@@ -6,6 +6,9 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
   - [Initiale Zielsetzung der Entwicklung](#initiale-zielsetzung-der-entwicklung)
   - [To-Dos](#to-dos)
     - [Inhaltlich](#inhaltlich)
+      - [Generelles](#generelles)
+      - [Header](#header)
+      - [Text](#text)
     - [Technische Umsetzung](#technische-umsetzung)
   - [Dokumentation](#dokumentation)
     - [Versionierung](#versionierung)
@@ -28,12 +31,36 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 4. Testbarkeit
 5. Kopplung mit (Oxygen-)Templates
 6. Erzeugung einer Web-Dokumentation aus dem Schema heraus (ersetzt die Dokumentation im Wiki)
+7. XSLT-Skripte (o.ä.) zur Migration zwischen Datenständen
 
 ## To-Dos
 
 ### Inhaltlich
 
+#### Generelles
+
+- Kapselung in `<teiCorpus/>` [siehe #3035](https://histhub.ssrq-sds-fds.ch/redmine/issues/3035)
+
+#### Header
+
+- [ ] Speicherung der Archivsignatur / URL [siehe #1512](https://histhub.ssrq-sds-fds.ch/redmine/issues/1512?issue_count=24&issue_position=10&next_issue_id=1458&prev_issue_id=2548)
+- [ ] `<settlement/>` zu `<msIdentifier/>` hinzufügen [#3033](https://histhub.ssrq-sds-fds.ch/redmine/issues/3033?issue_count=11&issue_position=1&next_issue_id=3032)
+- [ ] Überarbeitung der Beschreibung von Siglen (<seal/>) [#1330](https://histhub.ssrq-sds-fds.ch/redmine/issues/1330)
+- [ ] Persitente Identifikatoren über UUIDs [siehe #2995](https://histhub.ssrq-sds-fds.ch/redmine/issues/2995)
+- [ ] Content-Model für `<msItem/>` definieren [siehe #3007](https://histhub.ssrq-sds-fds.ch/redmine/issues/3007)
+
+#### Text
+
+- [ ] Sauberes Content-Model für `tei:text` definieren [siehe #3031](https://histhub.ssrq-sds-fds.ch/redmine/issues/3031)
+- [ ] Hashtags (Doppelkreuze...) nur noch für bestimmte Fälle (interne Verweise) erlauben [siehe #1458](https://histhub.ssrq-sds-fds.ch/redmine/issues/1458?issue_count=21&issue_position=10&next_issue_id=1441&prev_issue_id=2548)
+
+
 ### Technische Umsetzung
+
+- [ ]: Aufteilung des Schemas bestimmen
+- [ ]: Pipeline zur Erzeugung des Schemas erstellen
+- [ ]: Benötigte Stylesheets aus den TEI-Stylesheets bestimmen und sinnvoll einbinden (Submodule?)
+- [ ]: Welche Schritte sind notwendig, um die bestehenden Daten an das neue Schema anzupassen?
 
 ## Dokumentation
 
@@ -45,9 +72,11 @@ Die Versionierung des Schemas erfolgt gemäß Semantic Versioning. Dies erlaubt 
 MAJOR.MINOR.PATCH
 ```
 
-Die Versionsnumer wird als Tag in der Git-History hinterlegt und ist zudem in der Datei `pyproject.toml` in der Tabelle `ssrq.schema.meta` hinterlegt. Die kompilierten Versionen des Schemas folgen dem Muster `tei-ssrq-schema-version.(rng|odd)` und verwenden die in dieser Projektkonfiguration hinterlegte Versionnumer.
+Die Versionsnummer wird als Tag in der Git-History hinterlegt und ist zudem in der Datei `pyproject.toml` in der Tabelle `ssrq.schema.meta` hinterlegt. Die kompilierten Versionen des Schemas folgen dem Muster `tei-ssrq-schema-version.(rng|odd)` und verwenden die in dieser Projektkonfiguration hinterlegte Versionnumer.
 
 ### Aufbau
+
+ToDo
 
 ### Was ist wo?
 
