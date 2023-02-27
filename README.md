@@ -49,12 +49,15 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [ ] Persitente Identifikatoren über UUIDs [siehe #2995](https://histhub.ssrq-sds-fds.ch/redmine/issues/2995)
 - [ ] Content-Model für `<msItem/>` definieren [siehe #3007](https://histhub.ssrq-sds-fds.ch/redmine/issues/3007)
 - [ ] Ergänzung von `<change/>`, um ‚Milestone‘-Änderungen zu verzeichnen [siehe #1441](https://histhub.ssrq-sds-fds.ch/redmine/issues/1441?issue_count=18&issue_position=10&next_issue_id=1424&prev_issue_id=2548)
+- [ ] mehrere alternative Idenfikatoren erlauben [siehe #2880](https://histhub.ssrq-sds-fds.ch/redmine/issues/2880)
+- [ ] sprachunabhängige Kodierung des Trägermaterials [siehe #2663](https://histhub.ssrq-sds-fds.ch/redmine/issues/2663)
+- [ ] Werte für `<head/>` in Liste bibl. Angaben vereinheitlichen [siehe #2665](https://histhub.ssrq-sds-fds.ch/redmine/issues/2665)
 
 #### Text
 
 - [ ] Sauberes Content-Model für `tei:text` definieren [siehe #3031](https://histhub.ssrq-sds-fds.ch/redmine/issues/3031)
 - [ ] Hashtags (Doppelkreuze...) nur noch für bestimmte Fälle (interne Verweise) erlauben [siehe #1458](https://histhub.ssrq-sds-fds.ch/redmine/issues/1458?issue_count=21&issue_position=10&next_issue_id=1441&prev_issue_id=2548)
-
+- [ ] eine Ersetzung muss immer eine Löschung mit Inhalt enthalten [siehe #2548](https://histhub.ssrq-sds-fds.ch/redmine/issues/2548?issue_count=13&issue_position=6&next_issue_id=1361&prev_issue_id=2634)
 
 ### Technische Umsetzung
 
