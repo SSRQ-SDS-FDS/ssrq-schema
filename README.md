@@ -41,8 +41,8 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 
 #### Generelles
 
-- Kapselung in `<teiCorpus/>` [siehe #3035](https://histhub.ssrq-sds-fds.ch/redmine/issues/3035)
-- Verweise ‚die alten Dateien‘ prüfen und bereinigen [#siehe 3036](https://histhub.ssrq-sds-fds.ch/redmine/issues/3036)
+- [ ] Kapselung in `<teiCorpus/>` [siehe #3035](https://histhub.ssrq-sds-fds.ch/redmine/issues/3035)
+- [ ] Verweise ‚die alten Dateien‘ prüfen und bereinigen [#siehe 3036](https://histhub.ssrq-sds-fds.ch/redmine/issues/3036)
 
 #### Header
 
@@ -63,10 +63,10 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 
 ### Technische Umsetzung
 
-- [ ]: Aufteilung des Schemas bestimmen
-- [ ]: Pipeline zur Erzeugung des Schemas erstellen
-- [ ]: Benötigte Stylesheets aus den TEI-Stylesheets bestimmen und sinnvoll einbinden (Submodule?)
-- [ ]: Welche Schritte sind notwendig, um die bestehenden Daten an das neue Schema anzupassen?
+- [ ] Aufteilung des Schemas bestimmen
+- [ ] Pipeline zur Erzeugung des Schemas erstellen
+- [ ] Benötigte Stylesheets aus den TEI-Stylesheets bestimmen und sinnvoll einbinden (Submodule?)
+- [ ] Welche Schritte sind notwendig, um die bestehenden Daten an das neue Schema anzupassen?
 
 ## Dokumentation
 
