@@ -15,6 +15,8 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
     - [Aufbau](#aufbau)
     - [Was ist wo?](#was-ist-wo)
     - [Technisches Setup](#technisches-setup)
+      - [Verwendete Software / Technologien](#verwendete-software--technologien)
+      - [Einrichtung / Anforderungen an die Umgebung](#einrichtung--anforderungen-an-die-umgebung)
     - [Anpassung](#anpassung)
       - [Anpassung von Übersetzungen](#anpassung-von-übersetzungen)
       - [Anpassung von Inhaltstypen](#anpassung-von-inhaltstypen)
@@ -88,17 +90,33 @@ ToDo
 
 ### Technisches Setup
 
-**Verwendete Software / Technologien**:
+#### Verwendete Software / Technologien
 
-- [TEI ODD](https://tei-c.org/guidelines/customization/getting-started-with-p5-odds/)
-- [TEI Stylesheets](https://github.com/TEIC/Stylesheets)
+- [jing](https://github.com/relaxng/jing-trang)
+- [poetry](https://python-poetry.org)
 - [pytest](https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html)
 - [saxonche](https://pypi.org/project/saxonche/)
+- [taskipy](https://github.com/illBeRoy/taskipy)
+- [TEI ODD](https://tei-c.org/guidelines/customization/getting-started-with-p5-odds/)
+- [TEI Stylesheets](https://github.com/TEIC/Stylesheets)
 - [xmlformatter](https://pypi.org/project/xmlformatter/) (vakant!)
-- [make](https://de.wikipedia.org/wiki/Make)
 - ...
 
-ToDo: Erläuterung Einrichtung, Entwicklung / Ausführen von Tests und Ausführung
+#### Einrichtung / Anforderungen an die Umgebung
+
+Das Repository wird regulär über `git clone` ausgecheckt. Für die vollständige Funktionalität müssen dann noch die Git-Submodule initialisiert werden:
+
+```sh
+git submodule update --init --recursive
+```
+
+Für die Kompilierung des Schemas sowie die Ausführung der Tests ist es erforderlich, dass eine `JAVA`-Laufzeitumgebung sowie `Python` in Version 3.11 auf dem System installiert ist. Ferner ist es erforderlich, dass der Python-Paketmanager `poetry` installiert ist.
+
+Alle weiteren Abhängigkeiten können dann über folgenden Befehl install werden
+
+```sh
+poetry install
+```
 
 ### Anpassung
 
