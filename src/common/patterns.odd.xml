@@ -1,0 +1,93 @@
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>So called patterns used by the SSRQ</title>
+                <author>Bastian Politycki</author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>SSRQ-SDS-FDS</publisher>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA
+                        4.0)</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>This file defines common specifications used by various SSRQ schemas.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <p>Revision of last commit: $Rev$</p>
+                <p>Date of last commit: $Date$</p>
+                <p>Author of last commit: $Author$</p>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            
+            <specGrp xml:id="ssrq-patterns">
+                
+                <dataSpec ident="ssrq.idno.article" mode="add">
+                    <desc xml:lang="de" versionDate="2022-10-25">Muster für Identifikationsnummern für Stücke</desc>
+                    <content>
+                        <dataRef name="string" restriction="(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+))"/>
+                    </content>
+                </dataSpec>
+
+                <dataSpec ident="ssrq.pointer.persons" mode="add">
+                    <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für
+                        Personen-IDs zur Verknüpfung mit der Personen- und
+                        Organisationsdatenbank</desc>
+                    <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for person IDs
+                        for linking with the person and organisation database</desc>
+                    <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle d'identifiant de
+                        personne pour le lien avec la base de données des personnes et des
+                        organisations</desc>
+                    <content>
+                        <dataRef name="string" restriction="per\d{6}[abc]?(\.\d{2})?"/>
+                    </content>
+                </dataSpec>
+                <dataSpec ident="ssrq.pointer.keywords">
+                    <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für
+                        Schlagwort-IDs zur Verknüpfung mit der Schlagwort- und Lemmadatenbank</desc>
+                    <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for keyword IDs
+                        for linking to the keyword and lemma database</desc>
+                    <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des ID de
+                        mots-clés pour la liaison avec la base de données des mots-clés et des
+                        lemmes</desc>
+                    <content>
+                        <dataRef name="string" restriction="key\d{6}$?"/>
+                    </content>
+                </dataSpec>
+                <dataSpec ident="ssrq.pointer.lemma">
+                    <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Lemma-IDs
+                        zur Verknüpfung mit der Schlagwort- und Lemmadatenbank</desc>
+                    <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for lemma IDs
+                        for linking to the keyword and lemma database</desc>
+                    <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des ID de lemmes
+                        pour la liaison avec la base de données des mots-clés et des lemmes</desc>
+                    <content>
+                        <dataRef name="string" restriction="lem\d{6}(\.1?\d{2})?"/>
+                    </content>
+                </dataSpec>
+                
+                <dataSpec ident="ssrq.pointer.target" mode="add">
+                    <desc xml:lang="de" versionDate="2022-12-08">Definiert das Muster für Verweise als Referenz auf andere TEI-Stücke, als Hyperlink oder als DOI.</desc>
+                    <desc xml:lang="en" versionDate="2022-12-08">Defines the pattern for references as reference to other TEI documents, as hyperlink or as DOI.</desc>
+                    <desc xml:lang="fr" versionDate="2022-12-08">Définit le modèle pour les références comme référence à d'autres pièces TEI, comme hyperlien ou comme DOI.</desc>
+                    <content>
+                        <alternate minOccurs="1" maxOccurs="1">
+                            <dataRef name="string" restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)(-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)))?"/>
+                            <dataRef name="string" restriction="http(s)?://(w{3})?.*"/>
+                            <dataRef name="string" restriction="doi:10\.\d{4}/.*"/>
+                        </alternate>
+                    </content>
+                </dataSpec>
+
+            </specGrp>
+        </body>
+    </text>
+</TEI>

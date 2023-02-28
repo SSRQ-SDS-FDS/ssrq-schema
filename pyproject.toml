@@ -1,7 +1,6 @@
 [ssrq.schema.meta]
-name = "ssrq-schema"
 authors = ["Bastian Politycki <bastian.politycki@unisg.ch>", "Pascale Sutter <pascale.sutter@unisg.ch>"]
-version = "0.0.1"
+schemas = [{title = "The main schema used by the Swiss Law Sources to validate TEI XML transcriptions", entry = "main.odd.xml", version="0.0.1"}]
 
 [tool.poetry]
 name = "ssrq-schema"
@@ -13,8 +12,9 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 taskipy = "^1.10.3"
-xmlformatter = "^0.2.4"
 saxonche = "^12.0.0"
+pydantic = "^1.10.5"
+semver = "^2.13.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.1.0"
@@ -26,7 +26,7 @@ select = ["E", "F", "I001"]
 ignore = ["E501"]
 
 [tool.taskipy.tasks]
-test = "pytest -v"
+
 
 [build-system]
 requires = ["poetry-core"]
