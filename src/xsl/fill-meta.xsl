@@ -6,15 +6,15 @@
                 exclude-result-prefixes="#all"
                 expand-text="yes"
                 version="3.0">
-
-
+    
+    
     <xsl:output method="xml" indent="yes"/>
     <xsl:mode on-no-match="shallow-copy"/>
     
     <xsl:param name="title" as="xs:string" select="'Schema of the Swiss Law Sources'"/>
-    <xsl:param name="authors" as="xs:string*"/>    
+    <xsl:param name="authors" as="xs:string*"/>
     <xsl:param name="version" as="xs:string" select="'1.0.0'"/>
-    <xsl:param name="desc" as="xs:string"/>
+    <xsl:param name="desc" as="xs:string" select="''"/>
     
     <xsl:template match="//tei:title[parent::tei:titleStmt]">
         <title>
@@ -45,8 +45,8 @@
             <xsl:value-of select="$desc"/>
         </p>
     </xsl:template>
-
-   
     
-
+    
+    
+    
 </xsl:stylesheet>
