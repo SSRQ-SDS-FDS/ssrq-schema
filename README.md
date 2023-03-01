@@ -106,6 +106,8 @@ ToDo
 - der Unterordner `lib` enthält als git-Submodule die tei-Stylesheets; die verwendete Branch ist in der Datei `.gitmodules` definiert
 - der Unterordner `elements` enthält die Schema-Deklarationen je Element; pro spezifizierten Element wird eine Datei nach dem Muster `name.odd.xml` erstellt – sofern verschiedene Spezifikationen für unt. Typen (Einleitung, Transkripte, etc.) festgelegt werden, wird der Typ mit `-type` an den Namen angehängt
 - der Unterordner `common` enthält Spezifikationen, die von verschiedenen Teilen des Schemas wiederverwendet werden
+  - `constrains.odd.xml`: globale Schematron-Regeln
+  - `patterns.odd.xml`: sog. Patterns, die als Inhaltsmodelle an verschiedenen Stellen verwendet werden – bspw. das Muster für Personen-IDs
 - konkrete Schemadeklrationen werden auf der obersten Ebene festgelegt; die benötigten Bestandteile werden hier eingebunden
 
 ### Technisches Setup
@@ -135,6 +137,12 @@ Alle weiteren Abhängigkeiten können dann über folgenden Befehl install werden
 
 ```sh
 poetry install
+```
+
+Anschließend lassen sich die Tests folgendermaßen ausführen:
+
+```sh
+poetry run task test
 ```
 
 ### Anpassung
