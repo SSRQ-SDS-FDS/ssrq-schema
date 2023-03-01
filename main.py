@@ -16,6 +16,7 @@ XSLTS = {
     "meta": XSLT_BASE / "fill-meta.xsl",
     "odd2odd": TEI_STYLESHEETS / "odd2odd.xsl",
     "odd2rng": TEI_STYLESHEETS / "odd2relax.xsl",
+    "path": XSLT_BASE / "resolve-path.xsl",
 }
 OMIT_VERSION: bool = False
 
@@ -85,6 +86,29 @@ def load_config() -> Optional[SSRQConfig]:
         config = tomllib.load(f)
 
     return SSRQConfig(**config["ssrq"]["schema"]["meta"])
+
+
+def resolve_relative_paths(doc: str) -> str:
+    """A small helper function to replace relative @target paths with absolute paths.
+    It would be an alternative approach to use the saxon set_base_uri() method, but this
+    method has some strange behaviours."""
+
+    with PySaxonProcessor(license=False) as proc:
+        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+        document: PyXdmNode = proc.parse_xml(xml_text=doc)
+        xsltproc.set_parameter(
+            "path_base", proc.make_string_value(SRC_DIR.absolute().as_uri())
+        )
+
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+            stylesheet_file=str(XSLTS["path"])
+        )
+        result: str = xsl.transform_to_string(xdm_node=document)
+
+    if result is None:
+        raise ValueError("Failed to resolve relative paths")
+
+    return result
 
 
 def fill_template_with_metadata(authors: list[str], schema: SSRQSchemaType) -> str:
@@ -162,6 +186,7 @@ def odd_factory(
     odd_with_metadata = fill_template_with_metadata(
         authors=authors, schema=schema_config
     )
+    odd_with_metadata = resolve_relative_paths(doc=odd_with_metadata)
     compiled_odd = compile_odd_to_odd(
         odd=odd_with_metadata, tei_version=schema_config["tei_version"]
     )

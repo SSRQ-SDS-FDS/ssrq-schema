@@ -1,0 +1,33 @@
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <specGrp xml:id="constraints">
+        <constraintSpec scheme="schematron" module="core" ident="gl-sch-1" mode="change">
+            <desc xml:lang="en" versionDate="2023-03-01">Mutually dependent for all elements: @unit
+                and @quantity</desc>
+            <constraint>
+                <sch:pattern>
+                    <sch:rule context="tei:*">
+                        <sch:report test="@quantity and not(@unit)" xml:lang="en">If the @quantity
+                            attribute is specified on the <sch:name/> element, @unit must be
+                            present, too.</sch:report>
+                        <sch:report test="@unit and not(@quantity)" xml:lang="en">If the @unit
+                            attribute is specified on the <sch:name/> element, @quantity must be
+                            present, too.</sch:report>
+                    </sch:rule>
+                </sch:pattern>
+            </constraint>
+        </constraintSpec>
+        <constraintSpec scheme="schematron" ident="sch-gl-2">
+            <desc xml:lang="en" versionDate="2023-03-01">The value of an attribute should never
+                start with some kind of whitespace</desc>
+            <constraint>
+                <sch:pattern>
+                    <sch:rule context="@*">
+                        <sch:report test="matches(., '^(?:\s+|\t+|\n)(.*)$')" xml:lang="en"> The
+                            value of <sch:name/> should not start with whitesapce. </sch:report>
+                    </sch:rule>
+                </sch:pattern>
+            </constraint>
+        </constraintSpec>
+    </specGrp>
+</div>

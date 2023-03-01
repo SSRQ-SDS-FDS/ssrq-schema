@@ -1,16 +1,39 @@
-<TEI xmlns="http://www.tei-c.org/ns/1.0" 
-    xmlns:rng="http://relaxng.org/ns/structure/1.0"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron" 
-    xmlns:ssrq="http://ssrq-sds-fds.ch/ns/nonTEI"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:ssrq="http://ssrq-sds-fds.ch/ns/nonTEI"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
 
 
     <xi:include href="templates/meta.odd.xml"/>
 
     <text>
         <body>
-            <p/>
+            <schemaSpec ident="ssrq-main-schema" docLang="de" xml:lang="en">
+
+                <!-- modules used -->
+                <moduleRef key="tei"/>
+                <moduleRef key="core"
+                    include="abbr add analytic author bibl biblScope biblStruct cb choice corr date del editor expan foreign gap graphic head hi imprint item label lb list listBibl measure measureGrp monogr note num orig p pb pubPlace publisher q quote ref reg resp respStmt series sic term textLang time title unclear"/>
+                <moduleRef key="header"
+                    include="availability textClass profileDesc fileDesc idno editorialDecl encodingDesc extent keywords licence publicationStmt profileDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
+                <moduleRef key="textstructure"
+                    include="TEI back body div docImprint front group signed text"/>
+                <moduleRef key="linking" include="ab anchor seg"/>
+                <moduleRef key="msdescription"
+                    include="altIdentifier origDate origPlace dimensions height width support material condition msDesc physDesc sealDesc objectDesc supportDesc seal msContents history additional repository msItem filiation msIdentifier summary origin"/>
+                <moduleRef key="transcr"
+                    include="addSpan damage damageSpan delSpan facsimile fw handShift space subst surface supplied zone"/>
+                <moduleRef key="textcrit" include="app lem listWit rdg witness"/>
+                <moduleRef key="namesdates"
+                    include="listOrg listPerson listPlace orgName persName placeName"/>
+                <moduleRef key="figures" include="figure table row cell"/>
+
+                <!-- global constraint -->
+                <specGrpRef target="common/constraints.odd.xml#constraints"/>
+
+                <!-- element specs -->
+                <specGrpRef target="elements/respStmt.xml"/>
+                
+            </schemaSpec>
         </body>
     </text>
 </TEI>
