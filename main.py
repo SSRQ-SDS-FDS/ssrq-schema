@@ -10,6 +10,7 @@ SRC_DIR = CWD / "src"
 XSLT_BASE = CWD / SRC_DIR / "xsl"
 TEI_STYLESHEETS = CWD / SRC_DIR / "lib/tei_stylesheets/odds"
 XSLTS = {
+    "clean": XSLT_BASE / "clean-compiled.xsl",
     "meta": XSLT_BASE / "fill-meta.xsl",
     "odd2odd": TEI_STYLESHEETS / "odd2odd.xsl",
 }
@@ -102,14 +103,33 @@ def compile_odd_to_odd(odd: str, tei_version: str) -> str:
     return result
 
 
-def odd_factory(schema_config: SSRQSchemaType, authors: list[str]) -> None:
+def odd_factory(
+    schema_config: SSRQSchemaType, authors: list[str], clean: bool = True
+) -> str:
     odd_with_metadata = fill_template_with_metadata(
         authors=authors, schema=schema_config
     )
     compiled_odd = compile_odd_to_odd(
         odd=odd_with_metadata, tei_version=schema_config["tei_version"]
     )
-    print(compiled_odd)
+
+    if clean:
+        with PySaxonProcessor(license=False) as proc:
+            proc.set_configuration_property(name="xi", value="on")
+            xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+            document: PyXdmNode = proc.parse_xml(xml_text=compiled_odd)
+
+            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+                stylesheet_file=str(XSLTS["clean"])
+            )
+            result: str = xsl.transform_to_string(xdm_node=document)
+
+        if result is None:
+            raise ValueError("No result from XSLT transformation, while cleaning")
+
+        return result
+
+    return compiled_odd
 
 
 if __name__ == "__main__":
@@ -121,6 +141,9 @@ if __name__ == "__main__":
         cpus = cpu_count()
         len_schemas = len(config.schemas)
         with Pool(processes=len_schemas if len_schemas <= cpus else cpus) as p:
-            p.map(partial(odd_factory, authors=config.authors), config.schemas)
+            odds = p.map(partial(odd_factory, authors=config.authors), config.schemas)
+
+        for odd in odds:
+            print(odd)
     else:
         print("No config found – can't continue")
