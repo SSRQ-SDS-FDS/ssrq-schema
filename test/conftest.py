@@ -3,8 +3,10 @@ from pathlib import Path
 
 import pytest
 from pyschval.main import XSLT_FILES, extract_schematron_from_relaxng
+from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
+from ssrq_cli.xml_utils import ext_etree
 
-from main import Schema, load_config, odd_factory
+from main import XSLTS, Schema, load_config, odd_factory
 
 
 @dataclass
@@ -25,6 +27,36 @@ class SimpleTEIWriter:
 
     def list(self) -> list[str]:
         return [str(file.absolute()) for file in self.path.glob("*.xml")]
+
+    def parse_files(self):
+        parser = ext_etree.XMLParser(recover=True)
+        parsed_files: list[tuple[str, ext_etree._ElementTree]] = [
+            (file, ext_etree.parse(file, parser=parser)) for file in self.list()
+        ]
+        return parsed_files
+
+    def construct_file_pattern(self) -> str:
+        return str(self.path.absolute() / "*.xml")
+
+
+def change_rng_start(rng: str, name: str) -> str:
+    """Change the start element of the RNG file to the given name."""
+    with PySaxonProcessor(license=False) as proc:
+        proc.set_configuration_property(name="xi", value="on")
+        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+        document: PyXdmNode = proc.parse_xml(xml_text=rng)
+        xsltproc.set_parameter("start-el-name", proc.make_string_value(name))
+
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+            stylesheet_file=str(XSLTS["change-start"])
+        )
+
+        result: str = xsl.transform_to_string(xdm_node=document)
+
+    if result is None:
+        raise ValueError("Failed to resolve relative paths")
+
+    return result
 
 
 @pytest.fixture
@@ -59,3 +91,12 @@ def constraints(odds: list[Schema]):
 def writer(tmp_path: Path) -> SimpleTEIWriter:
     """A fixture, which returns a SimpleTEIWriter object, which can be used to write TEI files to a temporary directory."""
     return SimpleTEIWriter(tmp_path)
+
+
+@pytest.fixture
+def main_schema(odds: list[Schema]) -> Schema:
+    """A fixture, which returns the main ssrq schema."""
+    try:
+        return [odd for odd in odds if odd.name == "TEI_Schema"][0]
+    except IndexError:
+        raise ValueError("No main schema found")
