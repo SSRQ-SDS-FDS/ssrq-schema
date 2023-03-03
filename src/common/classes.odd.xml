@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    
+    <!-- Note / ToDo: Geprüft bis inklusive att.global.linking; weitere Klassen überprüfen siehe: https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-ATTS.html -->
+
+    <specGrp xml:id="ssrq-classes">
+
+        <classSpec ident="att.analytic" type="atts" mode="delete"/>
+        <classSpec ident="att.edition" type="atts" mode="delete"/>
+        <classSpec ident="att.sortable" type="atts" mode="delete"/>
+        <classSpec ident="att.cReferencing" type="atts" mode="delete"/>
+        <classSpec ident="att.declaring" type="atts" mode="delete"/>
+        <classSpec ident="att.global.linking" type="atts" mode="delete"/>
+        <classSpec ident="att.ranging" type="atts" mode="delete"/>
+        <classSpec ident="att.datable.w3c" type="atts" mode="delete"/>
+        <classSpec ident="att.datable.iso" type="atts" mode="delete"/>
+        <classSpec ident="att.fragmentable" type="atts" mode="delete"/>
+        <classSpec ident="att.datcat" type="atts" mode="delete"/>
+
+        <classSpec ident="att.global" type="atts" mode="change">
+            <classes mode="replace">
+                <memberOf key="att.global.rendition"/>
+                <memberOf key="att.global.responsibility"/>
+                <memberOf key="att.global.source"/>
+            </classes>
+            <attList>
+                <attDef ident="xml:base" mode="delete"/>
+                <attDef ident="xml:space" mode="delete"/>
+            </attList>
+        </classSpec>
+
+        <classSpec ident="att.global.rendition" type="atts" mode="change">
+            <attList>
+                <attDef ident="style" mode="delete"/>
+                <attDef ident="rendition" mode="delete"/>
+            </attList>
+        </classSpec>
+
+        <classSpec ident="att.measurement" type="atts" mode="change">
+            <attList>
+                <attDef ident="unitRef" mode="delete"/>
+            </attList>
+        </classSpec>
+
+        <classSpec ident="att.transcriptional" type="atts" mode="change">
+            <attList>
+                <attDef ident="cause" mode="delete"/>
+                <attDef ident="seq" mode="delete"/>
+                <attDef ident="status" mode="delete"/>
+            </attList>
+        </classSpec>
+
+        <classSpec ident="att.damaged" type="atts" mode="change">
+            <attList>
+                <attDef ident="group" mode="delete"/>
+            </attList>
+        </classSpec>
+
+        <classSpec ident="att.editLike" type="atts" mode="change">
+            <attList>
+                <attDef ident="evidence" mode="delete"/>
+                <attDef ident="instant" mode="delete"/>
+            </attList>
+        </classSpec>
+
+        <classSpec ident="att.typed" type="atts" mode="change">
+            <attList>
+                <attDef ident="subtype" mode="delete"/>
+            </attList>
+        </classSpec>
+
+        <classSpec ident="att.tableDecoration" type="atts" mode="change">
+            <attList>
+                <attDef ident="cols" mode="delete"/>
+                <attDef ident="rows" mode="delete"/>
+            </attList>
+        </classSpec>
+
+        <classSpec ident="att.dimensions" type="atts" mode="change">
+            <attList>
+                <attDef ident="scope" mode="delete"/>
+            </attList>
+        </classSpec>
+
+        <classSpec ident="att.pointing" type="atts" mode="change">
+            <attList>
+                <attDef ident="targetLang" mode="delete"/>
+                <attDef ident="evaluate" mode="delete"/>
+            </attList>
+        </classSpec>
+
+
+        <classSpec ident="att.handFeatures" type="atts" mode="change">
+            <attList>
+                <attDef ident="scribe" mode="replace">
+                    <desc>The value is constrained in the Schematron constraint sch-gl-2.</desc>
+                    <datatype>
+                        <rng:text/>
+                    </datatype>
+                </attDef>
+                <attDef ident="scope" mode="delete"/>
+                <attDef ident="scribeRef" mode="delete"/>
+                <attDef ident="script" mode="delete"/>
+                <attDef ident="scriptRef" mode="delete"/>
+            </attList>
+        </classSpec>
+
+        <classSpec type="atts" ident="att.datable" mode="change">
+            <attList>
+                <attDef ident="calendar" mode="replace" usage="opt">
+                    <desc xml:lang="de">verwendeter Kalender</desc>
+                    <desc xml:lang="en">Calendar used</desc>
+                    <desc xml:lang="fr">Calendrier utilisé</desc>
+                    <desc xml:lang="it">Calendario utilizzato</desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.calendar"/>
+                    </datatype>
+                    <!-- Prüfen: Kann das weg? -->
+                    <constraintSpec scheme="schematron" ident="calendar" mode="replace">
+                        <desc>Specific rules for @calendar</desc>
+                        <constraint>
+                            <sch:pattern>
+                                <sch:rule context="tei:origDate[@calendar][ancestor::tei:teiHeader]">
+                                    <sch:assert test=" string-length(.) = 0 or string-length(.) > 0"
+                                        xml:lang="en">Text inside an <sch:name/> in the metadata
+                                        section needs to have a length between 0-∞.</sch:assert>
+                                </sch:rule>
+                            </sch:pattern>
+                        </constraint>
+                    </constraintSpec>
+                </attDef>
+            </attList>
+        </classSpec>
+
+    </specGrp>
+
+</div>

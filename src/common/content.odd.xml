@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    
+    <specGrp xml:id="ssrq-default-content-types">
+        
+        <macroSpec ident="ssrq.content.default" mode="add">
+            <content>
+                <rng:text/>
+                <!--Textkritische Auszeichnungen-->
+                <rng:ref name="abbr"/>
+                <rng:ref name="add"/>
+                <rng:ref name="addSpan"/>
+                <rng:ref name="app"/>
+                <rng:ref name="corr"/>
+                <rng:ref name="choice"/>
+                <rng:ref name="damage"/>
+                <rng:ref name="damageSpan"/>
+                <rng:ref name="del"/>
+                <rng:ref name="delSpan"/>
+                <rng:ref name="foreign"/>
+                <rng:ref name="gap"/>
+                <rng:ref name="handShift"/>
+                <rng:ref name="note"/>
+                <rng:ref name="sic"/>
+                <rng:ref name="space"/>
+                <rng:ref name="subst"/>
+                <rng:ref name="supplied"/>
+                <rng:ref name="unclear"/>
+                <!--Auszeichnungen, die der Darstellung...-->
+                <rng:ref name="ab"/>
+                <rng:ref name="cb"/>
+                <rng:ref name="div"/>
+                <rng:ref name="figure"/>
+                <rng:ref name="head"/>
+                <rng:ref name="hi"/>
+                <rng:ref name="lb"/>
+                <rng:ref name="orig"/>
+                <rng:ref name="p"/>
+                <rng:ref name="pb"/>
+                <rng:ref name="q"/>
+                <rng:ref name="quote"/>
+                <rng:ref name="seg"/>
+                <rng:ref name="signed"/>
+                <rng:ref name="table"/>
+                <!--Inhaltliche Auszeichnungen-->
+                <rng:ref name="date"/>
+                <rng:ref name="origDate"/>
+                <rng:ref name="measure"/>
+                <rng:ref name="measureGrp"/>
+                <rng:ref name="num"/>
+                <rng:ref name="time"/>
+                <!--Registertags-->
+                <rng:ref name="persName"/>
+                <rng:ref name="orgName"/>
+                <rng:ref name="placeName"/>
+                <rng:ref name="origPlace"/>
+                <rng:ref name="term"/>
+            </content>
+        </macroSpec>
+        
+    </specGrp>
+    
+</div>

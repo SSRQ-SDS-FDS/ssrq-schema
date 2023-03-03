@@ -1,0 +1,71 @@
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0">
+
+    <specGrp xml:id="ssrq-date-time">
+
+        <dataSpec ident="ssrq.date.calendar" mode="add">
+            <desc versionDate="2022-04-29" xml:lang="de">Geschlossene Liste von Kalendertypen, die
+                von der SSRQ verwendet werden. Für weitere Informationen siehe <ref
+                    target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien"
+                    >Datierungsrichtlinien</ref>.</desc>
+            <desc versionDate="2022-04-29" xml:lang="en">Closed list of calender types used by the
+                SLS.For more information see <ref
+                    target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">dating
+                    guidelines</ref>.</desc>
+            <desc versionDate="2023-03-02" xml:lang="fr">Liste fermée de Types de calendriers
+                utilisés par la SDS. Pour plus d'informations, voir <ref
+                    target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">les directives
+                    de datation</ref>.</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="annunciation">
+                        <desc versionDate="2022-04-29" xml:lang="de">Annuntiationsstil</desc>
+                        <desc versionDate="2022-04-29" xml:lang="fr">le style de
+                            l’Annonciation</desc>
+                        <desc versionDate="2022-09-05" xml:lang="it">stile dell’Annunciazione</desc>
+                        <desc versionDate="2022-04-29" xml:lang="en">Annunciation Style</desc>
+                    </valItem>
+                    <valItem ident="circumcision">
+                        <desc versionDate="2022-04-29" xml:lang="de">Circumcisionsstil</desc>
+                        <desc versionDate="2022-04-29" xml:lang="fr">le style de la
+                            Circoncision</desc>
+                        <desc versionDate="2022-09-05" xml:lang="it">stile della
+                            Circoncisione</desc>
+                        <desc versionDate="2022-04-29" xml:lang="en">Circumcision Style</desc>
+                    </valItem>
+                    <valItem ident="Gregorian">
+                        <desc versionDate="2022-04-29" xml:lang="de">Gregorianischer Kalender</desc>
+                        <desc versionDate="2022-04-29" xml:lang="fr">le calendrier grégorien</desc>
+                        <desc versionDate="2022-09-05" xml:lang="it">il calendario gregoriano</desc>
+                        <desc versionDate="2022-04-29" xml:lang="en">Gregorian calendar</desc>
+                    </valItem>
+                    <valItem ident="Julian">
+                        <desc versionDate="2022-04-29" xml:lang="de">Julianischer Kalender</desc>
+                        <desc versionDate="2022-04-29" xml:lang="fr">le calendrier julien</desc>
+                        <desc versionDate="2022-09-05" xml:lang="it">il calendario giuliano</desc>
+                        <desc versionDate="2022-07-11" xml:lang="en">Julian calendar</desc>
+                    </valItem>
+                    <valItem ident="natal">
+                        <desc versionDate="2022-04-29" xml:lang="de">Natalstil</desc>
+                        <desc versionDate="2022-04-29" xml:lang="fr">le style de la Nativité</desc>
+                        <desc versionDate="2022-09-05" xml:lang="it">stile della natività</desc>
+                        <desc versionDate="2022-04-29" xml:lang="en">Christmas Style or Nativity
+                            Style</desc>
+                    </valItem>
+                </valList>
+            </content>
+            <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-02">
+                <egXML xmlns="http://www.tei-c.org/ns/Examples"><date from-custom="1588-09-13"
+                        to-custom="1588-09-30" datingMethod="Julian" calendar="Julian"> Zwischen 3.
+                        und 20 September 1588</date></egXML>
+            </exemplum>
+            <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-02">
+                <egXML xmlns="http://www.tei-c.org/ns/Examples"><date when="1364-02-04"
+                        calendar="annunciation style">le quatre jour du mois de février en l’ans
+                        Notre Seigneur courant 1363</date></egXML>
+            </exemplum>
+        </dataSpec>
+
+    </specGrp>
+
+</div>
