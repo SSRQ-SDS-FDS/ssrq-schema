@@ -12,6 +12,7 @@ SRC_DIR = CWD / "src"
 XSLT_BASE = CWD / SRC_DIR / "xsl"
 TEI_STYLESHEETS = CWD / SRC_DIR / "lib/tei_stylesheets/odds"
 XSLTS = {
+    "change-start": XSLT_BASE / "change-rng-start.xsl",
     "clean": XSLT_BASE / "clean-compiled.xsl",
     "meta": XSLT_BASE / "fill-meta.xsl",
     "odd2odd": TEI_STYLESHEETS / "odd2odd.xsl",

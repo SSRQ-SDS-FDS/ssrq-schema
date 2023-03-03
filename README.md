@@ -45,6 +45,11 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 
 - [ ] Kapselung in `<teiCorpus/>` [siehe #3035](https://histhub.ssrq-sds-fds.ch/redmine/issues/3035)
 - [ ] Verweise ‚die alten Dateien‘ prüfen und bereinigen [#siehe 3036](https://histhub.ssrq-sds-fds.ch/redmine/issues/3036)
+- [x] Verwendung von `@rendition` verbieten [#siehe 3048](https://histhub.ssrq-sds-fds.ch/redmine/issues/3048)
+- [x] Verwendung von `@corresp` verbieten
+- [ ] Verwendung von `@rend` prüfen [#siehe 3051](https://histhub.ssrq-sds-fds.ch/redmine/issues/3051)
+- [ ] Verwendung von `@cert` prüfen [#siehe 3052](https://histhub.ssrq-sds-fds.ch/redmine/issues/3052)
+- [ ] Verwendung von `@resp` prüfen [#siehe 3053](https://histhub.ssrq-sds-fds.ch/redmine/issues/3053)
 
 #### Header
 
@@ -64,6 +69,8 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [ ] eine Ersetzung muss immer eine Löschung mit Inhalt enthalten [siehe #2548](https://histhub.ssrq-sds-fds.ch/redmine/issues/2548?issue_count=13&issue_position=6&next_issue_id=1361&prev_issue_id=2634)
 - [ ] Werte von `@n` als Teil von `tei:pb` einschränken [siehe #3047](https://histhub.ssrq-sds-fds.ch/redmine/issues/3047)
 - [ ] Content-Model für `@scribe` überarbeiten [siehe #1311](https://histhub.ssrq-sds-fds.ch/redmine/issues/1311)
+- [ ] Attribut `@place` für `tei:figure` erlauben [siehe #3049](https://histhub.ssrq-sds-fds.ch/redmine/issues/3049)
+- [x] `tei:anchor` innerhalb der Zelle einer Tabelle erlauben [siehe #3006](https://histhub.ssrq-sds-fds.ch/redmine/issues/3006?issue_count=10&issue_position=1&next_issue_id=3005)
 
 ### Technische Umsetzung
 
