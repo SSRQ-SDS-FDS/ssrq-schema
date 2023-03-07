@@ -50,6 +50,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [ ] Verwendung von `@rend` prüfen [#siehe 3051](https://histhub.ssrq-sds-fds.ch/redmine/issues/3051)
 - [ ] Verwendung von `@cert` prüfen [#siehe 3052](https://histhub.ssrq-sds-fds.ch/redmine/issues/3052)
 - [ ] Verwendung von `@resp` prüfen [#siehe 3053](https://histhub.ssrq-sds-fds.ch/redmine/issues/3053)
+- [ ] Attribut `@source` nur eingeschränkt zulassen [#siehe 3056](https://histhub.ssrq-sds-fds.ch/redmine/issues/3056)
 
 #### Header
 

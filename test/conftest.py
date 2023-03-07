@@ -2,7 +2,11 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import pytest
-from pyschval.main import XSLT_FILES, extract_schematron_from_relaxng
+from pyschval.main import (
+    XSLT_FILES,
+    create_schematron_stylesheet,
+    extract_schematron_from_relaxng,
+)
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
 from ssrq_cli.xml_utils import ext_etree
 
@@ -72,21 +76,6 @@ def odds() -> list[Schema]:
     return odds
 
 
-@pytest.fixture
-def constraints(odds: list[Schema]):
-    """A fixture, which extracts all schematron rules from the RNG files and returns them as a list of FileConstraints –
-    one for each ODD file."""
-    constraints = [
-        FileConstraints(
-            odd.name,
-            extract_schematron_from_relaxng(odd.rng, XSLT_FILES["extract-sch"]),
-        )
-        for odd in odds
-    ]
-
-    return constraints
-
-
 @pytest.fixture(scope="function")
 def writer(tmp_path: Path) -> SimpleTEIWriter:
     """A fixture, which returns a SimpleTEIWriter object, which can be used to write TEI files to a temporary directory."""
@@ -100,3 +89,12 @@ def main_schema(odds: list[Schema]) -> Schema:
         return [odd for odd in odds if odd.name == "TEI_Schema"][0]
     except IndexError:
         raise ValueError("No main schema found")
+
+
+@pytest.fixture
+def main_constraints(main_schema: Schema) -> str:
+    """A fixture, which returns the schematron rules from the main schema."""
+    extracted_rules = extract_schematron_from_relaxng(
+        main_schema.rng, XSLT_FILES["extract-sch"]
+    )
+    return create_schematron_stylesheet(extracted_rules, XSLT_FILES["schxslt"])

@@ -5,7 +5,7 @@
     
     <specGrp xml:id="ssrq-default-content-types">
         
-        <macroSpec ident="ssrq.content.default" mode="add">
+        <macroSpec ident="ssrq.content.default" mode="add" module="ssrq.core.module">
             <content>
                 <rng:text/>
                 <!--Textkritische Auszeichnungen-->
