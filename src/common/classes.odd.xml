@@ -2,28 +2,29 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    
+
     <!-- Note / ToDo: Geprüft bis inklusive att.global.linking; weitere Klassen überprüfen siehe: https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-ATTS.html -->
 
     <specGrp xml:id="ssrq-classes">
 
+
         <classSpec ident="att.analytic" type="atts" mode="delete"/>
-        <classSpec ident="att.edition" type="atts" mode="delete"/>
-        <classSpec ident="att.sortable" type="atts" mode="delete"/>
         <classSpec ident="att.cReferencing" type="atts" mode="delete"/>
-        <classSpec ident="att.declaring" type="atts" mode="delete"/>
-        <classSpec ident="att.global.linking" type="atts" mode="delete"/>
-        <classSpec ident="att.ranging" type="atts" mode="delete"/>
-        <classSpec ident="att.datable.w3c" type="atts" mode="delete"/>
         <classSpec ident="att.datable.iso" type="atts" mode="delete"/>
-        <classSpec ident="att.fragmentable" type="atts" mode="delete"/>
+        <classSpec ident="att.datable.w3c" type="atts" mode="delete"/>
         <classSpec ident="att.datcat" type="atts" mode="delete"/>
+        <classSpec ident="att.declaring" type="atts" mode="delete"/>
+        <classSpec ident="att.fragmentable" type="atts" mode="delete"/>
+        <classSpec ident="att.edition" type="atts" mode="delete"/>
+        <classSpec ident="att.global.linking" type="atts" mode="delete"/>
+        <classSpec ident="att.global.source" type="atts" mode="delete"/>
+        <classSpec ident="att.ranging" type="atts" mode="delete"/>
+        <classSpec ident="att.sortable" type="atts" mode="delete"/>
 
         <classSpec ident="att.global" type="atts" mode="change">
             <classes mode="replace">
                 <memberOf key="att.global.rendition"/>
                 <memberOf key="att.global.responsibility"/>
-                <memberOf key="att.global.source"/>
             </classes>
             <attList>
                 <attDef ident="xml:base" mode="delete"/>
@@ -132,6 +133,62 @@
                     </constraintSpec>
                 </attDef>
             </attList>
+        </classSpec>
+
+
+
+        <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
+
+            <desc versionDate="2023-03-07" xml:lang="de">Stellt ein @source Attribut bereit, dessen
+                Semantik dem der TEI entspricht.</desc>
+            <desc versionDate="2023-03-07" xml:lang="en">Provides a common @source attribute
+                semantically identical to the TEI @source.</desc>
+            <constraintSpec scheme="schematron" ident="sch-att-source">
+                <desc xml:lang="en" versionDate="2023-03-07">If source is used with tei:idno no
+                    whitespace is allowed</desc>
+                <constraint>
+                    <sch:pattern>
+                        <sch:rule context="tei:idno[@source]">
+                            <sch:report test="matches(./@source, '\s')" xml:lang="en">When @source
+                                is used together with <sch:name/> whitespace is not
+                                allowed.</sch:report>
+                        </sch:rule>
+                    </sch:pattern>
+                </constraint>
+            </constraintSpec>
+            <attList>
+                <attDef ident="source" mode="add" usage="opt">
+                    <gloss versionDate="2023-03-07" xml:lang="de">Quelle</gloss>
+                    <desc versionDate="2023-03-07" xml:lang="de">Verweis auf ein anderes Stück
+                        (bspw. im Falle der Mehrfachüberlieferung) oder auf ein
+                        Archivinformationssystem.</desc>
+                    <gloss versionDate="2023-03-07" xml:lang="en">source</gloss>
+                    <desc versionDate="2023-03-07" xml:lang="en">Reference to another item (e.g. in
+                        the case of multiple records) or to an archival information system.</desc>
+                    <gloss versionDate="2023-03-07" xml:lang="fr">la source</gloss>
+                    <desc versionDate="2023-03-07" xml:lang="fr">Renvoi à une autre pièce (par ex.
+                        en cas de livraison multiple) ou à un système d'information
+                        archivistique.</desc>
+                    <datatype>
+                        <rng:choice>
+                            <rng:list>
+                                <rng:oneOrMore>
+                                    <rng:ref name="ssrq.pointer.urn"/>
+                                </rng:oneOrMore>
+                            </rng:list>
+                            <rng:ref name="ssrq.pointer.url"/>
+                        </rng:choice>
+                    </datatype>
+
+                </attDef>
+            </attList>
+            <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-03">
+                <p>Lesung rekonstruiert durch eine andere Überlieferung</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <p>Zum ersten soll <supplied source="urn:ssrq:SSRQ-SG-III_4-189-1">man wissen,
+                            das</supplied> niemand </p>
+                </egXML>
+            </exemplum>
         </classSpec>
 
     </specGrp>
