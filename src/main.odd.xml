@@ -1,9 +1,9 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:ssrq="http://ssrq-sds-fds.ch/ns/nonTEI"
     xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
-    
+
     <xi:include href="templates/meta.odd.xml"/>
-    
+
     <text>
         <body>
             <schemaSpec ident="ssrq-main-schema" docLang="de en fr" xml:lang="en">
@@ -15,32 +15,33 @@
                 <moduleRef key="header"
                     include="availability textClass profileDesc fileDesc idno editorialDecl encodingDesc extent keywords licence publicationStmt profileDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
                 <moduleRef key="textstructure"
-                    include="TEI back body div docImprint front group signed text"/>
+                    include="TEI back body div docImprint front signed text"/>
                 <moduleRef key="linking" include="ab anchor seg"/>
                 <moduleRef key="msdescription"
                     include="altIdentifier origDate origPlace dimensions height width support material condition msDesc physDesc sealDesc objectDesc supportDesc seal msContents history additional repository msItem filiation msIdentifier summary origin"/>
                 <moduleRef key="transcr"
-                    include="addSpan damage damageSpan delSpan facsimile fw handShift space subst surface supplied zone"/>
+                    include="addSpan damage damageSpan delSpan fw handShift space subst supplied"/>
                 <moduleRef key="textcrit" include="app lem listWit rdg witness"/>
                 <moduleRef key="namesdates"
                     include="listOrg listPerson listPlace orgName persName placeName"/>
                 <moduleRef key="figures" include="figure table row cell"/>
-                
+
                 <!-- modules and classes -->
                 <specGrpRef target="common/modules.odd.xml#ssrq-modules"/>
                 <specGrpRef target="common/classes.odd.xml#ssrq-classes"/>
-                
+
                 <!-- global constraints -->
                 <specGrpRef target="common/constraints.odd.xml#constraints"/>
-                
-                <!-- content and datatypes --> 
+
+                <!-- content and datatypes -->
                 <specGrpRef target="common/content.odd.xml#ssrq-default-content-types"/>
                 <specGrpRef target="common/patterns.odd.xml#ssrq-patterns"/>
-                
-                
+
+
                 <!-- element specs -->
                 <specGrpRef target="elements/cell.xml"/>
                 <specGrpRef target="elements/idno.xml"/>
+                <specGrpRef target="elements/TEI.xml"/>
 
             </schemaSpec>
         </body>
