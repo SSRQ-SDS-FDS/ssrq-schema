@@ -1,6 +1,75 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
 
+    <specGrp xml:id="ssrq-hand">
+
+        <dataSpec ident="ssrq.hand.scribe" mode="add">
+            <desc versionDate="2023-03-14" xml:lang="de">Anonyme Anlage- oder Nachtragshand</desc>
+            <desc versionDate="2023-03-14" xml:lang="en">Anonymous main or supplementary hand</desc>
+            <desc versionDate="2023-03-14" xml:lang="fr">ToDo: Übersetzung fr</desc>
+            <desc versionDate="2023-03-14" xml:lang="it">ToDo: Übersetzung it</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="firstHand">
+                        <desc versionDate="2023-03-14" xml:lang="de">Anlagehand (A)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="en">main hand (A)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="fr">main principale (A)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="it">mano principale (A)</desc>
+                    </valItem>
+                    <valItem ident="secondaryHand">
+                        <desc versionDate="2023-03-14" xml:lang="de">Nachtragshand (B)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="en">other hand (B)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="fr">main secondaire (B)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="it">mano secondaria (B)</desc>
+                    </valItem>
+                    <valItem ident="thirdHand">
+                        <desc versionDate="2023-03-14" xml:lang="de">Nachtragshand (C)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="en">other hand (C)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="fr">main secondaire (C)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="it">mano secondaria (C)</desc>
+                    </valItem>
+                    <valItem ident="fourthHand">
+                        <desc versionDate="2023-03-14" xml:lang="de">Nachtragshand (D)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="en">other hand (D)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="fr">main secondaire (D)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="it">mano secondaria (D)</desc>
+                    </valItem>
+                    <valItem ident="fifthHand">
+                        <desc versionDate="2023-03-14" xml:lang="de">Nachtragshand (E)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="en">other hand (E)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="fr">main secondaire (E)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="it">mano secondaria (E)</desc>
+                    </valItem>
+                    <valItem ident="sixthHand">
+                        <desc versionDate="2023-03-14" xml:lang="de">Nachtragshand (F)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="en">other hand (F)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="fr">main secondaire (F)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="it">mano secondaria (F)</desc>
+                    </valItem>
+                    <valItem ident="seventhHand">
+                        <desc versionDate="2023-03-14" xml:lang="de">Nachtragshand (G)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="en">other hand (G)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="fr">main secondaire (G)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="it">mano secondaria (G)</desc>
+                    </valItem>
+                    <valItem ident="eighthHand">
+                        <desc versionDate="2023-03-14" xml:lang="de">Nachtragshand (H)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="en">other hand (H)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="fr">main secondaire (H)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="it">mano secondaria (H)</desc>
+                    </valItem>
+                    <valItem ident="ninthHand">
+                        <desc versionDate="2023-03-14" xml:lang="de">Nachtragshand (H)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="en">other hand (H)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="fr">main secondaire (H)</desc>
+                        <desc versionDate="2023-03-14" xml:lang="it">mano secondaria (H)</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+    </specGrp>
+
     <specGrp xml:id="ssrq-date-time">
 
         <dataSpec ident="ssrq.date.calendar" mode="add">

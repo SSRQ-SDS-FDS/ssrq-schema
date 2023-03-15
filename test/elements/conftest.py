@@ -4,7 +4,7 @@ from main import Schema
 
 from ..conftest import change_rng_start
 
-ELEMENTS = ["cell", "idno"]
+ELEMENTS = ["cell", "handShift", "idno"]
 
 
 @pytest.fixture

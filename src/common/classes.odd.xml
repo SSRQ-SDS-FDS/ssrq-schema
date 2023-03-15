@@ -3,7 +3,7 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
 
-    <!-- Note / ToDo: Geprüft bis inklusive att.global.linking; weitere Klassen überprüfen siehe: https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-ATTS.html -->
+    <!-- Note / ToDo: Geprüft bis inklusive att.handFeatures; weitere Klassen überprüfen siehe: https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-ATTS.html -->
 
     <specGrp xml:id="ssrq-classes">
 
@@ -97,10 +97,50 @@
         <classSpec ident="att.handFeatures" type="atts" mode="change">
             <attList>
                 <attDef ident="scribe" mode="replace">
-                    <desc>The value is constrained in the Schematron constraint sch-gl-2.</desc>
+                    <desc versionDate="2023-03-14" xml:lang="de">@scribe bezeichnet den Schreiber
+                        oder die Hand. Ist der Schreiber namentlich genannt, enthält @scribe die
+                        Identifikationsnummer der Person (perNNNNNNN), die in der Funktion als
+                        Schreiber auftritt.</desc>
+                    <desc versionDate="2023-03-14" xml:lang="fr">@scribe contient le numéro
+                        d'identification d'une personne (perNNNNNNN) qui apparaît dans la fonction
+                        du scribe. </desc>
                     <datatype>
-                        <rng:text/>
+                        <rng:choice>
+                            <rng:ref name="ssrq.hand.scribe"/>
+                            <rng:ref name="ssrq.pointer.persons"/>
+                        </rng:choice>
                     </datatype>
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-14">
+                        <p>Normale Unterschrift</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <signed><handShift scribe="persID"/></signed>
+                        </egXML>
+                    </exemplum>
+                    <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-14">
+                        <p>Signature normale</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <signed><handShift scribe="persID"/></signed>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+                <attDef ident="medium" mode="replace">
+                    <desc versionDate="2023-03-15" xml:lang="de">Verwendetes Schreibwerkzeug</desc>
+                    <desc versionDate="2023-03-15" xml:lang="fr">Outils d'écriture utilisés</desc>
+                    <desc versionDate="2023-03-15" xml:lang="en">Writing tool used</desc>
+                    <valList type="closed">
+                        <valItem ident="other ink">
+                            <desc xml:lang="de" versionDate="2022-05-06">mit anderer Tinte</desc>
+                            <desc xml:lang="fr" versionDate="2022-05-06">avec une autre encre</desc>
+                            <desc xml:lang="it" versionDate="2022-09-05">altro inchiostro</desc>
+                            <desc xml:lang="en" versionDate="2022-05-06">with different ink</desc>
+                        </valItem>
+                        <valItem ident="pencil">
+                            <desc xml:lang="de" versionDate="2022-05-06">mit Bleistift</desc>
+                            <desc xml:lang="fr" versionDate="2022-05-06">au crayon</desc>
+                            <desc xml:lang="it" versionDate="2022-09-05">matita</desc>
+                            <desc xml:lang="en" versionDate="2022-05-06">with pencil</desc>
+                        </valItem>
+                    </valList>
                 </attDef>
                 <attDef ident="scope" mode="delete"/>
                 <attDef ident="scribeRef" mode="delete"/>

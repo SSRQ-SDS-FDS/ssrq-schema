@@ -39,6 +39,7 @@ ignore = ["E501"]
 fmt = "black ."
 lint = "ruff --fix ."
 test = "pytest -n auto"
+compile = "python main.py"
 
 [build-system]
 requires = ["poetry-core"]
