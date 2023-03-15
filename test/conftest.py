@@ -12,6 +12,8 @@ from ssrq_cli.xml_utils import ext_etree
 
 from main import XSLTS, Schema, load_config, odd_factory
 
+ELEMENTS = ["cell", "graphic", "handShift", "idno"]
+
 
 @dataclass
 class FileConstraints:
@@ -63,7 +65,7 @@ def change_rng_start(rng: str, name: str) -> str:
     return result
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def odds() -> list[Schema]:
     """Compile all odds found in the pyproject.toml to odds and RelaxNG files. Return as a list of Schema objects."""
     config = load_config()
@@ -74,6 +76,14 @@ def odds() -> list[Schema]:
     odds = [odd_factory(schema, authors=config.authors) for schema in config.schemas]
 
     return odds
+
+
+@pytest.fixture(scope="session")
+def change_rng_start_per_odd(odds: list[Schema]) -> dict[str, dict[str, str]]:
+    """Change the start element of the RNG file to the given name."""
+    return {
+        odd.name: {el: change_rng_start(odd.rng, el) for el in ELEMENTS} for odd in odds
+    }
 
 
 @pytest.fixture(scope="function")
