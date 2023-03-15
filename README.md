@@ -72,6 +72,8 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [ ] Content-Model für `@scribe` überarbeiten [siehe #1311](https://histhub.ssrq-sds-fds.ch/redmine/issues/1311)
 - [ ] Attribut `@place` für `tei:figure` erlauben [siehe #3049](https://histhub.ssrq-sds-fds.ch/redmine/issues/3049)
 - [x] `tei:anchor` innerhalb der Zelle einer Tabelle erlauben [siehe #3006](https://histhub.ssrq-sds-fds.ch/redmine/issues/3006?issue_count=10&issue_position=1&next_issue_id=3005)
+- [ ] Werte für `@medium` einschränken [siehe #3064](https://histhub.ssrq-sds-fds.ch/redmine/issues/3064)
+- [ ] `@rend` im Falle von `tei:addSpan|tei:add` durch `@medium` ersetzen [siehe #3065](https://histhub.ssrq-sds-fds.ch/redmine/issues/3065)
 
 ### Technische Umsetzung
 
