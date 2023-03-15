@@ -38,7 +38,7 @@ ignore = ["E501"]
 [tool.taskipy.tasks]
 fmt = "black ."
 lint = "ruff --fix ."
-test = "pytest -n auto"
+test = "pytest -n 4"
 compile = "python main.py"
 
 [build-system]
