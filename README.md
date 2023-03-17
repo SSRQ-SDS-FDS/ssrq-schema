@@ -77,10 +77,10 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 
 ### Technische Umsetzung
 
-- [ ]: Aufteilung des Schemas bestimmen
-- [x]: Pipeline zur Erzeugung des Schemas erstellen
-- [x]: Benötigte Stylesheets aus den TEI-Stylesheets bestimmen und sinnvoll einbinden (Submodule?)
-- [ ]: Welche Schritte sind notwendig, um die bestehenden Daten an das neue Schema anzupassen?
+- [ ] Aufteilung des Schemas bestimmen
+- [x] Pipeline zur Erzeugung des Schemas erstellen
+- [x] Benötigte Stylesheets aus den TEI-Stylesheets bestimmen und sinnvoll einbinden (Submodule?)
+- [ ] Welche Schritte sind notwendig, um die bestehenden Daten an das neue Schema anzupassen?
 
 ## Dokumentation
 

@@ -12,7 +12,7 @@ from ssrq_cli.xml_utils import ext_etree
 
 from main import XSLTS, Schema, load_config, odd_factory
 
-ELEMENTS = ["cell", "graphic", "handShift", "idno"]
+ELEMENTS = ["cell", "graphic", "handShift", "height", "idno", "width"]
 
 
 @dataclass

@@ -42,6 +42,54 @@
 
         <classSpec ident="att.measurement" type="atts" mode="change">
             <attList>
+                <attDef ident="unit" mode="change">
+                    <desc xml:lang="de" versionDate="2023-03-17">Maßeinheit</desc>
+                    <desc xml:lang="fr" versionDate="2023-03-17">Unité de mesure</desc>
+                    <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement</desc>
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
+                        <p>Angabe eines Längenmaßes</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <width unit="cm"/>
+                        </egXML>
+                    </exemplum>
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
+                        <p>Angabe der Blattanzahl</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <measure unit="leaf" quantity="3"/>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+                <attDef ident="quantity" mode="change">
+                    <desc xml:lang="de" versionDate="2023-03-17">Gibt bei einer Lücke die Anzahl der
+                        fehlenden Zeichen bzw. die Fehlstelle in cm wieder. Gibt bei Abmessungen die
+                        Ausdehnung an.</desc>
+                    <desc xml:lang="fr" versionDate="2023-03-17">ToDo: Übersetzung</desc>
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
+                        <p>Loch in einer Editionsvorlage, bei dem keine Ergänzung möglich ist</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"> und sol och der w<damage
+                                agent="hole"><gap unit="cm" quantity="3.5"/></damage>
+                        </egXML>
+                    </exemplum>
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
+                        <p>Unbestimmte Anzahl Pfund (0 verwenden)</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"><measure type="currency"
+                                unit="lb" quantity="0">etlich hundert pfund</measure>
+                        </egXML>
+                    </exemplum>
+                    <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-17">
+                        <p>Trou à cause d'un dommage dans le texte source que l'éditeur ne peut pas
+                            compléter</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"> und sol och der w<damage
+                                agent="hole"><gap unit="cm" quantity="3.5"/></damage>
+                        </egXML>
+                    </exemplum>
+                    <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-17">
+                        <p>Pour un nombre inconnu de livres (utiliser 0)</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"><measure type="currency"
+                                unit="lb" quantity="0">etlich hundert pfund</measure>
+                        </egXML>
+                    </exemplum>
+                </attDef>
                 <attDef ident="unitRef" mode="delete"/>
             </attList>
         </classSpec>

@@ -139,7 +139,7 @@
 
     <specGrp xml:id="ssrq-measure">
 
-        <dataSpec ident="ssrq.measure.lengths.base">
+        <dataSpec ident="ssrq.measure.lengths.base.cm">
             <content>
                 <valList type="closed">
                     <valItem ident="cm">
@@ -148,6 +148,13 @@
                         <desc xml:lang="en" versionDate="2023-03-17">cm</desc>
                         <desc xml:lang="it" versionDate="2023-03-17">cm</desc>
                     </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+        
+        <dataSpec ident="ssrq.measure.lengths.base.line">
+            <content>
+                <valList type="closed">
                     <valItem ident="line">
                         <desc xml:lang="de" versionDate="2023-03-17">Zeile</desc>
                         <desc xml:lang="de" type="plural" versionDate="2023-03-17">Zeilen</desc>

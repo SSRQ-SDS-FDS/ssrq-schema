@@ -39,6 +39,7 @@ ignore = ["E501"]
 fmt = "black ."
 lint = "ruff --fix ."
 test = "pytest -n 4"
+test_lint = "black . && ruff --fix . && pytest -n 4"
 compile = "python main.py"
 
 [build-system]
