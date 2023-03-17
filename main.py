@@ -18,6 +18,7 @@ XSLTS = {
     "odd2odd": TEI_STYLESHEETS / "odd2odd.xsl",
     "odd2rng": TEI_STYLESHEETS / "odd2relax.xsl",
     "path": XSLT_BASE / "resolve-path.xsl",
+    "vars": XSLT_BASE / "resolve-sch-let.xsl",
 }
 OMIT_VERSION: bool = False
 
@@ -163,6 +164,23 @@ def compile_odd_to_odd(odd: str, tei_version: str) -> str:
     return result
 
 
+def resolve_sch_let(odd: str) -> str:
+    with PySaxonProcessor(license=False) as proc:
+        proc.set_configuration_property(name="xi", value="on")
+        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+        document: PyXdmNode = proc.parse_xml(xml_text=odd)
+
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+            stylesheet_file=str(XSLTS["vars"])
+        )
+        result: str = xsl.transform_to_string(xdm_node=document)
+
+    if result is None:
+        raise ValueError("No result from XSLT transformation, while cleaning")
+
+    return result
+
+
 def compile_odd_to_rng(odd: str, tei_version: str) -> str:
     with PySaxonProcessor(license=False) as proc:
         proc.set_configuration_property(name="xi", value="on")
@@ -207,6 +225,8 @@ def odd_factory(
             raise ValueError("No result from XSLT transformation, while cleaning")
 
         compiled_odd = result
+
+    compiled_odd = resolve_sch_let(odd=compiled_odd)
 
     rng = compile_odd_to_rng(odd=compiled_odd, tei_version=schema_config["tei_version"])
 
