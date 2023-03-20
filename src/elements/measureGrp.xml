@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="measureGrp" module="core" mode="change">
+    <desc xml:lang="de" versionDate="2023-03-17">(measure group) enthält eine Gruppe von gleichen
+        Massen, gleichen Gewichten etc. und wird für Währungsbezeichnungen, die nicht umgerechnet
+        werden können, verwendet.</desc>
+    <desc xml:lang="fr" versionDate="2023-03-17">Contient un groupe de poids et mesures etc. Il est
+        également utilisé pour des unités monétaires qui ne peuvent pas être converties.</desc>
+    <classes mode="replace">
+        <memberOf key="model.measureLike"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <elementRef key="app"/>
+            <elementRef key="cell"/>
+            <elementRef key="lb"/>
+            <elementRef key="measure"/>
+        </alternate>
+    </content>
+    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
+        <p>Währungsbezeichnungen, die man auf Anhieb nicht umrechnen kann</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"> ... buͦß verfallen sin <measureGrp><measure
+                    quantity="3" unit="lb" type="currency">druͤ pfund </measure>
+                <measure quantity="5" unit="ß" type="currency">fuͤnf schilling
+                pfenig</measure></measureGrp>. </egXML>
+    </exemplum>
+</elementSpec>
