@@ -11,12 +11,14 @@
         <memberOf key="model.measureLike"/>
     </classes>
     <content>
-        <alternate minOccurs="1" maxOccurs="unbounded">
-            <elementRef key="app"/>
-            <elementRef key="cell"/>
-            <elementRef key="lb"/>
-            <elementRef key="measure"/>
-        </alternate>
+        <sequence preserveOrder="false">
+            <elementRef key="measure" minOccurs="2" maxOccurs="unbounded"/>
+            <alternate minOccurs="0" maxOccurs="unbounded">
+                <elementRef key="app"/>
+                <elementRef key="cell"/>
+                <elementRef key="lb"/>
+            </alternate>
+        </sequence>
     </content>
     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
         <p>Währungsbezeichnungen, die man auf Anhieb nicht umrechnen kann</p>
