@@ -12,7 +12,16 @@ from ssrq_cli.xml_utils import ext_etree
 
 from main import XSLTS, Schema, load_config, odd_factory
 
-ELEMENTS = ["cell", "graphic", "handShift", "height", "idno", "measureGrp", "width"]
+ELEMENTS = [
+    "cell",
+    "graphic",
+    "handShift",
+    "height",
+    "idno",
+    "measure",
+    "measureGrp",
+    "width",
+]
 
 
 @dataclass
@@ -107,4 +116,5 @@ def main_constraints(main_schema: Schema) -> str:
     extracted_rules = extract_schematron_from_relaxng(
         main_schema.rng, XSLT_FILES["extract-sch"]
     )
+
     return create_schematron_stylesheet(extracted_rules, XSLT_FILES["schxslt"])

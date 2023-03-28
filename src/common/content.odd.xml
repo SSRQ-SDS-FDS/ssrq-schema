@@ -2,64 +2,115 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    
+
     <specGrp xml:id="ssrq-default-content-types">
-        
-        <macroSpec ident="ssrq.content.default" mode="add" module="ssrq.core.module">
+
+        <macroSpec ident="ssrq.content.critical" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-03-23">Textkritische Auszeichnungen</desc>
+            <desc xml:lang="fr" versionDate="2023-03-23">Distinctions de la critique
+                textuelle</desc>
             <content>
-                <rng:text/>
-                <!--Textkritische Auszeichnungen-->
-                <rng:ref name="abbr"/>
-                <rng:ref name="add"/>
-                <rng:ref name="addSpan"/>
-                <rng:ref name="app"/>
-                <rng:ref name="corr"/>
-                <rng:ref name="choice"/>
-                <rng:ref name="damage"/>
-                <rng:ref name="damageSpan"/>
-                <rng:ref name="del"/>
-                <rng:ref name="delSpan"/>
-                <rng:ref name="foreign"/>
-                <rng:ref name="gap"/>
-                <rng:ref name="handShift"/>
-                <rng:ref name="note"/>
-                <rng:ref name="sic"/>
-                <rng:ref name="space"/>
-                <rng:ref name="subst"/>
-                <rng:ref name="supplied"/>
-                <rng:ref name="unclear"/>
-                <!--Auszeichnungen, die der Darstellung...-->
-                <rng:ref name="ab"/>
-                <rng:ref name="cb"/>
-                <rng:ref name="div"/>
-                <rng:ref name="figure"/>
-                <rng:ref name="head"/>
-                <rng:ref name="hi"/>
-                <rng:ref name="lb"/>
-                <rng:ref name="orig"/>
-                <rng:ref name="p"/>
-                <rng:ref name="pb"/>
-                <rng:ref name="q"/>
-                <rng:ref name="quote"/>
-                <rng:ref name="seg"/>
-                <rng:ref name="signed"/>
-                <rng:ref name="table"/>
-                <!--Inhaltliche Auszeichnungen-->
-                <rng:ref name="date"/>
-                <rng:ref name="origDate"/>
-                <rng:ref name="measure"/>
-                <rng:ref name="measureGrp"/>
-                <rng:ref name="num"/>
-                <rng:ref name="time"/>
-                <!--Registertags-->
-                <rng:ref name="persName"/>
-                <rng:ref name="orgName"/>
-                <rng:ref name="placeName"/>
-                <rng:ref name="origPlace"/>
-                <rng:ref name="term"/>
+                <elementRef key="abbr"/>
+                <elementRef key="add"/>
+                <elementRef key="addSpan"/>
+                <elementRef key="app"/>
+                <elementRef key="corr"/>
+                <elementRef key="choice"/>
+                <elementRef key="damage"/>
+                <elementRef key="damageSpan"/>
+                <elementRef key="del"/>
+                <elementRef key="delSpan"/>
+                <elementRef key="foreign"/>
+                <elementRef key="gap"/>
+                <elementRef key="handShift"/>
+                <elementRef key="note"/>
+                <elementRef key="sic"/>
+                <elementRef key="space"/>
+                <elementRef key="subst"/>
+                <elementRef key="supplied"/>
+                <elementRef key="unclear"/>
             </content>
         </macroSpec>
-        
+
+        <macroSpec ident="ssrq.content.display" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-03-18">Auszeichnungen, die die Darstellung
+                beschreiben / dieser dienen</desc>
+            <content>
+                <alternate>
+                    <elementRef key="ab"/>
+                    <elementRef key="cb"/>
+                    <elementRef key="div"/>
+                    <elementRef key="figure"/>
+                    <elementRef key="head"/>
+                    <elementRef key="hi"/>
+                    <elementRef key="lb"/>
+                    <elementRef key="orig"/>
+                    <elementRef key="p"/>
+                    <elementRef key="pb"/>
+                    <elementRef key="q"/>
+                    <elementRef key="quote"/>
+                    <elementRef key="seg"/>
+                    <elementRef key="signed"/>
+                    <elementRef key="table"/>
+                </alternate>
+            </content>
+        </macroSpec>
+
+        <macroSpec ident="ssrq.content.measure" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-03-23">Auszeichnung von Maßen und ähnlichen
+                Dingen</desc>
+            <desc xml:lang="fr" versionDate="2023-03-23">Distinction des mesures et choses
+                similaires</desc>
+            <content>
+                <alternate>
+                    <elementRef key="measure"/>
+                    <elementRef key="measureGrp"/>
+                </alternate>
+            </content>
+        </macroSpec>
+
+        <macroSpec ident="ssrq.content.content" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-03-23">Inhaltliche Auszeichnung</desc>
+            <desc xml:lang="fr" versionDate="2023-03-23">Distinction du contenu</desc>
+            <content>
+                <alternate>
+                    <elementRef key="date"/>
+                    <elementRef key="origDate"/>
+                    <elementRef key="num"/>
+                    <elementRef key="time"/>
+                </alternate>
+            </content>
+        </macroSpec>
+
+        <macroSpec ident="ssrq.content.entities" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-03-23">Auszeichnung von Personen, Orten,
+                Organisationen etc.</desc>
+            <desc xml:lang="fr" versionDate="2023-03-23">Distinction des personnes, lieux,
+                organisations etc.</desc>
+            <content>
+                <alternate>
+                    <elementRef key="persName"/>
+                    <elementRef key="orgName"/>
+                    <elementRef key="placeName"/>
+                    <elementRef key="origPlace"/>
+                    <elementRef key="term"/>
+                </alternate>
+            </content>
+        </macroSpec>
+
+        <macroSpec ident="ssrq.content.default" mode="add" module="ssrq.core.module">
+            <content>
+                <alternate>
+                    <textNode/>
+                    <macroRef key="ssrq.content.critical"/>
+                    <macroRef key="ssrq.content.display"/>
+                    <macroRef key="ssrq.content.measure"/>
+                    <macroRef key="ssrq.content.content"/>
+                    <macroRef key="ssrq.content.entities"/>
+                </alternate>
+            </content>
+        </macroSpec>
+
     </specGrp>
-    
+
 </div>

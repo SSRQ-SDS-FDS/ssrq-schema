@@ -42,10 +42,24 @@
 
         <classSpec ident="att.measurement" type="atts" mode="change">
             <attList>
-                <attDef ident="unit" mode="change">
+                <attDef ident="unit" mode="replace" usage="req">
                     <desc xml:lang="de" versionDate="2023-03-17">Maßeinheit oder Währung</desc>
                     <desc xml:lang="fr" versionDate="2023-03-17">Unité de mesure ou devise</desc>
                     <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement or currency</desc>
+                    <datatype maxOccurs="1">
+                        <rng:choice>
+                            <rng:ref name="ssrq.measure.area"/>
+                            <rng:ref name="ssrq.measure.capacity"/>
+                            <rng:ref name="ssrq.measure.currency"/>
+                            <rng:ref name="ssrq.measure.lengths.base.cm"/>
+                            <rng:ref name="ssrq.measure.lengths.base.klafter"/>
+                            <rng:ref name="ssrq.measure.length"/>
+                            <rng:ref name="ssrq.measure.various"/>
+                            <rng:ref name="ssrq.measure.weight"/>
+                            <rng:ref name="ssrq.measure.parts.vierling"/>
+                            <rng:ref name="ssrq.measure.time"/>
+                        </rng:choice>
+                    </datatype>
                     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
                         <p>Angabe der Blattanzahl</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">

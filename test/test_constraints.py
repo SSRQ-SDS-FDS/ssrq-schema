@@ -38,12 +38,12 @@ def test_attribute_whitespace_constraint(
     [
         (
             "unit-only",
-            "<measure xmlns='http://www.tei-c.org/ns/1.0' unit='cm'></measure>",
+            "<measure xmlns='http://www.tei-c.org/ns/1.0' unit='cm'>bar</measure>",
             False,
         ),
         (
             "unit-and-quantity",
-            "<measure xmlns='http://www.tei-c.org/ns/1.0' unit='cm' quantity='3'></measure>",
+            "<measure xmlns='http://www.tei-c.org/ns/1.0' unit='cm' quantity='3'>foo</measure>",
             True,
         ),
     ],
