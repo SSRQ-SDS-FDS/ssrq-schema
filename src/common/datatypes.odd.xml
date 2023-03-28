@@ -487,7 +487,7 @@
                         <desc xml:lang="en" versionDate="2023-03-17">tub</desc>
                         <desc xml:lang="it" versionDate="2023-03-17">zuber</desc>
                     </valItem>
-                    
+
                 </valList>
             </content>
         </dataSpec>
@@ -1620,8 +1620,156 @@
             </content>
         </dataSpec>
 
+    </specGrp>
 
+    <specGrp xml:id="ssrq-role">
+        <dataSpec ident="ssrq.role.person" mode="add">
+            <desc xml:lang="de" versionDate="2022-05-12">Rolle einer Person im besagten
+                Text</desc>
+            <desc xml:lang="en" versionDate="2022-07-11">Role of a person in the text</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="audentiaprocurator">
+                        <desc xml:lang="de" versionDate="2022-05-12"
+                            >Audentiaprokurator</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12"
+                            >audentiaprokurator</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12"
+                            >audentiaprocurator</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13"
+                            >audentiaprocuratore</desc>
+                    </valItem>
+                    <valItem ident="biblical">
+                        <desc xml:lang="de" versionDate="2022-05-12">biblische Figur, keine
+                            Heilige</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">personnage biblique,
+                            mais pas un saint</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">biblical person, but
+                            not a saint</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">personaggio biblico, non un santo</desc>
+                    </valItem>
+                    <valItem ident="computator">
+                        <desc xml:lang="de" versionDate="2022-05-12">Komputator</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">computateur</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">computator</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">computatore</desc>
+                    </valItem>
+                    <valItem ident="corrector">
+                        <desc xml:lang="de" versionDate="2022-05-12">Korrektor</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">correcteur</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">corrector</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">corettore</desc>
+                    </valItem>
+                    <valItem ident="issuer">
+                        <desc xml:lang="de" versionDate="2022-05-12">Aussteller</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">personne qui a fait un
+                            acte</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">issuer</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">autore dell'atto</desc>
+                    </valItem>
+                    <valItem ident="mythological">
+                        <desc xml:lang="de" versionDate="2022-05-12">mythologische
+                            Figuren</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">personnage
+                            mythologique</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">mythical person</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">personaggio mitologico</desc>
+                    </valItem>
+                    <valItem ident="procurator">
+                        <desc xml:lang="de" versionDate="2022-05-12">Prokurator</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">procurateur</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">procurator</desc>
+                        <desc xml:lang="it" versionDate="2022-05-12">procuratore</desc>
+                    </valItem>
+                    <valItem ident="protonotarius">
+                        <desc xml:lang="de" versionDate="2022-05-12">Protonotar</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">protonotaire</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">protonotary</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">protonotario</desc>
+                    </valItem>
+                    <valItem ident="recipient">
+                        <desc xml:lang="de" versionDate="2022-05-12">Empfänger</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">personne qui a reçu
+                            l’acte</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">recipient</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">destinatario</desc>
+                    </valItem>
+                    <valItem ident="rescribendario">
+                        <desc xml:lang="de" versionDate="2022-05-12">Reskribendar</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">reskribendar</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">rescribendarius</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">rescribendario</desc>
+                    </valItem>
+                    <valItem ident="saint">
+                        <desc xml:lang="de" versionDate="2022-05-12">Heilige</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">saint</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">saint</desc>
+                        <desc xml:lang="it" versionDate="2022-05-12">santo</desc>
+                    </valItem>
+                    <valItem ident="scriptor">
+                        <desc xml:lang="de" versionDate="2022-05-12">Schreiber</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">scripteur</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">scribe</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">scriba</desc>
+                    </valItem>
+                    <valItem ident="sigillant">
+                        <desc xml:lang="de" versionDate="2022-05-12">Siegler</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">personne qui a posé un
+                            sceau</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">sigillant</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">persona che ha impostato un
+                            sigillo</desc>
+                    </valItem>
+                    <valItem ident="testis">
+                        <desc xml:lang="de" versionDate="2022-05-12">Zeuge</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">témoin d’une liste de
+                            témoins</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">witness</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">testimone</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
 
+        <dataSpec ident="ssrq.role.institution" mode="add">
+            <desc xml:lang="de" versionDate="2022-05-12">Rolle einer Person oder Institution
+                im besagten Text</desc>
+            <desc xml:lang="en" versionDate="2022-07-11">Role of a person or institution in
+                the text</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="issuer">
+                        <desc xml:lang="de" versionDate="2022-05-12">Aussteller</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">personne/institution qui a fait
+                            un acte</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">issuer</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">autore dell'atto</desc>
+                    </valItem>
+                    <valItem ident="recipient">
+                        <desc xml:lang="de" versionDate="2022-05-12">Empfänger</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">personne/institution qui a reçu
+                            l’acte</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">recipient</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">destinatario</desc>
+                    </valItem>
+                    <valItem ident="sigillant">
+                        <desc xml:lang="de" versionDate="2022-05-12">Siegelinhaber</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">personne/institution qui a posé
+                            un sceau </desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">sigillant</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">titolare del sigillo</desc>
+                    </valItem>
+                    <valItem ident="testis">
+                        <desc xml:lang="de" versionDate="2022-05-12">Zeuge</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-12">personne/institution d’une liste
+                            de témoins</desc>
+                        <desc xml:lang="en" versionDate="2022-05-12">witness</desc>
+                        <desc xml:lang="it" versionDate="2022-09-13">testimone</desc>
+                    </valItem>
+                    <dataRef key="1"></dataRef>
+                </valList>
+            </content>
+        </dataSpec>
     </specGrp>
 
 </div>

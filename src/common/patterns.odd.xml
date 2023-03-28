@@ -2,7 +2,7 @@
 <div xmlns="http://www.tei-c.org/ns/1.0">
 
     <specGrp xml:id="ssrq-patterns">
-        <!-- 
+        <!--
         <dataSpec ident="ssrq.idno.article" mode="add">
             <desc xml:lang="de" versionDate="2022-10-25">Muster für Identifikationsnummern für
                 Stücke</desc>
@@ -22,6 +22,18 @@
                 pour le lien avec la base de données des personnes et des organisations</desc>
             <content>
                 <dataRef name="string" restriction="per\d{6}[abc]?(\.\d{2})?"/>
+            </content>
+        </dataSpec>
+
+        <dataSpec ident="ssrq.pointer.org" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Org-IDs zur
+                Verknüpfung mit der Personen- und Organisationsdatenbank</desc>
+            <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for org-IDs for
+                linking with the person and organisation database</desc>
+            <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des org-ID pour
+                l'établissement d'un lien avec la base de données des personnes et des organisations</desc>
+            <content>
+                <dataRef name="string" restriction="org\d{6}(\.\d{2})?"/>
             </content>
         </dataSpec>
 
@@ -62,7 +74,7 @@
                 />
             </content>
         </dataSpec>
-        
+
         <dataSpec ident="ssrq.pointer.url" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-03-07">Definiert das Muster für Verweise als
                 URL.</desc>

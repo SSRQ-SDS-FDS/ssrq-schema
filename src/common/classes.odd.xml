@@ -9,6 +9,7 @@
 
 
         <classSpec ident="att.analytic" type="atts" mode="delete"/>
+        <classSpec ident="att.canonical" type="atts" mode="delete"/>
         <classSpec ident="att.cReferencing" type="atts" mode="delete"/>
         <classSpec ident="att.datable.iso" type="atts" mode="delete"/>
         <classSpec ident="att.datable.w3c" type="atts" mode="delete"/>
@@ -19,6 +20,8 @@
         <classSpec ident="att.global.change" type="atts" mode="delete"/>
         <classSpec ident="att.global.linking" type="atts" mode="delete"/>
         <classSpec ident="att.global.source" type="atts" mode="delete"/>
+        <classSpec ident="att.msClass" type="atts" mode="delete"/>
+        <classSpec ident="att.msExcerpt" type="atts" mode="delete"/>
         <classSpec ident="att.ranging" type="atts" mode="delete"/>
         <classSpec ident="att.sortable" type="atts" mode="delete"/>
 
@@ -45,7 +48,8 @@
                 <attDef ident="unit" mode="replace" usage="req">
                     <desc xml:lang="de" versionDate="2023-03-17">Maßeinheit oder Währung</desc>
                     <desc xml:lang="fr" versionDate="2023-03-17">Unité de mesure ou devise</desc>
-                    <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement or currency</desc>
+                    <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement or
+                        currency</desc>
                     <datatype maxOccurs="1">
                         <rng:choice>
                             <rng:ref name="ssrq.measure.area"/>
@@ -68,8 +72,8 @@
                     </exemplum>
                 </attDef>
                 <attDef ident="quantity" mode="change">
-                    <desc xml:lang="de" versionDate="2023-03-17">Gibt bei Abmessungen die
-                        Ausdehnung an.</desc>
+                    <desc xml:lang="de" versionDate="2023-03-17">Gibt bei Abmessungen die Ausdehnung
+                        an.</desc>
                     <desc xml:lang="fr" versionDate="2023-03-17">ToDo: Übersetzung</desc>
                     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
                         <p>Unbestimmte Anzahl Pfund (0 verwenden)</p>
@@ -248,7 +252,82 @@
             </attList>
         </classSpec>
 
+        <classSpec ident="att.naming" type="atts" mode="change" module="tei">
+            <attList>
+                <attDef ident="nymRef" mode="delete"/>
+            </attList>
+        </classSpec>
 
+        <classSpec ident="ssrq.att.canonical" type="atts" mode="add" module="ssrq.core.module">
+            <desc versionDate="2023-03-28" xml:lang="de">Stellt die Attribute @key und @ref bereit –
+                temporärer Fix für https://github.com/TEIC/Stylesheets/issues/600.</desc>
+            <desc versionDate="2023-03-28" xml:lang="en">Provides the attributes @key and @ref -
+                temporary fix for https://github.com/TEIC/Stylesheets/issues/600.</desc>
+            <desc versionDate="2023-03-28" xml:lang="fr">Fournit les attributs @key et @ref -
+                correction temporaire pour https://github.com/TEIC/Stylesheets/issues/600.</desc>
+            <attList>
+                <attDef ident="ref" mode="add">
+                    <desc versionDate="2023-03-28" xml:lang="de">Referenz auf die Datenbanken der
+                        SSRQ.</desc>
+                    <desc versionDate="2023-03-07" xml:lang="en">Reference to the databases of the
+                        SLS.</desc>
+                    <datatype>
+                        <rng:choice>
+                            <rng:ref name="ssrq.pointer.persons"/>
+                            <rng:ref name="ssrq.pointer.lemma"/>
+                            <rng:ref name="ssrq.pointer.org"/>
+                            <rng:ref name="ssrq.pointer.keywords"/>
+                        </rng:choice>
+                    </datatype>
+                </attDef>
+                <attDef ident="key" mode="add">
+                    <desc versionDate="2023-03-28" xml:lang="de">Tätigkeit, für die ein
+                        Bearbeiter verantwortlich ist.</desc>
+                    <desc versionDate="2023-03-07" xml:lang="en">Activity for which a editor is
+                        responsible.</desc>
+                    <valList type="closed">
+                        <valItem ident="transcript">
+                            <desc xml:lang="de" versionDate="2023-03-28">Transkript</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">transcription</desc>
+                            <desc xml:lang="en" versionDate="2023-03-28">transcription</desc>
+                            <desc xml:lang="it" versionDate="2023-03-28">trascrizione</desc>
+                        </valItem>
+                        <valItem ident="tagging">
+                            <desc xml:lang="de" versionDate="2023-03-28">Auszeichnung der
+                                Transkription</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">désignation d’une
+                                transcription</desc>
+                            <desc xml:lang="en" versionDate="2023-03-28">tagging</desc>
+                            <desc xml:lang="it" versionDate="2023-03-28">designazione di una
+                                trascrizione</desc>
+                        </valItem>
+                        <valItem ident="index">
+                            <desc xml:lang="de" versionDate="2023-03-28">Index</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">index</desc>
+                            <desc xml:lang="en" versionDate="2023-03-28">index</desc>
+                            <desc xml:lang="it" versionDate="2023-03-28">indice</desc>
+                        </valItem>
+                        <valItem ident="qualitycheck">
+                            <desc xml:lang="de" versionDate="2023-03-28">Qualitätskontrolle</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">contrôle de qualité</desc>
+                            <desc xml:lang="en" versionDate="2023-03-28">quality control</desc>
+                            <desc xml:lang="it" versionDate="2023-03-28">Controllo della
+                                qualità</desc>
+                        </valItem>
+                        <valItem ident="headerinfo">
+                            <desc xml:lang="de" versionDate="2023-03-28">Metadaten im
+                                TEI-Header</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">métadonnées dans le header
+                                TEI</desc>
+                            <desc xml:lang="en" versionDate="2023-03-28">meta data in the TEI
+                                header</desc>
+                            <desc xml:lang="it" versionDate="2023-03-28">metadati nell'intestazione
+                                TEI</desc>
+                        </valItem>
+                    </valList>
+                </attDef>
+            </attList>
+        </classSpec>
 
         <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="orgName" module="namesdates" mode="change">
+    <desc xml:lang="de" versionDate="2023-03-28">Zeichnet eine Organisation bzw. Institution, wie
+        Klöster, Zünfte, Räte, Nachbarschaft etc., aus.</desc>
+    <desc xml:lang="en" versionDate="2023-03-17">Characterises an organisation or institution, such
+        as monasteries, guilds, councils, neighbourhoods, etc.</desc>
+    <desc xml:lang="fr" versionDate="2023-03-28">Signale une organisation voire une institution
+        comme p.e. monastère, confrérie, conseil, voisinage etc.</desc>
+    <classes mode="replace">
+        <memberOf key="model.nameLike.agent"/>
+        <memberOf key="ssrq.att.canonical"/>
+        <memberOf key="att.naming"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <textNode/>
+            <macroRef key="ssrq.content.default"/>
+        </alternate>
+    </content>
+    <attList>
+        <attDef ident="key" mode="delete"/>
+        <attDef ident="ref" mode="change">
+            <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung der Organisation mit der
+                Personen- und Organisationsdatenbank.</desc>
+            <desc xml:lang="en" versionDate="2023-03-28">Linking the organisation with the database
+                of persons and organisations.</desc>
+            <desc xml:lang="fr" versionDate="2023-03-28">Relier l'organisation à la base de données
+                des personnes et des organisations.</desc>
+            <datatype>
+                <dataRef key="ssrq.pointer.org"/>
+            </datatype>
+        </attDef>
+        <attDef ident="role" mode="change">
+            <desc xml:lang="de" versionDate="2023-03-28">Auszeichnung einer Institution im
+                Quelltext.</desc>
+            <desc xml:lang="en" versionDate="2023-03-28">Distinction of an institution in the source
+                text.</desc>
+            <desc xml:lang="fr" versionDate="2023-03-28">Distinction d'une institution dans le texte
+                source.</desc>
+            <datatype>
+                <dataRef key="ssrq.role.institution"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-28">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <orgName ref="org000001">gotzhus ze <placeName>Pfaͤvers</placeName></orgName>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-28">
+        <p>Als orgName wird auch bei namentlicher Nennung des Bürgermeisters nur Bürgermeister und
+            Rat ausgezeichnet. Der namentlich erwähnte Bürgermeister wird als persName getagt.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"> Presentibus herr <persName>Bernhart von
+                Chaam</persName>, <orgName>burgermeister, und beid räth</orgName>. </egXML>
+    </exemplum>
+</elementSpec>
