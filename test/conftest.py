@@ -18,6 +18,7 @@ ELEMENTS = [
     "handShift",
     "height",
     "idno",
+    "licence",
     "measure",
     "measureGrp",
     "orgName",

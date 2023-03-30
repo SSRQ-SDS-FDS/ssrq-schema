@@ -22,6 +22,8 @@
         <classSpec ident="att.global.source" type="atts" mode="delete"/>
         <classSpec ident="att.msClass" type="atts" mode="delete"/>
         <classSpec ident="att.msExcerpt" type="atts" mode="delete"/>
+        <classSpec ident="att.notated" type="atts" mode="delete"/>
+        <classSpec ident="att.personal" type="atts" mode="delete"/>
         <classSpec ident="att.ranging" type="atts" mode="delete"/>
         <classSpec ident="att.sortable" type="atts" mode="delete"/>
 
@@ -164,6 +166,14 @@
 
         <classSpec ident="att.pointing" type="atts" mode="change">
             <attList>
+                <attDef ident="target" mode="change">
+                    <desc versionDate="2023-03-29" xml:lang="de">Hyperlink, DOI oder interner Verweis.</desc>
+                    <desc versionDate="2023-03-29" xml:lang="en">Hyperlink, DOI or internal reference.</desc>
+                    <desc versionDate="2023-03-29" xml:lang="fr">Lien hypertexte, DOI ou référence interne.</desc>
+                    <datatype>
+                        <dataRef key="ssrq.pointer.target"/>
+                    </datatype>
+                </attDef>
                 <attDef ident="targetLang" mode="delete"/>
                 <attDef ident="evaluate" mode="delete"/>
             </attList>
