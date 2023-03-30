@@ -9,7 +9,6 @@
 
 
         <classSpec ident="att.analytic" type="atts" mode="delete"/>
-        <classSpec ident="att.canonical" type="atts" mode="delete"/>
         <classSpec ident="att.cReferencing" type="atts" mode="delete"/>
         <classSpec ident="att.datable.iso" type="atts" mode="delete"/>
         <classSpec ident="att.datable.w3c" type="atts" mode="delete"/>
@@ -268,15 +267,9 @@
             </attList>
         </classSpec>
 
-        <classSpec ident="ssrq.att.canonical" type="atts" mode="add" module="ssrq.core.module">
-            <desc versionDate="2023-03-28" xml:lang="de">Stellt die Attribute @key und @ref bereit –
-                temporärer Fix für https://github.com/TEIC/Stylesheets/issues/600.</desc>
-            <desc versionDate="2023-03-28" xml:lang="en">Provides the attributes @key and @ref -
-                temporary fix for https://github.com/TEIC/Stylesheets/issues/600.</desc>
-            <desc versionDate="2023-03-28" xml:lang="fr">Fournit les attributs @key et @ref -
-                correction temporaire pour https://github.com/TEIC/Stylesheets/issues/600.</desc>
+        <classSpec ident="att.canonical" type="atts" mode="change" module="tei">
             <attList>
-                <attDef ident="ref" mode="add">
+                <attDef ident="ref" mode="change">
                     <desc versionDate="2023-03-28" xml:lang="de">Referenz auf die Datenbanken der
                         SSRQ.</desc>
                     <desc versionDate="2023-03-07" xml:lang="en">Reference to the databases of the
@@ -290,7 +283,7 @@
                         </rng:choice>
                     </datatype>
                 </attDef>
-                <attDef ident="key" mode="add">
+                <attDef ident="key" mode="change">
                     <desc versionDate="2023-03-28" xml:lang="de">Tätigkeit, für die ein
                         Bearbeiter verantwortlich ist.</desc>
                     <desc versionDate="2023-03-07" xml:lang="en">Activity for which a editor is

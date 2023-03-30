@@ -10,7 +10,6 @@
         comme p.e. monastère, confrérie, conseil, voisinage etc.</desc>
     <classes mode="replace">
         <memberOf key="model.nameLike.agent"/>
-        <memberOf key="ssrq.att.canonical"/>
         <memberOf key="att.naming"/>
     </classes>
     <content>
@@ -21,7 +20,7 @@
     </content>
     <attList>
         <attDef ident="key" mode="delete"/>
-        <attDef ident="ref" mode="change">
+        <attDef ident="ref" mode="change" module="att.canonical">
             <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung der Organisation mit der
                 Personen- und Organisationsdatenbank.</desc>
             <desc xml:lang="en" versionDate="2023-03-28">Linking the organisation with the database
