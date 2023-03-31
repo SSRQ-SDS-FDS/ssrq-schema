@@ -3,8 +3,6 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
 
-    <!-- Note / ToDo: Geprüft bis inklusive att.handFeatures; weitere Klassen überprüfen siehe: https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-ATTS.html -->
-
     <specGrp xml:id="ssrq-classes">
 
 
@@ -24,7 +22,11 @@
         <classSpec ident="att.notated" type="atts" mode="delete"/>
         <classSpec ident="att.personal" type="atts" mode="delete"/>
         <classSpec ident="att.ranging" type="atts" mode="delete"/>
+        <classSpec ident="att.segLike" type="atts" mode="delete"/>
         <classSpec ident="att.sortable" type="atts" mode="delete"/>
+        <classSpec ident="att.textCritical" type="atts" mode="delete"/>
+        <classSpec ident="att.timed" type="atts" mode="delete"/>
+        <classSpec ident="att.transcriptional" type="atts" mode="delete"/>
 
         <classSpec ident="att.global" type="atts" mode="change">
             <classes mode="replace">
@@ -332,6 +334,22 @@
             </attList>
         </classSpec>
 
+        <classSpec ident="att.spanning" type="atts" module="tei" mode="change">
+            <attList>
+                <attDef ident="spanTo" mode="change">
+                    <desc versionDate="2023-03-31" xml:lang="de">Verweist mittels einen Fragmentbezeichners auf den Endpunkt von addSpan, delSpan oder damageSpan.</desc>
+                    <desc versionDate="2023-03-31" xml:lang="en">Refers to the end point of addSpan, delSpan or damageSpan by means of a fragment identifier.</desc>
+                    <desc versionDate="2023-03-31" xml:lang="fr">Renvoie au point final de addSpan, delSpan ou damageSpan au moyen d'un identificateur de fragment.</desc>
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-31">
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <p><delSpan spanTo="#del1"/> ... <anchor xml:id="del1"/></p>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+
+            </attList>
+        </classSpec>
+
         <classSpec ident="att.resourced" type="atts" module="tei" mode="change">
             <attList>
                 <attDef ident="url" mode="change" usage="req">
@@ -341,6 +359,12 @@
                 </attDef>
             </attList>
         </classSpec>
+
+        <!--
+            ToDos:
+            - att.witnessed
+            - att.written
+        -->
 
         <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
 
