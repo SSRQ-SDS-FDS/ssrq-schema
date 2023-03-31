@@ -332,6 +332,16 @@
             </attList>
         </classSpec>
 
+        <classSpec ident="att.resourced" type="atts" module="tei" mode="change">
+            <attList>
+                <attDef ident="url" mode="change" usage="req">
+                    <desc versionDate="2023-03-31" xml:lang="de">Verknüpfung mit einer Bilddatei.</desc>
+                    <desc versionDate="2023-03-31" xml:lang="fr">Lien vers un fichier image.</desc>
+                    <desc versionDate="2023-03-31" xml:lang="en">Link to an image file.</desc>
+                </attDef>
+            </attList>
+        </classSpec>
+
         <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
 
             <desc versionDate="2023-03-07" xml:lang="de">Stellt ein @source Attribut bereit, dessen
