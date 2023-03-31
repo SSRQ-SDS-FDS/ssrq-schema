@@ -75,6 +75,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [x] `tei:anchor` innerhalb der Zelle einer Tabelle erlauben [siehe #3006](https://histhub.ssrq-sds-fds.ch/redmine/issues/3006?issue_count=10&issue_position=1&next_issue_id=3005)
 - [ ] Werte für `@medium` einschränken [siehe #3064](https://histhub.ssrq-sds-fds.ch/redmine/issues/3064)
 - [ ] `@rend` im Falle von `tei:addSpan|tei:add` durch `@medium` ersetzen [siehe #3065](https://histhub.ssrq-sds-fds.ch/redmine/issues/3065)
+- [ ] Verwendung von `@wit` sowie Erfassung von Metadaten referenzierter Textzeugen klären [siehe #1360](https://histhub.ssrq-sds-fds.ch/redmine/issues/1360)
 
 ### Technische Umsetzung
 
