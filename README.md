@@ -51,6 +51,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [ ] Verwendung von `@cert` prüfen [#siehe 3052](https://histhub.ssrq-sds-fds.ch/redmine/issues/3052)
 - [ ] Verwendung von `@resp` prüfen [#siehe 3053](https://histhub.ssrq-sds-fds.ch/redmine/issues/3053)
 - [ ] Attribut `@source` nur eingeschränkt zulassen [#siehe 3056](https://histhub.ssrq-sds-fds.ch/redmine/issues/3056)
+- [ ] Verwendung aller Attributklassen prüfen
 
 #### Header
 
@@ -128,7 +129,6 @@ ToDo
 - [poetry](https://python-poetry.org)
 - [pytest](https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html)
 - [saxonche](https://pypi.org/project/saxonche/)
-- [taskipy](https://github.com/illBeRoy/taskipy)
 - [TEI ODD](https://tei-c.org/guidelines/customization/getting-started-with-p5-odds/)
 - [TEI Stylesheets](https://github.com/TEIC/Stylesheets)
 - ...
@@ -152,7 +152,7 @@ poetry install
 Anschließend lassen sich die Tests folgendermaßen ausführen:
 
 ```sh
-poetry run task test
+./Taskfile test
 ```
 
 ### Anpassung
