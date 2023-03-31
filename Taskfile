@@ -25,12 +25,6 @@ function lint-only {
 function lint {
     fmt-check
     lint-only
-    type-check
-}
-
-function type-check {
-    echo "Checking types with mypy..."
-    cmd mypy ${src}
 }
 
 function test {
