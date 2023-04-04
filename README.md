@@ -23,6 +23,8 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
       - [Anpassung von Übersetzungen](#anpassung-von-übersetzungen)
       - [Anpassung von Inhaltstypen](#anpassung-von-inhaltstypen)
       - [Anpassung von Attributwerten](#anpassung-von-attributwerten)
+      - [Anpassung / Erstellung von Tests](#anpassung--erstellung-von-tests)
+      - [Randnotiz Perfomance der Tests](#randnotiz-perfomance-der-tests)
     - [Schema erzeugen](#schema-erzeugen)
       - [Erzeugung einer neuen Version und Upload](#erzeugung-einer-neuen-version-und-upload)
       - [Erzeugung der Dokuemtation](#erzeugung-der-dokuemtation)
@@ -63,6 +65,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [ ] mehrere alternative Idenfikatoren erlauben [siehe #2880](https://histhub.ssrq-sds-fds.ch/redmine/issues/2880)
 - [ ] sprachunabhängige Kodierung des Trägermaterials [siehe #2663](https://histhub.ssrq-sds-fds.ch/redmine/issues/2663)
 - [ ] Werte für `<head/>` in Liste bibl. Angaben vereinheitlichen [siehe #2665](https://histhub.ssrq-sds-fds.ch/redmine/issues/2665)
+- [ ] `<resp/>` vereinheitlichen [siehe #3070](https://histhub.ssrq-sds-fds.ch/redmine/issues/3070)
 
 #### Text
 
@@ -118,7 +121,11 @@ ToDo
 - der Unterordner `lib` enthält als git-Submodule die tei-Stylesheets; die verwendete Branch ist in der Datei `.gitmodules` definiert
 - der Unterordner `elements` enthält die Schema-Deklarationen je Element; pro spezifizierten Element wird eine Datei nach dem Muster `name.odd.xml` erstellt – sofern verschiedene Spezifikationen für unt. Typen (Einleitung, Transkripte, etc.) festgelegt werden, wird der Typ mit `-type` an den Namen angehängt
 - der Unterordner `common` enthält Spezifikationen, die von verschiedenen Teilen des Schemas wiederverwendet werden
+  - `classes.odd.xml`: Klassendefinitionen
   - `constrains.odd.xml`: globale Schematron-Regeln
+  - `content.odd.xml`: Inhaltstypen
+  - `datatypes.odd.xml`: Datentypen, die als Inhalt für Attribute oder Elemente verwendet werden
+  - `modules.odd.xml`: SSRQ-spezifische Module in Ergänzung der TEI
   - `patterns.odd.xml`: sog. Patterns, die als Inhaltsmodelle an verschiedenen Stellen verwendet werden – bspw. das Muster für Personen-IDs
 - konkrete Schemadeklrationen werden auf der obersten Ebene festgelegt; die benötigten Bestandteile werden hier eingebunden
 
@@ -150,17 +157,48 @@ Alle weiteren Abhängigkeiten können dann über folgenden Befehl install werden
 poetry install
 ```
 
-Anschließend lassen sich die Tests folgendermaßen ausführen:
+Wiederholt ausgeführte Aufgaben (bspw. Ausführung der Tests) sind im sog. [Taskfile](Taskfile) gebündelt. Für die einfachere Benutzung empfiehlt es sich in der lokalen Shell-Konfigurationen einen Alias für das Taskfile nach dem Schema `alias run=./Taskfile` einzurichten, dann lassen sich die diversen Aufgaben nach folgendem Muster ausführen:
 
 ```sh
-./Taskfile test
+run test
+```
+
+Weitere Parameter (bspw. `-s` um print-Statement immer anzuzeigen) können einfach übergeben werden:
+
+```sh
+run test -s
 ```
 
 ### Anpassung
 
 #### Anpassung von Übersetzungen
 
-ToDo
+Das Schema ist in vier verschiedene Sprachen übersetzt: de, fr, en, it
+
+Beschreibungen von Elementen werden auf deutsch, englisch und franzözisch verfasst. Die Spezifikation eines Element (siehe [/src/elements](/src/elements)) sollte immer ein Element `<desc/>` je Sprache enthalten. Für das Element `<cell/>` sieht das bspw. so aus:
+
+```xml
+<desc xml:lang="de" versionDate="2023-03-03">Auszeichnung von Tabellenzellen.</desc>
+<desc xml:lang="en" versionDate="2023-03-03">Table cell mark-up.</desc>
+<desc xml:lang="fr" versionDate="2023-03-03">Balisage des cellules de tableau.</desc>
+```
+
+Neben der Sprache sollte das Attribut `@versionDate` verwendet werden.
+
+Beschreibungen von Attributwerten werden in der z.T. in der digitalen Edition verwendet und müssen in diesen Fällen **immer** in allen vier Sprachen angelegt werden. Dies kann folgendermaßen aussehen:
+
+```xml
+<valItem ident="Sack">
+    <desc xml:lang="de" versionDate="2023-03-17">Sack</desc>
+    <desc xml:lang="de" type="plural" versionDate="2023-03-17">Säcke</desc>
+    <desc xml:lang="fr" versionDate="2023-03-17">sac</desc>
+    <desc xml:lang="fr" type="plural" versionDate="2023-03-17">sacs</desc>
+    <desc xml:lang="en" versionDate="2023-03-17">bag</desc>
+    <desc xml:lang="en" type="plural" versionDate="2023-03-17">bags</desc>
+    <desc xml:lang="it" versionDate="2023-03-17">sacchetto,</desc>
+    <desc xml:lang="it" type="plural" versionDate="2023-03-17">sacchetti</desc>
+</valItem>
+```
 
 #### Anpassung von Inhaltstypen
 
@@ -169,6 +207,86 @@ ToDo
 #### Anpassung von Attributwerten
 
 Todo
+
+#### Anpassung / Erstellung von Tests
+
+Die im Schema festgelegten Regeln werden automatisch mit `pytest` überprüft. Hierfür müssen Testfälle definiert werden. Tests werden im Unterordner [test](/test) erstellt. Es wird zwischen Tests, die allgemeine Bedingungen des Schema prüfen, und elementspezifischen Tests unterschieden. Allgemeine Tests befinden sich gemeinsam mit den Konfigurationsdateien (`conftest.py`) auf der obersten Ebene. Elementspezifische Tests befinden sich in [test/element](/test/elements/). Nach Möglichkeit sollten immer mehrere Fälle je Test überprüft werden -- siehe hierzu [Parametrizing fixtures and test functions](https://docs.pytest.org/en/6.2.x/parametrize.html).
+
+Im Testfile eines Elements müssen zunächst die benötigten Module importiert werden.
+
+```python
+import pytest
+from ssrq_cli.validate.xml import RNGJingValidator
+
+from main import Schema
+
+from ..conftest import SimpleTEIWriter
+```
+
+Anschließend können die Tests erstellt werden. Hierbei wird zwischen Tests zum Prüfen von RELAXNG- und Schematron-Regeln unterschieden (siehe bspw. [test_idno.py](/test/elements/test_idno.py)). Die Testdefinition ist dabei weitestgehend an der Triple-A-Rule (Arrange-Act-Assert) orientiert und folgt typischerweise folgendem Muster:
+
+```python
+# ARRANGE
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-text",
+            "<text xmlns='http://www.tei-c.org/ns/1.0'><body><div><p>foo</p></div></body></text>",
+            True,
+        ),
+        (
+            "valid-text",
+            "<text xmlns='http://www.tei-c.org/ns/1.0'><body><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
+            True,
+        ),
+        (
+            "invalid-text-with-back-only",
+            "<text xmlns='http://www.tei-c.org/ns/1.0'><back><div><p>foo</p></div></back></text>",
+            False,
+        ),
+        (
+            "invalid-text-with-attribute",
+            "<text type='foobar' xmlns='http://www.tei-c.org/ns/1.0'><body><div><p>hallo welt!</p></div></body></text>",
+            False,
+        ),
+        (
+            "invalid-text-with-group",
+            "<text xmlns='http://www.tei-c.org/ns/1.0'><group><body><div><p>hallo welt!</p></div></body></group></text>",
+            False,
+        ),
+    ],
+)
+def test_text(
+    element_schema: dict[str, str],
+    writer: SimpleTEIWriter,
+    name: str,
+    markup: str,
+    result: bool,
+):
+    validator = RNGJingValidator()
+    writer.write(name, markup)
+
+    # ACT
+    validator.validate(
+        sources=writer.parse_files(),
+        schema=element_schema["text"],
+        file_pattern=writer.construct_file_pattern(),
+    )
+
+    # ASSERT
+    assert len(validator.get_invalid()) == (0 if result else 1)
+```
+
+Sollen nur die Tests eines Elements ausgeführt werden, dann kann dazu folgender Befehl verwendet werden:
+
+```sh
+run test test/elements/test_cell.py
+```
+
+#### Randnotiz Perfomance der Tests
+
+Bevor die Tests erzeugt werden, wird ein neues RNG-Schema basierend auf den Quelldateien in `src` erzeugt. Die Erzeugung der Schemadatei hängt vom jeweiligen Netzwerk ab, da hier der Server des TEI-Consortiums angefragt bei. In der Praxis hat sich gezeigt, dass eine VPN-Verbindung zur Uni dies drastisch beschleunigen kann.
 
 ### Schema erzeugen
 
