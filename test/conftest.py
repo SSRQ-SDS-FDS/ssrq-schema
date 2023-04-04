@@ -23,6 +23,7 @@ ELEMENTS = [
     "measure",
     "measureGrp",
     "orgName",
+    "respStmt",
     "text",
     "width",
 ]
