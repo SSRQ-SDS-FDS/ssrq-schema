@@ -15,7 +15,7 @@
                 <moduleRef key="header"
                     include="availability textClass profileDesc fileDesc idno editorialDecl encodingDesc extent keywords licence publicationStmt profileDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
                 <moduleRef key="textstructure"
-                    include="TEI back body div docImprint front signed text"/>
+                    include="TEI back body div docImprint signed text"/>
                 <moduleRef key="linking" include="ab anchor seg"/>
                 <moduleRef key="msdescription"
                     include="altIdentifier origDate origPlace dimensions height width support material condition msDesc physDesc sealDesc objectDesc supportDesc seal msContents history additional repository msItem filiation msIdentifier summary origin"/>
@@ -52,6 +52,7 @@
                 <specGrpRef target="elements/measureGrp.xml"/>
                 <specGrpRef target="elements/orgName.xml"/>
                 <specGrpRef target="elements/TEI.xml"/>
+                <specGrpRef target="elements/text.xml"/>
                 <specGrpRef target="elements/width.xml"/>
 
             </schemaSpec>
