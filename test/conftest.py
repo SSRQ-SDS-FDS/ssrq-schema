@@ -13,6 +13,7 @@ from ssrq_cli.xml_utils import ext_etree
 from main import XSLTS, Schema, load_config, odd_factory
 
 ELEMENTS = [
+    "back",
     "cell",
     "graphic",
     "handShift",
