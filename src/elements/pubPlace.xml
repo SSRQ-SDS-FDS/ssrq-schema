@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="pubPlace" module="core" mode="change"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <desc xml:lang="de" versionDate="2023-04-05">Der pubPlace liefert Angaben zum Publikationsort. Dies kann sowohl der
+        Publikationsort der elektronischen Edition sein als auch der Publikationsort des in der Literaturliste
+        aufgeführten Artikels oder Buches. Bei Druckschriften wird innerhalb von "docImprint" der Druckort mit
+        "pubPlace" genannt.</desc>
+    <desc xml:lang="fr" versionDate="2023-04-05">Le tag "pubPlace" donne des informations sur le lieu de publication.
+        Il peut s'agir et du lieu de publication de l'édition numérique et de celui de l'article ou livre indiqé dans
+        la liste de référence. Dans le cas des documents imprimés, l'emplacement de l'impression est indiqué dans
+        "docImprint" avec "pubPlace". </desc>
+    <desc xml:lang="en" versionDate="2023-04-05">The pubPlace provides information on the place of publication. This
+        can be both the place of publication of the electronic edition as well as the place of publication of the
+        article or book listed in the bibliography. In the case of printed publications, the place of publication is
+        indicated within "docImprint" with pubPlace" within "docImprint".</desc>
+    <classes mode="replace"/>
+    <content>
+        <textNode/>
+    </content>
+   <constraintSpec scheme="schematron" ident="sch-el-text">
+        <desc xml:lang="en" versionDate="2023-04-05">Constraint for tei:pubPlace</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:pubPlace">
+                    <sch:assert test="string-length(normalize-space(.)) > 0"><sch:name/> should contain some text.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-05">
+        <p>Einfaches Beispiel für den Inhalt von tei:pubPlace:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <msItem>
+                <textLang>Latein</textLang>
+                <filiation type="current">Druck</filiation>
+                <docImprint>
+                    <pubPlace>Druckort</pubPlace>
+                    <publisher>Druckerei</publisher>
+                </docImprint>
+            </msItem>
+        </egXML>
+    </exemplum>
+</elementSpec>

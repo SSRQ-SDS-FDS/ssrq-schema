@@ -24,6 +24,7 @@ ELEMENTS = [
     "measure",
     "measureGrp",
     "orgName",
+    "pubPlace",
     "respStmt",
     "text",
     "width",
