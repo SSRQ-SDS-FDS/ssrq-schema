@@ -479,18 +479,6 @@ files = [
 ]
 
 [[package]]
-name = "install"
-version = "1.3.5"
-description = "Install packages from within code"
-category = "main"
-optional = false
-python-versions = ">=2.7, >=3.5"
-files = [
-    {file = "install-1.3.5-py3-none-any.whl", hash = "sha256:0d3fadf4aa62c95efe8d34757c8507eb46177f86c016c21c6551eafc6a53d5a9"},
-    {file = "install-1.3.5.tar.gz", hash = "sha256:e67c8a0be5ccf8cb4ffa17d090f3a61b6e820e6a7e21cd1d2c0f7bc59b18e647"},
-]
-
-[[package]]
 name = "lxml"
 version = "4.9.2"
 description = "Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API."
@@ -701,18 +689,6 @@ python-versions = ">=3.7"
 files = [
     {file = "pathspec-0.11.0-py3-none-any.whl", hash = "sha256:3a66eb970cbac598f9e5ccb5b2cf58930cd8e3ed86d393d541eaf2d8b1705229"},
     {file = "pathspec-0.11.0.tar.gz", hash = "sha256:64d338d4e0914e91c1792321e6907b5a593f1ab1851de7fc269557a21b30ebbc"},
-]
-
-[[package]]
-name = "pip"
-version = "23.0.1"
-description = "The PyPA recommended tool for installing Python packages."
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "pip-23.0.1-py3-none-any.whl", hash = "sha256:236bcb61156d76c4b8a05821b988c7b8c35bf0da28a4b614e8d6ab5212c25c6f"},
-    {file = "pip-23.0.1.tar.gz", hash = "sha256:cd015ea1bfb0fcef59d8a286c1f8bebcb983f6317719d415dc5351efb7cd7024"},
 ]
 
 [[package]]
@@ -1168,4 +1144,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "951a07b6d9cd43ce5fd1a29f5c820aed2c8177fb45bb3773b11ac5fb1f5233e6"
+content-hash = "ada859677fca9d301b16b567439623040c8de8fdfa9219bd2975ef0ff375679e"
