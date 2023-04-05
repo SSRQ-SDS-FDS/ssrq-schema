@@ -7,7 +7,7 @@
     <desc xml:lang="en" versionDate="2023-03-17">Characterises an organisation or institution, such
         as monasteries, guilds, councils, neighbourhoods, etc.</desc>
     <desc xml:lang="fr" versionDate="2023-03-28">Signale une organisation voire une institution
-        comme p.e. monastère, confrérie, conseil, voisinage etc.</desc>
+        comme p. e. monastère, confrérie, conseil, voisinage etc.</desc>
     <classes mode="replace">
         <memberOf key="model.nameLike.agent"/>
         <memberOf key="att.naming"/>
@@ -21,37 +21,42 @@
     <attList>
         <attDef ident="key" mode="delete"/>
         <attDef ident="ref" mode="change" module="att.canonical">
-            <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung der Organisation mit der
+            <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung der Organisation mit der ID der
                 Personen- und Organisationsdatenbank.</desc>
-            <desc xml:lang="en" versionDate="2023-03-28">Linking the organisation with the database
+            <desc xml:lang="en" versionDate="2023-03-28">Linking the organisation with the ID of the database
                 of persons and organisations.</desc>
-            <desc xml:lang="fr" versionDate="2023-03-28">Relier l'organisation à la base de données
+            <desc xml:lang="fr" versionDate="2023-03-28">Relier l'organisation à l'ID de la base de données
                 des personnes et des organisations.</desc>
             <datatype>
                 <dataRef key="ssrq.pointer.org"/>
             </datatype>
         </attDef>
         <attDef ident="role" mode="change">
-            <desc xml:lang="de" versionDate="2023-03-28">Auszeichnung einer Institution im
-                Quelltext.</desc>
-            <desc xml:lang="en" versionDate="2023-03-28">Distinction of an institution in the source
+            <desc xml:lang="de" versionDate="2023-03-28">Auszeichnung der Rolle einer Institution im
+                Quellentext.</desc>
+            <desc xml:lang="en" versionDate="2023-03-28">Distinction of the role of an institution in the source
                 text.</desc>
-            <desc xml:lang="fr" versionDate="2023-03-28">Distinction d'une institution dans le texte
+            <desc xml:lang="fr" versionDate="2023-03-28">Distinction du rôle d'une institutio dans le texte
                 source.</desc>
             <datatype>
                 <dataRef key="ssrq.role.institution"/>
             </datatype>
         </attDef>
     </attList>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-28">
+    <exemplum type="ssrq-doc-example"  versionDate="2023-03-28">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <orgName ref="org000001">gotzhus ze <placeName>Pfaͤvers</placeName></orgName>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-28">
-        <p>Als orgName wird auch bei namentlicher Nennung des Bürgermeisters nur Bürgermeister und
+    <exemplum type="ssrq-doc-example"  versionDate="2023-03-28">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">de la <orgName>maison de banque <persName>Antoine Fornachon</persName></orgName>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-03-28">
+        <p xml:lang="de">Als orgName wird auch bei namentlicher Nennung des Bürgermeisters nur Bürgermeister und
             Rat ausgezeichnet. Der namentlich erwähnte Bürgermeister wird als persName getagt.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"> Presentibus herr <persName>Bernhart von
+        <p xml:lang="fr">Si le nom du bourgmestre est mentionné dans un texte, orgName ne signale que le bourgmestre et le conseil. Le nom du bourgmestre doit être indiqué avec le tag persName.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">Presentibus herr <persName>Bernhart von
                 Chaam</persName>, <orgName>burgermeister, und beid räth</orgName>. </egXML>
     </exemplum>
 </elementSpec>
