@@ -2,21 +2,42 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="back" module="textstructure" mode="change">
-    <gloss xml:lang="de" versionDate="2023-04-04">Nachspann</gloss>
-    <desc xml:lang="de" versionDate="2023-04-04">ToDo</desc>
-    <gloss xml:lang="en" versionDate="2023-04-04">Appendix</gloss>
-    <desc xml:lang="en" versionDate="2023-04-04">ToDo</desc>
-    <gloss xml:lang="fr" versionDate="2023-04-04">Appendice</gloss>
-    <desc xml:lang="fr" versionDate="2023-04-04">ToDo</desc>
+    <gloss xml:lang="de" versionDate="2023-04-04">Kommentar</gloss>
+    <desc xml:lang="de" versionDate="2023-04-04">Der Kommentar enthält weiterführende Informationen zu einem edierten Quellenstück, ordnet das Stück historisch ein und gibt Auskunft, warum ein Stück für die Edition ausgewählt wurde.</desc>
+    <gloss xml:lang="en" versionDate="2023-04-04">Comment</gloss>
+    <desc xml:lang="en" versionDate="2023-04-04">Le commentaire contient des informations complémentaires sur une pièce éditée, place la pièce dans son contexte historique et donne des informations sur les raisons pour lesquelles une pièce a été choisie pour l'édition.</desc>
+    <gloss xml:lang="fr" versionDate="2023-04-04">Commentaire</gloss>
+    <desc xml:lang="fr" versionDate="2023-04-04">The commentary contains further information on an edited  piece, classifies the piece historically and provides information on why a piece was chosen for the edition.</desc>
     <classes mode="replace"/>
     <content>
         <elementRef key="div"/>
     </content>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-04">
-        <!-- ToDo: Beispeil für tei:back ergänzen... -->
-        <p>...</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-05">
+        <p xml:lang="de">Beispiel eines Kommentars mit unterschiedlichen Abschnitten:</p>
+        <p xml:lang="en">Example of a comment with different sections::</p>
+        <p xml:lang="de">Exemple de commentaire avec différentes sections&#160;:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <!-- Beispiel hier ergänzen -->
+        <back>
+            <div n="1" org="uniform" sample="complete">
+                <p>Zum Verkauf der Burg <placeName ref="loc007559.01">Wildenburg</placeName> sowie zu den nachfolgenden Verkäufen an die Grafen <orgName ref="org000144">von Toggenburg</orgName>
+                    vgl. den Kommentar zum edierten Stück <bibl><ref target="http://permalink.snl.ch/bib/chbsg000056393">ChSG</ref>, <ref target="http://monasterium.net/mom/CH-StiASG/Urkunden/CC.2.B.1/charter">Bd.&#160;5,
+                        Nr.&#160;2839</ref></bibl> sowie <bibl><ref target="http://permalink.snl.ch/bib/chbsg000118351">Gabathuler
+                            2009c</ref>, S.&#160;235–239</bibl>. <date when="1320">1320</date>  wird der Besitz östlich der Burg Wildenburg verkauft und <date when="1328">1328</date>  die übrigen Saxer
+                    Besitzungen, die zur Wildenburg gehören, von der <placeName ref="loc006227">Zapfenmüli</placeName> an der <placeName ref="loc006290.01">Simmi</placeName>
+                    im Tobel bis zur Herrschaft <placeName ref="loc000754">Starkenstein</placeName>, wobei sich die Saxer die Alp <placeName ref="loc006138">Tesel</placeName> ausdrücklich vorbehalten.</p>
+                <p>Zu den Verkäufen an die Toggenburger und deren Folgen für die Saxer vgl. <bibl><ref target="http://permalink.snl.ch/bib/chbsg000080293">Deplazes-Haefliger 1976</ref>, S.&#160;80–84</bibl>.</p>
+            </div>
+            <div n="2" org="uniform" sample="complete">
+                <p>Zum Verkauf von Boden durch die Hohensaxer an die <orgName ref="org000425"
+                    >Appenzeller</orgName> in der <placeName ref="loc007565">Saxerlücke</placeName>,
+                    der einzigen direkten Verbindung zwischen der Freiherrschaft Sax-Hohensax und Appenzell,
+                    zum Bau einer Letzi am <date when="1346-01-20">20. Januar 1346</date> (vgl.
+                    <bibl><ref target="http://permalink.snl.ch/bib/chbsg000080293"
+                        >Deplazes-Haefliger 1976</ref>, S. &#160;10</bibl>, gedruckt in <bibl><ref
+                            target="http://permalink.snl.ch/bib/chbsg000056393">ChSG</ref>, <ref target="http://monasterium.net/mom/CSGVI/1346_I_20.1/charter">Bd.&#160;6,
+                                Nr.&#160;3966</ref></bibl>).</p>
+            </div>
+        </back>
         </egXML>
     </exemplum>
 </elementSpec>
