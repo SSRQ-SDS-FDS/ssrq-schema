@@ -3,12 +3,9 @@
 
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="measure" module="core" mode="change">
-    <desc xml:lang="de" versionDate="2023-03-17">Gibt die Breite eines Blattes oder Buchs sowie die
-        Breite der Plica wieder.</desc>
-    <desc xml:lang="en" versionDate="2023-03-17">Indicates the width of a leaf or book and the width
-        of the plica.</desc>
-    <desc xml:lang="fr" versionDate="2023-03-17">Indique la largeur d'une feuille ou d'un livre,
-        ainsi que celle d'une plica.</desc>
+    <desc xml:lang="de" versionDate="2023-03-17">Auszeichnung für Masse und Gewichte sowie das Alter einer Person</desc>
+    <desc xml:lang="en" versionDate="2023-03-17">Tag for measures and weights as well as the age of a person</desc>
+    <desc xml:lang="fr" versionDate="2023-03-17">La balise pour une mesure ou un poids ainsi que de l'âge d'une personne</desc>
     <classes mode="replace">
         <memberOf key="model.measureLike"/>
         <memberOf key="att.measurement"/>
@@ -20,7 +17,7 @@
             <macroRef key="ssrq.content.critical"/>
             <macroRef key="ssrq.content.display"/>
             <macroRef key="ssrq.content.content"/>
-            <macroRef key="ssrq.content.entities"/>
+            <macroRef key="ssrq.content.entities"/> 
 
         </alternate>
     </content>
@@ -93,9 +90,9 @@
     </constraintSpec>
     <attList>
         <attDef ident="commodity" mode="change">
-            <desc xml:lang="de" versionDate="2023-03-21">Enthält die gemessene Substanz</desc>
-            <desc xml:lang="fr" versionDate="2023-03-21">La substance mesurée contient-elle</desc>
-            <desc xml:lang="en" versionDate="2023-03-21">The substance measured</desc>
+            <desc xml:lang="de" versionDate="2023-03-21">Enthält die gemessene Substanz.</desc>
+            <desc xml:lang="fr" versionDate="2023-03-21">La substance mesurée contient-elle.</desc>
+            <desc xml:lang="en" versionDate="2023-03-21">The substance measured.</desc>
             <valList type="closed">
                 <valItem ident="field">
                     <desc xml:lang="de" versionDate="2023-03-21">Acker</desc>
@@ -490,17 +487,12 @@
                     <desc xml:lang="it" versionDate="2023-03-21">ticchettio</desc>
                 </valItem>
             </valList>
-            <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-21">
-                <p>Masseinheit</p>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples"> Item <measure type="weight"
+            <exemplum type="ssrq-doc-example" versionDate="2023-03-21">
+                <p xml:lang="de">Masseinheit</p>
+                <p xml:lang="fr">Unité de mesure&#160;:</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">Item <measure type="weight"
                         unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull</measure>
-                    git <measure type="currency" unit="ß" quantity="2">ij ß</measure>. </egXML>
-            </exemplum>
-            <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-21">
-                <p>Unité de mesure</p>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples"> Item <measure type="weight"
-                        unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull</measure>
-                    git <measure type="currency" unit="ß" quantity="2">ij ß</measure>. </egXML>
+                    git <measure type="currency" unit="ß" quantity="2">ij ß</measure>.</egXML>
             </exemplum>
         </attDef>
         <attDef ident="origin" mode="add" module="ssrq.core.module" usage="opt">
@@ -560,16 +552,30 @@
         </attDef>
 
     </attList>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-23">
-        <p>Währungsbezeichnungen</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-03-23">
+        <p  xml:lang="de">Währungsbezeichnung:</p>
+        <p  xml:lang="fr">Indication de monnaie&#160;:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples"> umb <measure type="currency" origin="ZH"
                 unit="lb" quantity="2">zwai phunt nuwer Zuricher</measure>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-23">
-        <p>Währungsbezeichnungen, z. B. Bussen, mit @commodity</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">... eyner rechten pene <measure
-                type="currency" unit="lb" commodity="gold" quantity="50"> funffczig phunt lotigs
-                goldes</measure> vorfallen seyn ... </egXML>
+    <exemplum type="ssrq-doc-example" versionDate="2023-03-23">
+        <p  xml:lang="de">Masseinheit:</p>
+        <p  xml:lang="fr">Unité de mesure&#160;:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">... item oben här <measure type="area" unit="Juchart" quantity="8" commodity="field">acht 
+            juchart acher</measure> aneinanderen, genannt ....</egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-03-23">
+        <p  xml:lang="de">Masseinheit:</p>
+        <p  xml:lang="fr">Unité de mesure&#160;:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">Item <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull</measure> git
+            <measure type="currency" unit="ß" quantity="2">ij ß</measure>.</egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-05">
+        <p  xml:lang="de">Altersangabe:</p>
+        <p  xml:lang="fr">Indication d'âge&#160;:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">... wan das jeman unser lannttluͤtten, er sye jung oder alltt,
+            <measure type="age" unit="year" quantity="14">ob vierzechen jarenn</measure> von ainem
+            paner endrunne ... </egXML>
     </exemplum>
 </elementSpec>
