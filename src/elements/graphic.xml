@@ -9,7 +9,8 @@
     <desc xml:lang="en" versionDate="2023-03-15">Contains information about an image or graphic
         illustration as part of the text or external reference.</desc>
     <gloss xml:lang="fr" versionDate="2023-03-15">Image</gloss>
-    <desc xml:lang="fr" versionDate="2023-03-15">ToDo: Übersetzung</desc>
+    <desc xml:lang="fr" versionDate="2023-03-15">Contient des informations sur une image ou une
+        illustration graphique faisant partie du texte ou référence externe.</desc>
     <classes mode="replace">
         <memberOf key="model.graphicLike"/>
         <memberOf key="att.internetMedia"/>
@@ -34,6 +35,7 @@
         <attDef ident="mimeType" mode="replace" usage="req">
             <desc xml:lang="de" versionDate="2023-03-15">MimeType der eingebundenen Bilddatei</desc>
             <desc xml:lang="en" versionDate="2023-03-15">MimeType of the included image file</desc>
+            <desc xml:lang="fr" versionDate="2023-03-15">MimeType du fichier d'image intégré</desc>
             <valList type="closed">
                 <valItem ident="image/jpg"/>
                 <valItem ident="image/png"/>
@@ -43,7 +45,7 @@
         <attDef ident="type" mode="replace" usage="req">
             <desc xml:lang="de" versionDate="2023-03-15">Typ der Grafik</desc>
             <desc xml:lang="en" versionDate="2023-03-15">Graphic type</desc>
-            <desc xml:lang="fr" versionDate="2023-03-15">Type de graphique</desc>
+            <desc xml:lang="fr" versionDate="2023-03-15">type de graphique</desc>
             <valList type="closed">
                 <valItem ident="familytree">
                     <desc xml:lang="de" versionDate="2023-03-15">Stammbaum</desc>
@@ -73,8 +75,9 @@
         </attDef>
         <attDef ident="url" mode="change" usage="req"/>
     </attList>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-15">
-        <p>Definition der Identifikationsnummer des Stücks:</p>
+    <exemplum type="ssrq-doc-example"  versionDate="2023-03-15">
+        <p xml:lang="de">Definition der Identifikationsnummer des Stücks:</p>
+        <p xml:lang="fr">Définition du numéro d'identification de la pièce &#160;:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <graphic type="graphic" mimeType="image/jpg" url="SSRQ-FR-I_2_8-graphic-6.jpg"/>
         </egXML>
