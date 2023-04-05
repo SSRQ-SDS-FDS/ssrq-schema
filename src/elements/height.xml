@@ -2,9 +2,9 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="height" module="msdescription" mode="change">
-    <desc xml:lang="de" versionDate="2023-03-21">Gibt die Höhe eines Blattes oder Buches wieder.</desc>
-    <desc xml:lang="en" versionDate="2023-03-21">Indicates the height of a sheet or book.</desc>
-    <desc xml:lang="fr" versionDate="2023-03-21">Reflète la hauteur d'une feuille ou d'un livre.</desc>
+    <desc xml:lang="de" versionDate="2023-03-21">Gibt die Höhe eines Blattes oder Buches wieder (cm).</desc>
+    <desc xml:lang="en" versionDate="2023-03-21">Indicates the height of a sheet or book (cm).</desc>
+    <desc xml:lang="fr" versionDate="2023-03-21">Reflète la hauteur d'une feuille ou d'un livre (cm).</desc>
     <classes mode="replace">
         <memberOf key="model.dimLike"/>
         <memberOf key="model.measureLike"/>
@@ -21,7 +21,7 @@
         </attDef>
         <attDef ident="quantity" mode="change" usage="req"/>
     </attList>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
+    <exemplum type="ssrq-doc-example" versionDate="2023-03-17">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <height unit="cm" quantity="10.0"/>
         </egXML>
