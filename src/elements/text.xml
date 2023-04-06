@@ -3,9 +3,11 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="text" module="textstructure" mode="change"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <desc xml:lang="de" versionDate="2023-04-04">Beinhaltet alle physisch auf einem Quellenstück
-        oder in einem Buch vorhandenen Zeichen (Transkription / Edition, d. h. Primärdaten) sowie die Kommentierung eines edierten Stücks.</desc>
+        oder in einem Buch vorhandenen Zeichen (Transkription / Edition, d. h. Primärdaten) sowie
+        die Kommentierung eines edierten Stücks.</desc>
     <desc xml:lang="en" versionDate="2023-04-04">Includes all characters physically present on a
-        source item or in a book (transcription / edition, i. e. primary data) as well as the commentary on the edited piece.</desc>
+        source item or in a book (transcription / edition, i. e. primary data) as well as the
+        commentary on the edited piece.</desc>
     <desc xml:lang="fr" versionDate="2023-04-04">Contient tous les signes qui se trouvent
         physiquement sur une pièce source ou un livre (transcription / édition, cet-à-dire données
         primaires) ainsi que le commentaire de la pièce éditée.</desc>
@@ -22,9 +24,13 @@
         <desc xml:lang="en" versionDate="2023-04-05">Constraint for tei:text</desc>
         <constraint>
             <sch:pattern>
-                <sch:rule context="tei:text[@type = 'summary']">
-                    <sch:assert test="tei:body[exists(child::*)]"><sch:name/> should have an tei:body
-                        with at least one child node.</sch:assert>
+                <sch:rule context="tei:text[@type]">
+                    <sch:assert test="tei:body[exists(child::*)]"><sch:name/> with @type needs to
+                        have an at least one child one.</sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:text[not(@type)]">
+                    <sch:assert test="tei:body[empty(child::*)]"><sch:name/> without @type needs to
+                        have an empty body.</sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
@@ -34,10 +40,13 @@
             <valList type="closed">
                 <valItem ident="summary">
                     <desc xml:lang="de" versionDate="2023-04-05">Regest des Quellstücks</desc>
-                    <desc xml:lang="en" versionDate="2023-04-05">Regest of the source
-                        document</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-05">Enregistrement du document
-                        source</desc>
+                    <desc xml:lang="en" versionDate="2023-04-05">Regest of the source document</desc>
+                    <desc xml:lang="fr" versionDate="2023-04-05">Enregistrement du document source</desc>
+                </valItem>
+                <valItem ident="transcript">
+                    <desc xml:lang="de" versionDate="2023-04-06">Transkript des Quellstücks</desc>
+                    <desc xml:lang="en" versionDate="2023-04-06">Transcript of the source document</desc>
+                    <desc xml:lang="fr" versionDate="2023-04-06">Transcription du document source</desc>
                 </valItem>
             </valList>
         </attDef>

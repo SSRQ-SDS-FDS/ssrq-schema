@@ -13,12 +13,12 @@ from ..conftest import SimpleTEIWriter
     [
         (
             "valid-text",
-            "<text xmlns='http://www.tei-c.org/ns/1.0'><body><div><p>foo</p></div></body></text>",
+            "<text xmlns='http://www.tei-c.org/ns/1.0' type='transcript'><body><div><p>foo</p></div></body></text>",
             True,
         ),
         (
             "valid-text",
-            "<text xmlns='http://www.tei-c.org/ns/1.0'><body><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
+            "<text xmlns='http://www.tei-c.org/ns/1.0' type='transcript'><body><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
             True,
         ),
         (
@@ -66,12 +66,17 @@ def test_text(
     [
         (
             "valid-text",
-            "<text xmlns='http://www.tei-c.org/ns/1.0'><body><div><p>foo</p></div></body></text>",
+            "<text xmlns='http://www.tei-c.org/ns/1.0' type='transcript'><body><div><p>foo</p></div></body></text>",
             True,
         ),
         (
             "valid-text",
-            "<text xmlns='http://www.tei-c.org/ns/1.0'><body type='summary'><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
+            "<text xmlns='http://www.tei-c.org/ns/1.0' type='summary'><body><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
+            True,
+        ),
+        (
+            "valid-text-with-empty-body",
+            "<text xmlns='http://www.tei-c.org/ns/1.0'><body/></text>",
             True,
         ),
         (
