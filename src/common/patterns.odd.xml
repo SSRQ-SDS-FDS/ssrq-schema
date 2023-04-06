@@ -100,6 +100,15 @@
             </content>
         </dataSpec>
 
+        <dataSpec ident="ssrq.facs.name" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-04-06">Restriktion für Datei- bzw. Faksimilenamen.</desc>
+            <desc xml:lang="en" versionDate="2023-04-06">Restriction for file or facsimile names.</desc>
+            <desc xml:lang="fr" versionDate="2023-04-06">Restriction pour les noms de fichiers ou de fac-similés.</desc>
+            <content>
+                <dataRef name="string" restriction="[A-Za-z_\-\.0-9]+([1-9]|[rv])"/>
+            </content>
+        </dataSpec>
+
     </specGrp>
 
 </div>

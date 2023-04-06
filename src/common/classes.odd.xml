@@ -40,6 +40,20 @@
             </attList>
         </classSpec>
 
+        <classSpec ident="att.global.facs" type="atts" mode="change">
+            <attList>
+                <attDef ident="facs" mode="change" usage="opt">
+                    <desc xml:lang="de" versionDate="2023-04-06">Ordnet einer Textseite einem Faksimile oder einem faksimilierten Ausschnitt zu.</desc>
+                    <desc xml:lang="en" versionDate="2023-04-06">Assigns a facsimile or facsimile extract to a page of text.</desc>
+                    <desc xml:lang="de" versionDate="2023-04-06">Associe une page de texte à un fac-similé ou à un extrait de fac-similé.</desc>
+                    <datatype>
+                        <dataRef key="ssrq.facs.name"/>
+                    </datatype>
+                </attDef>
+            </attList>
+            <!-- ToDo: Beispiele für @facs und Beschreibung verbotener Zeichen verbalisieren -->
+        </classSpec>
+
         <classSpec ident="att.global.rendition" type="atts" mode="change">
             <attList>
                 <attDef ident="style" mode="delete"/>

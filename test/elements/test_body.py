@@ -19,12 +19,12 @@ from ..conftest import SimpleTEIWriter
         ),
         (
             "valid-body-with-pb-div",
-            "<body xmlns='http://www.tei-c.org/ns/1.0'><pb n='1' facs='abcde'/><div><p>bar</p></div></body>",
+            "<body xmlns='http://www.tei-c.org/ns/1.0'><pb n='1' facs='abcde_1'/><div><p>bar</p></div></body>",
             True,
         ),
         (
             "valid-body-with-pb-div-signed",
-            "<body xmlns='http://www.tei-c.org/ns/1.0'><pb n='1' facs='abcde'/><div><p>bar</p></div><signed><lb/>Rechenschriber</signed></body>",
+            "<body xmlns='http://www.tei-c.org/ns/1.0'><pb n='1' facs='abcde_1'/><div><p>bar</p></div><signed><lb/>Rechenschriber</signed></body>",
             True,
         ),
         (
