@@ -12,28 +12,28 @@ from ..conftest import SimpleTEIWriter
     "name, markup, result",
     [
         (
-                "valid-pubPlace",
-                "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
-                True,
+            "valid-pubPlace",
+            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
+            True,
         ),
         (
-                "invalid-pubPlace",
-                "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'><p/></pubPlace>",
-                False,
+            "invalid-pubPlace",
+            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'><p/></pubPlace>",
+            False,
         ),
         (
-                "invalid-text-with-attributes",
-                "<pubPlace type='foobar' xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
-                False,
+            "invalid-text-with-attributes",
+            "<pubPlace type='foobar' xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
+            False,
         ),
     ],
 )
 def test_pubPlace(
-        element_schema: dict[str, str],
-        writer: SimpleTEIWriter,
-        name: str,
-        markup: str,
-        result: bool,
+    element_schema: dict[str, str],
+    writer: SimpleTEIWriter,
+    name: str,
+    markup: str,
+    result: bool,
 ):
     validator = RNGJingValidator()
     writer.write(name, markup)
@@ -45,23 +45,24 @@ def test_pubPlace(
     )
     assert len(validator.get_invalid()) == (0 if result else 1)
 
+
 @pytest.mark.parametrize(
     "name, markup, result",
     [
         (
-                "valid-pubPlace",
-                "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
-                True,
+            "valid-pubPlace",
+            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
+            True,
         ),
         (
-                "invalid-pubPlace",
-                "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'/>",
-                False,
+            "invalid-pubPlace",
+            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'/>",
+            False,
         ),
     ],
 )
 def test_pubPlace_constraints(
-        main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the constraints defined for tei:pubPlace."""
     writer.write(name, markup)

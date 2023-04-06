@@ -4,5 +4,30 @@
     <classes mode="change">
         <memberOf key="att.global.facs"/>
     </classes>
-
+    <attList>
+        <attDef ident="n" mode="change">
+            <desc xml:lang="de" versionDate="2023-04-06">Angabe der originalen Paginierung oder
+                Foliierung.</desc>
+            <desc xml:lang="en" versionDate="2023-04-06">Indication of the original pagination or
+                foliation.</desc>
+            <desc xml:lang="fr" versionDate="2023-04-06">Indication de la pagination ou du foliotage
+                d'origine.</desc>
+            <datatype>
+                <dataRef name="string" restriction="\d+[rv]?"/>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="change">
+            <valList type="closed">
+                <valItem ident="original">
+                    <desc xml:lang="de" versionDate="2023-04-06">Originalseitenwechsel</desc>
+                    <desc xml:lang="it" versionDate="2023-04-06">Impaginazione originale</desc>
+                    <desc xml:lang="en" versionDate="2023-04-06">Original pagination</desc>
+                    <desc xml:lang="fr" versionDate="2023-04-06">Saut de page original</desc>
+                </valItem>
+            </valList>
+        </attDef>
+        <attDef ident="break" mode="delete"/>
+        <attDef ident="rend" mode="delete"/>
+    </attList>
+    <!-- ToDo: Beispiele ergänzen -->
 </elementSpec>
