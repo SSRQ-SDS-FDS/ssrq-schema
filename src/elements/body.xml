@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="body" module="textstructure" mode="change"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <gloss xml:lang="de" versionDate="2023-04-06">Kerntext</gloss>
+    <desc xml:lang="de" versionDate="2023-04-06">Enthält den transkribierten Quellentext sowie die
+        zeitgleichen Dorsualnotizen in <tag type="empty">ab</tag>.</desc>
+    <gloss xml:lang="fr" versionDate="2023-04-06">Texte principal</gloss>
+    <desc xml:lang="fr" versionDate="2023-04-06">Contient le texte transcrit de la source ainsi que
+        les notes dorsales dans <tag type="empty">ab</tag>.</desc>
+    <gloss xml:lang="en" versionDate="2023-04-06">Main text</gloss>
+    <desc xml:lang="en" versionDate="2023-04-06">Contains the transcribed source text as well as the
+        contemporaneous dorsual notes in <tag type="empty">ab</tag>.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence minOccurs="0" maxOccurs="1">
+            <alternate minOccurs="0" maxOccurs="unbounded">
+                <elementRef key="gap"/>
+                <elementRef key="pb"/>
+            </alternate>
+            <sequence minOccurs="0">
+                <elementRef key="div" minOccurs="1"/>
+                <alternate minOccurs="0" maxOccurs="unbounded">
+                    <elementRef key="gap"/>
+                    <elementRef key="pb"/>
+                </alternate>
+            </sequence>
+            <elementRef key="signed" minOccurs="0"/>
+            <alternate minOccurs="0" maxOccurs="unbounded">
+                <elementRef key="gap"/>
+                <elementRef key="pb"/>
+            </alternate>
+        </sequence>
+    </content>
+    <!-- <classes mode="replace"/>
+    <content>
+        <textNode/>
+    </content>
+    <constraintSpec scheme="schematron" ident="sch-el-text">
+        <desc xml:lang="en" versionDate="2023-04-05">Constraint for tei:pubPlace</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:pubPlace">
+                    <sch:assert test="string-length(normalize-space(.)) > 0"><sch:name/> should contain some text.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec> -->
+    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-05">
+        <p>Einfaches Beispiel für den Inhalt von tei:pubPlace:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <msItem>
+                <textLang>Latein</textLang>
+                <filiation type="current">Druck</filiation>
+                <docImprint>
+                    <pubPlace>Druckort</pubPlace>
+                    <publisher>Druckerei</publisher>
+                </docImprint>
+            </msItem>
+        </egXML>
+    </exemplum>
+</elementSpec>

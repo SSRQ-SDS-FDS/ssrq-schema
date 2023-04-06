@@ -14,6 +14,7 @@ from main import XSLTS, Schema, load_config, odd_factory
 
 ELEMENTS = [
     "back",
+    "body",
     "cell",
     "docImprint",
     "graphic",

@@ -79,6 +79,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [ ] Werte für `@medium` einschränken [siehe #3064](https://histhub.ssrq-sds-fds.ch/redmine/issues/3064)
 - [ ] `@rend` im Falle von `tei:addSpan|tei:add` durch `@medium` ersetzen [siehe #3065](https://histhub.ssrq-sds-fds.ch/redmine/issues/3065)
 - [ ] Verwendung von `@wit` sowie Erfassung von Metadaten referenzierter Textzeugen klären [siehe #1360](https://histhub.ssrq-sds-fds.ch/redmine/issues/1360)
+- [ ] Attribut `@type` für `<text/>` mit den Werten summary oder transcript verpflichtend festlegen [siehe #3074](https://histhub.ssrq-sds-fds.ch/redmine/issues/3074)
 
 ### Technische Umsetzung
 
