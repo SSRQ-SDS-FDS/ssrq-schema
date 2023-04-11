@@ -39,9 +39,9 @@ import pytest
     ],
 )
 def test_body(
-        test_element_with_rng: Callable[[str, str, str, bool], None],
-        name: str,
-        markup: str,
-        result: bool,
+    test_element_with_rng: Callable[[str, str, str, bool], None],
+    name: str,
+    markup: str,
+    result: bool,
 ):
     test_element_with_rng("body", name, markup, result)

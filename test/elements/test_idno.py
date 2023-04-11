@@ -26,10 +26,10 @@ from ..conftest import SimpleTEIWriter
     ],
 )
 def test_idno(
-        test_element_with_rng: Callable[[str, str, str, bool], None],
-        name: str,
-        markup: str,
-        result: bool,
+    test_element_with_rng: Callable[[str, str, str, bool], None],
+    name: str,
+    markup: str,
+    result: bool,
 ):
     test_element_with_rng("idno", name, markup, result)
 

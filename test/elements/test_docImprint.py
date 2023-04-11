@@ -34,9 +34,9 @@ import pytest
     ],
 )
 def test_docImprint(
-        test_element_with_rng: Callable[[str, str, str, bool], None],
-        name: str,
-        markup: str,
-        result: bool,
+    test_element_with_rng: Callable[[str, str, str, bool], None],
+    name: str,
+    markup: str,
+    result: bool,
 ):
     test_element_with_rng("docImprint", name, markup, result)

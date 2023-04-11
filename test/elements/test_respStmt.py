@@ -3,7 +3,6 @@ from typing import Callable
 import pytest
 
 
-
 @pytest.mark.parametrize(
     "name, markup, result",
     [
@@ -35,9 +34,9 @@ import pytest
     ],
 )
 def test_respStmt(
-        test_element_with_rng: Callable[[str, str, str, bool], None],
-        name: str,
-        markup: str,
-        result: bool,
+    test_element_with_rng: Callable[[str, str, str, bool], None],
+    name: str,
+    markup: str,
+    result: bool,
 ):
     test_element_with_rng("respStmt", name, markup, result)
