@@ -1,12 +1,10 @@
-from typing import Callable
-
 import pytest
 from pyschval.main import (
     SchematronResult,
     validate_chunk,
 )
 
-from ..conftest import SimpleTEIWriter
+from ..conftest import RNG_test_function, SimpleTEIWriter
 
 
 @pytest.mark.parametrize(
@@ -30,12 +28,12 @@ from ..conftest import SimpleTEIWriter
     ],
 )
 def test_pubPlace(
-    test_element_with_rng: Callable[[str, str, str, bool], None],
+    test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
     result: bool,
 ):
-    test_element_with_rng("pubPlace", name, markup, result)
+    test_element_with_rng("pubPlace", name, markup, result, False)
 
 
 @pytest.mark.parametrize(

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Optional, TypeAlias
 
 import pytest
 from pyschval.main import (
@@ -30,6 +30,7 @@ ELEMENTS = [
     "pubPlace",
     "respStmt",
     "text",
+    "TEI",
     "width",
 ]
 
@@ -130,17 +131,36 @@ def main_constraints(main_schema: Schema) -> str:
     return create_schematron_stylesheet(extracted_rules, XSLT_FILES["schxslt"])
 
 
+RNG_test_function: TypeAlias = Callable[
+    [str, str, str, bool, bool], Optional[RNGJingValidator]
+]
+
+
 @pytest.fixture(scope="function")
 def test_element_with_rng(
     element_schema: dict[str, str],
     writer: SimpleTEIWriter,
-) -> Callable[[str, str, str, bool], None]:
+) -> RNG_test_function:
     def test_element(
         element_name: str,
         name: str,
         markup: str,
         result: bool,
+        return_validator: bool = False,
     ):
+        """A generic function, which can be used to test a single element against the defined RelaxNG rules.
+
+        Args:
+            element_name (str): The name (without namespace) of the element to test.e
+            name (str): The name of the file to write / the name of the testcase.
+            markup (str): The markup to write to the file.
+            result (bool): The expected result of the validation.
+            return_validator (bool, optional): If True, the validator object is returned. Defaults to False.
+
+        Returns:
+            None: The test passes if the validation result matches the expected result.
+        """
+
         validator = RNGJingValidator()
         writer.write(name, markup)
 
@@ -149,6 +169,10 @@ def test_element_with_rng(
             schema=element_schema[element_name],
             file_pattern=writer.construct_file_pattern(),
         )
+
         assert len(validator.get_invalid()) == (0 if result else 1)
+
+        if return_validator:
+            return validator
 
     return test_element
