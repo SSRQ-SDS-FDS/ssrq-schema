@@ -1,7 +1,6 @@
-import pytest
-from ssrq_cli.validate.xml import RNGJingValidator
+from test.conftest import RNG_test_function
 
-from ..conftest import SimpleTEIWriter
+import pytest
 
 
 @pytest.mark.parametrize(
@@ -29,19 +28,10 @@ from ..conftest import SimpleTEIWriter
         ),
     ],
 )
-def test_graphic_rng(
-    element_schema: dict[str, str],
-    writer: SimpleTEIWriter,
+def test_graphic(
+    test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
     result: bool,
 ):
-    validator = RNGJingValidator()
-    writer.write(name, markup)
-
-    validator.validate(
-        sources=writer.parse_files(),
-        schema=element_schema["graphic"],
-        file_pattern=writer.construct_file_pattern(),
-    )
-    assert len(validator.get_invalid()) == (0 if result else 1)
+    test_element_with_rng("graphic", name, markup, result, False)

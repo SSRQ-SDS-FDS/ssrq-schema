@@ -3,9 +3,8 @@ from pyschval.main import (
     SchematronResult,
     validate_chunk,
 )
-from ssrq_cli.validate.xml import RNGJingValidator
 
-from ..conftest import SimpleTEIWriter
+from ..conftest import RNG_test_function, SimpleTEIWriter
 
 
 @pytest.mark.parametrize(
@@ -29,21 +28,13 @@ from ..conftest import SimpleTEIWriter
     ],
 )
 def test_pubPlace(
-    element_schema: dict[str, str],
-    writer: SimpleTEIWriter,
+    test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
     result: bool,
 ):
-    validator = RNGJingValidator()
-    writer.write(name, markup)
+    test_element_with_rng("pubPlace", name, markup, result, False)
 
-    validator.validate(
-        sources=writer.parse_files(),
-        schema=element_schema["pubPlace"],
-        file_pattern=writer.construct_file_pattern(),
-    )
-    assert len(validator.get_invalid()) == (0 if result else 1)
 
 
 @pytest.mark.parametrize(
