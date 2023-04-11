@@ -61,6 +61,28 @@
             </attList>
         </classSpec>
 
+        <classSpec ident="att.global.responsibility" type="atts" mode="change">
+            <attList>
+                <attDef ident="cert" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-04-11">Angabe des Grads der Sicherheit</desc>
+                    <desc xml:lang="fr" versionDate="2023-04-11">Indication du degré de certitude</desc>
+                    <desc xml:lang="en" versionDate="2023-04-11">Indication of the degree of certainty</desc>
+                    <valList type="closed">
+                        <valItem ident="high">
+                            <desc xml:lang="de" versionDate="2023-04-11">hoch</desc>
+                            <desc xml:lang="fr" versionDate="2023-04-11">élevé</desc>
+                            <desc xml:lang="en" versionDate="2023-04-11">high</desc>
+                        </valItem>
+                        <valItem ident="low">
+                            <desc xml:lang="de" versionDate="2023-04-11">niedrig</desc>
+                            <desc xml:lang="fr" versionDate="2023-04-11">faible</desc>
+                            <desc xml:lang="en" versionDate="2022-05-06">low</desc>
+                        </valItem>
+                    </valList>
+                </attDef>
+            </attList>
+        </classSpec>
+
         <classSpec ident="att.measurement" type="atts" mode="change">
             <attList>
                 <attDef ident="unit" mode="replace" usage="req">

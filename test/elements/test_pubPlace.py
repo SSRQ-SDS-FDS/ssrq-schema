@@ -16,6 +16,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter
             True,
         ),
         (
+            "valid-pubPlace-with-cert",
+            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0' cert='low'>foo-low</pubPlace>",
+            True,
+        ),
+        (
             "invalid-pubPlace",
             "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'><p/></pubPlace>",
             False,
@@ -23,6 +28,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter
         (
             "invalid-text-with-attributes",
             "<pubPlace type='foobar' xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
+            False,
+        ),
+        (
+            "valid-pubPlace-with-invalid-cert",
+            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0' cert='medium'>foo-medium</pubPlace>",
             False,
         ),
     ],
@@ -34,7 +44,6 @@ def test_pubPlace(
     result: bool,
 ):
     test_element_with_rng("pubPlace", name, markup, result, False)
-
 
 
 @pytest.mark.parametrize(

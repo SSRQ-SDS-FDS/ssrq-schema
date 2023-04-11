@@ -14,7 +14,9 @@
         can be both the place of publication of the electronic edition as well as the place of publication of the
         article or book listed in the bibliography. In the case of printed publications, the place of publication is
         indicated within "docImprint" with pubPlace" within "docImprint".</desc>
-    <classes mode="replace"/>
+    <classes mode="replace">
+        <memberOf key="att.global.responsibility"/>
+    </classes>
     <content>
         <textNode/>
     </content>
@@ -28,6 +30,9 @@
             </sch:pattern>
         </constraint>
     </constraintSpec>
+    <attList>
+        <attDef ident="resp" mode="delete"/>
+    </attList>
     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-05">
         <p>Einfaches Beispiel für den Inhalt von tei:pubPlace:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
