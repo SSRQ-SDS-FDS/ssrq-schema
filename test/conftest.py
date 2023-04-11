@@ -17,6 +17,7 @@ ELEMENTS = [
     "body",
     "cell",
     "docImprint",
+    "figure",
     "graphic",
     "handShift",
     "height",
