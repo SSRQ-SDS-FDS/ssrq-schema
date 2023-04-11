@@ -32,6 +32,7 @@ ELEMENTS = [
     "pubPlace",
     "respStmt",
     "row",
+    "table",
     "text",
     "TEI",
     "width",

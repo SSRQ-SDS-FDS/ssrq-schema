@@ -25,6 +25,45 @@
         transcribed with the character string character string &#x2012;).</desc>
     <desc xml:lang="fr" versionDate="2023-04-11">Est utilisé avec <tag empty="true">row</tag>
         (ligne) et <tag empty="true">cell</tag> (colonne) pour transcrire un tableau. Il est compté
-        de haut en bas et de gauche à droite. Si possible, reprendre un tableau comme texte courant.</desc>
-    <!-- To Do ... -->
+        de haut en bas et de gauche à droite. Si possible, reprendre un tableau comme texte
+        courant.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="head" minOccurs="0" maxOccurs="1"/>
+            <alternate minOccurs="1" maxOccurs="unbounded">
+                <elementRef key="row"/>
+                <elementRef key="pb"/>
+            </alternate>
+        </sequence>
+    </content>
+    <exemplum versionDate="2023-04-11">
+        <p xml:lang="de">Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten
+            drei Spalten mit «gbz», «xr» bzw. «dn» überschrieben werden</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div>
+                <table>
+                    <head>Von dem wein</head>
+                    <row>
+                        <cell/>
+                        <cell role="label">gbz</cell>
+                        <cell role="label">xr</cell>
+                        <cell role="label">₰</cell>
+                    </row>
+                    <row>
+                        <cell>für j saum wein</cell>
+                        <cell>–</cell>
+                        <cell>1</cell>
+                        <cell>–</cell>
+                    </row>
+                    <row>
+                        <cell>für j lägelen wein</cell>
+                        <cell>–</cell>
+                        <cell>–</cell>
+                        <cell>2</cell>
+                    </row>
+                </table>
+            </div>
+        </egXML>
+    </exemplum>
 </elementSpec>
