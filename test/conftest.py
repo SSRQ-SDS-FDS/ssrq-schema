@@ -28,6 +28,7 @@ ELEMENTS = [
     "pb",
     "pubPlace",
     "respStmt",
+    "row",
     "text",
     "width",
 ]
