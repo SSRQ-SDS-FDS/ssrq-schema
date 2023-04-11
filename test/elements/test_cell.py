@@ -1,7 +1,6 @@
-import pytest
-from ssrq_cli.validate.xml import RNGJingValidator
+from typing import Callable
 
-from ..conftest import SimpleTEIWriter
+import pytest
 
 
 @pytest.mark.parametrize(
@@ -31,18 +30,9 @@ from ..conftest import SimpleTEIWriter
     ],
 )
 def test_cell(
-    element_schema: dict[str, str],
-    writer: SimpleTEIWriter,
-    name: str,
-    markup: str,
-    result: bool,
+        test_element_with_rng: Callable[[str, str, str, bool], None],
+        name: str,
+        markup: str,
+        result: bool,
 ):
-    validator = RNGJingValidator()
-    writer.write(name, markup)
-
-    validator.validate(
-        sources=writer.parse_files(),
-        schema=element_schema["cell"],
-        file_pattern=writer.construct_file_pattern(),
-    )
-    assert len(validator.get_invalid()) == (0 if result else 1)
+    test_element_with_rng("cell", name, markup, result)
