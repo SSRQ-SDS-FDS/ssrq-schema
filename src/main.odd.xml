@@ -11,16 +11,16 @@
                 <!-- modules used -->
                 <moduleRef key="tei"/>
                 <moduleRef key="core"
-                    include="abbr add analytic author bibl biblScope biblStruct cb choice corr date del editor expan foreign gap graphic head hi imprint item label lb list listBibl measure measureGrp monogr note num orig p pb pubPlace publisher q quote ref reg resp respStmt series sic teiCorpus term textLang time title unclear"/>
+                    include="abbr add author bibl cb choice corr date del editor expan foreign gap graphic head hi imprint item label lb list listBibl measure measureGrp note num orig p pb pubPlace publisher q quote ref reg resp respStmt series sic teiCorpus term textLang time title unclear"/>
                 <moduleRef key="header"
-                    include="availability textClass profileDesc fileDesc idno editorialDecl encodingDesc extent keywords licence publicationStmt profileDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
+                    include="availability editorialDecl encodingDesc fileDesc extent idno keywords licence publicationStmt profileDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
                 <moduleRef key="textstructure"
                     include="TEI back body div docImprint signed text"/>
                 <moduleRef key="linking" include="ab anchor seg"/>
                 <moduleRef key="msdescription"
                     include="altIdentifier origDate origPlace dimensions height width support material condition msDesc physDesc sealDesc objectDesc supportDesc seal msContents history additional repository msItem filiation msIdentifier summary origin"/>
                 <moduleRef key="transcr"
-                    include="addSpan damage damageSpan delSpan fw handShift space subst supplied"/>
+                    include="addSpan damage damageSpan delSpan handShift space subst supplied"/>
                 <moduleRef key="textcrit" include="app lem listWit rdg witness"/>
                 <moduleRef key="namesdates"
                     include="listOrg listPerson listPlace orgName persName placeName"/>
@@ -39,8 +39,6 @@
                 <specGrpRef target="common/datatypes.odd.xml#ssrq-measure"/>
                 <specGrpRef target="common/datatypes.odd.xml#ssrq-role"/>
                 <specGrpRef target="common/patterns.odd.xml#ssrq-patterns"/>
-
-
 
                 <!-- element specs -->
                 <specGrpRef target="elements/back.xml"/>
