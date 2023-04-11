@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Callable
 
 import pytest
 from pyschval.main import (
@@ -8,6 +9,7 @@ from pyschval.main import (
     extract_schematron_from_relaxng,
 )
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
+from ssrq_cli.validate import RNGJingValidator
 from ssrq_cli.xml_utils import ext_etree
 
 from main import XSLTS, Schema, load_config, odd_factory
@@ -126,3 +128,27 @@ def main_constraints(main_schema: Schema) -> str:
     )
 
     return create_schematron_stylesheet(extracted_rules, XSLT_FILES["schxslt"])
+
+
+@pytest.fixture(scope="function")
+def test_element_with_rng(
+    element_schema: dict[str, str],
+    writer: SimpleTEIWriter,
+) -> Callable[[str, str, str, bool], None]:
+    def test_element(
+        element_name: str,
+        name: str,
+        markup: str,
+        result: bool,
+    ):
+        validator = RNGJingValidator()
+        writer.write(name, markup)
+
+        validator.validate(
+            sources=writer.parse_files(),
+            schema=element_schema[element_name],
+            file_pattern=writer.construct_file_pattern(),
+        )
+        assert len(validator.get_invalid()) == (0 if result else 1)
+
+    return test_element

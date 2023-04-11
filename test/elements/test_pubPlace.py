@@ -3,8 +3,7 @@ from pyschval.main import (
     SchematronResult,
     validate_chunk,
 )
-from ssrq_cli.validate.xml import RNGJingValidator
-
+from typing import Callable
 from ..conftest import SimpleTEIWriter
 
 
@@ -12,51 +11,43 @@ from ..conftest import SimpleTEIWriter
     "name, markup, result",
     [
         (
-                "valid-pubPlace",
-                "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
-                True,
+            "valid-pubPlace",
+            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
+            True,
         ),
         (
-                "invalid-pubPlace",
-                "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'><p/></pubPlace>",
-                False,
+            "invalid-pubPlace",
+            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'><p/></pubPlace>",
+            False,
         ),
         (
-                "invalid-text-with-attributes",
-                "<pubPlace type='foobar' xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
-                False,
+            "invalid-text-with-attributes",
+            "<pubPlace type='foobar' xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
+            False,
         ),
     ],
 )
 def test_pubPlace(
-        element_schema: dict[str, str],
-        writer: SimpleTEIWriter,
+        test_element_with_rng: Callable[[str, str, str, bool], None],
         name: str,
         markup: str,
         result: bool,
 ):
-    validator = RNGJingValidator()
-    writer.write(name, markup)
+    test_element_with_rng("pubPlace", name, markup, result)
 
-    validator.validate(
-        sources=writer.parse_files(),
-        schema=element_schema["pubPlace"],
-        file_pattern=writer.construct_file_pattern(),
-    )
-    assert len(validator.get_invalid()) == (0 if result else 1)
 
 @pytest.mark.parametrize(
     "name, markup, result",
     [
         (
-                "valid-pubPlace",
-                "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
-                True,
+            "valid-pubPlace",
+            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
+            True,
         ),
         (
-                "invalid-pubPlace",
-                "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'/>",
-                False,
+            "invalid-pubPlace",
+            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'/>",
+            False,
         ),
     ],
 )
