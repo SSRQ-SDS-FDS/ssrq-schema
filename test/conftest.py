@@ -27,6 +27,7 @@ ELEMENTS = [
     "measure",
     "measureGrp",
     "orgName",
+    "pb",
     "pubPlace",
     "respStmt",
     "text",
