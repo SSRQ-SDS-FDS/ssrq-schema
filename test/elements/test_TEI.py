@@ -8,8 +8,10 @@ import pytest
     [
         (
             "TEI-valid",
-            "<TEI xmlns='http://www.tei-c.org/ns/1.0' xml:lang='de'><teiHeader></teiHeader><text></text></TEI>",
-            False,
+            """<TEI xmlns='http://www.tei-c.org/ns/1.0' xml:lang='de'><teiHeader><fileDesc><titleStmt><title>foo</title>
+            </titleStmt><publicationStmt><p>foo</p></publicationStmt><sourceDesc><p>foo</p></sourceDesc></fileDesc>
+            </teiHeader><text><body></body></text></TEI>""",
+            True,
             None,
         ),
         (

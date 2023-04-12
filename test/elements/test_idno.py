@@ -55,7 +55,7 @@ def test_idno(
 def test_series_idno_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
-    """Test the constraints definid for tei:idno."""
+    """Test the constraints defined for tei:idno."""
     writer.write(name, markup)
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
@@ -67,12 +67,12 @@ def test_series_idno_constraints(
     "name, markup, result",
     [
         (
-            "valid-ms-idno",
+            "invalid-ms-idno",
             "<msIdentifier xmlns='http://www.tei-c.org/ns/1.0'><idno xml:lang='de'>bar</idno></msIdentifier>",
             False,
         ),
         (
-            "invalid-ms-idno",
+            "valid-ms-idno",
             "<msIdentifier xmlns='http://www.tei-c.org/ns/1.0'><idno>bar</idno></msIdentifier>",
             True,
         ),
@@ -81,7 +81,7 @@ def test_series_idno_constraints(
 def test_msIdent_idno_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
-    """Test the constraints definid for tei:idno."""
+    """Test the constraints defined for tei:idno."""
     writer.write(name, markup)
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
