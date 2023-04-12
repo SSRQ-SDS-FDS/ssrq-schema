@@ -1,5 +1,3 @@
-from typing import Callable
-
 import pytest
 from pyschval.main import (
     SchematronResult,
@@ -7,7 +5,7 @@ from pyschval.main import (
 )
 from saxonche import PySaxonProcessor
 
-from ..conftest import SimpleTEIWriter
+from ..conftest import RNG_test_function, SimpleTEIWriter
 
 
 @pytest.mark.parametrize(
@@ -26,12 +24,12 @@ from ..conftest import SimpleTEIWriter
     ],
 )
 def test_idno(
-        test_element_with_rng: Callable[[str, str, str, bool], None],
-        name: str,
-        markup: str,
-        result: bool,
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
 ):
-    test_element_with_rng("idno", name, markup, result)
+    test_element_with_rng("idno", name, markup, result, False)
 
 
 @pytest.mark.parametrize(

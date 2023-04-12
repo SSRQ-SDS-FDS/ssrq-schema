@@ -1,4 +1,4 @@
-from typing import Callable
+from test.conftest import RNG_test_function
 
 import pytest
 
@@ -29,9 +29,9 @@ import pytest
     ],
 )
 def test_orgName(
-        test_element_with_rng: Callable[[str, str, str, bool], None],
-        name: str,
-        markup: str,
-        result: bool,
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
 ):
-    test_element_with_rng("orgName", name, markup, result)
+    test_element_with_rng("orgName", name, markup, result, False)

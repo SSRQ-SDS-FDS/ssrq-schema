@@ -3,8 +3,8 @@ from pyschval.main import (
     SchematronResult,
     validate_chunk,
 )
-from typing import Callable
-from ..conftest import SimpleTEIWriter
+
+from ..conftest import RNG_test_function, SimpleTEIWriter
 
 
 @pytest.mark.parametrize(
@@ -28,12 +28,12 @@ from ..conftest import SimpleTEIWriter
     ],
 )
 def test_pubPlace(
-        test_element_with_rng: Callable[[str, str, str, bool], None],
-        name: str,
-        markup: str,
-        result: bool,
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
 ):
-    test_element_with_rng("pubPlace", name, markup, result)
+    test_element_with_rng("pubPlace", name, markup, result, False)
 
 
 @pytest.mark.parametrize(
@@ -52,7 +52,7 @@ def test_pubPlace(
     ],
 )
 def test_pubPlace_constraints(
-        main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the constraints defined for tei:pubPlace."""
     writer.write(name, markup)

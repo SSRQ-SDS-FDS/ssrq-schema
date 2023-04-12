@@ -1,7 +1,6 @@
-from typing import Callable
+from test.conftest import RNG_test_function
 
 import pytest
-
 
 
 @pytest.mark.parametrize(
@@ -35,9 +34,9 @@ import pytest
     ],
 )
 def test_respStmt(
-        test_element_with_rng: Callable[[str, str, str, bool], None],
-        name: str,
-        markup: str,
-        result: bool,
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
 ):
-    test_element_with_rng("respStmt", name, markup, result)
+    test_element_with_rng("respStmt", name, markup, result, False)
