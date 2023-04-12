@@ -39,7 +39,7 @@
                 <sch:rule context="tei:idno[parent::tei:seriesStmt][not(@type)]">
                     <sch:assert
                         test="matches(., '^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$')"
-                        >The idno must match the definied schema – see the examples in the
+                        >The idno must match the defined schema – see the examples in the
                         docs.</sch:assert>
                 </sch:rule>
                 <sch:rule context="tei:idno[parent::tei:seriesStmt][@type]">

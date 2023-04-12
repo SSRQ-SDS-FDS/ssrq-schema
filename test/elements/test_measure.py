@@ -68,7 +68,7 @@ def test_measure_constraints(
     message: str,
     result: bool,
 ):
-    """Test the constraints definid for tei:idno."""
+    """Test the constraints defined for tei:measure."""
     writer.write(name, markup)
 
     reports: list[SchematronResult] = validate_chunk(

@@ -6,7 +6,11 @@ import pytest
 @pytest.mark.parametrize(
     "name, markup, result",
     [
-        ("valid-cell", "<cell xmlns='http://www.tei-c.org/ns/1.0'>foo</cell>", True),
+        (
+            "valid-cell",
+            "<cell xmlns='http://www.tei-c.org/ns/1.0'>foo</cell>",
+            True
+        ),
         (
             "valid-cell",
             "<cell xmlns='http://www.tei-c.org/ns/1.0' role='label'>foo</cell>",

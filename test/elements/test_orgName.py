@@ -22,7 +22,7 @@ import pytest
             False,
         ),
         (
-            "orgName-with-invalid-key",
+            "orgName-with-invalid-role",
             "<orgName xmlns='http://www.tei-c.org/ns/1.0' ref='org000001' role='xyz'>bar</orgName>",
             False,
         ),
