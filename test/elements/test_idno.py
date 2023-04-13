@@ -67,14 +67,14 @@ def test_series_idno_constraints(
     "name, markup, result",
     [
         (
-            "invalid-ms-idno",
+            "valid-ms-idno",
             "<msIdentifier xmlns='http://www.tei-c.org/ns/1.0'><idno xml:lang='de'>bar</idno></msIdentifier>",
-            False,
+            True,
         ),
         (
-            "valid-ms-idno",
+            "invalid-ms-idno",
             "<msIdentifier xmlns='http://www.tei-c.org/ns/1.0'><idno>bar</idno></msIdentifier>",
-            True,
+            False,
         ),
     ],
 )
@@ -92,4 +92,4 @@ def test_msIdent_idno_constraints(
         node = proc.parse_xml(xml_text=xml)
         xp.set_context(xdm_item=node)
         item = xp.evaluate_single('//*:text[contains(., "idno element needs")]')
-        assert bool(item) is result
+        assert bool(item) is not result
