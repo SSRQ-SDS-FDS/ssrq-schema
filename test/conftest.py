@@ -29,6 +29,7 @@ ELEMENTS = [
     "measureGrp",
     "orgName",
     "pb",
+    "publisher",
     "pubPlace",
     "respStmt",
     "row",

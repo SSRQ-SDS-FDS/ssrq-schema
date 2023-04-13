@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/Examples" ident="publisher" module="core" mode="change"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <desc xml:lang="de" versionDate="2023-04-12">"publisher" enthält bei Druckschriften als Teil von docImprint den
+        Namen der Druckerei oder des Druckers. Als Teil der allgemeinen Metadaten eines Stücks enthält "publisher" die
+        Angabe der herausgebenden Institution. </desc>
+    <desc xml:lang="fr" versionDate="2023-04-12">"publisher" contient, pour les imprimés, comme partie de docImprint,
+        le nom de l'imprimerie ou de l'imprimeur. En tant que partie des métadonnées générales d'une pièce, "publisher"
+        contient l'indication de l'institution éditrice.</desc>
+    <desc xml:lang="en" versionDate="2023-04-12">"publisher" contains the name of the printer or printing company for
+        print publications as part of docImprint. As part of the general metadata of a piece, "publisher" contains the
+        name of the publishing institution.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global.responsibility"/>
+    </classes>
+    <content>
+        <textNode/>
+    </content>
+    <constraintSpec scheme="schematron" ident="sch-el-text">
+        <desc xml:lang="en" versionDate="2023-04-05">Constraint for tei:publisher</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:publisher">
+                    <sch:assert test="string-length(normalize-space(.)) > 0"><sch:name/> should contain some text.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <addDef ident="resp" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-12">
+        <p>Beispiel für tei:publisher innerhalb von tei:docImprint</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <docImprint>
+                <pubPlace>Zürich</pubPlace>
+                <publisher>Johann Heinrich Hamberger</publisher>
+            </docImprint>
+        </egXML>
+        <p>Beispiel für tei:publisher mit @cert</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <docImprint>
+                <pubPlace>Zürich</pubPlace>
+                <publisher cert="low">Heidegger und Rahn</publisher>
+            </docImprint>
+        </egXML>
+        <p>Beispiel für tei:publisher innerhalb von tei:publicationStmt</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <publicationStmt>
+                <publisher>SSRQ-SDS-FDS</publisher>
+            </publicationStmt>
+        </egXML>
+    </exemplum>
+</elementSpec>
