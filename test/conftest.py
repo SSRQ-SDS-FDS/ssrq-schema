@@ -34,6 +34,7 @@ ELEMENTS = [
     "publisher",
     "pubPlace",
     "respStmt",
+    "repository",
     "row",
     "table",
     "text",

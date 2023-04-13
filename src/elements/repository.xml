@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="repository" module="msdescription"
+    mode="change" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <desc xml:lang="de" versionDate="2023-04-12">Das <tag type="empty">repository</tag> benennt das
+        Archiv (keine Kürzel) innerhalb von <tag type="empty">msIdentifier</tag>.</desc>
+    <desc xml:lang="fr" versionDate="2023-04-12">Le <tag type="empty">repository</tag> nomme
+        l'archive (pas d'abréviation) à l'intérieur de <tag type="empty">msIdentifier</tag>.</desc>
+    <desc xml:lang="en" versionDate="2023-04-12">The <tag type="empty">repository</tag> names the
+        archive (no abbreviations) within <tag type="empty">msIdentifier</tag>.</desc>
+    <classes mode="change">
+        <memberOf key="att.global.facs" mode="delete"/>
+        <memberOf key="att.global.rendition" mode="delete"/>
+        <memberOf key="att.global.responsibility" mode="delete"/>
+        <memberOf key="att.typed" mode="delete"/>
+    </classes>
+    <attList>
+        <attDef ident="xml:lang" mode="replace">
+            <desc xml:lang="de" versionDate="2023-04-13">ISO-639-1-Sprachkürzel</desc>
+            <desc xml:lang="fr" versionDate="2023-04-13">ISO-639-1-Abréviation de la langue</desc>
+            <desc xml:lang="en" versionDate="2023-04-13">ISO-639-1-Language abbreviation</desc>
+            <valList type="closed">
+                <valItem ident="de"/>
+                <valItem ident="fr"/>
+            </valList>
+        </attDef>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-13">
+        <p xml:lang="de">Beispielhafte Verwendung zur Erfassung des Archivs</p>
+        <p xml:lang="fr">Exemple d'utilisation pour la saisie des archives</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <msIdentifier>
+                <repository xml:lang="de">Staatsarchiv Schwyz</repository>
+                <idno xml:lang="de">StASZ, Urk. 190</idno>
+            </msIdentifier>
+        </egXML>
+    </exemplum>
+</elementSpec>
