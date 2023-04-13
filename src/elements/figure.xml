@@ -13,7 +13,8 @@
         copies of documents, the location of the seal on the original document (L. S. = Locus
         sigilli) or (L. S. = locus sigilli) or illustrations referenced with <tag type="empty"
             >graphic</tag>.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-11">To-Do</desc>
+    <desc xml:lang="fr" versionDate="2023-04-11">Figure contient des informations graphiques, dans notre cas un seing notariel, une signature du notaire ou un signum, un dessin à la plume, une gravure sur bois, un signe de renvoi ou en cas d'une copie d'un acte la place où se trouve le sceau dans l'original (L. S. = Locus sigilli). Dans les introductions, les illustrations, graphiques, arbres généalogiques, etc. sont intégrés à la figure (<tag type="empty"
+        >graphic</tag>).</desc>
     <classes mode="replace"/>
     <content>
         <sequence minOccurs="0" maxOccurs="1">
@@ -104,7 +105,9 @@
         <p xml:lang="fr">Signature avec le signe d'urgence</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <signed><figure type="notarial sign"/>
-                <handShift scribe="persID"/>Unterschrift </signed>
+                <lb/>Et ego Hainricus Jacobi de Augiamaiori, clericus Constanciensis dyocesis, publicus imperiali auctoritate notarius iuratus, quia
+                <lb/>...
+            </signed>
         </egXML>
     </exemplum>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-11">
@@ -112,6 +115,50 @@
         <p xml:lang="fr">Locus sigilli (L. S.)</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <figure type="locus sigilli"/>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
+        <p xml:lang="de">Holzschnitt auf einem Titelblatt eines Drucks:</p>
+        <p xml:lang="fr">Gravure sur bois posée sur la page de titre d'une impression&#160;:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+           <head>...
+            <lb/>über Eelich sachen ge<lb break="no"/>richt sol werden</head>
+            <p><figure  type="woodcut"/><note>Beschreibung des Emblems vgl. 
+                <bibl><ref target="http://permalink.snl.ch/bib/chbsg000119287">Zürcher Kirchenordnungen,</ref> Bd.&#160;2, S.&#160;359</bibl>.</note></p>
+            <p>
+                <lb/>Getruckt zuͦ <origPlace>Zürich</origPlace> / durch 
+                <lb/><persName>Johansen Hager</persName>
+            </p>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
+        <p xml:lang="de">Beispiel eines Stammbaumes in einer Einleitung einer Editionseinheit: </p>
+        <p xml:lang="fr">Exemple d'un arbre généalogique dans une introduction à une unité d'édition&#160;:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <figure type="illustration">
+                <graphic type="familytree" mimeType="image/svg" url="WB_HB.svg" width="69.34%"/>
+                <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
+                <!--<figDesc> Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>-->
+            </figure>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
+        <p xml:lang="de">Stempel auf der Rückseite (als Dorsualnotiz): </p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div><ab type="dorsal" place="verso"><figure type="stamp"/><lb/>Vor Kantonsgericht
+                <lb/>St. Gallen, 12. X. 1885
+                <lb/>der Präsident</ab></div>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
+        <p xml:lang="de">Verweiszeichen (innerhalb von p):</p>
+        <p xml:lang="fr">signe de renvoi (dans p)&#160;:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div>
+                <p>
+                    <figure type="sign"/><lb/>Des ersten ...
+                </p>
+            </div>
         </egXML>
     </exemplum>
 </elementSpec>
