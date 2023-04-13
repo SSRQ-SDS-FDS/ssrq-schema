@@ -113,6 +113,34 @@ def resolve_relative_paths(doc: str) -> str:
     return result
 
 
+def check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:
+    """A helper function to check if all files, which are embedded in the ODD file via specGrpRef
+    are available in the src directory. If not, an error is raised."""
+
+    import re
+    from os.path import exists
+    from urllib.parse import urlparse
+
+    embedded_files = re.findall(r'specGrpRef target="(.*\.xml)(?:.*)?"', doc)
+
+    try:
+        bundled_exceptions = []
+        for file in embedded_files:
+            if exists(urlparse(file).path):
+                continue
+            bundled_exceptions.append(FileNotFoundError(f"{file} not found"))
+        if len(bundled_exceptions) > 0:
+            raise ExceptionGroup("File not found", bundled_exceptions)
+    except ExceptionGroup as errors:
+        print(
+            f"The following files in schema {schema['entry']} are missing – fix the paths before you continue:"
+        )
+        for e in errors.exceptions:
+            print(e)
+
+        raise SystemExit(1)
+
+
 def fill_template_with_metadata(authors: list[str], schema: SSRQSchemaType) -> str:
     with PySaxonProcessor(license=False) as proc:
         proc.set_configuration_property(name="xi", value="on")
@@ -206,6 +234,9 @@ def odd_factory(
         authors=authors, schema=schema_config
     )
     odd_with_metadata = resolve_relative_paths(doc=odd_with_metadata)
+
+    check_embedded_files(doc=odd_with_metadata, schema=schema_config)
+
     compiled_odd = compile_odd_to_odd(
         odd=odd_with_metadata, tei_version=schema_config["tei_version"]
     )
@@ -240,8 +271,6 @@ def odd_factory(
 
 if __name__ == "__main__":
     import argparse
-    from functools import partial
-    from multiprocessing import Pool, cpu_count
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--omit-version", type=bool, default=False)
@@ -252,10 +281,11 @@ if __name__ == "__main__":
 
     config = load_config()
     if config is not None:
-        cpus = cpu_count()
         len_schemas = len(config.schemas)
-        with Pool(processes=len_schemas if len_schemas <= cpus else cpus) as p:
-            odds = p.map(partial(odd_factory, authors=config.authors), config.schemas)
+        odds = [
+            odd_factory(schema_config=schema, authors=config.authors)
+            for schema in config.schemas
+        ]
 
         for odd in odds:
             odd.store()
