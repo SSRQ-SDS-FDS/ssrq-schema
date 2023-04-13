@@ -26,6 +26,7 @@ ELEMENTS = [
     "height",
     "idno",
     "licence",
+    "list",
     "measure",
     "measureGrp",
     "orgName",
