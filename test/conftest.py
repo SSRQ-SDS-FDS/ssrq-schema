@@ -30,6 +30,7 @@ ELEMENTS = [
     "list",
     "measure",
     "measureGrp",
+    "msIdentifier",
     "orgName",
     "pb",
     "publisher",

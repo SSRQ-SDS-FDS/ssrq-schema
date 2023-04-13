@@ -68,7 +68,7 @@ def test_series_idno_constraints(
     [
         (
             "valid-ms-idno",
-            "<msIdentifier><idno xml:lang='de'>bar</idno></msIdentifier>",
+            "<msIdentifier><idno xml:lang='de'>bar</idno><repository xml:lang='de'>bar</repository></msIdentifier>",
             True,
         ),
         (
