@@ -8,27 +8,27 @@ import pytest
     [
         (
             "valid-publisher",
-            "<publisher>foo</publisher>",
+            "<publisher xmlns='http://www.tei-c.org/ns/1.0'>foo</publisher>",
             True,
         ),
         (
             "invalid-publisher",
-            "<publisher><p>foo</p></publisher>",
+            "<publisher xmlns='http://www.tei-c.org/ns/1.0'><p>foo</p></publisher>",
             False,
         ),
         (
             "valid-publisher-with-cert-low",
-            "<publisher cert='low'>foo</publisher>",
+            "<publisher xmlns='http://www.tei-c.org/ns/1.0' cert='low'>foo</publisher>",
             True,
         ),
         (
             "valid-publisher-with-cert-high",
-            "<publisher cert='high'>foo</publisher>",
+            "<publisher xmlns='http://www.tei-c.org/ns/1.0' cert='high'>foo</publisher>",
             True,
         ),
         (
             "invalid-publisher-with-cert",
-            "<publisher cert='unsicher'>foo</publisher>",
+            "<publisher xmlns='http://www.tei-c.org/ns/1.0' cert='unsicher'>foo</publisher>",
             False,
         ),
     ],
