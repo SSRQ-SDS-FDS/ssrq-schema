@@ -8,22 +8,22 @@ import pytest
     [
         (
             "valid-measureGrp",
-            "<measureGrp xmlns='http://www.tei-c.org/ns/1.0'><lb/><measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure><measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure></measureGrp>",
+            "<measureGrp><lb/><measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure><measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure></measureGrp>",
             True,
         ),
         (
             "invalid-measureGrp-without-content",
-            "<measureGrp xmlns='http://www.tei-c.org/ns/1.0'/>",
+            "<measureGrp/>",
             False,
         ),
         (
             "invalid-measureGrp-with-attribute",
-            "<measureGrp xmlns='http://www.tei-c.org/ns/1.0' type='foo'><lb/></measureGrp>",
+            "<measureGrp type='foo'><lb/></measureGrp>",
             False,
         ),
         (
             "invalid-measureGrp-with-one-measure",
-            "<measureGrp xmlns='http://www.tei-c.org/ns/1.0'><lb/><measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure></measureGrp>",
+            "<measureGrp><lb/><measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure></measureGrp>",
             False,
         ),
     ],

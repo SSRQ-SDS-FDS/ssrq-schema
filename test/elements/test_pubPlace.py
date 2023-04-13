@@ -4,7 +4,7 @@ from pyschval.main import (
     validate_chunk,
 )
 
-from ..conftest import RNG_test_function, SimpleTEIWriter
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -12,27 +12,27 @@ from ..conftest import RNG_test_function, SimpleTEIWriter
     [
         (
             "valid-pubPlace",
-            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
+            "<pubPlace>foo</pubPlace>",
             True,
         ),
         (
             "valid-pubPlace-with-cert",
-            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0' cert='low'>foo-low</pubPlace>",
+            "<pubPlace cert='low'>foo-low</pubPlace>",
             True,
         ),
         (
             "invalid-pubPlace",
-            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'><p/></pubPlace>",
+            "<pubPlace><p/></pubPlace>",
             False,
         ),
         (
             "invalid-text-with-attributes",
-            "<pubPlace type='foobar' xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
+            "<pubPlace type='foobar'>foo</pubPlace>",
             False,
         ),
         (
             "valid-pubPlace-with-invalid-cert",
-            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0' cert='medium'>foo-medium</pubPlace>",
+            "<pubPlace cert='medium'>foo-medium</pubPlace>",
             False,
         ),
     ],
@@ -51,12 +51,12 @@ def test_pubPlace(
     [
         (
             "valid-pubPlace",
-            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'>foo</pubPlace>",
+            "<pubPlace>foo</pubPlace>",
             True,
         ),
         (
             "invalid-pubPlace",
-            "<pubPlace xmlns='http://www.tei-c.org/ns/1.0'/>",
+            "<pubPlace/>",
             False,
         ),
     ],
@@ -65,7 +65,7 @@ def test_pubPlace_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the constraints defined for tei:pubPlace."""
-    writer.write(name, markup)
+    writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
     )

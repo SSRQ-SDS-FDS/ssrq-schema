@@ -8,22 +8,22 @@ import pytest
     [
         (
             "valid-orgName",
-            "<orgName xmlns='http://www.tei-c.org/ns/1.0' ref='org000001'>bar</orgName>",
+            "<orgName ref='org000001'>bar</orgName>",
             True,
         ),
         (
             "valid-orgName-with-role",
-            "<orgName xmlns='http://www.tei-c.org/ns/1.0' ref='org000001' role='recipient'>bar</orgName>",
+            "<orgName ref='org000001' role='recipient'>bar</orgName>",
             True,
         ),
         (
             "orgName-with-invalid-ref",
-            "<orgName xmlns='http://www.tei-c.org/ns/1.0' ref='abcdefg' role='recipient'>bar</orgName>",
+            "<orgName ref='abcdefg' role='recipient'>bar</orgName>",
             False,
         ),
         (
             "orgName-with-invalid-role",
-            "<orgName xmlns='http://www.tei-c.org/ns/1.0' ref='org000001' role='xyz'>bar</orgName>",
+            "<orgName ref='org000001' role='xyz'>bar</orgName>",
             False,
         ),
     ],

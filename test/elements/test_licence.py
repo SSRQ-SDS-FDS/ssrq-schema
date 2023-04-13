@@ -8,12 +8,12 @@ import pytest
     [
         (
             "valid-licence",
-            "<licence xmlns='http://www.tei-c.org/ns/1.0' target='http://licence.bar'>foo bar</licence>",
+            "<licence target='http://licence.bar'>foo bar</licence>",
             True,
         ),
         (
             "invalid-licence",
-            "<licence xmlns='http://www.tei-c.org/ns/1.0' target='licence.bar'>foo bar</licence>",
+            "<licence target='licence.bar'>foo bar</licence>",
             False,
         ),
     ],

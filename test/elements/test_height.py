@@ -8,22 +8,22 @@ import pytest
     [
         (
             "valid-height",
-            "<height xmlns='http://www.tei-c.org/ns/1.0' quantity='3' unit='cm'/>",
+            "<height quantity='3' unit='cm'/>",
             True,
         ),
         (
             "invalid-height-missing-unit",
-            "<height xmlns='http://www.tei-c.org/ns/1.0' quantity='3'/>",
+            "<height quantity='3'/>",
             False,
         ),
         (
             "invalid-height-wrong-unit",
-            "<height xmlns='http://www.tei-c.org/ns/1.0' quantity='3' unit='bar'/>",
+            "<height quantity='3' unit='bar'/>",
             False,
         ),
         (
             "invalid-height-wrong-quantity",
-            "<height xmlns='http://www.tei-c.org/ns/1.0' quantity='bar' unit='cm'/>",
+            "<height quantity='bar' unit='cm'/>",
             False,
         ),
     ],

@@ -8,12 +8,12 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-list",
-            "<list xmlns='http://www.tei-c.org/ns/1.0'><item>foo</item></list>",
+            "<list><item>foo</item></list>",
             True,
         ),
         (
             "invalid-list",
-            "<list xmlns='http://www.tei-c.org/ns/1.0'/>",
+            "<list/>",
             False,
         ),
     ],

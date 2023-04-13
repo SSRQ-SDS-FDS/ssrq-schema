@@ -4,7 +4,7 @@ from pyschval.main import (
     validate_chunk,
 )
 
-from ..conftest import RNG_test_function, SimpleTEIWriter
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -12,17 +12,17 @@ from ..conftest import RNG_test_function, SimpleTEIWriter
     [
         (
             "valid-editor-with-persName",
-            "<editor xmlns='http://www.tei-c.org/ns/1.0'><persName>Friedrich Emil Welti</persName></editor>",
+            "<editor><persName>Friedrich Emil Welti</persName></editor>",
             True,
         ),
         (
             "valid-editor-with-text",
-            "<editor xmlns='http://www.tei-c.org/ns/1.0'>Friedrich Emil Welti</editor>",
+            "<editor>Friedrich Emil Welti</editor>",
             True,
         ),
         (
             "invalid-editor-with-p",
-            "<editor xmlns='http://www.tei-c.org/ns/1.0'><p>Friedrich Emil Welti</p></editor>",
+            "<editor><p>Friedrich Emil Welti</p></editor>",
             False,
         ),
     ],
@@ -41,12 +41,12 @@ def test_editor_rng(
     [
         (
             "valid-editor-with-persName-in-titleStmt",
-            "<titleStmt xmlns='http://www.tei-c.org/ns/1.0'><editor><persName>Friedrich Emil Welti</persName></editor></titleStmt>",
+            "<titleStmt><editor><persName>Friedrich Emil Welti</persName></editor></titleStmt>",
             True,
         ),
         (
             "invalid-editor-with-persName-in-titleStmt",
-            "<titleStmt xmlns='http://www.tei-c.org/ns/1.0'><editor>Friedrich Emil Welti</editor></titleStmt>",
+            "<titleStmt><editor>Friedrich Emil Welti</editor></titleStmt>",
             False,
         ),
     ],
@@ -55,7 +55,7 @@ def test_editor_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the constraints definid for tei:editor."""
-    writer.write(name, markup)
+    writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
     )

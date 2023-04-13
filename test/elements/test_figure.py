@@ -4,7 +4,7 @@ from pyschval.main import (
     validate_chunk,
 )
 
-from ..conftest import RNG_test_function, SimpleTEIWriter
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -12,17 +12,17 @@ from ..conftest import RNG_test_function, SimpleTEIWriter
     [
         (
             "valid-figure-without-content",
-            "<figure xmlns='http://www.tei-c.org/ns/1.0' type='locus sigilli'/>",
+            "<figure type='locus sigilli'/>",
             True,
         ),
         (
             "valid-figure-with-content",
-            "<figure type='illustration' xmlns='http://www.tei-c.org/ns/1.0'><graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/></figure>",
+            "<figure type='illustration'><graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/></figure>",
             True,
         ),
         (
             "invalid-figure-without-content",
-            "<figure xmlns='http://www.tei-c.org/ns/1.0' type='foo'/>",
+            "<figure type='foo'/>",
             False,
         ),
     ],
@@ -41,17 +41,17 @@ def test_figure(
     [
         (
             "valid-figure-with-type-locus",
-            "<figure xmlns='http://www.tei-c.org/ns/1.0' type='locus sigilli'/>",
+            "<figure type='locus sigilli'/>",
             True,
         ),
         (
             "valid-figure-with-type-illustration",
-            "<figure type='illustration' xmlns='http://www.tei-c.org/ns/1.0'><graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/></figure>",
+            "<figure type='illustration'><graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/></figure>",
             True,
         ),
         (
             "invalid-figure-with-type-illustration",
-            "<figure type='illustration' xmlns='http://www.tei-c.org/ns/1.0'/>",
+            "<figure type='illustration'/>",
             False,
         ),
     ],
@@ -60,7 +60,7 @@ def test_figure_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the constraints definid for tei:figure."""
-    writer.write(name, markup)
+    writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
     )

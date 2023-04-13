@@ -8,17 +8,17 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-row",
-            "<row xmlns='http://www.tei-c.org/ns/1.0'><cell>foo</cell></row>",
+            "<row><cell>foo</cell></row>",
             True,
         ),
         (
             "invalid-row-content",
-            "<row xmlns='http://www.tei-c.org/ns/1.0'><measureGrp><cell>foo</cell></measureGrp></row>",
+            "<row><measureGrp><cell>foo</cell></measureGrp></row>",
             False,
         ),
         (
             "invalid-row-with-attribute",
-            "<row xmlns='http://www.tei-c.org/ns/1.0' type='foo'><cell>foo</cell></row>",
+            "<row type='foo'><cell>foo</cell></row>",
             False,
         ),
     ],

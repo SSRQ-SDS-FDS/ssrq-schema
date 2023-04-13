@@ -4,7 +4,7 @@ from pyschval.main import (
     validate_chunk,
 )
 
-from ..conftest import RNG_test_function, SimpleTEIWriter
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -12,32 +12,32 @@ from ..conftest import RNG_test_function, SimpleTEIWriter
     [
         (
             "valid-text",
-            "<text xmlns='http://www.tei-c.org/ns/1.0' type='transcript'><body><div><p>foo</p></div></body></text>",
+            "<text type='transcript'><body><div><p>foo</p></div></body></text>",
             True,
         ),
         (
             "valid-text",
-            "<text xmlns='http://www.tei-c.org/ns/1.0' type='transcript'><body><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
+            "<text type='transcript'><body><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
             True,
         ),
         (
             "valid-text-with-valid-attribute",
-            "<text type='summary' xmlns='http://www.tei-c.org/ns/1.0'><body><div><p>hallo welt!</p></div></body></text>",
+            "<text type='summary'><body><div><p>hallo welt!</p></div></body></text>",
             True,
         ),
         (
             "invalid-text-with-back-only",
-            "<text xmlns='http://www.tei-c.org/ns/1.0'><back><div><p>foo</p></div></back></text>",
+            "<text><back><div><p>foo</p></div></back></text>",
             False,
         ),
         (
             "invalid-text-with-invalid-attribute",
-            "<text type='foobar' xmlns='http://www.tei-c.org/ns/1.0'><body><div><p>hallo welt!</p></div></body></text>",
+            "<text type='foobar'><body><div><p>hallo welt!</p></div></body></text>",
             False,
         ),
         (
             "invalid-text-with-group",
-            "<text xmlns='http://www.tei-c.org/ns/1.0'><group><body><div><p>hallo welt!</p></div></body></group></text>",
+            "<text><group><body><div><p>hallo welt!</p></div></body></group></text>",
             False,
         ),
     ],
@@ -56,22 +56,22 @@ def test_text(
     [
         (
             "valid-text",
-            "<text xmlns='http://www.tei-c.org/ns/1.0' type='transcript'><body><div><p>foo</p></div></body></text>",
+            "<text type='transcript'><body><div><p>foo</p></div></body></text>",
             True,
         ),
         (
             "valid-text",
-            "<text xmlns='http://www.tei-c.org/ns/1.0' type='summary'><body><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
+            "<text type='summary'><body><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
             True,
         ),
         (
             "valid-text-with-empty-body",
-            "<text xmlns='http://www.tei-c.org/ns/1.0'><body/></text>",
+            "<text><body/></text>",
             True,
         ),
         (
             "invalid-text-with-type-empty-body",
-            "<text type='summary' xmlns='http://www.tei-c.org/ns/1.0'><body/></text>",
+            "<text type='summary'><body/></text>",
             False,
         ),
     ],
@@ -80,7 +80,7 @@ def test_text_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the constraints defined for tei:text."""
-    writer.write(name, markup)
+    writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
     )

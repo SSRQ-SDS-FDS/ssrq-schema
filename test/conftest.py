@@ -1,3 +1,4 @@
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Optional, TypeAlias
@@ -41,6 +42,8 @@ ELEMENTS = [
     "TEI",
     "width",
 ]
+
+el_start_re = re.compile(r"(<\w+)([\s>\/])")
 
 
 @dataclass
@@ -91,6 +94,17 @@ def change_rng_start(rng: str, name: str) -> str:
         raise ValueError("Failed to resolve relative paths")
 
     return result
+
+
+def add_tei_namespace(markup: str) -> str:
+    """Add the TEI namespace to the given markup."""
+    return (
+        re.sub(
+            el_start_re, r"\1 xmlns='http://www.tei-c.org/ns/1.0'\2", markup, count=1
+        )
+        if "http://www.tei-c.org/ns/1.0" not in markup
+        else markup
+    )
 
 
 @pytest.fixture(scope="session")
@@ -170,7 +184,7 @@ def test_element_with_rng(
         """
 
         validator = RNGJingValidator()
-        writer.write(name, markup)
+        writer.write(name, add_tei_namespace(markup))
 
         validator.validate(
             sources=writer.parse_files(),

@@ -6,25 +6,25 @@ import pytest
 @pytest.mark.parametrize(
     "name, markup, result",
     [
-        ("valid-cell", "<cell xmlns='http://www.tei-c.org/ns/1.0'>foo</cell>", True),
+        ("valid-cell", "<cell>foo</cell>", True),
         (
             "valid-cell",
-            "<cell xmlns='http://www.tei-c.org/ns/1.0' role='label'>foo</cell>",
+            "<cell role='label'>foo</cell>",
             True,
         ),
         (
             "valid-cell",
-            "<cell xmlns='http://www.tei-c.org/ns/1.0'>foo <anchor xml:id='bar'/></cell>",
+            "<cell>foo <anchor xml:id='bar'/></cell>",
             True,
         ),
         (
             "invalid-cell",
-            "<cell xmlns='http://www.tei-c.org/ns/1.0' role='bar'>foo</cell>",
+            "<cell role='bar'>foo</cell>",
             False,
         ),
         (
             "invalid-cell",
-            '<cell xmlns="http://www.tei-c.org/ns/1.0" foo="bar"><teiHeader/></cell>',
+            '<cell foo="bar"><teiHeader/></cell>',
             False,
         ),
     ],

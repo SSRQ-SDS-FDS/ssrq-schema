@@ -8,32 +8,32 @@ import pytest
     [
         (
             "valid-empty-body",
-            "<body xmlns='http://www.tei-c.org/ns/1.0'/>",
+            "<body/>",
             True,
         ),
         (
             "valid-body-with-div",
-            "<body xmlns='http://www.tei-c.org/ns/1.0'><div><p>bar</p></div></body>",
+            "<body><div><p>bar</p></div></body>",
             True,
         ),
         (
             "valid-body-with-pb-div",
-            "<body xmlns='http://www.tei-c.org/ns/1.0'><pb n='1' facs='abcde_1'/><div><p>bar</p></div></body>",
+            "<body><pb n='1' facs='abcde_1'/><div><p>bar</p></div></body>",
             True,
         ),
         (
             "valid-body-with-pb-div-signed",
-            "<body xmlns='http://www.tei-c.org/ns/1.0'><pb n='1' facs='abcde_1'/><div><p>bar</p></div><signed><lb/>Rechenschriber</signed></body>",
+            "<body><pb n='1' facs='abcde_1'/><div><p>bar</p></div><signed><lb/>Rechenschriber</signed></body>",
             True,
         ),
         (
             "invalid-body-with-text-only",
-            "<body xmlns='http://www.tei-c.org/ns/1.0'>foo</body>",
+            "<body>foo</body>",
             False,
         ),
         (
             "invalid-body-with-p-as-child",
-            "<body xmlns='http://www.tei-c.org/ns/1.0'><p>foo</p></body>",
+            "<body><p>foo</p></body>",
             False,
         ),
     ],

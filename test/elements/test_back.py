@@ -8,22 +8,22 @@ import pytest
     [
         (
             "valid-back",
-            "<back xmlns='http://www.tei-c.org/ns/1.0'><div><p>foo</p></div></back>",
+            "<back><div><p>foo</p></div></back>",
             True,
         ),
         (
             "invalid-back-with-p-only",
-            "<back xmlns='http://www.tei-c.org/ns/1.0'><p>foo</p></back>",
+            "<back><p>foo</p></back>",
             False,
         ),
         (
             "invalid-back-with-attribute",
-            "<back xml:id='bar123' xmlns='http://www.tei-c.org/ns/1.0'><div><p>foo</p></div></back>",
+            "<back xml:id='bar123'><div><p>foo</p></div></back>",
             False,
         ),
         (
             "invalid-back-with-attribute",
-            "<back rend='bar' xmlns='http://www.tei-c.org/ns/1.0'><div><p>foo</p></div></back>",
+            "<back rend='bar'><div><p>foo</p></div></back>",
             False,
         ),
     ],

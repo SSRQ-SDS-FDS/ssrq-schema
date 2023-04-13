@@ -8,37 +8,37 @@ import pytest
     [
         (
             "handShift-valid",
-            "<handShift xmlns='http://www.tei-c.org/ns/1.0' scribe='secondaryHand'/>",
+            "<handShift scribe='secondaryHand'/>",
             True,
         ),
         (
             "handShift-invalid",
-            "<handShift xmlns='http://www.tei-c.org/ns/1.0' scribe='secondaryHand'>foo</handShift>",
+            "<handShift scribe='secondaryHand'>foo</handShift>",
             False,
         ),
         (
             "handShift-valid",
-            "<handShift xmlns='http://www.tei-c.org/ns/1.0' scribe='per035807'/>",
+            "<handShift scribe='per035807'/>",
             True,
         ),
         (
             "handShift-invalid",
-            "<handShift xmlns='http://www.tei-c.org/ns/1.0' scribe='per035'/>",
+            "<handShift scribe='per035'/>",
             False,
         ),
         (
             "handShift-invalid",
-            "<handShift xmlns='http://www.tei-c.org/ns/1.0' scribe='foo'/>",
+            "<handShift scribe='foo'/>",
             False,
         ),
         (
             "handShift-invalid",
-            "<handShift xmlns='http://www.tei-c.org/ns/1.0'/>",
+            "<handShift/>",
             False,
         ),
         (
             "handShift-invalid",
-            "<handShift xmlns='http://www.tei-c.org/ns/1.0' scribe='foo'/>",
+            "<handShift scribe='foo'/>",
             False,
         ),
     ],

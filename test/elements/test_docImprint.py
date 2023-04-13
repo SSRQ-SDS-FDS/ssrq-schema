@@ -8,27 +8,27 @@ import pytest
     [
         (
             "valid-docImprint",
-            "<docImprint xmlns='http://www.tei-c.org/ns/1.0'><pubPlace>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
+            "<docImprint><pubPlace>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
             True,
         ),
         (
             "invalid-docImprint-with-attribute",
-            "<docImprint xmlns='http://www.tei-c.org/ns/1.0' type='foo'><pubPlace>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
+            "<docImprint type='foo'><pubPlace>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
             False,
         ),
         (
             "invalid-docImprint-without-pubPlace",
-            "<docImprint xmlns='http://www.tei-c.org/ns/1.0'><publisher>Heidegger</publisher></docImprint>",
+            "<docImprint><publisher>Heidegger</publisher></docImprint>",
             False,
         ),
         (
             "invalid-docImprint-without-publisher",
-            "<docImprint xmlns='http://www.tei-c.org/ns/1.0'><pubPlace>Bern</pubPlace></docImprint>",
+            "<docImprint><pubPlace>Bern</pubPlace></docImprint>",
             False,
         ),
         (
             "invalid-docImprint-with-multiple-places",
-            "<docImprint xmlns='http://www.tei-c.org/ns/1.0'><pubPlace>Bern</pubPlace><pubPlace>St. Gallen</pubPlace><publisher>Heidegger</publisher></docImprint>",
+            "<docImprint><pubPlace>Bern</pubPlace><pubPlace>St. Gallen</pubPlace><publisher>Heidegger</publisher></docImprint>",
             False,
         ),
     ],

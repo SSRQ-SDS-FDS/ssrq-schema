@@ -8,32 +8,32 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-pb-with-type",
-            "<pb xmlns='http://www.tei-c.org/ns/1.0' n='1' type='original'/>",
+            "<pb n='1' type='original'/>",
             True,
         ),
         (
             "valid-pb-without-type",
-            "<pb xmlns='http://www.tei-c.org/ns/1.0' n='1'/>",
+            "<pb n='1'/>",
             True,
         ),
         (
             "valid-pb-with-facs",
-            "<pb xmlns='http://www.tei-c.org/ns/1.0' n='1' facs='StASH_Ordnungen_A_4_328'/>",
+            "<pb n='1' facs='StASH_Ordnungen_A_4_328'/>",
             True,
         ),
         (
             "pb-with-invalid-facs",
-            "<pb xmlns='http://www.tei-c.org/ns/1.0' n='1' facs='StASH_Ordnungen_A_4_328u'/>",
+            "<pb n='1' facs='StASH_Ordnungen_A_4_328u'/>",
             False,
         ),
         (
             "pb-with-invalid-facs",
-            "<pb xmlns='http://www.tei-c.org/ns/1.0' n='1' facs='StASH_Ordnungen A_4_328'/>",
+            "<pb n='1' facs='StASH_Ordnungen A_4_328'/>",
             False,
         ),
         (
             "pb-with-invalid-n",
-            "<pb xmlns='http://www.tei-c.org/ns/1.0' n='1XIV'/>",
+            "<pb n='1XIV'/>",
             False,
         ),
     ],

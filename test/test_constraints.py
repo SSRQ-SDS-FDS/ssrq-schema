@@ -4,7 +4,7 @@ from pyschval.main import (
     validate_chunk,
 )
 
-from .conftest import SimpleTEIWriter
+from .conftest import SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -12,12 +12,12 @@ from .conftest import SimpleTEIWriter
     [
         (
             "with-whitespace",
-            "<TEI xmlns='http://www.tei-c.org/ns/1.0' type=' foo'></TEI>",
+            "<TEI type=' foo'></TEI>",
             False,
         ),
         (
             "without-whitespace",
-            "<TEI xmlns='http://www.tei-c.org/ns/1.0' type='bar'></TEI>",
+            "<TEI type='bar'></TEI>",
             True,
         ),
     ],
@@ -38,12 +38,12 @@ def test_attribute_whitespace_constraint(
     [
         (
             "unit-only",
-            "<measure xmlns='http://www.tei-c.org/ns/1.0' unit='cm'>bar</measure>",
+            "<measure unit='cm'>bar</measure>",
             False,
         ),
         (
             "unit-and-quantity",
-            "<measure xmlns='http://www.tei-c.org/ns/1.0' unit='cm' quantity='3'>foo</measure>",
+            "<measure unit='cm' quantity='3'>foo</measure>",
             True,
         ),
     ],
@@ -52,7 +52,7 @@ def test_dependency_of_unit_and_quantity(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the if the validation fails, when an attribute starts with whitespace."""
-    writer.write(name, markup)
+    writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
     )
@@ -64,17 +64,17 @@ def test_dependency_of_unit_and_quantity(
     [
         (
             "correct-facs",
-            "<pb xmlns='http://www.tei-c.org/ns/1.0' facs='foo_1r'/>",
+            "<pb facs='foo_1r'/>",
             True,
         ),
         (
             "incorrect-facs",
-            "<pb xmlns='http://www.tei-c.org/ns/1.0' facs='foo._1r'/>",
+            "<pb facs='foo._1r'/>",
             False,
         ),
         (
             "incorrect-facs",
-            "<pb xmlns='http://www.tei-c.org/ns/1.0' facs='foo__1r'/>",
+            "<pb facs='foo__1r'/>",
             False,
         ),
     ],
@@ -83,7 +83,7 @@ def test_facs_naming_conventions(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the if the validation fails, when an attribute starts with whitespace."""
-    writer.write(name, markup)
+    writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
     )

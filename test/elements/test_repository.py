@@ -8,25 +8,22 @@ import pytest
     [
         (
             "repository-valid-de",
-            "<repository xmlns='http://www.tei-c.org/ns/1.0' xml:lang='de'>Staatsarchiv Schwyz</repository>"
-            "",
+            "<repository xml:lang='de'>Staatsarchiv Schwyz</repository>" "",
             True,
         ),
         (
             "repository-valid-fr",
-            "<repository xmlns='http://www.tei-c.org/ns/1.0' xml:lang='fr'>Archives de l’État de Fribourg</repository>"
-            "",
+            "<repository xml:lang='fr'>Archives de l’État de Fribourg</repository>" "",
             True,
         ),
         (
             "repository-invalid-lang",
-            "<repository xmlns='http://www.tei-c.org/ns/1.0' xml:lang='it'>Archives de l’État de Fribourg</repository>"
-            "",
+            "<repository xml:lang='it'>Archives de l’État de Fribourg</repository>" "",
             False,
         ),
         (
             "repository-invalid-attr",
-            "<repository xmlns='http://www.tei-c.org/ns/1.0' xml:lang='fr' n='123'>Archives de l’État de Fribourg</repository>"
+            "<repository xml:lang='fr' n='123'>Archives de l’État de Fribourg</repository>"
             "",
             False,
         ),

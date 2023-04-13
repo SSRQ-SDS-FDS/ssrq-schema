@@ -5,7 +5,7 @@ from pyschval.main import (
 )
 from saxonche import PySaxonProcessor
 
-from ..conftest import RNG_test_function, SimpleTEIWriter
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -13,12 +13,12 @@ from ..conftest import RNG_test_function, SimpleTEIWriter
     [
         (
             "idno-archive-valid",
-            "<idno xmlns='http://www.tei-c.org/ns/1.0' xml:lang='de' source='http://foo.bar'>bar</idno>",
+            "<idno xml:lang='de' source='http://foo.bar'>bar</idno>",
             True,
         ),
         (
             "idno-archive-invalid",
-            " <idno xmlns='http://www.tei-c.org/ns/1.0' xml:lang='de' source='foo.bar'>foo</idno>",
+            " <idno xml:lang='de' source='foo.bar'>foo</idno>",
             False,
         ),
     ],
@@ -37,17 +37,17 @@ def test_idno(
     [
         (
             "valid-series-idno",
-            "<seriesStmt xmlns='http://www.tei-c.org/ns/1.0'><idno>SSRQ-SG-III_4-77-1</idno></seriesStmt>",
+            "<seriesStmt><idno>SSRQ-SG-III_4-77-1</idno></seriesStmt>",
             True,
         ),
         (
             "valid-series-idno",
-            "<seriesStmt xmlns='http://www.tei-c.org/ns/1.0'><idno type='uuid'>73988c1a-40e1-4527-94b7-736d418b29d0</idno></seriesStmt>",
+            "<seriesStmt><idno type='uuid'>73988c1a-40e1-4527-94b7-736d418b29d0</idno></seriesStmt>",
             True,
         ),
         (
             "invalid-series-idno",
-            "<seriesStmt xmlns='http://www.tei-c.org/ns/1.0'><idno>73988c1a-40e1-4527-94b7-736d418b29d0</idno></seriesStmt>",
+            "<seriesStmt><idno>73988c1a-40e1-4527-94b7-736d418b29d0</idno></seriesStmt>",
             False,
         ),
     ],
@@ -56,7 +56,7 @@ def test_series_idno_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the constraints defined for tei:idno."""
-    writer.write(name, markup)
+    writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
     )
@@ -68,12 +68,12 @@ def test_series_idno_constraints(
     [
         (
             "valid-ms-idno",
-            "<msIdentifier xmlns='http://www.tei-c.org/ns/1.0'><idno xml:lang='de'>bar</idno></msIdentifier>",
+            "<msIdentifier><idno xml:lang='de'>bar</idno></msIdentifier>",
             True,
         ),
         (
             "invalid-ms-idno",
-            "<msIdentifier xmlns='http://www.tei-c.org/ns/1.0'><idno>bar</idno></msIdentifier>",
+            "<msIdentifier><idno>bar</idno></msIdentifier>",
             False,
         ),
     ],
@@ -82,7 +82,7 @@ def test_msIdent_idno_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the constraints defined for tei:idno."""
-    writer.write(name, markup)
+    writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
     )

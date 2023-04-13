@@ -5,7 +5,7 @@ from pyschval.main import (
 )
 from saxonche import PySaxonProcessor
 
-from ..conftest import RNG_test_function, SimpleTEIWriter
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -13,17 +13,17 @@ from ..conftest import RNG_test_function, SimpleTEIWriter
     [
         (
             "valid-measure",
-            "<measure xmlns='http://www.tei-c.org/ns/1.0' type='currency' origin='ZH' unit='lb' quantity='2'>zwai phunt nuwer Zuricher</measure>",
+            "<measure type='currency' origin='ZH' unit='lb' quantity='2'>zwai phunt nuwer Zuricher</measure>",
             True,
         ),
         (
             "valid-measure-with-commodity",
-            "<measure xmlns='http://www.tei-c.org/ns/1.0' type='weight' unit='Zentner' quantity='1' commodity='wool'>ein zentner landtwull</measure>",
+            "<measure type='weight' unit='Zentner' quantity='1' commodity='wool'>ein zentner landtwull</measure>",
             True,
         ),
         (
             "invalid-measure-without-unit",
-            "<measure xmlns='http://www.tei-c.org/ns/1.0' type='currency' origin='ZH' quantity='2'>zwai phunt nuwer Zuricher</measure>",
+            "<measure type='currency' origin='ZH' quantity='2'>zwai phunt nuwer Zuricher</measure>",
             False,
         ),
     ],
@@ -42,19 +42,19 @@ def test_measure(
     [
         (
             "invalid-empty-measure",
-            "<measure xmlns='http://www.tei-c.org/ns/1.0' type='area' unit='Juchart' quantity='8' commodity='field'/>",
+            "<measure type='area' unit='Juchart' quantity='8' commodity='field'/>",
             "measure must not be empty",
             False,
         ),
         (
             "valid-area-unit",
-            "<measure xmlns='http://www.tei-c.org/ns/1.0' type='area' unit='Juchart' quantity='8' commodity='field'>acht juchart acher</measure>",
+            "<measure type='area' unit='Juchart' quantity='8' commodity='field'>acht juchart acher</measure>",
             None,
             True,
         ),
         (
             "invalid-area-unit",
-            "<measure xmlns='http://www.tei-c.org/ns/1.0' type='area' unit='bar' quantity='8' commodity='field'>acht juchart acher</measure>",
+            "<measure type='area' unit='bar' quantity='8' commodity='field'>acht juchart acher</measure>",
             "is not a valid area measurement",
             False,
         ),
@@ -69,7 +69,7 @@ def test_measure_constraints(
     result: bool,
 ):
     """Test the constraints defined for tei:measure."""
-    writer.write(name, markup)
+    writer.write(name, add_tei_namespace(markup))
 
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints

@@ -8,22 +8,22 @@ import pytest
     [
         (
             "valid-width",
-            "<width xmlns='http://www.tei-c.org/ns/1.0' quantity='3' unit='cm'/>",
+            "<width quantity='3' unit='cm'/>",
             True,
         ),
         (
             "invalid-width-missing-unit",
-            "<width xmlns='http://www.tei-c.org/ns/1.0' quantity='3'/>",
+            "<width quantity='3'/>",
             False,
         ),
         (
             "invalid-width-wrong-unit",
-            "<width xmlns='http://www.tei-c.org/ns/1.0' quantity='3' unit='bar'/>",
+            "<width quantity='3' unit='bar'/>",
             False,
         ),
         (
             "invalid-width-wrong-quantity",
-            "<width xmlns='http://www.tei-c.org/ns/1.0' quantity='bar' unit='cm'/>",
+            "<width quantity='bar' unit='cm'/>",
             False,
         ),
     ],

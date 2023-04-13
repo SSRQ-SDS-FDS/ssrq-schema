@@ -8,7 +8,7 @@ import pytest
     [
         (
             "TEI-valid",
-            """<TEI xmlns='http://www.tei-c.org/ns/1.0' xml:lang='de'><teiHeader><fileDesc><titleStmt><title>foo</title>
+            """<TEI xml:lang='de'><teiHeader><fileDesc><titleStmt><title>foo</title>
             </titleStmt><publicationStmt><p>foo</p></publicationStmt><sourceDesc><p>foo</p></sourceDesc></fileDesc>
             </teiHeader><text><body></body></text></TEI>""",
             True,
@@ -16,19 +16,19 @@ import pytest
         ),
         (
             "TEI-invalid-content",
-            "<TEI xmlns='http://www.tei-c.org/ns/1.0' xml:lang='de'><teiHeader></teiHeader><facsimile></facsimile><text></text></TEI>",
+            "<TEI xml:lang='de'><teiHeader></teiHeader><facsimile></facsimile><text></text></TEI>",
             False,
             None,
         ),
         (
             "TEI-invalid-att",
-            " <TEI xmlns='http://www.tei-c.org/ns/1.0' xml:lang='fr' n='1234'><teiHeader></teiHeader><text></text></TEI>",
+            " <TEI xml:lang='fr' n='1234'><teiHeader></teiHeader><text></text></TEI>",
             False,
             'attribute "n" not allowed here',
         ),
         (
             "TEI-invalid-lang",
-            " <TEI xmlns='http://www.tei-c.org/ns/1.0' xml:lang='pt'><teiHeader></teiHeader><text></text></TEI>",
+            " <TEI xml:lang='pt'><teiHeader></teiHeader><text></text></TEI>",
             False,
             'must be equal to "de", "fr" or "it"',
         ),
