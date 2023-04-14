@@ -38,6 +38,7 @@ ELEMENTS = [
     "pb",
     "publisher",
     "pubPlace",
+    "summary",
     "support",
     "respStmt",
     "repository",
