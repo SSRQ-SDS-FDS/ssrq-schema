@@ -1,3 +1,4 @@
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional, TypedDict
@@ -117,7 +118,6 @@ def check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:
     """A helper function to check if all files, which are embedded in the ODD file via specGrpRef
     are available in the src directory. If not, an error is raised."""
 
-    import re
     from os.path import exists
     from urllib.parse import urlparse
 
@@ -227,12 +227,29 @@ def compile_odd_to_rng(odd: str, tei_version: str) -> str:
     return result
 
 
+def show_stats(schema: str, name: str) -> None:
+    included_elements: list[str] = " ".join(
+        re.findall(r'include="(.*)"', schema)
+    ).split(" ")
+    specified_elements: list[str] = re.findall(r'target="elements/(\w+)\.xml"', schema)
+    print(
+        f"Elements included in {name}: {len(included_elements)}\nElements already specified: {len(specified_elements)}\nElements to specify: {len(included_elements) - len(specified_elements)}\n"
+    )
+
+
 def odd_factory(
-    schema_config: SSRQSchemaType, authors: list[str], clean: bool = True
+    schema_config: SSRQSchemaType,
+    authors: list[str],
+    clean: bool = True,
+    print_stats: bool = False,
 ) -> Schema:
     odd_with_metadata = fill_template_with_metadata(
         authors=authors, schema=schema_config
     )
+
+    if print_stats:
+        show_stats(schema=odd_with_metadata, name=schema_config["entry"])
+
     odd_with_metadata = resolve_relative_paths(doc=odd_with_metadata)
 
     check_embedded_files(doc=odd_with_metadata, schema=schema_config)
@@ -283,7 +300,7 @@ if __name__ == "__main__":
     if config is not None:
         len_schemas = len(config.schemas)
         odds = [
-            odd_factory(schema_config=schema, authors=config.authors)
+            odd_factory(schema_config=schema, authors=config.authors, print_stats=True)
             for schema in config.schemas
         ]
 
