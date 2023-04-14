@@ -8,12 +8,15 @@
         lieu de conservation actuel et les anciens lieux de conservation de la source.</desc>
     <desc xml:lang="en" versionDate="2023-04-13">The <tag type="empty">msIdentifier</tag> describes
         the current repository and former repositories of the source.</desc>
-    <classes mode="change"/>
+    <classes mode="replace"/>
     <content>
-        <sequence preserveOrder="false" maxOccurs="unbounded" minOccurs="1">
-            <elementRef key="idno"/>
-            <elementRef key="repository"/>
-            <elementRef key="settlement" minOccurs="0" maxOccurs="1"/>
+        <sequence>
+            <sequence preserveOrder="false" maxOccurs="unbounded" minOccurs="1">
+                <elementRef key="idno"/>
+                <elementRef key="repository"/>
+                <elementRef key="settlement" minOccurs="0" maxOccurs="1"/>
+            </sequence>
+            <elementRef key="altIdentifier" minOccurs="0" maxOccurs="1"/>
         </sequence>
     </content>
     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-13">
