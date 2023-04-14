@@ -67,6 +67,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [ ] Werte für `<head/>` in Liste bibl. Angaben vereinheitlichen [siehe #2665](https://histhub.ssrq-sds-fds.ch/redmine/issues/2665)
 - [ ] `<resp/>` vereinheitlichen [siehe #3070](https://histhub.ssrq-sds-fds.ch/redmine/issues/3070)
 - [ ] Content Model `<condition/>` klären [siehe #3079](https://histhub.ssrq-sds-fds.ch/redmine/issues/3079)
+- [ ] Werte / Content Model für `<damage/>` bestimmen [siehe #3080](https://histhub.ssrq-sds-fds.ch/redmine/issues/3080)
 
 #### Text
 
