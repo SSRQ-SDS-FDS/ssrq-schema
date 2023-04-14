@@ -29,6 +29,7 @@ ELEMENTS = [
     "idno",
     "licence",
     "list",
+    "material",
     "measure",
     "measureGrp",
     "msIdentifier",
