@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="condition" module="msdescription"
+    mode="change" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <desc xml:lang="de" versionDate="2023-04-14">Beschreibt den Erhaltungszustand und Schäden einer
+        Quelle. Detailbeschreibungen, wie Lücken, Löcher etc., erfolgen an der entsprechenden
+        Stelle.</desc>
+    <desc xml:lang="fr" versionDate="2023-04-14">Décrit l'état de conservation et les dommages d'une
+        source. Les descriptions détaillées, telles que les lacunes, les trous, etc. à l'endroit
+        indiqué.</desc>
+    <desc xml:lang="en" versionDate="2023-04-14">Describes the state of preservation and damage of a
+        source. Detailed descriptions, such as gaps, holes, etc., are given at the appropriate
+        place.</desc>
+    <classes mode="replace"/>
+    <content>
+        <alternate minOccurs="1" maxOccurs="1">
+            <elementRef key="damage"/>
+            <elementRef key="p"/>
+            <textNode/>
+        </alternate>
+    </content>
+    <constraintSpec scheme="schematron" ident="sch-el-condition">
+        <desc xml:lang="en" versionDate="2023-04-14">Constraint for tei:condition</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:condition[not(*)]">
+                    <sch:assert test="string-length(normalize-space(.)) > 0"><sch:name/> should contain some text.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-14">
+        <p xml:lang="de">Modellhafter Aufbau</p>
+        <p xml:lang="fr">Structure modèle</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <condition>Mäusefrass</condition>
+        </egXML>
+    </exemplum>
+</elementSpec>

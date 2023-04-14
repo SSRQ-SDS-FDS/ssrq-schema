@@ -20,6 +20,7 @@ ELEMENTS = [
     "back",
     "body",
     "cell",
+    "condition",
     "docImprint",
     "editor",
     "figure",
