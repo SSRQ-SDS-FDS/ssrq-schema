@@ -23,6 +23,7 @@ ELEMENTS = [
     "condition",
     "docImprint",
     "editor",
+    "extent",
     "figure",
     "graphic",
     "handShift",
