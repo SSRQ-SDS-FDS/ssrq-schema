@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="availability" module="header" mode="change"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <gloss xml:lang="de" versionDate="2023-04-19">Verfügbarkeit</gloss>
+    <desc xml:lang="de" versionDate="2023-04-19">Liefert Informationen zur Verfügbarkeit eines
+        Textes, zum Beispiel Einschränkungen bezüglich des Gebrauchs oder der Weitergabe,
+        Lizensierungen usw. Wir benutzen den Tag, um die Institution, die uns Faksimiles zur
+        Verfügung gestellt hat, zu erwähnen. Ein Faksimile kann von einem Drittanbieter (und nicht
+        von der Institution, indem die Quelle archiviert ist) erstellt werden. Eine Quelle kann im
+        AVN liegen, das Faksimile wurde aber von der BPUN zur Verfügung gestellt bzw.
+        erstellt.</desc>
+    <gloss xml:lang="en" versionDate="2023-04-19">Availability</gloss>
+    <desc xml:lang="en" versionDate="2023-04-19">Provides information on the availability of a text
+        Text, for example, restrictions on use or distribution, licensing, etc. We use the tag to
+        mention the institution that provided us with facsimiles. A facsimile may be provided by a
+        third party (and not by the institution where the source is archived). A source may be in
+        the AVN, but the facsimile was provided or created by BPUN.</desc>
+    <gloss xml:lang="fr" versionDate="2023-04-19">Disponibilité</gloss>
+    <desc xml:lang="fr" versionDate="2023-04-19">renseigne sur la disponibilité du texte, par
+        exemple sur toutes restrictions quant à son usage ou sa diffusion, son copyright,
+        etc.</desc>
+    <classes mode="replace">
+        <memberOf key="model.publicationStmtPart.detail"/>
+    </classes>
+    <content>
+        <sequence preserveOrder="false">
+            <!-- NB: The usage of tei:p/@xml:id should be deprecated in future versions of the schema -->
+            <elementRef key="p" minOccurs="0" maxOccurs="1"/>
+            <elementRef key="licence" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+    </content>
+    <constraintSpec scheme="schematron" ident="sch-el-availability">
+        <desc xml:lang="en" versionDate="2023-04-20">Constraint for tei:availability to ensure p
+            uses an @xml:id</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:availability[tei:p]">
+                    <sch:assert test="tei:p/@xml:id and tei:p/@xml:id = 'facs'">The element tei:p
+                        inside <sch:name/> needs to use an @xml:id with an value of
+                        'facs'.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-20">
+        <p xml:lang="de">Modellhafter Aufbau</p>
+        <p xml:lang="fr">Structure modèle</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <availability>
+                <p xml:id="facs">Bibliothèque publique et universitaire de Neuchâtel (BPUN)</p>
+                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                    >Attribution-NonCommercial- ShareAlike 4.0 International (CC BY-NC-SA
+                    4.0)</licence>
+            </availability>
+        </egXML>
+    </exemplum>
+</elementSpec>
