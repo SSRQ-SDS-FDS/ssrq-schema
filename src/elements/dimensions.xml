@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="dimensions" module="msdescription"
+    mode="change" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <desc xml:lang="de" versionDate="2023-04-19">Masse einer Quelle</desc>
+    <desc xml:lang="en" versionDate="2023-04-19">Dimension of a source</desc>
+    <desc xml:lang="fr" versionDate="2023-04-19">Dimensions d'une source</desc>
+    <classes mode="replace">
+        <memberOf key="model.pPart.msdesc"/>
+    </classes>
+    <content>
+        <sequence preserveOrder="false">
+            <elementRef key="width" minOccurs="1" maxOccurs="1"/>
+            <elementRef key="height" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+    </content>
+    <constraintSpec scheme="schematron" ident="sch-el-extent">
+        <desc xml:lang="en" versionDate="2023-04-19">Constraint for tei:dimensions</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:dimensions[@type = 'plica']">
+                    <sch:assert test="count(*) = 1 and */name() = 'width'">If the value of @type is
+                        'plica' only one tei:width is allowed as child.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="type" mode="add">
+            <!-- To-Do: Desc ergänzen -->
+            <valList type="closed">
+                <valItem ident="leaves">
+                    <!-- To-Do: Desc ergänzen -->
+                </valItem>
+                <valItem ident="plica">
+                    <!-- To-Do: Desc ergänzen -->
+                </valItem>
+            </valList>
+        </attDef>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-19">
+        <p xml:lang="de">Modellhafter Aufbau</p>
+        <p xml:lang="fr">Structure modèle</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <extent>
+                <dimensions type="leaves">
+                    <height unit="cm" quantity="16.0"/>
+                    <width unit="cm" quantity="23.0"/>
+                </dimensions>
+                <dimensions type="plica">
+                    <width unit="cm" quantity="4.0"/>
+                </dimensions>
+            </extent>
+        </egXML>
+    </exemplum>
+</elementSpec>

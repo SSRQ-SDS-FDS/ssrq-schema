@@ -21,6 +21,7 @@ ELEMENTS = [
     "body",
     "cell",
     "condition",
+    "dimensions",
     "docImprint",
     "editor",
     "extent",
