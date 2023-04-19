@@ -22,6 +22,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-pb-with-facs-roman",
+            "<pb n='IV' facs='StASH_Ordnungen_A_4_328'/>",
+            True,
+        ),
+        (
             "pb-with-invalid-facs",
             "<pb n='1' facs='StASH_Ordnungen_A_4_328u'/>",
             False,
@@ -32,8 +37,13 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "pb-with-invalid-n",
+            "pb-with-invalid-mixed-n",
             "<pb n='1XIV'/>",
+            False,
+        ),
+        (
+            "pb-with-invalid-roman-n",
+            "<pb n='MV'/>",
             False,
         ),
     ],

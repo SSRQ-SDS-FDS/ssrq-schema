@@ -13,7 +13,7 @@
             <desc xml:lang="fr" versionDate="2023-04-06">Indication de la pagination ou du foliotage
                 d'origine.</desc>
             <datatype>
-                <dataRef name="string" restriction="\d+[rv]?"/>
+                <dataRef name="string" restriction="\d+|[IVXCL]+[rv]?"/>
             </datatype>
         </attDef>
         <attDef ident="type" mode="change">
