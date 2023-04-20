@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="keywords" module="header" mode="change">
+    <desc xml:lang="de" versionDate="2023-04-20">Liste von Schlagworten aus der
+        Schlagwortendatenbank zur Beschreibung des Dokuments</desc>
+    <desc xml:lang="en" versionDate="2023-04-19">List of keywords from the keyword database to
+        describe the document</desc>
+    <desc xml:lang="fr" versionDate="2023-04-19">Liste de mots-clés issus de la base de données de
+        mots-clés pour décrire le document</desc>
+    <classes mode="replace"/>
+    <content>
+        <elementRef key="term" minOccurs="1" maxOccurs="unbounded"/>
+    </content>
+    <attList>
+        <attDef ident="scheme" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-20">
+        <p xml:lang="de">Modellhafter Aufbau</p>
+        <p xml:lang="fr">Structure modèle</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <keywords>
+                <term ref="key000192"/>
+                <term ref="key000097"/>
+                <term ref="key000049"/>
+                <term ref="key000193"/>
+            </keywords>
+        </egXML>
+    </exemplum>
+</elementSpec>

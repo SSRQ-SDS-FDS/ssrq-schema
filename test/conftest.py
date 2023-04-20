@@ -33,6 +33,7 @@ ELEMENTS = [
     "handShift",
     "height",
     "idno",
+    "keywords",
     "licence",
     "list",
     "material",
