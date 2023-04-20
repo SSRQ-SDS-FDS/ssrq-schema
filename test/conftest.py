@@ -25,6 +25,7 @@ ELEMENTS = [
     "dimensions",
     "docImprint",
     "editor",
+    "editorialDecl",
     "encodingDesc",
     "extent",
     "figure",
