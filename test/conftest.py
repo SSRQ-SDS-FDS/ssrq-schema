@@ -17,6 +17,7 @@ from main import XSLTS, Schema, load_config, odd_factory
 
 ELEMENTS = [
     "altIdentifier",
+    "availability",
     "back",
     "body",
     "cell",
