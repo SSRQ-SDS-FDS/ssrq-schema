@@ -54,6 +54,7 @@ ELEMENTS = [
     "row",
     "table",
     "text",
+    "textClass",
     "TEI",
     "width",
 ]
