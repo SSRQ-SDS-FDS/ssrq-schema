@@ -37,6 +37,18 @@
             </content>
         </dataSpec>
 
+        <dataSpec ident="ssrq.pointer.places" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2024-04-20">Definiert das Muster für Place-IDs zur
+                Verknüpfung mit der Ortsdatenbank</desc>
+            <desc xml:lang="en" versionDate="2024-04-20">Defines the pattern for place-IDs for
+                linking with the places database</desc>
+            <desc xml:lang="fr" versionDate="2024-04-20">Définit le modèle des place-ID pour
+                l'établissement d'un lien avec la base de données des lieux</desc>
+            <content>
+                <dataRef name="string" restriction="loc\d{6}(\.\d{2})?"/>
+            </content>
+        </dataSpec>
+
         <dataSpec ident="ssrq.pointer.keywords">
             <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Schlagwort-IDs zur
                 Verknüpfung mit der Schlagwort- und Lemmadatenbank</desc>
@@ -82,7 +94,6 @@
                 <dataRef name="string" restriction="http(s)?://(w{3})?.*"/>
             </content>
         </dataSpec>
-
 
         <dataSpec ident="ssrq.pointer.target" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2022-12-08">Definiert das Muster für Verweise als
