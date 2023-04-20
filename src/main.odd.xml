@@ -22,7 +22,7 @@
                     include="addSpan damage damageSpan delSpan handShift space subst supplied"/>
                 <moduleRef key="textcrit" include="app lem listWit rdg witness"/>
                 <moduleRef key="namesdates"
-                    include="listOrg listPerson listPlace orgName persName placeName settlement"/>
+                    include="orgName persName placeName settlement"/>
                 <moduleRef key="figures" include="figure table row cell"/>
 
                 <!-- modules and classes -->
@@ -60,11 +60,14 @@
                 <specGrpRef target="elements/msIdentifier.xml"/>
                 <specGrpRef target="elements/orgName.xml"/>
                 <specGrpRef target="elements/pb.xml"/>
+                <specGrpRef target="elements/persName.xml"/>
+                <specGrpRef target="elements/placeName.xml"/>
                 <specGrpRef target="elements/publisher.xml"/>
                 <specGrpRef target="elements/pubPlace.xml"/>
                 <specGrpRef target="elements/respStmt.xml"/>
                 <specGrpRef target="elements/repository.xml"/>
                 <specGrpRef target="elements/row.xml"/>
+                <specGrpRef target="elements/settlement.xml"/>
                 <specGrpRef target="elements/summary.xml"/>
                 <specGrpRef target="elements/support.xml"/>
                 <specGrpRef target="elements/table.xml"/>
