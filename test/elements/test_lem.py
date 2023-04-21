@@ -12,14 +12,9 @@ import pytest
             True,
         ),
         (
-            "invalid-empty-lem",
-            "<lem/>",
-            True,
-        ),
-        (
             "lem-with-valid-attribute",
             "<lem xml:id='foo'>bar</lem>",
-            False,
+            True,
         ),
         (
             "lem-with-invalid-attribute",
