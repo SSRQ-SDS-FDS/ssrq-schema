@@ -34,6 +34,7 @@ ELEMENTS = [
     "height",
     "idno",
     "keywords",
+    "lb",
     "licence",
     "list",
     "material",
