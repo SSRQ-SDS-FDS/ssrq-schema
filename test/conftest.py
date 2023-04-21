@@ -47,6 +47,7 @@ ELEMENTS = [
     "publisher",
     "pubPlace",
     "settlement",
+    "seriesStmt",
     "summary",
     "support",
     "respStmt",
