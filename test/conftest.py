@@ -35,6 +35,7 @@ ELEMENTS = [
     "idno",
     "keywords",
     "lb",
+    "lem",
     "licence",
     "list",
     "material",
