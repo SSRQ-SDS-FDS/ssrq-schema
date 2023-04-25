@@ -31,6 +31,15 @@ import pytest
                                     4.0)</licence>
                                 </availability>
                             </publicationStmt>
+                            <seriesStmt xml:id="ssrq-sds-fds">
+                                <title>Sammlung Schweizerischer Rechtsquellen</title>
+                                <respStmt>
+                                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                                    <resp key="publisher"/>
+                                </respStmt>
+                                <idno>SSRQ-FR-I_2_8-1-1</idno>
+                                <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
+                            </seriesStmt>
                             <sourceDesc>
                                 <msDesc>
                                 <msIdentifier>
