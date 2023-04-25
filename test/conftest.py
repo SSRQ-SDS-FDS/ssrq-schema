@@ -13,55 +13,17 @@ from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecu
 from ssrq_cli.validate import RNGJingValidator
 from ssrq_cli.xml_utils import ext_etree
 
-from main import XSLTS, Schema, load_config, odd_factory
+from main import (
+    SPECIFIED_ELEMENTS,
+    SRC_DIR,
+    XSLTS,
+    Schema,
+    SSRQSchemaType,
+    load_config,
+    odd_factory,
+)
 
-ELEMENTS = [
-    "altIdentifier",
-    "availability",
-    "back",
-    "body",
-    "cell",
-    "condition",
-    "dimensions",
-    "docImprint",
-    "editor",
-    "editorialDecl",
-    "encodingDesc",
-    "extent",
-    "figure",
-    "graphic",
-    "handShift",
-    "height",
-    "idno",
-    "keywords",
-    "lb",
-    "licence",
-    "list",
-    "material",
-    "measure",
-    "measureGrp",
-    "msIdentifier",
-    "orgName",
-    "pb",
-    "persName",
-    "placeName",
-    "profileDesc",
-    "publisher",
-    "publicationStmt",
-    "pubPlace",
-    "settlement",
-    "seriesStmt",
-    "summary",
-    "support",
-    "respStmt",
-    "repository",
-    "row",
-    "table",
-    "text",
-    "textClass",
-    "TEI",
-    "width",
-]
+ElName = str
 
 el_start_re = re.compile(r"(<\w+)([\s>\/])")
 
@@ -127,24 +89,50 @@ def add_tei_namespace(markup: str) -> str:
     )
 
 
+def extract_specified_elements_for_rng(schema: SSRQSchemaType) -> list[ElName]:
+    """Extract the specified elements from the given schema –
+    this list can be used to change the specified RNG start-Element.
+
+    Args:
+        schema (SSRQSchemaType): The schema to extract the elements from.
+
+    Returns:
+        list[str]: A list of all specified elements – based on includes by specGrpRef.
+    """
+    with open(SRC_DIR / schema["entry"], "r") as sf:
+        sf = sf.read()
+        specs: list[str] = re.findall(SPECIFIED_ELEMENTS, sf)
+
+    return specs
+
+
 @pytest.fixture(scope="session")
-def odds() -> list[Schema]:
+def odds() -> list[tuple[Schema, list[ElName]]]:
     """Compile all odds found in the pyproject.toml to odds and RelaxNG files. Return as a list of Schema objects."""
     config = load_config()
 
     if config is None:
         raise ValueError("No config file found")
 
-    odds = [odd_factory(schema, authors=config.authors) for schema in config.schemas]
+    odds = [
+        (
+            odd_factory(schema, authors=config.authors),
+            extract_specified_elements_for_rng(schema),
+        )
+        for schema in config.schemas
+    ]
 
     return odds
 
 
 @pytest.fixture(scope="session")
-def change_rng_start_per_odd(odds: list[Schema]) -> dict[str, dict[str, str]]:
+def change_rng_start_per_odd(
+    odds: list[tuple[Schema, list[ElName]]]
+) -> dict[str, dict[str, str]]:
     """Change the start element of the RNG file to the given name."""
     return {
-        odd.name: {el: change_rng_start(odd.rng, el) for el in ELEMENTS} for odd in odds
+        odd.name: {el: change_rng_start(odd.rng, el) for el in el_names}
+        for odd, el_names in odds
     }
 
 
@@ -155,10 +143,10 @@ def writer(tmp_path: Path) -> SimpleTEIWriter:
 
 
 @pytest.fixture
-def main_schema(odds: list[Schema]) -> Schema:
+def main_schema(odds: list[tuple[Schema, list[ElName]]]) -> Schema:
     """A fixture, which returns the main ssrq schema."""
     try:
-        return [odd for odd in odds if odd.name == "TEI_Schema"][0]
+        return [odd for odd, _ in odds if odd.name == "TEI_Schema"][0]
     except IndexError:
         raise ValueError("No main schema found")
 
