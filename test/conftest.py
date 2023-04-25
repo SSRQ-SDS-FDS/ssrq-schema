@@ -142,7 +142,7 @@ def writer(tmp_path: Path) -> SimpleTEIWriter:
     return SimpleTEIWriter(tmp_path)
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def main_schema(odds: list[tuple[Schema, list[ElName]]]) -> Schema:
     """A fixture, which returns the main ssrq schema."""
     try:
@@ -151,7 +151,7 @@ def main_schema(odds: list[tuple[Schema, list[ElName]]]) -> Schema:
         raise ValueError("No main schema found")
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def main_constraints(main_schema: Schema) -> str:
     """A fixture, which returns the schematron rules from the main schema."""
     extracted_rules = extract_schematron_from_relaxng(
