@@ -9,7 +9,7 @@ import pytest
         (
             "TEI-valid",
             """<TEI xml:lang='de'><teiHeader><fileDesc><titleStmt><title>foo</title>
-            </titleStmt><publicationStmt><p>foo</p></publicationStmt><sourceDesc><p>foo</p></sourceDesc></fileDesc>
+            </titleStmt><publicationStmt><publisher>SSRQ-SDS-FDS</publisher><availability><p xml:id='facs'>Bibliothèque publique et universitaire de Neuchâtel (BPUN)</p><licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Attribution-NonCommercial- ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence></availability></publicationStmt><sourceDesc><p>foo</p></sourceDesc></fileDesc>
             </teiHeader><text><body></body></text></TEI>""",
             True,
             None,

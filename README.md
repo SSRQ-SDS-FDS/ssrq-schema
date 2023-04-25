@@ -68,6 +68,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [ ] `<resp/>` vereinheitlichen [siehe #3070](https://histhub.ssrq-sds-fds.ch/redmine/issues/3070)
 - [ ] Content Model `<condition/>` klären [siehe #3079](https://histhub.ssrq-sds-fds.ch/redmine/issues/3079)
 - [ ] Werte / Content Model für `<damage/>` bestimmen [siehe #3080](https://histhub.ssrq-sds-fds.ch/redmine/issues/3080)
+- [x] `<date/>` sollte innerhalb von `<publicationStmt/>` optional sein [siehe #3084](https://histhub.ssrq-sds-fds.ch/redmine/issues/3084)
 
 #### Text
 
