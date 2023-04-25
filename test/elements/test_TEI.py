@@ -8,7 +8,8 @@ import pytest
     [
         (
             "TEI-valid",
-            """<TEI xml:lang='de'><teiHeader><fileDesc><titleStmt><title>foo</title>
+            """<TEI xml:lang='de'><teiHeader><fileDesc><titleStmt><title>foo</title><editor><persName>Michael Nadig</persName></editor>
+                <respStmt><persName>Ariane Huber Hernández</persName><persName>Michael Nadig</persName><resp key='transcript'/></respStmt>
             </titleStmt><publicationStmt><publisher>SSRQ-SDS-FDS</publisher><availability><p xml:id='facs'>Bibliothèque publique et universitaire de Neuchâtel (BPUN)</p><licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Attribution-NonCommercial- ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence></availability></publicationStmt><sourceDesc><p>foo</p></sourceDesc></fileDesc>
             </teiHeader><text><body></body></text></TEI>""",
             True,
