@@ -45,6 +45,7 @@ ELEMENTS = [
     "pb",
     "persName",
     "placeName",
+    "profileDesc",
     "publisher",
     "publicationStmt",
     "pubPlace",
