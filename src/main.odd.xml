@@ -10,6 +10,7 @@
 
                 <!-- modules used -->
                 <moduleRef key="tei"/>
+                <moduleRef key="certainty" include="precision"/>
                 <moduleRef key="core"
                     include="abbr add author bibl cb choice corr date del editor expan foreign gap graphic head hi item label lb list listBibl measure measureGrp note num orig p pb pubPlace publisher q quote ref reg resp respStmt series sic teiCorpus term textLang time title unclear"/>
                 <moduleRef key="header"
