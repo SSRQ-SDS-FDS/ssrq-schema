@@ -42,9 +42,12 @@
         <classSpec ident="att.global.facs" type="atts" mode="change">
             <attList>
                 <attDef ident="facs" mode="change" usage="opt">
-                    <desc xml:lang="de" versionDate="2023-04-06">Ordnet einer Textseite einem Faksimile oder einem faksimilierten Ausschnitt zu.</desc>
-                    <desc xml:lang="en" versionDate="2023-04-06">Assigns a facsimile or facsimile extract to a page of text.</desc>
-                    <desc xml:lang="de" versionDate="2023-04-06">Associe une page de texte à un fac-similé ou à un extrait de fac-similé.</desc>
+                    <desc xml:lang="de" versionDate="2023-04-06">Ordnet einer Textseite einem
+                        Faksimile oder einem faksimilierten Ausschnitt zu.</desc>
+                    <desc xml:lang="en" versionDate="2023-04-06">Assigns a facsimile or facsimile
+                        extract to a page of text.</desc>
+                    <desc xml:lang="de" versionDate="2023-04-06">Associe une page de texte à un
+                        fac-similé ou à un extrait de fac-similé.</desc>
                     <datatype>
                         <dataRef key="ssrq.facs.name"/>
                     </datatype>
@@ -63,9 +66,12 @@
         <classSpec ident="att.global.responsibility" type="atts" mode="change">
             <attList>
                 <attDef ident="cert" mode="replace">
-                    <desc xml:lang="de" versionDate="2023-04-11">Angabe des Grads der Sicherheit</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">Indication du degré de certitude</desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">Indication of the degree of certainty</desc>
+                    <desc xml:lang="de" versionDate="2023-04-11">Angabe des Grads der
+                        Sicherheit</desc>
+                    <desc xml:lang="fr" versionDate="2023-04-11">Indication du degré de
+                        certitude</desc>
+                    <desc xml:lang="en" versionDate="2023-04-11">Indication of the degree of
+                        certainty</desc>
                     <valList type="closed">
                         <valItem ident="high">
                             <desc xml:lang="de" versionDate="2023-04-11">hoch</desc>
@@ -198,9 +204,12 @@
         <classSpec ident="att.pointing" type="atts" mode="change">
             <attList>
                 <attDef ident="target" mode="change">
-                    <desc versionDate="2023-03-29" xml:lang="de">Hyperlink, DOI oder interner Verweis.</desc>
-                    <desc versionDate="2023-03-29" xml:lang="en">Hyperlink, DOI or internal reference.</desc>
-                    <desc versionDate="2023-03-29" xml:lang="fr">Lien hypertexte, DOI ou référence interne.</desc>
+                    <desc versionDate="2023-03-29" xml:lang="de">Hyperlink, DOI oder interner
+                        Verweis.</desc>
+                    <desc versionDate="2023-03-29" xml:lang="en">Hyperlink, DOI or internal
+                        reference.</desc>
+                    <desc versionDate="2023-03-29" xml:lang="fr">Lien hypertexte, DOI ou référence
+                        interne.</desc>
                     <datatype>
                         <dataRef key="ssrq.pointer.target"/>
                     </datatype>
@@ -315,8 +324,8 @@
                     </datatype>
                 </attDef>
                 <attDef ident="key" mode="change">
-                    <desc versionDate="2023-03-28" xml:lang="de">Tätigkeit, für die ein
-                        Bearbeiter verantwortlich ist.</desc>
+                    <desc versionDate="2023-03-28" xml:lang="de">Tätigkeit, für die ein Bearbeiter
+                        verantwortlich ist.</desc>
                     <desc versionDate="2023-03-07" xml:lang="en">Activity for which a editor is
                         responsible.</desc>
                     <valList type="closed">
@@ -363,12 +372,36 @@
             </attList>
         </classSpec>
 
+        <classSpec ident="att.scoping" type="atts" module="tei" mode="change">
+            <attList>
+                <attDef ident="match" mode="change">
+                    <desc versionDate="2023-04-26" xml:lang="de">Verweist mittels eines einfachen
+                        XPath-Ausdrucks auf den unsicheren Bestandteil – das unsichere Attribut –
+                        der Datierung.</desc>
+                    <datatype>
+                        <rng:list>
+                            <rng:oneOrMore>
+                                <rng:data type="string">
+                                    <rng:param name="pattern">@[a-z]{2,9}-custom</rng:param>
+                                </rng:data>
+                            </rng:oneOrMore>
+                        </rng:list>
+                    </datatype>
+                </attDef>
+                <attDef ident="target" mode="delete"/>
+            </attList>
+        </classSpec>
+
         <classSpec ident="att.spanning" type="atts" module="tei" mode="change">
             <attList>
                 <attDef ident="spanTo" mode="change">
-                    <desc versionDate="2023-03-31" xml:lang="de">Verweist mittels einen Fragmentbezeichners auf den Endpunkt von addSpan, delSpan oder damageSpan.</desc>
-                    <desc versionDate="2023-03-31" xml:lang="en">Refers to the end point of addSpan, delSpan or damageSpan by means of a fragment identifier.</desc>
-                    <desc versionDate="2023-03-31" xml:lang="fr">Renvoie au point final de addSpan, delSpan ou damageSpan au moyen d'un identificateur de fragment.</desc>
+                    <desc versionDate="2023-03-31" xml:lang="de">Verweist mittels einen
+                        Fragmentbezeichners auf den Endpunkt von addSpan, delSpan oder
+                        damageSpan.</desc>
+                    <desc versionDate="2023-03-31" xml:lang="en">Refers to the end point of addSpan,
+                        delSpan or damageSpan by means of a fragment identifier.</desc>
+                    <desc versionDate="2023-03-31" xml:lang="fr">Renvoie au point final de addSpan,
+                        delSpan ou damageSpan au moyen d'un identificateur de fragment.</desc>
                     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-31">
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <p><delSpan spanTo="#del1"/> ... <anchor xml:id="del1"/></p>
@@ -382,7 +415,8 @@
         <classSpec ident="att.resourced" type="atts" module="tei" mode="change">
             <attList>
                 <attDef ident="url" mode="change" usage="req">
-                    <desc versionDate="2023-03-31" xml:lang="de">Verknüpfung mit einer Bilddatei.</desc>
+                    <desc versionDate="2023-03-31" xml:lang="de">Verknüpfung mit einer
+                        Bilddatei.</desc>
                     <desc versionDate="2023-03-31" xml:lang="fr">Lien vers un fichier image.</desc>
                     <desc versionDate="2023-03-31" xml:lang="en">Link to an image file.</desc>
                 </attDef>
