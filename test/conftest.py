@@ -38,6 +38,7 @@ ELEMENTS = [
     "lem",
     "licence",
     "list",
+    "listWit",
     "material",
     "measure",
     "measureGrp",
