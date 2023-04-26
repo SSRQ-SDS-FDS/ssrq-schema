@@ -98,6 +98,16 @@
             </content>
         </macroSpec>
 
+        <macroSpec ident="ssrq.content.msdescription" module="ssrq.core.module">
+          <desc xml:lang="de" versionDate="2023-04-26">Auszeichnung von Dokumenten.</desc>
+            <desc xml:lang="fr" versionDate="2023-03-23">Distinction des documents.</desc>
+            <content>
+                <alternate>
+                    <elementRef key="msDesc"/>
+                </alternate>
+            </content>
+        </macroSpec>
+
         <macroSpec ident="ssrq.content.default" mode="add" module="ssrq.core.module">
             <content>
                 <alternate>

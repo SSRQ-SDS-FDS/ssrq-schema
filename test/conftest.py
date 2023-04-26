@@ -61,6 +61,7 @@ ELEMENTS = [
     "textClass",
     "TEI",
     "width",
+    "witness",
 ]
 
 el_start_re = re.compile(r"(<\w+)([\s>\/])")
