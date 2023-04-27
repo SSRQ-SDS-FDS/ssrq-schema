@@ -54,6 +54,7 @@ ELEMENTS = [
     "seriesStmt",
     "summary",
     "support",
+    "rdg",
     "respStmt",
     "repository",
     "row",
