@@ -16,7 +16,7 @@ import pytest
             "<listWit><witness xml:id='bar'>Foo</witness><witness xml:id='foo'>Bar</witness></listWit>",
             True,
         ),
-(
+        (
             "invalid-empty-listWit",
             "<listWit></listWit>",
             False,

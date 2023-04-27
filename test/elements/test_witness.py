@@ -9,29 +9,28 @@ import pytest
         (
             "valid-witness",
             """<witness xml:id="foo">
-                    <msDesc>
-                        <msIdentifier>
-                            <idno>foo</idno>
-                            <repository>bar</repository>
-                        </msIdentifier>
-                    </msDesc>                            
-                </witness>""",
+                        <msDesc>
+                            <msIdentifier>
+                                <idno>foo</idno>
+                                <repository>bar</repository>
+                            </msIdentifier>
+                        </msDesc>                            
+                    </witness>""",
             True,
         ),
         (
             "witness-with-invalid-attribute",
             """<witness type="foo">
-                    <msDesc>
-                        <msIdentifier>
-                            <idno>foo</idno>
-                            <repository>bar</repository>
-                        </msIdentifier>
-                    </msDesc>                            
-                </witness>""",
+                        <msDesc>
+                            <msIdentifier>
+                                <idno>foo</idno>
+                                <repository>bar</repository>
+                            </msIdentifier>
+                        </msDesc>                            
+                    </witness>""",
             False,
         ),
     ],
-
 )
 def test_witness(
     test_element_with_rng: RNG_test_function,
