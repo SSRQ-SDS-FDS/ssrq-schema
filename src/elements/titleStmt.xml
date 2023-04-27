@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="titleStmt" module="header" mode="change">
+    <desc xml:lang="de" versionDate="2023-04-25">Gibt innerhalb von <tag type="empty">title</tag>
+        Informationen zum Titel des Bandes an. Die Verantwortlichen für die Transkription und
+        Auszeichnung des Rechtsquellenbandes werden hier im <tag type="empty">respStmt</tag> mit
+        ihren jeweiligen Funktionen aufgeführt. Mit <tag type="empty">editor</tag> werden die
+        Bearbeitenden der Editionseinheit erfasst.</desc>
+    <desc xml:lang="en" versionDate="2023-04-25">Specifies within <tag type="empty">title</tag>
+        Information about the title of the volume. The persons responsible for the transcription and
+        of the legal source volume are listed here in <tag type="empty">respStmt</tag> with
+        their respective functions. The <tag type="empty">editor</tag> lists the editors of the
+        current volume.</desc>
+    <desc xml:lang="en" versionDate="2023-04-25">Spécifie dans <tag type="empty">title</tag>
+        Informations sur le titre du volume. Les personnes responsables de la transcription et
+        du volume de sources juridiques sont énumérées ici dans <tag type="empty">respStmt</tag> avec leurs fonctions respectives.
+        Le <tag type="empty">editor</tag> donne la liste des éditeurs du
+        volume en cours.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="title"/>
+            <elementRef key="editor" minOccurs="1" maxOccurs="unbounded"/>
+            <elementRef key="respStmt" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </content>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-25">
+        <p xml:lang="de">Beispielhaftes titleStmt mit zwei Editor*innen</p>
+        <!-- ToDo: Franzözische Übersetzung prüfen!!! -->
+        <p xml:lang="fr">Exemple de titleStmt avec deux rédacteurs</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <titleStmt>
+                <title>I. Abteilung: Die Rechtsquellen des Kantons Zürich. Neue Folge. Zweiter Teil:
+                    Rechte der Landschaft. Band 11: Die Obervogteien um die Stadt Zürich</title>
+                <editor>
+                    <persName>Ariane Huber Hernández</persName>
+                </editor>
+                <editor>
+                    <persName>Michael Nadig</persName>
+                </editor>
+                <respStmt>
+                    <persName>Ariane Huber Hernández</persName>
+                    <persName>Michael Nadig</persName>
+                    <resp key="transcript"/>
+                </respStmt>
+                <respStmt>
+                    <persName>Ariane Huber Hernández</persName>
+                    <persName>Michael Nadig</persName>
+                    <resp key="tagging"/>
+                </respStmt>
+            </titleStmt>
+        </egXML>
+    </exemplum>
+</elementSpec>

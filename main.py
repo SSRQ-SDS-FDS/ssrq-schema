@@ -23,6 +23,8 @@ XSLTS = {
 }
 OMIT_VERSION: bool = False
 
+SPECIFIED_ELEMENTS = r'target="elements/(\w+)\.xml"'
+
 
 class SSRQSchemaType(TypedDict):
     description: str
@@ -231,7 +233,7 @@ def show_stats(schema: str, name: str) -> None:
     included_elements: list[str] = " ".join(
         re.findall(r'include="(.*)"', schema)
     ).split(" ")
-    specified_elements: list[str] = re.findall(r'target="elements/(\w+)\.xml"', schema)
+    specified_elements: list[str] = re.findall(SPECIFIED_ELEMENTS, schema)
     print(
         f"Elements included in {name}: {len(included_elements)}\nElements already specified: {len(specified_elements)}\nElements to specify: {len(included_elements) - len(specified_elements)}\n"
     )
