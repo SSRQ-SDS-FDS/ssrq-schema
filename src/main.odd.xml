@@ -10,6 +10,7 @@
 
                 <!-- modules used -->
                 <moduleRef key="tei"/>
+                <moduleRef key="certainty" include="precision"/>
                 <moduleRef key="core"
                     include="abbr add author bibl cb choice corr date del editor expan foreign gap graphic head hi item label lb list listBibl measure measureGrp note num orig p pb pubPlace publisher q quote ref reg resp respStmt series sic teiCorpus term textLang time title unclear"/>
                 <moduleRef key="header"
@@ -54,6 +55,7 @@
                 <specGrpRef target="elements/encodingDesc.xml"/>
                 <specGrpRef target="elements/extent.xml"/>
                 <specGrpRef target="elements/figure.xml"/>
+                <specGrpRef target="elements/fileDesc.xml"/>
                 <specGrpRef target="elements/graphic.xml"/>
                 <specGrpRef target="elements/handShift.xml"/>
                 <specGrpRef target="elements/height.xml"/>
@@ -72,7 +74,10 @@
                 <specGrpRef target="elements/pb.xml"/>
                 <specGrpRef target="elements/persName.xml"/>
                 <specGrpRef target="elements/placeName.xml"/>
+                <specGrpRef target="elements/precision.xml"/>
+                <specGrpRef target="elements/profileDesc.xml"/>
                 <specGrpRef target="elements/publisher.xml"/>
+                <specGrpRef target="elements/publicationStmt.xml"/>
                 <specGrpRef target="elements/pubPlace.xml"/>
                 <specGrpRef target="elements/rdg.xml"/>
                 <specGrpRef target="elements/respStmt.xml"/>
@@ -80,12 +85,14 @@
                 <specGrpRef target="elements/row.xml"/>
                 <specGrpRef target="elements/settlement.xml"/>
                 <specGrpRef target="elements/seriesStmt.xml"/>
+                <specGrpRef target="elements/sourceDesc.xml"/>
                 <specGrpRef target="elements/summary.xml"/>
                 <specGrpRef target="elements/support.xml"/>
                 <specGrpRef target="elements/table.xml"/>
                 <specGrpRef target="elements/TEI.xml"/>
                 <specGrpRef target="elements/text.xml"/>
                 <specGrpRef target="elements/textClass.xml"/>
+                <specGrpRef target="elements/titleStmt.xml"/>
                 <specGrpRef target="elements/width.xml"/>
                 <specGrpRef target="elements/witness.xml"/>
             </schemaSpec>
