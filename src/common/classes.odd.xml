@@ -325,12 +325,12 @@
                         </rng:choice>
                     </datatype>
                 </attDef>
-                <attDef ident="key" mode="change">
-                    <desc versionDate="2023-03-28" xml:lang="de">Tätigkeit, für die ein Bearbeiter
+                <attDef ident="key" mode="replace">
+                    <desc versionDate="2023-04-28" xml:lang="de">Tätigkeit, für die ein Bearbeiter oder eine Organisation.
                         verantwortlich ist.</desc>
-                    <desc versionDate="2023-03-07" xml:lang="en">Activity for which a editor is
-                        responsible.</desc>
-                    <valList type="closed">
+                    <desc versionDate="2023-04-28" xml:lang="en">Activity for which an agent or organisation
+                        is responsible.</desc>
+                    <valList type="closed" mode="change">
                         <valItem ident="transcript">
                             <desc xml:lang="de" versionDate="2023-03-28">Transkript</desc>
                             <desc xml:lang="fr" versionDate="2023-03-28">transcription</desc>
@@ -358,6 +358,12 @@
                             <desc xml:lang="en" versionDate="2023-03-28">quality control</desc>
                             <desc xml:lang="it" versionDate="2023-03-28">Controllo della
                                 qualità</desc>
+                        </valItem>
+                        <valItem ident="publisher">
+                            <desc xml:lang="de" versionDate="2023-04-28">Herausgeberschaft</desc>
+                            <desc xml:lang="fr" versionDate="2023-04-28">Rédaction</desc>
+                            <desc xml:lang="en" versionDate="2023-04-28">Editorial</desc>
+                            <desc xml:lang="it" versionDate="2023-04-28">Editoriale</desc>
                         </valItem>
                         <valItem ident="headerinfo">
                             <desc xml:lang="de" versionDate="2023-03-28">Metadaten im
