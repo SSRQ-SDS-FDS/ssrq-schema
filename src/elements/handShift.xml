@@ -3,11 +3,16 @@
 
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="handShift" module="transcr" mode="change">
     <gloss xml:lang="de" versionDate="2023-03-15">Handwechsel</gloss>
-    <desc xml:lang="de" versionDate="2023-03-15">Gibt den Wechsel einer Hand an.</desc>
+    <desc xml:lang="de" versionDate="2023-03-15">
+        <gi>handShift</gi>
+        gibt den Wechsel einer Hand an.
+    </desc>
     <gloss xml:lang="en" versionDate="2023-03-15">Change of hands</gloss>
-    <desc xml:lang="en" versionDate="2023-03-15">Indicates the change of a hand.</desc>
+    <desc xml:lang="en" versionDate="2023-03-15"><gi>handShift</gi>indicates the change of a hand.
+    </desc>
     <gloss xml:lang="fr" versionDate="2023-03-15">Changement de main</gloss>
-    <desc xml:lang="fr" versionDate="2023-03-15">Indique le changement d'une main.</desc>
+    <desc xml:lang="fr" versionDate="2023-03-15"><gi>handShift</gi>indique le changement d'une main.
+    </desc>
     <classes mode="replace">
         <memberOf key="att.handFeatures"/>
     </classes>
@@ -15,7 +20,7 @@
         <empty/>
     </content>
     <attList>
-        <attDef ident="scribe" usage="req" mode="change"/>
+        <attDef ident="scribe" mode="change" usage="req"/>
         <attDef ident="medium" mode="delete"/>
         <attDef ident="new" mode="delete"/>
     </attList>
@@ -24,6 +29,13 @@
         <p xml:lang="fr">Changement d'une main / du scribe</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <handShift scribe="persID"/>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
+        <p xml:lang="de">Bezeichnung einer zweiten Hand</p>
+        <p xml:lang="fr">Désignation d'une main secondaire</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <handShift scribe="secondaryHand"/>
         </egXML>
     </exemplum>
 </elementSpec>
