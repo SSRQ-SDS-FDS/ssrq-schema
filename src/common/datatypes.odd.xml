@@ -162,8 +162,8 @@
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">lignes</desc>
                         <desc xml:lang="en" versionDate="2023-03-17">line</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">lines</desc>
-                        <desc xml:lang="it" versionDate="2023-03-17"/>
-                        <desc xml:lang="it" type="plural" versionDate="2023-03-17"/>
+                        <desc xml:lang="it"  versionDate="2023-04-28">riga</desc>
+                        <desc xml:lang="it" type="plural"  versionDate="2023-04-28">righe</desc>
                     </valItem>
                 </valList>
             </content>
@@ -208,8 +208,8 @@
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">pages</desc>
                         <desc xml:lang="en" versionDate="2023-03-17">page</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">pages</desc>
-                        <desc xml:lang="it" versionDate="2023-03-17">linea</desc>
-                        <desc xml:lang="it" type="plural" versionDate="2023-03-17">linee</desc>
+                        <desc xml:lang="it"  versionDate="2023-04-28">pagina</desc>
+                        <desc xml:lang="it" type="plural"  versionDate="2023-04-28">pagine</desc>
                     </valItem>
                     <valItem ident="word">
                         <desc xml:lang="de" versionDate="2023-03-17">Wort</desc>
@@ -1732,10 +1732,12 @@
         </dataSpec>
 
         <dataSpec ident="ssrq.role.institution" mode="add">
-            <desc xml:lang="de" versionDate="2022-05-12">Rolle einer Person oder Institution
-                im besagten Text</desc>
+            <desc xml:lang="de" versionDate="2023-04-28">Rolle einer Person oder Institution
+                im Text</desc>
             <desc xml:lang="en" versionDate="2022-07-11">Role of a person or institution in
                 the text</desc>
+            <desc xml:lang="it"  versionDate="2023-04-28">Ruolo di una persona o di un'istituzione
+                nel testo</desc>
             <content>
                 <valList type="closed">
                     <valItem ident="issuer">
