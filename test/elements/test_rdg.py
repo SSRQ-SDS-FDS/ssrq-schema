@@ -8,7 +8,7 @@ import pytest
     [
         (
             "valid-rdg",
-            "<rdg wit='#foo'>bar</rdg>",
+            "<rdg wit='#foo #foo2'>bar</rdg>",
             True,
         ),
         (

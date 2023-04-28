@@ -8,7 +8,7 @@ import pytest
     [
         (
             "valid-witness",
-            """<witness xml:id="foo">
+            """<witness xml:id='foo'>
                         <msDesc>
                             <msIdentifier>
                                 <idno>foo</idno>
@@ -21,13 +21,13 @@ import pytest
         (
             "witness-with-invalid-attribute",
             """<witness type="foo">
-                        <msDesc>
-                            <msIdentifier>
-                                <idno>foo</idno>
-                                <repository>bar</repository>
-                            </msIdentifier>
-                        </msDesc>                            
-                    </witness>""",
+                                    <msDesc>
+                                        <msIdentifier>
+                                            <idno>foo</idno>
+                                            <repository>bar</repository>
+                                        </msIdentifier>
+                                    </msDesc>                            
+                                </witness>""",
             False,
         ),
     ],

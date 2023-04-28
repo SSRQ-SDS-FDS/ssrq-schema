@@ -2,12 +2,21 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="listWit" module="textcrit" mode="change">
-    <desc xml:lang="de" versionDate="2023-04-26"><gi>listWit</gi> enthält die verschiedenen Stückbeschreibungen der
-        Quellen (Orginale, Kopien etc.). Für jede Quelle wird ein <gi>witness</gi> erstellt.</desc>
-    <desc xml:lang="en" versionDate="2023-04-26"><gi>listWit</gi> contains the different piece descriptions of the
-        sources (originals, copies etc.). A <gi>witness</gi> is created for each source.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-26"><gi>listWit</gi> contient les différentes descriptions des pièces
-        des sources (originaux, copies etc.). Un <gi>witness</gi> est créé pour chaque source.</desc>
+    <desc xml:lang="de" versionDate="2023-04-26">
+        <gi>listWit</gi>
+        enthält die verschiedenen Stückbeschreibungen der
+        Quellen (Orginale, Kopien etc.). Für jede Quelle wird ein <gi>witness</gi> erstellt.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-04-26">
+        <gi>listWit</gi>
+        contains the different piece descriptions of the
+        sources (originals, copies etc.). A <gi>witness</gi> is created for each source.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-04-26">
+        <gi>listWit</gi>
+        contient les différentes descriptions des pièces
+        des sources (originaux, copies etc.). Un <gi>witness</gi> est créé pour chaque source.
+    </desc>
     <classes mode="replace">
         <memberOf key="att.global"/>
         <memberOf key="model.listLike"/>
@@ -19,13 +28,11 @@
     </content>
     <attList>
         <attDef ident="n" mode="delete"/>
-        <attDef ident="xml:base" mode="delete"/>
-        <attDef ident="xml:space" mode="delete"/>
     </attList>
-    <exemplum type="ssrq-doc-example"  versionDate="2023-04-26">
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <listWit>
-                <witness xml:id="b">STAW B 3a/10</witness>
+                <witness xml:id="B">STAW B 3a/10</witness>
                 <witness xml:id="win">winbib Ms. Fol. 27</witness>
             </listWit>
         </egXML>

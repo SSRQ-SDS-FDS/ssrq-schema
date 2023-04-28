@@ -2,9 +2,18 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="witness" module="textcrit" mode="change">
-    <desc xml:lang="de" versionDate="2023-04-26"><gi>witness</gi> enthält die Stückbeschreibung einer Quelle.</desc>
-    <desc xml:lang="en" versionDate="2023-04-26"><gi>witness</gi> ccontains the description of a source.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-26"><gi>witness</gi> contient la description d'une source.</desc>
+    <desc xml:lang="de" versionDate="2023-04-26">
+        <gi>witness</gi>
+        enthält die Stückbeschreibung einer Quelle.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-04-26">
+        <gi>witness</gi>
+        ccontains the description of a source.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-04-26">
+        <gi>witness</gi>
+        contient la description d'une source.
+    </desc>
     <classes mode="replace">
         <memberOf key="att.global"/>
     </classes>
@@ -16,17 +25,15 @@
     </content>
     <attList>
         <attDef ident="n" mode="delete"/>
-        <attDef ident="xml:base" mode="delete"/>
-        <attDef ident="xml:space" mode="delete"/>
+        <attDef ident="xml:id" mode="change" usage="req"/>
     </attList>
-    <exemplum type="ssrq-doc-example"  versionDate="2023-04-26">
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-26">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <listWit>
                 <witness xml:id="A">
                     <msDesc>
                         <msIdentifier>
                             <idno>StAAG U.17/0020a</idno>
-                            <repository>Staatsarchiv Aargau</repository>
                         </msIdentifier>
                     </msDesc>
                 </witness>

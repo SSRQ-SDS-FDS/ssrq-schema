@@ -8,7 +8,7 @@ import pytest
     [
         (
             "valid-listWit",
-            "<listWit><witness>Foo</witness></listWit>",
+            "<listWit><witness xml:id='bar'>Foo</witness></listWit>",
             True,
         ),
         (
