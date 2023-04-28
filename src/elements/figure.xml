@@ -6,15 +6,15 @@
     <desc xml:lang="de" versionDate="2023-04-11">Enthält grafische Informationen wie das
         Notarzeichen (= Notariatszeichen, Notariatssignet, Signum), Federzeichnungen, Holzschnitte,
         Verweiszeichen oder bei Kopien von Urkunden die Stelle, an der sich in der Originalurkunde
-        das Siegel befindet (L. S. = Locus sigilli) oder Abbildungen, die mit <tag type="empty"
-            >graphic</tag> referenziert werden.</desc>
+        das Siegel befindet (L. S. = Locus sigilli) oder Abbildungen, die mit <gi
+            >graphic</gi> referenziert werden.</desc>
     <desc xml:lang="en" versionDate="2023-04-11">Contains graphic information such as the Notarial
         sign (= notarial sign, notarial signet, signum), pen drawings, woodcuts, or, in the case of
         copies of documents, the location of the seal on the original document (L. S. = Locus
-        sigilli) or (L. S. = locus sigilli) or illustrations referenced with <tag type="empty"
-            >graphic</tag>.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-11">"Figure" contient des informations graphiques, dans notre cas un seing notariel, une signature du notaire ou un signum, un dessin à la plume, une gravure sur bois, un signe de renvoi ou en cas d'une copie d'un acte la place où se trouve le sceau dans l'original (L. S. = Locus sigilli). Dans les introductions, les illustrations, graphiques, arbres généalogiques, etc. sont intégrés à la figure (<tag type="empty"
-        >graphic</tag>).</desc>
+        sigilli) or (L. S. = locus sigilli) or illustrations referenced with <gi
+            >graphic</gi>.</desc>
+    <desc xml:lang="fr" versionDate="2023-04-11"><gi>figure</gi> contient des informations graphiques, dans notre cas un seing notariel, une signature du notaire ou un signum, un dessin à la plume, une gravure sur bois, un signe de renvoi ou en cas d'une copie d'un acte la place où se trouve le sceau dans l'original (L. S. = Locus sigilli). Dans les introductions, les illustrations, graphiques, arbres généalogiques, etc. sont intégrés à la figure (<gi
+        >graphic</gi>).</desc>
     <classes mode="replace"/>
     <content>
         <sequence minOccurs="0" maxOccurs="1">
@@ -123,10 +123,10 @@
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
            <head>...
             <lb/>über Eelich sachen ge<lb break="no"/>richt sol werden</head>
-            <p><figure  type="woodcut"/><note>Beschreibung des Emblems vgl. 
+            <p><figure  type="woodcut"/><note>Beschreibung des Emblems vgl.
                 <bibl><ref target="http://permalink.snl.ch/bib/chbsg000119287">Zürcher Kirchenordnungen,</ref> Bd.&#160;2, S.&#160;359</bibl>.</note></p>
             <p>
-                <lb/>Getruckt zuͦ <origPlace>Zürich</origPlace> / durch 
+                <lb/>Getruckt zuͦ <origPlace>Zürich</origPlace> / durch
                 <lb/><persName>Johansen Hager</persName>
             </p>
         </egXML>

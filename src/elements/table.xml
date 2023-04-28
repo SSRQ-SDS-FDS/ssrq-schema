@@ -2,8 +2,8 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="table" module="figures" mode="change"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-04-11">Wird zusammen mit <tag type="empty">row</tag>
-        (Zeile) und <tag type="empty">cell</tag> (Spalte) für die Darstellung von Tabellen benötigt.
+    <desc xml:lang="de" versionDate="2023-04-11">Wird zusammen mit <gi>row</gi>
+        (Zeile) und <gi>cell</gi> (Spalte) für die Darstellung von Tabellen benötigt.
         Es wird von oben nach unten und von links nach rechts gezählt. Wenn immer möglich eine
         Tabelle als Fliesstext dargestellt werden kann, soll auf die Darstellung in Form einer
         Tabelle verzichtet werden. In Tabellen und Listen werden – insbesondere bei den gedruckten
@@ -13,8 +13,8 @@
         ein Querstrich als Nullwert vor (vgl. Beispiel unten). Bei der Transkription wird hierfür
         der ziffernbreite Halbgeviertstrich – (U+2012) verwendet (zu transkribieren mit der
         Zeichenfolge &#x2012;).</desc>
-    <desc xml:lang="en" versionDate="2023-04-11">Is used together with <tag type="empty">row</tag>.
-        (row) and <tag type="empty">cell</tag> (column) for the display of tables. It is counted
+    <desc xml:lang="en" versionDate="2023-04-11">Is used together with <gi>row</gi>.
+        (row) and <gi>cell</gi> (column) for the display of tables. It is counted
         from top to bottom and from left to right. Whenever possible a can be displayed as
         continuous text, the display in the form of a table should be omitted. table should be
         avoided. In tables and lists -– especially in printed In tables and lists, especially in the
@@ -23,8 +23,8 @@
         transcribed with the string &#x22;). Likewise, in tables a horizontal bar occurs as a zero
         value (cf. example below). In the transcription (U+2012) is used for this purpose (to be
         transcribed with the character string character string &#x2012;).</desc>
-    <desc xml:lang="fr" versionDate="2023-04-11">Est utilisé avec <tag empty="true">row</tag>
-        (ligne) et <tag empty="true">cell</tag> (colonne) pour transcrire un tableau. Il est compté
+    <desc xml:lang="fr" versionDate="2023-04-11">Est utilisé avec <gi>row</gi>
+        (ligne) et <gi>cell</gi> (colonne) pour transcrire un tableau. Il est compté
         de haut en bas et de gauche à droite. Si possible, reprendre un tableau comme texte
         courant.</desc>
     <classes mode="replace"/>
@@ -175,7 +175,7 @@
                 <row><cell/><cell/><cell>Caspar.</cell><cell>1.</cell><cell>Margaretha</cell><cell>--</cell><cell>Ulrich.</cell></row>
                 <row><cell/><cell/><cell>Heinrich</cell><cell>2.</cell><cell/><cell/></row>
                 <row><cell>David</cell><cell>--</cell><cell>Regula</cell><cell>3.</cell><cell/><cell/></row>
-            </table> 
+            </table>
         </egXML>
     </exemplum>
 </elementSpec>

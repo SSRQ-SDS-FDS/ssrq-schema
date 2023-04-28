@@ -2,12 +2,12 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="repository" module="msdescription"
     mode="change">
-    <desc xml:lang="de" versionDate="2023-04-12">Das <tag type="empty">repository</tag> benennt das
-        Archiv (keine Kürzel) innerhalb von <tag type="empty">msIdentifier</tag>.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-12">Le <tag type="empty">repository</tag> nomme
-        l'archive (pas d'abréviation) à l'intérieur de <tag type="empty">msIdentifier</tag>.</desc>
-    <desc xml:lang="en" versionDate="2023-04-12">The <tag type="empty">repository</tag> names the
-        archive (no abbreviations) within <tag type="empty">msIdentifier</tag>.</desc>
+    <desc xml:lang="de" versionDate="2023-04-12">Das <gi>repository</gi> benennt das
+        Archiv (keine Kürzel) innerhalb von <gi>msIdentifier</gi>.</desc>
+    <desc xml:lang="fr" versionDate="2023-04-12">Le <gi>repository</gi> nomme
+        l'archive (pas d'abréviation) à l'intérieur de <gi>msIdentifier</gi>.</desc>
+    <desc xml:lang="en" versionDate="2023-04-12">The <gi>repository</gi> names the
+        archive (no abbreviations) within <gi>msIdentifier</gi>.</desc>
     <classes mode="change">
         <memberOf key="att.global.facs" mode="delete"/>
         <memberOf key="att.global.rendition" mode="delete"/>

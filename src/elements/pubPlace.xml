@@ -2,15 +2,15 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="pubPlace" module="core" mode="change"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-04-05">Der pubPlace liefert Angaben zum Publikationsort. Dies kann sowohl der
+    <desc xml:lang="de" versionDate="2023-04-05">Der <gi>pubPlace</gi> liefert Angaben zum Publikationsort. Dies kann sowohl der
         Publikationsort der elektronischen Edition sein als auch der Publikationsort des in der Literaturliste
         aufgeführten Artikels oder Buches. Bei Druckschriften wird innerhalb von "docImprint" der Druckort mit
         "pubPlace" genannt.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-05">Le tag "pubPlace" donne des informations sur le lieu de publication.
+    <desc xml:lang="fr" versionDate="2023-04-05">Le tag <gi>pubPlace</gi> donne des informations sur le lieu de publication.
         Il peut s'agir et du lieu de publication de l'édition numérique et de celui de l'article ou livre indiqé dans
         la liste de référence. Dans le cas des documents imprimés, l'emplacement de l'impression est indiqué dans
         "docImprint" avec "pubPlace". </desc>
-    <desc xml:lang="en" versionDate="2023-04-05">The pubPlace provides information on the place of publication. This
+    <desc xml:lang="en" versionDate="2023-04-05">The <gi>pubPlace</gi> provides information on the place of publication. This
         can be both the place of publication of the electronic edition as well as the place of publication of the
         article or book listed in the bibliography. In the case of printed publications, the place of publication is
         indicated within "docImprint" with pubPlace" within "docImprint".</desc>
