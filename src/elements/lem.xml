@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="lem" module="textcrit" mode="change">
+    <desc xml:lang="de" versionDate="2023-04-21">
+        <gi>lem</gi>
+        enthält innerhalb von <gi>app</gi> eine Passage, von der
+        es eine von der Editionsvorlage abweichende Textvariante gibt.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-04-21">
+        <gi>lem</gi>
+        contains within <gi>app</gi> a passage of which there is
+        a text variant that differs from the edition template.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-04-21">
+        <gi>lem</gi>
+        contient dans <gi>app</gi> un passage dont il existe une
+        variante de texte qui diffère du modèle d'édition.
+    </desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <textNode/>
+            <macroRef key="ssrq.content.default"/>
+        </alternate>
+    </content>
+    <attList>
+        <attDef ident="n" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <app>
+                <lem>lxxxvij</lem>
+                <rdg wit="#B #C">quadringentesimo</rdg>
+            </app>
+        </egXML>
+    </exemplum>
+</elementSpec>

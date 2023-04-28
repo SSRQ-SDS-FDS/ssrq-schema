@@ -4,7 +4,9 @@
     <desc xml:lang="de" versionDate="2023-04-05">Enthält bei Druckschriften den Druckort (pubPlace) und den Namen der Druckerei (publisher).</desc>
     <desc xml:lang="fr" versionDate="2023-04-05">Contient, pour les imprimés, le lieu d'impression (pubPlace) et le nom de l'imprimerie (publisher).</desc>
     <desc xml:lang="en" versionDate="2023-04-05">Contains the place of printing (pubPlace) and the name of the printer (publisher).</desc>
-    <classes mode="replace"/>
+    <classes mode="replace">
+        <memberOf key="model.titlepagePart"/>
+    </classes>
     <content>
         <sequence>
             <elementRef key="pubPlace" minOccurs="1" maxOccurs="1"/>
