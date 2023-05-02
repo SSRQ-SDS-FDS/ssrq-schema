@@ -27,9 +27,13 @@
         </alternate>
     </content>
     <attList>
-        <attDef ident="wit" mode="change" usage="req"/>
+        <attDef ident="wit" mode="change" usage="req">
+            <datatype minOccurs="1" maxOccurs="unbounded">
+                <dataRef key="ssrq.pointer.uuid"/>
+            </datatype>
+        </attDef>
     </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <app>
                 <lem>lxxxvij</lem>
@@ -39,7 +43,7 @@
             </app>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <app>
                 <lem>lxxxvij</lem>

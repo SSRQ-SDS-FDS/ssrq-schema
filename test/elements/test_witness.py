@@ -9,25 +9,37 @@ import pytest
         (
             "valid-witness",
             """<witness xml:id='ad28656b-5c8d-459c-afb4-3e6ddf70810d' n="A">
-                            <msDesc>
-                                <msIdentifier>
-                                    <idno>foo</idno>
-                                    <repository>bar</repository>
-                                </msIdentifier>
-                            </msDesc>                            
-                        </witness>""",
+                                                <msDesc>
+                                                    <msIdentifier>
+                                                        <idno>foo</idno>
+                                                        <repository>bar</repository>
+                                                    </msIdentifier>
+                                                </msDesc>                            
+                                            </witness>""",
             True,
+        ),
+        (
+            "invalid-witness-xml-id",
+            """<witness xml:id='bla' n="A">
+                                                <msDesc>
+                                                    <msIdentifier>
+                                                        <idno>foo</idno>
+                                                        <repository>bar</repository>
+                                                    </msIdentifier>
+                                                </msDesc>                            
+                                            </witness>""",
+            False,
         ),
         (
             "witness-with-invalid-attribute",
             """<witness type="foo">
-                                        <msDesc>
-                                            <msIdentifier>
-                                                <idno>foo</idno>
-                                                <repository>bar</repository>
-                                            </msIdentifier>
-                                        </msDesc>                            
-                                    </witness>""",
+                                                            <msDesc>
+                                                                <msIdentifier>
+                                                                    <idno>foo</idno>
+                                                                    <repository>bar</repository>
+                                                                </msIdentifier>
+                                                            </msDesc>                            
+                                                        </witness>""",
             False,
         ),
     ],

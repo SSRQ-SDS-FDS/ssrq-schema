@@ -3,7 +3,6 @@ from pyschval.main import (
     SchematronResult,
     validate_chunk,
 )
-from saxonche import PySaxonProcessor
 
 from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
@@ -72,8 +71,12 @@ def test_supplied(
         ),
     ],
 )
-def test_supplied_constraints(main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool):
+def test_supplied_constraints(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
     """Test the constraints defined for tei:supplied."""
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(files=writer.list(), isosch=main_constraints)
+    reports: list[SchematronResult] = validate_chunk(
+        files=writer.list(), isosch=main_constraints
+    )
     assert reports[0].is_valid() is result

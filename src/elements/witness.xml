@@ -25,7 +25,15 @@
     </content>
     <attList>
         <attDef ident="n" mode="change" usage="req"/>
-        <attDef ident="xml:id" mode="change" usage="req"/>
+        <attDef ident="xml:id" mode="change" usage="req">
+            <datatype>
+                <dataRef name="string"
+                         restriction="[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+            </datatype>
+        </attDef>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="resp" mode="delete"/>
+        <attDef ident="rend" mode="delete"/>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
