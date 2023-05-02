@@ -34,7 +34,7 @@
     <constraintSpec scheme="schematron" ident="sch-el-sic">
         <constraint>
             <sch:pattern>
-                <sch:rule context="tei:sic">
+                <sch:rule context="tei:sic[not(ancestor::tei:choice)]">
                     <sch:assert test="./* or string-length(./string()) > 0"><sch:name/> must not be
                         empty!</sch:assert>
                 </sch:rule>

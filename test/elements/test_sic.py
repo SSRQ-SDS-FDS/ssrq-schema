@@ -32,6 +32,11 @@ def test_sic(
     "name, markup, result",
     [
         ("valid-sic-with-text", "<sic>bar</sic>", True),
+        (
+            "valid-sic-without-text-inside-choice",
+            "<choice><sic/><corr>bar</corr></choice>",
+            True,
+        ),
         ("invalid-sic-without-content", "<sic/>", False),
     ],
 )
