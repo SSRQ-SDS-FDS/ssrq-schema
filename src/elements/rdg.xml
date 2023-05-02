@@ -27,22 +27,30 @@
         </alternate>
     </content>
     <attList>
-        <attDef ident="wit" mode="change" usage="req"/>
+        <attDef ident="wit" mode="change" usage="req">
+            <datatype minOccurs="1" maxOccurs="unbounded">
+                <dataRef key="ssrq.pointer.uuid"/>
+            </datatype>
+        </attDef>
     </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <app>
                 <lem>lxxxvij</lem>
-                <rdg wit="#B #C">quadringentesimo</rdg>
+                <rdg wit="#ad28656b-5c8d-459c-afb4-3e6ddf70810d #ad28656b-5c8d-459c-afb4-3e6ddf70810e">
+                    quadringentesimo
+                </rdg>
             </app>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <app>
                 <lem>lxxxvij</lem>
-                <rdg wit="#B #C">quadringentesimo</rdg>
-                <rdg wit="#D">lxxxiiij</rdg>
+                <rdg wit="#ad28656b-5c8d-459c-afb4-3e6ddf70810d #ad28656b-5c8d-459c-afb4-3e6ddf70810e">
+                    quadringentesimo
+                </rdg>
+                <rdg wit="#ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
             </app>
         </egXML>
     </exemplum>

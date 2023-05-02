@@ -437,8 +437,8 @@
         <dataSpec ident="ssrq.hand.scribe" mode="add">
             <desc versionDate="2023-03-17" xml:lang="de">Anonyme Anlage- oder Nachtragshand</desc>
             <desc versionDate="2023-03-17" xml:lang="en">Anonymous main or supplementary hand</desc>
-            <desc versionDate="2023-03-17" xml:lang="fr">ToDo: Übersetzung fr</desc>
-            <desc versionDate="2023-03-17" xml:lang="it">ToDo: Übersetzung it</desc>
+            <desc versionDate="2023-04-28" xml:lang="fr">Main principale ou supplémentaire anonyme</desc>
+            <desc versionDate="2023-04-28" xml:lang="it">Mano principale o supplementare anonima</desc>
             <content>
                 <valList type="closed">
                     <valItem ident="firstHand">
@@ -490,10 +490,10 @@
                         <desc versionDate="2023-03-17" xml:lang="it">mano secondaria (H)</desc>
                     </valItem>
                     <valItem ident="ninthHand">
-                        <desc versionDate="2023-03-17" xml:lang="de">Nachtragshand (H)</desc>
-                        <desc versionDate="2023-03-17" xml:lang="en">other hand (H)</desc>
-                        <desc versionDate="2023-03-17" xml:lang="fr">main secondaire (H)</desc>
-                        <desc versionDate="2023-03-17" xml:lang="it">mano secondaria (H)</desc>
+                        <desc versionDate="2023-03-17" xml:lang="de">Nachtragshand (I)</desc>
+                        <desc versionDate="2023-03-17" xml:lang="en">other hand (I)</desc>
+                        <desc versionDate="2023-03-17" xml:lang="fr">main secondaire (I)</desc>
+                        <desc versionDate="2023-03-17" xml:lang="it">mano secondaria (I)</desc>
                     </valItem>
                 </valList>
             </content>
@@ -506,31 +506,35 @@
         <dataSpec ident="ssrq.date.calendar" mode="add">
             <desc versionDate="2023-03-17" xml:lang="de">Geschlossene Liste von Kalendertypen, die
                 von der SSRQ verwendet werden. Für weitere Informationen siehe <ref
-                    target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien"
-                    >Datierungsrichtlinien</ref>.</desc>
+                        target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">Datierungsrichtlinien</ref>.
+            </desc>
             <desc versionDate="2023-03-17" xml:lang="en">Closed list of calender types used by the
-                SLS.For more information see <ref
-                    target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">dating
-                    guidelines</ref>.</desc>
+                SLS.For more information see <ref target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">dating
+                    guidelines</ref>.
+            </desc>
             <desc versionDate="2023-03-17" xml:lang="fr">Liste fermée de Types de calendriers
                 utilisés par la SDS. Pour plus d'informations, voir <ref
-                    target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">les directives
-                    de datation</ref>.</desc>
+                        target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">les directives
+                    de datation</ref>.
+            </desc>
             <content>
                 <valList type="closed">
                     <valItem ident="annunciation">
                         <desc versionDate="2023-03-17" xml:lang="de">Annuntiationsstil</desc>
                         <desc versionDate="2023-03-17" xml:lang="fr">le style de
-                            l’Annonciation</desc>
+                            l’Annonciation
+                        </desc>
                         <desc versionDate="2023-03-17" xml:lang="it">stile dell’Annunciazione</desc>
                         <desc versionDate="2023-03-17" xml:lang="en">Annunciation Style</desc>
                     </valItem>
                     <valItem ident="circumcision">
                         <desc versionDate="2023-03-17" xml:lang="de">Circumcisionsstil</desc>
                         <desc versionDate="2023-03-17" xml:lang="fr">le style de la
-                            Circoncision</desc>
+                            Circoncision
+                        </desc>
                         <desc versionDate="2023-03-17" xml:lang="it">stile della
-                            Circoncisione</desc>
+                            Circoncisione
+                        </desc>
                         <desc versionDate="2023-03-17" xml:lang="en">Circumcision Style</desc>
                     </valItem>
                     <valItem ident="Gregorian">
@@ -550,19 +554,26 @@
                         <desc versionDate="2023-03-17" xml:lang="fr">le style de la Nativité</desc>
                         <desc versionDate="2023-03-17" xml:lang="it">stile della natività</desc>
                         <desc versionDate="2023-03-17" xml:lang="en">Christmas Style or Nativity
-                            Style</desc>
+                            Style
+                        </desc>
                     </valItem>
                 </valList>
             </content>
             <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-02">
-                <egXML xmlns="http://www.tei-c.org/ns/Examples"><date from-custom="1588-09-13"
-                        to-custom="1588-09-30" datingMethod="Julian" calendar="Julian"> Zwischen 3.
-                        und 20 September 1588</date></egXML>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <date from-custom="1588-09-13"
+                          to-custom="1588-09-30" datingMethod="Julian" calendar="Julian">Zwischen 3.
+                        und 20 September 1588
+                    </date>
+                </egXML>
             </exemplum>
             <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-02">
-                <egXML xmlns="http://www.tei-c.org/ns/Examples"><date when="1364-02-04"
-                        calendar="annunciation style">le quatre jour du mois de février en l’ans
-                        Notre Seigneur courant 1363</date></egXML>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <date when="1364-02-04"
+                          calendar="annunciation style">le quatre jour du mois de février en l’ans
+                        Notre Seigneur courant 1363
+                    </date>
+                </egXML>
             </exemplum>
         </dataSpec>
 
@@ -593,8 +604,8 @@
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">lignes</desc>
                         <desc xml:lang="en" versionDate="2023-03-17">line</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">lines</desc>
-                        <desc xml:lang="it"  versionDate="2023-04-28">riga</desc>
-                        <desc xml:lang="it" type="plural"  versionDate="2023-04-28">righe</desc>
+                        <desc xml:lang="it" versionDate="2023-04-28">riga</desc>
+                        <desc xml:lang="it" type="plural" versionDate="2023-04-28">righe</desc>
                     </valItem>
                 </valList>
             </content>
@@ -615,11 +626,14 @@
 
         <dataSpec ident="ssrq.measure.typography">
             <desc xml:lang="de" versionDate="2023-03-17">Masseinheiten im Zusammenhang mit der
-                typographischen Gestaltung</desc>
+                typographischen Gestaltung
+            </desc>
             <desc xml:lang="fr" versionDate="2023-03-17">Unités de mesure en rapport avec la
-                conception typographique</desc>
+                conception typographique
+            </desc>
             <desc xml:lang="en" versionDate="2023-03-17">Units of measurement regarding the
-                typographic design</desc>
+                typographic design
+            </desc>
             <content>
                 <valList type="closed">
                     <valItem ident="character">
@@ -639,8 +653,8 @@
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">pages</desc>
                         <desc xml:lang="en" versionDate="2023-03-17">page</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">pages</desc>
-                        <desc xml:lang="it"  versionDate="2023-04-28">pagina</desc>
-                        <desc xml:lang="it" type="plural"  versionDate="2023-04-28">pagine</desc>
+                        <desc xml:lang="it" versionDate="2023-04-28">pagina</desc>
+                        <desc xml:lang="it" type="plural" versionDate="2023-04-28">pagine</desc>
                     </valItem>
                     <valItem ident="word">
                         <desc xml:lang="de" versionDate="2023-03-17">Wort</desc>
@@ -699,7 +713,8 @@
                         <desc xml:lang="de" type="plural" versionDate="2023-03-17">Kannen</desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">kanne (pot)</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">kannen
-                            (pots)</desc>
+                            (pots)
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-03-17">pot</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">pots</desc>
                         <desc xml:lang="it" versionDate="2023-03-17">brocca</desc>
@@ -1024,7 +1039,8 @@
                 <valItem ident="fauchée">
                     <desc xml:lang="de" versionDate="2023-03-17">fauchée (Mahd)</desc>
                     <desc xml:lang="de" type="plural" versionDate="2023-03-17">fauchées
-                        (Mahd)</desc>
+                        (Mahd)
+                    </desc>
                     <desc xml:lang="fr" versionDate="2023-03-17">fauchée</desc>
                     <desc xml:lang="fr" type="plural" versionDate="2023-03-17">fauchées</desc>
                     <desc xml:lang="en" versionDate="2023-03-17">fauchée</desc>
@@ -1070,21 +1086,27 @@
                     <desc xml:lang="de" versionDate="2023-03-17">Kuhsömmerung</desc>
                     <desc xml:lang="de" type="plural" versionDate="2023-03-17">Kuhsömmerungen</desc>
                     <desc xml:lang="fr" versionDate="2023-03-17">kuhsömmerung (valeur d’un alpage
-                        selon le nombre de vaches qui peuvent y paître en été)</desc>
+                        selon le nombre de vaches qui peuvent y paître en été)
+                    </desc>
                     <desc xml:lang="en" versionDate="2023-03-17">kuhsömmerung (value of a mountain
-                        pasture based on the number of cows that can graze there in summer)</desc>
+                        pasture based on the number of cows that can graze there in summer)
+                    </desc>
                     <desc xml:lang="it" versionDate="2023-03-17">kuhsömmerung (valore di un'alpe in
-                        funzione del numero di vacche che possono pascolare lì in estate)</desc>
+                        funzione del numero di vacche che possono pascolare lì in estate)
+                    </desc>
                 </valItem>
                 <valItem ident="Kuhwinterung">
                     <desc xml:lang="de" versionDate="2023-03-17">Kuhwinterung</desc>
                     <desc xml:lang="de" type="plural" versionDate="2023-03-17">Kuhwinterungen</desc>
                     <desc xml:lang="fr" versionDate="2023-03-17">kuhwinterung (valeur d’un alpage
-                        selon le nombre de vaches qui peuvent y paître en hiver)</desc>
+                        selon le nombre de vaches qui peuvent y paître en hiver)
+                    </desc>
                     <desc xml:lang="en" versionDate="2023-03-17">kuhwinterung (value of a mountain
-                        pasture based on the number of cows that can graze there in winter)</desc>
+                        pasture based on the number of cows that can graze there in winter)
+                    </desc>
                     <desc xml:lang="it" versionDate="2023-03-17">kuhwinterung (valore di un'alpe in
-                        funzione del numero di vacche che possono pascolare lì in inverno)</desc>
+                        funzione del numero di vacche che possono pascolare lì in inverno)
+                    </desc>
                 </valItem>
                 <valItem ident="Mal">
                     <desc xml:lang="de" versionDate="2023-03-17">Mal</desc>
@@ -1155,13 +1177,16 @@
                         <desc xml:lang="de" versionDate="2023-03-17">Denier (Skrupel)</desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">denier (scrupule)</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">deniers
-                            (scrupules)</desc>
+                            (scrupules)
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-03-17">denier (scrupule)</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">deniers
-                            (scrupules)</desc>
+                            (scrupules)
+                        </desc>
                         <desc xml:lang="it" versionDate="2023-03-17">denaro (scrupulo)</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17">denari
-                            (scrupuli)</desc>
+                            (scrupuli)
+                        </desc>
                     </valItem>
                     <valItem ident="Gewäg">
                         <desc xml:lang="de" versionDate="2023-03-17">Gewäg</desc>
@@ -1203,16 +1228,20 @@
                     <valItem ident="Pfefferpfund">
                         <desc xml:lang="de" versionDate="2023-03-17">Pfefferpfund</desc>
                         <desc xml:lang="de" type="plural" versionDate="2023-03-17"
-                            >Pfefferpfunde</desc>
+                        >Pfefferpfunde
+                        </desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">pfefferpfund</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17"
-                            >pfefferpfunde</desc>
+                        >pfefferpfunde
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-03-17">pfefferpfund</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17"
-                            >pfefferpfunde</desc>
+                        >pfefferpfunde
+                        </desc>
                         <desc xml:lang="it" versionDate="2023-03-17">pfefferpfund</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17"
-                            >pfefferpfunde</desc>
+                        >pfefferpfunde
+                        </desc>
                     </valItem>
                     <valItem ident="Rupp">
                         <desc xml:lang="de" versionDate="2023-03-17">Rupp</desc>
@@ -1275,7 +1304,8 @@
                     <valItem ident="Böhmischer Groschen">
                         <desc xml:lang="de" versionDate="2023-03-17">Böhmischer Groschen</desc>
                         <desc xml:lang="de" type="plural" versionDate="2023-03-17">Böhmische
-                            Groschen</desc>
+                            Groschen
+                        </desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">gros bohêmien</desc>
                         <desc xml:lang="en" versionDate="2023-03-17">Prague groschen</desc>
                         <desc xml:lang="it" versionDate="2023-03-17">grosso</desc>
@@ -1294,16 +1324,20 @@
                     <valItem ident="écu blanc">
                         <desc xml:lang="de" versionDate="2023-03-17">écu blanc</desc>
                         <desc xml:lang="de" type="plural" versionDate="2023-03-17">écus
-                            blancs</desc>
+                            blancs
+                        </desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">écu blanc</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">écus
-                            blancs</desc>
+                            blancs
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-03-17">écu blanc</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">écus
-                            blancs</desc>
+                            blancs
+                        </desc>
                         <desc xml:lang="it" versionDate="2023-03-17">écu blanc</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17">écus
-                            blancs</desc>
+                            blancs
+                        </desc>
                     </valItem>
                     <valItem ident="écu d’or">
                         <desc xml:lang="de" versionDate="2023-03-17">écu d’or</desc>
@@ -1318,16 +1352,20 @@
                     <valItem ident="écu petit">
                         <desc xml:lang="de" versionDate="2023-03-17">écu petit</desc>
                         <desc xml:lang="de" type="plural" versionDate="2023-03-17">écus
-                            petits</desc>
+                            petits
+                        </desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">écu petit</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">écus
-                            petits</desc>
+                            petits
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-03-17">écu petit</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">écus
-                            petits</desc>
+                            petits
+                        </desc>
                         <desc xml:lang="it" versionDate="2023-03-17">écu petit</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17">écus
-                            petits</desc>
+                            petits
+                        </desc>
                     </valItem>
                     <valItem ident="Engrogne">
                         <desc xml:lang="de" versionDate="2023-03-17">Engrogne</desc>
@@ -1451,27 +1489,32 @@
                         <desc xml:lang="fr" versionDate="2023-03-17">demi-gulden</desc>
                         <desc xml:lang="en" versionDate="2023-03-17">half-guilder</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17"
-                            >half-guilders</desc>
+                        >half-guilders
+                        </desc>
                         <desc xml:lang="it" versionDate="2023-03-17">mezzo fiorino</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17">mezzi
-                            fiorini</desc>
+                            fiorini
+                        </desc>
                     </valItem>
                     <valItem ident="Halbtaler">
                         <desc xml:lang="de" versionDate="2023-03-17">Halbtaler</desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">halbtaler</desc>
                         <desc xml:lang="en" versionDate="2023-03-17">half thaler</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">half
-                            thalers</desc>
+                            thalers
+                        </desc>
                         <desc xml:lang="it" versionDate="2023-03-17">mezzo tallero</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17">mezzi
-                            talleri</desc>
+                            talleri
+                        </desc>
                     </valItem>
                     <valItem ident="k">
                         <desc xml:lang="de" versionDate="2023-03-17">Krone</desc>
                         <desc xml:lang="de" type="plural" versionDate="2023-03-17">Kronen</desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">écu/couronne</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17"
-                            >écus/couronnes</desc>
+                        >écus/couronnes
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-03-17">crown</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">crowns</desc>
                         <desc xml:lang="it" versionDate="2023-03-17">corona</desc>
@@ -1496,16 +1539,20 @@
                     <valItem ident="livre faible">
                         <desc xml:lang="de" versionDate="2023-03-17">livre faible</desc>
                         <desc xml:lang="de" type="plural" versionDate="2023-03-17">livres
-                            faibles</desc>
+                            faibles
+                        </desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">livre faible</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">livres
-                            faibles</desc>
+                            faibles
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-03-17">livre faible</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">livres
-                            faibles</desc>
+                            faibles
+                        </desc>
                         <desc xml:lang="it" versionDate="2023-03-17">livre faible</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17">livres
-                            faibles</desc>
+                            faibles
+                        </desc>
                     </valItem>
                     <valItem ident="Louis dor">
                         <desc xml:lang="de" versionDate="2023-03-17">Louis d’or</desc>
@@ -1517,13 +1564,16 @@
                         <desc xml:lang="de" versionDate="2023-03-17">Louistaler</desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">Louis blanc</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">Louis
-                            blancs</desc>
+                            blancs
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-03-17">Louis blanc</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">Louis
-                            blancs</desc>
+                            blancs
+                        </desc>
                         <desc xml:lang="it" versionDate="2023-03-17">Louis blanc</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17">Louis
-                            blancs</desc>
+                            blancs
+                        </desc>
                     </valItem>
                     <valItem ident="M">
                         <desc xml:lang="de" versionDate="2023-03-17">Mark</desc>
@@ -1541,11 +1591,13 @@
                         <desc xml:lang="de" versionDate="2023-03-17">Ort</desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">un quart d’un florin</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">quarts d’un
-                            florin</desc>
+                            florin
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-03-17">ort</desc>
                         <desc xml:lang="it" versionDate="2023-03-17">un quarto di fiorino</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17">quarti di
-                            fiorino</desc>
+                            fiorino
+                        </desc>
                     </valItem>
                     <valItem ident="Pistole">
                         <desc xml:lang="de" versionDate="2023-03-17">Pistole</desc>
@@ -1599,13 +1651,16 @@
                         <desc xml:lang="de" versionDate="2023-03-17">Schweizer Franken</desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">livre Suisse</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">livres
-                            Suisse</desc>
+                            Suisse
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-03-17">Swiss franc</desc>
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">Swiss
-                            francs</desc>
+                            francs
+                        </desc>
                         <desc xml:lang="it" versionDate="2023-03-17">franco svizzero</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17">franchi
-                            svizzeri</desc>
+                            svizzeri
+                        </desc>
                     </valItem>
                     <valItem ident="Taler">
                         <desc xml:lang="de" versionDate="2023-03-17">Taler</desc>
@@ -1788,7 +1843,8 @@
                     <valItem ident="Schubkarre">
                         <desc xml:lang="de" versionDate="2023-03-17">Schubkarre</desc>
                         <desc xml:lang="de" type="plural" versionDate="2023-03-17"
-                            >Schubkarren</desc>
+                        >Schubkarren
+                        </desc>
                         <desc xml:lang="fr" versionDate="2023-03-17">brouette</desc>
                         <desc xml:lang="fr" type="plural" versionDate="2023-03-17">brouettes</desc>
                         <desc xml:lang="en" versionDate="2023-03-17">barrow</desc>
@@ -2465,27 +2521,35 @@
     <specGrp xml:id="ssrq-role">
         <dataSpec ident="ssrq.role.person" mode="add">
             <desc xml:lang="de" versionDate="2022-05-12">Rolle einer Person im besagten
-                Text</desc>
+                Text
+            </desc>
             <desc xml:lang="en" versionDate="2022-07-11">Role of a person in the text</desc>
             <content>
                 <valList type="closed">
                     <valItem ident="audentiaprocurator">
                         <desc xml:lang="de" versionDate="2022-05-12"
-                            >Audentiaprokurator</desc>
+                        >Audentiaprokurator
+                        </desc>
                         <desc xml:lang="fr" versionDate="2022-05-12"
-                            >audentiaprokurator</desc>
+                        >audentiaprokurator
+                        </desc>
                         <desc xml:lang="en" versionDate="2022-05-12"
-                            >audentiaprocurator</desc>
+                        >audentiaprocurator
+                        </desc>
                         <desc xml:lang="it" versionDate="2022-09-13"
-                            >audentiaprocuratore</desc>
+                        >audentiaprocuratore
+                        </desc>
                     </valItem>
                     <valItem ident="biblical">
                         <desc xml:lang="de" versionDate="2022-05-12">biblische Figur, keine
-                            Heilige</desc>
+                            Heilige
+                        </desc>
                         <desc xml:lang="fr" versionDate="2022-05-12">personnage biblique,
-                            mais pas un saint</desc>
+                            mais pas un saint
+                        </desc>
                         <desc xml:lang="en" versionDate="2022-05-12">biblical person, but
-                            not a saint</desc>
+                            not a saint
+                        </desc>
                         <desc xml:lang="it" versionDate="2022-09-13">personaggio biblico, non un santo</desc>
                     </valItem>
                     <valItem ident="computator">
@@ -2503,15 +2567,18 @@
                     <valItem ident="issuer">
                         <desc xml:lang="de" versionDate="2022-05-12">Aussteller</desc>
                         <desc xml:lang="fr" versionDate="2022-05-12">personne qui a fait un
-                            acte</desc>
+                            acte
+                        </desc>
                         <desc xml:lang="en" versionDate="2022-05-12">issuer</desc>
                         <desc xml:lang="it" versionDate="2022-09-13">autore dell'atto</desc>
                     </valItem>
                     <valItem ident="mythological">
                         <desc xml:lang="de" versionDate="2022-05-12">mythologische
-                            Figuren</desc>
+                            Figuren
+                        </desc>
                         <desc xml:lang="fr" versionDate="2022-05-12">personnage
-                            mythologique</desc>
+                            mythologique
+                        </desc>
                         <desc xml:lang="en" versionDate="2023-04-20">mythological person</desc>
                         <desc xml:lang="it" versionDate="2022-09-13">personaggio mitologico</desc>
                     </valItem>
@@ -2530,7 +2597,8 @@
                     <valItem ident="recipient">
                         <desc xml:lang="de" versionDate="2022-05-12">Empfänger</desc>
                         <desc xml:lang="fr" versionDate="2022-05-12">personne qui a reçu
-                            l’acte</desc>
+                            l’acte
+                        </desc>
                         <desc xml:lang="en" versionDate="2022-05-12">recipient</desc>
                         <desc xml:lang="it" versionDate="2022-09-13">destinatario</desc>
                     </valItem>
@@ -2555,15 +2623,18 @@
                     <valItem ident="sigillant">
                         <desc xml:lang="de" versionDate="2022-05-12">Siegler</desc>
                         <desc xml:lang="fr" versionDate="2022-05-12">personne qui a posé un
-                            sceau</desc>
+                            sceau
+                        </desc>
                         <desc xml:lang="en" versionDate="2022-05-12">sigillant</desc>
                         <desc xml:lang="it" versionDate="2022-09-13">persona che ha impostato un
-                            sigillo</desc>
+                            sigillo
+                        </desc>
                     </valItem>
                     <valItem ident="witness">
                         <desc xml:lang="de" versionDate="2022-05-12">Zeuge</desc>
                         <desc xml:lang="fr" versionDate="2022-05-12">témoin d’une liste de
-                            témoins</desc>
+                            témoins
+                        </desc>
                         <desc xml:lang="en" versionDate="2022-05-12">witness</desc>
                         <desc xml:lang="it" versionDate="2022-09-13">testimone</desc>
                     </valItem>
@@ -2573,38 +2644,45 @@
 
         <dataSpec ident="ssrq.role.institution" mode="add">
             <desc xml:lang="de" versionDate="2023-04-28">Rolle einer Person oder Institution
-                im Text</desc>
+                im Text
+            </desc>
             <desc xml:lang="en" versionDate="2022-07-11">Role of a person or institution in
-                the text</desc>
-            <desc xml:lang="it"  versionDate="2023-04-28">Ruolo di una persona o di un'istituzione
-                nel testo</desc>
+                the text
+            </desc>
+            <desc xml:lang="it" versionDate="2023-04-28">Ruolo di una persona o di un'istituzione
+                nel testo
+            </desc>
             <content>
                 <valList type="closed">
                     <valItem ident="issuer">
                         <desc xml:lang="de" versionDate="2022-05-12">Aussteller</desc>
                         <desc xml:lang="fr" versionDate="2022-05-12">personne/institution qui a fait
-                            un acte</desc>
+                            un acte
+                        </desc>
                         <desc xml:lang="en" versionDate="2022-05-12">issuer</desc>
                         <desc xml:lang="it" versionDate="2022-09-13">autore dell'atto</desc>
                     </valItem>
                     <valItem ident="recipient">
                         <desc xml:lang="de" versionDate="2022-05-12">Empfänger</desc>
                         <desc xml:lang="fr" versionDate="2022-05-12">personne/institution qui a reçu
-                            l’acte</desc>
+                            l’acte
+                        </desc>
                         <desc xml:lang="en" versionDate="2022-05-12">recipient</desc>
                         <desc xml:lang="it" versionDate="2022-09-13">destinatario</desc>
                     </valItem>
                     <valItem ident="sigillant">
                         <desc xml:lang="de" versionDate="2022-05-12">Siegelinhaber</desc>
                         <desc xml:lang="fr" versionDate="2022-05-12">personne/institution qui a posé
-                            un sceau </desc>
+                            un sceau
+                        </desc>
                         <desc xml:lang="en" versionDate="2022-05-12">sigillant</desc>
                         <desc xml:lang="it" versionDate="2022-09-13">titolare del sigillo</desc>
                     </valItem>
                     <valItem ident="testis">
                         <desc xml:lang="de" versionDate="2022-05-12">Zeuge</desc>
                         <desc xml:lang="fr" versionDate="2022-05-12">personne/institution d’une liste
-                            de témoins</desc>
+                            de témoins
+                        </desc>
                         <desc xml:lang="en" versionDate="2022-05-12">witness</desc>
                         <desc xml:lang="it" versionDate="2022-09-13">testimone</desc>
                     </valItem>

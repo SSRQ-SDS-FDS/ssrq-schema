@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="supplied" module="transcr" mode="change"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <desc xml:lang="de" versionDate="2023-04-28">
+        <gi>supplied</gi>
+        enthält eine Textpassage, die vom Bearbeitenden zum besseren Textverständnis ergänzt wurde.
+        Wenn ein Bearbeitender eine Passage frei ergänzt, weist er sich in <att>resp</att> mit seinem Kürzel aus.
+        Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf diese mit <att>source</att> referenziert.
+        Der Grund für eine Ergänzung kann mit <att>reason</att> angegeben werden.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-04-28">
+        <gi>supplied</gi>
+        contains a text passage that has been supplemented by the editor for better understanding of
+        the text. If an editor freely adds a passage, he identifies himself in <att>resp</att> with his abbreviation.
+        If a text is supplemented using another text template, this is referenced with <att>source</att>. The reason
+        for an addition can be specified with <att>reason</att>.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-04-28">
+        <gi>supplied</gi>
+        contient un passage de texte qui a été complété par l'éditeur pour une meilleure
+        compréhension du texte. Si un éditeur ajoute librement un passage, il s'identifie en <att>resp</att> avec son
+        abréviation. Si un texte est complété à l'aide d'un autre modèle de texte, celui-ci est référencé par
+        <att>source</att>. La raison d'un ajout peut être spécifiée avec <att>raison</att>.
+    </desc>
+    <classes mode="replace">
+        <memberOf key="att.global.responsibility"/>
+        <memberOf key="ssrq.att.source"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <textNode/>
+            <macroRef key="ssrq.content.default"/>
+        </alternate>
+    </content>
+    <constraintSpec scheme="schematron" ident="sch-el-supplied">
+        <desc xml:lang="en" versionDate="2023-05-02">Constraint for
+            <gi>supplied</gi>
+        </desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:supplied">
+                    <sch:assert test=".[@resp][not(@source)] or .[@source][not(@resp)]">
+                        Must contain either a resp or a source attribute.
+                    </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="source" mode="replace">
+            <datatype minOccurs="1" maxOccurs="unbounded">
+                <dataRef key="ssrq.pointer.uuid"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <supplied resp="SM" reason="omitted">eis</supplied>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <supplied source="#ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
+        </egXML>
+    </exemplum>
+</elementSpec>

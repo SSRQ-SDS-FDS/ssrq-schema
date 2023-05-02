@@ -8,8 +8,13 @@ import pytest
     [
         (
             "valid-rdg",
-            "<rdg wit='#foo #foo2'>bar</rdg>",
+            "<rdg wit='#ad28656b-5c8d-459c-afb4-3e6ddf70810d #ad28656b-5c8d-459c-afb4-3e6ddf70810e'>bar</rdg>",
             True,
+        ),
+        (
+            "rdg-with-invalid-xml-id",
+            "<rdg wit='#bar #ad28656b-5c8d-459c-afb4-3e6ddf70810e'>bar</rdg>",
+            False,
         ),
         (
             "invalid-rdg-wit-false-attribute",

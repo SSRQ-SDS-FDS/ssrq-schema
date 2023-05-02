@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="addSpan" module="transcr" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-02">
+        <gi>addSpan</gi>
+        bezeichnet größere Abschnitte, die dem Text hinzugefügt wurden.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-05-02">
+        <gi>addSpan</gi>
+        denotes larger sections added to the text.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-05-02">
+        <gi>addSpan</gi>
+        désigne des sections plus grandes qui ont été ajoutées au texte.
+    </desc>
+    <classes mode="replace">
+        <memberOf key="att.global.rendition"/>
+        <memberOf key="att.handFeatures"/>
+        <memberOf key="att.placement"/>
+        <memberOf key="att.spanning"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="att.written"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="hand" mode="change">
+            <datatype>
+                <dataRef key="ssrq.hand.scribe"/>
+            </datatype>
+        </attDef>
+        <attDef ident="medium" mode="delete"/>
+        <attDef ident="spanTo" mode="change" usage="req"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <addSpan place="left margin" type="sign" spanTo="#add1"/>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <addSpan place="inline" hand="secondaryHand" rend="other ink" spanTo="#add1"/>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <addSpan place="below" scribe="per024279a" spanTo="#add1"/>
+        </egXML>
+    </exemplum>
+</elementSpec>

@@ -15,11 +15,14 @@
         -->
         <dataSpec ident="ssrq.pointer.persons" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Personen-IDs zur
-                Verknüpfung mit der Personen- und Organisationsdatenbank</desc>
+                Verknüpfung mit der Personen- und Organisationsdatenbank
+            </desc>
             <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for person IDs for
-                linking with the person and organisation database</desc>
+                linking with the person and organisation database
+            </desc>
             <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle d'identifiant de personne
-                pour le lien avec la base de données des personnes et des organisations</desc>
+                pour le lien avec la base de données des personnes et des organisations
+            </desc>
             <content>
                 <dataRef name="string" restriction="per\d{6}[abc]?(\.\d{2})?"/>
             </content>
@@ -27,11 +30,14 @@
 
         <dataSpec ident="ssrq.pointer.org" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Org-IDs zur
-                Verknüpfung mit der Personen- und Organisationsdatenbank</desc>
+                Verknüpfung mit der Personen- und Organisationsdatenbank
+            </desc>
             <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for org-IDs for
-                linking with the person and organisation database</desc>
+                linking with the person and organisation database
+            </desc>
             <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des org-ID pour
-                l'établissement d'un lien avec la base de données des personnes et des organisations</desc>
+                l'établissement d'un lien avec la base de données des personnes et des organisations
+            </desc>
             <content>
                 <dataRef name="string" restriction="org\d{6}(\.\d{2})?"/>
             </content>
@@ -39,11 +45,14 @@
 
         <dataSpec ident="ssrq.pointer.places" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2024-04-20">Definiert das Muster für Place-IDs zur
-                Verknüpfung mit der Ortsdatenbank</desc>
+                Verknüpfung mit der Ortsdatenbank
+            </desc>
             <desc xml:lang="en" versionDate="2024-04-20">Defines the pattern for place-IDs for
-                linking with the places database</desc>
+                linking with the places database
+            </desc>
             <desc xml:lang="fr" versionDate="2024-04-20">Définit le modèle des place-ID pour
-                l'établissement d'un lien avec la base de données des lieux</desc>
+                l'établissement d'un lien avec la base de données des lieux
+            </desc>
             <content>
                 <dataRef name="string" restriction="loc\d{6}(\.\d{2})?"/>
             </content>
@@ -51,11 +60,14 @@
 
         <dataSpec ident="ssrq.pointer.keywords">
             <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Schlagwort-IDs zur
-                Verknüpfung mit der Schlagwort- und Lemmadatenbank</desc>
+                Verknüpfung mit der Schlagwort- und Lemmadatenbank
+            </desc>
             <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for keyword IDs for
-                linking to the keyword and lemma database</desc>
+                linking to the keyword and lemma database
+            </desc>
             <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des ID de mots-clés pour
-                la liaison avec la base de données des mots-clés et des lemmes</desc>
+                la liaison avec la base de données des mots-clés et des lemmes
+            </desc>
             <content>
                 <dataRef name="string" restriction="key\d{6}$?"/>
             </content>
@@ -63,11 +75,14 @@
 
         <dataSpec ident="ssrq.pointer.lemma" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Lemma-IDs zur
-                Verknüpfung mit der Schlagwort- und Lemmadatenbank</desc>
+                Verknüpfung mit der Schlagwort- und Lemmadatenbank
+            </desc>
             <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for lemma IDs for
-                linking to the keyword and lemma database</desc>
+                linking to the keyword and lemma database
+            </desc>
             <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des ID de lemmes pour la
-                liaison avec la base de données des mots-clés et des lemmes</desc>
+                liaison avec la base de données des mots-clés et des lemmes
+            </desc>
             <content>
                 <dataRef name="string" restriction="lem\d{6}(\.1?\d{2})?"/>
             </content>
@@ -75,33 +90,57 @@
 
         <dataSpec ident="ssrq.pointer.urn" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-03-07">Definiert das Muster für Verweise als
-                Referenz auf andere TEI-Stücke inklusive Fragment-Bezeichnern.</desc>
+                Referenz auf andere TEI-Stücke inklusive Fragment-Bezeichnern.
+            </desc>
             <desc xml:lang="en" versionDate="2023-03-07">Defines the pattern for references as
-                reference to other TEI documents including fragment identifiers.</desc>
+                reference to other TEI documents including fragment identifiers.
+            </desc>
             <desc xml:lang="fr" versionDate="2023-03-07">Définit le modèle pour les références comme
-                référence à d'autres pièces TEI y compris les identificateurs de fragments.</desc>
+                référence à d'autres pièces TEI y compris les identificateurs de fragments.
+            </desc>
             <content>
                 <dataRef name="string"
-                    restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)(-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)))?(#[A-Za-z0-9_]+)?"
+                         restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)(-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)))?(#[A-Za-z0-9_]+)?"
                 />
             </content>
         </dataSpec>
 
         <dataSpec ident="ssrq.pointer.url" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-03-07">Definiert das Muster für Verweise als
-                URL.</desc>
+                URL.
+            </desc>
             <content>
                 <dataRef name="string" restriction="http(s)?://(w{3})?.*"/>
             </content>
         </dataSpec>
 
+        <dataSpec ident="ssrq.pointer.uuid" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-05-02">Definiert das Muster für Verweise auf uuids im selben
+                Dokument
+            </desc>
+            <desc xml:lang="en" versionDate="2023-05-02">Defines the pattern for references to uuids in the same
+                document
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-05-02">Définit le modèle pour les références à uuids dans le même
+                document
+            </desc>
+            <content>
+                <dataRef name="string"
+                         restriction="#[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
+                />
+            </content>
+        </dataSpec>
+
         <dataSpec ident="ssrq.pointer.target" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2022-12-08">Definiert das Muster für Verweise als
-                Referenz auf andere TEI-Stücke, als Hyperlink oder als DOI.</desc>
+                Referenz auf andere TEI-Stücke, als Hyperlink oder als DOI.
+            </desc>
             <desc xml:lang="en" versionDate="2022-12-08">Defines the pattern for references as
-                reference to other TEI documents, as hyperlink or as DOI.</desc>
+                reference to other TEI documents, as hyperlink or as DOI.
+            </desc>
             <desc xml:lang="fr" versionDate="2022-12-08">Définit le modèle pour les références comme
-                référence à d'autres pièces TEI, comme hyperlien ou comme DOI.</desc>
+                référence à d'autres pièces TEI, comme hyperlien ou comme DOI.
+            </desc>
             <content>
                 <alternate minOccurs="1" maxOccurs="1">
                     <dataRef key="ssrq.pointer.urn"/>
