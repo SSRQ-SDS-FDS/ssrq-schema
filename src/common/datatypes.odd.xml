@@ -1,7 +1,438 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
 
+    <specGrp xml:id="ssrq-agent">
+
+        <dataSpec ident="ssrq.agent" mode="add">
+            <desc xml:lang="de" versionDate="2023-05-02">beschreibt die Art einer
+                Beschädigung</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="cancelled">
+                        <desc xml:lang="de" versionDate="2023-05-02">Kassation</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">cassation</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">cassamento</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">cancellation</desc>
+                    </valItem>
+                    <valItem ident="clipping">
+                        <desc xml:lang="de" versionDate="2023-05-02">Beschneidung (am
+                            Blattrand)</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">une coupure</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">rifilatura (al margine della carta)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">clipping (on the leaf
+                            margin)</desc>
+                    </valItem>
+                    <valItem ident="covered by seal">
+                        <desc xml:lang="de" versionDate="2023-05-02">verdeckendes
+                            Siegel</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">un sceau
+                            couvrant</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sigillo oscurante</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">covering seal</desc>
+                    </valItem>
+                    <valItem ident="crack">
+                        <desc xml:lang="de" versionDate="2023-05-02">Riss</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">déchirure</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">strappo</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">tear</desc>
+                    </valItem>
+                    <valItem ident="faded ink">
+                        <desc xml:lang="de" versionDate="2023-05-02">verblasste Tinte</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">encre estompée</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">inchiostro sbiadito</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">faded ink</desc>
+                    </valItem>
+                    <valItem ident="faded ink and clipping">
+                        <desc xml:lang="de" versionDate="2023-05-02">verblasste Tinte und
+                            Beschneidung (am Blattrand)</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">une coupure et encre stompée</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">inchiostro sbiadito e rifilatura (al margine della carta)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">faded ink and clipping
+                            (on the leaf margin)</desc>
+                    </valItem>
+                    <valItem ident="fold">
+                        <desc xml:lang="de" versionDate="2023-05-02">Falt</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">le pli</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">piega</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">fold</desc>
+                    </valItem>
+                    <valItem ident="glued page">
+                        <desc xml:lang="de" versionDate="2023-05-02">zusammengeklebte
+                            Seiten</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">pages collées</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">pagine incollate</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">glued pages</desc>
+                    </valItem>
+                    <valItem ident="hairline">
+                        <desc xml:lang="de" versionDate="2023-05-02">feinen Riss</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">légère(s)
+                            fissure(s)</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">lieve strappo</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">hairline tear</desc>
+                    </valItem>
+                    <valItem ident="hole">
+                        <desc xml:lang="de" versionDate="2023-05-02">Loch</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">un ou plusieurs
+                            trou(s)</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">buco</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">hole</desc>
+                    </valItem>
+                    <valItem ident="ink blot">
+                        <desc xml:lang="de" versionDate="2023-05-02">Tintenklecks</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">coulure d’encre</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">macchia d’inchiostro</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">ink blot</desc>
+                    </valItem>
+                    <valItem ident="ink hole">
+                        <desc xml:lang="de" versionDate="2023-05-02">Tintenfrass</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">corrosion d’encre</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">corrosione dell’inchiostro</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">ink hole</desc>
+                    </valItem>
+                    <valItem ident="insects">
+                        <desc xml:lang="de" versionDate="2023-05-02">Insektenfrass</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">des insectes</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">divorato dagli insetti</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">insects</desc>
+                    </valItem>
+                    <valItem ident="lost folio">
+                        <desc xml:lang="de" versionDate="2023-05-02">fehlende
+                            Seite/fehlendes Blatt</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">la perte de la
+                            page/feuille</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">perdita di un foglio/una carta</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">lost folio</desc>
+                    </valItem>
+                    <valItem ident="mice">
+                        <desc xml:lang="de" versionDate="2023-05-02">Mäusefrass</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">des dents de
+                            rongeurs</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">divorato da un roditore</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">mice</desc>
+                    </valItem>
+                    <valItem ident="mildew">
+                        <desc xml:lang="de" versionDate="2023-05-02"
+                            >Pilzbefall/Schimmel</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">la moisissure</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">muffa</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">mold</desc>
+                    </valItem>
+                    <valItem ident="overbinding">
+                        <desc xml:lang="de" versionDate="2023-05-02">verdeckenden
+                            Einband</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">la couverture de la
+                            reliure</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">copertina della rilegatura</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">covering binding</desc>
+                    </valItem>
+                    <valItem ident="part of the folio lost">
+                        <desc xml:lang="de" versionDate="2023-05-02">fehlenden Teil der
+                            Seite oder des Blatts</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">la perte d’une partie
+                            de la page/feuille</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">perdita di una parte di un foglio/una carta</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">lost part of the
+                            page/folio</desc>
+                    </valItem>
+                    <valItem ident="restoration">
+                        <desc xml:lang="de" versionDate="2023-05-02">Restauration</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">la restauration</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">restauro</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">restoration</desc>
+                    </valItem>
+                    <valItem ident="smoke">
+                        <desc xml:lang="de" versionDate="2023-05-02"
+                            >Rauch/Brandschaden</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">la fumée/le feu</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">fumo/fuoco</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">smoke/fire</desc>
+                    </valItem>
+                    <valItem ident="stapling">
+                        <desc xml:lang="de" versionDate="2023-05-02">Heftklammer</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">une agrafe</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">graffetta</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">stapling</desc>
+                    </valItem>
+                    <valItem ident="water spot">
+                        <desc xml:lang="de" versionDate="2023-05-02">Wasserfleck</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">des traces d’eau ou
+                            d’humidité</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">tracce d’umidità</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">water spot</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+    </specGrp>
+
     <specGrp xml:id="ssrq-hand">
+
+        <dataSpec ident="ssrq.hand.hand" mode="add">
+            <desc xml:lang="de" versionDate="2023-05-02">gibt Informationen zur Hand bzw.
+                zum Schreiber des Textes</desc>
+            <desc xml:lang="en" versionDate="2023-05-02">provides information on the hand or
+                the scribe</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="hand10c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 10.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du X<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo X</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 10th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand11c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 11.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XI<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XI</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 11th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand12c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 12.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XII<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XII</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 12th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand13c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 13.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XIII<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIII</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 13th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand14c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 14.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XIV<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIV</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 14th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand15c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 15.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XV<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XV</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 15th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand16c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 16.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XVI<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVI</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 16th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand17c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 17.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XVII<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVII</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 17th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand18c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 18.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du
+                            XVIII<hi rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVIII</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 18th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand19c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 19.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XIX<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIX</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 19th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand20c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 20.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XX<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XX</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 20th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand21c">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 21.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XXI<hi
+                                rend="sup">e</hi> siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XXI</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 21th
+                            century</desc>
+                    </valItem>
+                    <valItem ident="hand10c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 10.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du X<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo X (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 10th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand11c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 11.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XI<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XI (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 11th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand12c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 12.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XII<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XII (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 12th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand13c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 13.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XIII<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIII (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 13th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand14c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 14.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XIV<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIV (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 14th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand15c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 15.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XV<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XV (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 15th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand16c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 16.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XVI<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVI (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 16th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand17c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 17.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XVII<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVII (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 17th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand18c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 18.
+                            Jh.</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du
+                            XVIII<hi rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVIII (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 18th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand19c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 19.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XIX<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIX (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 19th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand20c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 20.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XX<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XX (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 20th
+                            century?</desc>
+                    </valItem>
+                    <valItem ident="hand21c?">
+                        <desc xml:lang="de" versionDate="2023-05-02">von Hand des 21.
+                            Jh.?</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une main du XXI<hi
+                                rend="sup">e</hi> (?) siècle</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XXI (?)</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a hand of the 21th
+                            century?</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+        <dataSpec ident="ssrq.hand.other" mode="add">
+            <desc xml:lang="de" versionDate="2023-05-02">gibt Informationen zur Hand bzw.
+                zum Schreiber des Textes</desc>
+            <desc xml:lang="en" versionDate="2023-05-02">provides information on the hand or
+                the scribe</desc>
+            <content>
+                <valList>
+                    <valItem ident="other hand">
+                        <desc xml:lang="de" versionDate="2023-05-02">von anderer Hand</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par une autre
+                            main</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da un’altra mano</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in another hand</desc>
+                        <!-- erscheint in der Anmerkung -->
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+        <dataSpec ident="ssrq.hand.later" mode="add">
+            <desc xml:lang="de" versionDate="2023-05-02">gibt Informationen zur Hand bzw.
+                zum Schreiber des Textes</desc>
+            <desc xml:lang="en" versionDate="2023-05-02">provides information on the hand or
+                the scribe</desc>
+            <content>
+                <valList>
+                    <valItem ident="later hand">
+                        <desc xml:lang="de" versionDate="2023-05-02">von späterer
+                            Hand</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">d’une main plus
+                            récente</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">da una mano più recente</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in a later hand</desc>
+                        <!-- erscheint im Haupttext -->
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
 
         <dataSpec ident="ssrq.hand.scribe" mode="add">
             <desc versionDate="2023-03-17" xml:lang="de">Anonyme Anlage- oder Nachtragshand</desc>
@@ -1615,6 +2046,415 @@
                         <desc xml:lang="en" type="plural" versionDate="2023-03-17">quarters</desc>
                         <desc xml:lang="it" versionDate="2023-03-17">quartino</desc>
                         <desc xml:lang="it" type="plural" versionDate="2023-03-17">quartini</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+    </specGrp>
+
+    <specGrp xml:id="ssrq-place">
+
+        <dataSpec ident="ssrq.place" mode="add">
+            <desc xml:lang="de" versionDate="2023-05-02">Ort einer Ergänzung</desc>
+            <desc xml:lang="en" versionDate="2023-05-02">Place of a supplement</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="above">
+                        <desc xml:lang="de" versionDate="2023-05-02">oberhalb der
+                            Zeile</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">au-dessus de la
+                            ligne</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">al di sopra della riga</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">above the line</desc>
+                    </valItem>
+                    <valItem ident="below">
+                        <desc xml:lang="de" versionDate="2023-05-02">unterhalb der
+                            Zeile</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">au-dessous de la
+                            ligne</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">al di sotto della riga</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">below the line</desc>
+                    </valItem>
+                    <valItem ident="bottom">
+                        <desc xml:lang="de" versionDate="2023-05-02">am unteren Rand</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">en bas de page</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">a piè di pagina</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the bottom</desc>
+                    </valItem>
+                    <valItem ident="cover">
+                        <desc xml:lang="de" versionDate="2023-05-02">auf dem Umschlag</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">sur la
+                            couverture</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sulla copertina</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the cover</desc>
+                    </valItem>
+                    <valItem ident="cover above">
+                        <desc xml:lang="de" versionDate="2023-05-02">auf dem Umschlag
+                            oben</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">en haut de la
+                            couverture</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">nella parte superiore della copertina</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">at the top of the
+                            cover</desc>
+                    </valItem>
+                    <valItem ident="cover bottom">
+                        <desc xml:lang="de" versionDate="2023-05-02">auf dem Umschlag
+                            unten</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">en bas de la
+                            couverture</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">nella parte inferiore della copertina</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">at the bottom of the
+                            cover</desc>
+                    </valItem>
+                    <valItem ident="cover middle">
+                        <desc xml:lang="de" versionDate="2023-05-02">auf dem Umschlag in der
+                            Mitte</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">au milieu de la
+                            couverture</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">nel mezzo della copertina</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">in the middle of the
+                            cover</desc>
+                    </valItem>
+                    <valItem ident="left margin">
+                        <desc xml:lang="de" versionDate="2023-05-02">am linken Rand</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">dans la marge de
+                            gauche</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul margine sinistro</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the left
+                            margin</desc>
+                    </valItem>
+                    <valItem ident="right margin">
+                        <desc xml:lang="de" versionDate="2023-05-02">am rechten Rand</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">dans la marge de
+                            droite</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul margine destro</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the right
+                            margin"</desc>
+                    </valItem>
+                    <valItem ident="next page">
+                        <desc xml:lang="de" versionDate="2023-05-02">auf der nächsten Seite</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">sur la page
+                            suivante</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sulla pagina seguente</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the next page</desc>
+                    </valItem>
+                    <valItem ident="verso">
+                        <desc xml:lang="de" versionDate="2023-05-02">auf der Rückseite</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">au verso</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the reverse side</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+        <dataSpec ident="ssrq.place.add" mode="add">
+            <desc xml:lang="de" versionDate="2023-05-02">Ort einer Ergänzung</desc>
+            <desc xml:lang="en" versionDate="2023-05-02">Place of a supplement</desc>
+            <content>
+                <valList>
+                    <valItem ident="inline">
+                        <desc xml:lang="de" versionDate="2023-05-02">auf Zeilenhöhe</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">à la hauteur de la
+                            ligne</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">all’altezza della riga</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">inline</desc>
+                    </valItem>
+                    <valItem ident="interlinear">
+                        <desc xml:lang="de" versionDate="2023-05-02">zwischen zwei
+                            Zeilen</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">entre les lignes</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">tra le righe</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">interlinear</desc>
+                    </valItem>
+                    <valItem ident="left top">
+                        <desc xml:lang="de" versionDate="2023-05-02">am linken oberen
+                            Rand</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">en haut à gauche</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">in alto a sinistra</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the left top</desc>
+                    </valItem>
+                    <valItem ident="opposite">
+                        <desc xml:lang="de" versionDate="2023-05-02">auf der gegenüberliegenden
+                            Seite</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">sur la page
+                            opposée</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sulla pagina opposta</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the opposite
+                            page</desc>
+                    </valItem>
+                    <valItem ident="overwritten">
+                        <desc xml:lang="de" versionDate="2023-05-02">überschrieben</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">par-dessus</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sovrascritto</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">overwritten</desc>
+                    </valItem>
+                    <valItem ident="previous page">
+                        <desc xml:lang="de" versionDate="2023-05-02">auf der vorherigen Seite</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">sur la page précédente</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sulla pagina precedente</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the previous page</desc>
+                    </valItem>
+                    <valItem ident="right top">
+                        <desc xml:lang="de" versionDate="2023-05-02">am rechten oberen
+                            Rand</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">en haut à droite</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">in alto a destra</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the right top</desc>
+                    </valItem>
+                    <valItem ident="top">
+                        <desc xml:lang="de" versionDate="2023-05-02">am oberen Rand</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">en haut de page</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul bordo superiore</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">on the top</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+
+        <dataSpec ident="ssrq.place.ab" mode="add">
+            <desc xml:lang="de" versionDate="2023-05-02">Ort einer Ergänzung</desc>
+            <desc xml:lang="en" versionDate="2023-05-02">Place of a supplement</desc>
+            <content>
+                <valList>
+                    <valItem ident="left plica">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der linken Seite
+                            der Plica</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">du côté gauche de la
+                            plica</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">a sinistra della plica</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">on the left side of the
+                            plica</desc>
+                    </valItem>
+                    <valItem ident="parchment tag">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf dem
+                            Pergamentstreifen</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">à une lanière en
+                            parchemin</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sulla striscia di pergamena</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">on the parchment
+                            tag</desc>
+                    </valItem>
+                    <valItem ident="plica">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Plica</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">sur la plica</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sulla plica</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">on the plica</desc>
+                    </valItem>
+                    <valItem ident="plica verso">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite der
+                            Plica</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au verso de la
+                            plica</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso della plica</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">on the verso of the
+                            plica</desc>
+                    </valItem>
+                    <valItem ident="right plica">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der rechten Seite
+                            der Plica</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">du côté droit de la
+                            plica</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">a destro della plica</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">on the right side of
+                            the plica</desc>
+                    </valItem>
+                    <valItem ident="sub plica">
+                        <desc xml:lang="de" versionDate="2022-05-10">unter der Plica</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au-dessous de la
+                            plica</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sotto la plica</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">sub plica</desc>
+                    </valItem>
+                    <valItem ident="verso above">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite
+                            oben</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au verso en haut</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso superiore</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">at the top of the
+                            verso</desc>
+                    </valItem>
+                    <valItem ident="verso above left">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite oben
+                            links</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au verso en haut à
+                            gauche</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso superiore a sinistra</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">at the top left of the
+                            verso</desc>
+                    </valItem>
+                    <valItem ident="verso above middle">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite oben
+                            in der Mitte</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au verso en haut au
+                            milieu</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso superiore in mezzo</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">at the top of the verso
+                            in the middle</desc>
+                    </valItem>
+                    <valItem ident="verso above right">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite oben
+                            rechts</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au verso en haut à
+                            droite</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso superiore a destra</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">at the top right of the
+                            verso</desc>
+                    </valItem>
+                    <valItem ident="verso bottom">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite
+                            unten</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au verso en bas</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso inferiore</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">at the bottom of the
+                            verso</desc>
+                    </valItem>
+                    <valItem ident="verso bottom left">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite unten
+                            links</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au verso en bas à
+                            gauche</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso inferiore a sinistra</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">at the bottom left of
+                            the verso</desc>
+                    </valItem>
+                    <valItem ident="verso bottom middle">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite unten
+                            in der Mitte</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au verso en bas au
+                            milieu</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso inferiore in mezzo</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">at the bottom of the
+                            verso in the middle</desc>
+                    </valItem>
+                    <valItem ident="verso bottom right">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite unten
+                            rechts</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au verso en bas à
+                            droite</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso inferiore a destra</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">at the bottom right of
+                            the verso</desc>
+                    </valItem>
+                    <valItem ident="verso middle">
+                        <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite in
+                            der Mitte</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-10">au centre du verso de
+                            la page</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sul verso in mezzo</desc>
+                        <desc xml:lang="en" versionDate="2022-05-10">in the middle of the
+                            verso</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+    </specGrp>
+
+    <specGrp xml:id="ssrq-rend">
+
+        <dataSpec ident="ssrq.critical.rend.del" mode="add">
+            <desc xml:lang="de" versionDate="2023-05-02">gibt wieder, wie eine Streichung
+                vorgenommen wurde</desc>
+            <desc xml:lang="en" versionDate="2023-05-02">rendition of the concrete
+                deletion</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="blackened">
+                        <desc xml:lang="de" versionDate="2023-05-02">Streichung durch
+                            Schwärzen</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">caviardage</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">depennamento</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">deletion by blackening
+                            text</desc>
+                    </valItem>
+                    <valItem ident="bracketed">
+                        <desc xml:lang="de" versionDate="2023-05-02">Streichung durch
+                            Verwendung von Klammern</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">la suppression se
+                            trouve entre parenthèses</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">cancellazione tra parentesi</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">deletion by bracketing
+                            text</desc>
+                    </valItem>
+                    <valItem ident="crossout">
+                        <desc xml:lang="de" versionDate="2023-05-02">Streichung durch
+                            gekreuzte Linien</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">suppression en croisant la ligne</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">cancellazione sbarrata</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">deletion by crossed
+                            lines</desc>
+                    </valItem>
+                    <valItem ident="overwritten">
+                        <desc xml:lang="de" versionDate="2023-05-02">Streichung durch
+                            direkte Überschreibung des Textes</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">la suppression a été
+                            remplacée directement</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">cancellazione con sovrascrittura diretta del testo</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">deleted text directly
+                            overwritten</desc>
+                    </valItem>
+                    <valItem ident="rubbing">
+                        <desc xml:lang="de" versionDate="2023-05-02">Streichung durch
+                            Textlöschung/Rasur</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">suppression par
+                            grattage</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">cancellazione raschiata</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">deletion by
+                            scraping</desc>
+                    </valItem>
+                    <valItem ident="strikethrough">
+                        <desc xml:lang="de" versionDate="2023-05-02">Streichung durch
+                            einfache Durchstreichung</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">suppression par
+                            biffage</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">cancellazione biffata</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">deletion by
+                            strikethrough</desc>
+                    </valItem>
+                    <valItem ident="subpunction">
+                        <desc xml:lang="de" versionDate="2023-05-02">Streichung durch Punkte
+                            unter dem zu Streichenden</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">suppression par
+                            exponctuation</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">cancellazione con segno di espunzione</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">deletion by
+                            subpunctuation</desc>
+                    </valItem>
+                    <valItem ident="underline">
+                        <desc xml:lang="de" versionDate="2023-05-02">Streichung mit
+                            Unterstreichen</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">la suppression a été
+                            soulignée</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">cancellazione sottolineata</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">deletion by
+                            underlining</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+        <dataSpec ident="ssrq.rend.add" mode="add">
+            <desc xml:lang="de" versionDate="2023-05-02">"Schreibstoff" der
+                Hinzufügung</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="other ink">
+                        <desc xml:lang="de" versionDate="2023-05-02">mit anderer
+                            Tinte</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">avec une autre
+                            encre</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">altro inchiostro</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">with different
+                            ink</desc>
+                    </valItem>
+                    <valItem ident="pencil">
+                        <desc xml:lang="de" versionDate="2023-05-02">mit Bleistift</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-02">au crayon</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">matita</desc>
+                        <desc xml:lang="en" versionDate="2023-05-02">with pencil</desc>
                     </valItem>
                 </valList>
             </content>
