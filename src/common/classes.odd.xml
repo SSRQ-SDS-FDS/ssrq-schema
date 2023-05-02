@@ -360,10 +360,13 @@
                     </datatype>
                 </attDef>
                 <attDef ident="key" mode="replace">
-                    <desc versionDate="2023-04-28" xml:lang="de">Tätigkeit, für die ein Bearbeiter oder eine Organisation.
-                        verantwortlich ist.</desc>
+                    <desc versionDate="2023-04-28" xml:lang="de">Tätigkeit, für die ein Bearbeiter oder eine
+                        Organisation.
+                        verantwortlich ist.
+                    </desc>
                     <desc versionDate="2023-04-28" xml:lang="en">Activity for which an agent or organisation
-                        is responsible.</desc>
+                        is responsible.
+                    </desc>
                     <valList type="closed" mode="change">
                         <valItem ident="transcript">
                             <desc xml:lang="de" versionDate="2023-03-28">Transkript</desc>
@@ -537,7 +540,6 @@
                                 </rng:oneOrMore>
                             </rng:list>
                             <rng:ref name="ssrq.pointer.url"/>
-                            <rng:ref name="ssrq.pointer.uuid"/>
                         </rng:choice>
                     </datatype>
 

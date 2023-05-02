@@ -41,14 +41,8 @@
         <constraint>
             <sch:pattern>
                 <sch:rule context="tei:supplied">
-                    <sch:assert test="(@resp and not(@source)) or (@source and not(@resp))">
+                    <sch:assert test=".[@resp][not(@source)] or .[@source][not(@resp)]">
                         Must contain either a resp or a source attribute.
-                    </sch:assert>
-                </sch:rule>
-                <sch:rule context="tei:supplied/@source">
-                    <sch:assert
-                            test="matches(., '[#]{1}^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$')"
-                    >The permanent identification number in the attribute needs to be a uuid.
                     </sch:assert>
                 </sch:rule>
             </sch:pattern>
@@ -56,15 +50,20 @@
     </constraintSpec>
     <attList>
         <attDef ident="cert" mode="delete"/>
+        <attDef ident="source" mode="replace">
+            <datatype minOccurs="1" maxOccurs="unbounded">
+                <dataRef key="ssrq.pointer.uuid"/>
+            </datatype>
+        </attDef>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <supplied resp="SM" reason="omitted">eis</supplied>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <supplied source="#B">gerechte</supplied>
+            <supplied source="#ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
         </egXML>
     </exemplum>
 </elementSpec>

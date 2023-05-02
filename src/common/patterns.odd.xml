@@ -115,12 +115,18 @@
         </dataSpec>
 
         <dataSpec ident="ssrq.pointer.uuid" mode="add" module="ssrq.core.module">
-            <desc xml:lang="de" versionDate="2023-05-02">Definiert das Muster für Verweise auf uuids</desc>
-            <desc xml:lang="en" versionDate="2023-05-02">Defines the pattern for references to uuids</desc>
-            <desc xml:lang="fr" versionDate="2023-05-02">Définit le modèle pour les références à uuids</desc>
+            <desc xml:lang="de" versionDate="2023-05-02">Definiert das Muster für Verweise auf uuids im selben
+                Dokument
+            </desc>
+            <desc xml:lang="en" versionDate="2023-05-02">Defines the pattern for references to uuids in the same
+                document
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-05-02">Définit le modèle pour les références à uuids dans le même
+                document
+            </desc>
             <content>
                 <dataRef name="string"
-                         restriction="^[#]{1}[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+                         restriction="#[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"
                 />
             </content>
         </dataSpec>

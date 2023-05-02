@@ -12,9 +12,14 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "supplied-valid",
-            "<supplied>foo</supplied>",
+            "valid-supplied-source",
+            "<supplied source='#73988c1a-40e1-4527-94b7-736d418b29d0'>foo</supplied>",
             True,
+        ),
+        (
+            "invalid-supplied-source",
+            "<supplied source='#bar'>foo</supplied>",
+            False,
         ),
         (
             "supplied-valid-with-reason",
@@ -57,7 +62,7 @@ def test_supplied(
         ),
         (
             "invalid-supplied-source",
-            "<supplied source='something-completely-different'>foo</supplied>",
+            "<supplied>foo</supplied>",
             False,
         ),
         (
