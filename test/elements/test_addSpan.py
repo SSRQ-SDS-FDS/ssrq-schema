@@ -14,14 +14,20 @@ from ..conftest import RNG_test_function
         (
             "valid-addSpan-with-attributes",
             """<addSpan 
-                                hand='secondaryHand'
-                                place='below'
-                                rend='other ink'
-                                scribe='per000001'
-                                spanTo='#add1'
-                                type='sign'/>""",
+                            hand='#otherHand'
+                            place='below'
+                            rend='other ink'
+                            spanTo='#add1'
+                            type='sign'/>""",
             True,
         ),
+        # ToDo: Dieser Test wird nicht korrekt ausgewertet, wie kann ich Prüfung auf IDs als Attributwert erzwingen?
+        # vgl. test_delSpan
+        # (
+        #    "addSpan-with-invalid-attribute-values",
+        #    "<addSpan hand='foo' spanTo='add1'/>",
+        #    False,
+        # ),
         (
             "invalid-addSpan",
             "<addSpan spanTo='#add1'>foo</addSpan>",
