@@ -8,12 +8,13 @@ import pytest
     [
         (
             "valid-listWit",
-            "<listWit><witness xml:id='bar'>Foo</witness></listWit>",
+            "<listWit><witness xml:id='ad28656b-5c8d-459c-afb4-3e6ddf70810d' n='A'>Foo</witness></listWit>",
             True,
         ),
         (
             "valid-listWit-with-multiple-entries",
-            "<listWit><witness xml:id='bar'>Foo</witness><witness xml:id='foo'>Bar</witness></listWit>",
+            """<listWit><witness xml:id='ad28656b-5c8d-459c-afb4-3e6ddf70810d' n='A'>Foo</witness>
+                    <witness xml:id='ad28656b-5c8d-459c-afb4-3e6ddf70810e' n='B'>Bar</witness></listWit>""",
             True,
         ),
         (
@@ -23,7 +24,7 @@ import pytest
         ),
         (
             "invalid-listWit-with-attribute",
-            "<listWit type='foo'><witness xml:id='bar'>Foo</witness></listWit>",
+            "<listWit type='foo'><witness xml:id='ad28656b-5c8d-459c-afb4-3e6ddf70810d' n='A'>Foo</witness></listWit>",
             False,
         ),
     ],

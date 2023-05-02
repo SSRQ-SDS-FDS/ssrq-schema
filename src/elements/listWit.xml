@@ -29,11 +29,23 @@
     <attList>
         <attDef ident="n" mode="delete"/>
     </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <listWit>
-                <witness xml:id="B">STAW B 3a/10</witness>
-                <witness xml:id="win">winbib Ms. Fol. 27</witness>
+                <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810d" n="A">
+                    <msDesc>
+                        <msIdentifier>
+                            <idno>STAW B 3a/10</idno>
+                        </msIdentifier>
+                    </msDesc>
+                </witness>
+                <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810e" n="B">
+                    <msDesc>
+                        <msIdentifier>
+                            <idno>winbib Ms. Fol. 27</idno>
+                        </msIdentifier>
+                    </msDesc>
+                </witness>
             </listWit>
         </egXML>
     </exemplum>
