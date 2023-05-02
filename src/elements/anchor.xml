@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="anchor" module="linking" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-02">Endpunkt einer Streichung (vgl. <gi>delSpan</gi>),
+        einer weiteren Ergänzung (vgl. <gi>addSpan</gi>) oder einer Beschädigung (vgl.
+            <gi>damageSpan</gi>) an. Als Wert des Attributs xml:id ist der den ersten Teil des
+        Namens dieser Elemente sowie einer fortlaufende Nummer zu wählen: del1, del2, add1, add2,
+        usw.</desc>
+    <desc xml:lang="en" versionDate="2023-05-02">Endpoint of a deletion (cf. <gi>delSpan</gi>), a
+        further addition (cf. <gi>addSpan</gi>) or a damage (cf. <gi>damageSpan</gi>). The value of
+        the attribute xml:id shall be the first part of the name of these elements and a consecutive
+        number: del1, del2, add1, add2, etc.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-02">Point final d'une suppression (cf.
+        <gi>delSpan</gi>), d'un ajout (cf. <gi>addSpan</gi>) ou d'un dommage (cf.
+            <gi>damageSpan</gi>). La valeur de l'attribut xml:id doit être la première partie du nom
+        de ces éléments et un nombre consécutif : del1, del2, add1, add2, etc.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="xml:id" mode="change" usage="req">
+            <datatype>
+                <dataRef name="string" restriction="(del|damage|add)[1-9]+"/>
+            </datatype>
+        </attDef>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="rend" mode="delete"/>
+        <attDef ident="resp" mode="delete"/>
+        <attDef ident="xml:lang" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
+    <p xml:lang="de">Beispielhafte Verwendung in Kombination mit <gi>delSpan</gi></p>
+        <p xml:lang="fr">BExemple d'utilisation en combinaison avec <gi>delSpan</gi></p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <p><delSpan spanTo="#del1"/> ... <anchor xml:id="del1"/></p>
+        </egXML>
+    </exemplum>
+</elementSpec>

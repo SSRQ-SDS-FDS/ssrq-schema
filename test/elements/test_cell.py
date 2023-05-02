@@ -14,7 +14,7 @@ import pytest
         ),
         (
             "valid-cell",
-            "<cell>foo <anchor xml:id='bar'/></cell>",
+            "<cell>foo <anchor xml:id='del1'/></cell>",
             True,
         ),
         (
