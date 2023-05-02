@@ -45,7 +45,6 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 
 #### Generelles
 
-- [ ] Kapselung in `<teiCorpus/>` [siehe #3035](https://histhub.ssrq-sds-fds.ch/redmine/issues/3035)
 - [ ] Verweise ‚die alten Dateien‘ prüfen und bereinigen [#siehe 3036](https://histhub.ssrq-sds-fds.ch/redmine/issues/3036)
 - [x] Verwendung von `@rendition` verbieten [#siehe 3048](https://histhub.ssrq-sds-fds.ch/redmine/issues/3048)
 - [x] Verwendung von `@corresp` verbieten
