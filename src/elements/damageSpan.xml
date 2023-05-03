@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="damageSpan" module="transcr" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-04">bezeichnet größere Abschnitte, die beschädigt sind.</desc>
+    <desc xml:lang="en" versionDate="2023-05-04">denotes larger sections that are damaged.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-04">désigne des sections plus grandes qui sont endommagées.</desc>
+    <classes mode="replace">
+        <memberOf key="att.damaged"/>
+        <memberOf key="att.spanning"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="agent" mode="change" usage="req">
+            <datatype>
+                <dataRef key="ssrq.agent"/>
+            </datatype>
+        </attDef>
+        <attDef ident="degree" mode="delete"/>
+        <attDef ident="spanTo" mode="change" usage="req"/>
+        <!-- ToDo: Nach Entflechtung der Klassen: att.damaged, att.dimension, att.ranging und att.written
+             können die folgenden Angaben entfernt werden, vgl. damage
+        -->
+        <attDef ident="extent" mode="delete"/>
+        <attDef ident="hand" mode="delete"/>
+        <attDef ident="quantity" mode="delete"/>
+        <attDef ident="unit" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-03">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <damageSpan agent="clipping" spanTo="#dmg1"/>
+            Item ein hoffstatt ...
+            <anchor xml:id="dmg1"/>
+        </egXML>
+    </exemplum>
+</elementSpec>
