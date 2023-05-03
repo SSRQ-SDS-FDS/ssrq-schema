@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="placeName" module="namesdates" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="placeName" module="namesdates" mode="change">
     <desc xml:lang="de" versionDate="2023-04-20">Zeichnet topographische Bezeichnungen (einen Ort oder einen Flurnamen) aus.</desc>
     <desc xml:lang="en" versionDate="2023-04-20">Indicates topographical designations (a place or a field name).</desc>
     <desc xml:lang="fr" versionDate="2023-04-20">Distingue les désignations topographiques (un lieu ou un lieu-dit).</desc>
@@ -10,10 +10,9 @@
         <memberOf key="att.canonical"/>
     </classes>
     <content>
-        <alternate minOccurs="1" maxOccurs="unbounded">
-            <textNode/>
-            <macroRef key="ssrq.content.default"/>
-        </alternate>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
     </content>
     <attList>
         <attDef ident="key" mode="delete"/>
