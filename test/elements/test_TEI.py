@@ -80,6 +80,13 @@ import pytest
                                 </msDesc>
                             </sourceDesc>
                         </fileDesc>
+                        <encodingDesc>
+                    <editorialDecl>
+                        <p>
+                            <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
+                        </p>
+                    </editorialDecl>
+                </encodingDesc>
                     </teiHeader>
                     <text>
                         <body/>

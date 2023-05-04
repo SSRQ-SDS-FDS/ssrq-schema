@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="teiHeader" module="header" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-04">Beinhaltet alle wichtigen Angaben – in Form von
+        Metadaten – zum edierten Dokument.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-04">Contient toutes les informations importantes - sous
+        forme de métadonnées - sur le document édité.</desc>
+    <desc xml:lang="en" versionDate="2023-05-04">Contains all important information - in the form of
+        metadata - about the edited document.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="fileDesc"/>
+            <elementRef key="encodingDesc"/>
+            <elementRef key="profileDesc" minOccurs="0" maxOccurs="1"/>
+            <macroRef key="ssrq.content.default"/>
+        </sequence>
+    </content>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-04">
+        <p xml:lang="de">Einfacher Absatz</p>
+        <p xml:lang="fr">Talon simple</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <p>
+                <seg>Absatz vom Bearbeitenden einer Quellenediton</seg>
+            </p>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-04">
+        <p xml:lang="de"><gi>teiHeader</gi> mit <gi>fileDesc</gi>, <gi>encodingDesc</gi> und <gi>
+            profileDesc</gi></p>
+        <p xml:lang="de"><gi>teiHeader</gi> mit <gi>fileDesc</gi>, <gi>encodingDesc</gi> und <gi>
+            profileDesc</gi></p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <teiHeader>
+                <fileDesc>
+                    <titleStmt>
+                        <title>foo</title>
+                        <editor>
+                            <persName>Michael Nadig</persName>
+                        </editor>
+                        <respStmt>
+                            <persName>Ariane Huber Hernández</persName>
+                            <persName>Michael Nadig</persName>
+                            <resp key="transcript"/>
+                        </respStmt>
+                    </titleStmt>
+                    <publicationStmt>
+                        <publisher>SSRQ-SDS-FDS</publisher>
+                        <availability>
+                            <p xml:id="facs">Bibliothèque publique et universitaire de Neuchâtel
+                                (BPUN)</p>
+                            <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                            >Attribution-NonCommercial-
+                                ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence>
+                        </availability>
+                    </publicationStmt>
+                    <seriesStmt xml:id="ssrq-sds-fds">
+                        <title>Sammlung Schweizerischer Rechtsquellen</title>
+                        <respStmt>
+                            <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                            <resp key="publisher"/>
+                        </respStmt>
+                        <idno>SSRQ-FR-I_2_8-1-1</idno>
+                        <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
+                    </seriesStmt>
+                    <sourceDesc>
+                        <msDesc>
+                            <msIdentifier>
+                                <idno xml:lang="de" source="http://foo.bar">bar</idno>
+                                <repository xml:lang="de">foo</repository>
+                            </msIdentifier>
+                            <head>Projekt eines Eides für den Förster oder Bannwart in Sax-Forstegg</head>
+                            <msContents>
+                                <summary>
+                                    <p xml:lang="de">foo</p>
+                                </summary>
+                                <msItem>
+                                    <textLang xml:lang="de"/>
+                                    <filiation type="current">Abschrift, Buch (729 Seiten) mit
+                                        kartoniertem Einband</filiation>
+                                </msItem>
+                            </msContents>
+                            <physDesc>
+                                <objectDesc>
+                                    <supportDesc>
+                                        <support>
+                                            <material type="paper"/>
+                                        </support>
+                                        <extent>
+                                            <dimensions type="leaves">
+                                                <height unit="cm" quantity="36.0"/>
+                                                <width unit="cm" quantity="23.5"/>
+                                            </dimensions>
+                                        </extent>
+                                    </supportDesc>
+                                </objectDesc>
+                            </physDesc>
+                            <history>
+                                <origin>
+                                    <origDate from-custom="1615-04-15" to-custom="1700-12-31"/>
+                                </origin>
+                            </history>
+                        </msDesc>
+                    </sourceDesc>
+                </fileDesc>
+                <encodingDesc>
+                    <editorialDecl>
+                        <p>
+                            <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
+                        </p>
+                    </editorialDecl>
+                </encodingDesc>
+                <profileDesc>
+                    <textClass>
+                        <keywords>
+                            <term ref="key000192"/>
+                            <term ref="key000097"/>
+                            <term ref="key000049"/>
+                            <term ref="key000193"/>
+                        </keywords>
+                    </textClass>
+                </profileDesc>
+            </teiHeader>
+        </egXML>
+    </exemplum>
+</elementSpec>
