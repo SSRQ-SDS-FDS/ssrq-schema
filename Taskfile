@@ -29,7 +29,19 @@ function lint {
 
 function test {
     lint
+
+    output=$(validate 2>&1) # Execute the command and capture the output – stderr will go to stdout.
+
+    if echo "$output" | grep -q "Some files are not"; then
+        echo "$output"
+        exit 1
+    fi
+
     echo "Running tests using pytest..."
+    cmd pytest -n 4 "${@}"
+}
+
+function test-only {
     cmd pytest -n 4 "${@}"
 }
 
