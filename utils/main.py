@@ -7,11 +7,13 @@ import tomllib
 from pydantic import BaseModel, validator
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
 
-CWD = Path.cwd()
-DIST_DIR = CWD / "dist"
-SRC_DIR = CWD / "src"
-XSLT_BASE = CWD / SRC_DIR / "xsl"
-TEI_STYLESHEETS = CWD / SRC_DIR / "lib/tei_stylesheets/odds"
+CUR_DIR = Path(__file__).parent.parent.absolute()
+DIST_DIR = CUR_DIR / "dist"
+SRC_DIR = CUR_DIR / "src"
+COMMON_DIR = SRC_DIR / "common"
+ELEMENTS_DIR = SRC_DIR / "elements"
+XSLT_BASE = CUR_DIR / SRC_DIR / "xsl"
+TEI_STYLESHEETS = CUR_DIR / SRC_DIR / "lib/tei_stylesheets/odds"
 XSLTS = {
     "change-start": XSLT_BASE / "change-rng-start.xsl",
     "clean": XSLT_BASE / "clean-compiled.xsl",
@@ -85,7 +87,7 @@ class Schema:
 def load_config() -> Optional[SSRQConfig]:
     """Load the configuration from pyproject.toml and apply some basic validation using pydantic."""
     with open(
-        CWD / "pyproject.toml",
+        CUR_DIR / "pyproject.toml",
         "rb",
     ) as f:
         config = tomllib.load(f)

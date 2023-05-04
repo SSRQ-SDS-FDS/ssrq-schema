@@ -34,7 +34,13 @@ function test {
 }
 
 function compile {
-    cmd python main.py
+    validate
+    cmd python utils/main.py
+}
+
+function validate {
+    echo "Checking the xml sources..."
+    cmd python utils/validate.py
 }
 
 function help {
