@@ -159,6 +159,15 @@
             </content>
         </dataSpec>
 
+        <dataSpec ident="ssrq.date.point" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-05-05">SSRQ definiertes Muster für Zeitpunkte – basierend auf Tagen</desc>
+            <desc xml:lang="en" versionDate="2023-05-05">SSRQ defined pattern for time points - based on days</desc>
+            <desc xml:lang="fr" versionDate="2023-05-05">SSRQ modèle défini pour l'heure - basé sur les jours</desc>
+            <content>
+                <dataRef name="string" restriction="(\d{4}|-)-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])"/>
+            </content>
+        </dataSpec>
+
     </specGrp>
 
 </div>

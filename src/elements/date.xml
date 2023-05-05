@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="date" module="linking" mode="change"
+    xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <!--  <desc xml:lang="de" versionDate="2023-05-02">Enthält eine beliebige Textebene ohne klar
+        definierte Zuordnung. Wir verwenden den Tag immer zusammen mit <att>type</att> und <att>
+            place</att> für Vermerke, Dorsualnotizen, Kanzleivermerke und Registraturvermerke sowie für
+        Marginalien. Bei Papsturkunden erfolgt die Angabe der Vermerke in folgender Reihenfolge:
+        Zuerst die Vermerke unter der Plica, dann die Vermerke auf der Plica von links nach rechts
+        und zum Schluss die Vermerke auf der Rückseite der Urkunde von links nach rechts. Die
+        Vermerke und Dorsualnotizen werden in chronologischer Reihenfolge aufgenommen. Zeitgleich
+        entstandene Vermerke werden aufgrund der chronologischen Reihenfolge immer an erster Stelle
+        aufgeführt. Zeitgleiche Vermerke werden in Leserichtung von oben nach unten und von links
+        nach rechts erfasst. Wenn z. B. bei einem Missiv auf der Rückseite ein Dorsualvermerk an
+        erster Stelle steht, dann die Adresse folgt und schliesslich zwei weitere Dorsualvermerke,
+        dann steht die Adresse trotzdem an erster Stelle. Falls die Leserichtung, an der man sich
+        orientieren soll, nicht einheitlich ist, also ein Dorsualvermerk auf den Kopf steht, ist ein
+        Kommentar notwendig.</desc> -->
+    <classes mode="replace">
+        <memberOf key="macro.dateLike"/>
+        <memberOf key="model.publicationStmtPart.detail"/>
+        <memberOf key="att.datable"/>
+    </classes>
+    <content>
+        <rng:zeroOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:zeroOrMore>
+    </content>
+    <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
+        <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)]">
+                    <sch:assert
+                        test=".[@datingMethod]">The attribute @datingMethod is required, when <sch:name/>
+                        is used outside of the publicationStmt.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="when-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.date.point"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <!--  <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
+        <p xml:lang="de">Definition der Identifikationsnummer eines Stücks:</p>
+        <p xml:lang="fr">Définition du numéro d'identification d'une pièce&#160;:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <seriesStmt xml:id="ssrq-sds-fds">
+                <title>Sammlung Schweizerischer Rechtsquellen</title>
+                <respStmt>
+                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                    <resp key="publisher"/>
+                </respStmt>
+                <idno>SSRQ-FR-I_2_8-1-1</idno>
+                <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
+            </seriesStmt>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
+        <p xml:lang="de">Verweis auf eine Signatur mit Link ins Archivinformationssystem:</p>
+        <p xml:lang="fr">Référence à une cote avec lien vers le système d'information des
+            archives&#160;:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <msIdentifier>
+                <idno xml:lang="de" source="http://scope.stiftsarchiv.sg.ch/detail.aspx?id=30146">StiASG
+                    Urk. GG2 T2</idno>
+            </msIdentifier>
+        </egXML>
+    </exemplum> -->
+</elementSpec>

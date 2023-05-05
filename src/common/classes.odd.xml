@@ -107,8 +107,18 @@
                 </constraint>
             </constraintSpec>
             <attList>
+                <attDef ident="datingMethod" mode="replace" usage="opt">
+                    <desc xml:lang="de">verwendeter Kalender</desc>
+                    <desc xml:lang="en">Calendar used</desc>
+                    <desc xml:lang="fr">Calendrier utilisé</desc>
+                    <desc xml:lang="it">Calendario utilizzato</desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.calendar"/>
+                    </datatype>
+                    <!-- This removes the TEI default constraints, which requires text content
+                         for any elements that uses @calendar. -->
+                </attDef>
                 <attDef ident="datingPoint" mode="delete"/>
-                <attDef ident="datingMethod" mode="delete"/>
             </attList>
         </classSpec>
         <classSpec ident="att.measurement" type="atts" mode="change">
