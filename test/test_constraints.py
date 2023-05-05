@@ -88,3 +88,49 @@ def test_facs_naming_conventions(
         files=writer.list(), isosch=main_constraints
     )
     assert reports[0].is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "correct-datable-with-when",
+            "<date when-custom='2020'/>",
+            True,
+        ),
+        (
+            "incorrect-datable-combination-when-to-custom",
+            "<date when-custom='2020' to-custom='2020-12-31'/>",
+            False,
+        ),
+        (
+            "correct-datable-combination-from-to",
+            "<date from-custom='2020-01-01' to-custom='2020-12-31'/>",
+            True,
+        ),
+        (
+            "incorrect-datable-from-without-to",
+            "<date from-custom='2020-01-01' />",
+            False,
+        ),
+        (
+            "incorrect-datable-combination-from-to-notBefore",
+            "<date from-custom='2020-01-01' to-custom='2020-12-31' notBefore-custom='2019'/>",
+            False,
+        ),
+        (
+            "incorrect-datable-combination-from-to-notAfter",
+            "<date from-custom='2020-01-01' to-custom='2020-12-31' notAfter-custom='2019'/>",
+            False,
+        ),
+    ],
+)
+def test_datable_custom_attr(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """Tests the various constraints definied for att.datable.custom."""
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = validate_chunk(
+        files=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].is_valid() is result
