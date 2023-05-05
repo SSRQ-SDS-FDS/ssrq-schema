@@ -3,20 +3,20 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="seg" module="linking" mode="change">
     <desc xml:lang="de" versionDate="2023-05-04">Kennzeichnung von Absätzen, die vom Bearbeitenden
         zur Strukturierung des Quellentextes (=lesbare Editon) eingefügt werden, innerhalb von <gi>p</gi>
-        verwendet. Dagegen werden <g>div</g> und <gi>p</gi> nur für originale Absätze verwendet. Bei
+        verwendet. Dagegen werden <gi>div</gi> und <gi>p</gi> nur für originale Absätze verwendet. Bei
         längeren Originaltexten wie Offnungen oder Urbarien kann es sinnvoll sein, Artikel, Absätze
         oder Parapgraphen durch <gi>seg</gi> mit <att>n</att> zu nummerieren. Aber bitte keine
         «Hyperstrukturierung»: Nummerierung nur dort, wo die Struktur des Textes es hergibt (vgl.
         Beispiele in den gedruckten Bänden der SSRQ).</desc>
     <desc xml:lang="fr" versionDate="2023-05-04">Identification des paragraphes insérés par
         l'éditeur pour structurer le texte source (= édition lisible), utilisés à l'intérieur de <gi>
-        p</gi>. Par contre, <g>div</g> et <gi>p</gi> ne sont utilisés que pour les paragraphes
+        p</gi>. Par contre, <gi>div</gi> et <gi>p</gi> ne sont utilisés que pour les paragraphes
         originaux. Pour les textes originaux plus longs, comme les ouvertures ou les urbariums, il
         peut être utile de numéroter les articles, les paragraphes ou les paraphrases par <gi>seg</gi>
         avec <att>n</att>. Mais de grâce, pas d'"hyperstructuration" : ne numéroter que là où la
         structure du texte le permet (cf. exemples dans les volumes imprimés de la SSRQ).</desc>
     <desc xml:lang="en" versionDate="2023-05-04">Identification of paragraphs inserted by the editor
-        to structure the source text (=readable editon), used within <gi>p</gi>. In contrast, <g>div</g>
+        to structure the source text (=readable editon), used within <gi>p</gi>. In contrast, <gi>div</gi>
         and <gi>p</gi> are only used for original paragraphs. For longer original texts such as
         openings or urbaria, it may be useful to number articles, paragraphs or parapraphs by <gi>
         seg</gi> with <att>n</att>. But please no "hyperstructuring": numbering only where the
