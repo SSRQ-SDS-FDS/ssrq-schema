@@ -115,8 +115,27 @@
                     <datatype>
                         <dataRef key="ssrq.date.calendar"/>
                     </datatype>
-                    <!-- This removes the TEI default constraints, which requires text content
-                         for any elements that uses @calendar. -->
+                </attDef>
+                <attDef ident="when-custom" mode="change">
+                    <desc xml:lang="de" versionDate="2023-05-07">Angabe des Datums orientiert an ISO
+                        8601. Angaben von Zeiträumen sind hier verboten und erfolgen durch <att>
+                        from-custom</att> und <att>to-custom</att>.</desc>
+                    <desc xml:lang="en" versionDate="2023-05-07">Specification of the date oriented
+                        to ISO 8601. Specification of time periods is prohibited here and is done by <att>
+                        from-custom</att> and <att>to-custom</att>.</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-07">Indication de la date selon la
+                        norme ISO 8601. Les indications de périodes sont ici interdites et se font
+                        par <att>from-custom</att> et <att>to-custom</att>.</desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+                        <p xml:lang="de">Beispielhafte Datierung auf den 03. März 1631</p>
+                        <p xml:lang="fr">Exemple de datation au 03 mars 1631</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="Gregorian" when-custom="1631-03-03">März, 03, 1631</date>
+                        </egXML>
+                    </exemplum>
                 </attDef>
                 <attDef ident="datingPoint" mode="delete"/>
             </attList>
