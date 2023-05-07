@@ -89,6 +89,12 @@
                 <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
                 <constraint>
                     <sch:pattern>
+                        <sch:rule
+                            context="tei:*[@from-custom][matches(@from-custom, '^\d{4}-\d{2}-\d{2}$')][@to-custom][matches(@to-custom, '^\d{4}-\d{2}-\d{2}$')][not(@notBefore-custom|@notAfter-custom)]">
+                            <sch:assert
+                                test="(number(translate(@to-custom, '-', '')) - number(translate(@from-custom, '-', ''))) > 0">Invalid
+                                timespan – the @to-custom attribute must be a later time.</sch:assert>
+                        </sch:rule>
                         <sch:rule context="tei:*[@when-custom]">
                             <sch:report
                                 test="@notBefore-custom|@notAfter-custom|@from-custom|@to-custom">The
@@ -115,6 +121,48 @@
                     <datatype>
                         <dataRef key="ssrq.date.calendar"/>
                     </datatype>
+                </attDef>
+                <attDef ident="from-custom" mode="change">
+                    <desc xml:lang="de" versionDate="2023-05-07">Angabe des Startpunkts eines
+                        Zeitraums orientiert an ISO 8601.</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-07">Indication du point de départ d'une
+                        période orientée selon la norme ISO 8601.</desc>
+                    <desc xml:lang="en" versionDate="2023-05-07">Specification of the starting point
+                        of a period oriented to ISO 8601.</desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+                        <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis
+                            Pfingsten 1584</p>
+                        <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte
+                            1583 à la Pentecôte 1584</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="Julian" from-custom="1583-05-30"
+                                to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584</date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+                <attDef ident="to-custom" mode="change">
+                    <desc xml:lang="de" versionDate="2023-05-07">Angabe des Startpunkts eines
+                        Zeitraums orientiert an ISO 8601.</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-07">Indication du point de départ d'une
+                        période orientée selon la norme ISO 8601.</desc>
+                    <desc xml:lang="en" versionDate="2023-05-07">Specification of the starting point
+                        of a period oriented to ISO 8601.</desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+                        <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis
+                            Pfingsten 1584</p>
+                        <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte
+                            1583 à la Pentecôte 1584</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="Julian" from-custom="1583-05-30"
+                                to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584</date>
+                        </egXML>
+                    </exemplum>
                 </attDef>
                 <attDef ident="when-custom" mode="change">
                     <desc xml:lang="de" versionDate="2023-05-07">Angabe des Datums orientiert an ISO

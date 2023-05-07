@@ -35,6 +35,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<date when='1756-02-12' datingMethod='Gregorian'>12. Februar 1756</date>",
             False,
         ),
+        (
+            "valid-date-with-from-to",
+            "<date datingMethod='Julian' from-custom='1583-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
+            True,
+        ),
+        (
+            "date-with-invalid-from-to",
+            "<date datingMethod='Julian' from-custom='1501' to-custom='1600'>15. Jahrhundert</date>",
+            False,
+        ),
     ],
 )
 def test_date_rng(
@@ -57,6 +67,16 @@ def test_date_rng(
         (
             "invalid-date-without-datingMethod",
             "<date when-custom='1756-02-12'>12. Februar 1756</date>",
+            False,
+        ),
+        (
+            "valid-date-with-from-to",
+            "<date datingMethod='Julian' from-custom='1583-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
+            True,
+        ),
+        (
+            "date-with-invalid-timespan",
+            "<date datingMethod='Julian' from-custom='1589-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
             False,
         ),
     ],
