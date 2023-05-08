@@ -3,20 +3,18 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="date" module="linking" mode="change"
     xmlns:rng="http://relaxng.org/ns/structure/1.0"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <!--  <desc xml:lang="de" versionDate="2023-05-02">Enthält eine beliebige Textebene ohne klar
-        definierte Zuordnung. Wir verwenden den Tag immer zusammen mit <att>type</att> und <att>
-            place</att> für Vermerke, Dorsualnotizen, Kanzleivermerke und Registraturvermerke sowie für
-        Marginalien. Bei Papsturkunden erfolgt die Angabe der Vermerke in folgender Reihenfolge:
-        Zuerst die Vermerke unter der Plica, dann die Vermerke auf der Plica von links nach rechts
-        und zum Schluss die Vermerke auf der Rückseite der Urkunde von links nach rechts. Die
-        Vermerke und Dorsualnotizen werden in chronologischer Reihenfolge aufgenommen. Zeitgleich
-        entstandene Vermerke werden aufgrund der chronologischen Reihenfolge immer an erster Stelle
-        aufgeführt. Zeitgleiche Vermerke werden in Leserichtung von oben nach unten und von links
-        nach rechts erfasst. Wenn z. B. bei einem Missiv auf der Rückseite ein Dorsualvermerk an
-        erster Stelle steht, dann die Adresse folgt und schliesslich zwei weitere Dorsualvermerke,
-        dann steht die Adresse trotzdem an erster Stelle. Falls die Leserichtung, an der man sich
-        orientieren soll, nicht einheitlich ist, also ein Dorsualvermerk auf den Kopf steht, ist ein
-        Kommentar notwendig.</desc> -->
+    <desc xml:lang="de" versionDate="2023-05-08">Erfassung (sämtlicher) Datumsangaben im Text.
+        Achtung: <ref target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">
+        Datierungsrichtlinien</ref> beachten. Datierungen in Quelltexten (Originaldatum) werden
+        hingegen mit <gi>origDate</gi> ausgezeichnet.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-08">Saisie de (toutes) les dates dans le texte.
+        Attention : respecter <ref target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">les
+        directives de datation</ref>. Les datations dans les textes sources (date d'origine) sont
+        par contre marquées par <gi>origDate</gi>.</desc>
+    <desc xml:lang="en" versionDate="2023-05-08">Record (all) dates in the text. Attention: <ref
+            target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">Pay attention to dating
+        guidelines</ref>. Dates in source texts (original date), on the other hand, are marked with <gi>
+        origDate</gi>.</desc>
     <classes mode="replace">
         <memberOf key="macro.dateLike"/>
         <memberOf key="model.publicationStmtPart.detail"/>
@@ -40,30 +38,28 @@
             </sch:pattern>
         </constraint>
     </constraintSpec>
-    <!--  <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
-        <p xml:lang="de">Definition der Identifikationsnummer eines Stücks:</p>
-        <p xml:lang="fr">Définition du numéro d'identification d'une pièce&#160;:</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+        <p xml:lang="de">Beispielhafte Datierung auf den 03. März 1631</p>
+        <p xml:lang="fr">Exemple de datation au 03 mars 1631</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <seriesStmt xml:id="ssrq-sds-fds">
-                <title>Sammlung Schweizerischer Rechtsquellen</title>
-                <respStmt>
-                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                    <resp key="publisher"/>
-                </respStmt>
-                <idno>SSRQ-FR-I_2_8-1-1</idno>
-                <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
-            </seriesStmt>
+            <date datingMethod="Gregorian" when-custom="1631-03-03">März, 03, 1631</date>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
-        <p xml:lang="de">Verweis auf eine Signatur mit Link ins Archivinformationssystem:</p>
-        <p xml:lang="fr">Référence à une cote avec lien vers le système d'information des
-            archives&#160;:</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+        <p xml:lang="de">Beispielhafte Auszeichnung ca. 1510</p>
+        <p xml:lang="fr">Exemple de distinction vers 1510</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <msIdentifier>
-                <idno xml:lang="de" source="http://scope.stiftsarchiv.sg.ch/detail.aspx?id=30146">StiASG
-                    Urk. GG2 T2</idno>
-            </msIdentifier>
+            <date datingMethod="Julian" notBefore-custom="1510-01-01"
+                to-custom="1515-12-31">ca. 1510</date>
         </egXML>
-    </exemplum> -->
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+        <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
+        <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte 1583 à la
+            Pentecôte 1584</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <date datingMethod="Julian" from-custom="1583-05-30"
+                to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584</date>
+        </egXML>
+    </exemplum>
 </elementSpec>

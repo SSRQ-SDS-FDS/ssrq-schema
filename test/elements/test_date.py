@@ -45,6 +45,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<date datingMethod='Julian' from-custom='1501' to-custom='1600'>15. Jahrhundert</date>",
             False,
         ),
+        (
+            "valid-date-with-notBefore-notAfter",
+            "<date datingMethod='Julian' from-custom='1510-01-01' notAfter-custom='1515-12-12'>ca. 1510</date>",
+            True,
+        ),
+        (
+            "date-with-invalid-notBefore-notAfter",
+            "<date datingMethod='Julian' from-custom='1510' notAfter-custom='1515'>ca. 1510</date>",
+            False,
+        ),
     ],
 )
 def test_date_rng(

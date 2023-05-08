@@ -161,6 +161,38 @@
                         </egXML>
                     </exemplum>
                 </attDef>
+                <attDef ident="notAfter-custom" mode="change">
+                    <desc xml:lang="de" versionDate="2023-05-08">Gibt den Endpunkt eines Zeitintervalls an in der Standardform yyyy-mm-dd oder hh:mm:ss an.</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-08">Indique le point final d'un intervalle de temps sous la forme standard aaaa-mm-jj ou hh:mm:ss.</desc>
+                    <desc xml:lang="en" versionDate="2023-05-08">Specifies the end point of a time interval in the standard form yyyy-mm-dd or hh:mm:ss.</desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-08">
+                        <p xml:lang="de">Beispielhafte Auszeichnung ca. 1510</p>
+                        <p xml:lang="fr">Exemple de distinction vers 1510</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="Julian" notBefore-custom="1510-01-01"
+                                  to-custom="1515-12-31">ca. 1510</date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+                <attDef ident="notBefore-custom" mode="change">
+                    <desc xml:lang="de" versionDate="2023-05-08">Gibt den Anfangspunkt eines Zeitintervalls an in der Standardform yyyy-mm-dd oder hh:mm:ss an.</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-08">Indique le point de départ d'un intervalle de temps sous la forme standard aaaa-mm-jj ou hh:mm:ss.</desc>
+                    <desc xml:lang="en" versionDate="2023-05-08">Specifies the starting point of a time interval in the standard form yyyy-mm-dd or hh:mm:ss.</desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+                        <p xml:lang="de">Beispielhafte Auszeichnung ca. 1510</p>
+                        <p xml:lang="fr">Exemple de distinction vers 1510</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="Julian" notBefore-custom="1510-01-01"
+                                  to-custom="1515-12-31">ca. 1510</date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
                 <attDef ident="when-custom" mode="change">
                     <desc xml:lang="de" versionDate="2023-05-07">Angabe des Datums orientiert an ISO
                         8601. Angaben von Zeiträumen sind hier verboten und erfolgen durch <att>
