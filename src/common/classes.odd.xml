@@ -89,12 +89,6 @@
                 <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
                 <constraint>
                     <sch:pattern>
-                        <sch:rule
-                            context="tei:*[@from-custom][matches(@from-custom, '^\d{4}-\d{2}-\d{2}$')][@to-custom][matches(@to-custom, '^\d{4}-\d{2}-\d{2}$')][not(@notBefore-custom|@notAfter-custom)]">
-                            <sch:assert
-                                test="(number(translate(@to-custom, '-', '')) - number(translate(@from-custom, '-', ''))) > 0">Invalid
-                                timespan – the @to-custom attribute must be a later time.</sch:assert>
-                        </sch:rule>
                         <sch:rule context="tei:*[@when-custom]">
                             <sch:report
                                 test="@notBefore-custom|@notAfter-custom|@from-custom|@to-custom">The
@@ -108,6 +102,9 @@
                                 @from-custom|@to-custom.</sch:report>
                             <sch:assert test="@from-custom and @to-custom">@from-custom and
                                 @to-custom must always be used together.</sch:assert>
+                            <sch:assert
+                                test="if (matches(@from-custom, '^\d{4}-\d{2}-\d{2}$') and matches(@from-custom, '^\d{4}-\d{2}-\d{2}$')) then (number(translate(@to-custom, '-', '')) - number(translate(@from-custom, '-', ''))) > 0 else true()">
+                                Invalid timespan – the @to-custom attribute must be a point later in time.</sch:assert>
                         </sch:rule>
                     </sch:pattern>
                 </constraint>
