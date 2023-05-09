@@ -19,6 +19,7 @@
         <memberOf key="macro.dateLike"/>
         <memberOf key="model.publicationStmtPart.detail"/>
         <memberOf key="att.datable"/>
+        <memberOf key="att.duration.iso"/>
         <memberOf key="att.typed"/>
     </classes>
     <content>
@@ -30,7 +31,7 @@
         <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
         <constraint>
             <sch:pattern>
-                <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)]">
+                <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
                     <sch:assert
                         test=".[@datingMethod]">The attribute @datingMethod is required, when <sch:name/>
                         is used outside of the publicationStmt.</sch:assert>
@@ -38,6 +39,46 @@
             </sch:pattern>
         </constraint>
     </constraintSpec>
+    <attList>
+        <attDef ident="dur-iso" mode="change">
+            <desc xml:lang="de" versionDate="2023-05-09">Erfassung Zeitspanne nach <ref
+                    target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+                Beginnt mit dem Kürzel P (Periode) gefolgt von arabischen Ziffern. Sich
+                wiederholende Zeitspannenden werden im vollen Format ausgedrückt und beginnen mit
+                dem Kürzel R (Repeated). Ansonsten werden folgende Werte vergeben <list>
+                    <item>Y = year</item>
+                    <item>M = month</item>
+                    <item>W = week</item>
+                    <item>D = day</item>
+                    <item>H = hour</item>
+                </list></desc>
+            <desc xml:lang="en" versionDate="2023-05-09">Recording period according to <ref
+                    target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+                Begins with the abbreviation P (Period) followed by Arabic numerals. Repeating time
+                spans are expressed in full format and begin with the abbreviation R (Repeated).
+                Otherwise, the following values are assigned <list>
+                    <item>Y = year</item>
+                    <item>M = month</item>
+                    <item>W = week</item>
+                    <item>D = day</item>
+                    <item>H = hour</item>
+                </list></desc>
+            <desc xml:lang="fr" versionDate="2023-05-09">Saisie Période selon <ref
+                    target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+                Commence par l'abréviation P (période) suivie de chiffres arabes. Les périodes
+                répétitives sont exprimées au format complet et commencent par l'abréviation R
+                (Repeated). Sinon, les valeurs suivantes sont attribuées <list>
+                    <item>Y = year</item>
+                    <item>M = month</item>
+                    <item>W = week</item>
+                    <item>D = day</item>
+                    <item>H = hour</item>
+                </list></desc>
+            <datatype>
+                <dataRef name="string" restriction="(R/)?P(\d+(\.\d+)?[YMWDH])+"/>
+            </datatype>
+        </attDef>
+    </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
         <p xml:lang="de">Beispielhafte Datierung auf den 03. März 1631</p>
         <p xml:lang="fr">Exemple de datation au 03 mars 1631</p>

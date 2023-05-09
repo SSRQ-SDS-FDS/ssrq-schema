@@ -55,6 +55,21 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<date datingMethod='Julian' from-custom='1510' notAfter-custom='1515'>ca. 1510</date>",
             False,
         ),
+        (
+            "date-with-valid-dur-iso-with-decimal",
+            "<date dur-iso='R/P3.5Y'>Alle drei einhalb Jahre</date>",
+            True,
+        ),
+        (
+            "date-with-valid-dur-iso-with-months",
+            "<date dur-iso='R/P3Y6M'>Alle drei einhalb Jahre</date>",
+            True,
+        ),
+        (
+            "date-with-invalid-dur-iso",
+            "<date dur-iso='P/3Y'>3 Jahre</date>",
+            False,
+        ),
     ],
 )
 def test_date_rng(
@@ -88,6 +103,11 @@ def test_date_rng(
             "date-with-invalid-timespan",
             "<date datingMethod='Julian' from-custom='1589-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
             False,
+        ),
+        (
+            "date-with-valid-dur-iso-without-datingMethod",
+            "<date dur-iso='R/P3.5Y'>Alle drei einhalb Jahre</date>",
+            True,
         ),
     ],
 )
