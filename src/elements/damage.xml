@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="damage" module="transcr" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-09">bezeichnet einen beschädigten Abschnitt</desc>
+    <desc xml:lang="en" versionDate="2023-05-09">denotes a damaged section</desc>
+    <desc xml:lang="fr" versionDate="2023-05-09">indique une section endommagée</desc>
+    <classes mode="replace">
+        <memberOf key="att.damaged"/>
+    </classes>
+    <content>
+        <sequence>
+            <alternate minOccurs="1" maxOccurs="unbounded">
+                <elementRef key="add"/>
+                <elementRef key="gap"/>
+                <elementRef key="supplied"/>
+                <elementRef key="unclear"/>
+            </alternate>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="agent" mode="change" usage="req">
+            <datatype>
+                <dataRef key="ssrq.agent"/>
+            </datatype>
+        </attDef>
+        <attDef ident="degree" mode="delete"/>
+        <attDef ident="group" mode="delete"/>
+        <!-- ToDo: Nach Entflechtung der Klassen: att.damaged, att.dimension, att.ranging und att.written
+             können die folgenden Angaben entfernt werden, vgl. damaSpan
+        -->
+        <attDef ident="extent" mode="delete"/>
+        <attDef ident="hand" mode="delete"/>
+        <attDef ident="quantity" mode="delete"/>
+        <attDef ident="unit" mode="delete"/>
+    </attList>
+    <!-- ToDo: Element <gi>add</gi> noch nicht definiert:
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
+        <p xml:lang="de">Beschädigte Stelle, in der eine andere Hand Text eingetragen hat.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <damage agent="water spot">
+                <add hand="#otherHand" place="overwritten">zuͦ trincken</add>
+            </damage>
+        </egXML>
+    </exemplum>
+    -->
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
+        <p xml:lang="de">Beschädigte Stelle, deren Text unlesbar ist</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <damage agent="water spot">
+                <gap quantity="9" unit="cm"/>
+            </damage>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
+        <p xml:lang="de">Beschädigte Stelle, deren Text ergänzt wurde</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <damage agent="water spot">
+                <supplied source="#73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
+            </damage>
+        </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
+        <p xml:lang="de">Beschädigte Stelle, deren Lesung unsicher ist</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <damage agent="ink blot">
+                <unclear>die</unclear>
+            </damage>
+        </egXML>
+    </exemplum>
+</elementSpec>
