@@ -10,28 +10,27 @@
     <gloss xml:lang="fr" versionDate="2023-03-15">Changement de main</gloss>
     <desc xml:lang="fr" versionDate="2023-05-04">indique le changement d'une main.</desc>
     <classes mode="replace">
-        <memberOf key="att.handFeatures"/>
+        <memberOf key="att.written"/>
     </classes>
     <content>
         <empty/>
     </content>
     <attList>
-        <attDef ident="scribe" mode="change" usage="req"/>
-        <attDef ident="medium" mode="delete"/>
+        <attDef ident="hand" mode="change" usage="req"/>
         <attDef ident="new" mode="delete"/>
     </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-15">
-        <p xml:lang="de">Wechsel einer Hand / des Schreibers</p>
-        <p xml:lang="fr">Changement d'une main / du scribe</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
+        <p xml:lang="de">Wechsel zu einer Hand</p>
+        <p xml:lang="fr">Passer à une autre main</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <handShift scribe="persID"/>
+            <handShift hand="#otherHand"/>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
-        <p xml:lang="de">Bezeichnung einer zweiten Hand</p>
-        <p xml:lang="fr">Désignation d'une main secondaire</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
+        <p xml:lang="de">Wechsel zu einer zweiten Hand</p>
+        <p xml:lang="fr">Passer à une seconde main</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <handShift scribe="secondaryHand"/>
+            <handShift hand="#secondHand"/>
         </egXML>
     </exemplum>
 </elementSpec>

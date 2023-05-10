@@ -8,37 +8,22 @@ import pytest
     [
         (
             "handShift-valid",
-            "<handShift scribe='secondaryHand'/>",
+            "<handShift hand='#secondHand'/>",
             True,
         ),
         (
             "handShift-invalid",
-            "<handShift scribe='secondaryHand'>foo</handShift>",
+            "<handShift hand='#secondHand'>foo</handShift>",
             False,
         ),
         (
-            "handShift-valid",
+            "handShift-invalid-attribute",
             "<handShift scribe='per035807'/>",
-            True,
-        ),
-        (
-            "handShift-invalid",
-            "<handShift scribe='per035'/>",
             False,
         ),
         (
-            "handShift-invalid",
-            "<handShift scribe='foo'/>",
-            False,
-        ),
-        (
-            "handShift-invalid",
+            "handShift-invalid-without-attribute",
             "<handShift/>",
-            False,
-        ),
-        (
-            "handShift-invalid",
-            "<handShift scribe='foo'/>",
             False,
         ),
     ],

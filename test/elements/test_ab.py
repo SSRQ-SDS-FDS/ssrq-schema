@@ -17,12 +17,12 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "valid-ab-with-hand",
-            " <ab type='archiving reference' place='left margin' hand='hand20c?'>St. Georgenamt FC 2</ab>",
+            " <ab type='archiving reference' place='left margin' hand='#hand20cf'>St. Georgenamt FC 2</ab>",
             True,
         ),
         (
             "invalid-ab-without-type",
-            " <ab place='left margin' hand='hand20c?'>St. Georgenamt FC 2</ab>",
+            " <ab place='left margin' hand='#hand20c'>St. Georgenamt FC 2</ab>",
             False,
         ),
     ],
@@ -41,17 +41,17 @@ def test_ab_rng(
     [
         (
             "valid-ab-inside-div",
-            "<div><ab type='archiving reference' place='left margin' hand='hand20c?'>St. Georgenamt FC 2</ab></div>",
+            "<div><ab type='archiving reference' place='left margin' hand='#hand20cf'>St. Georgenamt FC 2</ab></div>",
             True,
         ),
         (
             "invalid-ab-inside-div-with-following-ab",
-            "<div><ab type='archiving reference' place='left margin' hand='hand20c?'>St. Georgenamt FC 2</ab><ab type='archiving reference' place='left margin' hand='hand20c?'>St. Georgenamt FC 2</ab></div>",
+            "<div><ab type='archiving reference' place='left margin' hand='#hand20cf'>St. Georgenamt FC 2</ab><ab type='archiving reference' place='left margin' hand='hand20c?'>St. Georgenamt FC 2</ab></div>",
             False,
         ),
         (
             "invalid-ab-inside-div",
-            "<div><ab type='archiving reference' place='left margin' hand='hand20c?'>St. Georgenamt FC 2</ab><p>foo</p></div>",
+            "<div><ab type='archiving reference' place='left margin' hand='#hand20cf'>St. Georgenamt FC 2</ab><p>foo</p></div>",
             False,
         ),
     ],
