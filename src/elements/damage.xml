@@ -37,7 +37,7 @@
     <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
         <p xml:lang="de">Beschädigte Stelle, in der eine andere Hand Text eingetragen hat.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <damage agent="water spot">
+            <damage agent="water_spot">
                 <add hand="#otherHand" place="overwritten">zuͦ trincken</add>
             </damage>
         </egXML>
@@ -46,7 +46,7 @@
     <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
         <p xml:lang="de">Beschädigte Stelle, deren Text unlesbar ist</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <damage agent="water spot">
+            <damage agent="water_spot">
                 <gap quantity="9" unit="cm"/>
             </damage>
         </egXML>
@@ -54,7 +54,7 @@
     <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
         <p xml:lang="de">Beschädigte Stelle, deren Text ergänzt wurde</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <damage agent="water spot">
+            <damage agent="water_spot">
                 <supplied source="#73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
             </damage>
         </egXML>
@@ -62,7 +62,7 @@
     <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
         <p xml:lang="de">Beschädigte Stelle, deren Lesung unsicher ist</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <damage agent="ink blot">
+            <damage agent="ink_blot">
                 <unclear>die</unclear>
             </damage>
         </egXML>

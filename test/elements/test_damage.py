@@ -9,7 +9,7 @@ from ..conftest import RNG_test_function
         # Todo: füge diesen Test hinzu, wenn <gi>add</gi> definiert wurde
         #        (
         #          "valid-damage-with-add",
-        #            """<damage agent="water spot">
+        #            """<damage agent="water_spot">
         #                                <add hand="#otherHand" place="overwritten">zuͦ trincken</add>
         #                            </damage>
         #                            """,
@@ -18,28 +18,28 @@ from ..conftest import RNG_test_function
         (
             "valid-damage-with-gap",
             """
-                                                    <damage agent="water spot">
-                                                        <gap quantity="9" unit="cm"/>
-                                                    </damage>
-                                                """,
+                                                        <damage agent="water_spot">
+                                                            <gap quantity="9" unit="cm"/>
+                                                        </damage>
+                                                    """,
             True,
         ),
         (
             "valid-damage-with-supplied",
             """
-                                                <damage agent="water spot">
-                                                    <supplied source="#73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
-                                                </damage>
-                                            """,
+                                                    <damage agent="water_spot">
+                                                        <supplied source="#73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
+                                                    </damage>
+                                                """,
             True,
         ),
         (
             "valid-damage-with-unclear",
             """
-                                    <damage agent="ink blot">
-                                        <unclear>die</unclear>
-                                    </damage>
-                                """,
+                                        <damage agent="ink_blot">
+                                            <unclear>die</unclear>
+                                        </damage>
+                                    """,
             True,
         ),
         (
@@ -49,7 +49,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "invalid-damage-with-wrong-attribute",
-            "<damage agent='ink blot' type='foo'><unclear>die</unclear></damage>",
+            "<damage agent='ink_blot' type='foo'><unclear>die</unclear></damage>",
             False,
         ),
     ],

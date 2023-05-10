@@ -3,6 +3,7 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <specGrp xml:id="ssrq-classes">
+
         <classSpec ident="att.analytic" type="atts" mode="delete"/>
         <classSpec ident="att.cReferencing" type="atts" mode="delete"/>
         <classSpec ident="att.datable.iso" type="atts" mode="delete"/>
@@ -25,6 +26,7 @@
         <classSpec ident="att.textCritical" type="atts" mode="delete"/>
         <classSpec ident="att.timed" type="atts" mode="delete"/>
         <classSpec ident="att.transcriptional" type="atts" mode="delete"/>
+
         <classSpec ident="att.global" type="atts" mode="change">
             <classes mode="replace">
                 <memberOf key="att.global.rendition"/>
@@ -455,7 +457,7 @@
                 <attDef ident="scriptRef" mode="delete"/>
             </attList>
         </classSpec>
-        <classSpec type="atts" ident="att.datable" mode="change">
+        <classSpec ident="att.datable" type="atts" mode="change">
             <attList>
                 <attDef ident="calendar" mode="replace" usage="req">
                     <desc xml:lang="de">verwendeter Kalender</desc>
@@ -483,6 +485,7 @@
                 </attDef>
             </attList>
         </classSpec>
+
         <classSpec ident="att.naming" type="atts" mode="change" module="tei">
             <attList>
                 <attDef ident="nymRef" mode="delete"/>
@@ -564,7 +567,7 @@
                 </attDef>
             </attList>
         </classSpec>
-        <classSpec ident="att.scoping" type="atts" module="tei" mode="change">
+        <classSpec ident="att.scoping" type="atts" mode="change" module="tei">
             <attList>
                 <attDef ident="match" mode="change">
                     <desc versionDate="2023-04-26" xml:lang="de">Verweist mittels eines einfachen
@@ -584,7 +587,7 @@
                 <attDef ident="target" mode="delete"/>
             </attList>
         </classSpec>
-        <classSpec ident="att.spanning" type="atts" module="tei" mode="change">
+        <classSpec ident="att.spanning" type="atts" mode="change" module="tei">
             <attList>
                 <attDef ident="spanTo" mode="change">
                     <desc versionDate="2023-03-31" xml:lang="de">Verweist mittels einen
@@ -608,7 +611,7 @@
                 </attDef>
             </attList>
         </classSpec>
-        <classSpec ident="att.resourced" type="atts" module="tei" mode="change">
+        <classSpec ident="att.resourced" type="atts" mode="change" module="tei">
             <attList>
                 <attDef ident="url" mode="change" usage="req">
                     <desc versionDate="2023-03-31" xml:lang="de">Verknüpfung mit einer Bilddatei.</desc>
@@ -617,12 +620,13 @@
                 </attDef>
             </attList>
         </classSpec>
-        <!--
-            ToDos:
+
+        <!-- ToDo:
             - att.witnessed
             - att.written
             - att.placement [wird benötigt in <gi>addSpan</gi>]
         -->
+
         <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
             <desc versionDate="2023-03-07" xml:lang="de">Stellt ein @source Attribut bereit, dessen
                 Semantik dem der TEI entspricht.
@@ -683,5 +687,6 @@
                 </egXML>
             </exemplum>
         </classSpec>
+
     </specGrp>
 </div>

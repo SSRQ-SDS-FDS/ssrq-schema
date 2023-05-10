@@ -17,12 +17,12 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "valid-ab-with-hand",
-            " <ab type='archiving reference' place='left margin' hand='#hand20cf'>St. Georgenamt FC 2</ab>",
+            " <ab type='archiving reference' place='left_margin' hand='#hand20cf'>St. Georgenamt FC 2</ab>",
             True,
         ),
         (
             "invalid-ab-without-type",
-            " <ab place='left margin' hand='#hand20c'>St. Georgenamt FC 2</ab>",
+            " <ab place='left_margin' hand='#hand20c'>St. Georgenamt FC 2</ab>",
             False,
         ),
     ],
