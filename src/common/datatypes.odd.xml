@@ -2109,6 +2109,147 @@
 
     </specGrp>
 
+    <specGrp xml:id="ssrq-period">
+        <dataSpec ident="ssrq.period.days" mode="add">
+            <desc versionDate="2023-05-11" xml:lang="de">Geschlossene Liste von Werten, die
+                von der SSRQ zur Bezeichnung von Wochentagen verwendet werden</desc>
+            <desc versionDate="2023-05-11" xml:lang="fr">Liste fermée de valeurs utilisées
+                par la SSRQ pour désigner les jours de la semaine</desc>
+            <desc versionDate="2023-05-11" xml:lang="en">Closed list of values for naming
+                days of the week used by the SSRQ</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="P1WD">
+                        <desc xml:lang="de" versionDate="2022-05-05">Sonntag</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">dimanche</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">domenica</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">Sunday</desc>
+                    </valItem>
+                    <valItem ident="P2WD">
+                        <desc xml:lang="de" versionDate="2022-05-05">Montag</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">lundi</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">lunedì</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">Monday</desc>
+                    </valItem>
+                    <valItem ident="P3WD">
+                        <desc xml:lang="de" versionDate="2022-05-05">Dienstag</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">mardi</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">martedì</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">Tuesday</desc>
+                    </valItem>
+                    <valItem ident="P4WD">
+                        <desc xml:lang="de" versionDate="2022-05-05">Mittwoch</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">mercredi</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">mercoledì</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">Wednesday</desc>
+                    </valItem>
+                    <valItem ident="P5WD">
+                        <desc xml:lang="de" versionDate="2022-05-05">Donnerstag</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">jeudi</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">giovedì</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">Thursday</desc>
+                    </valItem>
+                    <valItem ident="P6WD">
+                        <desc xml:lang="de" versionDate="2022-05-05">Freitag</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">vendredi</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">venerdì</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">Friday</desc>
+                    </valItem>
+                    <valItem ident="P7WD">
+                        <desc xml:lang="de" versionDate="2022-05-05">Samstag</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">samedi</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">sabato</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">Saturday</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.period.daytimes" mode="add">
+            <desc versionDate="2022-05-05" xml:lang="de">Geschlossene Liste von Werten, die
+                von der SSRQ zur Bezeichnung von Tageszeiten verwendet werden</desc>
+            <desc versionDate="2023-05-11" xml:lang="fr">Liste fermée de valeurs utilisées
+                par la SSRQ pour désigner les heures de la journée</desc>
+            <desc versionDate="2022-05-05" xml:lang="en">Closed list of values for times of day
+                used by the SSRQ</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="evening">
+                        <desc xml:lang="de" versionDate="2022-05-05">abends</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">le soir</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">la sera</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">evening</desc>
+                    </valItem>
+                    <valItem ident="morning">
+                        <desc xml:lang="de" versionDate="2022-05-05">morgens</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">le matin</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">la mattina</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">morning</desc>
+                    </valItem>
+                    <valItem ident="noon">
+                        <desc xml:lang="de" versionDate="2022-05-05">mittags</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">à midi</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">a mezzogiorno</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">noon</desc>
+                    </valItem>
+                    <valItem ident="afternoon">
+                        <desc xml:lang="de" versionDate="2022-05-05">nachmittags</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">l’après-midi</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">il pomeriggio</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">afternoon</desc>
+                    </valItem>
+                    <valItem ident="byNight">
+                        <desc xml:lang="de" versionDate="2022-05-05">nachts</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">la nuit</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">la notte</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">night</desc>
+                    </valItem>
+                    <valItem ident="byDay">
+                        <desc xml:lang="de" versionDate="2022-05-05">tags</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">le jour</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">di giorno</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">day</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.period.seasons" mode="add">
+            <desc versionDate="2022-05-05" xml:lang="de">Geschlossene Liste von Werten, die
+                von der SSRQ zur Bezeichnung von Jahreszeiten verwendet werden</desc>
+            <desc versionDate="2023-05-11" xml:lang="fr">Liste fermée de valeurs utilisées
+                par la SSRQ pour désigner les saisons</desc>
+            <desc versionDate="2022-05-05" xml:lang="en">Closed list of values for naming
+                seasons used by the SSRQ</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="spring">
+                        <desc xml:lang="de" versionDate="2022-05-05">Frühling</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">printemps</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">primavera</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">spring</desc>
+                    </valItem>
+                    <valItem ident="fall">
+                        <desc xml:lang="de" versionDate="2022-05-05">Herbst</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">automne</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">autunno</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">fall</desc>
+                    </valItem>
+                    <valItem ident="summer">
+                        <desc xml:lang="de" versionDate="2022-05-05">Sommer</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">été</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">estate</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">summer</desc>
+                    </valItem>
+                    <valItem ident="winter">
+                        <desc xml:lang="de" versionDate="2022-05-05">Winter</desc>
+                        <desc xml:lang="fr" versionDate="2022-05-05">hiver</desc>
+                        <desc xml:lang="it" versionDate="2022-09-05">inverno</desc>
+                        <desc xml:lang="en" versionDate="2022-05-05">winter</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+    </specGrp>
+
     <specGrp xml:id="ssrq-place">
 
         <dataSpec ident="ssrq.place" mode="add">
