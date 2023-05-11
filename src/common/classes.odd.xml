@@ -417,6 +417,18 @@
                     for any elements that uses @calendar. -->
                     <constraintSpec scheme="schematron" ident="calendar" mode="delete"/>
                 </attDef>
+                <attDef ident="period" mode="change">
+                    <desc xml:lang="de" versionDate="2023-05-11">Verweist auf eine benannte Periode wie Jahreszeiten oder Wochentage. Für Zeitspannen wie „vier Wochen“ wird hingegen das Attribut <att>dur-iso</att> verwendet.</desc>
+                    <desc xml:lang="en" versionDate="2023-05-11">Refers to a named period such as seasons or days of the week. For periods such as "four weeks", on the other hand, the attribute <att>dur-iso</att> is used.</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-11">Fait référence à une période nommée, comme les saisons ou les jours de la semaine. En revanche, l'attribut <att>dur-iso</att> est utilisé pour des périodes telles que "quatre semaines".</desc>
+                    <exemplum type="ssrq-doc-example">
+                        <p xml:lang="de">Sommer und Winter</p>
+                        <p xml:lang="fr">Été et hiver</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date period="summer">somer</date> unnd <date period="winter">wintter</date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
             </attList>
         </classSpec>
         <classSpec ident="att.naming" type="atts" mode="change" module="tei">

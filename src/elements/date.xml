@@ -78,6 +78,15 @@
                 <dataRef name="string" restriction="(R/)?P(\d+(\.\d+)?[YMWDH])+"/>
             </datatype>
         </attDef>
+        <attDef ident="period" mode="change">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.period.days"/>
+                    <rng:ref name="ssrq.period.seasons"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="calendar" mode="delete"/>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
         <p xml:lang="de">Beispielhafte Datierung auf den 03. März 1631</p>

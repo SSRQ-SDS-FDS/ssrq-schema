@@ -70,6 +70,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<date dur-iso='P/3Y'>3 Jahre</date>",
             False,
         ),
+        (
+            "date-with-valid-period",
+            "<date period='summer'>es war im Sommer</date>",
+            True,
+        ),
+        (
+            "date-with-invalid-period",
+            "<date period='sommer'>es war im Sommer</date>",
+            False,
+        ),
     ],
 )
 def test_date_rng(
