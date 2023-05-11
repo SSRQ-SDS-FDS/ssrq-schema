@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="supplied" module="transcr" mode="change"
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="supplied"
+             module="transcr" mode="change"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-05-04">enthält eine Textpassage, die vom Bearbeitenden zum besseren
+    <desc xml:lang="de" versionDate="2023-05-11">Enthält eine Textpassage, die vom Bearbeitenden zum besseren
         Textverständnis ergänzt wurde. Wenn ein Bearbeitender eine Passage frei ergänzt, weist er sich in <att>resp
         </att> mit seinem Kürzel aus. Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf diese mit <att>
             source
         </att> referenziert. Der Grund für eine Ergänzung kann mit <att>reason</att> angegeben werden.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-04">contains a text passage that has been supplemented by the editor for
+    <desc xml:lang="en" versionDate="2023-05-11">Contains a text passage that has been supplemented by the editor for
         better understanding of the text. If an editor freely adds a passage, he identifies himself in <att>resp</att> with
         his abbreviation. If a text is supplemented using another text template, this is referenced with <att>
             source</att>. The reason for an addition can be specified with <att>reason</att>.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-04">contient un passage de texte qui a été complété par l'éditeur pour une
+    <desc xml:lang="fr" versionDate="2023-05-11">Contient un passage de texte qui a été complété par l'éditeur pour une
         meilleure compréhension du texte. Si un éditeur ajoute librement un passage, il s'identifie en <att>resp</att> avec
         son abréviation. Si un texte est complété à l'aide d'un autre modèle de texte, celui-ci est référencé par<att>
             source</att>. La raison d'un ajout peut être spécifiée avec <att>raison</att>.

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="handShift" module="transcr" mode="change">
     <gloss xml:lang="de" versionDate="2023-03-15">Handwechsel</gloss>
-    <desc xml:lang="de" versionDate="2023-05-04">gibt den Wechsel einer Hand an.
+    <desc xml:lang="de" versionDate="2023-05-11">Gibt den Wechsel einer Hand an.
     </desc>
     <gloss xml:lang="en" versionDate="2023-03-15">Change of hands</gloss>
-    <desc xml:lang="en" versionDate="2023-05-04">indicates the change of a hand.</desc>
+    <desc xml:lang="en" versionDate="2023-05-11">Indicates the change of a hand.</desc>
     <gloss xml:lang="fr" versionDate="2023-03-15">Changement de main</gloss>
-    <desc xml:lang="fr" versionDate="2023-05-04">indique le changement d'une main.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-11">Indique le changement d'une main.</desc>
     <classes mode="replace">
         <memberOf key="att.written"/>
     </classes>
