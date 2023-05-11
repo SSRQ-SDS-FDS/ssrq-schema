@@ -2,11 +2,14 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="resp" module="core" mode="change">
     <desc xml:lang="de" versionDate="2023-04-28">Beschreibt die Art der Verantwortung. Also
-        Transkription, Auszeichnung, Identifikation etc.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-28">Décrit le type de responsabilité. Donc
-        transcription, marquage, identification, etc.</desc>
+        Transkription, Auszeichnung, Identifikation etc.
+    </desc>
     <desc xml:lang="en" versionDate="2023-04-28">Describes the type of responsibility:
-        transcription, award, identification etc.</desc>
+        transcription, award, identification etc.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-04-28">Décrit le type de responsabilité. Donc
+        transcription, marquage, identification, etc.
+    </desc>
     <classes mode="replace">
         <memberOf key="att.canonical"/>
     </classes>
@@ -14,7 +17,7 @@
         <empty/>
     </content>
     <attList>
-        
+
         <attDef ident="ref" mode="delete"/>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-28">

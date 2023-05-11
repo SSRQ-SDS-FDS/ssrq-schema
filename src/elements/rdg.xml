@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="rdg" module="textcrit" mode="change">
-    <desc xml:lang="de" versionDate="2023-04-27">
-        <gi>rdg</gi>
-        ermöglicht es, eine einzige Lesart eines Textabschnittes
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="rdg"
+             module="textcrit" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-11">Ermöglicht es, eine einzige Lesart eines Textabschnittes
         in einem anderen Dokument (z. B. 2. Ausfertigung oder Kopie) anzuzeigen.
     </desc>
-    <desc xml:lang="en" versionDate="2023-04-27">
-        <gi>rdg</gi>
-        makes it possible to display a single reading of a section
+    <desc xml:lang="en" versionDate="2023-05-11">Makes it possible to display a single reading of a section
         of text in another document (e.g. 2nd copy or copy).
     </desc>
-    <desc xml:lang="fr" versionDate="2023-04-27">
-        <gi>rdg</gi>
-        permet d'afficher une seule lecture d'une section de texte
+    <desc xml:lang="fr" versionDate="2023-05-11">Permet d'afficher une seule lecture d'une section de texte
         dans un autre document (ex. 2ème copie ou copie).
     </desc>
     <classes mode="replace">

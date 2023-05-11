@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="material" module="msdescription"
-    mode="change" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+             mode="change" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <desc xml:lang="de" versionDate="2023-04-14">Beschreibt das Trägermaterial.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-14">Décrit le support.</desc>
     <desc xml:lang="en" versionDate="2023-04-14">Describes the substrate.</desc>
+    <desc xml:lang="fr" versionDate="2023-04-14">Décrit le support.</desc>
     <classes mode="replace">
         <memberOf key="model.pPart.msdesc"/>
     </classes>
@@ -36,9 +36,11 @@
     </attList>
     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-14">
         <p xml:lang="de">Modellhafter Aufbau mit zwingender Verwendung von @type und ohne
-            Textinhalt</p>
+            Textinhalt
+        </p>
         <p xml:lang="fr">Structure modèle avec utilisation obligatoire de @type et sans contenu
-            textuel</p>
+            textuel
+        </p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <material type="paper"/>
         </egXML>

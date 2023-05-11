@@ -2,14 +2,17 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="TEI" module="textstructure" mode="change">
     <gloss xml:lang="de" versionDate="2023-03-09">TEI Dokument</gloss>
-    <desc xml:lang="de" versionDate="2023-03-09">Der TEI-Tag umschliesst ein einzelnes Dokument
-        (Stück) als sogenannter Root-Tag. Mehrfachüberlieferungen werden in einem Tag teiCorpus gebündelt.</desc>
+    <desc xml:lang="de" versionDate="2023-05-11">Umschliesst ein einzelnes Dokument
+        (Stück) als sogenannter Root-Tag. Mehrfachüberlieferungen werden in einem Tag teiCorpus gebündelt.
+    </desc>
     <gloss xml:lang="en" versionDate="2023-03-09">TEI Dokument</gloss>
-    <desc xml:lang="en" versionDate="2023-03-09">The TEI tag encloses a single document (piece) as a
-        so-called root tag. Multiple deliveries are bundled in a teiCorpus tag.</desc>
+    <desc xml:lang="en" versionDate="2023-05-11">Encloses a single document (piece) as a
+        so-called root tag. Multiple deliveries are bundled in a teiCorpus tag.
+    </desc>
     <gloss xml:lang="fr" versionDate="2023-03-09">Document TEI</gloss>
-    <desc xml:lang="fr" versionDate="2023-03-09">La balise TEI entoure un document individuel
-        (pièce). Les documents à transmission multiple sont regroupés dans une balise teiCorpus.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-11">Entoure un document individuel
+        (pièce). Les documents à transmission multiple sont regroupés dans une balise teiCorpus.
+    </desc>
     <classes mode="change">
         <memberOf key="att.global.facs" mode="delete"/>
         <memberOf key="att.global.rendition" mode="delete"/>

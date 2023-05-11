@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="settlement" module="namesdates" mode="change">
-    <desc xml:lang="de" versionDate="2023-04-20">Zeichnet innerhalb von tei:msIdentifier einen Siedlungsnamen aus.</desc>
+    <desc xml:lang="de" versionDate="2023-04-20">Zeichnet innerhalb von tei:msIdentifier einen Siedlungsnamen aus.
+    </desc>
     <desc xml:lang="en" versionDate="2023-04-20">Identifies a settlement name within tei:msIdentifier.</desc>
     <desc xml:lang="fr" versionDate="2023-04-20">Distingue un nom d'agglomération au sein de tei:msIdentifier..</desc>
     <classes mode="replace">
@@ -18,11 +18,14 @@
         <attDef ident="key" mode="delete"/>
         <attDef ident="ref" mode="change" module="att.canonical">
             <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung des Ortes mit der ID der
-                Ortsdatenbank.</desc>
+                Ortsdatenbank.
+            </desc>
             <desc xml:lang="en" versionDate="2023-03-28">Linking the place with the ID of the database
-                of places.</desc>
+                of places.
+            </desc>
             <desc xml:lang="fr" versionDate="2023-03-28">Relier le lieu à l'ID de la base de données
-                des lieux.</desc>
+                des lieux.
+            </desc>
             <datatype>
                 <dataRef key="ssrq.pointer.places"/>
             </datatype>
@@ -32,7 +35,9 @@
         <p xml:lang="de">Beispiel für die Angabe eines Siedlungsnamens innerhalb von tei:msIdentifier</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <msIdentifier>
-                <repository xml:lang="de">Staatsarchiv <settlement>St. Gallen</settlement></repository>
+                <repository xml:lang="de">Staatsarchiv
+                    <settlement>St. Gallen</settlement>
+                </repository>
                 <idno xml:lang="de">StASG AA 2 B 001a, fol. 1r–5r</idno>
             </msIdentifier>
         </egXML>

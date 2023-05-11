@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="persName" module="namesdates" mode="change">
-    <desc xml:lang="de" versionDate="2024-04-20">Zeichnet eine Person aus und umfasst in der Regel nur den Vor- und Nachnamen.</desc>
-    <desc xml:lang="en" versionDate="2024-04-20">Indicates a person and usually includes only the first and last name.</desc>
-    <desc xml:lang="fr" versionDate="2024-04-20">Distingue une personne et ne comprend généralement que le prénom et le nom.</desc>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="persName"
+             module="namesdates" mode="change">
+    <desc xml:lang="de" versionDate="2024-04-20">Zeichnet eine Person aus und umfasst in der Regel nur den Vor- und
+        Nachnamen.
+    </desc>
+    <desc xml:lang="en" versionDate="2024-04-20">Indicates a person and usually includes only the first and last name.
+    </desc>
+    <desc xml:lang="fr" versionDate="2024-04-20">Distingue une personne et ne comprend généralement que le prénom et le
+        nom.
+    </desc>
     <classes mode="replace">
         <memberOf key="model.nameLike.agent"/>
         <memberOf key="att.naming"/>
@@ -18,22 +23,28 @@
         <attDef ident="key" mode="delete"/>
         <attDef ident="ref" mode="change" module="att.canonical">
             <desc xml:lang="de" versionDate="2023-04-20">Verknüpfung der Person mit der ID der
-                Personen- und Organisationsdatenbank.</desc>
+                Personen- und Organisationsdatenbank.
+            </desc>
             <desc xml:lang="en" versionDate="2023-04-20">Linking the person with the ID of the database
-                of persons and organisations.</desc>
+                of persons and organisations.
+            </desc>
             <desc xml:lang="fr" versionDate="2023-04-20">Relier la personne à l'ID de la base de données
-                des personnes et des organisations.</desc>
+                des personnes et des organisations.
+            </desc>
             <datatype>
                 <dataRef key="ssrq.pointer.persons"/>
             </datatype>
         </attDef>
         <attDef ident="role" mode="change">
             <desc xml:lang="de" versionDate="2023-04-20">Auszeichnung der Rolle einer Person im
-                Quellentext.</desc>
+                Quellentext.
+            </desc>
             <desc xml:lang="en" versionDate="2023-04-20">Distinction of the role of a person in the source
-                text.</desc>
+                text.
+            </desc>
             <desc xml:lang="fr" versionDate="2023-04-20">Distinction du rôle d'une personne dans le texte
-                source.</desc>
+                source.
+            </desc>
             <datatype>
                 <dataRef key="ssrq.role.person"/>
             </datatype>
@@ -42,16 +53,16 @@
     <exemplum type="ssrq-doc-example" versionDate="2024-04-20">
         <p xml:lang="de">Beispiel für einen einfachen Personennamen.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-             <persName ref="per008949a">Hans Gullisen</persName>
+            <persName ref="per008949a">Hans Gullisen</persName>
         </egXML>
     </exemplum>
     <exemplum type="ssrq-doc-example" versionDate="2024-04-20">
         <p xml:lang="de">Beispiel für ineinander verschachtelte Personennamen.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-             <persName ref="per008937a">
-                   <persName ref="per008949a">Hans Gullisen</persName>
-                    seligen frouw
-             </persName>
+            <persName ref="per008937a">
+                <persName ref="per008949a">Hans Gullisen</persName>
+                seligen frouw
+            </persName>
         </egXML>
     </exemplum>
     <exemplum type="ssrq-doc-example" versionDate="2024-04-20">

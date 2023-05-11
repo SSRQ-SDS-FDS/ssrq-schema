@@ -2,9 +2,8 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="list" module="core" mode="change">
     <desc xml:lang="de" versionDate="2023-04-13">Wird für Aufzählungen aller Art verwendet.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-13">Utilisé pour les énumérations de toutes
-        sortes.</desc>
     <desc xml:lang="en" versionDate="2023-04-13">Used for enumerations of all kinds.</desc>
+    <desc xml:lang="fr" versionDate="2023-04-13">Utilisé pour les énumérations de toutes sortes.</desc>
     <classes mode="replace">
         <memberOf key="model.listLike"/>
         <memberOf key="att.global.rendition"/>
@@ -15,19 +14,25 @@
     <attList>
         <attDef ident="rend" mode="change" usage="opt">
             <desc xml:lang="de" versionDate="2023-04-13">Optionale Angabe zur Darstellung der
-                Liste.</desc>
+                Liste.
+            </desc>
             <desc xml:lang="fr" versionDate="2023-04-13">Indication facultative pour la présentation
-                de la liste.</desc>
+                de la liste.
+            </desc>
             <desc xml:lang="en" versionDate="2023-04-13">Optional specification for the display of
-                the list.</desc>
+                the list.
+            </desc>
             <valList type="closed">
                 <valItem ident="bulleted">
                     <desc xml:lang="de" versionDate="2023-04-13">Liste mit einfachen
-                        Bullet-Points</desc>
+                        Bullet-Points
+                    </desc>
                     <desc xml:lang="fr" versionDate="2023-04-13">Liste de bullet-points
-                        simples</desc>
+                        simples
+                    </desc>
                     <desc xml:lang="en" versionDate="2023-04-13">List with simple bullet
-                        points</desc>
+                        points
+                    </desc>
                 </valItem>
                 <valItem ident="numbered">
                     <desc xml:lang="de" versionDate="2023-04-13">Nummerierte Liste</desc>

@@ -1,15 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="publisher" module="core" mode="change" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-04-12"><gi>publisher</gi> enthält bei Druckschriften als Teil von docImprint den
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="publisher" module="core" mode="change"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <desc xml:lang="de" versionDate="2023-05-11">Enthält bei Druckschriften als Teil von docImprint den
         Namen der Druckerei oder des Druckers. Als Teil der allgemeinen Metadaten eines Stücks enthält "publisher" die
-        Angabe der herausgebenden Institution. </desc>
-    <desc xml:lang="fr" versionDate="2023-04-12"><gi>publisher</gi> contient, pour les imprimés, comme partie de docImprint,
-        le nom de l'imprimerie ou de l'imprimeur. En tant que partie des métadonnées générales d'une pièce, "publisher"
-        contient l'indication de l'institution éditrice.</desc>
-    <desc xml:lang="en" versionDate="2023-04-12"><gi>publisher</gi> contains the name of the printer or printing company for
+        Angabe der herausgebenden Institution.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-05-11">Contains the name of the printer or printing company for
         print publications as part of docImprint. As part of the general metadata of a piece, "publisher" contains the
-        name of the publishing institution.</desc>
+        name of the publishing institution.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-05-11">Contient, pour les imprimés, comme partie de docImprint,
+        le nom de l'imprimerie ou de l'imprimeur. En tant que partie des métadonnées générales d'une pièce, "publisher"
+        contient l'indication de l'institution éditrice.
+    </desc>
     <classes mode="replace">
         <memberOf key="att.global.responsibility"/>
     </classes>
@@ -21,7 +25,10 @@
         <constraint>
             <sch:pattern>
                 <sch:rule context="tei:publisher">
-                    <sch:assert test="string-length(normalize-space(.)) > 0"><sch:name/> should contain some text.</sch:assert>
+                    <sch:assert test="string-length(normalize-space(.)) > 0">
+                        <sch:name/>
+                        should contain some text.
+                    </sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>

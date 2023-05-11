@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="row" module="figures" mode="change">
     <desc xml:lang="de" versionDate="2023-04-11">Auszeichnung von Tabellenzeilen</desc>
     <desc xml:lang="en" versionDate="2023-04-11">Markup for labelling rows of table</desc>
@@ -11,9 +10,11 @@
     </content>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-11">
         <p xml:lang="de">Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten
-            drei Spalten mit «gbz», «xr» bzw. «dn» überschrieben werden:</p>
+            drei Spalten mit «gbz», «xr» bzw. «dn» überschrieben werden:
+        </p>
         <p xml:lang="fr">Exemple d'une liste de prix de vin avec quatre colonnes dont les dernières
-            trois sont intitulées «gbz», «xr» et «dn»&#160;:</p>
+            trois sont intitulées «gbz», «xr» et «dn»&#160;:
+        </p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <table>
                 <head>Von dem wein</head>

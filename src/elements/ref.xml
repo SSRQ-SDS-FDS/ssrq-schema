@@ -17,23 +17,8 @@
         Archivsignatur zu wiederholen, sondern es reicht, auf die Stücknummer der Editionseinheit zu
         verlinken (vgl. Beispiel unten). Ebenso ist es möglich, innerhalb der eigenen
         Editionseinheit von einem Stück auf ein anderes zu referenzieren. Wir verwenden dafür die
-        Idno (vgl. Beispiel).</desc>
-    <desc xml:lang="fr" versionDate="2023-04-28">Renvoi/Lien/Référence croisée à un autre document,
-        la préface, le registre d'un volume rétronumérisé, une entrée dans le DHS, la littérature
-        citée etc. Il est utile de mettre à l'aide de <gi>ref</gi> des liens vers autres sources
-        non-éditées qui sont enregistrées dans un système d'informations d'archives. Ce n'est pas
-        judicieux de faire des renvois à un corpus d'actes si on ne parle que d'un seul acte, juste
-        parce que la pièce ne possède pas de cote. En cas d'entrées issues d'un livre qu'on ne veut
-        pas enregistrer séparément dans un système d'archives (si ceci serait possible), on peut
-        faire référence au livre (entier) dans le catalogue d'archive. En cas de liens vers autres
-        éditions, il faut d'abord indiquer la cote de la source si celle-ci a été consultée
-        (autopsie) ou si la cote a été vérifiée avec Query et se laisse mettre en lien. Si un
-        document d'archive a été évalué à base d'une édition, il suffit d'indiquer l'édition. En cas
-        d'un renvoi à une source qui fait partie d'un ensemble d'édition des SDS, il n'est pas
-        nécessaire de répéter la cote d'archive. Il suffit de faire référence au numéro de la pièce
-        de l'ensemble d'édition (cf. exemple en bas). De même, il est possible de faire référence
-        d'une pièce à une autre au sein de sa propre unité d'édition. Nous utilisons pour cela la
-        idno (cf. exemple en bas).</desc>
+        Idno (vgl. Beispiel).
+    </desc>
     <desc xml:lang="en" versionDate="2023-04-28">Cross-reference/Link/Cross-reference to another
         document, the preface, the register of a retronumbered volume, an entry in the DHS, the
         literature cited literature etc. It is useful to use <gi>ref</gi> to link to other unedited
@@ -49,7 +34,25 @@
         is part of an SDS edition set, it is not necessary to repeat the It is not necessary to
         repeat the archive number. It is sufficient to refer to the item number of the edition set
         (see example below). Similarly, it is possible to refer from one part to another within its
-        own publishing unit. For this we use the idno (see example below).</desc>
+        own publishing unit. For this we use the idno (see example below).
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-04-28">Renvoi/Lien/Référence croisée à un autre document,
+        la préface, le registre d'un volume rétronumérisé, une entrée dans le DHS, la littérature
+        citée etc. Il est utile de mettre à l'aide de <gi>ref</gi> des liens vers autres sources
+        non-éditées qui sont enregistrées dans un système d'informations d'archives. Ce n'est pas
+        judicieux de faire des renvois à un corpus d'actes si on ne parle que d'un seul acte, juste
+        parce que la pièce ne possède pas de cote. En cas d'entrées issues d'un livre qu'on ne veut
+        pas enregistrer séparément dans un système d'archives (si ceci serait possible), on peut
+        faire référence au livre (entier) dans le catalogue d'archive. En cas de liens vers autres
+        éditions, il faut d'abord indiquer la cote de la source si celle-ci a été consultée
+        (autopsie) ou si la cote a été vérifiée avec Query et se laisse mettre en lien. Si un
+        document d'archive a été évalué à base d'une édition, il suffit d'indiquer l'édition. En cas
+        d'un renvoi à une source qui fait partie d'un ensemble d'édition des SDS, il n'est pas
+        nécessaire de répéter la cote d'archive. Il suffit de faire référence au numéro de la pièce
+        de l'ensemble d'édition (cf. exemple en bas). De même, il est possible de faire référence
+        d'une pièce à une autre au sein de sa propre unité d'édition. Nous utilisons pour cela la
+        idno (cf. exemple en bas).
+    </desc>
     <classes mode="replace">
         <memberOf key="model.annotationPart.body"/>
         <memberOf key="model.ptrLike"/>
@@ -67,7 +70,8 @@
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <bibl>
                 <ref target="https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858">SSRQ SG
-                    III/2, Nr. 231 </ref>
+                    III/2, Nr. 231
+                </ref>
             </bibl>
         </egXML>
     </exemplum>
