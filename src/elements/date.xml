@@ -31,10 +31,16 @@
         <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
         <constraint>
             <sch:pattern>
-                <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
+                <sch:rule
+                    context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
                     <sch:assert
                         test=".[@datingMethod]">The attribute @datingMethod is required, when <sch:name/>
                         is used outside of the publicationStmt.</sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
+                    <sch:assert test=".[@type][@type/data(.) = ('electronic', 'print')]">If <sch:name/>
+                        is part of the publicationStmt it must contains @type with a value of
+                        electronic or print.</sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
@@ -85,6 +91,59 @@
                     <rng:ref name="ssrq.period.seasons"/>
                 </rng:choice>
             </datatype>
+        </attDef>
+        <attDef ident="type" mode="replace">
+            <desc xml:lang="de" versionDate="2023-05-12">Nähere Charakterisierung einer Datierung –
+                wird für Termine und Fristen verwendet sowie für Art der Publikation</desc>
+            <desc xml:lang="fr" versionDate="2023-05-12">More detailed characterisation of a dating
+                - used for dates and deadlines as well as for type of publication</desc>
+            <desc xml:lang="fr" versionDate="2023-05-12">Caractérisation plus détaillée d'une
+                datation - utilisée pour les dates et les délais ainsi que pour le type de
+                publication</desc>
+            <valList type="closed">
+                <valItem ident="deadline">
+                    <desc xml:lang="de">Termin/Frist</desc>
+                    <desc xml:lang="fr">délai</desc>
+                    <desc xml:lang="en">period</desc>
+                    <desc xml:lang="it">scadenza</desc>
+                </valItem>
+                <valItem ident="deadline_holiday">
+                    <desc xml:lang="de">Kirchenfest als Termin/Frist</desc>
+                    <desc xml:lang="fr">des fêtes religieuses comme délai</desc>
+                    <desc xml:lang="en">feast day (period)</desc>
+                    <desc xml:lang="it">festività religiose come scadenza</desc>
+                </valItem>
+                <valItem ident="deadline_floating_holiday">
+                    <desc xml:lang="de">beweglicher Feiertag als Termin/Frist</desc>
+                    <desc xml:lang="fr">des fêtes sans date fixe comme délai</desc>
+                    <desc xml:lang="en">floating holiday (deadline)</desc>
+                    <desc xml:lang="it">festività religiose senza una data fissa come scadenza</desc>
+                </valItem>
+                <valItem ident="holiday">
+                    <desc xml:lang="de">Kirchenfest</desc>
+                    <desc xml:lang="fr">des fêtes religieuses</desc>
+                    <desc xml:lang="en">feast day</desc>
+                    <desc xml:lang="it">festività religiose</desc>
+                </valItem>
+                <valItem ident="floating_holiday">
+                    <desc xml:lang="de">beweglicher Feiertag</desc>
+                    <desc xml:lang="fr">des fêtes sans date fixe</desc>
+                    <desc xml:lang="en">floating holiday</desc>
+                    <desc xml:lang="it">festività senza una data fissa</desc>
+                </valItem>
+                <valItem ident="electronic">
+                    <desc xml:lang="de">elektronische Publikation</desc>
+                    <desc xml:lang="fr">publication numérique</desc>
+                    <desc xml:lang="en">electronic publication</desc>
+                    <desc xml:lang="it">pubblicazione digitale</desc>
+                </valItem>
+                <valItem ident="print">
+                    <desc xml:lang="de">Druck</desc>
+                    <desc xml:lang="fr">imprimé</desc>
+                    <desc xml:lang="en">print</desc>
+                    <desc xml:lang="it">stampa</desc>
+                </valItem>
+            </valList>
         </attDef>
         <attDef ident="calendar" mode="delete"/>
     </attList>

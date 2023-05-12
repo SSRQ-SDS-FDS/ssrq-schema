@@ -76,6 +76,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "date-with-valid-period-and-type",
+            "<date period='summer' type='holiday'>es war im Sommer</date>",
+            True,
+        ),
+        (
+            "date-with-valid-period-and-invalid-type",
+            "<date period='summer' type='summer holiday'>es war im Sommer</date>",
+            False,
+        ),
+        (
             "date-with-invalid-period",
             "<date period='sommer'>es war im Sommer</date>",
             False,
@@ -118,6 +128,16 @@ def test_date_rng(
             "date-with-valid-dur-iso-without-datingMethod",
             "<date dur-iso='R/P3.5Y'>Alle drei einhalb Jahre</date>",
             True,
+        ),
+        (
+            "valid-date-inside-pubStmt",
+            "<publicationStmt><date type='electronic' when-custom='2019-08-15'/></publicationStmt>",
+            True,
+        ),
+        (
+            "invalid-date-inside-pubStmt",
+            "<publicationStmt><date type='holiday' when-custom='2019-08-15'/></publicationStmt>",
+            False,
         ),
     ],
 )
