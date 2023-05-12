@@ -91,5 +91,7 @@ def test_msIdent_idno_constraints(
         xml = reports[0].report
         node = proc.parse_xml(xml_text=xml)
         xp.set_context(xdm_item=node)
-        item = xp.evaluate_single('//*:text[contains(., "idno element needs")]')
+        item = xp.evaluate_single(
+            '//*:text[contains(normalize-space(.), "idno element needs")]'
+        )
         assert bool(item) is not result

@@ -83,5 +83,7 @@ def test_measure_constraints(
             xml = reports[0].report
             node = proc.parse_xml(xml_text=xml)
             xp.set_context(xdm_item=node)
-            item = xp.evaluate_single(f"//*:text[contains(., '{message}')]")
+            item = xp.evaluate_single(
+                f"//*:text[contains(normalize-space(.), '{message}')]"
+            )
             assert bool(item) is not result
