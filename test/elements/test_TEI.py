@@ -74,7 +74,7 @@ import pytest
                                 </physDesc>
                                 <history>
                                     <origin>
-                                        <origDate from-custom="1615-04-15" to-custom="1700-12-31"/>
+                                        <origDate from-custom="1615-04-15" to-custom="1700-12-31" calendar="unknown"/>
                                     </origin>
                                 </history>
                                 </msDesc>

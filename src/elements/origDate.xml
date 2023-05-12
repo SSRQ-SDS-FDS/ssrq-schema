@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="origDate" module="msDescription"
+    mode="change" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    <desc xml:lang="de" versionDate="2023-05-12">Erfassung des Originaldatums des edierten
+        Quellentexts (Ausstellungdatum). Es können auch mehrere Originaldatierungen innerhalb einer
+        Editionsvorlage vorhanden sein. Mit <att>when-custom</att> und <att>datingMethod</att> wird
+        das Datum gemäss den Datierungsrichtlinien erfasst. Zum Umgang mit Heiligenfesten und
+        anderen kirchlichen Feiertagen vgl. <gi>date</gi>. In den Kommentaren und Anmerkungen wird <gi>
+        date</gi> verwendet. Das normalisierte Datum eines edierten Stücks wird in den Metadaten
+        erfasst.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-12">Saisie de la date originale du texte source édité
+        (date d'exposition). Il peut également y avoir plusieurs dates originales dans un modèle
+        d'édition. Avec <att>when-custom</att> et <att>datingMethod</att>, la date est saisie
+        conformément aux directives de datation. Pour le traitement des fêtes de saints et autres
+        fêtes religieuses, voir <gi>date</gi>. Dans les commentaires et les notes, on utilise <gi>
+        date</gi>. La date normalisée d'une pièce éditée est saisie dans les métadonnées.</desc>
+    <desc xml:lang="de" versionDate="2023-05-12">Recording the original date of the edited source
+        text (date of issue). There can also be several original datings within one edition
+        template. With <att>when-custom</att> and <att>datingMethod</att> the date is recorded
+        according to the dating guidelines. For dealing with saints' feasts and other church
+        holidays, cf. <gi>date</gi>. In the comments and annotations <gi>date</gi> is used. The
+        normalised date of an edited piece is recorded in the metadata.</desc>
+    <classes mode="replace">
+        <memberOf key="model.pPart.msdesc"/>
+        <memberOf key="att.datable"/>
+    </classes>
+    <content>
+        <rng:zeroOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:zeroOrMore>
+    </content>
+    <attList>
+        <attDef ident="period" mode="change">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.period.days"/>
+                    <rng:ref name="ssrq.period.seasons"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="datingMethod" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-12">
+        <p xml:lang="de">Originaldatierung bei Urkunden</p>
+        <p xml:lang="fr">Datation originale des actes</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <origDate when-custom="1448-05-25" calendar="Gregorian">uf sant Urbans tag in dem jár,
+                do man zalt nach Cristi unsers herren gepurt tusend vierhundert und im acht und
+                viertzigosten jâr</origDate>
+        </egXML>
+    </exemplum>
+</elementSpec>

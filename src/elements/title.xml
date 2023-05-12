@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="title" module="core" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-12">Enthält als Teil des <gi>titleStmt</gi> den
+        vollständigen Titel des Rechtsquellenbandes bzw. der Editionseinheit – als Teil des <gi>
+        seriesStmt</gi> den Titel der Serie.</desc>
+    <desc xml:lang="en" versionDate="2023-05-12">Contains as part of the <gi>titleStmt</gi> the full
+        title of the legal source volume or edition unit - as part of the <gi>seriesStmt</gi> the
+        title of the series.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-12">Contient dans le <gi>titleStmt</gi> le titre
+        complet du volume de la source légale ou de l'unité d'édition - dans le <gi>seriesStmt</gi>
+        le titre de la série.</desc>
+    <classes mode="replace">
+        <memberOf key="model.emphLike"/>
+        <memberOf key="model.msQuoteLike"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <textNode/>
+            <elementRef key="hi"/>
+        </alternate>
+    </content>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-12">
+        <p xml:lang="de">Einfacher Titel</p>
+        <p xml:lang="fr">Titre simple</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <title>Rechtsquellen der Stadt und Herrschaft Rapperswil (mit den Höfen Busskirch/Jona,
+                Kempraten und Wagen)</title>
+        </egXML>
+    </exemplum>
+</elementSpec>
