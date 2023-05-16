@@ -43,7 +43,7 @@ from ..conftest import RNG_test_function
         ),
     ],
 )
-def test_element(
+def test_time_rng(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
