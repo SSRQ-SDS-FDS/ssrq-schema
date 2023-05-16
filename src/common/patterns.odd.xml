@@ -168,6 +168,15 @@
             </content>
         </dataSpec>
 
+        <dataSpec ident="ssrq.time.point" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-05-16">SSRQ definiertes Muster für Zeitpunkte – basierend auf Sekunden</desc>
+            <desc xml:lang="fr" versionDate="2023-05-16">SSRQ modèle défini pour les points temporels - basé sur les secondes</desc>
+            <desc xml:lang="en" versionDate="2023-05-16">SSRQ defined pattern for time points - based on seconds</desc>
+            <content>
+                <dataRef name="string" restriction="(2[0-4]|[0-1][0-9]):[0-5][0-9]:[0-5][0-9]"/>
+            </content>
+        </dataSpec>
+
     </specGrp>
 
 </div>
