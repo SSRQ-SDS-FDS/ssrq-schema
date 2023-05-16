@@ -56,22 +56,22 @@ def test_precision(
     [
         (
             "valid-precision-match",
-            "<date datingMethod='Gregorian' when-custom='1637-10-18'>1637 [Oktober 18]<precision precision='low' match='@when-custom'/></date>",
+            "<date datingMethod='gregorian' when-custom='1637-10-18'>1637 [Oktober 18]<precision precision='low' match='@when-custom'/></date>",
             True,
         ),
         (
             "multiple-valid-precision-match",
-            "<date datingMethod='Gregorian' notBefore-custom='1637' notAfter-custom='1703'>nach 1638<precision precision='high' match='@notBefore-custom @notAfter-custom'/></date>",
+            "<date datingMethod='gregorian' notBefore-custom='1637' notAfter-custom='1703'>nach 1638<precision precision='high' match='@notBefore-custom @notAfter-custom'/></date>",
             True,
         ),
         (
             "invalid-precision-match",
-            "<date datingMethod='Gregorian' when-custom='1637-10-18'>1637 [Oktober 18]<precision precision='low' match='@when-customs'/></date>",
+            "<date datingMethod='gregorian' when-custom='1637-10-18'>1637 [Oktober 18]<precision precision='low' match='@when-customs'/></date>",
             False,
         ),
         (
             "invalid-multiple-valid-precision-match",
-            "<date datingMethod='Gregorian' notBefore-custom='1637' notAfter-custom='1703'>nach 1638<precision precision='high' match='@notBefore-custom @notafter-custom'/></date>",
+            "<date datingMethod='gregorian' notBefore-custom='1637' notAfter-custom='1703'>nach 1638<precision precision='high' match='@notBefore-custom @notafter-custom'/></date>",
             False,
         ),
     ],

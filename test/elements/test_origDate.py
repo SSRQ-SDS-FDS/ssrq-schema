@@ -8,7 +8,7 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-origDate",
-            "<origDate when-custom='1448-05-25' calendar='Gregorian'>bar</origDate>",
+            "<origDate when-custom='1448-05-25' calendar='gregorian'>bar</origDate>",
             True,
         ),
         (

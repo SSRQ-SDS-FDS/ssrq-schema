@@ -95,32 +95,32 @@ def test_facs_naming_conventions(
     [
         (
             "correct-datable-with-when",
-            "<date datingMethod='Gregorian' when-custom='2020'/>",
+            "<date datingMethod='gregorian' when-custom='2020'/>",
             True,
         ),
         (
             "incorrect-datable-combination-when-to-custom",
-            "<date datingMethod='Gregorian' when-custom='2020' to-custom='2020-12-31'/>",
+            "<date datingMethod='gregorian' when-custom='2020' to-custom='2020-12-31'/>",
             False,
         ),
         (
             "correct-datable-combination-from-to",
-            "<date datingMethod='Gregorian' from-custom='2020-01-01' to-custom='2020-12-31'/>",
+            "<date datingMethod='gregorian' from-custom='2020-01-01' to-custom='2020-12-31'/>",
             True,
         ),
         (
             "incorrect-datable-from-without-to",
-            "<date datingMethod='Gregorian' from-custom='2020-01-01' />",
+            "<date datingMethod='gregorian' from-custom='2020-01-01' />",
             False,
         ),
         (
             "incorrect-datable-combination-from-to-notBefore",
-            "<date datingMethod='Gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notBefore-custom='2019'/>",
+            "<date datingMethod='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notBefore-custom='2019'/>",
             False,
         ),
         (
             "incorrect-datable-combination-from-to-notAfter",
-            "<date datingMethod='Gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notAfter-custom='2019'/>",
+            "<date datingMethod='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notAfter-custom='2019'/>",
             False,
         ),
     ],
