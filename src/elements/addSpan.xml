@@ -8,24 +8,22 @@
         <memberOf key="att.global.rendition"/>
         <memberOf key="att.placement"/>
         <memberOf key="att.spanning"/>
-        <memberOf key="att.typed"/>
         <memberOf key="att.written"/>
     </classes>
     <content>
         <empty/>
     </content>
-    <attList>
-        <attDef ident="medium" mode="delete"/>
-        <attDef ident="spanTo" mode="change" usage="req"/>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-04">
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-17">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <addSpan place="left margin" type="sign" spanTo="#add1"/>
+            <addSpan place="left margin" spanTo="add1"/>
+            ...
+            <anchor xml:id="add1"/>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-04">
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-17">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <addSpan place="inline" hand="#otherHand" rend="other ink" spanTo="#add1"/>
+            <addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
+            <anchor xml:id="add1"/>
         </egXML>
     </exemplum>
 </elementSpec>

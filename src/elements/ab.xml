@@ -48,6 +48,17 @@
         de même en premier lieu. Si le sens de lecture auquel on doit se référer n'est pas uniforme,
         c'est-à-dire si une mention dorsale est à l'envers, un commentaire est nécessaire.
     </desc>
+    <desc xml:lang="it" versionDate="2023-05-21">Contiene qualsiasi livello di testo senza un'assegnazione chiaramente
+        definita. Utilizziamo sempre il tag insieme a <att>type</att> e <att>place</att> per annotazioni, note dorsali,
+        note clericali e note anagrafiche oltre che per marginalia. Nei documenti pontifici le annotazioni sono
+        riportate nel seguente ordine: prima le annotazioni sotto la plica, poi le annotazioni sulla plica da sinistra a
+        destra e infine le annotazioni sul retro del documento da sinistra a destra. Le annotazioni e le note dorsali
+        sono riportate in ordine cronologico. Le note create contemporaneamente sono sempre elencate per prime a causa
+        dell'ordine cronologico. Le annotazioni contemporanee sono registrate in ordine di lettura dall'alto verso il
+        basso e da sinistra a destra. se ad es. Ad esempio, se una missiva ha una nota dorsale sul retro, seguita
+        dall'indirizzo e infine altre due note dorsali, l'indirizzo viene comunque prima. Se la direzione di lettura
+        verso cui orientarsi non è uniforme, cioè una nota dorsale è capovolta, è necessario un commento.
+    </desc>
     <classes mode="replace">
         <memberOf key="macro.abContent"/>
         <memberOf key="model.pLike"/>
@@ -98,25 +109,12 @@
                 </rng:choice>
             </datatype>
         </attDef>
-        <attDef ident="scribe" mode="change">
-            <desc versionDate="2023-05-03" xml:lang="de">Referenz auf ID des Schreibers</desc>
-            <desc versionDate="2023-05-03" xml:lang="en">Reference to ID of the recorder</desc>
-            <desc versionDate="2023-05-03" xml:lang="fr">Référence à l'ID de l'enregistreur</desc>
-            <datatype>
-                <dataRef key="ssrq.pointer.persons"/>
-            </datatype>
-        </attDef>
         <attDef ident="type" mode="replace" usage="req">
-            <desc xml:lang="de" versionDate="2023-05-02">Detaillierte Beschreibung des Elements <gi>
-                ab</gi>.
+            <desc xml:lang="de" versionDate="2023-05-02">Detaillierte Beschreibung des Elements <gi>ab</gi>.
             </desc>
-            <desc xml:lang="fr" versionDate="2023-05-02">Description détaillée de l'élément
-                <gi>ab</gi>
-                .
+            <desc xml:lang="fr" versionDate="2023-05-02">Description détaillée de l'élément <gi>ab</gi>.
             </desc>
-            <desc xml:lang="de" versionDate="2023-05-02">Detailed description of the element
-                <gi>ab</gi>
-                .
+            <desc xml:lang="de" versionDate="2023-05-02">Detailed description of the element <gi>ab</gi>.
             </desc>
             <valList type="closed">
                 <valItem ident="archiving reference">
@@ -169,7 +167,6 @@
                 </valItem>
             </valList>
         </attDef>
-
         <attDef ident="cert" mode="delete"/>
         <attDef ident="medium" mode="delete"/>
         <attDef ident="n" mode="delete"/>
@@ -177,7 +174,8 @@
         <attDef ident="resp" mode="delete"/>
         <attDef ident="xml:id" mode="delete"/>
     </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
+    <!-- ToDo: Beispiele passen nicht zum Element <gi>ab</gi>, passende Beispiele ergänzen -->
+    <!--<exemplum type="ssrq-doc-example" versionDate="2023-03-03">
         <p xml:lang="de">Definition der Identifikationsnummer eines Stücks:</p>
         <p xml:lang="fr">Définition du numéro d'identification d'une pièce&#160;:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -205,4 +203,5 @@
             </msIdentifier>
         </egXML>
     </exemplum>
+    -->
 </elementSpec>

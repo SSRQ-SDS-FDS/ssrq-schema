@@ -4,53 +4,44 @@ from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
-    "name, markup, result",
+    "name, markup, result, message",
     [
-        # Todo: füge diesen Test hinzu, wenn <gi>add</gi> definiert wurde
-        #        (
-        #          "valid-damage-with-add",
-        #            """<damage agent="water_spot">
-        #                                <add hand="#otherHand" place="overwritten">zuͦ trincken</add>
-        #                            </damage>
-        #                            """,
-        #            True,
-        #        ),
+        # Test aktivieren, sobald <gi>add</gi> modelliert wurde.
+        # (
+        #    "valid-damage-with-add",
+        #    "<damage agent='water_spot'><add hand='otherHand' place='overwritten'>zuͦ trincken</add></damage>",
+        #    False,
+        #    "without matching ID",
+        # ),
         (
             "valid-damage-with-gap",
-            """
-                                                        <damage agent="water_spot">
-                                                            <gap quantity="9" unit="cm"/>
-                                                        </damage>
-                                                    """,
+            "<damage agent='faded_ink clipping'><gap quantity='9' unit='cm'/></damage>",
             True,
+            None,
         ),
         (
             "valid-damage-with-supplied",
-            """
-                                                    <damage agent="water_spot">
-                                                        <supplied source="#73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
-                                                    </damage>
-                                                """,
-            True,
+            "<damage agent='water_spot'><supplied source='73988c1a-40e1-4527-94b7-736d418b29d0'>verthruwen</supplied></damage>",
+            False,
+            "without matching ID",
         ),
         (
             "valid-damage-with-unclear",
-            """
-                                        <damage agent="ink_blot">
-                                            <unclear>die</unclear>
-                                        </damage>
-                                    """,
+            "<damage agent='ink_blot'><unclear>die</unclear></damage>",
             True,
+            None,
         ),
         (
             "invalid-damage-without-agent",
             "<damage><unclear>die</unclear></damage>",
             False,
+            None,
         ),
         (
             "invalid-damage-with-wrong-attribute",
             "<damage agent='ink_blot' type='foo'><unclear>die</unclear></damage>",
             False,
+            None,
         ),
     ],
 )
@@ -59,5 +50,14 @@ def test_damage(
     name: str,
     markup: str,
     result: bool,
+    message: str | None,
 ):
-    test_element_with_rng("damage", name, markup, result, False)
+    test_element_with_rng("damage", name, markup, result, True)
+    if message:
+        validation_result = test_element_with_rng("damage", name, markup, result, True)
+        file_reports = validation_result.reports[0]
+        assert isinstance(file_reports.report, list)
+        messages = "".join([error.message for error in file_reports.report])
+        assert message in messages
+    else:
+        test_element_with_rng("damage", name, markup, result, False)

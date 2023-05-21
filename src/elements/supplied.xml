@@ -19,6 +19,12 @@
         son abréviation. Si un texte est complété à l'aide d'un autre modèle de texte, celui-ci est référencé par<att>
             source</att>. La raison d'un ajout peut être spécifiée avec <att>raison</att>.
     </desc>
+    <desc xml:lang="it" versionDate="2023-05-21">Contiene un passaggio di testo che è stato aggiunto dall'editore per
+        una migliore comprensione del testo. Se un curatore aggiunge liberamente un passaggio, si identifica in
+        <att>resp</att>
+        con la sua sigla. Se un testo viene integrato utilizzando un altro modello di testo, questo
+        viene referenziato con <att>source</att>. Il motivo di un'aggiunta può essere specificato con <att>reason</att>.
+    </desc>
     <classes mode="replace">
         <memberOf key="att.global.responsibility"/>
         <memberOf key="ssrq.att.source"/>
@@ -45,8 +51,8 @@
     <attList>
         <attDef ident="cert" mode="delete"/>
         <attDef ident="source" mode="replace">
-            <datatype minOccurs="1" maxOccurs="unbounded">
-                <dataRef key="ssrq.pointer.uuid"/>
+            <datatype>
+                <dataRef name="IDREFS"/>
             </datatype>
         </attDef>
     </attList>
@@ -57,7 +63,7 @@
     </exemplum>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-02">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <supplied source="#ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
+            <supplied source="ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
         </egXML>
     </exemplum>
 </elementSpec>

@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="pb" module="core" mode="change">
-    <classes mode="change">
+    <classes mode="replace">
+        <memberOf key="model.milestoneLike"/>
+        <memberOf key="att.global"/>
         <memberOf key="att.global.facs"/>
+        <memberOf key="att.typed"/>
     </classes>
     <attList>
         <attDef ident="n" mode="change">
             <desc xml:lang="de" versionDate="2023-04-06">Angabe der originalen Paginierung oder
-                Foliierung.</desc>
+                Foliierung.
+            </desc>
             <desc xml:lang="en" versionDate="2023-04-06">Indication of the original pagination or
-                foliation.</desc>
+                foliation.
+            </desc>
             <desc xml:lang="fr" versionDate="2023-04-06">Indication de la pagination ou du foliotage
-                d'origine.</desc>
+                d'origine.
+            </desc>
             <datatype>
                 <dataRef name="string" restriction="\d+|[IVXCL]+[rv]?"/>
             </datatype>
@@ -26,35 +32,55 @@
                 </valItem>
             </valList>
         </attDef>
+        <attDef ident="xml:lang" mode="delete"/>
         <attDef ident="break" mode="delete"/>
         <attDef ident="rend" mode="delete"/>
+        <attDef ident="resp" mode="delete"/>
+        <attDef ident="cert" mode="delete"/>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
-        <p xml:lang="de">Beispiel für eine Originalfoliierung: </p>
+        <p xml:lang="de">Beispiel für eine Originalfoliierung:</p>
         <p xml:lang="fr">Exemple pour des folios originaux&#160;:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <pb n="1r"  type="original"/><lb/>
+            <pb n="1r" type="original"/>
+            <lb/>
         </egXML>
     </exemplum>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
-        <p xml:lang="de">ACHTUNG: Wortteile ohne Leerschlag oder Drücken der Return- oder Eingabetaste direkt nach <pb/><lb break="no"/> anhängen:</p>
-        <p xml:lang="fr">ATTENTION&#160;: Ces parties de mot suivent directement <pb/><lb break="no"/>, sans espace ou touche entrée/return&#160;:</p>
+        <p xml:lang="de">ACHTUNG: Wortteile ohne Leerschlag oder Drücken der Return- oder Eingabetaste direkt nach
+            <pb/>
+            <lb break="no"/>
+            anhängen:
+        </p>
+        <p xml:lang="fr">ATTENTION&#160;: Ces parties de mot suivent directement
+            <pb/>
+            <lb break="no"/>, sans espace ou touche entrée/return&#160;:
+        </p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            geschri<pb/><lb break="no"/>ben
+            geschri
+            <pb/>
+            <lb break="no"/>ben
         </egXML>
     </exemplum>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
-        <p xml:lang="de">Blattzählung von Vorsatz- und Titelblättern mit römischen Ziffern: </p>
+        <p xml:lang="de">Blattzählung von Vorsatz- und Titelblättern mit römischen Ziffern:</p>
         <p xml:lang="fr">Pagination de plusieurs pages de titre ou pages de garde avec des chiffres romains&#160;:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <pb n="Ir"/>
-            <head>Urbar oder libell der <orgName>burgern zue <placeName>Werdenberg</placeName></orgName>er, vidimiert und
-                renoviert anno salutis <origDate when="1640">1640</origDate></head>
+            <head>Urbar oder libell der
+                <orgName>burgern zue
+                    <placeName>Werdenberg</placeName>
+                </orgName>
+                er, vidimiert und
+                renoviert anno salutis
+                <origDate when="1640">1640</origDate>
+            </head>
             <pb n="1"/>
             <p>
                 <lb/>Ich, <persName>Jacob Felldtmann</persName>, der junger, der zeith der hochgeachten
                 woledlen gestrengen frommen ehren
-                ...</p>
+                ...
+            </p>
         </egXML>
     </exemplum>
 </elementSpec>

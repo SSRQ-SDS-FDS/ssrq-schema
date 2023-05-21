@@ -5,6 +5,7 @@
     <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections deleted from the text.</desc>
     <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui ont été supprimées du texte.
     </desc>
+    <desc xml:lang="it" versionDate="2023-05-20">Indica sezioni più grandi che sono state eliminate dal testo.</desc>
     <classes mode="replace">
         <memberOf key="att.global.rendition"/>
         <memberOf key="att.spanning"/>
@@ -14,17 +15,15 @@
         <empty/>
     </content>
     <attList>
-        <attDef ident="spanTo" mode="change" usage="req"/>
-        <attDef ident="hand" mode="change">
-            <datatype minOccurs="1" maxOccurs="1">
-                <dataRef key="ssrq.hand.hand"/>
-                <!-- ToDo: das hier müsste korrigiert werden, vgl. <gi>addSpan</gi>-->
+        <attDef ident="rend" mode="replace">
+            <datatype>
+                <dataRef key="ssrq.critical.rend.del"/>
             </datatype>
         </attDef>
     </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-03">
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <delSpan rend="crossout" hand="later hand" spanTo="#del1"/>
+            <delSpan rend="crossout" hand="laterHand" spanTo="del1"/>
             Item ein hoffstatt ...
             <anchor xml:id="del1"/>
         </egXML>

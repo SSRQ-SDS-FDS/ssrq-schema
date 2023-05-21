@@ -4,6 +4,7 @@
     <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet einen beschädigten Abschnitt</desc>
     <desc xml:lang="en" versionDate="2023-05-11">Denotes a damaged section</desc>
     <desc xml:lang="fr" versionDate="2023-05-11">Indique une section endommagée</desc>
+    <desc xml:lang="it" versionDate="2023-05-20">Indica una sezione danneggiata</desc>
     <classes mode="replace">
         <memberOf key="att.damaged"/>
     </classes>
@@ -17,50 +18,44 @@
             </alternate>
         </sequence>
     </content>
-    <attList>
-        <attDef ident="agent" mode="change" usage="req">
-            <datatype>
-                <dataRef key="ssrq.agent"/>
-            </datatype>
-        </attDef>
-        <attDef ident="degree" mode="delete"/>
-        <attDef ident="group" mode="delete"/>
-        <!-- ToDo: Nach Entflechtung der Klassen: att.damaged, att.dimension, att.ranging und att.written
-             können die folgenden Angaben entfernt werden, vgl. damaSpan
-        -->
-        <attDef ident="extent" mode="delete"/>
-        <attDef ident="hand" mode="delete"/>
-        <attDef ident="quantity" mode="delete"/>
-        <attDef ident="unit" mode="delete"/>
-    </attList>
-    <!-- ToDo: Element <gi>add</gi> noch nicht definiert:
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
         <p xml:lang="de">Beschädigte Stelle, in der eine andere Hand Text eingetragen hat.</p>
+        <p xml:lang="en">Damaged spot where another hand has written text.</p>
+        <p xml:lang="fr">Endroit endommagé où une autre main a écrit du texte.</p>
+        <p xml:lang="it">Punto danneggiato dove un'altra mano ha scritto del testo.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <damage agent="water_spot">
-                <add hand="#otherHand" place="overwritten">zuͦ trincken</add>
+                <add hand="otherHand" place="overwritten">zuͦ trincken</add>
             </damage>
         </egXML>
     </exemplum>
-    -->
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
-        <p xml:lang="de">Beschädigte Stelle, deren Text unlesbar ist</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
+        <p xml:lang="de">Beschädigte Stelle, deren Text unlesbar ist.</p>
+        <p xml:lang="en">Damaged spot, the text of which is illegible.</p>
+        <p xml:lang="fr">Endroit endommagé dont le texte est illisible.</p>
+        <p xml:lang="it">Punto danneggiato, il cui testo è illeggibile.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <damage agent="water_spot">
                 <gap quantity="9" unit="cm"/>
             </damage>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
-        <p xml:lang="de">Beschädigte Stelle, deren Text ergänzt wurde</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
+        <p xml:lang="de">Beschädigte Stelle, deren Text ergänzt wurde.</p>
+        <p xml:lang="en">Damaged spot, the text of which has been supplied.</p>
+        <p xml:lang="fr">Endroit endommagé dont le texte a été ajouté.</p>
+        <p xml:lang="it">Punto danneggiato, il cui testo è stato aggiunto.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <damage agent="water_spot">
-                <supplied source="#73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
+                <supplied source="73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
             </damage>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-09">
-        <p xml:lang="de">Beschädigte Stelle, deren Lesung unsicher ist</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
+        <p xml:lang="de">Beschädigte Stelle, deren Lesung unsicher ist.</p>
+        <p xml:lang="en">Damaged passage whose reading is uncertain.</p>
+        <p xml:lang="fr">Endroit endommagé dont la lecture est incertaine.</p>
+        <p xml:lang="it">Punto danneggiato la cui lettura è incerta.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <damage agent="ink_blot">
                 <unclear>die</unclear>
