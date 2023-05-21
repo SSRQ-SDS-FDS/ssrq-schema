@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="origin" module="msdescription" mode="change"
+>
+    <desc xml:lang="de" versionDate="2023-05-16">Enthält Informationen zur Herkunft eines Dokuments.</desc>
+    <desc
+        xml:lang="fr" versionDate="2023-05-16">Contient des informations sur l'origine d'un
+    document.</desc>
+    <desc xml:lang="en" versionDate="2023-05-16">Contains information on the origin
+    of a document.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <alternate minOccurs="1" maxOccurs="1">
+                <elementRef key="foreign"/>
+                <elementRef key="origDate"/>
+            </alternate>
+            <elementRef key="origPlace" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+    </content>
+    <exemplum
+        type="ssrq-doc-example" versionDate="2023-05-16">
+        <p xml:lang="de">Erfassung der Herkunft und der Datierung</p>
+        <p xml:lang="fr">Saisie de l'origine et de la datation</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <origin>
+                <origDate when-custom="1366-06-29" calendar="julian"/>
+                <origPlace>Rheineck</origPlace>
+            </origin>
+        </egXML>
+    </exemplum>
+</elementSpec>
