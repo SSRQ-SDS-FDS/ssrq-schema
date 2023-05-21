@@ -70,9 +70,9 @@
         <classSpec ident="att.canonical" type="atts" mode="change">
             <attList>
                 <!-- ToDo: Überprüfe Attributdefinitionen.
-                        Beide enthalten nicht das, was zu erwarten wäre (einen externen
-                        Schlüssel in @key bzw. eine URI in @ref), @ref wird in jedem Element
-                        überschrieben. Ist das so gewollt?
+                        Verweise auf Datenbank-IDs in das Attribut key verlegen.
+                        Andere Lösung für die Arbeitsschritte "transcript" usw. finden, z. B.
+                        respStmt mit @type oder resp mit @type.
                 -->
                 <attDef ident="key" mode="replace">
                     <desc versionDate="2023-04-28" xml:lang="de">Tätigkeit, für die ein Bearbeiter
@@ -180,9 +180,6 @@
                     for any elements that uses @calendar. -->
                     <constraintSpec scheme="schematron" ident="calendar" mode="delete"/>
                 </attDef>
-                <!-- ToDo: Füge Definition für @period hinzu. Eventuell eigener Datentyp erforderlich,
-                        um sicherzustellen, dass nur vordefinierte Werte verwendet werden können.
-                 -->
             </attList>
         </classSpec>
         <classSpec ident="att.datable.custom" type="atts" mode="change">
@@ -220,7 +217,6 @@
             </constraintSpec>
             <attList>
                 <attDef ident="datingPoint" mode="delete"/>
-                <!-- ToDo: inhaltliche Überschneidung von datingMethod mit att.datable @calendar -->
                 <attDef ident="datingMethod" mode="replace" usage="opt">
                     <desc xml:lang="de">verwendeter Kalender</desc>
                     <desc xml:lang="en">calendar used</desc>
@@ -719,6 +715,7 @@
                         <!-- ToDo: Aktualisiere Beispiele und Tests für <gi>graphic</gi> -->
                         <dataRef key="ssrq.pointer.target"/>
                     </datatype>
+                    <!-- ToDo: Sinnvolle Beschränkung für Bilddateinamen finden -->
                 </attDef>
             </attList>
         </classSpec>
@@ -753,7 +750,7 @@
         </classSpec>
         <classSpec ident="att.spanning" type="atts" mode="change">
             <attList>
-                <attDef ident="spanTo" mode="change">
+                <attDef ident="spanTo" mode="change" usage="req">
                     <desc xml:lang="de" versionDate="2023-05-17">Verweist auf die <att>xml:id</att> eines Endpunktes
                     </desc>
                     <desc xml:lang="en" versionDate="2023-05-17">Points to the <att>xml:id</att> of an endpoint
@@ -763,9 +760,8 @@
                     </desc>
                     <desc xml:lang="it" versionDate="2023-05-17">Punta a <att>xml:id</att> di un endpoint
                     </desc>
-                    <!-- ToDo: Aktualisiere Beispiele und Tests für addSpan, delSpan und damageSpan -->
                     <datatype>
-                        <rng:data type="IDREF"/>
+                        <dataRef name="IDREF"/>
                     </datatype>
                     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-05-17">
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">

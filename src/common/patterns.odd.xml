@@ -4,18 +4,6 @@
 
     <specGrp xml:id="ssrq-patterns">
 
-        <!--
-        <dataSpec ident="ssrq.idno.article" mode="add">
-            <desc xml:lang="de" versionDate="2022-10-25">Muster für Identifikationsnummern für
-                Stücke</desc>
-            <content>
-                <dataRef name="string"
-                    restriction="(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+))"
-                />
-            </content>
-        </dataSpec>
-        -->
-
         <dataSpec ident="ssrq.pointer.persons" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Personen-IDs zur
                 Verknüpfung mit der Personen- und Organisationsdatenbank
