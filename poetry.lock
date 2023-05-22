@@ -205,14 +205,14 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "certifi"
-version = "2022.12.7"
+version = "2023.5.7"
 description = "Python package for providing Mozilla's CA Bundle."
 category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "certifi-2022.12.7-py3-none-any.whl", hash = "sha256:4ad3232f5e926d6718ec31cfc1fcadfde020920e278684144551c91769c7bc18"},
-    {file = "certifi-2022.12.7.tar.gz", hash = "sha256:35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"},
+    {file = "certifi-2023.5.7-py3-none-any.whl", hash = "sha256:c6c2e98f5c7869efca1f8916fed228dd91539f9f1b444c314c06eef02980c716"},
+    {file = "certifi-2023.5.7.tar.gz", hash = "sha256:0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"},
 ]
 
 [[package]]
@@ -344,14 +344,14 @@ test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
 
 [[package]]
 name = "elementpath"
-version = "4.1.1"
+version = "4.1.2"
 description = "XPath 1.0/2.0/3.0/3.1 parsers and selectors for ElementTree and lxml"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "elementpath-4.1.1-py3-none-any.whl", hash = "sha256:3ac9735460824ed5f14c223d8de36bede2a9347e11b2775dcbf801eede1c7cdc"},
-    {file = "elementpath-4.1.1.tar.gz", hash = "sha256:cd2bff3de8cddf8a480f728e648c6cae47d8ab66696c7d830a7a84536d8cae58"},
+    {file = "elementpath-4.1.2-py3-none-any.whl", hash = "sha256:e8a6c5685e1843c620f426c85ad21ff25cfc7554790116b1046adae7dc252458"},
+    {file = "elementpath-4.1.2.tar.gz", hash = "sha256:0bd0ef5bad559b677ba499e9c7342ca1f2ae2bace90808ee52528ec8d9f6e12b"},
 ]
 
 [package.extras]
@@ -695,18 +695,18 @@ files = [
 
 [[package]]
 name = "platformdirs"
-version = "3.3.0"
+version = "3.5.1"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "platformdirs-3.3.0-py3-none-any.whl", hash = "sha256:ea61fd7b85554beecbbd3e9b37fb26689b227ffae38f73353cbcc1cf8bd01878"},
-    {file = "platformdirs-3.3.0.tar.gz", hash = "sha256:64370d47dc3fca65b4879f89bdead8197e93e05d696d6d1816243ebae8595da5"},
+    {file = "platformdirs-3.5.1-py3-none-any.whl", hash = "sha256:e2378146f1964972c03c085bb5662ae80b2b8c06226c54b2ff4aa9483e8a13a5"},
+    {file = "platformdirs-3.5.1.tar.gz", hash = "sha256:412dae91f52a6f84830f39a8078cecd0e866cb72294a5c66808e74d5e88d251f"},
 ]
 
 [package.extras]
-docs = ["furo (>=2023.3.27)", "proselint (>=0.13)", "sphinx (>=6.1.3)", "sphinx-autodoc-typehints (>=1.23,!=1.23.4)"]
+docs = ["furo (>=2023.3.27)", "proselint (>=0.13)", "sphinx (>=6.2.1)", "sphinx-autodoc-typehints (>=1.23,!=1.23.4)"]
 test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=7.3.1)", "pytest-cov (>=4)", "pytest-mock (>=3.10)"]
 
 [[package]]
@@ -835,14 +835,14 @@ testing = ["argcomplete", "attrs (>=19.2.0)", "hypothesis (>=3.56)", "mock", "no
 
 [[package]]
 name = "pytest-xdist"
-version = "3.2.1"
+version = "3.3.1"
 description = "pytest xdist plugin for distributed testing, most importantly across multiple CPUs"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pytest-xdist-3.2.1.tar.gz", hash = "sha256:1849bd98d8b242b948e472db7478e090bf3361912a8fed87992ed94085f54727"},
-    {file = "pytest_xdist-3.2.1-py3-none-any.whl", hash = "sha256:37290d161638a20b672401deef1cba812d110ac27e35d213f091d15b8beb40c9"},
+    {file = "pytest-xdist-3.3.1.tar.gz", hash = "sha256:d5ee0520eb1b7bcca50a60a518ab7a7707992812c578198f8b44fdfac78e8c93"},
+    {file = "pytest_xdist-3.3.1-py3-none-any.whl", hash = "sha256:ff9daa7793569e6a68544850fd3927cd257cc03a7ef76c95e86915355e82b5f2"},
 ]
 
 [package.dependencies]
@@ -924,34 +924,34 @@ files = [
 
 [[package]]
 name = "saxonche"
-version = "12.1.0"
-description = "Official Saxonica python package for the SaxonC-HE 12.1 processor: for XSLT 3.0, XQuery 3.1, XPath 3.1 and XML Schema processing."
+version = "12.2.0"
+description = "Official Saxonica python package for the SaxonC-HE 12.2 processor: for XSLT 3.0, XQuery 3.1, XPath 3.1 and XML Schema processing."
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "saxonche-12.1.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:9d6ed39200941d33689bfc8e4b139ee1d77a73949924d80c9f3532967be04be5"},
-    {file = "saxonche-12.1.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:d9d4ce2124e3105d422cddcf702aeac47841e211f2c9c90920b31bdd09c2e1b0"},
-    {file = "saxonche-12.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:40872434673d18e48e33175524a32faa6d7d18e4a253698fdea905a70038d35f"},
-    {file = "saxonche-12.1.0-cp310-cp310-win_amd64.whl", hash = "sha256:f833f59fc7dddaa8751d8fad0ec8c3bb9a517bc65d9f24c7e64b18777a438b95"},
-    {file = "saxonche-12.1.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:4c64e6fd87f74cff8eae3e445bc6ebcd66d244cd43b9d965885a56b677027928"},
-    {file = "saxonche-12.1.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:96618ad97b1f9a6e4cbdc323fceea2093c7fd9962bc097f59aeed3875234840b"},
-    {file = "saxonche-12.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9dc8783217a895e8eec8a6a8b00cfab5ea1cdf648d06339d6f217e30e0ebdb01"},
-    {file = "saxonche-12.1.0-cp311-cp311-win_amd64.whl", hash = "sha256:492d769d7772c2918734588f8c1848049dba211054734c7500c0c1e9351c0b0b"},
-    {file = "saxonche-12.1.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:99eb498abdc8914b615f065a8667d297c7f95b7f7756360d2bfd965a68e7d1a9"},
-    {file = "saxonche-12.1.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:2896bd87d5f963cb59d13ff58b320bad1436179bf3515ed1346034407babc591"},
-    {file = "saxonche-12.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2048460d7ece31062f9c3349b4206d4f321409066c0f33daaa13245c650acda6"},
-    {file = "saxonche-12.1.0-cp38-cp38-win_amd64.whl", hash = "sha256:9430c6b6ea466d789fbf082895932cd310b684d36a1ee8797ad6b4dee71d6beb"},
-    {file = "saxonche-12.1.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:aaa6f76ffa5ae7f67927eccb0336b7374e05e4ee40e4e7b8cfe551013ab602fd"},
-    {file = "saxonche-12.1.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:b241e30148c3b73bfbb10aa00689bc48ab46eb08fd168375f122249d5b7ebf76"},
-    {file = "saxonche-12.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a5886f507fa65eea5ed6899925e1497083325dbb41d014590dcdcd80a3a77e3e"},
-    {file = "saxonche-12.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:3e2c2ca5b70a7d7af75cafe5ffc69b8310ea2db4bec877ed78d6452642090950"},
-    {file = "saxonche-12.1.0-pp38-pypy38_pp73-macosx_10_9_x86_64.whl", hash = "sha256:da7b1c4e881f04907fe5bc44585bb1ee4b617570ce1536faa04eb1dccd6ca15e"},
-    {file = "saxonche-12.1.0-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8469b59bd55f036bf53409377bee2b6ebb7a302023767cd71fde12b1f5d4f79a"},
-    {file = "saxonche-12.1.0-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:e22d41459d7dde861d09a75b8e23ebd09d871441f4967cef6b4038a1b252e99d"},
-    {file = "saxonche-12.1.0-pp39-pypy39_pp73-macosx_10_9_x86_64.whl", hash = "sha256:adb93e4896925f8ba5f823ed8da246aa5ed0d87e02520f1cd648c7d98e6d54d4"},
-    {file = "saxonche-12.1.0-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:69aa798dba77c78e928ee3ccc56167df51763026f0a1e0b8b3e658079ed25d99"},
-    {file = "saxonche-12.1.0-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:0359c2f7ddac0cb9aabe0dca8f9f78a2121a8822542d55506e1e48418dd5f332"},
+    {file = "saxonche-12.2.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:0ef0573259cada4b188dbff5236079346f95d7aed9a466cbe41e3b1a676d0c24"},
+    {file = "saxonche-12.2.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:2cec80c53e0b97a8c476ac690c9aa47f5a25a9d881a16517b53989db57754356"},
+    {file = "saxonche-12.2.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:797412a68c8fe093d9c832dface4ca26e9f46aed6b749276b56d635f617686ab"},
+    {file = "saxonche-12.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e7e29bc797548c6dea152994e92028d3105a9104208d56c6a3c8e5bdf108ee63"},
+    {file = "saxonche-12.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:5a36c2fac14b4e17c18eb65e3c2f8c3a35d2a49f9ca1a376fca8b0dc25d3639f"},
+    {file = "saxonche-12.2.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:22a896f4fe45ad3729caa22d841963097075a02a2e8021920a893be02f6744ef"},
+    {file = "saxonche-12.2.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:c4bd37abcc3855c3ba536b48e89635e84a3fc3a187f9b7033df69a239110109e"},
+    {file = "saxonche-12.2.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1329ad625f8afe9c947c262f664291025ad3535e0642c183988e5c6bc732742b"},
+    {file = "saxonche-12.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ba64a811d864171ebe563242c06a82fc64b54d550c4b8c41b2512e575452b046"},
+    {file = "saxonche-12.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:8bbff6c07abdd9916c1e471e237e75205e0edf13a33007b8271b65b658a4d40e"},
+    {file = "saxonche-12.2.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:4e47c6158de64d7746138810ab7ad3631b7a62ad3eef1c51cc643dfd744b2465"},
+    {file = "saxonche-12.2.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:1748030dde6f951fb357d75c589410eed53d4e4dac96c2dd22adeb0cbea4e776"},
+    {file = "saxonche-12.2.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c94874840ef9eea3cbed968c3bd754f841346e1c2501f27e48e4c7c8bfb4eb12"},
+    {file = "saxonche-12.2.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9334d48341ab683b1fbaf4fdfcc7ddc299b2546e616ccd7adb58ffa469c98ccb"},
+    {file = "saxonche-12.2.0-cp38-cp38-win_amd64.whl", hash = "sha256:f5556446802c51b6c690d0fa06c8e7a40e67532c9882fbc6ebb6b0b35c949471"},
+    {file = "saxonche-12.2.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:ad0cb4dfd7f08383bbc4ed7b0397d546acfe46ff4e51e4b6c213ea5fc83f11d2"},
+    {file = "saxonche-12.2.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:44eb67837508d286e57c902217599fcbe3121d55f2dc9f0ba057e89d0c7e9589"},
+    {file = "saxonche-12.2.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:185a22923b9db3f877979b36efbd6ae07b6c8d5fa197501c21c7bfbd74e93956"},
+    {file = "saxonche-12.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f317c3b4d6e7dd51a5275914cb21736317eb1fadf9101e5d8bf58efabbdb05b9"},
+    {file = "saxonche-12.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:c8eb745dedc16fa24bc03d004f91b33f099c8b263f20b10e19c6cc308b5b7954"},
+    {file = "saxonche-12.2.0-pp38-pypy38_pp73-macosx_10_9_x86_64.whl", hash = "sha256:c2dac512f191b4d8eafc88583d9bcb57ea7226a7126fdada9fd0c6444077b947"},
+    {file = "saxonche-12.2.0-pp39-pypy39_pp73-macosx_10_9_x86_64.whl", hash = "sha256:2f22ac9c979b647a3b626757331ec9bfccfcbfba4f6ebedc282cf91b83912172"},
 ]
 
 [[package]]
@@ -995,11 +995,11 @@ files = [
 
 [[package]]
 name = "ssrq-cli"
-version = "0.4.0"
+version = "0.6.0"
 description = ""
 category = "dev"
 optional = false
-python-versions = "^3.10"
+python-versions = "^3.11"
 files = []
 develop = false
 
@@ -1007,15 +1007,29 @@ develop = false
 aiohttp = "^3.8.3"
 elementpath = "^4.0.1"
 lxml = "^4.9.2"
+pydantic = "^1.10.6"
 pyschval = {git = "https://github.com/SSRQ-SDS-FDS/py-schematron-validator.git", rev = "main"}
 requests = "^2.28.2"
+tomli-w = "^1.0.0"
 typer = {version = "^0.7.0", extras = ["all"]}
 
 [package.source]
 type = "git"
 url = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-cli.git"
 reference = "main"
-resolved_reference = "b7d3362b8fdbcee9243f459419b0e4b8d885025a"
+resolved_reference = "cc4236c3c31ebb79d66efbb74701a00c47288e37"
+
+[[package]]
+name = "tomli-w"
+version = "1.0.0"
+description = "A lil' TOML writer"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tomli_w-1.0.0-py3-none-any.whl", hash = "sha256:9f2a07e8be30a0729e533ec968016807069991ae2fd921a78d42f429ae5f4463"},
+    {file = "tomli_w-1.0.0.tar.gz", hash = "sha256:f463434305e0336248cac9c2dc8076b707d8a12d019dd349f5c1e382dd1ae1b9"},
+]
 
 [[package]]
 name = "typer"
@@ -1055,20 +1069,21 @@ files = [
 
 [[package]]
 name = "urllib3"
-version = "1.26.15"
+version = "2.0.2"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 category = "main"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+python-versions = ">=3.7"
 files = [
-    {file = "urllib3-1.26.15-py2.py3-none-any.whl", hash = "sha256:aa751d169e23c7479ce47a0cb0da579e3ede798f994f5816a74e4f4500dcea42"},
-    {file = "urllib3-1.26.15.tar.gz", hash = "sha256:8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"},
+    {file = "urllib3-2.0.2-py3-none-any.whl", hash = "sha256:d055c2f9d38dc53c808f6fdc8eab7360b6fdbbde02340ed25cfbcd817c62469e"},
+    {file = "urllib3-2.0.2.tar.gz", hash = "sha256:61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"},
 ]
 
 [package.extras]
-brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)", "brotlipy (>=0.6.0)"]
-secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)", "urllib3-secure-extra"]
-socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
+secure = ["certifi", "cryptography (>=1.9)", "idna (>=2.0.0)", "pyopenssl (>=17.1.0)", "urllib3-secure-extra"]
+socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
+zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "yarl"
