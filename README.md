@@ -58,7 +58,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 
 - [ ] Speicherung der Archivsignatur / URL [siehe #1512](https://histhub.ssrq-sds-fds.ch/redmine/issues/1512?issue_count=24&issue_position=10&next_issue_id=1458&prev_issue_id=2548)
 - [x] `<settlement/>` zu `<msIdentifier/>` hinzufügen [#3033](https://histhub.ssrq-sds-fds.ch/redmine/issues/3033?issue_count=11&issue_position=1&next_issue_id=3032)
-- [ ] Persitente Identifikatoren über UUIDs [siehe #2995](https://histhub.ssrq-sds-fds.ch/redmine/issues/2995)
+- [x] Persitente Identifikatoren über UUIDs [siehe #2995](https://histhub.ssrq-sds-fds.ch/redmine/issues/2995)
 - [ ] Content-Model für `<msItem/>` definieren [siehe #3007](https://histhub.ssrq-sds-fds.ch/redmine/issues/3007)
 - [ ] Ergänzung von `<change/>`, um ‚Milestone‘-Änderungen zu verzeichnen [siehe #1441](https://histhub.ssrq-sds-fds.ch/redmine/issues/1441?issue_count=18&issue_position=10&next_issue_id=1424&prev_issue_id=2548)
 - [ ] mehrere alternative Idenfikatoren erlauben [siehe #2880](https://histhub.ssrq-sds-fds.ch/redmine/issues/2880)
@@ -66,7 +66,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [ ] Werte für `<head/>` in Liste bibl. Angaben vereinheitlichen [siehe #2665](https://histhub.ssrq-sds-fds.ch/redmine/issues/2665)
 - [ ] `<resp/>` vereinheitlichen [siehe #3070](https://histhub.ssrq-sds-fds.ch/redmine/issues/3070)
 - [ ] Content Model `<condition/>` klären [siehe #3079](https://histhub.ssrq-sds-fds.ch/redmine/issues/3079)
-- [ ] Werte / Content Model für `<damage/>` bestimmen [siehe #3080](https://histhub.ssrq-sds-fds.ch/redmine/issues/3080)
+- [x] Werte / Content Model für `<damage/>` bestimmen [siehe #3080](https://histhub.ssrq-sds-fds.ch/redmine/issues/3080)
 - [x] `<date/>` sollte innerhalb von `<publicationStmt/>` optional sein [siehe #3084](https://histhub.ssrq-sds-fds.ch/redmine/issues/3084)
 
 #### Text
@@ -80,7 +80,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 - [x] `tei:anchor` innerhalb der Zelle einer Tabelle erlauben [siehe #3006](https://histhub.ssrq-sds-fds.ch/redmine/issues/3006?issue_count=10&issue_position=1&next_issue_id=3005)
 - [ ] Werte für `@medium` einschränken [siehe #3064](https://histhub.ssrq-sds-fds.ch/redmine/issues/3064)
 - [ ] `@rend` im Falle von `tei:addSpan|tei:add` durch `@medium` ersetzen [siehe #3065](https://histhub.ssrq-sds-fds.ch/redmine/issues/3065)
-- [ ] Verwendung von `@wit` sowie Erfassung von Metadaten referenzierter Textzeugen klären [siehe #1360](https://histhub.ssrq-sds-fds.ch/redmine/issues/1360)
+- [x] Verwendung von `@wit` sowie Erfassung von Metadaten referenzierter Textzeugen klären [siehe #1360](https://histhub.ssrq-sds-fds.ch/redmine/issues/1360)
 - [x] Attribut `@type` für `<text/>` mit den Werten summary oder transcript verpflichtend festlegen [siehe #3074](https://histhub.ssrq-sds-fds.ch/redmine/issues/3074)
 - [ ] Klärung Content-Model `<row/>` [siehe #3076](https://histhub.ssrq-sds-fds.ch/redmine/issues/3076)
 
