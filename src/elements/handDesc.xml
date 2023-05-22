@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="handDesc" module="msdescription" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-22">Beschreibt die Hände und alle Handwechsel.</desc>
+    <desc xml:lang="en" versionDate="2023-05-22">Describes the hands and all hand changes.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-22">Décrit les mains et tous les changements de mains.</desc>
+    <desc xml:lang="it" versionDate="2023-05-22">Descrive le mani e tutti i cambi di mano.</desc>
+    <classes mode="replace"/>
+    <content>
+        <elementRef key="handNote" minOccurs="1" maxOccurs="unbounded"/>
+    </content>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-22">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <physDesc>
+                <handDesc>
+                    <handNote xml:id="hand1" n="firstHand" scribe="per123456">
+                        <date cert="low" from="1001-01-01" to="1100-12-31"/>
+                    </handNote>
+                    <handNote xml:id="hand2" n="secondHand"/>
+                    <handNote xml:id="hand3" n="otherHand"/>
+                    <handNote xml:id="hand4" n="laterHand"/>
+                </handDesc>
+            </physDesc>
+        </egXML>
+    </exemplum>
+</elementSpec>
