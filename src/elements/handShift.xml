@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="handShift" module="transcr" mode="change">
     <gloss xml:lang="de" versionDate="2023-03-15">Handwechsel</gloss>
-    <desc xml:lang="de" versionDate="2023-03-15">
-        <gi>handShift</gi>
-        gibt den Wechsel einer Hand an.
-    </desc>
+    <desc xml:lang="de" versionDate="2023-05-11">Gibt den Wechsel einer Hand an.</desc>
     <gloss xml:lang="en" versionDate="2023-03-15">Change of hands</gloss>
-    <desc xml:lang="en" versionDate="2023-03-15"><gi>handShift</gi>indicates the change of a hand.
-    </desc>
+    <desc xml:lang="en" versionDate="2023-05-11">Indicates the change of a hand.</desc>
     <gloss xml:lang="fr" versionDate="2023-03-15">Changement de main</gloss>
-    <desc xml:lang="fr" versionDate="2023-03-15"><gi>handShift</gi>indique le changement d'une main.
-    </desc>
+    <desc xml:lang="fr" versionDate="2023-05-11">Indique le changement d'une main.</desc>
+    <gloss xml:lang="it" versionDate="2023-05-20">Cambio di mano</gloss>
+    <desc xml:lang="it" versionDate="2023-05-20">Indica il cambio di mano.</desc>
     <classes mode="replace">
-        <memberOf key="att.handFeatures"/>
+        <memberOf key="att.written"/>
     </classes>
     <content>
         <empty/>
     </content>
     <attList>
-        <attDef ident="scribe" mode="change" usage="req"/>
-        <attDef ident="medium" mode="delete"/>
+        <attDef ident="hand" mode="change" usage="req"/>
         <attDef ident="new" mode="delete"/>
     </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-15">
-        <p xml:lang="de">Wechsel einer Hand / des Schreibers</p>
-        <p xml:lang="fr">Changement d'une main / du scribe</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
+        <p xml:lang="de">Wechsel zu einer anderen Hand</p>
+        <p xml:lang="en">switch to another hand</p>
+        <p xml:lang="fr">passer à une autre main</p>
+        <p xml:lang="it">passa a un'altra mano</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <handShift scribe="persID"/>
+            <handShift hand="otherHand"/>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
-        <p xml:lang="de">Bezeichnung einer zweiten Hand</p>
-        <p xml:lang="fr">Désignation d'une main secondaire</p>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
+        <p xml:lang="de">Wechsel zu einer zweiten Hand</p>
+        <p xml:lang="en">switch to a second hand</p>
+        <p xml:lang="fr">Passer à une seconde main</p>
+        <p xml:lang="it">Passa a una mano seconda</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <handShift scribe="secondaryHand"/>
+            <handShift hand="secondHand"/>
         </egXML>
     </exemplum>
 </elementSpec>

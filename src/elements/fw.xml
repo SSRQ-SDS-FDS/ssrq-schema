@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="fw" module="transcr" mode="change"
+             xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    <desc xml:lang="de" versionDate="2023-05-22">Beschreibt zum Beispiel eine Kopf- oder Fusszeile, Kustoden oder
+        Reklamanten.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-05-22">Describes, for example, a header or footer, catchword or reclamant.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-05-22">Décrit, par exemple, un en-tête ou un pied de page, un dépositaire ou
+        une réclamation.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-05-22">Descrive, ad esempio, un'intestazione o un piè di pagina, custode o
+        reclamant.
+    </desc>
+    <classes mode="replace">
+        <memberOf key="att.typed"/>
+    </classes>
+    <content>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
+    </content>
+    <attList>
+        <attDef ident="type" mode="replace" usage="req">
+            <valList type="closed">
+                <valItem ident="catchword">
+                    <desc xml:lang="de" versionDate="2023-05-22">Kustode</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-22">dépositaire</desc>
+                    <desc xml:lang="en" versionDate="2023-05-22">catchword</desc>
+                    <desc xml:lang="it" versionDate="2023-05-22">custode</desc>
+                </valItem>
+            </valList>
+        </attDef>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-22">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <fw type="catchword">wort</fw>
+            <pb/>
+            <lb/>wort
+        </egXML>
+    </exemplum>
+</elementSpec>

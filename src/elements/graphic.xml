@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="graphic" module="core" mode="change"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <gloss xml:lang="de" versionDate="2023-03-15">Bild</gloss>
     <desc xml:lang="de" versionDate="2023-03-15">Enthält Informationen zu einem Bild oder einer
-        graphischen Illustration als Teil des Textes oder externe Referenz.</desc>
+        graphischen Illustration als Teil des Textes oder externe Referenz.
+    </desc>
     <gloss xml:lang="en" versionDate="2023-03-15">Image</gloss>
     <desc xml:lang="en" versionDate="2023-03-15">Contains information about an image or graphic
-        illustration as part of the text or external reference.</desc>
+        illustration as part of the text or external reference.
+    </desc>
     <gloss xml:lang="fr" versionDate="2023-03-15">Image</gloss>
     <desc xml:lang="fr" versionDate="2023-03-15">Contient des informations sur une image ou une
-        illustration graphique faisant partie du texte ou référence externe.</desc>
+        illustration graphique faisant partie du texte ou référence externe.
+    </desc>
     <classes mode="replace">
         <memberOf key="model.graphicLike"/>
         <memberOf key="att.internetMedia"/>
@@ -26,7 +29,8 @@
             <sch:pattern>
                 <sch:rule context="tei:graphic">
                     <sch:assert test="not(contains(@url, '/'))">The usage of a '/' is not
-                        allowed</sch:assert>
+                        allowed
+                    </sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
@@ -73,9 +77,8 @@
                 </valItem>
             </valList>
         </attDef>
-        <attDef ident="url" mode="change" usage="req"/>
     </attList>
-    <exemplum type="ssrq-doc-example"  versionDate="2023-03-15">
+    <exemplum type="ssrq-doc-example" versionDate="2023-03-15">
         <p xml:lang="de">Definition der Identifikationsnummer des Stücks:</p>
         <p xml:lang="fr">Définition du numéro d'identification de la pièce &#160;:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">

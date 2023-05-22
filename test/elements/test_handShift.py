@@ -4,42 +4,31 @@ import pytest
 
 
 @pytest.mark.parametrize(
-    "name, markup, result",
+    "name, markup, result, message",
     [
         (
             "handShift-valid",
-            "<handShift scribe='secondaryHand'/>",
-            True,
+            "<handShift hand='secondHand'/>",
+            False,
+            "without matching ID",
         ),
         (
             "handShift-invalid",
-            "<handShift scribe='secondaryHand'>foo</handShift>",
+            "<handShift hand='secondHand'>foo</handShift>",
             False,
+            "without matching ID",
         ),
         (
-            "handShift-valid",
+            "handShift-invalid-attribute",
             "<handShift scribe='per035807'/>",
-            True,
-        ),
-        (
-            "handShift-invalid",
-            "<handShift scribe='per035'/>",
             False,
+            None,
         ),
         (
-            "handShift-invalid",
-            "<handShift scribe='foo'/>",
-            False,
-        ),
-        (
-            "handShift-invalid",
+            "handShift-invalid-without-attribute",
             "<handShift/>",
             False,
-        ),
-        (
-            "handShift-invalid",
-            "<handShift scribe='foo'/>",
-            False,
+            None,
         ),
     ],
 )
@@ -48,5 +37,16 @@ def test_handShift(
     name: str,
     markup: str,
     result: bool,
+    message: str | None,
 ):
-    test_element_with_rng("handShift", name, markup, result, False)
+    test_element_with_rng("handShift", name, markup, result, True)
+    if message:
+        validation_result = test_element_with_rng(
+            "handShift", name, markup, result, True
+        )
+        file_reports = validation_result.reports[0]
+        assert isinstance(file_reports.report, list)
+        messages = "".join([error.message for error in file_reports.report])
+        assert message in messages
+    else:
+        test_element_with_rng("handShift", name, markup, result, False)

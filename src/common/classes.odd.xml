@@ -1,31 +1,400 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <specGrp xml:id="ssrq-classes">
-        <classSpec ident="att.analytic" type="atts" mode="delete"/>
+
+        <!-- Attribute classes not in use -->
+        <classSpec ident="att.anchoring" type="atts" mode="delete"/>
+        <classSpec ident="att.ascribed" type="atts" mode="delete"/>
+        <classSpec ident="att.ascribed.directed" type="atts" mode="delete"/>
+        <classSpec ident="att.breaking" type="atts" mode="delete"/>
+        <classSpec ident="att.citeStructurePart" type="atts" mode="delete"/>
+        <classSpec ident="att.citing" type="atts" mode="delete"/>
+        <classSpec ident="att.combinable" type="atts" mode="delete"/>
+        <classSpec ident="att.coordinated" type="atts" mode="delete"/>
         <classSpec ident="att.cReferencing" type="atts" mode="delete"/>
         <classSpec ident="att.datable.iso" type="atts" mode="delete"/>
         <classSpec ident="att.datable.w3c" type="atts" mode="delete"/>
         <classSpec ident="att.datcat" type="atts" mode="delete"/>
+        <classSpec ident="att.declarable" type="atts" mode="delete"/>
         <classSpec ident="att.declaring" type="atts" mode="delete"/>
+        <classSpec ident="att.deprecated" type="atts" mode="delete"/>
         <classSpec ident="att.divLike" type="atts" mode="delete"/>
-        <classSpec ident="att.fragmentable" type="atts" mode="delete"/>
+        <classSpec ident="att.docStatus" type="atts" mode="delete"/>
+        <classSpec ident="att.duration" type="atts" mode="delete"/>
+        <classSpec ident="att.duration.w3c" type="atts" mode="delete"/>
         <classSpec ident="att.edition" type="atts" mode="delete"/>
+        <classSpec ident="att.editLike" type="atts" mode="delete"/>
+        <classSpec ident="att.enjamb" type="atts" mode="delete"/>
+        <classSpec ident="att.entryLike" type="atts" mode="delete"/>
+        <classSpec ident="att.formula" type="atts" mode="delete"/>
+        <classSpec ident="att.fragmentable" type="atts" mode="delete"/>
+        <classSpec ident="att.gaijiProp" type="atts" mode="delete"/>
+        <classSpec ident="att.global.analytic" type="atts" mode="delete"/>
         <classSpec ident="att.global.change" type="atts" mode="delete"/>
         <classSpec ident="att.global.linking" type="atts" mode="delete"/>
         <classSpec ident="att.global.source" type="atts" mode="delete"/>
+        <classSpec ident="att.identified" type="atts" mode="delete"/>
+        <classSpec ident="att.internetMedia" type="atts" mode="delete"/>
+        <classSpec ident="att.interpLike" type="atts" mode="delete"/>
+        <classSpec ident="att.lexikographic" type="atts" mode="delete"/>
+        <classSpec ident="att.lexikographic.normalized" type="atts" mode="delete"/>
+        <classSpec ident="att.linguistic" type="atts" mode="delete"/>
+        <classSpec ident="att.locatable" type="atts" mode="delete"/>
+        <classSpec ident="att.media" type="atts" mode="delete"/>
+        <classSpec ident="att.metrical" type="atts" mode="delete"/>
+        <classSpec ident="att.milestoneUnit" type="atts" mode="delete"/>
         <classSpec ident="att.msClass" type="atts" mode="delete"/>
         <classSpec ident="att.msExcerpt" type="atts" mode="delete"/>
+        <classSpec ident="att.namespaceable" type="atts" mode="delete"/>
         <classSpec ident="att.notated" type="atts" mode="delete"/>
+        <classSpec ident="att.partials" type="atts" mode="delete"/>
+        <classSpec ident="att.patternReplacement" type="atts" mode="delete"/>
         <classSpec ident="att.personal" type="atts" mode="delete"/>
+        <classSpec ident="att.pointing.group" type="atts" mode="delete"/>
+        <classSpec ident="att.predicate" type="atts" mode="delete"/>
         <classSpec ident="att.ranging" type="atts" mode="delete"/>
+        <classSpec ident="att.rdgPart" type="atts" mode="delete"/>
+        <classSpec ident="att.repeatable" type="atts" mode="delete"/>
         <classSpec ident="att.segLike" type="atts" mode="delete"/>
         <classSpec ident="att.sortable" type="atts" mode="delete"/>
+        <classSpec ident="att.styleDef" type="atts" mode="delete"/>
         <classSpec ident="att.textCritical" type="atts" mode="delete"/>
         <classSpec ident="att.timed" type="atts" mode="delete"/>
         <classSpec ident="att.transcriptional" type="atts" mode="delete"/>
+        <classSpec ident="att.translatable" type="atts" mode="delete"/>
+
+        <!-- Modified attribute classes -->
+        <classSpec ident="att.canonical" type="atts" mode="change">
+            <attList>
+                <!-- ToDo: Überprüfe Attributdefinitionen.
+                        Verweise auf Datenbank-IDs in das Attribut key verlegen.
+                        Andere Lösung für die Arbeitsschritte "transcript" usw. finden, z. B.
+                        respStmt mit @type oder resp mit @type.
+                -->
+                <attDef ident="key" mode="replace">
+                    <desc versionDate="2023-04-28" xml:lang="de">Tätigkeit, für die ein Bearbeiter
+                        oder eine Organisation verantwortlich ist.
+                    </desc>
+                    <desc versionDate="2023-04-28" xml:lang="en">Activity for which an agent or
+                        organisation is responsible.
+                    </desc>
+                    <desc versionDate="2023-05-16" xml:lang="fr">Activité dont un transformateur ou une organisation est
+                        responsable.
+                    </desc>
+                    <desc versionDate="2023-05-16" xml:lang="it">Attività per la quale è responsabile un responsabile
+                        del trattamento o un'organizzazione.
+                    </desc>
+                    <valList type="closed" mode="replace">
+                        <valItem ident="transcript">
+                            <desc xml:lang="de" versionDate="2023-03-28">Transkript</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">transcription</desc>
+                            <desc xml:lang="en" versionDate="2023-03-28">transcription</desc>
+                            <desc xml:lang="it" versionDate="2023-03-28">trascrizione</desc>
+                        </valItem>
+                        <valItem ident="tagging">
+                            <desc xml:lang="de" versionDate="2023-03-28">Auszeichnung der Transkription</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">désignation d’une transcription</desc>
+                            <desc xml:lang="en" versionDate="2023-03-28">tagging</desc>
+                            <desc xml:lang="it" versionDate="2023-03-28">designazione di una trascrizione</desc>
+                        </valItem>
+                        <valItem ident="index">
+                            <desc xml:lang="de" versionDate="2023-03-28">Index</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">index</desc>
+                            <desc xml:lang="en" versionDate="2023-03-28">index</desc>
+                            <desc xml:lang="it" versionDate="2023-03-28">indice</desc>
+                        </valItem>
+                        <valItem ident="qualitycheck">
+                            <desc xml:lang="de" versionDate="2023-03-28">Qualitätskontrolle</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">contrôle de qualité</desc>
+                            <desc xml:lang="en" versionDate="2023-03-28">quality control</desc>
+                            <desc xml:lang="it" versionDate="2023-03-28">Controllo della qualità</desc>
+                        </valItem>
+                        <valItem ident="publisher">
+                            <desc xml:lang="de" versionDate="2023-04-28">Herausgeberschaft</desc>
+                            <desc xml:lang="fr" versionDate="2023-04-28">Rédaction</desc>
+                            <desc xml:lang="en" versionDate="2023-04-28">Editorial</desc>
+                            <desc xml:lang="it" versionDate="2023-04-28">Editoriale</desc>
+                        </valItem>
+                        <valItem ident="headerinfo">
+                            <desc xml:lang="de" versionDate="2023-03-28">Metadaten im TEI-Header</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">métadonnées dans le header TEI</desc>
+                            <desc xml:lang="en" versionDate="2023-03-28">meta data in the TEI header</desc>
+                            <desc xml:lang="it" versionDate="2023-03-28">metadati nell'intestazione TEI</desc>
+                        </valItem>
+                    </valList>
+                </attDef>
+                <attDef ident="ref" mode="replace">
+                    <desc versionDate="2023-03-28" xml:lang="de">Referenz auf die Datenbanken der SSRQ.</desc>
+                    <desc versionDate="2023-03-07" xml:lang="en">Reference to the databases of the SLS.</desc>
+                    <desc versionDate="2023-05-16" xml:lang="de">Référence aux bases de données du SDS.</desc>
+                    <desc versionDate="2023-05-16" xml:lang="de">Riferimento alle banche dati della FDS.</desc>
+                    <datatype>
+                        <rng:choice>
+                            <rng:ref name="ssrq.pointer.persons"/>
+                            <rng:ref name="ssrq.pointer.lemma"/>
+                            <rng:ref name="ssrq.pointer.org"/>
+                            <rng:ref name="ssrq.pointer.keywords"/>
+                        </rng:choice>
+                    </datatype>
+                </attDef>
+            </attList>
+        </classSpec>
+        <classSpec ident="att.damaged" type="atts" mode="change">
+            <classes mode="replace"/>
+            <attList>
+                <attDef ident="agent" mode="replace" usage="req">
+                    <desc xml:lang="de" versionDate="2023-05-11">Beschreibt die Art einer Beschädigung gemäss einer
+                        fest definierten Werteliste.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-11">Describes the type of damage according to a firmly
+                        defined list of values.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-11">Décrit le type de dommage selon une liste de valeurs
+                        bien définie.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-16">Descrive il tipo di danno secondo un elenco di valori
+                        ben definito.
+                    </desc>
+                    <datatype minOccurs="1" maxOccurs="unbounded">
+                        <dataRef key="ssrq.agent"/>
+                    </datatype>
+                </attDef>
+                <attDef ident="group" mode="delete"/>
+                <attDef ident="degree" mode="delete"/>
+            </attList>
+        </classSpec>
+        <classSpec ident="att.datable.custom" type="atts" mode="change">
+            <desc xml:lang="de" versionDate="2023-05-05">Attribute zur Auszeichnung von Datierungen</desc>
+            <desc xml:lang="en" versionDate="2023-05-05">Attributes for the distinction of dating</desc>
+            <desc xml:lang="fr" versionDate="2023-05-05">Attributs pour le marquage des datations</desc>
+            <desc xml:lang="it" versionDate="2023-05-16">Attributi per segnare la datazione</desc>
+            <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
+                <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
+                <constraint>
+                    <sch:pattern>
+                        <sch:rule context="tei:*[@when-custom]">
+                            <sch:report
+                                    test="@notBefore-custom|@notAfter-custom|@from-custom|@to-custom">The
+                                @when-custom attribute cannot be used with any other
+                                att.datable.custom attributes.
+                            </sch:report>
+                        </sch:rule>
+                        <sch:rule context="tei:*[@from-custom or @to-custom]">
+                            <sch:report
+                                    test="@notBefore-custom|@notAfter-custom">The usage of
+                                @notBefore-custom|@notAfter-custom is not allowed together with
+                                @from-custom|@to-custom.
+                            </sch:report>
+                            <sch:assert test="@from-custom and @to-custom">@from-custom and
+                                @to-custom must always be used together.
+                            </sch:assert>
+                            <sch:assert
+                                    test="if (matches(@from-custom, '^\d{4}-\d{2}-\d{2}$') and matches(@from-custom, '^\d{4}-\d{2}-\d{2}$')) then (number(translate(@to-custom, '-', '')) - number(translate(@from-custom, '-', ''))) > 0 else true()">
+                                Invalid timespan – the @to-custom attribute must be a point later in time.
+                            </sch:assert>
+                        </sch:rule>
+                    </sch:pattern>
+                </constraint>
+            </constraintSpec>
+            <attList>
+                <attDef ident="datingPoint" mode="delete"/>
+                <attDef ident="datingMethod" mode="replace" usage="opt">
+                    <desc xml:lang="de">verwendeter Kalender</desc>
+                    <desc xml:lang="en">calendar used</desc>
+                    <desc xml:lang="fr">calendrier utilisé</desc>
+                    <desc xml:lang="it">calendario utilizzato</desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.calendar"/>
+                    </datatype>
+                </attDef>
+                <attDef ident="from-custom" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-05-16">Gibt den Startpunkt eines Zeitraums gemäss ISO 8601
+                        an.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-16">Indicates the start point of a period according to ISO
+                        8601.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-16">Indique le point de départ d'une période selon ISO
+                        8601.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-16">Indica il punto di inizio di un periodo secondo ISO
+                        8601.
+                    </desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+                        <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
+                        <p xml:lang="en">Exemplary award for the period from Pentecost 1583 to Pentecost 1584</p>
+                        <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte 1583 à la Pentecôte
+                            1584
+                        </p>
+                        <p xml:lang="it">Riconoscimento esemplare per il periodo dalla Pentecoste 1583 alla Pentecoste
+                            1584
+                        </p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="julian" from-custom="1583-05-30"
+                                to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584</date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+                <attDef ident="to-custom" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss ISO 8601 an.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-16">Indicates the end point of a period according to ISO
+                        8601.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-16">Indique le point final d'une période selon ISO 8601.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-16">Indica il punto finale di un periodo secondo ISO 8601.
+                    </desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+                        <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
+                        <p xml:lang="en">Exemplary award for the period from Pentecost 1583 to Pentecost 1584</p>
+                        <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte 1583 à la Pentecôte
+                            1584
+                        </p>
+                        <p xml:lang="it">Riconoscimento esemplare per il periodo dalla Pentecoste 1583 alla Pentecoste
+                            1584
+                        </p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="julian" from-custom="1583-05-30"
+                                to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584</date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+                <attDef ident="notAfter-custom" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss ISO 8601 an.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-16">Indicates the end point of a period according to ISO
+                        8601.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-16">Indique le point final d'une période selon ISO 8601.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-16">Indica il punto finale di un periodo secondo ISO 8601.
+                    </desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-16">
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="julian" notBefore-custom="1510-01-01"
+                                  to-custom="1515-12-31">ca. 1510</date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+                <attDef ident="notBefore-custom" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-05-16">Gibt den Startpunkt eines Zeitraums gemäss ISO 8601
+                        an.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-16">Indicates the start point of a period according to ISO
+                        8601.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-16">Indique le point de départ d'une période selon ISO
+                        8601.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-16">Indica il punto di inizio di un periodo secondo ISO
+                        8601.
+                    </desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="julian" notBefore-custom="1510-01-01"
+                                  to-custom="1515-12-31">ca. 1510</date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+                <attDef ident="when-custom" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-05-07">Gibt ein Datum gemäss ISO 8601 an.</desc>
+                    <desc xml:lang="en" versionDate="2023-05-07">Specifies a date according to ISO 8601.</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-07">Spécifie une date conformément à la norme ISO 8601.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-07">Specifica una data secondo ISO 8601.</desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+                        <p xml:lang="de">Beispielhafte Datierung auf den 03. März 1631</p>
+                        <p xml:lang="en">Exemplary dating to March 3, 1631</p>
+                        <p xml:lang="fr">Exemple de datation au 03 mars 1631</p>
+                        <p xml:lang="it">Esemplare datato 3 marzo 1631</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+            </attList>
+        </classSpec>
+        <classSpec ident="att.dimensions" type="atts" mode="change">
+            <attList>
+                <attDef ident="unit" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-03-17">Masseinheit</desc>
+                    <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement</desc>
+                    <desc xml:lang="fr" versionDate="2023-03-17">Unité de mesure</desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Unità di misura</desc>
+                    <datatype>
+                        <dataRef key="ssrq.measure.lengths.base.cm"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-05-17">
+                        <p>Angabe eines Längenmasses</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <width unit="cm"/>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+                <attDef ident="quantity" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-05-17">Gibt die Grösse der mit <att>unit</att> angegebenen
+                        Einheit an
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-17">Specifies the size of the unit specified with
+                        <att>unit</att>
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-17">Spécifie la taille de l'unité spécifiée avec
+                        <att>unit</att>
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Specifica la dimensione dell'unità specificata con
+                        <att>unit</att>
+                    </desc>
+                    <datatype>
+                        <rng:choice>
+                            <rng:data type="float">
+                                <rng:param name="minInclusive">0</rng:param>
+                            </rng:data>
+                            <rng:data type="positiveInteger"/>
+                        </rng:choice>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
+                        <p xml:lang="de">Loch in einer Editionsvorlage, bei dem keine Ergänzung möglich ist</p>
+                        <p xml:lang="en">Hole in an edition template where no addition is possible</p>
+                        <p xml:lang="fr">Trou à cause d'un dommage dans le texte source que l'éditeur ne peut pas
+                            compléter
+                        </p>
+                        <p xml:lang="de">Buco in un modello di edizione in cui non è possibile alcuna aggiunta</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">und sol och der w
+                            <damage agent="hole">
+                                <gap unit="cm" quantity="3.5"/>
+                            </damage>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+                <attDef ident="extent" mode="delete"/>
+                <attDef ident="precision" mode="delete"/>
+                <attDef ident="scope" mode="delete"/>
+            </attList>
+        </classSpec>
         <classSpec ident="att.global" type="atts" mode="change">
+            <!-- ToDo: Klassenabängigkeiten auflösen, keine Klasse sollte
+                    andere Klassen automatisch beinhalten, da sonst
+                    Attribute an Stellen erlaubt werden könnten, an denen
+                    sie eigentlich nicht erwünscht sind.
+            -->
             <classes mode="replace">
                 <memberOf key="att.global.rendition"/>
                 <memberOf key="att.global.responsibility"/>
@@ -37,13 +406,19 @@
         </classSpec>
         <classSpec ident="att.global.facs" type="atts" mode="change">
             <attList>
-                <attDef ident="facs" mode="change" usage="opt">
-                    <desc xml:lang="de" versionDate="2023-04-06">Ordnet einer Textseite einem
-                        Faksimile oder einem faksimilierten Ausschnitt zu. </desc>
+                <attDef ident="facs" mode="replace" usage="opt">
+                    <desc xml:lang="de" versionDate="2023-05-17">Ordnet eine Textseite einem
+                        Faksimile oder einem faksimilierten Ausschnitt zu.
+                    </desc>
                     <desc xml:lang="en" versionDate="2023-04-06">Assigns a facsimile or facsimile
-                        extract to a page of text. </desc>
+                        extract to a page of text.
+                    </desc>
                     <desc xml:lang="fr" versionDate="2023-04-06">Associe une page de texte à un
-                        fac-similé ou à un extrait de fac-similé. </desc>
+                        fac-similé ou à un extrait de fac-similé.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Associa una pagina di testo a un facsimile o un
+                        estratto facsimile.
+                    </desc>
                     <datatype>
                         <dataRef key="ssrq.facs.name"/>
                     </datatype>
@@ -60,161 +435,61 @@
         <classSpec ident="att.global.responsibility" type="atts" mode="change">
             <attList>
                 <attDef ident="cert" mode="replace">
-                    <desc xml:lang="de" versionDate="2023-04-11">Angabe des Grads der Sicherheit </desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">Indication du degré de certitude </desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">Indication of the degree of
-                        certainty </desc>
+                    <desc xml:lang="de" versionDate="2023-04-11">Angabe des Grads der Sicherheit</desc>
+                    <desc xml:lang="en" versionDate="2023-04-11">Indication of the degree of certainty</desc>
+                    <desc xml:lang="fr" versionDate="2023-04-11">Indication du degré de certitude</desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Indicazione del grado di certezza</desc>
                     <valList type="closed">
                         <valItem ident="high">
                             <desc xml:lang="de" versionDate="2023-04-11">hoch</desc>
-                            <desc xml:lang="fr" versionDate="2023-04-11">élevé</desc>
                             <desc xml:lang="en" versionDate="2023-04-11">high</desc>
+                            <desc xml:lang="fr" versionDate="2023-04-11">élevé</desc>
                             <desc xml:lang="it" versionDate="2023-04-28">alto</desc>
                         </valItem>
                         <valItem ident="low">
                             <desc xml:lang="de" versionDate="2023-04-11">niedrig</desc>
-                            <desc xml:lang="fr" versionDate="2023-04-11">faible</desc>
                             <desc xml:lang="en" versionDate="2022-05-06">low</desc>
+                            <desc xml:lang="fr" versionDate="2023-04-11">faible</desc>
                             <desc xml:lang="it" versionDate="2023-04-28">basso</desc>
                         </valItem>
                     </valList>
                 </attDef>
             </attList>
         </classSpec>
-        <classSpec ident="att.datable.custom" type="atts" mode="change">
-            <desc xml:lang="de" versionDate="2023-05-05">Attribute zur Auszeichnung von Datierungen</desc>
-            <desc xml:lang="en" versionDate="2023-05-05">Attributes for the distinction of dating</desc>
-            <desc xml:lang="fr" versionDate="2023-05-05">Attributs pour le marquage des datations</desc>
-            <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
-                <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
-                <constraint>
-                    <sch:pattern>
-                        <sch:rule context="tei:*[@when-custom]">
-                            <sch:report
-                                test="@notBefore-custom|@notAfter-custom|@from-custom|@to-custom">The
-                                @when-custom attribute cannot be used with any other
-                                att.datable.custom attributes.</sch:report>
-                        </sch:rule>
-                        <sch:rule context="tei:*[@from-custom or @to-custom]">
-                            <sch:report
-                                test="@notBefore-custom|@notAfter-custom">The usage of
-                                @notBefore-custom|@notAfter-custom is not allowed together with
-                                @from-custom|@to-custom.</sch:report>
-                            <sch:assert test="@from-custom and @to-custom">@from-custom and
-                                @to-custom must always be used together.</sch:assert>
-                            <sch:assert
-                                test="if (matches(@from-custom, '^\d{4}-\d{2}-\d{2}$') and matches(@from-custom, '^\d{4}-\d{2}-\d{2}$')) then (number(translate(@to-custom, '-', '')) - number(translate(@from-custom, '-', ''))) > 0 else true()">
-                                Invalid timespan – the @to-custom attribute must be a point later in time.</sch:assert>
-                        </sch:rule>
-                    </sch:pattern>
-                </constraint>
-            </constraintSpec>
+        <classSpec ident="att.handFeatures" type="atts" mode="change">
             <attList>
-                <attDef ident="datingMethod" mode="replace" usage="opt">
-                    <desc xml:lang="de">verwendeter Kalender</desc>
-                    <desc xml:lang="en">Calendar used</desc>
-                    <desc xml:lang="fr">Calendrier utilisé</desc>
-                    <desc xml:lang="it">Calendario utilizzato</desc>
+                <attDef ident="scribe" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-05-17">Bezeichnet den Schreiber
+                        mit der Identifikationsnummer der Person.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-03-14">Labels the writer with the identification number of the
+                        person.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-03-14">Étiquettes de l'écrivain avec le numéro
+                        d'identification de la personne.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-03-14">Etichetta lo scrivente con il numero identificativo
+                        della persona.
+                    </desc>
                     <datatype>
-                        <dataRef key="ssrq.date.calendar"/>
+                        <dataRef key="ssrq.pointer.persons"/>
                     </datatype>
-                </attDef>
-                <attDef ident="from-custom" mode="change">
-                    <desc xml:lang="de" versionDate="2023-05-07">Angabe des Startpunkts eines
-                        Zeitraums orientiert an ISO 8601.</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-07">Indication du point de départ d'une
-                        période orientée selon la norme ISO 8601.</desc>
-                    <desc xml:lang="en" versionDate="2023-05-07">Specification of the starting point
-                        of a period oriented to ISO 8601.</desc>
-                    <datatype>
-                        <dataRef key="ssrq.date.point"/>
-                    </datatype>
-                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-                        <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis
-                            Pfingsten 1584</p>
-                        <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte
-                            1583 à la Pentecôte 1584</p>
+                    <!-- ToDo: Beispiel erstellen, sobald handNote modelliert wurde:
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-14">
+                        <p xml:lang="de">Identifikation einer Hand mit einem Schreiber</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <date datingMethod="julian" from-custom="1583-05-30"
-                                to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584</date>
+                            <handNote scribe="per000001">
+
+                            </handNote>
                         </egXML>
                     </exemplum>
+                    -->
                 </attDef>
-                <attDef ident="to-custom" mode="change">
-                    <desc xml:lang="de" versionDate="2023-05-07">Angabe des Startpunkts eines
-                        Zeitraums orientiert an ISO 8601.</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-07">Indication du point de départ d'une
-                        période orientée selon la norme ISO 8601.</desc>
-                    <desc xml:lang="en" versionDate="2023-05-07">Specification of the starting point
-                        of a period oriented to ISO 8601.</desc>
-                    <datatype>
-                        <dataRef key="ssrq.date.point"/>
-                    </datatype>
-                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-                        <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis
-                            Pfingsten 1584</p>
-                        <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte
-                            1583 à la Pentecôte 1584</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <date datingMethod="julian" from-custom="1583-05-30"
-                                to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584</date>
-                        </egXML>
-                    </exemplum>
-                </attDef>
-                <attDef ident="notAfter-custom" mode="change">
-                    <desc xml:lang="de" versionDate="2023-05-08">Gibt den Endpunkt eines Zeitintervalls an in der Standardform yyyy-mm-dd oder hh:mm:ss an.</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-08">Indique le point final d'un intervalle de temps sous la forme standard aaaa-mm-jj ou hh:mm:ss.</desc>
-                    <desc xml:lang="en" versionDate="2023-05-08">Specifies the end point of a time interval in the standard form yyyy-mm-dd or hh:mm:ss.</desc>
-                    <datatype>
-                        <dataRef key="ssrq.date.point"/>
-                    </datatype>
-                    <exemplum type="ssrq-doc-example" versionDate="2023-05-08">
-                        <p xml:lang="de">Beispielhafte Auszeichnung ca. 1510</p>
-                        <p xml:lang="fr">Exemple de distinction vers 1510</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <date datingMethod="julian" notBefore-custom="1510-01-01"
-                                  to-custom="1515-12-31">ca. 1510</date>
-                        </egXML>
-                    </exemplum>
-                </attDef>
-                <attDef ident="notBefore-custom" mode="change">
-                    <desc xml:lang="de" versionDate="2023-05-08">Gibt den Anfangspunkt eines Zeitintervalls an in der Standardform yyyy-mm-dd oder hh:mm:ss an.</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-08">Indique le point de départ d'un intervalle de temps sous la forme standard aaaa-mm-jj ou hh:mm:ss.</desc>
-                    <desc xml:lang="en" versionDate="2023-05-08">Specifies the starting point of a time interval in the standard form yyyy-mm-dd or hh:mm:ss.</desc>
-                    <datatype>
-                        <dataRef key="ssrq.date.point"/>
-                    </datatype>
-                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-                        <p xml:lang="de">Beispielhafte Auszeichnung ca. 1510</p>
-                        <p xml:lang="fr">Exemple de distinction vers 1510</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <date datingMethod="julian" notBefore-custom="1510-01-01"
-                                  to-custom="1515-12-31">ca. 1510</date>
-                        </egXML>
-                    </exemplum>
-                </attDef>
-                <attDef ident="when-custom" mode="change">
-                    <desc xml:lang="de" versionDate="2023-05-07">Angabe des Datums orientiert an ISO
-                        8601. Angaben von Zeiträumen sind hier verboten und erfolgen durch <att>
-                        from-custom</att> und <att>to-custom</att>.</desc>
-                    <desc xml:lang="en" versionDate="2023-05-07">Specification of the date oriented
-                        to ISO 8601. Specification of time periods is prohibited here and is done by <att>
-                        from-custom</att> and <att>to-custom</att>.</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-07">Indication de la date selon la
-                        norme ISO 8601. Les indications de périodes sont ici interdites et se font
-                        par <att>from-custom</att> et <att>to-custom</att>.</desc>
-                    <datatype>
-                        <dataRef key="ssrq.date.point"/>
-                    </datatype>
-                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-                        <p xml:lang="de">Beispielhafte Datierung auf den 03. März 1631</p>
-                        <p xml:lang="fr">Exemple de datation au 03 mars 1631</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <date datingMethod="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
-                        </egXML>
-                    </exemplum>
-                </attDef>
-                <attDef ident="datingPoint" mode="delete"/>
+                <attDef ident="medium" mode="delete"/>
+                <attDef ident="scope" mode="delete"/>
+                <attDef ident="scribeRef" mode="delete"/>
+                <attDef ident="script" mode="delete"/>
+                <attDef ident="scriptRef" mode="delete"/>
             </attList>
         </classSpec>
         <classSpec ident="att.measurement" type="atts" mode="change">
@@ -222,7 +497,7 @@
                 <attDef ident="unit" mode="replace" usage="req">
                     <desc xml:lang="de" versionDate="2023-03-17">Maßeinheit oder Währung</desc>
                     <desc xml:lang="fr" versionDate="2023-03-17">Unité de mesure ou devise</desc>
-                    <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement or currency </desc>
+                    <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement or currency</desc>
                     <datatype maxOccurs="1">
                         <rng:choice>
                             <rng:ref name="ssrq.measure.area"/>
@@ -240,103 +515,68 @@
                 </attDef>
                 <attDef ident="quantity" mode="change">
                     <desc xml:lang="de" versionDate="2023-03-17">Gibt bei Abmessungen die Ausdehnung
-                        an. </desc>
+                        an.
+                    </desc>
                     <desc xml:lang="fr" versionDate="2023-03-17">ToDo: Übersetzung</desc>
                     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
                         <p>Unbestimmte Anzahl Pfund (0 verwenden)</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <measure type="currency"
-                                unit="lb" quantity="0">etlich hundert pfund </measure>
+                                     unit="lb" quantity="0">etlich hundert pfund
+                            </measure>
                         </egXML>
                     </exemplum>
                     <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-17">
                         <p>Pour un nombre inconnu de livres (utiliser 0)</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <measure type="currency"
-                                unit="lb" quantity="0">etlich hundert pfund </measure>
+                                     unit="lb" quantity="0">etlich hundert pfund
+                            </measure>
                         </egXML>
                     </exemplum>
                 </attDef>
                 <attDef ident="unitRef" mode="delete"/>
+                <!-- ToDo: <att>commodity</att>: Eigenen Datentyp festlegen
+                        und dann Attributdefinition von Element in die Klasse
+                        verlegen mit Referenz auf den Datentyp
+                 -->
             </attList>
         </classSpec>
-        <classSpec ident="att.transcriptional" type="atts" mode="change">
+        <classSpec ident="att.placement" type="atts" mode="change">
             <attList>
-                <attDef ident="cause" mode="delete"/>
-                <attDef ident="seq" mode="delete"/>
-                <attDef ident="status" mode="delete"/>
-            </attList>
-        </classSpec>
-        <classSpec ident="att.damaged" type="atts" mode="change">
-            <attList>
-                <attDef ident="group" mode="delete"/>
-            </attList>
-        </classSpec>
-        <classSpec ident="att.editLike" type="atts" mode="change">
-            <attList>
-                <attDef ident="evidence" mode="delete"/>
-                <attDef ident="instant" mode="delete"/>
-            </attList>
-        </classSpec>
-        <classSpec ident="att.typed" type="atts" mode="change">
-            <attList>
-                <attDef ident="subtype" mode="delete"/>
-            </attList>
-        </classSpec>
-        <classSpec ident="att.tableDecoration" type="atts" mode="change">
-            <attList>
-                <attDef ident="cols" mode="delete"/>
-                <attDef ident="rows" mode="delete"/>
-            </attList>
-        </classSpec>
-        <classSpec ident="att.dimensions" type="atts" mode="change">
-            <attList>
-                <attDef ident="unit" mode="change">
-                    <desc xml:lang="de" versionDate="2023-03-17">Masseinheit</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-17">Unité de mesure</desc>
-                    <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement</desc>
-                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
-                        <p>Angabe eines Längenmaßes</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <width unit="cm"/>
-                        </egXML>
-                    </exemplum>
+                <attDef ident="place" mode="change">
+                    <desc xml:lang="de" versionDate="2023-05-12">Gibt eine Stelle auf einem Textzeugen gemäß einer
+                        fest definierten Liste an.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-12">Indicates a position on a text witness according to a
+                        fixed list.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-12">Indique une position sur un témoin de texte selon une
+                        liste fixe.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Indica una posizione su un testimone testuale secondo
+                        un elenco fisso.
+                    </desc>
+                    <!-- ToDo: Einschränkungen für bestimmte Werte: z. B. nicht recto + verso
+                                Erlaubt soll aber sein z. B. recto + top + left
+                                Vielleicht Aufteilen der Datentypen in sinnvolle Gruppen?
+                                (recto, verso, previous_page, next_page)
+                                (top, bottom, left, middle, right) etc.
+                     -->
+                    <datatype minOccurs="1" maxOccurs="unbounded">
+                        <dataRef key="ssrq.place"/>
+                    </datatype>
                 </attDef>
-                <attDef ident="quantity" mode="change">
-                    <desc xml:lang="de" versionDate="2023-03-17">Gibt bei einer Lücke die Anzahl der
-                        fehlenden Zeichen bzw. die Fehlstelle in cm wieder. </desc>
-                    <desc xml:lang="fr" versionDate="2023-03-17">ToDo: Übersetzung</desc>
-                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
-                        <p>Loch in einer Editionsvorlage, bei dem keine Ergänzung möglich ist</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">und sol och der w <damage
-                                agent="hole">
-                                <gap unit="cm" quantity="3.5"/>
-                            </damage>
-                        </egXML>
-                    </exemplum>
-                    <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-17">
-                        <p>Trou à cause d'un dommage dans le texte source que l'éditeur ne peut pas
-                            compléter </p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">und sol och der w <damage
-                                agent="hole">
-                                <gap unit="cm" quantity="3.5"/>
-                            </damage>
-                        </egXML>
-                    </exemplum>
-                </attDef>
-                <attDef ident="precision" mode="delete"/>
-                <attDef ident="scope" mode="delete"/>
             </attList>
         </classSpec>
         <classSpec ident="att.pointing" type="atts" mode="change">
             <attList>
                 <attDef ident="target" mode="change">
-                    <desc versionDate="2023-03-29" xml:lang="de">Hyperlink, DOI oder interner
-                        Verweis. </desc>
-                    <desc versionDate="2023-03-29" xml:lang="en">Hyperlink, DOI or internal
-                        reference. </desc>
-                    <desc versionDate="2023-03-29" xml:lang="fr">Lien hypertexte, DOI ou référence
-                        interne. </desc>
+                    <desc versionDate="2023-03-29" xml:lang="de">Hyperlink, DOI oder interner Verweis.</desc>
+                    <desc versionDate="2023-03-29" xml:lang="en">Hyperlink, DOI or internal reference.</desc>
+                    <desc versionDate="2023-03-29" xml:lang="fr">Lien hypertexte, DOI ou référence interne.</desc>
+                    <desc versionDate="2023-05-17" xml:lang="it">Collegamento ipertestuale, DOI o riferimento interno.
+                    </desc>
                     <datatype>
                         <dataRef key="ssrq.pointer.target"/>
                     </datatype>
@@ -345,38 +585,14 @@
                 <attDef ident="evaluate" mode="delete"/>
             </attList>
         </classSpec>
-        <classSpec ident="att.handFeatures" type="atts" mode="change">
+        <classSpec ident="att.resourced" type="atts" mode="change">
             <attList>
-                <attDef ident="scribe" mode="replace">
-                    <desc versionDate="2023-03-14" xml:lang="de">@scribe bezeichnet den Schreiber
-                        oder die Hand. Ist der Schreiber namentlich genannt, enthält @scribe die
-                        Identifikationsnummer der Person (perNNNNNNN), die in der Funktion als
-                        Schreiber auftritt. </desc>
-                    <desc versionDate="2023-03-14" xml:lang="fr">@scribe contient le numéro
-                        d'identification d'une personne (perNNNNNNN) qui apparaît dans la fonction
-                        du scribe. </desc>
-                    <datatype>
-                        <rng:choice>
-                            <rng:ref name="ssrq.hand.scribe"/>
-                            <rng:ref name="ssrq.pointer.persons"/>
-                        </rng:choice>
-                    </datatype>
-                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-14">
-                        <p>Normale Unterschrift</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <signed>
-                                <handShift scribe="persID"/>
-                            </signed>
-                        </egXML>
-                    </exemplum>
-                    <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-14">
-                        <p>Signature normale</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <signed>
-                                <handShift scribe="persID"/>
-                            </signed>
-                        </egXML>
-                    </exemplum>
+                <attDef ident="url" mode="change" usage="req">
+                    <desc xml:lang="de" versionDate="2023-03-31">Verknüpfung mit einer Bilddatei.</desc>
+                    <desc xml:lang="en" versionDate="2023-03-31">Link to an image file.</desc>
+                    <desc xml:lang="fr" versionDate="2023-03-31">Lien vers un fichier image.</desc>
+                    <desc xml:lang="it" versionDate="2023-03-31">Collegamento a un file immagine.</desc>
+                    <!-- ToDo: sinnvolle Beschränkung für Dateinamen finden -->
                 </attDef>
                 <attDef ident="medium" mode="replace">
                     <desc versionDate="2023-03-15" xml:lang="de">Verwendetes Schreibwerkzeug</desc>
@@ -403,7 +619,7 @@
                 <attDef ident="scriptRef" mode="delete"/>
             </attList>
         </classSpec>
-        <classSpec type="atts" ident="att.datable" mode="change">
+        <classSpec ident="att.datable" type="atts" mode="change">
             <attList>
                 <attDef ident="calendar" mode="replace" usage="req">
                     <desc xml:lang="de">verwendeter Kalender</desc>
@@ -431,6 +647,7 @@
                 </attDef>
             </attList>
         </classSpec>
+
         <classSpec ident="att.naming" type="atts" mode="change" module="tei">
             <attList>
                 <attDef ident="nymRef" mode="delete"/>
@@ -440,9 +657,11 @@
             <attList>
                 <attDef ident="ref" mode="change">
                     <desc versionDate="2023-03-28" xml:lang="de">Referenz auf die Datenbanken der
-                        SSRQ. </desc>
+                        SSRQ.
+                    </desc>
                     <desc versionDate="2023-03-07" xml:lang="en">Reference to the databases of the
-                        SLS. </desc>
+                        SLS.
+                    </desc>
                     <datatype>
                         <rng:choice>
                             <rng:ref name="ssrq.pointer.persons"/>
@@ -452,63 +671,24 @@
                         </rng:choice>
                     </datatype>
                 </attDef>
-                <attDef ident="key" mode="replace">
-                    <desc versionDate="2023-04-28" xml:lang="de">Tätigkeit, für die ein Bearbeiter
-                        oder eine Organisation. verantwortlich ist. </desc>
-                    <desc versionDate="2023-04-28" xml:lang="en">Activity for which an agent or
-                        organisation is responsible. </desc>
-                    <valList type="closed" mode="change">
-                        <valItem ident="transcript">
-                            <desc xml:lang="de" versionDate="2023-03-28">Transkript</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">transcription</desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">transcription</desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">trascrizione</desc>
-                        </valItem>
-                        <valItem ident="tagging">
-                            <desc xml:lang="de" versionDate="2023-03-28">Auszeichnung der
-                                Transkription </desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">désignation d’une
-                                transcription </desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">tagging</desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">designazione di una
-                                trascrizione </desc>
-                        </valItem>
-                        <valItem ident="index">
-                            <desc xml:lang="de" versionDate="2023-03-28">Index</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">index</desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">index</desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">indice</desc>
-                        </valItem>
-                        <valItem ident="qualitycheck">
-                            <desc xml:lang="de" versionDate="2023-03-28">Qualitätskontrolle</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">contrôle de qualité</desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">quality control</desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">Controllo della qualità </desc>
-                        </valItem>
-                        <valItem ident="publisher">
-                            <desc xml:lang="de" versionDate="2023-04-28">Herausgeberschaft</desc>
-                            <desc xml:lang="fr" versionDate="2023-04-28">Rédaction</desc>
-                            <desc xml:lang="en" versionDate="2023-04-28">Editorial</desc>
-                            <desc xml:lang="it" versionDate="2023-04-28">Editoriale</desc>
-                        </valItem>
-                        <valItem ident="headerinfo">
-                            <desc xml:lang="de" versionDate="2023-03-28">Metadaten im TEI-Header </desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">métadonnées dans le header
-                                TEI </desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">meta data in the TEI header </desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">metadati nell'intestazione
-                                TEI </desc>
-                        </valItem>
-                    </valList>
-                </attDef>
             </attList>
         </classSpec>
-        <classSpec ident="att.scoping" type="atts" module="tei" mode="change">
+        <classSpec ident="att.scoping" type="atts" mode="change">
             <attList>
                 <attDef ident="match" mode="change">
-                    <desc versionDate="2023-04-26" xml:lang="de">Verweist mittels eines einfachen
+                    <desc xml:lang="de" versionDate="2023-05-17">Verweist mittels eines einfachen
                         XPath-Ausdrucks auf den unsicheren Bestandteil – das unsichere Attribut –
-                        der Datierung. </desc>
+                        einer Datierung.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-17">Points to the uncertain part - the uncertain attribute
+                        - of a dating using a simple XPath expression.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-17">Indique la partie incertaine - l'attribut incertain -
+                        d'une datation à l'aide d'une simple expression XPath.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Indica la parte incerta - l'attributo incerto - di una
+                        datazione utilizzando una semplice espressione XPath.
+                    </desc>
                     <datatype>
                         <rng:list>
                             <rng:oneOrMore>
@@ -522,68 +702,136 @@
                 <attDef ident="target" mode="delete"/>
             </attList>
         </classSpec>
-        <classSpec ident="att.spanning" type="atts" module="tei" mode="change">
+        <classSpec ident="att.spanning" type="atts" mode="change">
             <attList>
-                <attDef ident="spanTo" mode="change">
-                    <desc versionDate="2023-03-31" xml:lang="de">Verweist mittels einen
-                        Fragmentbezeichners auf den Endpunkt von addSpan, delSpan oder damageSpan. </desc>
-                    <desc versionDate="2023-03-31" xml:lang="en">Refers to the end point of addSpan,
-                        delSpan or damageSpan by means of a fragment identifier. </desc>
-                    <desc versionDate="2023-03-31" xml:lang="fr">Renvoie au point final de addSpan,
-                        delSpan ou damageSpan au moyen d'un identificateur de fragment. </desc>
-                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-31">
+                <attDef ident="spanTo" mode="change" usage="req">
+                    <desc xml:lang="de" versionDate="2023-05-17">Verweist auf die <att>xml:id</att> eines Endpunktes
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-17">Points to the <att>xml:id</att> of an endpoint
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-17">Pointe vers le <att>xml:id</att> d'un point de
+                        terminaison
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Punta a <att>xml:id</att> di un endpoint
+                    </desc>
+                    <datatype>
+                        <dataRef name="IDREF"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-05-17">
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <p>
-                                <delSpan spanTo="#del1"/> ... <anchor xml:id="del1"/>
+                                <delSpan spanTo="del1"/>
+                                ...
+                                <anchor xml:id="del1"/>
                             </p>
                         </egXML>
                     </exemplum>
                 </attDef>
             </attList>
         </classSpec>
-        <classSpec ident="att.resourced" type="atts" module="tei" mode="change">
+        <classSpec ident="att.tableDecoration" type="atts" mode="change">
             <attList>
-                <attDef ident="url" mode="change" usage="req">
-                    <desc versionDate="2023-03-31" xml:lang="de">Verknüpfung mit einer Bilddatei. </desc>
-                    <desc versionDate="2023-03-31" xml:lang="fr">Lien vers un fichier image.</desc>
-                    <desc versionDate="2023-03-31" xml:lang="en">Link to an image file.</desc>
+                <attDef ident="cols" mode="delete"/>
+                <attDef ident="rows" mode="delete"/>
+            </attList>
+        </classSpec>
+        <classSpec ident="att.typed" type="atts" mode="change">
+            <attList>
+                <attDef ident="subtype" mode="delete"/>
+            </attList>
+        </classSpec>
+        <classSpec ident="att.witnessed" type="atts" mode="change">
+            <attList>
+                <attDef ident="wit" mode="change" usage="req">
+                    <desc xml:lang="de" versionDate="2023-05-17">Enthält Verweise auf die IDs anderer Textzeugen, die
+                        mit <gi>witness</gi> im <gi>teiHeader</gi> deklariert wurden.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-17">Contains references to the IDs of other text witnesses
+                        declared with <gi>witness</gi> in the <gi>teiHeader</gi>.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-17">Contient des références aux ID d'autres témoins de
+                        texte déclarés avec <gi>witness</gi> dans le <gi>teiHeader</gi>.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Contiene riferimenti agli ID di altri testimoni
+                        testuali dichiarati con <gi>witness</gi> nel <gi>teiHeader</gi>.
+                    </desc>
+                    <datatype>
+                        <dataRef name="IDREFS"
+                                 restriction="[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+                    </datatype>
                 </attDef>
             </attList>
         </classSpec>
-        <!--
-            ToDos:
-            - att.witnessed
-            - att.written
-        -->
+        <classSpec ident="att.written" type="atts" mode="change">
+            <attList>
+                <attDef ident="hand" mode="change">
+                    <desc xml:lang="de" versionDate="2023-05-11">Enthält einen Verweis auf die ID eines
+                        <gi>handNote</gi>-Element, das im <gi>teiHeader</gi> deklariert wurde.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-17">Contains a reference to the ID of a
+                        <gi>handNote</gi>
+                        element declared in the <gi>teiHeader</gi>.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-17">Contient une référence à l'ID d'un élément
+                        <gi>handNote</gi>
+                        déclaré dans le <gi>teiHeader</gi>.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Contiene un riferimento all'ID di un elemento
+                        <gi>handNote</gi>
+                        dichiarato in <gi>teiHeader</gi>.
+                    </desc>
+                    <datatype>
+                        <dataRef name="IDREF"/>
+                    </datatype>
+                </attDef>
+            </attList>
+        </classSpec>
+
+        <!-- Additional attribute classes -->
         <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
-            <desc versionDate="2023-03-07" xml:lang="de">Stellt ein @source Attribut bereit, dessen
-                Semantik dem der TEI entspricht. </desc>
-            <desc versionDate="2023-03-07" xml:lang="en">Provides a common @source attribute
-                semantically identical to the TEI @source. </desc>
+            <desc xml:lang="de" versionDate="2023-03-07">Stellt ein Attribut <att>source</att> bereit, dessen
+                Semantik dem der TEI entspricht.
+            </desc>
+            <desc xml:lang="en" versionDate="2023-03-07">Provides a common <att>source</att> attribute
+                semantically identical to the TEI specification.
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-05-17">Fournit un attribut <att>source</att> dont la sémantique
+                correspond à celle de la TEI.
+            </desc>
+            <desc xml:lang="it" versionDate="2023-05-17">Fornisce un attributo <att>source</att> la cui semantica
+                corrisponde a quella del TEI.
+            </desc>
             <constraintSpec scheme="schematron" ident="sch-att-source">
-                <desc xml:lang="en" versionDate="2023-03-07">If source is used with tei:idno no
-                    whitespace is allowed </desc>
+                <desc xml:lang="en" versionDate="2023-03-07">If source is used with <gi>tei:idno</gi> no
+                    whitespace is allowed
+                </desc>
                 <constraint>
                     <sch:pattern>
                         <sch:rule context="tei:idno[@source]">
                             <sch:report test="matches(./@source, '\s')" xml:lang="en">When @source
-                                is used together with <sch:name/> whitespace is not allowed. </sch:report>
+                                is used together with
+                                <sch:name/>
+                                whitespace is not allowed.
+                            </sch:report>
                         </sch:rule>
                     </sch:pattern>
                 </constraint>
             </constraintSpec>
             <attList>
                 <attDef ident="source" mode="add" usage="opt">
-                    <gloss versionDate="2023-03-07" xml:lang="de">Quelle</gloss>
-                    <desc versionDate="2023-03-07" xml:lang="de">Verweis auf ein anderes Stück
+                    <desc xml:lang="de" versionDate="2023-03-07">Verweis auf ein anderes Stück
                         (bspw. im Falle der Mehrfachüberlieferung) oder auf ein
-                        Archivinformationssystem. </desc>
-                    <gloss versionDate="2023-03-07" xml:lang="en">source</gloss>
-                    <desc versionDate="2023-03-07" xml:lang="en">Reference to another item (e.g. in
-                        the case of multiple records) or to an archival information system. </desc>
-                    <gloss versionDate="2023-03-07" xml:lang="fr">la source</gloss>
-                    <desc versionDate="2023-03-07" xml:lang="fr">Renvoi à une autre pièce (par ex.
-                        en cas de livraison multiple) ou à un système d'information archivistique. </desc>
+                        Archivinformationssystem.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-03-07">Reference to another item (e.g. in
+                        the case of multiple records) or to an archival information system.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-03-07">Renvoi à une autre pièce (par ex.
+                        en cas de livraison multiple) ou à un système d'information archivistique.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-03-07">Si riferisce a un altro pezzo (ad esempio nel caso di
+                        trasmissione multipla) o a un sistema informativo di archivio.
+                    </desc>
                     <datatype>
                         <rng:choice>
                             <rng:list>
@@ -597,12 +845,18 @@
                 </attDef>
             </attList>
             <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-03">
-                <p>Lesung rekonstruiert durch eine andere Überlieferung</p>
+                <p xml:lang="de">Lesung rekonstruiert durch eine andere Überlieferung</p>
+                <p xml:lang="en">Reading reconstructed from another tradition</p>
+                <p xml:lang="fr">La lecture reconstruite à partir d'une autre tradition</p>
+                <p xml:lang="it">Lettura ricostruita da un'altra tradizione</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <p>Zum ersten soll <supplied source="urn:ssrq:SSRQ-SG-III_4-189-1">man wissen,
-                        das </supplied> niemand </p>
+                        das
+                    </supplied> niemand
+                    </p>
                 </egXML>
             </exemplum>
         </classSpec>
+
     </specGrp>
 </div>

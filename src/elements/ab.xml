@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="ab" module="linking" mode="change" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="ab" module="linking" mode="change"
+             xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <desc xml:lang="de" versionDate="2023-05-02">Enthält eine beliebige Textebene ohne klar
-        definierte Zuordnung. Wir verwenden den Tag immer zusammen mit <att>type</att> und <att>
-        place</att> für Vermerke, Dorsualnotizen, Kanzleivermerke und Registraturvermerke sowie für
+        definierte Zuordnung. Wir verwenden den Tag immer zusammen mit <att>type</att> und
+        <att>place</att>
+        für Vermerke, Dorsualnotizen, Kanzleivermerke und Registraturvermerke sowie für
         Marginalien. Bei Papsturkunden erfolgt die Angabe der Vermerke in folgender Reihenfolge:
         Zuerst die Vermerke unter der Plica, dann die Vermerke auf der Plica von links nach rechts
         und zum Schluss die Vermerke auf der Rückseite der Urkunde von links nach rechts. Die
@@ -15,7 +17,8 @@
         erster Stelle steht, dann die Adresse folgt und schliesslich zwei weitere Dorsualvermerke,
         dann steht die Adresse trotzdem an erster Stelle. Falls die Leserichtung, an der man sich
         orientieren soll, nicht einheitlich ist, also ein Dorsualvermerk auf den Kopf steht, ist ein
-        Kommentar notwendig.</desc>
+        Kommentar notwendig.
+    </desc>
     <!-- ToDo: Übersetzungen prüfen! -->
     <desc xml:lang="en" versionDate="2023-05-02">Contains any text level without a clearly defined
         assignment. We always use the tag together with <att>type</att> and <att>place</att> for
@@ -28,10 +31,12 @@
         bottom and from left to right. For example, if a missive has a dorsal notation on the back
         in first place, followed by the address and finally two more dorsal notations, the address
         will still be in first place. If the reading direction to be followed is not uniform, i.e. a
-        dorsual note is upside down, a comment is necessary.</desc>
+        dorsual note is upside down, a comment is necessary.
+    </desc>
     <desc xml:lang="fr" versionDate="2023-05-02">Contient un niveau de texte quelconque sans
-        affectation clairement définie. Nous utilisons toujours cette balise avec <att>type</att>
-        et <att>place</att> pour les mentions, les notes dorsales, les mentions de chancellerie et
+        affectation clairement définie. Nous utilisons toujours cette balise avec <att>type</att> et
+        <att>place</att>
+        pour les mentions, les notes dorsales, les mentions de chancellerie et
         les mentions de registre ainsi que pour les marginalia. Pour les documents pontificaux, les
         mentions sont indiquées dans l'ordre suivant : d'abord les mentions sous le plica, ensuite
         les mentions sur le plica de gauche à droite et enfin les mentions au verso du document de
@@ -41,13 +46,26 @@
         de haut en bas et de gauche à droite. Si, par exemple, une mention dorsale figure au verso
         d'un missile, suivie de l'adresse et de deux autres mentions dorsales, l'adresse figure tout
         de même en premier lieu. Si le sens de lecture auquel on doit se référer n'est pas uniforme,
-        c'est-à-dire si une mention dorsale est à l'envers, un commentaire est nécessaire.</desc>
+        c'est-à-dire si une mention dorsale est à l'envers, un commentaire est nécessaire.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-05-21">Contiene qualsiasi livello di testo senza un'assegnazione chiaramente
+        definita. Utilizziamo sempre il tag insieme a <att>type</att> e <att>place</att> per annotazioni, note dorsali,
+        note clericali e note anagrafiche oltre che per marginalia. Nei documenti pontifici le annotazioni sono
+        riportate nel seguente ordine: prima le annotazioni sotto la plica, poi le annotazioni sulla plica da sinistra a
+        destra e infine le annotazioni sul retro del documento da sinistra a destra. Le annotazioni e le note dorsali
+        sono riportate in ordine cronologico. Le note create contemporaneamente sono sempre elencate per prime a causa
+        dell'ordine cronologico. Le annotazioni contemporanee sono registrate in ordine di lettura dall'alto verso il
+        basso e da sinistra a destra. se ad es. Ad esempio, se una missiva ha una nota dorsale sul retro, seguita
+        dall'indirizzo e infine altre due note dorsali, l'indirizzo viene comunque prima. Se la direzione di lettura
+        verso cui orientarsi non è uniforme, cioè una nota dorsale è capovolta, è necessario un commento.
+    </desc>
     <classes mode="replace">
         <memberOf key="macro.abContent"/>
         <memberOf key="model.pLike"/>
         <memberOf key="att.global"/>
         <memberOf key="att.handFeatures"/>
         <memberOf key="att.typed"/>
+        <memberOf key="att.written"/>
     </classes>
     <content>
         <rng:oneOrMore>
@@ -60,31 +78,30 @@
             <sch:pattern>
                 <sch:rule context="tei:ab">
                     <sch:assert test="count(parent::tei:div/tei:ab) = 1"
-                        xml:lang="en">There can only be one <sch:name/> element within &lt;div&gt;.</sch:assert>
+                                xml:lang="en">There can only be one
+                        <sch:name/>
+                        element within &lt;div&gt;.
+                    </sch:assert>
                     <sch:assert test="count(parent::tei:div/*) = 1" xml:lang="en"
-                    >The <sch:name/>
-                        element must be the only element within &lt;div&gt;.</sch:assert>
+                    >The
+                        <sch:name/>
+                        element must be the only element within &lt;div&gt;.
+                    </sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
     </constraintSpec>
     <attList>
-        <attDef ident="hand" mode="add">
-            <desc xml:lang="de" versionDate="2023-05-03">Informationen zur Hand bzw. zum Schreiber des Textes</desc>
-            <desc xml:lang="en" versionDate="2023-05-03">Information about the hand or the writer of the text</desc>
-            <desc xml:lang="de" versionDate="2023-05-03">Informations sur la main ou l'auteur du texte</desc>
-            <datatype>
-                <rng:choice>
-                    <rng:ref name="ssrq.hand.hand"/>
-                    <rng:ref name="ssrq.hand.other"/>
-                    <rng:ref name="ssrq.hand.later"/>
-                </rng:choice>
-            </datatype>
-        </attDef>
         <attDef ident="place" mode="add" usage="req">
-            <desc xml:lang="de" versionDate="2023-05-02">Ort einer Dorsualnotiz, eines Vermerks, eines Registraturvermerks oder eines Kanzleivermerks</desc>
-            <desc xml:lang="en" versionDate="2023-05-02">Place of a dorsal note, a note, a registry note or a chancery note</desc>
-            <desc xml:lang="fr" versionDate="2023-05-02">Lieu d'une note dorsale, d'une note, d'une note d'enregistrement ou d'une note de chancellerie</desc>
+            <desc xml:lang="de" versionDate="2023-05-02">Ort einer Dorsualnotiz, eines Vermerks, eines
+                Registraturvermerks oder eines Kanzleivermerks
+            </desc>
+            <desc xml:lang="en" versionDate="2023-05-02">Place of a dorsal note, a note, a registry note or a chancery
+                note
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-05-02">Lieu d'une note dorsale, d'une note, d'une note
+                d'enregistrement ou d'une note de chancellerie
+            </desc>
             <datatype>
                 <rng:choice>
                     <rng:ref name="ssrq.place"/>
@@ -92,21 +109,13 @@
                 </rng:choice>
             </datatype>
         </attDef>
-        <attDef ident="scribe" mode="change">
-            <desc versionDate="2023-05-03" xml:lang="de">Referenz auf ID des Schreibers</desc>
-            <desc versionDate="2023-05-03" xml:lang="en">Reference to ID of the recorder</desc>
-            <desc versionDate="2023-05-03" xml:lang="fr">Référence à l'ID de l'enregistreur</desc>
-            <datatype>
-                <dataRef key="ssrq.pointer.persons"/>
-            </datatype>
-        </attDef>
         <attDef ident="type" mode="replace" usage="req">
-            <desc xml:lang="de" versionDate="2023-05-02">Detaillierte Beschreibung des Elements <gi>
-                ab</gi>.</desc>
-            <desc xml:lang="fr" versionDate="2023-05-02">Description détaillée de l'élément <gi>ab</gi>
-                .</desc>
-            <desc xml:lang="de" versionDate="2023-05-02">Detailed description of the element <gi>ab</gi>
-                .</desc>
+            <desc xml:lang="de" versionDate="2023-05-02">Detaillierte Beschreibung des Elements <gi>ab</gi>.
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-05-02">Description détaillée de l'élément <gi>ab</gi>.
+            </desc>
+            <desc xml:lang="de" versionDate="2023-05-02">Detailed description of the element <gi>ab</gi>.
+            </desc>
             <valList type="closed">
                 <valItem ident="archiving reference">
                     <desc xml:lang="de">Registraturvermerk</desc>
@@ -158,7 +167,6 @@
                 </valItem>
             </valList>
         </attDef>
-
         <attDef ident="cert" mode="delete"/>
         <attDef ident="medium" mode="delete"/>
         <attDef ident="n" mode="delete"/>
@@ -166,7 +174,8 @@
         <attDef ident="resp" mode="delete"/>
         <attDef ident="xml:id" mode="delete"/>
     </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
+    <!-- ToDo: Beispiele passen nicht zum Element <gi>ab</gi>, passende Beispiele ergänzen -->
+    <!--<exemplum type="ssrq-doc-example" versionDate="2023-03-03">
         <p xml:lang="de">Definition der Identifikationsnummer eines Stücks:</p>
         <p xml:lang="fr">Définition du numéro d'identification d'une pièce&#160;:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -184,12 +193,15 @@
     <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
         <p xml:lang="de">Verweis auf eine Signatur mit Link ins Archivinformationssystem:</p>
         <p xml:lang="fr">Référence à une cote avec lien vers le système d'information des
-            archives&#160;:</p>
+            archives&#160;:
+        </p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <msIdentifier>
                 <idno xml:lang="de" source="http://scope.stiftsarchiv.sg.ch/detail.aspx?id=30146">StiASG
-                    Urk. GG2 T2</idno>
+                    Urk. GG2 T2
+                </idno>
             </msIdentifier>
         </egXML>
     </exemplum>
+    -->
 </elementSpec>
