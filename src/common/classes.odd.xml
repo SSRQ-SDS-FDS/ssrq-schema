@@ -333,6 +333,19 @@
             </attList>
         </classSpec>
         <classSpec ident="att.dimensions" type="atts" mode="change">
+            <constraintSpec scheme="schematron" ident="sch-att-dimensions">
+                <desc xml:lang="en" versionDate="2023-05-22">If <att>unit</att> has the value unknown, <att>quantity</att>
+                    must be unknown too.</desc>
+                <constraint>
+                    <sch:pattern>
+                        <sch:rule context="tei:height[@unit = 'unknown']|tei:width[@unit = 'unknown']">
+                            <sch:assert test="./@quantity = 'unknown'" xml:lang="en">When @unit is unknown, @quantity
+                                must be unknown too.
+                            </sch:assert>
+                        </sch:rule>
+                    </sch:pattern>
+                </constraint>
+            </constraintSpec>
             <attList>
                 <attDef ident="unit" mode="replace">
                     <desc xml:lang="de" versionDate="2023-03-17">Masseinheit</desc>
@@ -368,6 +381,7 @@
                                 <rng:param name="minInclusive">0</rng:param>
                             </rng:data>
                             <rng:data type="positiveInteger"/>
+                            <rng:ref name="ssrq.measure.unknown"/>
                         </rng:choice>
                     </datatype>
                     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">

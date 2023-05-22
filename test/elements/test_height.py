@@ -1,6 +1,10 @@
-from test.conftest import RNG_test_function
+from test.conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 import pytest
+from pyschval.main import (
+    SchematronResult,
+    validate_chunk,
+)
 
 
 @pytest.mark.parametrize(
@@ -9,6 +13,11 @@ import pytest
         (
             "valid-height",
             "<height quantity='3' unit='cm'/>",
+            True,
+        ),
+        (
+            "valid-height-with-unknown-values",
+            "<height quantity='unknown' unit='unknown'/>",
             True,
         ),
         (
@@ -35,3 +44,28 @@ def test_height(
     result: bool,
 ):
     test_element_with_rng("height", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-height-with-unknown-values",
+            "<height quantity='unknown' unit='unknown'/>",
+            True,
+        ),
+        (
+            "invalid-height-with-unknown-values",
+            "<height quantity='1' unit='unknown'/>",
+            False,
+        ),
+    ],
+)
+def test_height_constraints(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = validate_chunk(
+        files=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].is_valid() is result
