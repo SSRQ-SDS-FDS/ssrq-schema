@@ -20,7 +20,7 @@
                 <moduleRef key="msdescription"
                            include="altIdentifier origDate origPlace dimensions height width support material condition msDesc physDesc sealDesc objectDesc supportDesc seal msContents history additional repository msItem filiation msIdentifier summary origin"/>
                 <moduleRef key="transcr"
-                           include="addSpan damage damageSpan delSpan handShift space subst supplied"/>
+                           include="addSpan damage damageSpan delSpan fw handShift space subst supplied"/>
                 <moduleRef key="textcrit" include="app lem listWit rdg witness"/>
                 <moduleRef key="namesdates"
                            include="orgName persName placeName settlement"/>
@@ -69,6 +69,7 @@
                 <specGrpRef target="elements/extent.xml"/>
                 <specGrpRef target="elements/figure.xml"/>
                 <specGrpRef target="elements/fileDesc.xml"/>
+                <specGrpRef target="elements/fw.xml"/>
                 <specGrpRef target="elements/graphic.xml"/>
                 <specGrpRef target="elements/handShift.xml"/>
                 <specGrpRef target="elements/history.xml"/>

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
 
     <specGrp xml:id="ssrq-default-content-types">
 
         <macroSpec ident="ssrq.content.critical" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-03-23">Textkritische Auszeichnungen</desc>
             <desc xml:lang="fr" versionDate="2023-03-23">Distinctions de la critique
-                textuelle</desc>
+                textuelle
+            </desc>
             <content>
                 <elementRef key="abbr"/>
                 <elementRef key="add"/>
@@ -34,13 +35,15 @@
 
         <macroSpec ident="ssrq.content.display" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-03-18">Auszeichnungen, die die Darstellung
-                beschreiben / dieser dienen</desc>
+                beschreiben / dieser dienen
+            </desc>
             <content>
                 <alternate>
                     <elementRef key="ab"/>
                     <elementRef key="cb"/>
                     <elementRef key="div"/>
                     <elementRef key="figure"/>
+                    <elementRef key="fw"/>
                     <elementRef key="head"/>
                     <elementRef key="hi"/>
                     <elementRef key="lb"/>
@@ -58,9 +61,11 @@
 
         <macroSpec ident="ssrq.content.measure" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-03-23">Auszeichnung von Maßen und ähnlichen
-                Dingen</desc>
+                Dingen
+            </desc>
             <desc xml:lang="fr" versionDate="2023-03-23">Distinction des mesures et choses
-                similaires</desc>
+                similaires
+            </desc>
             <content>
                 <alternate>
                     <elementRef key="measure"/>
@@ -84,9 +89,11 @@
 
         <macroSpec ident="ssrq.content.entities" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-03-23">Auszeichnung von Personen, Orten,
-                Organisationen etc.</desc>
+                Organisationen etc.
+            </desc>
             <desc xml:lang="fr" versionDate="2023-03-23">Distinction des personnes, lieux,
-                organisations etc.</desc>
+                organisations etc.
+            </desc>
             <content>
                 <alternate>
                     <elementRef key="persName"/>
