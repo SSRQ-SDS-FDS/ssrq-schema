@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="p" module="core" mode="change"
+    xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <desc xml:lang="de" versionDate="2023-05-22">Beschreibt einen ‚prosaischen‘ Absatz. In der
+        Transkription werden damit originale Absätze ausgezeichnet. Eine inhaltliche Gliederung des
+        Textes durch den Bearbeitenden erfolgt mit <gi>seg</gi>. Wird in einer Urkunde der Text
+        durch einen Abstand oder eine Initiale inhaltlich strukturiert, kann der Absatz mit <gi>p</gi>
+        ausgezeichnet werden. Paragraphen-Zeichen werden nicht speziell mit <gi>figure</gi>
+        ausgezeichnet.</desc>
+    <desc xml:lang="en" versionDate="2023-05-22">Describes a 'prosaic' paragraph. In the
+        transcription, this is used to indicate original paragraphs. The text is structured by the
+        editor with <gi>seg</gi>. If the text in a document is structured by a space or an initial,
+        the paragraph can be marked with <gi>p</gi>. Paragraph characters are not specially marked
+        with <gi>figure</gi>.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-22">Décrit un paragraphe "prosaïque". Dans la
+        transcription, il est utilisé pour indiquer les paragraphes originaux. Le texte est
+        structuré par l'éditeur avec <gi>seg</gi>. Si le texte d'un document est structuré par un
+        espace ou une initiale, le paragraphe peut être marqué par <gi>p</gi>. Les caractères de
+        paragraphe ne sont pas spécialement marqués par <gi>figure</gi>.</desc>
+    <classes mode="replace">
+        <memberOf key="model.pLike"/>
+        <memberOf key="att.global"/>
+    </classes>
+    <constraintSpec scheme="schematron" ident="sch-el-p">
+        <desc xml:lang="en" versionDate="2023-05-22">Ensure all <gi>p</gi> elements have a <att>
+            xml:lang</att> when they are sibling</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule
+                    context="tei:p[@xml:lang][following-sibling::tei:p|preceding-sibling::tei:p]">
+                    <sch:assert
+                        test="every $p in ./following-sibling::tei:p|./preceding-sibling::tei:p satisfies $p[@xml:lang]"
+                        xml:lang="en">If @xml:lang is used on <sch:name/> the preceding and
+                        following <sch:name/> also have to use it! </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="rend" mode="delete"/>
+        <attDef ident="resp" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-22">
+        <p xml:lang="de">Beispielhafte Verwendung in Kombination mit <gi>seg</gi></p>
+        <p xml:lang="de">Exemple d'utilisation en combinaison avec <gi>seg</gi>.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <p>
+                <seg><lb/>Man sol ôch zuͦ den selben meyen oder herbst taͤding richten <lb/>umb
+                    eigen oder umb erb und von keiner sunderbaren sache, <lb/>es sy denn beider teil
+                    wille.</seg>
+            </p>
+        </egXML>
+    </exemplum>
+</elementSpec>

@@ -27,35 +27,13 @@
         <memberOf key="model.publicationStmtPart.detail"/>
     </classes>
     <content>
-        <sequence preserveOrder="false">
-            <!-- NB: The usage of tei:p/@xml:id should be deprecated in future versions of the schema -->
-            <elementRef key="p" minOccurs="0" maxOccurs="1"/>
-            <elementRef key="licence" minOccurs="1" maxOccurs="1"/>
-        </sequence>
+        <elementRef key="licence"/>
     </content>
-    <constraintSpec scheme="schematron" ident="sch-el-availability">
-        <desc xml:lang="en" versionDate="2023-04-20">Constraint for tei:availability to ensure p
-            uses an @xml:id
-        </desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:availability[tei:p]">
-                    <sch:assert test="tei:p/@xml:id and tei:p/@xml:id = 'facs'">The element tei:p
-                        inside
-                        <sch:name/>
-                        needs to use an @xml:id with an value of
-                        'facs'.
-                    </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-20">
         <p xml:lang="de">Modellhafter Aufbau</p>
         <p xml:lang="fr">Structure modèle</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <availability>
-                <p xml:id="facs">Bibliothèque publique et universitaire de Neuchâtel (BPUN)</p>
                 <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                 >Attribution-NonCommercial- ShareAlike 4.0 International (CC BY-NC-SA
                     4.0)
