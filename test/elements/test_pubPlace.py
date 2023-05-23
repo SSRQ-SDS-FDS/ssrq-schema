@@ -44,29 +44,3 @@ def test_pubPlace(
     result: bool,
 ):
     test_element_with_rng("pubPlace", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "valid-pubPlace",
-            "<pubPlace>foo</pubPlace>",
-            True,
-        ),
-        (
-            "invalid-pubPlace",
-            "<pubPlace/>",
-            False,
-        ),
-    ],
-)
-def test_pubPlace_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    """Test the constraints defined for tei:pubPlace."""
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].is_valid() is result

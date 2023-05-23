@@ -23,19 +23,6 @@
     <content>
         <textNode/>
     </content>
-    <constraintSpec scheme="schematron" ident="sch-el-text">
-        <desc xml:lang="en" versionDate="2023-04-05">Constraint for tei:pubPlace</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:pubPlace">
-                    <sch:assert test="string-length(normalize-space(.)) > 0">
-                        <sch:name/>
-                        should contain some text.
-                    </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
     <attList>
         <attDef ident="resp" mode="delete"/>
     </attList>

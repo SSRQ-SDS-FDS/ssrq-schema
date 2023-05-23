@@ -32,20 +32,6 @@
             </alternate>
         </sequence>
     </content>
-    <!-- <classes mode="replace"/>
-    <content>
-        <textNode/>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-text">
-        <desc xml:lang="en" versionDate="2023-04-05">Constraint for tei:pubPlace</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:pubPlace">
-                    <sch:assert test="string-length(normalize-space(.)) > 0"><sch:name/> should contain some text.</sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec> -->
     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-05">
         <p>Einfaches Beispiel für den Inhalt von tei:pubPlace:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">

@@ -19,16 +19,6 @@
             <textNode/>
         </alternate>
     </content>
-    <constraintSpec scheme="schematron" ident="sch-el-condition">
-        <desc xml:lang="en" versionDate="2023-04-14">Constraint for tei:condition</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:condition[not(*)]">
-                    <sch:assert test="string-length(normalize-space(.)) > 0"><sch:name/> should contain some text.</sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-14">
         <p xml:lang="de">Modellhafter Aufbau</p>
         <p xml:lang="fr">Structure modèle</p>
