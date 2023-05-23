@@ -1,10 +1,6 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
