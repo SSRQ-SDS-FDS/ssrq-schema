@@ -134,3 +134,39 @@ def test_datable_custom_attr(
         files=writer.list(), isosch=main_constraints
     )
     assert reports[0].is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-publisher",
+            "<publisher>bar</publisher>",
+            True,
+        ),
+        (
+            "invalid-publisher",
+            "<publisher/>",
+            False,
+        ),
+        (
+            "valid-hi",
+            "<hi rend='sup'>bar</hi>",
+            True,
+        ),
+        (
+            "invalid-hi",
+            "<hi rend='sup'/>",
+            False,
+        ),
+    ],
+)
+def test_text_content_constraint_gl4(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """Tests the global constraint, which ensure the usage of text() for multiple elements."""
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = validate_chunk(
+        files=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].is_valid() is result
