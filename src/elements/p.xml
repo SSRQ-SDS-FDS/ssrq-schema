@@ -35,10 +35,10 @@
             <sch:pattern>
                 <sch:rule
                     context="tei:p[@xml:lang][following-sibling::tei:p|preceding-sibling::tei:p]">
-                    <sch:report
-                        test="every $p in ./following-sibling::tei:p|./preceding-sibling::tei:p satifies $p[@xml:lang]"
+                    <sch:assert
+                        test="every $p in ./following-sibling::tei:p|./preceding-sibling::tei:p satisfies $p[@xml:lang]"
                         xml:lang="en">If @xml:lang is used on <sch:name/> the preceding and
-                        following <sch:name/> also have to use it! </sch:report>
+                        following <sch:name/> also have to use it! </sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
