@@ -1,5 +1,4 @@
 import pytest
-
 from pyschval.main import (
     SchematronResult,
     validate_chunk,

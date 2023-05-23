@@ -23,11 +23,6 @@
         <memberOf key="model.pLike"/>
         <memberOf key="att.global"/>
     </classes>
-    <content>
-        <rng:zeroOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:zeroOrMore>
-    </content>
     <constraintSpec scheme="schematron" ident="sch-el-p">
         <desc xml:lang="en" versionDate="2023-05-22">Ensure all <gi>p</gi> elements have a <att>
             xml:lang</att> when they are sibling</desc>

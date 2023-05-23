@@ -23,8 +23,6 @@ import pytest
                 <publicationStmt>
                     <publisher>SSRQ-SDS-FDS</publisher>
                     <availability>
-                        <p xml:id="facs">Bibliothèque publique et universitaire de Neuchâtel
-                            (BPUN)</p>
                         <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                             >Attribution-NonCommercial- ShareAlike 4.0 International (CC BY-NC-SA
                             4.0)</licence>
@@ -99,8 +97,6 @@ import pytest
                 <publicationStmt>
                     <publisher>SSRQ-SDS-FDS</publisher>
                     <availability>
-                        <p xml:id="facs">Bibliothèque publique et universitaire de Neuchâtel
-                            (BPUN)</p>
                         <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                             >Attribution-NonCommercial- ShareAlike 4.0 International (CC BY-NC-SA
                             4.0)</licence>
