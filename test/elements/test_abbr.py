@@ -13,7 +13,7 @@ import pytest
         ),
         (
             "valid-abbr-with-mixed-content",
-            "<abbr><hi>foo</hi>bar</abbr>",
+            "<abbr><hi rend='sup'>foo</hi>bar</abbr>",
             True,
         ),
         (
