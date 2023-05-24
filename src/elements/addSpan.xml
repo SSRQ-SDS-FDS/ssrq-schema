@@ -13,6 +13,13 @@
     <content>
         <empty/>
     </content>
+    <attList>
+        <attDef ident="rend" mode="replace">
+            <datatype>
+                <dataRef key="ssrq.rend.add"/>
+            </datatype>
+        </attDef>
+    </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-17">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <addSpan place="left margin" spanTo="add1"/>
@@ -23,6 +30,7 @@
     <exemplum type="ssrq-doc-example" versionDate="2023-05-17">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
+            ...
             <anchor xml:id="add1"/>
         </egXML>
     </exemplum>

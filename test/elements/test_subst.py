@@ -8,52 +8,27 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-subst",
-            """
-                                            <subst>
-                                                <del>foo</del>
-                                                <add>bar</add>
-                                            </subst>
-                                        """,
+            "<subst><del>foo</del><add place='left_top'>bar</add></subst>",
             True,
         ),
         (
             "valid-subst-add-first",
-            """
-                                        <subst>
-                                            <add>bar</add>
-                                            <del>foo</del>
-                                        </subst>
-                                    """,
+            "<subst><add place='left_top'>bar</add><del>foo</del></subst>",
             True,
         ),
         (
             "valid-subst-with-xml-id",
-            """
-                                        <subst xml:id="bla">
-                                            <add>bar</add>
-                                            <del>foo</del>
-                                        </subst>
-                                    """,
+            "<subst xml:id='bla'><add place='left_top'>bar</add><del>foo</del></subst>",
             True,
         ),
         (
             "invalid-subst-with-wrong-attributes",
-            """
-                                        <subst type="bla">
-                                            <add>bar</add>
-                                            <del>foo</del>
-                                        </subst>
-                                    """,
+            "<subst type='bla'><add place='left_top'>bar</add><del>foo</del></subst>",
             False,
         ),
         (
             "invalid-subst-with-wrong-children",
-            """
-                                        <subst>
-                                            <note>bar</note>
-                                            <p>foo</p>
-                                        </subst>
-                                    """,
+            "<subst><note>bar</note><p>foo</p></subst>",
             False,
         ),
         (
