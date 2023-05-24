@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="corr" module="core" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-24">Enthält eine durch einen Editor vorgenommene Korrektur.</desc>
+    <desc xml:lang="en" versionDate="2023-05-24">Contains a correction made by an editor.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-24">Contient une correction faite par un éditeur.</desc>
+    <desc xml:lang="it" versionDate="2023-05-24">Contiene una correzione apportata da un editor.</desc>
+    <classes mode="replace">
+        <memberOf key="model.choicePart"/>
+        <memberOf key="model.pPart.transcriptional"/>
+        <memberOf key="att.global.responsibility"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <textNode/>
+            <macroRef key="ssrq.content.default"/>
+        </alternate>
+    </content>
+    <attList>
+        <attDef ident="cert" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-24">
+        <p xml:lang="de">Beispiel für eine Korrektur.</p>
+        <p xml:lang="en">Example of a correction.</p>
+        <p xml:lang="fr">Exemple de correction.</p>
+        <p xml:lang="it">Esempio di correzione.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <choice>
+                <sic>digintates</sic>
+                <corr>dignitates</corr>
+            </choice>
+        </egXML>
+    </exemplum>
+</elementSpec>
