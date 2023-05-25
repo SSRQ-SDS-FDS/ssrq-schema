@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="orig"
+             module="core" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-24">Enthält innerhalb von Einleitungen, Kommentaren und Anmerkungen
+        Textteile, die in Quellensprache verfasst sind.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-05-24">Contains parts of text written in source language within introductions,
+        comments and notes.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-05-24">Contient des parties de texte écrites dans la langue source dans les
+        introductions, les commentaires et les notes.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-05-24">Contiene parti di testo scritte nella lingua di partenza all'interno di
+        introduzioni, commenti e note.
+    </desc>
+    <classes mode="replace">
+        <memberOf key="model.pPart.transcriptional"/>
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
+    </content>
+    <attList>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="rend" mode="delete"/>
+        <attDef ident="resp" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-24">
+        <p xml:lang="de">Beispiel für einen originalsprachlichen Ausdruck in einer Anmerkung.</p>
+        <p xml:lang="en">Example of an original language expression in an annotation.</p>
+        <p xml:lang="fr">Exemple d'expression de la langue d'origine dans une annotation.</p>
+        <p xml:lang="it">Esempio di un'espressione in lingua originale in un'annotazione.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <note>Am Beispiel von Seebach lässt sich beobachten, wie Nachträge aus Beschlüssen
+                der <orig>bursamy</orig> [...] zustande kommen.
+            </note>
+        </egXML>
+    </exemplum>
+</elementSpec>

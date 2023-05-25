@@ -1791,11 +1791,14 @@
     <specGrp xml:id="ssrq-period">
         <dataSpec ident="ssrq.period.days" mode="add">
             <desc versionDate="2023-05-11" xml:lang="de">Geschlossene Liste von Werten, die
-                von der SSRQ zur Bezeichnung von Wochentagen verwendet werden</desc>
+                von der SSRQ zur Bezeichnung von Wochentagen verwendet werden
+            </desc>
             <desc versionDate="2023-05-11" xml:lang="fr">Liste fermée de valeurs utilisées
-                par la SSRQ pour désigner les jours de la semaine</desc>
+                par la SSRQ pour désigner les jours de la semaine
+            </desc>
             <desc versionDate="2023-05-11" xml:lang="en">Closed list of values for naming
-                days of the week used by the SSRQ</desc>
+                days of the week used by the SSRQ
+            </desc>
             <content>
                 <valList type="closed">
                     <valItem ident="P1WD">
@@ -1845,11 +1848,14 @@
         </dataSpec>
         <dataSpec ident="ssrq.period.daytimes" mode="add">
             <desc versionDate="2022-05-05" xml:lang="de">Geschlossene Liste von Werten, die
-                von der SSRQ zur Bezeichnung von Tageszeiten verwendet werden</desc>
+                von der SSRQ zur Bezeichnung von Tageszeiten verwendet werden
+            </desc>
             <desc versionDate="2023-05-11" xml:lang="fr">Liste fermée de valeurs utilisées
-                par la SSRQ pour désigner les heures de la journée</desc>
+                par la SSRQ pour désigner les heures de la journée
+            </desc>
             <desc versionDate="2022-05-05" xml:lang="en">Closed list of values for times of day
-                used by the SSRQ</desc>
+                used by the SSRQ
+            </desc>
             <content>
                 <valList type="closed">
                     <valItem ident="evening">
@@ -1893,11 +1899,14 @@
         </dataSpec>
         <dataSpec ident="ssrq.period.seasons" mode="add">
             <desc versionDate="2022-05-05" xml:lang="de">Geschlossene Liste von Werten, die
-                von der SSRQ zur Bezeichnung von Jahreszeiten verwendet werden</desc>
+                von der SSRQ zur Bezeichnung von Jahreszeiten verwendet werden
+            </desc>
             <desc versionDate="2023-05-11" xml:lang="fr">Liste fermée de valeurs utilisées
-                par la SSRQ pour désigner les saisons</desc>
+                par la SSRQ pour désigner les saisons
+            </desc>
             <desc versionDate="2022-05-05" xml:lang="en">Closed list of values for naming
-                seasons used by the SSRQ</desc>
+                seasons used by the SSRQ
+            </desc>
             <content>
                 <valList type="closed">
                     <valItem ident="spring">
@@ -2174,7 +2183,7 @@
 
     <specGrp xml:id="ssrq-rend">
 
-        <dataSpec ident="ssrq.critical.rend.del" mode="add">
+        <dataSpec ident="ssrq.rend.del" mode="add">
             <desc xml:lang="de" versionDate="2023-05-16">Gibt wieder, wie eine Streichung vorgenommen wurde.</desc>
             <desc xml:lang="en" versionDate="2023-05-16">Represents how a deletion was made.</desc>
             <desc xml:lang="fr" versionDate="2023-05-16">Représente comment une suppression a été effectuée.</desc>
@@ -2233,6 +2242,10 @@
             </content>
         </dataSpec>
 
+        <!-- ToDo: Modellierung dieses Datentyps überdenken:
+            a) Name des Datentyps (Verwendung in add, addSpan und ab als @rend vs. Verwendung in handNote in @medium)
+            b) Hier werden Schreibgerät und Textfarbe miteinander vermengt
+        -->
         <dataSpec ident="ssrq.rend.add" mode="add">
             <desc xml:lang="de" versionDate="2023-05-16">Schreibmittel der Hinzufügung</desc>
             <desc xml:lang="en" versionDate="2023-05-16">Writing means of addition</desc>

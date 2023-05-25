@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="expan" module="core" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-23">Enthält eine Abkürzung.</desc>
+    <desc xml:lang="en" versionDate="2023-05-23">Contains an abbreviation.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-23">Contient une abréviation.</desc>
+    <desc xml:lang="it" versionDate="2023-05-23">Contiene un'abbreviazione.</desc>
+    <classes mode="replace">
+        <memberOf key="model.choicePart"/>
+        <memberOf key="model.pPart.editorial"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <textNode/>
+            <macroRef key="ssrq.content.entities"/>
+        </alternate>
+    </content>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-23">
+        <p xml:lang="de">Beispiel für eine Abkürzung.</p>
+        <p xml:lang="en">Example of an abbreviation.</p>
+        <p xml:lang="fr">Exemple d'abréviation.</p>
+        <p xml:lang="it">Esempio di abbreviazione.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <choice>
+                <abbr>sabbo</abbr>
+                <expan>sabbato</expan>
+            </choice>
+        </egXML>
+    </exemplum>
+</elementSpec>

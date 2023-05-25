@@ -6,8 +6,6 @@ from ..conftest import RNG_test_function
 @pytest.mark.parametrize(
     "name, markup, result, message",
     [
-        # ToDo: Alle Test überarbeiten, sodass die IDs überprüft werden können.
-        # Dieses Tests können alle nur False sein, weil keine passende ID für @spanTo und @hand definiert werden kann.
         (
             "valid-addSpan",
             "<addSpan spanTo='add1'/>",

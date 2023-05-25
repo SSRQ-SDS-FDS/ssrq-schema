@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="add"
+             module="core" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-24">Enthält Text, der von einem Schreiber hinzugefügt wurde.</desc>
+    <desc xml:lang="en" versionDate="2023-05-24">Contains text added by a writer.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-24">Contient du texte ajouté par un rédacteur.</desc>
+    <desc xml:lang="it" versionDate="2023-05-24">Contiene testo aggiunto da uno scrittore.</desc>
+    <classes>
+        <memberOf key="model.linePart"/>
+        <memberOf key="model.pPart.transcriptional"/>
+        <memberOf key="att.placement"/>
+        <memberOf key="att.global.rendition"/>
+        <memberOf key="att.written"/>
+        <memberOf key="att.typed"/>
+    </classes>
+    <content>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
+    </content>
+    <attList>
+        <attDef ident="place" mode="replace" usage="req">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.place"/>
+                    <rng:ref name="ssrq.place.add"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="rend" mode="replace">
+            <datatype>
+                <dataRef key="ssrq.rend.add"/>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="replace">
+            <valList type="closed">
+                <valItem ident="sign">
+                    <desc xml:lang="de" versionDate="2023-05-24">Hinzufügung durch spezielles Zeichen markiert.</desc>
+                    <desc xml:lang="en" versionDate="2023-05-24">Addition marked by special sign.</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-24">Ajout signalé par un signe spécial.</desc>
+                    <desc xml:lang="it" versionDate="2023-05-24">Aggiunta contrassegnata da apposito segno.</desc>
+                </valItem>
+            </valList>
+        </attDef>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-24">
+        <p xml:lang="de">Beispiel für eine Hinzufügung am linken Rand</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <p>
+                <add place="left_margin" type="sign" rend="other_ink" hand="otherHand">
+                    <lb/>zuͦ unnd be
+                    <lb break="no"/>schlossen
+                </add>
+                zuͦ halten
+            </p>
+        </egXML>
+    </exemplum>
+</elementSpec>
