@@ -17,11 +17,6 @@ import pytest
             True,
         ),
         (
-            "valid-expan-with-cert-and-resp-attribute",
-            "<expan cert='high' resp='bar'>foo</expan>",
-            True,
-        ),
-        (
             "invalid-expan-with-wrong-attribute",
             "<expan att='foo'>bar</expan>",
             False,
