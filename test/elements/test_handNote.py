@@ -23,7 +23,7 @@ import pytest
         ),
         (
             "valid-handNote-with-date",
-            "<handNote xml:id='foo' n='otherHand'><date cert='low' from-custom='1001-01-01' to-custom='1100-12-31'/></handNote>",
+            "<handNote xml:id='foo' n='otherHand'><date from-custom='1001-01-01' to-custom='1100-12-31'/></handNote>",
             True,
         ),
         (

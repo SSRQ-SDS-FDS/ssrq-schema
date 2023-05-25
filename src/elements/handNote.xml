@@ -36,7 +36,9 @@
             <physDesc>
                 <handDesc>
                     <handNote xml:id="hand1" n="firstHand" scribe="per123456">
-                        <date cert="low" from="1001-01-01" to="1100-12-31"/>
+                        <date from-custom="1001-01-01" to-custom="1100-12-31">
+                            <precision precision="low" match="@from-custom"/>
+                        </date>
                     </handNote>
                     <handNote xml:id="hand2" n="secondHand"/>
                     <handNote xml:id="hand3" n="otherHand"/>
