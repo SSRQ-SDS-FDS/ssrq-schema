@@ -90,6 +90,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<date period='sommer'>es war im Sommer</date>",
             False,
         ),
+        (
+            "valid-date-with-precision",
+            "<date datingMethod='julian' notBefore-custom='1341-01-01' notAfter-custom='1355-12-31'>Um 1346 und um 1350 <precision precision='low' match='@notBefore-custom @notAfter-custom'/></date>",
+            True,
+        ),
     ],
 )
 def test_date_rng(

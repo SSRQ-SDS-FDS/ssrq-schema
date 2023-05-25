@@ -16,6 +16,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-precision",
+            "<precision precision='low' match='@notBefore-custom @notAfter-custom'/>",
+            True,
+        ),
+        (
             "valid-precision-with-multiple-match-values",
             "<precision precision='low' match='@from-custom @to-custom'/>",
             True,

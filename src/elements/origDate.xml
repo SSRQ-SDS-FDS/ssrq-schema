@@ -27,7 +27,10 @@
     </classes>
     <content>
         <rng:zeroOrMore>
-            <rng:ref name="ssrq.content.default"/>
+            <rng:choice>
+                <rng:ref name="ssrq.content.default"/>
+                <rng:ref name="precision"/>
+            </rng:choice>
         </rng:zeroOrMore>
     </content>
     <attList>

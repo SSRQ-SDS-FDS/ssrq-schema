@@ -24,7 +24,10 @@
     </classes>
     <content>
         <rng:zeroOrMore>
-            <rng:ref name="ssrq.content.default"/>
+            <rng:choice>
+                <rng:ref name="ssrq.content.default"/>
+                <rng:ref name="precision"/>
+            </rng:choice>
         </rng:zeroOrMore>
     </content>
     <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
@@ -172,8 +175,12 @@
         </egXML>
     </exemplum>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-12">
-        <p xml:lang="de">Beispielhafte Auszeichnung einer Doppeldatierung. Bei Texten, die doppelt, d. h. nach dem alten und neuen Stil, datiert sind, wird nach dem neuen Stil bzw. dem Gregorianischen Kalender datiert. </p>
-        <p xml:lang="fr">Exemple d'une double datation. Pour les textes qui sont doublement datés, c'est-à-dire selon l'ancien et le nouveau style, la datation est effectuée selon le nouveau style ou le calendrier grégorien.</p>
+        <p xml:lang="de">Beispielhafte Auszeichnung einer Doppeldatierung. Bei Texten, die doppelt,
+            d. h. nach dem alten und neuen Stil, datiert sind, wird nach dem neuen Stil bzw. dem
+            Gregorianischen Kalender datiert. </p>
+        <p xml:lang="fr">Exemple d'une double datation. Pour les textes qui sont doublement datés,
+            c'est-à-dire selon l'ancien et le nouveau style, la datation est effectuée selon le
+            nouveau style ou le calendrier grégorien.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <date when-custom="1590-10-25" datingMethod="#Gregorian">25/15. octobris anno 90</date>
         </egXML>
