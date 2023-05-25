@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="handNote" module="header" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-22">Beschreibt eine Hand und identifiziert sie gegebenenfalls mit einem
+        Schreiber.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-05-22">Describes a hand and, where appropriate, identifies it with a scribe.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-05-22">Décrit une main et, le cas échéant, identifie un scribe.</desc>
+    <desc xml:lang="it" versionDate="2023-05-22">Descrive una mano e, se del caso, identifica uno scrivano.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="att.handFeatures"/>
+    </classes>
+    <content>
+        <sequence>
+            <elementRef key="date" minOccurs="0" maxOccurs="unbounded"/>
+            <elementRef key="p" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="xml:id" mode="change" usage="req"/>
+        <attDef ident="n" mode="change" usage="opt">
+            <datatype>
+                <dataRef key="ssrq.hand"/>
+            </datatype>
+        </attDef>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="rend" mode="delete"/>
+        <attDef ident="resp" mode="delete"/>
+        <attDef ident="xml:lang" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-22">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <!-- somewhere inside the <gi>teiHeader</gi> element -->
+            <physDesc>
+                <handDesc>
+                    <handNote xml:id="hand1" n="firstHand" scribe="per123456">
+                        <date from-custom="1001-01-01" to-custom="1100-12-31">
+                            <precision precision="low" match="@from-custom"/>
+                        </date>
+                    </handNote>
+                    <handNote xml:id="hand2" n="secondHand"/>
+                    <handNote xml:id="hand3" n="otherHand"/>
+                    <handNote xml:id="hand4" n="laterHand"/>
+                </handDesc>
+            </physDesc>
+            <!-- somewhere inside the <gi>body</gi> element -->
+            <delSpan rend="crossout" hand="hand1" spanTo="del1"/>
+            Item ein hoffstatt ...
+            <anchor xml:id="del1"/>
+            <addSpan place="left_margin" spanTo="add1" hand="hand4"/>
+            Item ...
+            <anchor xml:id="add1"/>
+        </egXML>
+    </exemplum>
+</elementSpec>

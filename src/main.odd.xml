@@ -14,11 +14,11 @@
                 <moduleRef key="core"
                            include="abbr add author bibl cb choice corr date del editor expan foreign gap graphic head hi item label lb list listBibl measure measureGrp note num orig p pb pubPlace publisher q quote ref resp respStmt series sic term textLang time title unclear"/>
                 <moduleRef key="header"
-                           include="availability editorialDecl encodingDesc fileDesc extent idno keywords licence publicationStmt profileDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
+                           include="availability editorialDecl encodingDesc extent fileDesc handNote idno keywords licence publicationStmt profileDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
                 <moduleRef key="textstructure" include="TEI back body div docImprint signed text"/>
                 <moduleRef key="linking" include="ab anchor seg"/>
                 <moduleRef key="msdescription"
-                           include="altIdentifier origDate origPlace dimensions height width support material condition msDesc physDesc sealDesc objectDesc supportDesc seal msContents history additional repository msItem filiation msIdentifier summary origin"/>
+                           include="altIdentifier origDate origPlace dimensions handDesc height width support material condition msDesc physDesc sealDesc objectDesc supportDesc seal msContents history additional repository msItem filiation msIdentifier summary origin"/>
                 <moduleRef key="transcr"
                            include="addSpan damage damageSpan delSpan fw handShift space subst supplied"/>
                 <moduleRef key="textcrit" include="app lem listWit rdg witness"/>
@@ -71,6 +71,8 @@
                 <specGrpRef target="elements/fileDesc.xml"/>
                 <specGrpRef target="elements/fw.xml"/>
                 <specGrpRef target="elements/graphic.xml"/>
+                <specGrpRef target="elements/handDesc.xml"/>
+                <specGrpRef target="elements/handNote.xml"/>
                 <specGrpRef target="elements/handShift.xml"/>
                 <specGrpRef target="elements/hi.xml"/>
                 <specGrpRef target="elements/history.xml"/>
