@@ -28,7 +28,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-pubPlace-with-invalid-cert",
-            "<pubPlace cert='medium'>foo-medium</pubPlace>",
+            "<pubPlace cert='mid'>foo-mid</pubPlace>",
             False,
         ),
     ],

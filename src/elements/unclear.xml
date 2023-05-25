@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="unclear" module="core" mode="change"
+             xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    <desc xml:lang="de" versionDate="2023-05-25">Zeichnet eine unsichere Lesung aus. Ist die Ursache
+        eine Beschädigung, dann wird diese durch <gi>damage</gi> angegeben.</desc>
+    <desc xml:lang="en" versionDate="2023-05-25">Indicates an unsafe reading. If the cause is
+        damage, this is indicated by <gi>damage</gi>.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-25">Indique une lecture non sûre. Si la cause est une
+        détérioration, celle-ci est indiquée par <gi>damage</gi>.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global.responsibility"/>
+    </classes>
+    <content>
+        <rng:zeroOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:zeroOrMore>
+    </content>
+    <attList>
+        <attDef ident="agent" mode="delete"/>
+        <attDef ident="reason" mode="delete"/>
+        <attDef ident="resp" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-25">
+        <p xml:lang="de">Unsichere Lesung ohne Beschädigung</p>
+        <p xml:lang="fr">Lecture non sécurisée sans dommage</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"> ve<unclear cert="high">stik</unclear>lich </egXML>
+    </exemplum>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-25">
+        <p xml:lang="de">Verblasste Tinte in einer Editionsvorlage, bei der eine unsichere Lesung
+            durch den Bearbeitenden möglich ist</p>
+        <p xml:lang="fr">Lecture incertaine qui n'est pas due à un dommage, mais à l'encre faible.
+            L'éditeur utilise <gi>unclear</gi> avec <gi>damage</gi> pour indiquer son incertitude
+            sur ce passage</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"> und sol och der w<damage agent="faded_ink">
+                <unclear>eib</unclear>
+            </damage>el </egXML>
+    </exemplum>
+</elementSpec>
