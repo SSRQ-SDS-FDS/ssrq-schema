@@ -11,9 +11,13 @@
         <memberOf key="model.pPart.editorial"/>
     </classes>
     <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <textNode/>
+            <elementRef key="hi"/>
+            <elementRef key="lb"/>
+            <elementRef key="sic"/>
+            <elementRef key="unclear"/>
+        </alternate>
     </content>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-23">
         <p xml:lang="de">Beispiel für eine Abkürzung.</p>
