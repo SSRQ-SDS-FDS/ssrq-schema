@@ -22,7 +22,10 @@
     <attList>
         <attDef ident="place" mode="replace" usage="req">
             <datatype>
-                <dataRef key="ssrq.place.add"/>
+                <rng:choice>
+                    <rng:ref name="ssrq.place"/>
+                    <rng:ref name="ssrq.place.add"/>
+                </rng:choice>
             </datatype>
         </attDef>
         <attDef ident="rend" mode="replace">
