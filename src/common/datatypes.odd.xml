@@ -143,6 +143,48 @@
 
     </specGrp>
 
+    <specGrp xml:id="ssrq-bibl">
+
+        <dataSpec ident="ssrq.bibl.types">
+            <desc xml:lang="de" versionDate="2023-05-26">Typen bibliographischer Angaben</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">Types de données bibliographiques</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">Types of bibliographic references</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="edition">
+                        <desc xml:lang="de" versionDate="2023-05-26">Edition</desc>
+                        <desc xml:lang="en" versionDate="2023-05-26">edition</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-26">édition</desc>
+                        <desc xml:lang="it" versionDate="2023-05-26">edizione</desc>
+                    </valItem>
+                    <valItem ident="literature">
+                        <desc xml:lang="de" versionDate="2023-05-26">Literatur</desc>
+                        <desc xml:lang="en" versionDate="2023-05-26">literature</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-26">littérature</desc>
+                        <desc xml:lang="it" versionDate="2023-05-26">letteratura</desc>
+                    </valItem>
+                    <valItem ident="translation">
+                        <desc xml:lang="de" versionDate="2023-05-26">Übersetzung</desc>
+                        <desc xml:lang="en" versionDate="2023-05-26">translation</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-26">la traduction</desc>
+                        <desc xml:lang="it" versionDate="2023-05-26">traduzione</desc>
+                    </valItem>
+                    <valItem ident="url">
+                        <desc xml:lang="de" type="singular" versionDate="2023-05-26">URL</desc>
+                        <desc xml:lang="de" type="plural" versionDate="2023-05-26">URLs</desc>
+                        <desc xml:lang="en" type="singular" versionDate="2023-05-26">URL</desc>
+                        <desc xml:lang="en" type="plural" versionDate="2023-05-26">URLs</desc>
+                        <desc xml:lang="fr" type="singular" versionDate="2023-05-26">URL</desc>
+                        <desc xml:lang="fr" type="plural" versionDate="2023-05-26">URLs</desc>
+                        <desc xml:lang="it" type="singular" versionDate="2023-05-26">URL</desc>
+                        <desc xml:lang="it" type="plural" versionDate="2023-05-26">URLs</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+    </specGrp>
+
     <specGrp xml:id="ssrq-hand">
 
         <dataSpec ident="ssrq.hand" mode="add">
@@ -2414,6 +2456,38 @@
                 </valList>
             </content>
         </dataSpec>
+    </specGrp>
+
+    <specGrp xml:id="ssrq-struct">
+
+        <dataSpec ident="ssrq.struct.head" mode="add">
+            <desc xml:lang="de" versionDate="2023-05-26">Typen von Titeln zur Textstrukturierung</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">Types de titres pour structurer le texte</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">Types of headings for structuring text</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="title">
+                        <desc xml:lang="de" versionDate="2023-05-26">Haupttitel</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-26">titre principal</desc>
+                        <desc xml:lang="en" versionDate="2023-05-26">title</desc>
+                        <desc xml:lang="it" versionDate="2023-05-26">titolo principale</desc>
+                    </valItem>
+                    <valItem ident="subtitle">
+                        <desc xml:lang="de" versionDate="2023-05-26">Untertitel</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-26">sous-titre</desc>
+                        <desc xml:lang="en" versionDate="2023-05-26">subtitle</desc>
+                        <desc xml:lang="it" versionDate="2023-05-26">sottotitolo</desc>
+                    </valItem>
+                    <valItem ident="subsubtitle">
+                        <desc xml:lang="de" versionDate="2023-05-26">Unteruntertitel</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-26">sous-sous-titre</desc>
+                        <desc xml:lang="en" versionDate="2023-05-26">subsubtitle</desc>
+                        <desc xml:lang="it" versionDate="2023-05-26">sottosottotitolo</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
     </specGrp>
 
 </div>
