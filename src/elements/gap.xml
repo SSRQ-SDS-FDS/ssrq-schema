@@ -63,11 +63,6 @@
                 <sch:rule context="tei:gap[not(parent::tei:damage) and @source]">
                     <sch:report test="@unit or @quantity or @reason">If @source is specified on the <sch:name/>
                         element, @unit, @quantity and @reason are forbidden.</sch:report>
-                    <!-- ToDo: nachfolgend auskommentierte Regel prüfen -->
-                    <!--  fakultativ <sch:assert test="following-sibling::*[position() = 1 and
-                    self::tei:note]"
-                                         >If @source is specified on the <sch:name/> element, the <sch:name/> element must be immediately
-                    followed by a tei:note element.</sch:assert> -->
                 </sch:rule>
             </sch:pattern>
         </constraint>
