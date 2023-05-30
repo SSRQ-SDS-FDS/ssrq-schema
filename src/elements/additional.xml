@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="additional" module="msDescription"
+    mode="change">
+    <desc xml:lang="de" versionDate="2023-05-30">Erfassung von Verweisen auf Editionen, Regsten und
+        Literatur.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-30">Saisie des références aux éditions, aux registres
+        et à la littérature.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-30">Recording of references to editions, registers and
+        literature.</desc>
+    <classes mode="replace"/>
+    <content>
+        <elementRef key="listBibl" minOccurs="1" maxOccurs="unbounded"/>
+    </content>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-30">
+        <p xml:lang="de">Beispielhafter Aufbau</p>
+        <p xml:lang="fr">Exemple de structure</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <additional>
+                <listBibl>
+                    <!-- ... -->
+                </listBibl>
+            </additional>
+        </egXML>
+    </exemplum>
+</elementSpec>
