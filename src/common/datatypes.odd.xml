@@ -950,6 +950,29 @@
             </valList>
         </dataSpec>
 
+        <dataSpec ident="ssrq.measure.scope">
+            <desc xml:lang="de" versionDate="2023-05-30">Masse zur Beschreibung des Textumfangs</desc>
+            <desc xml:lang="en" versionDate="2023-05-30">Mass for the description of the text volume</desc>
+            <desc xml:lang="fr" versionDate="2023-05-30">Dimensions pour décrire la taille du texte</desc>
+            <desc xml:lang="it" versionDate="2023-05-30">Dimensioni per descrivere le dimensioni del testo</desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="leaf">
+                        <desc xml:lang="de" versionDate="2023-05-30">Blatt</desc>
+                        <desc xml:lang="en" versionDate="2023-05-30">leaf</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-30">feuille</desc>
+                        <desc xml:lang="it" versionDate="2023-05-30">foglio</desc>
+                    </valItem>
+                    <valItem ident="page">
+                        <desc xml:lang="de" versionDate="2023-05-30">Seite</desc>
+                        <desc xml:lang="en" versionDate="2023-05-30">page</desc>
+                        <desc xml:lang="fr" versionDate="2023-05-30">page</desc>
+                        <desc xml:lang="it" versionDate="2023-05-30">pagina</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
         <dataSpec ident="ssrq.measure.weight">
             <desc xml:lang="de" versionDate="2023-03-17">Gewichtsmasse</desc>
             <desc xml:lang="en" versionDate="2023-05-16">Weight measurements</desc>
