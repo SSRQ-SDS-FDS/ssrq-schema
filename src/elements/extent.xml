@@ -2,14 +2,17 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="extent" module="header" mode="change"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-04-19">Beschreibt die Masse einer Quelle</desc>
-    <desc xml:lang="en" versionDate="2023-04-19">Describes the dimension of a source</desc>
-    <desc xml:lang="fr" versionDate="2023-04-19">Décrit les dimensions d'une source</desc>
+    <desc xml:lang="de" versionDate="2023-04-19">Beschreibt die Masse einer Quelle sowie den Textumfang</desc>
+    <desc xml:lang="en" versionDate="2023-04-19">Describes the mass of a source as well as the text volume</desc>
+    <desc xml:lang="fr" versionDate="2023-04-19">Décrit la masse d'une source ainsi que le volume du texte</desc>
     <classes mode="replace">
         <memberOf key="model.biblPart"/>
     </classes>
     <content>
-        <elementRef key="dimensions" minOccurs="1" maxOccurs="unbounded"/>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <elementRef key="dimensions"/>
+            <elementRef key="extent"/>
+        </alternate>
     </content>
     <constraintSpec scheme="schematron" ident="sch-el-extent">
         <desc xml:lang="en" versionDate="2023-04-19">Constraint for tei:extent to ensure unique
@@ -20,6 +23,12 @@
                     <sch:assert
                         test="count(distinct-values(tei:dimensions/@type)) = count(tei:dimensions)"
                         >The @type of each tei:dimensions, which is a child of <sch:name/>, needs to
+                        be unique.</sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:extent[count(tei:measure) > 1]">
+                    <sch:assert
+                        test="count(distinct-values(tei:measure/@type)) = count(tei:measure)"
+                        >The @type of each tei:measure, which is a child of <sch:name/>, needs to
                         be unique.</sch:assert>
                 </sch:rule>
             </sch:pattern>
@@ -37,6 +46,8 @@
                 <dimensions type="plica">
                     <width unit="cm" quantity="4.0"/>
                 </dimensions>
+                <measure type="text_scope" unit="leaf" quantity="2"/>
+                <measure type="text_scope" unit="page" quantity="4"/>
             </extent>
         </egXML>
     </exemplum>

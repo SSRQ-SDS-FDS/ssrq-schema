@@ -22,6 +22,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-measure-as-text-scope",
+            "<measure type='text_scope' unit='leaf' quantity='1'/>",
+            True,
+        ),
+        (
             "invalid-measure-without-unit",
             "<measure type='currency' origin='ZH' quantity='2'>zwai phunt nuwer Zuricher</measure>",
             False,
@@ -56,6 +61,18 @@ def test_measure(
             "invalid-area-unit",
             "<measure type='area' unit='bar' quantity='8' commodity='field'>acht juchart acher</measure>",
             "is not a valid area measurement",
+            False,
+        ),
+        (
+            "valid-scope-unit",
+            "<extent><measure type='text_scope' unit='leaf' quantity='8'/></extent>",
+            None,
+            True,
+        ),
+        (
+            "invalid-scope-unit",
+            "<measure type='text_scope' unit='bar' quantity='8'/>",
+            "is no valid scope measurement",
             False,
         ),
     ],
