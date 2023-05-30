@@ -9,19 +9,23 @@
         non imprimées et imprimées ainsi que des références bibliographiques.</desc>
     <classes mode="replace">
         <memberOf key="model.biblLike"/>
+        <memberOf key="att.typed"/>
     </classes>
     <content>
-        <sequence>
-            <elementRef key="head"/>
             <elementRef key="bibl" minOccurs="1" maxOccurs="unbounded"/>
-        </sequence>
     </content>
+    <attList>
+        <attDef ident="type" mode="change" usage="req">
+            <datatype>
+                <dataRef key="ssrq.bibl.types"/>
+            </datatype>
+        </attDef>
+    </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-30">
         <p xml:lang="de">Verweise auf Regsten</p>
         <p xml:lang="fr">Références à Regsten</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <listBibl>
-                <head type="summary">Regest</head>
+            <listBibl type="summary">
                 <bibl>Rigendinger 2007, S. 221–223</bibl>
             </listBibl>
         </egXML>

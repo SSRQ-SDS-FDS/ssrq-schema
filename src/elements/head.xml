@@ -34,21 +34,6 @@
             </rng:choice>
         </rng:oneOrMore>
     </content>
-    <constraintSpec scheme="schematron" ident="sch-el-head">
-        <constraint>
-            <sch:pattern>
-                <sch:let name="headType"
-                    value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.bibl.types']//tei:valItem/@ident, '|'), '&quot;')}}"/>
-                <sch:rule context="tei:head[ancestor::tei:listBibl]">
-                    <sch:assert test=".[@type][matches(@type, concat('^', $headType, '$'))]">If <sch:name/>
-                        is part of listBibl the value of @type must be one of <sch:value-of
-                            select="$headType"/></sch:assert>
-                    <sch:assert test="not(*)">If <sch:name/> is part of listBibl only text is
-                        allowed.</sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
     <attList>
         <attDef ident="place" mode="change">
             <datatype>
@@ -61,10 +46,7 @@
         </attDef>
         <attDef ident="type" mode="change">
             <datatype>
-                <rng:choice>
-                    <rng:ref name="ssrq.bibl.types"/>
-                    <rng:ref name="ssrq.struct.head"/>
-                </rng:choice>
+                <dataRef key="ssrq.struct.head"/>
             </datatype>
         </attDef>
         <attDef ident="cert" mode="delete"/>

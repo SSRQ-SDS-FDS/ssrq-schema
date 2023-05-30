@@ -8,17 +8,17 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-listBibl",
-            "<listBibl><head type='literature'>bar</head><bibl>foo</bibl></listBibl>",
+            "<listBibl type='literature'><bibl>foo</bibl></listBibl>",
             True,
         ),
         (
-            "invalid-listBibl-without-head",
+            "invalid-listBibl-without-type",
             "<listBibl><bibl>foo</bibl></listBibl>",
             False,
         ),
         (
             "invalid-listBibl-without-bibl",
-            "<listBibl><head type='literature'>bar</head></listBibl>",
+            "<listBibl type='literature'/>",
             False,
         ),
     ],

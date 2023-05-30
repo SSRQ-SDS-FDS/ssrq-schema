@@ -8,7 +8,7 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-additional",
-            "<additional><listBibl><head type='literature'>bar</head><bibl>foo</bibl></listBibl></additional>",
+            "<additional><listBibl type='literature'><bibl>foo</bibl></listBibl></additional>",
             True,
         ),
         (
