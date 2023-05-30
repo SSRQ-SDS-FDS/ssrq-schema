@@ -58,6 +58,14 @@ class SimpleTEIWriter:
         return str(self.path.absolute() / "*.xml")
 
 
+def load_example(name: str) -> str:
+    """Load the example file with the given name."""
+    with open(
+        Path(__file__).parent / "examples" / f"{name}", "r", encoding="utf-8"
+    ) as f:
+        return f.read()
+
+
 def change_rng_start(rng: str, name: str) -> str:
     """Change the start element of the RNG file to the given name."""
     with PySaxonProcessor(license=False) as proc:

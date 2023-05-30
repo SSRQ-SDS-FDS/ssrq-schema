@@ -1,4 +1,4 @@
-from test.conftest import RNG_test_function
+from test.conftest import RNG_test_function, load_example
 
 import pytest
 
@@ -8,39 +8,7 @@ import pytest
     [
         (
             "valid-sourceDesc",
-            """ <sourceDesc>
-            <msDesc>
-               <msIdentifier><idno xml:lang='de' source='http://foo.bar'>bar</idno><repository xml:lang='de'>foo</repository></msIdentifier>
-               <head>Projekt eines Eides für den Förster oder Bannwart in Sax-Forstegg</head>
-               <msContents>
-                  <summary><p xml:lang='de'>foo</p></summary>
-                  <msItem>
-                     <textLang xml:lang="de"/>
-                     <filiation type="current">Abschrift, Buch (729 Seiten) mit kartoniertem Einband</filiation>
-                  </msItem>
-               </msContents>
-               <physDesc>
-                  <objectDesc>
-                     <supportDesc>
-                        <support>
-                           <material type='paper'/>
-                        </support>
-                        <extent>
-                           <dimensions type="leaves">
-                              <height unit="cm" quantity="36.0"/>
-                              <width unit="cm" quantity="23.5"/>
-                           </dimensions>
-                        </extent>
-                     </supportDesc>
-                  </objectDesc>
-               </physDesc>
-               <history>
-                  <origin>
-                     <origDate calendar='gregorian' from-custom="1615-04-15" to-custom="1700-12-31"/>
-                  </origin>
-               </history>
-            </msDesc>
-         </sourceDesc>""",
+            "<sourceDesc>{msDesc}</sourceDesc>",
             True,
         ),
         (
@@ -56,4 +24,5 @@ def test_sourceDesc_rng(
     markup: str,
     result: bool,
 ):
+    markup = markup.format(msDesc=load_example("msDesc.xml"))
     test_element_with_rng("sourceDesc", name, markup, result, False)
