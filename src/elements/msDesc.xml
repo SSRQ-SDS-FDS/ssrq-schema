@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="msDesc" module="msdescription" mode="change">
+    <desc xml:lang="de" versionDate="2023-05-30">Beschreibt das edierte Quellenstück mit
+        Aufbewahrungsort, Material, Layout, Schreiber, Siegel und Bibliographie zu Sekundärliteratur
+        (Metadaten).</desc>
+    <desc xml:lang="fr" versionDate="2023-05-30">Décrit la pièce de source éditée avec le lieu de
+        conservation, le matériau, la mise en page, le scribe, le sceau et la bibliographie sur la
+        littérature secondaire (métadonnées).</desc>
+    <desc xml:lang="en" versionDate="2023-05-30">Describes the edited source document, including
+        place of preservation, material, layout, scribe, seal and bibliography on secondary
+        literature (metadata).</desc>
+    <classes mode="replace">
+        <memberOf key="model.biblLike"/>
+    </classes>
+    <content>
+        <sequence>
+            <elementRef key="msIdentifier" minOccurs="0" maxOccurs="1"/>
+            <elementRef key="head" minOccurs="1" maxOccurs="unbounded"/>
+            <elementRef key="msContents"/>
+            <elementRef key="physDesc"/>
+            <elementRef key="history"/>
+            <elementRef key="additional" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+    </content>
+    <!-- ToDo: Aktuelles und repräsentatives Beispiel ergänzen! -->
+</elementSpec>

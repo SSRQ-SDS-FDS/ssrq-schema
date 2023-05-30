@@ -1,4 +1,4 @@
-from test.conftest import RNG_test_function
+from test.conftest import RNG_test_function, load_example
 
 import pytest
 
@@ -8,14 +8,7 @@ import pytest
     [
         (
             "valid-witness",
-            """<witness xml:id='ad28656b-5c8d-459c-afb4-3e6ddf70810d' n="A">
-                                                <msDesc>
-                                                    <msIdentifier>
-                                                        <idno>foo</idno>
-                                                        <repository>bar</repository>
-                                                    </msIdentifier>
-                                                </msDesc>                            
-                                            </witness>""",
+            """<witness xml:id='ad28656b-5c8d-459c-afb4-3e6ddf70810d' n="A">{msDesc}</witness>""",
             True,
         ),
         (
@@ -26,7 +19,7 @@ import pytest
                                                         <idno>foo</idno>
                                                         <repository>bar</repository>
                                                     </msIdentifier>
-                                                </msDesc>                            
+                                                </msDesc>
                                             </witness>""",
             False,
         ),
@@ -38,7 +31,7 @@ import pytest
                                                                     <idno>foo</idno>
                                                                     <repository>bar</repository>
                                                                 </msIdentifier>
-                                                            </msDesc>                            
+                                                            </msDesc>
                                                         </witness>""",
             False,
         ),
@@ -50,4 +43,5 @@ def test_witness(
     markup: str,
     result: bool,
 ):
+    markup = markup.format(msDesc=load_example("msDesc.xml"))
     test_element_with_rng("witness", name, markup, result, False)
