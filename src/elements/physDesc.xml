@@ -16,6 +16,7 @@
     <content>
         <sequence>
             <elementRef key="objectDesc"/>
+            <elementRef key="bindingDesc" minOccurs="0" maxOccurs="1"/>
             <elementRef key="handDesc" minOccurs="0" maxOccurs="1"/>
             <elementRef key="sealDesc" minOccurs="0" maxOccurs="1"/>
         </sequence>
