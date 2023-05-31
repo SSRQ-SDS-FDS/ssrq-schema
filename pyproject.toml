@@ -1,6 +1,6 @@
 [ssrq.schema.meta]
 authors = ["Bastian Politycki <bastian.politycki@unisg.ch>", "Pascale Sutter <pascale.sutter@unisg.ch>"]
-schemas = [{title="SSRQ Editionsrichtlinien", description = "The main schema used by the Swiss Law Sources to validate TEI XML transcriptions", entry = "main.odd.xml", name="TEI_Schema", version="0.0.1", tei_version="4.5.0"}]
+schemas = [{title="SSRQ Editionsrichtlinien", description = "The main schema used by the Swiss Law Sources to validate TEI XML transcriptions", entry = "main.odd.xml", name="TEI_Schema", version="1.0.0-alpha.1", tei_version="4.5.0"}]
 
 [tool.poetry]
 name = "ssrq-schema"
