@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="num" module="core" mode="change"
+    xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    <desc xml:lang="de" versionDate="2023-05-30">Enthält eine Nummer im transkribierten Quelltext –
+        jedoch Massangaben, Währungen oder Datumsangaben. Der Wert wird im Attribut <att>value</att>
+        maschinenlesbar hinterlegt.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-30">Contient un numéro dans le texte source transcrit -
+        mais des indications de mesure, des devises ou des dates. La valeur est enregistrée dans
+        l'attribut <att>value</att> de manière à être lisible par une machine.</desc>
+    <desc xml:lang="en" versionDate="2023-05-30">Contains a number in the transcribed source text -
+        but indications of measurement, currency or dates. The value is stored in the <att>value</att>
+        attribute so that it can be read by a machine.</desc>
+    <classes mode="replace">
+        <memberOf key="model.measureLike"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <textNode/>
+            <elementRef key="hi"/>
+            <elementRef key="lb"/>
+            <elementRef key="pb"/>
+        </alternate>
+    </content>
+    <attList>
+        <attDef ident="value" mode="change" usage="req">
+            <desc xml:lang="de" versionDate="2023-05-31">Zahlenwert in arabischen Ziffern</desc>
+            <desc xml:lang="fr" versionDate="2023-05-31">Valeur numérique en chiffres arabes</desc>
+            <desc xml:lang="en" versionDate="2023-05-31">Numerical value in Arabic numerals</desc>
+            <datatype>
+                <rng:choice>
+                    <rng:data type="float"/>
+                    <rng:data type="int"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="delete"/>
+    </attList>
+    <exemplum type="ssrq-doc-example" versionDate="2023-05-16">
+        <p xml:lang="de">Erfassung eines Zeitpunkts</p>
+        <p xml:lang="fr">Saisie d'un moment</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <time when-custom="08:48:00">8 Uhr 48</time>
+        </egXML>
+    </exemplum>
+</elementSpec>
