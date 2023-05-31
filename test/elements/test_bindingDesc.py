@@ -25,4 +25,3 @@ def test_bindingDesc(
     result: bool,
 ):
     test_element_with_rng("bindingDesc", name, markup, result, False)
-
