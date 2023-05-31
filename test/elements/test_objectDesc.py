@@ -8,7 +8,7 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-objectDesc",
-            """<objectDesc>
+            """<objectDesc form='copy'>
                 <supportDesc>
                     <support>
                         <material type='paper'/>

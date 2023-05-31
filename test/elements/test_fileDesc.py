@@ -54,7 +54,7 @@ import pytest
                             </msItem>
                         </msContents>
                         <physDesc>
-                            <objectDesc>
+                            <objectDesc form='copy'>
                                 <supportDesc>
                                     <support>
                                         <material type="paper"/>
