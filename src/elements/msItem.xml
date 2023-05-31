@@ -11,14 +11,11 @@
         <memberOf key="model.msItemPart"/>
     </classes>
     <content>
-        <elementRef key="textLang" minOccurs="0" maxOccurs="unbounded"/>
-        <sequence preserveOrder="false">
-            <elementRef key="filiation" minOccurs="1" maxOccurs="unbounded"/>
-            <alternate minOccurs="0">
-                <elementRef key="author" maxOccurs="unbounded"/>
-                <elementRef key="docImprint" maxOccurs="1"/>
-            </alternate>
-        </sequence>
+        <elementRef key="textLang" minOccurs="1" maxOccurs="unbounded"/>
+        <alternate minOccurs="0">
+            <elementRef key="author" maxOccurs="unbounded"/>
+            <elementRef key="docImprint" maxOccurs="1"/>
+        </alternate>
     </content>
     <!-- ToDo: Prüfen, ob der Constraint aus dem alten Schema noch benötigt wird -->
     <exemplum type="ssrq-doc-example" versionDate="2023-05-30">
@@ -27,7 +24,6 @@
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <msItem>
                 <textLang xml:lang="de"/>
-                <filiation type="current">Original</filiation>
             </msItem>
         </egXML>
     </exemplum>

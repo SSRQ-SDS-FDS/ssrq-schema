@@ -51,8 +51,6 @@ from ..conftest import RNG_test_function
                                 </summary>
                                 <msItem>
                                     <textLang xml:lang="de"/>
-                                    <filiation type="current">Abschrift, Buch (729 Seiten) mit
-                                        kartoniertem Einband</filiation>
                                 </msItem>
                             </msContents>
                             <physDesc>

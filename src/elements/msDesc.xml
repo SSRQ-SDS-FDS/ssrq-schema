@@ -17,7 +17,7 @@
         <sequence>
             <elementRef key="msIdentifier" minOccurs="0" maxOccurs="1"/>
             <elementRef key="head" minOccurs="1" maxOccurs="unbounded"/>
-            <elementRef key="msContents"/>
+            <elementRef key="msContents" minOccurs="0" maxOccurs="1"/>
             <elementRef key="physDesc"/>
             <elementRef key="history"/>
             <elementRef key="additional" minOccurs="0" maxOccurs="1"/>

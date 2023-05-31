@@ -10,7 +10,7 @@
         source as well as information regardging situation of transmission.</desc>
     <classes mode="replace"/>
     <content>
-        <sequence>
+        <sequence minOccurs="1">
             <elementRef key="summary" minOccurs="0" maxOccurs="1"/>
             <elementRef key="msItem"/>
         </sequence>
@@ -27,7 +27,6 @@
                 </summary>
                 <msItem>
                     <textLang xml:lang="de"/>
-                    <filiation type="current">Original</filiation>
                 </msItem>
             </msContents>
         </egXML>

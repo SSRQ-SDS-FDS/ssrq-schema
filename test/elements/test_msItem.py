@@ -8,12 +8,12 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-msItem",
-            "<msItem><textLang xml:lang='de'/><filiation type='current'>Original</filiation></msItem>",
+            "<msItem><textLang xml:lang='de'/></msItem>",
             True,
         ),
         (
             "invalid-msItem",
-            "<msItem><textLang xml:lang='de'/></msItem>",
+            "<msItem></msItem>",
             False,
         ),
     ],

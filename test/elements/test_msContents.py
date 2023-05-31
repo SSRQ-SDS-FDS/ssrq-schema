@@ -17,7 +17,6 @@ from ..conftest import RNG_test_function
                 </summary>
                 <msItem>
                     <textLang xml:lang="de"/>
-                    <filiation type="current">Original</filiation>
                 </msItem>
             </msContents>
             """,
@@ -29,7 +28,6 @@ from ..conftest import RNG_test_function
             <msContents>
                 <msItem>
                     <textLang xml:lang="de"/>
-                    <filiation type="current">Original</filiation>
                 </msItem>
             </msContents>
             """,
@@ -44,6 +42,14 @@ from ..conftest import RNG_test_function
                         Konrad, Heinz und Hans Grafer den Zoll von St. Ulrich und die Schenke in
                         Sevelen.</p>
                 </summary>
+            </msContents>
+            """,
+            False,
+        ),
+        (
+            "invalid-msContents-without-child",
+            """
+            <msContents>
             </msContents>
             """,
             False,

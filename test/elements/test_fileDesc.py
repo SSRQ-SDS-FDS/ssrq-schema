@@ -51,8 +51,6 @@ import pytest
                             </summary>
                             <msItem>
                                 <textLang xml:lang="de"/>
-                                <filiation type="current">Abschrift, Buch (729 Seiten) mit
-                                    kartoniertem Einband</filiation>
                             </msItem>
                         </msContents>
                         <physDesc>
@@ -116,8 +114,6 @@ import pytest
                             </summary>
                             <msItem>
                                 <textLang xml:lang="de"/>
-                                <filiation type="current">Abschrift, Buch (729 Seiten) mit
-                                    kartoniertem Einband</filiation>
                             </msItem>
                         </msContents>
                         <physDesc>
