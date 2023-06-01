@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="seal" module="msdescription" mode="change"
-             xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <desc xml:lang="de" versionDate="2023-05-31">Beschreibt das Aussehen eines Siegels.</desc>
     <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'apparence d'un sceau.</desc>
     <desc xml:lang="en" versionDate="2023-05-31">Describes the appearance of a seal.</desc>
@@ -21,6 +21,20 @@
             <elementRef key="p" minOccurs="0"/>
         </sequence>
     </content>
+    <constraintSpec scheme="schematron" ident="sch-el-seal" mode="add">
+        <desc versionDate="2023-06-01" xml:lang="en">Schematron rules for tei:seal</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:seal[preceding-sibling::tei:seal]">
+                    <sch:let name="expectedNumber"
+                        value="./preceding-sibling::tei:seal/@n + 1"/>
+                    <sch:assert
+                        test="./@n = $expectedNumber">The value of @n must be equal to <sch:value-of
+                            select="$expectedNumber"/>.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <attList>
         <attDef ident="n" mode="change" usage="req">
             <desc xml:lang="de" versionDate="2023-05-31">Fortlaufende Zählung der Siegel</desc>
@@ -61,7 +75,8 @@
         <p xml:lang="fr">Exemple de saisie d'un sceau</p>
         <p xml:lang="fr">Saisie d'un moment</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <seal n="1" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
+            <seal n="1" material="wax" shape="round" attachment="sealed_on_a_parchment_tag"
+                condition="damaged">
                 <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
             </seal>
         </egXML>
