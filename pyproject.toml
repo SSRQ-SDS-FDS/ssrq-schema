@@ -29,6 +29,7 @@ pytest-xdist = "^3.2.0"
 [tool.poetry.group.docs.dependencies]
 mkdocs-material = "^9.1.15"
 mkdocs-static-i18n = "^0.56"
+snakemd = "^2.1.0"
 
 [tool.pytest.ini_options]
 testpaths = [

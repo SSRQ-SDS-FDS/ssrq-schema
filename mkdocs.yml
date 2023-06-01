@@ -14,8 +14,8 @@ extra:
 extra_css:
   - assets/css/extra.css
 # This hook creates the odd and generates a markdown-file per element (de, fr, en)
-#hooks:
-#  - utils/odd2md.py
+hooks:
+  - ./utils/doc_hooks.py
 markdown_extensions:
   - footnotes
 plugins:
