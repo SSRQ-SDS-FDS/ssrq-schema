@@ -50,6 +50,14 @@ function compile {
     cmd python utils/main.py
 }
 
+function build-docs {
+    cmd mkdocs build
+}
+
+function serve-docs {
+    cmd mkdocs serve
+}
+
 function validate {
     echo "Checking the xml sources..."
     cmd python utils/validate.py

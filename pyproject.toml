@@ -25,6 +25,11 @@ pyschval = {git = "https://github.com/SSRQ-SDS-FDS/py-schematron-validator.git",
 ssrq-cli = {git = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-cli.git", rev = "main"}
 pytest-xdist = "^3.2.0"
 
+
+[tool.poetry.group.docs.dependencies]
+mkdocs-material = "^9.1.15"
+mkdocs-static-i18n = "^0.56"
+
 [tool.pytest.ini_options]
 testpaths = [
     "tests"

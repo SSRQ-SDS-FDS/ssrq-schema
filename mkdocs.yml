@@ -1,0 +1,55 @@
+copyright: Copyright &copy; 2023 SSRQ-SDS-FDS
+docs_dir: docs
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/SSRQ-SDS-FDS/ssrq-schema
+      name: Schema of the SSRQ on GitHub
+    - icon: fontawesome/solid/computer
+      link: https://editio.ssrq-online.ch
+      name: editio / digital scholarly edition
+    - icon: material/information
+      link: https://www.ssrq-sds-fds.ch/en/service-menu/contact/
+      name: contact / imprint
+extra_css:
+  - assets/css/extra.css
+# This hook creates the odd and generates a markdown-file per element (de, fr, en)
+#hooks:
+#  - utils/odd2md.py
+markdown_extensions:
+  - footnotes
+plugins:
+  - search
+  - i18n:
+      default_language: de
+      docs_structure: suffix
+      languages:
+        default:
+          build: true
+          name: Default (de)
+          site_name: SSRQ Dokumentation
+        fr:
+          build: true
+          name: Français
+          site_name: SDS Documentation
+        en:
+          build: true
+          name: English
+          site_name: SLS Documentation
+      nav_translations:
+        de:
+          Base: Philologische Grundlagen
+          Elements: Tag-Bibliothek
+        en:
+          Base: Philological foundations
+          Elements: Tag library
+        fr:
+          Base: Bases philologiques
+          Elements: Bibliothèque de tags
+site_name: SSRQ Docs
+theme:
+  favicon: assets/images/favicon-ssrq-32.png
+  features:
+    - navigation.path
+    - navigation.top
+  name: material
