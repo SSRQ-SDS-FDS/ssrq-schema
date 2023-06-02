@@ -37,7 +37,7 @@
     </constraintSpec>
     <attList>
         <attDef ident="n" mode="change" usage="req">
-            <desc xml:lang="de" versionDate="2023-05-31">Fortlaufende Zählung der Siegel</desc>
+            <desc xml:lang="de" versionDate="2023-05-31">Fortlaufende Zählung der Siegel von links nach rechts (anhand der Siegelschlitze bzw. der tatsächlich vorhandenen Siegel)</desc>
             <desc xml:lang="fr" versionDate="2023-05-31">Comptage continu des sceaux</desc>
             <desc xml:lang="en" versionDate="2023-05-31">Continuous seal counting</desc>
             <datatype>
@@ -45,7 +45,7 @@
             </datatype>
         </attDef>
         <attDef ident="place" mode="replace">
-            <desc xml:lang="de" versionDate="2023-05-31">Beschreibt den Ort des Siegels</desc>
+            <desc xml:lang="de" versionDate="2023-05-31">Beschreibt den Anbringungsort des Siegels</desc>
             <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'emplacement du sceau</desc>
             <desc xml:lang="en" versionDate="2023-05-31">Describes the location of the seal</desc>
             <valList type="closed">
