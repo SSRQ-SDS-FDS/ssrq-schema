@@ -11,7 +11,7 @@ from .conftest import XsltParam, apply_xsl, check_result_with_xpath
                 XsltParam(
                     name="modes",
                     type="xs:string",
-                    value=["add-att-descirptions"],
+                    value=["add-att-descriptions"],
                 ),
             ],
             "count(//tei:attDef[not(tei:desc)][not(@mode = 'delete')]) = 0",
@@ -23,6 +23,15 @@ from .conftest import XsltParam, apply_xsl, check_result_with_xpath
             ],
             "count(//tei:attDef[not(./tei:desc)][not(./@mode = 'delete')]) = 0",
             False,
+        ),
+        (
+            [
+                XsltParam(
+                    name="modes", type="xs:string", value=["resolve-keys-and-names"]
+                ),
+            ],
+            "count(//tei:attDef[tei:datatype[tei:dataRef[@key]]]) = 0",
+            True,
         ),
     ],
 )

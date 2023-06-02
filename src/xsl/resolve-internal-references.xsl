@@ -4,8 +4,8 @@
     xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns="http://www.tei-c.org/ns/1.0"
     expand-text="yes" exclude-result-prefixes="#all" version="3.0">
 
-    <!-- 
-    : This stylesheets includes some templates to resolve all internal references, 
+    <!--
+    : This stylesheets includes some templates to resolve all internal references,
     : which are part of the compiled odd. Afterwards the result can easily be used
     : for the documentation.
     :
@@ -16,7 +16,7 @@
     <xsl:output method="xml" indent="yes"/>
 
     <xsl:param name="modes" as="xs:string+"
-        select="('add-att-descirptions', 'resolve-keys-and-names')"/>
+        select="('add-att-descriptions', 'resolve-keys-and-names')"/>
 
     <xsl:template match="/">
         <xsl:variable name="initial-odd" select="."/>
@@ -27,12 +27,10 @@
             <xsl:variable name="mode-name" select="." as="xs:string"/>
             <xsl:variable name="odd-result" as="node()+">
                 <xsl:choose>
-                    <xsl:when test="$mode-name = 'add-att-descirptions'">
-                        <xsl:message select="$mode-name"/>
+                    <xsl:when test="$mode-name = 'add-att-descriptions'">
                         <xsl:apply-templates select="$odd" mode="add-att-descriptions"/>
                     </xsl:when>
                     <xsl:when test="$mode-name = 'resolve-keys-and-names'">
-                        <xsl:message select="$mode-name"/>
                         <xsl:apply-templates select="$odd" mode="resolve-keys-and-names"/>
                     </xsl:when>
                     <xsl:otherwise>
@@ -57,7 +55,7 @@
         </xsl:copy>
     </xsl:template>
 
-    <!-- 
+    <!--
     : A template to fill every tei:attDef with corresponding tei:desc-elements,
     : which are missing, if the attributes are inherited from a class.
     :
@@ -100,14 +98,30 @@
         </xsl:copy>
     </xsl:template>
 
-    <!-- 
+    <!--
     : A template to resolve the values of datatypes, which are referenced by tei:dataRef.
     :
     : @author: Bastian Politycki
     -->
-    <xsl:template match="tei:dataRef[@key]" mode="resolve-keys-and-names">
-       <!-- ... -->
+    <xsl:template match="tei:datatype[tei:dataRef[@key]]" mode="resolve-keys-and-names">
+        <xsl:copy-of select="tei:find-referenced-by-key(./tei:dataRef, ./tei:dataRef/@key)"/>
     </xsl:template>
+
+    <xsl:function name="tei:find-referenced-by-key" as="element(tei:valList)?">
+        <xsl:param name="context" as="element(tei:dataRef)"/>
+        <xsl:param name="key" as="xs:string"/>
+        <xsl:variable name="dataSpec" as="element(tei:dataSpec)"
+            select="$context/root()//tei:dataSpec[@ident = $key]"/>
+        <xsl:variable name="output" as="element(tei:valList)?">
+            <xsl:choose>
+                <xsl:when test="$dataSpec[.//tei:valList]">
+                    <xsl:sequence select="$dataSpec//tei:valList"/>
+                </xsl:when>
+                <xsl:otherwise/>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:sequence select="$output"/>
+    </xsl:function>
 
 
 
