@@ -6,13 +6,12 @@ from ..conftest import RNG_test_function
 @pytest.mark.parametrize(
     "name, markup, result, message",
     [
-        # Test aktivieren, sobald <gi>add</gi> modelliert wurde.
-        # (
-        #    "valid-damage-with-add",
-        #    "<damage agent='water_spot'><add hand='otherHand' place='overwritten'>zuͦ trincken</add></damage>",
-        #    False,
-        #    "without matching ID",
-        # ),
+        (
+            "valid-damage-with-add",
+            "<damage agent='water_spot'><add hand='otherHand' place='overwritten'>zuͦ trincken</add></damage>",
+            False,
+            "without matching ID",
+        ),
         (
             "valid-damage-with-gap",
             "<damage agent='faded_ink clipping'><gap quantity='9' unit='cm'/></damage>",
