@@ -2,11 +2,14 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="msItem" module="msdescription" mode="change">
     <desc xml:lang="de" versionDate="2023-05-30">Enthält Informationen zur Textsprache der Quelle
-        und Überlieferungssituation.</desc>
+        und Überlieferungssituation.
+    </desc>
     <desc xml:lang="fr" versionDate="2023-05-30">Contient des informations sur la langue du texte de
-        la source et la situation de transmission.</desc>
+        la source et la situation de transmission.
+    </desc>
     <desc xml:lang="en" versionDate="2023-05-30">Contains information on the textual language of the
-        source and the situation of transmission.</desc>
+        source and the situation of transmission.
+    </desc>
     <classes mode="replace">
         <memberOf key="model.msItemPart"/>
     </classes>
@@ -17,7 +20,6 @@
             <elementRef key="docImprint" maxOccurs="1"/>
         </alternate>
     </content>
-    <!-- ToDo: Prüfen, ob der Constraint aus dem alten Schema noch benötigt wird -->
     <exemplum type="ssrq-doc-example" versionDate="2023-05-30">
         <p xml:lang="de">Modellhafter Aufbau</p>
         <p xml:lang="de">Structure modèle</p>

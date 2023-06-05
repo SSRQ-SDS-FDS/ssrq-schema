@@ -79,7 +79,6 @@ def test_text(
 def test_text_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
-    """Test the constraints defined for tei:text."""
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints

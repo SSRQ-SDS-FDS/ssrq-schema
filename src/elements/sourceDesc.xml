@@ -3,12 +3,15 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="sourceDesc" module="header" mode="change">
     <desc xml:lang="de" versionDate="2023-04-25">Informationen zum Quellstück – dazu zählen: Inhalt
         (Regest), Aufbewahrungsort, Material, Layout, Schreiber, Siegel und bibliographische
-        Angaben.</desc>
+        Angaben.
+    </desc>
     <desc xml:lang="en" versionDate="2023-04-25">Information on the source item - this includes:
-        Content (registry), location, material, layout, scribe, seal and bibliographic information.</desc>
+        Content (registry), location, material, layout, scribe, seal and bibliographic information.
+    </desc>
     <desc xml:lang="fr" versionDate="2023-04-25">Informations sur la pièce source - cela comprend :
         le contenu (regest), le lieu de conservation, le matériau, la mise en page, le scribe, le
-        sceau et les informations bibliographiques.</desc>
+        sceau et les informations bibliographiques.
+    </desc>
     <classes mode="replace"/>
     <content>
         <alternate minOccurs="1" maxOccurs="1">
@@ -16,5 +19,4 @@
             <elementRef key="listWit"/>
         </alternate>
     </content>
-    <!-- ToDo: Beispiel ergänzen -->
 </elementSpec>

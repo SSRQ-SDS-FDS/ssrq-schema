@@ -68,11 +68,6 @@
         <!-- Modified attribute classes -->
         <classSpec ident="att.canonical" type="atts" mode="change">
             <attList>
-                <!-- ToDo: Überprüfe Attributdefinitionen.
-                        Verweise auf Datenbank-IDs in das Attribut key verlegen.
-                        Andere Lösung für die Arbeitsschritte "transcript" usw. finden, z. B.
-                        respStmt mit @type oder resp mit @type.
-                -->
                 <attDef ident="key" mode="replace">
                     <desc versionDate="2023-04-28" xml:lang="de">Tätigkeit, für die ein Bearbeiter
                         oder eine Organisation verantwortlich ist.
@@ -242,7 +237,8 @@
                         </p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <date datingMethod="julian" from-custom="1583-05-30"
-                                to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584</date>
+                                  to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
+                            </date>
                         </egXML>
                     </exemplum>
                 </attDef>
@@ -270,7 +266,8 @@
                         </p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <date datingMethod="julian" from-custom="1583-05-30"
-                                to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584</date>
+                                  to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
+                            </date>
                         </egXML>
                     </exemplum>
                 </attDef>
@@ -290,7 +287,8 @@
                     <exemplum type="ssrq-doc-example" versionDate="2023-05-16">
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <date datingMethod="julian" notBefore-custom="1510-01-01"
-                                  to-custom="1515-12-31">ca. 1510</date>
+                                  to-custom="1515-12-31">ca. 1510
+                            </date>
                         </egXML>
                     </exemplum>
                 </attDef>
@@ -313,7 +311,8 @@
                     <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <date datingMethod="julian" notBefore-custom="1510-01-01"
-                                  to-custom="1515-12-31">ca. 1510</date>
+                                  to-custom="1515-12-31">ca. 1510
+                            </date>
                         </egXML>
                     </exemplum>
                 </attDef>
@@ -340,8 +339,10 @@
         </classSpec>
         <classSpec ident="att.dimensions" type="atts" mode="change">
             <constraintSpec scheme="schematron" ident="sch-att-dimensions">
-                <desc xml:lang="en" versionDate="2023-05-22">If <att>unit</att> has the value unknown, <att>quantity</att>
-                    must be unknown too.</desc>
+                <desc xml:lang="en" versionDate="2023-05-22">If <att>unit</att> has the value unknown,
+                    <att>quantity</att>
+                    must be unknown too.
+                </desc>
                 <constraint>
                     <sch:pattern>
                         <sch:rule context="tei:height[@unit = 'unknown']|tei:width[@unit = 'unknown']">
@@ -410,11 +411,6 @@
             </attList>
         </classSpec>
         <classSpec ident="att.global" type="atts" mode="change">
-            <!-- ToDo: Klassenabängigkeiten auflösen, keine Klasse sollte
-                    andere Klassen automatisch beinhalten, da sonst
-                    Attribute an Stellen erlaubt werden könnten, an denen
-                    sie eigentlich nicht erwünscht sind.
-            -->
             <classes mode="replace">
                 <memberOf key="att.global.rendition"/>
                 <memberOf key="att.global.responsibility"/>
@@ -452,7 +448,6 @@
                     </datatype>
                 </attDef>
             </attList>
-            <!-- ToDo: Beispiele für @facs und Beschreibung verbotener Zeichen verbalisieren -->
         </classSpec>
         <classSpec ident="att.global.rendition" type="atts" mode="change">
             <attList>
@@ -508,16 +503,6 @@
                     <datatype>
                         <dataRef key="ssrq.pointer.persons"/>
                     </datatype>
-                    <!-- ToDo: Beispiel erstellen, sobald handNote modelliert wurde:
-                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-14">
-                        <p xml:lang="de">Identifikation einer Hand mit einem Schreiber</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <handNote scribe="per000001">
-
-                            </handNote>
-                        </egXML>
-                    </exemplum>
-                    -->
                 </attDef>
                 <attDef ident="medium" mode="delete"/>
                 <attDef ident="scope" mode="delete"/>
@@ -571,10 +556,6 @@
                     </exemplum>
                 </attDef>
                 <attDef ident="unitRef" mode="delete"/>
-                <!-- ToDo: <att>commodity</att>: Eigenen Datentyp festlegen
-                        und dann Attributdefinition von Element in die Klasse
-                        verlegen mit Referenz auf den Datentyp
-                 -->
             </attList>
         </classSpec>
         <classSpec ident="att.placement" type="atts" mode="change">
@@ -592,12 +573,6 @@
                     <desc xml:lang="it" versionDate="2023-05-17">Indica una posizione su un testimone testuale secondo
                         un elenco fisso.
                     </desc>
-                    <!-- ToDo: Einschränkungen für bestimmte Werte: z. B. nicht recto + verso
-                                Erlaubt soll aber sein z. B. recto + top + left
-                                Vielleicht Aufteilen der Datentypen in sinnvolle Gruppen?
-                                (recto, verso, previous_page, next_page)
-                                (top, bottom, left, middle, right) etc.
-                     -->
                     <datatype minOccurs="1" maxOccurs="unbounded">
                         <dataRef key="ssrq.place"/>
                     </datatype>
@@ -627,7 +602,6 @@
                     <desc xml:lang="en" versionDate="2023-03-31">Link to an image file.</desc>
                     <desc xml:lang="fr" versionDate="2023-03-31">Lien vers un fichier image.</desc>
                     <desc xml:lang="it" versionDate="2023-03-31">Collegamento a un file immagine.</desc>
-                    <!-- ToDo: sinnvolle Beschränkung für Dateinamen finden -->
                 </attDef>
                 <attDef ident="medium" mode="replace">
                     <desc versionDate="2023-03-15" xml:lang="de">Verwendetes Schreibwerkzeug</desc>
@@ -669,14 +643,24 @@
                     <constraintSpec scheme="schematron" ident="calendar" mode="delete"/>
                 </attDef>
                 <attDef ident="period" mode="change">
-                    <desc xml:lang="de" versionDate="2023-05-11">Verweist auf eine benannte Periode wie Jahreszeiten oder Wochentage. Für Zeitspannen wie „vier Wochen“ wird hingegen das Attribut <att>dur-iso</att> verwendet.</desc>
-                    <desc xml:lang="en" versionDate="2023-05-11">Refers to a named period such as seasons or days of the week. For periods such as "four weeks", on the other hand, the attribute <att>dur-iso</att> is used.</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-11">Fait référence à une période nommée, comme les saisons ou les jours de la semaine. En revanche, l'attribut <att>dur-iso</att> est utilisé pour des périodes telles que "quatre semaines".</desc>
+                    <desc xml:lang="de" versionDate="2023-05-11">Verweist auf eine benannte Periode wie Jahreszeiten
+                        oder Wochentage. Für Zeitspannen wie „vier Wochen“ wird hingegen das Attribut <att>dur-iso</att> verwendet.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-11">Refers to a named period such as seasons or days of the
+                        week. For periods such as "four weeks", on the other hand, the attribute <att>dur-iso</att> is
+                        used.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-11">Fait référence à une période nommée, comme les saisons
+                        ou les jours de la semaine. En revanche, l'attribut <att>dur-iso</att> est utilisé pour des
+                        périodes telles que "quatre semaines".
+                    </desc>
                     <exemplum type="ssrq-doc-example">
                         <p xml:lang="de">Sommer und Winter</p>
                         <p xml:lang="fr">Été et hiver</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <date period="summer">somer</date> unnd <date period="winter">wintter</date>
+                            <date period="summer">somer</date>
+                            unnd
+                            <date period="winter">wintter</date>
                         </egXML>
                     </exemplum>
                 </attDef>
@@ -912,7 +896,8 @@
                         <valItem ident="slit">
                             <desc xml:lang="de" versionDate="2023-05-31">nur Siegelschlitz vorhanden</desc>
                             <desc xml:lang="fr" versionDate="2023-05-31">il n’existe qu’une fente pour le
-                                sceau</desc>
+                                sceau
+                            </desc>
                             <desc xml:lang="en" versionDate="2023-05-31">slit with no seal</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">c'è solo uno slot per il sigillo</desc>
                         </valItem>
@@ -961,9 +946,15 @@
                     </valList>
                 </attDef>
                 <attDef ident="condition" mode="add" usage="req">
-                    <desc xml:lang="de" versionDate="2023-05-31">Beschreibt den Erhaltungszustand und Schäden eines Siegels.</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'état de conservation et les dommages d'un sceau.</desc>
-                    <desc xml:lang="en" versionDate="2023-05-31">Décrit l'état de conservation et les dommages d'un sceau.</desc>
+                    <desc xml:lang="de" versionDate="2023-05-31">Beschreibt den Erhaltungszustand und Schäden eines
+                        Siegels.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'état de conservation et les dommages d'un
+                        sceau.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Décrit l'état de conservation et les dommages d'un
+                        sceau.
+                    </desc>
                     <valList type="closed">
                         <valItem ident="absent">
                             <desc xml:lang="de" versionDate="2023-05-31">fehlt</desc>

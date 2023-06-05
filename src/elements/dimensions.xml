@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="dimensions" module="msdescription"
-    mode="change" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+             mode="change" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <desc xml:lang="de" versionDate="2023-04-19">Masse einer Quelle</desc>
     <desc xml:lang="en" versionDate="2023-04-19">Dimension of a source</desc>
     <desc xml:lang="fr" versionDate="2023-04-19">Dimensions d'une source</desc>
@@ -20,20 +20,18 @@
             <sch:pattern>
                 <sch:rule context="tei:dimensions[@type = 'plica']">
                     <sch:assert test="count(*) = 1 and */name() = 'width'">If the value of @type is
-                        'plica' only one tei:width is allowed as child.</sch:assert>
+                        'plica' only one tei:width is allowed as child.
+                    </sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
     </constraintSpec>
     <attList>
         <attDef ident="type" mode="add">
-            <!-- To-Do: Desc ergänzen -->
             <valList type="closed">
                 <valItem ident="leaves">
-                    <!-- To-Do: Desc ergänzen -->
                 </valItem>
                 <valItem ident="plica">
-                    <!-- To-Do: Desc ergänzen -->
                 </valItem>
             </valList>
         </attDef>

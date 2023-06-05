@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="head" module="core" mode="change"
-    xmlns:rng="http://relaxng.org/ns/structure/1.0"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+             xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <desc xml:lang="de" versionDate="2023-05-26">Enthält als Teil des <gi>teiHeader</gi> den Titel
         des Dokuments und als Teil von <gi>listBibl</gi> die Beschreibung des zitierten Kurztitels
         als Edition, Regest oder Literatur. In <gi>body</gi> die Überschrift eines Kapitels oder
         Unterkapitels. Innerhalb von <gi>figure</gi> enthält <gi>head</gi> die Legende einer
-        Abbildung, einer Graphik, eines Stammbaumes etc.</desc>
+        Abbildung, einer Graphik, eines Stammbaumes etc.
+    </desc>
     <desc xml:lang="en" versionDate="2023-05-26">Contains as part of <gi>teiHeader</gi> the title of
         the document and as part of <gi>listBibl</gi> the description of the cited short title as
         edition, regest or literature. In <gi>body</gi> the heading of a chapter or subchapter.
         Within <gi>figure</gi>, <gi>head</gi> contains the legend of an illustration, a graph, a
-        family tree etc.</desc>
+        family tree etc.
+    </desc>
     <desc xml:lang="fr" versionDate="2023-05-26">Contient comme partie de <gi>teiHeader</gi> le
         titre du document et comme partie de <gi>listBibl</gi> la description du titre court cité
         comme édition, regest ou littérature. Dans <gi>body</gi>, le titre d'un chapitre ou d'un
         sous-chapitre. A l'intérieur de <gi>figure</gi>, <gi>head</gi> contient la légende d'une
-        illustration, d'un graphique, d'un arbre généalogique, etc.</desc>
+        illustration, d'un graphique, d'un arbre généalogique, etc.
+    </desc>
     <classes mode="replace">
         <memberOf key="model.headLike"/>
         <memberOf key="att.global"/>
@@ -38,7 +40,6 @@
         <attDef ident="place" mode="change">
             <datatype>
                 <rng:choice>
-                    <!-- ToDo: besser einschränken -->
                     <rng:ref name="ssrq.place"/>
                     <rng:ref name="ssrq.place.add"/>
                 </rng:choice>
@@ -55,7 +56,8 @@
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-26">
         <p xml:lang="de">Titel, der vom Bearbeitenden zur besseren Strukturierung des Texts
-            hinzugefügt wird</p>
+            hinzugefügt wird
+        </p>
         <p xml:lang="de">Titre ajouté par l'éditeur pour mieux structurer le texte</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <head resp="PS">Erbrecht</head>
@@ -67,15 +69,10 @@
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <figure type="illustration">
                 <graphic type="familytree" mimeType="image/svg" url="WB_HB.svg"
-                    width="69.34%"/>
+                         width="69.34%"/>
                 <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
-                <!--<figDesc>
-                        Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>-->
+                <figDesc>Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>
             </figure>
         </egXML>
     </exemplum>
-    <!-- ToDO: hier ggf. ausführliche Beschreibung ergänzen und Beispiele ergänzen -->
-    <remarks xml:lang="de" versionDate="2023-05-26">
-        <p></p>
-    </remarks>
 </elementSpec>

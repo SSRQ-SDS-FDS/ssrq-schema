@@ -383,7 +383,6 @@
             </content>
         </dataSpec>
 
-        <!-- ToDo: Überprüfen, ob das mit measure.typography zusammengelegt werden kann -->
         <dataSpec ident="ssrq.measure.lengths.base.line">
             <content>
                 <valList type="closed">
@@ -2009,7 +2008,6 @@
         </dataSpec>
     </specGrp>
 
-    <!-- ToDo: Places zusammenführen und atomisieren -->
     <specGrp xml:id="ssrq-place">
 
         <dataSpec ident="ssrq.place" mode="add">
@@ -2312,11 +2310,7 @@
                 </valList>
             </content>
         </dataSpec>
-
-        <!-- ToDo: Modellierung dieses Datentyps überdenken:
-            a) Name des Datentyps (Verwendung in add, addSpan und ab als @rend vs. Verwendung in handNote in @medium)
-            b) Hier werden Schreibgerät und Textfarbe miteinander vermengt
-        -->
+        
         <dataSpec ident="ssrq.rend.add" mode="add">
             <desc xml:lang="de" versionDate="2023-05-16">Schreibmittel der Hinzufügung</desc>
             <desc xml:lang="en" versionDate="2023-05-16">Writing means of addition</desc>

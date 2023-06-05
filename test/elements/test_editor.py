@@ -54,7 +54,6 @@ def test_editor_rng(
 def test_editor_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
-    """Test the constraints definid for tei:editor."""
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints

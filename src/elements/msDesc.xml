@@ -3,13 +3,16 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="msDesc" module="msdescription" mode="change">
     <desc xml:lang="de" versionDate="2023-05-30">Beschreibt das edierte Quellenstück mit
         Aufbewahrungsort, Material, Layout, Schreiber, Siegel und Bibliographie zu Sekundärliteratur
-        (Metadaten).</desc>
+        (Metadaten).
+    </desc>
     <desc xml:lang="fr" versionDate="2023-05-30">Décrit la pièce de source éditée avec le lieu de
         conservation, le matériau, la mise en page, le scribe, le sceau et la bibliographie sur la
-        littérature secondaire (métadonnées).</desc>
+        littérature secondaire (métadonnées).
+    </desc>
     <desc xml:lang="en" versionDate="2023-05-30">Describes the edited source document, including
         place of preservation, material, layout, scribe, seal and bibliography on secondary
-        literature (metadata).</desc>
+        literature (metadata).
+    </desc>
     <classes mode="replace">
         <memberOf key="model.biblLike"/>
     </classes>
@@ -23,5 +26,4 @@
             <elementRef key="additional" minOccurs="0" maxOccurs="1"/>
         </sequence>
     </content>
-    <!-- ToDo: Aktuelles und repräsentatives Beispiel ergänzen! -->
 </elementSpec>

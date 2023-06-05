@@ -19,7 +19,6 @@
         orientieren soll, nicht einheitlich ist, also ein Dorsualvermerk auf den Kopf steht, ist ein
         Kommentar notwendig.
     </desc>
-    <!-- ToDo: Übersetzungen prüfen! -->
     <desc xml:lang="en" versionDate="2023-05-02">Contains any text level without a clearly defined
         assignment. We always use the tag together with <att>type</att> and <att>place</att> for
         notes, dorsal notes, chancery notes and registry notes as well as for marginalia. In the
@@ -174,34 +173,4 @@
         <attDef ident="resp" mode="delete"/>
         <attDef ident="xml:id" mode="delete"/>
     </attList>
-    <!-- ToDo: Beispiele passen nicht zum Element <gi>ab</gi>, passende Beispiele ergänzen -->
-    <!--<exemplum type="ssrq-doc-example" versionDate="2023-03-03">
-        <p xml:lang="de">Definition der Identifikationsnummer eines Stücks:</p>
-        <p xml:lang="fr">Définition du numéro d'identification d'une pièce&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <seriesStmt xml:id="ssrq-sds-fds">
-                <title>Sammlung Schweizerischer Rechtsquellen</title>
-                <respStmt>
-                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                    <resp key="publisher"/>
-                </respStmt>
-                <idno>SSRQ-FR-I_2_8-1-1</idno>
-                <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
-            </seriesStmt>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
-        <p xml:lang="de">Verweis auf eine Signatur mit Link ins Archivinformationssystem:</p>
-        <p xml:lang="fr">Référence à une cote avec lien vers le système d'information des
-            archives&#160;:
-        </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <msIdentifier>
-                <idno xml:lang="de" source="http://scope.stiftsarchiv.sg.ch/detail.aspx?id=30146">StiASG
-                    Urk. GG2 T2
-                </idno>
-            </msIdentifier>
-        </egXML>
-    </exemplum>
-    -->
 </elementSpec>
