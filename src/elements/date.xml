@@ -49,7 +49,7 @@
                 <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
                     <sch:assert test=".[@type][@type/data(.) = ('electronic', 'print')]">If
                         <sch:name/>
-                        is part of the publicationStmt it must contains @type with a value of
+                        is part of the publicationStmt it must contain @type with a value of
                         electronic or print.
                     </sch:assert>
                 </sch:rule>
