@@ -19,7 +19,7 @@
                 <elementRef key="repository"/>
                 <elementRef key="settlement" minOccurs="0" maxOccurs="1"/>
             </sequence>
-            <elementRef key="altIdentifier" minOccurs="0" maxOccurs="1"/>
+            <elementRef key="altIdentifier" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
     </content>
     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-13">
