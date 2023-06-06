@@ -11,4 +11,4 @@ def on_config(config: MkDocsConfig):
         odd2md = ODD2Md(
             schema=schema, languages=LANGS, target_dir=f"{config.docs_dir}/elements"
         )
-        odd2md.create_md_doc()
+        odd2md.create_md_doc_per_lang()
