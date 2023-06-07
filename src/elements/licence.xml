@@ -3,11 +3,14 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="licence" module="header" mode="change">
     <desc xml:lang="de" versionDate="2023-03-30">Liefert Informationen zur Verfügbarkeit eines
         Textes, zum Beispiel Einschränkungen bezüglich des Gebrauchs oder der Weitergabe,
-        Lizensierungen usw.</desc>
+        Lizensierungen usw.
+    </desc>
     <desc xml:lang="en" versionDate="2023-03-30">Provides information on the availability of a text,
-        for example restrictions on use or distribution, licensing, etc.</desc>
+        for example restrictions on use or distribution, licensing, etc.
+    </desc>
     <desc xml:lang="fr" versionDate="2023-03-30">Contient des informations légales applicables au
-        texte, notamment le contrat de licence définissant les droits d'utilisation.</desc>
+        texte, notamment le contrat de licence définissant les droits d'utilisation.
+    </desc>
     <classes mode="replace">
         <memberOf key="model.availabilityPart"/>
         <memberOf key="att.pointing"/>
@@ -21,12 +24,12 @@
                 <dataRef key="ssrq.pointer.url"/>
             </datatype>
         </attDef>
-        <attDef ident="quantity" mode="change" usage="req"/>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-03-30">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-
-                ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence>
+                ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+            </licence>
         </egXML>
     </exemplum>
 </elementSpec>
