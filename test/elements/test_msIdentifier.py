@@ -12,6 +12,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-msIdentifier-with-multiple-altIdentifier",
+            "<msIdentifier><idno xml:lang='de' source='http://foo.bar'>bar</idno><repository xml:lang='de'>foo</repository><altIdentifier><idno>Nr. Bar</idno></altIdentifier><altIdentifier><idno>Nr. Foo</idno></altIdentifier></msIdentifier>",
+            True,
+        ),
+        (
             "valid-msIdentifie-with-settlement",
             "<msIdentifier><idno xml:lang='de' source='http://foo.bar'>bar</idno><repository xml:lang='de'>foo</repository><settlement>Zürich</settlement></msIdentifier>",
             True,

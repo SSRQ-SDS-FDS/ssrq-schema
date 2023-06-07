@@ -19,6 +19,12 @@
         <memberOf key="att.global.responsibility" mode="delete"/>
         <memberOf key="att.typed" mode="delete"/>
     </classes>
+    <content>
+        <sequence>
+            <elementRef key="teiHeader"/>
+            <elementRef key="text"/>
+        </sequence>
+    </content>
     <attList>
         <attDef ident="xml:lang" mode="replace">
             <valList type="closed">
