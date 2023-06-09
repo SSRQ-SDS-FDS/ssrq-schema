@@ -43,7 +43,7 @@ class SSRQConfig(BaseModel):
 
     @validator("schemas", pre=True)
     def version_issemver(cls, schemas: list[SSRQSchemaType]) -> list[SSRQSchemaType]:
-        import semver
+        import semver  # type: ignore
 
         for schema in schemas:
             if semver.VersionInfo.isvalid(schema["version"]) is False:
@@ -103,11 +103,11 @@ def resolve_relative_paths(doc: str) -> str:
     with PySaxonProcessor(license=False) as proc:
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(xml_text=doc)
-        xsltproc.set_parameter(
-            "path_base", proc.make_string_value(SRC_DIR.absolute().as_uri())
+        xsltproc.set_parameter(  # type: ignore
+            "path_base", proc.make_string_value(SRC_DIR.absolute().as_uri())  # type: ignore
         )
 
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(XSLTS["path"])
         )
         result: str = xsl.transform_to_string(xdm_node=document)
@@ -147,27 +147,27 @@ def check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:
 
 def fill_template_with_metadata(authors: list[str], schema: SSRQSchemaType) -> str:
     with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")
+        proc.set_configuration_property(name="xi", value="on")  # type: ignore
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(
             xml_file_name=f"{str(SRC_DIR)}/{schema['entry']}"
         )
 
         # the not very elegant way to pass parameters to the stylesheet...
-        xsltproc.set_parameter(
+        xsltproc.set_parameter(  # type: ignore
             "authors",
-            proc.make_array(
+            proc.make_array(  # type: ignore
                 [
-                    proc.make_string_value(author.split("<")[0].strip())
+                    proc.make_string_value(author.split("<")[0].strip())  # type: ignore
                     for author in authors
                 ]
             ),
         )
-        xsltproc.set_parameter("desc", proc.make_string_value(schema["description"]))
-        xsltproc.set_parameter("title", proc.make_string_value(schema["title"]))
-        xsltproc.set_parameter("version", proc.make_string_value(schema["version"]))
+        xsltproc.set_parameter("desc", proc.make_string_value(schema["description"]))  # type: ignore
+        xsltproc.set_parameter("title", proc.make_string_value(schema["title"]))  # type: ignore
+        xsltproc.set_parameter("version", proc.make_string_value(schema["version"]))  # type: ignore
 
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(XSLTS["meta"])
         )
         result = xsl.transform_to_string(xdm_node=document)
@@ -180,12 +180,12 @@ def fill_template_with_metadata(authors: list[str], schema: SSRQSchemaType) -> s
 
 def compile_odd_to_odd(odd: str, tei_version: str) -> str:
     with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")
+        proc.set_configuration_property(name="xi", value="on")  # type: ignore
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(xml_text=odd)
-        xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))
+        xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))  # type: ignore
 
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(XSLTS["odd2odd"])
         )
         result: str = xsl.transform_to_string(xdm_node=document)
@@ -198,11 +198,11 @@ def compile_odd_to_odd(odd: str, tei_version: str) -> str:
 
 def resolve_sch_let(odd: str) -> str:
     with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")
+        proc.set_configuration_property(name="xi", value="on")  # type: ignore
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(xml_text=odd)
 
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(XSLTS["vars"])
         )
         result: str = xsl.transform_to_string(xdm_node=document)
@@ -215,12 +215,12 @@ def resolve_sch_let(odd: str) -> str:
 
 def compile_odd_to_rng(odd: str, tei_version: str) -> str:
     with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")
+        proc.set_configuration_property(name="xi", value="on")  # type: ignore
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(xml_text=odd)
-        xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))
+        xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))  # type: ignore
 
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(XSLTS["odd2rng"])
         )
         result: str = xsl.transform_to_string(xdm_node=document)
@@ -264,11 +264,11 @@ def odd_factory(
 
     if clean:
         with PySaxonProcessor(license=False) as proc:
-            proc.set_configuration_property(name="xi", value="on")
+            proc.set_configuration_property(name="xi", value="on")  # type: ignore
             xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
             document: PyXdmNode = proc.parse_xml(xml_text=compiled_odd)
 
-            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
                 stylesheet_file=str(XSLTS["clean"])
             )
             result: str = xsl.transform_to_string(xdm_node=document)

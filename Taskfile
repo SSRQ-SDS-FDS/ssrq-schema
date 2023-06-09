@@ -22,9 +22,15 @@ function lint-only {
     cmd ruff ${src}
 }
 
+function type-check {
+    echo "Type checking using mypy..."
+    cmd mypy
+}
+
 function lint {
     fmt-check
     lint-only
+    type-check
 }
 
 function test {
