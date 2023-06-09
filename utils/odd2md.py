@@ -1,19 +1,22 @@
-from dataclasses import dataclass
+import re
+import xml.etree.ElementTree as ET
+from abc import abstractmethod
 from pathlib import Path
-from typing import Literal
+from typing import Literal, Optional, Protocol, runtime_checkable
 
-from saxonche import (
-    PySaxonProcessor,
-    PyXdmAtomicValue,
-    PyXdmMap,
-    PyXsltExecutable,
-)
+from snakemd import Document  # type: ignore
 
-from utils.main import XSLT_BASE, Schema, load_config, odd_factory
+from utils.main import Schema, load_config, odd_factory
 
+# default languages used to generate the documentation
 LANGS = ["de", "fr"]
-RESOLVE_XSL = "resolve-internal-references.xsl"
-SPEC_TO_MD_XSL = "odd-to-md.xsl"
+# various namespaces used in the ODD
+TEI_NS = "http://www.tei-c.org/ns/1.0"
+RELAX_NG_NS = "http://relaxng.org/ns/structure/1.0"
+XML_NS = "http://www.w3.org/XML/1998/namespace"
+NS_MAP = {"tei": TEI_NS, "rng": RELAX_NG_NS, "xml": XML_NS}
+
+RE_PATTERN = re.compile(r"[\s\n]+")
 
 
 def create_schema_by_entry(entry_point: str) -> Schema | None:
@@ -27,90 +30,157 @@ def create_schema_by_entry(entry_point: str) -> Schema | None:
     """
     config = load_config()
 
-    if config is not None:
-        schema_config = [
-            schema for schema in config.schemas if schema["entry"] == entry_point
-        ][0]
-        return odd_factory(
-            schema_config=schema_config,
-            authors=config.authors,
+    if config is None:
+        return None
+
+    schema_config = [
+        schema for schema in config.schemas if schema["entry"] == entry_point
+    ][0]
+    return odd_factory(
+        schema_config=schema_config,
+        authors=config.authors,
+    )
+
+
+ODD_COMP_TYPES = Literal["elementSpec", "classSpec", "dataSpec", "macroSpec"]
+
+
+@runtime_checkable
+class ODDElement(Protocol):
+    odd_element: ET.Element
+    odd_type: ODD_COMP_TYPES
+    ident: str
+
+    @property
+    def classes(self) -> list[str] | None:
+        ...
+
+    @abstractmethod
+    def to_markdown(self, lang: str, path: Optional[Path] = None) -> Optional[str]:
+        ...
+
+
+class BaseSpec:
+    odd_element: ET.Element
+    odd_type: ODD_COMP_TYPES
+    ident: str
+
+    @property
+    def classes(self) -> list[str] | None:
+        classes = self.odd_element.find("./tei:class", namespaces=NS_MAP)
+        if classes is None:
+            return None
+        member_of = classes.findall(".//tei:memberOf", namespaces=NS_MAP)
+        return [member.attrib["key"] for member in member_of]
+
+    def get_desc(self, lang: str) -> str:
+        desc = self.odd_element.find(
+            f"./tei:desc[@xml:lang='{lang}']", namespaces=NS_MAP
+        )
+        if desc is None:
+            return ""
+        return self._desc_node_to_string(node=desc)
+
+    def _desc_node_to_string(self, node: ET.Element) -> str:
+        child_nodes = node.findall("*")
+
+        if len(child_nodes) == 0:
+            return RE_PATTERN.sub(" ", node.text) if node.text is not None else ""
+
+        child_nodes_dict: dict[str, ET.Element] = {
+            child_node.text.strip(): child_node
+            for child_node in node.findall("*")
+            if child_node.text is not None
+        }
+
+        return RE_PATTERN.sub(
+            " ",
+            " ".join(
+                [
+                    self._handle_node_text(
+                        child_nodes_dict=child_nodes_dict, text=text.strip()
+                    )
+                    for text in node.itertext()
+                ]
+            ),
         )
 
-
-@dataclass
-class XsltParam:
-    """A class to represent an XSLT parameter."""
-
-    name: str
-    type: Literal["xs:string", "xs:integer"]
-    value: list[str] | str
-
-
-def create_saxon_values(proc: PySaxonProcessor, param: XsltParam) -> PyXdmAtomicValue:
-    """Create a Saxon value from a XsltParam.
-
-    Args:
-        proc (PySaxonProcessor): The Saxon processor.
-        param (XsltParam): The XSLT parameter.
-
-    Returns:
-        PyXdmAtomicValue: The Saxon value."""
-
-    match param.type:
-        case "xs:string":
-            return (
-                proc.make_string_value(param.value)
-                if isinstance(param.value, str)
-                else proc.make_array(
-                    [proc.make_string_value(value) for value in param.value]
-                )
-            )
-        case "xs:integer":
-            return (
-                proc.make_integer_value(param.value)
-                if isinstance(param.value, str)
-                else proc.make_array(
-                    [proc.make_integer_value(value) for value in param.value]
-                )
-            )
-        case _:
-            raise ValueError(f"Unknown type: {type}")
+    def _handle_node_text(
+        self, child_nodes_dict: dict[str, ET.Element], text: str
+    ) -> str:
+        if text in child_nodes_dict.keys():
+            child = child_nodes_dict[text]
+            child_name = name if (name := child.tag.split("}")[1]) else child.tag
+            match child_name:
+                case "gi":
+                    return f"[`<{text}/>`]({text}.md)"
+                case "att":
+                    return f"[@{text})(#{text})"
+                case "ref":
+                    return f"[{text}]({child.attrib['target']})"
+                case _:
+                    return text
+        return text
 
 
-def apply_xsl(xml: str, xsl_name: str, params: list[XsltParam] | None = None) -> str:
-    """A helper function to apply an XSLT stylesheet to an XML document.
+class ElementSpec(BaseSpec):
+    odd_element: ET.Element
+    odd_type: ODD_COMP_TYPES
+    ident: str
 
-    Args:
-        xml (str): The XML document.
-        xsl_name (str): The name of the XSLT stylesheet.
-        params (list[XsltParam] | None, optional): The parameters to pass to the stylesheet. Defaults to None.
+    def __init__(self, element: ET.Element):
+        self.odd_element = element
+        self.odd_type = "elementSpec"
+        self.ident = element.attrib["ident"]
 
-    Returns:
-        str: The result of the transformation."""
+    def to_markdown(self, lang: str, path: Optional[Path] = None) -> Optional[str]:
+        doc = Document()
+        doc.add_heading(self.ident, level=1)
+        doc.add_paragraph(self.get_desc(lang=lang))
 
-    with PySaxonProcessor(license=False) as proc:
-        xml_node = proc.parse_xml(xml_text=xml)
-        xsl_proc = proc.new_xslt30_processor()
+        if path is not None:
+            return doc.dump(name=f"{self.ident}.{lang}", dir=path)
+        return doc.__str__()
 
-        if params is not None:
-            for param in params:
-                xsl_proc.set_parameter(
-                    name=param.name,
-                    value=create_saxon_values(proc=proc, param=param),
-                )
 
-        xsl: PyXsltExecutable = xsl_proc.compile_stylesheet(
-            stylesheet_file=str(XSLT_BASE / xsl_name)
-        )
+class DataSpec:
+    odd_element: ET.Element
+    odd_type: ODD_COMP_TYPES
+    ident: str
 
-        result: str = xsl.transform_to_string(xdm_node=xml_node)
-    return result
+    def __init__(self, element: ET.Element):
+        self.odd_element = element
+        self.odd_type = "dataSpec"
+        self.ident = element.attrib["ident"]
+
+    @property
+    def classes(self) -> list[str] | None:
+        return None
+
+    def to_markdown(self, lang: str, path: Optional[Path] = None) -> Optional[str]:
+        pass
+
+
+class ODDReader:
+    odd: ET.Element
+    elements: list[str]
+    components: dict[str, ODDElement]
+
+    def __init__(self, odd: str):
+        self.odd = ET.fromstring(odd)
+        elements = self._get_element_specs()
+        self.elements = [spec.ident for spec in elements]
+        self.components = {spec.ident: spec for spec in self._get_element_specs()}
+
+    def _get_element_specs(self) -> list[ElementSpec]:
+        el_specs = self.odd.findall(".//tei:elementSpec", namespaces=NS_MAP)
+        return [ElementSpec(element=el_spec) for el_spec in el_specs]
 
 
 class ODD2Md:
     """A class which helps to streamline the process of converting ODD files to Markdown."""
 
-    schema: str
+    schema: ODDReader
     languages: list[str]
     el_spec_name: str = "elementSpec"
     out_dir: Path
@@ -126,7 +196,9 @@ class ODD2Md:
         """
         self.out_dir = Path(target_dir)
         self.languages = languages
-        self.schema = schema.compiled_odd if isinstance(schema, Schema) else schema
+        self.schema = ODDReader(
+            odd=schema.compiled_odd if isinstance(schema, Schema) else schema
+        )
 
     def create_md_doc_per_lang(self) -> None:
         """Create a markdown documentation per element per language.
@@ -134,46 +206,7 @@ class ODD2Md:
         Returns:
             None: Nothing."""
 
-        resolved_odd = apply_xsl(
-            xml=self.schema,
-            xsl_name=RESOLVE_XSL,
-        )
-        for lang in self.languages:
-            odd_to_md = apply_xsl(
-                xml=resolved_odd,
-                xsl_name=SPEC_TO_MD_XSL,
-                params=[
-                    XsltParam(
-                        name="lang",
-                        type="xs:string",
-                        value=lang,
-                    )
-                ],
-            )
-            self.store_md_doc_per_lang(md_doc=odd_to_md, lang=lang)
-
-    def store_md_doc_per_lang(self, md_doc: str, lang: str) -> None:
-        """Store the markdown documentation per element per language.
-
-        Args:
-            md_doc (str): The markdown documentation.
-            lang (str): The language.
-
-        Returns:
-            None: Nothing."""
-
-        with PySaxonProcessor(license=False) as proc:
-            docs = proc.parse_xml(xml_text=md_doc)
-            xp_proc = proc.new_xpath_processor()
-            xp_proc.set_context(xdm_item=docs)
-            specs: list[PyXdmMap] = xp_proc.evaluate(
-                f"for $el in //{self.el_spec_name} return map{{'content': $el/text(), 'name': $el/@ident/data(.)}}"
-            )
-            for spec in specs:
-                name = spec.get("name")
-                content = spec.get("content")
-                if name is not None and content is not None:
-                    with open(
-                        self.out_dir / f"{name}.{lang}.md", "w", encoding="utf-8"
-                    ) as f:
-                        f.write(content.__str__())
+        for element in self.schema.elements:
+            component = self.schema.components[element]
+            for lang in self.languages:
+                component.to_markdown(lang=lang, path=self.out_dir)

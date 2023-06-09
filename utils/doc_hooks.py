@@ -1,4 +1,4 @@
-from mkdocs.config.defaults import MkDocsConfig
+from mkdocs.config.defaults import MkDocsConfig  # type: ignore
 from mkdocs.plugins import event_priority
 
 from utils.odd2md import LANGS, ODD2Md, create_schema_by_entry
