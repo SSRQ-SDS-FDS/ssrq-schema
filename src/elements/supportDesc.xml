@@ -16,6 +16,9 @@
             <elementRef key="condition" minOccurs="0" maxOccurs="1"/>
         </sequence>
     </content>
+    <attList>
+        <attDef ident="material" mode="delete"/>
+    </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-17">
         <p xml:lang="de">Beschreibung des Materials und der Abmessungen</p>
         <p xml:lang="fr">Description du matériau et des dimensions</p>
