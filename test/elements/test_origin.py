@@ -12,6 +12,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-origin-with-lang",
+            " <origin xml:lang='de'><origDate when-custom='1366-06-29' calendar='gregorian'/><origPlace>Rheineck</origPlace></origin>",
+            True,
+        ),
+        (
             "invalid-origin-with-note",
             " <origin><origDate when-custom='1366-06-29' calendar='gregorian'/><origPlace>Rheineck</origPlace><note>some text</note></origin>",
             False,
