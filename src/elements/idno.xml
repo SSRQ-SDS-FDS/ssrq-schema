@@ -26,7 +26,7 @@
         <memberOf key="att.global"/>
     </classes>
     <content>
-        <dataRef name="string"/>
+        <dataRef name="string" restriction="\S+.*"/>
     </content>
     <constraintSpec scheme="schematron" ident="sch-el-idno">
         <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:idno</desc>
@@ -78,6 +78,11 @@
                 </valItem>
             </valList>
         </attDef>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="resp" mode="delete"/>
+        <attDef ident="rend" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
         <p xml:lang="de">Definition der Identifikationsnummer eines Stücks:</p>
