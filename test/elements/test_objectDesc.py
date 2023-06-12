@@ -26,6 +26,26 @@ from ..conftest import RNG_test_function
             </objectDesc>""",
             True,
         ),
+        (
+            "objectDesc-with-invalid-form",
+            """<objectDesc form='bar'>
+                <supportDesc>
+                    <support>
+                        <material type='paper'/>
+                    </support>
+                    <extent>
+                        <dimensions type="leaves">
+                            <height unit="cm" quantity="16.0"/>
+                            <width unit="cm" quantity="23.0"/>
+                        </dimensions>
+                        <dimensions type="plica">
+                            <width unit="cm" quantity="4.0"/>
+                        </dimensions>
+                    </extent>
+                </supportDesc>
+            </objectDesc>""",
+            False,
+        ),
         ("invalid-objectDesc", "<objectDesc><p>foo</p></objectDesc>", False),
     ],
 )

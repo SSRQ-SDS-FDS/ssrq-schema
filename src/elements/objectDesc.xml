@@ -15,7 +15,7 @@
         <elementRef key="supportDesc"/>
     </content>
     <attList>
-        <attDef ident="form" mode="change" usage="req">
+        <attDef ident="form" mode="replace" usage="req">
             <desc xml:lang="de" versionDate="2023-05-31">Beschreibung der (physischen)
                 Überlieferungsform.</desc>
             <desc xml:lang="fr" versionDate="2023-05-31">Description de la forme (physique) de
@@ -65,7 +65,7 @@
                     <desc xml:lang="it" versionDate="2023-05-31">Frammento</desc>
                     <desc xml:lang="en" versionDate="2023-05-31">Fragment</desc>
                 </valItem>
-                <valItem ident="Insert">
+                <valItem ident="insert">
                     <desc xml:lang="de" versionDate="2023-05-31">Insert</desc>
                     <desc xml:lang="fr" versionDate="2023-05-31">Insert</desc>
                     <desc xml:lang="it" versionDate="2023-05-31">Inserto</desc>
