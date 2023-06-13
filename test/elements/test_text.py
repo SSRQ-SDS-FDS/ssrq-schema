@@ -1,10 +1,6 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
@@ -26,8 +22,13 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "invalid-text-without-type",
+            "<text><body><div><p>hallo welt!</p></div></body></text>",
+            False,
+        ),
+        (
             "invalid-text-with-back-only",
-            "<text><back><div><p>foo</p></div></back></text>",
+            "<text type='summary'><back><div><p>foo</p></div></back></text>",
             False,
         ),
         (
@@ -37,7 +38,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "invalid-text-with-group",
-            "<text><group><body><div><p>hallo welt!</p></div></body></group></text>",
+            "<text type='summary'><group><body><div><p>hallo welt!</p></div></body></group></text>",
             False,
         ),
     ],
@@ -49,38 +50,3 @@ def test_text(
     result: bool,
 ):
     test_element_with_rng("text", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "valid-text",
-            "<text type='transcript'><body><div><p>foo</p></div></body></text>",
-            True,
-        ),
-        (
-            "valid-text",
-            "<text type='summary'><body><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
-            True,
-        ),
-        (
-            "valid-text-with-empty-body",
-            "<text><body/></text>",
-            True,
-        ),
-        (
-            "invalid-text-with-type-empty-body",
-            "<text type='summary'><body/></text>",
-            False,
-        ),
-    ],
-)
-def test_text_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].is_valid() is result
