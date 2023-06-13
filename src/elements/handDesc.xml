@@ -9,6 +9,9 @@
     <content>
         <elementRef key="handNote" minOccurs="1" maxOccurs="unbounded"/>
     </content>
+    <attList>
+        <attDef ident="hands" mode="delete"/>
+    </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-24">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <physDesc>

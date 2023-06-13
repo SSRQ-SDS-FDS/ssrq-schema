@@ -17,6 +17,11 @@ import pytest
             True,
         ),
         (
+            "invalid-handDesc-with-hands",
+            "<handDesc hands='10'><handNote xml:id='foo'/></handDesc>",
+            False,
+        ),
+        (
             "invalid-handDesc",
             "<handDesc><p>Foo</p></handDesc>",
             False,
