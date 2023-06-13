@@ -2,7 +2,7 @@ import re
 import xml.etree.ElementTree as ET
 from abc import abstractmethod
 from pathlib import Path
-from typing import Literal, Optional, Protocol, runtime_checkable
+from typing import Callable, Literal, Optional, Protocol, runtime_checkable
 
 from snakemd import Document  # type: ignore
 
@@ -42,6 +42,21 @@ def create_schema_by_entry(entry_point: str) -> Schema | None:
     )
 
 
+def split_tag_and_ns(tag: str) -> tuple[str, str]:
+    """Split a tag into its namespace and its tag name.
+
+    Args:
+        tag (str): The tag to split.
+
+    Returns:
+        tuple[str, str]: The namespace and the tag name.
+    """
+    if "}" not in tag:
+        return "", tag
+    ns, tag_name = tag[1:].split("}")
+    return ns, tag_name
+
+
 ODD_COMP_TYPES = Literal["elementSpec", "classSpec", "dataSpec", "macroSpec"]
 
 
@@ -50,10 +65,7 @@ class ODDElement(Protocol):
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
     ident: str
-
-    @property
-    def classes(self) -> list[str] | None:
-        ...
+    classes: list[str] | None
 
     @abstractmethod
     def to_markdown(self, lang: str, path: Optional[Path] = None) -> Optional[str]:
@@ -64,10 +76,15 @@ class BaseSpec:
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
     ident: str
+    classes: list[str] | None
 
-    @property
-    def classes(self) -> list[str] | None:
-        classes = self.odd_element.find("./tei:class", namespaces=NS_MAP)
+    def __init__(self, element: ET.Element) -> None:
+        self.odd_element = element
+        self.ident = element.attrib["ident"]
+        self.classes = self._get_classes()
+
+    def _get_classes(self) -> list[str] | None:
+        classes = self.odd_element.find("./tei:classes", namespaces=NS_MAP)
         if classes is None:
             return None
         member_of = classes.findall(".//tei:memberOf", namespaces=NS_MAP)
@@ -106,11 +123,14 @@ class BaseSpec:
         )
 
     def _handle_node_text(
-        self, child_nodes_dict: dict[str, ET.Element], text: str
+        self,
+        child_nodes_dict: dict[str, ET.Element],
+        text: str,
+        split_tag: Callable[[str], tuple[str, str]] = split_tag_and_ns,
     ) -> str:
         if text in child_nodes_dict.keys():
             child = child_nodes_dict[text]
-            child_name = name if (name := child.tag.split("}")[1]) else child.tag
+            child_name = name if (name := split_tag(child.tag)[1]) else child.tag
             match child_name:
                 case "gi":
                     return f"[`<{text}/>`]({text}.md)"
@@ -124,14 +144,9 @@ class BaseSpec:
 
 
 class ElementSpec(BaseSpec):
-    odd_element: ET.Element
-    odd_type: ODD_COMP_TYPES
-    ident: str
-
     def __init__(self, element: ET.Element):
-        self.odd_element = element
+        super().__init__(element=element)
         self.odd_type = "elementSpec"
-        self.ident = element.attrib["ident"]
 
     def to_markdown(self, lang: str, path: Optional[Path] = None) -> Optional[str]:
         doc = Document()
@@ -147,15 +162,13 @@ class DataSpec:
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
     ident: str
+    classes: list[str] | None
 
     def __init__(self, element: ET.Element):
         self.odd_element = element
         self.odd_type = "dataSpec"
         self.ident = element.attrib["ident"]
-
-    @property
-    def classes(self) -> list[str] | None:
-        return None
+        self.classes = None
 
     def to_markdown(self, lang: str, path: Optional[Path] = None) -> Optional[str]:
         pass

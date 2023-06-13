@@ -1,7 +1,12 @@
-from typing import Optional
+import xml.etree.ElementTree as ET
+from typing import Callable, Optional
 
 import pytest
 from saxonche import PySaxonProcessor, PyXdmItem
+
+from utils.odd2md import NS_MAP
+
+EL_FINDER = Callable[[str], ET.Element | None]
 
 
 def check_result_with_xpath(
@@ -22,7 +27,7 @@ def check_result_with_xpath(
         assert eval_result == expected_result
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def example_odd() -> str:
     from pathlib import Path
 
@@ -30,3 +35,13 @@ def example_odd() -> str:
         Path(__file__).parent.parent.absolute() / "examples/odd_example.xml", "r"
     ) as f:
         return f.read()
+
+
+@pytest.fixture(scope="session")
+def example_elementSpec(example_odd: str) -> EL_FINDER:
+    parsed_odd = ET.fromstring(example_odd)
+
+    def get_element_spec(ident: str) -> ET.Element | None:
+        return parsed_odd.find(f".//tei:elementSpec[@ident='{ident}']", NS_MAP)
+
+    return get_element_spec
