@@ -83,6 +83,7 @@ class ODDElement(Protocol):
 
 
 class BaseSpec:
+    attributes: list[str] | None
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
     ident: str
@@ -92,6 +93,23 @@ class BaseSpec:
         self.odd_element = element
         self.ident = element.attrib["ident"]
         self.classes = self._get_classes()
+
+    def find_attributes(self) -> list[str] | None:
+        att_list = self.odd_element.find("./tei:attList", namespaces=NS_MAP)
+        if att_list is None and self.classes is None:
+            return None
+
+        element_attributes = att_list.findall("tei:attDef", namespaces=NS_MAP)
+
+        return (
+            [
+                attribute.attrib["ident"]
+                for attribute in element_attributes
+                if attribute.get("mode") != "delete"
+            ]
+            if element_attributes is not None
+            else None
+        )
 
     def _get_classes(self) -> list[str] | None:
         classes = self.odd_element.find("./tei:classes", namespaces=NS_MAP)
@@ -165,10 +183,25 @@ class ElementSpec(BaseSpec):
         # Add the name of the element as title
         doc.add_heading(self.ident, level=1)
         self._desc_to_markdown(lang=lang, desc_title=lang_translations["desc"], doc=doc)
+        self._create_attribute_desc(
+            lang=lang, section_title=lang_translations["attr"], doc=doc
+        )
 
         if path is not None:
             return doc.dump(name=f"{self.ident}.{lang}", dir=path)
         return doc.__str__()
+
+    def _create_attribute_desc(self, lang: str, section_title: str, doc: Document):
+        if hasattr(self, "attributes") and self.attributes is None:
+            # If the element has no attributes, return
+            return None
+
+        self.attributes = self.find_attributes()
+
+        if self.attributes is None:
+            return None
+
+        doc.add_heading(section_title, level=2)
 
     def _desc_to_markdown(self, lang: str, desc_title: str, doc: Document) -> None:
         doc.add_heading(desc_title, level=2)

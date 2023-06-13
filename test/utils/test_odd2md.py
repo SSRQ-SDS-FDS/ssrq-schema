@@ -76,3 +76,13 @@ def test_odd_reader_components_setup(example_odd: str, tmp_path: Path):
     assert int(components.__str__()) == len(odd_reader.components)
     for _, component in odd_reader.components.items():
         assert isinstance(component, ODDElement)
+
+
+def test_attr_desc_md(example_elementSpec: EL_FINDER):
+    example_el_spec = example_elementSpec("figure")
+    assert example_elementSpec is not None
+    el_spec = ElementSpec(element=example_el_spec)
+    attributes = el_spec.find_attributes()
+    
+    assert attributes is not None
+    assert len(attributes) == 1
