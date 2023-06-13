@@ -159,6 +159,16 @@ def test_datable_custom_attr(
             "<hi rend='sup'/>",
             False,
         ),
+        (
+            "valid-head",
+            "<head>bar</head>",
+            True,
+        ),
+        (
+            "invalid-head",
+            "<head/>",
+            False,
+        ),
     ],
 )
 def test_text_content_constraint_gl4(
