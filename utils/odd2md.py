@@ -7,6 +7,7 @@ from typing import Callable, Literal, Optional, Protocol, runtime_checkable
 from snakemd import Document  # type: ignore
 
 from utils.main import Schema, load_config, odd_factory
+from utils.translater import TRANSLATE, Translations
 
 # default languages used to generate the documentation
 LANGS = ["de", "fr"]
@@ -68,7 +69,9 @@ class ODDElement(Protocol):
     classes: list[str] | None
 
     @abstractmethod
-    def to_markdown(self, lang: str, path: Optional[Path] = None) -> Optional[str]:
+    def to_markdown(
+        self, lang: str, lang_translations: dict[str, str], path: Optional[Path] = None
+    ) -> Optional[str]:
         ...
 
 
@@ -148,14 +151,21 @@ class ElementSpec(BaseSpec):
         super().__init__(element=element)
         self.odd_type = "elementSpec"
 
-    def to_markdown(self, lang: str, path: Optional[Path] = None) -> Optional[str]:
+    def to_markdown(
+        self, lang: str, lang_translations: dict[str, str], path: Optional[Path] = None
+    ) -> Optional[str]:
         doc = Document()
+        # Add the name of the element as title
         doc.add_heading(self.ident, level=1)
-        doc.add_paragraph(self.get_desc(lang=lang))
+        self._desc_to_markdown(lang=lang, desc_title=lang_translations["desc"], doc=doc)
 
         if path is not None:
             return doc.dump(name=f"{self.ident}.{lang}", dir=path)
         return doc.__str__()
+
+    def _desc_to_markdown(self, lang: str, desc_title: str, doc: Document) -> None:
+        doc.add_heading(desc_title, level=2)
+        doc.add_paragraph(self.get_desc(lang=lang))
 
 
 class DataSpec:
@@ -170,7 +180,9 @@ class DataSpec:
         self.ident = element.attrib["ident"]
         self.classes = None
 
-    def to_markdown(self, lang: str, path: Optional[Path] = None) -> Optional[str]:
+    def to_markdown(
+        self, lang: str, lang_translations: dict[str, str], path: Optional[Path] = None
+    ) -> Optional[str]:
         pass
 
 
@@ -178,12 +190,14 @@ class ODDReader:
     odd: ET.Element
     elements: list[str]
     components: dict[str, ODDElement]
+    translations: Translations
 
-    def __init__(self, odd: str):
+    def __init__(self, odd: str, translations: Translations = TRANSLATE):
         self.odd = ET.fromstring(odd)
         elements = self._get_element_specs()
         self.elements = [spec.ident for spec in elements]
         self.components = {spec.ident: spec for spec in self._get_element_specs()}
+        self.translations = translations
 
     def _get_element_specs(self) -> list[ElementSpec]:
         el_specs = self.odd.findall(".//tei:elementSpec", namespaces=NS_MAP)
@@ -222,4 +236,8 @@ class ODD2Md:
         for element in self.schema.elements:
             component = self.schema.components[element]
             for lang in self.languages:
-                component.to_markdown(lang=lang, path=self.out_dir)
+                component.to_markdown(
+                    lang=lang,
+                    lang_translations=getattr(self.schema.translations, lang),
+                    path=self.out_dir,
+                )
