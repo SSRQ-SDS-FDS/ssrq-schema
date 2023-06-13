@@ -1,7 +1,15 @@
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from utils.odd2md import LANGS, NS_MAP, ElementSpec, ODD2Md, split_tag_and_ns
+from utils.odd2md import (
+    LANGS,
+    NS_MAP,
+    ElementSpec,
+    ODD2Md,
+    ODDElement,
+    ODDReader,
+    split_tag_and_ns,
+)
 
 from .conftest import EL_FINDER, check_result_with_xpath
 
@@ -21,6 +29,7 @@ def test_class_el_spec_init(example_elementSpec: EL_FINDER):
     example_el_spec = example_elementSpec("p")
     assert example_el_spec is not None
     el_spec = ElementSpec(element=example_el_spec)
+    assert isinstance(el_spec, ODDElement)
     assert el_spec.odd_element == example_el_spec
     assert el_spec.ident == "p"
     assert el_spec.odd_type == "elementSpec"
@@ -33,7 +42,7 @@ def test_class_el_spec_init(example_elementSpec: EL_FINDER):
     )
 
 
-def test_class_el_spec_desc_to_md(example_elementSpec: EL_FINDER):
+def test_spec_desc_to_md(example_elementSpec: EL_FINDER):
     example_el_spec = example_elementSpec("p")
     assert example_elementSpec is not None
     el_spec = ElementSpec(element=example_el_spec)
@@ -54,3 +63,16 @@ def test_class_el_spec_desc_to_md(example_elementSpec: EL_FINDER):
                     assert f"[{child.text}]({child.attrib['target']})" in desc
                 case _:
                     assert child.text in desc
+
+
+def test_odd_reader_components_setup(example_odd: str, tmp_path: Path):
+    odd_reader = ODDReader(odd=example_odd)
+    components = check_result_with_xpath(
+        xml=example_odd,
+        xpath="count(//tei:classSpec|//tei:macroSpec|//tei:dataSpec)",
+        expected_result=None,
+    )
+    assert components is not None
+    assert int(components.__str__()) == len(odd_reader.components)
+    for _, component in odd_reader.components.items():
+        assert isinstance(component, ODDElement)
