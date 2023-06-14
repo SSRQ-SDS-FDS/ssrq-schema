@@ -22,6 +22,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "measure-with-invalid-commodity",
+            "<measure type='weight' unit='Zentner' quantity='1' commodity='bar'>ein zentner landtwull</measure>",
+            False,
+        ),
+        (
             "valid-measure-as-text-scope",
             "<measure type='text_scope' unit='leaf' quantity='1'/>",
             True,
