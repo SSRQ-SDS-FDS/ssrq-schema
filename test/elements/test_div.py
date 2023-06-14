@@ -17,6 +17,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "invalid-div-with-text-only",
+            "<div>foo</div>",
+            False,
+        ),
+        (
             "invalid-div-with-wrong-type",
             "<div type='bar'><p>foo</p></div>",
             False,

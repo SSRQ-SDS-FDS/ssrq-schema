@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="div" module="textstructure" mode="change"
-             xmlns:rng="http://relaxng.org/ns/structure/1.0">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="div" module="textstructure" mode="change">
     <desc xml:lang="de" versionDate="2023-05-23">Gliedert Quellentexte innerhalb von <gi>body</gi> oder Bemerkungen
         innnerhalb von <gi>back</gi> zusammen mit <gi>p</gi> in Abschnitte.
     </desc>
@@ -21,9 +20,13 @@
         <memberOf key="att.typed"/>
     </classes>
     <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <macroRef key="ssrq.content.critical"/>
+            <macroRef key="ssrq.content.display"/>
+            <macroRef key="ssrq.content.measure"/>
+            <macroRef key="ssrq.content.content"/>
+            <macroRef key="ssrq.content.entities"/>
+        </alternate>
     </content>
     <attList>
         <attDef ident="xml:id" mode="delete"/>
