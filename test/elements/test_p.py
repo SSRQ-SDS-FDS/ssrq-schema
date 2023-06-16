@@ -21,6 +21,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "p-with-invalid-content",
+            "<p><row>bar</row></p>",
+            False,
+        ),
+        (
             "simple-p-with-invalid-attr",
             "<p rend='black'>foo</p>",
             False,
