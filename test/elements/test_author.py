@@ -21,6 +21,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "invalid-author-with-key",
+            "<author role='scribe' key='bar'>Adam Böniger, Landschreiber von Glarus</author>",
+            False,
+        ),
+        (
             "author-with-invalid-role",
             "<author role='scriptor'><persName ref='per002336'>Adam Böniger</persName>, Landschreiber von Glarus</author>",
             False,
