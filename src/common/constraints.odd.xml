@@ -47,7 +47,7 @@
             <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
             <constraint>
                 <sch:pattern>
-                    <sch:rule context="tei:condition[not(*)]|tei:head[not(*)]|tei:hi[not(*)]|tei:publisher|tei:pubPlace|tei:bibl[not(*)]">
+                    <sch:rule context="tei:publisher|tei:pubPlace|tei:*[name() = ('abbr', 'bibl', 'condition', 'head', 'hi', 'orgName', 'p', 'persName', 'q', 'quote', 'ref', 'time', 'title')][not(*)]">
                         <sch:assert test="string-length(normalize-space(.)) > 0"><sch:name/> should contain some text.</sch:assert>
                     </sch:rule>
                 </sch:pattern>
