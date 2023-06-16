@@ -603,29 +603,6 @@
                     <desc xml:lang="fr" versionDate="2023-03-31">Lien vers un fichier image.</desc>
                     <desc xml:lang="it" versionDate="2023-03-31">Collegamento a un file immagine.</desc>
                 </attDef>
-                <attDef ident="medium" mode="replace">
-                    <desc versionDate="2023-03-15" xml:lang="de">Verwendetes Schreibwerkzeug</desc>
-                    <desc versionDate="2023-03-15" xml:lang="fr">Outils d'écriture utilisés</desc>
-                    <desc versionDate="2023-03-15" xml:lang="en">Writing tool used</desc>
-                    <valList type="closed">
-                        <valItem ident="other ink">
-                            <desc xml:lang="de" versionDate="2022-05-06">mit anderer Tinte</desc>
-                            <desc xml:lang="fr" versionDate="2022-05-06">avec une autre encre</desc>
-                            <desc xml:lang="it" versionDate="2022-09-05">altro inchiostro</desc>
-                            <desc xml:lang="en" versionDate="2022-05-06">with different ink</desc>
-                        </valItem>
-                        <valItem ident="pencil">
-                            <desc xml:lang="de" versionDate="2022-05-06">mit Bleistift</desc>
-                            <desc xml:lang="fr" versionDate="2022-05-06">au crayon</desc>
-                            <desc xml:lang="it" versionDate="2022-09-05">matita</desc>
-                            <desc xml:lang="en" versionDate="2022-05-06">with pencil</desc>
-                        </valItem>
-                    </valList>
-                </attDef>
-                <attDef ident="scope" mode="delete"/>
-                <attDef ident="scribeRef" mode="delete"/>
-                <attDef ident="script" mode="delete"/>
-                <attDef ident="scriptRef" mode="delete"/>
             </attList>
         </classSpec>
         <classSpec ident="att.datable" type="atts" mode="change">
