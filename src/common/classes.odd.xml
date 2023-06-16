@@ -617,7 +617,18 @@
                     </datatype>
                     <!-- This removes the TEI default constraints, which requires text content
                     for any elements that uses @calendar. -->
-                    <constraintSpec scheme="schematron" ident="calendar" mode="delete"/>
+                    <constraintSpec scheme="schematron" ident="sch-att-calendar" mode="replace">
+                        <desc versionDate="2023-06-13" xml:lang="en">Schematron to check the usage of attributes.</desc>
+                        <constraint>
+                            <sch:pattern>
+                                <sch:rule context="tei:*[@calendar]">
+                                    <sch:assert
+                                        test=".[@when-custom|@notBefore-custom|@notAfter-custom|@from-custom|@to-custom]">More attributes must be used together with @calendar to specify the date.
+                                    </sch:assert>
+                                </sch:rule>
+                            </sch:pattern>
+                        </constraint>
+                    </constraintSpec>
                 </attDef>
                 <attDef ident="period" mode="change">
                     <desc xml:lang="de" versionDate="2023-05-11">Verweist auf eine benannte Periode wie Jahreszeiten
