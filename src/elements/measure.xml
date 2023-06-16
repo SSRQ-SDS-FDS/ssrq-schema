@@ -62,10 +62,7 @@
                         <sch:value-of
                                 select="string-join(tokenize($currency, '\|'), ', ')"/>
                     </sch:assert>
-                    <sch:assert test="matches(string(), '[\S\s]+[\S]+') and not(./*)">
-                        <sch:name/>
-                        must not be empty!
-                    </sch:assert>
+                    <sch:extends rule="measure-not-empty"/>
                 </sch:rule>
                 <sch:rule context="tei:measure[@type = 'length']">
                     <sch:let name="length"
@@ -572,7 +569,10 @@
                 <dataRef key="ssrq.measure.origin"/>
             </datatype>
         </attDef>
-        <attDef ident="type" mode="change" usage="opt">
+        <attDef ident="type" mode="replace" usage="req">
+            <desc xml:lang="de" versionDate="2023-06-16">Art der Massangabe</desc>
+            <desc xml:lang="fr" versionDate="2023-06-16">Type d'indication de mesure</desc>
+            <desc xml:lang="en" versionDate="2023-06-16">Type of measurement indication</desc>
             <valList type="closed">
                 <valItem ident="area">
                     <desc xml:lang="de" versionDate="2023-03-21">Flächenmass</desc>
