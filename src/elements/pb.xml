@@ -19,10 +19,13 @@
                 d'origine.
             </desc>
             <datatype>
-                <dataRef name="string" restriction="\d+|[IVXCL]+[rv]?"/>
+                <dataRef name="string" restriction="(\d+|[IVXCL]+)[rv]?"/>
             </datatype>
         </attDef>
-        <attDef ident="type" mode="change">
+        <attDef ident="type" mode="replace">
+            <desc xml:lang="de" versionDate="2023-06-16">Typ des Seitenfangs</desc>
+            <desc xml:lang="fr" versionDate="2023-06-16">Type d'appendice latéral</desc>
+            <desc xml:lang="en" versionDate="2023-06-16">Type of page change</desc>
             <valList type="closed">
                 <valItem ident="original">
                     <desc xml:lang="de" versionDate="2023-04-06">Originalseitenwechsel</desc>
