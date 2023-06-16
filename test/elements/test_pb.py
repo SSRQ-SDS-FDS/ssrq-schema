@@ -17,6 +17,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-pb-without-type-with-r",
+            "<pb n='12r'/>",
+            True,
+        ),
+        (
             "valid-pb-with-facs",
             "<pb n='1' facs='StASH_Ordnungen_A_4_328'/>",
             True,
