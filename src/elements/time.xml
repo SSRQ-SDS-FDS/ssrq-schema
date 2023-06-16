@@ -32,9 +32,9 @@
         <memberOf key="att.duration.iso"/>
     </classes>
     <content>
-        <rng:zeroOrMore>
+        <rng:oneOrMore>
             <rng:ref name="ssrq.content.default"/>
-        </rng:zeroOrMore>
+        </rng:oneOrMore>
     </content>
     <attList>
         <attDef ident="dur-iso" mode="change">
