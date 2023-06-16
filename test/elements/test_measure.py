@@ -27,6 +27,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "measure-with-invalid-type",
+            "<measure type='foo' unit='leaf' quantity='1'/>",
+            False,
+        ),
+        (
+            "invalid-measure-without-type",
+            "<measure unit='leaf' quantity='1'/>",
+            False,
+        ),
+        (
             "invalid-measure-without-unit",
             "<measure type='currency' origin='ZH' quantity='2'>zwai phunt nuwer Zuricher</measure>",
             False,
@@ -50,6 +60,12 @@ def test_measure(
             "<measure type='area' unit='Juchart' quantity='8' commodity='field'/>",
             "measure must not be empty",
             False,
+        ),
+        (
+            "valid-measure-with-text",
+            "<measure type='currency' unit='Angster' quantity='8' commodity='field'>bar</measure>",
+            None,
+            True,
         ),
         (
             "valid-area-unit",
