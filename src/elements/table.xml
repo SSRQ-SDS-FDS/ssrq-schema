@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="table" module="figures" mode="change"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <desc xml:lang="de" versionDate="2023-04-11">Wird zusammen mit <gi>row</gi>
         (Zeile) und <gi>cell</gi> (Spalte) für die Darstellung von Tabellen benötigt.
         Es wird von oben nach unten und von links nach rechts gezählt. Wenn immer möglich eine
@@ -37,6 +37,10 @@
             </alternate>
         </sequence>
     </content>
+    <attList>
+        <attDef ident="cols" mode="delete"/>
+        <attDef ident="rows" mode="delete"/>
+    </attList>
     <exemplum versionDate="2023-04-11">
         <p xml:lang="de">Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten
             drei Spalten mit «gbz», «xr» bzw. «dn» überschrieben werden:</p>

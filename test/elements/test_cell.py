@@ -18,6 +18,11 @@ import pytest
             True,
         ),
         (
+            "cell-with-invalid-attr",
+            "<cell xml:id='bar'>foo</cell>",
+            False,
+        ),
+        (
             "invalid-cell",
             "<cell role='bar'>foo</cell>",
             False,
