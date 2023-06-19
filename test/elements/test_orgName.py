@@ -1,6 +1,10 @@
-from test.conftest import RNG_test_function
-
 import pytest
+from pyschval.main import (
+    SchematronResult,
+    validate_chunk,
+)
+
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -35,3 +39,38 @@ def test_orgName(
     result: bool,
 ):
     test_element_with_rng("orgName", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-orgName-inside-respStmt",
+            "<respStmt><orgName>Fondation des sources du droit de la Société suisse des juristes</orgName></respStmt>",
+            True,
+        ),
+        (
+            "valid-orgName-inside-respStmt",
+            "<respStmt><orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName></respStmt>",
+            True,
+        ),
+        (
+            "invalid-orgName-inside-respStmt-with-attr",
+            "<respStmt><orgName ref='bar'>Fondation des sources du droit de la Société suisse des juristes</orgName></respStmt>",
+            False,
+        ),
+        (
+            "orgName-inside-respStmt-with-invalid-content",
+            "<respStmt><orgName>bar</orgName></respStmt>",
+            False,
+        ),
+    ],
+)
+def test_orgName_constraints(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = validate_chunk(
+        files=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].is_valid() is result
