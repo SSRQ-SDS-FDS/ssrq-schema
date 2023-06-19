@@ -5,6 +5,9 @@
     <desc xml:lang="de" versionDate="2023-03-03">Auszeichnung von Tabellenzellen</desc>
     <desc xml:lang="en" versionDate="2023-03-03">Table cell mark-up</desc>
     <desc xml:lang="fr" versionDate="2023-03-03">Balisage des cellules de tableau</desc>
+    <classe mode="replace">
+        <memberOf key="att.tableDecoration"/>
+    </classe>
     <content>
         <rng:oneOrMore>
             <rng:ref name="ssrq.content.default"/>
@@ -12,6 +15,9 @@
     </content>
     <attList>
         <attDef ident="role" mode="replace">
+            <desc xml:lang="de" versionDate="2023-06-19">Spezielle Verwendung einer Tabellenzelle</desc>
+            <desc xml:lang="en" versionDate="2023-06-19">Special use of a table cell</desc>
+            <desc xml:lang="fr" versionDate="2023-06-19">Utilisation particulière d'une cellule de tableau</desc>
             <valList type="closed">
                 <valItem ident="label">
                     <desc xml:lang="de" versionDate="2023-03-03">Spaltenüberschrift</desc>
@@ -20,8 +26,8 @@
                 </valItem>
             </valList>
         </attDef>
-        <attDef ident="n" mode="delete"/>
-        <attDef ident="rend" mode="delete"/>
+        <attDef ident="cols" mode="delete"/>
+        <attDef ident="rows" mode="delete"/>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
         <p xml:lang="de">Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten
