@@ -62,6 +62,27 @@ def test_find_classes_recursive(
     assert len(el_spec.classes) == 5
 
 
+def test_find_el_content(
+    example_elementSpec: EL_FINDER, example_odd: str, tmp_path: Path
+):
+    odd_reader = ODDReader(odd=example_odd)
+    example_el_spec = example_elementSpec("hi")
+    assert example_el_spec is not None
+    el_spec = ElementSpec(element=example_el_spec)
+    assert el_spec.odd_type == "elementSpec"
+    el_spec.content = el_spec.find_content_elements(
+        element=el_spec.odd_element, components=odd_reader.components  # type: ignore
+    )
+    assert el_spec.content is not None
+    assert isinstance(el_spec.content, list)
+    default_content_elements = check_result_with_xpath(
+        xml=example_odd,
+        xpath="count(//tei:macroSpec[starts-with(@ident, 'ssrq.content')]//tei:elementRef|//tei:macroSpec[starts-with(@ident, 'ssrq.content')]//tei:textNode)",
+        expected_result=None,
+    )
+    assert len(el_spec.content) == int(default_content_elements.__str__())
+
+
 def test_spec_desc_to_md(example_elementSpec: EL_FINDER):
     example_el_spec = example_elementSpec("p")
     assert example_elementSpec is not None

@@ -73,6 +73,7 @@ class ODDElement(Protocol):
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
     ident: str
+    module: str | None
     classes: list[str] | None
 
     @abstractmethod
@@ -84,14 +85,17 @@ class ODDElement(Protocol):
 
 class BaseSpec:
     attributes: list[str] | None
+    content: dict[str, list[str]] | None
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
     ident: str
+    module: str | None
     classes: list[str] | None = None
 
     def __init__(self, element: ET.Element) -> None:
         self.odd_element = element
         self.ident = element.attrib["ident"]
+        self.module = element.attrib.get("module")
 
     def find_classes(
         self,
@@ -154,6 +158,54 @@ class BaseSpec:
             if element_attributes is not None
             else None
         )
+
+    def find_content_elements(
+        self,
+        element: ET.Element,
+        components: dict[str, ODDElement],
+    ) -> list[str] | None:
+        """
+        Find all possibile content elements, which could occur in the current ODDElement.
+        Works recursively, so all macros or datatypes will be expanded.
+
+        Args:
+            element (ET.Element): The element to search for content elements.
+            components (dict[str, ODDElement]): A dictionary of all components.
+
+        Returns:
+            list[str] | None: A list of all possibile content elements."""
+        elements_found: list[str] | None = None
+
+        content = element.find("tei:content", namespaces=NS_MAP)
+
+        if content is None or len(content) == 0:
+            # Return early if no content is found
+            return elements_found
+
+        elements_found = []
+
+        for content_part in content.iter():
+            key_or_name = (
+                key
+                if (key := content_part.attrib.get("key"))
+                else content_part.attrib.get("name")
+            )
+            if key_or_name is not None:
+                content_spec = components.get(key_or_name)
+
+                if content_spec is not None:
+                    nested_content = self.find_content_elements(
+                        element=content_spec.odd_element, components=components
+                    )
+                    if nested_content is not None:
+                        elements_found.extend(nested_content)
+                else:
+                    elements_found.append(key_or_name)
+
+            if split_tag_and_ns(content_part.tag)[1] == "textNode":
+                elements_found.append("textNode")
+
+        return elements_found
 
     def get_desc(self, lang: str) -> str:
         desc = self.odd_element.find(
@@ -261,11 +313,13 @@ class DataSpec:
     odd_type: ODD_COMP_TYPES
     ident: str
     classes: list[str] | None
+    module: str | None
 
     def __init__(self, element: ET.Element):
         self.odd_element = element
         self.odd_type = "dataSpec"
         self.ident = element.attrib["ident"]
+        self.module = element.attrib.get("module")
         self.classes = None
 
     def to_markdown(
@@ -287,13 +341,13 @@ class MacroSpec(BaseSpec):
 
 class ODDReader:
     odd: ET.Element
-    elements: list[ElementSpec]
+    elements: dict[str, ElementSpec]
     components: dict[str, ODDElement]
     translations: Translations
 
     def __init__(self, odd: str, translations: Translations = TRANSLATE):
         self.odd = ET.fromstring(odd)
-        self.elements = [spec for spec in self._get_element_specs()]
+        self.elements = {spec.ident: spec for spec in self._get_element_specs()}
         self.components = {
             component.ident: component
             for component in self._get_component_specs()
@@ -352,7 +406,7 @@ class ODD2Md:
         Returns:
             None: Nothing."""
 
-        for element in self.schema.elements:
+        for _, element in self.schema.elements.items():
             for lang in self.languages:
                 element.to_markdown(
                     lang=lang,
