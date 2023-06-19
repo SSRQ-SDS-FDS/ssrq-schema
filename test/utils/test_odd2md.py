@@ -25,7 +25,7 @@ def test_creation_of_md_files_per_el(example_odd: str, tmp_path: Path):
         assert len(list(tmp_path.glob("*.md"))) == elements
 
 
-def test_class_el_spec_init(example_elementSpec: EL_FINDER):
+def test_find_classes_non_recursive(example_elementSpec: EL_FINDER):
     example_el_spec = example_elementSpec("p")
     assert example_el_spec is not None
     el_spec = ElementSpec(element=example_el_spec)
@@ -33,6 +33,8 @@ def test_class_el_spec_init(example_elementSpec: EL_FINDER):
     assert el_spec.odd_element == example_el_spec
     assert el_spec.ident == "p"
     assert el_spec.odd_type == "elementSpec"
+    el_spec.classes = el_spec.find_classes(element=el_spec.odd_element)
+    assert el_spec.classes is not None
     assert len(el_spec.classes) == int(
         check_result_with_xpath(
             ET.tostring(example_el_spec, encoding="unicode"),
@@ -40,6 +42,24 @@ def test_class_el_spec_init(example_elementSpec: EL_FINDER):
             expected_result=None,
         ).__str__()
     )
+
+
+def test_find_classes_recursive(
+    example_elementSpec: EL_FINDER, example_odd: str, tmp_path: Path
+):
+    odd_reader = ODDReader(odd=example_odd)
+    example_el_spec = example_elementSpec("p")
+    assert example_el_spec is not None
+    el_spec = ElementSpec(element=example_el_spec)
+    assert isinstance(el_spec, ODDElement)
+    assert el_spec.odd_element == example_el_spec
+    assert el_spec.ident == "p"
+    assert el_spec.odd_type == "elementSpec"
+    el_spec.classes = el_spec.find_classes(
+        element=el_spec.odd_element, components=odd_reader.components
+    )
+    assert el_spec.classes is not None
+    assert len(el_spec.classes) == 5
 
 
 def test_spec_desc_to_md(example_elementSpec: EL_FINDER):
@@ -80,9 +100,8 @@ def test_odd_reader_components_setup(example_odd: str, tmp_path: Path):
 
 def test_attr_desc_md(example_elementSpec: EL_FINDER):
     example_el_spec = example_elementSpec("figure")
-    assert example_elementSpec is not None
+    assert example_el_spec is not None
     el_spec = ElementSpec(element=example_el_spec)
     attributes = el_spec.find_attributes()
-    
     assert attributes is not None
     assert len(attributes) == 1

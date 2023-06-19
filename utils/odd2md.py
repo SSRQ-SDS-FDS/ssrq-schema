@@ -4,7 +4,7 @@ from abc import abstractmethod
 from pathlib import Path
 from typing import (
     Callable,
-    Iterable,
+    Iterator,
     Literal,
     Optional,
     Protocol,
@@ -87,18 +87,62 @@ class BaseSpec:
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
     ident: str
-    classes: list[str] | None
+    classes: list[str] | None = None
 
     def __init__(self, element: ET.Element) -> None:
         self.odd_element = element
         self.ident = element.attrib["ident"]
-        self.classes = self._get_classes()
+
+    def find_classes(
+        self,
+        element: ET.Element,
+        components: dict[str, ODDElement] | None = None,
+    ) -> list[str] | None:
+        """
+        Find all classes that the current ODDElement is a member of.
+        Works recursively, so it also finds nested classes.
+
+        Args:
+            element (ET.Element): The element to search for classes.
+            components (dict[str, ODDElement] | None, optional): A dictionary of all components. Defaults to None.
+
+        Returns:
+            list[str] | None: A list of all classes that the current ODDElement is a member of.
+        """
+        classes_found: list[str] | None = None
+
+        classes = element.find("./tei:classes", namespaces=NS_MAP)
+
+        if classes is None or len(classes) == 0:
+            # Return early if no classes are found
+            return classes_found
+
+        classes_found = []
+
+        for class_elem in element.findall(
+            "tei:classes/tei:memberOf", namespaces=NS_MAP
+        ):
+            class_key = class_elem.attrib["key"]
+            class_spec = components.get(class_key) if components else None
+
+            classes_found.append(class_key)
+
+            if class_spec is not None:
+                nested_classes = self.find_classes(
+                    element=class_spec.odd_element, components=components
+                )
+                if nested_classes is not None:
+                    classes_found.extend(nested_classes)
+
+        return classes_found
 
     def find_attributes(self) -> list[str] | None:
         att_list = self.odd_element.find("./tei:attList", namespaces=NS_MAP)
+
         if att_list is None and self.classes is None:
             return None
 
+        assert isinstance(att_list, ET.Element)
         element_attributes = att_list.findall("tei:attDef", namespaces=NS_MAP)
 
         return (
@@ -110,13 +154,6 @@ class BaseSpec:
             if element_attributes is not None
             else None
         )
-
-    def _get_classes(self) -> list[str] | None:
-        classes = self.odd_element.find("./tei:classes", namespaces=NS_MAP)
-        if classes is None:
-            return None
-        member_of = classes.findall(".//tei:memberOf", namespaces=NS_MAP)
-        return [member.attrib["key"] for member in member_of]
 
     def get_desc(self, lang: str) -> str:
         desc = self.odd_element.find(
@@ -258,11 +295,13 @@ class ODDReader:
         self.odd = ET.fromstring(odd)
         self.elements = [spec for spec in self._get_element_specs()]
         self.components = {
-            component.ident: component for component in self._get_component_specs()
+            component.ident: component
+            for component in self._get_component_specs()
+            if isinstance(component, ODDElement)
         }
         self.translations = translations
 
-    def _get_component_specs(self) -> Iterable[ODDElement]:
+    def _get_component_specs(self) -> Iterator[ClassSpec | DataSpec | MacroSpec]:
         from itertools import chain
 
         class_specs = [
