@@ -28,13 +28,10 @@
         <memberOf key="att.written"/>
     </classes>
     <content>
-        <rng:oneOrMore>
-            <rng:choice>
-                <rng:ref name="ssrq.content.default"/>
-                <rng:ref name="anchor"/>
-                <rng:ref name="bibl"/>
-            </rng:choice>
-        </rng:oneOrMore>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <elementRef key="bibl"/>
+            <macroRef key="ssrq.content.default"/>
+        </alternate>
     </content>
     <attList>
         <attDef ident="place" mode="change">
