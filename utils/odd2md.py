@@ -275,9 +275,12 @@ class BaseSpec:
                 for attribute in attributes
             ]
 
+            if len(class_attributes) == 0:
+                class_attributes = None
+
         element_attributes = (
             el_attr
-            if len((el_attr := att_list.findall("tei:attDef", namespaces=NS_MAP))) > 0
+            if len((el_attr := att_list.findall("./tei:attDef", namespaces=NS_MAP))) > 0
             else None
         )
 
@@ -345,7 +348,7 @@ class BaseSpec:
             return None
 
         assert isinstance(att_list, ET.Element)
-        class_attributes = att_list.findall("tei:attDef", namespaces=NS_MAP)
+        class_attributes = att_list.findall("./tei:attDef", namespaces=NS_MAP)
 
         return class_attributes if len(class_attributes) > 0 else None
 
@@ -392,7 +395,7 @@ class BaseSpec:
                 case "gi":
                     return f"[`<{text}/>`]({text}.md)"
                 case "att":
-                    return f"[@{text})(#{text})"
+                    return f"[@{text}](#{text})"
                 case "ref":
                     return f"[{text}]({child.attrib['target']})"
                 case _:
