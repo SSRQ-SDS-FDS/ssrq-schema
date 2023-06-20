@@ -72,6 +72,11 @@ def test_supplied(
     "name, markup, result",
     [
         (
+            "invalid-empty-supplied-source",
+            "<supplied source='73988c1a-40e1-4527-94b7-736d418b29d0'/>",
+            False,
+        ),
+        (
             "valid-supplied-source",
             "<supplied source='73988c1a-40e1-4527-94b7-736d418b29d0'>foo</supplied>",
             True,

@@ -58,6 +58,11 @@ def test_del(
     "name, markup, result",
     [
         (
+            "invalid-empty-del",
+            "<del/>",
+            False,
+        ),
+        (
             "valid-del-inside-subst",
             "<subst><del>abc</del><add place='left_top'>bar</add></subst>",
             True,
