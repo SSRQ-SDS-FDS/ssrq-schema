@@ -8,6 +8,7 @@ from typing import (
     Literal,
     Optional,
     Protocol,
+    Self,
     runtime_checkable,
 )
 
@@ -130,7 +131,7 @@ class AttributeSpec:
 
 class BaseSpec:
     attributes: list[AttributeSpec] | None
-    content: dict[str, list[str]] | None
+    content: list[str] | None
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
     ident: str
@@ -269,7 +270,7 @@ class BaseSpec:
         if class_attributes is not None:
             # flatten the list of lists using a list comprehension and filter out None values
             class_attributes = [
-                attribute
+                attribute  # type: ignore
                 for attributes in class_attributes
                 if attributes is not None
                 for attribute in attributes
@@ -288,7 +289,7 @@ class BaseSpec:
             return None
 
         return self._compare_element_with_class_attributes(
-            element_attributes=element_attributes, class_attributes=class_attributes
+            element_attributes=element_attributes, class_attributes=class_attributes  # type: ignore
         )
 
     def find_content_elements(
@@ -411,6 +412,7 @@ class ElementSpec(BaseSpec):
     def to_markdown(
         self,
         components: dict[str, ODDElement],
+        elements: dict[str, Self],
         lang: str,
         lang_translations: dict[str, str],
         path: Optional[Path] = None,
@@ -424,6 +426,18 @@ class ElementSpec(BaseSpec):
             desc_title=lang_translations["desc"],
             doc=doc,
         )
+
+        if not hasattr(self, "content"):
+            self.content = self.find_content_elements(
+                element=self.odd_element, components=components
+            )
+
+        self._list_content_model(
+            elements=elements,
+            translations=lang_translations,
+            doc=doc,
+        )
+
         self._create_attribute_desc(
             components=components,
             lang=lang,
@@ -452,12 +466,52 @@ class ElementSpec(BaseSpec):
             doc.add_heading(f"@{attribute.ident}", level=3)
             self._desc_to_markdown(el=attribute.attr_element, lang=lang, doc=doc)
 
+    def _list_content_model(
+        self,
+        elements: dict[str, Self],
+        translations: dict[str, str],
+        doc: Document,
+    ) -> None:
+        doc.add_heading(translations["content"], level=2)
+        if self.content is None:
+            doc.add_paragraph(translations["isEmpty"])
+            return None
+
+        group_content_by_model = self._group_content_by_model(
+            elements=elements, content=self.content
+        )
+
+        doc.add_unordered_list(
+            [
+                f"**{module}**: {' '.join([f'[{element}]({element}.md)' for element in sorted(elements)])}"
+                for module, elements in group_content_by_model[0].items()
+            ]
+            + [" ".join([translations[i] for i in group_content_by_model[1]])]
+        )
+
     def _desc_to_markdown(
         self, lang: str, el: ET.Element, doc: Document, desc_title: str | None = None
     ) -> None:
         if desc_title is not None:
             doc.add_heading(desc_title, level=2)
         doc.add_paragraph(self.get_desc(element=el, lang=lang))
+
+    def _group_content_by_model(self, elements: dict[str, Self], content: list[str]):
+        elements_by_model: dict[str, list[str]] = {}
+        misc: list[str] = []
+
+        for element in content:
+            if (
+                element in elements.keys()
+                and (module := elements[element].module) is not None
+            ):
+                elements_by_model.setdefault(module, []).append(element)
+            else:
+                misc.append(element)
+
+        return dict(sorted(elements_by_model.items())), {
+            "text" for i in misc if i in ["textNode", "string", "str"]
+        }
 
 
 class ClassSpec(BaseSpec):
@@ -573,6 +627,7 @@ class ODD2Md:
             for lang in self.languages:
                 element.to_markdown(
                     components=self.schema.components,
+                    elements=self.schema.elements,
                     lang=lang,
                     lang_translations=getattr(self.schema.translations, lang),
                     path=self.out_dir,
