@@ -17,7 +17,7 @@
     </desc>
     <classes mode="replace"/>
     <content>
-        <elementRef key="div"/>
+        <elementRef key="div" minOccurs="1" maxOccurs="unbounded"/>
     </content>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-05">
         <p xml:lang="de">Beispiel eines Kommentars mit unterschiedlichen Abschnitten:</p>
