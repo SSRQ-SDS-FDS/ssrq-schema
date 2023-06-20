@@ -14,8 +14,7 @@
         riferimento a un altro documento o documenti.
     </desc>
     <classes mode="replace">
-        <memberOf key="att.global"/>
-        <memberOf key="member.global.edit"/>
+        <memberOf key="model.global.edit"/>
     </classes>
     <content>
         <sequence>
@@ -24,7 +23,9 @@
         </sequence>
     </content>
     <attList>
-        <attDef ident="n" mode="delete"/>
+        <attDef ident="from" mode="delete"/>
+        <attDef ident="loc" mode="delete"/>
+        <attDef ident="to" mode="delete"/>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-17">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
