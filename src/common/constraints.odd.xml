@@ -3,42 +3,56 @@
     <specGrp xml:id="constraints">
         <constraintSpec scheme="schematron" module="core" ident="gl-sch-1" mode="change">
             <desc xml:lang="en" versionDate="2023-03-01">Mutually dependent for all elements: @unit
-                and @quantity</desc>
+                and @quantity
+            </desc>
             <constraint>
                 <sch:pattern>
                     <sch:rule context="tei:*">
                         <sch:report test="@quantity and not(@unit)" xml:lang="en">If the @quantity
-                            attribute is specified on the <sch:name/> element, @unit must be
-                            present, too.</sch:report>
+                            attribute is specified on the
+                            <sch:name/>
+                            element, @unit must be
+                            present, too.
+                        </sch:report>
                         <sch:report test="@unit and not(@quantity)" xml:lang="en">If the @unit
-                            attribute is specified on the <sch:name/> element, @quantity must be
-                            present, too.</sch:report>
+                            attribute is specified on the
+                            <sch:name/>
+                            element, @quantity must be
+                            present, too.
+                        </sch:report>
                     </sch:rule>
                 </sch:pattern>
             </constraint>
         </constraintSpec>
         <constraintSpec scheme="schematron" ident="sch-gl-2">
             <desc xml:lang="en" versionDate="2023-03-01">The value of an attribute should never
-                start with some kind of whitespace</desc>
+                start with some kind of whitespace
+            </desc>
             <constraint>
                 <sch:pattern>
                     <sch:rule context="@*">
-                        <sch:report test="matches(., '^(?:\s+|\t+|\n)(.*)$')" xml:lang="en"> The
-                            value of <sch:name/> should not start with whitesapce. </sch:report>
+                        <sch:report test="matches(., '^(?:\s+|\t+|\n)(.*)$')" xml:lang="en">The
+                            value of
+                            <sch:name/>
+                            should not start with whitesapce.
+                        </sch:report>
                     </sch:rule>
                 </sch:pattern>
             </constraint>
         </constraintSpec>
         <constraintSpec scheme="schematron" ident="sch-gl-3">
             <desc xml:lang="en" versionDate="2023-04-06">A dot ('.') should not be followed by an
-                underscore ('_') in @facs.</desc>
+                underscore ('_') in @facs.
+            </desc>
             <constraint>
                 <sch:pattern>
                     <sch:rule context="*[@facs]">
                         <sch:report test="matches(@facs, '\._')" xml:lang="en">It's not allowed to
-                            use '_.' as part of the facsimile name.</sch:report>
+                            use '_.' as part of the facsimile name.
+                        </sch:report>
                         <sch:report test="matches(@facs, '__')" xml:lang="en">An underscore should
-                            not be followed by another underscore.</sch:report>
+                            not be followed by another underscore.
+                        </sch:report>
                     </sch:rule>
                 </sch:pattern>
             </constraint>
@@ -47,8 +61,14 @@
             <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
             <constraint>
                 <sch:pattern>
-                    <sch:rule context="tei:publisher|tei:pubPlace|tei:*[name() = ('abbr', 'bibl', 'condition', 'head', 'hi', 'orgName', 'p', 'persName', 'q', 'quote', 'ref', 'time', 'title')][not(*)]">
-                        <sch:assert test="string-length(normalize-space(.)) > 0"><sch:name/> should contain some text.</sch:assert>
+                    <sch:rule
+                            context="tei:publisher|tei:pubPlace|tei:*[name() = ('abbr', 'bibl', 'condition', 'foreign',
+                            'head', 'hi', 'orgName', 'p', 'persName', 'q', 'quote', 'ref', 'seg', 'signed', 'time',
+                            'title', 'unclear')][not(*)]">
+                        <sch:assert test="string-length(normalize-space(.)) > 0">
+                            <sch:name/>
+                            should contain some text.
+                        </sch:assert>
                     </sch:rule>
                 </sch:pattern>
             </constraint>
@@ -58,7 +78,9 @@
             <constraint>
                 <sch:pattern>
                     <sch:rule context="tei:TEI">
-                        <sch:assert test="count(distinct-values(//tei:idno/text())) = count(//tei:idno)">The value of every tei:idno should be unique.</sch:assert>
+                        <sch:assert test="count(distinct-values(//tei:idno/text())) = count(//tei:idno)">The value of
+                            every tei:idno should be unique.
+                        </sch:assert>
                     </sch:rule>
                 </sch:pattern>
             </constraint>
