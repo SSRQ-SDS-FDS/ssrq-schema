@@ -16,6 +16,16 @@ from ..conftest import RNG_test_function
             "<list/>",
             False,
         ),
+        (
+            "invalid-list-with-wrong-attribute",
+            "<list att='foo'><item>foo</item></list>",
+            False,
+        ),
+        (
+            "invalid-list-with-wrong-attribute-value",
+            "<list rend='bar'><item>foo</item></list>",
+            False,
+        ),
     ],
 )
 def test_list(
