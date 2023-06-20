@@ -11,9 +11,10 @@ extra:
     - icon: material/information
       link: https://www.ssrq-sds-fds.ch/en/service-menu/contact/
       name: contact / imprint
+
 extra_css:
   - assets/css/extra.css
-# This hook creates the odd and generates a markdown-file per element (de, fr, en)
+# This hook creates the odd and generates a markdown-file per element (de, fr)
 hooks:
   - ./utils/doc_hooks.py
 markdown_extensions:
@@ -32,17 +33,10 @@ plugins:
           build: true
           name: Français
           site_name: SDS Documentation
-        #en:
-        #  build: true
-        #  name: English
-        #  site_name: SLS Documentation
       nav_translations:
         de:
           Base: Philologische Grundlagen
           Elements: Tag-Bibliothek
-        #en:
-        #  Base: Philological foundations
-        #  Elements: Tag library
         fr:
           Base: Bases philologiques
           Elements: Bibliothèque de tags

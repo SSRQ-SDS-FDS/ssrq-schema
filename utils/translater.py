@@ -3,7 +3,7 @@ from pathlib import Path
 
 from pydantic import BaseModel, root_validator
 
-translations_file = Path(__file__).parent.parent / "docs/i18n/translations.json"
+translations_file = Path(__file__).parent.parent / "docs/translations/translations.json"
 
 
 class Translations(BaseModel):
