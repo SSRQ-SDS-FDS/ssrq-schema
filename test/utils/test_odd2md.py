@@ -160,3 +160,40 @@ def test_odd_reader_components_setup(example_odd: str, tmp_path: Path):
     assert int(components.__str__()) == len(odd_reader.components)
     for _, component in odd_reader.components.items():
         assert isinstance(component, ODDElement)
+
+
+def test_find_examples(
+    example_odd: str,
+    example_elementSpec: EL_FINDER,
+):
+    example_el_spec = example_elementSpec("measureGrp")
+    el_spec = ElementSpec(element=example_el_spec)  # type: ignore
+    assert example_el_spec is not None
+    examples = el_spec.find_examples()
+    assert examples is not None
+    examples_check = check_result_with_xpath(
+        xml=example_odd,
+        xpath="count(//tei:elementSpec[@ident = 'measureGrp']//tei:exemplum)",
+        expected_result=None,
+    )
+    assert len(examples) == int(examples_check.__str__())
+
+
+def test_example_to_string(
+    example_odd: str,
+    example_elementSpec: EL_FINDER,
+):
+    example_el_spec = example_elementSpec("measureGrp")
+    el_spec = ElementSpec(element=example_el_spec)  # type: ignore
+    assert example_el_spec is not None
+    examples = el_spec.find_examples()
+    assert examples is not None
+    for example in examples:
+        example_string = el_spec.example_to_string(example=example, lang="de")
+        assert example_string is not None
+        assert isinstance(example_string, tuple)
+        assert len(example_string) == 2
+        assert example_string[0] is not None
+        assert isinstance(example_string[1], str)
+        assert "measure" in example_string[1]
+        assert "type" in example_string[1]

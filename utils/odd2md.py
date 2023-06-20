@@ -21,9 +21,10 @@ from utils.translater import TRANSLATE, Translations
 LANGS = ["de", "fr"]
 # various namespaces used in the ODD
 TEI_NS = "http://www.tei-c.org/ns/1.0"
+TEI_EX = "http://www.tei-c.org/ns/Examples"
 RELAX_NG_NS = "http://relaxng.org/ns/structure/1.0"
 XML_NS = "http://www.w3.org/XML/1998/namespace"
-NS_MAP = {"tei": TEI_NS, "rng": RELAX_NG_NS, "xml": XML_NS}
+NS_MAP = {"tei": TEI_NS, "teiEx": TEI_EX, "rng": RELAX_NG_NS, "xml": XML_NS}
 
 RE_PATTERN = re.compile(r"[\s\n]+")
 
@@ -243,6 +244,14 @@ class BaseSpec:
 
         return classes_found
 
+    def find_examples(self) -> list[ET.Element] | None:
+        examples = self.odd_element.findall("tei:exemplum", namespaces=NS_MAP)
+
+        if examples is None or len(examples) == 0:
+            return None
+
+        return examples
+
     def find_attributes(
         self, components: dict[str, ODDElement]
     ) -> list[AttributeSpec] | None:
@@ -339,6 +348,44 @@ class BaseSpec:
                 elements_found.append("textNode")
 
         return elements_found
+
+    def example_to_string(
+        self, example: ET.Element, lang: str
+    ) -> tuple[str | None, str]:
+        """
+        Convert an tei:exemplum to a string.
+
+        Args:
+            example (ET.Element): The example to convert.
+            lang (str): The language of the output.
+
+        Returns:
+            tuple[str | None, str]: A tuple containing the title and the code of the example.
+
+        Raises:
+            ValueError: If the example does not contain any example code.
+        """
+        from elementpath import select
+        from elementpath.xpath3 import XPath3Parser
+
+        example_title = example.find(
+            f"./tei:p[@xml:lang = '{lang}']", namespaces=NS_MAP
+        )
+        example_code = example.find("./teiEx:egXML", namespaces=NS_MAP)
+
+        if example_code is None:
+            raise ValueError("Example does not contain any code.")
+
+        ET.indent(example_code, space="    ", level=0)
+
+        return (
+            self._desc_node_to_string(node=example_title)
+            if example_title is not None
+            else None,
+            ET.tostring(example_code, encoding="unicode", method="xml").replace(
+                "ns0:", ""
+            ),
+        )
 
     def _get_attributes_from_class(
         self, odd_class: ET.Element
@@ -445,6 +492,12 @@ class ElementSpec(BaseSpec):
             doc=doc,
         )
 
+        self._list_examples(
+            translations=lang_translations,
+            lang=lang,
+            doc=doc,
+        )
+
         if path is not None:
             return doc.dump(name=f"{self.ident}.{lang}", dir=path)
         return doc.__str__()
@@ -488,6 +541,25 @@ class ElementSpec(BaseSpec):
             ]
             + [" ".join([translations[i] for i in group_content_by_model[1]])]
         )
+
+    def _list_examples(
+        self, translations: dict[str, str], lang: str, doc: Document
+    ) -> None:
+        examples = self.odd_element.findall(".//tei:exemplum", namespaces=NS_MAP)
+        doc.add_heading(translations["examples"], level=2)
+
+        if len(examples) == 0:
+            doc.add_paragraph(translations["noExamples"])
+            return None
+
+        for index, example in enumerate(examples):
+            title, code = self.example_to_string(example=example, lang=lang)
+            doc.add_heading(f"{translations['example']} {index + 1}", level=3)
+
+            if title is not None:
+                doc.add_paragraph(title)
+
+            doc.add_code(code=code, lang="xml")
 
     def _desc_to_markdown(
         self, lang: str, el: ET.Element, doc: Document, desc_title: str | None = None
