@@ -4,6 +4,9 @@ schemas = [{title="SSRQ Editionsrichtlinien", description = "The main schema use
 
 [tool.poetry]
 name = "ssrq-schema"
+packages = [
+    { include = "utils/*.py" },
+]
 version = "0.1.0"
 description = "TEI-ODD schema for the Swiss Law Sources with Python based tooling."
 authors = ["Bpolitycki <bastian.politycki@unisg.ch>"]
