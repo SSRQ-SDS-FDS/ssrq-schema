@@ -22,6 +22,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "invalid-table-with-attr",
+            "<table rows='1' cols='1'><row><cell>foo</cell></row></table>",
+            False,
+        ),
+        (
             "invalid-table-without-content",
             "<table/>",
             False,
