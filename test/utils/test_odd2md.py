@@ -1,9 +1,12 @@
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+import pytest
+
 from utils.odd2md import (
     LANGS,
     NS_MAP,
+    AttributeSpec,
     ElementSpec,
     ODD2Md,
     ODDElement,
@@ -83,11 +86,51 @@ def test_find_el_content(
     assert len(el_spec.content) == int(default_content_elements.__str__())
 
 
+@pytest.mark.parametrize(
+    "element_name, has_attributes, attributes",
+    [
+        (
+            "bibl",
+            False,
+            None,
+        ),
+        ("hi", True, ["rend", "hand"]),
+        ("term", True, ["ref"]),
+    ],
+)
+def test_find_el_attributes(
+    example_elementSpec: EL_FINDER,
+    example_odd: str,
+    element_name: str,
+    has_attributes: bool,
+    attributes: list[str] | None,
+):
+    odd_reader = ODDReader(odd=example_odd)
+    example_el_spec = example_elementSpec(element_name)
+    assert example_el_spec is not None
+    el_spec = ElementSpec(element=example_el_spec)
+    assert el_spec.odd_type == "elementSpec"
+    el_spec.attributes = el_spec.find_attributes(
+        components=odd_reader.components  # type: ignore
+    )
+    assert bool(el_spec.attributes) is has_attributes
+    if has_attributes:
+        assert attributes is not None
+        assert isinstance(el_spec.attributes, list)
+        assert len(el_spec.attributes) == len(attributes)
+        for attribute in el_spec.attributes:
+            assert isinstance(attribute, AttributeSpec)
+            assert attribute.ident in attributes
+            descriptions = attribute.attr_element.findall("tei:desc", namespaces=NS_MAP)
+            assert len(descriptions) > 1
+            assert len(descriptions) <= 4
+
+
 def test_spec_desc_to_md(example_elementSpec: EL_FINDER):
     example_el_spec = example_elementSpec("p")
     assert example_elementSpec is not None
     el_spec = ElementSpec(element=example_el_spec)
-    desc = el_spec.get_desc(lang="de")
+    desc = el_spec.get_desc(element=el_spec.odd_element, lang="de")
     assert isinstance(desc, str)
     assert "\n" not in desc
     desc_childs = el_spec.odd_element.findall(
@@ -117,12 +160,3 @@ def test_odd_reader_components_setup(example_odd: str, tmp_path: Path):
     assert int(components.__str__()) == len(odd_reader.components)
     for _, component in odd_reader.components.items():
         assert isinstance(component, ODDElement)
-
-
-def test_attr_desc_md(example_elementSpec: EL_FINDER):
-    example_el_spec = example_elementSpec("figure")
-    assert example_el_spec is not None
-    el_spec = ElementSpec(element=example_el_spec)
-    attributes = el_spec.find_attributes()
-    assert attributes is not None
-    assert len(attributes) == 1

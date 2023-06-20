@@ -83,8 +83,53 @@ class ODDElement(Protocol):
         ...
 
 
+class AttributeSpec:
+    attr_element: ET.Element
+    classes: list[ET.Element]
+    ident: str
+
+    def __init__(self, element: ET.Element, element_classes: list[ET.Element]) -> None:
+        self.attr_element = element
+        self.ident = element.attrib["ident"]
+        self.classes = element_classes
+        self._add_description()
+
+    def _add_description(self) -> None:
+        """Add the description of the attribute to the attribute element if it does not
+        exist.
+        """
+
+        desc = self.attr_element.find("./tei:desc", namespaces=NS_MAP)
+
+        if desc is not None:
+            return None
+
+        class_descriptions: list[ET.Element] = []
+
+        for element_class in self.classes:
+            attribute = element_class.findall(
+                f".//tei:attDef[@ident = '{self.ident}']",
+                namespaces=NS_MAP,
+            )
+            if attribute:
+                for a in attribute:
+                    class_descriptions.extend(
+                        a.findall("./tei:desc", namespaces=NS_MAP)
+                    )
+
+        if len(class_descriptions) > 0:
+            for index, description in enumerate(class_descriptions):
+                self.attr_element.insert(index, description)
+
+    def _add_content(self) -> None:
+        ...
+
+    def resolve_content(self, components: dict[str, ODDElement]) -> None:
+        ...
+
+
 class BaseSpec:
-    attributes: list[str] | None
+    attributes: list[AttributeSpec] | None
     content: dict[str, list[str]] | None
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
@@ -96,6 +141,63 @@ class BaseSpec:
         self.odd_element = element
         self.ident = element.attrib["ident"]
         self.module = element.attrib.get("module")
+
+    def _compare_element_with_class_attributes(
+        self,
+        element_attributes: list[ET.Element] | None,
+        class_attributes: list[ET.Element] | None,
+    ) -> list[AttributeSpec] | None:
+        """A helper function to compare the attributes of an element with the attributes
+        of its classes.
+
+        Args:
+            element_attributes (list[ET.Element] | None): The attributes of the element.
+            class_attributes (list[ET.Element] | None): The attributes of the classes.
+
+        Returns:
+            list[AttributeSpec] | None: The attributes of the element including those
+                not deleted and defined in the class."""
+
+        def get_attributes_not_deleted(
+            attributes: list[ET.Element],
+        ) -> list[ET.Element]:
+            return [
+                attribute
+                for attribute in attributes
+                if attribute.get("mode") != "delete"
+            ]
+
+        if element_attributes is None and class_attributes is None:
+            return None
+
+        if class_attributes is None and element_attributes is not None:
+            return [
+                AttributeSpec(attr, class_attributes if class_attributes else [])
+                for attr in get_attributes_not_deleted(element_attributes)
+            ]
+
+        if element_attributes is None and class_attributes is not None:
+            return [
+                AttributeSpec(attr, class_attributes)
+                for attr in get_attributes_not_deleted(class_attributes)
+            ]
+
+        assert element_attributes is not None
+        assert class_attributes is not None
+
+        class_attributes = get_attributes_not_deleted(class_attributes)
+
+        return [
+            AttributeSpec(attribute, class_attributes)
+            for attribute in class_attributes
+            if not any(
+                [
+                    el_attribute.get("ident") == attribute.get("ident")
+                    and el_attribute.get("mode") == "delete"
+                    for el_attribute in element_attributes
+                ]
+            )
+        ]
 
     def find_classes(
         self,
@@ -140,23 +242,50 @@ class BaseSpec:
 
         return classes_found
 
-    def find_attributes(self) -> list[str] | None:
+    def find_attributes(
+        self, components: dict[str, ODDElement]
+    ) -> list[AttributeSpec] | None:
         att_list = self.odd_element.find("./tei:attList", namespaces=NS_MAP)
+
+        if self.classes is None:
+            self.classes = self.find_classes(
+                element=self.odd_element, components=components
+            )
 
         if att_list is None and self.classes is None:
             return None
 
         assert isinstance(att_list, ET.Element)
-        element_attributes = att_list.findall("tei:attDef", namespaces=NS_MAP)
-
-        return (
+        class_attributes = (
             [
-                attribute.attrib["ident"]
-                for attribute in element_attributes
-                if attribute.get("mode") != "delete"
+                self._get_attributes_from_class(component.odd_element)
+                for c in self.classes
+                if (component := components.get(c)) is not None
             ]
-            if element_attributes is not None
+            if self.classes is not None
             else None
+        )
+
+        if class_attributes is not None:
+            # flatten the list of lists using a list comprehension and filter out None values
+            class_attributes = [
+                attribute
+                for attributes in class_attributes
+                if attributes is not None
+                for attribute in attributes
+            ]
+
+        element_attributes = (
+            el_attr
+            if len((el_attr := att_list.findall("tei:attDef", namespaces=NS_MAP))) > 0
+            else None
+        )
+
+        if element_attributes is None and class_attributes is None:
+            return None
+
+        return self._compare_element_with_class_attributes(
+            element_attributes=element_attributes, class_attributes=class_attributes
         )
 
     def find_content_elements(
@@ -207,10 +336,21 @@ class BaseSpec:
 
         return elements_found
 
-    def get_desc(self, lang: str) -> str:
-        desc = self.odd_element.find(
-            f"./tei:desc[@xml:lang='{lang}']", namespaces=NS_MAP
-        )
+    def _get_attributes_from_class(
+        self, odd_class: ET.Element
+    ) -> list[ET.Element] | None:
+        att_list = odd_class.find("./tei:attList", namespaces=NS_MAP)
+
+        if att_list is None:
+            return None
+
+        assert isinstance(att_list, ET.Element)
+        class_attributes = att_list.findall("tei:attDef", namespaces=NS_MAP)
+
+        return class_attributes if len(class_attributes) > 0 else None
+
+    def get_desc(self, element: ET.Element, lang: str) -> str:
+        desc = element.find(f"./tei:desc[@xml:lang='{lang}']", namespaces=NS_MAP)
         if desc is None:
             return ""
         return self._desc_node_to_string(node=desc)
@@ -266,35 +406,55 @@ class ElementSpec(BaseSpec):
         self.odd_type = "elementSpec"
 
     def to_markdown(
-        self, lang: str, lang_translations: dict[str, str], path: Optional[Path] = None
+        self,
+        components: dict[str, ODDElement],
+        lang: str,
+        lang_translations: dict[str, str],
+        path: Optional[Path] = None,
     ) -> Optional[str]:
         doc = Document()
         # Add the name of the element as title
         doc.add_heading(self.ident, level=1)
-        self._desc_to_markdown(lang=lang, desc_title=lang_translations["desc"], doc=doc)
+        self._desc_to_markdown(
+            lang=lang,
+            el=self.odd_element,
+            desc_title=lang_translations["desc"],
+            doc=doc,
+        )
         self._create_attribute_desc(
-            lang=lang, section_title=lang_translations["attr"], doc=doc
+            components=components,
+            lang=lang,
+            section_title=lang_translations["attr"],
+            doc=doc,
         )
 
         if path is not None:
             return doc.dump(name=f"{self.ident}.{lang}", dir=path)
         return doc.__str__()
 
-    def _create_attribute_desc(self, lang: str, section_title: str, doc: Document):
-        if hasattr(self, "attributes") and self.attributes is None:
-            # If the element has no attributes, return
-            return None
-
-        self.attributes = self.find_attributes()
+    def _create_attribute_desc(
+        self,
+        components: dict[str, ODDElement],
+        lang: str,
+        section_title: str,
+        doc: Document,
+    ):
+        self.attributes = self.find_attributes(components=components)
 
         if self.attributes is None:
             return None
 
         doc.add_heading(section_title, level=2)
+        for attribute in self.attributes:
+            doc.add_heading(f"@{attribute.ident}", level=3)
+            self._desc_to_markdown(el=attribute.attr_element, lang=lang, doc=doc)
 
-    def _desc_to_markdown(self, lang: str, desc_title: str, doc: Document) -> None:
-        doc.add_heading(desc_title, level=2)
-        doc.add_paragraph(self.get_desc(lang=lang))
+    def _desc_to_markdown(
+        self, lang: str, el: ET.Element, doc: Document, desc_title: str | None = None
+    ) -> None:
+        if desc_title is not None:
+            doc.add_heading(desc_title, level=2)
+        doc.add_paragraph(self.get_desc(element=el, lang=lang))
 
 
 class ClassSpec(BaseSpec):
@@ -409,6 +569,7 @@ class ODD2Md:
         for _, element in self.schema.elements.items():
             for lang in self.languages:
                 element.to_markdown(
+                    components=self.schema.components,
                     lang=lang,
                     lang_translations=getattr(self.schema.translations, lang),
                     path=self.out_dir,
