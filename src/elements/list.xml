@@ -12,7 +12,7 @@
         <elementRef key="item" minOccurs="1" maxOccurs="unbounded"/>
     </content>
     <attList>
-        <attDef ident="rend" mode="change" usage="opt">
+        <attDef ident="rend" mode="replace" usage="opt">
             <desc xml:lang="de" versionDate="2023-04-13">Optionale Angabe zur Darstellung der
                 Liste.
             </desc>
