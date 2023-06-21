@@ -7,9 +7,9 @@ import pytest
     "name, markup, result",
     [
         (
-            "valid-empty-body",
+            "invalid-empty-body",
             "<body/>",
-            True,
+            False,
         ),
         (
             "valid-body-with-div",
