@@ -2,7 +2,8 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="textLang" module="core" mode="change">
     <desc xml:lang="de" versionDate="2023-05-23">Enthält die Textsprache bzw. die Textsprachen einer
-        Quelle.</desc>
+        Quelle.
+    </desc>
     <desc xml:lang="fr" versionDate="2023-05-23">Contient la ou les langues du texte d'une source.</desc>
     <desc xml:lang="en" versionDate="2023-05-23">Contains the text language(s) of a source.</desc>
     <classes mode="replace">
@@ -19,6 +20,8 @@
         <attDef ident="rend" mode="delete"/>
         <attDef ident="resp" mode="delete"/>
         <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="mainLang" mode="delete"/>
+        <attDef ident="otherLangs" mode="delete"/>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-23">
         <p xml:lang="de">Einfaches Beispiel</p>
