@@ -12,6 +12,11 @@ import pytest
             True,
         ),
         (
+            "valid-back-with-multiple-divs",
+            "<back><div><p>foo</p></div><div><p>foo</p></div></back>",
+            True,
+        ),
+        (
             "invalid-back-with-p-only",
             "<back><p>foo</p></back>",
             False,
