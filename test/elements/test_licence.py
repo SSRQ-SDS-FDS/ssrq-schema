@@ -12,7 +12,9 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-licence",
-            "<licence target='http://licence.bar'>foo bar</licence>",
+            """<licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+                    Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+                    </licence>""",
             True,
         ),
         (

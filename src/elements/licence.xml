@@ -16,13 +16,15 @@
         <memberOf key="att.pointing"/>
     </classes>
     <content>
-        <textNode/>
+        <valList type="closed">
+            <valItem ident="Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)"/>
+        </valList>
     </content>
     <attList>
-        <attDef ident="target" mode="change" usage="req">
-            <datatype>
-                <dataRef key="ssrq.pointer.url"/>
-            </datatype>
+        <attDef ident="target" mode="replace" usage="req">
+            <valList type="closed">
+                <valItem ident="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+            </valList>
         </attDef>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-03-30">

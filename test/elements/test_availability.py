@@ -8,7 +8,7 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-availability",
-            "<availability><licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Attribution-NonCommercial- ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence></availability>",
+            "<availability><licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence></availability>",
             True,
         ),
         (
@@ -18,7 +18,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "invalid-availability-with-attribute",
-            "<availability type='foo'><licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Attribution-NonCommercial- ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence></availability>",
+            "<availability type='foo'><licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence></availability>",
             False,
         ),
         (
