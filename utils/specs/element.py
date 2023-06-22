@@ -83,7 +83,12 @@ class ElementSpec(BaseSpec):
         translations: dict[str, str],
         doc: Document,
     ) -> None:
+        from itertools import chain
+
         doc.add_heading(translations["content"], level=2)
+
+        if self.ident == "damage":
+            print(self.content)
         if self.content is None:
             doc.add_paragraph(translations["isEmpty"])
             return None
@@ -92,13 +97,22 @@ class ElementSpec(BaseSpec):
             elements=elements, content=self.content
         )
 
-        doc.add_unordered_list(
+        contents_elements = (
             [
                 f"**{module}**: {' '.join([f'[{element}]({element}.md)' for element in sorted(elements)])}"
                 for module, elements in group_content_by_model[0].items()
             ]
-            + [" ".join([translations[i] for i in group_content_by_model[1]])]
+            if len(group_content_by_model[0].keys()) > 0
+            else None
         )
+
+        text_elements = (
+            [" ".join([translations[i] for i in group_content_by_model[1]])]
+            if len(group_content_by_model[1]) > 0
+            else None
+        )
+
+        doc.add_unordered_list(chain(contents_elements or [], text_elements or []))
 
     def _list_examples(
         self, translations: dict[str, str], lang: str, doc: Document

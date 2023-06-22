@@ -204,6 +204,10 @@ class BaseSpec:
             # Return early if no content is found
             return elements_found
 
+        if content.find("tei:empty", namespaces=NS_MAP) is not None:
+            # Also return early if the content is empty
+            return elements_found
+
         elements_found = []
 
         for content_part in content.iter():

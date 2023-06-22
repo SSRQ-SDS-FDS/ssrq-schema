@@ -65,25 +65,67 @@ def test_find_classes_recursive(
     assert len(el_spec.classes) == 5
 
 
+@pytest.mark.parametrize(
+    "element_name, has_content, xpath",
+    [
+        (
+            "hi",
+            True,
+            "count(//tei:macroSpec[starts-with(@ident, 'ssrq.content')]//tei:elementRef|//tei:macroSpec[starts-with(@ident, 'ssrq.content')]//tei:textNode)",
+        ),
+        ("addSpan", False, None),
+        ("delSpan", False, None),
+        ("damage", True, "4"),
+    ],
+)
 def test_find_el_content(
-    example_elementSpec: EL_FINDER, example_odd: str, tmp_path: Path
+    example_elementSpec: EL_FINDER,
+    example_odd: str,
+    element_name: str,
+    has_content: bool,
+    xpath: str | None,
 ):
+    """
+    Test if the content of an element is found correctly.
+
+    Args:
+        example_elementSpec (EL_FINDER): Fixture to find an elementSpec in the example ODD.
+        example_odd (str): Fixture to find the example ODD.
+        element_name (str): Name of the element to find.
+        has_content (bool): Whether the element has content or not.
+        xpath (str | None): XPath expression to find the content of the element.
+
+    Returns:
+        None"""
+
     odd_reader = ODDReader(odd=example_odd)
-    example_el_spec = example_elementSpec("hi")
+    example_el_spec = example_elementSpec(element_name)
+
     assert example_el_spec is not None
+
     el_spec = ElementSpec(element=example_el_spec)
+
     assert el_spec.odd_type == "elementSpec"
+
     el_spec.content = el_spec.find_content_elements(
         element=el_spec.odd_element, components=odd_reader.components  # type: ignore
     )
-    assert el_spec.content is not None
-    assert isinstance(el_spec.content, list)
-    default_content_elements = check_result_with_xpath(
-        xml=example_odd,
-        xpath="count(//tei:macroSpec[starts-with(@ident, 'ssrq.content')]//tei:elementRef|//tei:macroSpec[starts-with(@ident, 'ssrq.content')]//tei:textNode)",
-        expected_result=None,
-    )
-    assert len(el_spec.content) == int(default_content_elements.__str__())
+
+    if has_content:
+        assert el_spec.content is not None
+    else:
+        assert el_spec.content is None
+
+    if has_content:
+        assert isinstance(el_spec.content, list)
+
+        if xpath is not None:
+            default_content_elements = check_result_with_xpath(
+                xml=example_odd,
+                xpath=xpath,
+                expected_result=None,
+            )
+            assert len(el_spec.content) == int(default_content_elements.__str__())
 
 
 @pytest.mark.parametrize(
