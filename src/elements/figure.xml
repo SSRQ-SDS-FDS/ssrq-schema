@@ -18,7 +18,9 @@
         introductions, les illustrations, graphiques, arbres généalogiques, etc. sont intégrés à la figure (<gi>
             graphic</gi>).
     </desc>
-    <classes mode="replace"/>
+    <classes mode="replace">
+        <memberOf key="att.typed"/>
+    </classes>
     <content>
         <sequence minOccurs="0" maxOccurs="1">
             <elementRef key="graphic" minOccurs="1" maxOccurs="1"/>
@@ -47,12 +49,12 @@
         </constraint>
     </constraintSpec>
     <attList>
-        <attDef ident="type" mode="add" usage="req">
+        <attDef ident="type" mode="replace" usage="req">
             <desc xml:lang="de" versionDate="2023-04-11">Zwingende Zuordnung zu einem Typ</desc>
             <desc xml:lang="fr" versionDate="2023-04-11">Affectation obligatoire à un type</desc>
             <desc xml:lang="en" versionDate="2023-04-11">Mandatory assignment to a type</desc>
             <valList type="closed">
-                <valItem ident="copper engraving">
+                <valItem ident="copper_engraving">
                     <desc xml:lang="de" versionDate="2023-04-11">Kupferstich</desc>
                     <desc xml:lang="fr" versionDate="2023-04-11">gravure sur cuivre</desc>
                     <desc xml:lang="en" versionDate="2023-04-11">copper engraving</desc>
@@ -70,7 +72,7 @@
                     <desc xml:lang="en" versionDate="2023-04-11">illustration</desc>
                     <desc xml:lang="it" versionDate="2023-04-11">figura</desc>
                 </valItem>
-                <valItem ident="locus sigilli">
+                <valItem ident="locus_sigilli">
                     <desc xml:lang="de" versionDate="2023-04-11">Locus sigilli</desc>
                     <desc xml:lang="fr" versionDate="2023-04-11">locus sigilli</desc>
                     <desc xml:lang="en" versionDate="2023-04-11">locus sigilli</desc>
@@ -82,7 +84,7 @@
                     <desc xml:lang="en" versionDate="2023-04-11">monogramma</desc>
                     <desc xml:lang="it" versionDate="2023-04-11">monogram</desc>
                 </valItem>
-                <valItem ident="notarial sign">
+                <valItem ident="notarial_sign">
                     <desc xml:lang="de" versionDate="2023-04-11">Notarzeichen</desc>
                     <desc xml:lang="fr" versionDate="2023-04-11">seing/signe notarial</desc>
                     <desc xml:lang="en" versionDate="2023-04-11">notarial sign</desc>
@@ -114,7 +116,7 @@
         <p xml:lang="fr">Signature avec le signe d'urgence</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <signed>
-                <figure type="notarial sign"/>
+                <figure type="notarial_sign"/>
                 <lb/>Et ego Hainricus Jacobi de Augiamaiori, clericus Constanciensis dyocesis, publicus imperiali
                 auctoritate notarius iuratus, quia
                 <lb/>...
@@ -125,7 +127,7 @@
         <p xml:lang="de">Locus sigilli (L. S.)</p>
         <p xml:lang="fr">Locus sigilli (L. S.)</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <figure type="locus sigilli"/>
+            <figure type="locus_sigilli"/>
         </egXML>
     </exemplum>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
