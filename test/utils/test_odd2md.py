@@ -5,14 +5,14 @@ import pytest
 
 from utils.odd2md import (
     LANGS,
-    NS_MAP,
-    AttributeSpec,
-    ElementSpec,
     ODD2Md,
-    ODDElement,
     ODDReader,
-    split_tag_and_ns,
 )
+from utils.specs.abstract import ODDElement
+from utils.specs.attribute import AttributeSpec
+from utils.specs.config import NS_MAP
+from utils.specs.element import ElementSpec
+from utils.specs.utils import split_tag_and_ns
 
 from .conftest import EL_FINDER, check_result_with_xpath
 
