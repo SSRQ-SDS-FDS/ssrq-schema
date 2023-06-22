@@ -14,6 +14,13 @@ import pytest
             True,
         ),
         (
+            "licence-with-invalid-text",
+            """<licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+                    Attribution-NonCommercial-ShareAlike 4.0 International
+                    </licence>""",
+            False,
+        ),
+        (
             "invalid-licence",
             "<licence target='licence.bar'>foo bar</licence>",
             False,
