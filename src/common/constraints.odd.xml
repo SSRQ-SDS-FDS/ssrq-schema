@@ -63,7 +63,7 @@
                 <sch:pattern>
                     <sch:rule
                             context="tei:publisher|tei:pubPlace|tei:*[name() = ('ab', 'abbr', 'add', 'bibl', 'condition',
-                            'del', 'expan', 'foreign', 'fw', 'head', 'hi', 'label', 'lem', 'licence', 'note', 'num',
+                            'corr', 'del', 'expan', 'foreign', 'fw', 'head', 'hi', 'label', 'lem', 'licence', 'note', 'num',
                             'orgName', 'orig', 'p', 'persName', 'placeName', 'q', 'quote', 'ref', 'seg', 'sic', 'signed',
                             'supplied', 'time', 'title', 'unclear')][not(*)]">
                         <sch:assert test="string-length(normalize-space(.)) > 0">
