@@ -55,6 +55,20 @@
                 <dataRef name="IDREFS"/>
             </datatype>
         </attDef>
+        <attDef ident="reason" mode="replace">
+            <desc xml:lang="de" versionDate="2023-06-21">Grund der Ergänzung</desc>
+            <desc xml:lang="en" versionDate="2023-06-21">reason for addition</desc>
+            <desc xml:lang="fr" versionDate="2023-06-21">raison de l'ajout</desc>
+            <desc xml:lang="it" versionDate="2023-06-21">motivo dell'aggiunta</desc>
+            <valList type="closed">
+                <valItem ident="omitted">
+                    <desc xml:lang="de" versionDate="2023-06-21">weggelassen</desc>
+                    <desc xml:lang="en" versionDate="2023-06-21">omitted</desc>
+                    <desc xml:lang="fr" versionDate="2023-06-21">omis</desc>
+                    <desc xml:lang="it" versionDate="2023-06-21">omesso</desc>
+                </valItem>
+            </valList>
+        </attDef>
     </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
