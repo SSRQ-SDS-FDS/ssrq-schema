@@ -18,6 +18,13 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "licence-with-invalid-text",
+            """<licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+                    Attribution-NonCommercial-ShareAlike 4.0 International
+                    </licence>""",
+            False,
+        ),
+        (
             "invalid-licence",
             "<licence target='licence.bar'>foo bar</licence>",
             False,
