@@ -6,7 +6,11 @@
     <desc xml:lang="fr" versionDate="2023-04-11">Contient une rangée d'un tableau</desc>
     <classes mode="replace"/>
     <content>
-        <elementRef key="cell" minOccurs="1" maxOccurs="unbounded"/>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <elementRef key="cell"/>
+            <elementRef key="measureGrp"/>
+        </alternate>
+
     </content>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-11">
         <p xml:lang="de">Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten
