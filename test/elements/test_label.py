@@ -35,6 +35,11 @@ def test_element(
     "name, markup, result",
     [
         (
+            "invalid-empty-label",
+            "<label type='keyword' place='left_margin'/>",
+            False,
+        ),
+        (
             "valid-label-after-lb",
             "<p><lb/><label type='keyword' place='left_margin'>bar baz foo</label></p>",
             True,
