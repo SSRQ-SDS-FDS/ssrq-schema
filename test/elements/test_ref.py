@@ -1,6 +1,10 @@
-from test.conftest import RNG_test_function
-
 import pytest
+from pyschval.main import (
+    SchematronResult,
+    validate_chunk,
+)
+
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -40,3 +44,34 @@ def test_ref_rng(
     result: bool,
 ):
     test_element_with_rng("ref", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-ref-without-target",
+            "<ref>abcde</ref>",
+            True,
+        ),
+        (
+            "invalid-ref-without-target-and-text",
+            "<ref></ref>",
+            False,
+        ),
+        (
+            "valid-ref-without-text",
+            "<ref target='https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'/>",
+            True,
+        ),
+    ],
+)
+def test_ref_constraint(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = validate_chunk(
+        files=writer.list(), isosch=main_constraints
+    )
+    print("failed-assert" in reports[0].report)
+    assert reports[0].is_valid() is result

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="ref" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="ref" module="core" mode="change"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <desc xml:lang="de" versionDate="2023-04-28">Hinweis/Link/Querverweis auf ein anderes Dokument,
         die Einleitung, das Register eines retrodigitalisierten Bandes, einen Eintrag im HLS,
         zitierte Literatur etc. Es ist sinnvoll, Links auf weitere, nicht edierte, aber in einem
@@ -17,8 +18,7 @@
         Archivsignatur zu wiederholen, sondern es reicht, auf die Stücknummer der Editionseinheit zu
         verlinken (vgl. Beispiel unten). Ebenso ist es möglich, innerhalb der eigenen
         Editionseinheit von einem Stück auf ein anderes zu referenzieren. Wir verwenden dafür die
-        Idno (vgl. Beispiel).
-    </desc>
+        Idno (vgl. Beispiel). </desc>
     <desc xml:lang="en" versionDate="2023-04-28">Cross-reference/Link/Cross-reference to another
         document, the preface, the register of a retronumbered volume, an entry in the DHS, the
         literature cited literature etc. It is useful to use <gi>ref</gi> to link to other unedited
@@ -34,8 +34,7 @@
         is part of an SDS edition set, it is not necessary to repeat the It is not necessary to
         repeat the archive number. It is sufficient to refer to the item number of the edition set
         (see example below). Similarly, it is possible to refer from one part to another within its
-        own publishing unit. For this we use the idno (see example below).
-    </desc>
+        own publishing unit. For this we use the idno (see example below). </desc>
     <desc xml:lang="fr" versionDate="2023-04-28">Renvoi/Lien/Référence croisée à un autre document,
         la préface, le registre d'un volume rétronumérisé, une entrée dans le DHS, la littérature
         citée etc. Il est utile de mettre à l'aide de <gi>ref</gi> des liens vers autres sources
@@ -51,8 +50,7 @@
         nécessaire de répéter la cote d'archive. Il suffit de faire référence au numéro de la pièce
         de l'ensemble d'édition (cf. exemple en bas). De même, il est possible de faire référence
         d'une pièce à une autre au sein de sa propre unité d'édition. Nous utilisons pour cela la
-        idno (cf. exemple en bas).
-    </desc>
+        idno (cf. exemple en bas). </desc>
     <classes mode="replace">
         <memberOf key="model.annotationPart.body"/>
         <memberOf key="model.ptrLike"/>
@@ -64,14 +62,27 @@
             <textNode/>
         </alternate>
     </content>
+    <constraintSpec ident="refAtts" mode="delete" scheme="schematron"/>
+    <constraintSpec scheme="schematron" ident="sch-el-ref" mode="add">
+        <desc xml:lang="en" versionDate="2023-06-22">Specific schematron rule for tei:ref</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule
+                    context="tei:ref[not(*)]">
+                    <sch:assert test="if (not(.[@target])) then string-length(normalize-space(.)) > 0 else .[@target]">
+                        <sch:name/> should contain some text or must use the attribute @target.
+                    </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
         <p xml:lang="de">Verweis auf gedruckte Quellen</p>
         <p xml:lang="fr">Référence aux sources imprimées</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <bibl>
                 <ref target="https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858">SSRQ SG
-                    III/2, Nr. 231
-                </ref>
+                    III/2, Nr. 231 </ref>
             </bibl>
         </egXML>
     </exemplum>
