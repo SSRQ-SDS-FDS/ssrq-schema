@@ -16,7 +16,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<sic><lb/><term ref='lem014672.11'>hexenry</term> bar</sic>",
             True,
         ),
-        ("invalid-sic-simple-with-attribute", "<sic n='1'>bar</sic>", False),
+        (
+            "invalid-sic-simple-with-attribute",
+            "<sic n='1'>bar</sic>",
+            False,
+        ),
     ],
 )
 def test_sic(
@@ -31,13 +35,16 @@ def test_sic(
 @pytest.mark.parametrize(
     "name, markup, result",
     [
-        ("valid-sic-with-text", "<sic>bar</sic>", True),
         (
-            "valid-sic-without-text-inside-choice",
-            "<choice><sic/><corr>bar</corr></choice>",
+            "valid-sic-with-text",
+            "<sic>bar</sic>",
             True,
         ),
-        ("invalid-sic-without-content", "<sic/>", False),
+        (
+            "invalid-empty-sic",
+            "<sic/>",
+            False,
+        ),
     ],
 )
 def test_sic_constraints(

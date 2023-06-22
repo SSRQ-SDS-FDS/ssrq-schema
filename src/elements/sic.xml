@@ -34,19 +34,6 @@
             <macroRef key="ssrq.content.entities"/>
         </alternate>
     </content>
-    <constraintSpec scheme="schematron" ident="sch-el-sic">
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:sic[not(ancestor::tei:choice)]">
-                    <sch:assert test="./* or string-length(./string()) > 0">
-                        <sch:name/>
-                        must not be
-                        empty!
-                    </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
         <p xml:lang="de">Einfache Verwendung</p>
         <p xml:lang="fr">Facile à utiliser</p>
