@@ -14,17 +14,12 @@
         Contient dans <gi>app</gi> un passage dont il existe une
         variante de texte qui diffère du modèle d'édition.
     </desc>
-    <classes mode="replace">
-        <memberOf key="att.global"/>
-    </classes>
+    <classes mode="replace"/>
     <content>
         <rng:oneOrMore>
             <rng:ref name="ssrq.content.default"/>
         </rng:oneOrMore>
     </content>
-    <attList>
-        <attDef ident="n" mode="delete"/>
-    </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-04-28">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <app>
