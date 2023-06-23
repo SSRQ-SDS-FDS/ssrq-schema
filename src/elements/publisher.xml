@@ -20,8 +20,10 @@
     <content>
         <textNode/>
     </content>
-    <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
-        <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
+    <constraintSpec scheme="schematron" ident="sch-publisher-custom" mode="add">
+        <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for
+            <gi>publisher</gi>
+        </desc>
         <constraint>
             <sch:pattern>
                 <sch:rule

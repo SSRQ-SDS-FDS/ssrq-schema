@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="persName"
-             module="namesdates" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="persName" module="namesdates" mode="change"
+             xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <desc xml:lang="de" versionDate="2024-04-20">Zeichnet eine Person aus und umfasst in der Regel nur den Vor- und
         Nachnamen.
     </desc>
@@ -19,6 +19,21 @@
             <rng:ref name="ssrq.content.default"/>
         </rng:oneOrMore>
     </content>
+    <constraintSpec scheme="schematron" ident="sch-persName-custom" mode="add">
+        <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for
+            <gi>persName</gi>
+        </desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:persName[ancestor::tei:editor]">
+                    <sch:assert test="not(@ref|@role)">If
+                        <sch:name/>
+                        is part of the editor it must not contain the attributes @ref or @role.
+                    </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <attList>
         <attDef ident="key" mode="delete"/>
         <attDef ident="ref" mode="change" module="att.canonical">
