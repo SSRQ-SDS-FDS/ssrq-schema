@@ -7,6 +7,7 @@
     <desc xml:lang="fr" versionDate="2023-04-19">Dimensions d'une source</desc>
     <classes mode="replace">
         <memberOf key="model.pPart.msdesc"/>
+        <memberOf key="att.typed"/>
     </classes>
     <content>
         <sequence preserveOrder="false">
@@ -27,11 +28,13 @@
         </constraint>
     </constraintSpec>
     <attList>
-        <attDef ident="type" mode="add">
+        <attDef ident="type" mode="replace" usage="req">
             <valList type="closed">
                 <valItem ident="leaves">
+                    <desc xml:lang="de" versionDate="2023-06-23">Ausmass der Blätter</desc>
                 </valItem>
                 <valItem ident="plica">
+                    <desc xml:lang="de" versionDate="2023-06-23">Ausmass der Plica</desc>
                 </valItem>
             </valList>
         </attDef>
