@@ -20,6 +20,32 @@
     <content>
         <textNode/>
     </content>
+    <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
+        <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule
+                        context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
+                    <sch:assert
+                            test=".[@datingMethod]">The attribute @datingMethod is required, when
+                        <sch:name/>
+                        is used outside of the publicationStmt.
+                    </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:publisher[ancestor::tei:publicationStmt]">
+                    <sch:assert test="text() = 'SSRQ-SDS-FDS'">If
+                        <sch:name/>
+                        is part of the publicationStmt it must contain the text "SSRQ-SDS-FDS".
+                    </sch:assert>
+                    <sch:assert test="not(@cert)">
+                        If
+                        <sch:name/>
+                        is part of the publicationStmt it may not contain the attribute @cert.
+                    </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <attList>
         <attDef ident="resp" mode="delete"/>
     </attList>
