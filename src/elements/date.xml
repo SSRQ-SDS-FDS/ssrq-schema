@@ -52,6 +52,19 @@
                         is part of the publicationStmt it must contain @type with a value of
                         electronic or print.
                     </sch:assert>
+                    <sch:assert
+                            test=".[@when-custom][not(@datingMethod|@dur-iso|@from-custom|@to-custom|@notAfter-custom|@notBefore-custom|@period)]">
+                        If
+                        <sch:name/>
+                        is part of the publicationStmt it must contain @when-custom and may not contain
+                        @dating-method, @dur-iso, @from-custom, @to-custom, @notAfter-custom, @notBefore-custom or
+                        @period.
+                    </sch:assert>
+                    <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)">
+                        If
+                        <sch:name/>
+                        is part of the publicationStmt it must not have any content.
+                    </sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
