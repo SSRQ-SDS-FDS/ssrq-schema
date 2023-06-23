@@ -26,7 +26,7 @@
     <attList>
         <attDef ident="xml:id" mode="change" usage="req">
             <datatype>
-                <dataRef name="string" restriction="(del|damage|add)[1-9]+"/>
+                <dataRef name="ID" restriction="(del|damage|add)[1-9]+"/>
             </datatype>
         </attDef>
         <attDef ident="cert" mode="delete"/>
@@ -44,7 +44,7 @@
         </p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <p>
-                <delSpan spanTo="#del1"/>
+                <delSpan spanTo="del1"/>
                 ...
                 <anchor xml:id="del1"/>
             </p>

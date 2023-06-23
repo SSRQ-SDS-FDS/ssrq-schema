@@ -26,7 +26,7 @@ def test_attribute_whitespace_constraint(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Test the if the validation fails, when an attribute starts with whitespace."""
-    writer.write(name, markup)
+    writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
     )
@@ -175,6 +175,32 @@ def test_text_content_constraint_gl4(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Tests the global constraint, which ensure the usage of text() for multiple elements."""
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = validate_chunk(
+        files=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-spanTo",
+            "<p><delSpan spanTo='del1'/><anchor xml:id='del1'/></p>",
+            True,
+        ),
+        (
+            "invalid-spanTo",
+            "<p><anchor xml:id='del1'/><delSpan spanTo='del1'/></p>",
+            False,
+        ),
+    ],
+)
+def test_constraint_attspanning(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """Tests the global constraint for @spanTo."""
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
