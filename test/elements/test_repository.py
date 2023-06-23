@@ -1,6 +1,10 @@
-from test.conftest import RNG_test_function
-
 import pytest
+from pyschval.main import (
+    SchematronResult,
+    validate_chunk,
+)
+
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -23,8 +27,12 @@ import pytest
         ),
         (
             "repository-invalid-attr",
-            "<repository xml:lang='fr' n='123'>Archives de l’État de Fribourg</repository>"
-            "",
+            "<repository xml:lang='fr' n='123'>Archives de l’État de Fribourg</repository>",
+            False,
+        ),
+        (
+            "invalid-repository-with-non-text-content",
+            "<repository xml:lang='fr'><p>Archives de l’État de Fribourg</p></repository>",
             False,
         ),
     ],
@@ -36,3 +44,23 @@ def test_repository(
     result: bool,
 ):
     test_element_with_rng("repository", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "invalid-empty-repository",
+            "<repository xml:lang='de'/>",
+            False,
+        ),
+    ],
+)
+def test_repository_constraints(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = validate_chunk(
+        files=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].is_valid() is result

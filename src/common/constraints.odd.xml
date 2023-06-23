@@ -64,8 +64,8 @@
                     <sch:rule
                             context="tei:publisher|tei:pubPlace|tei:*[name() = ('ab', 'abbr', 'add', 'bibl', 'condition',
                             'corr', 'del', 'expan', 'foreign', 'fw', 'head', 'hi', 'item', 'label', 'lem', 'licence',
-                            'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'q', 'quote', 'seg', 'sic',
-                            'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
+                            'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'q', 'quote', 'repository',
+                            'seg', 'sic', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
                         <sch:assert test="string-length(normalize-space(.)) > 0">
                             <sch:name/>
                             should contain some text.
