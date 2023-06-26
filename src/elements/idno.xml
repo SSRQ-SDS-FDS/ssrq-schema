@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="idno" module="header" mode="change"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+    ident="idno"
+    module="header"
+    mode="change">
     <gloss xml:lang="de" versionDate="2023-03-07">Identifikationsnummer / Archivkürzel</gloss>
-    <desc xml:lang="de" versionDate="2023-05-11">Benennt im seriesStmt das
-        Bandkürzel (Kanton, Teil, Reihe) der Sammlung Schweizerischer Rechtsquellen oder enthält im
-        msIdentifier die Signatur einer Quelle. Die Signatur hat sich nach dem
-        System des jeweiligen Archivs zu richten.
-    </desc>
+    <desc xml:lang="de" versionDate="2023-05-11">Benennt im seriesStmt das Bandkürzel (Kanton, Teil,
+        Reihe) der Sammlung Schweizerischer Rechtsquellen oder enthält im msIdentifier die Signatur
+        einer Quelle. Die Signatur hat sich nach dem System des jeweiligen Archivs zu richten. </desc>
     <gloss xml:lang="en" versionDate="2023-03-07">Identification number / archive code</gloss>
-    <desc xml:lang="en" versionDate="2023-05-11">Designates in the seriesStmt
-        the volume abbreviation (canton, part, series) of the collection of Swiss law
-        sources or contains the signature of a source in the msIdentifier. The signature must
-        be in accordance with the system of the respective archive.
-    </desc>
+    <desc xml:lang="en" versionDate="2023-05-11">Designates in the seriesStmt the volume
+        abbreviation (canton, part, series) of the collection of Swiss law sources or contains the
+        signature of a source in the msIdentifier. The signature must be in accordance with the
+        system of the respective archive. </desc>
     <gloss xml:lang="fr" versionDate="2023-03-07">Numéro d'identification / code d'archive</gloss>
-    <desc xml:lang="fr" versionDate="2023-05-11">Indique dans seriesStmt la cote
-        (carton, volume, série) de la collection des sources du droit ou contient dans msIdentifier
-        la cote d'une source. La cote doit s'orienter au système de
-        l'archive correspondant.
-    </desc>
+    <desc xml:lang="fr" versionDate="2023-05-11">Indique dans seriesStmt la cote (carton, volume,
+        série) de la collection des sources du droit ou contient dans msIdentifier la cote d'une
+        source. La cote doit s'orienter au système de l'archive correspondant. </desc>
     <classes mode="replace">
         <memberOf key="ssrq.att.source"/>
         <memberOf key="att.typed"/>
@@ -34,30 +32,23 @@
             <sch:pattern>
                 <sch:rule context="tei:idno[parent::tei:seriesStmt]">
                     <sch:assert test="not(@xml:id)">The usage of @xml:id is prohibited, when idno is
-                        used inside the seriesStmt.
-                    </sch:assert>
+                        used inside the seriesStmt. </sch:assert>
                 </sch:rule>
             </sch:pattern>
             <sch:pattern>
                 <sch:rule context="tei:idno[parent::tei:seriesStmt][not(@type)]">
                     <sch:assert
-                            test="matches(., '^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$')"
-                    >The idno must match the defined schema – see the examples in the
-                        docs.
-                    </sch:assert>
+                        test="matches(., '^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$')">The
+                        idno must match the defined schema – see the examples in the docs. </sch:assert>
                 </sch:rule>
                 <sch:rule context="tei:idno[parent::tei:seriesStmt][@type]">
                     <sch:assert
-                            test="matches(., '^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$')"
-                    >The permanent identification number needs to be an uuid.
-                    </sch:assert>
+                        test="matches(., '^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$')">The
+                        permanent identification number needs to be an uuid. </sch:assert>
                 </sch:rule>
                 <sch:rule context="tei:idno[parent::tei:msIdentifier]">
-                    <sch:assert test="@xml:lang">The
-                        <sch:name/>
-                        element needs an attribute
-                        @xml:lang if it's inside tei:msIdentifier.
-                    </sch:assert>
+                    <sch:assert test="@xml:lang">The <sch:name/> element needs an attribute
+                        @xml:lang if it's inside tei:msIdentifier. </sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
@@ -66,15 +57,9 @@
         <attDef ident="type" mode="replace">
             <valList type="closed">
                 <valItem ident="uuid">
-                    <desc xml:lang="de" versionDate="2023-03-03">Universally Unique
-                        Identifier
-                    </desc>
-                    <desc xml:lang="en" versionDate="2023-03-03">Universally Unique
-                        Identifier
-                    </desc>
-                    <desc xml:lang="fr" versionDate="2023-03-03">Universally Unique
-                        Identifier
-                    </desc>
+                    <desc xml:lang="de" versionDate="2023-03-03">Universally Unique Identifier </desc>
+                    <desc xml:lang="en" versionDate="2023-03-03">Universally Unique Identifier </desc>
+                    <desc xml:lang="fr" versionDate="2023-03-03">Universally Unique Identifier </desc>
                 </valItem>
             </valList>
         </attDef>
@@ -84,9 +69,8 @@
         <attDef ident="rend" mode="delete"/>
         <attDef ident="xml:id" mode="delete"/>
     </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
-        <p xml:lang="de">Definition der Identifikationsnummer eines Stücks:</p>
-        <p xml:lang="fr">Définition du numéro d'identification d'une pièce&#160;:</p>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-03">
+        <p>Definition der Identifikationsnummer eines Stücks:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <seriesStmt xml:id="ssrq-sds-fds">
                 <title>Sammlung Schweizerischer Rechtsquellen</title>
@@ -99,13 +83,35 @@
             </seriesStmt>
         </egXML>
     </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
-        <p xml:lang="de">Verweis auf eine Signatur mit Link ins Archivinformationssystem:</p>
-        <p xml:lang="fr">Référence à une cote avec lien vers le système d'information des archives&#160;:</p>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-03">
+        <p>Définition du numéro d'identification d'une pièce :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <seriesStmt xml:id="ssrq-sds-fds">
+                <title>Sammlung Schweizerischer Rechtsquellen</title>
+                <respStmt>
+                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                    <resp key="publisher"/>
+                </respStmt>
+                <idno>SSRQ-FR-I_2_8-1-1</idno>
+                <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
+            </seriesStmt>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-03">
+        <p>Verweis auf eine Signatur mit Link ins Archivinformationssystem:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <msIdentifier>
-                <idno xml:lang="de" source="http://scope.stiftsarchiv.sg.ch/detail.aspx?id=30146">StiASG Urk. GG2 T2
-                </idno>
+                <idno xml:lang="de"
+                    source="http://scope.stiftsarchiv.sg.ch/detail.aspx?id=30146">StiASG Urk. GG2 T2 </idno>
+            </msIdentifier>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-03">
+        <p>Référence à une cote avec lien vers le système d'information des archives :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <msIdentifier>
+                <idno xml:lang="de"
+                    source="http://scope.stiftsarchiv.sg.ch/detail.aspx?id=30146">StiASG Urk. GG2 T2 </idno>
             </msIdentifier>
         </egXML>
     </exemplum>

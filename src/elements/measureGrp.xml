@@ -1,65 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="measureGrp" module="core" mode="change">
-    <desc xml:lang="de" versionDate="2023-05-11">Enthält eine Gruppe von
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="measureGrp"
+             module="core"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-11">Enthält eine Gruppe von
         Massen, Gewichten etc. und Währungsbezeichnungen, die nicht umgerechnet
         werden können.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-11">Contains a group of masses, weights, etc. and currency
+   <desc xml:lang="en" versionDate="2023-05-11">Contains a group of masses, weights, etc. and currency
         denominations that cannot be converted.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-03-17">Contient un groupe de poids et mesures etc. Il est
+   <desc xml:lang="fr" versionDate="2023-03-17">Contient un groupe de poids et mesures etc. Il est
         également utilisé pour des unités monétaires qui ne peuvent pas être converties.
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.measureLike"/>
-    </classes>
-    <content>
-        <sequence preserveOrder="false">
-            <elementRef key="measure" minOccurs="2" maxOccurs="unbounded"/>
-            <alternate minOccurs="0" maxOccurs="unbounded">
-                <elementRef key="app"/>
-                <elementRef key="cell"/>
-                <elementRef key="lb"/>
-            </alternate>
-        </sequence>
-    </content>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
-        <p xml:lang="de">Währungsbezeichnungen, die man auf Anhieb nicht umrechnen kann:</p>
-        <p xml:lang="fr">Unité monétaire qui ne peut pas être convertie&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">... buͦß verfallen sin
+   <classes mode="replace">
+      <memberOf key="model.measureLike"/>
+   </classes>
+   <content>
+      <sequence preserveOrder="false">
+         <elementRef key="measure" minOccurs="2" maxOccurs="unbounded"/>
+         <alternate minOccurs="0" maxOccurs="unbounded">
+            <elementRef key="app"/>
+            <elementRef key="cell"/>
+            <elementRef key="lb"/>
+         </alternate>
+      </sequence>
+   </content>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-17">
+      <p>Währungsbezeichnungen, die man auf Anhieb nicht umrechnen kann:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">... buͦß verfallen sin
             <measureGrp>
-                <measure
-                        quantity="3" unit="lb" type="currency">druͤ pfund
+            <measure quantity="3" unit="lb" type="currency">druͤ pfund
                 </measure>
-                <measure quantity="5" unit="ß" type="currency">fuͤnf schilling
+            <measure quantity="5" unit="ß" type="currency">fuͤnf schilling
                     pfenig
                 </measure>
-            </measureGrp>
+         </measureGrp>
             .
         </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-05">
-        <p xml:lang="de">Verschiedene Mengenangaben von Getreide:</p>
-        <p xml:lang="fr">Diverses quantités de blé&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-17">
+      <p>Unité monétaire qui ne peut pas être convertie :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">... buͦß verfallen sin
             <measureGrp>
-                <measure commodity="wheat" unit="Scheffel" quantity="10" type="volume">zehen schoͤffel</measure>
+            <measure quantity="3" unit="lb" type="currency">druͤ pfund
+                </measure>
+            <measure quantity="5" unit="ß" type="currency">fuͤnf schilling
+                    pfenig
+                </measure>
+         </measureGrp>
+            .
+        </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-05">
+      <p>Verschiedene Mengenangaben von Getreide:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <measureGrp>
+            <measure commodity="wheat" unit="Scheffel" quantity="10" type="volume">zehen schoͤffel</measure>
                 und
                 <measure commodity="wheat" unit="Viertel" quantity="1" type="volume">ain viertail waissen</measure>
-            </measureGrp>
+         </measureGrp>
             und ...
         </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-05">
-        <p xml:lang="de">Verschiedene Flächenangaben:</p>
-        <p xml:lang="fr">Divers indications de surface&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <measureGrp>
-                <measure type="area" unit="Juchart" quantity="3" commodity="field">dryg juchart akkers</measure>
-                <measure type="area" unit="Mitmal" quantity="0.5" commodity="field">ains halben mitmels</measure>minder
-            </measureGrp>
-            <note>Es sind 3 Jucharten weniger 0.5 Mitmal (= 1/8 Juchart) = 2 7/8 Jucharten.</note>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-05">
+      <p>Diverses quantités de blé :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <measureGrp>
+            <measure commodity="wheat" unit="Scheffel" quantity="10" type="volume">zehen schoͤffel</measure>
+                und
+                <measure commodity="wheat" unit="Viertel" quantity="1" type="volume">ain viertail waissen</measure>
+         </measureGrp>
+            und ...
         </egXML>
-    </exemplum>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-05">
+      <p>Verschiedene Flächenangaben:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <measureGrp>
+            <measure type="area" unit="Juchart" quantity="3" commodity="field">dryg juchart akkers</measure>
+            <measure type="area" unit="Mitmal" quantity="0.5" commodity="field">ains halben mitmels</measure>minder
+            </measureGrp>
+         <note>Es sind 3 Jucharten weniger 0.5 Mitmal (= 1/8 Juchart) = 2 7/8 Jucharten.</note>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-05">
+      <p>Divers indications de surface :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <measureGrp>
+            <measure type="area" unit="Juchart" quantity="3" commodity="field">dryg juchart akkers</measure>
+            <measure type="area" unit="Mitmal" quantity="0.5" commodity="field">ains halben mitmels</measure>minder
+            </measureGrp>
+         <note>Es sind 3 Jucharten weniger 0.5 Mitmal (= 1/8 Juchart) = 2 7/8 Jucharten.</note>
+      </egXML>
+   </exemplum>
 </elementSpec>

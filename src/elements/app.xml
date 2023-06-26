@@ -1,52 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="app" module="textcrit" mode="change">
-    <desc xml:lang="de" versionDate="2023-05-17">Ermöglicht es, verschiedene Lesarten eines Textabschnittes
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="app"
+             module="textcrit"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-17">Ermöglicht es, verschiedene Lesarten eines Textabschnittes
         unter Bezugnahme auf ein anderes Dokument oder mehrere andere Dokumente anzuzeigen.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-17">Allows you to view different readings of a section of text with
+   <desc xml:lang="en" versionDate="2023-05-17">Allows you to view different readings of a section of text with
         reference to another document or documents.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-17">Permet de visualiser différentes lectures d'une section de texte en
+   <desc xml:lang="fr" versionDate="2023-05-17">Permet de visualiser différentes lectures d'une section de texte en
         référence à un ou plusieurs autres documents.
     </desc>
-    <desc xml:lang="it" versionDate="2023-05-17">Consente di visualizzare diverse letture di una sezione di testo con
+   <desc xml:lang="it" versionDate="2023-05-17">Consente di visualizzare diverse letture di una sezione di testo con
         riferimento a un altro documento o documenti.
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.global.edit"/>
-    </classes>
-    <content>
-        <sequence>
-            <elementRef key="lem" minOccurs="1" maxOccurs="1"/>
-            <elementRef key="rdg" minOccurs="1" maxOccurs="unbounded"/>
-        </sequence>
-    </content>
-    <attList>
-        <attDef ident="from" mode="delete"/>
-        <attDef ident="loc" mode="delete"/>
-        <attDef ident="to" mode="delete"/>
-        <attDef ident="type" mode="delete"/>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
+   <classes mode="replace">
+      <memberOf key="model.global.edit"/>
+   </classes>
+   <content>
+      <sequence>
+         <elementRef key="lem" minOccurs="1" maxOccurs="1"/>
+         <elementRef key="rdg" minOccurs="1" maxOccurs="unbounded"/>
+      </sequence>
+   </content>
+   <attList>
+      <attDef ident="from" mode="delete"/>
+      <attDef ident="loc" mode="delete"/>
+      <attDef ident="to" mode="delete"/>
+      <attDef ident="type" mode="delete"/>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <app>
+            <lem>lxxxvij</lem>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
                     quadringentesimo
                 </rdg>
-            </app>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
+         </app>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <app>
+            <lem>lxxxvij</lem>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
                     quadringentesimo
                 </rdg>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
-            </app>
-        </egXML>
-    </exemplum>
+         </app>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <app>
+            <lem>lxxxvij</lem>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
+                    quadringentesimo
+                </rdg>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
+         </app>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <app>
+            <lem>lxxxvij</lem>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
+                    quadringentesimo
+                </rdg>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
+         </app>
+      </egXML>
+   </exemplum>
 </elementSpec>

@@ -1,223 +1,247 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="date" module="core" mode="change"
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-05-08">Erfassung (sämtlicher) Datumsangaben im Text.
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="date"
+             module="core"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-08">Erfassung (sämtlicher) Datumsangaben im Text.
         Achtung: <ref target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">
             Datierungsrichtlinien
         </ref> beachten. Datierungen in Quelltexten (Originaldatum) werden
         hingegen mit <gi>origDate</gi> ausgezeichnet.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-08">Saisie de (toutes) les dates dans le texte.
+   <desc xml:lang="fr" versionDate="2023-05-08">Saisie de (toutes) les dates dans le texte.
         Attention : respecter <ref target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">les
             directives de datation</ref>. Les datations dans les textes sources (date d'origine) sont
         par contre marquées par <gi>origDate</gi>.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-08">Record (all) dates in the text. Attention: <ref
-            target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">Pay attention to dating
+   <desc xml:lang="en" versionDate="2023-05-08">Record (all) dates in the text. Attention: <ref target="https://www.ssrq-sds-fds.ch/wiki/Datierungsrichtlinien">Pay attention to dating
         guidelines</ref>. Dates in source texts (original date), on the other hand, are marked with <gi>
         origDate</gi>.
     </desc>
-    <classes mode="replace">
-        <memberOf key="macro.dateLike"/>
-        <memberOf key="model.publicationStmtPart.detail"/>
-        <memberOf key="att.datable"/>
-        <memberOf key="att.duration.iso"/>
-        <memberOf key="att.typed"/>
-    </classes>
-    <content>
-        <rng:zeroOrMore>
-            <rng:choice>
-                <rng:ref name="ssrq.content.default"/>
-                <rng:ref name="precision"/>
-            </rng:choice>
-        </rng:zeroOrMore>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
-        <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule
-                        context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
-                    <sch:assert
-                            test=".[@datingMethod]">The attribute @datingMethod is required, when
+   <classes mode="replace">
+      <memberOf key="macro.dateLike"/>
+      <memberOf key="model.publicationStmtPart.detail"/>
+      <memberOf key="att.datable"/>
+      <memberOf key="att.duration.iso"/>
+      <memberOf key="att.typed"/>
+   </classes>
+   <content>
+      <rng:zeroOrMore>
+         <rng:choice>
+            <rng:ref name="ssrq.content.default"/>
+            <rng:ref name="precision"/>
+         </rng:choice>
+      </rng:zeroOrMore>
+   </content>
+   <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
+      <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
+      <constraint>
+         <sch:pattern>
+            <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
+               <sch:assert test=".[@datingMethod]">The attribute @datingMethod is required, when
                         <sch:name/>
                         is used outside of the publicationStmt.
                     </sch:assert>
-                </sch:rule>
-                <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
-                    <sch:assert test=".[@type][@type/data(.) = ('electronic', 'print')]">If
+            </sch:rule>
+            <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
+               <sch:assert test=".[@type][@type/data(.) = ('electronic', 'print')]">If
                         <sch:name/>
                         is part of the publicationStmt it must contain @type with a value of
                         electronic or print.
                     </sch:assert>
-                    <sch:assert
-                            test=".[@when-custom][not(@datingMethod|@dur-iso|@from-custom|@to-custom|@notAfter-custom|@notBefore-custom|@period)]">
+               <sch:assert test=".[@when-custom][not(@datingMethod|@dur-iso|@from-custom|@to-custom|@notAfter-custom|@notBefore-custom|@period)]">
                         If
                         <sch:name/>
                         is part of the publicationStmt it must contain @when-custom and may not contain
                         @dating-method, @dur-iso, @from-custom, @to-custom, @notAfter-custom, @notBefore-custom or
                         @period.
                     </sch:assert>
-                    <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)">
+               <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)">
                         If
                         <sch:name/>
                         is part of the publicationStmt it must not have any content.
                     </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="dur-iso" mode="change">
-            <desc xml:lang="de" versionDate="2023-05-09">Erfassung Zeitspanne nach <ref
-                    target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <attList>
+      <attDef ident="dur-iso" mode="change">
+         <desc xml:lang="de" versionDate="2023-05-09">Erfassung Zeitspanne nach <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
                 Beginnt mit dem Kürzel P (Periode) gefolgt von arabischen Ziffern. Sich
                 wiederholende Zeitspannenden werden im vollen Format ausgedrückt und beginnen mit
                 dem Kürzel R (Repeated). Ansonsten werden folgende Werte vergeben
                 <list>
-                    <item>Y = year</item>
-                    <item>M = month</item>
-                    <item>W = week</item>
-                    <item>D = day</item>
-                    <item>H = hour</item>
-                </list>
-            </desc>
-            <desc xml:lang="en" versionDate="2023-05-09">Recording period according to <ref
-                    target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+               <item>Y = year</item>
+               <item>M = month</item>
+               <item>W = week</item>
+               <item>D = day</item>
+               <item>H = hour</item>
+            </list>
+         </desc>
+         <desc xml:lang="en" versionDate="2023-05-09">Recording period according to <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
                 Begins with the abbreviation P (Period) followed by Arabic numerals. Repeating time
                 spans are expressed in full format and begin with the abbreviation R (Repeated).
                 Otherwise, the following values are assigned
                 <list>
-                    <item>Y = year</item>
-                    <item>M = month</item>
-                    <item>W = week</item>
-                    <item>D = day</item>
-                    <item>H = hour</item>
-                </list>
-            </desc>
-            <desc xml:lang="fr" versionDate="2023-05-09">Saisie Période selon <ref
-                    target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+               <item>Y = year</item>
+               <item>M = month</item>
+               <item>W = week</item>
+               <item>D = day</item>
+               <item>H = hour</item>
+            </list>
+         </desc>
+         <desc xml:lang="fr" versionDate="2023-05-09">Saisie Période selon <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
                 Commence par l'abréviation P (période) suivie de chiffres arabes. Les périodes
                 répétitives sont exprimées au format complet et commencent par l'abréviation R
                 (Repeated). Sinon, les valeurs suivantes sont attribuées
                 <list>
-                    <item>Y = year</item>
-                    <item>M = month</item>
-                    <item>W = week</item>
-                    <item>D = day</item>
-                    <item>H = hour</item>
-                </list>
-            </desc>
-            <datatype>
-                <dataRef name="string" restriction="(R/)?P(\d+(\.\d+)?[YMWDH])+"/>
-            </datatype>
-        </attDef>
-        <attDef ident="period" mode="change">
-            <datatype>
-                <rng:choice>
-                    <rng:ref name="ssrq.period.days"/>
-                    <rng:ref name="ssrq.period.seasons"/>
-                </rng:choice>
-            </datatype>
-        </attDef>
-        <attDef ident="type" mode="replace">
-            <desc xml:lang="de" versionDate="2023-05-12">Nähere Charakterisierung einer Datierung –
+               <item>Y = year</item>
+               <item>M = month</item>
+               <item>W = week</item>
+               <item>D = day</item>
+               <item>H = hour</item>
+            </list>
+         </desc>
+         <datatype>
+            <dataRef name="string" restriction="(R/)?P(\d+(\.\d+)?[YMWDH])+"/>
+         </datatype>
+      </attDef>
+      <attDef ident="period" mode="change">
+         <datatype>
+            <rng:choice>
+               <rng:ref name="ssrq.period.days"/>
+               <rng:ref name="ssrq.period.seasons"/>
+            </rng:choice>
+         </datatype>
+      </attDef>
+      <attDef ident="type" mode="replace">
+         <desc xml:lang="de" versionDate="2023-05-12">Nähere Charakterisierung einer Datierung –
                 wird für Termine und Fristen verwendet sowie für Art der Publikation
             </desc>
-            <desc xml:lang="en" versionDate="2023-05-12">More detailed characterisation of a dating
+         <desc xml:lang="en" versionDate="2023-05-12">More detailed characterisation of a dating
                 - used for dates and deadlines as well as for type of publication
             </desc>
-            <desc xml:lang="fr" versionDate="2023-05-12">Caractérisation plus détaillée d'une
+         <desc xml:lang="fr" versionDate="2023-05-12">Caractérisation plus détaillée d'une
                 datation - utilisée pour les dates et les délais ainsi que pour le type de
                 publication
             </desc>
-            <valList type="closed">
-                <valItem ident="deadline">
-                    <desc xml:lang="de">Termin/Frist</desc>
-                    <desc xml:lang="fr">délai</desc>
-                    <desc xml:lang="en">period</desc>
-                    <desc xml:lang="it">scadenza</desc>
-                </valItem>
-                <valItem ident="deadline_holiday">
-                    <desc xml:lang="de">Kirchenfest als Termin/Frist</desc>
-                    <desc xml:lang="fr">des fêtes religieuses comme délai</desc>
-                    <desc xml:lang="en">feast day (period)</desc>
-                    <desc xml:lang="it">festività religiose come scadenza</desc>
-                </valItem>
-                <valItem ident="deadline_floating_holiday">
-                    <desc xml:lang="de">beweglicher Feiertag als Termin/Frist</desc>
-                    <desc xml:lang="fr">des fêtes sans date fixe comme délai</desc>
-                    <desc xml:lang="en">floating holiday (deadline)</desc>
-                    <desc xml:lang="it">festività religiose senza una data fissa come scadenza</desc>
-                </valItem>
-                <valItem ident="holiday">
-                    <desc xml:lang="de">Kirchenfest</desc>
-                    <desc xml:lang="fr">des fêtes religieuses</desc>
-                    <desc xml:lang="en">feast day</desc>
-                    <desc xml:lang="it">festività religiose</desc>
-                </valItem>
-                <valItem ident="floating_holiday">
-                    <desc xml:lang="de">beweglicher Feiertag</desc>
-                    <desc xml:lang="fr">des fêtes sans date fixe</desc>
-                    <desc xml:lang="en">floating holiday</desc>
-                    <desc xml:lang="it">festività senza una data fissa</desc>
-                </valItem>
-                <valItem ident="electronic">
-                    <desc xml:lang="de">elektronische Publikation</desc>
-                    <desc xml:lang="fr">publication numérique</desc>
-                    <desc xml:lang="en">electronic publication</desc>
-                    <desc xml:lang="it">pubblicazione digitale</desc>
-                </valItem>
-                <valItem ident="print">
-                    <desc xml:lang="de">Druck</desc>
-                    <desc xml:lang="fr">imprimé</desc>
-                    <desc xml:lang="en">print</desc>
-                    <desc xml:lang="it">stampa</desc>
-                </valItem>
-            </valList>
-        </attDef>
-        <attDef ident="calendar" mode="delete"/>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-        <p xml:lang="de">Beispielhafte Datierung auf den 03. März 1631</p>
-        <p xml:lang="fr">Exemple de datation au 03 mars 1631</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <date datingMethod="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-        <p xml:lang="de">Beispielhafte Auszeichnung ca. 1510</p>
-        <p xml:lang="fr">Exemple de distinction vers 1510</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <date datingMethod="julian" notBefore-custom="1510-01-01"
-                  to-custom="1515-12-31">ca. 1510
+         <valList type="closed">
+            <valItem ident="deadline">
+               <desc xml:lang="de">Termin/Frist</desc>
+               <desc xml:lang="fr">délai</desc>
+               <desc xml:lang="en">period</desc>
+               <desc xml:lang="it">scadenza</desc>
+            </valItem>
+            <valItem ident="deadline_holiday">
+               <desc xml:lang="de">Kirchenfest als Termin/Frist</desc>
+               <desc xml:lang="fr">des fêtes religieuses comme délai</desc>
+               <desc xml:lang="en">feast day (period)</desc>
+               <desc xml:lang="it">festività religiose come scadenza</desc>
+            </valItem>
+            <valItem ident="deadline_floating_holiday">
+               <desc xml:lang="de">beweglicher Feiertag als Termin/Frist</desc>
+               <desc xml:lang="fr">des fêtes sans date fixe comme délai</desc>
+               <desc xml:lang="en">floating holiday (deadline)</desc>
+               <desc xml:lang="it">festività religiose senza una data fissa come scadenza</desc>
+            </valItem>
+            <valItem ident="holiday">
+               <desc xml:lang="de">Kirchenfest</desc>
+               <desc xml:lang="fr">des fêtes religieuses</desc>
+               <desc xml:lang="en">feast day</desc>
+               <desc xml:lang="it">festività religiose</desc>
+            </valItem>
+            <valItem ident="floating_holiday">
+               <desc xml:lang="de">beweglicher Feiertag</desc>
+               <desc xml:lang="fr">des fêtes sans date fixe</desc>
+               <desc xml:lang="en">floating holiday</desc>
+               <desc xml:lang="it">festività senza una data fissa</desc>
+            </valItem>
+            <valItem ident="electronic">
+               <desc xml:lang="de">elektronische Publikation</desc>
+               <desc xml:lang="fr">publication numérique</desc>
+               <desc xml:lang="en">electronic publication</desc>
+               <desc xml:lang="it">pubblicazione digitale</desc>
+            </valItem>
+            <valItem ident="print">
+               <desc xml:lang="de">Druck</desc>
+               <desc xml:lang="fr">imprimé</desc>
+               <desc xml:lang="en">print</desc>
+               <desc xml:lang="it">stampa</desc>
+            </valItem>
+         </valList>
+      </attDef>
+      <attDef ident="calendar" mode="delete"/>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-07">
+      <p>Beispielhafte Datierung auf den 03. März 1631</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <date datingMethod="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-07">
+      <p>Exemple de datation au 03 mars 1631</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <date datingMethod="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-07">
+      <p>Beispielhafte Auszeichnung ca. 1510</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <date datingMethod="julian"
+               notBefore-custom="1510-01-01"
+               to-custom="1515-12-31">ca. 1510
             </date>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-        <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
-        <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte 1583 à la
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-07">
+      <p>Exemple de distinction vers 1510</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <date datingMethod="julian"
+               notBefore-custom="1510-01-01"
+               to-custom="1515-12-31">ca. 1510
+            </date>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-07">
+      <p>Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <date datingMethod="julian"
+               from-custom="1583-05-30"
+               to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
+            </date>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-07">
+      <p>Exemple de distinction de la période allant de la Pentecôte 1583 à la
             Pentecôte 1584
         </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <date datingMethod="julian" from-custom="1583-05-30"
-                  to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <date datingMethod="julian"
+               from-custom="1583-05-30"
+               to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
             </date>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-12">
-        <p xml:lang="de">Beispielhafte Auszeichnung einer Doppeldatierung. Bei Texten, die doppelt,
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-12">
+      <p>Beispielhafte Auszeichnung einer Doppeldatierung. Bei Texten, die doppelt,
             d. h. nach dem alten und neuen Stil, datiert sind, wird nach dem neuen Stil bzw. dem
             Gregorianischen Kalender datiert.
         </p>
-        <p xml:lang="fr">Exemple d'une double datation. Pour les textes qui sont doublement datés,
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <date when-custom="1590-10-25" datingMethod="#Gregorian">25/15. octobris anno 90</date>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-12">
+      <p>Exemple d'une double datation. Pour les textes qui sont doublement datés,
             c'est-à-dire selon l'ancien et le nouveau style, la datation est effectuée selon le
             nouveau style ou le calendrier grégorien.
         </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <date when-custom="1590-10-25" datingMethod="#Gregorian">25/15. octobris anno 90</date>
-        </egXML>
-    </exemplum>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <date when-custom="1590-10-25" datingMethod="#Gregorian">25/15. octobris anno 90</date>
+      </egXML>
+   </exemplum>
 </elementSpec>

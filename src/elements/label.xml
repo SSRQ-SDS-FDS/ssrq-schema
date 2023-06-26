@@ -1,78 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="label" module="core" mode="change"
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-05-25">Auszeichnung von Randanmerkungen, in Kombination
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="label"
+             module="core"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-25">Auszeichnung von Randanmerkungen, in Kombination
         mit <att>type</att>, die in den Editionstext integriert werden.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-25">Marking of marginal notes, in combination with <att>
+   <desc xml:lang="en" versionDate="2023-05-25">Marking of marginal notes, in combination with <att>
         type</att>, which are integrated into the edition text.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-25">Marquage de notes marginales, en combinaison avec <att>
+   <desc xml:lang="fr" versionDate="2023-05-25">Marquage de notes marginales, en combinaison avec <att>
         type</att>, qui sont intégrées dans le texte de l'édition.
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.labelLike"/>
-        <memberOf key="att.placement"/>
-        <memberOf key="att.typed"/>
-        <memberOf key="att.written"/>
-    </classes>
-    <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-label">
-        <desc xml:lang="en" versionDate="2023-05-25">Constraint for tei:label</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:label[not(parent::list)]">
-                    <sch:assert test="preceding-sibling::*[1][self::tei:lb]">The first preceding
+   <classes mode="replace">
+      <memberOf key="model.labelLike"/>
+      <memberOf key="att.placement"/>
+      <memberOf key="att.typed"/>
+      <memberOf key="att.written"/>
+   </classes>
+   <content>
+      <rng:oneOrMore>
+         <rng:ref name="ssrq.content.default"/>
+      </rng:oneOrMore>
+   </content>
+   <constraintSpec scheme="schematron" ident="sch-el-label">
+      <desc xml:lang="en" versionDate="2023-05-25">Constraint for tei:label</desc>
+      <constraint>
+         <sch:pattern>
+            <sch:rule context="tei:label[not(parent::list)]">
+               <sch:assert test="preceding-sibling::*[1][self::tei:lb]">The first preceding
                         sibling of
                         <sch:name/>
                         must be tei:lb.
                     </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="place" mode="replace" usage="req">
-            <desc xml:lang="de" versionDate="2023-05-25">Ort der Randanmerkung</desc>
-            <desc xml:lang="fr" versionDate="2023-05-25">Emplacement de la note marginale</desc>
-            <desc xml:lang="en" versionDate="2023-05-25">Location of the marginal note</desc>
-            <valList type="closed">
-                <valItem ident="right_margin">
-                    <desc xml:lang="de">am rechten Rand</desc>
-                    <desc xml:lang="fr">dans la marge de droite</desc>
-                    <desc xml:lang="en">in the right margin</desc>
-                    <desc xml:lang="it">sul margine destro</desc>
-                </valItem>
-                <valItem ident="left_margin">
-                    <desc xml:lang="de">am linken Rand</desc>
-                    <desc xml:lang="fr">dans la marge de gauche</desc>
-                    <desc xml:lang="en">in the left margin</desc>
-                    <desc xml:lang="it">sul margine sinistro</desc>
-                </valItem>
-            </valList>
-        </attDef>
-        <attDef ident="type" mode="replace" usage="req">
-            <valList type="closed">
-                <valItem ident="keyword">
-                    <desc xml:lang="de" versionDate="2023-05-25">Schlüsselwort</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-25">mot-clé</desc>
-                    <desc xml:lang="en" versionDate="2023-05-25">keyword</desc>
-                    <desc xml:lang="it" versionDate="2023-05-25">parola chiave</desc>
-                </valItem>
-            </valList>
-        </attDef>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-25">
-        <p xml:lang="de">Angabe einer Randanmerkung</p>
-        <p xml:lang="fr">Indication d'une note marginale</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <label type="keyword" place="left margin">Complices</label>
-        </egXML>
-    </exemplum>
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <attList>
+      <attDef ident="place" mode="replace" usage="req">
+         <desc xml:lang="de" versionDate="2023-05-25">Ort der Randanmerkung</desc>
+         <desc xml:lang="fr" versionDate="2023-05-25">Emplacement de la note marginale</desc>
+         <desc xml:lang="en" versionDate="2023-05-25">Location of the marginal note</desc>
+         <valList type="closed">
+            <valItem ident="right_margin">
+               <desc xml:lang="de">am rechten Rand</desc>
+               <desc xml:lang="fr">dans la marge de droite</desc>
+               <desc xml:lang="en">in the right margin</desc>
+               <desc xml:lang="it">sul margine destro</desc>
+            </valItem>
+            <valItem ident="left_margin">
+               <desc xml:lang="de">am linken Rand</desc>
+               <desc xml:lang="fr">dans la marge de gauche</desc>
+               <desc xml:lang="en">in the left margin</desc>
+               <desc xml:lang="it">sul margine sinistro</desc>
+            </valItem>
+         </valList>
+      </attDef>
+      <attDef ident="type" mode="replace" usage="req">
+         <valList type="closed">
+            <valItem ident="keyword">
+               <desc xml:lang="de" versionDate="2023-05-25">Schlüsselwort</desc>
+               <desc xml:lang="fr" versionDate="2023-05-25">mot-clé</desc>
+               <desc xml:lang="en" versionDate="2023-05-25">keyword</desc>
+               <desc xml:lang="it" versionDate="2023-05-25">parola chiave</desc>
+            </valItem>
+         </valList>
+      </attDef>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-25">
+      <p>Angabe einer Randanmerkung</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <label type="keyword" place="left margin">Complices</label>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-25">
+      <p>Indication d'une note marginale</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <label type="keyword" place="left margin">Complices</label>
+      </egXML>
+   </exemplum>
 </elementSpec>

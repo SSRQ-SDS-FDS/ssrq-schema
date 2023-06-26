@@ -1,81 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="div" module="textstructure" mode="change">
-    <desc xml:lang="de" versionDate="2023-05-23">Gliedert Quellentexte innerhalb von <gi>body</gi> oder Bemerkungen
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="div"
+             module="textstructure"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-23">Gliedert Quellentexte innerhalb von <gi>body</gi> oder Bemerkungen
         innnerhalb von <gi>back</gi> zusammen mit <gi>p</gi> in Abschnitte.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-23">Sections source text within <gi>body</gi> or comments within
+   <desc xml:lang="en" versionDate="2023-05-23">Sections source text within <gi>body</gi> or comments within
         <gi>back</gi>
         together with <gi>p</gi>.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-23">Sections le texte source dans <gi>body</gi> ou les commentaires dans
+   <desc xml:lang="fr" versionDate="2023-05-23">Sections le texte source dans <gi>body</gi> ou les commentaires dans
         <gi>back</gi>
         avec <gi>p</gi>.
     </desc>
-    <desc xml:lang="it" versionDate="2023-05-23">Sezioni del testo sorgente all'interno di <gi>body</gi> o commenti
+   <desc xml:lang="it" versionDate="2023-05-23">Sezioni del testo sorgente all'interno di <gi>body</gi> o commenti
         all'interno di <gi>back</gi> insieme a <gi>p</gi>.
     </desc>
-    <classes mode="replace">
-        <memberOf key="att.global"/>
-        <memberOf key="att.typed"/>
-    </classes>
-    <content>
-        <alternate minOccurs="1" maxOccurs="unbounded">
-            <macroRef key="ssrq.content.critical"/>
-            <macroRef key="ssrq.content.display"/>
-            <macroRef key="ssrq.content.measure"/>
-            <macroRef key="ssrq.content.content"/>
-            <macroRef key="ssrq.content.entities"/>
-        </alternate>
-    </content>
-    <attList>
-        <attDef ident="xml:id" mode="delete"/>
-        <attDef ident="xml:lang" mode="delete"/>
-        <attDef ident="cert" mode="delete"/>
-        <attDef ident="rend" mode="delete"/>
-        <attDef ident="resp" mode="delete"/>
-        <attDef ident="type" mode="replace">
-            <valList type="closed">
-                <valItem ident="part"/>
-                <valItem ident="chapter"/>
-                <valItem ident="collection"/>
-                <valItem ident="section"/>
-                <valItem ident="subsection"/>
-            </valList>
-        </attDef>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-23">
-        <p xml:lang="de">Beispiel innerhalb des Kommentarbereichs</p>
-        <p xml:lang="en">Example inside the comments section</p>
-        <p xml:lang="fr">Exemple dans la section des commentaires</p>
-        <p xml:lang="it">Esempio all'interno della sezione commenti</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <back>
-                <div type="section" n="1">
-                    <p>Zu den ältesten Urbaren der Grafschaft Werdenberg ....</p>
-                    <p>Das hier edierte Urbar ist nicht datiert. ...</p>
-                </div>
-                <div type="section" n="2">
-                    <p>Der erste Teil des Urbars von 1639 ...</p>
-                </div>
-            </back>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-23">
-        <p xml:lang="de">Beispiel innerhalb des Textbereichs</p>
-        <p xml:lang="en">Example within the text section</p>
-        <p xml:lang="fr">Exemple dans la section de texte</p>
-        <p xml:lang="it">Esempio all'interno della sezione di testo</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <body>
-                <div>
-                    <p>
-                        <lb/>XI. Alle Milch von kranknen Kuͤhen muß weggeschuͤttet werden. Auf
+   <classes mode="replace">
+      <memberOf key="att.global"/>
+      <memberOf key="att.typed"/>
+   </classes>
+   <content>
+      <alternate minOccurs="1" maxOccurs="unbounded">
+         <macroRef key="ssrq.content.critical"/>
+         <macroRef key="ssrq.content.display"/>
+         <macroRef key="ssrq.content.measure"/>
+         <macroRef key="ssrq.content.content"/>
+         <macroRef key="ssrq.content.entities"/>
+      </alternate>
+   </content>
+   <attList>
+      <attDef ident="xml:id" mode="delete"/>
+      <attDef ident="xml:lang" mode="delete"/>
+      <attDef ident="cert" mode="delete"/>
+      <attDef ident="rend" mode="delete"/>
+      <attDef ident="resp" mode="delete"/>
+      <attDef ident="type" mode="replace">
+         <valList type="closed">
+            <valItem ident="part"/>
+            <valItem ident="chapter"/>
+            <valItem ident="collection"/>
+            <valItem ident="section"/>
+            <valItem ident="subsection"/>
+         </valList>
+      </attDef>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
+      <p>Beispiel innerhalb des Kommentarbereichs</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <back>
+            <div type="section" n="1">
+               <p>Zu den ältesten Urbaren der Grafschaft Werdenberg ....</p>
+               <p>Das hier edierte Urbar ist nicht datiert. ...</p>
+            </div>
+            <div type="section" n="2">
+               <p>Der erste Teil des Urbars von 1639 ...</p>
+            </div>
+         </back>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-23">
+      <p>Example inside the comments section</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <back>
+            <div type="section" n="1">
+               <p>Zu den ältesten Urbaren der Grafschaft Werdenberg ....</p>
+               <p>Das hier edierte Urbar ist nicht datiert. ...</p>
+            </div>
+            <div type="section" n="2">
+               <p>Der erste Teil des Urbars von 1639 ...</p>
+            </div>
+         </back>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
+      <p>Exemple dans la section des commentaires</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <back>
+            <div type="section" n="1">
+               <p>Zu den ältesten Urbaren der Grafschaft Werdenberg ....</p>
+               <p>Das hier edierte Urbar ist nicht datiert. ...</p>
+            </div>
+            <div type="section" n="2">
+               <p>Der erste Teil des Urbars von 1639 ...</p>
+            </div>
+         </back>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-23">
+      <p>Esempio all'interno della sezione commenti</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <back>
+            <div type="section" n="1">
+               <p>Zu den ältesten Urbaren der Grafschaft Werdenberg ....</p>
+               <p>Das hier edierte Urbar ist nicht datiert. ...</p>
+            </div>
+            <div type="section" n="2">
+               <p>Der erste Teil des Urbars von 1639 ...</p>
+            </div>
+         </back>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
+      <p>Beispiel innerhalb des Textbereichs</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <body>
+            <div>
+               <p>
+                  <lb/>XI. Alle Milch von kranknen Kuͤhen muß weggeschuͤttet werden. Auf
                         <lb/>dieses sollen die Aufseher besonders Achtung geben, und keine Kuh melken
                         <lb/>lassen, bis ihr vorhin die Zunge besichtigt, und sie gesund erfunden worden.
                     </p>
-                </div>
-            </body>
-        </egXML>
-    </exemplum>
+            </div>
+         </body>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-23">
+      <p>Example within the text section</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <body>
+            <div>
+               <p>
+                  <lb/>XI. Alle Milch von kranknen Kuͤhen muß weggeschuͤttet werden. Auf
+                        <lb/>dieses sollen die Aufseher besonders Achtung geben, und keine Kuh melken
+                        <lb/>lassen, bis ihr vorhin die Zunge besichtigt, und sie gesund erfunden worden.
+                    </p>
+            </div>
+         </body>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
+      <p>Exemple dans la section de texte</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <body>
+            <div>
+               <p>
+                  <lb/>XI. Alle Milch von kranknen Kuͤhen muß weggeschuͤttet werden. Auf
+                        <lb/>dieses sollen die Aufseher besonders Achtung geben, und keine Kuh melken
+                        <lb/>lassen, bis ihr vorhin die Zunge besichtigt, und sie gesund erfunden worden.
+                    </p>
+            </div>
+         </body>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-23">
+      <p>Esempio all'interno della sezione di testo</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <body>
+            <div>
+               <p>
+                  <lb/>XI. Alle Milch von kranknen Kuͤhen muß weggeschuͤttet werden. Auf
+                        <lb/>dieses sollen die Aufseher besonders Achtung geben, und keine Kuh melken
+                        <lb/>lassen, bis ihr vorhin die Zunge besichtigt, und sie gesund erfunden worden.
+                    </p>
+            </div>
+         </body>
+      </egXML>
+   </exemplum>
 </elementSpec>

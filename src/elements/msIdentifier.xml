@@ -1,35 +1,46 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="msIdentifier" module="msdescription"
-             mode="change" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-05-11">Beschreibt
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="msIdentifier"
+             module="msdescription"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-11">Beschreibt
         den aktuellen Aufbewahrungsort und ehemalige Aufbewahrungsorte der Quelle.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-11">Describes
+   <desc xml:lang="en" versionDate="2023-05-11">Describes
         the current repository and former repositories of the source.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-11">Décrit le
+   <desc xml:lang="fr" versionDate="2023-05-11">Décrit le
         lieu de conservation actuel et les anciens lieux de conservation de la source.
     </desc>
-    <classes mode="replace"/>
-    <content>
-        <sequence>
-            <sequence preserveOrder="false" maxOccurs="unbounded" minOccurs="1">
-                <elementRef key="idno"/>
-                <elementRef key="repository"/>
-                <elementRef key="settlement" minOccurs="0" maxOccurs="1"/>
-            </sequence>
-            <elementRef key="altIdentifier" minOccurs="0" maxOccurs="unbounded"/>
-        </sequence>
-    </content>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-13">
-        <p xml:lang="de">Beispielhafte Verwendung des Elements tei:msIdentifier</p>
-        <p xml:lang="fr">Exemple d'utilisation de l'élément tei:msIdentifier</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <msIdentifier>
-                <repository xml:lang="de">Staatsarchiv Schwyz</repository>
-                <idno xml:lang="de">StASZ, Urk. 190</idno>
-            </msIdentifier>
-        </egXML>
-    </exemplum>
+   <classes mode="replace"/>
+   <content>
+      <sequence>
+         <sequence preserveOrder="false" maxOccurs="unbounded" minOccurs="1">
+            <elementRef key="idno"/>
+            <elementRef key="repository"/>
+            <elementRef key="settlement" minOccurs="0" maxOccurs="1"/>
+         </sequence>
+         <elementRef key="altIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+   </content>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>Beispielhafte Verwendung des Elements tei:msIdentifier</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <msIdentifier>
+            <repository xml:lang="de">Staatsarchiv Schwyz</repository>
+            <idno xml:lang="de">StASZ, Urk. 190</idno>
+         </msIdentifier>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>Exemple d'utilisation de l'élément tei:msIdentifier</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <msIdentifier>
+            <repository xml:lang="de">Staatsarchiv Schwyz</repository>
+            <idno xml:lang="de">StASZ, Urk. 190</idno>
+         </msIdentifier>
+      </egXML>
+   </exemplum>
 </elementSpec>

@@ -1,89 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="term" module="core" mode="change"
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-05-23">Beinhaltet ein Wort (Lemma) oder einen
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="term"
+             module="core"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-23">Beinhaltet ein Wort (Lemma) oder einen
         Sachwortbegriff (Schlagwort). Über das Attribut <att>ref</att> werden die Einträge in den
         Registerdatenbanken verknüpft.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-23">Contains a word (lemma) or a subject term
+   <desc xml:lang="en" versionDate="2023-05-23">Contains a word (lemma) or a subject term
         (keyword). The <att>ref</att> attribute is used to link the entries in the register
         databases.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-23">Contient un mot (lemme) ou une notion de sujet
+   <desc xml:lang="fr" versionDate="2023-05-23">Contient un mot (lemme) ou une notion de sujet
         (mot-clé). L'attribut <att>ref</att> permet de relier les entrées dans les bases de données
         du registre.
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.emphLike"/>
-        <memberOf key="att.canonical"/>
-    </classes>
-    <content>
-        <alternate minOccurs="0" maxOccurs="unbounded">
-            <elementRef key="lb"/>
-            <elementRef key="pb"/>
-            <elementRef key="p"/>
-            <elementRef key="unclear"/>
-            <elementRef key="choice"/>
-            <elementRef key="gap"/>
-            <elementRef key="damage"/>
-            <elementRef key="del"/>
-            <elementRef key="add"/>
-            <elementRef key="hi"/>
-            <elementRef key="sic"/>
-            <elementRef key="note"/>
-            <elementRef key="subst"/>
-            <elementRef key="persName"/>
-            <textNode/>
-        </alternate>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-term">
-        <desc xml:lang="en" versionDate="2023-05-22">Constraint to ensure, that text or a reference
+   <classes mode="replace">
+      <memberOf key="model.emphLike"/>
+      <memberOf key="att.canonical"/>
+   </classes>
+   <content>
+      <alternate minOccurs="0" maxOccurs="unbounded">
+         <elementRef key="lb"/>
+         <elementRef key="pb"/>
+         <elementRef key="p"/>
+         <elementRef key="unclear"/>
+         <elementRef key="choice"/>
+         <elementRef key="gap"/>
+         <elementRef key="damage"/>
+         <elementRef key="del"/>
+         <elementRef key="add"/>
+         <elementRef key="hi"/>
+         <elementRef key="sic"/>
+         <elementRef key="note"/>
+         <elementRef key="subst"/>
+         <elementRef key="persName"/>
+         <textNode/>
+      </alternate>
+   </content>
+   <constraintSpec scheme="schematron" ident="sch-el-term">
+      <desc xml:lang="en" versionDate="2023-05-22">Constraint to ensure, that text or a reference
             is used!
         </desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule
-                        context="tei:term">
-                    <sch:assert
-                            test="if (./parent::tei:keywords) then .[@ref][not(contains(@ref, 'lem'))] else @ref or string-length(normalize-space(string())) > 0"
-                            xml:lang="en">
-                        <sch:name/>
+      <constraint>
+         <sch:pattern>
+            <sch:rule context="tei:term">
+               <sch:assert test="if (./parent::tei:keywords) then .[@ref][not(contains(@ref, 'lem'))] else @ref or string-length(normalize-space(string())) &gt; 0"
+                           xml:lang="en">
+                  <sch:name/>
                         must have an attribute or a text node. If it is a child
                         of tei:keywords, the attribute @ref must match the regular expression "key\d{6}$?".
                     </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="key" mode="delete"/>
-        <attDef ident="ref" mode="change" module="att.canonical">
-            <desc xml:lang="de" versionDate="2023-05-23">Verknüpfung mit Lemma- und
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <attList>
+      <attDef ident="key" mode="delete"/>
+      <attDef ident="ref" mode="change" module="att.canonical">
+         <desc xml:lang="de" versionDate="2023-05-23">Verknüpfung mit Lemma- und
                 Schlagwortdatenbank.
             </desc>
-            <desc xml:lang="en" versionDate="2023-05-23">Link to lemma and keyword database.</desc>
-            <desc xml:lang="fr" versionDate="2023-05-23">Lien vers une base de données de lemmes et
+         <desc xml:lang="en" versionDate="2023-05-23">Link to lemma and keyword database.</desc>
+         <desc xml:lang="fr" versionDate="2023-05-23">Lien vers une base de données de lemmes et
                 de mots-clés.
             </desc>
-            <datatype>
-                <rng:choice>
-                    <rng:ref name="ssrq.pointer.keywords"/>
-                    <rng:ref name="ssrq.pointer.lemma"/>
-                </rng:choice>
-            </datatype>
-        </attDef>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-23">
-        <p xml:lang="de">Glossareinträge des Sarganserländer Bandes in TEI</p>
-        <p xml:lang="fr">Une entrée dans le glossaire sur le Sarganserländer Band dans TEI</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">Item alz aber beid <term ref="lem001301.09">
+         <datatype>
+            <rng:choice>
+               <rng:ref name="ssrq.pointer.keywords"/>
+               <rng:ref name="ssrq.pointer.lemma"/>
+            </rng:choice>
+         </datatype>
+      </attDef>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
+      <p>Glossareinträge des Sarganserländer Bandes in TEI</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">Item alz aber beid <term ref="lem001301.09">
             partyen
         </term> der
             <term ref="lem005912.01">richtung</term>
-            <term ref="lem006058.01">gichtig
+         <term ref="lem006058.01">gichtig
                 sind</term>, wie die beschehen ist,
         </egXML>
-    </exemplum>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
+      <p>Une entrée dans le glossaire sur le Sarganserländer Band dans TEI</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">Item alz aber beid <term ref="lem001301.09">
+            partyen
+        </term> der
+            <term ref="lem005912.01">richtung</term>
+         <term ref="lem006058.01">gichtig
+                sind</term>, wie die beschehen ist,
+        </egXML>
+   </exemplum>
 </elementSpec>
