@@ -780,9 +780,33 @@
                         testuali dichiarati con <gi>witness</gi> nel <gi>teiHeader</gi>.
                     </desc>
                     <datatype>
-                        <dataRef name="IDREFS"
-                                 restriction="[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+                        <dataRef name="IDREFS"/>
                     </datatype>
+                    <constraintSpec scheme="schematron" ident="sch-att-wit">
+                        <desc xml:lang="en" versionDate="2023-06-22">Make sure, the referenced ID belongs to a witness
+                            element.
+                        </desc>
+                        <constraint>
+                            <sch:pattern>
+                                <sch:rule context="tei:*[@wit]">
+                                    <sch:let name="wits" value="tokenize(@wit, ' ')"></sch:let>
+                                    <!--This rule is introduced, because @wit should not point to any other element
+                                        type than a witness, and this: <anyElement xml:id="foo"/> <rdg wit="foo"/>
+                                        would be valid XML.
+                                    -->
+                                    <sch:assert
+                                            test="every $wit in $wits satisfies id($wit)/name() = 'witness'"
+                                            xml:lang="en">
+                                        Every referenced ID in @wit must belong to a witness element.
+                                    </sch:assert>
+                                    <!-- This rule is introduced, because <rdg wit="foo foo"/> would be valid XML. -->
+                                    <sch:assert test="count($wits) = count(distinct-values($wits))" xml:lang="en">
+                                        Every ID may be referenced just once.
+                                    </sch:assert>
+                                </sch:rule>
+                            </sch:pattern>
+                        </constraint>
+                    </constraintSpec>
                 </attDef>
             </attList>
         </classSpec>

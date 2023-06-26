@@ -11,19 +11,28 @@
         <memberOf key="att.global"/>
     </classes>
     <content>
-        <alternate minOccurs="1" maxOccurs="unbounded">
-            <textNode/>
-            <elementRef key="msDesc"/>
-        </alternate>
+        <elementRef key="msDesc"/>
     </content>
     <attList>
-        <attDef ident="n" mode="change" usage="req"/>
-        <attDef ident="xml:id" mode="change" usage="req">
+        <attDef ident="n" mode="replace" usage="req">
             <datatype>
-                <dataRef name="string"
-                         restriction="[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+                <dataRef name="string" restriction="[A-Z][0-9]?"/>
             </datatype>
         </attDef>
+        <attDef ident="xml:id" mode="change" usage="req">
+            <datatype>
+                <!--This restriction has two parts
+                    1) A prefix "id-ssrq-". This prefix is used to make sure, that the xml:id is a valid token of
+                    the XS:ID datatype (id est a NCName without colons). This is necessary, because the following
+                    UUID may start with a letter, which is forbidden as first char in NCNames.
+                    2) A UUID Version 4. This is used, because UUIDs are (potentially) persistant and globally
+                    unique. This allows publishing the XML-files while still work in progress.
+                -->
+                <dataRef name="ID"
+                         restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:lang" mode="delete"/>
         <attDef ident="cert" mode="delete"/>
         <attDef ident="resp" mode="delete"/>
         <attDef ident="rend" mode="delete"/>
