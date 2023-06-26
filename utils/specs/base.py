@@ -250,9 +250,7 @@ class BaseSpec:
             ValueError: If the example does not contain any example code.
         """
 
-        example_title = example.find(
-            f"./tei:p[@xml:lang = '{lang}']", namespaces=NS_MAP
-        )
+        example_title = example.find("./tei:p", namespaces=NS_MAP)
         example_code = example.find("./teiEx:egXML", namespaces=NS_MAP)
 
         if example_code is None:
@@ -264,8 +262,12 @@ class BaseSpec:
             self._desc_node_to_string(node=example_title)
             if example_title is not None
             else None,
-            ET.tostring(example_code, encoding="unicode", method="xml").replace(
-                "ns0:", ""
+            re.sub(
+                r'<egXML (xmlns:ns\d=".*")+>',
+                "<egXML>",
+                ET.tostring(example_code, encoding="unicode", method="xml").replace(
+                    "ns0:", ""
+                ),
             ),
         )
 

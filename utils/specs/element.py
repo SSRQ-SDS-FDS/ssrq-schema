@@ -87,8 +87,6 @@ class ElementSpec(BaseSpec):
 
         doc.add_heading(translations["content"], level=2)
 
-        if self.ident == "damage":
-            print(self.content)
         if self.content is None:
             doc.add_paragraph(translations["isEmpty"])
             return None
@@ -117,7 +115,9 @@ class ElementSpec(BaseSpec):
     def _list_examples(
         self, translations: dict[str, str], lang: str, doc: Document
     ) -> None:
-        examples = self.odd_element.findall(".//tei:exemplum", namespaces=NS_MAP)
+        examples = self.odd_element.findall(
+            f".//tei:exemplum[@xml:lang = '{lang}' ]", namespaces=NS_MAP
+        )
         doc.add_heading(translations["examples"], level=2)
 
         if len(examples) == 0:
