@@ -1,47 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="del"
-    module="core" mode="change">
-    <desc xml:lang="de" versionDate="2023-05-24">Enthält Text, der von einem Schreiber getilgt
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="del"
+             module="core"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-24">Enthält Text, der von einem Schreiber getilgt
         wurde.</desc>
-    <desc xml:lang="en" versionDate="2023-05-24">Contains text deleted by a writer.</desc>
-    <desc xml:lang="fr" versionDate="2023-05-24">Contient du texte effacé par un scribe.</desc>
-    <desc xml:lang="it" versionDate="2023-05-24">Contiene testo cancellato da uno scrivano.</desc>
-    <classes>
-        <memberOf key="model.linePart"/>
-        <memberOf key="model.pPart.transcriptional"/>
-        <memberOf key="att.global.rendition"/>
-        <memberOf key="att.written"/>
-    </classes>
-    <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-del" mode="add">
-        <desc versionDate="2023-06-01" xml:lang="en">Schematron rules for tei:del</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:del[parent::tei:subst][not(text())][not(*[not(self::tei:gap)])]">
-                    <sch:assert
-                        test=".[tei:gap]"><sch:name/> inside tei:subst must contain at least a
+   <desc xml:lang="en" versionDate="2023-05-24">Contains text deleted by a writer.</desc>
+   <desc xml:lang="fr" versionDate="2023-05-24">Contient du texte effacé par un scribe.</desc>
+   <desc xml:lang="it" versionDate="2023-05-24">Contiene testo cancellato da uno scrivano.</desc>
+   <classes>
+      <memberOf key="model.linePart"/>
+      <memberOf key="model.pPart.transcriptional"/>
+      <memberOf key="att.global.rendition"/>
+      <memberOf key="att.written"/>
+   </classes>
+   <content>
+      <rng:oneOrMore>
+         <rng:ref name="ssrq.content.default"/>
+      </rng:oneOrMore>
+   </content>
+   <constraintSpec scheme="schematron" ident="sch-el-del" mode="add">
+      <desc versionDate="2023-06-01" xml:lang="en">Schematron rules for tei:del</desc>
+      <constraint>
+         <sch:pattern>
+            <sch:rule context="tei:del[parent::tei:subst][not(text())][not(*[not(self::tei:gap)])]">
+               <sch:assert test=".[tei:gap]">
+                  <sch:name/> inside tei:subst must contain at least a
                         tei:gap.</sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="rend" mode="replace">
-            <datatype>
-                <dataRef key="ssrq.rend.del"/>
-            </datatype>
-        </attDef>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-24">
-        <p xml:lang="de">Beispiel für eine Tilgung.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <p>Item ein <del rend="crossout" hand="otherHand">ein</del> hofstatt </p>
-        </egXML>
-    </exemplum>
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <attList>
+      <attDef ident="rend" mode="replace">
+         <datatype>
+            <dataRef key="ssrq.rend.del"/>
+         </datatype>
+      </attDef>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-24">
+      <p>Beispiel für eine Tilgung.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <p>Item ein <del rend="crossout" hand="otherHand">ein</del> hofstatt </p>
+      </egXML>
+   </exemplum>
 </elementSpec>

@@ -1,37 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="addSpan" module="transcr" mode="change">
-    <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet größere Abschnitte, die dem Text hinzugefügt wurden.</desc>
-    <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections added to the text.</desc>
-    <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui ont été ajoutées au texte.</desc>
-    <classes mode="replace">
-        <memberOf key="att.global.rendition"/>
-        <memberOf key="att.placement"/>
-        <memberOf key="att.spanning"/>
-        <memberOf key="att.written"/>
-    </classes>
-    <content>
-        <empty/>
-    </content>
-    <attList>
-        <attDef ident="rend" mode="replace">
-            <datatype>
-                <dataRef key="ssrq.rend.add"/>
-            </datatype>
-        </attDef>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <addSpan place="left margin" spanTo="add1"/>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="addSpan"
+             module="transcr"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet größere Abschnitte, die dem Text hinzugefügt wurden.</desc>
+   <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections added to the text.</desc>
+   <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui ont été ajoutées au texte.</desc>
+   <classes mode="replace">
+      <memberOf key="att.global.rendition"/>
+      <memberOf key="att.placement"/>
+      <memberOf key="att.spanning"/>
+      <memberOf key="att.written"/>
+   </classes>
+   <content>
+      <empty/>
+   </content>
+   <attList>
+      <attDef ident="rend" mode="replace">
+         <datatype>
+            <dataRef key="ssrq.rend.add"/>
+         </datatype>
+      </attDef>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <addSpan place="left margin" spanTo="add1"/>
             ...
             <anchor xml:id="add1"/>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <addSpan place="left margin" spanTo="add1"/>
             ...
             <anchor xml:id="add1"/>
-        </egXML>
-    </exemplum>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
+            ...
+            <anchor xml:id="add1"/>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
+            ...
+            <anchor xml:id="add1"/>
+      </egXML>
+   </exemplum>
 </elementSpec>

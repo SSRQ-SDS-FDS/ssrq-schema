@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="encodingDesc" module="header" mode="change">
-    <desc xml:lang="de" versionDate="2023-04-20">Beinhaltet Beschreibungen / Verweis Transkriptions-
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="encodingDesc"
+             module="header"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-04-20">Beinhaltet Beschreibungen / Verweis Transkriptions-
         und Codierungsrichtlinien.</desc>
-    <desc xml:lang="en" versionDate="2023-04-19">Includes descriptions / reference transcription and
+   <desc xml:lang="en" versionDate="2023-04-19">Includes descriptions / reference transcription and
         coding guidelines.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-19">Comprend des descriptions / références des
+   <desc xml:lang="fr" versionDate="2023-04-19">Comprend des descriptions / références des
         directives de transcription et de codage.</desc>
-    <classes mode="replace">
-        <memberOf key="model.teiHeaderPart"/>
-    </classes>
-    <content>
-        <elementRef key="editorialDecl"/>
-    </content>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-20">
-        <p xml:lang="de">Modellhafter Aufbau</p>
-        <p xml:lang="fr">Structure modèle</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <encodingDesc>
-                <editorialDecl>
-                    <p>
-                        <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
-                    </p>
-                </editorialDecl>
-            </encodingDesc>
-        </egXML>
-    </exemplum>
+   <classes mode="replace">
+      <memberOf key="model.teiHeaderPart"/>
+   </classes>
+   <content>
+      <elementRef key="editorialDecl"/>
+   </content>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-20">
+      <p>Modellhafter Aufbau</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <encodingDesc>
+            <editorialDecl>
+               <p>
+                  <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
+               </p>
+            </editorialDecl>
+         </encodingDesc>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-20">
+      <p>Structure modèle</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <encodingDesc>
+            <editorialDecl>
+               <p>
+                  <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
+               </p>
+            </editorialDecl>
+         </encodingDesc>
+      </egXML>
+   </exemplum>
 </elementSpec>

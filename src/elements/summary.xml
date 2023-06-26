@@ -1,40 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="summary" module="msdescription"
-    mode="change" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-04-14">Beschreibt den Inhalt der Quelle (= Regest)
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="summary"
+             module="msdescription"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-04-14">Beschreibt den Inhalt der Quelle (= Regest)
         ausführlich.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-14">Décrit en détail le contenu de la source (=
+   <desc xml:lang="fr" versionDate="2023-04-14">Décrit en détail le contenu de la source (=
         regest).</desc>
-    <desc xml:lang="en" versionDate="2023-04-14">Describes the content of the source (= regest) in
+   <desc xml:lang="en" versionDate="2023-04-14">Describes the content of the source (= regest) in
         detail.</desc>
-    <classes mode="replace"/>
-    <content>
-        <elementRef key="p" minOccurs="1" maxOccurs="unbounded"/>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-summary">
-        <desc xml:lang="en" versionDate="2023-04-14">Constraint for tei:summary</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:summary/tei:p">
-                    <sch:assert test=".[@xml:lang]"><sch:name/> as part of tei:summary should always
+   <classes mode="replace"/>
+   <content>
+      <elementRef key="p" minOccurs="1" maxOccurs="unbounded"/>
+   </content>
+   <constraintSpec scheme="schematron" ident="sch-el-summary">
+      <desc xml:lang="en" versionDate="2023-04-14">Constraint for tei:summary</desc>
+      <constraint>
+         <sch:pattern>
+            <sch:rule context="tei:summary/tei:p">
+               <sch:assert test=".[@xml:lang]">
+                  <sch:name/> as part of tei:summary should always
                         have an attribute xml:lang.</sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-14">
-        <p xml:lang="de">Mehrsprachiges Regest</p>
-        <p xml:lang="fr">Résumé multilingue</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <summary>
-                <p xml:lang="de">Claude Chauderon aus Penthalaz wird des Diebstahls und der Hexerei
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-14">
+      <p>Mehrsprachiges Regest</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <summary>
+            <p xml:lang="de">Claude Chauderon aus Penthalaz wird des Diebstahls und der Hexerei
                     angeklagt. Er wird befragt und zum Scheiterhaufen verurteilt. Das Urteil wird
                     durch vorheriges Enthaupten gemildert.</p>
-                <p xml:lang="fr">Claude Chauderon, de Penthalaz, est accusé de vols et de
+            <p xml:lang="fr">Claude Chauderon, de Penthalaz, est accusé de vols et de
                     sorcellerie. Il est interrogée et condamné au bûcher, mais bénéficie d'une
                     mitigation de peine: il est décapité.</p>
-            </summary>
-        </egXML>
-    </exemplum>
+         </summary>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-14">
+      <p>Résumé multilingue</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <summary>
+            <p xml:lang="de">Claude Chauderon aus Penthalaz wird des Diebstahls und der Hexerei
+                    angeklagt. Er wird befragt und zum Scheiterhaufen verurteilt. Das Urteil wird
+                    durch vorheriges Enthaupten gemildert.</p>
+            <p xml:lang="fr">Claude Chauderon, de Penthalaz, est accusé de vols et de
+                    sorcellerie. Il est interrogée et condamné au bûcher, mais bénéficie d'une
+                    mitigation de peine: il est décapité.</p>
+         </summary>
+      </egXML>
+   </exemplum>
 </elementSpec>

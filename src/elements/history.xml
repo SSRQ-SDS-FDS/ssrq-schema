@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="history" module="msdescription"
-    mode="change">
-    <desc xml:lang="de" versionDate="2023-05-16">Container für Informationen zur Geschichte eines
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="history"
+             module="msdescription"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-16">Container für Informationen zur Geschichte eines
         Dokuments. Dazu zählen beispielsweise Datierung oder der Ausstellungsort.</desc>
-    <desc xml:lang="fr" versionDate="2023-05-16">Conteneur d'informations sur l'histoire d'un
+   <desc xml:lang="fr" versionDate="2023-05-16">Conteneur d'informations sur l'histoire d'un
         document. Il s'agit par exemple de la datation ou du lieu d'exposition.</desc>
-    <desc xml:lang="en" versionDate="2023-05-16">Container for information on the history of a
+   <desc xml:lang="en" versionDate="2023-05-16">Container for information on the history of a
         document. This includes, for example, dating or the place of issue.</desc>
-    <classes mode="replace"/>
-    <content>
-        <elementRef key="origin"/>
-    </content>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-16">
-        <p xml:lang="de">Modellhafter Aufbau inklusive Datierung und Ausstellungsort</p>
-        <p xml:lang="fr">Modèle de construction, y compris la datation et le lieu d'exposition</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <history>
-                <origin>
-                    <origDate from-custo="1532-05-20" to-custom="1532-12-31" calendar="unknown"/>
-                    <origPlace ref="loc000701">Schaffhausen</origPlace>
-                </origin>
-            </history>
-        </egXML>
-    </exemplum>
+   <classes mode="replace"/>
+   <content>
+      <elementRef key="origin"/>
+   </content>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-16">
+      <p>Modellhafter Aufbau inklusive Datierung und Ausstellungsort</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <history>
+            <origin>
+               <origDate from-custo="1532-05-20" to-custom="1532-12-31" calendar="unknown"/>
+               <origPlace ref="loc000701">Schaffhausen</origPlace>
+            </origin>
+         </history>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-16">
+      <p>Modèle de construction, y compris la datation et le lieu d'exposition</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <history>
+            <origin>
+               <origDate from-custo="1532-05-20" to-custom="1532-12-31" calendar="unknown"/>
+               <origPlace ref="loc000701">Schaffhausen</origPlace>
+            </origin>
+         </history>
+      </egXML>
+   </exemplum>
 </elementSpec>

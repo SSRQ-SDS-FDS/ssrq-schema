@@ -1,46 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="precision" module="certainty" mode="change"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-04-26">Angabe von Unsicherheit / Präzision bei Datierungen </desc>
-    <desc xml:lang="en" versionDate="2023-04-26">Indication of uncertainty / precision in dating </desc>
-    <desc xml:lang="fr" versionDate="2023-04-26">Indication de l'incertitude / de la précision pour
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="precision"
+             module="certainty"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-04-26">Angabe von Unsicherheit / Präzision bei Datierungen </desc>
+   <desc xml:lang="en" versionDate="2023-04-26">Indication of uncertainty / precision in dating </desc>
+   <desc xml:lang="fr" versionDate="2023-04-26">Indication de l'incertitude / de la précision pour
         les datations </desc>
-    <classes mode="replace">
-        <memberOf key="model.certLike"/>
-        <memberOf key="model.global.meta"/>
-        <memberOf key="att.scoping"/>
-    </classes>
-    <content>
-        <empty/>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-precision">
-        <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:precision test-matches </desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:precision[@match]">
-                    <sch:let name="parent" value="./parent::*"/>
-                    <sch:assert
-                        test="every $matchAttr in tokenize(./@match, ' ') satisfies exists($parent/@*[name() = substring-after($matchAttr, '@')])"
-                    >Every
+   <classes mode="replace">
+      <memberOf key="model.certLike"/>
+      <memberOf key="model.global.meta"/>
+      <memberOf key="att.scoping"/>
+   </classes>
+   <content>
+      <empty/>
+   </content>
+   <constraintSpec scheme="schematron" ident="sch-el-precision">
+      <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:precision test-matches </desc>
+      <constraint>
+         <sch:pattern>
+            <sch:rule context="tei:precision[@match]">
+               <sch:let name="parent" value="./parent::*"/>
+               <sch:assert test="every $matchAttr in tokenize(./@match, ' ') satisfies exists($parent/@*[name() = substring-after($matchAttr, '@')])">Every
                         value that is targeted via @match must have a corresponding attribute on the
                         parent. </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="precision" mode="change" usage="req"/>
-        <attDef ident="match" mode="change" usage="req"/>
-        <attDef ident="stdDeviation" mode="delete"/>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-26">
-        <p xml:lang="de">Unsicheres Datum, zum Beispiel um 1346 und um 1350</p>
-        <p xml:lang="fr">Date incertaine, par exemple vers 1346 et vers 1350</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <date notBefore-custom="1341-01-01" notAfter-custom="1355-12-31">Um 1346 und um 1350 <precision
-                    precision="low" match="@notBefore-custom @notAfter-custom"/>
-            </date>
-        </egXML>
-    </exemplum>
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <attList>
+      <attDef ident="precision" mode="change" usage="req"/>
+      <attDef ident="match" mode="change" usage="req"/>
+      <attDef ident="stdDeviation" mode="delete"/>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-26">
+      <p>Unsicheres Datum, zum Beispiel um 1346 und um 1350</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <date notBefore-custom="1341-01-01" notAfter-custom="1355-12-31">Um 1346 und um 1350 <precision precision="low" match="@notBefore-custom @notAfter-custom"/>
+         </date>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-26">
+      <p>Date incertaine, par exemple vers 1346 et vers 1350</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <date notBefore-custom="1341-01-01" notAfter-custom="1355-12-31">Um 1346 und um 1350 <precision precision="low" match="@notBefore-custom @notAfter-custom"/>
+         </date>
+      </egXML>
+   </exemplum>
 </elementSpec>

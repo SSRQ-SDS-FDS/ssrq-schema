@@ -1,54 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="lb" module="core" mode="change">
-    <desc xml:lang="de" versionDate="2023-04-21">Beschreibt den Zeilenwechsel bzw. den Zeilenbeginn.
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="lb"
+             module="core"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-04-21">Beschreibt den Zeilenwechsel bzw. den Zeilenbeginn.
         Wird vor jeder Zeile an den Anfang der Zeile gesetzt, auch vor der ersten Zeile des Textes
         und wenn ein neuer Abschnitt beginnt. Wird auch bei Texten mit nur einer Zeile verwendet.
         Achtung: Einrückungen werden nicht berücksichtigt.</desc>
-    <desc xml:lang="en" versionDate="2023-04-21">Describes the line change or the beginning of the
+   <desc xml:lang="en" versionDate="2023-04-21">Describes the line change or the beginning of the
         line. Is placed at the beginning of the line before each line, also before the first line of
         the text and when a new section begins. Is also used for texts with only one line.
         Attention: Indentations are not taken into account.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-21">Décrit le changement de ligne ou le début de la
+   <desc xml:lang="fr" versionDate="2023-04-21">Décrit le changement de ligne ou le début de la
         ligne. Se place au début de chaque ligne, y compris avant la première ligne du texte et
         lorsqu'un nouveau paragraphe commence. Est également utilisé pour les textes ne comportant
         qu'une seule ligne. Attention : les indentations ne sont pas prises en compte.</desc>
-    <classes mode="replace">
-        <memberOf key="model.milestoneLike"/>
-        <memberOf key="att.breaking"/>
-        <memberOf key="att.global.facs"/>
-    </classes>
-    <attList>
-        <attDef ident="break" mode="replace">
-            <desc xml:lang="de" versionDate="2023-04-21">Zeigt innerhalb von <gi
-                    >lb</gi> an, ob ein Zeilenumbruch innerhalb eines Wortes vorliegt – auch wenn
+   <classes mode="replace">
+      <memberOf key="model.milestoneLike"/>
+      <memberOf key="att.breaking"/>
+      <memberOf key="att.global.facs"/>
+   </classes>
+   <attList>
+      <attDef ident="break" mode="replace">
+         <desc xml:lang="de" versionDate="2023-04-21">Zeigt innerhalb von <gi>lb</gi> an, ob ein Zeilenumbruch innerhalb eines Wortes vorliegt – auch wenn
                 der Zeilenumbruch mit dem Seitenumbruch zusammenfällt. Bei gedruckten Texten werden
                 analog zu den handschriftlichen Texten Trennstriche mit eben hiermit und
                 Binde-/Ergänzungsstriche mit '-'' transkribiert.</desc>
-            <desc xml:lang="en" versionDate="2023-04-21">Indicates within <gi>lb</gi>
+         <desc xml:lang="en" versionDate="2023-04-21">Indicates within <gi>lb</gi>
                 whether there is a line break within a word - even if the line break coincides with
                 the page break. In printed texts, hyphens are transcribed with this and hyphens with
                 '-'', analogous to handwritten texts.</desc>
-            <desc xml:lang="fr" versionDate="2023-04-21">Indique à l'intérieur de <gi
-                    >lb</gi> s'il y a un saut de ligne à l'intérieur d'un mot - même si le saut de
+         <desc xml:lang="fr" versionDate="2023-04-21">Indique à l'intérieur de <gi>lb</gi> s'il y a un saut de ligne à l'intérieur d'un mot - même si le saut de
                 ligne coïncide avec le saut de page. Pour les textes imprimés, les traits d'union
                 sont transcrits de la même manière que les textes manuscrits, avec justement ceci et
                 les traits de liaison/complément avec '-''.</desc>
-            <valList type="closed">
-                <valItem ident="no"/>
-            </valList>
-        </attDef>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-19">
-        <p xml:lang="de">Modellhafte Benutzung – Achtung: immer leerer Tag</p>
-        <p xml:lang="fr">Utilisation comme modèle - Attention : jour toujours vide</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <lb/>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
-        <p xml:lang="de">Worttrennung über den Zeilenwechsel</p>
-        <p xml:lang="fr">Séparation des mots via le saut de ligne</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">geschri<lb break="no"/>ben </egXML>
-    </exemplum>
+         <valList type="closed">
+            <valItem ident="no"/>
+         </valList>
+      </attDef>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-19">
+      <p>Modellhafte Benutzung – Achtung: immer leerer Tag</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <lb/>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-19">
+      <p>Utilisation comme modèle - Attention : jour toujours vide</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <lb/>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>Worttrennung über den Zeilenwechsel</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">geschri<lb break="no"/>ben </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>Séparation des mots via le saut de ligne</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">geschri<lb break="no"/>ben </egXML>
+   </exemplum>
 </elementSpec>

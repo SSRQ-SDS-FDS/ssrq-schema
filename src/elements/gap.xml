@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="gap" module="core" mode="change"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:rng="http://relaxng.org/ns/structure/1.0">
-    <desc xml:lang="de" versionDate="2023-05-26">Zeichnet eine Auslassung seitens des Bearbeitenden
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="gap"
+             module="core"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-26">Zeichnet eine Auslassung seitens des Bearbeitenden
         aus (herkömmlich mit [...] gekennzeichnet). Dies betrifft vor allem gänzlich unleserliche
         Stellen. Der Grund für eine Auslassung kann mit <att>reason</att> angegeben werden. Wenn die
         Ursache einer Unlesbarkeit aber eine Beschädigung ist, so wird auf <att>reason</att>
@@ -14,7 +18,7 @@
         ediert wurden, mit <gi>gap</gi> weggelassen werden. Auf das bereits edierte Stück wird mit <att>
         source</att> verwiesen. In diesem Fall wird eine Anmerkung in <gi>note</gi> oder eine
         Bemerkung in <gi>back</gi> ergänzt.</desc>
-    <desc xml:lang="en" versionDate="2023-05-26">Indicates an omission on the part of the editor
+   <desc xml:lang="en" versionDate="2023-05-26">Indicates an omission on the part of the editor
         (conventionally marked with [...]). This applies above all to completely illegible passages.
         The reason for an omission can be indicated with <att>reason</att>. However, if the cause of
         an illegibility is damage, <att>reason</att> is omitted - instead, the tag is enclosed with <gi>
@@ -24,7 +28,7 @@
         original but as an independent piece, the parts that have already been edited in an earlier
         original can be omitted with <gi>gap</gi>. The already edited piece is referred to with <att>
         source</att>. In this case, a note is added in <gi>note</gi> or a remark in <gi>back</gi>.</desc>
-    <desc xml:lang="fr" versionDate="2023-05-26">Indique une omission de la part de l'éditeur
+   <desc xml:lang="fr" versionDate="2023-05-26">Indique une omission de la part de l'éditeur
         (conventionnellement marquée par [...]). Cela s'applique surtout aux passages complètement
         illisibles. La raison d'une omission peut être indiquée par <att>motif</att>. Toutefois, si
         la cause de l'illisibilité est un dommage, <att>reason</att> est omis - à la place, la
@@ -35,87 +39,99 @@
         parties qui ont déjà été éditées dans un original antérieur peuvent être omises avec <gi>gap</gi>.
         Le morceau déjà édité est désigné par <att>source</att>. Dans ce cas, une note est ajoutée
         dans <gi>note</gi> ou une remarque dans <gi>back</gi>.</desc>
-    <classes mode="replace">
-        <memberOf key="att.dimensions"/>
-        <memberOf key="ssrq.att.source"/>
-    </classes>
-    <content>
-        <empty/>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-gap">
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:gap[parent::tei:damage]">
-                    <sch:report test="@reason" xml:lang="en">If <sch:name/> is a child of
+   <classes mode="replace">
+      <memberOf key="att.dimensions"/>
+      <memberOf key="ssrq.att.source"/>
+   </classes>
+   <content>
+      <empty/>
+   </content>
+   <constraintSpec scheme="schematron" ident="sch-el-gap">
+      <constraint>
+         <sch:pattern>
+            <sch:rule context="tei:gap[parent::tei:damage]">
+               <sch:report test="@reason" xml:lang="en">If <sch:name/> is a child of
                         tei:damage, @reason cannot be specififed on tei:gap.</sch:report>
-                    <sch:report test="not(@unit) or not(@quantity)" xml:lang="en"> If tei:gap is a
+               <sch:report test="not(@unit) or not(@quantity)" xml:lang="en"> If tei:gap is a
                         child of tei:damage, @unit and @quantity need to specified on tei:gap.</sch:report>
-                </sch:rule>
-                <sch:rule context="tei:gap[not(parent::tei:damage) and @reason]">
-                    <sch:report
-                        test="@reason = 'illegible' and (not(@unit) or not(@quantity))"
-                    >If @reason is
+            </sch:rule>
+            <sch:rule context="tei:gap[not(parent::tei:damage) and @reason]">
+               <sch:report test="@reason = 'illegible' and (not(@unit) or not(@quantity))">If @reason is
                         specified on the <sch:name/> element and its value is "illegible", @unit and
                         @quantity must be present, too.</sch:report>
-                    <sch:report test="@source">On the <sch:name/> element, @source cannot occur
+               <sch:report test="@source">On the <sch:name/> element, @source cannot occur
                         together with @reason. Those attributes are mutually exclusive.</sch:report>
-                </sch:rule>
-                <sch:rule context="tei:gap[not(parent::tei:damage) and @source]">
-                    <sch:report test="@unit or @quantity or @reason">If @source is specified on the <sch:name/>
+            </sch:rule>
+            <sch:rule context="tei:gap[not(parent::tei:damage) and @source]">
+               <sch:report test="@unit or @quantity or @reason">If @source is specified on the <sch:name/>
                         element, @unit, @quantity and @reason are forbidden.</sch:report>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="reason" mode="replace">
-            <desc xml:lang="de" versionDate="2023-05-26">Grund der Lücke</desc>
-            <desc xml:lang="fr" versionDate="2023-05-26">Raison de l'écart</desc>
-            <desc xml:lang="en" versionDate="2023-05-26">Reason for the difference</desc>
-            <valList type="closed">
-                <valItem ident="illegible">
-                    <desc xml:lang="de" versionDate="2023-05-26">unleserlich</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-26">illisible</desc>
-                    <desc xml:lang="en" versionDate="2023-05-26">illegible</desc>
-                    <desc xml:lang="it" versionDate="2023-05-26">illeggibile</desc>
-                </valItem>
-                <valItem ident="irrelevant">
-                    <desc xml:lang="de" versionDate="2023-05-26">irrelevant</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-26">insignifiant</desc>
-                    <desc xml:lang="en" versionDate="2023-05-26">irrelevant</desc>
-                    <desc xml:lang="it" versionDate="2023-05-26">irrilevante</desc>
-                </valItem>
-                <valItem ident="missing">
-                    <desc xml:lang="de" versionDate="2023-05-26">fehlt</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-26">manquant</desc>
-                    <desc xml:lang="en" versionDate="2023-05-26">missing</desc>
-                    <desc xml:lang="it" versionDate="2023-05-26">mancante</desc>
-                </valItem>
-            </valList>
-        </attDef>
-        <attDef ident="unit" mode="change">
-            <datatype>
-                <rng:choice>
-                    <rng:ref name="ssrq.measure.lengths.base.cm"/>
-                    <rng:ref name="ssrq.measure.lengths.base.line"/>
-                    <rng:ref name="ssrq.measure.typography"/>
-                </rng:choice>
-            </datatype>
-        </attDef>
-        <attDef ident="agent" mode="delete"/>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-26">
-        <p xml:lang="de">Unlesbare Zeile ohne Streichung oder Beschädigung</p>
-        <p xml:lang="fr">Ligne illisible sans rature ou détérioration</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <gap reason="illegible" unit="line" quantity="1.0"/>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-26">
-        <p xml:lang="de">Loch in einer Editionsvorlage, bei dem keine Ergänzung möglich ist – Masse werden auf 0.5 auf- oder abgerundet.</p>
-        <p xml:lang="fr">Trou dans un modèle d'édition pour lequel aucun ajout n'est possible - les mesures sont arrondies à 0,5.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            und sol och der w<damage agent="hole"><gap unit="cm" quantity="3.5"/></damage>
-        </egXML>
-    </exemplum>
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <attList>
+      <attDef ident="reason" mode="replace">
+         <desc xml:lang="de" versionDate="2023-05-26">Grund der Lücke</desc>
+         <desc xml:lang="fr" versionDate="2023-05-26">Raison de l'écart</desc>
+         <desc xml:lang="en" versionDate="2023-05-26">Reason for the difference</desc>
+         <valList type="closed">
+            <valItem ident="illegible">
+               <desc xml:lang="de" versionDate="2023-05-26">unleserlich</desc>
+               <desc xml:lang="fr" versionDate="2023-05-26">illisible</desc>
+               <desc xml:lang="en" versionDate="2023-05-26">illegible</desc>
+               <desc xml:lang="it" versionDate="2023-05-26">illeggibile</desc>
+            </valItem>
+            <valItem ident="irrelevant">
+               <desc xml:lang="de" versionDate="2023-05-26">irrelevant</desc>
+               <desc xml:lang="fr" versionDate="2023-05-26">insignifiant</desc>
+               <desc xml:lang="en" versionDate="2023-05-26">irrelevant</desc>
+               <desc xml:lang="it" versionDate="2023-05-26">irrilevante</desc>
+            </valItem>
+            <valItem ident="missing">
+               <desc xml:lang="de" versionDate="2023-05-26">fehlt</desc>
+               <desc xml:lang="fr" versionDate="2023-05-26">manquant</desc>
+               <desc xml:lang="en" versionDate="2023-05-26">missing</desc>
+               <desc xml:lang="it" versionDate="2023-05-26">mancante</desc>
+            </valItem>
+         </valList>
+      </attDef>
+      <attDef ident="unit" mode="change">
+         <datatype>
+            <rng:choice>
+               <rng:ref name="ssrq.measure.lengths.base.cm"/>
+               <rng:ref name="ssrq.measure.lengths.base.line"/>
+               <rng:ref name="ssrq.measure.typography"/>
+            </rng:choice>
+         </datatype>
+      </attDef>
+      <attDef ident="agent" mode="delete"/>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
+      <p>Unlesbare Zeile ohne Streichung oder Beschädigung</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <gap reason="illegible" unit="line" quantity="1.0"/>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
+      <p>Ligne illisible sans rature ou détérioration</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <gap reason="illegible" unit="line" quantity="1.0"/>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
+      <p>Loch in einer Editionsvorlage, bei dem keine Ergänzung möglich ist – Masse werden auf 0.5 auf- oder abgerundet.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            und sol och der w<damage agent="hole">
+            <gap unit="cm" quantity="3.5"/>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
+      <p>Trou dans un modèle d'édition pour lequel aucun ajout n'est possible - les mesures sont arrondies à 0,5.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            und sol och der w<damage agent="hole">
+            <gap unit="cm" quantity="3.5"/>
+         </damage>
+      </egXML>
+   </exemplum>
 </elementSpec>

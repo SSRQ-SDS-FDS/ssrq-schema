@@ -1,667 +1,685 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="measure" module="core" mode="change">
-    <desc xml:lang="de" versionDate="2023-05-30">Auszeichnung für Masse und Gewichte, das Alter
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="measure"
+             module="core"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-30">Auszeichnung für Masse und Gewichte, das Alter
         einer Person oder den Umfang eines Textes
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-30">Marquage des poids et mesures, de l'âge d'une
+   <desc xml:lang="fr" versionDate="2023-05-30">Marquage des poids et mesures, de l'âge d'une
         personne ou de la taille d'un texte
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-30">Marking weights and measures, the age of a person
+   <desc xml:lang="en" versionDate="2023-05-30">Marking weights and measures, the age of a person
         or the size of a text
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.measureLike"/>
-        <memberOf key="att.measurement"/>
-        <memberOf key="att.typed"/>
-    </classes>
-    <content>
-        <alternate minOccurs="1" maxOccurs="unbounded">
-            <textNode/>
-            <macroRef key="ssrq.content.critical"/>
-            <macroRef key="ssrq.content.display"/>
-            <macroRef key="ssrq.content.content"/>
-            <macroRef key="ssrq.content.entities"/>
-        </alternate>
-    </content>
-    <constraintSpec scheme="schematron" mode="change" ident="sch-measure" module="core">
-        <desc xml:lang="de" versionDate="2023-03-23">Constrains for tei:measure</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule abstract="true" id="measure-not-empty">
-                    <sch:assert test="matches(string(), '[\S\s]+[\S]+') and not(./*)">
-                        <sch:name/>
+   <classes mode="replace">
+      <memberOf key="model.measureLike"/>
+      <memberOf key="att.measurement"/>
+      <memberOf key="att.typed"/>
+   </classes>
+   <content>
+      <alternate minOccurs="1" maxOccurs="unbounded">
+         <textNode/>
+         <macroRef key="ssrq.content.critical"/>
+         <macroRef key="ssrq.content.display"/>
+         <macroRef key="ssrq.content.content"/>
+         <macroRef key="ssrq.content.entities"/>
+      </alternate>
+   </content>
+   <constraintSpec scheme="schematron"
+                   mode="change"
+                   ident="sch-measure"
+                   module="core">
+      <desc xml:lang="de" versionDate="2023-03-23">Constrains for tei:measure</desc>
+      <constraint>
+         <sch:pattern>
+            <sch:rule abstract="true" id="measure-not-empty">
+               <sch:assert test="matches(string(), '[\S\s]+[\S]+') and not(./*)">
+                  <sch:name/>
                         must not be empty!
                     </sch:assert>
-                </sch:rule>
-                <sch:rule context="tei:measure[@unit][not(@type)]">
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'area']">
-                    <sch:let name="area"
-                             value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.area']//tei:valItem/@ident, '|'), '&quot;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $area, '$'))">
-                        <sch:value-of
-                                select="./@unit"/>
+            </sch:rule>
+            <sch:rule context="tei:measure[@unit][not(@type)]">
+               <sch:extends rule="measure-not-empty"/>
+            </sch:rule>
+            <sch:rule context="tei:measure[@type = 'area']">
+               <sch:let name="area"
+                        value="{{concat('&#34;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.area']//tei:valItem/@ident, '|'), '&#34;')}}"/>
+               <sch:assert test="matches(@unit, concat('^', $area, '$'))">
+                  <sch:value-of select="./@unit"/>
                         is not a valid area measurement – you need to choose
                         from the following list:
-                        <sch:value-of
-                                select="string-join(tokenize($area, '\|'), ', ')"/>
-                    </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'currency']">
-                    <sch:let name="currency"
-                             value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.currency']//tei:valItem/@ident, '|'), '&quot;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $currency, '$'))">
-                        <sch:value-of
-                                select="./@unit"/>
+                        <sch:value-of select="string-join(tokenize($area, '\|'), ', ')"/>
+               </sch:assert>
+               <sch:extends rule="measure-not-empty"/>
+            </sch:rule>
+            <sch:rule context="tei:measure[@type = 'currency']">
+               <sch:let name="currency"
+                        value="{{concat('&#34;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.currency']//tei:valItem/@ident, '|'), '&#34;')}}"/>
+               <sch:assert test="matches(@unit, concat('^', $currency, '$'))">
+                  <sch:value-of select="./@unit"/>
                         is not valid currency – you need to choose from the
                         following list:
-                        <sch:value-of
-                                select="string-join(tokenize($currency, '\|'), ', ')"/>
-                    </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'length']">
-                    <sch:let name="length"
-                             value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.length', 'ssrq.measure.lengths.base.cm', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $length, '$'))">
-                        <sch:value-of
-                                select="./@unit"/>
+                        <sch:value-of select="string-join(tokenize($currency, '\|'), ', ')"/>
+               </sch:assert>
+               <sch:extends rule="measure-not-empty"/>
+            </sch:rule>
+            <sch:rule context="tei:measure[@type = 'length']">
+               <sch:let name="length"
+                        value="{{concat('&#34;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.length', 'ssrq.measure.lengths.base.cm', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&#34;')}}"/>
+               <sch:assert test="matches(@unit, concat('^', $length, '$'))">
+                  <sch:value-of select="./@unit"/>
                         is not valid length measurement– you need to choose
                         from the following list:
-                        <sch:value-of
-                                select="string-join(tokenize($length, '\|'), ', ')"/>
-                    </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'volume']">
-                    <sch:let name="volume"
-                             value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.lengths.base.klafter', 'ssrq.measure.capacity', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $volume, '$'))">
-                        <sch:value-of
-                                select="./@unit"/>
+                        <sch:value-of select="string-join(tokenize($length, '\|'), ', ')"/>
+               </sch:assert>
+               <sch:extends rule="measure-not-empty"/>
+            </sch:rule>
+            <sch:rule context="tei:measure[@type = 'volume']">
+               <sch:let name="volume"
+                        value="{{concat('&#34;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.lengths.base.klafter', 'ssrq.measure.capacity', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&#34;')}}"/>
+               <sch:assert test="matches(@unit, concat('^', $volume, '$'))">
+                  <sch:value-of select="./@unit"/>
                         is not valid capacity measurement– you need to choose
                         from the following list:
-                        <sch:value-of
-                                select="string-join(tokenize($volume, '\|'), ', ')"/>
-                    </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'age']">
-                    <sch:let name="age"
-                             value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.time']//tei:valItem/@ident), '|'), '&quot;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $age, '$'))">
-                        <sch:value-of
-                                select="./@unit"/>
+                        <sch:value-of select="string-join(tokenize($volume, '\|'), ', ')"/>
+               </sch:assert>
+               <sch:extends rule="measure-not-empty"/>
+            </sch:rule>
+            <sch:rule context="tei:measure[@type = 'age']">
+               <sch:let name="age"
+                        value="{{concat('&#34;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.time']//tei:valItem/@ident), '|'), '&#34;')}}"/>
+               <sch:assert test="matches(@unit, concat('^', $age, '$'))">
+                  <sch:value-of select="./@unit"/>
                         is no valid time measurement – you need to choose
                         from the following list:
-                        <sch:value-of
-                                select="string-join(tokenize($age, '\|'), ', ')"/>
-                    </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'text_scope']">
-                    <sch:let name="scope"
-                             value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.scope']//tei:valItem/@ident), '|'), '&quot;')}}"/>
-                    <sch:assert test=".[parent::tei:extent]">
-                        <sch:name/>
+                        <sch:value-of select="string-join(tokenize($age, '\|'), ', ')"/>
+               </sch:assert>
+               <sch:extends rule="measure-not-empty"/>
+            </sch:rule>
+            <sch:rule context="tei:measure[@type = 'text_scope']">
+               <sch:let name="scope"
+                        value="{{concat('&#34;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.scope']//tei:valItem/@ident), '|'), '&#34;')}}"/>
+               <sch:assert test=".[parent::tei:extent]">
+                  <sch:name/>
                         of type 'text_scope' must be a child of tei:extent.
                     </sch:assert>
-                    <sch:assert test="matches(@unit, concat('^', $scope, '$'))">
-                        <sch:value-of
-                                select="./@unit"/>
+               <sch:assert test="matches(@unit, concat('^', $scope, '$'))">
+                  <sch:value-of select="./@unit"/>
                         is no valid scope measurement – you need to choose
                         from the following list:
-                        <sch:value-of
-                                select="string-join(tokenize($scope, '\|'), ', ')"/>
-                    </sch:assert>
-                    <sch:assert test="string-length(text()) = 0 and not(*)">
-                        <sch:name/>
+                        <sch:value-of select="string-join(tokenize($scope, '\|'), ', ')"/>
+               </sch:assert>
+               <sch:assert test="string-length(text()) = 0 and not(*)">
+                  <sch:name/>
                         of type
                         'text_scope' must be empty.
                     </sch:assert>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'undefined']">
-                    <sch:let name="various"
-                             value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.various']//tei:valItem/@ident), '|'), '&quot;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $various, '$'))">
-                        <sch:value-of
-                                select="./@unit"/>
+            </sch:rule>
+            <sch:rule context="tei:measure[@type = 'undefined']">
+               <sch:let name="various"
+                        value="{{concat('&#34;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.various']//tei:valItem/@ident), '|'), '&#34;')}}"/>
+               <sch:assert test="matches(@unit, concat('^', $various, '$'))">
+                  <sch:value-of select="./@unit"/>
                         is not part of unspecific measurements– you need to
                         choose from the following list:
-                        <sch:value-of
-                                select="string-join(tokenize($various, '\|'), ', ')"/>
-                    </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="commodity" mode="replace">
-            <desc xml:lang="de" versionDate="2023-03-21">Enthält die gemessene Substanz.</desc>
-            <desc xml:lang="fr" versionDate="2023-03-21">La substance mesurée contient-elle.</desc>
-            <desc xml:lang="en" versionDate="2023-03-21">The substance measured.</desc>
-            <valList type="closed">
-                <valItem ident="field">
-                    <desc xml:lang="de" versionDate="2023-03-21">Acker</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">champ</desc>
-                    <desc xml:lang="fr" type="plural" versionDate="2023-03-21">champs</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">field</desc>
-                    <desc xml:lang="en" type="plural" versionDate="2023-03-21">fields</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">campo</desc>
-                    <desc xml:lang="it" type="plural" versionDate="2023-03-21">campi</desc>
-                </valItem>
-                <valItem ident="apple">
-                    <desc xml:lang="de" versionDate="2023-03-21">Äpfel</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">pommes</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">apples</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">mele</desc>
-                </valItem>
-                <valItem ident="pear">
-                    <desc xml:lang="de" versionDate="2023-03-21">Birnen</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">poires</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">pears</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">pere</desc>
-                </valItem>
-                <valItem ident="lead">
-                    <desc xml:lang="de" versionDate="2023-03-21">Blei</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">plomb</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">lead</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">piombo</desc>
-                </valItem>
-                <valItem ident="bean">
-                    <desc xml:lang="de" versionDate="2023-03-21">Bohnen</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">haricots</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">beans</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">fagioli</desc>
-                </valItem>
-                <valItem ident="bread">
-                    <desc xml:lang="de" versionDate="2023-03-21">Brot</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">pain</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">bread</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">pane</desc>
-                </valItem>
-                <valItem ident="butter">
-                    <desc xml:lang="de" versionDate="2023-03-21">Butter</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">beurre</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">butter</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">burro</desc>
-                </valItem>
-                <valItem ident="spelt">
-                    <desc xml:lang="de" versionDate="2023-03-21">Dinkel</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">épeautre</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">spelt</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">spelta</desc>
-                </valItem>
-                <valItem ident="dried fruit">
-                    <desc xml:lang="de" versionDate="2023-03-21">Dörrobst</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">fruit sec</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">dried fruit</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">frutta secca</desc>
-                </valItem>
-                <valItem ident="pea">
-                    <desc xml:lang="de" versionDate="2023-03-21">Erbsen</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">pois</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">peas</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">piselli</desc>
-                </valItem>
-                <valItem ident="grain_spelt">
-                    <desc xml:lang="de" versionDate="2023-03-21">Fesen und Kernen</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">grain non-décortiqué et épeautre
+                        <sch:value-of select="string-join(tokenize($various, '\|'), ', ')"/>
+               </sch:assert>
+               <sch:extends rule="measure-not-empty"/>
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <attList>
+      <attDef ident="commodity" mode="replace">
+         <desc xml:lang="de" versionDate="2023-03-21">Enthält die gemessene Substanz.</desc>
+         <desc xml:lang="fr" versionDate="2023-03-21">La substance mesurée contient-elle.</desc>
+         <desc xml:lang="en" versionDate="2023-03-21">The substance measured.</desc>
+         <valList type="closed">
+            <valItem ident="field">
+               <desc xml:lang="de" versionDate="2023-03-21">Acker</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">champ</desc>
+               <desc xml:lang="fr" type="plural" versionDate="2023-03-21">champs</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">field</desc>
+               <desc xml:lang="en" type="plural" versionDate="2023-03-21">fields</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">campo</desc>
+               <desc xml:lang="it" type="plural" versionDate="2023-03-21">campi</desc>
+            </valItem>
+            <valItem ident="apple">
+               <desc xml:lang="de" versionDate="2023-03-21">Äpfel</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">pommes</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">apples</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">mele</desc>
+            </valItem>
+            <valItem ident="pear">
+               <desc xml:lang="de" versionDate="2023-03-21">Birnen</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">poires</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">pears</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">pere</desc>
+            </valItem>
+            <valItem ident="lead">
+               <desc xml:lang="de" versionDate="2023-03-21">Blei</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">plomb</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">lead</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">piombo</desc>
+            </valItem>
+            <valItem ident="bean">
+               <desc xml:lang="de" versionDate="2023-03-21">Bohnen</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">haricots</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">beans</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">fagioli</desc>
+            </valItem>
+            <valItem ident="bread">
+               <desc xml:lang="de" versionDate="2023-03-21">Brot</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">pain</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">bread</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">pane</desc>
+            </valItem>
+            <valItem ident="butter">
+               <desc xml:lang="de" versionDate="2023-03-21">Butter</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">beurre</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">butter</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">burro</desc>
+            </valItem>
+            <valItem ident="spelt">
+               <desc xml:lang="de" versionDate="2023-03-21">Dinkel</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">épeautre</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">spelt</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">spelta</desc>
+            </valItem>
+            <valItem ident="dried fruit">
+               <desc xml:lang="de" versionDate="2023-03-21">Dörrobst</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">fruit sec</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">dried fruit</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">frutta secca</desc>
+            </valItem>
+            <valItem ident="pea">
+               <desc xml:lang="de" versionDate="2023-03-21">Erbsen</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">pois</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">peas</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">piselli</desc>
+            </valItem>
+            <valItem ident="grain_spelt">
+               <desc xml:lang="de" versionDate="2023-03-21">Fesen und Kernen</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">grain non-décortiqué et épeautre
                         égrugé
                     </desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">grain and spelt</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">grano non decorticato e farro
+               <desc xml:lang="en" versionDate="2023-03-21">grain and spelt</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">grano non decorticato e farro
                         decorticato
                     </desc>
-                </valItem>
-                <valItem ident="fish">
-                    <desc xml:lang="de" versionDate="2023-03-21">Fisch</desc>
-                    <desc xml:lang="de" type="plural" versionDate="2023-03-21">Fische</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">poisson</desc>
-                    <desc xml:lang="fr" type="plural" versionDate="2023-03-21">poissons</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">fish</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">pesce</desc>
-                    <desc xml:lang="it" type="plural" versionDate="2023-03-21">pesci</desc>
-                </valItem>
-                <valItem ident="flax">
-                    <desc xml:lang="de" versionDate="2023-03-21">Flachs</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">lin</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">flax</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">lino</desc>
-                </valItem>
-                <valItem ident="meat">
-                    <desc xml:lang="de" versionDate="2023-03-21">Fleisch</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">viande</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">meat</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">carne</desc>
-                </valItem>
-                <valItem ident="vegetables">
-                    <desc xml:lang="de" versionDate="2023-03-21">Gemüse</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">verdura</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">légume</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">vegetables</desc>
-                </valItem>
-                <valItem ident="barley">
-                    <desc xml:lang="de" versionDate="2023-03-21">Gerste</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">orge</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">barley</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">orzo</desc>
-                </valItem>
-                <valItem ident="gold">
-                    <desc xml:lang="de" versionDate="2023-03-21">Gold</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">or</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">gold</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">oro</desc>
-                </valItem>
-                <valItem ident="oat">
-                    <desc xml:lang="de" versionDate="2023-03-21">Hafer</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">avoine</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">oat</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">avena</desc>
-                </valItem>
-                <valItem ident="hemp">
-                    <desc xml:lang="de" versionDate="2023-03-21">Hanf</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">chanvre</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">hemp</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">cannabis</desc>
-                </valItem>
-                <valItem ident="hay">
-                    <desc xml:lang="de" versionDate="2023-03-21">Heu</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">foin</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">hay</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">fieno</desc>
-                </valItem>
-                <valItem ident="herring">
-                    <desc xml:lang="de" versionDate="2023-03-21">Hering</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">hareng</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">herring</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">aringhe</desc>
-                </valItem>
-                <valItem ident="millet">
-                    <desc xml:lang="de" versionDate="2023-03-21">Hirse</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">millet</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">millet</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">miglio</desc>
-                </valItem>
-                <valItem ident="wood">
-                    <desc xml:lang="de" versionDate="2023-03-21">Holz</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">bois</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">wood</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">legno</desc>
-                </valItem>
-                <valItem ident="honey">
-                    <desc xml:lang="de" versionDate="2023-03-21">Honig</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">miel</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">honey</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">miele</desc>
-                </valItem>
-                <valItem ident="pulses">
-                    <desc xml:lang="de" versionDate="2023-03-21">Hülsenfrüchte</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">légumineuses</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">pulses</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">legumi</desc>
-                </valItem>
-                <valItem ident="lime">
-                    <desc xml:lang="de" versionDate="2023-03-21">Kalk</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">chaux</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">lime</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">calce</desc>
-                </valItem>
-                <valItem ident="potatoes">
-                    <desc xml:lang="de" versionDate="2023-03-21">Kartoffeln</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">pommes de terre</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">potatoes</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">patate</desc>
-                </valItem>
-                <valItem ident="cheese">
-                    <desc xml:lang="de" versionDate="2023-03-21">Käse</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">fromage</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">cheese</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">fromaggio</desc>
-                </valItem>
-                <valItem ident="merchandise">
-                    <desc xml:lang="de" versionDate="2023-03-21">Kaufmannsgut</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">marchandise</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">merchandise</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">merce</desc>
-                </valItem>
-                <valItem ident="bran">
-                    <desc xml:lang="de" versionDate="2023-03-21">Kleie</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">son</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">bran</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">crusca</desc>
-                </valItem>
-                <valItem ident="coal">
-                    <desc xml:lang="de" versionDate="2023-03-21">Kohle</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">charbon</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">coal</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">carbone</desc>
-                </valItem>
-                <valItem ident="grain">
-                    <desc xml:lang="de" versionDate="2023-03-21">Korn</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">grain</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">grain</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">grano</desc>
-                </valItem>
-                <valItem ident="grain_wheat">
-                    <desc xml:lang="de" versionDate="2023-03-21">Korn und Weizen</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">grain et blé</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">grain and wheat</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">grano e frumento</desc>
-                </valItem>
-                <valItem ident="land">
-                    <desc xml:lang="de" versionDate="2023-03-21">Land</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">pays</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">land</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">paese</desc>
-                </valItem>
-                <valItem ident="electuary">
-                    <desc xml:lang="de" versionDate="2023-03-21">Latwerge</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">électuaire</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">electuary</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">elletuario</desc>
-                </valItem>
-                <valItem ident="lentils">
-                    <desc xml:lang="de" versionDate="2023-03-21">Linsen</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">lentilles</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">lentils</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">lenti</desc>
-                </valItem>
-                <valItem ident="flour">
-                    <desc xml:lang="de" versionDate="2023-03-21">Mehl</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">farine</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">flour</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">farina</desc>
-                </valItem>
-                <valItem ident="milk">
-                    <desc xml:lang="de" versionDate="2023-03-21">Milch</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">lait</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">milk</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">latte</desc>
-                </valItem>
-                <valItem ident="dung">
-                    <desc xml:lang="de" versionDate="2023-03-21">Mist</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">fumier</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">manure</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">letame</desc>
-                </valItem>
-                <valItem ident="must">
-                    <desc xml:lang="de" versionDate="2023-03-21">Most</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">cidre</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">cider</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">sidro</desc>
-                </valItem>
-                <valItem ident="mush">
-                    <desc xml:lang="de" versionDate="2023-03-21">Mus</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">purée</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">mush</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">purè</desc>
-                </valItem>
-                <valItem ident="mushflour">
-                    <desc xml:lang="de" versionDate="2023-04-28">Musmehl</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-28">farine pour la purée</desc>
-                    <desc xml:lang="en" versionDate="2023-04-28">mushflour</desc>
-                    <desc xml:lang="it" versionDate="2023-04-28">farina per il purè</desc>
-                </valItem>
-                <valItem ident="nuts">
-                    <desc xml:lang="de" versionDate="2023-03-21">Nüsse</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">noix</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">nuts</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">noci</desc>
-                </valItem>
-                <valItem ident="vineyard">
-                    <desc xml:lang="de" versionDate="2023-03-21">Reben</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">vigne</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">vineyard</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">vigneto</desc>
-                </valItem>
-                <valItem ident="rice">
-                    <desc xml:lang="de" versionDate="2023-03-21">Reis</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">riz</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">rice</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">riso</desc>
-                </valItem>
-                <valItem ident="marsh">
-                    <desc xml:lang="de" versionDate="2023-03-21">Ried</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">marais</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">marsh</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">palude</desc>
-                </valItem>
-                <valItem ident="rye">
-                    <desc xml:lang="de" versionDate="2023-03-21">Roggen</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">seigel</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">rye</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">segale</desc>
-                </valItem>
-                <valItem ident="salt">
-                    <desc xml:lang="de" versionDate="2023-03-21">Salz</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">sel</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">salt</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">sale</desc>
-                </valItem>
-                <valItem ident="lard">
-                    <desc xml:lang="de" versionDate="2023-03-21">Schmalz</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">saindoux</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">lard</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">lardo</desc>
-                </valItem>
-                <valItem ident="silk">
-                    <desc xml:lang="de" versionDate="2023-03-21">Seide</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">soie</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">silk</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">seta</desc>
-                </valItem>
-                <valItem ident="silver">
-                    <desc xml:lang="de" versionDate="2023-03-21">Silber</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">argent</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">silver</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">argento</desc>
-                </valItem>
-                <valItem ident="steel">
-                    <desc xml:lang="de" versionDate="2023-03-21">Stahl</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">acier</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">steel</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">acciaio</desc>
-                </valItem>
-                <valItem ident="picket">
-                    <desc xml:lang="de" versionDate="2023-03-21">Stickel</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">échalas</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">stake</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">paletti</desc>
-                </valItem>
-                <valItem ident="straw">
-                    <desc xml:lang="de" versionDate="2023-03-21">Stroh</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">paille</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">straw</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">paglia</desc>
-                </valItem>
-                <valItem ident="drapery">
-                    <desc xml:lang="de" versionDate="2023-03-21">Tuch</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">étoffe</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">cloth</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">tessuto</desc>
-                </valItem>
-                <valItem ident="tallow">
-                    <desc xml:lang="de" versionDate="2023-03-21">Unschlitt</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">suif</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">tallow</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">sego</desc>
-                </valItem>
-                <valItem ident="wax">
-                    <desc xml:lang="de" versionDate="2023-03-21">Wachs</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">cire</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">wax</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">cera</desc>
-                </valItem>
-                <valItem ident="forest">
-                    <desc xml:lang="de" versionDate="2023-03-21">Wald</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">forêt</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">forest</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">foresta</desc>
-                </valItem>
-                <valItem ident="wine">
-                    <desc xml:lang="de" versionDate="2023-03-21">Wein</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">vin</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">wine</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">vino</desc>
-                </valItem>
-                <valItem ident="wheat">
-                    <desc xml:lang="de" versionDate="2023-03-21">Weizen</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">blé (froment)</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">wheat</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">frumento</desc>
-                </valItem>
-                <valItem ident="grassland">
-                    <desc xml:lang="de" versionDate="2023-03-21">Wiese</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">pré</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">meadow</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">prato</desc>
-                </valItem>
-                <valItem ident="wool">
-                    <desc xml:lang="de" versionDate="2023-03-21">Wolle</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">laine</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">wool</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">lana</desc>
-                </valItem>
-                <valItem ident="Ziger">
-                    <desc xml:lang="de" versionDate="2023-03-21">Ziger</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">ziger</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">ziger (whey cheese)</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">ziger</desc>
-                </valItem>
-                <valItem ident="tin">
-                    <desc xml:lang="de" versionDate="2023-03-21">Zinn</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">étain</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">tin</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">stagno</desc>
-                </valItem>
-                <valItem ident="denim">
-                    <desc xml:lang="de" versionDate="2023-03-21">Zwillich</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">coutil</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">ticking</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">ticchettio</desc>
-                </valItem>
-            </valList>
-            <exemplum type="ssrq-doc-example" versionDate="2023-03-21">
-                <p xml:lang="de">Masseinheit</p>
-                <p xml:lang="fr">Unité de mesure&#160;:</p>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">Item
-                    <measure type="weight"
-                             unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull
+            </valItem>
+            <valItem ident="fish">
+               <desc xml:lang="de" versionDate="2023-03-21">Fisch</desc>
+               <desc xml:lang="de" type="plural" versionDate="2023-03-21">Fische</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">poisson</desc>
+               <desc xml:lang="fr" type="plural" versionDate="2023-03-21">poissons</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">fish</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">pesce</desc>
+               <desc xml:lang="it" type="plural" versionDate="2023-03-21">pesci</desc>
+            </valItem>
+            <valItem ident="flax">
+               <desc xml:lang="de" versionDate="2023-03-21">Flachs</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">lin</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">flax</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">lino</desc>
+            </valItem>
+            <valItem ident="meat">
+               <desc xml:lang="de" versionDate="2023-03-21">Fleisch</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">viande</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">meat</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">carne</desc>
+            </valItem>
+            <valItem ident="vegetables">
+               <desc xml:lang="de" versionDate="2023-03-21">Gemüse</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">verdura</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">légume</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">vegetables</desc>
+            </valItem>
+            <valItem ident="barley">
+               <desc xml:lang="de" versionDate="2023-03-21">Gerste</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">orge</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">barley</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">orzo</desc>
+            </valItem>
+            <valItem ident="gold">
+               <desc xml:lang="de" versionDate="2023-03-21">Gold</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">or</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">gold</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">oro</desc>
+            </valItem>
+            <valItem ident="oat">
+               <desc xml:lang="de" versionDate="2023-03-21">Hafer</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">avoine</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">oat</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">avena</desc>
+            </valItem>
+            <valItem ident="hemp">
+               <desc xml:lang="de" versionDate="2023-03-21">Hanf</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">chanvre</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">hemp</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">cannabis</desc>
+            </valItem>
+            <valItem ident="hay">
+               <desc xml:lang="de" versionDate="2023-03-21">Heu</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">foin</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">hay</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">fieno</desc>
+            </valItem>
+            <valItem ident="herring">
+               <desc xml:lang="de" versionDate="2023-03-21">Hering</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">hareng</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">herring</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">aringhe</desc>
+            </valItem>
+            <valItem ident="millet">
+               <desc xml:lang="de" versionDate="2023-03-21">Hirse</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">millet</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">millet</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">miglio</desc>
+            </valItem>
+            <valItem ident="wood">
+               <desc xml:lang="de" versionDate="2023-03-21">Holz</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">bois</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">wood</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">legno</desc>
+            </valItem>
+            <valItem ident="honey">
+               <desc xml:lang="de" versionDate="2023-03-21">Honig</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">miel</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">honey</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">miele</desc>
+            </valItem>
+            <valItem ident="pulses">
+               <desc xml:lang="de" versionDate="2023-03-21">Hülsenfrüchte</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">légumineuses</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">pulses</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">legumi</desc>
+            </valItem>
+            <valItem ident="lime">
+               <desc xml:lang="de" versionDate="2023-03-21">Kalk</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">chaux</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">lime</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">calce</desc>
+            </valItem>
+            <valItem ident="potatoes">
+               <desc xml:lang="de" versionDate="2023-03-21">Kartoffeln</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">pommes de terre</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">potatoes</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">patate</desc>
+            </valItem>
+            <valItem ident="cheese">
+               <desc xml:lang="de" versionDate="2023-03-21">Käse</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">fromage</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">cheese</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">fromaggio</desc>
+            </valItem>
+            <valItem ident="merchandise">
+               <desc xml:lang="de" versionDate="2023-03-21">Kaufmannsgut</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">marchandise</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">merchandise</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">merce</desc>
+            </valItem>
+            <valItem ident="bran">
+               <desc xml:lang="de" versionDate="2023-03-21">Kleie</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">son</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">bran</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">crusca</desc>
+            </valItem>
+            <valItem ident="coal">
+               <desc xml:lang="de" versionDate="2023-03-21">Kohle</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">charbon</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">coal</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">carbone</desc>
+            </valItem>
+            <valItem ident="grain">
+               <desc xml:lang="de" versionDate="2023-03-21">Korn</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">grain</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">grain</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">grano</desc>
+            </valItem>
+            <valItem ident="grain_wheat">
+               <desc xml:lang="de" versionDate="2023-03-21">Korn und Weizen</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">grain et blé</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">grain and wheat</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">grano e frumento</desc>
+            </valItem>
+            <valItem ident="land">
+               <desc xml:lang="de" versionDate="2023-03-21">Land</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">pays</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">land</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">paese</desc>
+            </valItem>
+            <valItem ident="electuary">
+               <desc xml:lang="de" versionDate="2023-03-21">Latwerge</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">électuaire</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">electuary</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">elletuario</desc>
+            </valItem>
+            <valItem ident="lentils">
+               <desc xml:lang="de" versionDate="2023-03-21">Linsen</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">lentilles</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">lentils</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">lenti</desc>
+            </valItem>
+            <valItem ident="flour">
+               <desc xml:lang="de" versionDate="2023-03-21">Mehl</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">farine</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">flour</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">farina</desc>
+            </valItem>
+            <valItem ident="milk">
+               <desc xml:lang="de" versionDate="2023-03-21">Milch</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">lait</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">milk</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">latte</desc>
+            </valItem>
+            <valItem ident="dung">
+               <desc xml:lang="de" versionDate="2023-03-21">Mist</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">fumier</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">manure</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">letame</desc>
+            </valItem>
+            <valItem ident="must">
+               <desc xml:lang="de" versionDate="2023-03-21">Most</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">cidre</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">cider</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">sidro</desc>
+            </valItem>
+            <valItem ident="mush">
+               <desc xml:lang="de" versionDate="2023-03-21">Mus</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">purée</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">mush</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">purè</desc>
+            </valItem>
+            <valItem ident="mushflour">
+               <desc xml:lang="de" versionDate="2023-04-28">Musmehl</desc>
+               <desc xml:lang="fr" versionDate="2023-04-28">farine pour la purée</desc>
+               <desc xml:lang="en" versionDate="2023-04-28">mushflour</desc>
+               <desc xml:lang="it" versionDate="2023-04-28">farina per il purè</desc>
+            </valItem>
+            <valItem ident="nuts">
+               <desc xml:lang="de" versionDate="2023-03-21">Nüsse</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">noix</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">nuts</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">noci</desc>
+            </valItem>
+            <valItem ident="vineyard">
+               <desc xml:lang="de" versionDate="2023-03-21">Reben</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">vigne</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">vineyard</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">vigneto</desc>
+            </valItem>
+            <valItem ident="rice">
+               <desc xml:lang="de" versionDate="2023-03-21">Reis</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">riz</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">rice</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">riso</desc>
+            </valItem>
+            <valItem ident="marsh">
+               <desc xml:lang="de" versionDate="2023-03-21">Ried</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">marais</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">marsh</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">palude</desc>
+            </valItem>
+            <valItem ident="rye">
+               <desc xml:lang="de" versionDate="2023-03-21">Roggen</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">seigel</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">rye</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">segale</desc>
+            </valItem>
+            <valItem ident="salt">
+               <desc xml:lang="de" versionDate="2023-03-21">Salz</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">sel</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">salt</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">sale</desc>
+            </valItem>
+            <valItem ident="lard">
+               <desc xml:lang="de" versionDate="2023-03-21">Schmalz</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">saindoux</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">lard</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">lardo</desc>
+            </valItem>
+            <valItem ident="silk">
+               <desc xml:lang="de" versionDate="2023-03-21">Seide</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">soie</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">silk</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">seta</desc>
+            </valItem>
+            <valItem ident="silver">
+               <desc xml:lang="de" versionDate="2023-03-21">Silber</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">argent</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">silver</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">argento</desc>
+            </valItem>
+            <valItem ident="steel">
+               <desc xml:lang="de" versionDate="2023-03-21">Stahl</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">acier</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">steel</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">acciaio</desc>
+            </valItem>
+            <valItem ident="picket">
+               <desc xml:lang="de" versionDate="2023-03-21">Stickel</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">échalas</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">stake</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">paletti</desc>
+            </valItem>
+            <valItem ident="straw">
+               <desc xml:lang="de" versionDate="2023-03-21">Stroh</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">paille</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">straw</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">paglia</desc>
+            </valItem>
+            <valItem ident="drapery">
+               <desc xml:lang="de" versionDate="2023-03-21">Tuch</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">étoffe</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">cloth</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">tessuto</desc>
+            </valItem>
+            <valItem ident="tallow">
+               <desc xml:lang="de" versionDate="2023-03-21">Unschlitt</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">suif</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">tallow</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">sego</desc>
+            </valItem>
+            <valItem ident="wax">
+               <desc xml:lang="de" versionDate="2023-03-21">Wachs</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">cire</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">wax</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">cera</desc>
+            </valItem>
+            <valItem ident="forest">
+               <desc xml:lang="de" versionDate="2023-03-21">Wald</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">forêt</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">forest</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">foresta</desc>
+            </valItem>
+            <valItem ident="wine">
+               <desc xml:lang="de" versionDate="2023-03-21">Wein</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">vin</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">wine</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">vino</desc>
+            </valItem>
+            <valItem ident="wheat">
+               <desc xml:lang="de" versionDate="2023-03-21">Weizen</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">blé (froment)</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">wheat</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">frumento</desc>
+            </valItem>
+            <valItem ident="grassland">
+               <desc xml:lang="de" versionDate="2023-03-21">Wiese</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">pré</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">meadow</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">prato</desc>
+            </valItem>
+            <valItem ident="wool">
+               <desc xml:lang="de" versionDate="2023-03-21">Wolle</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">laine</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">wool</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">lana</desc>
+            </valItem>
+            <valItem ident="Ziger">
+               <desc xml:lang="de" versionDate="2023-03-21">Ziger</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">ziger</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">ziger (whey cheese)</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">ziger</desc>
+            </valItem>
+            <valItem ident="tin">
+               <desc xml:lang="de" versionDate="2023-03-21">Zinn</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">étain</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">tin</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">stagno</desc>
+            </valItem>
+            <valItem ident="denim">
+               <desc xml:lang="de" versionDate="2023-03-21">Zwillich</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">coutil</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">ticking</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">ticchettio</desc>
+            </valItem>
+         </valList>
+         <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-21">
+            <p>Masseinheit</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">Item
+                    <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull
                     </measure>
                     git <measure type="currency" unit="ß" quantity="2">ij ß</measure>.
                 </egXML>
-            </exemplum>
-        </attDef>
-        <attDef ident="origin" mode="add" module="ssrq.core.module" usage="opt">
-            <desc xml:lang="de" versionDate="2023-03-21">Gibt bei einem Mass, einem Gewicht oder
+         </exemplum>
+         <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-21">
+            <p>Unité de mesure :</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">Item
+                    <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull
+                    </measure>
+                    git <measure type="currency" unit="ß" quantity="2">ij ß</measure>.
+                </egXML>
+         </exemplum>
+      </attDef>
+      <attDef ident="origin" mode="add" module="ssrq.core.module" usage="opt">
+         <desc xml:lang="de" versionDate="2023-03-21">Gibt bei einem Mass, einem Gewicht oder
                 einer Münze den Ort (Herkunft) an.
             </desc>
-            <desc xml:lang="fr" versionDate="2023-03-21">En cas d'une mesure, d'un poid ou d'une
+         <desc xml:lang="fr" versionDate="2023-03-21">En cas d'une mesure, d'un poid ou d'une
                 monnaie, @origin indique le lieu (d'origine).
             </desc>
-            <datatype>
-                <dataRef key="ssrq.measure.origin"/>
-            </datatype>
-        </attDef>
-        <attDef ident="type" mode="replace" usage="req">
-            <desc xml:lang="de" versionDate="2023-06-16">Art der Massangabe</desc>
-            <desc xml:lang="fr" versionDate="2023-06-16">Type d'indication de mesure</desc>
-            <desc xml:lang="en" versionDate="2023-06-16">Type of measurement indication</desc>
-            <valList type="closed">
-                <valItem ident="area">
-                    <desc xml:lang="de" versionDate="2023-03-21">Flächenmass</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">mesure de superficie</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">area</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">misura dell'area</desc>
-                </valItem>
-                <valItem ident="currency">
-                    <desc xml:lang="de" versionDate="2023-03-21">Währung</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">unité monétaire</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">currency</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">valuta</desc>
-                </valItem>
-                <valItem ident="length">
-                    <desc xml:lang="de" versionDate="2023-03-21">Längenmass</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">mesure de longueur</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">length</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">misura lineare</desc>
-                </valItem>
-                <valItem ident="volume">
-                    <desc xml:lang="de" versionDate="2023-03-21">Volumenmass</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">mesure de volume</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">volume</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">misura del volume</desc>
-                </valItem>
-                <valItem ident="weight">
-                    <desc xml:lang="de" versionDate="2023-03-21">Gewicht</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">poid</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">weight</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">peso</desc>
-                </valItem>
-                <valItem ident="age">
-                    <desc xml:lang="de" versionDate="2023-03-21">Alter</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">âge</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">age</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">età</desc>
-                </valItem>
-                <valItem ident="text_scope">
-                    <desc xml:lang="de" versionDate="2023-05-30">Textumfang</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-30">Taille du texte</desc>
-                    <desc xml:lang="en" versionDate="2023-05-30">Scope</desc>
-                    <desc xml:lang="it" versionDate="2023-05-30">Volume del testo</desc>
-                </valItem>
-                <valItem ident="undefined">
-                    <desc xml:lang="de" versionDate="2023-03-21">Ungefähres Mass/Gewicht</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-21">mesure/poid approximatif</desc>
-                    <desc xml:lang="en" versionDate="2023-03-21">undefined measure/weight</desc>
-                    <desc xml:lang="it" versionDate="2023-03-21">misura/peso approssimativo</desc>
-                </valItem>
-            </valList>
-        </attDef>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-23">
-        <p xml:lang="de">Währungsbezeichnung:</p>
-        <p xml:lang="fr">Indication de monnaie&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">umb
-            <measure type="currency" origin="ZH"
-                     unit="lb" quantity="2">zwai phunt nuwer Zuricher
+         <datatype>
+            <dataRef key="ssrq.measure.origin"/>
+         </datatype>
+      </attDef>
+      <attDef ident="type" mode="replace" usage="req">
+         <desc xml:lang="de" versionDate="2023-06-16">Art der Massangabe</desc>
+         <desc xml:lang="fr" versionDate="2023-06-16">Type d'indication de mesure</desc>
+         <desc xml:lang="en" versionDate="2023-06-16">Type of measurement indication</desc>
+         <valList type="closed">
+            <valItem ident="area">
+               <desc xml:lang="de" versionDate="2023-03-21">Flächenmass</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">mesure de superficie</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">area</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">misura dell'area</desc>
+            </valItem>
+            <valItem ident="currency">
+               <desc xml:lang="de" versionDate="2023-03-21">Währung</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">unité monétaire</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">currency</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">valuta</desc>
+            </valItem>
+            <valItem ident="length">
+               <desc xml:lang="de" versionDate="2023-03-21">Längenmass</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">mesure de longueur</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">length</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">misura lineare</desc>
+            </valItem>
+            <valItem ident="volume">
+               <desc xml:lang="de" versionDate="2023-03-21">Volumenmass</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">mesure de volume</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">volume</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">misura del volume</desc>
+            </valItem>
+            <valItem ident="weight">
+               <desc xml:lang="de" versionDate="2023-03-21">Gewicht</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">poid</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">weight</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">peso</desc>
+            </valItem>
+            <valItem ident="age">
+               <desc xml:lang="de" versionDate="2023-03-21">Alter</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">âge</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">age</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">età</desc>
+            </valItem>
+            <valItem ident="text_scope">
+               <desc xml:lang="de" versionDate="2023-05-30">Textumfang</desc>
+               <desc xml:lang="fr" versionDate="2023-05-30">Taille du texte</desc>
+               <desc xml:lang="en" versionDate="2023-05-30">Scope</desc>
+               <desc xml:lang="it" versionDate="2023-05-30">Volume del testo</desc>
+            </valItem>
+            <valItem ident="undefined">
+               <desc xml:lang="de" versionDate="2023-03-21">Ungefähres Mass/Gewicht</desc>
+               <desc xml:lang="fr" versionDate="2023-03-21">mesure/poid approximatif</desc>
+               <desc xml:lang="en" versionDate="2023-03-21">undefined measure/weight</desc>
+               <desc xml:lang="it" versionDate="2023-03-21">misura/peso approssimativo</desc>
+            </valItem>
+         </valList>
+      </attDef>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
+      <p>Währungsbezeichnung:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">umb
+            <measure type="currency" origin="ZH" unit="lb" quantity="2">zwai phunt nuwer Zuricher
             </measure>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-23">
-        <p xml:lang="de">Masseinheit:</p>
-        <p xml:lang="fr">Unité de mesure&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">... item oben här <measure type="area"
-                                                                                   unit="Juchart"
-                                                                                   quantity="8" commodity="field">acht
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-23">
+      <p>Indication de monnaie :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">umb
+            <measure type="currency" origin="ZH" unit="lb" quantity="2">zwai phunt nuwer Zuricher
+            </measure>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
+      <p>Masseinheit:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">... item oben här <measure type="area" unit="Juchart" quantity="8" commodity="field">acht
             juchart acher
         </measure> aneinanderen, genannt
             ....
         </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-23">
-        <p xml:lang="de">Masseinheit:</p>
-        <p xml:lang="fr">Unité de mesure&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">Item <measure type="weight" unit="Zentner"
-                                                                      quantity="1"
-                                                                      commodity="wool">ein zentner landtwull
-        </measure> git <measure type="currency"
-                                unit="ß" quantity="2">ij ß</measure>.
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-23">
+      <p>Unité de mesure :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">... item oben här <measure type="area" unit="Juchart" quantity="8" commodity="field">acht
+            juchart acher
+        </measure> aneinanderen, genannt
+            ....
         </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-05">
-        <p xml:lang="de">Altersangabe:</p>
-        <p xml:lang="fr">Indication d'âge&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">... wan das jeman unser lannttluͤtten, er
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
+      <p>Masseinheit:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">Item <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull
+        </measure> git <measure type="currency" unit="ß" quantity="2">ij ß</measure>.
+        </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-23">
+      <p>Unité de mesure :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">Item <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull
+        </measure> git <measure type="currency" unit="ß" quantity="2">ij ß</measure>.
+        </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-05">
+      <p>Altersangabe:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">... wan das jeman unser lannttluͤtten, er
             sye jung oder alltt,
             <measure type="age" unit="year" quantity="14">ob vierzechen jarenn</measure>
             von ainem paner endrunne ...
         </egXML>
-    </exemplum>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-05">
+      <p>Indication d'âge :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">... wan das jeman unser lannttluͤtten, er
+            sye jung oder alltt,
+            <measure type="age" unit="year" quantity="14">ob vierzechen jarenn</measure>
+            von ainem paner endrunne ...
+        </egXML>
+   </exemplum>
 </elementSpec>

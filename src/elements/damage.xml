@@ -1,65 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="damage" module="transcr" mode="change">
-    <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet einen beschädigten Abschnitt</desc>
-    <desc xml:lang="en" versionDate="2023-05-11">Denotes a damaged section</desc>
-    <desc xml:lang="fr" versionDate="2023-05-11">Indique une section endommagée</desc>
-    <desc xml:lang="it" versionDate="2023-05-20">Indica una sezione danneggiata</desc>
-    <classes mode="replace">
-        <memberOf key="att.damaged"/>
-    </classes>
-    <content>
-        <sequence>
-            <alternate minOccurs="1" maxOccurs="unbounded">
-                <elementRef key="add"/>
-                <elementRef key="gap"/>
-                <elementRef key="supplied"/>
-                <elementRef key="unclear"/>
-            </alternate>
-        </sequence>
-    </content>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
-        <p xml:lang="de">Beschädigte Stelle, in der eine andere Hand Text eingetragen hat.</p>
-        <p xml:lang="en">Damaged spot where another hand has written text.</p>
-        <p xml:lang="fr">Endroit endommagé où une autre main a écrit du texte.</p>
-        <p xml:lang="it">Punto danneggiato dove un'altra mano ha scritto del testo.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <damage agent="water_spot">
-                <add hand="otherHand" place="overwritten">zuͦ trincken</add>
-            </damage>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
-        <p xml:lang="de">Beschädigte Stelle, deren Text unlesbar ist.</p>
-        <p xml:lang="en">Damaged spot, the text of which is illegible.</p>
-        <p xml:lang="fr">Endroit endommagé dont le texte est illisible.</p>
-        <p xml:lang="it">Punto danneggiato, il cui testo è illeggibile.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <damage agent="water_spot">
-                <gap quantity="9" unit="cm"/>
-            </damage>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
-        <p xml:lang="de">Beschädigte Stelle, deren Text ergänzt wurde.</p>
-        <p xml:lang="en">Damaged spot, the text of which has been supplied.</p>
-        <p xml:lang="fr">Endroit endommagé dont le texte a été ajouté.</p>
-        <p xml:lang="it">Punto danneggiato, il cui testo è stato aggiunto.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <damage agent="water_spot">
-                <supplied source="73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
-            </damage>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
-        <p xml:lang="de">Beschädigte Stelle, deren Lesung unsicher ist.</p>
-        <p xml:lang="en">Damaged passage whose reading is uncertain.</p>
-        <p xml:lang="fr">Endroit endommagé dont la lecture est incertaine.</p>
-        <p xml:lang="it">Punto danneggiato la cui lettura è incerta.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <damage agent="ink_blot">
-                <unclear>die</unclear>
-            </damage>
-        </egXML>
-    </exemplum>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="damage"
+             module="transcr"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet einen beschädigten Abschnitt</desc>
+   <desc xml:lang="en" versionDate="2023-05-11">Denotes a damaged section</desc>
+   <desc xml:lang="fr" versionDate="2023-05-11">Indique une section endommagée</desc>
+   <desc xml:lang="it" versionDate="2023-05-20">Indica una sezione danneggiata</desc>
+   <classes mode="replace">
+      <memberOf key="att.damaged"/>
+   </classes>
+   <content>
+      <sequence>
+         <alternate minOccurs="1" maxOccurs="unbounded">
+            <elementRef key="add"/>
+            <elementRef key="gap"/>
+            <elementRef key="supplied"/>
+            <elementRef key="unclear"/>
+         </alternate>
+      </sequence>
+   </content>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Beschädigte Stelle, in der eine andere Hand Text eingetragen hat.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <add hand="otherHand" place="overwritten">zuͦ trincken</add>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Damaged spot where another hand has written text.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <add hand="otherHand" place="overwritten">zuͦ trincken</add>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Endroit endommagé où une autre main a écrit du texte.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <add hand="otherHand" place="overwritten">zuͦ trincken</add>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Punto danneggiato dove un'altra mano ha scritto del testo.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <add hand="otherHand" place="overwritten">zuͦ trincken</add>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Beschädigte Stelle, deren Text unlesbar ist.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <gap quantity="9" unit="cm"/>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Damaged spot, the text of which is illegible.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <gap quantity="9" unit="cm"/>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Endroit endommagé dont le texte est illisible.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <gap quantity="9" unit="cm"/>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Punto danneggiato, il cui testo è illeggibile.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <gap quantity="9" unit="cm"/>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Beschädigte Stelle, deren Text ergänzt wurde.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <supplied source="73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Damaged spot, the text of which has been supplied.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <supplied source="73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Endroit endommagé dont le texte a été ajouté.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <supplied source="73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Punto danneggiato, il cui testo è stato aggiunto.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="water_spot">
+            <supplied source="73988c1a-40e1-4527-94b7-736d418b29d0">verthruwen</supplied>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Beschädigte Stelle, deren Lesung unsicher ist.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="ink_blot">
+            <unclear>die</unclear>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Damaged passage whose reading is uncertain.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="ink_blot">
+            <unclear>die</unclear>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Endroit endommagé dont la lecture est incertaine.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="ink_blot">
+            <unclear>die</unclear>
+         </damage>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-20">
+      <p>Punto danneggiato la cui lettura è incerta.</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <damage agent="ink_blot">
+            <unclear>die</unclear>
+         </damage>
+      </egXML>
+   </exemplum>
 </elementSpec>

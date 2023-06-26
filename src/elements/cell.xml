@@ -1,62 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="cell" module="figures" mode="change"
-    xmlns:rng="http://relaxng.org/ns/structure/1.0">
-    <desc xml:lang="de" versionDate="2023-03-03">Auszeichnung von Tabellenzellen</desc>
-    <desc xml:lang="en" versionDate="2023-03-03">Table cell mark-up</desc>
-    <desc xml:lang="fr" versionDate="2023-03-03">Balisage des cellules de tableau</desc>
-    <classes mode="replace">
-        <memberOf key="att.tableDecoration"/>
-    </classes>
-    <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
-    </content>
-    <attList>
-        <attDef ident="role" mode="replace">
-            <desc xml:lang="de" versionDate="2023-06-19">Spezielle Verwendung einer Tabellenzelle</desc>
-            <desc xml:lang="en" versionDate="2023-06-19">Special use of a table cell</desc>
-            <desc xml:lang="fr" versionDate="2023-06-19">Utilisation particulière d'une cellule de
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             ident="cell"
+             module="figures"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-03-03">Auszeichnung von Tabellenzellen</desc>
+   <desc xml:lang="en" versionDate="2023-03-03">Table cell mark-up</desc>
+   <desc xml:lang="fr" versionDate="2023-03-03">Balisage des cellules de tableau</desc>
+   <classes mode="replace">
+      <memberOf key="att.tableDecoration"/>
+   </classes>
+   <content>
+      <rng:oneOrMore>
+         <rng:ref name="ssrq.content.default"/>
+      </rng:oneOrMore>
+   </content>
+   <attList>
+      <attDef ident="role" mode="replace">
+         <desc xml:lang="de" versionDate="2023-06-19">Spezielle Verwendung einer Tabellenzelle</desc>
+         <desc xml:lang="en" versionDate="2023-06-19">Special use of a table cell</desc>
+         <desc xml:lang="fr" versionDate="2023-06-19">Utilisation particulière d'une cellule de
                 tableau</desc>
-            <valList type="closed">
-                <valItem ident="label">
-                    <desc xml:lang="de" versionDate="2023-03-03">Spaltenüberschrift</desc>
-                    <desc xml:lang="en" versionDate="2023-03-03">Column heading</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-03">En-tête de colonne</desc>
-                </valItem>
-            </valList>
-        </attDef>
-        <attDef ident="cols" mode="delete"/>
-        <attDef ident="rows" mode="delete"/>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-03">
-        <p xml:lang="de">Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten
+         <valList type="closed">
+            <valItem ident="label">
+               <desc xml:lang="de" versionDate="2023-03-03">Spaltenüberschrift</desc>
+               <desc xml:lang="en" versionDate="2023-03-03">Column heading</desc>
+               <desc xml:lang="fr" versionDate="2023-03-03">En-tête de colonne</desc>
+            </valItem>
+         </valList>
+      </attDef>
+      <attDef ident="cols" mode="delete"/>
+      <attDef ident="rows" mode="delete"/>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-03">
+      <p>Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten
             drei Spalten mit «gbz», «xr» bzw. «dn» überschrieben werden: </p>
-        <p xml:lang="fr">Exemple d'une liste de prix de vin avec quatre colonnes dont les dernières
-            trois sont intitulées «gbz», «xr» et «dn»&#160;: </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <table>
-                <head>Von dem wein</head>
-                <row>
-                    <cell/>
-                    <cell role="label">gbz</cell>
-                    <cell role="label">xr</cell>
-                    <cell role="label">₰</cell>
-                </row>
-                <row>
-                    <cell>für j saum wein</cell>
-                    <cell>–</cell>
-                    <cell>1</cell>
-                    <cell>–</cell>
-                </row>
-                <row>
-                    <cell>für j lägelen wein</cell>
-                    <cell>–</cell>
-                    <cell>–</cell>
-                    <cell>2</cell>
-                </row>
-            </table>
-        </egXML>
-    </exemplum>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <table>
+            <head>Von dem wein</head>
+            <row>
+               <cell/>
+               <cell role="label">gbz</cell>
+               <cell role="label">xr</cell>
+               <cell role="label">₰</cell>
+            </row>
+            <row>
+               <cell>für j saum wein</cell>
+               <cell>–</cell>
+               <cell>1</cell>
+               <cell>–</cell>
+            </row>
+            <row>
+               <cell>für j lägelen wein</cell>
+               <cell>–</cell>
+               <cell>–</cell>
+               <cell>2</cell>
+            </row>
+         </table>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-03">
+      <p>Exemple d'une liste de prix de vin avec quatre colonnes dont les dernières
+            trois sont intitulées «gbz», «xr» et «dn» : </p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <table>
+            <head>Von dem wein</head>
+            <row>
+               <cell/>
+               <cell role="label">gbz</cell>
+               <cell role="label">xr</cell>
+               <cell role="label">₰</cell>
+            </row>
+            <row>
+               <cell>für j saum wein</cell>
+               <cell>–</cell>
+               <cell>1</cell>
+               <cell>–</cell>
+            </row>
+            <row>
+               <cell>für j lägelen wein</cell>
+               <cell>–</cell>
+               <cell>–</cell>
+               <cell>2</cell>
+            </row>
+         </table>
+      </egXML>
+   </exemplum>
 </elementSpec>

@@ -1,88 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="graphic" module="core" mode="change"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <gloss xml:lang="de" versionDate="2023-03-15">Bild</gloss>
-    <desc xml:lang="de" versionDate="2023-03-15">Enthält Informationen zu einem Bild oder einer
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="graphic"
+             module="core"
+             mode="change">
+   <gloss xml:lang="de" versionDate="2023-03-15">Bild</gloss>
+   <desc xml:lang="de" versionDate="2023-03-15">Enthält Informationen zu einem Bild oder einer
         graphischen Illustration als Teil des Textes oder externe Referenz.
     </desc>
-    <gloss xml:lang="en" versionDate="2023-03-15">Image</gloss>
-    <desc xml:lang="en" versionDate="2023-03-15">Contains information about an image or graphic
+   <gloss xml:lang="en" versionDate="2023-03-15">Image</gloss>
+   <desc xml:lang="en" versionDate="2023-03-15">Contains information about an image or graphic
         illustration as part of the text or external reference.
     </desc>
-    <gloss xml:lang="fr" versionDate="2023-03-15">Image</gloss>
-    <desc xml:lang="fr" versionDate="2023-03-15">Contient des informations sur une image ou une
+   <gloss xml:lang="fr" versionDate="2023-03-15">Image</gloss>
+   <desc xml:lang="fr" versionDate="2023-03-15">Contient des informations sur une image ou une
         illustration graphique faisant partie du texte ou référence externe.
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.graphicLike"/>
-        <memberOf key="att.internetMedia"/>
-        <memberOf key="att.resourced"/>
-        <memberOf key="att.typed"/>
-    </classes>
-    <content>
-        <empty/>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-graphic">
-        <desc xml:lang="en" versionDate="2023-03-15">Constraint for tei:graphic</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:graphic">
-                    <sch:assert test="not(contains(@url, '/'))">The usage of a '/' is not
+   <classes mode="replace">
+      <memberOf key="model.graphicLike"/>
+      <memberOf key="att.internetMedia"/>
+      <memberOf key="att.resourced"/>
+      <memberOf key="att.typed"/>
+   </classes>
+   <content>
+      <empty/>
+   </content>
+   <constraintSpec scheme="schematron" ident="sch-el-graphic">
+      <desc xml:lang="en" versionDate="2023-03-15">Constraint for tei:graphic</desc>
+      <constraint>
+         <sch:pattern>
+            <sch:rule context="tei:graphic">
+               <sch:assert test="not(contains(@url, '/'))">The usage of a '/' is not
                         allowed
                     </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="mimeType" mode="replace" usage="req">
-            <desc xml:lang="de" versionDate="2023-03-15">MimeType der eingebundenen Bilddatei</desc>
-            <desc xml:lang="en" versionDate="2023-03-15">MimeType of the included image file</desc>
-            <desc xml:lang="fr" versionDate="2023-03-15">MimeType du fichier d'image intégré</desc>
-            <valList type="closed">
-                <valItem ident="image/jpg"/>
-                <valItem ident="image/png"/>
-                <valItem ident="image/svg"/>
-            </valList>
-        </attDef>
-        <attDef ident="type" mode="replace" usage="req">
-            <desc xml:lang="de" versionDate="2023-03-15">Typ der Grafik</desc>
-            <desc xml:lang="en" versionDate="2023-03-15">Graphic type</desc>
-            <desc xml:lang="fr" versionDate="2023-03-15">type de graphique</desc>
-            <valList type="closed">
-                <valItem ident="familytree">
-                    <desc xml:lang="de" versionDate="2023-03-15">Stammbaum</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-15">pédigrée</desc>
-                    <desc xml:lang="en" versionDate="2023-03-15">familytree</desc>
-                    <desc xml:lang="it" versionDate="2023-03-15">albero genealogico</desc>
-                </valItem>
-                <valItem ident="figure">
-                    <desc xml:lang="de" versionDate="2023-03-15">Visualisierung</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-15">visualisation</desc>
-                    <desc xml:lang="en" versionDate="2023-03-15">visualisation</desc>
-                    <desc xml:lang="it" versionDate="2023-03-15">visualizzazione</desc>
-                </valItem>
-                <valItem ident="graphic">
-                    <desc xml:lang="de" versionDate="2023-03-15">Illustration</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-15">illustration</desc>
-                    <desc xml:lang="en" versionDate="2023-03-15">illustration</desc>
-                    <desc xml:lang="it" versionDate="2023-03-15">illustrazione</desc>
-                </valItem>
-                <valItem ident="map">
-                    <desc xml:lang="de" versionDate="2023-03-15">Karte</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-15">carte</desc>
-                    <desc xml:lang="en" versionDate="2023-03-15">map</desc>
-                    <desc xml:lang="it" versionDate="2023-03-15">mappa</desc>
-                </valItem>
-            </valList>
-        </attDef>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-03-15">
-        <p xml:lang="de">Definition der Identifikationsnummer des Stücks:</p>
-        <p xml:lang="fr">Définition du numéro d'identification de la pièce &#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <graphic type="graphic" mimeType="image/jpg" url="SSRQ-FR-I_2_8-graphic-6.jpg"/>
-        </egXML>
-    </exemplum>
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <attList>
+      <attDef ident="mimeType" mode="replace" usage="req">
+         <desc xml:lang="de" versionDate="2023-03-15">MimeType der eingebundenen Bilddatei</desc>
+         <desc xml:lang="en" versionDate="2023-03-15">MimeType of the included image file</desc>
+         <desc xml:lang="fr" versionDate="2023-03-15">MimeType du fichier d'image intégré</desc>
+         <valList type="closed">
+            <valItem ident="image/jpg"/>
+            <valItem ident="image/png"/>
+            <valItem ident="image/svg"/>
+         </valList>
+      </attDef>
+      <attDef ident="type" mode="replace" usage="req">
+         <desc xml:lang="de" versionDate="2023-03-15">Typ der Grafik</desc>
+         <desc xml:lang="en" versionDate="2023-03-15">Graphic type</desc>
+         <desc xml:lang="fr" versionDate="2023-03-15">type de graphique</desc>
+         <valList type="closed">
+            <valItem ident="familytree">
+               <desc xml:lang="de" versionDate="2023-03-15">Stammbaum</desc>
+               <desc xml:lang="fr" versionDate="2023-03-15">pédigrée</desc>
+               <desc xml:lang="en" versionDate="2023-03-15">familytree</desc>
+               <desc xml:lang="it" versionDate="2023-03-15">albero genealogico</desc>
+            </valItem>
+            <valItem ident="figure">
+               <desc xml:lang="de" versionDate="2023-03-15">Visualisierung</desc>
+               <desc xml:lang="fr" versionDate="2023-03-15">visualisation</desc>
+               <desc xml:lang="en" versionDate="2023-03-15">visualisation</desc>
+               <desc xml:lang="it" versionDate="2023-03-15">visualizzazione</desc>
+            </valItem>
+            <valItem ident="graphic">
+               <desc xml:lang="de" versionDate="2023-03-15">Illustration</desc>
+               <desc xml:lang="fr" versionDate="2023-03-15">illustration</desc>
+               <desc xml:lang="en" versionDate="2023-03-15">illustration</desc>
+               <desc xml:lang="it" versionDate="2023-03-15">illustrazione</desc>
+            </valItem>
+            <valItem ident="map">
+               <desc xml:lang="de" versionDate="2023-03-15">Karte</desc>
+               <desc xml:lang="fr" versionDate="2023-03-15">carte</desc>
+               <desc xml:lang="en" versionDate="2023-03-15">map</desc>
+               <desc xml:lang="it" versionDate="2023-03-15">mappa</desc>
+            </valItem>
+         </valList>
+      </attDef>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-15">
+      <p>Definition der Identifikationsnummer des Stücks:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <graphic type="graphic"
+                  mimeType="image/jpg"
+                  url="SSRQ-FR-I_2_8-graphic-6.jpg"/>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-15">
+      <p>Définition du numéro d'identification de la pièce  :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <graphic type="graphic"
+                  mimeType="image/jpg"
+                  url="SSRQ-FR-I_2_8-graphic-6.jpg"/>
+      </egXML>
+   </exemplum>
 </elementSpec>

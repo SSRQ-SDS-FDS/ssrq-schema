@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="body" module="textstructure" mode="change"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <gloss xml:lang="de" versionDate="2023-04-06">Kerntext</gloss>
-    <desc xml:lang="de" versionDate="2023-04-06">Enthält den transkribierten Quellentext sowie die
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="body"
+             module="textstructure"
+             mode="change">
+   <gloss xml:lang="de" versionDate="2023-04-06">Kerntext</gloss>
+   <desc xml:lang="de" versionDate="2023-04-06">Enthält den transkribierten Quellentext sowie die
         zeitgleichen Dorsualnotizen in <gi>ab</gi>.
     </desc>
-    <gloss xml:lang="fr" versionDate="2023-04-06">Texte principal</gloss>
-    <desc xml:lang="fr" versionDate="2023-04-06">Contient le texte transcrit de la source ainsi que
+   <gloss xml:lang="fr" versionDate="2023-04-06">Texte principal</gloss>
+   <desc xml:lang="fr" versionDate="2023-04-06">Contient le texte transcrit de la source ainsi que
         les notes dorsales dans <gi>ab</gi>.
     </desc>
-    <gloss xml:lang="en" versionDate="2023-04-06">Main text</gloss>
-    <desc xml:lang="en" versionDate="2023-04-06">Contains the transcribed source text as well as the
+   <gloss xml:lang="en" versionDate="2023-04-06">Main text</gloss>
+   <desc xml:lang="en" versionDate="2023-04-06">Contains the transcribed source text as well as the
         contemporaneous dorsual notes in <gi>ab</gi>.
     </desc>
-    <classes mode="replace"/>
-    <content>
-        <alternate minOccurs="1" maxOccurs="unbounded">
-            <elementRef key="gap"/>
-            <elementRef key="pb"/>
-            <elementRef key="div"/>
-            <elementRef key="signed"/>
-        </alternate>
-    </content>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-05">
-        <p>Einfaches Beispiel für den Inhalt von tei:pubPlace:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <msItem>
-                <textLang>Latein</textLang>
-                <docImprint>
-                    <pubPlace>Druckort</pubPlace>
-                    <publisher>Druckerei</publisher>
-                </docImprint>
-            </msItem>
-        </egXML>
-    </exemplum>
+   <classes mode="replace"/>
+   <content>
+      <alternate minOccurs="1" maxOccurs="unbounded">
+         <elementRef key="gap"/>
+         <elementRef key="pb"/>
+         <elementRef key="div"/>
+         <elementRef key="signed"/>
+      </alternate>
+   </content>
+   <exemplum xml:lang="" type="ssrq-doc-example" versionDate="2023-04-05">
+      <p>Einfaches Beispiel für den Inhalt von tei:pubPlace:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <msItem>
+            <textLang>Latein</textLang>
+            <docImprint>
+               <pubPlace>Druckort</pubPlace>
+               <publisher>Druckerei</publisher>
+            </docImprint>
+         </msItem>
+      </egXML>
+   </exemplum>
 </elementSpec>

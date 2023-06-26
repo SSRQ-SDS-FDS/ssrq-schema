@@ -1,25 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="sealDesc" module="msdescription"
-    mode="change">
-    <desc xml:lang="de" versionDate="2023-05-31">Beschreibt das bzw. die Siegel einer Urkunde.</desc>
-    <desc xml:lang="fr" versionDate="2023-05-31">Décrit le ou les sceaux d'un document.</desc>
-    <desc xml:lang="en" versionDate="2023-05-31">Describes the seal or seals of a document.</desc>
-    <classes mode="replace">
-        <memberOf key="model.physDescPart"/>
-    </classes>
-    <content>
-        <elementRef key="seal" minOccurs="1" maxOccurs="unbounded"/>
-    </content>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-31">
-        <p xml:lang="de">Beispielhafter Aufbau</p>
-        <p xml:lang="fr">Exemple de structure</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <sealDesc>
-                <seal n="1" material="..." shape="..." extent="..." attachment="..." condition="...">
-                    <persName role="sigillant" ref="perNNNNNN">NN</persName>
-                </seal>
-            </sealDesc>
-        </egXML>
-    </exemplum>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="sealDesc"
+             module="msdescription"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-31">Beschreibt das bzw. die Siegel einer Urkunde.</desc>
+   <desc xml:lang="fr" versionDate="2023-05-31">Décrit le ou les sceaux d'un document.</desc>
+   <desc xml:lang="en" versionDate="2023-05-31">Describes the seal or seals of a document.</desc>
+   <classes mode="replace">
+      <memberOf key="model.physDescPart"/>
+   </classes>
+   <content>
+      <elementRef key="seal" minOccurs="1" maxOccurs="unbounded"/>
+   </content>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-31">
+      <p>Beispielhafter Aufbau</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <sealDesc>
+            <seal n="1"
+                  material="..."
+                  shape="..."
+                  extent="..."
+                  attachment="..."
+                  condition="...">
+               <persName role="sigillant" ref="perNNNNNN">NN</persName>
+            </seal>
+         </sealDesc>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
+      <p>Exemple de structure</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <sealDesc>
+            <seal n="1"
+                  material="..."
+                  shape="..."
+                  extent="..."
+                  attachment="..."
+                  condition="...">
+               <persName role="sigillant" ref="perNNNNNN">NN</persName>
+            </seal>
+         </sealDesc>
+      </egXML>
+   </exemplum>
 </elementSpec>

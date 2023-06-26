@@ -1,83 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="publisher" module="core" mode="change"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-05-11">Enthält bei Druckschriften als Teil von docImprint den
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="publisher"
+             module="core"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-11">Enthält bei Druckschriften als Teil von docImprint den
         Namen der Druckerei oder des Druckers. Als Teil der allgemeinen Metadaten eines Stücks enthält "publisher" die
         Angabe der herausgebenden Institution.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-11">Contains the name of the printer or printing company for
+   <desc xml:lang="en" versionDate="2023-05-11">Contains the name of the printer or printing company for
         print publications as part of docImprint. As part of the general metadata of a piece, "publisher" contains the
         name of the publishing institution.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-11">Contient, pour les imprimés, comme partie de docImprint,
+   <desc xml:lang="fr" versionDate="2023-05-11">Contient, pour les imprimés, comme partie de docImprint,
         le nom de l'imprimerie ou de l'imprimeur. En tant que partie des métadonnées générales d'une pièce, "publisher"
         contient l'indication de l'institution éditrice.
     </desc>
-    <classes mode="replace">
-        <memberOf key="att.global.responsibility"/>
-    </classes>
-    <content>
-        <textNode/>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-publisher-custom" mode="add">
-        <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for
+   <classes mode="replace">
+      <memberOf key="att.global.responsibility"/>
+   </classes>
+   <content>
+      <textNode/>
+   </content>
+   <constraintSpec scheme="schematron" ident="sch-publisher-custom" mode="add">
+      <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for
             <gi>publisher</gi>
-        </desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule
-                        context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
-                    <sch:assert
-                            test=".[@datingMethod]">The attribute @datingMethod is required, when
+      </desc>
+      <constraint>
+         <sch:pattern>
+            <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
+               <sch:assert test=".[@datingMethod]">The attribute @datingMethod is required, when
                         <sch:name/>
                         is used outside of the publicationStmt.
                     </sch:assert>
-                </sch:rule>
-                <sch:rule context="tei:publisher[ancestor::tei:publicationStmt]">
-                    <sch:assert test="text() = 'SSRQ-SDS-FDS'">If
+            </sch:rule>
+            <sch:rule context="tei:publisher[ancestor::tei:publicationStmt]">
+               <sch:assert test="text() = 'SSRQ-SDS-FDS'">If
                         <sch:name/>
                         is part of the publicationStmt it must contain the text "SSRQ-SDS-FDS".
                     </sch:assert>
-                    <sch:assert test="not(@cert)">
+               <sch:assert test="not(@cert)">
                         If
                         <sch:name/>
                         is part of the publicationStmt it may not contain the attribute @cert.
                     </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="resp" mode="delete"/>
-    </attList>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-12">
-        <p xml:lang="de">Beispiel für tei:publisher innerhalb von tei:docImprint</p>
-        <p xml:lang="fr">Exemple pour tei:publisher au sein de tei:docImprint</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <docImprint>
-                <pubPlace>Zürich</pubPlace>
-                <publisher>Johann Heinrich Hamberger</publisher>
-            </docImprint>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-12">
-        <p xml:lang="de">Beispiel für tei:publisher mit @cert</p>
-        <p xml:lang="fr">Exemple pour tei:publisher avec @cert</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <docImprint>
-                <pubPlace>Zürich</pubPlace>
-                <publisher cert="low">Heidegger und Rahn</publisher>
-            </docImprint>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-12">
-        <p xml:lang="de">Beispiel für tei:publisher innerhalb von tei:publicationStmt</p>
-        <p xml:lang="fr">Exemple de tei:publisher au sein de tei:publicationStmt</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <publicationStmt>
-                <publisher>SSRQ-SDS-FDS</publisher>
-            </publicationStmt>
-        </egXML>
-    </exemplum>
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <attList>
+      <attDef ident="resp" mode="delete"/>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-12">
+      <p>Beispiel für tei:publisher innerhalb von tei:docImprint</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <docImprint>
+            <pubPlace>Zürich</pubPlace>
+            <publisher>Johann Heinrich Hamberger</publisher>
+         </docImprint>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-12">
+      <p>Exemple pour tei:publisher au sein de tei:docImprint</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <docImprint>
+            <pubPlace>Zürich</pubPlace>
+            <publisher>Johann Heinrich Hamberger</publisher>
+         </docImprint>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-12">
+      <p>Beispiel für tei:publisher mit @cert</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <docImprint>
+            <pubPlace>Zürich</pubPlace>
+            <publisher cert="low">Heidegger und Rahn</publisher>
+         </docImprint>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-12">
+      <p>Exemple pour tei:publisher avec @cert</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <docImprint>
+            <pubPlace>Zürich</pubPlace>
+            <publisher cert="low">Heidegger und Rahn</publisher>
+         </docImprint>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-12">
+      <p>Beispiel für tei:publisher innerhalb von tei:publicationStmt</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <publicationStmt>
+            <publisher>SSRQ-SDS-FDS</publisher>
+         </publicationStmt>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-12">
+      <p>Exemple de tei:publisher au sein de tei:publicationStmt</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <publicationStmt>
+            <publisher>SSRQ-SDS-FDS</publisher>
+         </publicationStmt>
+      </egXML>
+   </exemplum>
 </elementSpec>

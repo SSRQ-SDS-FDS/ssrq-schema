@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="altIdentifier" module="msdescription"
-    mode="change">
-    <desc xml:lang="de" versionDate="2023-04-14">Erfassung alter Archigsignaturen.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-14">Saisie d'anciennes signatures d'archives.</desc>
-    <desc xml:lang="en" versionDate="2023-04-14">Recording old archival signatures.</desc>
-    <classes mode="replace"/>
-    <content>
-        <elementRef key="idno"/>
-    </content>
-    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-14">
-        <p xml:lang="de">Modellhafter Aufbau</p>
-        <p xml:lang="fr">Structure modèle</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <msIdentifier>
-                <repository xml:lang="de">Landesarchiv Glarus</repository>
-                <idno
-                    source="https://archivverzeichnis.gl.ch/home/#/content/2c27b48bc9864c45b3ae7d3dbeb9747f"
-                    xml:lang="de">LAGL AG III.2465:008</idno>
-                <altIdentifier>
-                    <idno>LAGL I. 9h.</idno>
-                </altIdentifier>
-            </msIdentifier>
-        </egXML>
-    </exemplum>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="altIdentifier"
+             module="msdescription"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-04-14">Erfassung alter Archigsignaturen.</desc>
+   <desc xml:lang="fr" versionDate="2023-04-14">Saisie d'anciennes signatures d'archives.</desc>
+   <desc xml:lang="en" versionDate="2023-04-14">Recording old archival signatures.</desc>
+   <classes mode="replace"/>
+   <content>
+      <elementRef key="idno"/>
+   </content>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-14">
+      <p>Modellhafter Aufbau</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <msIdentifier>
+            <repository xml:lang="de">Landesarchiv Glarus</repository>
+            <idno source="https://archivverzeichnis.gl.ch/home/#/content/2c27b48bc9864c45b3ae7d3dbeb9747f"
+                  xml:lang="de">LAGL AG III.2465:008</idno>
+            <altIdentifier>
+               <idno>LAGL I. 9h.</idno>
+            </altIdentifier>
+         </msIdentifier>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-14">
+      <p>Structure modèle</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <msIdentifier>
+            <repository xml:lang="de">Landesarchiv Glarus</repository>
+            <idno source="https://archivverzeichnis.gl.ch/home/#/content/2c27b48bc9864c45b3ae7d3dbeb9747f"
+                  xml:lang="de">LAGL AG III.2465:008</idno>
+            <altIdentifier>
+               <idno>LAGL I. 9h.</idno>
+            </altIdentifier>
+         </msIdentifier>
+      </egXML>
+   </exemplum>
 </elementSpec>

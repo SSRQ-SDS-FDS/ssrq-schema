@@ -1,57 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="respStmt" module="core" mode="change">
-    <gloss xml:lang="de" versionDate="2023-04-04">Informationen zur Verantwortlichkeit</gloss>
-    <desc xml:lang="de" versionDate="2023-04-04">Angabe von Informationen zur Bearbeitung, der Art
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="respStmt"
+             module="core"
+             mode="change">
+   <gloss xml:lang="de" versionDate="2023-04-04">Informationen zur Verantwortlichkeit</gloss>
+   <desc xml:lang="de" versionDate="2023-04-04">Angabe von Informationen zur Bearbeitung, der Art
         der Bearbeitung des Stücks sowie der Herausgabe der Edition
     </desc>
-    <gloss xml:lang="en" versionDate="2023-04-04">Statement of Responsibility</gloss>
-    <desc xml:lang="en" versionDate="2023-04-04">Information on the arranger, the type of
+   <gloss xml:lang="en" versionDate="2023-04-04">Statement of Responsibility</gloss>
+   <desc xml:lang="en" versionDate="2023-04-04">Information on the arranger, the type of
         arrangement of the piece and the publication of the edition
     </desc>
-    <gloss xml:lang="fr" versionDate="2023-04-04">Déclaration de responsabilité</gloss>
-    <desc xml:lang="fr" versionDate="2023-04-04">Indication d'informations sur l'arrangeur, le type
+   <gloss xml:lang="fr" versionDate="2023-04-04">Déclaration de responsabilité</gloss>
+   <desc xml:lang="fr" versionDate="2023-04-04">Indication d'informations sur l'arrangeur, le type
         d'arrangement de la pièce et la publication de l'édition
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.respLike"/>
-        <memberOf key="model.recordingPart"/>
-    </classes>
-    <content>
-        <sequence>
-            <alternate minOccurs="1" maxOccurs="1">
-                <elementRef key="persName" maxOccurs="unbounded"/>
-                <elementRef key="orgName"/>
-            </alternate>
-            <elementRef key="resp"/>
-        </sequence>
-    </content>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-04">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <respStmt>
-                <persName>Rainer Hugener</persName>
-                <resp key="transcript"/>
-            </respStmt>
-            <respStmt>
-                <persName>Rainer Hugener</persName>
-                <resp key="tagging"/>
-            </respStmt>
-            <respStmt>
-                <persName>Werner Meier</persName>
-                <resp key="facs"/>
-            </respStmt>
-            <respStmt>
-                <persName>Pascale Sutter</persName>
-                <resp key="qualitycheck"/>
-            </respStmt>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-04">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <respStmt>
-                <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                <resp key="publisher"/>
-            </respStmt>
-        </egXML>
-    </exemplum>
+   <classes mode="replace">
+      <memberOf key="model.respLike"/>
+      <memberOf key="model.recordingPart"/>
+   </classes>
+   <content>
+      <sequence>
+         <alternate minOccurs="1" maxOccurs="1">
+            <elementRef key="persName" maxOccurs="unbounded"/>
+            <elementRef key="orgName"/>
+         </alternate>
+         <elementRef key="resp"/>
+      </sequence>
+   </content>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-04">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <respStmt>
+            <persName>Rainer Hugener</persName>
+            <resp key="transcript"/>
+         </respStmt>
+         <respStmt>
+            <persName>Rainer Hugener</persName>
+            <resp key="tagging"/>
+         </respStmt>
+         <respStmt>
+            <persName>Werner Meier</persName>
+            <resp key="facs"/>
+         </respStmt>
+         <respStmt>
+            <persName>Pascale Sutter</persName>
+            <resp key="qualitycheck"/>
+         </respStmt>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-04">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <respStmt>
+            <persName>Rainer Hugener</persName>
+            <resp key="transcript"/>
+         </respStmt>
+         <respStmt>
+            <persName>Rainer Hugener</persName>
+            <resp key="tagging"/>
+         </respStmt>
+         <respStmt>
+            <persName>Werner Meier</persName>
+            <resp key="facs"/>
+         </respStmt>
+         <respStmt>
+            <persName>Pascale Sutter</persName>
+            <resp key="qualitycheck"/>
+         </respStmt>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-04">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <respStmt>
+            <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+            <resp key="publisher"/>
+         </respStmt>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-04">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <respStmt>
+            <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+            <resp key="publisher"/>
+         </respStmt>
+      </egXML>
+   </exemplum>
 </elementSpec>

@@ -1,193 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="figure" module="figures" mode="change"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <desc xml:lang="de" versionDate="2023-04-11">Enthält grafische Informationen wie das
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             ident="figure"
+             module="figures"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-04-11">Enthält grafische Informationen wie das
         Notarzeichen (= Notariatszeichen, Notariatssignet, Signum), Federzeichnungen, Holzschnitte,
         Verweiszeichen oder bei Kopien von Urkunden die Stelle, an der sich in der Originalurkunde
         das Siegel befindet (L. S. = Locus sigilli) oder Abbildungen, die mit <gi>graphic</gi> referenziert werden.
     </desc>
-    <desc xml:lang="en" versionDate="2023-04-11">Contains graphic information such as the Notarial
+   <desc xml:lang="en" versionDate="2023-04-11">Contains graphic information such as the Notarial
         sign (= notarial sign, notmarial signet, signum), pen drawings, woodcuts, or, in the case of
         copies of documents, the location of the seal on the original document (L. S. = Locus
         sigilli) or (L. S. = locus sigilli) or illustrations referenced with <gi>graphic</gi>.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-04-11">Contient des informations graphiques, dans notre cas un seing notariel,
+   <desc xml:lang="fr" versionDate="2023-04-11">Contient des informations graphiques, dans notre cas un seing notariel,
         une signature du notaire ou un signum, un dessin à la plume, une gravure sur bois, un signe de renvoi ou en cas
         d'une copie d'un acte la place où se trouve le sceau dans l'original (L. S. = Locus sigilli). Dans les
         introductions, les illustrations, graphiques, arbres généalogiques, etc. sont intégrés à la figure (<gi>
             graphic</gi>).
     </desc>
-    <classes mode="replace">
-        <memberOf key="att.typed"/>
-    </classes>
-    <content>
-        <sequence minOccurs="0" maxOccurs="1">
-            <elementRef key="graphic" minOccurs="1" maxOccurs="1"/>
-            <elementRef key="head" minOccurs="0" maxOccurs="1"/>
-        </sequence>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-figure">
-        <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:idno</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:figure[@type = 'illustration']">
-                    <sch:assert test="tei:graphic">If the type of
+   <classes mode="replace">
+      <memberOf key="att.typed"/>
+   </classes>
+   <content>
+      <sequence minOccurs="0" maxOccurs="1">
+         <elementRef key="graphic" minOccurs="1" maxOccurs="1"/>
+         <elementRef key="head" minOccurs="0" maxOccurs="1"/>
+      </sequence>
+   </content>
+   <constraintSpec scheme="schematron" ident="sch-el-figure">
+      <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:idno</desc>
+      <constraint>
+         <sch:pattern>
+            <sch:rule context="tei:figure[@type = 'illustration']">
+               <sch:assert test="tei:graphic">If the type of
                         <sch:name/>
                         is 'illustration' an
                         element graphic is required.
                     </sch:assert>
-                </sch:rule>
-                <sch:rule context="tei:figure[not(@type = 'illustration')]">
-                    <sch:assert test="not(*) and not(text())">If the type of
+            </sch:rule>
+            <sch:rule context="tei:figure[not(@type = 'illustration')]">
+               <sch:assert test="not(*) and not(text())">If the type of
                         <sch:name/>
                         is not
                         'illustration' it must be empty.
                     </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="type" mode="replace" usage="req">
-            <desc xml:lang="de" versionDate="2023-04-11">Zwingende Zuordnung zu einem Typ</desc>
-            <desc xml:lang="fr" versionDate="2023-04-11">Affectation obligatoire à un type</desc>
-            <desc xml:lang="en" versionDate="2023-04-11">Mandatory assignment to a type</desc>
-            <valList type="closed">
-                <valItem ident="copper_engraving">
-                    <desc xml:lang="de" versionDate="2023-04-11">Kupferstich</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">gravure sur cuivre</desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">copper engraving</desc>
-                    <desc xml:lang="it" versionDate="2023-04-11">incisione su lastra di rame</desc>
-                </valItem>
-                <valItem ident="drawing">
-                    <desc xml:lang="de" versionDate="2023-04-11">Federzeichnung</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">dessin à la plume</desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">pen and ink drawing</desc>
-                    <desc xml:lang="it" versionDate="2023-04-11">disegno a penna e inchiostro</desc>
-                </valItem>
-                <valItem ident="illustration">
-                    <desc xml:lang="de" versionDate="2023-04-11">Abbildung</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">figure</desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">illustration</desc>
-                    <desc xml:lang="it" versionDate="2023-04-11">figura</desc>
-                </valItem>
-                <valItem ident="locus_sigilli">
-                    <desc xml:lang="de" versionDate="2023-04-11">Locus sigilli</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">locus sigilli</desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">locus sigilli</desc>
-                    <desc xml:lang="it" versionDate="2023-04-11">locus sigilli</desc>
-                </valItem>
-                <valItem ident="monogram">
-                    <desc xml:lang="de" versionDate="2023-04-11">Monogramm</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">monogramme</desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">monogramma</desc>
-                    <desc xml:lang="it" versionDate="2023-04-11">monogram</desc>
-                </valItem>
-                <valItem ident="notarial_sign">
-                    <desc xml:lang="de" versionDate="2023-04-11">Notarzeichen</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">seing/signe notarial</desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">notarial sign</desc>
-                    <desc xml:lang="it" versionDate="2023-04-11">signum notarile</desc>
-                </valItem>
-                <valItem ident="sign">
-                    <desc xml:lang="de" versionDate="2023-04-11">Verweiszeichen</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">signe de renvoi</desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">signe-de-renvoi</desc>
-                    <desc xml:lang="it" versionDate="2023-04-11">segno di riferimento</desc>
-                </valItem>
-                <valItem ident="stamp">
-                    <desc xml:lang="de" versionDate="2023-04-11">Stempel</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">tampon</desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">stamp</desc>
-                    <desc xml:lang="it" versionDate="2023-04-11">timbro</desc>
-                </valItem>
-                <valItem ident="woodcut">
-                    <desc xml:lang="de" versionDate="2023-04-11">Holzschnitt</desc>
-                    <desc xml:lang="fr" versionDate="2023-04-11">xylographie</desc>
-                    <desc xml:lang="en" versionDate="2023-04-11">woodcut</desc>
-                    <desc xml:lang="it" versionDate="2023-04-11">xilografia</desc>
-                </valItem>
-            </valList>
-        </attDef>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-11">
-        <p xml:lang="de">Unterschrift mit Notarzeichen</p>
-        <p xml:lang="fr">Signature avec le signe d'urgence</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <signed>
-                <figure type="notarial_sign"/>
-                <lb/>Et ego Hainricus Jacobi de Augiamaiori, clericus Constanciensis dyocesis, publicus imperiali
+            </sch:rule>
+         </sch:pattern>
+      </constraint>
+   </constraintSpec>
+   <attList>
+      <attDef ident="type" mode="replace" usage="req">
+         <desc xml:lang="de" versionDate="2023-04-11">Zwingende Zuordnung zu einem Typ</desc>
+         <desc xml:lang="fr" versionDate="2023-04-11">Affectation obligatoire à un type</desc>
+         <desc xml:lang="en" versionDate="2023-04-11">Mandatory assignment to a type</desc>
+         <valList type="closed">
+            <valItem ident="copper_engraving">
+               <desc xml:lang="de" versionDate="2023-04-11">Kupferstich</desc>
+               <desc xml:lang="fr" versionDate="2023-04-11">gravure sur cuivre</desc>
+               <desc xml:lang="en" versionDate="2023-04-11">copper engraving</desc>
+               <desc xml:lang="it" versionDate="2023-04-11">incisione su lastra di rame</desc>
+            </valItem>
+            <valItem ident="drawing">
+               <desc xml:lang="de" versionDate="2023-04-11">Federzeichnung</desc>
+               <desc xml:lang="fr" versionDate="2023-04-11">dessin à la plume</desc>
+               <desc xml:lang="en" versionDate="2023-04-11">pen and ink drawing</desc>
+               <desc xml:lang="it" versionDate="2023-04-11">disegno a penna e inchiostro</desc>
+            </valItem>
+            <valItem ident="illustration">
+               <desc xml:lang="de" versionDate="2023-04-11">Abbildung</desc>
+               <desc xml:lang="fr" versionDate="2023-04-11">figure</desc>
+               <desc xml:lang="en" versionDate="2023-04-11">illustration</desc>
+               <desc xml:lang="it" versionDate="2023-04-11">figura</desc>
+            </valItem>
+            <valItem ident="locus_sigilli">
+               <desc xml:lang="de" versionDate="2023-04-11">Locus sigilli</desc>
+               <desc xml:lang="fr" versionDate="2023-04-11">locus sigilli</desc>
+               <desc xml:lang="en" versionDate="2023-04-11">locus sigilli</desc>
+               <desc xml:lang="it" versionDate="2023-04-11">locus sigilli</desc>
+            </valItem>
+            <valItem ident="monogram">
+               <desc xml:lang="de" versionDate="2023-04-11">Monogramm</desc>
+               <desc xml:lang="fr" versionDate="2023-04-11">monogramme</desc>
+               <desc xml:lang="en" versionDate="2023-04-11">monogramma</desc>
+               <desc xml:lang="it" versionDate="2023-04-11">monogram</desc>
+            </valItem>
+            <valItem ident="notarial_sign">
+               <desc xml:lang="de" versionDate="2023-04-11">Notarzeichen</desc>
+               <desc xml:lang="fr" versionDate="2023-04-11">seing/signe notarial</desc>
+               <desc xml:lang="en" versionDate="2023-04-11">notarial sign</desc>
+               <desc xml:lang="it" versionDate="2023-04-11">signum notarile</desc>
+            </valItem>
+            <valItem ident="sign">
+               <desc xml:lang="de" versionDate="2023-04-11">Verweiszeichen</desc>
+               <desc xml:lang="fr" versionDate="2023-04-11">signe de renvoi</desc>
+               <desc xml:lang="en" versionDate="2023-04-11">signe-de-renvoi</desc>
+               <desc xml:lang="it" versionDate="2023-04-11">segno di riferimento</desc>
+            </valItem>
+            <valItem ident="stamp">
+               <desc xml:lang="de" versionDate="2023-04-11">Stempel</desc>
+               <desc xml:lang="fr" versionDate="2023-04-11">tampon</desc>
+               <desc xml:lang="en" versionDate="2023-04-11">stamp</desc>
+               <desc xml:lang="it" versionDate="2023-04-11">timbro</desc>
+            </valItem>
+            <valItem ident="woodcut">
+               <desc xml:lang="de" versionDate="2023-04-11">Holzschnitt</desc>
+               <desc xml:lang="fr" versionDate="2023-04-11">xylographie</desc>
+               <desc xml:lang="en" versionDate="2023-04-11">woodcut</desc>
+               <desc xml:lang="it" versionDate="2023-04-11">xilografia</desc>
+            </valItem>
+         </valList>
+      </attDef>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-11">
+      <p>Unterschrift mit Notarzeichen</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <signed>
+            <figure type="notarial_sign"/>
+            <lb/>Et ego Hainricus Jacobi de Augiamaiori, clericus Constanciensis dyocesis, publicus imperiali
                 auctoritate notarius iuratus, quia
                 <lb/>...
             </signed>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-11">
-        <p xml:lang="de">Locus sigilli (L. S.)</p>
-        <p xml:lang="fr">Locus sigilli (L. S.)</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <figure type="locus_sigilli"/>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
-        <p xml:lang="de">Holzschnitt auf einem Titelblatt eines Drucks:</p>
-        <p xml:lang="fr">Gravure sur bois posée sur la page de titre d'une impression&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <head>...
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-11">
+      <p>Signature avec le signe d'urgence</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <signed>
+            <figure type="notarial_sign"/>
+            <lb/>Et ego Hainricus Jacobi de Augiamaiori, clericus Constanciensis dyocesis, publicus imperiali
+                auctoritate notarius iuratus, quia
+                <lb/>...
+            </signed>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-11">
+      <p>Locus sigilli (L. S.)</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <figure type="locus_sigilli"/>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-11">
+      <p>Locus sigilli (L. S.)</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <figure type="locus_sigilli"/>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>Holzschnitt auf einem Titelblatt eines Drucks:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <head>...
                 <lb/>über Eelich sachen ge<lb break="no"/>richt sol werden
             </head>
-            <p>
-                <figure type="woodcut"/>
-                <note>Beschreibung des Emblems vgl.
+         <p>
+            <figure type="woodcut"/>
+            <note>Beschreibung des Emblems vgl.
                     <bibl>
-                        <ref target="http://permalink.snl.ch/bib/chbsg000119287">Zürcher Kirchenordnungen,</ref>
-                        Bd.&#160;2, S.&#160;359
+                  <ref target="http://permalink.snl.ch/bib/chbsg000119287">Zürcher Kirchenordnungen,</ref>
+                        Bd. 2, S. 359
                     </bibl>
                     .
                 </note>
-            </p>
-            <p>
-                <lb/>Getruckt zuͦ <origPlace>Zürich</origPlace> / durch
+         </p>
+         <p>
+            <lb/>Getruckt zuͦ <origPlace>Zürich</origPlace> / durch
                 <lb/>
-                <persName>Johansen Hager</persName>
-            </p>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
-        <p xml:lang="de">Beispiel eines Stammbaumes in einer Einleitung einer Editionseinheit:</p>
-        <p xml:lang="fr">Exemple d'un arbre généalogique dans une introduction à une unité d'édition&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <figure type="illustration">
-                <graphic type="familytree" mimeType="image/svg" url="WB_HB.svg" width="69.34%"/>
-                <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
-                <figDesc>Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>
-            </figure>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
-        <p xml:lang="de">Stempel auf der Rückseite (als Dorsualnotiz):</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <div>
-                <ab type="dorsal" place="verso">
-                    <figure type="stamp"/>
-                    <lb/>Vor Kantonsgericht
+            <persName>Johansen Hager</persName>
+         </p>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>Gravure sur bois posée sur la page de titre d'une impression :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <head>...
+                <lb/>über Eelich sachen ge<lb break="no"/>richt sol werden
+            </head>
+         <p>
+            <figure type="woodcut"/>
+            <note>Beschreibung des Emblems vgl.
+                    <bibl>
+                  <ref target="http://permalink.snl.ch/bib/chbsg000119287">Zürcher Kirchenordnungen,</ref>
+                        Bd. 2, S. 359
+                    </bibl>
+                    .
+                </note>
+         </p>
+         <p>
+            <lb/>Getruckt zuͦ <origPlace>Zürich</origPlace> / durch
+                <lb/>
+            <persName>Johansen Hager</persName>
+         </p>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>Beispiel eines Stammbaumes in einer Einleitung einer Editionseinheit:</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <figure type="illustration">
+            <graphic type="familytree"
+                     mimeType="image/svg"
+                     url="WB_HB.svg"
+                     width="69.34%"/>
+            <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
+            <figDesc>Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>
+         </figure>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>Exemple d'un arbre généalogique dans une introduction à une unité d'édition :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <figure type="illustration">
+            <graphic type="familytree"
+                     mimeType="image/svg"
+                     url="WB_HB.svg"
+                     width="69.34%"/>
+            <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
+            <figDesc>Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>
+         </figure>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>Stempel auf der Rückseite (als Dorsualnotiz):</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <div>
+            <ab type="dorsal" place="verso">
+               <figure type="stamp"/>
+               <lb/>Vor Kantonsgericht
                     <lb/>St. Gallen, 12. X. 1885
                     <lb/>der Präsident
                 </ab>
-            </div>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-04-13">
-        <p xml:lang="de">Verweiszeichen (innerhalb von p):</p>
-        <p xml:lang="fr">signe de renvoi (dans p)&#160;:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <div>
-                <p>
-                    <figure type="sign"/>
-                    <lb/>Des ersten ...
+         </div>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>Verweiszeichen (innerhalb von p):</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <div>
+            <p>
+               <figure type="sign"/>
+               <lb/>Des ersten ...
                 </p>
-            </div>
-        </egXML>
-    </exemplum>
+         </div>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+      <p>signe de renvoi (dans p) :</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <div>
+            <p>
+               <figure type="sign"/>
+               <lb/>Des ersten ...
+                </p>
+         </div>
+      </egXML>
+   </exemplum>
 </elementSpec>

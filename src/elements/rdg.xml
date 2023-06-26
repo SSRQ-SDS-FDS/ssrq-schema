@@ -1,46 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="rdg"
-             module="textcrit" mode="change">
-    <desc xml:lang="de" versionDate="2023-05-20">Ermöglicht es, eine einzige Lesart eines Textabschnittes
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             ident="rdg"
+             module="textcrit"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-20">Ermöglicht es, eine einzige Lesart eines Textabschnittes
         in einem anderen Dokument (z. B. 2. Ausfertigung oder Kopie) anzuzeigen.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-20">Makes it possible to display a single reading of a section
+   <desc xml:lang="en" versionDate="2023-05-20">Makes it possible to display a single reading of a section
         of text in another document (e.g. 2nd copy or copy).
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-20">Permet d'afficher une seule lecture d'une section de texte
+   <desc xml:lang="fr" versionDate="2023-05-20">Permet d'afficher une seule lecture d'une section de texte
         dans un autre document (ex. 2ème copie ou copie).
     </desc>
-    <desc xml:lang="it" versionDate="2023-05-20">Consente di visualizzare una singola lettura di una sezione di testo in
+   <desc xml:lang="it" versionDate="2023-05-20">Consente di visualizzare una singola lettura di una sezione di testo in
         un altro documento (es. 2a copia o copia).
     </desc>
-    <classes mode="replace">
-        <memberOf key="att.witnessed"/>
-    </classes>
-    <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
-    </content>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
+   <classes mode="replace">
+      <memberOf key="att.witnessed"/>
+   </classes>
+   <content>
+      <rng:oneOrMore>
+         <rng:ref name="ssrq.content.default"/>
+      </rng:oneOrMore>
+   </content>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-20">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <app>
+            <lem>lxxxvij</lem>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
                     quadringentesimo
                 </rdg>
-            </app>
-        </egXML>
-    </exemplum>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
+         </app>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-20">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <app>
+            <lem>lxxxvij</lem>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
                     quadringentesimo
                 </rdg>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
-            </app>
-        </egXML>
-    </exemplum>
+         </app>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-20">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <app>
+            <lem>lxxxvij</lem>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
+                    quadringentesimo
+                </rdg>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
+         </app>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-20">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <app>
+            <lem>lxxxvij</lem>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
+                    quadringentesimo
+                </rdg>
+            <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
+         </app>
+      </egXML>
+   </exemplum>
 </elementSpec>

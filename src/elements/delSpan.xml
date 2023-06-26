@@ -1,31 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="delSpan" module="transcr" mode="change">
-    <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet größere Abschnitte, die aus dem Text getilgt wurden.</desc>
-    <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections deleted from the text.</desc>
-    <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui ont été supprimées du texte.
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="delSpan"
+             module="transcr"
+             mode="change">
+   <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet größere Abschnitte, die aus dem Text getilgt wurden.</desc>
+   <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections deleted from the text.</desc>
+   <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui ont été supprimées du texte.
     </desc>
-    <desc xml:lang="it" versionDate="2023-05-20">Indica sezioni più grandi che sono state eliminate dal testo.</desc>
-    <classes mode="replace">
-        <memberOf key="att.global.rendition"/>
-        <memberOf key="att.spanning"/>
-        <memberOf key="att.written"/>
-    </classes>
-    <content>
-        <empty/>
-    </content>
-    <attList>
-        <attDef ident="rend" mode="replace">
-            <datatype>
-                <dataRef key="ssrq.rend.del"/>
-            </datatype>
-        </attDef>
-    </attList>
-    <exemplum type="ssrq-doc-example" versionDate="2023-05-20">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <delSpan rend="crossout" hand="laterHand" spanTo="del1"/>
+   <desc xml:lang="it" versionDate="2023-05-20">Indica sezioni più grandi che sono state eliminate dal testo.</desc>
+   <classes mode="replace">
+      <memberOf key="att.global.rendition"/>
+      <memberOf key="att.spanning"/>
+      <memberOf key="att.written"/>
+   </classes>
+   <content>
+      <empty/>
+   </content>
+   <attList>
+      <attDef ident="rend" mode="replace">
+         <datatype>
+            <dataRef key="ssrq.rend.del"/>
+         </datatype>
+      </attDef>
+   </attList>
+   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-20">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <delSpan rend="crossout" hand="laterHand" spanTo="del1"/>
             Item ein hoffstatt ...
             <anchor xml:id="del1"/>
-        </egXML>
-    </exemplum>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-20">
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <delSpan rend="crossout" hand="laterHand" spanTo="del1"/>
+            Item ein hoffstatt ...
+            <anchor xml:id="del1"/>
+      </egXML>
+   </exemplum>
 </elementSpec>
