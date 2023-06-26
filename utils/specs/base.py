@@ -290,15 +290,29 @@ class BaseSpec:
 
     def get_desc(self, element: ET.Element, lang: str) -> str:
         desc = element.find(f"./tei:desc[@xml:lang='{lang}']", namespaces=NS_MAP)
+
         if desc is None:
             return ""
         return self._desc_node_to_string(node=desc)
 
-    def _desc_node_to_string(self, node: ET.Element) -> str:
+    def _desc_node_to_string(
+        self, node: ET.Element, start_with_upper: bool = True
+    ) -> str:
+        def upper_desc_start(desc: str, upper: bool) -> str:
+            if not upper:
+                return desc
+            return desc[0].upper() + desc[1:]
+
         child_nodes = node.findall("*")
 
         if len(child_nodes) == 0:
-            return RE_PATTERN.sub(" ", node.text) if node.text is not None else ""
+            return (
+                upper_desc_start(
+                    desc=RE_PATTERN.sub(" ", node.text), upper=start_with_upper
+                )
+                if node.text is not None
+                else ""
+            )
 
         child_nodes_dict: dict[str, ET.Element] = {
             child_node.text.strip(): child_node
@@ -306,16 +320,19 @@ class BaseSpec:
             if child_node.text is not None
         }
 
-        return RE_PATTERN.sub(
-            " ",
-            " ".join(
-                [
-                    self._handle_node_text(
-                        child_nodes_dict=child_nodes_dict, text=text.strip()
-                    )
-                    for text in node.itertext()
-                ]
+        return upper_desc_start(
+            RE_PATTERN.sub(
+                " ",
+                " ".join(
+                    [
+                        self._handle_node_text(
+                            child_nodes_dict=child_nodes_dict, text=text.strip()
+                        )
+                        for text in node.itertext()
+                    ]
+                ),
             ),
+            upper=start_with_upper,
         )
 
     def _handle_node_text(
