@@ -11,14 +11,20 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result, message",
     [
         (
-            "valid-ab-with-scribe-and-place",
+            "invalid-ab-with-scribe",
             "<ab type='dorsal' place='cover' scribe='per011353'><lb/>Copiert - 976 fol</ab>",
+            False,
+            None,
+        ),
+        (
+            "valid-ab-with-place-and-type",
+            "<ab type='dorsal' place='cover'><lb/>Copiert - 976 fol</ab>",
             True,
             None,
         ),
         (
             "valid-ab-with-hand",
-            " <ab type='archiving reference' place='left_margin' hand='hand20cf'>St. Georgenamt FC 2</ab>",
+            " <ab type='archiving_reference' place='left_margin' hand='hand20cf'>St. Georgenamt FC 2</ab>",
             False,
             "without matching ID",
         ),
@@ -53,18 +59,23 @@ def test_ab_rng(
     [
         (
             "valid-ab-inside-div",
-            "<div><ab type='archiving reference' place='left margin' hand='hand20cf'>St. Georgenamt FC 2</ab></div>",
+            "<div><ab type='archiving_reference' place='left margin' hand='hand20cf'>St. Georgenamt FC 2</ab></div>",
             True,
         ),
         (
             "invalid-ab-inside-div-with-following-ab",
-            """<div><ab type='archiving reference' place='left margin' hand='hand20cf'>St. Georgenamt FC 2</ab>
-                <ab type='archiving reference' place='left margin' hand='hand20c?'>St. Georgenamt FC 2</ab></div>""",
+            """<div><ab type='archiving_reference' place='left margin' hand='hand20cf'>St. Georgenamt FC 2</ab>
+                        <ab type='archiving_reference' place='left margin' hand='hand20c?'>St. Georgenamt FC 2</ab></div>""",
             False,
         ),
         (
             "invalid-ab-inside-div",
-            "<div><ab type='archiving reference' place='left margin' hand='hand20cf'>St. Georgenamt FC 2</ab><p>foo</p></div>",
+            "<div><ab type='archiving_reference' place='left margin' hand='hand20cf'>St. Georgenamt FC 2</ab><p>foo</p></div>",
+            False,
+        ),
+        (
+            "invalid-empty-ab",
+            "<ab type='archiving_reference' place='left margin' hand='hand20cf'/>",
             False,
         ),
     ],

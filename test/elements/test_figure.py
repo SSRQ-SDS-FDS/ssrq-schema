@@ -12,7 +12,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-figure-without-content",
-            "<figure type='locus sigilli'/>",
+            "<figure type='locus_sigilli'/>",
             True,
         ),
         (
@@ -41,7 +41,7 @@ def test_figure(
     [
         (
             "valid-figure-with-type-locus",
-            "<figure type='locus sigilli'/>",
+            "<figure type='locus_sigilli'/>",
             True,
         ),
         (

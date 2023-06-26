@@ -9,24 +9,28 @@
     </desc>
     <desc xml:lang="en" versionDate="2023-05-11">Names the archive (no abbreviations) within <gi>msIdentifier</gi>.
     </desc>
-    <classes mode="change">
-        <memberOf key="att.global.facs" mode="delete"/>
-        <memberOf key="att.global.rendition" mode="delete"/>
-        <memberOf key="att.global.responsibility" mode="delete"/>
-        <memberOf key="att.typed" mode="delete"/>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
     </classes>
+    <content>
+        <textNode/>
+    </content>
     <attList>
-        <attDef ident="xml:lang" mode="replace">
-            <desc xml:lang="de" versionDate="2023-04-13">ISO-639-1-Sprachkürzel</desc>
-            <desc xml:lang="fr" versionDate="2023-04-13">ISO-639-1-Abréviation de la langue</desc>
-            <desc xml:lang="en" versionDate="2023-04-13">ISO-639-1-Language abbreviation</desc>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="rend" mode="delete"/>
+        <attDef ident="resp" mode="delete"/>
+        <attDef ident="xml:lang" mode="replace" usage="req">
+            <desc xml:lang="de" versionDate="2023-06-23">ISO-639-1-Sprachkürzel</desc>
+            <desc xml:lang="en" versionDate="2023-06-23">ISO-639-1-Language abbreviation</desc>
+            <desc xml:lang="fr" versionDate="2023-06-23">ISO-639-1-Abréviation de la langue</desc>
+            <desc xml:lang="it" versionDate="2023-06-23">ISO-639-1-Abbreviazione della lingua</desc>
             <valList type="closed">
                 <valItem ident="de"/>
                 <valItem ident="fr"/>
             </valList>
         </attDef>
-        <attDef ident="n" mode="delete"/>
-        <attDef ident="xml:id" mode="delete"/>
     </attList>
     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-04-13">
         <p xml:lang="de">Beispielhafte Verwendung zur Erfassung des Archivs</p>

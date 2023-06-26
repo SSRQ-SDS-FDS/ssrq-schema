@@ -8,6 +8,7 @@
     <classes mode="replace">
         <memberOf key="model.choicePart"/>
         <memberOf key="model.pPart.editorial"/>
+        <memberOf key="att.global.responsibility"/>
     </classes>
     <content>
         <alternate minOccurs="1" maxOccurs="unbounded">
@@ -15,6 +16,9 @@
             <macroRef key="ssrq.content.entities"/>
         </alternate>
     </content>
+    <attList>
+        <attDef ident="cert" mode="delete"/>
+    </attList>
     <exemplum type="ssrq-doc-example" versionDate="2023-05-23">
         <p xml:lang="de">Beispiel für eine Abkürzung.</p>
         <p xml:lang="en">Example of an abbreviation.</p>

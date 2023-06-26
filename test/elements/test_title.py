@@ -12,6 +12,16 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid_title-with-xml-lang",
+            "<title xml:lang='de'>foo</title>",
+            True,
+        ),
+        (
+            "invalid_title-with-wrong-attribute",
+            "<title att='bar'>foo</title>",
+            False,
+        ),
+        (
             "invalid_title",
             "<title><p>foo</p></title>",
             False,
