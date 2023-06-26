@@ -12,7 +12,7 @@ RE_PATTERN = re.compile(r"[\s\n]+")
 
 class BaseSpec:
     attributes: list[AttributeSpec] | None
-    content: list[str] | None
+    content: list[str | ET.Element] | None
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
     ident: str
@@ -185,7 +185,7 @@ class BaseSpec:
         self,
         element: ET.Element,
         components: dict[str, ODDElement],
-    ) -> list[str] | None:
+    ) -> list[str | ET.Element] | None:
         """
         Find all possibile content elements, which could occur in the current ODDElement.
         Works recursively, so all macros or datatypes will be expanded.
@@ -196,7 +196,7 @@ class BaseSpec:
 
         Returns:
             list[str] | None: A list of all possibile content elements."""
-        elements_found: list[str] | None = None
+        elements_found: list[str | ET.Element] | None = None
 
         content = element.find("tei:content", namespaces=NS_MAP)
 
@@ -227,6 +227,10 @@ class BaseSpec:
                         elements_found.extend(nested_content)
                 else:
                     elements_found.append(key_or_name)
+
+            if split_tag_and_ns(content_part.tag)[1] == "valList":
+                val_items = content_part.findall("./tei:valItem", namespaces=NS_MAP)
+                elements_found.extend(val_items)
 
             if split_tag_and_ns(content_part.tag)[1] == "textNode":
                 elements_found.append("textNode")
