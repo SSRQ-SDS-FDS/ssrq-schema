@@ -12,24 +12,29 @@ import pytest
             True,
         ),
         (
+            "invalid-empty-docImprint",
+            "<docImprint></docImprint>",
+            False,
+        ),
+        (
             "invalid-docImprint-with-attribute",
             "<docImprint type='foo'><pubPlace>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
             False,
         ),
         (
-            "invalid-docImprint-without-pubPlace",
+            "valid-docImprint-without-pubPlace",
             "<docImprint><publisher>Heidegger</publisher></docImprint>",
-            False,
+            True,
         ),
         (
-            "invalid-docImprint-without-publisher",
+            "valid-docImprint-without-publisher",
             "<docImprint><pubPlace>Bern</pubPlace></docImprint>",
-            False,
+            True,
         ),
         (
-            "invalid-docImprint-with-multiple-places",
+            "valid-docImprint-with-multiple-places",
             "<docImprint><pubPlace>Bern</pubPlace><pubPlace>St. Gallen</pubPlace><publisher>Heidegger</publisher></docImprint>",
-            False,
+            True,
         ),
     ],
 )
