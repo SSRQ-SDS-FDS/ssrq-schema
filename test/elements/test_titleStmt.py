@@ -20,12 +20,12 @@ import pytest
                 <respStmt>
                     <persName>Ariane Huber Hernández</persName>
                     <persName>Michael Nadig</persName>
-                    <resp key='transcript'/>
+                    <resp>Transkription</resp>
                 </respStmt>
                 <respStmt>
                     <persName>Ariane Huber Hernández</persName>
                     <persName>Michael Nadig</persName>
-                    <resp key='tagging'/>
+                    <resp>XML-Codierung des Transkripts</resp>
                 </respStmt>
             </titleStmt>""",
             True,
@@ -38,12 +38,12 @@ import pytest
                 <respStmt>
                     <persName>Ariane Huber Hernández</persName>
                     <persName>Michael Nadig</persName>
-                    <resp key='transcript'/>
+                    <resp>Transkription</resp>
                 </respStmt>
                 <respStmt>
                     <persName>Ariane Huber Hernández</persName>
                     <persName>Michael Nadig</persName>
-                    <resp key='tagging'/>
+                    <resp>XML-Codierung des Transkripts</resp>
                 </respStmt>
             </titleStmt>""",
             False,
@@ -62,12 +62,12 @@ import pytest
                 <respStmt>
                     <persName>Ariane Huber Hernández</persName>
                     <persName>Michael Nadig</persName>
-                    <resp key='transcript'/>
+                    <resp>Transkription</resp>
                 </respStmt>
                 <respStmt>
                     <persName>Ariane Huber Hernández</persName>
                     <persName>Michael Nadig</persName>
-                    <resp key='tagging'/>
+                    <resp>XML-Codierung des Transkripts</resp>
                 </respStmt>
             </titleStmt>""",
             False,

@@ -7,18 +7,28 @@ import pytest
     "name, markup, result",
     [
         (
-            "valid-resp",
-            "<resp key='transcript'/>",
+            "valid-resp-de",
+            "<resp>Transkription</resp>",
             True,
         ),
         (
-            "invalid-resp-with-content",
-            "<resp key='transcript'>Walther Merz</resp>",
+            "valid-resp-fr",
+            "<resp>Transcription</resp>",
+            True,
+        ),
+        (
+            "invalid-resp",
+            "<resp>foo</resp>",
             False,
         ),
         (
-            "resp-with-invalid-key",
-            "<resp key='everything'/>",
+            "resp-without-content",
+            "<resp/>",
+            False,
+        ),
+        (
+            "invalid-resp-fr-with-key",
+            "<resp key='transcript'>Transcription</resp>",
             False,
         ),
     ],

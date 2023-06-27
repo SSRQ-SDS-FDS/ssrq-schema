@@ -12,7 +12,7 @@ from ..conftest import RNG_test_function
                 <title>Sammlung Schweizerischer Rechtsquellen</title>
                 <respStmt>
                     <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                    <resp key='publisher'/>
+                    <resp>Herausgabe</resp>
                 </respStmt>
                 <idno>SSRQ-FR-I_2_8-1-1</idno>
                 <idno type='uuid'>ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
@@ -24,7 +24,7 @@ from ..conftest import RNG_test_function
             """<seriesStmt xml:id='ssrq-sds-fds'>
                 <respStmt>
                     <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                    <resp key='publisher'/>
+                    <resp>Herausgabe</resp>
                 </respStmt>
                 <idno>SSRQ-FR-I_2_8-1-1</idno>
                 <idno type='uuid'>ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
@@ -37,7 +37,7 @@ from ..conftest import RNG_test_function
                 <title>Sammlung Schweizerischer Rechtsquellen</title>
                 <respStmt>
                     <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                    <resp key='publisher'/>
+                    <resp>Herausgabe</resp>
                 </respStmt>
                 <idno>SSRQ-FR-I_2_8-1-1</idno>
             </seriesStmt>""",
@@ -49,7 +49,7 @@ from ..conftest import RNG_test_function
                 <title>Sammlung Schweizerischer Rechtsquellen</title>
                 <respStmt>
                     <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                    <resp key='publisher'/>
+                    <resp>Herausgabe</resp>
                 </respStmt>
                 <idno>SSRQ-FR-I_2_8-1-1</idno>
                 <idno type='uuid'>ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>

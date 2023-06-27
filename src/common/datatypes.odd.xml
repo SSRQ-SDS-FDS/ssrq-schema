@@ -2310,7 +2310,7 @@
                 </valList>
             </content>
         </dataSpec>
-        
+
         <dataSpec ident="ssrq.rend.add" mode="add">
             <desc xml:lang="de" versionDate="2023-05-16">Schreibmittel der Hinzufügung</desc>
             <desc xml:lang="en" versionDate="2023-05-16">Writing means of addition</desc>
@@ -2475,6 +2475,74 @@
                         </desc>
                         <desc xml:lang="en" versionDate="2022-05-12">witness</desc>
                         <desc xml:lang="it" versionDate="2022-09-13">testimone</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+        <dataSpec ident="ssrq.role.resp.de" mode="add">
+            <desc xml:lang="de" versionDate="2023-06-27">Aufgaben / Rollen der Beteiligten des Projektes
+                (deutschsprachig)
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-06-27">Tâches / rôles des participants au projet
+                (en allemand)
+            </desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="Erstellung Faksimile">
+                        <desc xml:lang="de" versionDate="2023-05-28">Erstellung Faksimile</desc>
+                    </valItem>
+                    <valItem ident="Erfassung Metadaten im TEI-Header">
+                        <desc xml:lang="de" versionDate="2023-03-28">Metadaten im TEI-Header</desc>
+                    </valItem>
+                    <valItem ident="Anlage Register">
+                        <desc xml:lang="de" versionDate="2023-03-28">Index</desc>
+                    </valItem>
+                    <valItem ident="Herausgabe">
+                        <desc xml:lang="de" versionDate="2023-04-28">Herausgeberschaft</desc>
+                    </valItem>
+                    <valItem ident="XML-Codierung des Transkripts">
+                        <desc xml:lang="de" versionDate="2023-03-28">Auszeichnung der Transkription</desc>
+                    </valItem>
+                    <valItem ident="Transkription">
+                        <desc xml:lang="de" versionDate="2023-03-28">Transkript</desc>
+                    </valItem>
+                    <valItem ident="Qualitätskontrolle">
+                        <desc xml:lang="de" versionDate="2023-03-28">Qualitätskontrolle</desc>
+                    </valItem>
+                </valList>
+            </content>
+        </dataSpec>
+
+        <dataSpec ident="ssrq.role.resp.fr" mode="add">
+            <desc xml:lang="de" versionDate="2023-06-27">Aufgaben / Rollen der Beteiligten des Projektes
+                (französischsprachig)
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-06-27">Tâches / rôles des participants au projet
+                (en français)
+            </desc>
+            <content>
+                <valList type="closed">
+                    <valItem ident="Création d'un fac-similé">
+                        <desc xml:lang="fr" versionDate="2023-03-28">Création d'un fac-similé</desc>
+                    </valItem>
+                    <valItem ident="Saisie des métadonnées dans l'en-tête TEI">
+                        <desc xml:lang="fr" versionDate="2023-03-28">métadonnées dans le header TEI</desc>
+                    </valItem>
+                    <valItem ident="Annexe Registre">
+                        <desc xml:lang="fr" versionDate="2023-03-28">index</desc>
+                    </valItem>
+                    <valItem ident="Publication">
+                        <desc xml:lang="fr" versionDate="2023-04-28">Rédaction</desc>
+                    </valItem>
+                    <valItem ident="Codage XML du transcript">
+                        <desc xml:lang="fr" versionDate="2023-03-28">désignation d’une transcription</desc>
+                    </valItem>
+                    <valItem ident="Transcription">
+                        <desc xml:lang="fr" versionDate="2023-03-28">transcription</desc>
+                    </valItem>
+                    <valItem ident="Contrôle de qualité">
+                        <desc xml:lang="fr" versionDate="2023-03-28">contrôle de qualité</desc>
                     </valItem>
                 </valList>
             </content>
