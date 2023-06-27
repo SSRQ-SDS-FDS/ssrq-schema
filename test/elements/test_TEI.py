@@ -19,7 +19,7 @@ import pytest
                                                     <respStmt>
                                                     <persName>Ariane Huber Hernández</persName>
                                                     <persName>Michael Nadig</persName>
-                                                    <resp key="transcript"/>
+                                                    <resp>Transkription</resp>
                                                     </respStmt>
                                                 </titleStmt>
                                                 <publicationStmt>
@@ -34,7 +34,7 @@ import pytest
                                                     <title>Sammlung Schweizerischer Rechtsquellen</title>
                                                     <respStmt>
                                                         <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                                                        <resp key="publisher"/>
+                                                        <resp>Herausgabe</resp>
                                                     </respStmt>
                                                     <idno>SSRQ-FR-I_2_8-1-1</idno>
                                                     <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
@@ -107,7 +107,7 @@ import pytest
                                                     <respStmt>
                                                     <persName>Ariane Huber Hernández</persName>
                                                     <persName>Michael Nadig</persName>
-                                                    <resp key="transcript"/>
+                                                    <resp>Transkription</resp>
                                                     </respStmt>
                                                 </titleStmt>
                                                 <publicationStmt>
@@ -122,7 +122,7 @@ import pytest
                                                     <title>Sammlung Schweizerischer Rechtsquellen</title>
                                                     <respStmt>
                                                         <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                                                        <resp key="publisher"/>
+                                                        <resp>Herausgabe</resp>
                                                     </respStmt>
                                                     <idno>SSRQ-FR-I_2_8-1-1</idno>
                                                     <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>

@@ -8,12 +8,12 @@ import pytest
     [
         (
             "valid-respStmt",
-            "<respStmt><persName>Friedrich Emil Welti</persName><resp key='transcript'/></respStmt>",
+            "<respStmt><persName>Friedrich Emil Welti</persName><resp>Transkription</resp></respStmt>",
             True,
         ),
         (
             "valid-respStmt",
-            "<respStmt><orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName><resp key='publisher'/></respStmt>",
+            "<respStmt><orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName><resp>Herausgabe</resp></respStmt>",
             True,
         ),
         (
@@ -23,12 +23,12 @@ import pytest
         ),
         (
             "invalid-respStmt-with-p",
-            "<respStmt><persName>Friedrich Emil Welti</persName><resp key='transcript'/><p>foo bar foo</p></respStmt>",
+            "<respStmt><persName>Friedrich Emil Welti</persName><resp>Transkription</resp><p>foo bar foo</p></respStmt>",
             False,
         ),
         (
             "invalid-respStmt-with-attr",
-            "<respStmt facs='foo'><persName>Friedrich Emil Welti</persName><resp key='transcript'/></respStmt>",
+            "<respStmt facs='foo'><persName>Friedrich Emil Welti</persName><resp>Transkription</resp></respStmt>",
             False,
         ),
     ],
