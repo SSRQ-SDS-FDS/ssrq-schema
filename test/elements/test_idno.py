@@ -17,6 +17,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "idno-archive-invalid",
+            "<idno xml:lang='de' source='http://foo.bar http://foo.bar'>foo 123</idno>",
+            False,
+        ),
+        (
             "invalid-idno-with-whitespace-only",
             "<idno> </idno>",
             False,

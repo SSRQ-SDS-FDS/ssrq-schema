@@ -54,6 +54,11 @@
         </constraint>
     </constraintSpec>
     <attList>
+        <attDef ident="source" mode="change">
+            <datatype>
+                <dataRef key="ssrq.pointer.url"/>
+            </datatype>
+        </attDef>
         <attDef ident="type" mode="replace">
             <valList type="closed">
                 <valItem ident="uuid">
