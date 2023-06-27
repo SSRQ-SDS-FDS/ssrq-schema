@@ -854,22 +854,6 @@
             <desc xml:lang="it" versionDate="2023-05-17">Fornisce un attributo <att>source</att> la cui semantica
                 corrisponde a quella del TEI.
             </desc>
-            <constraintSpec scheme="schematron" ident="sch-att-source">
-                <desc xml:lang="en" versionDate="2023-03-07">If source is used with <gi>tei:idno</gi> no
-                    whitespace is allowed
-                </desc>
-                <constraint>
-                    <sch:pattern>
-                        <sch:rule context="tei:idno[@source]">
-                            <sch:report test="matches(./@source, '\s')" xml:lang="en">When @source
-                                is used together with
-                                <sch:name/>
-                                whitespace is not allowed.
-                            </sch:report>
-                        </sch:rule>
-                    </sch:pattern>
-                </constraint>
-            </constraintSpec>
             <attList>
                 <attDef ident="source" mode="add" usage="opt">
                     <desc xml:lang="de" versionDate="2023-03-07">Verweis auf ein anderes Stück
