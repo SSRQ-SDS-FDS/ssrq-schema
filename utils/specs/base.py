@@ -1,13 +1,12 @@
 import re
 import xml.etree.ElementTree as ET
-from typing import Callable
 
 from utils.specs.abstract import ODD_COMP_TYPES, ODDElement
 from utils.specs.attribute import AttributeSpec
 from utils.specs.config import NS_MAP
 from utils.specs.utils import split_tag_and_ns
 
-RE_PATTERN = re.compile(r"[\s\n]+")
+RE_WHITESPACE_PATTERN = re.compile(r"[\s\n]+")
 
 
 class BaseSpec:
@@ -27,6 +26,7 @@ class BaseSpec:
     def _compare_element_with_class_attributes(
         self,
         element_attributes: list[ET.Element] | None,
+        element_classes: list[ET.Element] | None,
         class_attributes: list[ET.Element] | None,
     ) -> list[AttributeSpec] | None:
         """A helper function to compare the attributes of an element with the attributes
@@ -54,31 +54,42 @@ class BaseSpec:
 
         if class_attributes is None and element_attributes is not None:
             return [
-                AttributeSpec(attr, class_attributes if class_attributes else [])
+                AttributeSpec(attr, element_classes=element_classes)
                 for attr in get_attributes_not_deleted(element_attributes)
             ]
 
         if element_attributes is None and class_attributes is not None:
             return [
-                AttributeSpec(attr, class_attributes)
+                AttributeSpec(attr, element_classes=element_classes)
                 for attr in get_attributes_not_deleted(class_attributes)
             ]
 
         assert element_attributes is not None
         assert class_attributes is not None
 
+        ident_element_attributes_deleted = [
+            attribute.get("ident")
+            for attribute in element_attributes
+            if attribute.get("mode") == "delete"
+        ]
+        attributes_not_deleted = get_attributes_not_deleted(element_attributes)
+        ident_attributes_not_deleted = [
+            attribute.get("ident") for attribute in attributes_not_deleted
+        ]
         class_attributes = get_attributes_not_deleted(class_attributes)
 
+        for class_attr in class_attributes:
+            ident = class_attr.get("ident")
+            assert ident is not None
+            if (
+                ident not in ident_element_attributes_deleted
+                and ident not in ident_attributes_not_deleted
+            ):
+                attributes_not_deleted.append(class_attr)
+
         return [
-            AttributeSpec(attribute, class_attributes)
-            for attribute in class_attributes
-            if not any(
-                [
-                    el_attribute.get("ident") == attribute.get("ident")
-                    and el_attribute.get("mode") == "delete"
-                    for el_attribute in element_attributes
-                ]
-            )
+            AttributeSpec(element=attribute, element_classes=element_classes)
+            for attribute in attributes_not_deleted
         ]
 
     def find_classes(
@@ -146,27 +157,22 @@ class BaseSpec:
             return None
 
         assert isinstance(att_list, ET.Element)
-        class_attributes = (
-            [
-                self._get_attributes_from_class(component.odd_element)
-                for c in self.classes
-                if (component := components.get(c)) is not None
-            ]
-            if self.classes is not None
-            else None
-        )
+        class_attributes: list[ET.Element] | None = None
+        element_classes: list[ET.Element] | None = None
 
-        if class_attributes is not None:
-            # flatten the list of lists using a list comprehension and filter out None values
-            class_attributes = [
-                attribute  # type: ignore
-                for attributes in class_attributes
-                if attributes is not None
-                for attribute in attributes
-            ]
+        if self.classes is not None:
+            class_attributes = []
+            element_classes = []
+            for c in self.classes:
+                component = components.get(c)
+                if component is not None:
+                    attributes = self._get_attributes_from_class(component.odd_element)
+                    if attributes is not None:
+                        class_attributes.extend(attributes)
+                    element_classes.append(component.odd_element)
 
-            if len(class_attributes) == 0:
-                class_attributes = None
+        if class_attributes is not None and len(class_attributes) == 0:
+            class_attributes = None
 
         element_attributes = (
             el_attr
@@ -178,7 +184,9 @@ class BaseSpec:
             return None
 
         return self._compare_element_with_class_attributes(
-            element_attributes=element_attributes, class_attributes=class_attributes  # type: ignore
+            element_attributes=element_attributes,
+            class_attributes=class_attributes,
+            element_classes=element_classes,
         )
 
     def find_content_elements(
@@ -263,7 +271,7 @@ class BaseSpec:
         ET.indent(example_code, space="    ", level=0)
 
         return (
-            self._desc_node_to_string(node=example_title)
+            self._desc_node_to_string(desc=example_title)
             if example_title is not None
             else None,
             re.sub(
@@ -288,69 +296,56 @@ class BaseSpec:
 
         return class_attributes if len(class_attributes) > 0 else None
 
-    def get_desc(self, element: ET.Element, lang: str) -> str:
+    def get_desc(self, element: ET.Element, lang: str, upper: bool = True) -> str:
         desc = element.find(f"./tei:desc[@xml:lang='{lang}']", namespaces=NS_MAP)
 
         if desc is None:
             return ""
-        return self._desc_node_to_string(node=desc)
+        description_rendered = self._desc_node_to_string(desc=desc)
 
-    def _desc_node_to_string(
-        self, node: ET.Element, start_with_upper: bool = True
-    ) -> str:
-        def upper_desc_start(desc: str, upper: bool) -> str:
-            if not upper:
-                return desc
-            return desc[0].upper() + desc[1:]
-
-        child_nodes = node.findall("*")
-
-        if len(child_nodes) == 0:
-            return (
-                upper_desc_start(
-                    desc=RE_PATTERN.sub(" ", node.text), upper=start_with_upper
-                )
-                if node.text is not None
-                else ""
-            )
-
-        child_nodes_dict: dict[str, ET.Element] = {
-            child_node.text.strip(): child_node
-            for child_node in node.findall("*")
-            if child_node.text is not None
-        }
-
-        return upper_desc_start(
-            RE_PATTERN.sub(
-                " ",
-                " ".join(
-                    [
-                        self._handle_node_text(
-                            child_nodes_dict=child_nodes_dict, text=text.strip()
-                        )
-                        for text in node.itertext()
-                    ]
-                ),
-            ),
-            upper=start_with_upper,
+        return (
+            self._upper_desc_start(desc=description_rendered)
+            if upper
+            else description_rendered
         )
 
-    def _handle_node_text(
-        self,
-        child_nodes_dict: dict[str, ET.Element],
-        text: str,
-        split_tag: Callable[[str], tuple[str, str]] = split_tag_and_ns,
-    ) -> str:
-        if text in child_nodes_dict.keys():
-            child = child_nodes_dict[text]
-            child_name = name if (name := split_tag(child.tag)[1]) else child.tag
-            match child_name:
-                case "gi":
-                    return f"[`<{text}/>`]({text}.md)"
-                case "att":
-                    return f"[@{text}](#{text})"
-                case "ref":
-                    return f"[{text}]({child.attrib['target']})"
-                case _:
-                    return text
-        return text
+    def _upper_desc_start(self, desc: str) -> str:
+        return desc[0].upper() + desc[1:]
+
+    def _desc_node_to_string(self, desc: ET.Element):
+        output = ""
+        if desc.text is not None:
+            output += RE_WHITESPACE_PATTERN.sub(" ", desc.text)
+        if len(desc) > 0:
+            for child in desc:
+                tag_name = split_tag_and_ns(child.tag)[1]
+                tail_text = (
+                    RE_WHITESPACE_PATTERN.sub(" ", child.tail)
+                    if child.tail is not None
+                    else ""
+                )
+                child_text = (
+                    RE_WHITESPACE_PATTERN.sub(" ", child.text)
+                    if child.text is not None
+                    else ""
+                )
+                match tag_name:
+                    case "gi":
+                        output += (
+                            f"[`<{child_text}/>`]({child_text}.md) {tail_text}".strip()
+                        )
+                    case "att":
+                        output += f"[@{child_text}](#{child_text}) {tail_text}".strip()
+                    case "ref":
+                        output += f"[{child_text}]({child.attrib['target']}) {tail_text}".strip()
+                    case "list":
+                        output += "\n\n" + "\n".join(
+                            [
+                                "- " + self._desc_node_to_string(child)
+                                for child in child
+                                if isinstance(child, ET.Element)
+                            ]
+                        )
+                    case _:
+                        output += (child_text + tail_text).strip()
+        return re.sub((r"\s+([\.,:;])"), r"\1", output)

@@ -163,9 +163,81 @@ def test_find_el_attributes(
         for attribute in el_spec.attributes:
             assert isinstance(attribute, AttributeSpec)
             assert attribute.ident in attributes
-            descriptions = attribute.attr_element.findall("tei:desc", namespaces=NS_MAP)
-            assert len(descriptions) > 1
-            assert len(descriptions) <= 4
+
+
+@pytest.mark.parametrize(
+    "element_name, attribute, classes",
+    [
+        (
+            "date",
+            "period",
+            ["att.datable"],
+        ),
+    ],
+)
+def test_attribute_classes(
+    example_elementSpec: EL_FINDER,
+    example_odd: str,
+    element_name: str,
+    attribute: str,
+    classes: list[str],
+):
+    odd_reader = ODDReader(odd=example_odd)
+    example_el_spec = example_elementSpec(element_name)
+    assert example_el_spec is not None
+    el_spec = ElementSpec(element=example_el_spec)
+    assert el_spec.odd_type == "elementSpec"
+    el_spec.attributes = el_spec.find_attributes(
+        components=odd_reader.components  # type: ignore
+    )
+    assert el_spec.attributes is not None
+    attribute_spec = [attr for attr in el_spec.attributes if attr.ident == attribute]
+    assert len(attribute_spec) == 1
+    attribute_spec = attribute_spec[0]
+    assert isinstance(attribute_spec, AttributeSpec)
+    assert attribute_spec.classes is not None
+    attribute_classes = [class_.get("ident") for class_ in attribute_spec.classes]
+    for c in classes:
+        assert c in attribute_classes
+
+
+@pytest.mark.parametrize(
+    "element_name, attribute, lang_and_text",
+    [
+        (
+            "date",
+            "dur-iso",
+            [("de", "Erfassung Zeitspanne nach"), ("fr", "Saisie Période")],
+        ),
+    ],
+)
+def test_resolved_attribute_descriptions(
+    example_elementSpec: EL_FINDER,
+    example_odd: str,
+    element_name: str,
+    attribute: str,
+    lang_and_text: list[tuple[str, str]],
+):
+    odd_reader = ODDReader(odd=example_odd)
+    example_el_spec = example_elementSpec(element_name)
+    assert example_el_spec is not None
+    el_spec = ElementSpec(element=example_el_spec)
+    assert el_spec.odd_type == "elementSpec"
+    el_spec.attributes = el_spec.find_attributes(
+        components=odd_reader.components  # type: ignore
+    )
+    assert el_spec.attributes is not None
+    attribute_spec = [attr for attr in el_spec.attributes if attr.ident == attribute]
+    assert len(attribute_spec) == 1
+    attribute_spec = attribute_spec[0]
+    assert isinstance(attribute_spec, AttributeSpec)
+    for lang, text in lang_and_text:
+        lang_desc = attribute_spec.attr_element.find(
+            f"tei:desc[@xml:lang = '{lang}']", namespaces=NS_MAP
+        )
+        assert lang_desc is not None
+        assert lang_desc.text is not None
+        assert text in lang_desc.text
 
 
 def test_spec_desc_to_md(example_elementSpec: EL_FINDER):

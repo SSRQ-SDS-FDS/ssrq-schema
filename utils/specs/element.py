@@ -74,8 +74,9 @@ class ElementSpec(BaseSpec):
             return None
 
         doc.add_heading(section_title, level=2)
-        for attribute in self.attributes:
+        for attribute in sorted(self.attributes, key=lambda x: x.ident):
             doc.add_heading(f"@{attribute.ident}", level=3)
+
             self._desc_to_markdown(el=attribute.attr_element, lang=lang, doc=doc)
 
     def _list_content_model(
@@ -151,7 +152,7 @@ class ElementSpec(BaseSpec):
     ) -> None:
         if desc_title is not None:
             doc.add_heading(desc_title, level=2)
-        doc.add_paragraph(self.get_desc(element=el, lang=lang))
+        doc.add_raw(self.get_desc(element=el, lang=lang))
 
     def val_items_to_markdown(
         self,
