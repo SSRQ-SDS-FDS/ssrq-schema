@@ -5,14 +5,14 @@
              module="core"
              mode="change"
              xmlns:rng="http://relaxng.org/ns/structure/1.0">
-   <desc xml:lang="de" versionDate="2023-04-28">Beschreibt die Art der Verantwortung. Also
-        Transkription, Auszeichnung, Identifikation etc.
+   <desc xml:lang="de" versionDate="2023-06-27">Beschreibt die Art der Verantwortung. Also
+        Transkription, Auszeichnung, Qualitätskontrolle etc.
     </desc>
-   <desc xml:lang="en" versionDate="2023-04-28">Describes the type of responsibility:
-        transcription, award, identification etc.
+   <desc xml:lang="en" versionDate="2023-06-27">Describes the type of responsibility:
+      transcription, award, qualitycheck etc.
     </desc>
-   <desc xml:lang="fr" versionDate="2023-04-28">Décrit le type de responsabilité. Donc
-        transcription, marquage, identification, etc.
+   <desc xml:lang="fr" versionDate="2023-06-27">Décrit le type de responsabilité. Donc
+      transcription, marquage, contrôle de qualité  etc.
     </desc>
     <classes mode="replace"/>
    <content>
@@ -30,8 +30,17 @@
          </respStmt>
       </egXML>
    </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
+   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-06-27">
       <p>Responsible for the transcript</p>
+      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <respStmt>
+            <persName>Claudia Sutter</persName>
+            <resp>Transkription</resp>
+         </respStmt>
+      </egXML>
+   </exemplum>
+   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-06-27">
+      <p>Responsable de la transcription</p>
       <egXML xmlns="http://www.tei-c.org/ns/Examples">
          <respStmt>
             <persName>Claudia Sutter</persName>
