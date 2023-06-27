@@ -1,8 +1,11 @@
 import xml.etree.ElementTree as ET
 
+from snakemd import Document  # type: ignore
+
+from utils.logger import LOGGER
 from utils.specs.abstract import ODDElement
 from utils.specs.config import NS_MAP
-from utils.specs.utils import split_tag_and_ns
+from utils.specs.utils import split_tag_and_ns, translate_datatype
 
 
 class AttributeSpec:
@@ -25,6 +28,75 @@ class AttributeSpec:
         self.content = self._resolve_content(
             element=self.attr_element, components=components
         )
+
+    def content_values_to_markdown(
+        self, doc: Document, lang: str, translations: dict[str, str]
+    ) -> None:
+        """
+        Transforms the content values of the attribute to markdown and adds them to the
+        document. If the attribute has no content values, nothing is added to the
+        document.
+
+        Args:
+            doc (Document): The document to add the content values to.
+        """
+        if self.content is None:
+            return None
+
+        output: list[str] = []
+
+        for content_part in self.content:
+            _, tag_name = split_tag_and_ns(content_part.tag)
+            match tag_name:
+                case "data":
+                    name_translation = (
+                        translate_datatype(name, translations=translations)
+                        if (name := content_part.get("type"))
+                        else ""
+                    )
+                    restriction = (
+                        f" – {translations['restriction']}: {translations[name] + ' ' if (name := param.get('name')) else ''}`{param.text}`"
+                        if (param := content_part.find("rng:param", namespaces=NS_MAP))
+                        else ""
+                    )
+                    output.append(f"{name_translation}{restriction}")
+
+                case "dataRef":
+                    name_translation = (
+                        translate_datatype(name, translations=translations)
+                        if (name := content_part.get("name"))
+                        else ""
+                    )
+                    restriction = (
+                        f" – {translations['restriction']}: {translations['pattern']} `{r}`"
+                        if (r := content_part.get("restriction"))
+                        else ""
+                    )
+                    output.append(f"{name_translation}{restriction}")
+
+                case "ref":
+                    LOGGER.warning(
+                        f"Ignored unnresolved ref {content_part.get('name')} in attribute {self.ident}"
+                    )
+
+                case "valItem":
+                    desc = content_part.find(
+                        f"tei:desc[@xml:lang = '{lang}']", namespaces=NS_MAP
+                    )
+
+                    if desc is not None and desc.text is not None:
+                        output.append(desc.text)
+                        continue
+
+                    output.append(content_part.attrib["ident"])
+
+                case _:
+                    raise ValueError(
+                        f"Can't convert to markdown. Unexpected tag name: {tag_name}"
+                    )
+
+        doc.add_paragraph(f"*{translations['values']}*")
+        doc.add_unordered_list(output)
 
     def _add_description(self) -> None:
         """Add the description of the attribute to the attribute element if it does not
@@ -63,12 +135,33 @@ class AttributeSpec:
             if split_tag_and_ns(child.tag)[1] not in [
                 "constraintSpec",
                 "desc",
+                "gloss",
                 "exemplum",
             ]:
                 definitions.append(child)
 
         if len(definitions) == 0:
-            return None
+            if self.classes is None:
+                return None
+
+            class_containing_attribute = [
+                class_with_attr
+                for c in self.classes
+                if (
+                    class_with_attr := c.find(
+                        f".//tei:attDef[@ident = '{self.ident}']", namespaces=NS_MAP
+                    )
+                )
+                is not None
+            ]
+
+            if len(class_containing_attribute) == 0:
+                return None
+
+            for class_containing_attr in class_containing_attribute:
+                d = self._get_definition(context=class_containing_attr)
+                if d is not None:
+                    definitions.append(d)
 
         return definitions[0]
 
@@ -94,11 +187,24 @@ class AttributeSpec:
         values_found = []
 
         for content_part in data.iter():
-            key_or_name = (
-                key
-                if (key := content_part.attrib.get("key"))
-                else content_part.attrib.get("name")
-            )
+            _, tag_name = split_tag_and_ns(content_part.tag)
+
+            key_or_name: str | None = None
+
+            match tag_name:
+                case "data":
+                    key_or_name = content_part.get("type")
+                case "dataRef":
+                    key_or_name = (
+                        key
+                        if (key := content_part.get("key"))
+                        else content_part.get("name")
+                    )
+                case "ref":
+                    key_or_name = content_part.get("name")
+                case _:
+                    key_or_name = None
+
             if key_or_name is not None:
                 content_spec = components.get(key_or_name)
 

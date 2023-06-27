@@ -326,6 +326,7 @@ def test_example_to_string(
             "rend",
             2,
         ),
+        ("delSpan", "spanTo", 1),
     ],
 )
 def test_attribute_content(

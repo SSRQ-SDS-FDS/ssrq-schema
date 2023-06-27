@@ -47,7 +47,7 @@ class ElementSpec(BaseSpec):
         self._create_attribute_desc(
             components=components,
             lang=lang,
-            section_title=lang_translations["attr"],
+            translations=lang_translations,
             doc=doc,
         )
 
@@ -65,7 +65,7 @@ class ElementSpec(BaseSpec):
         self,
         components: dict[str, ODDElement],
         lang: str,
-        section_title: str,
+        translations: dict[str, str],
         doc: Document,
     ):
         self.attributes = self.find_attributes(components=components)
@@ -73,11 +73,19 @@ class ElementSpec(BaseSpec):
         if self.attributes is None:
             return None
 
-        doc.add_heading(section_title, level=2)
+        doc.add_heading(translations["attr"], level=2)
+
         for attribute in sorted(self.attributes, key=lambda x: x.ident):
             doc.add_heading(f"@{attribute.ident}", level=3)
 
             self._desc_to_markdown(el=attribute.attr_element, lang=lang, doc=doc)
+
+            if not hasattr(attribute, "content"):
+                attribute.add_content(components=components)
+
+            attribute.content_values_to_markdown(
+                doc=doc, lang=lang, translations=translations
+            )
 
     def _list_content_model(
         self,
