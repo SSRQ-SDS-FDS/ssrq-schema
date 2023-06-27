@@ -17,10 +17,14 @@
       <memberOf key="model.titlepagePart"/>
    </classes>
    <content>
-      <sequence>
-         <elementRef key="pubPlace" minOccurs="1" maxOccurs="1"/>
-         <elementRef key="publisher" minOccurs="1" maxOccurs="1"/>
-      </sequence>
+      <alternate>
+            <elementRef key="pubPlace" minOccurs="1" maxOccurs="unbounded"/>
+            <elementRef key="publisher" minOccurs="1" maxOccurs="1"/>
+            <sequence>
+                <elementRef key="pubPlace" minOccurs="1" maxOccurs="unbounded"/>
+                <elementRef key="publisher" minOccurs="1" maxOccurs="1"/>
+            </sequence>
+      </alternate>
    </content>
    <exemplum xml:lang="" type="ssrq-doc-example" versionDate="2023-04-05">
       <p>Einfaches Beispiel für den Inhalt von tei:docImprint:</p>
