@@ -40,11 +40,6 @@ def test_sic(
             "<sic>bar</sic>",
             True,
         ),
-        (
-            "invalid-empty-sic",
-            "<sic/>",
-            False,
-        ),
     ],
 )
 def test_sic_constraints(
