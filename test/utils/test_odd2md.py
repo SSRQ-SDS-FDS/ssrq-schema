@@ -311,3 +311,46 @@ def test_example_to_string(
         assert isinstance(example_string[1], str)
         assert "measure" in example_string[1]
         assert "type" in example_string[1]
+
+
+@pytest.mark.parametrize(
+    "element_name, attribute_name, content_len",
+    [
+        (
+            "gap",
+            "reason",
+            3,
+        ),
+        (
+            "add",
+            "rend",
+            2,
+        ),
+    ],
+)
+def test_attribute_content(
+    example_elementSpec: EL_FINDER,
+    example_odd: str,
+    element_name: str,
+    attribute_name: str,
+    content_len: int,
+):
+    odd_reader = ODDReader(odd=example_odd)
+    example_el_spec = example_elementSpec(element_name)
+    assert example_el_spec is not None
+    el_spec = ElementSpec(element=example_el_spec)
+    assert el_spec.odd_type == "elementSpec"
+    el_spec.attributes = el_spec.find_attributes(
+        components=odd_reader.components  # type: ignore
+    )
+    assert el_spec.attributes is not None
+    attribute_spec = [
+        attr for attr in el_spec.attributes if attr.ident == attribute_name
+    ]
+    assert len(attribute_spec) == 1
+    attribute_spec = attribute_spec[0]
+    assert isinstance(attribute_spec, AttributeSpec)
+    attribute_spec.add_content(odd_reader.components)
+    assert hasattr(attribute_spec, "content")
+    assert attribute_spec.content is not None
+    assert len(attribute_spec.content) == content_len
