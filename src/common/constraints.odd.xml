@@ -62,7 +62,7 @@
             <constraint>
                 <sch:pattern>
                     <sch:rule
-                            context="tei:publisher|tei:pubPlace|tei:*[name() = ('ab', 'abbr', 'add', 'bibl', 'condition',
+                            context="tei:publisher|tei:pubPlace|tei:*[name() = ('ab', 'abbr', 'add', 'bibl',
                             'del', 'expan', 'foreign', 'fw', 'head', 'hi', 'item', 'label', 'lem', 'licence',
                             'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'q', 'quote', 'repository',
                             'seg', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
