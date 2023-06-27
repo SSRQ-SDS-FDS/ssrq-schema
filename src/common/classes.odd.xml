@@ -427,6 +427,7 @@
                         <valItem ident="he"/>
                         <valItem ident="it"/>
                         <valItem ident="la"/>
+                        <valItem ident="rm"/>
                     </valList>
                 </attDef>
                 <attDef ident="xml:base" mode="delete"/>
@@ -731,12 +732,16 @@
                         <dataRef name="IDREF"/>
                     </datatype>
                     <constraintSpec ident="spanTo-points-to-following" scheme="schematron" mode="replace">
-                        <desc xml:lang="en" versionDate="2023-06-22">The @spanTo attribute must point to an element following the
-                            current element – this rules replaces the original TEI constraint, because we're using xs:IDREF.</desc>
+                        <desc xml:lang="en" versionDate="2023-06-22">The @spanTo attribute must point to an element
+                            following the current element – this rules replaces the original TEI constraint, because
+                            we're using xs:IDREF.
+                        </desc>
                         <constraint>
                             <sch:rule context="tei:*[@spanTo]">
                                 <sch:assert test="id(@spanTo) and following::*[@xml:id=(current()/@spanTo)]">
-                                    The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the current element <sch:name/>
+                                    The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the
+                                    current element
+                                    <sch:name/>
                                 </sch:assert>
                             </sch:rule>
                         </constraint>
