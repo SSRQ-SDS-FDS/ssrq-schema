@@ -4,15 +4,8 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 
 - [SSRQ-Schema](#ssrq-schema)
   - [Initiale Zielsetzung der Entwicklung](#initiale-zielsetzung-der-entwicklung)
-  - [To-Dos](#to-dos)
-    - [Inhaltlich](#inhaltlich)
-      - [Generelles](#generelles)
-      - [Header](#header)
-      - [Text](#text)
-    - [Technische Umsetzung](#technische-umsetzung)
   - [Dokumentation](#dokumentation)
     - [Versionierung](#versionierung)
-    - [Aufbau](#aufbau)
     - [Was ist wo?](#was-ist-wo)
       - [`doc`](#doc)
       - [`src`](#src)
@@ -24,10 +17,11 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
       - [Anpassung von Inhaltstypen](#anpassung-von-inhaltstypen)
       - [Anpassung von Attributwerten](#anpassung-von-attributwerten)
       - [Anpassung / Erstellung von Tests](#anpassung--erstellung-von-tests)
-      - [Randnotiz Perfomance der Tests](#randnotiz-perfomance-der-tests)
     - [Schema erzeugen](#schema-erzeugen)
       - [Erzeugung einer neuen Version und Upload](#erzeugung-einer-neuen-version-und-upload)
-      - [Erzeugung der Dokuemtation](#erzeugung-der-dokuemtation)
+      - [Erzeugung der Dokumentation](#erzeugung-der-dokumentation)
+        - [Befehle](#befehle)
+        - [Datei- / Ordnerstruktur](#datei---ordnerstruktur)
 
 ## Initiale Zielsetzung der Entwicklung
 
@@ -38,58 +32,6 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
 5. Kopplung mit (Oxygen-)Templates
 6. Erzeugung einer Web-Dokumentation aus dem Schema heraus (ersetzt die Dokumentation im Wiki)
 7. XSLT-Skripte (o.ä.) zur Migration zwischen Datenständen
-
-## To-Dos
-
-### Inhaltlich
-
-#### Generelles
-
-- [ ] Verweise ‚die alten Dateien‘ prüfen und bereinigen [#siehe 3036](https://histhub.ssrq-sds-fds.ch/redmine/issues/3036)
-- [x] Verwendung von `@rendition` verbieten [#siehe 3048](https://histhub.ssrq-sds-fds.ch/redmine/issues/3048)
-- [x] Verwendung von `@corresp` verbieten
-- [ ] Verwendung von `@rend` prüfen [#siehe 3051](https://histhub.ssrq-sds-fds.ch/redmine/issues/3051)
-- [ ] Verwendung von `@cert` prüfen [#siehe 3052](https://histhub.ssrq-sds-fds.ch/redmine/issues/3052)
-- [ ] Verwendung von `@resp` prüfen [#siehe 3053](https://histhub.ssrq-sds-fds.ch/redmine/issues/3053)
-- [ ] Attribut `@source` nur eingeschränkt zulassen [#siehe 3056](https://histhub.ssrq-sds-fds.ch/redmine/issues/3056)
-- [x] Verwendung aller Attributklassen prüfen
-
-#### Header
-
-- [ ] Speicherung der Archivsignatur / URL [siehe #1512](https://histhub.ssrq-sds-fds.ch/redmine/issues/1512?issue_count=24&issue_position=10&next_issue_id=1458&prev_issue_id=2548)
-- [x] `<settlement/>` zu `<msIdentifier/>` hinzufügen [#3033](https://histhub.ssrq-sds-fds.ch/redmine/issues/3033?issue_count=11&issue_position=1&next_issue_id=3032)
-- [x] Persitente Identifikatoren über UUIDs [siehe #2995](https://histhub.ssrq-sds-fds.ch/redmine/issues/2995)
-- [ ] Content-Model für `<msItem/>` definieren [siehe #3007](https://histhub.ssrq-sds-fds.ch/redmine/issues/3007)
-- [ ] Ergänzung von `<change/>`, um ‚Milestone‘-Änderungen zu verzeichnen [siehe #1441](https://histhub.ssrq-sds-fds.ch/redmine/issues/1441?issue_count=18&issue_position=10&next_issue_id=1424&prev_issue_id=2548)
-- [ ] mehrere alternative Idenfikatoren erlauben [siehe #2880](https://histhub.ssrq-sds-fds.ch/redmine/issues/2880)
-- [x] sprachunabhängige Kodierung des Trägermaterials [siehe #2663](https://histhub.ssrq-sds-fds.ch/redmine/issues/2663)
-- [ ] Werte für `<head/>` in Liste bibl. Angaben vereinheitlichen [siehe #2665](https://histhub.ssrq-sds-fds.ch/redmine/issues/2665)
-- [ ] `<resp/>` vereinheitlichen [siehe #3070](https://histhub.ssrq-sds-fds.ch/redmine/issues/3070)
-- [ ] Content Model `<condition/>` klären [siehe #3079](https://histhub.ssrq-sds-fds.ch/redmine/issues/3079)
-- [x] Werte / Content Model für `<damage/>` bestimmen [siehe #3080](https://histhub.ssrq-sds-fds.ch/redmine/issues/3080)
-- [x] `<date/>` sollte innerhalb von `<publicationStmt/>` optional sein [siehe #3084](https://histhub.ssrq-sds-fds.ch/redmine/issues/3084)
-
-#### Text
-
-- [x] Sauberes Content-Model für `tei:text` definieren [siehe #3031](https://histhub.ssrq-sds-fds.ch/redmine/issues/3031)
-- [ ] Hashtags (Doppelkreuze...) nur noch für bestimmte Fälle (interne Verweise) erlauben [siehe #1458](https://histhub.ssrq-sds-fds.ch/redmine/issues/1458?issue_count=21&issue_position=10&next_issue_id=1441&prev_issue_id=2548)
-- [ ] eine Ersetzung muss immer eine Löschung mit Inhalt enthalten [siehe #2548](https://histhub.ssrq-sds-fds.ch/redmine/issues/2548?issue_count=13&issue_position=6&next_issue_id=1361&prev_issue_id=2634)
-- [x] Werte von `@n` als Teil von `tei:pb` einschränken [siehe #3047](https://histhub.ssrq-sds-fds.ch/redmine/issues/3047)
-- [x] Content-Model für `@scribe` überarbeiten [siehe #1311](https://histhub.ssrq-sds-fds.ch/redmine/issues/1311)
-- [ ] Attribut `@place` für `tei:figure` erlauben [siehe #3049](https://histhub.ssrq-sds-fds.ch/redmine/issues/3049)
-- [x] `tei:anchor` innerhalb der Zelle einer Tabelle erlauben [siehe #3006](https://histhub.ssrq-sds-fds.ch/redmine/issues/3006?issue_count=10&issue_position=1&next_issue_id=3005)
-- [ ] Werte für `@medium` einschränken [siehe #3064](https://histhub.ssrq-sds-fds.ch/redmine/issues/3064)
-- [ ] `@rend` im Falle von `tei:addSpan|tei:add` durch `@medium` ersetzen [siehe #3065](https://histhub.ssrq-sds-fds.ch/redmine/issues/3065)
-- [x] Verwendung von `@wit` sowie Erfassung von Metadaten referenzierter Textzeugen klären [siehe #1360](https://histhub.ssrq-sds-fds.ch/redmine/issues/1360)
-- [x] Attribut `@type` für `<text/>` mit den Werten summary oder transcript verpflichtend festlegen [siehe #3074](https://histhub.ssrq-sds-fds.ch/redmine/issues/3074)
-- [ ] Klärung Content-Model `<row/>` [siehe #3076](https://histhub.ssrq-sds-fds.ch/redmine/issues/3076)
-
-### Technische Umsetzung
-
-- [ ] Aufteilung des Schemas bestimmen
-- [x] Pipeline zur Erzeugung des Schemas erstellen
-- [x] Benötigte Stylesheets aus den TEI-Stylesheets bestimmen und sinnvoll einbinden (Submodule?)
-- [ ] Welche Schritte sind notwendig, um die bestehenden Daten an das neue Schema anzupassen?
 
 ## Dokumentation
 
@@ -103,10 +45,6 @@ MAJOR.MINOR.PATCH
 
 Die Versionsnummer wird als Tag in der Git-History hinterlegt und ist zudem in der Datei `pyproject.toml` in der Tabelle `ssrq.schema.meta` hinterlegt. Die kompilierten Versionen des Schemas folgen dem Muster `tei-ssrq-schema-version.(rng|odd)` und verwenden die in dieser Projektkonfiguration hinterlegte Versionnumer.
 
-### Aufbau
-
-ToDo
-
 ### Was ist wo?
 
 Das Repository besteht aus vier verschiedenen Bereichen:
@@ -118,7 +56,7 @@ Das Repository besteht aus vier verschiedenen Bereichen:
 
 #### `doc`
 
-ToDo
+Siehe [Erzeugung der Dokumentation](#erzeugung-der-dokumentation).
 
 #### `src`
 
@@ -138,12 +76,12 @@ ToDo
 #### Verwendete Software / Technologien
 
 - [jing](https://github.com/relaxng/jing-trang)
+- [mkdocs](https://www.mkdocs.org)
 - [poetry](https://python-poetry.org)
 - [pytest](https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html)
 - [saxonche](https://pypi.org/project/saxonche/)
 - [TEI ODD](https://tei-c.org/guidelines/customization/getting-started-with-p5-odds/)
 - [TEI Stylesheets](https://github.com/TEIC/Stylesheets)
-- ...
 
 #### Einrichtung / Anforderungen an die Umgebung
 
@@ -177,9 +115,9 @@ run test -s
 
 #### Anpassung von Übersetzungen
 
-Das Schema ist in vier verschiedene Sprachen übersetzt: de, fr, en, it
+Das Schema ist in vier verschiedene Sprachen übersetzt: de, fr (sowie z.T. en und it)
 
-Beschreibungen von Elementen werden auf deutsch, englisch und franzözisch verfasst. Die Spezifikation eines Element (siehe [/src/elements](/src/elements)) sollte immer ein Element `<desc/>` je Sprache enthalten. Für das Element `<cell/>` sieht das bspw. so aus:
+Beschreibungen von Elementen werden i.d.R. in Deutsch, Englisch und Franzözisch verfasst. Die Spezifikation eines Element (siehe [/src/elements](/src/elements)) sollte immer ein Element `<desc/>` je Sprache enthalten. Für das Element `<cell/>` sieht das bspw. so aus:
 
 ```xml
 <desc xml:lang="de" versionDate="2023-03-03">Auszeichnung von Tabellenzellen.</desc>
@@ -271,15 +209,8 @@ def test_text(
     validator = RNGJingValidator()
     writer.write(name, markup)
 
-    # ACT
-    validator.validate(
-        sources=writer.parse_files(),
-        schema=element_schema["text"],
-        file_pattern=writer.construct_file_pattern(),
-    )
-
-    # ASSERT
-    assert len(validator.get_invalid()) == (0 if result else 1)
+    # ACT & ASSERT innerhalb der generischen Funktion `test_element_with_rng`
+    test_element_with_rng("text", name, markup, result, False)
 ```
 
 Sollen nur die Tests eines Elements ausgeführt werden, dann kann dazu folgender Befehl verwendet werden:
@@ -288,16 +219,37 @@ Sollen nur die Tests eines Elements ausgeführt werden, dann kann dazu folgender
 run test test/elements/test_cell.py
 ```
 
-#### Randnotiz Perfomance der Tests
-
-Bevor die Tests erzeugt werden, wird ein neues RNG-Schema basierend auf den Quelldateien in `src` erzeugt. Die Erzeugung der Schemadatei hängt vom jeweiligen Netzwerk ab, da hier der Server des TEI-Consortiums angefragt bei. In der Praxis hat sich gezeigt, dass eine VPN-Verbindung zur Uni dies drastisch beschleunigen kann.
-
 ### Schema erzeugen
 
 #### Erzeugung einer neuen Version und Upload
 
-ToDo
+Die Version eines Schemas ist je Inhaltstyp in der Datei `pyproject.toml` festgelegt. Sieh hierzu den Abschnitt [Versionierung](#versionierung). Der Befehl
 
-#### Erzeugung der Dokuemtation
+```sh
+run compile
+```
 
-Todo
+erzeugt die jeweiligen Schemadateien. Je Inhaltstyp werden eine `.odd` sowie eine `.rng` im Ordner `/dist` gespeichert.
+
+#### Erzeugung der Dokumentation
+
+Die Dokumentation für das Schema zur Validierung der Transkriptionen der ‚Stücke‘ (der Quelldokumente) wird aus dem ODD selbst erzeugt. Mithilfe des Dokumentations-Frameworks [mkdocs](https://www.mkdocs.org) wird eine statische HTML-Seite erzeugt. Diese beinhaltet sowohl die Dokumentation der einzelnen Tags als auch erläuternde Texte zu philologischen Grundlagenentscheidungen.
+
+##### Befehle
+
+- `run serve-docs`: Erzeugt die Dokumentation und startet zugleich einen Webserver (gedacht für die lokale Entwicklung)
+- `run build-docs`: Generiert die statische Dokumentationsseite. Das Ergebnis wird im Ordner `/site` abgelegt.
+
+##### Datei- / Ordnerstruktur
+
+Die Quelldateien für die Dokumentation sind einerseits die einzelnen Elementdefinitionen, diese befinden sich `/src/elements` und andererseits spezifische Dateien für die Dokuseite:
+
+- `mkdocs.yml`: Konfigurationsdatei für `mkdocs`; enthält ebenso Übersetzungen für die Navigation
+- `utils/odd2md.py`: Python-Skript zur Umwandlung der ODD-Datei in einzelne Markdown-Dateien je Element (Quelle ist ein kompiliertes ODD)
+- `utils/hook.py`: Hook (‚Event-Skript‘), welches von `mkdocs` beim Start aufgerufen wird – der Hook bindet wiederum `odd2md.py` ein
+- `docs`: grundlegende Quelldateien für die Dokuseite
+  - `index.md`: Startseite (das Kürzel `.de` oder `.fr` verweist auf die jeweilige Sprachversion)
+  - `assets`: CSS, Bilddateien usw.
+  - `base`: Markdowndateien mit statischen Beschreibungstexten (bspw. Datierungsrichtlinien)
+  - `elements`: leerer Ordner, in welchen die Markdowndateien je Element temporär gespeichert werden
+  - `translations`: Übersetzungen für Bestandteile des UIs / des Inhalts

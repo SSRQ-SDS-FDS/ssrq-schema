@@ -69,12 +69,12 @@ def load_example(name: str) -> str:
 def change_rng_start(rng: str, name: str) -> str:
     """Change the start element of the RNG file to the given name."""
     with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")
+        proc.set_configuration_property(name="xi", value="on")  # type: ignore
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(xml_text=rng)
-        xsltproc.set_parameter("start-el-name", proc.make_string_value(name))
+        xsltproc.set_parameter("start-el-name", proc.make_string_value(name))  # type: ignore
 
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(XSLTS["change-start"])
         )
 
