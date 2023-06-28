@@ -57,6 +57,8 @@ class ElementSpec(BaseSpec):
             doc=doc,
         )
 
+        self._list_tei_references(translations=lang_translations, doc=doc)
+
         if path is not None:
             return doc.dump(name=f"{self.ident}.{lang}", dir=path)
         return doc.__str__()
@@ -154,6 +156,21 @@ class ElementSpec(BaseSpec):
                 doc.add_paragraph(title)
 
             doc.add_code(code=code, lang="xml")
+
+    def _list_tei_references(self, translations: dict[str, str], doc: Document) -> None:
+        list_ref = self.odd_element.find("tei:listRef", namespaces=NS_MAP)
+
+        if list_ref is None:
+            return None
+
+        doc.add_heading(translations["teiRef"], level=2)
+
+        doc.add_unordered_list(
+            [
+                f"[{ref.text}]({ref.get('target')})"
+                for ref in list_ref.findall("tei:ref", namespaces=NS_MAP)
+            ]
+        )
 
     def _desc_to_markdown(
         self, lang: str, el: ET.Element, doc: Document, desc_title: str | None = None
