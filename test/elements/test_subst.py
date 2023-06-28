@@ -17,12 +17,7 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-subst-with-xml-id",
-            "<subst xml:id='bla'><add place='left_top'>bar</add><del>foo</del></subst>",
-            True,
-        ),
-        (
-            "invalid-subst-with-wrong-attributes",
+            "invalid-subst-with-attributes",
             "<subst type='bla'><add place='left_top'>bar</add><del>foo</del></subst>",
             False,
         ),
