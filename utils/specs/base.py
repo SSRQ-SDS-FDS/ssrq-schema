@@ -274,12 +274,8 @@ class BaseSpec:
             self._desc_node_to_string(desc=example_title)
             if example_title is not None
             else None,
-            re.sub(
-                r'<egXML (xmlns:ns\d=".*")+>',
-                "<egXML>",
-                ET.tostring(example_code, encoding="unicode", method="xml").replace(
-                    "ns0:", ""
-                ),
+            ET.tostring(example_code, encoding="unicode", method="xml").replace(
+                "ns0:", ""
             ),
         )
 
