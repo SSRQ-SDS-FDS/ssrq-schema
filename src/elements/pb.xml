@@ -4,121 +4,118 @@
              ident="pb"
              module="core"
              mode="change">
-   <classes mode="replace">
-      <memberOf key="model.milestoneLike"/>
-      <memberOf key="att.global"/>
-      <memberOf key="att.global.facs"/>
-      <memberOf key="att.typed"/>
-   </classes>
-   <attList>
-      <attDef ident="n" mode="change">
-         <desc xml:lang="de" versionDate="2023-04-06">Angabe der originalen Paginierung oder
+    <classes mode="replace">
+        <memberOf key="model.milestoneLike"/>
+        <memberOf key="att.global"/>
+        <memberOf key="att.global.facs"/>
+        <memberOf key="att.typed"/>
+    </classes>
+    <attList>
+        <attDef ident="n" mode="change">
+            <desc xml:lang="de" versionDate="2023-04-06">Angabe der originalen Paginierung oder
                 Foliierung.
             </desc>
-         <desc xml:lang="en" versionDate="2023-04-06">Indication of the original pagination or
+            <desc xml:lang="en" versionDate="2023-04-06">Indication of the original pagination or
                 foliation.
             </desc>
-         <desc xml:lang="fr" versionDate="2023-04-06">Indication de la pagination ou du foliotage
+            <desc xml:lang="fr" versionDate="2023-04-06">Indication de la pagination ou du foliotage
                 d'origine.
             </desc>
-         <datatype>
-            <dataRef name="string" restriction="(\d+|[IVXCL]+)[rv]?"/>
-         </datatype>
-      </attDef>
-      <attDef ident="type" mode="replace">
-         <desc xml:lang="de" versionDate="2023-06-16">Typ des Seitenfangs</desc>
-         <desc xml:lang="fr" versionDate="2023-06-16">Type d'appendice latéral</desc>
-         <desc xml:lang="en" versionDate="2023-06-16">Type of page change</desc>
-         <valList type="closed">
-            <valItem ident="original">
-               <desc xml:lang="de" versionDate="2023-04-06">Originalseitenwechsel</desc>
-               <desc xml:lang="it" versionDate="2023-04-06">Impaginazione originale</desc>
-               <desc xml:lang="en" versionDate="2023-04-06">Original pagination</desc>
-               <desc xml:lang="fr" versionDate="2023-04-06">Saut de page original</desc>
-            </valItem>
-         </valList>
-      </attDef>
-      <attDef ident="xml:lang" mode="delete"/>
-      <attDef ident="break" mode="delete"/>
-      <attDef ident="rend" mode="delete"/>
-      <attDef ident="resp" mode="delete"/>
-      <attDef ident="cert" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Beispiel für eine Originalfoliierung:</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <pb n="1r" type="original"/>
-         <lb/>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Exemple pour des folios originaux :</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <pb n="1r" type="original"/>
-         <lb/>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>ACHTUNG: Wortteile ohne Leerschlag oder Drücken der Return- oder Eingabetaste direkt nach
-            
-            
+            <datatype>
+                <dataRef name="string" restriction="(\d+|[IVXCL]+)[rv]?"/>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="replace">
+            <desc xml:lang="de" versionDate="2023-06-16">Typ des Seitenfangs</desc>
+            <desc xml:lang="fr" versionDate="2023-06-16">Type d'appendice latéral</desc>
+            <desc xml:lang="en" versionDate="2023-06-16">Type of page change</desc>
+            <valList type="closed">
+                <valItem ident="original">
+                    <desc xml:lang="de" versionDate="2023-04-06">Originalseitenwechsel</desc>
+                    <desc xml:lang="it" versionDate="2023-04-06">Impaginazione originale</desc>
+                    <desc xml:lang="en" versionDate="2023-04-06">Original pagination</desc>
+                    <desc xml:lang="fr" versionDate="2023-04-06">Saut de page original</desc>
+                </valItem>
+            </valList>
+        </attDef>
+        <attDef ident="xml:lang" mode="delete"/>
+        <attDef ident="break" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Beispiel für eine Originalfoliierung:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <pb n="1r" type="original"/>
+            <lb/>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Exemple pour des folios originaux :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <pb n="1r" type="original"/>
+            <lb/>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>ACHTUNG: Wortteile ohne Leerschlag oder Drücken der Return- oder Eingabetaste direkt nach
+
+
             anhängen:
         </p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
             geschri
             <pb/>
-         <lb break="no"/>ben
+            <lb break="no"/>ben
         </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>ATTENTION : Ces parties de mot suivent directement
-            
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>ATTENTION : Ces parties de mot suivent directement
+
             , sans espace ou touche entrée/return :
         </p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
             geschri
             <pb/>
-         <lb break="no"/>ben
+            <lb break="no"/>ben
         </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Blattzählung von Vorsatz- und Titelblättern mit römischen Ziffern:</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <pb n="Ir"/>
-         <head>Urbar oder libell der
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Blattzählung von Vorsatz- und Titelblättern mit römischen Ziffern:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <pb n="Ir"/>
+            <head>Urbar oder libell der
                 <orgName>burgern zue
                     <placeName>Werdenberg</placeName>
-            </orgName>
+                </orgName>
                 er, vidimiert und
                 renoviert anno salutis
                 <origDate when="1640">1640</origDate>
-         </head>
-         <pb n="1"/>
-         <p>
-            <lb/>Ich, <persName>Jacob Felldtmann</persName>, der junger, der zeith der hochgeachten
+            </head>
+            <pb n="1"/>
+            <p>
+                <lb/>Ich, <persName>Jacob Felldtmann</persName>, der junger, der zeith der hochgeachten
                 woledlen gestrengen frommen ehren
                 ...
             </p>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Pagination de plusieurs pages de titre ou pages de garde avec des chiffres romains :</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <pb n="Ir"/>
-         <head>Urbar oder libell der
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Pagination de plusieurs pages de titre ou pages de garde avec des chiffres romains :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <pb n="Ir"/>
+            <head>Urbar oder libell der
                 <orgName>burgern zue
                     <placeName>Werdenberg</placeName>
-            </orgName>
+                </orgName>
                 er, vidimiert und
                 renoviert anno salutis
                 <origDate when="1640">1640</origDate>
-         </head>
-         <pb n="1"/>
-         <p>
-            <lb/>Ich, <persName>Jacob Felldtmann</persName>, der junger, der zeith der hochgeachten
+            </head>
+            <pb n="1"/>
+            <p>
+                <lb/>Ich, <persName>Jacob Felldtmann</persName>, der junger, der zeith der hochgeachten
                 woledlen gestrengen frommen ehren
                 ...
             </p>
-      </egXML>
-   </exemplum>
+        </egXML>
+    </exemplum>
 </elementSpec>

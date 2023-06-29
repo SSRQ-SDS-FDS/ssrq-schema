@@ -5,93 +5,93 @@
              ident="head"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-26">Enthält als Teil des <gi>teiHeader</gi> den Titel
+    <desc xml:lang="de" versionDate="2023-05-26">Enthält als Teil des <gi>teiHeader</gi> den Titel
         des Dokuments und als Teil von <gi>listBibl</gi> die Beschreibung des zitierten Kurztitels
         als Edition, Regest oder Literatur. In <gi>body</gi> die Überschrift eines Kapitels oder
         Unterkapitels. Innerhalb von <gi>figure</gi> enthält <gi>head</gi> die Legende einer
         Abbildung, einer Graphik, eines Stammbaumes etc.
     </desc>
-   <desc xml:lang="en" versionDate="2023-05-26">Contains as part of <gi>teiHeader</gi> the title of
+    <desc xml:lang="en" versionDate="2023-05-26">Contains as part of <gi>teiHeader</gi> the title of
         the document and as part of <gi>listBibl</gi> the description of the cited short title as
         edition, regest or literature. In <gi>body</gi> the heading of a chapter or subchapter.
         Within <gi>figure</gi>, <gi>head</gi> contains the legend of an illustration, a graph, a
         family tree etc.
     </desc>
-   <desc xml:lang="fr" versionDate="2023-05-26">Contient comme partie de <gi>teiHeader</gi> le
+    <desc xml:lang="fr" versionDate="2023-05-26">Contient comme partie de <gi>teiHeader</gi> le
         titre du document et comme partie de <gi>listBibl</gi> la description du titre court cité
         comme édition, regest ou littérature. Dans <gi>body</gi>, le titre d'un chapitre ou d'un
         sous-chapitre. A l'intérieur de <gi>figure</gi>, <gi>head</gi> contient la légende d'une
         illustration, d'un graphique, d'un arbre généalogique, etc.
     </desc>
-   <classes mode="replace">
-      <memberOf key="model.headLike"/>
-      <memberOf key="att.global"/>
-      <memberOf key="att.placement"/>
-      <memberOf key="att.typed"/>
-      <memberOf key="att.written"/>
-   </classes>
-   <content>
-      <alternate minOccurs="1" maxOccurs="unbounded">
-         <elementRef key="bibl"/>
-         <macroRef key="ssrq.content.default"/>
-      </alternate>
-   </content>
-   <attList>
-      <attDef ident="place" mode="change">
-         <datatype>
-            <rng:choice>
-               <rng:ref name="ssrq.place"/>
-               <rng:ref name="ssrq.place.add"/>
-            </rng:choice>
-         </datatype>
-      </attDef>
-      <attDef ident="type" mode="change">
-         <datatype>
-            <dataRef key="ssrq.struct.head"/>
-         </datatype>
-      </attDef>
-      <attDef ident="cert" mode="delete"/>
-      <attDef ident="rend" mode="delete"/>
-      <attDef ident="xml:id" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
-      <p>Titel, der vom Bearbeitenden zur besseren Strukturierung des Texts
+    <classes mode="replace">
+        <memberOf key="model.headLike"/>
+        <memberOf key="att.global"/>
+        <memberOf key="att.global.responsibility"/>
+        <memberOf key="att.placement"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="att.written"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <elementRef key="bibl"/>
+            <macroRef key="ssrq.content.default"/>
+        </alternate>
+    </content>
+    <attList>
+        <attDef ident="place" mode="change">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.place"/>
+                    <rng:ref name="ssrq.place.add"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="change">
+            <datatype>
+                <dataRef key="ssrq.struct.head"/>
+            </datatype>
+        </attDef>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
+        <p>Titel, der vom Bearbeitenden zur besseren Strukturierung des Texts
             hinzugefügt wird
         </p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <head resp="PS">Erbrecht</head>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
-      <p>Titre ajouté par l'éditeur pour mieux structurer le texte</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <head resp="PS">Erbrecht</head>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
-      <p>Titel eines Stammbaums</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <figure type="illustration">
-            <graphic type="familytree"
-                     mimeType="image/svg"
-                     url="WB_HB.svg"
-                     width="69.34%"/>
-            <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
-            <figDesc>Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>
-         </figure>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
-      <p>Titre d'un arbre généalogique</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <figure type="illustration">
-            <graphic type="familytree"
-                     mimeType="image/svg"
-                     url="WB_HB.svg"
-                     width="69.34%"/>
-            <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
-            <figDesc>Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>
-         </figure>
-      </egXML>
-   </exemplum>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <head resp="PS">Erbrecht</head>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
+        <p>Titre ajouté par l'éditeur pour mieux structurer le texte</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <head resp="PS">Erbrecht</head>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
+        <p>Titel eines Stammbaums</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <figure type="illustration">
+                <graphic type="familytree"
+                         mimeType="image/svg"
+                         url="WB_HB.svg"
+                         width="69.34%"/>
+                <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
+                <figDesc>Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>
+            </figure>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
+        <p>Titre d'un arbre généalogique</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <figure type="illustration">
+                <graphic type="familytree"
+                         mimeType="image/svg"
+                         url="WB_HB.svg"
+                         width="69.34%"/>
+                <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
+                <figDesc>Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>
+            </figure>
+        </egXML>
+    </exemplum>
 </elementSpec>

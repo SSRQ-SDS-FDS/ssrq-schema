@@ -4,26 +4,26 @@
              ident="witness"
              module="textcrit"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-11">Enthält die Stückbeschreibung einer Quelle.
+    <desc xml:lang="de" versionDate="2023-05-11">Enthält die Stückbeschreibung einer Quelle.
     </desc>
-   <desc xml:lang="en" versionDate="2023-05-11">Contains the description of a source.
+    <desc xml:lang="en" versionDate="2023-05-11">Contains the description of a source.
     </desc>
-   <desc xml:lang="fr" versionDate="2023-05-11">Contient la description d'une source.
+    <desc xml:lang="fr" versionDate="2023-05-11">Contient la description d'une source.
     </desc>
-   <classes mode="replace">
-      <memberOf key="att.global"/>
-   </classes>
-   <content>
-      <elementRef key="msDesc"/>
-   </content>
-   <attList>
-      <attDef ident="n" mode="replace" usage="req">
-         <datatype>
-            <dataRef name="string" restriction="[A-Z][0-9]?"/>
-         </datatype>
-      </attDef>
-      <attDef ident="xml:id" mode="change" usage="req">
-         <datatype>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <elementRef key="msDesc"/>
+    </content>
+    <attList>
+        <attDef ident="n" mode="replace" usage="req">
+            <datatype>
+                <dataRef name="string" restriction="[A-Z][0-9]?"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:id" mode="change" usage="req">
+            <datatype>
                 <!--This restriction has two parts
                     1) A prefix "id-ssrq-". This prefix is used to make sure, that the xml:id is a valid token of
                     the XS:ID datatype (id est a NCName without colons). This is necessary, because the following
@@ -31,39 +31,36 @@
                     2) A UUID Version 4. This is used, because UUIDs are (potentially) persistant and globally
                     unique. This allows publishing the XML-files while still work in progress.
                 -->
-            <dataRef name="ID"
-                     restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
-         </datatype>
-      </attDef>
-      <attDef ident="xml:lang" mode="delete"/>
-      <attDef ident="cert" mode="delete"/>
-      <attDef ident="resp" mode="delete"/>
-      <attDef ident="rend" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-02">
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <listWit>
-            <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810d" n="A">
-               <msDesc>
-                  <msIdentifier>
-                     <idno>StAAG U.17/0020a</idno>
-                  </msIdentifier>
-               </msDesc>
-            </witness>
-         </listWit>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-02">
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <listWit>
-            <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810d" n="A">
-               <msDesc>
-                  <msIdentifier>
-                     <idno>StAAG U.17/0020a</idno>
-                  </msIdentifier>
-               </msDesc>
-            </witness>
-         </listWit>
-      </egXML>
-   </exemplum>
+                <dataRef name="ID"
+                         restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:lang" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-02">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <listWit>
+                <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810d" n="A">
+                    <msDesc>
+                        <msIdentifier>
+                            <idno>StAAG U.17/0020a</idno>
+                        </msIdentifier>
+                    </msDesc>
+                </witness>
+            </listWit>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-02">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <listWit>
+                <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810d" n="A">
+                    <msDesc>
+                        <msIdentifier>
+                            <idno>StAAG U.17/0020a</idno>
+                        </msIdentifier>
+                    </msDesc>
+                </witness>
+            </listWit>
+        </egXML>
+    </exemplum>
 </elementSpec>

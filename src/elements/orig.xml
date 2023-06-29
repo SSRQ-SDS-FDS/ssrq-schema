@@ -5,64 +5,61 @@
              ident="orig"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-24">Enthält innerhalb von Einleitungen, Kommentaren und Anmerkungen
+    <desc xml:lang="de" versionDate="2023-05-24">Enthält innerhalb von Einleitungen, Kommentaren und Anmerkungen
         Textteile, die in Quellensprache verfasst sind.
     </desc>
-   <desc xml:lang="en" versionDate="2023-05-24">Contains parts of text written in source language within introductions,
+    <desc xml:lang="en" versionDate="2023-05-24">Contains parts of text written in source language within introductions,
         comments and notes.
     </desc>
-   <desc xml:lang="fr" versionDate="2023-05-24">Contient des parties de texte écrites dans la langue source dans les
+    <desc xml:lang="fr" versionDate="2023-05-24">Contient des parties de texte écrites dans la langue source dans les
         introductions, les commentaires et les notes.
     </desc>
-   <desc xml:lang="it" versionDate="2023-05-24">Contiene parti di testo scritte nella lingua di partenza all'interno di
+    <desc xml:lang="it" versionDate="2023-05-24">Contiene parti di testo scritte nella lingua di partenza all'interno di
         introduzioni, commenti e note.
     </desc>
-   <classes mode="replace">
-      <memberOf key="model.pPart.transcriptional"/>
-      <memberOf key="att.global"/>
-   </classes>
-   <content>
-      <rng:oneOrMore>
-         <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-   </content>
-   <attList>
-      <attDef ident="xml:id" mode="delete"/>
-      <attDef ident="n" mode="delete"/>
-      <attDef ident="cert" mode="delete"/>
-      <attDef ident="rend" mode="delete"/>
-      <attDef ident="resp" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-24">
-      <p>Beispiel für einen originalsprachlichen Ausdruck in einer Anmerkung.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <note>Am Beispiel von Seebach lässt sich beobachten, wie Nachträge aus Beschlüssen
+    <classes mode="replace">
+        <memberOf key="model.pPart.transcriptional"/>
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
+    </content>
+    <attList>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="n" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-24">
+        <p>Beispiel für einen originalsprachlichen Ausdruck in einer Anmerkung.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <note>Am Beispiel von Seebach lässt sich beobachten, wie Nachträge aus Beschlüssen
                 der <orig>bursamy</orig> [...] zustande kommen.
             </note>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-24">
-      <p>Example of an original language expression in an annotation.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <note>Am Beispiel von Seebach lässt sich beobachten, wie Nachträge aus Beschlüssen
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-24">
+        <p>Example of an original language expression in an annotation.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <note>Am Beispiel von Seebach lässt sich beobachten, wie Nachträge aus Beschlüssen
                 der <orig>bursamy</orig> [...] zustande kommen.
             </note>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-24">
-      <p>Exemple d'expression de la langue d'origine dans une annotation.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <note>Am Beispiel von Seebach lässt sich beobachten, wie Nachträge aus Beschlüssen
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-24">
+        <p>Exemple d'expression de la langue d'origine dans une annotation.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <note>Am Beispiel von Seebach lässt sich beobachten, wie Nachträge aus Beschlüssen
                 der <orig>bursamy</orig> [...] zustande kommen.
             </note>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-24">
-      <p>Esempio di un'espressione in lingua originale in un'annotazione.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <note>Am Beispiel von Seebach lässt sich beobachten, wie Nachträge aus Beschlüssen
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-24">
+        <p>Esempio di un'espressione in lingua originale in un'annotazione.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <note>Am Beispiel von Seebach lässt sich beobachten, wie Nachträge aus Beschlüssen
                 der <orig>bursamy</orig> [...] zustande kommen.
             </note>
-      </egXML>
-   </exemplum>
+        </egXML>
+    </exemplum>
 </elementSpec>

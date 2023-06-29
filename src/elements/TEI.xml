@@ -4,66 +4,64 @@
              ident="TEI"
              module="textstructure"
              mode="change">
-   <gloss xml:lang="de" versionDate="2023-03-09">TEI Dokument</gloss>
-   <desc xml:lang="de" versionDate="2023-05-11">Umschliesst ein einzelnes Dokument
+    <gloss xml:lang="de" versionDate="2023-03-09">TEI Dokument</gloss>
+    <desc xml:lang="de" versionDate="2023-05-11">Umschliesst ein einzelnes Dokument
         (Stück) als sogenannter Root-Tag. Mehrfachüberlieferungen werden in einem Tag teiCorpus gebündelt.
     </desc>
-   <gloss xml:lang="en" versionDate="2023-03-09">TEI Dokument</gloss>
-   <desc xml:lang="en" versionDate="2023-05-11">Encloses a single document (piece) as a
+    <gloss xml:lang="en" versionDate="2023-03-09">TEI Dokument</gloss>
+    <desc xml:lang="en" versionDate="2023-05-11">Encloses a single document (piece) as a
         so-called root tag. Multiple deliveries are bundled in a teiCorpus tag.
     </desc>
-   <gloss xml:lang="fr" versionDate="2023-03-09">Document TEI</gloss>
-   <desc xml:lang="fr" versionDate="2023-05-11">Entoure un document individuel
+    <gloss xml:lang="fr" versionDate="2023-03-09">Document TEI</gloss>
+    <desc xml:lang="fr" versionDate="2023-05-11">Entoure un document individuel
         (pièce). Les documents à transmission multiple sont regroupés dans une balise teiCorpus.
     </desc>
-   <classes mode="change">
-      <memberOf key="att.global.facs" mode="delete"/>
-      <memberOf key="att.global.rendition" mode="delete"/>
-      <memberOf key="att.global.responsibility" mode="delete"/>
-      <memberOf key="att.typed" mode="delete"/>
-   </classes>
-   <content>
-      <sequence>
-         <elementRef key="teiHeader"/>
-         <elementRef key="text"/>
-      </sequence>
-   </content>
-   <attList>
-      <attDef ident="xml:lang" mode="replace">
-         <valList type="closed">
-            <valItem ident="de"/>
-            <valItem ident="it"/>
-            <valItem ident="fr"/>
-         </valList>
-      </attDef>
-      <attDef ident="n" mode="delete"/>
-      <attDef ident="xml:id" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-03">
-      <p>Minimales Beispiel:</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <TEI xml:lang="de">
-            <teiHeader/>
-            <text/>
-         </TEI>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-03">
-      <p>Exemple minimal :</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <TEI xml:lang="de">
-            <teiHeader/>
-            <text/>
-         </TEI>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-03-03">
-      <p>Minimal example:</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <TEI xml:lang="de">
-            <teiHeader/>
-            <text/>
-         </TEI>
-      </egXML>
-   </exemplum>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <sequence>
+            <elementRef key="teiHeader"/>
+            <elementRef key="text"/>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="xml:lang" mode="replace">
+            <valList type="closed">
+                <valItem ident="de"/>
+                <valItem ident="it"/>
+                <valItem ident="fr"/>
+            </valList>
+        </attDef>
+        <attDef ident="version" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-03">
+        <p>Minimales Beispiel:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <TEI xml:lang="de">
+                <teiHeader/>
+                <text/>
+            </TEI>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-03">
+        <p>Exemple minimal :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <TEI xml:lang="de">
+                <teiHeader/>
+                <text/>
+            </TEI>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-03-03">
+        <p>Minimal example:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <TEI xml:lang="de">
+                <teiHeader/>
+                <text/>
+            </TEI>
+        </egXML>
+    </exemplum>
 </elementSpec>

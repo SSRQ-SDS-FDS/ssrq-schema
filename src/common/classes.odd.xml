@@ -486,11 +486,11 @@
             </attList>
         </classSpec>
         <classSpec ident="att.global" type="atts" mode="change">
-            <classes mode="replace">
-                <memberOf key="att.global.rendition"/>
-                <memberOf key="att.global.responsibility"/>
-            </classes>
+            <classes mode="replace"/>
             <attList>
+                <attDef ident="n" mode="change"/>
+                <attDef ident="xml:base" mode="delete"/>
+                <attDef ident="xml:id" mode="change"/>
                 <attDef ident="xml:lang" mode="replace">
                     <desc xml:lang="de" versionDate="2023-05-23">ISO-639-1-Sprachkürzel</desc>
                     <desc xml:lang="en" versionDate="2023-05-23">ISO-639-1-Language abbreviation</desc>
@@ -505,7 +505,6 @@
                         <valItem ident="rm"/>
                     </valList>
                 </attDef>
-                <attDef ident="xml:base" mode="delete"/>
                 <attDef ident="xml:space" mode="delete"/>
             </attList>
         </classSpec>
