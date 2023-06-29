@@ -4,7 +4,7 @@
      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <specGrp xml:id="ssrq-classes">
 
-        <!-- Attribute classes not in use -->
+        <!-- TEI attribute classes deleted from schema -->
         <classSpec ident="att.anchoring" type="atts" mode="delete"/>
         <classSpec ident="att.ascribed" type="atts" mode="delete"/>
         <classSpec ident="att.ascribed.directed" type="atts" mode="delete"/>
@@ -65,7 +65,7 @@
         <classSpec ident="att.transcriptional" type="atts" mode="delete"/>
         <classSpec ident="att.translatable" type="atts" mode="delete"/>
 
-        <!-- Modified attribute classes -->
+        <!-- Modified TEI attribute classes -->
         <classSpec ident="att.canonical" type="atts" mode="change">
             <attList>
                 <attDef ident="key" mode="replace">
@@ -164,6 +164,56 @@
                 </attDef>
                 <attDef ident="group" mode="delete"/>
                 <attDef ident="degree" mode="delete"/>
+            </attList>
+        </classSpec>
+        <classSpec ident="att.datable" type="atts" mode="change">
+            <attList>
+                <attDef ident="calendar" mode="replace" usage="req">
+                    <desc xml:lang="de" versionDate="2023-05-31">verwendeter Kalender</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Calendar used</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Calendrier utilisé</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Calendario utilizzato</desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.calendar"/>
+                    </datatype>
+                    <!-- This removes the TEI default constraints, which requires text content
+                    for any elements that uses @calendar. -->
+                    <constraintSpec scheme="schematron" ident="sch-att-calendar" mode="replace">
+                        <desc versionDate="2023-06-13" xml:lang="en">Schematron to check the usage of attributes.</desc>
+                        <constraint>
+                            <sch:pattern>
+                                <sch:rule context="tei:*[@calendar]">
+                                    <sch:assert
+                                            test=".[@when-custom|@notBefore-custom|@notAfter-custom|@from-custom|@to-custom]">
+                                        More attributes must be used together with @calendar to specify the date.
+                                    </sch:assert>
+                                </sch:rule>
+                            </sch:pattern>
+                        </constraint>
+                    </constraintSpec>
+                </attDef>
+                <attDef ident="period" mode="change">
+                    <desc xml:lang="de" versionDate="2023-05-11">Verweist auf eine benannte Periode wie Jahreszeiten
+                        oder Wochentage. Für Zeitspannen wie „vier Wochen“ wird hingegen das Attribut <att>dur-iso</att> verwendet.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-11">Refers to a named period such as seasons or days of the
+                        week. For periods such as "four weeks", on the other hand, the attribute <att>dur-iso</att> is
+                        used.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-11">Fait référence à une période nommée, comme les saisons
+                        ou les jours de la semaine. En revanche, l'attribut <att>dur-iso</att> est utilisé pour des
+                        périodes telles que "quatre semaines".
+                    </desc>
+                    <exemplum type="ssrq-doc-example">
+                        <p xml:lang="de">Sommer und Winter</p>
+                        <p xml:lang="fr">Été et hiver</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date period="summer">somer</date>
+                            unnd
+                            <date period="winter">wintter</date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
             </attList>
         </classSpec>
         <classSpec ident="att.datable.custom" type="atts" mode="change">
@@ -564,6 +614,11 @@
                 <attDef ident="unitRef" mode="delete"/>
             </attList>
         </classSpec>
+        <classSpec ident="att.naming" type="atts" mode="change">
+            <attList>
+                <attDef ident="nymRef" mode="delete"/>
+            </attList>
+        </classSpec>
         <classSpec ident="att.placement" type="atts" mode="change">
             <attList>
                 <attDef ident="place" mode="change">
@@ -608,82 +663,6 @@
                     <desc xml:lang="en" versionDate="2023-03-31">Link to an image file.</desc>
                     <desc xml:lang="fr" versionDate="2023-03-31">Lien vers un fichier image.</desc>
                     <desc xml:lang="it" versionDate="2023-03-31">Collegamento a un file immagine.</desc>
-                </attDef>
-            </attList>
-        </classSpec>
-        <classSpec ident="att.datable" type="atts" mode="change">
-            <attList>
-                <attDef ident="calendar" mode="replace" usage="req">
-                    <desc xml:lang="de" versionDate="2023-05-31">verwendeter Kalender</desc>
-                    <desc xml:lang="en" versionDate="2023-05-31">Calendar used</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-31">Calendrier utilisé</desc>
-                    <desc xml:lang="it" versionDate="2023-05-31">Calendario utilizzato</desc>
-                    <datatype>
-                        <dataRef key="ssrq.date.calendar"/>
-                    </datatype>
-                    <!-- This removes the TEI default constraints, which requires text content
-                    for any elements that uses @calendar. -->
-                    <constraintSpec scheme="schematron" ident="sch-att-calendar" mode="replace">
-                        <desc versionDate="2023-06-13" xml:lang="en">Schematron to check the usage of attributes.</desc>
-                        <constraint>
-                            <sch:pattern>
-                                <sch:rule context="tei:*[@calendar]">
-                                    <sch:assert
-                                            test=".[@when-custom|@notBefore-custom|@notAfter-custom|@from-custom|@to-custom]">
-                                        More attributes must be used together with @calendar to specify the date.
-                                    </sch:assert>
-                                </sch:rule>
-                            </sch:pattern>
-                        </constraint>
-                    </constraintSpec>
-                </attDef>
-                <attDef ident="period" mode="change">
-                    <desc xml:lang="de" versionDate="2023-05-11">Verweist auf eine benannte Periode wie Jahreszeiten
-                        oder Wochentage. Für Zeitspannen wie „vier Wochen“ wird hingegen das Attribut <att>dur-iso</att> verwendet.
-                    </desc>
-                    <desc xml:lang="en" versionDate="2023-05-11">Refers to a named period such as seasons or days of the
-                        week. For periods such as "four weeks", on the other hand, the attribute <att>dur-iso</att> is
-                        used.
-                    </desc>
-                    <desc xml:lang="fr" versionDate="2023-05-11">Fait référence à une période nommée, comme les saisons
-                        ou les jours de la semaine. En revanche, l'attribut <att>dur-iso</att> est utilisé pour des
-                        périodes telles que "quatre semaines".
-                    </desc>
-                    <exemplum type="ssrq-doc-example">
-                        <p xml:lang="de">Sommer und Winter</p>
-                        <p xml:lang="fr">Été et hiver</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <date period="summer">somer</date>
-                            unnd
-                            <date period="winter">wintter</date>
-                        </egXML>
-                    </exemplum>
-                </attDef>
-            </attList>
-        </classSpec>
-
-        <classSpec ident="att.naming" type="atts" mode="change" module="tei">
-            <attList>
-                <attDef ident="nymRef" mode="delete"/>
-            </attList>
-        </classSpec>
-        <classSpec ident="att.canonical" type="atts" mode="change" module="tei">
-            <attList>
-                <attDef ident="ref" mode="change">
-                    <desc versionDate="2023-03-28" xml:lang="de">Referenz auf die Datenbanken der
-                        SSRQ.
-                    </desc>
-                    <desc versionDate="2023-03-07" xml:lang="en">Reference to the databases of the
-                        SLS.
-                    </desc>
-                    <datatype>
-                        <rng:choice>
-                            <rng:ref name="ssrq.pointer.persons"/>
-                            <rng:ref name="ssrq.pointer.lemma"/>
-                            <rng:ref name="ssrq.pointer.org"/>
-                            <rng:ref name="ssrq.pointer.keywords"/>
-                        </rng:choice>
-                    </datatype>
                 </attDef>
             </attList>
         </classSpec>
@@ -841,60 +820,6 @@
         </classSpec>
 
         <!-- Additional attribute classes -->
-        <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
-            <desc xml:lang="de" versionDate="2023-03-07">Stellt ein Attribut <att>source</att> bereit, dessen
-                Semantik dem der TEI entspricht.
-            </desc>
-            <desc xml:lang="en" versionDate="2023-03-07">Provides a common <att>source</att> attribute
-                semantically identical to the TEI specification.
-            </desc>
-            <desc xml:lang="fr" versionDate="2023-05-17">Fournit un attribut <att>source</att> dont la sémantique
-                correspond à celle de la TEI.
-            </desc>
-            <desc xml:lang="it" versionDate="2023-05-17">Fornisce un attributo <att>source</att> la cui semantica
-                corrisponde a quella del TEI.
-            </desc>
-            <attList>
-                <attDef ident="source" mode="add" usage="opt">
-                    <desc xml:lang="de" versionDate="2023-03-07">Verweis auf ein anderes Stück
-                        (bspw. im Falle der Mehrfachüberlieferung) oder auf ein
-                        Archivinformationssystem.
-                    </desc>
-                    <desc xml:lang="en" versionDate="2023-03-07">Reference to another item (e.g. in
-                        the case of multiple records) or to an archival information system.
-                    </desc>
-                    <desc xml:lang="fr" versionDate="2023-03-07">Renvoi à une autre pièce (par ex.
-                        en cas de livraison multiple) ou à un système d'information archivistique.
-                    </desc>
-                    <desc xml:lang="it" versionDate="2023-03-07">Si riferisce a un altro pezzo (ad esempio nel caso di
-                        trasmissione multipla) o a un sistema informativo di archivio.
-                    </desc>
-                    <datatype>
-                        <rng:choice>
-                            <rng:list>
-                                <rng:oneOrMore>
-                                    <rng:ref name="ssrq.pointer.urn"/>
-                                </rng:oneOrMore>
-                            </rng:list>
-                            <rng:ref name="ssrq.pointer.url"/>
-                        </rng:choice>
-                    </datatype>
-                </attDef>
-            </attList>
-            <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-03">
-                <p xml:lang="de">Lesung rekonstruiert durch eine andere Überlieferung</p>
-                <p xml:lang="en">Reading reconstructed from another tradition</p>
-                <p xml:lang="fr">La lecture reconstruite à partir d'une autre tradition</p>
-                <p xml:lang="it">Lettura ricostruita da un'altra tradizione</p>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <p>Zum ersten soll <supplied source="urn:ssrq:SSRQ-SG-III_4-189-1">man wissen,
-                        das
-                    </supplied> niemand
-                    </p>
-                </egXML>
-            </exemplum>
-        </classSpec>
-
         <classSpec ident="ssrq.att.seal" type="atts" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-05-31">Klasse von Attributen zur Beschreibung von Siegeln.</desc>
             <desc xml:lang="fr" versionDate="2023-05-31">Classe d'attributs permettant de décrire les sceaux.</desc>
@@ -1137,6 +1062,58 @@
 
             </attList>
         </classSpec>
-
+        <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-03-07">Stellt ein Attribut <att>source</att> bereit, dessen
+                Semantik dem der TEI entspricht.
+            </desc>
+            <desc xml:lang="en" versionDate="2023-03-07">Provides a common <att>source</att> attribute
+                semantically identical to the TEI specification.
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-05-17">Fournit un attribut <att>source</att> dont la sémantique
+                correspond à celle de la TEI.
+            </desc>
+            <desc xml:lang="it" versionDate="2023-05-17">Fornisce un attributo <att>source</att> la cui semantica
+                corrisponde a quella del TEI.
+            </desc>
+            <attList>
+                <attDef ident="source" mode="add" usage="opt">
+                    <desc xml:lang="de" versionDate="2023-03-07">Verweis auf ein anderes Stück
+                        (bspw. im Falle der Mehrfachüberlieferung) oder auf ein
+                        Archivinformationssystem.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-03-07">Reference to another item (e.g. in
+                        the case of multiple records) or to an archival information system.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-03-07">Renvoi à une autre pièce (par ex.
+                        en cas de livraison multiple) ou à un système d'information archivistique.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-03-07">Si riferisce a un altro pezzo (ad esempio nel caso di
+                        trasmissione multipla) o a un sistema informativo di archivio.
+                    </desc>
+                    <datatype>
+                        <rng:choice>
+                            <rng:list>
+                                <rng:oneOrMore>
+                                    <rng:ref name="ssrq.pointer.urn"/>
+                                </rng:oneOrMore>
+                            </rng:list>
+                            <rng:ref name="ssrq.pointer.url"/>
+                        </rng:choice>
+                    </datatype>
+                </attDef>
+            </attList>
+            <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-03">
+                <p xml:lang="de">Lesung rekonstruiert durch eine andere Überlieferung</p>
+                <p xml:lang="en">Reading reconstructed from another tradition</p>
+                <p xml:lang="fr">La lecture reconstruite à partir d'une autre tradition</p>
+                <p xml:lang="it">Lettura ricostruita da un'altra tradizione</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <p>Zum ersten soll <supplied source="urn:ssrq:SSRQ-SG-III_4-189-1">man wissen,
+                        das
+                    </supplied> niemand
+                    </p>
+                </egXML>
+            </exemplum>
+        </classSpec>
     </specGrp>
 </div>
