@@ -698,7 +698,7 @@
         </classSpec>
         <classSpec ident="att.scoping" type="atts" mode="change">
             <attList>
-                <attDef ident="match" mode="change">
+                <attDef ident="match" mode="change" usage="req">
                     <desc xml:lang="de" versionDate="2023-05-17">Verweist mittels eines einfachen
                         XPath-Ausdrucks auf den unsicheren Bestandteil – das unsichere Attribut –
                         einer Datierung.
