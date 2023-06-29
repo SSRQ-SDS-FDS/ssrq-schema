@@ -136,10 +136,11 @@
                     <desc xml:lang="it" versionDate="2023-05-16">Riferimento alle banche dati della FDS.</desc>
                     <datatype>
                         <rng:choice>
-                            <rng:ref name="ssrq.pointer.persons"/>
+                            <rng:ref name="ssrq.pointer.keywords"/>
                             <rng:ref name="ssrq.pointer.lemma"/>
                             <rng:ref name="ssrq.pointer.org"/>
-                            <rng:ref name="ssrq.pointer.keywords"/>
+                            <rng:ref name="ssrq.pointer.persons"/>
+                            <rng:ref name="ssrq.pointer.places"/>
                         </rng:choice>
                     </datatype>
                 </attDef>
