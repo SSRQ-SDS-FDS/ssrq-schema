@@ -6,129 +6,144 @@
              ident="time"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-16">Erfassung von Zeitangaben (Tageszeiten, Uhrzeiten).
+    <desc xml:lang="de" versionDate="2023-05-16">Erfassung von Zeitangaben (Tageszeiten, Uhrzeiten).
         Mithilfe der zugelassenen Attribute können die Angaben in einem normalisierten Format
         maschinenlesbar ausgedrückt werden. Das Format ist die vom W3C definierte Untermenge von ISO
         8601. Zeitpunkte werden mit <att>when-custom</att> bzw. <att>notBefore-custom</att>, <att>
-        notAfter-custom</att> angegeben, Zeiträume mit <att>from-custom</att> und <att>to-custom</att>.
+            notAfter-custom
+        </att> angegeben, Zeiträume mit <att>from-custom</att> und <att>to-custom</att>.
         Zeitspannen ohne Angabe von Anfang und Ende können mit <att>dur-iso</att> näher bezeichnet
-        werden. Unbestimmte Tageszeiten, wie z. B. nachts, werden mit <att>period</att> getagt.</desc>
-   <desc xml:lang="en" versionDate="2023-05-16">Recording of time information (times of day, times
+        werden. Unbestimmte Tageszeiten, wie z. B. nachts, werden mit <att>period</att> getagt.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-05-16">Recording of time information (times of day, times
         of day). With the help of the permitted attributes, the information can be expressed in a
         machine-readable normalised format. The format is the subset of ISO 8601 defined by the W3C.
         Times are specified with <att>when-custom</att> or <att>notBefore-custom</att>, <att>
-        notAfter-custom</att>, periods with <att>from-custom</att> and <att>to-custom</att>. Time
+            notAfter-custom</att>, periods with <att>from-custom</att> and <att>to-custom</att>. Time
         periods without indication of beginning and end can be specified in more detail with <att>
-        dur-iso</att>. Indeterminate times of day, such as at night, are tagged with <att>period</att>
-        .</desc>
-   <desc xml:lang="fr" versionDate="2023-05-16">Saisie des données temporelles (heures du jour,
+            dur-iso</att>. Indeterminate times of day, such as at night, are tagged with
+        <att>period</att>
+        .
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-05-16">Saisie des données temporelles (heures du jour,
         heures de la journée). Les attributs autorisés permettent d'exprimer les données dans un
         format normalisé lisible par une machine. Le format est le sous-ensemble de la norme ISO
         8601 défini par le W3C. Les moments sont indiqués par <att>when-custom</att> ou <att>
-        notBefore-custom</att>, <att>notAfter-custom</att>, les périodes par <att>from-custom</att>
+            notBefore-custom</att>, <att>notAfter-custom</att>, les périodes par
+        <att>from-custom</att>
         et <att>to-custom</att>. Les périodes sans indication de début et de fin peuvent être
         précisées avec <att>dur-iso</att>. Les périodes de jour non définies, comme la nuit, sont
-        indiquées par <att>period</att>.</desc>
-   <classes mode="replace">
-      <memberOf key="macro.dateLike"/>
-      <memberOf key="att.datable"/>
-      <memberOf key="att.duration.iso"/>
-   </classes>
-   <content>
-      <rng:oneOrMore>
-         <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-   </content>
-   <attList>
-      <attDef ident="dur-iso" mode="change">
-         <desc xml:lang="de" versionDate="2023-05-16">Erfassung Zeitspanne nach <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+        indiquées par <att>period</att>.
+    </desc>
+    <classes mode="replace">
+        <memberOf key="macro.dateLike"/>
+        <memberOf key="att.datable"/>
+        <memberOf key="att.datable.custom"/>
+        <memberOf key="att.duration.iso"/>
+    </classes>
+    <content>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
+    </content>
+    <attList>
+        <attDef ident="dur-iso" mode="change">
+            <desc xml:lang="de" versionDate="2023-05-16">Erfassung Zeitspanne nach <ref
+                    target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
                 Beginnt mit dem Kürzel P (Periode) gefolgt T (Time) und arabischen Ziffern. Sich
                 wiederholende Zeitspannenden werden im vollen Format ausgedrückt und beginnen mit
-                dem Kürzel R (Repeated). Ansonsten werden folgende Werte vergeben <list>
-               <item>H = hour</item>
-               <item>M = minute</item>
-               <item>S = second</item>
-            </list>
-         </desc>
-         <desc xml:lang="en" versionDate="2023-05-16">Acquisition time period according to <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+                dem Kürzel R (Repeated). Ansonsten werden folgende Werte vergeben
+                <list>
+                    <item>H = hour</item>
+                    <item>M = minute</item>
+                    <item>S = second</item>
+                </list>
+            </desc>
+            <desc xml:lang="en" versionDate="2023-05-16">Acquisition time period according to <ref
+                    target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
                 Starts with the abbreviation P (period) followed by T (time) and Arabic numerals.
                 Repeating time spans are expressed in full format and begin with the abbreviation R
                 (repeated). the abbreviation R (Repeated). Otherwise, the following values are
-                assigned <list>
-               <item>H = hour</item>
-               <item>M = minute</item>
-               <item>S = second</item>
-            </list>
-         </desc>
-         <desc xml:lang="fr" versionDate="2023-05-16">Saisie Période selon <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+                assigned
+                <list>
+                    <item>H = hour</item>
+                    <item>M = minute</item>
+                    <item>S = second</item>
+                </list>
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-05-16">Saisie Période selon <ref
+                    target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
                 Commence par l'abréviation P (période) suivie de T (temps) et de chiffres arabes.
                 Les périodes de temps répétitives sont exprimées dans un format complet et
                 commencent par l'abréviation R (Repeated). Sinon, les valeurs suivantes sont
-                attribuées <list>
-               <item>H = hour</item>
-               <item>M = minute</item>
-               <item>S = second</item>
-            </list>
-         </desc>
-         <datatype>
-            <dataRef name="string" restriction="(R/)?PT(\d+(\.\d+)?[HMS])+"/>
-         </datatype>
-      </attDef>
-      <attDef ident="from-custom" mode="change">
-         <datatype>
-            <dataRef key="ssrq.time.point"/>
-         </datatype>
-      </attDef>
-      <attDef ident="to-custom" mode="change">
-         <datatype>
-            <dataRef key="ssrq.time.point"/>
-         </datatype>
-      </attDef>
-      <attDef ident="notAfter-custom" mode="change">
-         <datatype>
-            <dataRef key="ssrq.time.point"/>
-         </datatype>
-      </attDef>
-      <attDef ident="notBefore-custom" mode="change">
-         <datatype>
-            <dataRef key="ssrq.time.point"/>
-         </datatype>
-      </attDef>
-      <attDef ident="when-custom" mode="change">
-         <datatype>
-            <dataRef key="ssrq.time.point"/>
-         </datatype>
-      </attDef>
-      <attDef ident="period" mode="change">
-         <datatype>
-            <dataRef key="ssrq.period.daytimes"/>
-         </datatype>
-      </attDef>
-      <attDef ident="calendar" mode="delete"/>
-      <attDef ident="datingMethod" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-16">
-      <p>Erfassung eines Zeitpunkts</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <time when-custom="08:48:00">8 Uhr 48</time>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-16">
-      <p>Saisie d'un moment</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <time when-custom="08:48:00">8 Uhr 48</time>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-16">
-      <p>Erfassung von Zeitperioden, die nicht mit ISO 8601 beschrieben werden können</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            ... <time period="byNight">nachtz</time>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-16">
-      <p>Saisie de périodes de temps qui ne peuvent pas être décrites avec ISO 8601</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            ... <time period="byNight">nachtz</time>
-      </egXML>
-   </exemplum>
+                attribuées
+                <list>
+                    <item>H = hour</item>
+                    <item>M = minute</item>
+                    <item>S = second</item>
+                </list>
+            </desc>
+            <datatype>
+                <dataRef name="string" restriction="(R/)?PT(\d+(\.\d+)?[HMS])+"/>
+            </datatype>
+        </attDef>
+        <attDef ident="from-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.point"/>
+            </datatype>
+        </attDef>
+        <attDef ident="to-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.point"/>
+            </datatype>
+        </attDef>
+        <attDef ident="notAfter-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.point"/>
+            </datatype>
+        </attDef>
+        <attDef ident="notBefore-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.point"/>
+            </datatype>
+        </attDef>
+        <attDef ident="when-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.point"/>
+            </datatype>
+        </attDef>
+        <attDef ident="period" mode="change">
+            <datatype>
+                <dataRef key="ssrq.period.daytimes"/>
+            </datatype>
+        </attDef>
+        <attDef ident="calendar" mode="delete"/>
+        <attDef ident="datingMethod" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-16">
+        <p>Erfassung eines Zeitpunkts</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <time when-custom="08:48:00">8 Uhr 48</time>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-16">
+        <p>Saisie d'un moment</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <time when-custom="08:48:00">8 Uhr 48</time>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-16">
+        <p>Erfassung von Zeitperioden, die nicht mit ISO 8601 beschrieben werden können</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            ...
+            <time period="byNight">nachtz</time>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-16">
+        <p>Saisie de périodes de temps qui ne peuvent pas être décrites avec ISO 8601</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            ...
+            <time period="byNight">nachtz</time>
+        </egXML>
+    </exemplum>
 </elementSpec>
