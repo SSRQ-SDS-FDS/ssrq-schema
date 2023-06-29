@@ -5,6 +5,9 @@
     <specGrp xml:id="ssrq-classes">
 
         <!-- TEI attribute classes deleted from schema -->
+        <!-- There are currently (2023-06-29) 81 attribute classes specified in TEI P5 4.6.0,
+             all of which are either explicitly deleted or changed in this document.
+        -->
         <classSpec ident="att.anchoring" type="atts" mode="delete"/>
         <classSpec ident="att.ascribed" type="atts" mode="delete"/>
         <classSpec ident="att.ascribed.directed" type="atts" mode="delete"/>
@@ -69,68 +72,68 @@
         <classSpec ident="att.canonical" type="atts" mode="change">
             <attList>
                 <attDef ident="key" mode="replace">
-                    <desc versionDate="2023-04-28" xml:lang="de">Tätigkeit, für die ein Bearbeiter
+                    <desc xml:lang="de" versionDate="2023-04-28">Tätigkeit, für die ein Bearbeiter
                         oder eine Organisation verantwortlich ist.
                     </desc>
-                    <desc versionDate="2023-04-28" xml:lang="en">Activity for which an agent or
+                    <desc xml:lang="en" versionDate="2023-04-28">Activity for which an agent or
                         organisation is responsible.
                     </desc>
-                    <desc versionDate="2023-05-16" xml:lang="fr">Activité dont un transformateur ou une organisation est
+                    <desc xml:lang="fr" versionDate="2023-05-16">Activité dont un transformateur ou une organisation est
                         responsable.
                     </desc>
-                    <desc versionDate="2023-05-16" xml:lang="it">Attività per la quale è responsabile un responsabile
+                    <desc xml:lang="it" versionDate="2023-05-16">Attività per la quale è responsabile un responsabile
                         del trattamento o un'organizzazione.
                     </desc>
-                    <valList type="closed" mode="replace">
+                    <valList type="closed">
                         <valItem ident="transcript">
                             <desc xml:lang="de" versionDate="2023-03-28">Transkript</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">transcription</desc>
                             <desc xml:lang="en" versionDate="2023-03-28">transcription</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">transcription</desc>
                             <desc xml:lang="it" versionDate="2023-03-28">trascrizione</desc>
                         </valItem>
                         <valItem ident="tagging">
                             <desc xml:lang="de" versionDate="2023-03-28">Auszeichnung der Transkription</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">désignation d’une transcription</desc>
                             <desc xml:lang="en" versionDate="2023-03-28">tagging</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">désignation d’une transcription</desc>
                             <desc xml:lang="it" versionDate="2023-03-28">designazione di una trascrizione</desc>
                         </valItem>
                         <valItem ident="facs">
                             <desc xml:lang="de" versionDate="2023-05-28">Erstellung Faksimile</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">Création d'un fac-similé</desc>
                             <desc xml:lang="en" versionDate="2023-03-28">Facsimile creation</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">Création d'un fac-similé</desc>
                             <desc xml:lang="it" versionDate="2023-03-28">Creazione di facsimile</desc>
                         </valItem>
                         <valItem ident="index">
                             <desc xml:lang="de" versionDate="2023-03-28">Index</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">index</desc>
                             <desc xml:lang="en" versionDate="2023-03-28">index</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">index</desc>
                             <desc xml:lang="it" versionDate="2023-03-28">indice</desc>
                         </valItem>
                         <valItem ident="qualitycheck">
                             <desc xml:lang="de" versionDate="2023-03-28">Qualitätskontrolle</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">contrôle de qualité</desc>
                             <desc xml:lang="en" versionDate="2023-03-28">quality control</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">contrôle de qualité</desc>
                             <desc xml:lang="it" versionDate="2023-03-28">Controllo della qualità</desc>
                         </valItem>
                         <valItem ident="publisher">
                             <desc xml:lang="de" versionDate="2023-04-28">Herausgeberschaft</desc>
-                            <desc xml:lang="fr" versionDate="2023-04-28">Rédaction</desc>
                             <desc xml:lang="en" versionDate="2023-04-28">Editorial</desc>
+                            <desc xml:lang="fr" versionDate="2023-04-28">Rédaction</desc>
                             <desc xml:lang="it" versionDate="2023-04-28">Editoriale</desc>
                         </valItem>
                         <valItem ident="headerinfo">
                             <desc xml:lang="de" versionDate="2023-03-28">Metadaten im TEI-Header</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">métadonnées dans le header TEI</desc>
                             <desc xml:lang="en" versionDate="2023-03-28">meta data in the TEI header</desc>
+                            <desc xml:lang="fr" versionDate="2023-03-28">métadonnées dans le header TEI</desc>
                             <desc xml:lang="it" versionDate="2023-03-28">metadati nell'intestazione TEI</desc>
                         </valItem>
                     </valList>
                 </attDef>
                 <attDef ident="ref" mode="replace">
-                    <desc versionDate="2023-03-28" xml:lang="de">Referenz auf die Datenbanken der SSRQ.</desc>
-                    <desc versionDate="2023-03-07" xml:lang="en">Reference to the databases of the SLS.</desc>
-                    <desc versionDate="2023-05-16" xml:lang="de">Référence aux bases de données du SDS.</desc>
-                    <desc versionDate="2023-05-16" xml:lang="de">Riferimento alle banche dati della FDS.</desc>
+                    <desc xml:lang="de" versionDate="2023-03-28">Referenz auf die Datenbanken der SSRQ.</desc>
+                    <desc xml:lang="en" versionDate="2023-03-07">Reference to the databases of the SLS.</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-16">Référence aux bases de données du SDS.</desc>
+                    <desc xml:lang="it" versionDate="2023-05-16">Riferimento alle banche dati della FDS.</desc>
                     <datatype>
                         <rng:choice>
                             <rng:ref name="ssrq.pointer.persons"/>
@@ -162,24 +165,26 @@
                         <dataRef key="ssrq.agent"/>
                     </datatype>
                 </attDef>
-                <attDef ident="group" mode="delete"/>
                 <attDef ident="degree" mode="delete"/>
+                <attDef ident="group" mode="delete"/>
             </attList>
         </classSpec>
         <classSpec ident="att.datable" type="atts" mode="change">
             <attList>
                 <attDef ident="calendar" mode="replace" usage="req">
-                    <desc xml:lang="de" versionDate="2023-05-31">verwendeter Kalender</desc>
-                    <desc xml:lang="en" versionDate="2023-05-31">Calendar used</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-31">Calendrier utilisé</desc>
-                    <desc xml:lang="it" versionDate="2023-05-31">Calendario utilizzato</desc>
+                    <desc xml:lang="de" versionDate="2023-06-29">verwendeter Kalender (im Inhalt des Elements)</desc>
+                    <desc xml:lang="en" versionDate="2023-06-29">calendar used (in the content of the element)</desc>
+                    <desc xml:lang="fr" versionDate="2023-06-29">calendrier utilisé (dans le contenu de l'élément)
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-06-29">calendario utilizzato (nel contenuto dell'elemento)
+                    </desc>
                     <datatype>
                         <dataRef key="ssrq.date.calendar"/>
                     </datatype>
                     <!-- This removes the TEI default constraints, which requires text content
                     for any elements that uses @calendar. -->
                     <constraintSpec scheme="schematron" ident="sch-att-calendar" mode="replace">
-                        <desc versionDate="2023-06-13" xml:lang="en">Schematron to check the usage of attributes.</desc>
+                        <desc xml:lang="en" versionDate="2023-06-13">Schematron to check the usage of attributes.</desc>
                         <constraint>
                             <sch:pattern>
                                 <sch:rule context="tei:*[@calendar]">
@@ -204,6 +209,10 @@
                         ou les jours de la semaine. En revanche, l'attribut <att>dur-iso</att> est utilisé pour des
                         périodes telles que "quatre semaines".
                     </desc>
+                    <desc xml:lang="it" versionDate="2023-06-29">Si riferisce a un periodo denominato come stagioni o
+                        giorni della settimana. Per periodi di tempo come "quattro settimane" viene utilizzato
+                        l'attributo <att>dur-iso</att>.
+                    </desc>
                     <exemplum type="ssrq-doc-example">
                         <p xml:lang="de">Sommer und Winter</p>
                         <p xml:lang="fr">Été et hiver</p>
@@ -222,7 +231,7 @@
             <desc xml:lang="fr" versionDate="2023-05-05">Attributs pour le marquage des datations</desc>
             <desc xml:lang="it" versionDate="2023-05-16">Attributi per segnare la datazione</desc>
             <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
-                <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
+                <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for att.datable.custom</desc>
                 <constraint>
                     <sch:pattern>
                         <sch:rule context="tei:*[@when-custom]">
@@ -250,16 +259,24 @@
                 </constraint>
             </constraintSpec>
             <attList>
-                <attDef ident="datingPoint" mode="delete"/>
-                <attDef ident="datingMethod" mode="replace" usage="opt">
-                    <desc xml:lang="de" versionDate="2023-05-31">verwendeter Kalender</desc>
-                    <desc xml:lang="en" versionDate="2023-05-31">calendar used</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-31">calendrier utilisé</desc>
-                    <desc xml:lang="it" versionDate="2023-05-31">calendario utilizzato</desc>
+                <attDef ident="datingMethod" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-05-31">verwendeter Kalender (in den Attributen der Klasse
+                        att.datable.custom)
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">calendar used (in the attributes of the class
+                        att.datable.custom)
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">calendrier utilisé (dans les attributes de la classe
+                        att.datable.custom)
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">calendario utilizzato (negli attributi della classe
+                        att.datable.custom)
+                    </desc>
                     <datatype>
                         <dataRef key="ssrq.date.calendar"/>
                     </datatype>
                 </attDef>
+                <attDef ident="datingPoint" mode="delete"/>
                 <attDef ident="from-custom" mode="replace">
                     <desc xml:lang="de" versionDate="2023-05-16">Gibt den Startpunkt eines Zeitraums gemäss ISO 8601
                         an.
@@ -272,35 +289,6 @@
                     </desc>
                     <desc xml:lang="it" versionDate="2023-05-16">Indica il punto di inizio di un periodo secondo ISO
                         8601.
-                    </desc>
-                    <datatype>
-                        <dataRef key="ssrq.date.point"/>
-                    </datatype>
-                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-                        <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
-                        <p xml:lang="en">Exemplary award for the period from Pentecost 1583 to Pentecost 1584</p>
-                        <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte 1583 à la Pentecôte
-                            1584
-                        </p>
-                        <p xml:lang="it">Riconoscimento esemplare per il periodo dalla Pentecoste 1583 alla Pentecoste
-                            1584
-                        </p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <date datingMethod="julian" from-custom="1583-05-30"
-                                  to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
-                            </date>
-                        </egXML>
-                    </exemplum>
-                </attDef>
-                <attDef ident="to-custom" mode="replace">
-                    <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss ISO 8601 an.
-                    </desc>
-                    <desc xml:lang="en" versionDate="2023-05-16">Indicates the end point of a period according to ISO
-                        8601.
-                    </desc>
-                    <desc xml:lang="fr" versionDate="2023-05-16">Indique le point final d'une période selon ISO 8601.
-                    </desc>
-                    <desc xml:lang="it" versionDate="2023-05-16">Indica il punto finale di un periodo secondo ISO 8601.
                     </desc>
                     <datatype>
                         <dataRef key="ssrq.date.point"/>
@@ -366,6 +354,35 @@
                         </egXML>
                     </exemplum>
                 </attDef>
+                <attDef ident="to-custom" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss ISO 8601 an.
+                    </desc>
+                    <desc xml:lang="en" versionDate="2023-05-16">Indicates the end point of a period according to ISO
+                        8601.
+                    </desc>
+                    <desc xml:lang="fr" versionDate="2023-05-16">Indique le point final d'une période selon ISO 8601.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-05-16">Indica il punto finale di un periodo secondo ISO 8601.
+                    </desc>
+                    <datatype>
+                        <dataRef key="ssrq.date.point"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
+                        <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
+                        <p xml:lang="en">Exemplary award for the period from Pentecost 1583 to Pentecost 1584</p>
+                        <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte 1583 à la Pentecôte
+                            1584
+                        </p>
+                        <p xml:lang="it">Riconoscimento esemplare per il periodo dalla Pentecoste 1583 alla Pentecoste
+                            1584
+                        </p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <date datingMethod="julian" from-custom="1583-05-30"
+                                  to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
+                            </date>
+                        </egXML>
+                    </exemplum>
+                </attDef>
                 <attDef ident="when-custom" mode="replace">
                     <desc xml:lang="de" versionDate="2023-05-07">Gibt ein Datum gemäss ISO 8601 an.</desc>
                     <desc xml:lang="en" versionDate="2023-05-07">Specifies a date according to ISO 8601.</desc>
@@ -404,21 +421,8 @@
                 </constraint>
             </constraintSpec>
             <attList>
-                <attDef ident="unit" mode="replace">
-                    <desc xml:lang="de" versionDate="2023-03-17">Masseinheit</desc>
-                    <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-17">Unité de mesure</desc>
-                    <desc xml:lang="it" versionDate="2023-05-17">Unità di misura</desc>
-                    <datatype>
-                        <dataRef key="ssrq.measure.lengths.base.cm"/>
-                    </datatype>
-                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-05-17">
-                        <p>Angabe eines Längenmasses</p>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <width unit="cm"/>
-                        </egXML>
-                    </exemplum>
-                </attDef>
+                <attDef ident="extent" mode="delete"/>
+                <attDef ident="precision" mode="delete"/>
                 <attDef ident="quantity" mode="replace">
                     <desc xml:lang="de" versionDate="2023-05-17">Gibt die Grösse der mit <att>unit</att> angegebenen
                         Einheit an
@@ -455,9 +459,27 @@
                         </egXML>
                     </exemplum>
                 </attDef>
-                <attDef ident="extent" mode="delete"/>
-                <attDef ident="precision" mode="delete"/>
                 <attDef ident="scope" mode="delete"/>
+                <attDef ident="unit" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-03-17">Masseinheit</desc>
+                    <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement</desc>
+                    <desc xml:lang="fr" versionDate="2023-03-17">Unité de mesure</desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Unità di misura</desc>
+                    <datatype>
+                        <dataRef key="ssrq.measure.lengths.base.cm"/>
+                    </datatype>
+                    <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-05-17">
+                        <p>Angabe eines Längenmasses</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <width unit="cm"/>
+                        </egXML>
+                    </exemplum>
+                </attDef>
+            </attList>
+        </classSpec>
+        <classSpec ident="att.duration.iso" type="atts" mode="change">
+            <attList>
+                <attDef ident="dur-iso" mode="change"/>
             </attList>
         </classSpec>
         <classSpec ident="att.global" type="atts" mode="change">
@@ -486,7 +508,7 @@
         </classSpec>
         <classSpec ident="att.global.facs" type="atts" mode="change">
             <attList>
-                <attDef ident="facs" mode="replace" usage="opt">
+                <attDef ident="facs" mode="replace">
                     <desc xml:lang="de" versionDate="2023-05-17">Ordnet eine Textseite einem
                         Faksimile oder einem faksimilierten Ausschnitt zu.
                     </desc>
@@ -507,8 +529,9 @@
         </classSpec>
         <classSpec ident="att.global.rendition" type="atts" mode="change">
             <attList>
-                <attDef ident="style" mode="delete"/>
+                <attDef ident="rend" mode="change"/>
                 <attDef ident="rendition" mode="delete"/>
+                <attDef ident="style" mode="delete"/>
             </attList>
         </classSpec>
         <classSpec ident="att.global.responsibility" type="atts" mode="change">
@@ -539,10 +562,13 @@
                         </valItem>
                     </valList>
                 </attDef>
+                <attDef ident="resp" mode="change"/>
             </attList>
         </classSpec>
         <classSpec ident="att.handFeatures" type="atts" mode="change">
             <attList>
+                <attDef ident="medium" mode="delete"/>
+                <attDef ident="scope" mode="delete"/>
                 <attDef ident="scribe" mode="replace">
                     <desc xml:lang="de" versionDate="2023-05-17">Bezeichnet den Schreiber
                         mit der Identifikationsnummer der Person.
@@ -560,8 +586,6 @@
                         <dataRef key="ssrq.pointer.persons"/>
                     </datatype>
                 </attDef>
-                <attDef ident="medium" mode="delete"/>
-                <attDef ident="scope" mode="delete"/>
                 <attDef ident="scribeRef" mode="delete"/>
                 <attDef ident="script" mode="delete"/>
                 <attDef ident="scriptRef" mode="delete"/>
@@ -569,31 +593,15 @@
         </classSpec>
         <classSpec ident="att.measurement" type="atts" mode="change">
             <attList>
-                <attDef ident="unit" mode="replace" usage="req">
-                    <desc xml:lang="de" versionDate="2023-03-17">Maßeinheit oder Währung</desc>
-                    <desc xml:lang="fr" versionDate="2023-03-17">Unité de mesure ou devise</desc>
-                    <desc xml:lang="en" versionDate="2023-03-17">Unit of measurement or currency</desc>
-                    <datatype maxOccurs="1">
-                        <rng:choice>
-                            <rng:ref name="ssrq.measure.area"/>
-                            <rng:ref name="ssrq.measure.capacity"/>
-                            <rng:ref name="ssrq.measure.currency"/>
-                            <rng:ref name="ssrq.measure.lengths.base.cm"/>
-                            <rng:ref name="ssrq.measure.lengths.base.klafter"/>
-                            <rng:ref name="ssrq.measure.length"/>
-                            <rng:ref name="ssrq.measure.various"/>
-                            <rng:ref name="ssrq.measure.weight"/>
-                            <rng:ref name="ssrq.measure.parts.vierling"/>
-                            <rng:ref name="ssrq.measure.scope"/>
-                            <rng:ref name="ssrq.measure.time"/>
-                        </rng:choice>
-                    </datatype>
-                </attDef>
+                <attDef ident="commodity" mode="change"/>
                 <attDef ident="quantity" mode="change">
-                    <desc xml:lang="de" versionDate="2023-03-17">Gibt bei Abmessungen die Ausdehnung
-                        an.
+                    <desc xml:lang="de" versionDate="2023-03-17">Gibt bei Abmessungen die Ausdehnung an.</desc>
+                    <desc xml:lang="en" versionDate="2023-06-29">In the case of dimensions, specifies the expansion.
                     </desc>
-                    <desc xml:lang="fr" versionDate="2023-03-17">ToDo: Übersetzung</desc>
+                    <desc xml:lang="fr" versionDate="2023-06-29">Dans le cas des dimensions, spécifie l'expansion.
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-06-29">Nel caso delle dimensioni, specifica l'espansione.
+                    </desc>
                     <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
                         <p>Unbestimmte Anzahl Pfund (0 verwenden)</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -611,17 +619,39 @@
                         </egXML>
                     </exemplum>
                 </attDef>
+                <attDef ident="unit" mode="replace" usage="req">
+                    <desc xml:lang="de" versionDate="2023-06-29">Masseinheit oder Währung</desc>
+                    <desc xml:lang="en" versionDate="2023-06-29">unit of measurement or currency</desc>
+                    <desc xml:lang="fr" versionDate="2023-06-29">unité de mesure ou devise</desc>
+                    <desc xml:lang="it" versionDate="2023-06-29">unità di misura o moneta</desc>
+                    <datatype maxOccurs="1">
+                        <rng:choice>
+                            <rng:ref name="ssrq.measure.area"/>
+                            <rng:ref name="ssrq.measure.capacity"/>
+                            <rng:ref name="ssrq.measure.currency"/>
+                            <rng:ref name="ssrq.measure.lengths.base.cm"/>
+                            <rng:ref name="ssrq.measure.lengths.base.klafter"/>
+                            <rng:ref name="ssrq.measure.length"/>
+                            <rng:ref name="ssrq.measure.various"/>
+                            <rng:ref name="ssrq.measure.weight"/>
+                            <rng:ref name="ssrq.measure.parts.vierling"/>
+                            <rng:ref name="ssrq.measure.scope"/>
+                            <rng:ref name="ssrq.measure.time"/>
+                        </rng:choice>
+                    </datatype>
+                </attDef>
                 <attDef ident="unitRef" mode="delete"/>
             </attList>
         </classSpec>
         <classSpec ident="att.naming" type="atts" mode="change">
             <attList>
                 <attDef ident="nymRef" mode="delete"/>
+                <attDef ident="role" mode="change"/>
             </attList>
         </classSpec>
         <classSpec ident="att.placement" type="atts" mode="change">
             <attList>
-                <attDef ident="place" mode="change">
+                <attDef ident="place" mode="replace">
                     <desc xml:lang="de" versionDate="2023-05-12">Gibt eine Stelle auf einem Textzeugen gemäß einer
                         fest definierten Liste an.
                     </desc>
@@ -642,18 +672,18 @@
         </classSpec>
         <classSpec ident="att.pointing" type="atts" mode="change">
             <attList>
-                <attDef ident="target" mode="change">
-                    <desc versionDate="2023-03-29" xml:lang="de">Hyperlink, DOI oder interner Verweis.</desc>
-                    <desc versionDate="2023-03-29" xml:lang="en">Hyperlink, DOI or internal reference.</desc>
-                    <desc versionDate="2023-03-29" xml:lang="fr">Lien hypertexte, DOI ou référence interne.</desc>
-                    <desc versionDate="2023-05-17" xml:lang="it">Collegamento ipertestuale, DOI o riferimento interno.
+                <attDef ident="evaluate" mode="delete"/>
+                <attDef ident="target" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-03-29">Hyperlink, DOI oder interner Verweis.</desc>
+                    <desc xml:lang="en" versionDate="2023-03-29">Hyperlink, DOI or internal reference.</desc>
+                    <desc xml:lang="fr" versionDate="2023-03-29">Lien hypertexte, DOI ou référence interne.</desc>
+                    <desc xml:lang="it" versionDate="2023-05-17">Collegamento ipertestuale, DOI o riferimento interno.
                     </desc>
                     <datatype>
                         <dataRef key="ssrq.pointer.target"/>
                     </datatype>
                 </attDef>
                 <attDef ident="targetLang" mode="delete"/>
-                <attDef ident="evaluate" mode="delete"/>
             </attList>
         </classSpec>
         <classSpec ident="att.resourced" type="atts" mode="change">
@@ -740,17 +770,19 @@
         <classSpec ident="att.tableDecoration" type="atts" mode="change">
             <attList>
                 <attDef ident="cols" mode="delete"/>
+                <attDef ident="role" mode="change"/>
                 <attDef ident="rows" mode="delete"/>
             </attList>
         </classSpec>
         <classSpec ident="att.typed" type="atts" mode="change">
             <attList>
                 <attDef ident="subtype" mode="delete"/>
+                <attDef ident="type" mode="change"/>
             </attList>
         </classSpec>
         <classSpec ident="att.witnessed" type="atts" mode="change">
             <attList>
-                <attDef ident="wit" mode="change" usage="req">
+                <attDef ident="wit" mode="replace" usage="req">
                     <desc xml:lang="de" versionDate="2023-05-17">Enthält Verweise auf die IDs anderer Textzeugen, die
                         mit <gi>witness</gi> im <gi>teiHeader</gi> deklariert wurden.
                     </desc>
@@ -822,68 +854,70 @@
         <!-- Additional attribute classes -->
         <classSpec ident="ssrq.att.seal" type="atts" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-05-31">Klasse von Attributen zur Beschreibung von Siegeln.</desc>
-            <desc xml:lang="fr" versionDate="2023-05-31">Classe d'attributs permettant de décrire les sceaux.</desc>
             <desc xml:lang="en" versionDate="2023-05-31">Class of attributes for describing seals.</desc>
+            <desc xml:lang="fr" versionDate="2023-05-31">Classe d'attributs permettant de décrire les sceaux.</desc>
+            <desc xml:lang="it" versionDate="2023-06-29">Classe di attributi per descrivere i sigilli.</desc>
             <attList>
                 <attDef ident="attachment" mode="add">
                     <desc xml:lang="de" versionDate="2023-05-31">Beschreibt die Befestigungsart des Siegels</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-31">Décrit le mode de fixation du sceau</desc>
                     <desc xml:lang="en" versionDate="2023-05-31">Describes the method of attachment of the seal</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Décrit le mode de fixation du sceau</desc>
+                    <desc xml:lang="it" versionDate="2023-06-29">Descrive il metodo di fissaggio del sigillo</desc>
                     <valList type="closed">
                         <valItem ident="applied">
                             <desc xml:lang="de" versionDate="2023-05-31">aufgedrückt</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">pressé</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">applied</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">pressé</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">aderente</desc>
                         </valItem>
-                        <valItem ident="slit">
-                            <desc xml:lang="de" versionDate="2023-05-31">nur Siegelschlitz vorhanden</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">il n’existe qu’une fente pour le
-                                sceau
-                            </desc>
-                            <desc xml:lang="en" versionDate="2023-05-31">slit with no seal</desc>
-                            <desc xml:lang="it" versionDate="2023-05-31">c'è solo uno slot per il sigillo</desc>
+                        <valItem ident="sealed_on_a_cord">
+                            <desc xml:lang="de" versionDate="2023-05-31">angehängt an einer Kordel</desc>
+                            <desc xml:lang="en" versionDate="2023-05-31">sealed on a cord</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à un cordo</desc>
+                            <desc xml:lang="it" versionDate="2023-05-31">pendente da una cordicella</desc>
+                        </valItem>
+                        <valItem ident="sealed_on_a_lace">
+                            <desc xml:lang="de" versionDate="2023-05-31">angehängt an Schnur</desc>
+                            <desc xml:lang="en" versionDate="2023-05-31">sealed on a lace</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à un cordon</desc>
+                            <desc xml:lang="it" versionDate="2023-05-31">pendente da un cordone</desc>
+                        </valItem>
+                        <valItem ident="sealed_on_a_leather_tag">
+                            <desc xml:lang="de" versionDate="2023-05-31">angehängt an Lederstreifen</desc>
+                            <desc xml:lang="en" versionDate="2023-05-31">sealed on a leather tag</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à une lanière en cuir</desc>
+                            <desc xml:lang="it" versionDate="2023-05-31">pendente da un laccio di cuoio</desc>
+                        </valItem>
+                        <valItem ident="sealed_on_a_parchment_tag">
+                            <desc xml:lang="de" versionDate="2023-05-31">angehängt an Pergamentstreifen</desc>
+                            <desc xml:lang="en" versionDate="2023-05-31">sealed on a parchment tag</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à une lanière en parchemin</desc>
+                            <desc xml:lang="it" versionDate="2023-05-31">pendente da una stricia di pergamena</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_ribbon">
                             <desc xml:lang="de" versionDate="2023-05-31">angehängt an Band</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à un ruban</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">sealed on a ribbon</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à un ruban</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">pendente da un nastro</desc>
                         </valItem>
                         <valItem ident="sealed_on_laces">
                             <desc xml:lang="de" versionDate="2023-05-31">angehängt an Fäden</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à un fil</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">sealed on laces</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à un fil</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">pendente da un filo</desc>
                         </valItem>
-                        <valItem ident="sealed_on_a_leather_tag">
-                            <desc xml:lang="de" versionDate="2023-05-31">angehängt an Lederstreifen</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à une lanière en cuir</desc>
-                            <desc xml:lang="en" versionDate="2023-05-31">sealed on a leather tag</desc>
-                            <desc xml:lang="it" versionDate="2023-05-31">pendente da un laccio di cuoio</desc>
-                        </valItem>
-                        <valItem ident="sealed_on_a_cord">
-                            <desc xml:lang="de" versionDate="2023-05-31">angehängt an einer Kordel</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à un cordo</desc>
-                            <desc xml:lang="en" versionDate="2023-05-31">sealed on a cord</desc>
-                            <desc xml:lang="it" versionDate="2023-05-31">pendente da una cordicella</desc>
-                        </valItem>
-                        <valItem ident="sealed_on_a_parchment_tag">
-                            <desc xml:lang="de" versionDate="2023-05-31">angehängt an Pergamentstreifen</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à une lanière en parchemin</desc>
-                            <desc xml:lang="en" versionDate="2023-05-31">sealed on a parchment tag</desc>
-                            <desc xml:lang="it" versionDate="2023-05-31">pendente da una stricia di pergamena</desc>
-                        </valItem>
-                        <valItem ident="sealed_on_a_lace">
-                            <desc xml:lang="de" versionDate="2023-05-31">angehängt an Schnur</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">attaché à un cordon</desc>
-                            <desc xml:lang="en" versionDate="2023-05-31">sealed on a lace</desc>
-                            <desc xml:lang="it" versionDate="2023-05-31">pendente da un cordone</desc>
+                        <valItem ident="slit">
+                            <desc xml:lang="de" versionDate="2023-05-31">nur Siegelschlitz vorhanden</desc>
+                            <desc xml:lang="en" versionDate="2023-05-31">slit with no seal</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">il n’existe qu’une fente pour le
+                                sceau
+                            </desc>
+                            <desc xml:lang="it" versionDate="2023-05-31">c'è solo uno slot per il sigillo</desc>
                         </valItem>
                         <valItem ident="wrapping-tie">
                             <desc xml:lang="de" versionDate="2023-05-31">zum Verschluss aufgedrückt</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">sceau de clôture</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">seal applied to close a document</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">sceau de clôture</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">sigillo di chiusura</desc>
                         </valItem>
                     </valList>
@@ -892,174 +926,178 @@
                     <desc xml:lang="de" versionDate="2023-05-31">Beschreibt den Erhaltungszustand und Schäden eines
                         Siegels.
                     </desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Describes the state of preservation and damage of a
+                        seal.
+                    </desc>
                     <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'état de conservation et les dommages d'un
                         sceau.
                     </desc>
-                    <desc xml:lang="en" versionDate="2023-05-31">Décrit l'état de conservation et les dommages d'un
-                        sceau.
+                    <desc xml:lang="it" versionDate="2023-06-29">Descrive lo stato di conservazione e danneggiamento
+                        di un sigillo.
                     </desc>
                     <valList type="closed">
                         <valItem ident="absent">
                             <desc xml:lang="de" versionDate="2023-05-31">fehlt</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">absent</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">missing</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">absent</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">perduto</desc>
                         </valItem>
                         <valItem ident="bound_in_linen">
                             <desc xml:lang="de" versionDate="2023-05-31">in Leinensäckchen</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">lié dans un sachet de lin</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">enclosed in a linen sack</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">lié dans un sachet de lin</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">rilegato in un sacchetto di lino</desc>
                         </valItem>
                         <valItem ident="chamfered">
                             <desc xml:lang="de" versionDate="2023-05-31">bestossen</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">écorné</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">chipped</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">écorné</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">smussato</desc>
                         </valItem>
                         <valItem ident="damaged">
                             <desc xml:lang="de" versionDate="2023-05-31">beschädigt</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">endommagé</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">damaged</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">endommagé</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">danneggiato</desc>
-                        </valItem>
-                        <valItem ident="fragmentary">
-                            <desc xml:lang="de" versionDate="2023-05-31">bruchstückhaft</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">fragmentaire</desc>
-                            <desc xml:lang="en" versionDate="2023-05-31">fragmentary</desc>
-                            <desc xml:lang="it" versionDate="2023-05-31">frammentario</desc>
                         </valItem>
                         <valItem ident="ex_and_enclosed">
                             <desc xml:lang="de" versionDate="2023-05-31">ab und beiliegend</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">détaché et joint</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">ex and enclosed</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">détaché et joint</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">staccato e allegato</desc>
                         </valItem>
-                        <valItem ident="in_a_capsule">
-                            <desc xml:lang="de" versionDate="2023-05-31">in verschlossener Metallkapsel</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">dans une boîte en métal</desc>
-                            <desc xml:lang="en" versionDate="2023-05-31">in a metal capsule</desc>
-                            <desc xml:lang="it" versionDate="2023-05-31">in una scatola di metallo</desc>
+                        <valItem ident="fragmentary">
+                            <desc xml:lang="de" versionDate="2023-05-31">bruchstückhaft</desc>
+                            <desc xml:lang="en" versionDate="2023-05-31">fragmentary</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">fragmentaire</desc>
+                            <desc xml:lang="it" versionDate="2023-05-31">frammentario</desc>
                         </valItem>
                         <valItem ident="in_a_box">
                             <desc xml:lang="de" versionDate="2023-05-31">in verschlossener Holzkapsel</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">dans une boîte en bois</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">in a wooden box</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">dans une boîte en bois</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">in una scatola di legno</desc>
+                        </valItem>
+                        <valItem ident="in_a_capsule">
+                            <desc xml:lang="de" versionDate="2023-05-31">in verschlossener Metallkapsel</desc>
+                            <desc xml:lang="en" versionDate="2023-05-31">in a metal capsule</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">dans une boîte en métal</desc>
+                            <desc xml:lang="it" versionDate="2023-05-31">in una scatola di metallo</desc>
                         </valItem>
                         <valItem ident="polished">
                             <desc xml:lang="de" versionDate="2023-05-31">abgeschliffen</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">poli</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">polished</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">poli</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">lucido</desc>
                         </valItem>
                         <valItem ident="well-preserved">
                             <desc xml:lang="de" versionDate="2023-05-31">gut erhalten</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">bien conservé</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">well-preserved</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">bien conservé</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">ben conservato</desc>
                         </valItem>
                     </valList>
                 </attDef>
                 <attDef ident="material" mode="add" usage="req">
                     <desc xml:lang="de" versionDate="2023-05-31">Beschreibt das Material eines Siegels</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-31">Décrit le matériau d'un sceau</desc>
                     <desc xml:lang="en" versionDate="2023-05-31">Describes the material of a seal</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Décrit le matériau d'un sceau</desc>
+                    <desc xml:lang="it" versionDate="2023-06-29">Descrive il materiale di un sigillo</desc>
                     <valList type="closed">
                         <valItem ident="bulle">
                             <desc xml:lang="de" versionDate="2023-05-31">Bulle</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">bulle</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">bull</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">bulle</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">bolla</desc>
                         </valItem>
                         <valItem ident="papered_seal">
                             <desc xml:lang="de" versionDate="2023-05-31">Papierwachssiegel</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">sceau sous papier</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">papered seal</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">sceau sous papier</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">sigillo sotto carta</desc>
                         </valItem>
                         <valItem ident="sealing_wax">
                             <desc xml:lang="de" versionDate="2023-05-31">Siegellack</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">cire pour le scellement</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">sealing wax</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">cire pour le scellement</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">ceralacca</desc>
-                        </valItem>
-                        <valItem ident="wax">
-                            <desc xml:lang="de" versionDate="2023-05-31">Wachs</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">cire</desc>
-                            <desc xml:lang="en" versionDate="2023-05-31">wax</desc>
-                            <desc xml:lang="it" versionDate="2023-05-31">cera</desc>
                         </valItem>
                         <valItem ident="wafer">
                             <desc xml:lang="de" versionDate="2023-05-31">Oblatensiegel</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">sceau hostie</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">wafer</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">sceau hostie</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">ostia</desc>
                         </valItem>
-                        <valItem ident="wax_in_a_capsule">
-                            <desc xml:lang="de" versionDate="2023-05-31">Wachs in Metallkapsel</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">cire dans une boîte en métal</desc>
-                            <desc xml:lang="en" versionDate="2023-05-31">wax in a metal capsule</desc>
-                            <desc xml:lang="it" versionDate="2023-05-31">cera in una capsula di metallo</desc>
+                        <valItem ident="wax">
+                            <desc xml:lang="de" versionDate="2023-05-31">Wachs</desc>
+                            <desc xml:lang="en" versionDate="2023-05-31">wax</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">cire</desc>
+                            <desc xml:lang="it" versionDate="2023-05-31">cera</desc>
                         </valItem>
                         <valItem ident="wax_in_a_box">
                             <desc xml:lang="de" versionDate="2023-05-31">Wachs in Holzkapsel</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">cire dans une boîte en bois</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">wax in a wooden box</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">cire dans une boîte en bois</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">cera in una capsula di legno</desc>
+                        </valItem>
+                        <valItem ident="wax_in_a_capsule">
+                            <desc xml:lang="de" versionDate="2023-05-31">Wachs in Metallkapsel</desc>
+                            <desc xml:lang="en" versionDate="2023-05-31">wax in a metal capsule</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">cire dans une boîte en métal</desc>
+                            <desc xml:lang="it" versionDate="2023-05-31">cera in una capsula di metallo</desc>
                         </valItem>
                         <valItem ident="wax_with_margin">
                             <desc xml:lang="de" versionDate="2023-05-31">Wachs in Schüssel</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">cire avec un bord</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">wax with margin</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">cire avec un bord</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">cera con un bordo</desc>
                         </valItem>
                     </valList>
                 </attDef>
                 <attDef ident="shape" mode="add">
                     <desc xml:lang="de" versionDate="2023-05-31">Beschreibt die Form des Siegels</desc>
-                    <desc xml:lang="fr" versionDate="2023-05-31">Décrit la forme du sceau</desc>
                     <desc xml:lang="en" versionDate="2023-05-31">Describes the shape of the seal</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Décrit la forme du sceau</desc>
+                    <desc xml:lang="it" versionDate="2023-06-29">Descrive la forma del sigillo</desc>
                     <valList type="closed">
                         <valItem ident="heart-shaped">
                             <desc xml:lang="de" versionDate="2023-05-31">herzförmig</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">en forme de cœur</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">heart-shaped</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">en forme de cœur</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">a forma di cuore</desc>
                         </valItem>
                         <valItem ident="octangular">
                             <desc xml:lang="de" versionDate="2023-05-31">achteckig</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">octongonal</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">octagonal</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">octongonal</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">ottagonale</desc>
                         </valItem>
                         <valItem ident="oval">
                             <desc xml:lang="de" versionDate="2023-05-31">spitzoval</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">ovale pointu</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">oval</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">ovale pointu</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">gotico</desc>
                         </valItem>
                         <valItem ident="peltade">
                             <desc xml:lang="de" versionDate="2023-05-31">schildförmig</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">en forme de bouclier</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">scutiform</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">en forme de bouclier</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">a forma di scudo</desc>
                         </valItem>
                         <valItem ident="round">
                             <desc xml:lang="de" versionDate="2023-05-31">rund</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">rond</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">round</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">rond</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">rotonda</desc>
                         </valItem>
                         <valItem ident="triangular">
                             <desc xml:lang="de" versionDate="2023-05-31">dreieckig</desc>
-                            <desc xml:lang="fr" versionDate="2023-05-31">triangulaire</desc>
                             <desc xml:lang="en" versionDate="2023-05-31">triangular</desc>
+                            <desc xml:lang="fr" versionDate="2023-05-31">triangulaire</desc>
                             <desc xml:lang="it" versionDate="2023-05-31">triangolare</desc>
                         </valItem>
                     </valList>
                 </attDef>
-
             </attList>
         </classSpec>
         <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
@@ -1076,7 +1114,7 @@
                 corrisponde a quella del TEI.
             </desc>
             <attList>
-                <attDef ident="source" mode="add" usage="opt">
+                <attDef ident="source" mode="add">
                     <desc xml:lang="de" versionDate="2023-03-07">Verweis auf ein anderes Stück
                         (bspw. im Falle der Mehrfachüberlieferung) oder auf ein
                         Archivinformationssystem.
