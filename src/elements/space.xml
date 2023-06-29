@@ -5,45 +5,45 @@
              ident="space"
              module="transcr"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-11">Zeichnet eine Lücke aus, die vom Schreiber bewusst zwecks späterer
+    <desc xml:lang="de" versionDate="2023-05-11">Zeichnet eine Lücke aus, die vom Schreiber bewusst zwecks späterer
         Ergänzung offen gelassen wurde.
     </desc>
-   <desc xml:lang="en" versionDate="2023-05-11">Denotes a gap that the writer deliberately left open for later
+    <desc xml:lang="en" versionDate="2023-05-11">Denotes a gap that the writer deliberately left open for later
         completion.
     </desc>
-   <desc xml:lang="fr" versionDate="2023-05-11">Désigne une lacune que l'auteur a délibérément laissée ouverte pour une
+    <desc xml:lang="fr" versionDate="2023-05-11">Désigne une lacune que l'auteur a délibérément laissée ouverte pour une
         réalisation ultérieure.
     </desc>
-   <desc xml:lang="it" versionDate="2023-05-17">Si riferisce a una lacuna che l'autore ha deliberatamente lasciato
+    <desc xml:lang="it" versionDate="2023-05-17">Si riferisce a una lacuna che l'autore ha deliberatamente lasciato
         aperto per una successiva realizzazione.
     </desc>
-   <classes mode="replace">
-      <memberOf key="att.dimensions"/>
-   </classes>
-   <content>
-      <empty/>
-   </content>
-   <attList>
-      <attDef ident="dim" mode="delete"/>
-      <attDef ident="unit" mode="replace" usage="req">
-         <datatype>
-            <rng:choice>
-               <rng:ref name="ssrq.measure.length.base.cm"/>
-               <rng:ref name="ssrq.measure.length.base.line"/>
-               <rng:ref name="ssrq.measure.typography"/>
-            </rng:choice>
-         </datatype>
-      </attDef>
-      <attDef ident="quantity" mode="change" usage="req"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-03">
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <space unit="word" quantity="2"/>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-03">
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <space unit="word" quantity="2"/>
-      </egXML>
-   </exemplum>
+    <classes mode="replace">
+        <memberOf key="att.dimensions"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="dim" mode="delete"/>
+        <attDef ident="unit" mode="replace" usage="req">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.measure.lengths.base.cm"/>
+                    <rng:ref name="ssrq.measure.lengths.base.line"/>
+                    <rng:ref name="ssrq.measure.typography"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="quantity" mode="change" usage="req"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-03">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <space unit="word" quantity="2"/>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-03">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <space unit="word" quantity="2"/>
+        </egXML>
+    </exemplum>
 </elementSpec>
