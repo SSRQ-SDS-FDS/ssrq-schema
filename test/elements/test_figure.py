@@ -21,7 +21,12 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "invalid-figure-without-content",
+            "valid-figure-with-place",
+            "<figure type='copper_engraving' place='above'/>",
+            True,
+        ),
+        (
+            "invalid-figure-with-wrong-type",
             "<figure type='foo'/>",
             False,
         ),
