@@ -80,15 +80,16 @@ class AttributeSpec:
                     )
 
                 case "valItem":
+                    val_item_rendered = content_part.attrib["ident"]
+
                     desc = content_part.find(
                         f"tei:desc[@xml:lang = '{lang}']", namespaces=NS_MAP
                     )
 
                     if desc is not None and desc.text is not None:
-                        output.append(desc.text)
-                        continue
+                        val_item_rendered += f" – *{desc.text.strip()}*"
 
-                    output.append(content_part.attrib["ident"])
+                    output.append(val_item_rendered)
 
                 case _:
                     raise ValueError(
