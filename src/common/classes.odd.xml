@@ -405,6 +405,7 @@
             </attList>
         </classSpec>
         <classSpec ident="att.dimensions" type="atts" mode="change">
+            <classes mode="replace"/>
             <constraintSpec scheme="schematron" ident="sch-att-dimensions">
                 <desc xml:lang="en" versionDate="2023-05-22">If <att>unit</att> has the value unknown,
                     <att>quantity</att>
