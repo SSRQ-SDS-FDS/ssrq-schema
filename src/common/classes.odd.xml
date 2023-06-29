@@ -770,7 +770,21 @@
         <classSpec ident="att.tableDecoration" type="atts" mode="change">
             <attList>
                 <attDef ident="cols" mode="delete"/>
-                <attDef ident="role" mode="change"/>
+                <attDef ident="role" mode="replace">
+                    <desc xml:lang="de" versionDate="2023-06-19">Spezielle Verwendung einer Tabellenzelle</desc>
+                    <desc xml:lang="en" versionDate="2023-06-19">Special use of a table cell</desc>
+                    <desc xml:lang="fr" versionDate="2023-06-19">Utilisation particulière d'une cellule de tableau
+                    </desc>
+                    <desc xml:lang="it" versionDate="2023-06-29">Uso speciale di una cella di tabella</desc>
+                    <valList type="closed">
+                        <valItem ident="label">
+                            <desc xml:lang="de" versionDate="2023-03-03">Spaltenüberschrift</desc>
+                            <desc xml:lang="en" versionDate="2023-06-29">column heading</desc>
+                            <desc xml:lang="fr" versionDate="2023-06-29">en-tête de colonne</desc>
+                            <desc xml:lang="de" versionDate="2023-06-29">intestazione di colonna</desc>
+                        </valItem>
+                    </valList>
+                </attDef>
                 <attDef ident="rows" mode="delete"/>
             </attList>
         </classSpec>
