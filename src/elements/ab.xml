@@ -20,6 +20,7 @@
     </desc>
     <classes mode="replace">
         <memberOf key="att.global"/>
+        <memberOf key="att.placement"/>
         <memberOf key="att.typed"/>
         <memberOf key="att.written"/>
         <memberOf key="macro.abContent"/>
@@ -50,7 +51,11 @@
         </constraint>
     </constraintSpec>
     <attList>
-        <attDef ident="place" mode="add" usage="req">
+        <!-- att.global -->
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+        <!-- att.placement -->
+        <attDef ident="place" mode="replace" usage="req">
             <desc xml:lang="de" versionDate="2023-05-02">Ort einer Dorsualnotiz, eines Vermerks, eines
                 Registraturvermerks oder eines Kanzleivermerks
             </desc>
@@ -60,6 +65,9 @@
             <desc xml:lang="fr" versionDate="2023-05-02">Lieu d'une note dorsale, d'une note, d'une note
                 d'enregistrement ou d'une note de chancellerie
             </desc>
+            <desc xml:lang="it" versionDate="2023-06-30">Posizione di un avviso dorsale, avviso, avviso di registro o
+                avviso clericale
+            </desc>
             <datatype>
                 <rng:choice>
                     <rng:ref name="ssrq.place"/>
@@ -67,67 +75,63 @@
                 </rng:choice>
             </datatype>
         </attDef>
+        <!-- att.typed -->
         <attDef ident="type" mode="replace" usage="req">
-            <desc xml:lang="de" versionDate="2023-05-02">Detaillierte Beschreibung des Elements <gi>ab</gi>.
-            </desc>
-            <desc xml:lang="fr" versionDate="2023-05-02">Description détaillée de l'élément <gi>ab</gi>.
-            </desc>
-            <desc xml:lang="en" versionDate="2023-05-02">Detailed description of the element <gi>ab</gi>.
-            </desc>
+            <desc xml:lang="de" versionDate="2023-05-02">Klassifikation des Elements</desc>
+            <desc xml:lang="en" versionDate="2023-05-02">Classification of the element</desc>
+            <desc xml:lang="fr" versionDate="2023-05-02">Classification de l'élément</desc>
+            <desc xml:lang="it" versionDate="2023-06-30">Classificazione dell'elemento</desc>
             <valList type="closed">
-                <valItem ident="archiving_reference">
-                    <desc xml:lang="de">Registraturvermerk</desc>
-                    <desc xml:lang="fr">Note d’archives</desc>
-                    <desc xml:lang="en">Registratur’s sign</desc>
-                    <desc xml:lang="it">Nota dell'archivio</desc>
-                </valItem>
                 <valItem ident="address">
                     <desc xml:lang="de">Anschrift</desc>
-                    <desc xml:lang="fr">Adresse</desc>
                     <desc xml:lang="en">Adress</desc>
+                    <desc xml:lang="fr">Adresse</desc>
                     <desc xml:lang="it">Inscriptio</desc>
+                </valItem>
+                <valItem ident="archiving_reference">
+                    <desc xml:lang="de">Registraturvermerk</desc>
+                    <desc xml:lang="en">Registratur’s sign</desc>
+                    <desc xml:lang="fr">Note d’archives</desc>
+                    <desc xml:lang="it">Nota dell'archivio</desc>
                 </valItem>
                 <valItem ident="chancery_notation">
                     <desc xml:lang="de">Kanzleivermerk</desc>
-                    <desc xml:lang="fr">Annotation issue d’une chancellerie</desc>
                     <desc xml:lang="en">Chancery notation</desc>
+                    <desc xml:lang="fr">Annotation issue d’une chancellerie</desc>
                     <desc xml:lang="it">Nota di cancellaria</desc>
                 </valItem>
                 <valItem ident="computatio">
                     <desc xml:lang="de">Komputierungsvermerk</desc>
-                    <desc xml:lang="fr">Annotation du computeur</desc>
                     <desc xml:lang="en">Computatio</desc>
+                    <desc xml:lang="fr">Annotation du computeur</desc>
                     <desc xml:lang="it">Computatio</desc>
                 </valItem>
                 <valItem ident="dorsal">
                     <desc xml:lang="de">Vermerk</desc>
-                    <desc xml:lang="fr">Note dorsale</desc>
                     <desc xml:lang="en">Dorsal notation</desc>
+                    <desc xml:lang="fr">Note dorsale</desc>
                     <desc xml:lang="it">Nota dorsale</desc>
                 </valItem>
                 <valItem ident="marginal_note">
                     <desc xml:lang="de">Marginalie</desc>
-                    <desc xml:lang="fr">Note</desc>
                     <desc xml:lang="en">Marginal note</desc>
+                    <desc xml:lang="fr">Note</desc>
                     <desc xml:lang="it">Marginalia</desc>
                 </valItem>
                 <valItem ident="sigillant">
                     <desc xml:lang="de">Sieglervermerk</desc>
-                    <desc xml:lang="fr">Annotation d’un sceau</desc>
                     <desc xml:lang="en">Sigillant’s notes</desc>
+                    <desc xml:lang="fr">Annotation d’un sceau</desc>
                     <desc xml:lang="it">Nota del sigillante</desc>
                 </valItem>
                 <valItem ident="tax">
                     <desc xml:lang="de">Taxvermerk</desc>
-                    <desc xml:lang="fr">Annotation de taxation</desc>
                     <desc xml:lang="en">Tax note</desc>
+                    <desc xml:lang="fr">Annotation de taxation</desc>
                     <desc xml:lang="it">Nota di tassazione</desc>
                 </valItem>
             </valList>
         </attDef>
-        <attDef ident="medium" mode="delete"/>
-        <attDef ident="n" mode="delete"/>
-        <attDef ident="xml:id" mode="delete"/>
     </attList>
     <remarks xml:lang="de" versionDate="2023-06-30">
         <p>Wir verwenden den Tag immer zusammen mit <att>type</att> und <att>place</att> für Vermerke, Dorsualnotizen,
