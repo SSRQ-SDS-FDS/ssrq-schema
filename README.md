@@ -22,16 +22,18 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
       - [Erzeugung der Dokumentation](#erzeugung-der-dokumentation)
         - [Befehle](#befehle)
         - [Datei- / Ordnerstruktur](#datei---ordnerstruktur)
+  - [Autor:innen](#autorinnen)
+  - [Lizenzierung](#lizenzierung)
 
 ## Initiale Zielsetzung der Entwicklung
 
 1. Aktualisierung und Anpassung des bestehenden Schemas an Neuentwicklungen TEI-Guidelines
-2. Aufarbeitung von Rück-/Misständen (siehe inhalt. To-Dos sowie die zugehörigen Projekte in Redmine)
+2. Aufarbeitung von Rück-/Misständen
 3. Eindeutige Versionierung (Daten entsprechen einem Schema einer bestimmten Version)
 4. Testbarkeit
-5. Kopplung mit (Oxygen-)Templates
-6. Erzeugung einer Web-Dokumentation aus dem Schema heraus (ersetzt die Dokumentation im Wiki)
-7. XSLT-Skripte (o.ä.) zur Migration zwischen Datenständen
+5. Erzeugung einer Web-Dokumentation aus dem Schema heraus (ersetzt die Dokumentation im Wiki)
+6. Erarbeitung von XSLT-Skripten (o.ä.) zur Migration zwischen Datenständen
+7. Öffentlicher Zugriff auf vormals interne Dokumentation
 
 ## Dokumentation
 
@@ -253,3 +255,13 @@ Die Quelldateien für die Dokumentation sind einerseits die einzelnen Elementdef
   - `base`: Markdowndateien mit statischen Beschreibungstexten (bspw. Datierungsrichtlinien)
   - `elements`: leerer Ordner, in welchen die Markdowndateien je Element temporär gespeichert werden
   - `translations`: Übersetzungen für Bestandteile des UIs / des Inhalts
+
+## Autor:innen
+
+- [Bastian Politycki](https://github.com/Bpolitycki) – Swiss Law Sources
+- [Christian Sonder](https://www.ssrq-sds-fds.ch/en/about-us/organisation/mitarbeitende/) – Swiss Law Sources
+- [Pascale Sutter](https://www.ssrq-sds-fds.ch/en/about-us/organisation/mitarbeitende/) – Swiss Law Sources
+
+## Lizenzierung
+
+Siehe [LICENSE](./LICENSE).
