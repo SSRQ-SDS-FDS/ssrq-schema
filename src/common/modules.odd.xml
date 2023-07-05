@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-
     <specGrp xml:id="ssrq-modules">
         <moduleSpec ident="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-05-15">Modul für SSRQ-spezifische Hinzufügungen</desc>
@@ -10,5 +12,4 @@
             <desc xml:lang="it" versionDate="2023-05-15">Modulo per aggiunte specifiche FDS</desc>
         </moduleSpec>
     </specGrp>
-
 </div>
