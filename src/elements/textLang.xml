@@ -4,58 +4,55 @@
              ident="textLang"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-23">Enthält die Textsprache bzw. die Textsprachen einer
+    <desc xml:lang="de" versionDate="2023-05-23">Enthält die Textsprache bzw. die Textsprachen einer
         Quelle.
     </desc>
-   <desc xml:lang="fr" versionDate="2023-05-23">Contient la ou les langues du texte d'une source.</desc>
-   <desc xml:lang="en" versionDate="2023-05-23">Contains the text language(s) of a source.</desc>
-   <classes mode="replace">
-      <memberOf key="model.msItemPart"/>
-      <memberOf key="att.global"/>
-   </classes>
-   <content>
-      <empty/>
-   </content>
-   <attList>
-      <attDef ident="xml:lang" mode="change" usage="req"/>
-      <attDef ident="cert" mode="delete"/>
-      <attDef ident="n" mode="delete"/>
-      <attDef ident="rend" mode="delete"/>
-      <attDef ident="resp" mode="delete"/>
-      <attDef ident="xml:id" mode="delete"/>
-      <attDef ident="mainLang" mode="delete"/>
-      <attDef ident="otherLangs" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Einfaches Beispiel</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <textLang xml:lang="de"/>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Exemple simple</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <textLang xml:lang="de"/>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Mehrere Sprachen</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <msItem>
+    <desc xml:lang="fr" versionDate="2023-05-23">Contient la ou les langues du texte d'une source.</desc>
+    <desc xml:lang="en" versionDate="2023-05-23">Contains the text language(s) of a source.</desc>
+    <classes mode="replace">
+        <memberOf key="model.msItemPart"/>
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="xml:lang" mode="change" usage="req"/>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="mainLang" mode="delete"/>
+        <attDef ident="otherLangs" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
+        <p>Einfaches Beispiel</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <textLang xml:lang="de"/>
-            <textLang xml:lang="fr"/>
-            <!-- ... -->
-         </msItem>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Plusieurs langues</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <msItem>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
+        <p>Exemple simple</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <textLang xml:lang="de"/>
-            <textLang xml:lang="fr"/>
-            <!-- ... -->
-         </msItem>
-      </egXML>
-   </exemplum>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
+        <p>Mehrere Sprachen</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <msItem>
+                <textLang xml:lang="de"/>
+                <textLang xml:lang="fr"/>
+                <!-- ... -->
+            </msItem>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
+        <p>Plusieurs langues</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <msItem>
+                <textLang xml:lang="de"/>
+                <textLang xml:lang="fr"/>
+                <!-- ... -->
+            </msItem>
+        </egXML>
+    </exemplum>
 </elementSpec>

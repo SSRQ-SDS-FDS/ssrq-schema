@@ -5,107 +5,105 @@
              ident="seal"
              module="msdescription"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-31">Beschreibt das Aussehen eines Siegels.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'apparence d'un sceau.</desc>
-   <desc xml:lang="en" versionDate="2023-05-31">Describes the appearance of a seal.</desc>
-   <classes mode="replace">
-      <memberOf key="att.global"/>
-      <memberOf key="att.global.facs"/>
-      <memberOf key="att.placement"/>
-      <memberOf key="ssrq.att.seal"/>
-   </classes>
-   <content>
-      <sequence minOccurs="0">
-         <alternate minOccurs="0">
-            <elementRef key="orgName"/>
-            <elementRef key="persName"/>
-         </alternate>
-         <elementRef key="p" minOccurs="0"/>
-      </sequence>
-   </content>
-   <constraintSpec scheme="schematron" ident="sch-el-seal" mode="add">
-      <desc versionDate="2023-06-01" xml:lang="en">Schematron rules for tei:seal</desc>
-      <constraint>
-         <sch:pattern>
-            <sch:rule context="tei:seal[preceding-sibling::tei:seal]">
-               <sch:let name="expectedNumber" value="./preceding-sibling::tei:seal/@n + 1"/>
-               <sch:assert test="./@n = $expectedNumber">The value of @n must be equal to<sch:value-of select="$expectedNumber"/>.
+    <desc xml:lang="de" versionDate="2023-05-31">Beschreibt das Aussehen eines Siegels.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'apparence d'un sceau.</desc>
+    <desc xml:lang="en" versionDate="2023-05-31">Describes the appearance of a seal.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="att.global.facs"/>
+        <memberOf key="att.placement"/>
+        <memberOf key="ssrq.att.seal"/>
+    </classes>
+    <content>
+        <sequence minOccurs="0">
+            <alternate minOccurs="0">
+                <elementRef key="orgName"/>
+                <elementRef key="persName"/>
+            </alternate>
+            <elementRef key="p" minOccurs="0"/>
+        </sequence>
+    </content>
+    <constraintSpec scheme="schematron" ident="sch-el-seal" mode="add">
+        <desc versionDate="2023-06-01" xml:lang="en">Schematron rules for tei:seal</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:seal[preceding-sibling::tei:seal]">
+                    <sch:let name="expectedNumber" value="./preceding-sibling::tei:seal/@n + 1"/>
+                    <sch:assert test="./@n = $expectedNumber">The value of @n must be equal to<sch:value-of
+                            select="$expectedNumber"/>.
                     </sch:assert>
-            </sch:rule>
-         </sch:pattern>
-      </constraint>
-   </constraintSpec>
-   <attList>
-      <attDef ident="n" mode="change" usage="req">
-         <desc xml:lang="de" versionDate="2023-05-31">Fortlaufende Zählung der Siegel von links nach rechts (anhand
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="n" mode="change" usage="req">
+            <desc xml:lang="de" versionDate="2023-05-31">Fortlaufende Zählung der Siegel von links nach rechts (anhand
                 der Siegelschlitze bzw. der tatsächlich vorhandenen Siegel)
             </desc>
-         <desc xml:lang="fr" versionDate="2023-05-31">Comptage continu des sceaux</desc>
-         <desc xml:lang="en" versionDate="2023-05-31">Continuous seal counting</desc>
-         <datatype>
-            <dataRef name="positiveInteger"/>
-         </datatype>
-      </attDef>
-      <attDef ident="place" mode="replace">
-         <desc xml:lang="de" versionDate="2023-05-31">Beschreibt den Anbringungsort des Siegels</desc>
-         <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'emplacement du sceau</desc>
-         <desc xml:lang="en" versionDate="2023-05-31">Describes the location of the seal</desc>
-         <valList type="closed">
-            <valItem ident="end">
-               <desc xml:lang="de" versionDate="2023-05-31">am Ende der Urkunde</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">en bas de l’acte</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">at the end of the act</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">in fondo all'atto</desc>
-            </valItem>
-            <valItem ident="overleaf">
-               <desc xml:lang="de" versionDate="2023-05-31">auf der anderen Seite des Blattes</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">sur l’autre page de la feuille</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">on the other side of the page</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">sull'altra pagina del foglio</desc>
-            </valItem>
-         </valList>
-      </attDef>
-      <attDef ident="cert" mode="delete"/>
-      <attDef ident="contemporary" mode="delete"/>
-      <attDef ident="rend" mode="delete"/>
-      <attDef ident="resp" mode="delete"/>
-      <attDef ident="xml:id" mode="delete"/>
-      <attDef ident="xml:lang" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-31">
-      <p>Beispielhafte Erfassung eines Siegels</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <seal n="1"
-               material="wax"
-               shape="round"
-               attachment="sealed_on_a_parchment_tag"
-               condition="damaged">
-            <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
-         </seal>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
-      <p>Exemple de saisie d'un sceau</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <seal n="1"
-               material="wax"
-               shape="round"
-               attachment="sealed_on_a_parchment_tag"
-               condition="damaged">
-            <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
-         </seal>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
-      <p>Saisie d'un moment</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <seal n="1"
-               material="wax"
-               shape="round"
-               attachment="sealed_on_a_parchment_tag"
-               condition="damaged">
-            <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
-         </seal>
-      </egXML>
-   </exemplum>
+            <desc xml:lang="fr" versionDate="2023-05-31">Comptage continu des sceaux</desc>
+            <desc xml:lang="en" versionDate="2023-05-31">Continuous seal counting</desc>
+            <datatype>
+                <dataRef name="positiveInteger"/>
+            </datatype>
+        </attDef>
+        <attDef ident="place" mode="replace">
+            <desc xml:lang="de" versionDate="2023-05-31">Beschreibt den Anbringungsort des Siegels</desc>
+            <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'emplacement du sceau</desc>
+            <desc xml:lang="en" versionDate="2023-05-31">Describes the location of the seal</desc>
+            <valList type="closed">
+                <valItem ident="end">
+                    <desc xml:lang="de" versionDate="2023-05-31">am Ende der Urkunde</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">en bas de l’acte</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">at the end of the act</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">in fondo all'atto</desc>
+                </valItem>
+                <valItem ident="overleaf">
+                    <desc xml:lang="de" versionDate="2023-05-31">auf der anderen Seite des Blattes</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">sur l’autre page de la feuille</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">on the other side of the page</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">sull'altra pagina del foglio</desc>
+                </valItem>
+            </valList>
+        </attDef>
+        <attDef ident="contemporary" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="xml:lang" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-31">
+        <p>Beispielhafte Erfassung eines Siegels</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <seal n="1"
+                  material="wax"
+                  shape="round"
+                  attachment="sealed_on_a_parchment_tag"
+                  condition="damaged">
+                <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
+            </seal>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
+        <p>Exemple de saisie d'un sceau</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <seal n="1"
+                  material="wax"
+                  shape="round"
+                  attachment="sealed_on_a_parchment_tag"
+                  condition="damaged">
+                <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
+            </seal>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
+        <p>Saisie d'un moment</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <seal n="1"
+                  material="wax"
+                  shape="round"
+                  attachment="sealed_on_a_parchment_tag"
+                  condition="damaged">
+                <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
+            </seal>
+        </egXML>
+    </exemplum>
 </elementSpec>

@@ -6,46 +6,50 @@
              ident="foreign"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-26">Beinhaltet Wörter oder Sätze, die in einer anderen
+    <desc xml:lang="de" versionDate="2023-05-26">Beinhaltet Wörter oder Sätze, die in einer anderen
         Sprache als der Haupttext vorliegen. «Actum», «datum» oder «etc.» werden nicht mit <gi>
-        foreign</gi> ausgezeichnet. Längere fremdsprachige Textpassagen werden zusätzlich auch in
-        den Metadaten unter <gi>textLang</gi> vermerkt.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-26">Contient des mots ou des phrases qui sont dans une
+            foreign
+        </gi> ausgezeichnet. Längere fremdsprachige Textpassagen werden zusätzlich auch in
+        den Metadaten unter <gi>textLang</gi> vermerkt.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-05-26">Contient des mots ou des phrases qui sont dans une
         autre langue que le texte principal. "Actum", "datum" ou "etc." ne sont pas signalés par <gi>
-        foreign</gi>. Les longs passages de texte en langue étrangère sont en outre également
-        indiqués dans les métadonnées sous <gi>textLang</gi>.</desc>
-   <desc xml:lang="en" versionDate="2023-05-26">Includes words or phrases that are in a language
+            foreign</gi>. Les longs passages de texte en langue étrangère sont en outre également
+        indiqués dans les métadonnées sous <gi>textLang</gi>.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-05-26">Includes words or phrases that are in a language
         other than the main text. "Actum", "datum" or "etc." are not marked with <gi>foreign</gi>.
-        Longer text passages in foreign languages are also noted in the metadata under <gi>textLang</gi>
-        .</desc>
-   <classes mode="replace">
-      <memberOf key="att.global"/>
-   </classes>
-   <content>
-      <rng:oneOrMore>
-         <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-   </content>
-   <attList>
-      <attDef ident="xml:lang" mode="change" usage="req"/>
-      <attDef ident="cert" mode="delete"/>
-      <attDef ident="n" mode="delete"/>
-      <attDef ident="rend" mode="delete"/>
-      <attDef ident="resp" mode="delete"/>
-      <attDef ident="xml:id" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
-      <p>Absatz mit fremdsprachigen Einschüben</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <p>Versigleter <foreign xml:lang="rm">scütt</foreign> entzwischen der gmeindt Langnetz
-                und der gmeind Fallß <foreign xml:lang="la">ut jntus</foreign> zu sechen.</p>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
-      <p>Paragraphe avec insertions en langues étrangères</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <p>Versigleter <foreign xml:lang="rm">scütt</foreign> entzwischen der gmeindt Langnetz
-                und der gmeind Fallß <foreign xml:lang="la">ut jntus</foreign> zu sechen.</p>
-      </egXML>
-   </exemplum>
+        Longer text passages in foreign languages are also noted in the metadata under
+        <gi>textLang</gi>
+        .
+    </desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
+    </content>
+    <attList>
+        <attDef ident="xml:lang" mode="change" usage="req"/>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
+        <p>Absatz mit fremdsprachigen Einschüben</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <p>Versigleter <foreign xml:lang="rm">scütt</foreign> entzwischen der gmeindt Langnetz
+                und der gmeind Fallß <foreign xml:lang="la">ut jntus</foreign> zu sechen.
+            </p>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
+        <p>Paragraphe avec insertions en langues étrangères</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <p>Versigleter <foreign xml:lang="rm">scütt</foreign> entzwischen der gmeindt Langnetz
+                und der gmeind Fallß <foreign xml:lang="la">ut jntus</foreign> zu sechen.
+            </p>
+        </egXML>
+    </exemplum>
 </elementSpec>
