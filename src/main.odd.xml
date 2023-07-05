@@ -6,33 +6,42 @@
         <body>
             <schemaSpec ident="ssrq-main-schema" docLang="de en fr" xml:lang="en">
 
-                <!-- modules used -->
+                <!-- TEI modules used -->
                 <moduleRef key="tei"/>
-                <moduleRef key="certainty" include="precision"/>
+                <moduleRef key="certainty"
+                           include="precision"/>
                 <moduleRef key="core"
                            include="abbr add author bibl cb choice corr date del editor expan foreign gap graphic head hi item label lb list listBibl measure measureGrp note num orig p pb pubPlace publisher q quote ref resp respStmt sic term textLang time title unclear"/>
                 <moduleRef key="header"
                            include="availability editorialDecl encodingDesc extent fileDesc handNote idno keywords licence publicationStmt profileDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
-                <moduleRef key="textstructure" include="TEI back body div docImprint signed text"/>
-                <moduleRef key="linking" include="ab anchor seg"/>
+                <moduleRef key="textstructure"
+                           include="TEI back body div docImprint signed text"/>
+                <moduleRef key="linking"
+                           include="ab anchor seg"/>
                 <moduleRef key="msdescription"
                            include="altIdentifier bindingDesc origDate origPlace dimensions handDesc height width support material condition msDesc physDesc sealDesc objectDesc supportDesc seal msContents history additional repository msItem msIdentifier summary origin"/>
                 <moduleRef key="transcr"
                            include="addSpan damage damageSpan delSpan fw handShift space subst supplied"/>
-                <moduleRef key="textcrit" include="app lem listWit rdg witness"/>
+                <moduleRef key="textcrit"
+                           include="app lem listWit rdg witness"/>
                 <moduleRef key="namesdates"
                            include="orgName persName placeName settlement"/>
-                <moduleRef key="figures" include="figure table row cell"/>
+                <moduleRef key="figures"
+                           include="figure table row cell"/>
 
-                <!-- modules and classes -->
+                <!-- own modules -->
                 <specGrpRef target="common/modules.odd.xml#ssrq-modules"/>
+
+                <!-- attribute classes -->
                 <specGrpRef target="common/classes.odd.xml#ssrq-classes"/>
 
                 <!-- global constraints -->
                 <specGrpRef target="common/constraints.odd.xml#constraints"/>
 
-                <!-- content and datatypes -->
+                <!-- content -->
                 <specGrpRef target="common/content.odd.xml#ssrq-default-content-types"/>
+
+                <!-- datatypes -->
                 <specGrpRef target="common/datatypes.odd.xml#ssrq-agent"/>
                 <specGrpRef target="common/datatypes.odd.xml#ssrq-bibl"/>
                 <specGrpRef target="common/datatypes.odd.xml#ssrq-date-time"/>
@@ -43,9 +52,11 @@
                 <specGrpRef target="common/datatypes.odd.xml#ssrq-rend"/>
                 <specGrpRef target="common/datatypes.odd.xml#ssrq-role"/>
                 <specGrpRef target="common/datatypes.odd.xml#ssrq-struct"/>
+
+                <!-- patterns -->
                 <specGrpRef target="common/patterns.odd.xml#ssrq-patterns"/>
 
-                <!-- element specs -->
+                <!-- element specifications -->
                 <specGrpRef target="elements/ab.xml"/>
                 <specGrpRef target="elements/abbr.xml"/>
                 <specGrpRef target="elements/add.xml"/>
