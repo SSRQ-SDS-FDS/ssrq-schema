@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:xi="http://www.w3.org/2001/XInclude">
+    <macroSpec ident="ssrq-examples">
+        <exemplum xml:lang="de" versionDate="2023-05-23" xml:id="ex-choice-1-de" >
+            <p>Beispiel für eine Abkürzung</p>
+            <xi:include href="ex-choice-1.xml" xpointer="ex-choice-1"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-choice-1-en">
+            <p>Example of an abbreviation</p>
+            <xi:include href="ex-choice-1.xml" xpointer="ex-choice-1"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-choice-1-fr">
+            <p>Exemple d'abréviation.</p>
+            <xi:include href="ex-choice-1.xml" xpointer="ex-choice-1"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-choice-1-it">
+            <p>Esempio di abbreviazione</p>
+            <xi:include href="ex-choice-1.xml" xpointer="ex-choice-1"/>
+        </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-choice-2-de">
+            <p>Beispiel für eine Korrektur</p>
+            <xi:include href="ex-choice-2.xml" xpointer="ex-choice-2"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-choice-2-en">
+            <p>Example of a correction</p>
+            <xi:include href="ex-choice-2.xml" xpointer="ex-choice-2"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-choice-2-fr">
+            <p>Exemple de correction</p>
+            <xi:include href="ex-choice-2.xml" xpointer="ex-choice-2"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-choice-2-it">
+            <p>Esempio di correzione</p>
+            <xi:include href="ex-choice-2.xml" xpointer="ex-choice-2"/>
+        </exemplum>
+    </macroSpec>
+</div>

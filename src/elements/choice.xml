@@ -3,7 +3,8 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="choice"
              module="core"
-             mode="change">
+             mode="change"
+             xmlns:xi="http://www.w3.org/2001/XInclude">
    <desc xml:lang="de" versionDate="2023-05-23">Gruppiert verschiedene Auszeichnungen zur selben Stelle im Text.</desc>
    <desc xml:lang="en" versionDate="2023-05-23">Groups different markup at the same place in the text.</desc>
    <desc xml:lang="fr" versionDate="2023-05-23">Regroupe différents balisages au même endroit dans le texte.</desc>
@@ -24,76 +25,13 @@
          </sequence>
       </alternate>
    </content>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Beispiel für eine Korrektur.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <choice>
-            <sic>offensiche</sic>
-            <corr resp="anh">offenliche</corr>
-         </choice>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Example of a correction.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <choice>
-            <sic>offensiche</sic>
-            <corr resp="anh">offenliche</corr>
-         </choice>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Exemple de correction.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <choice>
-            <sic>offensiche</sic>
-            <corr resp="anh">offenliche</corr>
-         </choice>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Esempio di correzione.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <choice>
-            <sic>offensiche</sic>
-            <corr resp="anh">offenliche</corr>
-         </choice>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Beispiel für eine Abkürzung.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <choice>
-            <abbr>sabbo</abbr>
-            <expan>sabbato</expan>
-         </choice>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Example of an abbreviation.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <choice>
-            <abbr>sabbo</abbr>
-            <expan>sabbato</expan>
-         </choice>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Exemple d'abréviation.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <choice>
-            <abbr>sabbo</abbr>
-            <expan>sabbato</expan>
-         </choice>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Esempio di abbreviazione.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <choice>
-            <abbr>sabbo</abbr>
-            <expan>sabbato</expan>
-         </choice>
-      </egXML>
-   </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-choice-1-de"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-1-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-1-en"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-1-it"/>
+
+    <xi:include href="examples.xml" xpointer="ex-choice-2-de"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-2-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-2-en"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-2-it"/>
 </elementSpec>
