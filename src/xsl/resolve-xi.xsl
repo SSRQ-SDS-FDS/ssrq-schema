@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teiex="http://www.tei-c.org/ns/Examples"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 exclude-result-prefixes="#all"
@@ -29,6 +30,12 @@
                 <xsl:apply-templates select="$content"/>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="teiex:egXML[@xml:id]">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <xsl:apply-templates/>
+        </egXML>
     </xsl:template>
     
     <!-- A hack, because the compiled odd get's cleaned afterwards – see clean-compiled.xsl -->

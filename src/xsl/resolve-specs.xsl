@@ -17,17 +17,33 @@
             <xsl:when test="$target => contains('#')">
                 <xsl:variable name="file_and_part" as="xs:string+" select="$target => tokenize('#')"/>
                 <xsl:variable name="content" as="node()" select="doc($file_and_part[1])//*[@xml:id = $file_and_part[2]]"/>
-                <xsl:apply-templates select="$content"/>
+                <xsl:call-template name="process-included-spec">
+                    <xsl:with-param name="context" as="node()" select="$content"/>
+                </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:variable name="content" as="node()">
                     <xsl:copy-of select="doc($target)"/>
                 </xsl:variable>
-                <xsl:apply-templates select="$content"/>
+                <xsl:call-template name="process-included-spec">
+                    <xsl:with-param name="context" as="node()" select="$content"/>
+                </xsl:call-template>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     
     <xsl:template match="processing-instruction()" />
+    
+    <xsl:template name="process-included-spec">
+        <xsl:param name="context" as="node()"/>
+        <xsl:choose>
+            <xsl:when test="$context/self::tei:specGrp">
+                <xsl:apply-templates select="$context/node()"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates select="$context"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
     
 </xsl:stylesheet>
