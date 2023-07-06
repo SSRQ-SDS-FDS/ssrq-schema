@@ -10,6 +10,7 @@ from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecu
 CUR_DIR = Path(__file__).parent.parent.absolute()
 DIST_DIR = CUR_DIR / "dist"
 SRC_DIR = CUR_DIR / "src"
+EXAMPLES_DIR = SRC_DIR / "examples"
 COMMON_DIR = SRC_DIR / "common"
 ELEMENTS_DIR = SRC_DIR / "elements"
 XSLT_BASE = CUR_DIR / SRC_DIR / "xsl"
@@ -21,7 +22,9 @@ XSLTS = {
     "odd2odd": TEI_STYLESHEETS / "odd2odd.xsl",
     "odd2rng": TEI_STYLESHEETS / "odd2relax.xsl",
     "path": XSLT_BASE / "resolve-path.xsl",
+    "specs": XSLT_BASE / "resolve-specs.xsl",
     "vars": XSLT_BASE / "resolve-sch-let.xsl",
+    "xi": XSLT_BASE / "resolve-xi.xsl",
 }
 OMIT_VERSION: bool = False
 
@@ -118,6 +121,51 @@ def resolve_relative_paths(doc: str) -> str:
     return result
 
 
+def resolve_specs(doc: str) -> str:
+    with PySaxonProcessor(license=False) as proc:
+        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+        document: PyXdmNode = proc.parse_xml(xml_text=doc)
+
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
+            stylesheet_file=str(XSLTS["specs"])
+        )
+        result: str = xsl.transform_to_string(xdm_node=document)
+
+    if result is None:
+        raise ValueError("Failed to include tei:specGrpRefs")
+
+    return result
+
+
+def resolve_xincludes(doc: str) -> str:
+    with PySaxonProcessor(license=False) as proc:
+        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+        document: PyXdmNode = proc.parse_xml(xml_text=doc)
+        xsltproc.set_parameter(  # type: ignore
+            "path_base", proc.make_string_value(EXAMPLES_DIR.absolute().as_uri())  # type: ignore
+        )
+
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
+            stylesheet_file=str(XSLTS["xi"])
+        )
+        result: str = xsl.transform_to_string(xdm_node=document)
+
+    if result is None:
+        raise ValueError("Failed to resolve xincludes")
+
+    return result
+
+
+def resolve_embedded_spec_files(doc: str) -> str:
+    """A helper function, which first resolves the content of all embeddes specs and then resolves the
+    examples embedded via xinclude."""
+
+    result_specs = resolve_specs(doc=doc)
+    result_xi = resolve_xincludes(doc=result_specs)
+
+    return result_xi
+
+
 def check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:
     """A helper function to check if all files, which are embedded in the ODD file via specGrpRef
     are available in the src directory. If not, an error is raised."""
@@ -180,7 +228,6 @@ def fill_template_with_metadata(authors: list[str], schema: SSRQSchemaType) -> s
 
 def compile_odd_to_odd(odd: str, tei_version: str) -> str:
     with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")  # type: ignore
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(xml_text=odd)
         xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))  # type: ignore
@@ -258,8 +305,10 @@ def odd_factory(
 
     check_embedded_files(doc=odd_with_metadata, schema=schema_config)
 
+    odd_resolved_specs = resolve_embedded_spec_files(doc=odd_with_metadata)
+
     compiled_odd = compile_odd_to_odd(
-        odd=odd_with_metadata, tei_version=schema_config["tei_version"]
+        odd=odd_resolved_specs, tei_version=schema_config["tei_version"]
     )
 
     if clean:

@@ -15,6 +15,7 @@ TEI_ODD_RNG = "http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifa
 FILTER_MSGS = [
     'element "exemplum" missing required attribute "xml:lang"',
     'value of attribute "module" is invalid',
+    'element "xi:include" not allowed here',
 ]
 
 
