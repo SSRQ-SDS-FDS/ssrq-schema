@@ -183,10 +183,25 @@ class BaseSpec:
         if element_attributes is None and class_attributes is None:
             return None
 
-        return self._compare_element_with_class_attributes(
+        attribute_specs = self._compare_element_with_class_attributes(
             element_attributes=element_attributes,
             class_attributes=class_attributes,
             element_classes=element_classes,
+        )
+
+        if attribute_specs is None:
+            return None
+
+        return (
+            specs
+            if (
+                specs := [
+                    spec
+                    for spec in attribute_specs
+                    if spec.attr_element.get("mode") != "delete"
+                ]
+            )
+            else None
         )
 
     def find_content_elements(

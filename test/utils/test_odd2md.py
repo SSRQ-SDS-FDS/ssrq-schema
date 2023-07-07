@@ -138,6 +138,7 @@ def test_find_el_content(
         ),
         ("hi", True, ["rend", "hand"]),
         ("term", True, ["ref"]),
+        ("material", True, ["type"]),
     ],
 )
 def test_find_el_attributes(
