@@ -5,33 +5,33 @@
              module="core"
              mode="change"
              xmlns:xi="http://www.w3.org/2001/XInclude">
-   <desc xml:lang="de" versionDate="2023-05-23">Gruppiert verschiedene Auszeichnungen zur selben Stelle im Text.</desc>
-   <desc xml:lang="en" versionDate="2023-05-23">Groups different markup at the same place in the text.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-23">Regroupe différents balisages au même endroit dans le texte.</desc>
-   <desc xml:lang="it" versionDate="2023-05-23">Raggruppa marcature diverse nello stesso punto del testo.</desc>
-   <classes mode="replace">
-      <memberOf key="model.linePart"/>
-      <memberOf key="model.pPart.editorial"/>
-   </classes>
-   <content>
-      <alternate minOccurs="1" maxOccurs="1">
-         <sequence minOccurs="1" maxOccurs="1">
-            <elementRef key="abbr"/>
-            <elementRef key="expan"/>
-         </sequence>
-         <sequence minOccurs="1" maxOccurs="1">
-            <elementRef key="sic"/>
-            <elementRef key="corr"/>
-         </sequence>
-      </alternate>
-   </content>
-    <xi:include href="examples.xml" xpointer="ex-choice-1-de"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-1-fr"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-1-en"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-1-it"/>
+    <desc xml:lang="de" versionDate="2023-05-23">Gruppiert verschiedene Auszeichnungen zur selben Stelle im Text.</desc>
+    <desc xml:lang="en" versionDate="2023-05-23">Groups different markup at the same place in the text.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-23">Regroupe différents balisages au même endroit dans le texte.</desc>
+    <desc xml:lang="it" versionDate="2023-05-23">Raggruppa marcature diverse nello stesso punto del testo.</desc>
+    <classes mode="replace">
+        <memberOf key="model.linePart"/>
+        <memberOf key="model.pPart.editorial"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="1">
+            <sequence minOccurs="1" maxOccurs="1">
+                <elementRef key="abbr"/>
+                <elementRef key="expan"/>
+            </sequence>
+            <sequence minOccurs="1" maxOccurs="1">
+                <elementRef key="sic"/>
+                <elementRef key="corr"/>
+            </sequence>
+        </alternate>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-choice-abbr-de"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-abbr-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-abbr-en"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-abbr-it"/>
 
-    <xi:include href="examples.xml" xpointer="ex-choice-2-de"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-2-fr"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-2-en"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-2-it"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-sic-de"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-sic-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-sic-en"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-sic-it"/>
 </elementSpec>
