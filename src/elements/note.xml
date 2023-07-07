@@ -1,40 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
              ident="note"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-26">Enthält eine sachkritische Anmerkung zu einer
-        Einzelstelle im Editionstext und folgt unmittelbar auf das Bezugswort im Editionstext. Wird
-        Originaltext zitiert, wird dieser mit <gi>orig</gi> ausgezeichnet.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-26">Contient une note critique sur un passage
-        particulier du texte de l'édition et suit immédiatement le mot de référence dans le texte de
-        l'édition. Si le texte original est cité, il est signalé par <gi>orig</gi>.</desc>
-   <desc xml:lang="en" versionDate="2023-05-26">Contains a critical note on a particular passage in
-        the edition text and immediately follows the reference word in the edition text. If the
-        original text is quoted, it is indicated by <gi>orig</gi>.</desc>
-   <classes mode="replace">
-      <memberOf key="macro.noteLike"/>
-   </classes>
-   <content>
-      <alternate minOccurs="1" maxOccurs="unbounded">
-         <macroRef key="ssrq.content.default"/>
-         <elementRef key="bibl"/>
-         <elementRef key="ref"/>
-      </alternate>
-   </content>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
-      <p>Anmerkung im Text</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples"> Anmerkung notwendig<note>Hier ist eine
-            Erklärung notwendig.</note>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
-      <p>Note dans le texte</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples"> Anmerkung notwendig<note>Hier ist eine
-            Erklärung notwendig.</note>
-      </egXML>
-   </exemplum>
+    <desc xml:lang="de" versionDate="2023-07-07">Enthält entweder eine sachkritische Anmerkung zu einer
+        Einzelstelle im Editionstext oder eine Anmerkung im Original.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-07-07">Contains either a factual comment on a single passage in the text of
+        the edition or a comment in the original.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-07-07">Contient soit un commentaire factuel sur un seul passage du texte de
+        l'édition, soit un commentaire dans l'original.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-07-07">Contiene un commento fattuale su un singolo passaggio nel testo
+        dell'edizione o un commento nell'originale.
+    </desc>
+    <classes mode="replace">
+        <memberOf key="att.placement"/>
+        <memberOf key="att.typed"/>
+    </classes>
+    <content>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+            <macroRef key="ssrq.content.default"/>
+            <elementRef key="bibl"/>
+            <elementRef key="ref"/>
+        </alternate>
+    </content>
+    <attList>
+        <attDef ident="type" mode="replace">
+            <desc xml:lang="de" versionDate="2023-07-07">Art der Anmerkung; wird dieses Attribut nicht vergeben, dann handelt es sich um eine Anmerkung der Editor:innen.</desc>
+            <desc xml:lang="en" versionDate="2023-07-07">Type of annotation; if this attribute is not assigned, then it is an annotation by the editor.</desc>
+            <desc xml:lang="fr" versionDate="2023-07-07">Type d'annotation ; si cet attribut n'est pas attribué, il s'agit d'une annotation de l'éditeur.</desc>
+            <desc xml:lang="it" versionDate="2023-07-07">Tipo di annotazione; se questo attributo non è assegnato, si tratta di un'annotazione dell'editore.</desc>
+            <valList type="closed">
+                <valItem ident="original">
+                    <desc xml:lang="de" versionDate="2023-07-07">Anmerkung im Original</desc>
+                    <desc xml:lang="en" versionDate="2023-07-07">note in the original</desc>
+                    <desc xml:lang="fr" versionDate="2023-07-07">note dans l'original</desc>
+                    <desc xml:lang="it" versionDate="2023-07-07">nota in originale</desc>
+                </valItem>
+            </valList>
+        </attDef>
+    </attList>
+    <remarks xml:lang="de" versionDate="2023-07-07">
+        <p>Ein <gi>note</gi>-Element folgt unmittelbar auf das Bezugswort im Editionstext. Wird
+            Originaltext zitiert, wird dieser mit <gi>orig</gi> ausgezeichnet.
+        </p>
+        <p>Handelt es sich um eine Anmerkung im Original wird das Attribut <att>type</att> mit dem Wert
+            <val>original</val>
+            verwendet.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-07">
+        <p>A <gi>note</gi> element immediately follows the reference word in the edition text. If original text is
+            quoted, it is marked with <gi>orig</gi>.
+        </p>
+        <p>If it is an annotation in the original, the attribute <att>type</att> with the value <val>original</val> is
+            used.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-07">
+        <p>Un élément <gi>note</gi> suit immédiatement le mot de référence dans le texte de l'édition. Si le texte
+            original est cité, il est marqué avec <gi>orig</gi>.
+        </p>
+        <p>S'il s'agit d'une annotation dans l'original, l'attribut <att>type</att> avec la valeur
+            <val>original</val>
+            est utilisé.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-07">
+        <p>Un elemento <gi>note</gi> segue immediatamente la parola di riferimento nel testo dell'edizione. Se il testo
+            originale è citato, è contrassegnato con <gi>orig</gi>.
+        </p>
+        <p>Se si tratta di un'annotazione nell'originale, viene utilizzato l'attributo <att>type</att> con valore
+            <val>original</val>.
+        </p>
+    </remarks>
 </elementSpec>

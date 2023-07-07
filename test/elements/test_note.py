@@ -16,8 +16,18 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "invalid-note-with-anchored",
-            "<note anchored='true'>foo</note>",
+            "valid-note-with-type-and-place",
+            "<note type='original' place='left_margin'>foo</note>",
+            True,
+        ),
+        (
+            "invalid-note-with-wrong-attribute-value",
+            "<note type='foo' place='foo'>foo</note>",
+            False,
+        ),
+        (
+            "invalid-note-with-wrong-attribute",
+            "<note att='true'>foo</note>",
             False,
         ),
     ],
