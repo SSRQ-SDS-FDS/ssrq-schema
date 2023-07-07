@@ -32,6 +32,10 @@
     </content>
     <attList>
         <attDef ident="type" mode="replace">
+            <desc xml:lang="de" versionDate="2023-07-07">Art der Anmerkung; wird dieses Attribut nicht vergeben, dann handelt es sich um eine Anmerkung der Editor:innen.</desc>
+            <desc xml:lang="en" versionDate="2023-07-07">Type of annotation; if this attribute is not assigned, then it is an annotation by the editor.</desc>
+            <desc xml:lang="fr" versionDate="2023-07-07">Type d'annotation ; si cet attribut n'est pas attribué, il s'agit d'une annotation de l'éditeur.</desc>
+            <desc xml:lang="it" versionDate="2023-07-07">Tipo di annotazione; se questo attributo non è assegnato, si tratta di un'annotazione dell'editore.</desc>
             <valList type="closed">
                 <valItem ident="original">
                     <desc xml:lang="de" versionDate="2023-07-07">Anmerkung im Original</desc>
