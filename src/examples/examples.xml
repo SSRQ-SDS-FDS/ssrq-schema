@@ -6,38 +6,89 @@
 <div xmlns="http://www.tei-c.org/ns/1.0"
      xmlns:xi="http://www.w3.org/2001/XInclude">
     <macroSpec ident="ssrq-examples">
-        <exemplum xml:lang="de" versionDate="2023-05-23" xml:id="ex-choice-1-de" >
+        <exemplum xml:lang="de" xml:id="ex-choice-abbr-de">
             <p>Beispiel für eine Abkürzung</p>
-            <xi:include href="ex-choice-1.xml" xpointer="ex-choice-1"/>
+            <xi:include href="choice-abbr.xml"/>
         </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-choice-1-en">
+        <exemplum xml:lang="en" xml:id="ex-choice-abbr-en">
             <p>Example of an abbreviation</p>
-            <xi:include href="ex-choice-1.xml" xpointer="ex-choice-1"/>
+            <xi:include href="choice-abbr.xml"/>
         </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-choice-1-fr">
+        <exemplum xml:lang="fr" xml:id="ex-choice-abbr-fr">
             <p>Exemple d'abréviation.</p>
-            <xi:include href="ex-choice-1.xml" xpointer="ex-choice-1"/>
+            <xi:include href="choice-abbr.xml"/>
         </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-choice-1-it">
+        <exemplum xml:lang="it" xml:id="ex-choice-abbr-it">
             <p>Esempio di abbreviazione</p>
-            <xi:include href="ex-choice-1.xml" xpointer="ex-choice-1"/>
+            <xi:include href="choice-abbr.xml"/>
         </exemplum>
 
-        <exemplum xml:lang="de" xml:id="ex-choice-2-de">
+        <exemplum xml:lang="de" xml:id="ex-choice-sic-de">
             <p>Beispiel für eine Korrektur</p>
-            <xi:include href="ex-choice-2.xml" xpointer="ex-choice-2"/>
+            <xi:include href="choice-sic.xml"/>
         </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-choice-2-en">
+        <exemplum xml:lang="en" xml:id="ex-choice-sic-en">
             <p>Example of a correction</p>
-            <xi:include href="ex-choice-2.xml" xpointer="ex-choice-2"/>
+            <xi:include href="choice-sic.xml"/>
         </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-choice-2-fr">
+        <exemplum xml:lang="fr" xml:id="ex-choice-sic-fr">
             <p>Exemple de correction</p>
-            <xi:include href="ex-choice-2.xml" xpointer="ex-choice-2"/>
+            <xi:include href="choice-sic.xml"/>
         </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-choice-2-it">
+        <exemplum xml:lang="it" xml:id="ex-choice-sic-it">
             <p>Esempio di correzione</p>
-            <xi:include href="ex-choice-2.xml" xpointer="ex-choice-2"/>
+            <xi:include href="choice-sic.xml"/>
+        </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-msDesc-de">
+            <p>Beispiel für eine Textzeugenbeschreibung</p>
+            <xi:include href="msDesc.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-msDesc-en">
+            <p>Example of a text witness description</p>
+            <xi:include href="msDesc.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-msDesc-fr">
+            <p>Exemple de description textuelle d'un témoin</p>
+            <xi:include href="msDesc.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-msDesc-it">
+            <p>Esempio di descrizione di un testimone testuale</p>
+            <xi:include href="msDesc.xml"/>
+        </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-sourceDesc-listWit-de">
+            <p>Beispiel für eine Quellenbeschreibung mit einer Liste von Textzeugen</p>
+            <xi:include href="sourceDesc-listWit.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-sourceDesc-listWit-en">
+            <p>Example of a source description with a list of text witnesses</p>
+            <xi:include href="sourceDesc-listWit.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-sourceDesc-listWit-fr">
+            <p>Exemple d'une description de source avec une liste de témoins de texte</p>
+            <xi:include href="sourceDesc-listWit.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-sourceDesc-listWit-it">
+            <p>Esempio di descrizione di una fonte con un elenco di testimoni testuali</p>
+            <xi:include href="sourceDesc-listWit.xml"/>
+        </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-sourceDesc-msDesc-de">
+            <p>Beispiel für eine Quellenbeschreibung mit einem Textzeugen</p>
+            <xi:include href="sourceDesc-msDesc.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-sourceDesc-msDesc-en">
+            <p>Example of a source description with a text witness</p>
+            <xi:include href="sourceDesc-msDesc.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-sourceDesc-msDesc-fr">
+            <p>Exemple de description de source avec un témoin de texte</p>
+            <xi:include href="sourceDesc-msDesc.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-sourceDesc-msDesc-it">
+            <p>Esempio di descrizione di una fonte con testimone testuale</p>
+            <xi:include href="sourceDesc-msDesc.xml"/>
         </exemplum>
     </macroSpec>
 </div>

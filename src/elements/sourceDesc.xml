@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="sourceDesc" module="header" mode="change">
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
+             ident="sourceDesc"
+             module="header"
+             mode="change">
     <desc xml:lang="de" versionDate="2023-04-25">Informationen zum Quellstück – dazu zählen: Inhalt
         (Regest), Aufbewahrungsort, Material, Layout, Schreiber, Siegel und bibliographische
         Angaben.
@@ -19,4 +26,13 @@
             <elementRef key="listWit"/>
         </alternate>
     </content>
+    <xi:include href="examples.xml" xpointer="ex-sourceDesc-msDesc-de"/>
+    <xi:include href="examples.xml" xpointer="ex-sourceDesc-msDesc-en"/>
+    <xi:include href="examples.xml" xpointer="ex-sourceDesc-msDesc-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-sourceDesc-msDesc-it"/>
+
+    <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-de"/>
+    <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-en"/>
+    <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-it"/>
 </elementSpec>
