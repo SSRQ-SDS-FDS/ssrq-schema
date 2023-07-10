@@ -1,4 +1,4 @@
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ElementTree
 from pathlib import Path
 from typing import (
     Iterator,
@@ -43,13 +43,13 @@ def create_schema_by_entry(entry_point: str) -> SSRQSchema | None:
 
 
 class ODDReader:
-    odd: ET.Element
+    odd: ElementTree.Element
     elements: dict[str, ElementSpec]
     components: dict[str, ODDElement]
     translations: Translations
 
     def __init__(self, odd: str, translations: Translations = TRANSLATE):
-        self.odd = ET.fromstring(odd)
+        self.odd = ElementTree.fromstring(odd)
         self.elements = {spec.ident: spec for spec in self._get_element_specs()}
         self.components = {
             component.ident: component
@@ -89,7 +89,7 @@ class ODD2Md:
     out_dir: Path
 
     def __init__(
-        self, schema: SSRQSchema | str, languages: list[str], target_dir: str
+            self, schema: SSRQSchema | str, languages: list[str], target_dir: str
     ) -> None:
         """Initialize the class.
 
