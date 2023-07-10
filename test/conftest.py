@@ -18,10 +18,10 @@ from utils.main import (
     SRC_DIR,
     XSLTS,
     Schema,
-    SSRQSchemaType,
     load_config,
     odd_factory,
 )
+from utils.SSRQSchemaType import SSRQSchemaType
 
 ElName = str
 

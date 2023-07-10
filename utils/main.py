@@ -1,11 +1,13 @@
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional, TypedDict
+from typing import Optional
 
 import tomllib
 from pydantic import BaseModel, validator
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
+
+from utils.SSRQSchemaType import SSRQSchemaType
 
 CUR_DIR = Path(__file__).parent.parent.absolute()
 DIST_DIR = CUR_DIR / "dist"
@@ -29,15 +31,6 @@ XSLTS = {
 OMIT_VERSION: bool = False
 
 SPECIFIED_ELEMENTS = r'target="elements/(\w+)\.xml"'
-
-
-class SSRQSchemaType(TypedDict):
-    description: str
-    entry: str
-    tei_version: str
-    name: str
-    title: str
-    version: str
 
 
 class SSRQConfig(BaseModel):
