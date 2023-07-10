@@ -256,5 +256,7 @@ class ODDFactory:
         ).split(" ")
         specified_elements: list[str] = re.findall(SPECIFIED_ELEMENTS, schema)
         print(
-            f"Elements included in {name}: {len(included_elements)}\nElements already specified: {len(specified_elements)}\nElements to specify: {len(included_elements) - len(specified_elements)}\n"
+            f"Elements included in {name}: {len(included_elements)}\n"
+            f"Elements already specified: {len(specified_elements)}\n"
+            f"Elements to specify: {len(included_elements) - len(specified_elements)}\n"
         )
