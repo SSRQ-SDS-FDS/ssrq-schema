@@ -72,33 +72,6 @@ def resolve_embedded_spec_files(doc: str) -> str:
     return result_xi
 
 
-def check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:
-    """A helper function to check if all files, which are embedded in the ODD file via specGrpRef
-    are available in the src directory. If not, an error is raised."""
-
-    from os.path import exists
-    from urllib.parse import urlparse
-
-    embedded_files = re.findall(r'specGrpRef target="(.*\.xml)(?:.*)?"', doc)
-
-    try:
-        bundled_exceptions = []
-        for file in embedded_files:
-            if exists(urlparse(file).path):
-                continue
-            bundled_exceptions.append(FileNotFoundError(f"{file} not found"))
-        if len(bundled_exceptions) > 0:
-            raise ExceptionGroup("File not found", bundled_exceptions)
-    except ExceptionGroup as errors:
-        print(
-            f"The following files in schema {schema['entry']} are missing – fix the paths before you continue:"
-        )
-        for e in errors.exceptions:
-            print(e)
-
-        raise SystemExit(1)
-
-
 def compile_odd_to_odd(odd: str, tei_version: str) -> str:
     with PySaxonProcessor(license=False) as proc:
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
@@ -170,7 +143,7 @@ class ODDFactory:
 
         odd_with_metadata = ODDFactory.__resolve_relative_paths(doc=odd_with_metadata)
 
-        check_embedded_files(doc=odd_with_metadata, schema=schema_config)
+        ODDFactory.__check_embedded_files(doc=odd_with_metadata, schema=schema_config)
 
         odd_resolved_specs = resolve_embedded_spec_files(doc=odd_with_metadata)
 
@@ -193,6 +166,33 @@ class ODDFactory:
             compiled_odd=compiled_odd,
             rng=rng,
         )
+
+    @staticmethod
+    def __check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:
+        """A helper function to check if all files, which are embedded in the ODD file via specGrpRef
+        are available in the src directory. If not, an error is raised."""
+
+        from os.path import exists
+        from urllib.parse import urlparse
+
+        embedded_files = re.findall(r'specGrpRef target="(.*\.xml)(?:.*)?"', doc)
+
+        try:
+            bundled_exceptions = []
+            for file in embedded_files:
+                if exists(urlparse(file).path):
+                    continue
+                bundled_exceptions.append(FileNotFoundError(f"{file} not found"))
+            if len(bundled_exceptions) > 0:
+                raise ExceptionGroup("File not found", bundled_exceptions)
+        except ExceptionGroup as errors:
+            print(
+                f"The following files in schema {schema['entry']} are missing – fix the paths before you continue:"
+            )
+            for e in errors.exceptions:
+                print(e)
+
+            raise SystemExit(1)
 
     @staticmethod
     def __fill_template_with_metadata(
