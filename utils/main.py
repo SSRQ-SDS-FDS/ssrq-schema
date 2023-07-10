@@ -241,20 +241,7 @@ def odd_factory(
     )
 
     if clean:
-        with PySaxonProcessor(license=False) as proc:
-            proc.set_configuration_property(name="xi", value="on")  # type: ignore
-            xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
-            document: PyXdmNode = proc.parse_xml(xml_text=compiled_odd)
-
-            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
-                stylesheet_file=str(XSLTS["clean"])
-            )
-            result: str = xsl.transform_to_string(xdm_node=document)
-
-        if result is None:
-            raise ValueError("No result from XSLT transformation, while cleaning")
-
-        compiled_odd = result
+        compiled_odd = clean_odd(compiled_odd)
 
     compiled_odd = resolve_sch_let(odd=compiled_odd)
 
@@ -266,6 +253,21 @@ def odd_factory(
         compiled_odd=compiled_odd,
         rng=rng,
     )
+
+
+def clean_odd(compiled_odd) -> str:
+    with PySaxonProcessor(license=False) as proc:
+        proc.set_configuration_property(name="xi", value="on")  # type: ignore
+        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+        document: PyXdmNode = proc.parse_xml(xml_text=compiled_odd)
+
+        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
+            stylesheet_file=str(XSLTS["clean"])
+        )
+        result: str = xsl.transform_to_string(xdm_node=document)
+    if result is None:
+        raise ValueError("No result from XSLT transformation, while cleaning")
+    return result
 
 
 if __name__ == "__main__":
