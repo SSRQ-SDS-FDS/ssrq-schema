@@ -217,42 +217,46 @@ def show_stats(schema: str, name: str) -> None:
     )
 
 
-def odd_factory(
-    schema_config: SSRQSchemaType,
-    authors: list[str],
-    clean: bool = True,
-    print_stats: bool = False,
-) -> SSRQSchema:
-    odd_with_metadata = fill_template_with_metadata(
-        authors=authors, schema=schema_config
-    )
+class ODDFactory:
+    @staticmethod
+    def create(
+        schema_config: SSRQSchemaType,
+        authors: list[str],
+        clean: bool = True,
+        print_stats: bool = False,
+    ) -> SSRQSchema:
+        odd_with_metadata = fill_template_with_metadata(
+            authors=authors, schema=schema_config
+        )
 
-    if print_stats:
-        show_stats(schema=odd_with_metadata, name=schema_config["entry"])
+        if print_stats:
+            show_stats(schema=odd_with_metadata, name=schema_config["entry"])
 
-    odd_with_metadata = resolve_relative_paths(doc=odd_with_metadata)
+        odd_with_metadata = resolve_relative_paths(doc=odd_with_metadata)
 
-    check_embedded_files(doc=odd_with_metadata, schema=schema_config)
+        check_embedded_files(doc=odd_with_metadata, schema=schema_config)
 
-    odd_resolved_specs = resolve_embedded_spec_files(doc=odd_with_metadata)
+        odd_resolved_specs = resolve_embedded_spec_files(doc=odd_with_metadata)
 
-    compiled_odd = compile_odd_to_odd(
-        odd=odd_resolved_specs, tei_version=schema_config["tei_version"]
-    )
+        compiled_odd = compile_odd_to_odd(
+            odd=odd_resolved_specs, tei_version=schema_config["tei_version"]
+        )
 
-    if clean:
-        compiled_odd = clean_odd(compiled_odd)
+        if clean:
+            compiled_odd = clean_odd(compiled_odd)
 
-    compiled_odd = resolve_sch_let(odd=compiled_odd)
+        compiled_odd = resolve_sch_let(odd=compiled_odd)
 
-    rng = compile_odd_to_rng(odd=compiled_odd, tei_version=schema_config["tei_version"])
+        rng = compile_odd_to_rng(
+            odd=compiled_odd, tei_version=schema_config["tei_version"]
+        )
 
-    return SSRQSchema(
-        version=schema_config["version"],
-        name=schema_config["name"],
-        compiled_odd=compiled_odd,
-        rng=rng,
-    )
+        return SSRQSchema(
+            version=schema_config["version"],
+            name=schema_config["name"],
+            compiled_odd=compiled_odd,
+            rng=rng,
+        )
 
 
 def clean_odd(compiled_odd) -> str:
@@ -284,7 +288,9 @@ if __name__ == "__main__":
     if config is not None:
         len_schemas = len(config.schemas)
         odds = [
-            odd_factory(schema_config=schema, authors=config.authors, print_stats=True)
+            ODDFactory.create(
+                schema_config=schema, authors=config.authors, print_stats=True
+            )
             for schema in config.schemas
         ]
 

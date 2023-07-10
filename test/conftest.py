@@ -15,8 +15,8 @@ from ssrq_cli.xml_utils import ext_etree
 
 from utils.constants import SPECIFIED_ELEMENTS, SRC_DIR, XSLTS
 from utils.main import (
+    ODDFactory,
     load_config,
-    odd_factory,
 )
 from utils.SSRQSchema import SSRQSchema
 from utils.SSRQSchemaType import SSRQSchemaType
@@ -122,7 +122,7 @@ def odds() -> list[tuple[SSRQSchema, list[ElName]]]:
 
     odds = [
         (
-            odd_factory(schema, authors=config.authors),
+            ODDFactory.create(schema, authors=config.authors),
             extract_specified_elements_for_rng(schema),
         )
         for schema in config.schemas
