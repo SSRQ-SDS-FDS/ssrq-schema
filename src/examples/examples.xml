@@ -6,6 +6,24 @@
 <div xmlns="http://www.tei-c.org/ns/1.0"
      xmlns:xi="http://www.w3.org/2001/XInclude">
     <macroSpec ident="ssrq-examples">
+
+        <exemplum xml:lang="de" xml:id="ex-ab-de">
+            <p>Beispiel für einen Kanzleivermerk.</p>
+            <xi:include href="ab.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-ab-en">
+            <p>Example of a clerk's note.</p>
+            <xi:include href="ab.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-ab-fr">
+            <p>Exemple de note de service.</p>
+            <xi:include href="ab.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-ab-it">
+            <p>Esempio di nota di un impiegato.</p>
+            <xi:include href="ab.xml"/>
+        </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-choice-abbr-de">
             <p>Beispiel für eine Abkürzung</p>
             <xi:include href="choice-abbr.xml"/>
