@@ -4,7 +4,8 @@ from typing import (
     Iterator,
 )
 
-from utils.main import ODDFactory, load_config
+from utils.main import load_config
+from utils.ODDFactory import ODDFactory
 from utils.specs.abstract import ODDElement
 from utils.specs.config import NS_MAP
 from utils.specs.dataspec import DataSpec
