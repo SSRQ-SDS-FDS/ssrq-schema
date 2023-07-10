@@ -33,6 +33,13 @@ class ElementSpec(BaseSpec):
             doc=doc,
         )
 
+        self._remarks_to_markdown(
+            lang=lang,
+            el=self.odd_element,
+            title=lang_translations["remarks"],
+            doc=doc,
+        )
+
         if not hasattr(self, "content"):
             self.content = self.find_content_elements(
                 element=self.odd_element, components=components
@@ -195,6 +202,22 @@ class ElementSpec(BaseSpec):
         if desc_title is not None:
             doc.add_heading(desc_title, level=2)
         doc.add_raw(self.get_desc(element=el, lang=lang))
+
+    def _remarks_to_markdown(
+        self, lang: str, el: ET.Element, doc: Document, title: str
+    ) -> None:
+        remarks = self.get_remarks(element=el, lang=lang)
+
+        if remarks is None:
+            return None
+
+        doc.add_heading(title, level=2)
+
+        if isinstance(remarks, list):
+            for remark in remarks:
+                doc.add_raw(remark)
+        else:
+            doc.add_raw(remarks)
 
     def val_items_to_markdown(
         self,

@@ -27,7 +27,7 @@
     
     <xsl:template match="tei:gloss[not(@xml:lang = $languages)]"/>
     
-    <xsl:template match="tei:remarks"/>
+    <xsl:template match="tei:remarks[not(@xml:lang = $languages)]"/>
     
     
 </xsl:stylesheet>

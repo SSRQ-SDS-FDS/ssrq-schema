@@ -320,10 +320,50 @@ class BaseSpec:
             else description_rendered
         )
 
+    def get_remarks(
+        self, element: ET.Element, lang: str, upper: bool = True
+    ) -> str | list[str] | None:
+        remark = element.find(f"./tei:remarks[@xml:lang='{lang}']", namespaces=NS_MAP)
+
+        remark_content: str | list[str]
+
+        if remark is None:
+            return None
+
+        remark_paragraphs = remark.findall("./tei:p", namespaces=NS_MAP)
+
+        if len(remark_paragraphs) == 0:
+            remark_content = (
+                self._upper_desc_start(desc=self._desc_node_to_string(desc=remark))
+                if upper
+                else self._desc_node_to_string(desc=remark)
+            )
+        else:
+            remark_content = [
+                self._upper_desc_start(desc=self._desc_node_to_string(desc=p))
+                if upper
+                else self._desc_node_to_string(desc=p)
+                for p in remark_paragraphs
+            ]
+
+        return remark_content
+
     def _upper_desc_start(self, desc: str) -> str:
         return desc[0].upper() + desc[1:]
 
     def _desc_node_to_string(self, desc: ET.Element):
+        """
+        This method converts a desc like node to a string.
+
+        Args:
+            desc (ET.Element): The desc like node.
+
+        Returns:
+            str: The string representation of the desc like node.
+
+        ToDo:
+            * Fix the bug that leading whitespace, which has a meaning, is removed.
+        """
         output = ""
         if desc.text is not None:
             output += RE_WHITESPACE_PATTERN.sub(" ", desc.text)
@@ -342,9 +382,7 @@ class BaseSpec:
                 )
                 match tag_name:
                     case "gi":
-                        output += (
-                            f"[`<{child_text}/>`]({child_text}.md) {tail_text}".strip()
-                        )
+                        output += f"[`<{child_text}/>`]({child_text}.md){tail_text if tail_text.startswith('-') else ' ' + tail_text}".strip()
                     case "att":
                         output += f"[@{child_text}](#{child_text}) {tail_text}".strip()
                     case "ref":
@@ -357,6 +395,8 @@ class BaseSpec:
                                 if isinstance(child, ET.Element)
                             ]
                         )
+                    case "val":
+                        output += f"`{child_text}` {tail_text}"
                     case _:
                         output += (child_text + tail_text).strip()
         return re.sub((r"\s+([\.,:;])"), r"\1", output)

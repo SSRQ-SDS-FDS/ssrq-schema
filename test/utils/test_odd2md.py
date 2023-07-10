@@ -356,3 +356,44 @@ def test_attribute_content(
     assert hasattr(attribute_spec, "content")
     assert attribute_spec.content is not None
     assert len(attribute_spec.content) == content_len
+
+
+@pytest.mark.parametrize(
+    "element_name, has_remarks, lang, text",
+    [
+        (
+            "note",
+            True,
+            "de",
+            [
+                "Ein [`<note/>`](note.md)-Element folgt unmittelbar auf das Bezugswort im Editionstext",
+                "Handelt es sich um eine Anmerkung",
+            ],
+        ),
+    ],
+)
+def test_remarks_to_markdown(
+    example_elementSpec: EL_FINDER,
+    example_odd: str,
+    element_name: str,
+    has_remarks: bool,
+    lang: str,
+    text: list[str] | str,
+):
+    example_el_spec = example_elementSpec(element_name)
+    assert example_el_spec is not None
+    el_spec = ElementSpec(element=example_el_spec)
+
+    remarks = el_spec.get_remarks(element=el_spec.odd_element, lang=lang)
+
+    if not has_remarks:
+        assert remarks is None
+    else:
+        assert remarks is not None
+
+        if isinstance(remarks, list):
+            assert len(remarks) == len(text)
+            for index, t in enumerate(text):
+                assert t in remarks[index]
+        else:
+            assert remarks in text
