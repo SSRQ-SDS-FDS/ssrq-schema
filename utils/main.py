@@ -27,23 +27,6 @@ def load_config() -> Optional[SSRQConfig]:
     return SSRQConfig(**config["ssrq"]["schema"]["meta"])
 
 
-def compile_odd_to_odd(odd: str, tei_version: str) -> str:
-    with PySaxonProcessor(license=False) as proc:
-        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
-        document: PyXdmNode = proc.parse_xml(xml_text=odd)
-        xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))  # type: ignore
-
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
-            stylesheet_file=str(XSLTS["odd2odd"])
-        )
-        result: str = xsl.transform_to_string(xdm_node=document)
-
-    if result is None:
-        raise ValueError("No result from XSLT transformation")
-
-    return result
-
-
 def resolve_sch_let(odd: str) -> str:
     with PySaxonProcessor(license=False) as proc:
         proc.set_configuration_property(name="xi", value="on")  # type: ignore
@@ -86,7 +69,7 @@ class ODDFactory:
             doc=odd_with_metadata
         )
 
-        compiled_odd = compile_odd_to_odd(
+        compiled_odd = ODDFactory.__compile_odd_to_odd(
             odd=odd_resolved_specs, tei_version=schema_config["tei_version"]
         )
 
@@ -132,6 +115,23 @@ class ODDFactory:
                 print(e)
 
             raise SystemExit(1)
+
+    @staticmethod
+    def __compile_odd_to_odd(odd: str, tei_version: str) -> str:
+        with PySaxonProcessor(license=False) as proc:
+            xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+            document: PyXdmNode = proc.parse_xml(xml_text=odd)
+            xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))  # type: ignore
+
+            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
+                stylesheet_file=str(XSLTS["odd2odd"])
+            )
+            result: str = xsl.transform_to_string(xdm_node=document)
+
+        if result is None:
+            raise ValueError("No result from XSLT transformation")
+
+        return result
 
     @staticmethod
     def __compile_odd_to_rng(odd: str, tei_version: str) -> str:
