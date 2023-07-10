@@ -61,24 +61,6 @@ def resolve_sch_let(odd: str) -> str:
     return result
 
 
-def compile_odd_to_rng(odd: str, tei_version: str) -> str:
-    with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")  # type: ignore
-        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
-        document: PyXdmNode = proc.parse_xml(xml_text=odd)
-        xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))  # type: ignore
-
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
-            stylesheet_file=str(XSLTS["odd2rng"])
-        )
-        result: str = xsl.transform_to_string(xdm_node=document)
-
-    if result is None:
-        raise ValueError("No result from XSLT transformation")
-
-    return result
-
-
 class ODDFactory:
     @staticmethod
     def create(
@@ -113,7 +95,7 @@ class ODDFactory:
 
         compiled_odd = resolve_sch_let(odd=compiled_odd)
 
-        rng = compile_odd_to_rng(
+        rng = ODDFactory.__compile_odd_to_rng(
             odd=compiled_odd, tei_version=schema_config["tei_version"]
         )
 
@@ -150,6 +132,24 @@ class ODDFactory:
                 print(e)
 
             raise SystemExit(1)
+
+    @staticmethod
+    def __compile_odd_to_rng(odd: str, tei_version: str) -> str:
+        with PySaxonProcessor(license=False) as proc:
+            proc.set_configuration_property(name="xi", value="on")  # type: ignore
+            xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+            document: PyXdmNode = proc.parse_xml(xml_text=odd)
+            xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))  # type: ignore
+
+            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
+                stylesheet_file=str(XSLTS["odd2rng"])
+            )
+            result: str = xsl.transform_to_string(xdm_node=document)
+
+        if result is None:
+            raise ValueError("No result from XSLT transformation")
+
+        return result
 
     @staticmethod
     def __fill_template_with_metadata(
