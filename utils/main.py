@@ -27,29 +27,6 @@ def load_config() -> Optional[SSRQConfig]:
     return SSRQConfig(**config["ssrq"]["schema"]["meta"])
 
 
-def resolve_relative_paths(doc: str) -> str:
-    """A small helper function to replace relative @target paths with absolute paths.
-    It would be an alternative approach to use the saxon set_base_uri() method, but this
-    method has some strange behaviours."""
-
-    with PySaxonProcessor(license=False) as proc:
-        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
-        document: PyXdmNode = proc.parse_xml(xml_text=doc)
-        xsltproc.set_parameter(  # type: ignore
-            "path_base", proc.make_string_value(SRC_DIR.absolute().as_uri())  # type: ignore
-        )
-
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
-            stylesheet_file=str(XSLTS["path"])
-        )
-        result: str = xsl.transform_to_string(xdm_node=document)
-
-    if result is None:
-        raise ValueError("Failed to resolve relative paths")
-
-    return result
-
-
 def resolve_specs(doc: str) -> str:
     with PySaxonProcessor(license=False) as proc:
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
@@ -191,7 +168,7 @@ class ODDFactory:
                 schema=odd_with_metadata, name=schema_config["entry"]
             )
 
-        odd_with_metadata = resolve_relative_paths(doc=odd_with_metadata)
+        odd_with_metadata = ODDFactory.__resolve_relative_paths(doc=odd_with_metadata)
 
         check_embedded_files(doc=odd_with_metadata, schema=schema_config)
 
@@ -249,6 +226,29 @@ class ODDFactory:
 
         if result is None:
             raise ValueError("No result from XSLT transformation")
+
+        return result
+
+    @staticmethod
+    def __resolve_relative_paths(doc: str) -> str:
+        """A small helper function to replace relative @target paths with absolute paths.
+        It would be an alternative approach to use the saxon set_base_uri() method, but this
+        method has some strange behaviours."""
+
+        with PySaxonProcessor(license=False) as proc:
+            xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+            document: PyXdmNode = proc.parse_xml(xml_text=doc)
+            xsltproc.set_parameter(  # type: ignore
+                "path_base", proc.make_string_value(SRC_DIR.absolute().as_uri())  # type: ignore
+            )
+
+            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
+                stylesheet_file=str(XSLTS["path"])
+            )
+            result: str = xsl.transform_to_string(xdm_node=document)
+
+        if result is None:
+            raise ValueError("Failed to resolve relative paths")
 
         return result
 
