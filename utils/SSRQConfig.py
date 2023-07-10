@@ -8,7 +8,7 @@ class SSRQConfig(BaseModel):
     schemas: list[SSRQSchemaType]
 
     @validator("schemas", pre=True)
-    def version_issemver(cls, schemas: list[SSRQSchemaType]) -> list[SSRQSchemaType]:
+    def version_issemver(self, schemas: list[SSRQSchemaType]) -> list[SSRQSchemaType]:
         import semver  # type: ignore
 
         for schema in schemas:
