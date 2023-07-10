@@ -89,7 +89,7 @@ class ODD2Md:
     out_dir: Path
 
     def __init__(
-            self, schema: SSRQSchema | str, languages: list[str], target_dir: str
+        self, schema: SSRQSchema | str, languages: list[str], target_dir: str
     ) -> None:
         """Initialize the class.
 
