@@ -27,51 +27,6 @@ def load_config() -> Optional[SSRQConfig]:
     return SSRQConfig(**config["ssrq"]["schema"]["meta"])
 
 
-def resolve_specs(doc: str) -> str:
-    with PySaxonProcessor(license=False) as proc:
-        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
-        document: PyXdmNode = proc.parse_xml(xml_text=doc)
-
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
-            stylesheet_file=str(XSLTS["specs"])
-        )
-        result: str = xsl.transform_to_string(xdm_node=document)
-
-    if result is None:
-        raise ValueError("Failed to include tei:specGrpRefs")
-
-    return result
-
-
-def resolve_xincludes(doc: str) -> str:
-    with PySaxonProcessor(license=False) as proc:
-        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
-        document: PyXdmNode = proc.parse_xml(xml_text=doc)
-        xsltproc.set_parameter(  # type: ignore
-            "path_base", proc.make_string_value(EXAMPLES_DIR.absolute().as_uri())  # type: ignore
-        )
-
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
-            stylesheet_file=str(XSLTS["xi"])
-        )
-        result: str = xsl.transform_to_string(xdm_node=document)
-
-    if result is None:
-        raise ValueError("Failed to resolve xincludes")
-
-    return result
-
-
-def resolve_embedded_spec_files(doc: str) -> str:
-    """A helper function, which first resolves the content of all embeddes specs and then resolves the
-    examples embedded via xinclude."""
-
-    result_specs = resolve_specs(doc=doc)
-    result_xi = resolve_xincludes(doc=result_specs)
-
-    return result_xi
-
-
 def compile_odd_to_odd(odd: str, tei_version: str) -> str:
     with PySaxonProcessor(license=False) as proc:
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
@@ -145,7 +100,9 @@ class ODDFactory:
 
         ODDFactory.__check_embedded_files(doc=odd_with_metadata, schema=schema_config)
 
-        odd_resolved_specs = resolve_embedded_spec_files(doc=odd_with_metadata)
+        odd_resolved_specs = ODDFactory.__resolve_embedded_spec_files(
+            doc=odd_with_metadata
+        )
 
         compiled_odd = compile_odd_to_odd(
             odd=odd_resolved_specs, tei_version=schema_config["tei_version"]
@@ -230,6 +187,32 @@ class ODDFactory:
         return result
 
     @staticmethod
+    def __resolve_embedded_spec_files(doc: str) -> str:
+        """A helper function, which first resolves the content of all embeddes specs and then resolves the
+        examples embedded via xinclude."""
+
+        result_specs = ODDFactory.__resolve_specs(doc=doc)
+        result_xi = ODDFactory.__resolve_xincludes(doc=result_specs)
+
+        return result_xi
+
+    @staticmethod
+    def __resolve_specs(doc: str) -> str:
+        with PySaxonProcessor(license=False) as proc:
+            xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+            document: PyXdmNode = proc.parse_xml(xml_text=doc)
+
+            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
+                stylesheet_file=str(XSLTS["specs"])
+            )
+            result: str = xsl.transform_to_string(xdm_node=document)
+
+        if result is None:
+            raise ValueError("Failed to include tei:specGrpRefs")
+
+        return result
+
+    @staticmethod
     def __resolve_relative_paths(doc: str) -> str:
         """A small helper function to replace relative @target paths with absolute paths.
         It would be an alternative approach to use the saxon set_base_uri() method, but this
@@ -249,6 +232,25 @@ class ODDFactory:
 
         if result is None:
             raise ValueError("Failed to resolve relative paths")
+
+        return result
+
+    @staticmethod
+    def __resolve_xincludes(doc: str) -> str:
+        with PySaxonProcessor(license=False) as proc:
+            xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+            document: PyXdmNode = proc.parse_xml(xml_text=doc)
+            xsltproc.set_parameter(  # type: ignore
+                "path_base", proc.make_string_value(EXAMPLES_DIR.absolute().as_uri())  # type: ignore
+            )
+
+            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
+                stylesheet_file=str(XSLTS["xi"])
+            )
+            result: str = xsl.transform_to_string(xdm_node=document)
+
+        if result is None:
+            raise ValueError("Failed to resolve xincludes")
 
         return result
 
