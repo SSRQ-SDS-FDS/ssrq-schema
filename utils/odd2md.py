@@ -4,13 +4,14 @@ from typing import (
     Iterator,
 )
 
-from utils.main import SSRQSchema, load_config, odd_factory
+from utils.main import load_config, odd_factory
 from utils.specs.abstract import ODDElement
 from utils.specs.config import NS_MAP
 from utils.specs.dataspec import DataSpec
 from utils.specs.element import ElementSpec
 from utils.specs.macrospec import MacroSpec
 from utils.specs.odd_class import ClassSpec
+from utils.SSRQSchema import SSRQSchema
 from utils.translater import TRANSLATE, Translations
 
 # default languages used to generate the documentation
