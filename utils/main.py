@@ -19,8 +19,8 @@ from utils.SSRQSchemaType import SSRQSchemaType
 def load_config() -> Optional[SSRQConfig]:
     """Load the configuration from pyproject.toml and apply some basic validation using pydantic."""
     with open(
-            CUR_DIR / "pyproject.toml",
-            "rb",
+        CUR_DIR / "pyproject.toml",
+        "rb",
     ) as f:
         config = tomllib.load(f)
 
@@ -174,30 +174,22 @@ def compile_odd_to_rng(odd: str, tei_version: str) -> str:
     return result
 
 
-def show_stats(schema: str, name: str) -> None:
-    included_elements: list[str] = " ".join(
-        re.findall(r'include="(.*)"', schema)
-    ).split(" ")
-    specified_elements: list[str] = re.findall(SPECIFIED_ELEMENTS, schema)
-    print(
-        f"Elements included in {name}: {len(included_elements)}\nElements already specified: {len(specified_elements)}\nElements to specify: {len(included_elements) - len(specified_elements)}\n"
-    )
-
-
 class ODDFactory:
     @staticmethod
     def create(
-            schema_config: SSRQSchemaType,
-            authors: list[str],
-            clean: bool = True,
-            print_stats: bool = False,
+        schema_config: SSRQSchemaType,
+        authors: list[str],
+        clean: bool = True,
+        print_stats: bool = False,
     ) -> SSRQSchema:
         odd_with_metadata = ODDFactory.__fill_template_with_metadata(
             authors=authors, schema=schema_config
         )
 
         if print_stats:
-            show_stats(schema=odd_with_metadata, name=schema_config["entry"])
+            ODDFactory.__show_stats(
+                schema=odd_with_metadata, name=schema_config["entry"]
+            )
 
         odd_with_metadata = resolve_relative_paths(doc=odd_with_metadata)
 
@@ -227,7 +219,7 @@ class ODDFactory:
 
     @staticmethod
     def __fill_template_with_metadata(
-            authors: list[str], schema: SSRQSchemaType
+        authors: list[str], schema: SSRQSchemaType
     ) -> str:
         with PySaxonProcessor(license=False) as proc:
             proc.set_configuration_property(name="xi", value="on")  # type: ignore
@@ -259,6 +251,16 @@ class ODDFactory:
             raise ValueError("No result from XSLT transformation")
 
         return result
+
+    @staticmethod
+    def __show_stats(schema: str, name: str) -> None:
+        included_elements: list[str] = " ".join(
+            re.findall(r'include="(.*)"', schema)
+        ).split(" ")
+        specified_elements: list[str] = re.findall(SPECIFIED_ELEMENTS, schema)
+        print(
+            f"Elements included in {name}: {len(included_elements)}\nElements already specified: {len(specified_elements)}\nElements to specify: {len(included_elements) - len(specified_elements)}\n"
+        )
 
 
 def clean_odd(compiled_odd) -> str:
