@@ -13,10 +13,8 @@ from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecu
 from ssrq_cli.validate import RNGJingValidator
 from ssrq_cli.xml_utils import ext_etree
 
+from utils.constants import SPECIFIED_ELEMENTS, SRC_DIR, XSLTS
 from utils.main import (
-    SPECIFIED_ELEMENTS,
-    SRC_DIR,
-    XSLTS,
     SSRQSchema,
     load_config,
     odd_factory,

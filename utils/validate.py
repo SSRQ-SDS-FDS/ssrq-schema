@@ -6,7 +6,7 @@ from ssrq_cli.validate import RNGJingValidator  # type: ignore
 from ssrq_cli.validate.xml import ValidationError  # type: ignore
 from ssrq_cli.xml_utils import ext_etree  # type: ignore
 
-from utils.main import COMMON_DIR, ELEMENTS_DIR, SRC_DIR
+from utils.constants import COMMON_DIR, ELEMENTS_DIR, SRC_DIR
 
 ODD_ENTRY_FILES = glob(str(SRC_DIR / "*.xml"))
 COMMON_FILES = glob(str(COMMON_DIR / "*.xml"))
