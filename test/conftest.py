@@ -17,7 +17,7 @@ from utils.main import (
     SPECIFIED_ELEMENTS,
     SRC_DIR,
     XSLTS,
-    Schema,
+    SSRQSchema,
     load_config,
     odd_factory,
 )
@@ -115,7 +115,7 @@ def extract_specified_elements_for_rng(schema: SSRQSchemaType) -> list[ElName]:
 
 
 @pytest.fixture(scope="session")
-def odds() -> list[tuple[Schema, list[ElName]]]:
+def odds() -> list[tuple[SSRQSchema, list[ElName]]]:
     """Compile all odds found in the pyproject.toml to odds and RelaxNG files. Return as a list of Schema objects."""
     config = load_config()
 
@@ -135,7 +135,7 @@ def odds() -> list[tuple[Schema, list[ElName]]]:
 
 @pytest.fixture(scope="session")
 def change_rng_start_per_odd(
-    odds: list[tuple[Schema, list[ElName]]]
+    odds: list[tuple[SSRQSchema, list[ElName]]]
 ) -> dict[str, dict[str, str]]:
     """Change the start element of the RNG file to the given name."""
     return {
@@ -151,7 +151,7 @@ def writer(tmp_path: Path) -> SimpleTEIWriter:
 
 
 @pytest.fixture(scope="session")
-def main_schema(odds: list[tuple[Schema, list[ElName]]]) -> Schema:
+def main_schema(odds: list[tuple[SSRQSchema, list[ElName]]]) -> SSRQSchema:
     """A fixture, which returns the main ssrq schema."""
     try:
         return [odd for odd, _ in odds if odd.name == "TEI_Schema"][0]
@@ -160,7 +160,7 @@ def main_schema(odds: list[tuple[Schema, list[ElName]]]) -> Schema:
 
 
 @pytest.fixture(scope="session")
-def main_constraints(main_schema: Schema) -> str:
+def main_constraints(main_schema: SSRQSchema) -> str:
     """A fixture, which returns the schematron rules from the main schema."""
     extracted_rules = extract_schematron_from_relaxng(
         main_schema.rng, XSLT_FILES["extract-sch"]

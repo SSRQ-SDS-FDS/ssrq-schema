@@ -4,7 +4,7 @@ from typing import (
     Iterator,
 )
 
-from utils.main import Schema, load_config, odd_factory
+from utils.main import SSRQSchema, load_config, odd_factory
 from utils.specs.abstract import ODDElement
 from utils.specs.config import NS_MAP
 from utils.specs.dataspec import DataSpec
@@ -17,14 +17,14 @@ from utils.translater import TRANSLATE, Translations
 LANGS = ["de", "fr"]
 
 
-def create_schema_by_entry(entry_point: str) -> Schema | None:
+def create_schema_by_entry(entry_point: str) -> SSRQSchema | None:
     """Create a schema from the config file.
 
     Args:
         entry_point (str): The name of the entry point.
 
     Returns:
-        Schema | None: A schema class instance if it exists, None otherwise.
+        SSRQSchema | None: A schema class instance if it exists, None otherwise.
     """
     config = load_config()
 
@@ -87,18 +87,18 @@ class ODD2Md:
     out_dir: Path
 
     def __init__(
-        self, schema: Schema | str, languages: list[str], target_dir: str
+        self, schema: SSRQSchema | str, languages: list[str], target_dir: str
     ) -> None:
         """Initialize the class.
 
         Args:
-            schema (Schema): The schema class instance.
+            schema (SSRQSchema): The schema class instance.
             languages (list[str]): The languages to convert.
         """
         self.out_dir = Path(target_dir)
         self.languages = languages
         self.schema = ODDReader(
-            odd=schema.compiled_odd if isinstance(schema, Schema) else schema
+            odd=schema.compiled_odd if isinstance(schema, SSRQSchema) else schema
         )
 
     def create_md_doc_per_lang(self) -> None:

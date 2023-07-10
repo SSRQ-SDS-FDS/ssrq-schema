@@ -34,7 +34,7 @@ SPECIFIED_ELEMENTS = r'target="elements/(\w+)\.xml"'
 
 
 @dataclass
-class Schema:
+class SSRQSchema:
     version: str
     name: str
     compiled_odd: str
@@ -268,7 +268,7 @@ def odd_factory(
     authors: list[str],
     clean: bool = True,
     print_stats: bool = False,
-) -> Schema:
+) -> SSRQSchema:
     odd_with_metadata = fill_template_with_metadata(
         authors=authors, schema=schema_config
     )
@@ -306,7 +306,7 @@ def odd_factory(
 
     rng = compile_odd_to_rng(odd=compiled_odd, tei_version=schema_config["tei_version"])
 
-    return Schema(
+    return SSRQSchema(
         version=schema_config["version"],
         name=schema_config["name"],
         compiled_odd=compiled_odd,
