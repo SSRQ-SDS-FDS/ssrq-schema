@@ -19,8 +19,8 @@ from utils.SSRQSchemaType import SSRQSchemaType
 def load_config() -> Optional[SSRQConfig]:
     """Load the configuration from pyproject.toml and apply some basic validation using pydantic."""
     with open(
-        CUR_DIR / "pyproject.toml",
-        "rb",
+            CUR_DIR / "pyproject.toml",
+            "rb",
     ) as f:
         config = tomllib.load(f)
 
@@ -122,39 +122,6 @@ def check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:
         raise SystemExit(1)
 
 
-def fill_template_with_metadata(authors: list[str], schema: SSRQSchemaType) -> str:
-    with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")  # type: ignore
-        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
-        document: PyXdmNode = proc.parse_xml(
-            xml_file_name=f"{str(SRC_DIR)}/{schema['entry']}"
-        )
-
-        # the not very elegant way to pass parameters to the stylesheet...
-        xsltproc.set_parameter(  # type: ignore
-            "authors",
-            proc.make_array(  # type: ignore
-                [
-                    proc.make_string_value(author.split("<")[0].strip())  # type: ignore
-                    for author in authors
-                ]
-            ),
-        )
-        xsltproc.set_parameter("desc", proc.make_string_value(schema["description"]))  # type: ignore
-        xsltproc.set_parameter("title", proc.make_string_value(schema["title"]))  # type: ignore
-        xsltproc.set_parameter("version", proc.make_string_value(schema["version"]))  # type: ignore
-
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
-            stylesheet_file=str(XSLTS["meta"])
-        )
-        result = xsl.transform_to_string(xdm_node=document)
-
-    if result is None:
-        raise ValueError("No result from XSLT transformation")
-
-    return result
-
-
 def compile_odd_to_odd(odd: str, tei_version: str) -> str:
     with PySaxonProcessor(license=False) as proc:
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
@@ -220,12 +187,12 @@ def show_stats(schema: str, name: str) -> None:
 class ODDFactory:
     @staticmethod
     def create(
-        schema_config: SSRQSchemaType,
-        authors: list[str],
-        clean: bool = True,
-        print_stats: bool = False,
+            schema_config: SSRQSchemaType,
+            authors: list[str],
+            clean: bool = True,
+            print_stats: bool = False,
     ) -> SSRQSchema:
-        odd_with_metadata = fill_template_with_metadata(
+        odd_with_metadata = ODDFactory.__fill_template_with_metadata(
             authors=authors, schema=schema_config
         )
 
@@ -257,6 +224,41 @@ class ODDFactory:
             compiled_odd=compiled_odd,
             rng=rng,
         )
+
+    @staticmethod
+    def __fill_template_with_metadata(
+            authors: list[str], schema: SSRQSchemaType
+    ) -> str:
+        with PySaxonProcessor(license=False) as proc:
+            proc.set_configuration_property(name="xi", value="on")  # type: ignore
+            xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+            document: PyXdmNode = proc.parse_xml(
+                xml_file_name=f"{str(SRC_DIR)}/{schema['entry']}"
+            )
+
+            # the not very elegant way to pass parameters to the stylesheet...
+            xsltproc.set_parameter(  # type: ignore
+                "authors",
+                proc.make_array(  # type: ignore
+                    [
+                        proc.make_string_value(author.split("<")[0].strip())  # type: ignore
+                        for author in authors
+                    ]
+                ),
+            )
+            xsltproc.set_parameter("desc", proc.make_string_value(schema["description"]))  # type: ignore
+            xsltproc.set_parameter("title", proc.make_string_value(schema["title"]))  # type: ignore
+            xsltproc.set_parameter("version", proc.make_string_value(schema["version"]))  # type: ignore
+
+            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
+                stylesheet_file=str(XSLTS["meta"])
+            )
+            result = xsl.transform_to_string(xdm_node=document)
+
+        if result is None:
+            raise ValueError("No result from XSLT transformation")
+
+        return result
 
 
 def clean_odd(compiled_odd) -> str:
