@@ -4,9 +4,9 @@ from pathlib import Path
 from typing import Optional
 
 import tomllib
-from pydantic import BaseModel, validator
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
 
+from utils.SSRQConfig import SSRQConfig
 from utils.SSRQSchemaType import SSRQSchemaType
 
 CUR_DIR = Path(__file__).parent.parent.absolute()
@@ -31,24 +31,6 @@ XSLTS = {
 OMIT_VERSION: bool = False
 
 SPECIFIED_ELEMENTS = r'target="elements/(\w+)\.xml"'
-
-
-class SSRQConfig(BaseModel):
-    authors: list[str]
-    schemas: list[SSRQSchemaType]
-
-    @validator("schemas", pre=True)
-    def version_issemver(cls, schemas: list[SSRQSchemaType]) -> list[SSRQSchemaType]:
-        import semver  # type: ignore
-
-        for schema in schemas:
-            if semver.VersionInfo.isvalid(schema["version"]) is False:
-                raise ValueError("version must be a semantic version string")
-            if semver.VersionInfo.isvalid(schema["tei_version"]) is False:
-                raise ValueError(
-                    "the selected tei version must be a semantic version string"
-                )
-        return schemas
 
 
 @dataclass
