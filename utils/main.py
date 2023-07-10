@@ -27,23 +27,6 @@ def load_config() -> Optional[SSRQConfig]:
     return SSRQConfig(**config["ssrq"]["schema"]["meta"])
 
 
-def resolve_sch_let(odd: str) -> str:
-    with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")  # type: ignore
-        xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
-        document: PyXdmNode = proc.parse_xml(xml_text=odd)
-
-        xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
-            stylesheet_file=str(XSLTS["vars"])
-        )
-        result: str = xsl.transform_to_string(xdm_node=document)
-
-    if result is None:
-        raise ValueError("No result from XSLT transformation, while cleaning")
-
-    return result
-
-
 class ODDFactory:
     @staticmethod
     def create(
@@ -76,7 +59,7 @@ class ODDFactory:
         if clean:
             compiled_odd = ODDFactory.__clean_odd(compiled_odd)
 
-        compiled_odd = resolve_sch_let(odd=compiled_odd)
+        compiled_odd = ODDFactory.__resolve_sch_let(odd=compiled_odd)
 
         rng = ODDFactory.__compile_odd_to_rng(
             odd=compiled_odd, tei_version=schema_config["tei_version"]
@@ -210,6 +193,23 @@ class ODDFactory:
         result_xi = ODDFactory.__resolve_xincludes(doc=result_specs)
 
         return result_xi
+
+    @staticmethod
+    def __resolve_sch_let(odd: str) -> str:
+        with PySaxonProcessor(license=False) as proc:
+            proc.set_configuration_property(name="xi", value="on")  # type: ignore
+            xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
+            document: PyXdmNode = proc.parse_xml(xml_text=odd)
+
+            xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
+                stylesheet_file=str(XSLTS["vars"])
+            )
+            result: str = xsl.transform_to_string(xdm_node=document)
+
+        if result is None:
+            raise ValueError("No result from XSLT transformation, while cleaning")
+
+        return result
 
     @staticmethod
     def __resolve_specs(doc: str) -> str:
