@@ -1,6 +1,6 @@
 from pydantic import BaseModel, validator
 
-from utils.SSRQSchemaType import SSRQSchemaType
+from utils.ssrqschematype import SSRQSchemaType
 
 
 class SSRQConfig(BaseModel):

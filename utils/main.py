@@ -5,8 +5,8 @@ import tomllib
 from utils.constants import (
     CUR_DIR,
 )
-from utils.ODDFactory import ODDFactory
-from utils.SSRQConfig import SSRQConfig
+from utils.oddfactory import ODDFactory
+from utils.ssrqconfig import SSRQConfig
 
 
 def load_config() -> Optional[SSRQConfig]:
