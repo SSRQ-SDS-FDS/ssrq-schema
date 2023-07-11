@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="anchor"
              module="linking"
              mode="change">
-    <desc xml:lang="de" versionDate="2023-05-02">Endpunkt einer Streichung (vgl. <gi>delSpan</gi>),
-        einer weiteren Ergänzung (vgl. <gi>addSpan</gi>) oder einer Beschädigung (vgl.
-        <gi>damageSpan</gi>) an. Als Wert des Attributs xml:id ist der den ersten Teil des
-        Namens dieser Elemente sowie einer fortlaufende Nummer zu wählen: del1, del2, add1, add2,
-        usw.
+    <desc xml:lang="de" versionDate="2023-07-11">Endpunkt einer umfangreichen Ergänzung (<gi>addSpan</gi>),
+        Streichung (<gi>delSpan</gi>), oder Beschädigung (<gi>damageSpan</gi>).
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-02">Endpoint of a deletion (cf. <gi>delSpan</gi>), a
-        further addition (cf. <gi>addSpan</gi>) or a damage (cf. <gi>damageSpan</gi>). The value of
-        the attribute xml:id shall be the first part of the name of these elements and a consecutive
-        number: del1, del2, add1, add2, etc.
+    <desc xml:lang="en" versionDate="2023-07-11">Endpoint of extensive addition (<gi>addSpan</gi>), deletion
+        (<gi>delSpan</gi>), or corruption (<gi>damageSpan</gi>).
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-02">Point final d'une suppression (cf.
-        <gi>delSpan</gi>), d'un ajout (cf. <gi>addSpan</gi>) ou d'un dommage (cf.
-        <gi>damageSpan</gi>). La valeur de l'attribut xml:id doit être la première partie du nom
-        de ces éléments et un nombre consécutif : del1, del2, add1, add2, etc.
+    <desc xml:lang="fr" versionDate="2023-07-11">Point final d'un ajout important (<gi>addSpan</gi>), d'une suppression
+        (<gi>delSpan</gi>) ou d'une corruption (<gi>damageSpan</gi>).
+    </desc>
+    <desc xml:lang="it" versionDate="2023-07-11">Endpoint di aggiunta estesa (<gi>addSpan</gi>), eliminazione
+        (<gi>delSpan</gi>) o danneggiamento (<gi>damageSpan</gi>).
     </desc>
     <classes mode="replace">
         <memberOf key="att.global"/>
@@ -59,4 +58,28 @@
             </p>
         </egXML>
     </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-11">
+        <p>Als Wert des Attributs <att>xml:id</att> ist der erste Teil des Namens der entsprechenden Elemente
+            (<gi>addSpan</gi>, <gi>delSpan</gi> bzw. <gi>damageSpan</gi>) sowie eine fortlaufende Nummer zu wählen:
+            z. B. add1, add2, usw. oder del1, del2, usw. oder damage1, damage2, usw.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-11">
+        <p>The value of the <att>xml:id</att> attribute is the first part of the name of the corresponding elements
+            (<gi>addSpan</gi>, <gi>delSpan</gi> or <gi>damageSpan</gi>) and a to dial a consecutive number: e.g.
+            add1, add2, etc. or del1, del2, etc. or damage1, damage2, etc.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-11">
+        <p>La valeur de l'attribut <att>xml:id</att> est la première partie du nom des éléments correspondants
+            (<gi>addSpan</gi>, <gi>delSpan</gi> ou <gi>damageSpan</gi>) et a pour composer un numéro consécutif :
+            ex. add1, add2, etc. ou del1, del2, etc. ou damage1, damage2, etc.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-11">
+        <p>Il valore dell'attributo <att>xml:id</att> è la prima parte del nome degli elementi corrispondenti
+            (<gi>addSpan</gi>, <gi>delSpan</gi> o <gi>damageSpan</gi>) e a per comporre un numero consecutivo: es.
+            add1, add2, ecc. o del1, del2, ecc. o damage1, damage2, ecc.
+        </p>
+    </remarks>
 </elementSpec>
