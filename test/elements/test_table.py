@@ -17,6 +17,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-table-with-multiple-heads",
+            "<table><head>bar</head><row><cell>foo</cell></row><head>bar</head><row><cell>foo</cell></row></table>",
+            True,
+        ),
+        (
             "valid-table-with-head-and-pb",
             "<table><head>bar</head> <pb n='32' facs='fol_32v'/><row><cell>foo</cell></row></table>",
             True,
