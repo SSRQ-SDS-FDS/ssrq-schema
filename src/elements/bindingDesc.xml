@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="bindingDesc" module="msdescription"
-             mode="change">
+    mode="change">
     <desc xml:lang="de" versionDate="2023-05-31">Wird verwendet, um Informationen über die physische
         Struktur oder Bindung eines Textes zu speichern. Mit diesem Tag können Details wie die Art
-        der Bindung (z. B. Buchbindung, Broschur) angegeben werden.
-    </desc>
+        der Bindung (z. B. Buchbindung, Broschur) angegeben werden. Die Beschreibung wird als
+        Freitext in <gi>p</gi> angegeben.</desc>
     <desc xml:lang="fr" versionDate="2023-05-31">Utilisée pour stocker des informations sur la
         structure physique ou la reliure d'un texte. Cette balise permet d'indiquer des détails tels
-        que le type de reliure (par exemple, reliure de livre, brochage).
-    </desc>
+        que le type de reliure (par exemple, reliure de livre, brochage). La description est donnée
+        en texte libre dans <gi>p</gi>.</desc>
     <desc xml:lang="en" versionDate="2023-05-31">Used to store information about the physical
         structure or binding of a text. This tag can be used to specify details such as the type of
-        binding (e.g. book binding, brochure).
-    </desc>
+        binding (e.g. book binding, brochure). The description is given as free text in <gi>p</gi>.</desc>
     <classes mode="replace">
         <memberOf key="model.physDescPart"/>
     </classes>
     <content>
         <elementRef key="p" minOccurs="1" maxOccurs="unbounded"/>
     </content>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-07-11">
+        <p>Beschreibung eines kartonierten Ledereinbanes</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <bindingDesc>
+                <p xml:lang="de">Buch mit kartoniertem Ledereinband</p>
+            </bindingDesc>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-07-11">
+        <p>Description d'une reliure en cuir cartonnée</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <bindingDesc>
+                <p xml:lang="fr">Livre avec couverture en cuir cartonnée</p>
+            </bindingDesc>
+        </egXML>
+    </exemplum>
 </elementSpec>
