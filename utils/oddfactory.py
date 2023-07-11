@@ -3,8 +3,8 @@ import re
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
 
 from utils.constants import EXAMPLES_DIR, SPECIFIED_ELEMENTS, SRC_DIR, XSLTS
-from utils.SSRQSchema import SSRQSchema
-from utils.SSRQSchemaType import SSRQSchemaType
+from utils.ssrqschema import SSRQSchema
+from utils.ssrqschematype import SSRQSchemaType
 
 
 class ODDFactory:

@@ -17,9 +17,9 @@ from utils.constants import SPECIFIED_ELEMENTS, SRC_DIR, XSLTS
 from utils.main import (
     load_config,
 )
-from utils.ODDFactory import ODDFactory
-from utils.SSRQSchema import SSRQSchema
-from utils.SSRQSchemaType import SSRQSchemaType
+from utils.oddfactory import ODDFactory
+from utils.ssrqschema import SSRQSchema
+from utils.ssrqschematype import SSRQSchemaType
 
 ElName = str
 
