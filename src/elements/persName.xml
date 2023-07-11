@@ -3,6 +3,7 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="persName"
              module="namesdates"
              mode="change">
@@ -69,25 +70,16 @@
          </datatype>
       </attDef>
    </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2024-04-20">
-      <p>Beispiel für einen einfachen Personennamen.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <persName ref="per008949a">Hans Gullisen</persName>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2024-04-20">
-      <p>Beispiel für ineinander verschachtelte Personennamen.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <persName ref="per008937a">
-            <persName ref="per008949a">Hans Gullisen</persName>
-                seligen frouw
-            </persName>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2024-04-20">
-      <p>Beispiel für einen Personennamen mit @role.</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <persName role="sigillant" ref="per002744a">Johann Jakob Escher</persName>
-      </egXML>
-   </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-persName-de-1"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-en-1"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-fr-1"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-it-1"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-de-2"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-en-2"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-fr-2"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-it-2"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-de-3"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-en-3"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-fr-3"/>
+    <xi:include href="examples.xml" xpointer="ex-persName-it-3"/>
 </elementSpec>

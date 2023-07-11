@@ -70,6 +70,54 @@
             <p>Esempio di descrizione di un testimone testuale</p>
             <xi:include href="msDesc.xml"/>
         </exemplum>
+        <exemplum xml:lang="de" xml:id="ex-persName-de-1">
+            <p>Beispiel für einen einfachen Personennamen</p>
+            <xi:include href="persName.xml" xpointer="persName-1"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-persName-en-1">
+            <p>Example of a simple personal name</p>
+            <xi:include href="persName.xml" xpointer="persName-1"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-persName-fr-1">
+            <p>Exemple de nom de personne</p>
+            <xi:include href="persName.xml" xpointer="persName-1"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-persName-it-1">
+            <p>Esempio di nome personale</p>
+            <xi:include href="persName.xml" xpointer="persName-1"/>
+        </exemplum>
+        <exemplum xml:lang="de" xml:id="ex-persName-de-2">
+            <p>Auszeichnung eines Heiligen – nur der Name wird erfasst</p>
+            <xi:include href="persName.xml" xpointer="persName-2"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-persName-en-2">
+            <p>Tagging of a saint</p>
+            <xi:include href="persName.xml" xpointer="persName-2"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-persName-fr-2">
+            <p>Marquage d'un saint</p>
+            <xi:include href="persName.xml" xpointer="persName-2"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-persName-it-2">
+            <p>Etichettatura di un santo</p>
+            <xi:include href="persName.xml" xpointer="persName-2"/>
+        </exemplum>
+        <exemplum xml:lang="de" xml:id="ex-persName-de-3">
+            <p>Verwendung mit <att>role</att></p>
+            <xi:include href="persName.xml" xpointer="persName-3"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-persName-en-3">
+            <p>Use with <att>role</att></p>
+            <xi:include href="persName.xml" xpointer="persName-3"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-persName-fr-3">
+            <p>Utilisation avec <att>role</att></p>
+            <xi:include href="persName.xml" xpointer="persName-3"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-persName-it-3">
+            <p>Utilizzare con <att>ruolo</att></p>
+            <xi:include href="persName.xml" xpointer="persName-3"/>
+        </exemplum>
         <exemplum xml:lang="de" xml:id="ex-orgName-de">
             <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
                 nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
