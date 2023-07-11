@@ -5,6 +5,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="seg"
              module="linking"
              mode="change">
@@ -32,44 +33,10 @@
         <attDef ident="xml:id" mode="delete"/>
         <attDef ident="xml:lang" mode="delete"/>
     </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-04">
-        <p>Einfacher Absatz</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <p>
-                <seg>Absatz vom Bearbeitenden einer Quellenediton</seg>
-            </p>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-04">
-        <p>Talon simple</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <p>
-                <seg>Absatz vom Bearbeitenden einer Quellenediton</seg>
-            </p>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-04">
-        <p>Beispiel einer Nummerierung von Abschnitten, die vom Bearbeitenden stammen
-            und so nicht im Original vorkommen
-        </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <p>
-                <seg n="1">Artikel 1</seg>
-                <seg n="2">Artikel 2</seg>
-            </p>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-04">
-        <p>Exemple de numérotation de paragraphes provenant de l'éditeur et
-            n'apparaissant pas ainsi dans l'original
-        </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <p>
-                <seg n="1">Artikel 1</seg>
-                <seg n="2">Artikel 2</seg>
-            </p>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-seg-de"/>
+    <xi:include href="examples.xml" xpointer="ex-seg-en"/>
+    <xi:include href="examples.xml" xpointer="ex-seg-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-seg-it"/>
     <remarks xml:lang="de" versionDate="2023-07-11">
         <p>Innerhalb von <gi>p</gi>verwendet. Dagegen werden <gi>div</gi> und <gi>p</gi> nur für originale Absätze
             verwendet.
