@@ -4,6 +4,7 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="anchor"
              module="linking"
              mode="change">
@@ -34,30 +35,18 @@
         <attDef ident="n" mode="delete"/>
         <attDef ident="xml:lang" mode="delete"/>
     </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-        <p>Beispielhafte Verwendung in Kombination mit
-            delSpan
-        </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <p>
-                <delSpan spanTo="del1"/>
-                ...
-                <anchor xml:id="del1"/>
-            </p>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-        <p>BExemple d'utilisation en combinaison avec
-            delSpan
-        </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <p>
-                <delSpan spanTo="del1"/>
-                ...
-                <anchor xml:id="del1"/>
-            </p>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-addSpan-de"/>
+    <xi:include href="examples.xml" xpointer="ex-addSpan-en"/>
+    <xi:include href="examples.xml" xpointer="ex-addSpan-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-addSpan-it"/>
+    <xi:include href="examples.xml" xpointer="ex-delSpan-de"/>
+    <xi:include href="examples.xml" xpointer="ex-delSpan-en"/>
+    <xi:include href="examples.xml" xpointer="ex-delSpan-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-delSpan-it"/>
+    <xi:include href="examples.xml" xpointer="ex-damageSpan-de"/>
+    <xi:include href="examples.xml" xpointer="ex-damageSpan-en"/>
+    <xi:include href="examples.xml" xpointer="ex-damageSpan-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-damageSpan-it"/>
     <remarks xml:lang="de" versionDate="2023-07-11">
         <p>Als Wert des Attributs <att>xml:id</att> ist der erste Teil des Namens der entsprechenden Elemente
             (<gi>addSpan</gi>, <gi>delSpan</gi> bzw. <gi>damageSpan</gi>) sowie eine fortlaufende Nummer zu wählen:
