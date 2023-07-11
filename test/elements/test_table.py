@@ -41,6 +41,11 @@ from ..conftest import RNG_test_function
             "<table><p>bar</p><row><cell>foo</cell></row></table>",
             False,
         ),
+        (
+            "invalid-table-without-row",
+            "<table><head>foo</head></table>",
+            False,
+        ),
     ],
 )
 def test_table(
