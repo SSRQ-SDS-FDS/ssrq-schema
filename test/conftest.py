@@ -14,9 +14,7 @@ from ssrq_cli.validate import RNGJingValidator
 from ssrq_cli.xml_utils import ext_etree
 
 from utils.constants import SPECIFIED_ELEMENTS, SRC_DIR, XSLTS
-from utils.main import (
-    load_config,
-)
+from utils.main import COMPILE_ODD_STEPS, RNG_STEP, load_config
 from utils.oddfactory import ODDFactory
 from utils.ssrqschema import SSRQSchema
 from utils.ssrqschematype import SSRQSchemaType
@@ -122,7 +120,9 @@ def odds() -> list[tuple[SSRQSchema, list[ElName]]]:
 
     odds = [
         (
-            ODDFactory.create(schema, authors=config.authors),
+            ODDFactory(authors=config.authors, schema_config=schema).create(
+                compile_odd_steps=COMPILE_ODD_STEPS, create_rng=RNG_STEP
+            ),
             extract_specified_elements_for_rng(schema),
         )
         for schema in config.schemas

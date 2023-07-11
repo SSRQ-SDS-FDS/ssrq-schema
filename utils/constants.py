@@ -1,13 +1,13 @@
 from pathlib import Path
 
-CUR_DIR = Path(__file__).parent.parent.absolute()
-DIST_DIR = CUR_DIR / "dist"
-SRC_DIR = CUR_DIR / "src"
+PROJECT_DIR = Path(__file__).parent.parent.absolute()
+DIST_DIR = PROJECT_DIR / "dist"
+SRC_DIR = PROJECT_DIR / "src"
 EXAMPLES_DIR = SRC_DIR / "examples"
 COMMON_DIR = SRC_DIR / "common"
 ELEMENTS_DIR = SRC_DIR / "elements"
-XSLT_BASE = CUR_DIR / SRC_DIR / "xsl"
-TEI_STYLESHEETS = CUR_DIR / SRC_DIR / "lib/tei_stylesheets/odds"
+XSLT_BASE = PROJECT_DIR / SRC_DIR / "xsl"
+TEI_STYLESHEETS = PROJECT_DIR / SRC_DIR / "lib/tei_stylesheets/odds"
 XSLTS = {
     "change-start": XSLT_BASE / "change-rng-start.xsl",
     "clean": XSLT_BASE / "clean-compiled.xsl",

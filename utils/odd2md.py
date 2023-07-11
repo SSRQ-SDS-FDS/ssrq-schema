@@ -4,7 +4,7 @@ from typing import (
     Iterator,
 )
 
-from utils.main import load_config
+from utils.main import COMPILE_ODD_STEPS, RNG_STEP, load_config
 from utils.oddfactory import ODDFactory
 from utils.specs.abstract import ODDElement
 from utils.specs.config import NS_MAP
@@ -36,9 +36,9 @@ def create_schema_by_entry(entry_point: str) -> SSRQSchema | None:
     schema_config = [
         schema for schema in config.schemas if schema["entry"] == entry_point
     ][0]
-    return ODDFactory.create(
-        schema_config=schema_config,
-        authors=config.authors,
+    return ODDFactory(authors=config.authors, schema_config=schema_config).create(
+        compile_odd_steps=COMPILE_ODD_STEPS,
+        create_rng=RNG_STEP,
     )
 
 

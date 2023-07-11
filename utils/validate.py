@@ -1,3 +1,5 @@
+import re
+from abc import ABC, abstractmethod
 from glob import glob
 
 import requests
@@ -17,6 +19,51 @@ FILTER_MSGS = [
     'value of attribute "module" is invalid',
     'element "xi:include" not allowed here',
 ]
+
+
+class Validator(ABC):
+    @staticmethod
+    @abstractmethod
+    def validate(doc: str, name: str) -> None:
+        pass
+
+
+class ValidatePaths(Validator):
+    @staticmethod
+    def validate(doc: str, name: str) -> None:
+        """A helper function to check if all files, which are embedded in the ODD file via specGrpRef
+        are available in the src directory. If not, an error is raised.
+
+        Args:
+            doc (str): The ODD file as a string.
+            name (str): The name of the schema.
+
+        Raises:
+            SystemExit: If one or more files are missing, the program is terminated.
+
+        Returns:
+            None"""
+
+        from os.path import exists
+        from urllib.parse import urlparse
+
+        embedded_files = re.findall(r'specGrpRef target="(.*\.xml)(?:.*)?"', doc)
+
+        try:
+            bundled_exceptions = []
+            for file in embedded_files:
+                if exists(urlparse(file).path):
+                    continue
+                bundled_exceptions.append(FileNotFoundError(f"{file} not found"))
+            if len(bundled_exceptions) > 0:
+                raise ExceptionGroup("File not found", bundled_exceptions)
+        except ExceptionGroup as errors:
+            print(
+                f"The following files in schema {name} are missing – fix the paths before you continue:\n",
+                errors.exceptions,
+            )
+
+            raise SystemExit(1)
 
 
 class WellFormedException(Exception):
