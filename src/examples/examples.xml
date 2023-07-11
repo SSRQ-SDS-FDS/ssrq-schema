@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model
         href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0"
-     xmlns:xi="http://www.w3.org/2001/XInclude">
+    xmlns:xi="http://www.w3.org/2001/XInclude">
     <macroSpec ident="ssrq-examples">
-
         <exemplum xml:lang="de" xml:id="ex-ab-de">
             <p>Beispiel für einen Kanzleivermerk.</p>
             <xi:include href="ab.xml"/>
@@ -23,7 +22,6 @@
             <p>Esempio di nota di un impiegato.</p>
             <xi:include href="ab.xml"/>
         </exemplum>
-
         <exemplum xml:lang="de" xml:id="ex-choice-abbr-de">
             <p>Beispiel für eine Abkürzung</p>
             <xi:include href="choice-abbr.xml"/>
@@ -40,7 +38,6 @@
             <p>Esempio di abbreviazione</p>
             <xi:include href="choice-abbr.xml"/>
         </exemplum>
-
         <exemplum xml:lang="de" xml:id="ex-choice-sic-de">
             <p>Beispiel für eine Korrektur</p>
             <xi:include href="choice-sic.xml"/>
@@ -57,7 +54,6 @@
             <p>Esempio di correzione</p>
             <xi:include href="choice-sic.xml"/>
         </exemplum>
-
         <exemplum xml:lang="de" xml:id="ex-msDesc-de">
             <p>Beispiel für eine Textzeugenbeschreibung</p>
             <xi:include href="msDesc.xml"/>
@@ -74,7 +70,28 @@
             <p>Esempio di descrizione di un testimone testuale</p>
             <xi:include href="msDesc.xml"/>
         </exemplum>
-
+        <exemplum xml:lang="de" xml:id="ex-orgName-de">
+            <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
+                nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
+                Nennung des Bürgermeisters.</p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-orgName-en">
+            <p>Institutions / functions are always identified as organisations - but not the people.
+                As shown below, this also applies to the naming of the mayor.</p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-orgName-fr">
+            <p>Les institutions/fonctions sont toujours identifiées comme des organisations, mais
+                pas les personnes. Comme indiqué ci-dessous, cela s'applique également à la
+                désignation du maire.</p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-orgName-it">
+            <p>Le istituzioni/funzioni sono sempre identificate come organizzazioni, ma non le
+                persone. Come illustrato di seguito, questo vale anche per il nome del sindaco.</p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
         <exemplum xml:lang="de" xml:id="ex-sourceDesc-listWit-de">
             <p>Beispiel für eine Quellenbeschreibung mit einer Liste von Textzeugen</p>
             <xi:include href="sourceDesc-listWit.xml"/>
@@ -91,7 +108,6 @@
             <p>Esempio di descrizione di una fonte con un elenco di testimoni testuali</p>
             <xi:include href="sourceDesc-listWit.xml"/>
         </exemplum>
-
         <exemplum xml:lang="de" xml:id="ex-sourceDesc-msDesc-de">
             <p>Beispiel für eine Quellenbeschreibung mit einem Textzeugen</p>
             <xi:include href="sourceDesc-msDesc.xml"/>
