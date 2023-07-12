@@ -46,4 +46,11 @@
         </xsl:choose>
     </xsl:template>
     
+    <xsl:template match="tei:remarks">
+        <remarks type="ssrq-remarks">
+            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates/>
+        </remarks>
+    </xsl:template>
+    
 </xsl:stylesheet>

@@ -3802,38 +3802,77 @@
                             >4.2.1. Headings and Trailers</ref>
                     </listRef>
                 </elementSpec>
-                <elementSpec rend="change" module="core" ident="note">
+                <elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                             rend="change"
+                             module="core"
+                             ident="note">
                     <gloss xml:lang="en" versionDate="2017-06-25">note</gloss>
                     <gloss versionDate="2017-06-25" xml:lang="de">Anmerkung</gloss>
-                    <desc rend="replace" xml:lang="de" versionDate="2023-05-26">Enthält eine
-                        sachkritische Anmerkung zu einer Einzelstelle im Editionstext und folgt
-                        unmittelbar auf das Bezugswort im Editionstext. Wird Originaltext zitiert, wird
-                        dieser mit <gi>orig</gi> ausgezeichnet.</desc>
-                    <desc rend="replace" xml:lang="fr" versionDate="2023-05-26">Contient une note
-                        critique sur un passage particulier du texte de l'édition et suit immédiatement le
-                        mot de référence dans le texte de l'édition. Si le texte original est cité, il est
-                        signalé par <gi>orig</gi>.</desc>
-                    <desc rend="replace" xml:lang="en" versionDate="2023-05-26">Contains a critical note
-                        on a particular passage in the edition text and immediately follows the reference
-                        word in the edition text. If the original text is quoted, it is indicated by
-                        <gi>orig</gi>.</desc>
-                    <classes/>
+                    <desc rend="replace" xml:lang="de" versionDate="2023-07-07">Enthält entweder eine sachkritische Anmerkung zu einer
+                        Einzelstelle im Editionstext oder eine Anmerkung im Original.
+                    </desc>
+                    <desc rend="replace" xml:lang="en" versionDate="2023-07-07">Contains either a factual comment on a single passage in the text of
+                        the edition or a comment in the original.
+                    </desc>
+                    <desc rend="replace" xml:lang="fr" versionDate="2023-07-07">Contient soit un commentaire factuel sur un seul passage du texte de
+                        l'édition, soit un commentaire dans l'original.
+                    </desc>
+                    <classes>
+                        <memberOf key="att.placement"/>
+                        <memberOf key="att.typed"/>
+                    </classes>
                     <content>
                         <alternate minOccurs="1" maxOccurs="unbounded">
                             <macroRef key="ssrq.content.default"/>
                             <elementRef key="bibl"/>
+                            <elementRef key="ref"/>
                         </alternate>
                     </content>
-                    <attList/>
+                    <attList>
+                        <attDef ident="type" mode="replace">
+                            <desc xml:lang="de" versionDate="2023-07-07">Art der Anmerkung; wird dieses Attribut nicht vergeben, dann handelt es sich um eine Anmerkung der Editor:innen.</desc>
+                            <desc xml:lang="en" versionDate="2023-07-07">Type of annotation; if this attribute is not assigned, then it is an annotation by the editor.</desc>
+                            <desc xml:lang="fr" versionDate="2023-07-07">Type d'annotation ; si cet attribut n'est pas attribué, il s'agit d'une annotation de l'éditeur.</desc>
+                            <valList type="closed">
+                                <valItem ident="original">
+                                    <desc xml:lang="de" versionDate="2023-07-07">Anmerkung im Original</desc>
+                                    <desc xml:lang="en" versionDate="2023-07-07">note in the original</desc>
+                                    <desc xml:lang="fr" versionDate="2023-07-07">note dans l'original</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                    <remarks xml:lang="de" versionDate="2023-07-07">
+                        <p>Ein <gi>note</gi>-Element folgt unmittelbar auf das Bezugswort im Editionstext. Wird
+                            Originaltext zitiert, wird dieser mit <gi>orig</gi> ausgezeichnet.
+                        </p>
+                        <p>Handelt es sich um eine Anmerkung im Original wird das Attribut <att>type</att> mit dem Wert
+                            <val>original</val>
+                            verwendet.
+                        </p>
+                    </remarks>
+                    <remarks xml:lang="en" versionDate="2023-07-07">
+                        <p>A <gi>note</gi> element immediately follows the reference word in the edition text. If original text is
+                            quoted, it is marked with <gi>orig</gi>.
+                        </p>
+                        <p>If it is an annotation in the original, the attribute <att>type</att> with the value <val>original</val> is
+                            used.
+                        </p>
+                    </remarks>
+                    <remarks xml:lang="fr" versionDate="2023-07-07">
+                        <p>Un élément <gi>note</gi> suit immédiatement le mot de référence dans le texte de l'édition. Si le texte
+                            original est cité, il est marqué avec <gi>orig</gi>.
+                        </p>
+                        <p>S'il s'agit d'une annotation dans l'original, l'attribut <att>type</att> avec la valeur
+                            <val>original</val>
+                            est utilisé.
+                        </p>
+                    </remarks>
                     <listRef>
-                        <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONONO"
-                            >3.9.1. Notes and Simple Annotation</ref>
-                        <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD27"
-                            >2.2.6. The Notes Statement</ref>
-                        <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICON"
-                            >3.12.2.8. Notes and Statement of Language</ref>
-                        <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPNO"
-                            >9.3.5.4. Notes within Entries</ref>
+                        <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONONO">3.9.1. Notes and Simple Annotation</ref>
+                        <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD27">2.2.6. The Notes Statement</ref>
+                        <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICON">3.12.2.8. Notes and Statement of Language</ref>
+                        <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPNO">9.3.5.4. Notes within Entries</ref>
                     </listRef>
                 </elementSpec>
                 <elementSpec rend="change" module="core" xml:id="GRAPHIC" ident="graphic">
