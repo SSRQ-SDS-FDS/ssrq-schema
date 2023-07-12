@@ -27,7 +27,14 @@
     
     <xsl:template match="tei:gloss[not(@xml:lang = $languages)]"/>
     
-    <xsl:template match="tei:remarks[not(@xml:lang = $languages)]"/>
+    <xsl:template match="tei:remarks">
+        <!-- Filters all TEI remarks and removes the hack introduced by resolve-specs.xsl -->
+        <xsl:if test=".[@type][@xml:lang = $languages][@type = 'ssrq-remarks']">
+            <remarks>
+                <xsl:copy-of select="node()|@* except @type"/>
+            </remarks>
+        </xsl:if>
+    </xsl:template>
     
     
 </xsl:stylesheet>
