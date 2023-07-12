@@ -128,7 +128,7 @@ class ElementSpec(BaseSpec):
             doc.add_paragraph(translations["isEmpty"])
             return None
 
-        content_keys, val_items = [i for i in self.content if isinstance(i, str)], [
+        content_keys, vallists = [i for i in self.content if isinstance(i, str)], [
             i for i in self.content if isinstance(i, ET.Element)
         ]
 
@@ -153,12 +153,13 @@ class ElementSpec(BaseSpec):
 
         doc.add_unordered_list(chain(contents_elements or [], text_elements or []))
 
-        self.val_items_to_markdown(
-            val_items=val_items,
-            doc=doc,
-            translations=translations,
-            lang=lang,
-        )
+        if len(vallists) > 0:
+            self.val_items_to_markdown(
+                val_items=self._filter_vallists_by_lang(vallists=vallists, lang=lang),
+                doc=doc,
+                translations=translations,
+                lang=lang,
+            )
 
     def _list_examples(
         self, translations: dict[str, str], lang: str, doc: Document
@@ -219,6 +220,19 @@ class ElementSpec(BaseSpec):
         else:
             doc.add_raw(remarks)
 
+    def _filter_vallists_by_lang(
+        self, vallists: list[ET.Element], lang: str
+    ) -> list[ET.Element]:
+        val_items = []
+
+        for vallist in vallists:
+            xml_lang = vallist.get(f"{{{NS_MAP['xml']}}}lang")
+
+            if xml_lang is None or xml_lang == lang:
+                val_items.extend(vallist.findall(".//tei:valItem", namespaces=NS_MAP))
+
+        return val_items
+
     def val_items_to_markdown(
         self,
         val_items: list[ET.Element],
@@ -226,18 +240,17 @@ class ElementSpec(BaseSpec):
         lang: str,
         translations: dict[str, str],
     ) -> None:
-        if len(val_items) > 0:
-            doc.add_paragraph(f"**{translations['restrictedValues']}**")
+        doc.add_paragraph(f"**{translations['restrictedValues']}**")
 
-            sorted_valItems = sorted(val_items, key=lambda x: x.attrib["ident"])
-            content_values = []
+        sorted_valItems = sorted(val_items, key=lambda x: x.attrib["ident"])
+        content_values = []
 
-            for valItem in sorted_valItems:
-                content_values.append(
-                    f"{valItem.attrib['ident']}{': ' + desc if len((desc := self.get_desc(element=valItem, lang=lang))) > 0 else ''}"
-                )
+        for val_item in sorted_valItems:
+            content_values.append(
+                f"{val_item.attrib['ident']}{': ' + desc if len((desc := self.get_desc(element=val_item, lang=lang))) > 0 else ''}"
+            )
 
-            doc.add_unordered_list(content_values)
+        doc.add_unordered_list(content_values)
 
     def _group_content_by_model(self, elements: dict[str, Self], content: list[str]):
         elements_by_model: dict[str, list[str]] = {}

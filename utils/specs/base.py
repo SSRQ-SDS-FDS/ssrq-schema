@@ -252,8 +252,7 @@ class BaseSpec:
                     elements_found.append(key_or_name)
 
             if split_tag_and_ns(content_part.tag)[1] == "valList":
-                val_items = content_part.findall("./tei:valItem", namespaces=NS_MAP)
-                elements_found.extend(val_items)
+                elements_found.append(content_part)
 
             if split_tag_and_ns(content_part.tag)[1] == "textNode":
                 elements_found.append("textNode")
