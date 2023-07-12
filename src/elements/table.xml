@@ -1,516 +1,581 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
              ident="table"
              module="figures"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-04-11">Wird zusammen mit <gi>row</gi>
-        (Zeile) und <gi>cell</gi> (Spalte) für die Darstellung von Tabellen benötigt.
-        Es wird von oben nach unten und von links nach rechts gezählt. Wenn immer möglich eine
-        Tabelle als Fliesstext dargestellt werden kann, soll auf die Darstellung in Form einer
-        Tabelle verzichtet werden. In Tabellen und Listen werden – insbesondere bei den gedruckten
-        Mandaten – Gänsefüsschen als Unterführungszeichen benutzt, um Wörter oder Zahlen aus der
-        oberen Zeile zu wiederholen (vgl. Beispiel unten). In solchen Fällen wird das "Ditto-Mark"
-        (U+0022) verwendet (zu transkribieren mit der Zeichenfolge "). Ebenso kommt in Tabellen
-        ein Querstrich als Nullwert vor (vgl. Beispiel unten). Bei der Transkription wird hierfür
-        der ziffernbreite Halbgeviertstrich – (U+2012) verwendet (zu transkribieren mit der
-        Zeichenfolge ‒).</desc>
-   <desc xml:lang="en" versionDate="2023-04-11">Is used together with <gi>row</gi>.
-        (row) and <gi>cell</gi> (column) for the display of tables. It is counted
-        from top to bottom and from left to right. Whenever possible a can be displayed as
-        continuous text, the display in the form of a table should be omitted. table should be
-        avoided. In tables and lists -– especially in printed In tables and lists, especially in the
-        printed mandates, quotation marks are used to repeat words or numbers from the top line.
-        line (cf. example below). In such cases, the "ditto mark"  (U+0022) is used (to be
-        transcribed with the string "). Likewise, in tables a horizontal bar occurs as a zero
-        value (cf. example below). In the transcription (U+2012) is used for this purpose (to be
-        transcribed with the character string character string ‒).</desc>
-   <desc xml:lang="fr" versionDate="2023-04-11">Est utilisé avec <gi>row</gi>
-        (ligne) et <gi>cell</gi> (colonne) pour transcrire un tableau. Il est compté
-        de haut en bas et de gauche à droite. Si possible, reprendre un tableau comme texte
-        courant.</desc>
-   <classes mode="replace"/>
-   <content>
-      <sequence>
-         <elementRef key="head" minOccurs="0" maxOccurs="1"/>
-         <alternate minOccurs="1" maxOccurs="unbounded">
-            <elementRef key="row"/>
-            <elementRef key="pb"/>
-         </alternate>
-      </sequence>
-   </content>
-   <attList>
-      <attDef ident="cols" mode="delete"/>
-      <attDef ident="rows" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-11">
-      <p>Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten
-            drei Spalten mit «gbz», «xr» bzw. «dn» überschrieben werden:</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <div>
+    <desc xml:lang="de" versionDate="2023-04-11">Wird zusammen mit <gi>row</gi> (Zeile) und
+        <gi>cell</gi>
+        (Spalte) für die Darstellung von Tabellen benötigt. Es wird von oben nach unten und von
+        links nach rechts gezählt. Wenn immer möglich eine Tabelle als Fliesstext dargestellt werden
+        kann, soll auf die Darstellung in Form einer Tabelle verzichtet werden. In Tabellen und
+        Listen werden – insbesondere bei den gedruckten Mandaten – Gänsefüsschen als
+        Unterführungszeichen benutzt, um Wörter oder Zahlen aus der oberen Zeile zu wiederholen
+        (vgl. Beispiel unten). In solchen Fällen wird das "Ditto-Mark" (U+0022) verwendet (zu
+        transkribieren mit der Zeichenfolge "). Ebenso kommt in Tabellen ein Querstrich als Nullwert
+        vor (vgl. Beispiel unten). Bei der Transkription wird hierfür der ziffernbreite
+        Halbgeviertstrich – (U+2012) verwendet (zu transkribieren mit der Zeichenfolge ‒).
+    </desc>
+    <desc xml:lang="en" versionDate="2023-04-11">Is used together with <gi>row</gi>. (row) and
+        <gi>cell</gi>
+        (column) for the display of tables. It is counted from top to bottom and from left
+        to right. Whenever possible a can be displayed as continuous text, the display in the form
+        of a table should be omitted. table should be avoided. In tables and lists -– especially in
+        printed In tables and lists, especially in the printed mandates, quotation marks are used to
+        repeat words or numbers from the top line. line (cf. example below). In such cases, the
+        "ditto mark" (U+0022) is used (to be transcribed with the string "). Likewise, in tables a
+        horizontal bar occurs as a zero value (cf. example below). In the transcription (U+2012) is
+        used for this purpose (to be transcribed with the character string character string ‒).
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-04-11">Est utilisé avec <gi>row</gi> (ligne) et
+        <gi>cell</gi>
+        (colonne) pour transcrire un tableau. Il est compté de haut en bas et de gauche à droite. Si
+        possible, reprendre un tableau comme texte courant.
+    </desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence preserveOrder="false">
+            <alternate minOccurs="0" maxOccurs="unbounded">
+                <elementRef key="head"/>
+                <elementRef key="pb"/>
+            </alternate>
+            <elementRef key="row" maxOccurs="unbounded"/>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="cols" mode="delete"/>
+        <attDef ident="rows" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-11">
+        <p>Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten drei Spalten
+            mit «gbz», «xr» bzw. «dn» überschrieben werden:
+        </p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div>
+                <table>
+                    <head>Von dem wein</head>
+                    <row>
+                        <cell/>
+                        <cell role="label">gbz</cell>
+                        <cell role="label">xr</cell>
+                        <cell role="label">₰</cell>
+                    </row>
+                    <row>
+                        <cell>für j saum wein</cell>
+                        <cell>–</cell>
+                        <cell>1</cell>
+                        <cell>–</cell>
+                    </row>
+                    <row>
+                        <cell>für j lägelen wein</cell>
+                        <cell>–</cell>
+                        <cell>–</cell>
+                        <cell>2</cell>
+                    </row>
+                </table>
+            </div>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-11">
+        <p>Exemple pour une liste de prix pour le vin avec quatre colonnes dont les dernières trois
+            sont intitulées « gbz », « xr » et « dn » :
+        </p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div>
+                <table>
+                    <head>Von dem wein</head>
+                    <row>
+                        <cell/>
+                        <cell role="label">gbz</cell>
+                        <cell role="label">xr</cell>
+                        <cell role="label">₰</cell>
+                    </row>
+                    <row>
+                        <cell>für j saum wein</cell>
+                        <cell>–</cell>
+                        <cell>1</cell>
+                        <cell>–</cell>
+                    </row>
+                    <row>
+                        <cell>für j lägelen wein</cell>
+                        <cell>–</cell>
+                        <cell>–</cell>
+                        <cell>2</cell>
+                    </row>
+                </table>
+            </div>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Beispiel für eine Ämterliste:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <table>
-               <head>Von dem wein</head>
-               <row>
-                  <cell/>
-                  <cell role="label">gbz</cell>
-                  <cell role="label">xr</cell>
-                  <cell role="label">₰</cell>
-               </row>
-               <row>
-                  <cell>für j saum wein</cell>
-                  <cell>–</cell>
-                  <cell>1</cell>
-                  <cell>–</cell>
-               </row>
-               <row>
-                  <cell>für j lägelen wein</cell>
-                  <cell>–</cell>
-                  <cell>–</cell>
-                  <cell>2</cell>
-               </row>
+                <row>
+                    <cell>Von den
+                        <orgName>schmiden</orgName>
+                    </cell>
+                    <cell>
+                        <persName>Uͤli Kupferschmid</persName>
+                    </cell>
+                </row>
+                <row>
+                    <cell>Von den
+                        <orgName>metzgern</orgName>
+                    </cell>
+                    <cell>
+                        <persName>Jaͤkli Orringer</persName>
+                    </cell>
+                </row>
+                <row>
+                    <cell>Von den
+                        <orgName>schnidern</orgName>
+                    </cell>
+                    <cell>
+                        <persName>Peter Buͦchberg</persName>
+                    </cell>
+                </row>
+                <row>
+                    <cell>Von den
+                        <orgName>schuͦchmachern</orgName>
+                    </cell>
+                    <cell>
+                        <persName>Hans Fuͦg</persName>
+                    </cell>
+                </row>
             </table>
-         </div>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-11">
-      <p>Exemple pour une liste de prix pour le vin avec quatre colonnes dont les dernières trois sont intitulées « gbz », « xr » et « dn » :</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <div>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Exemple pour une liste de fonctions :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <table>
-               <head>Von dem wein</head>
-               <row>
-                  <cell/>
-                  <cell role="label">gbz</cell>
-                  <cell role="label">xr</cell>
-                  <cell role="label">₰</cell>
-               </row>
-               <row>
-                  <cell>für j saum wein</cell>
-                  <cell>–</cell>
-                  <cell>1</cell>
-                  <cell>–</cell>
-               </row>
-               <row>
-                  <cell>für j lägelen wein</cell>
-                  <cell>–</cell>
-                  <cell>–</cell>
-                  <cell>2</cell>
-               </row>
+                <row>
+                    <cell>Von den
+                        <orgName>schmiden</orgName>
+                    </cell>
+                    <cell>
+                        <persName>Uͤli Kupferschmid</persName>
+                    </cell>
+                </row>
+                <row>
+                    <cell>Von den
+                        <orgName>metzgern</orgName>
+                    </cell>
+                    <cell>
+                        <persName>Jaͤkli Orringer</persName>
+                    </cell>
+                </row>
+                <row>
+                    <cell>Von den
+                        <orgName>schnidern</orgName>
+                    </cell>
+                    <cell>
+                        <persName>Peter Buͦchberg</persName>
+                    </cell>
+                </row>
+                <row>
+                    <cell>Von den
+                        <orgName>schuͦchmachern</orgName>
+                    </cell>
+                    <cell>
+                        <persName>Hans Fuͦg</persName>
+                    </cell>
+                </row>
             </table>
-         </div>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Beispiel für eine Ämterliste:</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <table>
-            <row>
-               <cell>Von den <orgName>schmiden</orgName>
-               </cell>
-               <cell>
-                  <persName>Uͤli Kupferschmid</persName>
-               </cell>
-            </row>
-            <row>
-               <cell>Von den <orgName>metzgern</orgName>
-               </cell>
-               <cell>
-                  <persName>Jaͤkli Orringer</persName>
-               </cell>
-            </row>
-            <row>
-               <cell>Von den <orgName>schnidern</orgName>
-               </cell>
-               <cell>
-                  <persName>Peter Buͦchberg</persName>
-               </cell>
-            </row>
-            <row>
-               <cell>Von den <orgName>schuͦchmachern</orgName>
-               </cell>
-               <cell>
-                  <persName>Hans Fuͦg</persName>
-               </cell>
-            </row>
-         </table>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Exemple pour une liste de fonctions :</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <table>
-            <row>
-               <cell>Von den <orgName>schmiden</orgName>
-               </cell>
-               <cell>
-                  <persName>Uͤli Kupferschmid</persName>
-               </cell>
-            </row>
-            <row>
-               <cell>Von den <orgName>metzgern</orgName>
-               </cell>
-               <cell>
-                  <persName>Jaͤkli Orringer</persName>
-               </cell>
-            </row>
-            <row>
-               <cell>Von den <orgName>schnidern</orgName>
-               </cell>
-               <cell>
-                  <persName>Peter Buͦchberg</persName>
-               </cell>
-            </row>
-            <row>
-               <cell>Von den <orgName>schuͦchmachern</orgName>
-               </cell>
-               <cell>
-                  <persName>Hans Fuͦg</persName>
-               </cell>
-            </row>
-         </table>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Beispiel für Preis-/Gewichtsangaben:</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <table>
-            <row>
-               <cell>Summa</cell>
-               <cell>an <measureGrp>
-                     <measure type="volume" unit="Mütt" commodity="spelt" quantity="32">kernen: xxxij mut</measure>, <measure type="volume" unit="Viertel" commodity="spelt" quantity="0.5">ɉ <abbr>f</abbr>
-                     </measure>
-                  </measureGrp>
-               </cell>
-            </row>
-            <row>
-               <cell/>
-               <cell>an <measure type="volume" unit="Malter" commodity="oat" quantity="1">haber: j <choice>
-                        <abbr>mal</abbr>
-                        <expan>malter</expan>
-                     </choice>
-                  </measure>
-               </cell>
-            </row>
-            <row>
-               <cell/>
-               <cell>an  <measure type="volume" unit="Viertel" commodity="pulse" quantity="2">schmalsat ij <abbr>f</abbr>
-                  </measure>
-               </cell>
-            </row>
-            <row>
-               <cell/>
-               <cell>an gaͤlt: <measure type="currency" unit="ß" quantity="6">vj  <choice>
-                        <abbr>hal</abbr>
-                        <expan>haller</expan>
-                     </choice>
-                  </measure>
-               </cell>
-            </row>
-         </table>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Exemple de poids et prix :  :</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <table>
-            <row>
-               <cell>Summa</cell>
-               <cell>an <measureGrp>
-                     <measure type="volume" unit="Mütt" commodity="spelt" quantity="32">kernen: xxxij mut</measure>, <measure type="volume" unit="Viertel" commodity="spelt" quantity="0.5">ɉ <abbr>f</abbr>
-                     </measure>
-                  </measureGrp>
-               </cell>
-            </row>
-            <row>
-               <cell/>
-               <cell>an <measure type="volume" unit="Malter" commodity="oat" quantity="1">haber: j <choice>
-                        <abbr>mal</abbr>
-                        <expan>malter</expan>
-                     </choice>
-                  </measure>
-               </cell>
-            </row>
-            <row>
-               <cell/>
-               <cell>an  <measure type="volume" unit="Viertel" commodity="pulse" quantity="2">schmalsat ij <abbr>f</abbr>
-                  </measure>
-               </cell>
-            </row>
-            <row>
-               <cell/>
-               <cell>an gaͤlt: <measure type="currency" unit="ß" quantity="6">vj  <choice>
-                        <abbr>hal</abbr>
-                        <expan>haller</expan>
-                     </choice>
-                  </measure>
-               </cell>
-            </row>
-         </table>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Beispiel für eine Brotordnung:</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <table>
-            <head>
-               <lb/>Nemlich wan ein <measure type="volume" unit="Mütt" quantity="1" commodity="spelt">mütt kernen</measure>
-               <lb/>
-               <measure type="currency" unit="lb" quantity="5.5">vɉ </measure> gillt, soͤllen die brott wegen
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Beispiel für Preis-/Gewichtsangaben:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <table>
+                <row>
+                    <cell>Summa</cell>
+                    <cell>an
+                        <measureGrp>
+                            <measure type="volume" unit="Mütt" commodity="spelt" quantity="32">kernen:
+                                xxxij mut</measure>,
+                            <measure type="volume" unit="Viertel" commodity="spelt"
+                                     quantity="0.5">ɉ
+                                <abbr>f</abbr>
+                            </measure>
+                        </measureGrp>
+                    </cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell>an
+                        <measure type="volume" unit="Malter" commodity="oat" quantity="1">haber:
+                            j
+                            <choice>
+                                <abbr>mal</abbr>
+                                <expan>malter</expan>
+                            </choice>
+                        </measure>
+                    </cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell>an
+                        <measure type="volume" unit="Viertel" commodity="pulse" quantity="2">schmalsat
+                            ij
+                            <abbr>f</abbr>
+                        </measure>
+                    </cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell>an gaͤlt:
+                        <measure type="currency" unit="ß" quantity="6">vj 
+                            <choice>
+                                <abbr>hal</abbr>
+                                <expan>haller</expan>
+                            </choice>
+                        </measure>
+                    </cell>
+                </row>
+            </table>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Exemple de poids et prix :  :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <table>
+                <row>
+                    <cell>Summa</cell>
+                    <cell>an
+                        <measureGrp>
+                            <measure type="volume" unit="Mütt" commodity="spelt" quantity="32">kernen:
+                                xxxij mut</measure>,
+                            <measure type="volume" unit="Viertel" commodity="spelt"
+                                     quantity="0.5">ɉ
+                                <abbr>f</abbr>
+                            </measure>
+                        </measureGrp>
+                    </cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell>an
+                        <measure type="volume" unit="Malter" commodity="oat" quantity="1">haber:
+                            j
+                            <choice>
+                                <abbr>mal</abbr>
+                                <expan>malter</expan>
+                            </choice>
+                        </measure>
+                    </cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell>an
+                        <measure type="volume" unit="Viertel" commodity="pulse" quantity="2">schmalsat
+                            ij
+                            <abbr>f</abbr>
+                        </measure>
+                    </cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell>an gaͤlt:
+                        <measure type="currency" unit="ß" quantity="6">vj 
+                            <choice>
+                                <abbr>hal</abbr>
+                                <expan>haller</expan>
+                            </choice>
+                        </measure>
+                    </cell>
+                </row>
+            </table>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Beispiel für eine Brotordnung:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <table>
+                <head>
+                    <lb/>Nemlich wan ein
+                    <measure type="volume" unit="Mütt" quantity="1"
+                             commodity="spelt">mütt kernen
+                    </measure>
+                    <lb/>
+                    <measure type="currency"
+                             unit="lb" quantity="5.5">vɉ 
+                    </measure>
+                    gillt, soͤllen die brott wegen
                 </head>
-            <row>
-               <cell/>
-               <cell>
-                  <measure type="currency" unit="ß" quantity="1">schiling</measure>
-               </cell>
-               <cell/>
-               <cell>
-                  <measure type="weight" unit="Lot" quantity="33">xxxiij lott</measure>
-               </cell>
-            </row>
-            <row>
-               <cell>Ein</cell>
-               <cell>
-                  <measure type="currency" unit="xr" quantity="1">crützer</measure>
-               </cell>
-               <cell>waͤrtigs brott</cell>
-               <cell>
-                  <measureGrp>
-                     <measure type="weight" unit="Lot" quantity="21">xxj lott</measure>
-                     <measure type="weight" unit="Quentli" quantity="3.5">iiiɉ <abbr>q</abbr>
-                     </measure>
-                  </measureGrp>
-               </cell>
-            </row>
-            <row>
-               <cell/>
-               <cell>
-                  <measure type="currency" unit="d" quantity="4">vierer</measure>
-               </cell>
-               <cell/>
-               <cell>
-                  <measureGrp>
-                     <measure type="weight" unit="Lot" quantity="10">x lott</measure>
-                     <measure type="weight" unit="Quentli" quantity="3.5">iiiɉ <abbr>q</abbr>
-                     </measure>
-                  </measureGrp>
-               </cell>
-            </row>
-         </table>
-         <table>
-            <head>
-               <lb/>So er <measure type="currency" unit="lb" quantity="5">fünff pfund</measure> giltett</head>
-            <row>
-               <cell/>
-               <cell>
-                  <measure type="currency" unit="ß" quantity="1">schiling</measure>
-               </cell>
-               <cell/>
-               <cell>
-                  <measureGrp>
-                     <measure type="weight" unit="Lot" quantity="36">xxxvj lott</measure>
-                     <measure type="weight" unit="Quentli" quantity="1">j <abbr>q</abbr>
-                     </measure>
-                  </measureGrp>
-               </cell>
-            </row>
-            <row>
-               <cell>Ein</cell>
-               <cell>
-                  <measure type="currency" unit="xr" quantity="1">crützer</measure>
-               </cell>
-               <cell>waͤrtigs brott</cell>
-               <cell>
-                  <measureGrp>
-                     <measure type="weight" unit="Lot" quantity="24">xxiiij lott</measure>
-                     <measure type="weight" unit="Quentli" quantity="0.5">ɉ <abbr>q</abbr>
-                     </measure>
-                  </measureGrp>
-               </cell>
-            </row>
-            <row>
-               <cell/>
-               <cell>
-                  <measure type="currency" unit="d" quantity="4">vierer</measure>
-               </cell>
-               <cell/>
-               <cell>
-                  <measure type="weight" unit="Lot" quantity="12">xij lott</measure>
-               </cell>
-            </row>
-         </table>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Exemple pour une ordonnance de pain :</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <table>
-            <head>
-               <lb/>Nemlich wan ein <measure type="volume" unit="Mütt" quantity="1" commodity="spelt">mütt kernen</measure>
-               <lb/>
-               <measure type="currency" unit="lb" quantity="5.5">vɉ </measure> gillt, soͤllen die brott wegen
+                <row>
+                    <cell/>
+                    <cell>
+                        <measure type="currency" unit="ß" quantity="1">schiling</measure>
+                    </cell>
+                    <cell/>
+                    <cell>
+                        <measure type="weight" unit="Lot" quantity="33">xxxiij lott</measure>
+                    </cell>
+                </row>
+                <row>
+                    <cell>Ein</cell>
+                    <cell>
+                        <measure type="currency" unit="xr" quantity="1">crützer</measure>
+                    </cell>
+                    <cell>waͤrtigs brott</cell>
+                    <cell>
+                        <measureGrp>
+                            <measure type="weight" unit="Lot" quantity="21">xxj lott</measure>
+                            <measure type="weight" unit="Quentli" quantity="3.5">iiiɉ
+                                <abbr>q</abbr>
+                            </measure>
+                        </measureGrp>
+                    </cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell>
+                        <measure type="currency" unit="d" quantity="4">vierer</measure>
+                    </cell>
+                    <cell/>
+                    <cell>
+                        <measureGrp>
+                            <measure type="weight" unit="Lot" quantity="10">x lott</measure>
+                            <measure type="weight" unit="Quentli" quantity="3.5">iiiɉ
+                                <abbr>q</abbr>
+                            </measure>
+                        </measureGrp>
+                    </cell>
+                </row>
+            </table>
+            <table>
+                <head>
+                    <lb/>So er
+                    <measure type="currency" unit="lb" quantity="5">fünff pfund</measure>
+                    giltett
                 </head>
-            <row>
-               <cell/>
-               <cell>
-                  <measure type="currency" unit="ß" quantity="1">schiling</measure>
-               </cell>
-               <cell/>
-               <cell>
-                  <measure type="weight" unit="Lot" quantity="33">xxxiij lott</measure>
-               </cell>
-            </row>
-            <row>
-               <cell>Ein</cell>
-               <cell>
-                  <measure type="currency" unit="xr" quantity="1">crützer</measure>
-               </cell>
-               <cell>waͤrtigs brott</cell>
-               <cell>
-                  <measureGrp>
-                     <measure type="weight" unit="Lot" quantity="21">xxj lott</measure>
-                     <measure type="weight" unit="Quentli" quantity="3.5">iiiɉ <abbr>q</abbr>
-                     </measure>
-                  </measureGrp>
-               </cell>
-            </row>
-            <row>
-               <cell/>
-               <cell>
-                  <measure type="currency" unit="d" quantity="4">vierer</measure>
-               </cell>
-               <cell/>
-               <cell>
-                  <measureGrp>
-                     <measure type="weight" unit="Lot" quantity="10">x lott</measure>
-                     <measure type="weight" unit="Quentli" quantity="3.5">iiiɉ <abbr>q</abbr>
-                     </measure>
-                  </measureGrp>
-               </cell>
-            </row>
-         </table>
-         <table>
-            <head>
-               <lb/>So er <measure type="currency" unit="lb" quantity="5">fünff pfund</measure> giltett</head>
-            <row>
-               <cell/>
-               <cell>
-                  <measure type="currency" unit="ß" quantity="1">schiling</measure>
-               </cell>
-               <cell/>
-               <cell>
-                  <measureGrp>
-                     <measure type="weight" unit="Lot" quantity="36">xxxvj lott</measure>
-                     <measure type="weight" unit="Quentli" quantity="1">j <abbr>q</abbr>
-                     </measure>
-                  </measureGrp>
-               </cell>
-            </row>
-            <row>
-               <cell>Ein</cell>
-               <cell>
-                  <measure type="currency" unit="xr" quantity="1">crützer</measure>
-               </cell>
-               <cell>waͤrtigs brott</cell>
-               <cell>
-                  <measureGrp>
-                     <measure type="weight" unit="Lot" quantity="24">xxiiij lott</measure>
-                     <measure type="weight" unit="Quentli" quantity="0.5">ɉ <abbr>q</abbr>
-                     </measure>
-                  </measureGrp>
-               </cell>
-            </row>
-            <row>
-               <cell/>
-               <cell>
-                  <measure type="currency" unit="d" quantity="4">vierer</measure>
-               </cell>
-               <cell/>
-               <cell>
-                  <measure type="weight" unit="Lot" quantity="12">xij lott</measure>
-               </cell>
-            </row>
-         </table>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Beispiel für die Darstellung von Verwandtschaftsbeziehungen:</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <table>
-            <row>
-               <cell/>
-               <cell/>
-               <cell/>
-               <cell>Jacob.</cell>
-               <cell/>
-               <cell/>
-            </row>
-            <row>
-               <cell/>
-               <cell/>
-               <cell>Caspar.</cell>
-               <cell>1.</cell>
-               <cell>Margaretha</cell>
-               <cell>--</cell>
-               <cell>Ulrich.</cell>
-            </row>
-            <row>
-               <cell/>
-               <cell/>
-               <cell>Heinrich</cell>
-               <cell>2.</cell>
-               <cell/>
-               <cell/>
-            </row>
-            <row>
-               <cell>David</cell>
-               <cell>--</cell>
-               <cell>Regula</cell>
-               <cell>3.</cell>
-               <cell/>
-               <cell/>
-            </row>
-         </table>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Exemple de représentation de liens de parenté :</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <table>
-            <row>
-               <cell/>
-               <cell/>
-               <cell/>
-               <cell>Jacob.</cell>
-               <cell/>
-               <cell/>
-            </row>
-            <row>
-               <cell/>
-               <cell/>
-               <cell>Caspar.</cell>
-               <cell>1.</cell>
-               <cell>Margaretha</cell>
-               <cell>--</cell>
-               <cell>Ulrich.</cell>
-            </row>
-            <row>
-               <cell/>
-               <cell/>
-               <cell>Heinrich</cell>
-               <cell>2.</cell>
-               <cell/>
-               <cell/>
-            </row>
-            <row>
-               <cell>David</cell>
-               <cell>--</cell>
-               <cell>Regula</cell>
-               <cell>3.</cell>
-               <cell/>
-               <cell/>
-            </row>
-         </table>
-      </egXML>
-   </exemplum>
+                <row>
+                    <cell/>
+                    <cell>
+                        <measure type="currency" unit="ß" quantity="1">schiling</measure>
+                    </cell>
+                    <cell/>
+                    <cell>
+                        <measureGrp>
+                            <measure type="weight" unit="Lot" quantity="36">xxxvj lott</measure>
+                            <measure type="weight" unit="Quentli" quantity="1">j
+                                <abbr>q</abbr>
+                            </measure>
+                        </measureGrp>
+                    </cell>
+                </row>
+                <row>
+                    <cell>Ein</cell>
+                    <cell>
+                        <measure type="currency" unit="xr" quantity="1">crützer</measure>
+                    </cell>
+                    <cell>waͤrtigs brott</cell>
+                    <cell>
+                        <measureGrp>
+                            <measure type="weight" unit="Lot" quantity="24">xxiiij lott</measure>
+                            <measure type="weight" unit="Quentli" quantity="0.5">ɉ
+                                <abbr>q</abbr>
+                            </measure>
+                        </measureGrp>
+                    </cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell>
+                        <measure type="currency" unit="d" quantity="4">vierer</measure>
+                    </cell>
+                    <cell/>
+                    <cell>
+                        <measure type="weight" unit="Lot" quantity="12">xij lott</measure>
+                    </cell>
+                </row>
+            </table>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Exemple pour une ordonnance de pain :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <table>
+                <head>
+                    <lb/>Nemlich wan ein
+                    <measure type="volume" unit="Mütt" quantity="1"
+                             commodity="spelt">mütt kernen
+                    </measure>
+                    <lb/>
+                    <measure type="currency"
+                             unit="lb" quantity="5.5">vɉ 
+                    </measure>
+                    gillt, soͤllen die brott wegen
+                </head>
+                <row>
+                    <cell/>
+                    <cell>
+                        <measure type="currency" unit="ß" quantity="1">schiling</measure>
+                    </cell>
+                    <cell/>
+                    <cell>
+                        <measure type="weight" unit="Lot" quantity="33">xxxiij lott</measure>
+                    </cell>
+                </row>
+                <row>
+                    <cell>Ein</cell>
+                    <cell>
+                        <measure type="currency" unit="xr" quantity="1">crützer</measure>
+                    </cell>
+                    <cell>waͤrtigs brott</cell>
+                    <cell>
+                        <measureGrp>
+                            <measure type="weight" unit="Lot" quantity="21">xxj lott</measure>
+                            <measure type="weight" unit="Quentli" quantity="3.5">iiiɉ
+                                <abbr>q</abbr>
+                            </measure>
+                        </measureGrp>
+                    </cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell>
+                        <measure type="currency" unit="d" quantity="4">vierer</measure>
+                    </cell>
+                    <cell/>
+                    <cell>
+                        <measureGrp>
+                            <measure type="weight" unit="Lot" quantity="10">x lott</measure>
+                            <measure type="weight" unit="Quentli" quantity="3.5">iiiɉ
+                                <abbr>q</abbr>
+                            </measure>
+                        </measureGrp>
+                    </cell>
+                </row>
+            </table>
+            <table>
+                <head>
+                    <lb/>So er
+                    <measure type="currency" unit="lb" quantity="5">fünff pfund</measure>
+                    giltett
+                </head>
+                <row>
+                    <cell/>
+                    <cell>
+                        <measure type="currency" unit="ß" quantity="1">schiling</measure>
+                    </cell>
+                    <cell/>
+                    <cell>
+                        <measureGrp>
+                            <measure type="weight" unit="Lot" quantity="36">xxxvj lott</measure>
+                            <measure type="weight" unit="Quentli" quantity="1">j
+                                <abbr>q</abbr>
+                            </measure>
+                        </measureGrp>
+                    </cell>
+                </row>
+                <row>
+                    <cell>Ein</cell>
+                    <cell>
+                        <measure type="currency" unit="xr" quantity="1">crützer</measure>
+                    </cell>
+                    <cell>waͤrtigs brott</cell>
+                    <cell>
+                        <measureGrp>
+                            <measure type="weight" unit="Lot" quantity="24">xxiiij lott</measure>
+                            <measure type="weight" unit="Quentli" quantity="0.5">ɉ
+                                <abbr>q</abbr>
+                            </measure>
+                        </measureGrp>
+                    </cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell>
+                        <measure type="currency" unit="d" quantity="4">vierer</measure>
+                    </cell>
+                    <cell/>
+                    <cell>
+                        <measure type="weight" unit="Lot" quantity="12">xij lott</measure>
+                    </cell>
+                </row>
+            </table>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Beispiel für die Darstellung von Verwandtschaftsbeziehungen:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <table>
+                <row>
+                    <cell/>
+                    <cell/>
+                    <cell/>
+                    <cell>Jacob.</cell>
+                    <cell/>
+                    <cell/>
+                </row>
+                <row>
+                    <cell/>
+                    <cell/>
+                    <cell>Caspar.</cell>
+                    <cell>1.</cell>
+                    <cell>Margaretha</cell>
+                    <cell>--</cell>
+                    <cell>Ulrich.</cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell/>
+                    <cell>Heinrich</cell>
+                    <cell>2.</cell>
+                    <cell/>
+                    <cell/>
+                </row>
+                <row>
+                    <cell>David</cell>
+                    <cell>--</cell>
+                    <cell>Regula</cell>
+                    <cell>3.</cell>
+                    <cell/>
+                    <cell/>
+                </row>
+            </table>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Exemple de représentation de liens de parenté :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <table>
+                <row>
+                    <cell/>
+                    <cell/>
+                    <cell/>
+                    <cell>Jacob.</cell>
+                    <cell/>
+                    <cell/>
+                </row>
+                <row>
+                    <cell/>
+                    <cell/>
+                    <cell>Caspar.</cell>
+                    <cell>1.</cell>
+                    <cell>Margaretha</cell>
+                    <cell>--</cell>
+                    <cell>Ulrich.</cell>
+                </row>
+                <row>
+                    <cell/>
+                    <cell/>
+                    <cell>Heinrich</cell>
+                    <cell>2.</cell>
+                    <cell/>
+                    <cell/>
+                </row>
+                <row>
+                    <cell>David</cell>
+                    <cell>--</cell>
+                    <cell>Regula</cell>
+                    <cell>3.</cell>
+                    <cell/>
+                    <cell/>
+                </row>
+            </table>
+        </egXML>
+    </exemplum>
 </elementSpec>
