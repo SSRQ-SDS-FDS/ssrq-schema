@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model
         href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0"
-     xmlns:xi="http://www.w3.org/2001/XInclude">
+    xmlns:xi="http://www.w3.org/2001/XInclude">
     <macroSpec ident="ssrq-examples">
-
+        
         <exemplum xml:lang="de" xml:id="ex-ab-de">
             <p>Beispiel für einen Kanzleivermerk.</p>
             <xi:include href="ab.xml"/>
@@ -57,7 +57,6 @@
             <p>Esempio di abbreviazione</p>
             <xi:include href="choice-abbr.xml"/>
         </exemplum>
-
         <exemplum xml:lang="de" xml:id="ex-choice-sic-de">
             <p>Beispiel für eine Korrektur</p>
             <xi:include href="choice-sic.xml"/>
@@ -126,6 +125,78 @@
             <xi:include href="msDesc.xml"/>
         </exemplum>
 
+        <exemplum xml:lang="de" xml:id="ex-persName-de-1">
+            <p>Beispiel für einen einfachen Personennamen</p>
+            <xi:include href="persName.xml" xpointer="persName-1"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-persName-en-1">
+            <p>Example of a simple personal name</p>
+            <xi:include href="persName.xml" xpointer="persName-1"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-persName-fr-1">
+            <p>Exemple de nom de personne</p>
+            <xi:include href="persName.xml" xpointer="persName-1"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-persName-it-1">
+            <p>Esempio di nome personale</p>
+            <xi:include href="persName.xml" xpointer="persName-1"/>
+        </exemplum>
+        <exemplum xml:lang="de" xml:id="ex-persName-de-2">
+            <p>Auszeichnung eines Heiligen – nur der Name wird erfasst</p>
+            <xi:include href="persName.xml" xpointer="persName-2"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-persName-en-2">
+            <p>Tagging of a saint</p>
+            <xi:include href="persName.xml" xpointer="persName-2"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-persName-fr-2">
+            <p>Marquage d'un saint</p>
+            <xi:include href="persName.xml" xpointer="persName-2"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-persName-it-2">
+            <p>Etichettatura di un santo</p>
+            <xi:include href="persName.xml" xpointer="persName-2"/>
+        </exemplum>
+        <exemplum xml:lang="de" xml:id="ex-persName-de-3">
+            <p>Verwendung mit <att>role</att></p>
+            <xi:include href="persName.xml" xpointer="persName-3"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-persName-en-3">
+            <p>Use with <att>role</att></p>
+            <xi:include href="persName.xml" xpointer="persName-3"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-persName-fr-3">
+            <p>Utilisation avec <att>role</att></p>
+            <xi:include href="persName.xml" xpointer="persName-3"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-persName-it-3">
+            <p>Utilizzare con <att>ruolo</att></p>
+            <xi:include href="persName.xml" xpointer="persName-3"/>
+        </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-orgName-de">
+            <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
+                nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
+                Nennung des Bürgermeisters.</p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-orgName-en">
+            <p>Institutions / functions are always identified as organisations - but not the people.
+                As shown below, this also applies to the naming of the mayor.</p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-orgName-fr">
+            <p>Les institutions/fonctions sont toujours identifiées comme des organisations, mais
+                pas les personnes. Comme indiqué ci-dessous, cela s'applique également à la
+                désignation du maire.</p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-orgName-it">
+            <p>Le istituzioni/funzioni sono sempre identificate come organizzazioni, ma non le
+                persone. Come illustrato di seguito, questo vale anche per il nome del sindaco.</p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-seg-de">
             <p>Beispiel für vom Bearbeitenden eingeführte Absätze</p>
             <xi:include href="seg.xml"/>
@@ -159,7 +230,6 @@
             <p>Esempio di descrizione di una fonte con un elenco di testimoni testuali</p>
             <xi:include href="sourceDesc-listWit.xml"/>
         </exemplum>
-
         <exemplum xml:lang="de" xml:id="ex-sourceDesc-msDesc-de">
             <p>Beispiel für eine Quellenbeschreibung mit einem Textzeugen</p>
             <xi:include href="sourceDesc-msDesc.xml"/>
