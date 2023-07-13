@@ -23,12 +23,20 @@ class ElementSpec(BaseSpec):
         path: Path | None = None,
     ) -> str | None:
         doc = Document()
-        # Add the name of the element as title
-        doc.add_heading(self.ident, level=1)
+
+        self._add_title(lang=lang, doc=doc)
+
         self._desc_to_markdown(
             lang=lang,
             el=self.odd_element,
             desc_title=lang_translations["desc"],
+            doc=doc,
+        )
+
+        self._remarks_to_markdown(
+            lang=lang,
+            el=self.odd_element,
+            title=lang_translations["remarks"],
             doc=doc,
         )
 
@@ -62,6 +70,22 @@ class ElementSpec(BaseSpec):
         if path is not None:
             return doc.dump(name=f"{self.ident}.{lang}", dir=path)
         return doc.__str__()
+
+    def _add_title(self, lang: str, doc: Document) -> None:
+        gloss = self.odd_element.find(
+            f"tei:gloss[@xml:lang = '{lang}']", namespaces=NS_MAP
+        )
+
+        # Add the title in the YAML front matter
+        doc.add_raw("\n".join(["---", f"title: {self.ident}", "---", "\n"]))
+
+        if gloss is not None:
+            doc.add_heading(
+                f"`<{self.ident}/>` ({self._desc_node_to_string(desc=gloss)})", level=1
+            )
+            return
+
+        doc.add_heading(f"`<{self.ident}/>`", level=1)
 
     def _create_attribute_desc(
         self,
@@ -179,6 +203,22 @@ class ElementSpec(BaseSpec):
         if desc_title is not None:
             doc.add_heading(desc_title, level=2)
         doc.add_raw(self.get_desc(element=el, lang=lang))
+
+    def _remarks_to_markdown(
+        self, lang: str, el: ET.Element, doc: Document, title: str
+    ) -> None:
+        remarks = self.get_remarks(element=el, lang=lang)
+
+        if remarks is None:
+            return None
+
+        doc.add_heading(title, level=2)
+
+        if isinstance(remarks, list):
+            for remark in remarks:
+                doc.add_raw(remark)
+        else:
+            doc.add_raw(remarks)
 
     def _filter_vallists_by_lang(
         self, vallists: list[ET.Element], lang: str

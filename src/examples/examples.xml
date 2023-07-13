@@ -6,6 +6,7 @@
 <div xmlns="http://www.tei-c.org/ns/1.0"
     xmlns:xi="http://www.w3.org/2001/XInclude">
     <macroSpec ident="ssrq-examples">
+        
         <exemplum xml:lang="de" xml:id="ex-ab-de">
             <p>Beispiel für einen Kanzleivermerk.</p>
             <xi:include href="ab.xml"/>
@@ -22,6 +23,24 @@
             <p>Esempio di nota di un impiegato.</p>
             <xi:include href="ab.xml"/>
         </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-addSpan-de">
+            <p>Beispiel für eine umfangreichere Hinzufügung</p>
+            <xi:include href="addSpan.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-addSpan-en">
+            <p>Example of a larger addition</p>
+            <xi:include href="addSpan.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-addSpan-fr">
+            <p>Exemple d'un ajout plus important</p>
+            <xi:include href="addSpan.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-addSpan-it">
+            <p>Esempio di un'aggiunta più grande</p>
+            <xi:include href="addSpan.xml"/>
+        </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-choice-abbr-de">
             <p>Beispiel für eine Abkürzung</p>
             <xi:include href="choice-abbr.xml"/>
@@ -54,6 +73,41 @@
             <p>Esempio di correzione</p>
             <xi:include href="choice-sic.xml"/>
         </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-damageSpan-de">
+            <p>Beispiel für einen umfangreicheren Schaden</p>
+            <xi:include href="damageSpan.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-damageSpan-en">
+            <p>Example of a more extensive damage</p>
+            <xi:include href="damageSpan.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-damageSpan-fr">
+            <p>Exemple d'un dommage plus important</p>
+            <xi:include href="damageSpan.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-damageSpan-it">
+            <p>Esempio di un danno più esteso</p>
+            <xi:include href="damageSpan.xml"/>
+        </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-delSpan-de">
+            <p>Beispiel für eine umfangreichere Tilgung</p>
+            <xi:include href="delSpan.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-delSpan-en">
+            <p>Example of a larger deletion</p>
+            <xi:include href="delSpan.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-delSpan-fr">
+            <p>Exemple de suppression plus importante</p>
+            <xi:include href="delSpan.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-delSpan-it">
+            <p>Esempio di una cancellazione più grande</p>
+            <xi:include href="delSpan.xml"/>
+        </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-msDesc-de">
             <p>Beispiel für eine Textzeugenbeschreibung</p>
             <xi:include href="msDesc.xml"/>
@@ -70,6 +124,7 @@
             <p>Esempio di descrizione di un testimone testuale</p>
             <xi:include href="msDesc.xml"/>
         </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-persName-de-1">
             <p>Beispiel für einen einfachen Personennamen</p>
             <xi:include href="persName.xml" xpointer="persName-1"/>
@@ -118,6 +173,7 @@
             <p>Utilizzare con <att>ruolo</att></p>
             <xi:include href="persName.xml" xpointer="persName-3"/>
         </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-orgName-de">
             <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
                 nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
@@ -140,6 +196,24 @@
                 persone. Come illustrato di seguito, questo vale anche per il nome del sindaco.</p>
             <xi:include href="orgName.xml"/>
         </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-seg-de">
+            <p>Beispiel für vom Bearbeitenden eingeführte Absätze</p>
+            <xi:include href="seg.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-seg-en">
+            <p>Example of paragraphs introduced by the editor</p>
+            <xi:include href="seg.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-seg-fr">
+            <p>Exemple de paragraphes introduits par l'éditeur</p>
+            <xi:include href="seg.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-seg-it">
+            <p>Esempio di paragrafi introdotti dal curatore</p>
+            <xi:include href="seg.xml"/>
+        </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-sourceDesc-listWit-de">
             <p>Beispiel für eine Quellenbeschreibung mit einer Liste von Textzeugen</p>
             <xi:include href="sourceDesc-listWit.xml"/>

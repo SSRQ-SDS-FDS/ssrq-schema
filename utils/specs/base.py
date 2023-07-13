@@ -183,10 +183,25 @@ class BaseSpec:
         if element_attributes is None and class_attributes is None:
             return None
 
-        return self._compare_element_with_class_attributes(
+        attribute_specs = self._compare_element_with_class_attributes(
             element_attributes=element_attributes,
             class_attributes=class_attributes,
             element_classes=element_classes,
+        )
+
+        if attribute_specs is None:
+            return None
+
+        return (
+            specs
+            if (
+                specs := [
+                    spec
+                    for spec in attribute_specs
+                    if spec.attr_element.get("mode") != "delete"
+                ]
+            )
+            else None
         )
 
     def find_content_elements(
@@ -304,10 +319,50 @@ class BaseSpec:
             else description_rendered
         )
 
+    def get_remarks(
+        self, element: ET.Element, lang: str, upper: bool = True
+    ) -> str | list[str] | None:
+        remark = element.find(f"./tei:remarks[@xml:lang='{lang}']", namespaces=NS_MAP)
+
+        remark_content: str | list[str]
+
+        if remark is None:
+            return None
+
+        remark_paragraphs = remark.findall("./tei:p", namespaces=NS_MAP)
+
+        if len(remark_paragraphs) == 0:
+            remark_content = (
+                self._upper_desc_start(desc=self._desc_node_to_string(desc=remark))
+                if upper
+                else self._desc_node_to_string(desc=remark)
+            )
+        else:
+            remark_content = [
+                self._upper_desc_start(desc=self._desc_node_to_string(desc=p))
+                if upper
+                else self._desc_node_to_string(desc=p)
+                for p in remark_paragraphs
+            ]
+
+        return remark_content
+
     def _upper_desc_start(self, desc: str) -> str:
         return desc[0].upper() + desc[1:]
 
     def _desc_node_to_string(self, desc: ET.Element):
+        """
+        This method converts a desc like node to a string.
+
+        Args:
+            desc (ET.Element): The desc like node.
+
+        Returns:
+            str: The string representation of the desc like node.
+
+        ToDo:
+            * Fix the bug that leading whitespace, which has a meaning, is removed.
+        """
         output = ""
         if desc.text is not None:
             output += RE_WHITESPACE_PATTERN.sub(" ", desc.text)
@@ -326,9 +381,7 @@ class BaseSpec:
                 )
                 match tag_name:
                     case "gi":
-                        output += (
-                            f"[`<{child_text}/>`]({child_text}.md) {tail_text}".strip()
-                        )
+                        output += f"[`<{child_text}/>`]({child_text}.md){tail_text if tail_text.startswith('-') else ' ' + tail_text}".strip()
                     case "att":
                         output += f"[@{child_text}](#{child_text}) {tail_text}".strip()
                     case "ref":
@@ -341,6 +394,8 @@ class BaseSpec:
                                 if isinstance(child, ET.Element)
                             ]
                         )
+                    case "val":
+                        output += f"`{child_text}` {tail_text}"
                     case _:
                         output += (child_text + tail_text).strip()
         return re.sub((r"\s+([\.,:;])"), r"\1", output)
