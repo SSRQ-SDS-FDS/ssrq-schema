@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="div"
              module="textstructure"
@@ -7,13 +10,11 @@
     <desc xml:lang="de" versionDate="2023-05-23">Gliedert Quellentexte innerhalb von <gi>body</gi> oder Bemerkungen
         innnerhalb von <gi>back</gi> zusammen mit <gi>p</gi> in Abschnitte.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-23">Sections source text within <gi>body</gi> or comments within
-        <gi>back</gi>
-        together with <gi>p</gi>.
+    <desc xml:lang="en" versionDate="2023-05-23">Sections source text within <gi>body</gi> or comments
+        within <gi>back</gi> together with <gi>p</gi>.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-23">Sections le texte source dans <gi>body</gi> ou les commentaires dans
-        <gi>back</gi>
-        avec <gi>p</gi>.
+    <desc xml:lang="fr" versionDate="2023-05-23">Sections le texte source dans <gi>body</gi> ou les commentaires
+        dans <gi>back</gi> avec <gi>p</gi>.
     </desc>
     <desc xml:lang="it" versionDate="2023-05-23">Sezioni del testo sorgente all'interno di <gi>body</gi> o commenti
         all'interno di <gi>back</gi> insieme a <gi>p</gi>.
@@ -23,7 +24,7 @@
         <memberOf key="att.typed"/>
     </classes>
     <content>
-        <alternate minOccurs="1" maxOccurs="unbounded">
+        <alternate maxOccurs="unbounded">
             <macroRef key="ssrq.content.critical"/>
             <macroRef key="ssrq.content.display"/>
             <macroRef key="ssrq.content.measure"/>
@@ -156,4 +157,51 @@
             </body>
         </egXML>
     </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-14">
+        <p>Originale Absätze werden nur mit <gi>p</gi> (ohne zusätzliches <gi>div</gi>) gekennzeichnet. Sofern das
+            Original stärker gegliedert oder strukturiert ist, kann man beides verwenden, gegebenenfalls zusammen
+            mit <att>type</att>. Abschnitte, die der Bearbeitende zur inhaltlichen Strukturierung (lesbarer Text)
+            einfügt, werden hingegen mit <gi>seg</gi> ausgezeichnet. Zur Strukturierung von Schlussformeln vgl. die
+            Beispiele auf der Seite Schlussformeln.
+        </p>
+        <p>Bei längeren Paratexten (Einleitung, Kommentar) können Kapitel durch <gi>div</gi> mit <att>n</att> nummeriert
+            und gegebenenfalls mit <att>type</att> näher bezeichnet werden. Vgl. dazu auch die Ausführungen
+            "Strukturierung der Texte" in den SSRQ-Transkriptionsrichtlinien.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-14">
+        <p>Original paragraphs are only marked with <gi>p</gi> (without an additional <gi>div</gi>). If the original
+            is more articulated or structured, you can use both, possibly together with <att>type</att>. Sections that
+            the editor inserts to structure the content (readable text), on the other hand, are marked
+            with <gi>seg</gi>. For the structuring of closing formulas, see the examples on the Closing Formulas page.
+        </p>
+        <p>In the case of longer paratexts (introduction, commentary), chapters can be numbered
+            with <gi>div</gi> and <att>n</att> and, if necessary, with <att>type</att>. See also the explanations
+            "Structuring of the texts" in the SLS transcription guidelines.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-14">
+        <p>Les paragraphes originaux ne sont marqués que par <gi>p</gi> (sans un <gi>div</gi> supplémentaire). Si
+            l'original est plus articulé ou structuré, vous pouvez utiliser les deux, éventuellement
+            avec <att>type</att>. Les sections que l'éditeur insère pour structurer le contenu (texte lisible), en
+            revanche, sont marquées par <gi>seg</gi>. Pour la structuration des formules de clôture, voir les exemples
+            sur la page Formules de clôture.
+        </p>
+        <p>Dans le cas de paratextes plus longs (introduction, commentaire), les chapitres peuvent être numérotés
+            avec <gi>div</gi> et <att>n</att> et, si nécessaire, avec <att>type</att>. Voir aussi les explications
+            « Structuration des textes » dans les consignes de transcription SDS.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-14">
+        <p>I paragrafi originali sono contrassegnati solo con <gi>p</gi> (senza un ulteriore <gi>div</gi>). Se
+            l'originale è più articolato o strutturato si possono usare entrambi, eventualmente insieme
+            a <att>type</att>. Le sezioni che l'editor inserisce per strutturare il contenuto (testo leggibile),
+            invece, sono contrassegnate con <gi>seg</gi>. Per la strutturazione delle formule di chiusura, vedere gli
+            esempi nella pagina Formule di chiusura.
+        </p>
+        <p>Nel caso di paratesti più lunghi (introduzione, commento), i capitoli possono essere numerati
+            con <gi>div</gi> con <att>n</att> e, se necessario, con <att>type</att>. Vedi anche le spiegazioni
+            "Strutturazione dei testi" nelle linee guida di trascrizione FDS.
+        </p>
+    </remarks>
 </elementSpec>
