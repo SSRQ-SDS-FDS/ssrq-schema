@@ -1,96 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron"
              ident="supplied"
              module="transcr"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-11">Enthält eine Textpassage, die vom Bearbeitenden zum besseren
-        Textverständnis ergänzt wurde. Wenn ein Bearbeitender eine Passage frei ergänzt, weist er sich in <att>resp
-        </att> mit seinem Kürzel aus. Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf diese mit <att>
-            source
-        </att> referenziert. Der Grund für eine Ergänzung kann mit <att>reason</att> angegeben werden.
-    </desc>
-   <desc xml:lang="en" versionDate="2023-05-11">Contains a text passage that has been supplemented by the editor for
-        better understanding of the text. If an editor freely adds a passage, he identifies himself in <att>resp</att> with
-        his abbreviation. If a text is supplemented using another text template, this is referenced with <att>
-            source</att>. The reason for an addition can be specified with <att>reason</att>.
-    </desc>
-   <desc xml:lang="fr" versionDate="2023-05-11">Contient un passage de texte qui a été complété par l'éditeur pour une
-        meilleure compréhension du texte. Si un éditeur ajoute librement un passage, il s'identifie en <att>resp</att> avec
-        son abréviation. Si un texte est complété à l'aide d'un autre modèle de texte, celui-ci est référencé par<att>
-            source</att>. La raison d'un ajout peut être spécifiée avec <att>raison</att>.
-    </desc>
-   <desc xml:lang="it" versionDate="2023-05-21">Contiene un passaggio di testo che è stato aggiunto dall'editore per
-        una migliore comprensione del testo. Se un curatore aggiunge liberamente un passaggio, si identifica in
-        <att>resp</att>
-        con la sua sigla. Se un testo viene integrato utilizzando un altro modello di testo, questo
-        viene referenziato con <att>source</att>. Il motivo di un'aggiunta può essere specificato con <att>reason</att>.
-    </desc>
-   <classes mode="replace">
-      <memberOf key="att.global.responsibility"/>
-      <memberOf key="ssrq.att.source"/>
-   </classes>
-   <content>
-      <rng:oneOrMore>
-         <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-   </content>
-   <constraintSpec scheme="schematron" ident="sch-el-supplied">
-      <desc xml:lang="en" versionDate="2023-05-02">Constraint for
+    <desc xml:lang="de" versionDate="2023-07-14">Enthält eine Ergänzung durch den Bearbeitenden.</desc>
+    <desc xml:lang="en" versionDate="2023-07-14">Contains an addition by the editor.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-14">Contient un ajout de l'éditeur.</desc>
+    <desc xml:lang="it" versionDate="2023-07-14">Contiene un'aggiunta dell'editore.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global.responsibility"/>
+        <memberOf key="ssrq.att.source"/>
+    </classes>
+    <content>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
+    </content>
+    <constraintSpec scheme="schematron" ident="sch-el-supplied">
+        <desc xml:lang="en" versionDate="2023-05-02">Constraint for
             <gi>supplied</gi>
-      </desc>
-      <constraint>
-         <sch:pattern>
-            <sch:rule context="tei:supplied">
-               <sch:assert test=".[@resp][not(@source)] or .[@source][not(@resp)]">
+        </desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:supplied">
+                    <sch:assert test=".[@resp][not(@source)] or .[@source][not(@resp)]">
                         Must contain either a resp or a source attribute.
                     </sch:assert>
-            </sch:rule>
-         </sch:pattern>
-      </constraint>
-   </constraintSpec>
-   <attList>
-      <attDef ident="cert" mode="delete"/>
-      <attDef ident="source" mode="replace">
-         <datatype>
-            <dataRef name="IDREFS"/>
-         </datatype>
-      </attDef>
-      <attDef ident="reason" mode="replace">
-         <desc xml:lang="de" versionDate="2023-06-21">Grund der Ergänzung</desc>
-         <desc xml:lang="en" versionDate="2023-06-21">reason for addition</desc>
-         <desc xml:lang="fr" versionDate="2023-06-21">raison de l'ajout</desc>
-         <desc xml:lang="it" versionDate="2023-06-21">motivo dell'aggiunta</desc>
-         <valList type="closed">
-            <valItem ident="omitted">
-               <desc xml:lang="de" versionDate="2023-06-21">weggelassen</desc>
-               <desc xml:lang="en" versionDate="2023-06-21">omitted</desc>
-               <desc xml:lang="fr" versionDate="2023-06-21">omis</desc>
-               <desc xml:lang="it" versionDate="2023-06-21">omesso</desc>
-            </valItem>
-         </valList>
-      </attDef>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <supplied resp="SM" reason="omitted">eis</supplied>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <supplied resp="SM" reason="omitted">eis</supplied>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-02">
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <supplied source="ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-02">
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <supplied source="ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
-      </egXML>
-   </exemplum>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="source" mode="replace">
+            <datatype>
+                <dataRef name="IDREFS"/>
+            </datatype>
+        </attDef>
+        <attDef ident="reason" mode="replace">
+            <desc xml:lang="de" versionDate="2023-06-21">Grund der Ergänzung</desc>
+            <desc xml:lang="en" versionDate="2023-06-21">reason for addition</desc>
+            <desc xml:lang="fr" versionDate="2023-06-21">raison de l'ajout</desc>
+            <desc xml:lang="it" versionDate="2023-06-21">motivo dell'aggiunta</desc>
+            <valList type="closed">
+                <valItem ident="omitted">
+                    <desc xml:lang="de" versionDate="2023-06-21">weggelassen</desc>
+                    <desc xml:lang="en" versionDate="2023-06-21">omitted</desc>
+                    <desc xml:lang="fr" versionDate="2023-06-21">omis</desc>
+                    <desc xml:lang="it" versionDate="2023-06-21">omesso</desc>
+                </valItem>
+            </valList>
+        </attDef>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <supplied resp="SM" reason="omitted">eis</supplied>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <supplied resp="SM" reason="omitted">eis</supplied>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-02">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <supplied source="ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-02">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <supplied source="ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
+        </egXML>
+    </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-14">
+        <p>Wenn ein Bearbeitender eine Passage frei ergänzt, weist er sich in <att>resp</att> mit seinem Kürzel aus.
+            Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf diese
+            mit <att>source</att> referenziert. Der Grund für eine Ergänzung kann mit <att>reason</att> angegeben
+            werden. Eine Anmerkung in <gi>note</gi> oder eine Bemerkung in <gi>back</gi> ist nötig.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-14">
+        <p>If an editor freely adds a passage, he identifies himself in <att>resp</att> with his abbreviation. If a
+            text is supplemented using another text template, this is referenced with <att>source</att>. The reason
+            for an addition can be specified with <att>reason</att>. A note in <gi>note</gi> or a comment
+            in <gi>back</gi> is required.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-14">
+        <p>Si un éditeur ajoute librement un passage, il s'identifie en <att>resp</att> avec son abréviation. Si un
+            texte est complété à l'aide d'un autre modèle de texte, celui-ci est référencé par <att>source</att>. La
+            raison d'un ajout peut être spécifiée avec <att>reason</att>. Une note dans <gi>note</gi> ou un commentaire
+            dans <gi>back</gi> est requis.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-14">
+        <p>Se un curatore aggiunge liberamente un passaggio, si identifica in <att>resp</att> con la sua sigla. Se un
+            testo viene integrato utilizzando un altro modello di testo, questo viene referenziato
+            con <att>source</att>. Il motivo di un'aggiunta può essere specificato con <att>reason</att>. È richiesta
+            una nota in <gi>note</gi> o un commento in <gi>back</gi>.
+        </p>
+    </remarks>
 </elementSpec>
