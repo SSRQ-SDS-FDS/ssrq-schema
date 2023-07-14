@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron"
              ident="precision"
              module="certainty"
              mode="change">
-    <desc xml:lang="de" versionDate="2023-04-26">Angabe von Unsicherheit / Präzision bei Datierungen</desc>
-    <desc xml:lang="en" versionDate="2023-04-26">Indication of uncertainty / precision in dating</desc>
-    <desc xml:lang="fr" versionDate="2023-04-26">Indication de l'incertitude / de la précision pour
-        les datations
-    </desc>
+    <desc xml:lang="de" versionDate="2023-07-14">Gibt Unsicherheit bei Datierungen an.</desc>
+    <desc xml:lang="en" versionDate="2023-07-14">Indicates uncertainty in dating.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-14">Indique une incertitude dans la datation.</desc>
+    <desc xml:lang="it" versionDate="2023-07-14">Indica incertezza nella datazione.</desc>
     <classes mode="replace">
+        <memberOf key="att.scoping"/>
         <memberOf key="model.certLike"/>
         <memberOf key="model.global.meta"/>
-        <memberOf key="att.scoping"/>
     </classes>
     <content>
         <empty/>
@@ -26,9 +28,7 @@
                     <sch:let name="parent" value="./parent::*"/>
                     <sch:assert
                             test="every $matchAttr in tokenize(./@match, ' ') satisfies exists($parent/@*[name() = substring-after($matchAttr, '@')])">
-                        Every
-                        value that is targeted via @match must have a corresponding attribute on the
-                        parent.
+                        Every value that is targeted via @match must have a corresponding attribute on the parent.
                     </sch:assert>
                 </sch:rule>
             </sch:pattern>
@@ -54,4 +54,30 @@
             </date>
         </egXML>
     </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-14">
+        <p>Mit <att>match</att> wird auf ein oder mehrere Attribute von <gi>date</gi> Bezug genommen.
+            Mit <att>precision</att> wird der Grad der Unsicherheit angegeben.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-14">
+        <p>
+            <att>match</att>
+            is used to refer to one or more attributes of <gi>date</gi>. <att>precision</att> specifies the degree of
+            uncertainty.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-14">
+        <p>
+            <att>match</att>
+            est utilisé pour faire référence à un ou plusieurs attributs de <gi>date</gi>. <att>precision</att> spécifie
+            le degré d'incertitude.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-14">
+        <p>
+            <att>match</att>
+            è usato per fare riferimento a uno o più attributi di <gi>date</gi>. <att>precision</att> specifica il grado
+            di incertezza.
+        </p>
+    </remarks>
 </elementSpec>
