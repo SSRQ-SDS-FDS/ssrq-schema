@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-    xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-    ident="condition"
-    module="msdescription"
-    mode="change">
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec
+        xmlns="http://www.tei-c.org/ns/1.0"
+        ident="condition"
+        module="msdescription"
+        mode="change">
     <desc xml:lang="de" versionDate="2023-04-14">Beschreibt den Erhaltungszustand und Schäden einer
-        Quelle. Detailbeschreibungen, wie Lücken, Löcher etc., erfolgen an der entsprechenden
-        Stelle.</desc>
-    <desc xml:lang="fr" versionDate="2023-04-14">Décrit l'état de conservation et les dommages d'une
-        source. Les descriptions détaillées, telles que les lacunes, les trous, etc. à l'endroit
-        indiqué.</desc>
+        Quelle. Detailbeschreibungen, wie Lücken, Löcher etc., erfolgen an der entsprechenden Stelle.
+    </desc>
     <desc xml:lang="en" versionDate="2023-04-14">Describes the state of preservation and damage of a
-        source. Detailed descriptions, such as gaps, holes, etc., are given at the appropriate
-        place.</desc>
+        source. Detailed descriptions, such as gaps, holes, etc., are given at the appropriate place.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-04-14">Décrit l'état de conservation et les dommages d'une
+        source. Les descriptions détaillées, telles que les lacunes, les trous, etc. à l'endroit indiqué.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-04-14">Descrive lo stato di conservazione e danneggiamento di una fonte.
+        Descrizioni dettagliate, come spazi vuoti, buchi, ecc., sono fornite nel punto appropriato.
+    </desc>
     <classes mode="replace">
         <memberOf key="att.damaged"/>
     </classes>
