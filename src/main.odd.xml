@@ -11,15 +11,20 @@
                 <moduleRef key="certainty"
                            include="precision"/>
                 <moduleRef key="core"
-                           include="abbr add author bibl cb choice corr date del editor expan foreign gap graphic head hi item label lb list listBibl measure measureGrp note num orig p pb pubPlace publisher q quote ref resp respStmt sic term textLang time title unclear"/>
+                           include="abbr add author bibl cb choice corr date del editor expan foreign gap graphic head
+                           hi item label lb list listBibl measure measureGrp note num orig p pb publisher pubPlace q
+                           quote ref resp respStmt sic term textLang time title unclear"/>
                 <moduleRef key="header"
-                           include="availability editorialDecl encodingDesc extent fileDesc handNote idno keywords licence publicationStmt profileDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
+                           include="availability editorialDecl encodingDesc extent fileDesc handNote idno keywords
+                           licence profileDesc publicationStmt seriesStmt sourceDesc teiHeader textClass titleStmt"/>
                 <moduleRef key="textstructure"
-                           include="TEI back body div docImprint signed text"/>
+                           include="back body div docImprint signed TEI text"/>
                 <moduleRef key="linking"
                            include="ab anchor seg"/>
                 <moduleRef key="msdescription"
-                           include="altIdentifier bindingDesc origDate origPlace dimensions handDesc height width support material condition msDesc physDesc sealDesc objectDesc supportDesc seal msContents history additional repository msItem msIdentifier summary origin"/>
+                           include="additional altIdentifier bindingDesc condition dimensions handDesc height history
+                           material msContents msDesc msIdentifier msItem objectDesc origDate origin origPlace physDesc
+                           repository seal sealDesc summary support supportDesc width"/>
                 <moduleRef key="transcr"
                            include="addSpan damage damageSpan delSpan fw handShift space subst supplied"/>
                 <moduleRef key="textcrit"
@@ -27,7 +32,7 @@
                 <moduleRef key="namesdates"
                            include="orgName persName placeName settlement"/>
                 <moduleRef key="figures"
-                           include="figure table row cell"/>
+                           include="cell figure row table"/>
 
                 <!-- own modules -->
                 <specGrpRef target="common/modules.odd.xml#ssrq-modules"/>
