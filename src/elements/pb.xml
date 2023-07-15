@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="pb"
              module="core"
@@ -11,18 +14,21 @@
         <memberOf key="att.typed"/>
     </classes>
     <attList>
-        <attDef ident="n" mode="change">
-            <desc xml:lang="de" versionDate="2023-04-06">Angabe der originalen Paginierung oder
-                Foliierung.
+        <attDef ident="n" mode="replace">
+            <desc xml:lang="de" versionDate="2023-07-15">Angabe der originalen Paginierung, Foliierung oder
+                Abschnittszählung.
             </desc>
-            <desc xml:lang="en" versionDate="2023-04-06">Indication of the original pagination or
-                foliation.
+            <desc xml:lang="en" versionDate="2023-07-15">Specification of the original pagination, foliation or section
+                numbering.
             </desc>
-            <desc xml:lang="fr" versionDate="2023-04-06">Indication de la pagination ou du foliotage
-                d'origine.
+            <desc xml:lang="fr" versionDate="2023-07-15">Spécification de la pagination originale, de la foliation ou de
+                la numérotation des sections.
+            </desc>
+            <desc xml:lang="it" versionDate="2023-07-15">Specifica dell'impaginazione, della foliazione o della
+                numerazione delle sezioni originali.
             </desc>
             <datatype>
-                <dataRef name="string" restriction="(\d+|[IVXCL]+)[rv]?"/>
+                <dataRef key="ssrq.numbering"/>
             </datatype>
         </attDef>
         <attDef ident="type" mode="replace">

@@ -34,6 +34,44 @@
             </content>
         </dataSpec>
 
+        <!-- numbering of folia, pages and (parchment) sections -->
+        <dataSpec ident="ssrq.foliation" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-07-15">Blattzählung</desc>
+            <desc xml:lang="en" versionDate="2023-07-15">Foliation</desc>
+            <desc xml:lang="fr" versionDate="2023-07-15">Foliation</desc>
+            <desc xml:lang="it" versionDate="2023-07-15">Foliazione</desc>
+            <content>
+                <dataRef name="string" restriction="((\d+)|([IVXLC]+))[rv]"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pagination" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-07-15">Seitenzählung</desc>
+            <desc xml:lang="en" versionDate="2023-07-15">Pagination</desc>
+            <desc xml:lang="fr" versionDate="2023-07-15">Pagination</desc>
+            <desc xml:lang="it" versionDate="2023-07-15">Paginazione</desc>
+            <content>
+                <dataRef name="string" restriction="(\d+)|([IVXLC]+)"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.section" mode="add" module="ssrq.core.module">
+            <desc xml:lang="de" versionDate="2023-07-15">Abschnittszählung</desc>
+            <desc xml:lang="en" versionDate="2023-07-15">Section numbering</desc>
+            <desc xml:lang="fr" versionDate="2023-07-15">Numérotation des sections</desc>
+            <desc xml:lang="it" versionDate="2023-07-15">Numerazione delle sezioni</desc>
+            <content>
+                <dataRef name="string" restriction="s(\d+)"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.numbering" mode="add" module="ssrq.core.module">
+            <content>
+                <alternate>
+                    <dataRef key="ssrq.foliation"/>
+                    <dataRef key="ssrq.pagination"/>
+                    <dataRef key="ssrq.section"/>
+                </alternate>
+            </content>
+        </dataSpec>
+
         <!-- file names -->
         <dataSpec ident="ssrq.facs.name" mode="add" module="ssrq.core.module">
             <desc xml:lang="de" versionDate="2023-04-06">Restriktion für Datei- bzw. Faksimilenamen.</desc>
