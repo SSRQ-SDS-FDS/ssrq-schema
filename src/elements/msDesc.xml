@@ -12,25 +12,28 @@
         Aufbewahrungsort, Material, Layout, Schreiber, Siegel und Bibliographie zu Sekundärliteratur
         (Metadaten).
     </desc>
+    <desc xml:lang="en" versionDate="2023-05-30">Describes the edited source document, including
+        place of preservation, material, layout, scribe, seal and bibliography on secondary
+        literature (metadata).
+    </desc>
     <desc xml:lang="fr" versionDate="2023-05-30">Décrit la pièce de source éditée avec le lieu de
         conservation, le matériau, la mise en page, le scribe, le sceau et la bibliographie sur la
         littérature secondaire (métadonnées).
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-30">Describes the edited source document, including
-        place of preservation, material, layout, scribe, seal and bibliography on secondary
-        literature (metadata).
+    <desc xml:lang="it" versionDate="2023-05-30">Descrive il pezzo sorgente modificato con posizione,
+        materiale, layout, copista, sigillo e bibliografia della letteratura secondaria (metadati).
     </desc>
     <classes mode="replace">
         <memberOf key="model.biblLike"/>
     </classes>
     <content>
         <sequence>
-            <elementRef key="msIdentifier" minOccurs="0" maxOccurs="1"/>
-            <elementRef key="head" minOccurs="1" maxOccurs="unbounded"/>
-            <elementRef key="msContents" minOccurs="0" maxOccurs="1"/>
+            <elementRef key="msIdentifier" minOccurs="0"/>
+            <elementRef key="head" maxOccurs="unbounded"/>
+            <elementRef key="msContents" minOccurs="0"/>
             <elementRef key="physDesc"/>
             <elementRef key="history"/>
-            <elementRef key="additional" minOccurs="0" maxOccurs="1"/>
+            <elementRef key="additional" minOccurs="0"/>
         </sequence>
     </content>
     <xi:include href="examples.xml" xpointer="ex-msDesc-de"/>
