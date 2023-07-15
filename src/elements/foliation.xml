@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             ident="foliation"
+             module="msdescription"
+             mode="change">
+    <desc xml:lang="de" versionDate="2023-05-17">Beschreibt die Blattzählung einer Quelle.</desc>
+    <desc xml:lang="en" versionDate="2023-05-17">Describes the foliation of a source.</desc>
+    <desc xml:lang="fr" versionDate="2023-05-17">Décrit la foliation d'une source.</desc>
+    <desc xml:lang="it" versionDate="2023-05-17">Descrive la foliazione di una fonte.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="p" maxOccurs="unbounded"/>
+        </sequence>
+    </content>
+</elementSpec>

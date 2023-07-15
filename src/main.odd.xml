@@ -22,9 +22,9 @@
                 <moduleRef key="linking"
                            include="ab anchor seg"/>
                 <moduleRef key="msdescription"
-                           include="additional altIdentifier bindingDesc condition dimensions handDesc height history
-                           material msContents msDesc msIdentifier msItem objectDesc origDate origin origPlace physDesc
-                           repository seal sealDesc summary support supportDesc width"/>
+                           include="additional altIdentifier bindingDesc condition dimensions foliation handDesc height
+                           history material msContents msDesc msIdentifier msItem objectDesc origDate origin origPlace
+                           physDesc repository seal sealDesc summary support supportDesc width"/>
                 <moduleRef key="transcr"
                            include="addSpan damage damageSpan delSpan fw handShift space subst supplied"/>
                 <moduleRef key="textcrit"
@@ -96,6 +96,7 @@
                 <specGrpRef target="elements/extent.xml"/>
                 <specGrpRef target="elements/figure.xml"/>
                 <specGrpRef target="elements/fileDesc.xml"/>
+                <specGrpRef target="elements/foliation.xml"/>
                 <specGrpRef target="elements/foreign.xml"/>
                 <specGrpRef target="elements/fw.xml"/>
                 <specGrpRef target="elements/gap.xml"/>
