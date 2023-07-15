@@ -1,167 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="objectDesc"
              module="msdescription"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-17">Container zur Beschreibung des Materials, der
-        Masse, des Erhaltungszustands und sowie Aussehens der Quelle.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-17">Conteneur décrivant le matériau, la masse, l'état
-        de conservation et l'aspect de la source.</desc>
-   <desc xml:lang="en" versionDate="2023-05-17">A container describing the material, mass, state of
-        preservation and appearance of the source.</desc>
-   <classes mode="replace">
-      <memberOf key="model.physDescPart"/>
-   </classes>
-   <content>
-      <elementRef key="supportDesc"/>
-   </content>
-   <attList>
-      <attDef ident="form" mode="replace" usage="req">
-         <desc xml:lang="de" versionDate="2023-05-31">Beschreibung der (physischen)
-                Überlieferungsform.</desc>
-         <desc xml:lang="fr" versionDate="2023-05-31">Description de la forme (physique) de
-                transmission.</desc>
-         <desc xml:lang="en" versionDate="2023-05-31">Description of (the physical) form of
-                transmission.</desc>
-         <valList type="closed">
-            <valItem ident="book">
-               <desc xml:lang="de" versionDate="2023-05-31">Buch</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">Livre</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Libro</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Book</desc>
-            </valItem>
-            <valItem ident="booklet">
-               <desc xml:lang="de" versionDate="2023-05-31">Heft</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">cahier</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Fascicolo</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Booklet</desc>
-            </valItem>
-            <valItem ident="copy">
-               <desc xml:lang="de" versionDate="2023-05-31">Abschrift</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">Copie</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Copia</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Copy</desc>
-            </valItem>
-            <valItem ident="draft">
-               <desc xml:lang="de" versionDate="2023-05-31">Entwurf</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">Brouillon</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Bozza</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Draft</desc>
-            </valItem>
-            <valItem ident="entry">
-               <desc xml:lang="de" versionDate="2023-05-31">Eintrag</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">Entrée</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Entrata</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Entry</desc>
-            </valItem>
-            <valItem ident="excerpt">
-               <desc xml:lang="de" versionDate="2023-05-31">Auszug</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">Extrait</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Estratto</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Excerpt</desc>
-            </valItem>
-            <valItem ident="fragment">
-               <desc xml:lang="de" versionDate="2023-05-31">Fragment</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">Fragment</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Frammento</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Fragment</desc>
-            </valItem>
-            <valItem ident="insert">
-               <desc xml:lang="de" versionDate="2023-05-31">Insert</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">Insert</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Inserto</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Insert</desc>
-            </valItem>
-            <valItem ident="original">
-               <desc xml:lang="de" versionDate="2023-05-31">Original</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">Original</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Originale</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Original</desc>
-            </valItem>
-            <valItem ident="partial_copy">
-               <desc xml:lang="de" versionDate="2023-05-31">Teilabschrift</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">Copie partielle</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Copia parziale</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Partial copy</desc>
-            </valItem>
-            <valItem ident="photocopy">
-               <desc xml:lang="de" versionDate="2023-05-31">Fotokopie</desc>
-               <desc xml:lang="fr" versionDate="2023-05-31">Photocopie</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Fotocopia</desc>
-               <desc xml:lang="en" versionDate="2023-05-31">Photocopy</desc>
-            </valItem>
-            <valItem ident="print">
-               <desc xml:lang="de" versionDate="2022-05-31">Druck</desc>
-               <desc xml:lang="fr" versionDate="2022-05-31">Impression</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Stampa</desc>
-               <desc xml:lang="en" versionDate="2022-05-31">Print</desc>
-            </valItem>
-            <valItem ident="summary">
-               <desc xml:lang="de" versionDate="2022-05-31">Regest</desc>
-               <desc xml:lang="fr" versionDate="2022-05-31">Regeste</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Regest</desc>
-               <desc xml:lang="en" versionDate="2022-05-31">Summary</desc>
-            </valItem>
-            <valItem ident="translation">
-               <desc xml:lang="de" versionDate="2022-05-31">Übersetzung</desc>
-               <desc xml:lang="fr" versionDate="2022-05-31">Traduction</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Traduzione</desc>
-               <desc xml:lang="en" versionDate="2022-05-31">Transltion</desc>
-            </valItem>
-            <valItem ident="vidimus">
-               <desc xml:lang="de" versionDate="2022-05-31">Vidimus</desc>
-               <desc xml:lang="fr" versionDate="2022-05-31">Vidimus</desc>
-               <desc xml:lang="it" versionDate="2023-05-31">Vidimus</desc>
-               <desc xml:lang="en" versionDate="2022-05-31">Vidimus</desc>
-            </valItem>
-         </valList>
-      </attDef>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-31">
-      <p>Modellhafter Aufbau</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <objectDesc form="original">
-            <supportDesc>
-               <support>
-                  <material type="paper"/>
-               </support>
-               <extent>
-                  <dimensions type="leaves">
-                     <height unit="cm" quantity="16.0"/>
-                     <width unit="cm" quantity="23.0"/>
-                  </dimensions>
-                  <dimensions type="plica">
-                     <width unit="cm" quantity="4.0"/>
-                  </dimensions>
-                  <measure type="text_scope" unit="leaf" quantity="2"/>
-                  <measure type="text_scope" unit="page" quantity="4"/>
-               </extent>
-            </supportDesc>
-         </objectDesc>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
-      <p>Structure modèle</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <objectDesc form="original">
-            <supportDesc>
-               <support>
-                  <material type="paper"/>
-               </support>
-               <extent>
-                  <dimensions type="leaves">
-                     <height unit="cm" quantity="16.0"/>
-                     <width unit="cm" quantity="23.0"/>
-                  </dimensions>
-                  <dimensions type="plica">
-                     <width unit="cm" quantity="4.0"/>
-                  </dimensions>
-                  <measure type="text_scope" unit="leaf" quantity="2"/>
-                  <measure type="text_scope" unit="page" quantity="4"/>
-               </extent>
-            </supportDesc>
-         </objectDesc>
-      </egXML>
-   </exemplum>
+    <desc xml:lang="de" versionDate="2023-07-15">Enthält Elemente zur Beschreibung des Materials, der
+        Masse, des Erhaltungszustands sowie Aussehens der Quelle.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-07-15">Contains elements describing the material, mass, state of preservation
+        and appearance of the source.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-07-15">Contient des éléments décrivant le matériau, la masse, l'état de
+        conservation et l'apparence de la source.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-07-15">Contiene elementi che descrivono il materiale, la massa, lo stato di
+        conservazione e l'aspetto della fonte.
+    </desc>
+    <classes mode="replace">
+        <memberOf key="model.physDescPart"/>
+    </classes>
+    <content>
+        <elementRef key="supportDesc"/>
+    </content>
+    <attList>
+        <attDef ident="form" mode="replace" usage="req">
+            <desc xml:lang="de" versionDate="2023-05-31">Beschreibung der (physischen) Überlieferungsform.</desc>
+            <desc xml:lang="en" versionDate="2023-05-31">Description of (the physical) form of transmission.</desc>
+            <desc xml:lang="fr" versionDate="2023-05-31">Description de la forme (physique) de transmission.</desc>
+            <desc xml:lang="it" versionDate="2023-05-31">Descrizione della forma (fisica) di trasmissione.</desc>
+            <valList type="closed">
+                <valItem ident="book">
+                    <desc xml:lang="de" versionDate="2023-05-31">Buch</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Book</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Livre</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Libro</desc>
+                </valItem>
+                <valItem ident="booklet">
+                    <desc xml:lang="de" versionDate="2023-05-31">Heft</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Booklet</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Cahier</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Fascicolo</desc>
+                </valItem>
+                <valItem ident="copy">
+                    <desc xml:lang="de" versionDate="2023-05-31">Abschrift</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Copy</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Copie</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Copia</desc>
+                </valItem>
+                <valItem ident="draft">
+                    <desc xml:lang="de" versionDate="2023-05-31">Entwurf</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Draft</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Brouillon</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Bozza</desc>
+                </valItem>
+                <valItem ident="entry">
+                    <desc xml:lang="de" versionDate="2023-05-31">Eintrag</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Entry</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Entrée</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Entrata</desc>
+                </valItem>
+                <valItem ident="excerpt">
+                    <desc xml:lang="de" versionDate="2023-05-31">Auszug</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Excerpt</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Extrait</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Estratto</desc>
+                </valItem>
+                <valItem ident="fragment">
+                    <desc xml:lang="de" versionDate="2023-05-31">Fragment</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Fragment</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Fragment</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Frammento</desc>
+                </valItem>
+                <valItem ident="insert">
+                    <desc xml:lang="de" versionDate="2023-05-31">Insert</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Insert</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Insert</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Inserto</desc>
+                </valItem>
+                <valItem ident="original">
+                    <desc xml:lang="de" versionDate="2023-05-31">Original</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Original</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Original</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Originale</desc>
+                </valItem>
+                <valItem ident="partial_copy">
+                    <desc xml:lang="de" versionDate="2023-05-31">Teilabschrift</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Partial copy</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Copie partielle</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Copia parziale</desc>
+                </valItem>
+                <valItem ident="photocopy">
+                    <desc xml:lang="de" versionDate="2023-05-31">Fotokopie</desc>
+                    <desc xml:lang="en" versionDate="2023-05-31">Photocopy</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-31">Photocopie</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Fotocopia</desc>
+                </valItem>
+                <valItem ident="print">
+                    <desc xml:lang="de" versionDate="2022-05-31">Druck</desc>
+                    <desc xml:lang="en" versionDate="2022-05-31">Print</desc>
+                    <desc xml:lang="fr" versionDate="2022-05-31">Impression</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Stampa</desc>
+                </valItem>
+                <valItem ident="summary">
+                    <desc xml:lang="de" versionDate="2022-05-31">Regest</desc>
+                    <desc xml:lang="en" versionDate="2022-05-31">Summary</desc>
+                    <desc xml:lang="fr" versionDate="2022-05-31">Regeste</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Regest</desc>
+                </valItem>
+                <valItem ident="translation">
+                    <desc xml:lang="de" versionDate="2022-05-31">Übersetzung</desc>
+                    <desc xml:lang="en" versionDate="2022-05-31">Transltion</desc>
+                    <desc xml:lang="fr" versionDate="2022-05-31">Traduction</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Traduzione</desc>
+                </valItem>
+                <valItem ident="vidimus">
+                    <desc xml:lang="de" versionDate="2022-05-31">Vidimus</desc>
+                    <desc xml:lang="en" versionDate="2022-05-31">Vidimus</desc>
+                    <desc xml:lang="fr" versionDate="2022-05-31">Vidimus</desc>
+                    <desc xml:lang="it" versionDate="2023-05-31">Vidimus</desc>
+                </valItem>
+            </valList>
+        </attDef>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-31">
+        <p>Modellhafter Aufbau</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <objectDesc form="original">
+                <supportDesc>
+                    <support>
+                        <material type="paper"/>
+                    </support>
+                    <extent>
+                        <dimensions type="leaves">
+                            <height unit="cm" quantity="16.0"/>
+                            <width unit="cm" quantity="23.0"/>
+                        </dimensions>
+                        <dimensions type="plica">
+                            <width unit="cm" quantity="4.0"/>
+                        </dimensions>
+                        <measure type="text_scope" unit="leaf" quantity="2"/>
+                        <measure type="text_scope" unit="page" quantity="4"/>
+                    </extent>
+                </supportDesc>
+            </objectDesc>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
+        <p>Structure modèle</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <objectDesc form="original">
+                <supportDesc>
+                    <support>
+                        <material type="paper"/>
+                    </support>
+                    <extent>
+                        <dimensions type="leaves">
+                            <height unit="cm" quantity="16.0"/>
+                            <width unit="cm" quantity="23.0"/>
+                        </dimensions>
+                        <dimensions type="plica">
+                            <width unit="cm" quantity="4.0"/>
+                        </dimensions>
+                        <measure type="text_scope" unit="leaf" quantity="2"/>
+                        <measure type="text_scope" unit="page" quantity="4"/>
+                    </extent>
+                </supportDesc>
+            </objectDesc>
+        </egXML>
+    </exemplum>
 </elementSpec>
