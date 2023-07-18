@@ -1,56 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="bibl"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-30">Auszeichnung von bibliographischen Angaben
-        (Literatur, Quellen) mit Seitenangaben. Das Kindelement <gi>ref</gi> verweist auf externe
-        Websiten, weitere edierte Stücke oder die Zotero-Literaturdatenbank.</desc>
-   <desc xml:lang="en" versionDate="2023-05-30">Markup of bibliographic information (literature,
-        sources) with page references. The child element <gi>ref</gi> refers to external websites,
-        further edited pieces or the Zotero literature database.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-30">Balisage des informations bibliographiques
-        (littérature, sources) avec des références de page. L'élément enfant <gi>ref</gi> renvoie à
-        des sites web externes, à d'autres documents édités ou à la base de données bibliographiques
-        Zotero.</desc>
-   <classes mode="replace">
-      <memberOf key="model.biblLike"/>
-   </classes>
-   <content>
-      <alternate minOccurs="1" maxOccurs="unbounded">
-         <elementRef key="ref"/>
-         <textNode/>
-      </alternate>
-   </content>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Erfassung mit Verweis auf Literaturdatenbank</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <bibl>
-            <ref target="http://zotero.org/groups/5048222/items/M8D9EG5B"/>, S. 93</bibl>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Saisie avec référence à la base de données bibliographiques</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <bibl>
-            <ref target="http://zotero.org/groups/5048222/items/M8D9EG5B"/>, S. 93</bibl>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Erfassung mit Verweis auf weiteres Stück</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <bibl>
-            <ref target="urn:ssrq:SSRQ-ZH-NF_II_11-74-1">SSRQ ZH NF II/11, Nr. 74</ref>
-         </bibl>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Saisie avec référence à une autre pièce</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <bibl>
-            <ref target="urn:ssrq:SSRQ-ZH-NF_II_11-74-1">SSRQ ZH NF II/11, Nr. 74</ref>
-         </bibl>
-      </egXML>
-   </exemplum>
+    <desc xml:lang="de" versionDate="2023-07-18">Enthält eine bibliographische Angabe mit Seitenangaben.</desc>
+    <desc xml:lang="en" versionDate="2023-07-18">Contains a bibliographical reference with page references.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-18">Contient une référence bibliographique avec des références de pages.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-07-18">Contiene un riferimento bibliografico con riferimenti di pagina.</desc>
+    <classes mode="replace">
+        <memberOf key="model.biblLike"/>
+    </classes>
+    <content>
+        <alternate maxOccurs="unbounded">
+            <elementRef key="ref"/>
+            <textNode/>
+        </alternate>
+    </content>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Erfassung mit Verweis auf Literaturdatenbank</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <bibl>
+                <ref target="http://zotero.org/groups/5048222/items/M8D9EG5B"/>, S. 93
+            </bibl>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Saisie avec référence à la base de données bibliographiques</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <bibl>
+                <ref target="http://zotero.org/groups/5048222/items/M8D9EG5B"/>, S. 93
+            </bibl>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Erfassung mit Verweis auf weiteres Stück</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <bibl>
+                <ref target="urn:ssrq:SSRQ-ZH-NF_II_11-74-1">SSRQ ZH NF II/11, Nr. 74</ref>
+            </bibl>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Saisie avec référence à une autre pièce</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <bibl>
+                <ref target="urn:ssrq:SSRQ-ZH-NF_II_11-74-1">SSRQ ZH NF II/11, Nr. 74</ref>
+            </bibl>
+        </egXML>
+    </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-18">
+        <p>Das Kindelement <gi>ref</gi> verweist auf externe Websites, weitere edierte Stücke oder die
+            Zotero-Literaturdatenbank.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-18">
+        <p>The <gi>ref</gi> child element links to external websites, other edited pieces, or the Zotero literature
+            database.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-18">
+        <p>L'élément enfant <gi>ref</gi> renvoie à des sites Web externes, à d'autres articles édités ou à la base de
+            données de littérature Zotero.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-18">
+        <p>L'elemento figlio <gi>ref</gi> si collega a siti web esterni, ad altri pezzi modificati o al database della
+            letteratura di Zotero.
+        </p>
+    </remarks>
 </elementSpec>
