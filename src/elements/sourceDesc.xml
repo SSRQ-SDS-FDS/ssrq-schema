@@ -8,20 +8,13 @@
              ident="sourceDesc"
              module="header"
              mode="change">
-    <desc xml:lang="de" versionDate="2023-04-25">Informationen zum Quellstück – dazu zählen: Inhalt
-        (Regest), Aufbewahrungsort, Material, Layout, Schreiber, Siegel und bibliographische
-        Angaben.
-    </desc>
-    <desc xml:lang="en" versionDate="2023-04-25">Information on the source item - this includes:
-        Content (registry), location, material, layout, scribe, seal and bibliographic information.
-    </desc>
-    <desc xml:lang="fr" versionDate="2023-04-25">Informations sur la pièce source - cela comprend :
-        le contenu (regest), le lieu de conservation, le matériau, la mise en page, le scribe, le
-        sceau et les informations bibliographiques.
-    </desc>
+    <desc xml:lang="de" versionDate="2023-07-18">Enthält Elemente zur Beschreibung der Quelle bzw. der Quellen.</desc>
+    <desc xml:lang="en" versionDate="2023-07-18">Contains elements describing the source or sources.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-18">Contient des éléments décrivant la source ou les sources.</desc>
+    <desc xml:lang="it" versionDate="2023-07-18">Contiene elementi che descrivono la fonte o le fonti.</desc>
     <classes mode="replace"/>
     <content>
-        <alternate minOccurs="1" maxOccurs="1">
+        <alternate>
             <elementRef key="msDesc"/>
             <elementRef key="listWit"/>
         </alternate>
@@ -30,9 +23,35 @@
     <xi:include href="examples.xml" xpointer="ex-sourceDesc-msDesc-en"/>
     <xi:include href="examples.xml" xpointer="ex-sourceDesc-msDesc-fr"/>
     <xi:include href="examples.xml" xpointer="ex-sourceDesc-msDesc-it"/>
-
     <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-de"/>
     <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-en"/>
     <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-fr"/>
     <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-it"/>
+    <remarks xml:lang="de" versionDate="2023-07-18">
+        <p>Beschrieben werden Inhalt (Regest), Aufbewahrungsort, Material, Layout, Schreiber, Siegel und
+            bibliographische Bezüge. Da die meisten dieser Metadaten aus einem AIS oder einer Datenbank des
+            Bearbeitenden exportiert und ins Portal importiert werden, werden hier nur noch die Siegel
+            in <gi>sealDesc</gi> bzw. <gi>seal</gi> genauer erfasst.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-18">
+        <p>Content (regest), place of storage, material, layout, scribe, seal and bibliographical references are
+            described. Since most of this metadata is exported from an AIS or a database of the processor and imported
+            into the portal, only the seals in <gi>sealDesc</gi> or <gi>seal</gi> are recorded more precisely here.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-18">
+        <p>Le contenu (regest), le lieu de stockage, le matériel, la mise en page, le scribe, le sceau et les
+            références bibliographiques sont décrits. Comme la plupart de ces métadonnées sont exportées depuis un
+            AIS ou une base de données du sous-traitant et importées dans le portail, seuls les sceaux
+            en <gi>sealDesc</gi> ou <gi>seal</gi> sont enregistrés plus précisément ici.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-18">
+        <p>Vengono descritti il contenuto (regest), il luogo di conservazione, il materiale, l'impaginazione, il
+            copista, il sigillo ei riferimenti bibliografici. Poiché la maggior parte di questi metadati viene
+            esportata da un AIS o da un database del processore e importata nel portale, solo i sigilli
+            in <gi>sealDesc</gi> o <gi>seal</gi> vengono registrati in modo più preciso qui.
+        </p>
+    </remarks>
 </elementSpec>
