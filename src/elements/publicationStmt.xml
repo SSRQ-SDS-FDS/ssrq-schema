@@ -1,63 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="publicationStmt"
              module="header"
              mode="change">
-   <gloss xml:lang="de" versionDate="2023-04-25">Angaben zur Veröffentlichung</gloss>
-   <desc xml:lang="de" versionDate="2023-04-25">Gruppiert Angaben zur Publikation und Verbreitung
-        des bearbeiteten elektronischen Stück. Das Datum der Veröffentlichung wird automatisch im
-        Zuge der Vorbereitung selbiger ergänzt.
+    <gloss xml:lang="de" versionDate="2023-07-18">Angaben zur Publikation</gloss>
+    <gloss xml:lang="en" versionDate="2023-07-18">Publication statement</gloss>
+    <gloss xml:lang="fr" versionDate="2023-07-18">Informations sur la publication</gloss>
+    <gloss xml:lang="it" versionDate="2023-07-18">Informazioni sulla pubblicazione</gloss>
+    <desc xml:lang="de" versionDate="2023-07-18">Enthält Elemente zur Beschreibung der Publikation und Verbreitung des
+        bearbeiteten Stücks.
     </desc>
-   <gloss xml:lang="en" versionDate="2023-04-25">Publication details</gloss>
-   <desc xml:lang="en" versionDate="2023-04-25">Groups information on the publication and
-        dissemination of the edited electronic piece. The date of publication is automatically added
-        in the course of preparing the publication.
+    <desc xml:lang="en" versionDate="2023-07-18">Contains elements describing the publication and distribution of the
+        edited piece.
     </desc>
-   <gloss xml:lang="fr" versionDate="2023-04-25">Informations sur la publication</gloss>
-   <desc xml:lang="fr" versionDate="2023-04-25">Regroupe les données relatives à la publication et
-        à la diffusion de la pièce électronique traitée. La date de publication est automatiquement
-        ajoutée lors de la préparation de la publication.
+    <desc xml:lang="fr" versionDate="2023-07-18">Contient des éléments décrivant la publication et la diffusion de la
+        pièce éditée.
     </desc>
-   <classes mode="replace"/>
-   <content>
-      <sequence>
-         <elementRef key="publisher" minOccurs="1" maxOccurs="1"/>
-         <sequence minOccurs="0" maxOccurs="1">
-            <elementRef key="date"/>
-            <elementRef key="date" minOccurs="0" maxOccurs="1"/>
-         </sequence>
-         <elementRef key="availability" minOccurs="1" maxOccurs="1"/>
-      </sequence>
-   </content>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-25">
-      <p>Angaben zur Publikation mit Datum</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <publicationStmt>
-            <publisher>SSRQ-SDS-FDS</publisher>
-            <date type="electronic" when-custom="2019-08-15"/>
-            <date type="print" when-custom="2020-11-20"/>
-            <availability>
-               <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA
+    <desc xml:lang="it" versionDate="2023-07-18">Contiene elementi che descrivono la pubblicazione e la distribuzione
+        del brano editato.
+    </desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="publisher"/>
+            <sequence minOccurs="0">
+                <!-- minOccurs="0" maxOccurs="2" does not work due to a bug in the TEI-Stylesheets.
+                     This workaround should be removed, once the bug is fixed. -->
+                <elementRef key="date"/>
+                <elementRef key="date" minOccurs="0"/>
+            </sequence>
+            <elementRef key="availability"/>
+        </sequence>
+    </content>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-25">
+        <p>Angaben zur Publikation mit Datum</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <publicationStmt>
+                <publisher>SSRQ-SDS-FDS</publisher>
+                <date type="electronic" when-custom="2019-08-15"/>
+                <date type="print" when-custom="2020-11-20"/>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA
                         4.0)
                     </licence>
-            </availability>
-         </publicationStmt>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-25">
-      <p>Informations sur la publication avec la date</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <publicationStmt>
-            <publisher>SSRQ-SDS-FDS</publisher>
-            <date type="electronic" when-custom="2019-08-15"/>
-            <date type="print" when-custom="2020-11-20"/>
-            <availability>
-               <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA
+                </availability>
+            </publicationStmt>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-25">
+        <p>Informations sur la publication avec la date</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <publicationStmt>
+                <publisher>SSRQ-SDS-FDS</publisher>
+                <date type="electronic" when-custom="2019-08-15"/>
+                <date type="print" when-custom="2020-11-20"/>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA
                         4.0)
                     </licence>
-            </availability>
-         </publicationStmt>
-      </egXML>
-   </exemplum>
+                </availability>
+            </publicationStmt>
+        </egXML>
+    </exemplum>
 </elementSpec>
