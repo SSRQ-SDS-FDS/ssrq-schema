@@ -1,43 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="listBibl"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-30">Informationscontainer zur Erfassung von
-        ungedruckten und gedruckten Quellen sowie Literaturangaben.</desc>
-   <desc xml:lang="en" versionDate="2023-05-30">Information container for recording unprinted and
-        printed sources as well as references.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-30">Conteneur d'informations pour la saisie des sources
-        non imprimées et imprimées ainsi que des références bibliographiques.</desc>
-   <classes mode="replace">
-      <memberOf key="model.biblLike"/>
-      <memberOf key="att.typed"/>
-   </classes>
-   <content>
-      <elementRef key="bibl" minOccurs="1" maxOccurs="unbounded"/>
-   </content>
-   <attList>
-      <attDef ident="type" mode="change" usage="req">
-         <datatype>
-            <dataRef key="ssrq.bibl.types"/>
-         </datatype>
-      </attDef>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Verweise auf Regsten</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <listBibl type="summary">
-            <bibl>Rigendinger 2007, S. 221–223</bibl>
-         </listBibl>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Références à Regsten</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <listBibl type="summary">
-            <bibl>Rigendinger 2007, S. 221–223</bibl>
-         </listBibl>
-      </egXML>
-   </exemplum>
+    <desc xml:lang="de" versionDate="2023-07-19">Enthält mit <gi>bibl</gi> kodierte bibliographische Angaben.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-07-19">Contains bibliographic information encoded with <gi>bibl</gi>.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-07-19">Contient des informations bibliographiques encodées avec <gi>bibl</gi>.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-07-19">Contiene informazioni bibliografiche codificate con <gi>bibl</gi>.
+    </desc>
+    <classes mode="replace">
+        <memberOf key="att.typed"/>
+        <memberOf key="model.biblLike"/>
+    </classes>
+    <content>
+        <elementRef key="bibl" maxOccurs="unbounded"/>
+    </content>
+    <attList>
+        <attDef ident="type" mode="change" usage="req">
+            <datatype>
+                <dataRef key="ssrq.bibl.types"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Verweise auf Regsten</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <listBibl type="summary">
+                <bibl>Rigendinger 2007, S. 221–223</bibl>
+            </listBibl>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Références à Regsten</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <listBibl type="summary">
+                <bibl>Rigendinger 2007, S. 221–223</bibl>
+            </listBibl>
+        </egXML>
+    </exemplum>
 </elementSpec>
