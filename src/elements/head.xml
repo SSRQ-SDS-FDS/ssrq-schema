@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
              ident="head"
              module="core"
              mode="change">
-    <desc xml:lang="de" versionDate="2023-05-26">Enthält als Teil des <gi>teiHeader</gi> den Titel
-        des Dokuments und als Teil von <gi>listBibl</gi> die Beschreibung des zitierten Kurztitels
-        als Edition, Regest oder Literatur. In <gi>body</gi> die Überschrift eines Kapitels oder
-        Unterkapitels. Innerhalb von <gi>figure</gi> enthält <gi>head</gi> die Legende einer
-        Abbildung, einer Graphik, eines Stammbaumes etc.
-    </desc>
-    <desc xml:lang="en" versionDate="2023-05-26">Contains as part of <gi>teiHeader</gi> the title of
-        the document and as part of <gi>listBibl</gi> the description of the cited short title as
-        edition, regest or literature. In <gi>body</gi> the heading of a chapter or subchapter.
-        Within <gi>figure</gi>, <gi>head</gi> contains the legend of an illustration, a graph, a
-        family tree etc.
-    </desc>
-    <desc xml:lang="fr" versionDate="2023-05-26">Contient comme partie de <gi>teiHeader</gi> le
-        titre du document et comme partie de <gi>listBibl</gi> la description du titre court cité
-        comme édition, regest ou littérature. Dans <gi>body</gi>, le titre d'un chapitre ou d'un
-        sous-chapitre. A l'intérieur de <gi>figure</gi>, <gi>head</gi> contient la légende d'une
-        illustration, d'un graphique, d'un arbre généalogique, etc.
-    </desc>
+    <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Überschrift oder einen Titel.</desc>
+    <desc xml:lang="en" versionDate="2023-07-19">Contains a heading or title.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-19">Contient un en-tête ou un titre.</desc>
+    <desc xml:lang="it" versionDate="2023-07-19">Contiene un'intestazione o un titolo.</desc>
     <classes mode="replace">
-        <memberOf key="model.headLike"/>
         <memberOf key="att.global"/>
         <memberOf key="att.global.responsibility"/>
         <memberOf key="att.placement"/>
         <memberOf key="att.typed"/>
         <memberOf key="att.written"/>
+        <memberOf key="model.headLike"/>
     </classes>
     <content>
-        <alternate minOccurs="1" maxOccurs="unbounded">
+        <alternate maxOccurs="unbounded">
             <elementRef key="bibl"/>
             <macroRef key="ssrq.content.default"/>
         </alternate>
     </content>
     <attList>
+        <attDef ident="cert" mode="delete"/>
         <attDef ident="place" mode="change">
             <datatype>
                 <rng:choice>
@@ -51,7 +41,6 @@
                 <dataRef key="ssrq.struct.head"/>
             </datatype>
         </attDef>
-        <attDef ident="cert" mode="delete"/>
         <attDef ident="xml:id" mode="delete"/>
     </attList>
     <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
@@ -62,7 +51,7 @@
             <head resp="PS">Erbrecht</head>
         </egXML>
     </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
         <p>Titre ajouté par l'éditeur pour mieux structurer le texte</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <head resp="PS">Erbrecht</head>
@@ -94,4 +83,28 @@
             </figure>
         </egXML>
     </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-19">
+        <p>Enthält als Teil des <gi>teiHeader</gi> den Titel des Dokuments und als Teil von <gi>listBibl</gi> die
+            Beschreibung des zitierten Kurztitels; in <gi>body</gi> die Überschrift eines Kapitels oder
+            Unterkapitels, in <gi>figure</gi> die Legende einer Abbildung, einer Graphik, eines Stammbaumes etc.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-19">
+        <p>Contains the title of the document as part of the <gi>teiHeader</gi> and the description of the cited short
+            title as part of <gi>listBibl</gi>; in <gi>body</gi> the heading of a chapter or subchapter,
+            in <gi>figure</gi> the legend of an illustration, a graphic, a family tree etc.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-19">
+        <p>Contient le titre du document dans le cadre de <gi>teiHeader</gi> et la description du titre abrégé cité dans
+            le cadre de <gi>listBibl</gi> ; en <gi>body</gi> le titre d'un chapitre ou d'un sous-chapitre,
+            en <gi>figure</gi> la légende d'une illustration, d'un graphique, d'un arbre généalogique etc.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-19">
+        <p>Contiene il titolo del documento come parte del <gi>teiHeader</gi> e la descrizione del titolo breve citato
+            come parte della <gi>listBibl</gi>; in <gi>body</gi> l'intestazione di un capitolo o sottocapitolo,
+            in <gi>figure</gi> la legenda di un'illustrazione, di un grafico, di un albero genealogico ecc.
+        </p>
+    </remarks>
 </elementSpec>
