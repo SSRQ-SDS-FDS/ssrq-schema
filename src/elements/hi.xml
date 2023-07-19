@@ -1,123 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
              ident="hi"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-23">Zeichnet die graphische Hervorhebung eines
-        Buchstabens, eines Wortes oder eines Satzes aus. Punkte vor hochgestellten Buchstaben bei
-        Aufzählungen, Datierungen, Abkürzungen usw. werden nicht berücksichtigt.</desc>
-   <desc xml:lang="en" versionDate="2023-05-23">Indicates the graphic emphasis of a letter, word or
-        sentence. Dots in front of superscript letters in enumerations, dating, abbreviations, etc.
-        are not taken into account.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-23">Distingue la mise en évidence graphique d'une
-        lettre, d'un mot ou d'une phrase. Les points placés devant les lettres en exposant dans les
-        énumérations, les datations, les abréviations, etc.</desc>
-   <classes mode="replace">
-      <memberOf key="model.hiLike"/>
-      <memberOf key="att.global.rendition"/>
-      <memberOf key="att.written"/>
-   </classes>
-   <content>
-      <rng:oneOrMore>
-         <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-   </content>
-   <attList>
-      <attDef ident="rend" mode="replace" usage="req">
-         <desc xml:lang="de" versionDate="2023-05-23">Zeigt an, wie ein fragliches Zeichen im
-                Originaltext aussieht.</desc>
-         <desc xml:lang="fr" versionDate="2023-05-23">Indique à quoi ressemble un caractère en
-                question dans le texte original.</desc>
-         <desc xml:lang="en" versionDate="2023-05-23">Indicates what a character in question
-                looks like in the original text.</desc>
-         <valList type="closed">
-            <valItem ident="center">
-               <desc xml:lang="de" versionDate="2023-05-23">zentriert</desc>
-               <desc xml:lang="fr" versionDate="2023-05-23">centré</desc>
-               <desc xml:lang="en" versionDate="2023-05-23">centered</desc>
-               <desc xml:lang="it" versionDate="2023-05-23">centrato</desc>
-            </valItem>
-            <valItem ident="framed">
-               <desc xml:lang="de" versionDate="2023-05-23">umrandet</desc>
-               <desc xml:lang="fr" versionDate="2023-05-23">encadré</desc>
-               <desc xml:lang="en" versionDate="2023-05-23">framed</desc>
-               <desc xml:lang="it" versionDate="2023-05-23">scatola</desc>
-            </valItem>
-            <valItem ident="font_change">
-               <desc xml:lang="de" versionDate="2023-05-23">Schriftwechsel</desc>
-               <desc xml:lang="fr" versionDate="2023-05-23">changement de police</desc>
-               <desc xml:lang="en" versionDate="2023-05-23">font change</desc>
-               <desc xml:lang="it" versionDate="2023-05-23">modifica dei caratteri</desc>
-            </valItem>
-            <valItem ident="italic">
-               <desc xml:lang="de" versionDate="2023-05-23">kursiv</desc>
-               <desc xml:lang="fr" versionDate="2023-05-23">cursif</desc>
-               <desc xml:lang="en" versionDate="2023-05-23">italic</desc>
-               <desc xml:lang="it" versionDate="2023-05-23">corsivo</desc>
-            </valItem>
-            <valItem ident="left">
-               <desc xml:lang="de" versionDate="2023-05-23">linksbündig</desc>
-               <desc xml:lang="fr" versionDate="2023-05-23">aligné à gauche</desc>
-               <desc xml:lang="en" versionDate="2023-05-23">left</desc>
-               <desc xml:lang="it" versionDate="2023-05-23">allineato a sinistra</desc>
-            </valItem>
-            <valItem ident="outdent">
-               <desc xml:lang="de" versionDate="2023-05-23">Durch hängenden Einzug
-                        hervorgehoben</desc>
-               <desc xml:lang="fr" versionDate="2023-05-23">dans la marge</desc>
-               <desc xml:lang="en" versionDate="2023-05-23">outdent</desc>
-               <desc xml:lang="it" versionDate="2023-05-23">a margine</desc>
-            </valItem>
-            <valItem ident="right">
-               <desc xml:lang="de" versionDate="2023-05-23">rechtssbündig</desc>
-               <desc xml:lang="fr" versionDate="2023-05-23">aligné à droite</desc>
-               <desc xml:lang="en" versionDate="2023-05-23">right</desc>
-               <desc xml:lang="it" versionDate="2023-05-23">allineato a destra </desc>
-            </valItem>
-            <valItem ident="rubricated">
-               <desc xml:lang="de" versionDate="2023-05-23">rubriziert</desc>
-               <desc xml:lang="fr" versionDate="2023-05-23">rubriqué</desc>
-               <desc xml:lang="en" versionDate="2023-05-23">rubricated</desc>
-               <desc xml:lang="it" versionDate="2023-05-23">rubricato</desc>
-            </valItem>
-            <valItem ident="sup">
-               <desc xml:lang="de" versionDate="2023-05-23">hochgestellt</desc>
-               <desc xml:lang="fr" versionDate="2023-05-23">suscrit</desc>
-               <desc xml:lang="en" versionDate="2023-05-23">superscript</desc>
-               <desc xml:lang="it" versionDate="2023-05-23">sottoscritto</desc>
-            </valItem>
-            <valItem ident="underline">
-               <desc xml:lang="de" versionDate="2023-05-23">unterstrichen</desc>
-               <desc xml:lang="fr" versionDate="2023-05-23">souligné</desc>
-               <desc xml:lang="en" versionDate="2023-05-23">underlined</desc>
-               <desc xml:lang="it" versionDate="2023-05-23">sottolineato</desc>
-            </valItem>
-         </valList>
-      </attDef>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Auszeichnung hochgestellter Buchstaben</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples"> deß 1729<hi rend="sup">ten</hi> jahrs </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Distinction des lettres en exposant</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples"> deß 1729<hi rend="sup">ten</hi> jahrs </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Beispiele einer Unterstreichung von späterer Hand – das Attribut hand
-            ist ein Verweis auf eine handNote</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <hi rend="underline" hand="laterHand">unterstrichener Text mit anderer Tinte</hi>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-      <p>Exemples de soulignement par une main ultérieure - l'attribut hand
-            est une référence à une handNote</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <hi rend="underline" hand="laterHand">unterstrichener Text mit anderer Tinte</hi>
-      </egXML>
-   </exemplum>
+    <desc xml:lang="de" versionDate="2023-07-19">Beschreibt die graphische Hervorhebung von Text.</desc>
+    <desc xml:lang="en" versionDate="2023-07-19">Describes the graphical highlighting of text.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-19">Décrit la mise en surbrillance graphique du texte.</desc>
+    <desc xml:lang="it" versionDate="2023-07-19">Descrive l'evidenziazione grafica del testo.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global.rendition"/>
+        <memberOf key="att.written"/>
+        <memberOf key="model.hiLike"/>
+    </classes>
+    <content>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
+    </content>
+    <attList>
+        <attDef ident="rend" mode="replace" usage="req">
+            <desc xml:lang="de" versionDate="2023-05-23">Zeigt an, wie ein fragliches Zeichen im
+                Originaltext aussieht.
+            </desc>
+            <desc xml:lang="en" versionDate="2023-05-23">Indicates what a character in question
+                looks like in the original text.
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-05-23">Indique à quoi ressemble un caractère en
+                question dans le texte original.
+            </desc>
+            <desc xml:lang="it" versionDate="2023-05-23">Indica l'aspetto di un carattere in questione
+                nel testo originale.
+            </desc>
+            <valList type="closed">
+                <valItem ident="center">
+                    <desc xml:lang="de" versionDate="2023-05-23">zentriert</desc>
+                    <desc xml:lang="en" versionDate="2023-05-23">centered</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-23">centré</desc>
+                    <desc xml:lang="it" versionDate="2023-05-23">centrato</desc>
+                </valItem>
+                <valItem ident="framed">
+                    <desc xml:lang="de" versionDate="2023-05-23">umrandet</desc>
+                    <desc xml:lang="en" versionDate="2023-05-23">framed</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-23">encadré</desc>
+                    <desc xml:lang="it" versionDate="2023-05-23">scatola</desc>
+                </valItem>
+                <valItem ident="font_change">
+                    <desc xml:lang="de" versionDate="2023-05-23">Schriftwechsel</desc>
+                    <desc xml:lang="en" versionDate="2023-05-23">font change</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-23">changement de police</desc>
+                    <desc xml:lang="it" versionDate="2023-05-23">modifica dei caratteri</desc>
+                </valItem>
+                <valItem ident="italic">
+                    <desc xml:lang="de" versionDate="2023-05-23">kursiv</desc>
+                    <desc xml:lang="en" versionDate="2023-05-23">italic</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-23">cursif</desc>
+                    <desc xml:lang="it" versionDate="2023-05-23">corsivo</desc>
+                </valItem>
+                <valItem ident="left">
+                    <desc xml:lang="de" versionDate="2023-05-23">linksbündig</desc>
+                    <desc xml:lang="en" versionDate="2023-05-23">left</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-23">aligné à gauche</desc>
+                    <desc xml:lang="it" versionDate="2023-05-23">allineato a sinistra</desc>
+                </valItem>
+                <valItem ident="outdent">
+                    <desc xml:lang="de" versionDate="2023-05-23">hängender Einzug</desc>
+                    <desc xml:lang="en" versionDate="2023-05-23">outdent</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-23">dans la marge</desc>
+                    <desc xml:lang="it" versionDate="2023-05-23">a margine</desc>
+                </valItem>
+                <valItem ident="right">
+                    <desc xml:lang="de" versionDate="2023-05-23">rechtssbündig</desc>
+                    <desc xml:lang="en" versionDate="2023-05-23">right</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-23">aligné à droite</desc>
+                    <desc xml:lang="it" versionDate="2023-05-23">allineato a destra</desc>
+                </valItem>
+                <valItem ident="rubricated">
+                    <desc xml:lang="de" versionDate="2023-05-23">rubriziert</desc>
+                    <desc xml:lang="en" versionDate="2023-05-23">rubricated</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-23">rubriqué</desc>
+                    <desc xml:lang="it" versionDate="2023-05-23">rubricato</desc>
+                </valItem>
+                <valItem ident="sup">
+                    <desc xml:lang="de" versionDate="2023-05-23">hochgestellt</desc>
+                    <desc xml:lang="en" versionDate="2023-05-23">superscript</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-23">suscrit</desc>
+                    <desc xml:lang="it" versionDate="2023-05-23">sottoscritto</desc>
+                </valItem>
+                <valItem ident="underline">
+                    <desc xml:lang="de" versionDate="2023-05-23">unterstrichen</desc>
+                    <desc xml:lang="en" versionDate="2023-05-23">underlined</desc>
+                    <desc xml:lang="fr" versionDate="2023-05-23">souligné</desc>
+                    <desc xml:lang="it" versionDate="2023-05-23">sottolineato</desc>
+                </valItem>
+            </valList>
+        </attDef>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
+        <p>Auszeichnung hochgestellter Buchstaben</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">deß 1729<hi rend="sup">ten</hi> jahrs
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
+        <p>Distinction des lettres en exposant</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">deß 1729<hi rend="sup">ten</hi> jahrs
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
+        <p>Beispiele einer Unterstreichung von späterer Hand – das Attribut hand
+            ist ein Verweis auf eine handNote
+        </p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <hi rend="underline" hand="laterHand">unterstrichener Text mit anderer Tinte</hi>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
+        <p>Exemples de soulignement par une main ultérieure - l'attribut hand
+            est une référence à une handNote
+        </p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <hi rend="underline" hand="laterHand">unterstrichener Text mit anderer Tinte</hi>
+        </egXML>
+    </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-19">
+        <p>Die Rechtsquellenstiftung macht keine faksimilierenden Transkriptionen, weshalb Versalien, Einzüge etc. nicht
+            dargestellt werden. Punkte vor hochgestellten Buchstaben bei Aufzählungen, Datierungen, Abkürzungen usw.
+            werden nicht berücksichtigt.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-19">
+        <p>The Legal Sources Foundation does not make facsimile transcriptions, which is why capital letters,
+            indentations, etc. are not shown. Dots in front of superscript letters in enumerations, dates,
+            abbreviations, etc. are not taken into account.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-19">
+        <p>La Legal Sources Foundation ne fait pas de transcriptions en fac-similé, c'est pourquoi les majuscules, les
+            indentations, etc. ne sont pas indiquées. Les points devant les lettres en exposant dans les énumérations,
+            les dates, les abréviations, etc. ne sont pas pris en compte.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-19">
+        <p>La Legal Sources Foundation non effettua trascrizioni in facsimile, motivo per cui non vengono mostrate
+            lettere maiuscole, rientri, ecc. I punti davanti alle lettere in apice nelle enumerazioni, nelle date, nelle
+            abbreviazioni, ecc. non vengono presi in considerazione.
+        </p>
+    </remarks>
 </elementSpec>
