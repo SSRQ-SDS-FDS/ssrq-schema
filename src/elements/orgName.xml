@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -16,9 +19,12 @@
     <desc xml:lang="fr" versionDate="2023-03-28">Signale une organisation voire une institution
         comme p. e. monastère, confrérie, conseil, voisinage etc.
     </desc>
+    <desc xml:lang="it" versionDate="2023-03-28">Identifica un'organizzazione o un'istituzione,
+        come monasteri, corporazioni, consigli, quartieri, ecc.
+    </desc>
     <classes mode="replace">
-        <memberOf key="model.nameLike.agent"/>
         <memberOf key="att.naming"/>
+        <memberOf key="model.nameLike.agent"/>
     </classes>
     <content>
         <rng:oneOrMore>
@@ -49,7 +55,7 @@
     </constraintSpec>
     <attList>
         <attDef ident="key" mode="delete"/>
-        <attDef ident="ref" mode="change" module="att.canonical">
+        <attDef ident="ref" mode="change">
             <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung der Organisation mit der ID der
                 Personen- und Organisationsdatenbank.
             </desc>
@@ -58,6 +64,9 @@
             </desc>
             <desc xml:lang="fr" versionDate="2023-03-28">Relier l'organisation à l'ID de la base de
                 données des personnes et des organisations.
+            </desc>
+            <desc xml:lang="it" versionDate="2023-03-28">Associazione dell'organizzazione con l'ID
+                delle persone e database dell'organizzazione.
             </desc>
             <datatype>
                 <dataRef key="ssrq.pointer.org"/>
@@ -72,6 +81,9 @@
             </desc>
             <desc xml:lang="fr" versionDate="2023-03-28">Distinction du rôle d'une institutio dans
                 le texte source.
+            </desc>
+            <desc xml:lang="it" versionDate="2023-03-28">Segnalazione del ruolo di un'istituzione nel
+                testo di partenza.
             </desc>
             <datatype>
                 <dataRef key="ssrq.role.institution"/>
@@ -142,7 +154,7 @@
                 <item>Dominion association</item>
                 <item>Kirchgenossenschaft/Pfarrei (Attention: a Kirchhöre or a Kirchspiel can also be a place name)
                 </item>
-                <item>Convent of a monastery; here: Convent (attention: a monastery can also be a be a place name)
+                <item>Convent of a monastery; here: Convent (attention: a monastery can also be a place name)
                 </item>
                 <item>Boyship</item>
                 <item>Commission (e.g. building commission etc.)</item>
@@ -198,6 +210,36 @@
         </p>
         <p>L'éditeur de la série, ici toujours la Fondation des sources du droit, est désigné dans
             le <gi>respStmt</gi> est distingué par <gi>orgName</gi>.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-11">
+        <p>All'interno della raccolta delle fonti giuridiche svizzere, le seguenti entità sono contrassegnate come
+            organizzazioni:
+            <list>
+                <item>Gruppo di popolazione (ad es. ebrei)</item>
+                <item>Fratellanza</item>
+                <item>Sindaco e consiglio</item>
+                <item>Cittadinanza</item>
+                <item>Confederazione o gruppo di sedi federali (ad es. VII sedi) (se non è la località ma
+                    l'organizzazione).
+                </item>
+                <item>Convento del monastero; qui: convento (nota: un monastero può anche essere un nome di luogo)
+                </item>
+                <item>Fanciullezza</item>
+                <item>Commissione (ad es. commissione edilizia ecc.)</item>
+                <item>Società commerciale</item>
+                <item>Quartiere</item>
+                <item>Comunità d'uso</item>
+                <item>Ordine</item>
+                <item>Consiglio</item>
+                <item>Schützengesellscha ft</item>
+                <item>Fondazione</item>
+                <item>Cooperativa fiscale</item>
+                <item>Zunft</item>
+            </list>
+        </p>
+        <p>L'editore della serie, qui sempre la fondazione della fonte legale, è indicato <gi>orgName</gi> nel <gi>
+            respStmt</gi>.
         </p>
     </remarks>
 </elementSpec>
