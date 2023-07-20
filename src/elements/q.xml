@@ -1,52 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
              ident="q"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-31">Enthält in der Transkription Text in direkter Rede
-        (z. B. bei Zeugenaussagen), in der Darstellung typischerweise mit «» hervorgehoben. Zitate
-        und Inserte innerhalb eines Quellentextes werden hingegen mit <gi>quote</gi> ausgezeichnet.</desc>
-   <desc xml:lang="en" versionDate="2023-05-31">Contains text in direct speech in the transcription
-        (e.g. witness statements), typically highlighted with "" in the presentation. Quotations and
-        in-serts within a source text, on the other hand, are marked with <gi>quote</gi>.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-31">Contient du texte en discours direct dans la
-        transcription (par exemple, des déclarations de témoins), généralement mis en évidence par "
-        " dans la présentation. Les citations et les insertions à l'intérieur d'un texte source, en
-        revanche, sont marquées par <gi>quote</gi>.</desc>
-   <classes mode="replace">
-      <memberOf key="model.hiLike"/>
-   </classes>
-   <content>
-      <rng:oneOrMore>
-         <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-   </content>
-   <attList>
-      <attDef ident="type" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Exemplarische Auszeichnung direkter Rede</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples"> Der ander spricht: <q>Richt mich uß oder
-            ich will dirs stellen bey der buß.</q>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Distinction exemplaire du discours direct</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples"> Der ander spricht: <q>Richt mich uß oder
-            ich will dirs stellen bey der buß.</q>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Hervorhebung in editorischen Paratexten (Kommentare, Einleitung, etc.)</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples"> Der Buchstabe <q>v</q> wird in vokalischer
-            Position stets als <q>u</q> transkribiert. </egXML>
-   </exemplum>
-   <exemplum xml:lang="defr" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Mise en évidence dans les paratextes éditoriaux (commentaires,
-            introduction, etc.)</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples"> Der Buchstabe <q>v</q> wird in vokalischer
-            Position stets als <q>u</q> transkribiert. </egXML>
-   </exemplum>
+    <desc xml:lang="de" versionDate="2023-07-20">Enthält in der Transkription Text in direkter Rede.</desc>
+    <desc xml:lang="en" versionDate="2023-07-20">Contains text in direct speech in the transcription.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-20">Contient du texte au discours direct dans la transcription.</desc>
+    <desc xml:lang="it" versionDate="2023-07-20">Contiene testo in discorso diretto nella trascrizione.</desc>
+    <classes mode="replace">
+        <memberOf key="model.hiLike"/>
+    </classes>
+    <content>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
+    </content>
+    <attList>
+        <attDef ident="type" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Exemplarische Auszeichnung direkter Rede</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">Der ander spricht:
+            <q>Richt mich uß oder
+                ich will dirs stellen bey der buß.
+            </q>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Distinction exemplaire du discours direct</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">Der ander spricht:
+            <q>Richt mich uß oder
+                ich will dirs stellen bey der buß.
+            </q>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Hervorhebung in editorischen Paratexten (Kommentare, Einleitung, etc.)</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">Der Buchstabe <q>v</q> wird in vokalischer
+            Position stets als <q>u</q> transkribiert.
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Mise en évidence dans les paratextes éditoriaux (commentaires,
+            introduction, etc.)
+        </p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">Der Buchstabe <q>v</q> wird in vokalischer
+            Position stets als <q>u</q> transkribiert.
+        </egXML>
+    </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-20">
+        <p>
+            <gi>q</gi>
+            wird z. B. bei Zeugenaussagen verwendet. In der Darstellung wird der Tag mit Anführungszeichen
+            hervorgehoben. Zitate und Inserte innerhalb eines Quellentextes werden hingegen
+            mit <gi>quote</gi> ausgezeichnet.
+        </p>
+        <p>Wird in einem Quellenstück der Name eines Dokuments oder eines Gebets genannt, dann wird dieses nicht mit
+            dem Tag <gi>q</gi> oder <gi>quote</gi> ausgezeichnet, aber der Titel gross geschrieben. Das Gleiche gilt
+            für historische Werktitel innerhalb der Paratexte.
+        </p>
+        <p>Innerhalb der Paratexte (Anmerkungen, Kommentar, Einleitung) kann der Tag <gi>q</gi> bei modalisierender
+            Funktion, d. h. ironisierend, distanzierend, übertragen etc., oder für Hervorhebungen verwendet werden.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-20">
+        <p>
+            <gi>q</gi>
+            becomes e. g. used in witness statements. In the display, the tag is highlighted with quotation
+            marks. Quotations and inserts within a source text, on the other hand, are marked with <gi>quote</gi>.
+        </p>
+        <p>When a source piece mentions the name of a document or a prayer, it is not marked with
+            the <gi>q</gi> or <gi>quote</gi> tag, but the title is capitalized. The same applies to historical work
+            titles within the paratexts.
+        </p>
+        <p>Within the paratexts (notes, comments, introduction), the <gi>q</gi> tag can be used with a modalizing
+            function, i. e. ironic, distancing, transferred etc., or used for emphasis.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-20">
+        <p>
+            <gi>q</gi>
+            devient par ex. utilisé dans les déclarations de témoins. Dans l'affichage, la balise est mise
+            en surbrillance avec des guillemets. Les citations et les insertions dans un texte source, en revanche, sont
+            signalées par <gi>quote</gi>.
+        </p>
+        <p>Lorsqu'une pièce source mentionne le nom d'un document ou d'une prière, elle n'est pas marquée de la
+            balise <gi>q</gi> ou <gi>quote</gi>, mais le titre est en majuscule. Il en va de même pour les titres
+            d'œuvres historiques dans les paratextes.
+        </p>
+        <p>Dans les paratextes (notes, commentaires, introduction), la balise <gi>q</gi> peut être utilisée avec une
+            fonction modalisante, i. e. ironique, distanciant, transféré etc., ou utilisé pour l'emphase.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-20">
+        <p>
+            <gi>q</gi>
+            diventa ad es. utilizzato nelle dichiarazioni dei testimoni. Nella visualizzazione, il tag è
+            evidenziato tra virgolette. Le citazioni e gli inserti all'interno di un testo sorgente, invece, sono
+            contrassegnati con <gi>quote</gi>.
+        </p>
+        <p>Quando un pezzo sorgente menziona il nome di un documento o di una preghiera, non è contrassegnato con il
+            tag <gi>q</gi> o <gi>quote</gi>, ma il titolo è in maiuscolo. Lo stesso vale per i titoli di opere storiche
+            all'interno dei paratesti.
+        </p>
+        <p>All'interno dei paratesti (note, commenti, introduzione), il tag <gi>q</gi> può essere utilizzato con una
+            funzione di modalizzazione, i. e. ironico, distaccato, trasferito ecc. o usato per enfatizzare.
+        </p>
+    </remarks>
 </elementSpec>
