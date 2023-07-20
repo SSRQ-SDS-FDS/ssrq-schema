@@ -7,13 +7,21 @@
              ident="pb"
              module="core"
              mode="change">
+    <desc xml:lang="de" versionDate="2023-07-20">Beschreibt einen Seitenanfang im Original.</desc>
+    <desc xml:lang="en" versionDate="2023-07-20">Describes the beginning of a page in the original.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-20">Décrit le début d'une page dans l'original.</desc>
+    <desc xml:lang="it" versionDate="2023-07-20">Descrive l'inizio di una pagina nell'originale.</desc>
     <classes mode="replace">
-        <memberOf key="model.milestoneLike"/>
         <memberOf key="att.global"/>
         <memberOf key="att.global.facs"/>
         <memberOf key="att.typed"/>
+        <memberOf key="model.milestoneLike"/>
     </classes>
+    <content>
+        <empty/>
+    </content>
     <attList>
+        <attDef ident="break" mode="delete"/>
         <attDef ident="n" mode="replace">
             <desc xml:lang="de" versionDate="2023-07-15">Angabe der originalen Paginierung, Foliierung oder
                 Abschnittszählung.
@@ -33,19 +41,19 @@
         </attDef>
         <attDef ident="type" mode="replace">
             <desc xml:lang="de" versionDate="2023-06-16">Typ des Seitenfangs</desc>
-            <desc xml:lang="fr" versionDate="2023-06-16">Type d'appendice latéral</desc>
             <desc xml:lang="en" versionDate="2023-06-16">Type of page change</desc>
+            <desc xml:lang="fr" versionDate="2023-06-16">Type d'appendice latéral</desc>
+            <desc xml:lang="it" versionDate="2023-06-16">Tipo di cambio pagina</desc>
             <valList type="closed">
                 <valItem ident="original">
                     <desc xml:lang="de" versionDate="2023-04-06">Originalseitenwechsel</desc>
-                    <desc xml:lang="it" versionDate="2023-04-06">Impaginazione originale</desc>
                     <desc xml:lang="en" versionDate="2023-04-06">Original pagination</desc>
                     <desc xml:lang="fr" versionDate="2023-04-06">Saut de page original</desc>
+                    <desc xml:lang="it" versionDate="2023-04-06">Impaginazione originale</desc>
                 </valItem>
             </valList>
         </attDef>
         <attDef ident="xml:lang" mode="delete"/>
-        <attDef ident="break" mode="delete"/>
     </attList>
     <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
         <p>Beispiel für eine Originalfoliierung:</p>
@@ -124,4 +132,89 @@
             </p>
         </egXML>
     </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-20">
+        <p>
+            <gi>pb</gi>
+            wird am Anfang der Seite aufgeführt und enthält in der Regel die Foliierung [z. B. n="109v"]
+            oder Paginierung [z. B. n="22"] in <att>n</att>. Eine Originalpaginierung oder Originalfoliierung wird
+            mit <att>type</att> = <val>original</val> gekennzeichnet. Es wird bei einer Quelle mit Originalfoliierung
+            auch die Versoseite mit <att>type</att> = <val>original</val> ausgezeichnet.
+        </p>
+        <p>Wenn ein Quellentext lediglich eine Seite umfasst (z. B. Urkunde), wird <gi>pb</gi> nur fürs Verlinken mit
+            den Faksimiles benötigt. Wenn ein Text über Vorderseite und Rückseite eines Einzelblatts verläuft
+            (2 Seiten), wird <gi>pb</gi> ohne Attribute auf der ersten und zweiten Seite gesetzt. Ab drei Seiten wird
+            mit <att>n</att> nummeriert. Bei einem Rodel wird an der Stelle, an der ein neues Pergament angenäht wurde,
+            der Seitenwechsel angemerkt. Bei mehreren Titelblättern oder Vorsatzblätter vor Beginn des eigentlichen
+            Inhalts und der eigentlichen Paginierung empfiehlt sich eine Blattzählung <att>n</att> mit römischen
+            +Ziffern (I, II, III, IV etc.), wie bei Handschriften üblich. Bei Drucken beginnt die Blattzählung
+            (Foliierung) mit dem Titelblatt. Das Titelblatt wird nicht speziell ausgezeichnet. Eine vorhandene Seiten-
+            oder Blattzählung wird übernommen und mit <att>type</att> = <val>original</val> versehen. Leere Blätter
+            oder leere Seiten werden mitgezählt. Besteht keine originale Seitenzählung, wird eine Blattzählung
+            eingeführt. Bogensignaturen werden nicht transkribiert.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-20">
+        <p>
+            <gi>pb</gi>
+            is listed at the top of the page and usually contains the foliation [e.g. n="109v"] or
+            pagination [e.g. n="22"] in <att>n</att>. An original pagination or original foliation is marked
+            with <att>type</att> = <val>original</val>. In the case of a source with original foiling, the verso is
+            also marked with <att>type</att> = <val>original</val>.
+        </p>
+        <p>If a source text is only one page long (e.g. a certificate), <gi>pb</gi> is only required for linking to the
+            facsimiles. If a text runs over the front and back of a single sheet (2 pages), <gi>pb</gi> is set without
+            attributes on the first and second page. Pages of three or more are numbered with <att>n</att>. On a
+            toboggan, the change of sides is noted at the point where a new piece of parchment was sewn on. If there are
+            several title pages or flyleaves before the beginning of the actual content and the actual pagination, it is
+            advisable to number the pages <att>n</att> with Roman +numerals (I, II, III, IV etc.), as is usual with
+            manuscripts. When printing, sheet counting (foliation) begins with the title sheet. The title page is not
+            specially marked. An existing page or sheet number is adopted and provided
+            with <att>type</att> = <val>original</val>. Blank sheets or blank pages are counted. If there is no
+            original page number, a page number is introduced. Sheet signatures are not transcribed.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-20">
+        <p>
+            <gi>pb</gi>
+            est répertorié en haut de la page et contient généralement la foliation [par ex. n="109v"] ou la pagination
+            [par ex. n="22"] dans <att>n</att>. Une pagination originale ou une foliation originale est marquée
+            par <att>type</att> = <val>original</val>. Dans le cas d'une source avec feuille d'origine, le verso est
+            également marqué avec <att>type</att> = <val>original</val>.
+        </p>
+        <p>Si un texte source ne fait qu'une page (par exemple, un certificat), <gi>pb</gi> n'est requis que pour
+            le lien vers les facsimilés. Si un texte s'étend sur le recto et le verso d'une seule feuille
+            (2 pages), <gi>pb</gi> est défini sans attributs sur la première et la deuxième page. Les pages de trois ou
+            plus sont numérotées avec <att>n</att>. Sur un toboggan, le changement de côté est noté à l'endroit où un
+            nouveau morceau de parchemin a été cousu. S'il y a plusieurs pages de titre ou pages de garde avant le
+            début du contenu proprement dit et la pagination proprement dite, il est conseillé de numéroter les
+            pages <att>n</att> avec des chiffres romains + (I, II, III, IV etc.), comme il est d'usage pour les
+            manuscrits. Lors de l'impression, le comptage des feuilles (foliation) commence par la feuille de titre.
+            La page de titre n'est pas spécialement marquée. Un numéro de page ou de feuille existant est adopté et
+            fourni avec <att>type</att> = <val>original</val>. Les feuilles blanches ou les pages blanches sont
+            comptées. S'il n'y a pas de numéro de page d'origine, un numéro de page est introduit. Les signatures de
+            feuille ne sont pas transcrites.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-20">
+        <p>
+            <gi>pb</gi>
+            è elencato nella parte superiore della pagina e di solito contiene la foliazione [ad es.
+            n="109v"] o impaginazione [ad es. n="22"] in <att>n</att>. Un'impaginazione originale o una foliazione
+            originale è contrassegnata con <att>type</att> = <val>original</val>. Nel caso di una fonte con sventatura
+            originale, anche il verso è contrassegnato con <att>type</att> = <val>original</val>.
+        </p>
+        <p>Se un testo sorgente è lungo solo una pagina (ad esempio un certificato), <gi>pb</gi> è richiesto solo
+            per il collegamento ai facsimili. Se un testo scorre su fronte e retro di un singolo foglio
+            (2 pagine), <gi>pb</gi> viene impostato senza attributi sulla prima e sulla seconda pagina. Le pagine di
+            tre o più sono numerate con <att>n</att>. Su uno slittino si nota il cambio di lato nel punto in cui è
+            stato cucito un nuovo pezzo di pergamena. Se sono presenti più frontespizi o carte di guardia prima
+            dell'inizio del contenuto vero e proprio e dell'effettiva impaginazione, si consiglia di numerare le
+            pagine <att>n</att> con numeri romani + (I, II, III, IV ecc.), come si usa nei manoscritti. Durante la
+            stampa, il conteggio dei fogli (foliazione) inizia con il foglio del titolo. Il frontespizio non è
+            particolarmente contrassegnato. Viene adottato un numero di pagina o di foglio esistente e fornito
+            con <att>type</att> = <val>original</val>. Vengono conteggiati i fogli o le pagine bianche. Se non esiste
+            un numero di pagina originale, viene introdotto un numero di pagina. Le segnature dei fogli non vengono
+            trascritte.
+        </p>
+    </remarks>
 </elementSpec>
