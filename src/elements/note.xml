@@ -24,7 +24,7 @@
         <memberOf key="att.typed"/>
     </classes>
     <content>
-        <alternate minOccurs="1" maxOccurs="unbounded">
+        <alternate maxOccurs="unbounded">
             <macroRef key="ssrq.content.default"/>
             <elementRef key="bibl"/>
             <elementRef key="ref"/>
@@ -32,10 +32,18 @@
     </content>
     <attList>
         <attDef ident="type" mode="replace">
-            <desc xml:lang="de" versionDate="2023-07-07">Art der Anmerkung; wird dieses Attribut nicht vergeben, dann handelt es sich um eine Anmerkung der Editor:innen.</desc>
-            <desc xml:lang="en" versionDate="2023-07-07">Type of annotation; if this attribute is not assigned, then it is an annotation by the editor.</desc>
-            <desc xml:lang="fr" versionDate="2023-07-07">Type d'annotation ; si cet attribut n'est pas attribué, il s'agit d'une annotation de l'éditeur.</desc>
-            <desc xml:lang="it" versionDate="2023-07-07">Tipo di annotazione; se questo attributo non è assegnato, si tratta di un'annotazione dell'editore.</desc>
+            <desc xml:lang="de" versionDate="2023-07-07">Art der Anmerkung; wird dieses Attribut nicht vergeben, dann
+                handelt es sich um eine Anmerkung der Editor:innen.
+            </desc>
+            <desc xml:lang="en" versionDate="2023-07-07">Type of annotation; if this attribute is not assigned, then it
+                is an annotation by the editor.
+            </desc>
+            <desc xml:lang="fr" versionDate="2023-07-07">Type d'annotation ; si cet attribut n'est pas attribué, il
+                s'agit d'une annotation de l'éditeur.
+            </desc>
+            <desc xml:lang="it" versionDate="2023-07-07">Tipo di annotazione; se questo attributo non è assegnato, si
+                tratta di un'annotazione dell'editore.
+            </desc>
             <valList type="closed">
                 <valItem ident="original">
                     <desc xml:lang="de" versionDate="2023-07-07">Anmerkung im Original</desc>
@@ -50,9 +58,8 @@
         <p>Ein <gi>note</gi>-Element folgt unmittelbar auf das Bezugswort im Editionstext. Wird
             Originaltext zitiert, wird dieser mit <gi>orig</gi> ausgezeichnet.
         </p>
-        <p>Handelt es sich um eine Anmerkung im Original wird das Attribut <att>type</att> mit dem Wert
-            <val>original</val>
-            verwendet.
+        <p>Handelt es sich um eine Anmerkung im Original wird das Attribut <att>type</att> mit dem
+            Wert <val>original</val> verwendet.
         </p>
     </remarks>
     <remarks xml:lang="en" versionDate="2023-07-07">
@@ -67,9 +74,8 @@
         <p>Un élément <gi>note</gi> suit immédiatement le mot de référence dans le texte de l'édition. Si le texte
             original est cité, il est marqué avec <gi>orig</gi>.
         </p>
-        <p>S'il s'agit d'une annotation dans l'original, l'attribut <att>type</att> avec la valeur
-            <val>original</val>
-            est utilisé.
+        <p>S'il s'agit d'une annotation dans l'original, l'attribut <att>type</att> avec la
+            valeur <val>original</val> est utilisé.
         </p>
     </remarks>
     <remarks xml:lang="it" versionDate="2023-07-07">
