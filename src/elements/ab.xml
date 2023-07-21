@@ -3,10 +3,13 @@
         href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="ab" module="linking" mode="change"
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-             xmlns:xi="http://www.w3.org/2001/XInclude">
+             xmlns:xi="http://www.w3.org/2001/XInclude"
+             ident="ab"
+             module="linking"
+             mode="change">
     <gloss xml:lang="de" versionDate="2023-06-30">Anonymer Textblock</gloss>
     <gloss xml:lang="en" versionDate="2023-06-30">anonymous block</gloss>
     <gloss xml:lang="fr" versionDate="2023-06-30">bloc anonyme</gloss>
@@ -52,10 +55,7 @@
         </constraint>
     </constraintSpec>
     <attList>
-        <!-- att.global -->
         <attDef ident="n" mode="delete"/>
-        <attDef ident="xml:id" mode="delete"/>
-        <!-- att.placement -->
         <attDef ident="place" mode="replace" usage="req">
             <desc xml:lang="de" versionDate="2023-05-02">Ort einer Dorsualnotiz, eines Vermerks, eines
                 Registraturvermerks oder eines Kanzleivermerks
@@ -76,7 +76,6 @@
                 </rng:choice>
             </datatype>
         </attDef>
-        <!-- att.typed -->
         <attDef ident="type" mode="replace" usage="req">
             <desc xml:lang="de" versionDate="2023-05-02">Klassifikation des Elements</desc>
             <desc xml:lang="en" versionDate="2023-05-02">Classification of the element</desc>
@@ -133,6 +132,7 @@
                 </valItem>
             </valList>
         </attDef>
+        <attDef ident="xml:id" mode="delete"/>
     </attList>
     <xi:include href="examples.xml" xpointer="ex-ab-de"/>
     <xi:include href="examples.xml" xpointer="ex-ab-fr"/>
