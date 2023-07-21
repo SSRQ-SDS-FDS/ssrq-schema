@@ -5,6 +5,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="signed"
              module="textstructure"
              mode="change">
@@ -29,42 +30,10 @@
             <rng:ref name="ssrq.content.default"/>
         </rng:oneOrMore>
     </content>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-        <p>Einfaches Beispiel für eine Unterschrift</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <signed>
-                <persName ref="per008827">Jean Jacques Purry</persName>
-                <figure type="notarial sign"/>
-            </signed>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-23">
-        <p>Simple example of a signature</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <signed>
-                <persName ref="per008827">Jean Jacques Purry</persName>
-                <figure type="notarial sign"/>
-            </signed>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
-        <p>Exemple simple de signature</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <signed>
-                <persName ref="per008827">Jean Jacques Purry</persName>
-                <figure type="notarial sign"/>
-            </signed>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-23">
-        <p>Semplice esempio di firma</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <signed>
-                <persName ref="per008827">Jean Jacques Purry</persName>
-                <figure type="notarial sign"/>
-            </signed>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-figure-1-de"/>
+    <xi:include href="examples.xml" xpointer="ex-figure-1-en"/>
+    <xi:include href="examples.xml" xpointer="ex-figure-1-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-figure-1-it"/>
     <remarks xml:lang="de" versionDate="2023-07-14">
         <p>Folgen nach einer Unterschrift noch verschiedene Vermerke (<gi>ab</gi>), dann muss <gi>signed</gi> innerhalb
             eines <gi>div</gi> stehen.
