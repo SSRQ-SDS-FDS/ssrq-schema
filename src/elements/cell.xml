@@ -5,6 +5,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="cell"
              module="figures"
              mode="change">
@@ -20,62 +21,10 @@
             <rng:ref name="ssrq.content.default"/>
         </rng:oneOrMore>
     </content>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-03">
-        <p>Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten
-            drei Spalten mit «gbz», «xr» bzw. «dn» überschrieben werden:
-        </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <table>
-                <head>Von dem wein</head>
-                <row>
-                    <cell/>
-                    <cell role="label">gbz</cell>
-                    <cell role="label">xr</cell>
-                    <cell role="label">₰</cell>
-                </row>
-                <row>
-                    <cell>für j saum wein</cell>
-                    <cell>–</cell>
-                    <cell>1</cell>
-                    <cell>–</cell>
-                </row>
-                <row>
-                    <cell>für j lägelen wein</cell>
-                    <cell>–</cell>
-                    <cell>–</cell>
-                    <cell>2</cell>
-                </row>
-            </table>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-03">
-        <p>Exemple d'une liste de prix de vin avec quatre colonnes dont les dernières
-            trois sont intitulées «gbz», «xr» et «dn» :
-        </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <table>
-                <head>Von dem wein</head>
-                <row>
-                    <cell/>
-                    <cell role="label">gbz</cell>
-                    <cell role="label">xr</cell>
-                    <cell role="label">₰</cell>
-                </row>
-                <row>
-                    <cell>für j saum wein</cell>
-                    <cell>–</cell>
-                    <cell>1</cell>
-                    <cell>–</cell>
-                </row>
-                <row>
-                    <cell>für j lägelen wein</cell>
-                    <cell>–</cell>
-                    <cell>–</cell>
-                    <cell>2</cell>
-                </row>
-            </table>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-cell-de"/>
+    <xi:include href="examples.xml" xpointer="ex-cell-en"/>
+    <xi:include href="examples.xml" xpointer="ex-cell-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-cell-it"/>
     <remarks xml:lang="de" versionDate="2023-07-11">
         <p>Wird innerhalb von <gi>table</gi> zusammen mit <gi>row</gi> (Zeile) für die Darstellung von Tabellen
             benötigt. Mit <att>role</att> = <val>label</val> wird eine Spaltenüberschrift, z. B. eine Währung eines
