@@ -5,6 +5,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="precision"
              module="certainty"
              mode="change">
@@ -38,22 +39,10 @@
         <attDef ident="precision" mode="change" usage="req"/>
         <attDef ident="stdDeviation" mode="delete"/>
     </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-26">
-        <p>Unsicheres Datum, zum Beispiel um 1346 und um 1350</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <date notBefore-custom="1341-01-01" notAfter-custom="1355-12-31">Um 1346 und um 1350
-                <precision precision="low" match="@notBefore-custom @notAfter-custom"/>
-            </date>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-26">
-        <p>Date incertaine, par exemple vers 1346 et vers 1350</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <date notBefore-custom="1341-01-01" notAfter-custom="1355-12-31">Um 1346 und um 1350
-                <precision precision="low" match="@notBefore-custom @notAfter-custom"/>
-            </date>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-precision-de"/>
+    <xi:include href="examples.xml" xpointer="ex-precision-en"/>
+    <xi:include href="examples.xml" xpointer="ex-precision-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-precision-it"/>
     <remarks xml:lang="de" versionDate="2023-07-14">
         <p>Mit <att>match</att> wird auf ein oder mehrere Attribute von <gi>date</gi> Bezug genommen.
             Mit <att>precision</att> wird der Grad der Unsicherheit angegeben.
