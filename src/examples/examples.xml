@@ -125,6 +125,33 @@
             <xi:include href="msDesc.xml"/>
         </exemplum>
 
+        <exemplum xml:lang="de" xml:id="ex-orgName-de">
+            <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
+                nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
+                Nennung des Bürgermeisters.
+            </p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-orgName-en">
+            <p>Institutions / functions are always identified as organisations - but not the people.
+                As shown below, this also applies to the naming of the mayor.
+            </p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-orgName-fr">
+            <p>Les institutions/fonctions sont toujours identifiées comme des organisations, mais
+                pas les personnes. Comme indiqué ci-dessous, cela s'applique également à la
+                désignation du maire.
+            </p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-orgName-it">
+            <p>Le istituzioni/funzioni sono sempre identificate come organizzazioni, ma non le
+                persone. Come illustrato di seguito, questo vale anche per il nome del sindaco.
+            </p>
+            <xi:include href="orgName.xml"/>
+        </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-persName-de-1">
             <p>Beispiel für einen einfachen Personennamen</p>
             <xi:include href="persName.xml" xpointer="persName-1"/>
@@ -182,31 +209,21 @@
             <xi:include href="persName.xml" xpointer="persName-3"/>
         </exemplum>
 
-        <exemplum xml:lang="de" xml:id="ex-orgName-de">
-            <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
-                nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
-                Nennung des Bürgermeisters.
-            </p>
-            <xi:include href="orgName.xml"/>
+        <exemplum xml:lang="de" xml:id="ex-precision-de">
+            <p>Beispiel für ein unsicheres Datum</p>
+            <xi:include href="precision.xml"/>
         </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-orgName-en">
-            <p>Institutions / functions are always identified as organisations - but not the people.
-                As shown below, this also applies to the naming of the mayor.
-            </p>
-            <xi:include href="orgName.xml"/>
+        <exemplum xml:lang="en" xml:id="ex-precision-en">
+            <p>Example of an uncertain date</p>
+            <xi:include href="precision.xml"/>
         </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-orgName-fr">
-            <p>Les institutions/fonctions sont toujours identifiées comme des organisations, mais
-                pas les personnes. Comme indiqué ci-dessous, cela s'applique également à la
-                désignation du maire.
-            </p>
-            <xi:include href="orgName.xml"/>
+        <exemplum xml:lang="fr" xml:id="ex-precision-fr">
+            <p>Exemple de date incertaine</p>
+            <xi:include href="precision.xml"/>
         </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-orgName-it">
-            <p>Le istituzioni/funzioni sono sempre identificate come organizzazioni, ma non le
-                persone. Come illustrato di seguito, questo vale anche per il nome del sindaco.
-            </p>
-            <xi:include href="orgName.xml"/>
+        <exemplum xml:lang="it" xml:id="ex-precision-it">
+            <p>Esempio di data incerta</p>
+            <xi:include href="precision.xml"/>
         </exemplum>
 
         <exemplum xml:lang="de" xml:id="ex-seg-de">
