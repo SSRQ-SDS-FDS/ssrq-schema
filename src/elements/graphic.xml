@@ -5,6 +5,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="graphic"
              module="core"
              mode="change">
@@ -84,6 +85,10 @@
             </valList>
         </attDef>
     </attList>
+    <xi:include href="examples.xml" xpointer="ex-figure-2-de"/>
+    <xi:include href="examples.xml" xpointer="ex-figure-2-en"/>
+    <xi:include href="examples.xml" xpointer="ex-figure-2-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-figure-2-it"/>
     <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-15">
         <p>Definition der Identifikationsnummer des Stücks:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">

@@ -48,25 +48,16 @@
     <xi:include href="examples.xml" xpointer="ex-head-table-en"/>
     <xi:include href="examples.xml" xpointer="ex-head-table-fr"/>
     <xi:include href="examples.xml" xpointer="ex-head-table-it"/>
+    <xi:include href="examples.xml" xpointer="ex-head-figure-de"/>
+    <xi:include href="examples.xml" xpointer="ex-head-figure-en"/>
+    <xi:include href="examples.xml" xpointer="ex-head-figure-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-head-figure-it"/>
     <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
         <p>Titel, der vom Bearbeitenden zur besseren Strukturierung des Texts
             hinzugefügt wird
         </p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <head resp="PS">Erbrecht</head>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
-        <p>Titel eines Stammbaums</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <figure type="illustration">
-                <graphic type="familytree"
-                         mimeType="image/svg"
-                         url="WB_HB.svg"
-                         width="69.34%"/>
-                <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
-                <figDesc>Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>
-            </figure>
         </egXML>
     </exemplum>
     <remarks xml:lang="de" versionDate="2023-07-19">
