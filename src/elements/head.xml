@@ -5,6 +5,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="head"
              module="core"
              mode="change">
@@ -43,6 +44,10 @@
         </attDef>
         <attDef ident="xml:id" mode="delete"/>
     </attList>
+    <xi:include href="examples.xml" xpointer="ex-head-table-de"/>
+    <xi:include href="examples.xml" xpointer="ex-head-table-en"/>
+    <xi:include href="examples.xml" xpointer="ex-head-table-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-head-table-it"/>
     <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
         <p>Titel, der vom Bearbeitenden zur besseren Strukturierung des Texts
             hinzugefügt wird
@@ -51,27 +56,8 @@
             <head resp="PS">Erbrecht</head>
         </egXML>
     </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
-        <p>Titre ajouté par l'éditeur pour mieux structurer le texte</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <head resp="PS">Erbrecht</head>
-        </egXML>
-    </exemplum>
     <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
         <p>Titel eines Stammbaums</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <figure type="illustration">
-                <graphic type="familytree"
-                         mimeType="image/svg"
-                         url="WB_HB.svg"
-                         width="69.34%"/>
-                <head>Graphik 1: Stammbaum der Grafen von Werdenberg-Heiligenberg</head>
-                <figDesc>Ein Beschreibungstext, wenn dieser gewünscht ist.</figDesc>
-            </figure>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
-        <p>Titre d'un arbre généalogique</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <figure type="illustration">
                 <graphic type="familytree"

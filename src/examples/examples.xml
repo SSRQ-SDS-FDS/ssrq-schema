@@ -7,6 +7,20 @@
         xmlns="http://www.tei-c.org/ns/1.0"
         xmlns:xi="http://www.w3.org/2001/XInclude">
     <macroSpec ident="ssrq-examples">
+        <!-- Naming conventions inside this file are the following:
+            A) The xml:id of an exemplum:
+                - start always with "ex"
+                - continues with the name of the main element, which is part of the exemplum
+                - semantically meaningful parts of the id are separated by a dash ("-")
+                - ends always with a language abbreviation ("de", "en", "fr", "it").
+            B) Translations inside of <p>:
+                - start always with a capital letter
+                - do *not* end with a punctuation mark
+            C) Order of Elements
+                - all exempla are ordered by their xml:id
+                - the languages are ordered alphabetically (de, en, fr, it)
+        -->
+
         <exemplum xml:lang="de" xml:id="ex-ab-de">
             <p>Beispiel für einen Kanzleivermerk</p>
             <xi:include href="ab.xml"/>
@@ -41,6 +55,23 @@
             <xi:include href="addSpan.xml"/>
         </exemplum>
 
+        <exemplum xml:lang="de" xml:id="ex-cell-de">
+            <p>Einfaches Beispiel für Zellen in einer Tabelle</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-cell-en">
+            <p>Simple example of cells in a table</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-cell-fr">
+            <p>Exemple simple de cellules dans un tableau</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-cell-it">
+            <p>Semplice esempio di celle in una tabella</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-choice-abbr-de">
             <p>Beispiel für eine Abkürzung</p>
             <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
@@ -57,6 +88,7 @@
             <p>Esempio di abbreviazione</p>
             <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
         </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-choice-sic-de">
             <p>Beispiel für eine Korrektur</p>
             <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
@@ -106,6 +138,23 @@
         <exemplum xml:lang="it" xml:id="ex-delSpan-it">
             <p>Esempio di una cancellazione più grande</p>
             <xi:include href="delSpan.xml"/>
+        </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-head-table-de">
+            <p>Beispiel für eine Überschrift in einer Tabelle</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-head-table-en">
+            <p>Example of a heading in a table</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-head-table-fr">
+            <p>Exemple d'en-tête dans un tableau</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-head-table-it">
+            <p>Esempio di intestazione in una tabella</p>
+            <xi:include href="table.xml"/>
         </exemplum>
 
         <exemplum xml:lang="de" xml:id="ex-msDesc-de">
@@ -168,6 +217,7 @@
             <p>Esempio di nome personale</p>
             <xi:include href="persName.xml" xpointer="persName-1"/>
         </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-persName-de-2">
             <p>Auszeichnung eines Heiligen – nur der Name wird erfasst</p>
             <xi:include href="persName.xml" xpointer="persName-2"/>
@@ -184,6 +234,7 @@
             <p>Etichettatura di un santo</p>
             <xi:include href="persName.xml" xpointer="persName-2"/>
         </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-persName-de-3">
             <p>Verwendung mit
                 <att>role</att>
@@ -226,6 +277,23 @@
             <xi:include href="precision.xml"/>
         </exemplum>
 
+        <exemplum xml:lang="de" xml:id="ex-row-de">
+            <p>Einfaches Beispiel für Zeilen in einer Tabelle</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-row-en">
+            <p>Simple example of rows in a table</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-row-fr">
+            <p>Exemple simple de lignes dans un tableau</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-row-it">
+            <p>Semplice esempio di righe in una tabella</p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-seg-de">
             <p>Beispiel für vom Bearbeitenden eingeführte Absätze</p>
             <xi:include href="seg.xml"/>
@@ -259,6 +327,7 @@
             <p>Esempio di descrizione di una fonte con un elenco di testimoni testuali</p>
             <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
         </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-sourceDesc-msDesc-de">
             <p>Beispiel für eine Quellenbeschreibung mit einem Textzeugen</p>
             <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
@@ -274,6 +343,31 @@
         <exemplum xml:lang="it" xml:id="ex-sourceDesc-msDesc-it">
             <p>Esempio di descrizione di una fonte con testimone testuale</p>
             <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
+        </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-table-de">
+            <p>Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten drei Spalten mit «gbz», «xr»
+                bzw. «dn» überschrieben sind
+            </p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-table-en">
+            <p>Example of a price list for wine with four columns, of which the last three columns are titled "gbz",
+                "xr" and "dn"
+            </p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-table-fr">
+            <p>Exemple d'une liste de prix pour un vin à quatre colonnes, dont les trois dernières colonnes sont
+                intitulées "gbz", "xr" et "dn"
+            </p>
+            <xi:include href="table.xml"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-table-it">
+            <p>Esempio di listino prezzi vino con quattro colonne, di cui le ultime tre colonne sono intitolate "gbz",
+                "xr" e "dn"
+            </p>
+            <xi:include href="table.xml"/>
         </exemplum>
     </macroSpec>
 </div>
