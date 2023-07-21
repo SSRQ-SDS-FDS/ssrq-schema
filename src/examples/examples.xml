@@ -3,24 +3,24 @@
         href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<div xmlns="http://www.tei-c.org/ns/1.0"
-    xmlns:xi="http://www.w3.org/2001/XInclude">
+<div
+        xmlns="http://www.tei-c.org/ns/1.0"
+        xmlns:xi="http://www.w3.org/2001/XInclude">
     <macroSpec ident="ssrq-examples">
-        
         <exemplum xml:lang="de" xml:id="ex-ab-de">
-            <p>Beispiel für einen Kanzleivermerk.</p>
+            <p>Beispiel für einen Kanzleivermerk</p>
             <xi:include href="ab.xml"/>
         </exemplum>
         <exemplum xml:lang="en" xml:id="ex-ab-en">
-            <p>Example of a clerk's note.</p>
+            <p>Example of a clerk's note</p>
             <xi:include href="ab.xml"/>
         </exemplum>
         <exemplum xml:lang="fr" xml:id="ex-ab-fr">
-            <p>Exemple de note de service.</p>
+            <p>Exemple de note de service</p>
             <xi:include href="ab.xml"/>
         </exemplum>
         <exemplum xml:lang="it" xml:id="ex-ab-it">
-            <p>Esempio di nota di un impiegato.</p>
+            <p>Esempio di nota di un impiegato</p>
             <xi:include href="ab.xml"/>
         </exemplum>
 
@@ -43,35 +43,35 @@
 
         <exemplum xml:lang="de" xml:id="ex-choice-abbr-de">
             <p>Beispiel für eine Abkürzung</p>
-            <xi:include href="choice-abbr.xml"/>
+            <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
         </exemplum>
         <exemplum xml:lang="en" xml:id="ex-choice-abbr-en">
             <p>Example of an abbreviation</p>
-            <xi:include href="choice-abbr.xml"/>
+            <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
         </exemplum>
         <exemplum xml:lang="fr" xml:id="ex-choice-abbr-fr">
-            <p>Exemple d'abréviation.</p>
-            <xi:include href="choice-abbr.xml"/>
+            <p>Exemple d'abréviation</p>
+            <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
         </exemplum>
         <exemplum xml:lang="it" xml:id="ex-choice-abbr-it">
             <p>Esempio di abbreviazione</p>
-            <xi:include href="choice-abbr.xml"/>
+            <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
         </exemplum>
         <exemplum xml:lang="de" xml:id="ex-choice-sic-de">
             <p>Beispiel für eine Korrektur</p>
-            <xi:include href="choice-sic.xml"/>
+            <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
         </exemplum>
         <exemplum xml:lang="en" xml:id="ex-choice-sic-en">
             <p>Example of a correction</p>
-            <xi:include href="choice-sic.xml"/>
+            <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
         </exemplum>
         <exemplum xml:lang="fr" xml:id="ex-choice-sic-fr">
             <p>Exemple de correction</p>
-            <xi:include href="choice-sic.xml"/>
+            <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
         </exemplum>
         <exemplum xml:lang="it" xml:id="ex-choice-sic-it">
             <p>Esempio di correzione</p>
-            <xi:include href="choice-sic.xml"/>
+            <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
         </exemplum>
 
         <exemplum xml:lang="de" xml:id="ex-damageSpan-de">
@@ -158,42 +158,54 @@
             <xi:include href="persName.xml" xpointer="persName-2"/>
         </exemplum>
         <exemplum xml:lang="de" xml:id="ex-persName-de-3">
-            <p>Verwendung mit <att>role</att></p>
+            <p>Verwendung mit
+                <att>role</att>
+            </p>
             <xi:include href="persName.xml" xpointer="persName-3"/>
         </exemplum>
         <exemplum xml:lang="en" xml:id="ex-persName-en-3">
-            <p>Use with <att>role</att></p>
+            <p>Use with
+                <att>role</att>
+            </p>
             <xi:include href="persName.xml" xpointer="persName-3"/>
         </exemplum>
         <exemplum xml:lang="fr" xml:id="ex-persName-fr-3">
-            <p>Utilisation avec <att>role</att></p>
+            <p>Utilisation avec
+                <att>role</att>
+            </p>
             <xi:include href="persName.xml" xpointer="persName-3"/>
         </exemplum>
         <exemplum xml:lang="it" xml:id="ex-persName-it-3">
-            <p>Utilizzare con <att>ruolo</att></p>
+            <p>Utilizzare con
+                <att>role</att>
+            </p>
             <xi:include href="persName.xml" xpointer="persName-3"/>
         </exemplum>
 
         <exemplum xml:lang="de" xml:id="ex-orgName-de">
             <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
                 nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
-                Nennung des Bürgermeisters.</p>
+                Nennung des Bürgermeisters.
+            </p>
             <xi:include href="orgName.xml"/>
         </exemplum>
         <exemplum xml:lang="en" xml:id="ex-orgName-en">
             <p>Institutions / functions are always identified as organisations - but not the people.
-                As shown below, this also applies to the naming of the mayor.</p>
+                As shown below, this also applies to the naming of the mayor.
+            </p>
             <xi:include href="orgName.xml"/>
         </exemplum>
         <exemplum xml:lang="fr" xml:id="ex-orgName-fr">
             <p>Les institutions/fonctions sont toujours identifiées comme des organisations, mais
                 pas les personnes. Comme indiqué ci-dessous, cela s'applique également à la
-                désignation du maire.</p>
+                désignation du maire.
+            </p>
             <xi:include href="orgName.xml"/>
         </exemplum>
         <exemplum xml:lang="it" xml:id="ex-orgName-it">
             <p>Le istituzioni/funzioni sono sempre identificate come organizzazioni, ma non le
-                persone. Come illustrato di seguito, questo vale anche per il nome del sindaco.</p>
+                persone. Come illustrato di seguito, questo vale anche per il nome del sindaco.
+            </p>
             <xi:include href="orgName.xml"/>
         </exemplum>
 
