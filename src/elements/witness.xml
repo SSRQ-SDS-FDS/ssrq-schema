@@ -4,20 +4,14 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="witness"
              module="textcrit"
              mode="change">
-    <desc xml:lang="de" versionDate="2023-07-13">Enthält innerhalb von <gi>listWit</gi> die Stückbeschreibung einer
-        Quelle.
-    </desc>
-    <desc xml:lang="en" versionDate="2023-07-13">Contains the piece description of a source within <gi>listWit</gi>.
-    </desc>
-    <desc xml:lang="fr" versionDate="2023-07-13">Contient la description d'un morceau d'une source
-        dans <gi>listWit</gi>.
-    </desc>
-    <desc xml:lang="it" versionDate="2023-07-13">Contiene la descrizione del pezzo di una fonte all'interno
-        di <gi>listWit</gi>.
-    </desc>
+    <desc xml:lang="de" versionDate="2023-07-24">Enthält die Stückbeschreibung einer Quelle.</desc>
+    <desc xml:lang="en" versionDate="2023-07-24">Contains the piece description of a source.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-24">Contient la description d'un morceau d'une source.</desc>
+    <desc xml:lang="it" versionDate="2023-07-24">Contiene la descrizione del pezzo di una fonte.</desc>
     <classes mode="replace">
         <memberOf key="att.global"/>
     </classes>
@@ -45,30 +39,8 @@
         </attDef>
         <attDef ident="xml:lang" mode="delete"/>
     </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-02">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <listWit>
-                <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810d" n="A">
-                    <msDesc>
-                        <msIdentifier>
-                            <idno>StAAG U.17/0020a</idno>
-                        </msIdentifier>
-                    </msDesc>
-                </witness>
-            </listWit>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-02">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <listWit>
-                <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810d" n="A">
-                    <msDesc>
-                        <msIdentifier>
-                            <idno>StAAG U.17/0020a</idno>
-                        </msIdentifier>
-                    </msDesc>
-                </witness>
-            </listWit>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-witness-de"/>
+    <xi:include href="examples.xml" xpointer="ex-witness-en"/>
+    <xi:include href="examples.xml" xpointer="ex-witness-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-witness-it"/>
 </elementSpec>
