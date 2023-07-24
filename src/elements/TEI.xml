@@ -4,6 +4,7 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="TEI"
              module="textstructure"
              mode="change">
@@ -41,33 +42,10 @@
         </attDef>
         <attDef ident="version" mode="delete"/>
     </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-03">
-        <p>Minimales Beispiel:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <TEI xml:lang="de">
-                <teiHeader/>
-                <text/>
-            </TEI>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-03">
-        <p>Exemple minimal :</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <TEI xml:lang="de">
-                <teiHeader/>
-                <text/>
-            </TEI>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-03-03">
-        <p>Minimal example:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <TEI xml:lang="de">
-                <teiHeader/>
-                <text/>
-            </TEI>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-TEI-de"/>
+    <xi:include href="examples.xml" xpointer="ex-TEI-en"/>
+    <xi:include href="examples.xml" xpointer="ex-TEI-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-TEI-it"/>
     <remarks xml:lang="de" versionDate="2023-07-14">
         <p>Mit <att>xml:lang</att> wird die Sprache der Bearbeitung angegeben.
         </p>
