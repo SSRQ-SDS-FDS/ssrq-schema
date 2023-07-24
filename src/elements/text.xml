@@ -4,6 +4,7 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="text"
              module="textstructure"
              mode="change">
@@ -39,28 +40,23 @@
                     <desc xml:lang="de" versionDate="2023-04-05">Regest des Quellstücks</desc>
                     <desc xml:lang="en" versionDate="2023-04-05">Regest of the source document</desc>
                     <desc xml:lang="fr" versionDate="2023-04-05">Enregistrement du document source</desc>
+                    <desc xml:lang="it" versionDate="2023-04-05">Regest del documento di origine</desc>
                 </valItem>
                 <valItem ident="transcript">
                     <desc xml:lang="de" versionDate="2023-04-06">Transkript des Quellstücks</desc>
                     <desc xml:lang="en" versionDate="2023-04-06">Transcript of the source document</desc>
                     <desc xml:lang="fr" versionDate="2023-04-06">Transcription du document source</desc>
+                    <desc xml:lang="it" versionDate="2023-04-06">Trascrizione del documento di origine</desc>
                 </valItem>
             </valList>
         </attDef>
     </attList>
-    <exemplum xml:lang="" type="ssrq-doc-example" versionDate="2023-06-13">
-        <p>Einfaches Beispiel für den Inhalt von tei:text:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <text type="transcript">
-                <body>
-                    <!-- hier geht es mit Markup weiter ... -->
-                </body>
-                <back>
-                    <div>
-                        <p>Eine längere Erläuterung...</p>
-                    </div>
-                </back>
-            </text>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-text-1-de"/>
+    <xi:include href="examples.xml" xpointer="ex-text-1-en"/>
+    <xi:include href="examples.xml" xpointer="ex-text-1-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-text-1-it"/>
+    <xi:include href="examples.xml" xpointer="ex-text-2-de"/>
+    <xi:include href="examples.xml" xpointer="ex-text-2-en"/>
+    <xi:include href="examples.xml" xpointer="ex-text-2-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-text-2-it"/>
 </elementSpec>

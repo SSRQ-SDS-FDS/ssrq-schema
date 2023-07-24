@@ -472,6 +472,40 @@
             <xi:include href="TEI.xml"/>
         </exemplum>
 
+        <exemplum xml:lang="de" xml:id="ex-text-1-de">
+            <p>Beispiel für ein Transkript mit optionalem Kommentarbereich</p>
+            <xi:include href="text.xml" xpointer="ex-text-1"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-text-1-en">
+            <p>Example of a transcript with an optional comment section</p>
+            <xi:include href="text.xml" xpointer="ex-text-1"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-text-1-fr">
+            <p>Exemple de transcription avec une section de commentaires facultative</p>
+            <xi:include href="text.xml" xpointer="ex-text-1"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-text-1-it">
+            <p>Esempio di una trascrizione con una sezione di commento facoltativa</p>
+            <xi:include href="text.xml" xpointer="ex-text-1"/>
+        </exemplum>
+
+        <exemplum xml:lang="de" xml:id="ex-text-2-de">
+            <p>Beispiel für ein Regest ohne Kommentarbereich</p>
+            <xi:include href="text.xml" xpointer="ex-text-2"/>
+        </exemplum>
+        <exemplum xml:lang="en" xml:id="ex-text-2-en">
+            <p>Example of a regest without a comment section</p>
+            <xi:include href="text.xml" xpointer="ex-text-2"/>
+        </exemplum>
+        <exemplum xml:lang="fr" xml:id="ex-text-2-fr">
+            <p>Exemple de registre sans section de commentaire</p>
+            <xi:include href="text.xml" xpointer="ex-text-2"/>
+        </exemplum>
+        <exemplum xml:lang="it" xml:id="ex-text-2-it">
+            <p>Esempio di un regest senza una sezione di commento</p>
+            <xi:include href="text.xml" xpointer="ex-text-2"/>
+        </exemplum>
+
         <exemplum xml:lang="de" xml:id="ex-witness-de">
             <p>Beispiel für mehrere Textzeugenbeschreibungen</p>
             <xi:include href="listWit.xml"/>
