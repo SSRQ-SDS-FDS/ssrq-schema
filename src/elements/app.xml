@@ -4,6 +4,7 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="app"
              module="textcrit"
              mode="change">
@@ -26,48 +27,10 @@
         <attDef ident="to" mode="delete"/>
         <attDef ident="type" mode="delete"/>
     </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
-                    quadringentesimo
-                </rdg>
-            </app>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
-                    quadringentesimo
-                </rdg>
-            </app>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
-                    quadringentesimo
-                </rdg>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
-            </app>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
-                    quadringentesimo
-                </rdg>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
-            </app>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-app-de"/>
+    <xi:include href="examples.xml" xpointer="ex-app-en"/>
+    <xi:include href="examples.xml" xpointer="ex-app-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-app-it"/>
     <remarks xml:lang="de" versionDate="2023-07-13">
         <p>Ermöglicht verschiedene Lesarten eines Wortes oder eines Textabschnittes anzuzeigen unter Bezugnahme auf ein
             anderes Dokument oder mehrere andere Dokumente. Muss sich unmittelbar, ohne Leerschlag, an das Wort
