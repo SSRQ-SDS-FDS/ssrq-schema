@@ -4,6 +4,7 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="listWit"
              module="textcrit"
              mode="change">
@@ -23,46 +24,10 @@
             <elementRef key="witness"/>
         </sequence>
     </content>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-02">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <listWit>
-                <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810d" n="A">
-                    <msDesc>
-                        <msIdentifier>
-                            <idno>STAW B 3a/10</idno>
-                        </msIdentifier>
-                    </msDesc>
-                </witness>
-                <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810e" n="B">
-                    <msDesc>
-                        <msIdentifier>
-                            <idno>winbib Ms. Fol. 27</idno>
-                        </msIdentifier>
-                    </msDesc>
-                </witness>
-            </listWit>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-02">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <listWit>
-                <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810d" n="A">
-                    <msDesc>
-                        <msIdentifier>
-                            <idno>STAW B 3a/10</idno>
-                        </msIdentifier>
-                    </msDesc>
-                </witness>
-                <witness xml:id="ad28656b-5c8d-459c-afb4-3e6ddf70810e" n="B">
-                    <msDesc>
-                        <msIdentifier>
-                            <idno>winbib Ms. Fol. 27</idno>
-                        </msIdentifier>
-                    </msDesc>
-                </witness>
-            </listWit>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-listWit-de"/>
+    <xi:include href="examples.xml" xpointer="ex-listWit-en"/>
+    <xi:include href="examples.xml" xpointer="ex-listWit-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-listWit-it"/>
     <remarks xml:lang="de" versionDate="2023-07-13">
         <p>Für jede Quelle wird ein <gi>witness</gi> erstellt.
         </p>
