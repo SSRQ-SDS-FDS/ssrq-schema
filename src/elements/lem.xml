@@ -5,22 +5,21 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="lem"
              module="textcrit"
              mode="change">
-    <desc xml:lang="de" versionDate="2023-05-11">
-        Enthält innerhalb von <gi>app</gi> eine Passage, von der es eine von der Editionsvorlage abweichende
-        Textvariante gibt.
+    <desc xml:lang="de" versionDate="2023-07-24">
+        Enthält eine Passage, von der es eine von der Editionsvorlage abweichende Textvariante gibt.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-11">
-        Contains within <gi>app</gi> a passage of which there is a text variant that differs from the edition template.
+    <desc xml:lang="en" versionDate="2023-07-24">
+        Contains a passage of which there is a text variant that differs from the edition template.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-11">
-        Contient dans <gi>app</gi> un passage dont il existe une variante de texte qui diffère du modèle d'édition.
+    <desc xml:lang="fr" versionDate="2023-07-24">
+        Contient un passage dont il existe une variante de texte qui diffère du modèle d'édition.
     </desc>
-    <desc xml:lang="it" versionDate="2023-07-13">
-        Contiene un passaggio all'interno di <gi>app</gi> di cui esiste una variante testuale che differisce dal
-        template dell'edizione.
+    <desc xml:lang="it" versionDate="2023-07-24">
+        Contiene un passaggio di cui esiste una variante testuale che differisce dal template dell'edizione.
     </desc>
     <classes mode="replace"/>
     <content>
@@ -28,22 +27,10 @@
             <rng:ref name="ssrq.content.default"/>
         </rng:oneOrMore>
     </content>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="#B #C">quadringentesimo</rdg>
-            </app>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="#B #C">quadringentesimo</rdg>
-            </app>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-app-de"/>
+    <xi:include href="examples.xml" xpointer="ex-app-en"/>
+    <xi:include href="examples.xml" xpointer="ex-app-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-app-it"/>
     <remarks xml:lang="de" versionDate="2023-07-13">
         <p>Die abweichende Textvariante wird in <gi>rdg</gi> wiedergegeben.
         </p>

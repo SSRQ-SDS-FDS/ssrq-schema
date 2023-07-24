@@ -5,6 +5,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:xi="http://www.w3.org/2001/XInclude"
              ident="rdg"
              module="textcrit"
              mode="change">
@@ -20,48 +21,10 @@
             <rng:ref name="ssrq.content.default"/>
         </rng:oneOrMore>
     </content>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-20">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
-                    quadringentesimo
-                </rdg>
-            </app>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-20">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
-                    quadringentesimo
-                </rdg>
-            </app>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-20">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
-                    quadringentesimo
-                </rdg>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
-            </app>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-20">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <app>
-                <lem>lxxxvij</lem>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810d ad28656b-5c8d-459c-afb4-3e6ddf70810e">
-                    quadringentesimo
-                </rdg>
-                <rdg wit="ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
-            </app>
-        </egXML>
-    </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-app-de"/>
+    <xi:include href="examples.xml" xpointer="ex-app-en"/>
+    <xi:include href="examples.xml" xpointer="ex-app-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-app-it"/>
     <remarks xml:lang="de" versionDate="2023-07-11">
         <p>Der Inhalt von <att>wit</att> besteht aus der Archivsignatur des Dokuments oder der Sigle des edierten
             Stücks, auf dem die Lesart basiert. Nach der Archivsignatur kann nach einem Separator (/) die URL/URI des
