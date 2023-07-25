@@ -278,13 +278,30 @@ def compile_odd_to_rng(odd: str, tei_version: str) -> str:
     return result
 
 
-def show_stats(schema: str, name: str) -> None:
-    included_elements: list[str] = " ".join(
-        re.findall(r'include="(.*)"', schema)
-    ).split(" ")
-    specified_elements: list[str] = re.findall(SPECIFIED_ELEMENTS, schema)
+def show_stats(schema: str, filename: str) -> None:
+    included_elements = calculate_number_of_included_elements(schema)
+    specified_elements = calculate_number_of_specified_elements(schema)
+    print_stats(filename, included_elements, specified_elements)
+
+
+def calculate_number_of_included_elements(schema) -> int:
+    include_list = re.findall(r'include="(.*)"', schema)
+    include_string = " ".join(include_list)
+    include_string = re.sub("(\s)+", " ", include_string)
+    include_list = include_string.split(" ")
+    return len(include_list)
+
+
+def calculate_number_of_specified_elements(schema) -> int:
+    specified_list = re.findall(SPECIFIED_ELEMENTS, schema)
+    return len(specified_list)
+
+
+def print_stats(filename: str, included_elements: int, specified_elements: int) -> None:
     print(
-        f"Elements included in {name}: {len(included_elements)}\nElements already specified: {len(specified_elements)}\nElements to specify: {len(included_elements) - len(specified_elements)}\n"
+        f"Elements included in {filename}: {included_elements}\n"
+        f"Elements already specified: {specified_elements}\n"
+        f"Elements to specify: {included_elements - specified_elements}\n"
     )
 
 
@@ -299,7 +316,7 @@ def odd_factory(
     )
 
     if print_stats:
-        show_stats(schema=odd_with_metadata, name=schema_config["entry"])
+        show_stats(schema=odd_with_metadata, filename=schema_config["entry"])
 
     odd_with_metadata = resolve_relative_paths(doc=odd_with_metadata)
 

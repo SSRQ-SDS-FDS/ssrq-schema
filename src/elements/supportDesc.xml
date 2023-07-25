@@ -1,56 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="supportDesc"
              module="msdescription"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-17">Informationscontainer für weitere Tags zur
-        Beschreibung von Material, Massen und Erhaltungszustand.</desc>
-   <desc xml:lang="en" versionDate="2023-05-17">Information container for further tags describing
-        material, masses and state of preservation.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-17">Conteneur d'informations pour d'autres étiquettes
-        décrivant le matériel, les masses et l'état de conservation.</desc>
-   <classes mode="replace"/>
-   <content>
-      <sequence>
-         <elementRef key="support"/>
-         <elementRef key="extent" minOccurs="0" maxOccurs="1"/>
-         <elementRef key="condition" minOccurs="0" maxOccurs="1"/>
-      </sequence>
-   </content>
-   <attList>
-      <attDef ident="material" mode="delete"/>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
-      <p>Beschreibung des Materials und der Abmessungen</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <supportDesc>
-            <support>
-               <material type="paper"/>
-            </support>
-            <extent>
-               <dimensions type="leaves">
-                  <height unit="cm" quantity="29.0"/>
-                  <width unit="cm" quantity="54.5"/>
-               </dimensions>
-            </extent>
-         </supportDesc>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
-      <p>Description du matériau et des dimensions</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <supportDesc>
-            <support>
-               <material type="paper"/>
-            </support>
-            <extent>
-               <dimensions type="leaves">
-                  <height unit="cm" quantity="29.0"/>
-                  <width unit="cm" quantity="54.5"/>
-               </dimensions>
-            </extent>
-         </supportDesc>
-      </egXML>
-   </exemplum>
+    <desc xml:lang="de" versionDate="2023-05-17">Enthält Elemente zur Beschreibung von Material, Massen, Blattzählung
+        und Erhaltungszustand einer Quelle.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-05-17">Contains elements to describe a source's material, masses, foliation
+        and conservation status.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-05-17">Contient des éléments pour décrire le matériau, les masses, nombre de
+        feuilles et l'état de conservation d'une source.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-05-17">Contiene elementi per descrivere il materiale, le masse, conteggio
+        fogli e lo stato di conservazione di una fonte.
+    </desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="support"/>
+            <elementRef key="extent" minOccurs="0"/>
+            <elementRef key="foliation" minOccurs="0"/>
+            <elementRef key="condition" minOccurs="0"/>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="material" mode="delete"/>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
+        <p>Beschreibung des Materials und der Abmessungen</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <supportDesc>
+                <support>
+                    <material type="paper"/>
+                </support>
+                <extent>
+                    <dimensions type="leaves">
+                        <height unit="cm" quantity="29.0"/>
+                        <width unit="cm" quantity="54.5"/>
+                    </dimensions>
+                </extent>
+            </supportDesc>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
+        <p>Description du matériau et des dimensions</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <supportDesc>
+                <support>
+                    <material type="paper"/>
+                </support>
+                <extent>
+                    <dimensions type="leaves">
+                        <height unit="cm" quantity="29.0"/>
+                        <width unit="cm" quantity="54.5"/>
+                    </dimensions>
+                </extent>
+            </supportDesc>
+        </egXML>
+    </exemplum>
 </elementSpec>

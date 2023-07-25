@@ -1,68 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="list"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-04-13">Wird für Aufzählungen aller Art verwendet.</desc>
-   <desc xml:lang="en" versionDate="2023-04-13">Used for enumerations of all kinds.</desc>
-   <desc xml:lang="fr" versionDate="2023-04-13">Utilisé pour les énumérations de toutes sortes.</desc>
-   <classes mode="replace">
-      <memberOf key="model.listLike"/>
-      <memberOf key="att.global.rendition"/>
-   </classes>
-   <content>
-      <elementRef key="item" minOccurs="1" maxOccurs="unbounded"/>
-   </content>
-   <attList>
-      <attDef ident="rend" mode="replace" usage="opt">
-         <desc xml:lang="de" versionDate="2023-04-13">Optionale Angabe zur Darstellung der
-                Liste.
-            </desc>
-         <desc xml:lang="fr" versionDate="2023-04-13">Indication facultative pour la présentation
-                de la liste.
-            </desc>
-         <desc xml:lang="en" versionDate="2023-04-13">Optional specification for the display of
-                the list.
-            </desc>
-         <valList type="closed">
-            <valItem ident="bulleted">
-               <desc xml:lang="de" versionDate="2023-04-13">Liste mit einfachen
-                        Bullet-Points
-                    </desc>
-               <desc xml:lang="fr" versionDate="2023-04-13">Liste de bullet-points
-                        simples
-                    </desc>
-               <desc xml:lang="en" versionDate="2023-04-13">List with simple bullet
-                        points
-                    </desc>
-            </valItem>
-            <valItem ident="numbered">
-               <desc xml:lang="de" versionDate="2023-04-13">Nummerierte Liste</desc>
-               <desc xml:lang="fr" versionDate="2023-04-13">Liste numérotée</desc>
-               <desc xml:lang="en" versionDate="2023-04-13">Numbered list</desc>
-            </valItem>
-         </valList>
-      </attDef>
-   </attList>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Einfache Liste ohne Angabe zur Darstellung</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <list>
-            <item>Apfel</item>
-            <item>Fisch</item>
-            <item>...</item>
-         </list>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-      <p>Liste simple sans indication de présentation</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <list>
-            <item>Apfel</item>
-            <item>Fisch</item>
-            <item>...</item>
-         </list>
-      </egXML>
-   </exemplum>
+    <desc xml:lang="de" versionDate="2023-07-19">Beschreibt eine Liste oder Aufzählung jeder Art.</desc>
+    <desc xml:lang="en" versionDate="2023-07-19">Describes a list or enumeration of any kind.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-19">Décrit une liste ou une énumération de tout type.</desc>
+    <desc xml:lang="it" versionDate="2023-07-19">Descrive un elenco o un'enumerazione di qualsiasi tipo.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global.rendition"/>
+        <memberOf key="model.listLike"/>
+    </classes>
+    <content>
+        <elementRef key="item" maxOccurs="unbounded"/>
+    </content>
+    <attList>
+        <attDef ident="rend" mode="replace">
+            <desc xml:lang="de" versionDate="2023-07-19">Angabe zur Darstellung der Liste</desc>
+            <desc xml:lang="en" versionDate="2023-07-19">Specification for displaying the list</desc>
+            <desc xml:lang="fr" versionDate="2023-07-19">Spécification d'affichage de la liste</desc>
+            <desc xml:lang="it" versionDate="2023-07-19">Specifica per la visualizzazione dell'elenco</desc>
+            <valList type="closed">
+                <valItem ident="bulleted">
+                    <desc xml:lang="de" versionDate="2023-07-19">Liste mit Bullet-Points</desc>
+                    <desc xml:lang="en" versionDate="2023-07-19">List with bullet points</desc>
+                    <desc xml:lang="fr" versionDate="2023-07-19">Liste avec des puces</desc>
+                    <desc xml:lang="it" versionDate="2023-07-19">Elenco con punti elenco</desc>
+                </valItem>
+                <valItem ident="numbered">
+                    <desc xml:lang="de" versionDate="2023-04-13">Nummerierte Liste</desc>
+                    <desc xml:lang="en" versionDate="2023-04-13">Numbered list</desc>
+                    <desc xml:lang="fr" versionDate="2023-04-13">Liste numérotée</desc>
+                    <desc xml:lang="it" versionDate="2023-04-13">Elenco numerato</desc>
+                </valItem>
+            </valList>
+        </attDef>
+    </attList>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Einfache Liste ohne Angabe zur Darstellung</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <list>
+                <item>Apfel</item>
+                <item>Fisch</item>
+                <item>...</item>
+            </list>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+        <p>Liste simple sans indication de présentation</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <list>
+                <item>Apfel</item>
+                <item>Fisch</item>
+                <item>...</item>
+            </list>
+        </egXML>
+    </exemplum>
 </elementSpec>

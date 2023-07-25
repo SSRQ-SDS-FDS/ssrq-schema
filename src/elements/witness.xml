@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="witness"
              module="textcrit"
              mode="change">
-    <desc xml:lang="de" versionDate="2023-05-11">Enthält die Stückbeschreibung einer Quelle.
+    <desc xml:lang="de" versionDate="2023-07-13">Enthält innerhalb von <gi>listWit</gi> die Stückbeschreibung einer
+        Quelle.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-11">Contains the description of a source.
+    <desc xml:lang="en" versionDate="2023-07-13">Contains the piece description of a source within <gi>listWit</gi>.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-11">Contient la description d'une source.
+    <desc xml:lang="fr" versionDate="2023-07-13">Contient la description d'un morceau d'une source
+        dans <gi>listWit</gi>.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-07-13">Contiene la descrizione del pezzo di una fonte all'interno
+        di <gi>listWit</gi>.
     </desc>
     <classes mode="replace">
         <memberOf key="att.global"/>

@@ -51,6 +51,11 @@ from ..conftest import RNG_test_function
             "<pb n='MV'/>",
             False,
         ),
+        (
+            "pb-with-section-numbering",
+            "<pb n='s1'/>",
+            True,
+        ),
     ],
 )
 def test_pb(

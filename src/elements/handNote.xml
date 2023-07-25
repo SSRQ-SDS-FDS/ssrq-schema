@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="handNote"
              module="header"
@@ -22,12 +25,12 @@
         </sequence>
     </content>
     <attList>
-        <attDef ident="xml:id" mode="change" usage="req"/>
-        <attDef ident="n" mode="change" usage="opt">
+        <attDef ident="n" mode="change">
             <datatype>
                 <dataRef key="ssrq.hand"/>
             </datatype>
         </attDef>
+        <attDef ident="xml:id" mode="change" usage="req"/>
         <attDef ident="xml:lang" mode="delete"/>
     </attList>
     <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-22">

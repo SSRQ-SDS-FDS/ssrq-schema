@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              ident="TEI"
              module="textstructure"
              mode="change">
     <gloss xml:lang="de" versionDate="2023-03-09">TEI Dokument</gloss>
-    <desc xml:lang="de" versionDate="2023-05-11">Umschliesst ein einzelnes Dokument
-        (Stück) als sogenannter Root-Tag. Mehrfachüberlieferungen werden in einem Tag teiCorpus gebündelt.
-    </desc>
     <gloss xml:lang="en" versionDate="2023-03-09">TEI Dokument</gloss>
-    <desc xml:lang="en" versionDate="2023-05-11">Encloses a single document (piece) as a
-        so-called root tag. Multiple deliveries are bundled in a teiCorpus tag.
-    </desc>
     <gloss xml:lang="fr" versionDate="2023-03-09">Document TEI</gloss>
-    <desc xml:lang="fr" versionDate="2023-05-11">Entoure un document individuel
-        (pièce). Les documents à transmission multiple sont regroupés dans une balise teiCorpus.
+    <gloss xml:lang="it" versionDate="2023-03-09">documento TEI</gloss>
+    <desc xml:lang="de" versionDate="2023-07-14">Beinhaltet ein einzelnes Dokument (Stück) als sogenanntes
+        Root-Element.
+    </desc>
+    <desc xml:lang="en" versionDate="2023-07-14">Contains a single document (piece) as a so-called root element.
+    </desc>
+    <desc xml:lang="fr" versionDate="2023-07-14">Contient un seul document (morceau) en tant qu'élément dit root.
+    </desc>
+    <desc xml:lang="it" versionDate="2023-07-14">Contiene un singolo documento (pezzo) come cosiddetto elemento root.
     </desc>
     <classes mode="replace">
         <memberOf key="att.global"/>
@@ -31,8 +35,8 @@
         <attDef ident="xml:lang" mode="replace">
             <valList type="closed">
                 <valItem ident="de"/>
-                <valItem ident="it"/>
                 <valItem ident="fr"/>
+                <valItem ident="it"/>
             </valList>
         </attDef>
         <attDef ident="version" mode="delete"/>
@@ -64,4 +68,20 @@
             </TEI>
         </egXML>
     </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-14">
+        <p>Mit <att>xml:lang</att> wird die Sprache der Bearbeitung angegeben.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-14">
+        <p>The language of the processing is specified with <att>xml:lang</att>.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-14">
+        <p>La langue du traitement est spécifiée avec <att>xml:lang</att>.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-14">
+        <p><att>xml:lang</att>specifica la lingua di editing.
+        </p>
+    </remarks>
 </elementSpec>

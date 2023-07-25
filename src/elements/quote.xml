@@ -1,73 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:rng="http://relaxng.org/ns/structure/1.0"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron"
              ident="quote"
              module="core"
              mode="change">
-   <desc xml:lang="de" versionDate="2023-05-31">Zeichnet Zitate innerhalb eines Originaltextes (z.
-        B. eine inserierte Urkunde oder eine Bibelstelle) aus. Idealerweise folgt am Schluss des
-        Zitats eine sachkritische Anmerkung mit <gi>note</gi> mit einem Verweis auf den Originaltext
-        oder Editions desselben.</desc>
-   <desc xml:lang="fr" versionDate="2023-05-31">Distingue les citations à l'intérieur d'un texte
-        original (p. ex. un document inséré ou un passage biblique). Idéalement, la citation est
-        suivie d'une note critique avec <gi>note</gi>, avec une référence au texte original ou aux
-        éditions de celui-ci.</desc>
-   <desc xml:lang="en" versionDate="2023-05-31">Indicates quotations within an original text (e.g.
-        an inscribed document or a biblical passage). Ideally, a fact-critical note with <gi>note</gi>
-        should follow at the end of the quotation with a reference to the original text or editions
-        of the same.</desc>
-   <classes mode="replace">
-      <memberOf key="model.quoteLike"/>
-   </classes>
-   <content>
-      <rng:oneOrMore>
-         <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-   </content>
-   <constraintSpec scheme="schematron" ident="sch-el-quote" mode="add">
-      <desc versionDate="2023-05-31" xml:lang="en">Schematron rules for tei:quote</desc>
-      <constraint>
-         <sch:pattern>
-            <sch:rule context="tei:quote">
-               <sch:report role="warning" test="not(.[following-sibling::*[1][self::tei:note]])">
-                  <sch:name/> should
-                        be followed by a tei:note element. </sch:report>
-            </sch:rule>
-         </sch:pattern>
-      </constraint>
-   </constraintSpec>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Exemplarischer Aufbau</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">Originaltext enthält <quote>Bibelzitat</quote>
-            .<note>[Belegstelle]</note>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Structure exemplaire</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">Originaltext enthält <quote>Bibelzitat</quote>
-            .<note>[Belegstelle]</note>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Zitat einer im Originaltext inserierten Urkunde</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <add place="below" hand="otherHand"> Hinfûr soll man leßen des banholtzes halb ein
-                gschrift, stât ze end dis buchs, fahent an: <quote>Wir Johannes Mantss.</quote>
-            <note>Mit
-                dem Verweis betreffend Bannholz ist StAZH G I 102, fol. 33r-v gemeint.</note>
-         </add>
-      </egXML>
-   </exemplum>
-   <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
-      <p>Citation d'un document inséré dans le texte original</p>
-      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-         <add place="below" hand="otherHand"> Hinfûr soll man leßen des banholtzes halb ein
-                gschrift, stât ze end dis buchs, fahent an: <quote>Wir Johannes Mantss.</quote>
-            <note>Mit
-                dem Verweis betreffend Bannholz ist StAZH G I 102, fol. 33r-v gemeint.</note>
-         </add>
-      </egXML>
-   </exemplum>
+    <desc xml:lang="de" versionDate="2023-07-20">Enthält ein Zitat innerhalb eines Originaltextes.</desc>
+    <desc xml:lang="en" versionDate="2023-07-20">Contains a citation within an original text.</desc>
+    <desc xml:lang="fr" versionDate="2023-07-20">Contient une citation dans un texte original.</desc>
+    <desc xml:lang="it" versionDate="2023-07-20">Contiene una citazione all'interno di un testo originale.</desc>
+    <classes mode="replace">
+        <memberOf key="model.quoteLike"/>
+    </classes>
+    <content>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
+    </content>
+    <constraintSpec scheme="schematron" ident="sch-el-quote" mode="add">
+        <desc versionDate="2023-05-31" xml:lang="en">Schematron rules for tei:quote</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:quote">
+                    <sch:report role="warning" test="not(.[following-sibling::*[1][self::tei:note]])">
+                        <sch:name/>
+                        should
+                        be followed by a tei:note element.
+                    </sch:report>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Exemplarischer Aufbau</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">Originaltext enthält
+            <quote>Bibelzitat</quote>
+            .
+            <note>[Belegstelle]</note>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Structure exemplaire</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">Originaltext enthält
+            <quote>Bibelzitat</quote>
+            .
+            <note>[Belegstelle]</note>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Zitat einer im Originaltext inserierten Urkunde</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <add place="below" hand="otherHand">Hinfûr soll man leßen des banholtzes halb ein
+                gschrift, stât ze end dis buchs, fahent an:
+                <quote>Wir Johannes Mantss.</quote>
+                <note>Mit
+                    dem Verweis betreffend Bannholz ist StAZH G I 102, fol. 33r-v gemeint.
+                </note>
+            </add>
+        </egXML>
+    </exemplum>
+    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
+        <p>Citation d'un document inséré dans le texte original</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <add place="below" hand="otherHand">Hinfûr soll man leßen des banholtzes halb ein
+                gschrift, stât ze end dis buchs, fahent an:
+                <quote>Wir Johannes Mantss.</quote>
+                <note>Mit
+                    dem Verweis betreffend Bannholz ist StAZH G I 102, fol. 33r-v gemeint.
+                </note>
+            </add>
+        </egXML>
+    </exemplum>
+    <remarks xml:lang="de" versionDate="2023-07-20">
+        <p>Enthält z. B. eine inserierte Urkunde oder eine Bibelstelle. Idealerweise folgt am Schluss des Zitats eine
+            sachkritische Anmerkung mit <gi>note</gi> mit einem Verweis auf den Originaltext oder eine Edition
+            desselben.
+        </p>
+        <p>Für direkte Rede in Quellentexten verwenden wir <gi>q</gi>. Wird in einem Quellenstück der Name eines
+            Dokuments oder eines Gebets genannt, dann wird dieses nicht mit dem Tag q oder quote ausgezeichnet, aber
+            der Titel grossgeschrieben. Das Gleiche gilt für historische Werktitel innerhalb der Paratexte. Innerhalb
+            der Paratexte (Anmerkungen, Kommentar, Einleitung) benutzen wir <gi>quote</gi> für Zitate aus der
+            Forschungsliteratur.
+        </p>
+    </remarks>
+    <remarks xml:lang="en" versionDate="2023-07-20">
+        <p>Contains e.g. an advertised document or a passage from the Bible. Ideally, the citation should be followed
+            by a factual comment with <gi>note</gi> with a reference to the original text or an edition of the same.
+        </p>
+        <p>For direct speech in source texts, we use <gi>q</gi>. If the name of a document or a prayer is mentioned in
+            a source piece, then this is not marked with the tag q or quote, but the title is capitalized. The same
+            applies to historical work titles within the paratexts. Within the paratexts (notes, commentary,
+            introduction) we use <gi>quote</gi> for citations from the research literature.
+        </p>
+    </remarks>
+    <remarks xml:lang="fr" versionDate="2023-07-20">
+        <p>Contient par ex. un document annoncé ou un passage de la Bible. Idéalement, la citation doit être suivie
+            d'un commentaire factuel avec <gi>note</gi> avec une référence au texte original ou à une édition de
+            celui-ci.
+        </p>
+        <p>Pour la parole directe dans les textes sources, nous utilisons <gi>q</gi>. Si le nom d'un document ou d'une
+            prière est mentionné dans une pièce source, cela n'est pas marqué avec la balise q ou une citation, mais le
+            titre est en majuscule. Il en va de même pour les titres d'œuvres historiques dans les paratextes. Dans les
+            paratextes (notes, commentaire, introduction), nous utilisons <gi>quote</gi> pour les citations de la
+            littérature de recherche.
+        </p>
+    </remarks>
+    <remarks xml:lang="it" versionDate="2023-07-20">
+        <p>Contiene ad es. un documento pubblicizzato o un brano della Bibbia. Idealmente, la citazione dovrebbe
+            essere seguita da un commento fattuale con <gi>note</gi> con riferimento al testo originale oa un'edizione
+            dello stesso.
+        </p>
+        <p>Per il discorso diretto nei testi di origine, usiamo <gi>q</gi>. Se il nome di un documento o di una
+            preghiera è menzionato in un brano sorgente, allora questo non è contrassegnato con il tag q o citazione, ma
+            il titolo è in maiuscolo. Lo stesso vale per i titoli di opere storiche all'interno dei paratesti.
+            All'interno dei paratesti (note, commento, introduzione) usiamo <gi>quote</gi> per le citazioni dalla
+            letteratura di ricerca.
+        </p>
+    </remarks>
 </elementSpec>
