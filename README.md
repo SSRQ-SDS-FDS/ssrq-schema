@@ -80,6 +80,7 @@ Siehe [Erzeugung der Dokumentation](#erzeugung-der-dokumentation).
 - [jing](https://github.com/relaxng/jing-trang)
 - [mkdocs](https://www.mkdocs.org)
 - [poetry](https://python-poetry.org)
+- [pre-commit](https://pre-commit.com)
 - [pytest](https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html)
 - [saxonche](https://pypi.org/project/saxonche/)
 - [TEI ODD](https://tei-c.org/guidelines/customization/getting-started-with-p5-odds/)
@@ -98,7 +99,7 @@ Für die Kompilierung des Schemas sowie die Ausführung der Tests ist es erforde
 Alle weiteren Abhängigkeiten können dann über folgenden Befehl install werden
 
 ```sh
-poetry install
+sh ./Taskfile install
 ```
 
 Wiederholt ausgeführte Aufgaben (bspw. Ausführung der Tests) sind im sog. [Taskfile](Taskfile) gebündelt. Für die einfachere Benutzung empfiehlt es sich in der lokalen Shell-Konfigurationen einen Alias für das Taskfile nach dem Schema `alias run=./Taskfile` einzurichten, dann lassen sich die diversen Aufgaben nach folgendem Muster ausführen:

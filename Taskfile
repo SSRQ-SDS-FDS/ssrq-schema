@@ -7,9 +7,11 @@ function cmd {
   poetry run "${@}"
 }
 
+
 function fmt {
   cmd black . "${@}"
   cmd ruff --fix . "${@}"
+  fmt-xml
 }
 
 function fmt-check {
@@ -17,9 +19,21 @@ function fmt-check {
     cmd black --check ${src}
 }
 
+function fmt-xml {
+    echo "Formatting xml files using xmllint..."
+    cmd pre-commit run format-xmllint --files $(git ls-files -- '*.xml')
+}
+
 function lint-only {
     echo "Linting using ruff..."
     cmd ruff ${src}
+}
+
+function install {
+    echo "Installing dependencies..."
+    poetry install
+    echo "Installing pre-commit hooks..."
+    cmd pre-commit install
 }
 
 function type-check {
