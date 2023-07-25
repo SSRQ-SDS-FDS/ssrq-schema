@@ -105,7 +105,7 @@
                     <desc xml:lang="it" versionDate="2023-05-16">Descrive il tipo di danno secondo un elenco di valori
                         ben definito.
                     </desc>
-                    <datatype minOccurs="1" maxOccurs="unbounded">
+                    <datatype maxOccurs="unbounded">
                         <dataRef key="ssrq.agent"/>
                     </datatype>
                 </attDef>
@@ -599,7 +599,7 @@
                     <desc xml:lang="en" versionDate="2023-06-29">unit of measurement or currency</desc>
                     <desc xml:lang="fr" versionDate="2023-06-29">unité de mesure ou devise</desc>
                     <desc xml:lang="it" versionDate="2023-06-29">unità di misura o moneta</desc>
-                    <datatype maxOccurs="1">
+                    <datatype>
                         <rng:choice>
                             <rng:ref name="ssrq.measure.area"/>
                             <rng:ref name="ssrq.measure.capacity"/>
@@ -639,7 +639,7 @@
                     <desc xml:lang="it" versionDate="2023-05-17">Indica una posizione su un testimone testuale secondo
                         un elenco fisso.
                     </desc>
-                    <datatype minOccurs="1" maxOccurs="unbounded">
+                    <datatype maxOccurs="unbounded">
                         <dataRef key="ssrq.place"/>
                     </datatype>
                 </attDef>
