@@ -8,7 +8,7 @@ from utils.constants import (
     SRC_DIR,
     XSLTS,
 )
-from utils.oddfactory import ODDFactory
+from utils.odd_pipeline.factory import ODDFactory
 from utils.oddstats import AnalyzeStats, Stats
 from utils.ssrqconfig import SSRQConfig
 from utils.validate import ValidatePaths, Validator

@@ -5,7 +5,7 @@ from typing import (
 )
 
 from utils.main import COMPILE_ODD_STEPS, RNG_STEP, load_config
-from utils.oddfactory import ODDFactory
+from utils.odd_pipeline.factory import ODDFactory
 from utils.specs.abstract import ODDElement
 from utils.specs.config import NS_MAP
 from utils.specs.dataspec import DataSpec

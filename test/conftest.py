@@ -15,7 +15,7 @@ from ssrq_cli.xml_utils import ext_etree
 
 from utils.constants import SPECIFIED_ELEMENTS, SRC_DIR, XSLTS
 from utils.main import COMPILE_ODD_STEPS, RNG_STEP, load_config
-from utils.oddfactory import ODDFactory
+from utils.odd_pipeline.factory import ODDFactory
 from utils.ssrqschema import SSRQSchema
 from utils.ssrqschematype import SSRQSchemaType
 
