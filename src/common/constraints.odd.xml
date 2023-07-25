@@ -89,5 +89,19 @@
                 </sch:pattern>
             </constraint>
         </constraintSpec>
+        <constraintSpec scheme="schematron" ident="sch-gl-6">
+            <desc xml:lang="en" versionDate="2023-07-25">Global constraint to ensure that no attribute has a duplicate
+                attribute value
+            </desc>
+            <constraint>
+                <sch:pattern>
+                    <sch:rule context="//@*">
+                        <sch:assert test="count(distinct-values(tokenize(.))) = count(tokenize(.))">
+                            An attribute should not have duplicate values
+                        </sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+            </constraint>
+        </constraintSpec>
     </specGrp>
 </div>

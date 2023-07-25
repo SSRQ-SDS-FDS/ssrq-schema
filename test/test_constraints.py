@@ -206,3 +206,29 @@ def test_constraint_attspanning(
         files=writer.list(), isosch=main_constraints
     )
     assert reports[0].is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "invalid-duplicate-attribute-values-agent",
+            "<damage agent='clipping cancelled clipping'><unclear>foo</unclear></damage>",
+            False,
+        ),
+        (
+            "invalid-duplicate-attribute-values-place",
+            "<add place='above verso above'>foo</add>",
+            False,
+        ),
+    ],
+)
+def test_duplicate_attribute_values_constraint_gl6(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """Tests the global constraint, which ensures that no attribute has duplicate attribute values."""
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = validate_chunk(
+        files=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].is_valid() is result
