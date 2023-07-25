@@ -71,64 +71,7 @@
         <!-- Modified TEI attribute classes -->
         <classSpec ident="att.canonical" type="atts" mode="change">
             <attList>
-                <attDef ident="key" mode="replace">
-                    <desc xml:lang="de" versionDate="2023-04-28">Tätigkeit, für die ein Bearbeiter
-                        oder eine Organisation verantwortlich ist.
-                    </desc>
-                    <desc xml:lang="en" versionDate="2023-04-28">Activity for which an agent or
-                        organisation is responsible.
-                    </desc>
-                    <desc xml:lang="fr" versionDate="2023-05-16">Activité dont un transformateur ou une organisation est
-                        responsable.
-                    </desc>
-                    <desc xml:lang="it" versionDate="2023-05-16">Attività per la quale è responsabile un responsabile
-                        del trattamento o un'organizzazione.
-                    </desc>
-                    <valList type="closed">
-                        <valItem ident="transcript">
-                            <desc xml:lang="de" versionDate="2023-03-28">Transkript</desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">transcription</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">transcription</desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">trascrizione</desc>
-                        </valItem>
-                        <valItem ident="tagging">
-                            <desc xml:lang="de" versionDate="2023-03-28">Auszeichnung der Transkription</desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">tagging</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">désignation d’une transcription</desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">designazione di una trascrizione</desc>
-                        </valItem>
-                        <valItem ident="facs">
-                            <desc xml:lang="de" versionDate="2023-05-28">Erstellung Faksimile</desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">Facsimile creation</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">Création d'un fac-similé</desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">Creazione di facsimile</desc>
-                        </valItem>
-                        <valItem ident="index">
-                            <desc xml:lang="de" versionDate="2023-03-28">Index</desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">index</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">index</desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">indice</desc>
-                        </valItem>
-                        <valItem ident="qualitycheck">
-                            <desc xml:lang="de" versionDate="2023-03-28">Qualitätskontrolle</desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">quality control</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">contrôle de qualité</desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">Controllo della qualità</desc>
-                        </valItem>
-                        <valItem ident="publisher">
-                            <desc xml:lang="de" versionDate="2023-04-28">Herausgeberschaft</desc>
-                            <desc xml:lang="en" versionDate="2023-04-28">Editorial</desc>
-                            <desc xml:lang="fr" versionDate="2023-04-28">Rédaction</desc>
-                            <desc xml:lang="it" versionDate="2023-04-28">Editoriale</desc>
-                        </valItem>
-                        <valItem ident="headerinfo">
-                            <desc xml:lang="de" versionDate="2023-03-28">Metadaten im TEI-Header</desc>
-                            <desc xml:lang="en" versionDate="2023-03-28">meta data in the TEI header</desc>
-                            <desc xml:lang="fr" versionDate="2023-03-28">métadonnées dans le header TEI</desc>
-                            <desc xml:lang="it" versionDate="2023-03-28">metadati nell'intestazione TEI</desc>
-                        </valItem>
-                    </valList>
-                </attDef>
+                <attDef ident="key" mode="delete"/>
                 <attDef ident="ref" mode="replace">
                     <desc xml:lang="de" versionDate="2023-03-28">Referenz auf die Datenbanken der SSRQ.</desc>
                     <desc xml:lang="en" versionDate="2023-03-07">Reference to the databases of the SLS.</desc>
