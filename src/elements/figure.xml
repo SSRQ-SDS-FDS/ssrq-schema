@@ -18,9 +18,9 @@
         <memberOf key="att.written"/>
     </classes>
     <content>
-        <sequence minOccurs="0" maxOccurs="1">
-            <elementRef key="graphic" minOccurs="1" maxOccurs="1"/>
-            <elementRef key="head" minOccurs="0" maxOccurs="1"/>
+        <sequence minOccurs="0">
+            <elementRef key="graphic"/>
+            <elementRef key="head" minOccurs="0"/>
         </sequence>
     </content>
     <constraintSpec scheme="schematron" ident="sch-el-figure">
