@@ -23,9 +23,7 @@
     <desc xml:lang="it" versionDate="2023-04-21">Contiene elementi per descrivere la collezione delle serie di fonti
         giuridiche svizzere.
     </desc>
-    <classes mode="replace">
-        <memberOf key="att.global"/>
-    </classes>
+    <classes mode="replace"/>
     <content>
         <sequence>
             <elementRef key="title"/>
@@ -33,18 +31,9 @@
             <elementRef key="idno" minOccurs="2" maxOccurs="2"/>
         </sequence>
     </content>
-    <attList>
-        <attDef ident="n" mode="delete"/>
-        <attDef ident="xml:id" mode="replace" usage="req">
-            <valList type="closed">
-                <valItem ident="ssrq-sds-fds"/>
-            </valList>
-        </attDef>
-        <attDef ident="xml:lang" mode="delete"/>
-    </attList>
     <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-21">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <seriesStmt xml:id="ssrq-sds-fds">
+            <seriesStmt>
                 <title>Sammlung Schweizerischer Rechtsquellen</title>
                 <respStmt>
                     <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
@@ -57,7 +46,7 @@
     </exemplum>
     <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-21">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <seriesStmt xml:id="ssrq-sds-fds">
+            <seriesStmt>
                 <title>Sammlung Schweizerischer Rechtsquellen</title>
                 <respStmt>
                     <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
