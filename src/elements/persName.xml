@@ -45,8 +45,7 @@
         </constraint>
     </constraintSpec>
     <attList>
-        <attDef ident="key" mode="delete"/>
-        <attDef ident="ref" mode="change">
+        <attDef ident="ref" mode="replace">
             <desc xml:lang="de" versionDate="2023-04-20">Verknüpfung der Person mit der ID der
                 Personen- und Organisationsdatenbank.
             </desc>
