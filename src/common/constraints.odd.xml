@@ -6,7 +6,7 @@
 <div xmlns="http://www.tei-c.org/ns/1.0"
      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <specGrp xml:id="constraints">
-        <constraintSpec scheme="schematron" module="core" ident="gl-sch-1" mode="change">
+        <constraintSpec scheme="schematron" ident="sch-gl-1">
             <desc xml:lang="en" versionDate="2023-03-01">Mutually dependent for all elements: @unit and @quantity</desc>
             <constraint>
                 <sch:pattern>

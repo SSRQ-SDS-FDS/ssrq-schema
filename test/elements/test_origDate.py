@@ -45,8 +45,13 @@ def test_element(
     "name, markup, result",
     [
         (
-            "valid-origDate",
+            "valid-origDate-with-text",
             "<origDate when-custom='1448-05-25' calendar='gregorian'>bar</origDate>",
+            True,
+        ),
+        (
+            "valid-origDate-without-text",
+            "<origDate when-custom='1448-05-25' calendar='gregorian'/>",
             True,
         ),
         (
