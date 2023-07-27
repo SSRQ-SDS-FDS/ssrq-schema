@@ -1,209 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-             ident="measure"
-             module="core"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Massangabe jeder Art.</desc>
-    <desc xml:lang="en" versionDate="2023-07-19">Contains a measurement of any type.</desc>
-    <desc xml:lang="fr" versionDate="2023-07-19">Contient une mesure de chaque type.</desc>
-    <desc xml:lang="it" versionDate="2023-07-19">Contiene una misura di ogni tipo.</desc>
-    <classes mode="replace">
-        <memberOf key="att.measurement"/>
-        <memberOf key="att.typed"/>
-        <memberOf key="model.measureLike"/>
-    </classes>
-    <content>
-        <alternate maxOccurs="unbounded">
-            <textNode/>
-            <macroRef key="ssrq.content.critical"/>
-            <macroRef key="ssrq.content.display"/>
-            <macroRef key="ssrq.content.content"/>
-            <macroRef key="ssrq.content.entities"/>
-        </alternate>
-    </content>
-    <constraintSpec scheme="schematron" mode="change" ident="sch-measure" module="core">
-        <desc xml:lang="en" versionDate="2023-03-23">Constrains for tei:measure</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule abstract="true" id="measure-not-empty">
-                    <sch:assert test="matches(string(), '[\S\s]+[\S]+') and not(./*)">
-                        <sch:name/>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="measure" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Massangabe jeder Art.</desc>
+  <desc xml:lang="en" versionDate="2023-07-19">Contains a measurement of any type.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient une mesure de chaque type.</desc>
+  <desc xml:lang="it" versionDate="2023-07-19">Contiene una misura di ogni tipo.</desc>
+  <classes mode="replace">
+    <memberOf key="att.measurement"/>
+    <memberOf key="att.typed"/>
+    <memberOf key="model.measureLike"/>
+  </classes>
+  <content>
+    <alternate maxOccurs="unbounded">
+      <textNode/>
+      <macroRef key="ssrq.content.critical"/>
+      <macroRef key="ssrq.content.display"/>
+      <macroRef key="ssrq.content.content"/>
+      <macroRef key="ssrq.content.entities"/>
+    </alternate>
+  </content>
+  <constraintSpec scheme="schematron" mode="change" ident="sch-measure" module="core">
+    <desc xml:lang="en" versionDate="2023-03-23">Constrains for tei:measure</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule abstract="true" id="measure-not-empty">
+          <sch:assert test="matches(string(), '[\S\s]+[\S]+') and not(./*)"><sch:name/>
                         must not be empty!
                     </sch:assert>
-                </sch:rule>
-                <sch:rule context="tei:measure[@unit][not(@type)]">
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'age']">
-                    <sch:let name="age"
-                             value="{{concat('&#34;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.time']//tei:valItem/@ident), '|'), '&#34;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $age, '$'))">
-                        <sch:value-of select="./@unit"/>
+        </sch:rule>
+        <sch:rule context="tei:measure[@unit][not(@type)]">
+          <sch:extends rule="measure-not-empty"/>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'age']">
+          <sch:let name="age" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.time']//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $age, '$'))"><sch:value-of select="./@unit"/>
                         is no valid time measurement – you need to choose
                         from the following list:
                         <sch:value-of select="string-join(tokenize($age, '\|'), ', ')"/>
                     </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'area']">
-                    <sch:let name="area"
-                             value="{{concat('&#34;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.area']//tei:valItem/@ident, '|'), '&#34;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $area, '$'))">
-                        <sch:value-of select="./@unit"/>
+          <sch:extends rule="measure-not-empty"/>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'area']">
+          <sch:let name="area" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.area']//tei:valItem/@ident, '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $area, '$'))"><sch:value-of select="./@unit"/>
                         is not a valid area measurement – you need to choose
                         from the following list:
                         <sch:value-of select="string-join(tokenize($area, '\|'), ', ')"/>
                     </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'currency']">
-                    <sch:let name="currency"
-                             value="{{concat('&#34;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.currency']//tei:valItem/@ident, '|'), '&#34;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $currency, '$'))">
-                        <sch:value-of select="./@unit"/>
+          <sch:extends rule="measure-not-empty"/>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'currency']">
+          <sch:let name="currency" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.currency']//tei:valItem/@ident, '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $currency, '$'))"><sch:value-of select="./@unit"/>
                         is not valid currency – you need to choose from the
                         following list:
                         <sch:value-of select="string-join(tokenize($currency, '\|'), ', ')"/>
                     </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'length']">
-                    <sch:let name="length"
-                             value="{{concat('&#34;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.length', 'ssrq.measure.lengths.base.cm', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&#34;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $length, '$'))">
-                        <sch:value-of select="./@unit"/>
+          <sch:extends rule="measure-not-empty"/>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'length']">
+          <sch:let name="length" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.length', 'ssrq.measure.lengths.base.cm', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $length, '$'))"><sch:value-of select="./@unit"/>
                         is not valid length measurement– you need to choose
                         from the following list:
                         <sch:value-of select="string-join(tokenize($length, '\|'), ', ')"/>
                     </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'text_scope']">
-                    <sch:let name="scope"
-                             value="{{concat('&#34;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.scope']//tei:valItem/@ident), '|'), '&#34;')}}"/>
-                    <sch:assert test=".[parent::tei:extent]">
-                        <sch:name/>
+          <sch:extends rule="measure-not-empty"/>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'text_scope']">
+          <sch:let name="scope" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.scope']//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test=".[parent::tei:extent]"><sch:name/>
                         of type 'text_scope' must be a child of tei:extent.
                     </sch:assert>
-                    <sch:assert test="matches(@unit, concat('^', $scope, '$'))">
-                        <sch:value-of select="./@unit"/>
+          <sch:assert test="matches(@unit, concat('^', $scope, '$'))"><sch:value-of select="./@unit"/>
                         is no valid scope measurement – you need to choose
                         from the following list:
                         <sch:value-of select="string-join(tokenize($scope, '\|'), ', ')"/>
                     </sch:assert>
-                    <sch:assert test="string-length(text()) = 0 and not(*)">
-                        <sch:name/>
+          <sch:assert test="string-length(text()) = 0 and not(*)"><sch:name/>
                         of type
                         'text_scope' must be empty.
                     </sch:assert>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'undefined']">
-                    <sch:let name="various"
-                             value="{{concat('&#34;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.various']//tei:valItem/@ident), '|'), '&#34;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $various, '$'))">
-                        <sch:value-of select="./@unit"/>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'undefined']">
+          <sch:let name="various" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.various']//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $various, '$'))"><sch:value-of select="./@unit"/>
                         is not part of unspecific measurements– you need to
                         choose from the following list:
                         <sch:value-of select="string-join(tokenize($various, '\|'), ', ')"/>
                     </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-                <sch:rule context="tei:measure[@type = 'volume']">
-                    <sch:let name="volume"
-                             value="{{concat('&#34;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.lengths.base.klafter', 'ssrq.measure.capacity', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&#34;')}}"/>
-                    <sch:assert test="matches(@unit, concat('^', $volume, '$'))">
-                        <sch:value-of select="./@unit"/>
+          <sch:extends rule="measure-not-empty"/>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'volume']">
+          <sch:let name="volume" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.lengths.base.klafter', 'ssrq.measure.capacity', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $volume, '$'))"><sch:value-of select="./@unit"/>
                         is not valid capacity measurement– you need to choose
                         from the following list:
                         <sch:value-of select="string-join(tokenize($volume, '\|'), ', ')"/>
                     </sch:assert>
-                    <sch:extends rule="measure-not-empty"/>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="commodity" mode="replace">
-            <datatype>
-                <dataRef key="ssrq.measure.att.commodity"/>
-            </datatype>
-        </attDef>
-        <attDef ident="origin" mode="add" module="ssrq.core.module">
-            <datatype>
-                <dataRef key="ssrq.measure.att.origin"/>
-            </datatype>
-        </attDef>
-        <attDef ident="type" mode="replace" usage="req">
-            <datatype>
-                <dataRef key="ssrq.measure.att.type"/>
-            </datatype>
-        </attDef>
-    </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
-        <p>Währungsbezeichnung:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">umb
+          <sch:extends rule="measure-not-empty"/>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="commodity" mode="replace">
+      <datatype>
+        <dataRef key="ssrq.measure.att.commodity"/>
+      </datatype>
+    </attDef>
+    <attDef ident="origin" mode="add" module="ssrq.core.module">
+      <datatype>
+        <dataRef key="ssrq.measure.att.origin"/>
+      </datatype>
+    </attDef>
+    <attDef ident="type" mode="replace" usage="req">
+      <datatype>
+        <dataRef key="ssrq.measure.att.type"/>
+      </datatype>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
+    <p>Währungsbezeichnung:</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">umb
             <measure type="currency" origin="ZH" unit="lb" quantity="2">zwai phunt nuwer Zuricher
             </measure>
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-23">
-        <p>Indication de monnaie :</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">umb
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-23">
+    <p>Indication de monnaie :</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">umb
             <measure type="currency" origin="ZH" unit="lb" quantity="2">zwai phunt nuwer Zuricher
             </measure>
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
-        <p>Masseinheit:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+  </exemplum>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
+    <p>Masseinheit:</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
             ... item oben här
             <measure type="area" unit="Juchart" quantity="8" commodity="field">acht juchart acher</measure>
             aneinanderen, genannt
             ....
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-23">
-        <p>Unité de mesure :</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-23">
+    <p>Unité de mesure :</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
             ... item oben här
             <measure type="area" unit="Juchart" quantity="8" commodity="field">acht juchart acher</measure>
             aneinanderen, genannt
             ....
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
-        <p>Masseinheit:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">Item <measure type="weight" unit="Zentner" quantity="1"
-                                                                      commodity="wool">ein zentner landtwull
+  </exemplum>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
+    <p>Masseinheit:</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">Item <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull
         </measure> git <measure type="currency" unit="ß" quantity="2">ij ß</measure>.
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-23">
-        <p>Unité de mesure :</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">Item <measure type="weight" unit="Zentner" quantity="1"
-                                                                      commodity="wool">ein zentner landtwull
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-23">
+    <p>Unité de mesure :</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">Item <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull
         </measure> git <measure type="currency" unit="ß" quantity="2">ij ß</measure>.
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-05">
-        <p>Altersangabe:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">... wan das jeman unser lannttluͤtten, er
+  </exemplum>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-05">
+    <p>Altersangabe:</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">... wan das jeman unser lannttluͤtten, er
             sye jung oder alltt,
             <measure type="age" unit="year" quantity="14">ob vierzechen jarenn</measure>
             von ainem paner endrunne ...
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-05">
-        <p>Indication d'âge :</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">... wan das jeman unser lannttluͤtten, er
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-05">
+    <p>Indication d'âge :</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">... wan das jeman unser lannttluͤtten, er
             sye jung oder alltt,
             <measure type="age" unit="year" quantity="14">ob vierzechen jarenn</measure>
             von ainem paner endrunne ...
         </egXML>
-    </exemplum>
+  </exemplum>
 </elementSpec>

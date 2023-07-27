@@ -1,49 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             ident="encodingDesc"
-             module="header"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-17">Enthält Elemente für den Verweis auf die Transkriptionsrichtlinien.
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="encodingDesc" module="header" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-17">Enthält Elemente für den Verweis auf die Transkriptionsrichtlinien.
     </desc>
-    <desc xml:lang="en" versionDate="2023-07-17">Contains elements for referencing the transcription guidelines.
+  <desc xml:lang="en" versionDate="2023-07-17">Contains elements for referencing the transcription guidelines.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-07-17">Contient des éléments pour référencer les directives de transcription.
+  <desc xml:lang="fr" versionDate="2023-07-17">Contient des éléments pour référencer les directives de transcription.
     </desc>
-    <desc xml:lang="it" versionDate="2023-07-17">Contiene elementi per fare riferimento alle linee guida di
+  <desc xml:lang="it" versionDate="2023-07-17">Contiene elementi per fare riferimento alle linee guida di
         trascrizione.
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.teiHeaderPart"/>
-    </classes>
-    <content>
-        <elementRef key="editorialDecl"/>
-    </content>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-20">
-        <p>Modellhafter Aufbau</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <encodingDesc>
-                <editorialDecl>
-                    <p>
-                        <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
-                    </p>
-                </editorialDecl>
-            </encodingDesc>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-20">
-        <p>Structure modèle</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <encodingDesc>
-                <editorialDecl>
-                    <p>
-                        <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
-                    </p>
-                </editorialDecl>
-            </encodingDesc>
-        </egXML>
-    </exemplum>
+  <classes mode="replace">
+    <memberOf key="model.teiHeaderPart"/>
+  </classes>
+  <content>
+    <elementRef key="editorialDecl"/>
+  </content>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-20">
+    <p>Modellhafter Aufbau</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <encodingDesc>
+        <editorialDecl>
+          <p>
+            <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
+          </p>
+        </editorialDecl>
+      </encodingDesc>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-20">
+    <p>Structure modèle</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <encodingDesc>
+        <editorialDecl>
+          <p>
+            <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
+          </p>
+        </editorialDecl>
+      </encodingDesc>
+    </egXML>
+  </exemplum>
 </elementSpec>

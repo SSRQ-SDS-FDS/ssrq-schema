@@ -1,101 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             ident="addSpan"
-             module="transcr"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-13">Bezeichnet größere Hinzufügungen.</desc>
-    <desc xml:lang="en" versionDate="2023-07-13">Denotes major additions.</desc>
-    <desc xml:lang="fr" versionDate="2023-07-13">Désigne des ajouts majeurs.</desc>
-    <desc xml:lang="it" versionDate="2023-07-13">Denota aggiunte importanti.</desc>
-    <classes mode="replace">
-        <memberOf key="att.global.rendition"/>
-        <memberOf key="att.placement"/>
-        <memberOf key="att.spanning"/>
-        <memberOf key="att.written"/>
-    </classes>
-    <content>
-        <empty/>
-    </content>
-    <attList>
-        <attDef ident="rend" mode="replace">
-            <datatype>
-                <dataRef key="ssrq.rend.add"/>
-            </datatype>
-        </attDef>
-    </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <addSpan place="left margin" spanTo="add1"/>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="addSpan" module="transcr" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-13">Bezeichnet größere Hinzufügungen.</desc>
+  <desc xml:lang="en" versionDate="2023-07-13">Denotes major additions.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-13">Désigne des ajouts majeurs.</desc>
+  <desc xml:lang="it" versionDate="2023-07-13">Denota aggiunte importanti.</desc>
+  <classes mode="replace">
+    <memberOf key="att.global.rendition"/>
+    <memberOf key="att.placement"/>
+    <memberOf key="att.spanning"/>
+    <memberOf key="att.written"/>
+  </classes>
+  <content>
+    <empty/>
+  </content>
+  <attList>
+    <attDef ident="rend" mode="replace">
+      <datatype>
+        <dataRef key="ssrq.rend.add"/>
+      </datatype>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"><addSpan place="left margin" spanTo="add1"/>
             ...
             <anchor xml:id="add1"/>
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <addSpan place="left margin" spanTo="add1"/>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"><addSpan place="left margin" spanTo="add1"/>
             ...
             <anchor xml:id="add1"/>
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
+  </exemplum>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"><addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
             ...
             <anchor xml:id="add1"/>
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"><addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
             ...
             <anchor xml:id="add1"/>
         </egXML>
-    </exemplum>
-    <remarks xml:lang="de" versionDate="2023-07-11">
-        <p>Mit <att>spanTo</att> wird zwingend auf den Endpunkt der Hinzufügung verwiesen, der
+  </exemplum>
+  <remarks xml:lang="de" versionDate="2023-07-11">
+    <p>Mit <att>spanTo</att> wird zwingend auf den Endpunkt der Hinzufügung verwiesen, der
             mit <gi>anchor</gi> markiert wird.
         </p>
-        <p>Der Ort der Hinzufügung muss zwingend in <att>place</att> und die Hand der ergänzten Stelle kann
+    <p>Der Ort der Hinzufügung muss zwingend in <att>place</att> und die Hand der ergänzten Stelle kann
             mit <att>hand</att> festgehalten werden. Falls notwendig, kann innerhalb von <att>rend</att> angegeben
             werden, wie die Hinzufügung (mit Bleistift, anderer Tinte etc.) vorgenommen wurde. Handelt es sich bei einer
             Ergänzung um die Hand des ersten Schreibers, dann wird die Hand nicht speziell angemerkt.
         </p>
-    </remarks>
-    <remarks xml:lang="en" versionDate="2023-07-11">
-        <p>
-            <att>spanTo</att>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-11">
+    <p><att>spanTo</att>
             is used to refer to the end point of the addition which is marked with <gi>anchor</gi>.
         </p>
-        <p>The place of addition must be in <att>place</att> and the hand of the added place can be held
+    <p>The place of addition must be in <att>place</att> and the hand of the added place can be held
             with <att>hand</att>. If necessary, inside <att>rend</att> it can be specified how the addition was made
             (pencil, other ink, etc.). If an addition is the hand of the first scribe, then the hand is not specifically
             noted.
         </p>
-    </remarks>
-    <remarks xml:lang="fr" versionDate="2023-07-11">
-        <p>
-            <att>spanTo</att>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-11">
+    <p><att>spanTo</att>
             est utilisé pour faire référence au point final de l'addition, qui est marquée par <gi>anchor</gi>.
         </p>
-        <p>La place d'addition doit être dans <att>place</att> et la main de la place ajoutée peut être tenue avec <att>
+    <p>La place d'addition doit être dans <att>place</att> et la main de la place ajoutée peut être tenue avec <att>
             hand</att>. Si nécessaire, à l'intérieur de <att>rend</att>, il est possible de spécifier comment l'ajout a
             été effectué (crayon, autre encre, etc.). Si un ajout est la main du premier scribe, alors la main n'est pas
             spécifiquement notée.
         </p>
-    </remarks>
-    <remarks xml:lang="it" versionDate="2023-07-11">
-        <p>
-            <att>spanTo</att>
+  </remarks>
+  <remarks xml:lang="it" versionDate="2023-07-11">
+    <p><att>spanTo</att>
             è usato per riferirsi al punto finale dell'addizione, che è contrassegnata con <gi>anchor</gi>.
         </p>
-        <p>Il luogo dell'addizione deve essere in <att>luogo</att> e la mano del luogo dell'addizione si può tenere con
+    <p>Il luogo dell'addizione deve essere in <att>luogo</att> e la mano del luogo dell'addizione si può tenere con
             <att>mano</att>. Se necessario, all'interno di <att>rend</att> si può specificare come è stata fatta
             l'aggiunta (matita, altro inchiostro, ecc.). Se un'aggiunta è la mano del primo scrivano, allora la mano non
             è specificatamente annotata.
         </p>
-    </remarks>
+  </remarks>
 </elementSpec>

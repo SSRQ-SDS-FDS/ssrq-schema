@@ -8,7 +8,27 @@ import pytest
     [
         (
             "valid-sourceDesc",
-            "<sourceDesc>{msDesc}</sourceDesc>",
+            """
+                    <sourceDesc>
+                        <msDesc>
+                            <head>foo</head>
+                            <physDesc>
+                                <objectDesc form="book">
+                                    <supportDesc>
+                                        <support>
+                                            <material type="paper"/>
+                                        </support>
+                                    </supportDesc>
+                                </objectDesc>
+                            </physDesc>
+                            <history>
+                                <origin>
+                                    <origDate calendar="gregorian" when-custom="1600-01-01"/>
+                                </origin>
+                            </history>
+                        </msDesc>
+                    </sourceDesc>
+                """,
             True,
         ),
         (

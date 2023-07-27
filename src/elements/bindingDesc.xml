@@ -1,64 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec
-        xmlns="http://www.tei-c.org/ns/1.0"
-        ident="bindingDesc"
-        module="msdescription"
-        mode="change">
-    <desc xml:lang="de" versionDate="2023-07-14">Enthält Informationen über die physische Struktur oder Bindung eines
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="bindingDesc" module="msdescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-14">Enthält Informationen über die physische Struktur oder Bindung eines
         Textes.
     </desc>
-    <desc xml:lang="en" versionDate="2023-07-14">Contains information about the physical structure or binding of a text.
+  <desc xml:lang="en" versionDate="2023-07-14">Contains information about the physical structure or binding of a text.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-07-14">Contient des informations sur la structure physique ou la reliure d'un
+  <desc xml:lang="fr" versionDate="2023-07-14">Contient des informations sur la structure physique ou la reliure d'un
         texte.
     </desc>
-    <desc xml:lang="it" versionDate="2023-07-14">Contiene informazioni sulla struttura fisica o sulla rilegatura di un
+  <desc xml:lang="it" versionDate="2023-07-14">Contiene informazioni sulla struttura fisica o sulla rilegatura di un
         testo.
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.physDescPart"/>
-    </classes>
-    <content>
-        <elementRef key="p" maxOccurs="unbounded"/>
-    </content>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-07-11">
-        <p>Beschreibung eines kartonierten Ledereinbanes</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <bindingDesc>
-                <p xml:lang="de">Buch mit kartoniertem Ledereinband</p>
-            </bindingDesc>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-07-11">
-        <p>Description d'une reliure en cuir cartonnée</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <bindingDesc>
-                <p xml:lang="fr">Livre avec couverture en cuir cartonnée</p>
-            </bindingDesc>
-        </egXML>
-    </exemplum>
-    <remarks xml:lang="de" versionDate="2023-07-14">
-        <p>Mit diesem Tag können Details wie die Art der Bindung (z. B. Buchbindung, Broschur) angegeben werden. Die
+  <classes mode="replace">
+    <memberOf key="model.physDescPart"/>
+  </classes>
+  <content>
+    <elementRef key="p" maxOccurs="unbounded"/>
+  </content>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-07-11">
+    <p>Beschreibung eines kartonierten Ledereinbanes</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <bindingDesc>
+        <p xml:lang="de">Buch mit kartoniertem Ledereinband</p>
+      </bindingDesc>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-07-11">
+    <p>Description d'une reliure en cuir cartonnée</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <bindingDesc>
+        <p xml:lang="fr">Livre avec couverture en cuir cartonnée</p>
+      </bindingDesc>
+    </egXML>
+  </exemplum>
+  <remarks xml:lang="de" versionDate="2023-07-14">
+    <p>Mit diesem Tag können Details wie die Art der Bindung (z. B. Buchbindung, Broschur) angegeben werden. Die
             Beschreibung wird als Freitext in <gi>p</gi> angegeben.
         </p>
-    </remarks>
-    <remarks xml:lang="en" versionDate="2023-07-14">
-        <p>This tag can be used to specify details such as the type of
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-14">
+    <p>This tag can be used to specify details such as the type of
             binding (e.g. book binding, brochure). The description is given as free text in <gi>p</gi>.
         </p>
-    </remarks>
-    <remarks xml:lang="fr" versionDate="2023-07-14">
-        <p>Cette balise permet d'indiquer des détails tels que le type de reliure (par exemple, reliure de livre,
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-14">
+    <p>Cette balise permet d'indiquer des détails tels que le type de reliure (par exemple, reliure de livre,
             brochage). La description est donnée en texte libre dans <gi>p</gi>.
         </p>
-    </remarks>
-    <remarks xml:lang="it" versionDate="2023-07-14">
-        <p>Questo tag può essere utilizzato per specificare dettagli come il tipo di rilegatura (ad es. rilegatura di
+  </remarks>
+  <remarks xml:lang="it" versionDate="2023-07-14">
+    <p>Questo tag può essere utilizzato per specificare dettagli come il tipo di rilegatura (ad es. rilegatura di
             libri, brochure). La descrizione è data come testo libero in <gi>p</gi>.
         </p>
-    </remarks>
+  </remarks>
 </elementSpec>

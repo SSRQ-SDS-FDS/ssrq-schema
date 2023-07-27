@@ -8,31 +8,74 @@ import pytest
     [
         (
             "valid-witness",
-            """<witness xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d' n="A">{msDesc}</witness>""",
+            """
+                <witness xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d' n="A">
+                    <msDesc>
+                        <head>foo</head>
+                        <physDesc>
+                            <objectDesc form="book">
+                                <supportDesc>
+                                    <support>
+                                        <material type="paper"/>
+                                    </support>
+                                </supportDesc>
+                            </objectDesc>
+                        </physDesc>
+                        <history>
+                            <origin>
+                                <origDate calendar="gregorian" when-custom="1600-01-01"/>
+                            </origin>
+                        </history>
+                    </msDesc>
+                </witness>""",
             True,
         ),
         (
             "invalid-witness-xml-id",
-            """<witness xml:id='bla' n="A">
-                                                    <msDesc>
-                                                        <msIdentifier>
-                                                            <idno>foo</idno>
-                                                            <repository>bar</repository>
-                                                        </msIdentifier>
-                                                    </msDesc>
-                                                </witness>""",
+            """
+                <witness xml:id='bla' n="A">
+                    <msDesc>
+                        <head>foo</head>
+                        <physDesc>
+                            <objectDesc form="book">
+                                <supportDesc>
+                                    <support>
+                                        <material type="paper"/>
+                                    </support>
+                                </supportDesc>
+                            </objectDesc>
+                        </physDesc>
+                        <history>
+                            <origin>
+                                <origDate calendar="gregorian" when-custom="1600-01-01"/>
+                            </origin>
+                        </history>
+                    </msDesc>
+                </witness>""",
             False,
         ),
         (
             "witness-with-invalid-attribute",
-            """<witness type="foo">
-                                                                <msDesc>
-                                                                    <msIdentifier>
-                                                                        <idno>foo</idno>
-                                                                        <repository>bar</repository>
-                                                                    </msIdentifier>
-                                                                </msDesc>
-                                                            </witness>""",
+            """
+                <witness type="foo">
+                    <msDesc>
+                        <head>foo</head>
+                        <physDesc>
+                            <objectDesc form="book">
+                                <supportDesc>
+                                    <support>
+                                        <material type="paper"/>
+                                    </support>
+                                </supportDesc>
+                            </objectDesc>
+                        </physDesc>
+                        <history>
+                            <origin>
+                                <origDate calendar="gregorian" when-custom="1600-01-01"/>
+                            </origin>
+                        </history>
+                    </msDesc>
+                </witness>""",
             False,
         ),
     ],

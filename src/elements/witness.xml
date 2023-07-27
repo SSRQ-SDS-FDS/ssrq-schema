@@ -1,46 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:xi="http://www.w3.org/2001/XInclude"
-             ident="witness"
-             module="textcrit"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-24">Enthält die Stückbeschreibung einer Quelle.</desc>
-    <desc xml:lang="en" versionDate="2023-07-24">Contains the piece description of a source.</desc>
-    <desc xml:lang="fr" versionDate="2023-07-24">Contient la description d'un morceau d'une source.</desc>
-    <desc xml:lang="it" versionDate="2023-07-24">Contiene la descrizione del pezzo di una fonte.</desc>
-    <classes mode="replace">
-        <memberOf key="att.global"/>
-    </classes>
-    <content>
-        <elementRef key="msDesc"/>
-    </content>
-    <attList>
-        <attDef ident="n" mode="replace" usage="req">
-            <datatype>
-                <dataRef name="string" restriction="[A-Z][0-9]?"/>
-            </datatype>
-        </attDef>
-        <attDef ident="xml:id" mode="change" usage="req">
-            <datatype>
-                <!--This restriction has two parts
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="witness" module="textcrit" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-24">Enthält die Stückbeschreibung einer Quelle.</desc>
+  <desc xml:lang="en" versionDate="2023-07-24">Contains the piece description of a source.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-24">Contient la description d'un morceau d'une source.</desc>
+  <desc xml:lang="it" versionDate="2023-07-24">Contiene la descrizione del pezzo di una fonte.</desc>
+  <classes mode="replace">
+    <memberOf key="att.global"/>
+  </classes>
+  <content>
+    <elementRef key="msDesc"/>
+  </content>
+  <attList>
+    <attDef ident="n" mode="replace" usage="req">
+      <datatype>
+        <dataRef name="string" restriction="[A-Z][0-9]?"/>
+      </datatype>
+    </attDef>
+    <attDef ident="xml:id" mode="change" usage="req">
+      <datatype>
+        <!--This restriction has two parts
                     1) A prefix "id-ssrq-". This prefix is used to make sure, that the xml:id is a valid token of
                     the XS:ID datatype (id est a NCName without colons). This is necessary, because the following
                     UUID may start with a letter, which is forbidden as first char in NCNames.
                     2) A UUID Version 4. This is used, because UUIDs are (potentially) persistant and globally
                     unique. This allows publishing the XML-files while still work in progress.
                 -->
-                <dataRef name="ID"
-                         restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
-            </datatype>
-        </attDef>
-        <attDef ident="xml:lang" mode="delete"/>
-    </attList>
-    <xi:include href="examples.xml" xpointer="ex-witness-de"/>
-    <xi:include href="examples.xml" xpointer="ex-witness-en"/>
-    <xi:include href="examples.xml" xpointer="ex-witness-fr"/>
-    <xi:include href="examples.xml" xpointer="ex-witness-it"/>
+        <dataRef name="ID" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+      </datatype>
+    </attDef>
+    <attDef ident="xml:lang" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-witness-de"/>
+  <xi:include href="examples.xml" xpointer="ex-witness-en"/>
+  <xi:include href="examples.xml" xpointer="ex-witness-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-witness-it"/>
 </elementSpec>

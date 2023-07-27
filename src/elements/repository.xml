@@ -1,60 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             ident="repository"
-             module="msdescription"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-15">Enthält ohne Abkürzung den Namen des Archivs, in welchem die Quelle
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="repository" module="msdescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-15">Enthält ohne Abkürzung den Namen des Archivs, in welchem die Quelle
         liegt.
     </desc>
-    <desc xml:lang="en" versionDate="2023-07-15">Contains the name of the archive in which the source is located without
+  <desc xml:lang="en" versionDate="2023-07-15">Contains the name of the archive in which the source is located without
         abbreviation.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-07-15">Contient le nom de l'archive dans laquelle se trouve la source sans
+  <desc xml:lang="fr" versionDate="2023-07-15">Contient le nom de l'archive dans laquelle se trouve la source sans
         abréviation.
     </desc>
-    <desc xml:lang="it" versionDate="2023-07-15">Contiene il nome dell'archivio in cui si trova la fonte senza
+  <desc xml:lang="it" versionDate="2023-07-15">Contiene il nome dell'archivio in cui si trova la fonte senza
         abbreviazione.
     </desc>
-    <classes mode="replace">
-        <memberOf key="att.global"/>
-    </classes>
-    <content>
-        <textNode/>
-    </content>
-    <attList>
-        <attDef ident="n" mode="delete"/>
-        <attDef ident="xml:id" mode="delete"/>
-        <attDef ident="xml:lang" mode="replace" usage="req">
-            <desc xml:lang="de" versionDate="2023-06-23">ISO-639-1-Sprachkürzel</desc>
-            <desc xml:lang="en" versionDate="2023-06-23">ISO-639-1-Language abbreviation</desc>
-            <desc xml:lang="fr" versionDate="2023-06-23">ISO-639-1-Abréviation de la langue</desc>
-            <desc xml:lang="it" versionDate="2023-06-23">ISO-639-1-Abbreviazione della lingua</desc>
-            <valList type="closed">
-                <valItem ident="de"/>
-                <valItem ident="fr"/>
-            </valList>
-        </attDef>
-    </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-        <p>Beispielhafte Verwendung zur Erfassung des Archivs</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <msIdentifier>
-                <repository xml:lang="de">Staatsarchiv Schwyz</repository>
-                <idno xml:lang="de">StASZ, Urk. 190</idno>
-            </msIdentifier>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-        <p>Exemple d'utilisation pour la saisie des archives</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <msIdentifier>
-                <repository xml:lang="de">Staatsarchiv Schwyz</repository>
-                <idno xml:lang="de">StASZ, Urk. 190</idno>
-            </msIdentifier>
-        </egXML>
-    </exemplum>
+  <classes mode="replace">
+    <memberOf key="att.global"/>
+  </classes>
+  <content>
+    <textNode/>
+  </content>
+  <attList>
+    <attDef ident="n" mode="delete"/>
+    <attDef ident="xml:id" mode="delete"/>
+    <attDef ident="xml:lang" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2023-06-23">ISO-639-1-Sprachkürzel</desc>
+      <desc xml:lang="en" versionDate="2023-06-23">ISO-639-1-Language abbreviation</desc>
+      <desc xml:lang="fr" versionDate="2023-06-23">ISO-639-1-Abréviation de la langue</desc>
+      <desc xml:lang="it" versionDate="2023-06-23">ISO-639-1-Abbreviazione della lingua</desc>
+      <valList type="closed">
+        <valItem ident="de"/>
+        <valItem ident="fr"/>
+      </valList>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+    <p>Beispielhafte Verwendung zur Erfassung des Archivs</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <msIdentifier>
+        <repository xml:lang="de">Staatsarchiv Schwyz</repository>
+        <idno xml:lang="de">StASZ, Urk. 190</idno>
+      </msIdentifier>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+    <p>Exemple d'utilisation pour la saisie des archives</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <msIdentifier>
+        <repository xml:lang="de">Staatsarchiv Schwyz</repository>
+        <idno xml:lang="de">StASZ, Urk. 190</idno>
+      </msIdentifier>
+    </egXML>
+  </exemplum>
 </elementSpec>

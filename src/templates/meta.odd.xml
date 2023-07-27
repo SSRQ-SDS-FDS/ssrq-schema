@@ -1,25 +1,25 @@
+<?xml version="1.0"?>
 <teiHeader xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
-    <fileDesc>
-        <titleStmt>
-            <title>{{ title }}</title>
-            <author>{{ author }}</author>
-        </titleStmt>
-        <publicationStmt>
-            <publisher>SSRQ-SDS-FDS</publisher>
-            <date when="1970-01-01"/>
-            <idno type="version">{{ version }}</idno>
-            <availability>
-                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <fileDesc>
+    <titleStmt>
+      <title>{{ title }}</title>
+      <author>{{ author }}</author>
+    </titleStmt>
+    <publicationStmt>
+      <publisher>SSRQ-SDS-FDS</publisher>
+      <date when="1970-01-01"/>
+      <idno type="version">{{ version }}</idno>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                     Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
                 </licence>
-            </availability>
-        </publicationStmt>
-        <notesStmt>
-            <note type="ns">SSRQ specific elements are assigned to <ref
-                    target="http://ssrq-sds-fds.ch/ns/nonTEI">ssrq</ref>-namespace</note>
-        </notesStmt>
-        <sourceDesc>
-            <p>{{ desc }}</p>
-        </sourceDesc>
-    </fileDesc>
+      </availability>
+    </publicationStmt>
+    <notesStmt>
+      <note type="ns">SSRQ specific elements are assigned to <ref target="http://ssrq-sds-fds.ch/ns/nonTEI">ssrq</ref>-namespace</note>
+    </notesStmt>
+    <sourceDesc>
+      <p>{{ desc }}</p>
+    </sourceDesc>
+  </fileDesc>
 </teiHeader>

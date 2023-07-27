@@ -1,160 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-             ident="editor"
-             module="core"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet in einer bibliographischen Angabe den Herausgeber einer
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="editor" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet in einer bibliographischen Angabe den Herausgeber einer
         Publikation. Im <gi>titleStmt</gi> eines Stücks werden damit die Bearbeitenden der Editionseinheit erfasst.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-11">Indicates the editor of a publication in a bibliographical entry.
+  <desc xml:lang="en" versionDate="2023-05-11">Indicates the editor of a publication in a bibliographical entry.
         In the <gi>titleStmt</gi> of a piece, the editors of the edition unit are thus recorded.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-11">Désigne, dans une notice bibliographique, l'éditeur d'une publication.
+  <desc xml:lang="fr" versionDate="2023-05-11">Désigne, dans une notice bibliographique, l'éditeur d'une publication.
         Dans le <gi>titleStmt</gi> d'une pièce, on saisit ainsi les éditeurs de l'unité d'édition.
     </desc>
-    <desc xml:lang="it" versionDate="2023-05-11">Designa l'editore di una pubblicazione in un riferimento bibliografico.
+  <desc xml:lang="it" versionDate="2023-05-11">Designa l'editore di una pubblicazione in un riferimento bibliografico.
         I curatori dell'unità di edizione sono registrati nel <gi>titleStmt</gi> di un brano.
     </desc>
-    <classes mode="replace"/>
-    <content>
-        <alternate>
-            <elementRef key="persName"/>
-            <textNode/>
-        </alternate>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-editor">
-        <desc xml:lang="en" versionDate="2023-04-13">Constraint for tei:editor</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:editor[parent::tei:titleStmt]">
-                    <sch:assert test="tei:persName">The usage of tei:editor as part of the titleStmt
+  <classes mode="replace"/>
+  <content>
+    <alternate>
+      <elementRef key="persName"/>
+      <textNode/>
+    </alternate>
+  </content>
+  <constraintSpec scheme="schematron" ident="sch-el-editor">
+    <desc xml:lang="en" versionDate="2023-04-13">Constraint for tei:editor</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:editor[parent::tei:titleStmt]">
+          <sch:assert test="tei:persName">The usage of tei:editor as part of the titleStmt
                         requires a tei:persName as child node.
                     </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-        <p>Beispiel einer bibliografischen Angabe</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <biblStruct>
-                <analytic>
-                    <author>Holenstein, André</author>
-                    <title level="a">Seelenheil und Untertanenpflicht. Zur gesellschaftlichen
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+    <p>Beispiel einer bibliografischen Angabe</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <biblStruct>
+        <analytic>
+          <author>Holenstein, André</author>
+          <title level="a">Seelenheil und Untertanenpflicht. Zur gesellschaftlichen
                         Funktion und theoretischen Begründung des Eides in der ständischen
                         Gesellschaft
                     </title>
-                </analytic>
-                <monogr>
-                    <title level="m">Der Fluch und der Eid. Die metaphysische Begründung
+        </analytic>
+        <monogr>
+          <title level="m">Der Fluch und der Eid. Die metaphysische Begründung
                         gesellschaftlichen Zusammenlebens und politischer Ordnung in der ständischen
                         Gesellschaft
                     </title>
-                    <editor>Peter Blickle</editor>
-                    <imprint>
-                        <pubPlace>Berlin</pubPlace>
-                        <date when="1993">1993</date>
-                    </imprint>
-                </monogr>
-                <monogr>
-                    <title level="m">Zeitschrift für historische Forschung</title>
-                    <note>Beih.</note>
-                    <imprint>
-                        <biblScope type="vol">15</biblScope>
-                        <biblScope type="pp">11–63</biblScope>
-                    </imprint>
-                </monogr>
-            </biblStruct>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-        <p>Exemple d'indication bibliographique</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <biblStruct>
-                <analytic>
-                    <author>Holenstein, André</author>
-                    <title level="a">Seelenheil und Untertanenpflicht. Zur gesellschaftlichen
+          <editor>Peter Blickle</editor>
+          <imprint>
+            <pubPlace>Berlin</pubPlace>
+            <date when="1993">1993</date>
+          </imprint>
+        </monogr>
+        <monogr>
+          <title level="m">Zeitschrift für historische Forschung</title>
+          <note>Beih.</note>
+          <imprint>
+            <biblScope type="vol">15</biblScope>
+            <biblScope type="pp">11–63</biblScope>
+          </imprint>
+        </monogr>
+      </biblStruct>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+    <p>Exemple d'indication bibliographique</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <biblStruct>
+        <analytic>
+          <author>Holenstein, André</author>
+          <title level="a">Seelenheil und Untertanenpflicht. Zur gesellschaftlichen
                         Funktion und theoretischen Begründung des Eides in der ständischen
                         Gesellschaft
                     </title>
-                </analytic>
-                <monogr>
-                    <title level="m">Der Fluch und der Eid. Die metaphysische Begründung
+        </analytic>
+        <monogr>
+          <title level="m">Der Fluch und der Eid. Die metaphysische Begründung
                         gesellschaftlichen Zusammenlebens und politischer Ordnung in der ständischen
                         Gesellschaft
                     </title>
-                    <editor>Peter Blickle</editor>
-                    <imprint>
-                        <pubPlace>Berlin</pubPlace>
-                        <date when="1993">1993</date>
-                    </imprint>
-                </monogr>
-                <monogr>
-                    <title level="m">Zeitschrift für historische Forschung</title>
-                    <note>Beih.</note>
-                    <imprint>
-                        <biblScope type="vol">15</biblScope>
-                        <biblScope type="pp">11–63</biblScope>
-                    </imprint>
-                </monogr>
-            </biblStruct>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-        <p>Beispiel der Erfassung der Bearbeitenden einer Editionseinheit</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <titleStmt>
-                <title>I. Abteilung: Die Rechtsquellen des Kantons Zürich. Neue Folge. Zweiter Teil:
+          <editor>Peter Blickle</editor>
+          <imprint>
+            <pubPlace>Berlin</pubPlace>
+            <date when="1993">1993</date>
+          </imprint>
+        </monogr>
+        <monogr>
+          <title level="m">Zeitschrift für historische Forschung</title>
+          <note>Beih.</note>
+          <imprint>
+            <biblScope type="vol">15</biblScope>
+            <biblScope type="pp">11–63</biblScope>
+          </imprint>
+        </monogr>
+      </biblStruct>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+    <p>Beispiel der Erfassung der Bearbeitenden einer Editionseinheit</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <titleStmt>
+        <title>I. Abteilung: Die Rechtsquellen des Kantons Zürich. Neue Folge. Zweiter Teil:
                     Rechte der Landschaft. Band 11: Die Obervogteien um die Stadt Zürich
                 </title>
-                <editor>
-                    <persName>Ariane Huber Hernández</persName>
-                </editor>
-                <editor>
-                    <persName>Michael Nadig</persName>
-                </editor>
-                <respStmt>
-                    <persName>Ariane Huber Hernández</persName>
-                    <persName>Michael Nadig</persName>
-                    <resp key="transcript"/>
-                </respStmt>
-                <respStmt>
-                    <persName>Ariane Huber Hernández</persName>
-                    <persName>Michael Nadig</persName>
-                    <resp key="tagging"/>
-                </respStmt>
-            </titleStmt>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-        <p>Exemple de saisie des collaborateurs d'une unité d'édition</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <titleStmt>
-                <title>I. Abteilung: Die Rechtsquellen des Kantons Zürich. Neue Folge. Zweiter Teil:
+        <editor>
+          <persName>Ariane Huber Hernández</persName>
+        </editor>
+        <editor>
+          <persName>Michael Nadig</persName>
+        </editor>
+        <respStmt>
+          <persName>Ariane Huber Hernández</persName>
+          <persName>Michael Nadig</persName>
+          <resp key="transcript"/>
+        </respStmt>
+        <respStmt>
+          <persName>Ariane Huber Hernández</persName>
+          <persName>Michael Nadig</persName>
+          <resp key="tagging"/>
+        </respStmt>
+      </titleStmt>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
+    <p>Exemple de saisie des collaborateurs d'une unité d'édition</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <titleStmt>
+        <title>I. Abteilung: Die Rechtsquellen des Kantons Zürich. Neue Folge. Zweiter Teil:
                     Rechte der Landschaft. Band 11: Die Obervogteien um die Stadt Zürich
                 </title>
-                <editor>
-                    <persName>Ariane Huber Hernández</persName>
-                </editor>
-                <editor>
-                    <persName>Michael Nadig</persName>
-                </editor>
-                <respStmt>
-                    <persName>Ariane Huber Hernández</persName>
-                    <persName>Michael Nadig</persName>
-                    <resp key="transcript"/>
-                </respStmt>
-                <respStmt>
-                    <persName>Ariane Huber Hernández</persName>
-                    <persName>Michael Nadig</persName>
-                    <resp key="tagging"/>
-                </respStmt>
-            </titleStmt>
-        </egXML>
-    </exemplum>
+        <editor>
+          <persName>Ariane Huber Hernández</persName>
+        </editor>
+        <editor>
+          <persName>Michael Nadig</persName>
+        </editor>
+        <respStmt>
+          <persName>Ariane Huber Hernández</persName>
+          <persName>Michael Nadig</persName>
+          <resp key="transcript"/>
+        </respStmt>
+        <respStmt>
+          <persName>Ariane Huber Hernández</persName>
+          <persName>Michael Nadig</persName>
+          <resp key="tagging"/>
+        </respStmt>
+      </titleStmt>
+    </egXML>
+  </exemplum>
 </elementSpec>
