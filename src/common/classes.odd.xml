@@ -117,7 +117,7 @@
             <classes mode="replace"/>
             <!-- This removes the TEI default constraints, which requires text content
                  for any elements that uses @calendar. -->
-            <constraintSpec ident="calendar" scheme="schematron" mode="delete"/>
+            <constraintSpec scheme="schematron" ident="calendar" mode="delete"/>
             <attList>
                 <attDef ident="calendar" mode="replace" usage="req">
                     <desc xml:lang="de" versionDate="2023-06-29">verwendeter Kalender (im Inhalt des Elements)</desc>
@@ -717,7 +717,7 @@
                     <datatype>
                         <dataRef name="IDREF"/>
                     </datatype>
-                    <constraintSpec ident="spanTo-points-to-following" scheme="schematron" mode="replace">
+                    <constraintSpec scheme="schematron" ident="spanTo-points-to-following" mode="replace">
                         <desc xml:lang="en" versionDate="2023-06-22">The @spanTo attribute must point to an element
                             following the current element – this rules replaces the original TEI constraint, because
                             we're using xs:IDREF.
