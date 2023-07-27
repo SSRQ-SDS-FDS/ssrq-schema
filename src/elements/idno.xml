@@ -140,7 +140,7 @@
         </p>
         <p>Enthält <gi>idno</gi> eine UUID, dann muss diese dem folgenden regulären Ausdruck entsprechen:
 
-            "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$".
+            <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
             Die UUID ist wie folgt aufgebaut:
             <list>
                 <item>Genau acht Zeichen aus folgendem Set: die Ziffern "0-9", die Grossbuchstaben "A-F" oder die
@@ -159,7 +159,7 @@
             </list>
         </p>
         <p>Enthält <gi>idno</gi> ein Bandkürzel der SSRQ, dann muss dies dem folgenden regulären Ausdruck entsprechen:
-            "^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$".
+            <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$"</val>.
             Die Bandkürzel sind wie folgt aufgebaut:
             <list>
                 <item>Das Präfix "SSRQ" oder "SDS" oder "FDS".</item>
@@ -187,7 +187,7 @@
         </p>
         <p>If <gi>idno</gi> contains a UUID, then it must match the following regular expression:
 
-            "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0- 9A-Fa-f]{3}-[0-9A-Fa-f]{12}$".
+            <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0- 9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
             The UUID is structured as follows:
             <list>
                 <item>Exactly eight characters from the following set: the digits "0-9", the capital letters "A-F" or
@@ -207,7 +207,7 @@
         </p>
         <p>If <gi>idno</gi> contains a volume abbreviation of the SSRQ, then this must match the following regular
             expression:
-            "^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\ .)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$".
+            <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\ .)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$</val>.
             The volume abbreviations are structured as follows:
             <list>
                 <item>The prefix "SSRQ" or "SDS" or "FDS".</item>
@@ -235,7 +235,7 @@
             respective.
         </p>
         <p>Si <gi>idno</gi> contient un UUID, alors il doit correspondre à l'expression régulière suivante :
-            "^[0-9A-Fa-f]{8}-[0-9A-Fa - f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12 } $". L'UUID est
+            <val>^[0-9A-Fa-f]{8}-[0-9A-Fa - f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>. L'UUID est
             structuré comme suit :
             <list>
                 <item>Exactement huit caractères parmi l'ensemble suivant : les chiffres "0-9", les lettres majuscules
@@ -254,8 +254,8 @@
             </list>
         </p>
         <p>Contient <gi>idno</gi> a abréviation de bande du SSRQ, cela doit correspondre à l'expression régulière
-            suivante : "^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(? : (
-            (?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$". Les abréviations de bande sont structurées comme suit
+            suivante : <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(? : (
+            (?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$</val>. Les abréviations de bande sont structurées comme suit
             :
             <list>
                 <item>Le préfixe "SSRQ" ou "SDS" ou "FDS".</item>
@@ -281,7 +281,7 @@
         <p>Se <gi>idno</gi> contiene la firma di un archivio, deve essere conforme al sistema del rispettivo archivio.
         </p>
         <p>Se <gi>idno</gi> contiene un UUID, deve corrispondere alla seguente espressione regolare:
-            "^[0-9A-Fa-f]{8}-[0-9A-Fa - f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12 } $". L'UUID è
+            <val>^[0-9A-Fa-f]{8}-[0-9A-Fa - f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>. L'UUID è
             strutturato come segue:
             <list>
                 <item>Esattamente otto caratteri del seguente insieme: le cifre "0-9", le lettere maiuscole "A-F" o le
@@ -300,8 +300,8 @@
             </list>
         </p>
         <p>Contiene <gi>idno</gi> a abbreviazione di banda dell'SSRQ, deve corrispondere alla seguente espressione
-            regolare: "^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?: (
-            (?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$". Le abbreviazioni di banda sono strutturate come segue:
+            regolare: <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?: (
+            (?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$</val>. Le abbreviazioni di banda sono strutturate come segue:
             <list>
                 <item>Il prefisso "SSRQ" o "SDS" o "FDS".</item>
                 <item>Un trattino.</item>
