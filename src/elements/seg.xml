@@ -1,80 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             xmlns:xi="http://www.w3.org/2001/XInclude"
-             ident="seg"
-             module="linking"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-11">Absätze, die vom Bearbeitenden
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="seg" module="linking" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-11">Absätze, die vom Bearbeitenden
         zur Strukturierung des Quellentextes eingefügt werden.
     </desc>
-    <desc xml:lang="en" versionDate="2023-07-11">Paragraphs inserted by the editor to structure the source text.
+  <desc xml:lang="en" versionDate="2023-07-11">Paragraphs inserted by the editor to structure the source text.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-07-11">Paragraphes insérés par l'éditeur pour structurer le texte source.
+  <desc xml:lang="fr" versionDate="2023-07-11">Paragraphes insérés par l'éditeur pour structurer le texte source.
     </desc>
-    <desc xml:lang="it" versionDate="2023-07-11">Paragrafi inseriti dall'editor per strutturare il testo di partenza.
+  <desc xml:lang="it" versionDate="2023-07-11">Paragrafi inseriti dall'editor per strutturare il testo di partenza.
     </desc>
-    <classes mode="replace">
-        <memberOf key="att.global"/>
-        <memberOf key="att.global.responsibility"/>
-        <memberOf key="model.segLike"/>
-    </classes>
-    <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
-    </content>
-    <attList>
-        <attDef ident="cert" mode="delete"/>
-        <attDef ident="xml:id" mode="delete"/>
-        <attDef ident="xml:lang" mode="delete"/>
-    </attList>
-    <xi:include href="examples.xml" xpointer="ex-seg-de"/>
-    <xi:include href="examples.xml" xpointer="ex-seg-en"/>
-    <xi:include href="examples.xml" xpointer="ex-seg-fr"/>
-    <xi:include href="examples.xml" xpointer="ex-seg-it"/>
-    <remarks xml:lang="de" versionDate="2023-07-11">
-        <p>Innerhalb von <gi>p</gi>verwendet. Dagegen werden <gi>div</gi> und <gi>p</gi> nur für originale Absätze
+  <classes mode="replace">
+    <memberOf key="att.global"/>
+    <memberOf key="att.global.responsibility"/>
+    <memberOf key="model.segLike"/>
+  </classes>
+  <content>
+    <rng:oneOrMore>
+      <rng:ref name="ssrq.content.default"/>
+    </rng:oneOrMore>
+  </content>
+  <attList>
+    <attDef ident="cert" mode="delete"/>
+    <attDef ident="xml:id" mode="delete"/>
+    <attDef ident="xml:lang" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-seg-de"/>
+  <xi:include href="examples.xml" xpointer="ex-seg-en"/>
+  <xi:include href="examples.xml" xpointer="ex-seg-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-seg-it"/>
+  <remarks xml:lang="de" versionDate="2023-07-11">
+    <p>Innerhalb von <gi>p</gi>verwendet. Dagegen werden <gi>div</gi> und <gi>p</gi> nur für originale Absätze
             verwendet.
         </p>
-        <p>Bei längeren Originaltexten wie Offnungen oder Urbarien kann es sinnvoll sein, Artikel, Absätze oder
+    <p>Bei längeren Originaltexten wie Offnungen oder Urbarien kann es sinnvoll sein, Artikel, Absätze oder
             Paragraphen durch <gi>seg</gi> mit <att>n</att> zu nummerieren. Aber bitte keine «Hyperstrukturierung»:
             Nummerierung nur dort, wo die Struktur des Textes es hergibt (vgl. Beispiele in den gedruckten Bänden der
             SSRQ). Zur Strukturierung von Schlussformeln siehe die Beispiele auf der Seite Schlussformeln.
         </p>
-    </remarks>
-    <remarks xml:lang="en" versionDate="2023-07-11">
-        <p>Used inside <gi>p</gi>. On the other hand, <gi>div</gi> and <gi>p</gi> are only used for original paragraphs.
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-11">
+    <p>Used inside <gi>p</gi>. On the other hand, <gi>div</gi> and <gi>p</gi> are only used for original paragraphs.
         </p>
-        <p>With longer original texts such as openings or urbaria, it can make sense to number articles, paragraphs or
+    <p>With longer original texts such as openings or urbaria, it can make sense to number articles, paragraphs or
             paragraphs with <gi>seg</gi> with <att>n</att>. But no "hyperstructuring" please: numbering only where the
             structure of the text allows (cf. examples in the printed volumes of the SSRQ). For the structuring of
             closing formulas, see the examples on the Closing Formulas page.
         </p>
-    </remarks>
-    <remarks xml:lang="fr" versionDate="2023-07-11">
-        <p>Utilisé à l'intérieur de <gi>p</gi>. D'autre part, <gi>div</gi> et <gi>p</gi> ne sont utilisés que pour les
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-11">
+    <p>Utilisé à l'intérieur de <gi>p</gi>. D'autre part, <gi>div</gi> et <gi>p</gi> ne sont utilisés que pour les
             paragraphes originaux.
         </p>
-        <p>Avec des textes originaux plus longs tels que des ouvertures ou des urbaria, il peut être judicieux de
+    <p>Avec des textes originaux plus longs tels que des ouvertures ou des urbaria, il peut être judicieux de
             numéroter des articles, des paragraphes ou des paragraphes avec <gi>seg</gi> avec <att>n</att>. Mais pas
             d'"hyperstructuration" s'il vous plait : numéroter seulement là où la structure du texte le permet (cf.
             exemples dans les volumes imprimés du SSRQ). Pour la structuration des formules de clôture, voir les
             exemples sur la page Formules de clôture.
         </p>
-    </remarks>
-    <remarks xml:lang="it" versionDate="2023-07-11">
-        <p>Usato all'interno di <gi>p</gi>. D'altra parte, <gi>div</gi> e <gi>p</gi> sono usati solo per i paragrafi
+  </remarks>
+  <remarks xml:lang="it" versionDate="2023-07-11">
+    <p>Usato all'interno di <gi>p</gi>. D'altra parte, <gi>div</gi> e <gi>p</gi> sono usati solo per i paragrafi
             originali.
         </p>
-        <p>Con testi originali più lunghi come aperture o urbaria, può avere senso numerare articoli, paragrafi o
+    <p>Con testi originali più lunghi come aperture o urbaria, può avere senso numerare articoli, paragrafi o
             capoversi con <gi>seg</gi> con <att>n</att>. Ma nessuna "iperstrutturazione" per favore: numerazione solo
             dove la struttura del testo lo consente (cfr. esempi nei volumi a stampa della SSRQ). Per la strutturazione
             delle formule di chiusura, vedere gli esempi nella pagina Formule di chiusura.
         </p>
-    </remarks>
+  </remarks>
 </elementSpec>

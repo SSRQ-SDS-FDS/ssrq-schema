@@ -1,52 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             xmlns:xi="http://www.w3.org/2001/XInclude"
-             ident="cell"
-             module="figures"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-13">Beschreibt eine Zelle einer Tabelle.</desc>
-    <desc xml:lang="en" versionDate="2023-07-13">Describes a cell of a table.</desc>
-    <desc xml:lang="fr" versionDate="2023-07-13">Décrit une cellule dans un tableau.</desc>
-    <desc xml:lang="it" versionDate="2023-07-13">Descrive una cella in una tabella.</desc>
-    <classes mode="replace">
-        <memberOf key="att.tableDecoration"/>
-    </classes>
-    <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
-    </content>
-    <xi:include href="examples.xml" xpointer="ex-cell-de"/>
-    <xi:include href="examples.xml" xpointer="ex-cell-en"/>
-    <xi:include href="examples.xml" xpointer="ex-cell-fr"/>
-    <xi:include href="examples.xml" xpointer="ex-cell-it"/>
-    <remarks xml:lang="de" versionDate="2023-07-11">
-        <p>Wird innerhalb von <gi>table</gi> zusammen mit <gi>row</gi> (Zeile) für die Darstellung von Tabellen
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="cell" module="figures" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-13">Beschreibt eine Zelle einer Tabelle.</desc>
+  <desc xml:lang="en" versionDate="2023-07-13">Describes a cell of a table.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-13">Décrit une cellule dans un tableau.</desc>
+  <desc xml:lang="it" versionDate="2023-07-13">Descrive una cella in una tabella.</desc>
+  <classes mode="replace">
+    <memberOf key="att.tableDecoration"/>
+  </classes>
+  <content>
+    <rng:oneOrMore>
+      <rng:ref name="ssrq.content.default"/>
+    </rng:oneOrMore>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-cell-de"/>
+  <xi:include href="examples.xml" xpointer="ex-cell-en"/>
+  <xi:include href="examples.xml" xpointer="ex-cell-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-cell-it"/>
+  <remarks xml:lang="de" versionDate="2023-07-11">
+    <p>Wird innerhalb von <gi>table</gi> zusammen mit <gi>row</gi> (Zeile) für die Darstellung von Tabellen
             benötigt. Mit <att>role</att> = <val>label</val> wird eine Spaltenüberschrift, z. B. eine Währung eines
             Spalteneintrags, angegeben.
         </p>
-    </remarks>
-    <remarks xml:lang="en" versionDate="2023-07-11">
-        <p>Is required within <gi>table</gi> together with <gi>row</gi> (row) for displaying tables. With
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-11">
+    <p>Is required within <gi>table</gi> together with <gi>row</gi> (row) for displaying tables. With
             <att>role</att>
             = <val>label</val> a column heading, e.g. B. a currency of a column entry specified.
         </p>
-    </remarks>
-    <remarks xml:lang="fr" versionDate="2023-07-11">
-        <p>Est requis dans <gi>table</gi> avec <gi>row</gi> (ligne) pour afficher les tableaux. Avec
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-11">
+    <p>Est requis dans <gi>table</gi> avec <gi>row</gi> (ligne) pour afficher les tableaux. Avec
             <att>role</att>
             = <val>label</val> un en-tête de colonne, par ex. B. une devise d'une entrée de colonne spécifiée.
         </p>
-    </remarks>
-    <remarks xml:lang="it" versionDate="2023-07-11">
-        <p>È richiesto all'interno di <gi>table</gi> insieme a <gi>row</gi> (riga) per visualizzare le tabelle. Con
+  </remarks>
+  <remarks xml:lang="it" versionDate="2023-07-11">
+    <p>È richiesto all'interno di <gi>table</gi> insieme a <gi>row</gi> (riga) per visualizzare le tabelle. Con
             <att>role</att>
             = <val>label</val> un'intestazione di colonna, ad es. B. una valuta di una voce di colonna specificata.
         </p>
-    </remarks>
+  </remarks>
 </elementSpec>

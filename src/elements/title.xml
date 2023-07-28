@@ -1,72 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             ident="title"
-             module="core"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-20">Enthält als Teil des <gi>titleStmt</gi> den Titel des
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="title" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-20">Enthält als Teil des <gi>titleStmt</gi> den Titel des
         Rechtsquellenbandes bzw. der Editionseinheit, als Teil des <gi>seriesStmt</gi> den Titel der Serie.
     </desc>
-    <desc xml:lang="en" versionDate="2023-07-20">Contains the title of the volume of legal sources or the edition unit
+  <desc xml:lang="en" versionDate="2023-07-20">Contains the title of the volume of legal sources or the edition unit
         as part of the <gi>titleStmt</gi>, and the title of the series as part of the <gi>seriesStmt</gi>.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-07-20">Contient le titre du volume des sources juridiques ou l'unité d'édition
+  <desc xml:lang="fr" versionDate="2023-07-20">Contient le titre du volume des sources juridiques ou l'unité d'édition
         dans le cadre du <gi>titleStmt</gi>, et le titre de la série dans le cadre du <gi>seriesStmt</gi>.
     </desc>
-    <desc xml:lang="it" versionDate="2023-07-20">Contiene il titolo del volume delle fonti giuridiche o l'unità di
+  <desc xml:lang="it" versionDate="2023-07-20">Contiene il titolo del volume delle fonti giuridiche o l'unità di
         edizione come parte del <gi>titleStmt</gi>, e il titolo della serie come parte del <gi>seriesStmt</gi>.
     </desc>
-    <classes mode="replace">
-        <memberOf key="att.global"/>
-        <memberOf key="model.emphLike"/>
-        <memberOf key="model.msQuoteLike"/>
-    </classes>
-    <content>
-        <alternate maxOccurs="unbounded">
-            <textNode/>
-            <elementRef key="hi"/>
-        </alternate>
-    </content>
-    <attList>
-        <attDef ident="level" mode="delete"/>
-        <attDef ident="n" mode="delete"/>
-        <attDef ident="xml:id" mode="delete"/>
-    </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-12">
-        <p>Einfacher Titel</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <title>Rechtsquellen der Stadt und Herrschaft Rapperswil (mit den Höfen Busskirch/Jona,
+  <classes mode="replace">
+    <memberOf key="att.global"/>
+    <memberOf key="model.emphLike"/>
+    <memberOf key="model.msQuoteLike"/>
+  </classes>
+  <content>
+    <alternate maxOccurs="unbounded">
+      <textNode/>
+      <elementRef key="hi"/>
+    </alternate>
+  </content>
+  <attList>
+    <attDef ident="level" mode="delete"/>
+    <attDef ident="n" mode="delete"/>
+    <attDef ident="xml:id" mode="delete"/>
+  </attList>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-12">
+    <p>Einfacher Titel</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <title>Rechtsquellen der Stadt und Herrschaft Rapperswil (mit den Höfen Busskirch/Jona,
                 Kempraten und Wagen)
             </title>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-12">
-        <p>Titre simple</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <title>Rechtsquellen der Stadt und Herrschaft Rapperswil (mit den Höfen Busskirch/Jona,
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-12">
+    <p>Titre simple</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <title>Rechtsquellen der Stadt und Herrschaft Rapperswil (mit den Höfen Busskirch/Jona,
                 Kempraten und Wagen)
             </title>
-        </egXML>
-    </exemplum>
-    <remarks xml:lang="de" versionDate="2023-07-20">
-        <p>Ein Buchtitel, der innerhalb einer Quelle zitiert wird, wird ebenfalls
+    </egXML>
+  </exemplum>
+  <remarks xml:lang="de" versionDate="2023-07-20">
+    <p>Ein Buchtitel, der innerhalb einer Quelle zitiert wird, wird ebenfalls
             mit <gi>title</gi> und <att>xml:lang</att> ausgezeichnet.
         </p>
-    </remarks>
-    <remarks xml:lang="en" versionDate="2023-07-20">
-        <p>A book title that is cited within a source is also marked with <gi>title</gi> and <att>xml:lang</att>.
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-20">
+    <p>A book title that is cited within a source is also marked with <gi>title</gi> and <att>xml:lang</att>.
         </p>
-    </remarks>
-    <remarks xml:lang="fr" versionDate="2023-07-20">
-        <p>Un titre de livre cité dans une source est également marqué par <gi>title</gi> et <att>xml:lang</att>.
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-20">
+    <p>Un titre de livre cité dans une source est également marqué par <gi>title</gi> et <att>xml:lang</att>.
         </p>
-    </remarks>
-    <remarks xml:lang="it" versionDate="2023-07-20">
-        <p>Il titolo di un libro citato all'interno di una fonte è contrassegnato anche
+  </remarks>
+  <remarks xml:lang="it" versionDate="2023-07-20">
+    <p>Il titolo di un libro citato all'interno di una fonte è contrassegnato anche
             con <gi>title</gi> e <att>xml:lang</att>.
         </p>
-    </remarks>
+  </remarks>
 </elementSpec>

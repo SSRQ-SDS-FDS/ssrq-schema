@@ -1,51 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             ident="textClass"
-             module="header"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-04-20">Enthält Elemente zur Beschreibung eines Textes mithilfe von
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="textClass" module="header" mode="change">
+  <desc xml:lang="de" versionDate="2023-04-20">Enthält Elemente zur Beschreibung eines Textes mithilfe von
         Schlagworten.
     </desc>
-    <desc xml:lang="en" versionDate="2023-04-20">Contains elements for describing a text using keywords.
+  <desc xml:lang="en" versionDate="2023-04-20">Contains elements for describing a text using keywords.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-04-20">Contient des éléments pour décrire un texte à l'aide de mots-clés.
+  <desc xml:lang="fr" versionDate="2023-04-20">Contient des éléments pour décrire un texte à l'aide de mots-clés.
     </desc>
-    <desc xml:lang="it" versionDate="2023-04-20">Contiene elementi per descrivere un testo utilizzando parole chiave.
+  <desc xml:lang="it" versionDate="2023-04-20">Contiene elementi per descrivere un testo utilizzando parole chiave.
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.profileDescPart"/>
-    </classes>
-    <content>
-        <elementRef key="keywords"/>
-    </content>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-20">
-        <p>Modellhafter Aufbau</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <textClass>
-                <keywords>
-                    <term ref="key000192"/>
-                    <term ref="key000097"/>
-                    <term ref="key000049"/>
-                    <term ref="key000193"/>
-                </keywords>
-            </textClass>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-20">
-        <p>Structure modèle</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <textClass>
-                <keywords>
-                    <term ref="key000192"/>
-                    <term ref="key000097"/>
-                    <term ref="key000049"/>
-                    <term ref="key000193"/>
-                </keywords>
-            </textClass>
-        </egXML>
-    </exemplum>
+  <classes mode="replace">
+    <memberOf key="model.profileDescPart"/>
+  </classes>
+  <content>
+    <elementRef key="keywords"/>
+  </content>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-20">
+    <p>Modellhafter Aufbau</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <textClass>
+        <keywords>
+          <term ref="key000192"/>
+          <term ref="key000097"/>
+          <term ref="key000049"/>
+          <term ref="key000193"/>
+        </keywords>
+      </textClass>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-20">
+    <p>Structure modèle</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <textClass>
+        <keywords>
+          <term ref="key000192"/>
+          <term ref="key000097"/>
+          <term ref="key000049"/>
+          <term ref="key000193"/>
+        </keywords>
+      </textClass>
+    </egXML>
+  </exemplum>
 </elementSpec>

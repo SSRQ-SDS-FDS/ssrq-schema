@@ -1,84 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-             ident="author"
-             module="core"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-18">Enthält als Teil einer bibliografischen Angabe den Autor
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="author" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-18">Enthält als Teil einer bibliografischen Angabe den Autor
         einer Publikation und als Teil von <gi>msItem</gi> den Schreiber einer Quelle.
     </desc>
-    <desc xml:lang="en" versionDate="2023-07-18">Contains the author of a publication as part of a bibliographic
+  <desc xml:lang="en" versionDate="2023-07-18">Contains the author of a publication as part of a bibliographic
         statement and the writer of a source as part of <gi>msItem</gi>.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-07-18">Contient l'auteur d'une publication dans le cadre d'une déclaration
+  <desc xml:lang="fr" versionDate="2023-07-18">Contient l'auteur d'une publication dans le cadre d'une déclaration
         bibliographique et l'auteur d'une source dans le cadre de <gi>msItem</gi>.
     </desc>
-    <desc xml:lang="it" versionDate="2023-07-18">Contiene l'autore di una pubblicazione come parte di una dichiarazione
+  <desc xml:lang="it" versionDate="2023-07-18">Contiene l'autore di una pubblicazione come parte di una dichiarazione
         bibliografica e l'autore di una fonte come parte di <gi>msItem</gi>.
     </desc>
-    <classes mode="replace">
-        <memberOf key="att.naming"/>
-        <memberOf key="model.respLike"/>
-    </classes>
-    <content>
-        <alternate maxOccurs="unbounded">
-            <textNode/>
-            <elementRef key="orgName"/>
-            <elementRef key="persName"/>
-        </alternate>
-    </content>
-    <constraintSpec scheme="schematron" ident="sch-el-author">
-        <desc xml:lang="en" versionDate="2023-05-02">Constraint for tei:author to ensure, that the
+  <classes mode="replace">
+    <memberOf key="att.naming"/>
+    <memberOf key="model.respLike"/>
+  </classes>
+  <content>
+    <alternate maxOccurs="unbounded">
+      <textNode/>
+      <elementRef key="orgName"/>
+      <elementRef key="persName"/>
+    </alternate>
+  </content>
+  <constraintSpec scheme="schematron" ident="sch-el-author">
+    <desc xml:lang="en" versionDate="2023-05-02">Constraint for tei:author to ensure, that the
             element is not empty!
         </desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:author[not(*)]">
-                    <sch:assert test="string-length(normalize-space(.)) &gt; 0" xml:lang="en">If
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:author[not(*)]">
+          <sch:assert test="string-length(normalize-space(.)) &gt; 0" xml:lang="en">If
                         <sch:name/>
                         has no child elements it needs to have text
                         content!
                     </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <attList>
-        <attDef ident="role" mode="replace">
-            <desc xml:lang="de" versionDate="2023-05-05">Rolle des Schreibenden</desc>
-            <desc xml:lang="en" versionDate="2023-05-05">Role of the writer</desc>
-            <desc xml:lang="fr" versionDate="2023-05-05">Rôle du rédacteur</desc>
-            <desc xml:lang="it" versionDate="2023-05-05">Ruolo dello scrittore</desc>
-            <valList type="closed" mode="replace">
-                <valItem ident="scribe">
-                    <desc xml:lang="de" versionDate="2022-05-12">Schreiber</desc>
-                    <desc xml:lang="fr" versionDate="2022-05-12">scripteur</desc>
-                    <desc xml:lang="en" versionDate="2022-05-12">scribe</desc>
-                    <desc xml:lang="it" versionDate="2022-09-13">scriba</desc>
-                </valItem>
-            </valList>
-        </attDef>
-    </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-05">
-        <p>Angabe des Schreibers eines Stücks mit Erfassung des Personennamens</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <author role="scribe">
-                <persName ref="per002336">Adam Böniger</persName>, Landschreiber
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="role" mode="replace">
+      <desc xml:lang="de" versionDate="2023-05-05">Rolle des Schreibenden</desc>
+      <desc xml:lang="en" versionDate="2023-05-05">Role of the writer</desc>
+      <desc xml:lang="fr" versionDate="2023-05-05">Rôle du rédacteur</desc>
+      <desc xml:lang="it" versionDate="2023-05-05">Ruolo dello scrittore</desc>
+      <valList type="closed" mode="replace">
+        <valItem ident="scribe">
+          <desc xml:lang="de" versionDate="2022-05-12">Schreiber</desc>
+          <desc xml:lang="fr" versionDate="2022-05-12">scripteur</desc>
+          <desc xml:lang="en" versionDate="2022-05-12">scribe</desc>
+          <desc xml:lang="it" versionDate="2022-09-13">scriba</desc>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-05">
+    <p>Angabe des Schreibers eines Stücks mit Erfassung des Personennamens</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <author role="scribe"><persName ref="per002336">Adam Böniger</persName>, Landschreiber
                 von Glarus
             </author>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-05">
-        <p>Indication de l'auteur d'une pièce avec saisie du nom de la personne</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <author role="scribe">
-                <persName ref="per002336">Adam Böniger</persName>, Landschreiber
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-05">
+    <p>Indication de l'auteur d'une pièce avec saisie du nom de la personne</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <author role="scribe"><persName ref="per002336">Adam Böniger</persName>, Landschreiber
                 von Glarus
             </author>
-        </egXML>
-    </exemplum>
+    </egXML>
+  </exemplum>
 </elementSpec>

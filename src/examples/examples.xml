@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<div
-        xmlns="http://www.tei-c.org/ns/1.0"
-        xmlns:xi="http://www.w3.org/2001/XInclude">
-    <macroSpec ident="ssrq-examples">
-        <!-- Naming conventions inside this file are the following:
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <macroSpec ident="ssrq-examples">
+    <!-- Naming conventions inside this file are the following:
             A) The xml:id of an exemplum:
                 - start always with "ex"
                 - continues with the name of the main element, which is part of the exemplum
@@ -20,507 +17,479 @@
                 - all exempla are ordered by their xml:id
                 - the languages are ordered alphabetically ("de", "en", "fr", "it")
         -->
-
-        <exemplum xml:lang="de" xml:id="ex-ab-de">
-            <p>Beispiel für einen Kanzleivermerk</p>
-            <xi:include href="ab.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-ab-en">
-            <p>Example of a clerk's note</p>
-            <xi:include href="ab.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-ab-fr">
-            <p>Exemple de note de service</p>
-            <xi:include href="ab.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-ab-it">
-            <p>Esempio di nota di un impiegato</p>
-            <xi:include href="ab.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-addSpan-de">
-            <p>Beispiel für eine umfangreichere Hinzufügung</p>
-            <xi:include href="addSpan.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-addSpan-en">
-            <p>Example of a larger addition</p>
-            <xi:include href="addSpan.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-addSpan-fr">
-            <p>Exemple d'un ajout plus important</p>
-            <xi:include href="addSpan.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-addSpan-it">
-            <p>Esempio di un'aggiunta più grande</p>
-            <xi:include href="addSpan.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-app-de">
-            <p>Beispiel für einen Apparateintrag</p>
-            <xi:include href="app.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-app-en">
-            <p>Example of an apparatus entry</p>
-            <xi:include href="app.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-app-fr">
-            <p>Exemple d'entrée d'appareil</p>
-            <xi:include href="app.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-app-it">
-            <p>Esempio di entrata di un attrezzo</p>
-            <xi:include href="app.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-cell-de">
-            <p>Einfaches Beispiel für Zellen in einer Tabelle</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-cell-en">
-            <p>Simple example of cells in a table</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-cell-fr">
-            <p>Exemple simple de cellules dans un tableau</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-cell-it">
-            <p>Semplice esempio di celle in una tabella</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-choice-abbr-de">
-            <p>Beispiel für eine Abkürzung</p>
-            <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-choice-abbr-en">
-            <p>Example of an abbreviation</p>
-            <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-choice-abbr-fr">
-            <p>Exemple d'abréviation</p>
-            <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-choice-abbr-it">
-            <p>Esempio di abbreviazione</p>
-            <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-choice-sic-de">
-            <p>Beispiel für eine Korrektur</p>
-            <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-choice-sic-en">
-            <p>Example of a correction</p>
-            <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-choice-sic-fr">
-            <p>Exemple de correction</p>
-            <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-choice-sic-it">
-            <p>Esempio di correzione</p>
-            <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-damageSpan-de">
-            <p>Beispiel für einen umfangreicheren Schaden</p>
-            <xi:include href="damageSpan.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-damageSpan-en">
-            <p>Example of a more extensive damage</p>
-            <xi:include href="damageSpan.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-damageSpan-fr">
-            <p>Exemple d'un dommage plus important</p>
-            <xi:include href="damageSpan.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-damageSpan-it">
-            <p>Esempio di un danno più esteso</p>
-            <xi:include href="damageSpan.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-delSpan-de">
-            <p>Beispiel für eine umfangreichere Tilgung</p>
-            <xi:include href="delSpan.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-delSpan-en">
-            <p>Example of a larger deletion</p>
-            <xi:include href="delSpan.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-delSpan-fr">
-            <p>Exemple de suppression plus importante</p>
-            <xi:include href="delSpan.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-delSpan-it">
-            <p>Esempio di una cancellazione più grande</p>
-            <xi:include href="delSpan.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-figure-1-de">
-            <p>Beispiel für ein Notariatszeichen</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-1"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-figure-1-en">
-            <p>Example of a notarial sign</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-1"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-figure-1-fr">
-            <p>Exemple d'enseigne notariale</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-1"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-figure-1-it">
-            <p>Esempio di segno notarile</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-1"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-figure-2-de">
-            <p>Beispiel eines Stammbaums</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-2"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-figure-2-en">
-            <p>Example of a family tree</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-2"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-figure-2-fr">
-            <p>Exemple d'arbre généalogique</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-2"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-figure-2-it">
-            <p>Esempio di albero genealogico</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-2"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-head-figure-de">
-            <p>Beispiel für eine Überschrift einer Graphik</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-2"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-head-figure-en">
-            <p>Example of a heading for a graphic</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-2"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-head-figure-fr">
-            <p>Exemple de titre pour un graphique</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-2"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-head-figure-it">
-            <p>Esempio di intestazione per un grafico</p>
-            <xi:include href="figure.xml" xpointer="ex-figure-2"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-head-table-de">
-            <p>Beispiel für eine Überschrift in einer Tabelle</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-head-table-en">
-            <p>Example of a heading in a table</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-head-table-fr">
-            <p>Exemple d'en-tête dans un tableau</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-head-table-it">
-            <p>Esempio di intestazione in una tabella</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-listWit-de">
-            <p>Beispiel für eine Textzeugenliste</p>
-            <xi:include href="listWit.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-listWit-en">
-            <p>Example of a text witness list</p>
-            <xi:include href="listWit.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-listWit-fr">
-            <p>Exemple de liste de témoins texte</p>
-            <xi:include href="listWit.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-listWit-it">
-            <p>Esempio di un elenco di testimoni testuali</p>
-            <xi:include href="listWit.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-msDesc-de">
-            <p>Beispiel für eine Textzeugenbeschreibung</p>
-            <xi:include href="msDesc.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-msDesc-en">
-            <p>Example of a text witness description</p>
-            <xi:include href="msDesc.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-msDesc-fr">
-            <p>Exemple de description textuelle d'un témoin</p>
-            <xi:include href="msDesc.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-msDesc-it">
-            <p>Esempio di descrizione di un testimone testuale</p>
-            <xi:include href="msDesc.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-orgName-de">
-            <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
+    <exemplum xml:lang="de" xml:id="ex-ab-de">
+      <p>Beispiel für einen Kanzleivermerk</p>
+      <xi:include href="ab.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-ab-en">
+      <p>Example of a clerk's note</p>
+      <xi:include href="ab.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-ab-fr">
+      <p>Exemple de note de service</p>
+      <xi:include href="ab.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-ab-it">
+      <p>Esempio di nota di un impiegato</p>
+      <xi:include href="ab.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-addSpan-de">
+      <p>Beispiel für eine umfangreichere Hinzufügung</p>
+      <xi:include href="addSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-addSpan-en">
+      <p>Example of a larger addition</p>
+      <xi:include href="addSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-addSpan-fr">
+      <p>Exemple d'un ajout plus important</p>
+      <xi:include href="addSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-addSpan-it">
+      <p>Esempio di un'aggiunta più grande</p>
+      <xi:include href="addSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-app-de">
+      <p>Beispiel für einen Apparateintrag</p>
+      <xi:include href="app.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-app-en">
+      <p>Example of an apparatus entry</p>
+      <xi:include href="app.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-app-fr">
+      <p>Exemple d'entrée d'appareil</p>
+      <xi:include href="app.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-app-it">
+      <p>Esempio di entrata di un attrezzo</p>
+      <xi:include href="app.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-cell-de">
+      <p>Einfaches Beispiel für Zellen in einer Tabelle</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-cell-en">
+      <p>Simple example of cells in a table</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-cell-fr">
+      <p>Exemple simple de cellules dans un tableau</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-cell-it">
+      <p>Semplice esempio di celle in una tabella</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-choice-abbr-de">
+      <p>Beispiel für eine Abkürzung</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-choice-abbr-en">
+      <p>Example of an abbreviation</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-choice-abbr-fr">
+      <p>Exemple d'abréviation</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-choice-abbr-it">
+      <p>Esempio di abbreviazione</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-choice-sic-de">
+      <p>Beispiel für eine Korrektur</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-choice-sic-en">
+      <p>Example of a correction</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-choice-sic-fr">
+      <p>Exemple de correction</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-choice-sic-it">
+      <p>Esempio di correzione</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-damageSpan-de">
+      <p>Beispiel für einen umfangreicheren Schaden</p>
+      <xi:include href="damageSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-damageSpan-en">
+      <p>Example of a more extensive damage</p>
+      <xi:include href="damageSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-damageSpan-fr">
+      <p>Exemple d'un dommage plus important</p>
+      <xi:include href="damageSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-damageSpan-it">
+      <p>Esempio di un danno più esteso</p>
+      <xi:include href="damageSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-delSpan-de">
+      <p>Beispiel für eine umfangreichere Tilgung</p>
+      <xi:include href="delSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-delSpan-en">
+      <p>Example of a larger deletion</p>
+      <xi:include href="delSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-delSpan-fr">
+      <p>Exemple de suppression plus importante</p>
+      <xi:include href="delSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-delSpan-it">
+      <p>Esempio di una cancellazione più grande</p>
+      <xi:include href="delSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-figure-1-de">
+      <p>Beispiel für ein Notariatszeichen</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-figure-1-en">
+      <p>Example of a notarial sign</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-figure-1-fr">
+      <p>Exemple d'enseigne notariale</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-figure-1-it">
+      <p>Esempio di segno notarile</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-figure-2-de">
+      <p>Beispiel eines Stammbaums</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-figure-2-en">
+      <p>Example of a family tree</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-figure-2-fr">
+      <p>Exemple d'arbre généalogique</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-figure-2-it">
+      <p>Esempio di albero genealogico</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-head-figure-de">
+      <p>Beispiel für eine Überschrift einer Graphik</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-head-figure-en">
+      <p>Example of a heading for a graphic</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-head-figure-fr">
+      <p>Exemple de titre pour un graphique</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-head-figure-it">
+      <p>Esempio di intestazione per un grafico</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-head-table-de">
+      <p>Beispiel für eine Überschrift in einer Tabelle</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-head-table-en">
+      <p>Example of a heading in a table</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-head-table-fr">
+      <p>Exemple d'en-tête dans un tableau</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-head-table-it">
+      <p>Esempio di intestazione in una tabella</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-listWit-de">
+      <p>Beispiel für eine Textzeugenliste</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-listWit-en">
+      <p>Example of a text witness list</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-listWit-fr">
+      <p>Exemple de liste de témoins texte</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-listWit-it">
+      <p>Esempio di un elenco di testimoni testuali</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msDesc-de">
+      <p>Beispiel für eine Textzeugenbeschreibung</p>
+      <xi:include href="msDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msDesc-en">
+      <p>Example of a text witness description</p>
+      <xi:include href="msDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msDesc-fr">
+      <p>Exemple de description textuelle d'un témoin</p>
+      <xi:include href="msDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-msDesc-it">
+      <p>Esempio di descrizione di un testimone testuale</p>
+      <xi:include href="msDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-orgName-de">
+      <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
                 nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
                 Nennung des Bürgermeisters.
             </p>
-            <xi:include href="orgName.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-orgName-en">
-            <p>Institutions / functions are always identified as organisations - but not the people.
+      <xi:include href="orgName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-orgName-en">
+      <p>Institutions / functions are always identified as organisations - but not the people.
                 As shown below, this also applies to the naming of the mayor.
             </p>
-            <xi:include href="orgName.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-orgName-fr">
-            <p>Les institutions/fonctions sont toujours identifiées comme des organisations, mais
+      <xi:include href="orgName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-orgName-fr">
+      <p>Les institutions/fonctions sont toujours identifiées comme des organisations, mais
                 pas les personnes. Comme indiqué ci-dessous, cela s'applique également à la
                 désignation du maire.
             </p>
-            <xi:include href="orgName.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-orgName-it">
-            <p>Le istituzioni/funzioni sono sempre identificate come organizzazioni, ma non le
+      <xi:include href="orgName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-orgName-it">
+      <p>Le istituzioni/funzioni sono sempre identificate come organizzazioni, ma non le
                 persone. Come illustrato di seguito, questo vale anche per il nome del sindaco.
             </p>
-            <xi:include href="orgName.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-persName-1-de">
-            <p>Beispiel für einen einfachen Personennamen</p>
-            <xi:include href="persName.xml" xpointer="ex-persName-1"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-persName-1-en">
-            <p>Example of a simple personal name</p>
-            <xi:include href="persName.xml" xpointer="ex-persName-1"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-persName-1-fr">
-            <p>Exemple de nom de personne</p>
-            <xi:include href="persName.xml" xpointer="ex-persName-1"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-persName-1-it">
-            <p>Esempio di nome personale</p>
-            <xi:include href="persName.xml" xpointer="ex-persName-1"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-persName-2-de">
-            <p>Auszeichnung eines Heiligen – nur der Name wird erfasst</p>
-            <xi:include href="persName.xml" xpointer="ex-persName-2"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-persName-2-en">
-            <p>Tagging of a saint</p>
-            <xi:include href="persName.xml" xpointer="ex-persName-2"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-persName-2-fr">
-            <p>Marquage d'un saint</p>
-            <xi:include href="persName.xml" xpointer="ex-persName-2"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-persName-2-it">
-            <p>Etichettatura di un santo</p>
-            <xi:include href="persName.xml" xpointer="ex-persName-2"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-persName-3-de">
-            <p>Verwendung mit
+      <xi:include href="orgName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-persName-1-de">
+      <p>Beispiel für einen einfachen Personennamen</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-1"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-persName-1-en">
+      <p>Example of a simple personal name</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-1"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-persName-1-fr">
+      <p>Exemple de nom de personne</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-1"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-persName-1-it">
+      <p>Esempio di nome personale</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-1"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-persName-2-de">
+      <p>Auszeichnung eines Heiligen – nur der Name wird erfasst</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-persName-2-en">
+      <p>Tagging of a saint</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-persName-2-fr">
+      <p>Marquage d'un saint</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-2"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-persName-2-it">
+      <p>Etichettatura di un santo</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-persName-3-de">
+      <p>Verwendung mit
                 <att>role</att>
             </p>
-            <xi:include href="persName.xml" xpointer="ex-persName-3"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-persName-3-en">
-            <p>Use with
+      <xi:include href="persName.xml" xpointer="ex-persName-3"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-persName-3-en">
+      <p>Use with
                 <att>role</att>
             </p>
-            <xi:include href="persName.xml" xpointer="ex-persName-3"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-persName-3-fr">
-            <p>Utilisation avec
+      <xi:include href="persName.xml" xpointer="ex-persName-3"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-persName-3-fr">
+      <p>Utilisation avec
                 <att>role</att>
             </p>
-            <xi:include href="persName.xml" xpointer="ex-persName-3"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-persName-3-it">
-            <p>Utilizzare con
+      <xi:include href="persName.xml" xpointer="ex-persName-3"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-persName-3-it">
+      <p>Utilizzare con
                 <att>role</att>
             </p>
-            <xi:include href="persName.xml" xpointer="ex-persName-3"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-precision-de">
-            <p>Beispiel für ein unsicheres Datum</p>
-            <xi:include href="precision.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-precision-en">
-            <p>Example of an uncertain date</p>
-            <xi:include href="precision.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-precision-fr">
-            <p>Exemple de date incertaine</p>
-            <xi:include href="precision.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-precision-it">
-            <p>Esempio di data incerta</p>
-            <xi:include href="precision.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-row-de">
-            <p>Einfaches Beispiel für Zeilen in einer Tabelle</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-row-en">
-            <p>Simple example of rows in a table</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-row-fr">
-            <p>Exemple simple de lignes dans un tableau</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-row-it">
-            <p>Semplice esempio di righe in una tabella</p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-seg-de">
-            <p>Beispiel für vom Bearbeitenden eingeführte Absätze</p>
-            <xi:include href="seg.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-seg-en">
-            <p>Example of paragraphs introduced by the editor</p>
-            <xi:include href="seg.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-seg-fr">
-            <p>Exemple de paragraphes introduits par l'éditeur</p>
-            <xi:include href="seg.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-seg-it">
-            <p>Esempio di paragrafi introdotti dal curatore</p>
-            <xi:include href="seg.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-sourceDesc-listWit-de">
-            <p>Beispiel für eine Quellenbeschreibung mit einer Liste von Textzeugen</p>
-            <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-sourceDesc-listWit-en">
-            <p>Example of a source description with a list of text witnesses</p>
-            <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-sourceDesc-listWit-fr">
-            <p>Exemple d'une description de source avec une liste de témoins de texte</p>
-            <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-sourceDesc-listWit-it">
-            <p>Esempio di descrizione di una fonte con un elenco di testimoni testuali</p>
-            <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-sourceDesc-msDesc-de">
-            <p>Beispiel für eine Quellenbeschreibung mit einem Textzeugen</p>
-            <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-sourceDesc-msDesc-en">
-            <p>Example of a source description with a text witness</p>
-            <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-sourceDesc-msDesc-fr">
-            <p>Exemple de description de source avec un témoin de texte</p>
-            <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-sourceDesc-msDesc-it">
-            <p>Esempio di descrizione di una fonte con testimone testuale</p>
-            <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-table-de">
-            <p>Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten drei Spalten mit «gbz», «xr»
+      <xi:include href="persName.xml" xpointer="ex-persName-3"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-precision-de">
+      <p>Beispiel für ein unsicheres Datum</p>
+      <xi:include href="precision.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-precision-en">
+      <p>Example of an uncertain date</p>
+      <xi:include href="precision.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-precision-fr">
+      <p>Exemple de date incertaine</p>
+      <xi:include href="precision.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-precision-it">
+      <p>Esempio di data incerta</p>
+      <xi:include href="precision.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-row-de">
+      <p>Einfaches Beispiel für Zeilen in einer Tabelle</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-row-en">
+      <p>Simple example of rows in a table</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-row-fr">
+      <p>Exemple simple de lignes dans un tableau</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-row-it">
+      <p>Semplice esempio di righe in una tabella</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-seg-de">
+      <p>Beispiel für vom Bearbeitenden eingeführte Absätze</p>
+      <xi:include href="seg.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-seg-en">
+      <p>Example of paragraphs introduced by the editor</p>
+      <xi:include href="seg.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-seg-fr">
+      <p>Exemple de paragraphes introduits par l'éditeur</p>
+      <xi:include href="seg.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-seg-it">
+      <p>Esempio di paragrafi introdotti dal curatore</p>
+      <xi:include href="seg.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-sourceDesc-listWit-de">
+      <p>Beispiel für eine Quellenbeschreibung mit einer Liste von Textzeugen</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-sourceDesc-listWit-en">
+      <p>Example of a source description with a list of text witnesses</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-sourceDesc-listWit-fr">
+      <p>Exemple d'une description de source avec une liste de témoins de texte</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-sourceDesc-listWit-it">
+      <p>Esempio di descrizione di una fonte con un elenco di testimoni testuali</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-sourceDesc-msDesc-de">
+      <p>Beispiel für eine Quellenbeschreibung mit einem Textzeugen</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-sourceDesc-msDesc-en">
+      <p>Example of a source description with a text witness</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-sourceDesc-msDesc-fr">
+      <p>Exemple de description de source avec un témoin de texte</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-sourceDesc-msDesc-it">
+      <p>Esempio di descrizione di una fonte con testimone testuale</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-table-de">
+      <p>Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten drei Spalten mit «gbz», «xr»
                 bzw. «dn» überschrieben sind
             </p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-table-en">
-            <p>Example of a price list for wine with four columns, of which the last three columns are titled "gbz",
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-table-en">
+      <p>Example of a price list for wine with four columns, of which the last three columns are titled "gbz",
                 "xr" and "dn"
             </p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-table-fr">
-            <p>Exemple d'une liste de prix pour un vin à quatre colonnes, dont les trois dernières colonnes sont
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-table-fr">
+      <p>Exemple d'une liste de prix pour un vin à quatre colonnes, dont les trois dernières colonnes sont
                 intitulées "gbz", "xr" et "dn"
             </p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-table-it">
-            <p>Esempio di listino prezzi vino con quattro colonne, di cui le ultime tre colonne sono intitolate "gbz",
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-table-it">
+      <p>Esempio di listino prezzi vino con quattro colonne, di cui le ultime tre colonne sono intitolate "gbz",
                 "xr" e "dn"
             </p>
-            <xi:include href="table.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-TEI-de">
-            <p>Minimalbeispiel für ein TEI-Dokument</p>
-            <xi:include href="TEI.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-TEI-en">
-            <p>Minimal example of a TEI document</p>
-            <xi:include href="TEI.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-TEI-fr">
-            <p>Exemple minimal d'un document TEI</p>
-            <xi:include href="TEI.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-TEI-it">
-            <p>Esempio minimo di documento TEI</p>
-            <xi:include href="TEI.xml"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-text-1-de">
-            <p>Beispiel für ein Transkript mit optionalem Kommentarbereich</p>
-            <xi:include href="text.xml" xpointer="ex-text-1"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-text-1-en">
-            <p>Example of a transcript with an optional comment section</p>
-            <xi:include href="text.xml" xpointer="ex-text-1"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-text-1-fr">
-            <p>Exemple de transcription avec une section de commentaires facultative</p>
-            <xi:include href="text.xml" xpointer="ex-text-1"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-text-1-it">
-            <p>Esempio di una trascrizione con una sezione di commento facoltativa</p>
-            <xi:include href="text.xml" xpointer="ex-text-1"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-text-2-de">
-            <p>Beispiel für ein Regest ohne Kommentarbereich</p>
-            <xi:include href="text.xml" xpointer="ex-text-2"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-text-2-en">
-            <p>Example of a regest without a comment section</p>
-            <xi:include href="text.xml" xpointer="ex-text-2"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-text-2-fr">
-            <p>Exemple de registre sans section de commentaire</p>
-            <xi:include href="text.xml" xpointer="ex-text-2"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-text-2-it">
-            <p>Esempio di un regest senza una sezione di commento</p>
-            <xi:include href="text.xml" xpointer="ex-text-2"/>
-        </exemplum>
-
-        <exemplum xml:lang="de" xml:id="ex-witness-de">
-            <p>Beispiel für mehrere Textzeugenbeschreibungen</p>
-            <xi:include href="listWit.xml"/>
-        </exemplum>
-        <exemplum xml:lang="en" xml:id="ex-witness-en">
-            <p>Example of multiple text witness descriptions</p>
-            <xi:include href="listWit.xml"/>
-        </exemplum>
-        <exemplum xml:lang="fr" xml:id="ex-witness-fr">
-            <p>Exemple de plusieurs descriptions de témoins textuels</p>
-            <xi:include href="listWit.xml"/>
-        </exemplum>
-        <exemplum xml:lang="it" xml:id="ex-witness-it">
-            <p>Esempio di descrizioni testimoni testuali multiple</p>
-            <xi:include href="listWit.xml"/>
-        </exemplum>
-    </macroSpec>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-TEI-de">
+      <p>Minimalbeispiel für ein TEI-Dokument</p>
+      <xi:include href="TEI.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-TEI-en">
+      <p>Minimal example of a TEI document</p>
+      <xi:include href="TEI.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-TEI-fr">
+      <p>Exemple minimal d'un document TEI</p>
+      <xi:include href="TEI.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-TEI-it">
+      <p>Esempio minimo di documento TEI</p>
+      <xi:include href="TEI.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-text-1-de">
+      <p>Beispiel für ein Transkript mit optionalem Kommentarbereich</p>
+      <xi:include href="text.xml" xpointer="ex-text-1"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-text-1-en">
+      <p>Example of a transcript with an optional comment section</p>
+      <xi:include href="text.xml" xpointer="ex-text-1"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-text-1-fr">
+      <p>Exemple de transcription avec une section de commentaires facultative</p>
+      <xi:include href="text.xml" xpointer="ex-text-1"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-text-1-it">
+      <p>Esempio di una trascrizione con una sezione di commento facoltativa</p>
+      <xi:include href="text.xml" xpointer="ex-text-1"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-text-2-de">
+      <p>Beispiel für ein Regest ohne Kommentarbereich</p>
+      <xi:include href="text.xml" xpointer="ex-text-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-text-2-en">
+      <p>Example of a regest without a comment section</p>
+      <xi:include href="text.xml" xpointer="ex-text-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-text-2-fr">
+      <p>Exemple de registre sans section de commentaire</p>
+      <xi:include href="text.xml" xpointer="ex-text-2"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-text-2-it">
+      <p>Esempio di un regest senza una sezione di commento</p>
+      <xi:include href="text.xml" xpointer="ex-text-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-witness-de">
+      <p>Beispiel für mehrere Textzeugenbeschreibungen</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-witness-en">
+      <p>Example of multiple text witness descriptions</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-witness-fr">
+      <p>Exemple de plusieurs descriptions de témoins textuels</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-witness-it">
+      <p>Esempio di descrizioni testimoni testuali multiple</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+  </macroSpec>
 </div>

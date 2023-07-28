@@ -1,97 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:xi="http://www.w3.org/2001/XInclude"
-             ident="abbr"
-             module="core"
-             mode="change">
-    <gloss xml:lang="de" versionDate="2023-06-30">Abkürzung</gloss>
-    <gloss xml:lang="en" versionDate="2023-06-30">Abbreviation</gloss>
-    <gloss xml:lang="fr" versionDate="2023-06-30">Abréviation</gloss>
-    <gloss xml:lang="it" versionDate="2023-06-30">Abbreviazione</gloss>
-    <desc xml:lang="de" versionDate="2023-05-23">Enthält eine Abkürzung.</desc>
-    <desc xml:lang="en" versionDate="2023-05-23">Contains an abbreviation.</desc>
-    <desc xml:lang="fr" versionDate="2023-05-23">Contient une abréviation.</desc>
-    <desc xml:lang="it" versionDate="2023-05-23">Contiene un'abbreviazione.</desc>
-    <classes mode="replace">
-        <memberOf key="model.choicePart"/>
-        <memberOf key="model.pPart.editorial"/>
-    </classes>
-    <content>
-        <alternate maxOccurs="unbounded">
-            <textNode/>
-            <elementRef key="hi"/>
-            <elementRef key="lb"/>
-            <elementRef key="sic"/>
-            <elementRef key="unclear"/>
-        </alternate>
-    </content>
-    <attList>
-        <attDef ident="type" mode="delete"/>
-    </attList>
-    <xi:include href="examples.xml" xpointer="ex-choice-abbr-de"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-abbr-fr"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-abbr-en"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-abbr-it"/>
-    <remarks xml:lang="de" versionDate="2023-06-30">
-        <p>Es werden keine Kürzungspunkte verwendet, da die Abkürzungen durch die Auszeichnung bereits als solche
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="abbr" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2023-06-30">Abkürzung</gloss>
+  <gloss xml:lang="en" versionDate="2023-06-30">Abbreviation</gloss>
+  <gloss xml:lang="fr" versionDate="2023-06-30">Abréviation</gloss>
+  <gloss xml:lang="it" versionDate="2023-06-30">Abbreviazione</gloss>
+  <desc xml:lang="de" versionDate="2023-05-23">Enthält eine Abkürzung.</desc>
+  <desc xml:lang="en" versionDate="2023-05-23">Contains an abbreviation.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-23">Contient une abréviation.</desc>
+  <desc xml:lang="it" versionDate="2023-05-23">Contiene un'abbreviazione.</desc>
+  <classes mode="replace">
+    <memberOf key="model.choicePart"/>
+    <memberOf key="model.pPart.editorial"/>
+  </classes>
+  <content>
+    <alternate maxOccurs="unbounded">
+      <textNode/>
+      <elementRef key="hi"/>
+      <elementRef key="lb"/>
+      <elementRef key="sic"/>
+      <elementRef key="unclear"/>
+    </alternate>
+  </content>
+  <attList>
+    <attDef ident="type" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-choice-abbr-de"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-abbr-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-abbr-en"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-abbr-it"/>
+  <remarks xml:lang="de" versionDate="2023-06-30">
+    <p>Es werden keine Kürzungspunkte verwendet, da die Abkürzungen durch die Auszeichnung bereits als solche
             gekennzeichnet sind.
         </p>
-        <p>Orthographische Gepflogenheiten des Schreibers werden ohne besondere Kennzeichnung berücksichtigt.
+    <p>Orthographische Gepflogenheiten des Schreibers werden ohne besondere Kennzeichnung berücksichtigt.
             Selbstverständliches wird stillschweigend aufgelöst, z. B. Nasalstriche, Affixe («-er», «con-», «per-»).
             Xsti wird stillschweigend aufgelöst in Christi, ebenso Ao = anno, wz = was oder dz = das.
         </p>
-        <p>Abkürzungen in der Textvorlage werden, wenn es möglich und sinnvoll ist, mit Hilfe
+    <p>Abkürzungen in der Textvorlage werden, wenn es möglich und sinnvoll ist, mit Hilfe
             von <gi>choice</gi> und <gi>expan</gi> aufgelöst.
         </p>
-        <p>Abkürzungen von Mass- und Münzbezeichnungen werden ausser in Fliesstexten (Kommentaren, Bemerkungen) nicht
+    <p>Abkürzungen von Mass- und Münzbezeichnungen werden ausser in Fliesstexten (Kommentaren, Bemerkungen) nicht
             aufgelöst. Es werden die entsprechenden Sonderzeichen verwendet.
         </p>
-    </remarks>
-    <remarks xml:lang="en" versionDate="2023-06-30">
-        <p>No abbreviation points are used, as the abbreviations are already marked as such by the markup.</p>
-        <p>The writer's spelling conventions are taken into account without special identification. The self-evident is
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-06-30">
+    <p>No abbreviation points are used, as the abbreviations are already marked as such by the markup.</p>
+    <p>The writer's spelling conventions are taken into account without special identification. The self-evident is
             tacitly resolved, e.g. B. nasal strokes, affixes («-er», «con-», «per-»). Xsti is tacitly resolved into
             Christi, as is Ao = anno, wz = was or dz = das.
         </p>
-        <p>Abbreviations in the text template are, if possible and sensible, with the help
+    <p>Abbreviations in the text template are, if possible and sensible, with the help
             of <gi>choice</gi> and <gi>expan</gi> resolved.
         </p>
-        <p>Abbreviations of dimensions and coin designations are not resolved except in continuous text (comments,
+    <p>Abbreviations of dimensions and coin designations are not resolved except in continuous text (comments,
             remarks). The corresponding special characters are used.
         </p>
-    </remarks>
-    <remarks xml:lang="fr" versionDate="2023-06-30">
-        <p>Aucun point d'abréviation n'est utilisé, car les abréviations sont déjà marquées comme telles par le
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-06-30">
+    <p>Aucun point d'abréviation n'est utilisé, car les abréviations sont déjà marquées comme telles par le
             balisage.
         </p>
-        <p>Les conventions orthographiques du rédacteur sont prises en compte sans identification particulière.
+    <p>Les conventions orthographiques du rédacteur sont prises en compte sans identification particulière.
             L'évidence est tacitement résolue, par ex. B. traits nasaux, affixes («-er», «con-», «per-»). Xsti est
             implicitement résolu en Christ, tout comme Ao = anno, wz = was ou dz = das.
         </p>
-        <p>Les abréviations dans le modèle de texte sont développées à l'aide de <gi>choice</gi> et <gi>expan</gi> si
+    <p>Les abréviations dans le modèle de texte sont développées à l'aide de <gi>choice</gi> et <gi>expan</gi> si
             cela est possible et utile.
         </p>
-        <p>Les abréviations de dimensions et les désignations de pièces ne sont pas résolues sauf en texte continu
+    <p>Les abréviations de dimensions et les désignations de pièces ne sont pas résolues sauf en texte continu
             (commentaires, remarques). Les caractères spéciaux correspondants sont utilisés.
         </p>
-    </remarks>
-    <remarks xml:lang="it" versionDate="2023-06-30">
-        <p>Non vengono utilizzati punti di abbreviazione, poiché le abbreviazioni sono già contrassegnate come tali
+  </remarks>
+  <remarks xml:lang="it" versionDate="2023-06-30">
+    <p>Non vengono utilizzati punti di abbreviazione, poiché le abbreviazioni sono già contrassegnate come tali
             dal markup.
         </p>
-        <p>Le convenzioni ortografiche dello scrittore sono prese in considerazione senza identificazione speciale.
+    <p>Le convenzioni ortografiche dello scrittore sono prese in considerazione senza identificazione speciale.
             L'ovvio è tacitamente risolto, ad es. B. tratti nasali, affissi («-er», «con-», «per-»). Xsti è
             implicitamente risolto in Cristo, così come Ao = anno, wz = was o dz = das.
         </p>
-        <p>Le abbreviazioni nel modello di testo vengono espanse con l'aiuto di <gi>choice</gi> e <gi>expan</gi> se
+    <p>Le abbreviazioni nel modello di testo vengono espanse con l'aiuto di <gi>choice</gi> e <gi>expan</gi> se
             possibile e utile.
         </p>
-        <p>Le abbreviazioni di dimensioni e designazioni di monete non vengono risolte se non nel testo continuo
+    <p>Le abbreviazioni di dimensioni e designazioni di monete non vengono risolte se non nel testo continuo
             (commenti, osservazioni). Vengono utilizzati i caratteri speciali corrispondenti.
         </p>
-    </remarks>
+  </remarks>
 </elementSpec>

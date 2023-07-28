@@ -1,53 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             ident="msContents"
-             module="msdescription"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-15">Enthält das Regest und die Textsprache der Quelle.</desc>
-    <desc xml:lang="en" versionDate="2023-07-15">Contains the regest and text language of the source.</desc>
-    <desc xml:lang="fr" versionDate="2023-07-15">Contient le registre et la langue du texte de la source.</desc>
-    <desc xml:lang="it" versionDate="2023-07-15">Contiene il regest e la lingua del testo della fonte.</desc>
-    <classes mode="replace"/>
-    <content>
-        <sequence>
-            <elementRef key="summary" minOccurs="0"/>
-            <elementRef key="msItem"/>
-        </sequence>
-    </content>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-        <p>Exemplarischer Aufbau am Beispiel SSRQ-SG-III_4-14-1</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <msContents>
-                <summary>
-                    <p>Graf Heinrich II. von Werdenberg-Heiligenberg(-Rheineck) verleiht den Brüdern
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="msContents" module="msdescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-15">Enthält das Regest und die Textsprache der Quelle.</desc>
+  <desc xml:lang="en" versionDate="2023-07-15">Contains the regest and text language of the source.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-15">Contient le registre et la langue du texte de la source.</desc>
+  <desc xml:lang="it" versionDate="2023-07-15">Contiene il regest e la lingua del testo della fonte.</desc>
+  <classes mode="replace"/>
+  <content>
+    <sequence>
+      <elementRef key="summary" minOccurs="0"/>
+      <elementRef key="msItem"/>
+    </sequence>
+  </content>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
+    <p>Exemplarischer Aufbau am Beispiel SSRQ-SG-III_4-14-1</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <msContents>
+        <summary>
+          <p>Graf Heinrich II. von Werdenberg-Heiligenberg(-Rheineck) verleiht den Brüdern
                         Konrad, Heinz und Hans Grafer den Zoll von St. Ulrich und die Schenke in
                         Sevelen.
                     </p>
-                </summary>
-                <msItem>
-                    <textLang xml:lang="de"/>
-                </msItem>
-            </msContents>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
-        <p>Structure exemplaire à l'exemple de SSRQ-SG-III_4-14-1</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <msContents>
-                <summary>
-                    <p>Graf Heinrich II. von Werdenberg-Heiligenberg(-Rheineck) verleiht den Brüdern
+        </summary>
+        <msItem>
+          <textLang xml:lang="de"/>
+        </msItem>
+      </msContents>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
+    <p>Structure exemplaire à l'exemple de SSRQ-SG-III_4-14-1</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <msContents>
+        <summary>
+          <p>Graf Heinrich II. von Werdenberg-Heiligenberg(-Rheineck) verleiht den Brüdern
                         Konrad, Heinz und Hans Grafer den Zoll von St. Ulrich und die Schenke in
                         Sevelen.
                     </p>
-                </summary>
-                <msItem>
-                    <textLang xml:lang="de"/>
-                </msItem>
-            </msContents>
-        </egXML>
-    </exemplum>
+        </summary>
+        <msItem>
+          <textLang xml:lang="de"/>
+        </msItem>
+      </msContents>
+    </egXML>
+  </exemplum>
 </elementSpec>

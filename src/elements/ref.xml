@@ -1,74 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-             ident="ref"
-             module="core"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-04-28">Enthält einen Verweis.</desc>
-    <classes mode="replace">
-        <memberOf key="att.pointing"/>
-        <memberOf key="model.annotationPart.body"/>
-        <memberOf key="model.ptrLike"/>
-    </classes>
-    <content>
-        <alternate maxOccurs="unbounded">
-            <elementRef key="hi"/>
-            <textNode/>
-        </alternate>
-    </content>
-    <constraintSpec scheme="schematron" ident="refAtts" mode="delete"/>
-    <constraintSpec scheme="schematron" ident="sch-el-ref" mode="add">
-        <desc xml:lang="en" versionDate="2023-06-22">Specific schematron rule for tei:ref</desc>
-        <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:ref[not(*)]">
-                    <sch:assert
-                            test="if (not(.[@target])) then string-length(normalize-space(.)) &gt; 0 else .[@target]">
-                        <sch:name/>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="ref" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-04-28">Enthält einen Verweis.</desc>
+  <classes mode="replace">
+    <memberOf key="att.pointing"/>
+    <memberOf key="model.annotationPart.body"/>
+    <memberOf key="model.ptrLike"/>
+  </classes>
+  <content>
+    <alternate maxOccurs="unbounded">
+      <elementRef key="hi"/>
+      <textNode/>
+    </alternate>
+  </content>
+  <constraintSpec scheme="schematron" ident="refAtts" mode="delete"/>
+  <constraintSpec scheme="schematron" ident="sch-el-ref" mode="add">
+    <desc xml:lang="en" versionDate="2023-06-22">Specific schematron rule for tei:ref</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:ref[not(*)]">
+          <sch:assert test="if (not(.[@target])) then string-length(normalize-space(.)) &gt; 0 else .[@target]"><sch:name/>
                         should contain some text or must use the attribute @target.
                     </sch:assert>
-                </sch:rule>
-            </sch:pattern>
-        </constraint>
-    </constraintSpec>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-        <p>Verweis auf gedruckte Quellen</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <bibl>
-                <ref target="https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858">SSRQ SG
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
+    <p>Verweis auf gedruckte Quellen</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <bibl>
+        <ref target="https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858">SSRQ SG
                     III/2, Nr. 231
                 </ref>
-            </bibl>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-        <p>Référence aux sources imprimées</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <bibl>
-                <ref target="https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858">SSRQ SG
+      </bibl>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
+    <p>Référence aux sources imprimées</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <bibl>
+        <ref target="https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858">SSRQ SG
                     III/2, Nr. 231
                 </ref>
-            </bibl>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-        <p>Verweis auf anderes Dokument</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <ref target="urn:ssrq:SSRQ-ZH-NF_I_2_1-4-1">SSRQ ZH NF I/2/1 4-1</ref>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-        <p>Référence à un autre document</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <ref target="urn:ssrq:SSRQ-ZH-NF_I_2_1-4-1">SSRQ ZH NF I/2/1 4-1</ref>
-        </egXML>
-    </exemplum>
-    <remarks xml:lang="de" versionDate="2023-07-20">
-        <p>Der Verweis kann auf ein anderes Dokument, die Einleitung, das Register eines retrodigitalisierten Bandes,
+      </bibl>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
+    <p>Verweis auf anderes Dokument</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <ref target="urn:ssrq:SSRQ-ZH-NF_I_2_1-4-1">SSRQ ZH NF I/2/1 4-1</ref>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
+    <p>Référence à un autre document</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <ref target="urn:ssrq:SSRQ-ZH-NF_I_2_1-4-1">SSRQ ZH NF I/2/1 4-1</ref>
+    </egXML>
+  </exemplum>
+  <remarks xml:lang="de" versionDate="2023-07-20">
+    <p>Der Verweis kann auf ein anderes Dokument, die Einleitung, das Register eines retrodigitalisierten Bandes,
             einen Eintrag im HLS, zitierte Literatur etc. zeigen. Es ist sinnvoll, Links auf weitere, nicht edierte,
             aber in einem Archivinformationssystem einzeln verzeichnete Quellenstücke innerhalb von <gi>ref</gi> zu
             setzen. Nicht sinnvoll ist es, wenn bei einer einzelnen Urkunde auf den ganzen Urkundenbestand verlinkt
@@ -83,9 +76,9 @@
             eigenen Editionseinheit von einem Stück auf ein anderes zu referenzieren. Wir verwenden dafür
             die <gi>idno</gi>.
         </p>
-    </remarks>
-    <remarks xml:lang="en" versionDate="2023-07-20">
-        <p>The reference can point to another document, the introduction, the index of a retrodigitized volume, an entry
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-20">
+    <p>The reference can point to another document, the introduction, the index of a retrodigitized volume, an entry
             in the HLS, cited literature, etc. It makes sense to place links within <gi>ref</gi> to other source pieces
             that are not edited but are individually listed in an archive information system. It does not make sense if
             a single certificate is linked to the entire stock of certificates because the individual certificate is not
@@ -99,9 +92,9 @@
             It is also possible to reference from one piece to another within your own edition unit. We use
             the <gi>idno</gi> for this.
         </p>
-    </remarks>
-    <remarks xml:lang="fr" versionDate="2023-07-20">
-        <p>La référence peut pointer vers un autre document, l'introduction, l'index d'un volume rétronumérisé, une
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-20">
+    <p>La référence peut pointer vers un autre document, l'introduction, l'index d'un volume rétronumérisé, une
             entrée dans l'HLS, une littérature citée, etc. Il est logique de placer des liens dans <gi>ref</gi> vers
             d'autres éléments sources qui ne sont pas édités mais qui sont répertoriés individuellement dans un système
             d'information d'archives. Cela n'a pas de sens qu'un seul certificat soit lié à l'ensemble du stock de
@@ -116,9 +109,9 @@
             exemple ci-dessous). Il est également possible de référencer d'une pièce à l'autre au sein de votre propre
             unité d'édition. Nous utilisons le <gi>idno</gi> pour cela.
         </p>
-    </remarks>
-    <remarks xml:lang="it" versionDate="2023-07-20">
-        <p>Il riferimento può indicare un altro documento, l'introduzione, l'indice di un volume retrodigitalizzato, una
+  </remarks>
+  <remarks xml:lang="it" versionDate="2023-07-20">
+    <p>Il riferimento può indicare un altro documento, l'introduzione, l'indice di un volume retrodigitalizzato, una
             voce nell'HLS, la letteratura citata, ecc. Ha senso inserire collegamenti all'interno di <gi>ref</gi> ad
             altri pezzi di origine che non sono modificati ma sono elencati individualmente in un sistema informativo di
             archivio. Non ha senso se un singolo certificato è collegato all'intero stock di certificati perché il
@@ -133,5 +126,5 @@
             possibile fare riferimento da un pezzo all'altro all'interno della propria unità di edizione.
             Usiamo <gi>idno</gi> per questo.
         </p>
-    </remarks>
+  </remarks>
 </elementSpec>

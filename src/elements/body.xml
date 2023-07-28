@@ -1,35 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             ident="body"
-             module="textstructure"
-             mode="change">
-    <gloss xml:lang="de" versionDate="2023-07-14">Textbereich</gloss>
-    <gloss xml:lang="en" versionDate="2023-07-14">Text section</gloss>
-    <gloss xml:lang="fr" versionDate="2023-07-14">Rubrique de texte</gloss>
-    <gloss xml:lang="it" versionDate="2023-07-14">Sezione di testo</gloss>
-    <desc xml:lang="de" versionDate="2023-04-06">Enthält den transkribierten Quellentext sowie die
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="body" module="textstructure" mode="change">
+  <gloss xml:lang="de" versionDate="2023-07-14">Textbereich</gloss>
+  <gloss xml:lang="en" versionDate="2023-07-14">Text section</gloss>
+  <gloss xml:lang="fr" versionDate="2023-07-14">Rubrique de texte</gloss>
+  <gloss xml:lang="it" versionDate="2023-07-14">Sezione di testo</gloss>
+  <desc xml:lang="de" versionDate="2023-04-06">Enthält den transkribierten Quellentext sowie die
         zeitgleichen Dorsualnotizen in <gi>ab</gi>.
     </desc>
-    <desc xml:lang="en" versionDate="2023-04-06">Contains the transcribed source text as well as the
+  <desc xml:lang="en" versionDate="2023-04-06">Contains the transcribed source text as well as the
         contemporaneous dorsual notes in <gi>ab</gi>.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-04-06">Contient le texte transcrit de la source ainsi que
+  <desc xml:lang="fr" versionDate="2023-04-06">Contient le texte transcrit de la source ainsi que
         les notes dorsales dans <gi>ab</gi>.
     </desc>
-    <desc xml:lang="it" versionDate="2023-04-06">Contiene il testo di origine trascritto e le coeve note dorsali
+  <desc xml:lang="it" versionDate="2023-04-06">Contiene il testo di origine trascritto e le coeve note dorsali
         in <gi>ab</gi>.
     </desc>
-    <classes mode="replace"/>
-    <content>
-        <alternate maxOccurs="unbounded">
-            <elementRef key="gap"/>
-            <elementRef key="pb"/>
-            <elementRef key="div"/>
-            <elementRef key="signed"/>
-        </alternate>
-    </content>
+  <classes mode="replace"/>
+  <content>
+    <alternate maxOccurs="unbounded">
+      <elementRef key="gap"/>
+      <elementRef key="pb"/>
+      <elementRef key="div"/>
+      <elementRef key="signed"/>
+    </alternate>
+  </content>
 </elementSpec>

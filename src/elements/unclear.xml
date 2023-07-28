@@ -1,84 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             ident="unclear"
-             module="core"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-20">Enthält eine unsichere Lesung.</desc>
-    <desc xml:lang="en" versionDate="2023-07-20">Contains an uncertain reading.</desc>
-    <desc xml:lang="fr" versionDate="2023-07-20">Contient une lecture incertaine.</desc>
-    <desc xml:lang="it" versionDate="2023-07-20">Contiene una lettura incerta.</desc>
-    <classes mode="replace">
-        <memberOf key="att.global.responsibility"/>
-    </classes>
-    <content>
-        <rng:zeroOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:zeroOrMore>
-    </content>
-    <attList>
-        <attDef ident="agent" mode="delete"/>
-        <attDef ident="reason" mode="delete"/>
-        <attDef ident="resp" mode="delete"/>
-    </attList>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-25">
-        <p>Unsichere Lesung ohne Beschädigung</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">ve<unclear cert="high">stik</unclear>lich
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="unclear" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-20">Enthält eine unsichere Lesung.</desc>
+  <desc xml:lang="en" versionDate="2023-07-20">Contains an uncertain reading.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-20">Contient une lecture incertaine.</desc>
+  <desc xml:lang="it" versionDate="2023-07-20">Contiene una lettura incerta.</desc>
+  <classes mode="replace">
+    <memberOf key="att.global.responsibility"/>
+  </classes>
+  <content>
+    <rng:zeroOrMore>
+      <rng:ref name="ssrq.content.default"/>
+    </rng:zeroOrMore>
+  </content>
+  <attList>
+    <attDef ident="agent" mode="delete"/>
+    <attDef ident="reason" mode="delete"/>
+    <attDef ident="resp" mode="delete"/>
+  </attList>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-25">
+    <p>Unsichere Lesung ohne Beschädigung</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">ve<unclear cert="high">stik</unclear>lich
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-25">
-        <p>Lecture non sécurisée sans dommage</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">ve<unclear cert="high">stik</unclear>lich
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-25">
+    <p>Lecture non sécurisée sans dommage</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">ve<unclear cert="high">stik</unclear>lich
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-25">
-        <p>Verblasste Tinte in einer Editionsvorlage, bei der eine unsichere Lesung
+  </exemplum>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-25">
+    <p>Verblasste Tinte in einer Editionsvorlage, bei der eine unsichere Lesung
             durch den Bearbeitenden möglich ist
         </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">und sol och der w
-            <damage agent="faded_ink">
-                <unclear>eib</unclear>
-            </damage>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">und sol och der w
+            <damage agent="faded_ink"><unclear>eib</unclear></damage>
             el
         </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-25">
-        <p>Lecture incertaine qui n'est pas due à un dommage, mais à l'encre faible.
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-25">
+    <p>Lecture incertaine qui n'est pas due à un dommage, mais à l'encre faible.
             L'éditeur utilise unclear avec damage pour indiquer son incertitude
             sur ce passage
         </p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">und sol och der w
-            <damage agent="faded_ink">
-                <unclear>eib</unclear>
-            </damage>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">und sol och der w
+            <damage agent="faded_ink"><unclear>eib</unclear></damage>
             el
         </egXML>
-    </exemplum>
-    <remarks xml:lang="de" versionDate="2023-07-20">
-        <p>Ist die Ursache eine Beschädigung, dann wird diese durch <gi>damage</gi> angegeben. Mit <att>cert</att> kann
+  </exemplum>
+  <remarks xml:lang="de" versionDate="2023-07-20">
+    <p>Ist die Ursache eine Beschädigung, dann wird diese durch <gi>damage</gi> angegeben. Mit <att>cert</att> kann
             angegeben werden, wie sicher die Lesung ist. Erweist sich eine Stelle als absolut unlesbar, so wird sie
             mit <gi>gap</gi> ausgezeichnet.
         </p>
-    </remarks>
-    <remarks xml:lang="en" versionDate="2023-07-20">
-        <p>If the cause is damage, then this is indicated by <gi>damage</gi>. <att>cert</att> can be used to specify how
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-20">
+    <p>If the cause is damage, then this is indicated by <gi>damage</gi>. <att>cert</att> can be used to specify how
             secure the reading is. If a passage turns out to be absolutely illegible, it is marked with <gi>gap</gi>.
         </p>
-    </remarks>
-    <remarks xml:lang="fr" versionDate="2023-07-20">
-        <p>Si la cause est un dommage, cela est indiqué par <gi>damage</gi>. <att>cert</att> peut être utilisé pour
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-20">
+    <p>Si la cause est un dommage, cela est indiqué par <gi>damage</gi>. <att>cert</att> peut être utilisé pour
             spécifier le degré de sécurité de la lecture. Si un passage s'avère absolument illisible, il est marqué
             d'un <gi>gap</gi>.
         </p>
-    </remarks>
-    <remarks xml:lang="it" versionDate="2023-07-20">
-        <p>Se la causa è un danno, questo è indicato da <gi>damage</gi>. <att>cert</att> può essere utilizzato per
+  </remarks>
+  <remarks xml:lang="it" versionDate="2023-07-20">
+    <p>Se la causa è un danno, questo è indicato da <gi>damage</gi>. <att>cert</att> può essere utilizzato per
             specificare quanto è sicura la lettura. Se un passaggio risulta essere assolutamente illeggibile, viene
             contrassegnato con <gi>gap</gi>.
         </p>
-    </remarks>
+  </remarks>
 </elementSpec>

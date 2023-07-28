@@ -1,57 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:rng="http://relaxng.org/ns/structure/1.0"
-             xmlns:xi="http://www.w3.org/2001/XInclude"
-             ident="signed"
-             module="textstructure"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-05-23">Beinhaltet Unterschriften und Unterschriften mit Notarzeichen und
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="signed" module="textstructure" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-23">Beinhaltet Unterschriften und Unterschriften mit Notarzeichen und
         befindet sich in der Regel am Ende eines Textes.
     </desc>
-    <desc xml:lang="en" versionDate="2023-05-23">Includes signatures and signatures with notary marks and is usually
+  <desc xml:lang="en" versionDate="2023-05-23">Includes signatures and signatures with notary marks and is usually
         found at the end of a text.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-05-23">Comprend des signatures et des signatures avec des marques de notaire
+  <desc xml:lang="fr" versionDate="2023-05-23">Comprend des signatures et des signatures avec des marques de notaire
         et se trouve généralement à la fin d'un texte.
     </desc>
-    <desc xml:lang="it" versionDate="2023-05-23">Include firme e firme con segni notarili e si trova solitamente alla
+  <desc xml:lang="it" versionDate="2023-05-23">Include firme e firme con segni notarili e si trova solitamente alla
         fine di un testo.
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.divBottomPart"/>
-        <memberOf key="model.divTopPart"/>
-    </classes>
-    <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
-    </content>
-    <xi:include href="examples.xml" xpointer="ex-figure-1-de"/>
-    <xi:include href="examples.xml" xpointer="ex-figure-1-en"/>
-    <xi:include href="examples.xml" xpointer="ex-figure-1-fr"/>
-    <xi:include href="examples.xml" xpointer="ex-figure-1-it"/>
-    <remarks xml:lang="de" versionDate="2023-07-14">
-        <p>Folgen nach einer Unterschrift noch verschiedene Vermerke (<gi>ab</gi>), dann muss <gi>signed</gi> innerhalb
+  <classes mode="replace">
+    <memberOf key="model.divBottomPart"/>
+    <memberOf key="model.divTopPart"/>
+  </classes>
+  <content>
+    <rng:oneOrMore>
+      <rng:ref name="ssrq.content.default"/>
+    </rng:oneOrMore>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-figure-1-de"/>
+  <xi:include href="examples.xml" xpointer="ex-figure-1-en"/>
+  <xi:include href="examples.xml" xpointer="ex-figure-1-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-figure-1-it"/>
+  <remarks xml:lang="de" versionDate="2023-07-14">
+    <p>Folgen nach einer Unterschrift noch verschiedene Vermerke (<gi>ab</gi>), dann muss <gi>signed</gi> innerhalb
             eines <gi>div</gi> stehen.
         </p>
-    </remarks>
-    <remarks xml:lang="en" versionDate="2023-07-14">
-        <p>If a signature is followed by various comments (<gi>ab</gi>), then <gi>signed</gi> must be within
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-14">
+    <p>If a signature is followed by various comments (<gi>ab</gi>), then <gi>signed</gi> must be within
             a <gi>div</gi>.
         </p>
-    </remarks>
-    <remarks xml:lang="fr" versionDate="2023-07-14">
-        <p>Si une signature est suivie de divers commentaires (<gi>ab</gi>), alors <gi>signed</gi> doit être dans
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-14">
+    <p>Si une signature est suivie de divers commentaires (<gi>ab</gi>), alors <gi>signed</gi> doit être dans
             un <gi>div</gi>.
         </p>
-    </remarks>
-    <remarks xml:lang="it" versionDate="2023-07-14">
-        <p>Se una firma è seguita da vari commenti (<gi>ab</gi>), allora <gi>signed</gi> deve trovarsi all'interno di
+  </remarks>
+  <remarks xml:lang="it" versionDate="2023-07-14">
+    <p>Se una firma è seguita da vari commenti (<gi>ab</gi>), allora <gi>signed</gi> deve trovarsi all'interno di
             un <gi>div</gi>.
         </p>
-    </remarks>
+  </remarks>
 </elementSpec>

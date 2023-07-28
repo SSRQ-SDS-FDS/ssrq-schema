@@ -1,49 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             ident="resp"
-             module="core"
-             mode="change"
-             xmlns:rng="http://relaxng.org/ns/structure/1.0">
-    <desc xml:lang="de" versionDate="2023-07-20">Beschreibt die Art der Verantwortung.</desc>
-    <desc xml:lang="en" versionDate="2023-07-20">Describes the nature of the responsibility.</desc>
-    <desc xml:lang="fr" versionDate="2023-07-20">Décrit la nature de la responsabilité.</desc>
-    <desc xml:lang="it" versionDate="2023-07-20">Descrive la natura della responsabilità.</desc>
-    <classes mode="replace"/>
-    <content>
-        <rng:choice>
-            <rng:ref name="ssrq.role.resp.de"/>
-            <rng:ref name="ssrq.role.resp.fr"/>
-        </rng:choice>
-    </content>
-    <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-        <p>Verantwortlich für das Transkript</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <respStmt>
-                <persName>Claudia Sutter</persName>
-                <resp>Transkription</resp>
-            </respStmt>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-06-27">
-        <p>Responsible for the transcript</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <respStmt>
-                <persName>Claudia Sutter</persName>
-                <resp>Transkription</resp>
-            </respStmt>
-        </egXML>
-    </exemplum>
-    <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-06-27">
-        <p>Responsable de la transcription</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <respStmt>
-                <persName>Claudia Sutter</persName>
-                <resp>Transkription</resp>
-            </respStmt>
-        </egXML>
-    </exemplum>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="resp" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-20">Beschreibt die Art der Verantwortung.</desc>
+  <desc xml:lang="en" versionDate="2023-07-20">Describes the nature of the responsibility.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-20">Décrit la nature de la responsabilité.</desc>
+  <desc xml:lang="it" versionDate="2023-07-20">Descrive la natura della responsabilità.</desc>
+  <classes mode="replace"/>
+  <content>
+    <rng:choice>
+      <rng:ref name="ssrq.role.resp.de"/>
+      <rng:ref name="ssrq.role.resp.fr"/>
+    </rng:choice>
+  </content>
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
+    <p>Verantwortlich für das Transkript</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <persName>Claudia Sutter</persName>
+        <resp>Transkription</resp>
+      </respStmt>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-06-27">
+    <p>Responsible for the transcript</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <persName>Claudia Sutter</persName>
+        <resp>Transkription</resp>
+      </respStmt>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-06-27">
+    <p>Responsable de la transcription</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <persName>Claudia Sutter</persName>
+        <resp>Transkription</resp>
+      </respStmt>
+    </egXML>
+  </exemplum>
 </elementSpec>

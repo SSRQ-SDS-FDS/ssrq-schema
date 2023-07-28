@@ -1,65 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model
-        href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:xi="http://www.w3.org/2001/XInclude"
-             ident="choice"
-             module="core"
-             mode="change">
-    <desc xml:lang="de" versionDate="2023-07-19">Enthält zwei Elemente zur alternativen Auszeichnung einer Textpassage.
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="choice" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-19">Enthält zwei Elemente zur alternativen Auszeichnung einer Textpassage.
     </desc>
-    <desc xml:lang="en" versionDate="2023-07-19">Contains two elements for alternative markup of a text passage.
+  <desc xml:lang="en" versionDate="2023-07-19">Contains two elements for alternative markup of a text passage.
     </desc>
-    <desc xml:lang="fr" versionDate="2023-07-19">Contient deux éléments pour le marquage alternatif d'un passage de
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient deux éléments pour le marquage alternatif d'un passage de
         texte.
     </desc>
-    <desc xml:lang="it" versionDate="2023-07-19">Contiene due elementi per la marcatura alternativa di un passaggio di
+  <desc xml:lang="it" versionDate="2023-07-19">Contiene due elementi per la marcatura alternativa di un passaggio di
         testo.
     </desc>
-    <classes mode="replace">
-        <memberOf key="model.linePart"/>
-        <memberOf key="model.pPart.editorial"/>
-    </classes>
-    <content>
-        <alternate>
-            <sequence>
-                <elementRef key="abbr"/>
-                <elementRef key="expan"/>
-            </sequence>
-            <sequence>
-                <elementRef key="sic"/>
-                <elementRef key="corr"/>
-            </sequence>
-        </alternate>
-    </content>
-    <xi:include href="examples.xml" xpointer="ex-choice-abbr-de"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-abbr-fr"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-abbr-en"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-abbr-it"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-sic-de"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-sic-fr"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-sic-en"/>
-    <xi:include href="examples.xml" xpointer="ex-choice-sic-it"/>
-    <remarks xml:lang="de" versionDate="2023-07-19">
-        <p>Der Tag enthält Elemente zur Auflösung von Abkürzungen oder zur Korrektur von Verschreibern.
+  <classes mode="replace">
+    <memberOf key="model.linePart"/>
+    <memberOf key="model.pPart.editorial"/>
+  </classes>
+  <content>
+    <alternate>
+      <sequence>
+        <elementRef key="abbr"/>
+        <elementRef key="expan"/>
+      </sequence>
+      <sequence>
+        <elementRef key="sic"/>
+        <elementRef key="corr"/>
+      </sequence>
+    </alternate>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-choice-abbr-de"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-abbr-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-abbr-en"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-abbr-it"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-de"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-en"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-it"/>
+  <remarks xml:lang="de" versionDate="2023-07-19">
+    <p>Der Tag enthält Elemente zur Auflösung von Abkürzungen oder zur Korrektur von Verschreibern.
             Die Auflösung der Abkürzung bzw. die Korrekturen stehen nach dem originalen Text.
         </p>
-    </remarks>
-    <remarks xml:lang="en" versionDate="2023-07-19">
-        <p>The tag contains elements for breaking up abbreviations or correcting spelling mistakes. The resolution of
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-19">
+    <p>The tag contains elements for breaking up abbreviations or correcting spelling mistakes. The resolution of
             the abbreviation and the corrections are given after the original text.
         </p>
-    </remarks>
-    <remarks xml:lang="fr" versionDate="2023-07-19">
-        <p>La balise contient des éléments permettant de décomposer les abréviations ou de corriger les fautes
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-19">
+    <p>La balise contient des éléments permettant de décomposer les abréviations ou de corriger les fautes
             d'orthographe. La résolution de l'abréviation et les corrections sont données après le texte original.
         </p>
-    </remarks>
-    <remarks xml:lang="it" versionDate="2023-07-19">
-        <p>Il tag contiene elementi per spezzare le abbreviazioni o correggere errori di ortografia. La risoluzione
+  </remarks>
+  <remarks xml:lang="it" versionDate="2023-07-19">
+    <p>Il tag contiene elementi per spezzare le abbreviazioni o correggere errori di ortografia. La risoluzione
             dell'abbreviazione e le correzioni si danno dopo il testo originale.
         </p>
-    </remarks>
+  </remarks>
 </elementSpec>
