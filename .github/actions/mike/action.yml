@@ -15,30 +15,18 @@ runs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
     - name: Deploy dev
-      if: ${{ inputs.version-name == 'dev' }}
       run: |
-        if poetry run mike list | grep -q "dev"; then
-          dev_exists=true
-        else
-          dev_exists=false
-        fi
-
-        if $dev_exists; then
+        dev_exists=$(poetry run mike list | grep dev)
+        if [[ -n "$dev_exists" ]]; then
           poetry run mike delete dev --push
         fi
-
         poetry run mike deploy dev --push
 
-        if poetry run mike list | grep -q "latest"; then
-          latest_exists=true
-        else
-          latest_exists=false
-        fi
-
-        if ! $latest_exists; then
+        latest_is_missing=$(poetry run mike list | grep latest)
+        if [[ -z "$output" ]]; then
           poetry run mike set-default dev --push
         fi
-
       shell: bash
+      if: ${{ inputs.version-name == 'dev' }}
     # - name: Deploy release
       # Todo
