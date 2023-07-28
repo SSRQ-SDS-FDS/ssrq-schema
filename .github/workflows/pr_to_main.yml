@@ -41,6 +41,8 @@ jobs:
         run: poetry install
       - name: Check the formatting of .py-files
         run: ./Taskfile fmt-check
+      - name: Check the formatting of .xml-files
+        run: ./Taskfile fmt-check-xml
       - name: Lint all .py-files
         run: ./Taskfile lint-only
       - name: Run all tests using pytest
