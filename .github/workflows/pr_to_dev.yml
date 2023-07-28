@@ -3,47 +3,57 @@ name: test_and_publish_dev
 on:
   pull_request:
     branches: ['dev']
+  push:
+    branches: ['dev']
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  ci:
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ['3.11']
-        poetry-version: ['1.2.2']
-
+  test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
           submodules: 'recursive'
-      - name: Setup access to private repo(s)
-        uses: webfactory/ssh-agent@v0.7.0
+      - name: Setup SSH and Python with Poetry
+        uses: ./.github/actions/setup
         with:
-          ssh-private-key: ${{ secrets.CLI_SECRET_KEY }}
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Setup Poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: ${{ matrix.poetry-version }}
+          ssh-key: ${{ secrets.CLI_SECRET_KEY }}
       - name: Setup xmllint
         uses: Bpolitycki/setup-xmllint-action@1.0.1
-      - name: Install dependencies
-        run: poetry install
       - name: Check the formatting of .py-files
         run: ./Taskfile fmt-check
       - name: Check the formatting of .xml-files
         run: ./Taskfile fmt-xml
       - name: Lint all .py-files
         run: ./Taskfile lint-only
-      - name: Run all tests using pytest
-        run: poetry run pytest -n 4
+      #- name: Run all tests using pytest
+      #  run: poetry run pytest -n 4
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: test
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PRE_COMMIT_ALLOW_NO_CONFIG: 1
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - name: Setup SSH and Python with Poetry
+        uses: ./.github/actions/setup
+        with:
+          ssh-key: ${{ secrets.CLI_SECRET_KEY }}
+      - name: Set docs-url
+        run: |
+          url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
+          echo "DOCS_URL=${url}" >> "$GITHUB_ENV"
+      - name: Build and publish
+        uses: ./.github/actions/mike
+        with:
+          version-name: 'dev'

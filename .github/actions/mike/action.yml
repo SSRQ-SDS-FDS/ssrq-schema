@@ -1,0 +1,32 @@
+name: Deploy using mike
+description: A action which deploys an mkdocs site using mike.
+
+inputs:
+  version-name:
+    description: The name of the version as well as the name of the target folder
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Configure Git user
+      shell: bash
+      run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+    - name: Deploy dev
+      run: |
+        dev_exists=$(poetry run mike list | grep dev)
+        if [[ -n "$dev_exists" ]]; then
+          poetry run mike delete dev --push
+        fi
+        poetry run mike deploy dev --push
+
+        latest_is_missing=$(poetry run mike list | grep latest)
+        if [[ -z "$output" ]]; then
+          poetry run mike set-default dev --push
+        fi
+      shell: bash
+      if: ${{ inputs.version-name == 'dev' }}
+    # - name: Deploy release
+      # Todo
