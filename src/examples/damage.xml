@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.tei-c.org/ns/1.0">
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-damage-add">
+    <damage agent="water_spot">
+      <add hand="otherHand" place="overwritten">zuͦ trincken</add>
+    </damage>
+  </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-damage-gap">
+    <damage agent="water_spot">
+      <gap quantity="9" unit="cm"/>
+    </damage>
+  </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-damage-supplied">
+    <damage agent="water_spot">
+      <supplied source="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810f">verthruwen</supplied>
+    </damage>
+  </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-damage-unclear">
+    <damage agent="ink_blot">
+      <unclear>die</unclear>
+    </damage>
+  </egXML>
+</div>
