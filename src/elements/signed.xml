@@ -24,10 +24,10 @@
       <rng:ref name="ssrq.content.default"/>
     </rng:oneOrMore>
   </content>
-  <xi:include href="examples.xml" xpointer="ex-figure-1-de"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-1-en"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-1-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-1-it"/>
+  <xi:include href="examples.xml" xpointer="ex-signed-de"/>
+  <xi:include href="examples.xml" xpointer="ex-signed-en"/>
+  <xi:include href="examples.xml" xpointer="ex-signed-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-signed-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Folgen nach einer Unterschrift noch verschiedene Vermerke (<gi>ab</gi>), dann muss <gi>signed</gi> innerhalb
             eines <gi>div</gi> stehen.
