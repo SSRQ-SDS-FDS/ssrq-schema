@@ -5,18 +5,18 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
   <macroSpec ident="ssrq-examples">
     <!-- Naming conventions inside this file are the following:
-            A) The xml:id of an exemplum:
-                - start always with "ex"
-                - continues with the name of the main element, which is part of the exemplum
-                - semantically meaningful parts of the id are separated by a dash ("-")
-                - ends always with a language abbreviation ("de", "en", "fr", "it").
-            B) Translations inside of <p>:
-                - start always with a capital letter
-                - do *not* end with a punctuation mark
-            C) Order of Elements
-                - all exempla are ordered by their xml:id
-                - the languages are ordered alphabetically ("de", "en", "fr", "it")
-        -->
+                A) The xml:id of an exemplum:
+                    - start always with "ex"
+                    - continues with the name of the main element, which is part of the exemplum
+                    - semantically meaningful parts of the id are separated by a dash ("-")
+                    - ends always with a language abbreviation ("de", "en", "fr", "it").
+                B) Translations inside of <p>:
+                    - start always with a capital letter
+                    - do *not* end with a punctuation mark
+                C) Order of Elements
+                    - all exempla are ordered by their xml:id
+                    - the languages are ordered alphabetically ("de", "en", "fr", "it")
+            -->
     <exemplum xml:lang="de" xml:id="ex-ab-de">
       <p>Beispiel für einen Kanzleivermerk</p>
       <xi:include href="ab.xml"/>
@@ -64,6 +64,22 @@
     <exemplum xml:lang="it" xml:id="ex-app-it">
       <p>Esempio di entrata di un attrezzo</p>
       <xi:include href="app.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-back-de">
+      <p>Beispiel für einen Kommentarbereich mit zwei Abschnitten</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-back-en">
+      <p>Example of a comments section with two divisions</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-back-fr">
+      <p>Exemple d'une section de commentaires avec deux divisions</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-back-it">
+      <p>Esempio di una sezione commenti con due divisioni</p>
+      <xi:include href="back.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-cell-de">
       <p>Einfaches Beispiel für Zellen in einer Tabelle</p>
