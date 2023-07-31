@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="space" module="transcr" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="space" module="transcr" mode="change">
   <desc xml:lang="de" versionDate="2023-05-11">Zeichnet eine Lücke aus, die vom Schreiber bewusst zwecks späterer
         Ergänzung offen gelassen wurde.
     </desc>
@@ -34,16 +34,10 @@
     </attDef>
     <attDef ident="quantity" mode="change" usage="req"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-03">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <space unit="word" quantity="2"/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-03">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <space unit="word" quantity="2"/>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-space-de"/>
+  <xi:include href="examples.xml" xpointer="ex-space-en"/>
+  <xi:include href="examples.xml" xpointer="ex-space-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-space-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Die Grösse der Lücke wird zwingend mit <att>unit</att> und <att>quantity</att> angegeben. Dabei handelt
             es sich um einen leeren Tag. Lücken infolge unbewusster Zeilensprünge werden hingegen
