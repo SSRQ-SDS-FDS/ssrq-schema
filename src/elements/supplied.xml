@@ -52,30 +52,14 @@
       </valList>
     </attDef>
   </attList>
+  <xi:include href="examples.xml" xpointer="ex-supplied-de"/>
+  <xi:include href="examples.xml" xpointer="ex-supplied-en"/>
+  <xi:include href="examples.xml" xpointer="ex-supplied-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-supplied-it"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-fr"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-it"/>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <supplied resp="SM" reason="omitted">eis</supplied>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <supplied resp="SM" reason="omitted">eis</supplied>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-02">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <supplied source="ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-02">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <supplied source="ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
-    </egXML>
-  </exemplum>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Wenn ein Bearbeitender eine Passage frei ergänzt, weist er sich in <att>resp</att> mit seinem Kürzel aus.
             Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf diese
