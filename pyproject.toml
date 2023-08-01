@@ -23,7 +23,7 @@ requests = "^2.30.0"
 [tool.poetry.group.dev.dependencies]
 black = "^23.1.0"
 pytest = "^7.2.1"
-ruff = "^0.0.261"
+ruff = "^0.0.281"
 pyschval = {git = "https://github.com/SSRQ-SDS-FDS/py-schematron-validator.git", rev = "main"}
 ssrq-cli = {git = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-cli.git", rev = "main"}
 pytest-xdist = "^3.2.0"
