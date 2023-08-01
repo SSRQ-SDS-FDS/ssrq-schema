@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="keywords" module="header" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="keywords" module="header" mode="change">
   <desc xml:lang="de" versionDate="2023-07-18">Enthält die wichtigsten Schlagworte zum Inhalt einer Quelle.</desc>
   <desc xml:lang="en" versionDate="2023-07-18">Contains the most important keywords for the content of a source.
     </desc>
@@ -19,28 +19,10 @@
   <attList>
     <attDef ident="scheme" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-20">
-    <p>Modellhafter Aufbau</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <keywords>
-        <term ref="key000192"/>
-        <term ref="key000097"/>
-        <term ref="key000049"/>
-        <term ref="key000193"/>
-      </keywords>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-20">
-    <p>Structure modèle</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <keywords>
-        <term ref="key000192"/>
-        <term ref="key000097"/>
-        <term ref="key000049"/>
-        <term ref="key000193"/>
-      </keywords>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-keywords-de"/>
+  <xi:include href="examples.xml" xpointer="ex-keywords-en"/>
+  <xi:include href="examples.xml" xpointer="ex-keywords-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-keywords-it"/>
   <remarks xml:lang="de" versionDate="2023-07-18">
     <p>Die Liste mit den Schlagworten ersetzt das klassische Sachregister der analogen Bände. Die Schlagworte
             beziehen sich in der Regel auf das gesamte Stück. Bei längeren Nummern bzw. bei der Edition eines Buches
