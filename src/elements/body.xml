@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="body" module="textstructure" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="body" module="textstructure" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-14">Textbereich</gloss>
   <gloss xml:lang="en" versionDate="2023-07-14">Text section</gloss>
   <gloss xml:lang="fr" versionDate="2023-07-14">Rubrique de texte</gloss>
@@ -28,4 +28,8 @@
       <elementRef key="signed"/>
     </alternate>
   </content>
+  <xi:include href="examples.xml" xpointer="ex-body-de"/>
+  <xi:include href="examples.xml" xpointer="ex-body-en"/>
+  <xi:include href="examples.xml" xpointer="ex-body-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-body-it"/>
 </elementSpec>

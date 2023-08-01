@@ -27,6 +27,7 @@
   </content>
   <attList>
     <attDef ident="n" mode="delete"/>
+    <attDef ident="version" mode="delete"/>
     <attDef ident="xml:id" mode="delete"/>
     <attDef ident="xml:lang" mode="replace">
       <valList type="closed">
@@ -35,7 +36,6 @@
         <valItem ident="it"/>
       </valList>
     </attDef>
-    <attDef ident="version" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-TEI-de"/>
   <xi:include href="examples.xml" xpointer="ex-TEI-en"/>

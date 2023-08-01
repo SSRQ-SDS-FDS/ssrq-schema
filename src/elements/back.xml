@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="back" module="textstructure" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="back" module="textstructure" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-14">Kommentarbereich</gloss>
   <gloss xml:lang="en" versionDate="2023-07-14">Comment section</gloss>
   <gloss xml:lang="fr" versionDate="2023-07-14">Rubrique commentaire</gloss>
@@ -26,159 +26,10 @@
   <content>
     <elementRef key="div" maxOccurs="unbounded"/>
   </content>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-05">
-    <p>Beispiel eines Kommentars mit unterschiedlichen Abschnitten:</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <back>
-        <div n="1" org="uniform" sample="complete">
-          <p>Zum Verkauf der Burg <placeName ref="loc007559.01">Wildenburg</placeName> sowie zu den
-                        nachfolgenden Verkäufen an die Grafen
-                        <orgName ref="org000144">von Toggenburg</orgName>
-                        vgl. den Kommentar zum edierten Stück
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000056393">ChSG</ref>,
-                            <ref target="http://monasterium.net/mom/CH-StiASG/Urkunden/CC.2.B.1/charter">Bd. 5,
-                                Nr. 2839
-                            </ref></bibl>
-                        sowie
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000118351">Gabathuler
-                                2009c</ref>, S. 235–239
-                        </bibl>
-                        . <date when="1320">1320</date>  wird der Besitz östlich der Burg Wildenburg verkauft und <date when="1328">1328
-                        </date>  die übrigen Saxer
-                        Besitzungen, die zur Wildenburg gehören, von der <placeName ref="loc006227">Zapfenmüli
-                        </placeName> an der
-                        <placeName ref="loc006290.01">Simmi</placeName>
-                        im Tobel bis zur Herrschaft <placeName ref="loc000754">Starkenstein</placeName>, wobei sich die
-                        Saxer die Alp <placeName ref="loc006138">Tesel</placeName> ausdrücklich vorbehalten.
-                    </p>
-          <p>Zu den Verkäufen an die Toggenburger und deren Folgen für die Saxer vgl.
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000080293">Deplazes-Haefliger 1976</ref>,
-                            S. 80–84
-                        </bibl>
-                        .
-                    </p>
-        </div>
-        <div n="2" org="uniform" sample="complete">
-          <p>Zum Verkauf von Boden durch die Hohensaxer an die <orgName ref="org000425">Appenzeller
-                    </orgName> in der <placeName ref="loc007565">Saxerlücke</placeName>,
-                        der einzigen direkten Verbindung zwischen der Freiherrschaft Sax-Hohensax und Appenzell,
-                        zum Bau einer Letzi am <date when="1346-01-20">20. Januar 1346</date> (vgl.
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000080293">Deplazes-Haefliger 1976</ref>,
-                            S.  10
-                        </bibl>
-                        , gedruckt in
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000056393">ChSG</ref>,
-                            <ref target="http://monasterium.net/mom/CSGVI/1346_I_20.1/charter">Bd. 6,
-                                Nr. 3966
-                            </ref></bibl>
-                        ).
-                    </p>
-        </div>
-      </back>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-04-05">
-    <p>Example of a comment with different sections::</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <back>
-        <div n="1" org="uniform" sample="complete">
-          <p>Zum Verkauf der Burg <placeName ref="loc007559.01">Wildenburg</placeName> sowie zu den
-                        nachfolgenden Verkäufen an die Grafen
-                        <orgName ref="org000144">von Toggenburg</orgName>
-                        vgl. den Kommentar zum edierten Stück
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000056393">ChSG</ref>,
-                            <ref target="http://monasterium.net/mom/CH-StiASG/Urkunden/CC.2.B.1/charter">Bd. 5,
-                                Nr. 2839
-                            </ref></bibl>
-                        sowie
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000118351">Gabathuler
-                                2009c</ref>, S. 235–239
-                        </bibl>
-                        . <date when="1320">1320</date>  wird der Besitz östlich der Burg Wildenburg verkauft und <date when="1328">1328
-                        </date>  die übrigen Saxer
-                        Besitzungen, die zur Wildenburg gehören, von der <placeName ref="loc006227">Zapfenmüli
-                        </placeName> an der
-                        <placeName ref="loc006290.01">Simmi</placeName>
-                        im Tobel bis zur Herrschaft <placeName ref="loc000754">Starkenstein</placeName>, wobei sich die
-                        Saxer die Alp <placeName ref="loc006138">Tesel</placeName> ausdrücklich vorbehalten.
-                    </p>
-          <p>Zu den Verkäufen an die Toggenburger und deren Folgen für die Saxer vgl.
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000080293">Deplazes-Haefliger 1976</ref>,
-                            S. 80–84
-                        </bibl>
-                        .
-                    </p>
-        </div>
-        <div n="2" org="uniform" sample="complete">
-          <p>Zum Verkauf von Boden durch die Hohensaxer an die <orgName ref="org000425">Appenzeller
-                    </orgName> in der <placeName ref="loc007565">Saxerlücke</placeName>,
-                        der einzigen direkten Verbindung zwischen der Freiherrschaft Sax-Hohensax und Appenzell,
-                        zum Bau einer Letzi am <date when="1346-01-20">20. Januar 1346</date> (vgl.
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000080293">Deplazes-Haefliger 1976</ref>,
-                            S.  10
-                        </bibl>
-                        , gedruckt in
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000056393">ChSG</ref>,
-                            <ref target="http://monasterium.net/mom/CSGVI/1346_I_20.1/charter">Bd. 6,
-                                Nr. 3966
-                            </ref></bibl>
-                        ).
-                    </p>
-        </div>
-      </back>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-05">
-    <p>Exemple de commentaire avec différentes sections :</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <back>
-        <div n="1" org="uniform" sample="complete">
-          <p>Zum Verkauf der Burg <placeName ref="loc007559.01">Wildenburg</placeName> sowie zu den
-                        nachfolgenden Verkäufen an die Grafen
-                        <orgName ref="org000144">von Toggenburg</orgName>
-                        vgl. den Kommentar zum edierten Stück
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000056393">ChSG</ref>,
-                            <ref target="http://monasterium.net/mom/CH-StiASG/Urkunden/CC.2.B.1/charter">Bd. 5,
-                                Nr. 2839
-                            </ref></bibl>
-                        sowie
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000118351">Gabathuler
-                                2009c</ref>, S. 235–239
-                        </bibl>
-                        . <date when="1320">1320</date>  wird der Besitz östlich der Burg Wildenburg verkauft und <date when="1328">1328
-                        </date>  die übrigen Saxer
-                        Besitzungen, die zur Wildenburg gehören, von der <placeName ref="loc006227">Zapfenmüli
-                        </placeName> an der
-                        <placeName ref="loc006290.01">Simmi</placeName>
-                        im Tobel bis zur Herrschaft <placeName ref="loc000754">Starkenstein</placeName>, wobei sich die
-                        Saxer die Alp <placeName ref="loc006138">Tesel</placeName> ausdrücklich vorbehalten.
-                    </p>
-          <p>Zu den Verkäufen an die Toggenburger und deren Folgen für die Saxer vgl.
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000080293">Deplazes-Haefliger 1976</ref>,
-                            S. 80–84
-                        </bibl>
-                        .
-                    </p>
-        </div>
-        <div n="2" org="uniform" sample="complete">
-          <p>Zum Verkauf von Boden durch die Hohensaxer an die <orgName ref="org000425">Appenzeller
-                    </orgName> in der <placeName ref="loc007565">Saxerlücke</placeName>,
-                        der einzigen direkten Verbindung zwischen der Freiherrschaft Sax-Hohensax und Appenzell,
-                        zum Bau einer Letzi am <date when="1346-01-20">20. Januar 1346</date> (vgl.
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000080293">Deplazes-Haefliger 1976</ref>,
-                            S.  10
-                        </bibl>
-                        , gedruckt in
-                        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000056393">ChSG</ref>,
-                            <ref target="http://monasterium.net/mom/CSGVI/1346_I_20.1/charter">Bd. 6,
-                                Nr. 3966
-                            </ref></bibl>
-                        ).
-                    </p>
-        </div>
-      </back>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-back-de"/>
+  <xi:include href="examples.xml" xpointer="ex-back-en"/>
+  <xi:include href="examples.xml" xpointer="ex-back-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-back-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Mehrere Bemerkungen lassen sich mit <gi>div</gi> strukturieren. Mit <gi>ref</gi>-Elementen lassen sich
             Literatur (RI-Opac-Shorttitle) und Internetlinks (z. B. verzeichnete Archivstücke etc.) referenzieren. Im

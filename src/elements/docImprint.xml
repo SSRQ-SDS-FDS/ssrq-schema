@@ -2,7 +2,11 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="docImprint" module="textstructure" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="docImprint" module="textstructure" mode="change">
+  <gloss xml:lang="de" versionDate="2023-07-31">Impressum</gloss>
+  <gloss xml:lang="en" versionDate="2023-07-31">Document imprint</gloss>
+  <gloss xml:lang="fr" versionDate="2023-07-31">imprimer</gloss>
+  <gloss xml:lang="it" versionDate="2023-07-31">impronta</gloss>
   <desc xml:lang="de" versionDate="2023-04-05">Enthält bei Druckschriften den Druckort (<gi>pubPlace</gi>) und den
         Namen der Druckerei (<gi>publisher</gi>).
     </desc>
@@ -29,16 +33,16 @@
       </sequence>
     </alternate>
   </content>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-05">
-    <p>Einfaches Beispiel für den Inhalt von tei:docImprint:</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <msItem>
-        <textLang>Latein</textLang>
-        <docImprint>
-          <pubPlace>Druckort</pubPlace>
-          <publisher>Druckerei</publisher>
-        </docImprint>
-      </msItem>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-1-de"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-1-en"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-1-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-1-it"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-2-de"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-2-en"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-2-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-2-it"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-3-de"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-3-en"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-3-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-docImprint-3-it"/>
 </elementSpec>

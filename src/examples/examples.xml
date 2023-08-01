@@ -5,18 +5,18 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
   <macroSpec ident="ssrq-examples">
     <!-- Naming conventions inside this file are the following:
-            A) The xml:id of an exemplum:
-                - start always with "ex"
-                - continues with the name of the main element, which is part of the exemplum
-                - semantically meaningful parts of the id are separated by a dash ("-")
-                - ends always with a language abbreviation ("de", "en", "fr", "it").
-            B) Translations inside of <p>:
-                - start always with a capital letter
-                - do *not* end with a punctuation mark
-            C) Order of Elements
-                - all exempla are ordered by their xml:id
-                - the languages are ordered alphabetically ("de", "en", "fr", "it")
-        -->
+                A) The xml:id of an exemplum:
+                    - start always with "ex"
+                    - continues with the name of the main element, which is part of the exemplum
+                    - semantically meaningful parts of the id are separated by a dash ("-")
+                    - ends always with a language abbreviation ("de", "en", "fr", "it").
+                B) Translations inside of <p>:
+                    - start always with a capital letter
+                    - do *not* end with a punctuation mark
+                C) Order of Elements
+                    - all exempla are ordered by their xml:id
+                    - the languages are ordered alphabetically ("de", "en", "fr", "it")
+            -->
     <exemplum xml:lang="de" xml:id="ex-ab-de">
       <p>Beispiel für einen Kanzleivermerk</p>
       <xi:include href="ab.xml"/>
@@ -64,6 +64,38 @@
     <exemplum xml:lang="it" xml:id="ex-app-it">
       <p>Esempio di entrata di un attrezzo</p>
       <xi:include href="app.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-back-de">
+      <p>Beispiel für einen Kommentarbereich mit zwei Abschnitten</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-back-en">
+      <p>Example of a comments section with two divisions</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-back-fr">
+      <p>Exemple d'une section de commentaires avec deux divisions</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-back-it">
+      <p>Esempio di una sezione commenti con due divisioni</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-body-de">
+      <p>Beispiel für einen Textbereich mit allen möglichen Kindelementen</p>
+      <xi:include href="body.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-body-en">
+      <p>Example of a text area with all possible child elements</p>
+      <xi:include href="body.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-body-fr">
+      <p>Exemple d'une zone de texte avec tous les éléments enfants possibles</p>
+      <xi:include href="body.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-body-it">
+      <p>Esempio di un'area di testo con tutti i possibili elementi figlio</p>
+      <xi:include href="body.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-cell-de">
       <p>Einfaches Beispiel für Zellen in einer Tabelle</p>
@@ -144,6 +176,86 @@
     <exemplum xml:lang="it" xml:id="ex-delSpan-it">
       <p>Esempio di una cancellazione più grande</p>
       <xi:include href="delSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-div-back-de">
+      <p>Beispiel für nummerierte Abschnitte innerhalb von <gi>back</gi></p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-div-back-en">
+      <p>Example of numbered divisions within <gi>back</gi></p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-div-back-fr">
+      <p>Exemple de divisions numérotées dans <gi>back</gi></p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-div-back-it">
+      <p>Esempio di divisioni numerate all'interno di <gi>back</gi></p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-div-body-de">
+      <p>Beispiel für einen Abschnitt innerhalb von <gi>body</gi></p>
+      <xi:include href="div.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-div-body-en">
+      <p>Example of a division inside <gi>body</gi></p>
+      <xi:include href="div.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-div-body-fr">
+      <p>Exemple de division à l'intérieur du <gi>body</gi></p>
+      <xi:include href="div.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-div-body-it">
+      <p>Esempio di una divisione all'interno di <gi>body</gi></p>
+      <xi:include href="div.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-docImprint-1-de">
+      <p>Beispiel für ein Impressum mit Druckort und Druckerei</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-1"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-docImprint-1-en">
+      <p>Example of an imprint with place of printing and printer</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-1"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-docImprint-1-fr">
+      <p>Exemple d'empreinte avec lieu d'impression et imprimeur</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-1"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-docImprint-1-it">
+      <p>Esempio di un'impronta con luogo di stampa e stampante</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-1"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-docImprint-2-de">
+      <p>Beispiel für ein Impressum mit mehreren Druckorten</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-docImprint-2-en">
+      <p>Example of an imprint with several places of printing</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-docImprint-2-fr">
+      <p>Exemple d'empreinte avec plusieurs lieux d'impression</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-2"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-docImprint-2-it">
+      <p>Esempio di un'impronta con più punti di stampa</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-docImprint-3-de">
+      <p>Beispiel für ein Impressum mit einer Druckerei</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-3"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-docImprint-3-en">
+      <p>Example of an imprint with a printing company</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-3"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-docImprint-3-fr">
+      <p>Exemple d'empreinte avec une imprimerie</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-3"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-docImprint-3-it">
+      <p>Esempio di un'impronta con una tipografia</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-3"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-figure-1-de">
       <p>Beispiel für ein Notariatszeichen</p>
@@ -370,6 +482,22 @@
     <exemplum xml:lang="it" xml:id="ex-seg-it">
       <p>Esempio di paragrafi introdotti dal curatore</p>
       <xi:include href="seg.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-signed-de">
+      <p>Beispiel für eine Unterschrift mit Notariatszeichen</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-signed-en">
+      <p>Example of a signature with a notary's mark</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-signed-fr">
+      <p>Exemple de signature avec marque de notaire</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-signed-it">
+      <p>Esempio di firma con timbro notarile</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-sourceDesc-listWit-de">
       <p>Beispiel für eine Quellenbeschreibung mit einer Liste von Textzeugen</p>

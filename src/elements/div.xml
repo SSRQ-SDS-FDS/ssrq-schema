@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="div" module="textstructure" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="div" module="textstructure" mode="change">
   <desc xml:lang="de" versionDate="2023-05-23">Gliedert Quellentexte innerhalb von <gi>body</gi> oder Bemerkungen
         innnerhalb von <gi>back</gi> zusammen mit <gi>p</gi> in Abschnitte.
     </desc>
@@ -21,16 +21,14 @@
   </classes>
   <content>
     <alternate maxOccurs="unbounded">
+      <macroRef key="ssrq.content.content"/>
       <macroRef key="ssrq.content.critical"/>
       <macroRef key="ssrq.content.display"/>
-      <macroRef key="ssrq.content.measure"/>
-      <macroRef key="ssrq.content.content"/>
       <macroRef key="ssrq.content.entities"/>
+      <macroRef key="ssrq.content.measure"/>
     </alternate>
   </content>
   <attList>
-    <attDef ident="xml:id" mode="delete"/>
-    <attDef ident="xml:lang" mode="delete"/>
     <attDef ident="type" mode="replace">
       <valList type="closed">
         <valItem ident="part"/>
@@ -40,115 +38,17 @@
         <valItem ident="subsection"/>
       </valList>
     </attDef>
+    <attDef ident="xml:id" mode="delete"/>
+    <attDef ident="xml:lang" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Beispiel innerhalb des Kommentarbereichs</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <back>
-        <div type="section" n="1">
-          <p>Zu den ältesten Urbaren der Grafschaft Werdenberg ....</p>
-          <p>Das hier edierte Urbar ist nicht datiert. ...</p>
-        </div>
-        <div type="section" n="2">
-          <p>Der erste Teil des Urbars von 1639 ...</p>
-        </div>
-      </back>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Example inside the comments section</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <back>
-        <div type="section" n="1">
-          <p>Zu den ältesten Urbaren der Grafschaft Werdenberg ....</p>
-          <p>Das hier edierte Urbar ist nicht datiert. ...</p>
-        </div>
-        <div type="section" n="2">
-          <p>Der erste Teil des Urbars von 1639 ...</p>
-        </div>
-      </back>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Exemple dans la section des commentaires</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <back>
-        <div type="section" n="1">
-          <p>Zu den ältesten Urbaren der Grafschaft Werdenberg ....</p>
-          <p>Das hier edierte Urbar ist nicht datiert. ...</p>
-        </div>
-        <div type="section" n="2">
-          <p>Der erste Teil des Urbars von 1639 ...</p>
-        </div>
-      </back>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Esempio all'interno della sezione commenti</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <back>
-        <div type="section" n="1">
-          <p>Zu den ältesten Urbaren der Grafschaft Werdenberg ....</p>
-          <p>Das hier edierte Urbar ist nicht datiert. ...</p>
-        </div>
-        <div type="section" n="2">
-          <p>Der erste Teil des Urbars von 1639 ...</p>
-        </div>
-      </back>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Beispiel innerhalb des Textbereichs</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <body>
-        <div>
-          <p><lb/>XI. Alle Milch von kranknen Kuͤhen muß weggeschuͤttet werden. Auf
-                        <lb/>dieses sollen die Aufseher besonders Achtung geben, und keine Kuh melken
-                        <lb/>lassen, bis ihr vorhin die Zunge besichtigt, und sie gesund erfunden worden.
-                    </p>
-        </div>
-      </body>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Example within the text section</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <body>
-        <div>
-          <p><lb/>XI. Alle Milch von kranknen Kuͤhen muß weggeschuͤttet werden. Auf
-                        <lb/>dieses sollen die Aufseher besonders Achtung geben, und keine Kuh melken
-                        <lb/>lassen, bis ihr vorhin die Zunge besichtigt, und sie gesund erfunden worden.
-                    </p>
-        </div>
-      </body>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Exemple dans la section de texte</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <body>
-        <div>
-          <p><lb/>XI. Alle Milch von kranknen Kuͤhen muß weggeschuͤttet werden. Auf
-                        <lb/>dieses sollen die Aufseher besonders Achtung geben, und keine Kuh melken
-                        <lb/>lassen, bis ihr vorhin die Zunge besichtigt, und sie gesund erfunden worden.
-                    </p>
-        </div>
-      </body>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Esempio all'interno della sezione di testo</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <body>
-        <div>
-          <p><lb/>XI. Alle Milch von kranknen Kuͤhen muß weggeschuͤttet werden. Auf
-                        <lb/>dieses sollen die Aufseher besonders Achtung geben, und keine Kuh melken
-                        <lb/>lassen, bis ihr vorhin die Zunge besichtigt, und sie gesund erfunden worden.
-                    </p>
-        </div>
-      </body>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-div-back-de"/>
+  <xi:include href="examples.xml" xpointer="ex-div-back-en"/>
+  <xi:include href="examples.xml" xpointer="ex-div-back-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-div-back-it"/>
+  <xi:include href="examples.xml" xpointer="ex-div-body-de"/>
+  <xi:include href="examples.xml" xpointer="ex-div-body-en"/>
+  <xi:include href="examples.xml" xpointer="ex-div-body-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-div-body-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Originale Absätze werden nur mit <gi>p</gi> (ohne zusätzliches <gi>div</gi>) gekennzeichnet. Sofern das
             Original stärker gegliedert oder strukturiert ist, kann man beides verwenden, gegebenenfalls zusammen
