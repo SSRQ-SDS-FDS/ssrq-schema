@@ -1166,7 +1166,23 @@
       <p>Esempio minimo di documento TEI</p>
       <xi:include href="TEI.xml"/>
     </exemplum>
-    <exemplum xml:lang="de" xml:id="ex-term-de">
+    <exemplum xml:lang="de" xml:id="ex-teiHeader-de">
+      <p>Beispiel für einen Kopfbereich mit allen Kindbereichen</p>
+      <xi:include href="teiHeader.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-teiHeader-en">
+      <p>Example of a header area with all child areas</p>
+      <xi:include href="teiHeader.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-teiHeader-fr">
+      <p>Exemple d'une zone d'en-tête avec toutes les zones enfants</p>
+      <xi:include href="teiHeader.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-teiHeader-it">
+      <p>Esempio di un'area di intestazione con tutte le aree figlio</p>
+      <xi:include href="teiHeader.xml"/>
+    </exemplum>
+        <exemplum xml:lang="de" xml:id="ex-term-de">
       <p>Erfassung eines Lemmas</p>
       <xi:include href="term.xml"/>
     </exemplum>
@@ -1181,7 +1197,6 @@
     <exemplum xml:lang="it" xml:id="ex-term-it">
       <p>Codifica di un lemma</p>
       <xi:include href="term.xml"/>
-    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-text-1-de">
       <p>Beispiel für ein Transkript mit optionalem Kommentarbereich</p>
       <xi:include href="text.xml" xpointer="ex-text-1"/>
