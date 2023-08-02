@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="addSpan" module="transcr" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="addSpan" module="transcr" mode="change">
   <desc xml:lang="de" versionDate="2023-07-13">Bezeichnet größere Hinzufügungen.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Denotes major additions.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Désigne des ajouts majeurs.</desc>
@@ -23,30 +23,10 @@
       </datatype>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"><addSpan place="left margin" spanTo="add1"/>
-            ...
-            <anchor xml:id="add1"/>
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"><addSpan place="left margin" spanTo="add1"/>
-            ...
-            <anchor xml:id="add1"/>
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-17">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"><addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
-            ...
-            <anchor xml:id="add1"/>
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-17">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"><addSpan place="inline" hand="otherHand" rend="other_ink" spanTo="add1"/>
-            ...
-            <anchor xml:id="add1"/>
-        </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-addSpan-de"/>
+  <xi:include href="examples.xml" xpointer="ex-addSpan-en"/>
+  <xi:include href="examples.xml" xpointer="ex-addSpan-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-addSpan-it"/>
   <remarks xml:lang="de" versionDate="2023-07-11">
     <p>Mit <att>spanTo</att> wird zwingend auf den Endpunkt der Hinzufügung verwiesen, der
             mit <gi>anchor</gi> markiert wird.

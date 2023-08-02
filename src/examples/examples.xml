@@ -5,18 +5,18 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
   <macroSpec ident="ssrq-examples">
     <!-- Naming conventions inside this file are the following:
-                A) The xml:id of an exemplum:
-                    - start always with "ex"
-                    - continues with the name of the main element, which is part of the exemplum
-                    - semantically meaningful parts of the id are separated by a dash ("-")
-                    - ends always with a language abbreviation ("de", "en", "fr", "it").
-                B) Translations inside of <p>:
-                    - start always with a capital letter
-                    - do *not* end with a punctuation mark
-                C) Order of Elements
-                    - all exempla are ordered by their xml:id
-                    - the languages are ordered alphabetically ("de", "en", "fr", "it")
-            -->
+        A) The xml:id of an exemplum:
+            - start always with "ex"
+            - continues with the name of the main element, which is part of the exemplum
+            - semantically meaningful parts of the id are separated by a dash ("-")
+            - ends always with a language abbreviation ("de", "en", "fr", "it").
+        B) Translations inside of <p>:
+            - start always with a capital letter
+            - do *not* end with a punctuation mark
+        C) Order of Elements
+            - all exempla are ordered by their xml:id
+            - the languages are ordered alphabetically ("de", "en", "fr", "it")
+    -->
     <exemplum xml:lang="de" xml:id="ex-ab-de">
       <p>Beispiel für einen Kanzleivermerk</p>
       <xi:include href="ab.xml"/>
@@ -144,6 +144,70 @@
     <exemplum xml:lang="it" xml:id="ex-choice-sic-it">
       <p>Esempio di correzione</p>
       <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-damage-add-de">
+      <p>Beispiel für eine beschädigte Stelle, in die eine andere Hand Text eingetragen hat</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-add"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-damage-add-en">
+      <p>Example of a damaged area where text has been written by another hand</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-add"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-damage-add-fr">
+      <p>Exemple d'une zone endommagée où le texte a été écrit par une autre main</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-add"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-damage-add-it">
+      <p>Esempio di un'area danneggiata in cui un'altra mano ha scritto del testo</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-add"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-damage-gap-de">
+      <p>Beispiel für eine beschädigte Stelle, deren Text unlesbar ist</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-gap"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-damage-gap-en">
+      <p>Example of a damaged spot where the text is unreadable</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-gap"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-damage-gap-fr">
+      <p>Exemple d'endroit endommagé où le texte est illisible</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-gap"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-damage-gap-it">
+      <p>Esempio di punto danneggiato in cui il testo è illeggibile</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-gap"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-damage-supplied-de">
+      <p>Beispiel für eine beschädigte Stelle, deren Text ergänzt wurde</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-supplied"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-damage-supplied-en">
+      <p>Example of a damaged passage whose text has been added</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-supplied"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-damage-supplied-fr">
+      <p>Exemple de passage endommagé dont le texte a été ajouté</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-supplied"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-damage-supplied-it">
+      <p>Esempio di brano danneggiato il cui testo è stato aggiunto</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-supplied"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-damage-unclear-de">
+      <p>Beispiel für eine beschädigte Stelle, deren Lesung unsicher ist</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-damage-unclear-en">
+      <p>Example of a damaged passage whose reading is uncertain</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-damage-unclear-fr">
+      <p>Exemple de passage endommagé dont la lecture est incertaine</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-damage-unclear-it">
+      <p>Esempio di brano danneggiato la cui lettura è incerta</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-unclear"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-damageSpan-de">
       <p>Beispiel für einen umfangreicheren Schaden</p>
@@ -288,6 +352,38 @@
     <exemplum xml:lang="it" xml:id="ex-figure-2-it">
       <p>Esempio di albero genealogico</p>
       <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-fw-de">
+      <p>Beispiel für eine Kustode</p>
+      <xi:include href="fw.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-fw-en">
+      <p>Example of a custodian</p>
+      <xi:include href="fw.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-fw-fr">
+      <p>Exemple de gardien</p>
+      <xi:include href="fw.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-fw-it">
+      <p>Esempio di custode</p>
+      <xi:include href="fw.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-handShift-de">
+      <p>Beispiel für einen Handwechsel</p>
+      <xi:include href="handShift.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-handShift-en">
+      <p>Example of a hand shift</p>
+      <xi:include href="handShift.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-handShift-fr">
+      <p>Exemple de changement de main</p>
+      <xi:include href="handShift.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-handShift-it">
+      <p>Esempio di cambio di mano</p>
+      <xi:include href="handShift.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-head-figure-de">
       <p>Beispiel für eine Überschrift einer Graphik</p>
@@ -530,6 +626,54 @@
     <exemplum xml:lang="it" xml:id="ex-sourceDesc-msDesc-it">
       <p>Esempio di descrizione di una fonte con testimone testuale</p>
       <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-space-de">
+      <p>Beispiel für einen Freiraum von 5 cm</p>
+      <xi:include href="space.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-space-en">
+      <p>Example of a free space of 5 cm</p>
+      <xi:include href="space.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-space-fr">
+      <p>Exemple d'un espace libre de 5 cm</p>
+      <xi:include href="space.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-space-it">
+      <p>Esempio di uno spazio libero di 5 cm</p>
+      <xi:include href="space.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-subst-de">
+      <p>Beispiel für eine Ersetzung</p>
+      <xi:include href="subst.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-subst-en">
+      <p>Example of a replacement</p>
+      <xi:include href="subst.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-subst-fr">
+      <p>Exemple de remplacement</p>
+      <xi:include href="subst.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-subst-it">
+      <p>Esempio di sostituzione</p>
+      <xi:include href="subst.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-supplied-de">
+      <p>Beispiel für eine Ergänzung</p>
+      <xi:include href="supplied.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-supplied-en">
+      <p>Example of an addition</p>
+      <xi:include href="supplied.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-supplied-fr">
+      <p>Exemple d'ajout</p>
+      <xi:include href="supplied.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-supplied-it">
+      <p>Esempio di addizione</p>
+      <xi:include href="supplied.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-table-de">
       <p>Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten drei Spalten mit «gbz», «xr»

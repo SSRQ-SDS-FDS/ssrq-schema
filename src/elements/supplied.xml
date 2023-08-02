@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="supplied" module="transcr" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="supplied" module="transcr" mode="change">
   <desc xml:lang="de" versionDate="2023-07-14">Enthält eine Ergänzung durch den Bearbeitenden.</desc>
   <desc xml:lang="en" versionDate="2023-07-14">Contains an addition by the editor.</desc>
   <desc xml:lang="fr" versionDate="2023-07-14">Contient un ajout de l'éditeur.</desc>
@@ -52,26 +52,14 @@
       </valList>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <supplied resp="SM" reason="omitted">eis</supplied>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <supplied resp="SM" reason="omitted">eis</supplied>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-02">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <supplied source="ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-02">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <supplied source="ad28656b-5c8d-459c-afb4-3e6ddf70810d">gerechte</supplied>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-supplied-de"/>
+  <xi:include href="examples.xml" xpointer="ex-supplied-en"/>
+  <xi:include href="examples.xml" xpointer="ex-supplied-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-supplied-it"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-supplied-de"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-supplied-en"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-supplied-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-supplied-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Wenn ein Bearbeitender eine Passage frei ergänzt, weist er sich in <att>resp</att> mit seinem Kürzel aus.
             Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf diese

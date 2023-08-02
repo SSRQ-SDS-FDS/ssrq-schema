@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="damageSpan" module="transcr" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="damageSpan" module="transcr" mode="change">
   <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet größere Abschnitte, die beschädigt sind.</desc>
   <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections that are damaged.</desc>
   <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui sont endommagées.</desc>
@@ -14,18 +14,10 @@
   <content>
     <empty/>
   </content>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-20">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"><damageSpan agent="clipping" spanTo="dmg1"/>
-            Item ein hoffstatt ...
-            <anchor xml:id="dmg1"/>
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-20">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"><damageSpan agent="clipping" spanTo="dmg1"/>
-            Item ein hoffstatt ...
-            <anchor xml:id="dmg1"/>
-        </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-damageSpan-de"/>
+  <xi:include href="examples.xml" xpointer="ex-damageSpan-en"/>
+  <xi:include href="examples.xml" xpointer="ex-damageSpan-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-damageSpan-it"/>
   <remarks xml:lang="de" versionDate="2023-07-13">
     <p>Mit <att>spanTo</att> wird zwingend auf den Endpunkt der Beschädigung verwiesen, der
             mit <gi>anchor</gi> markiert wird. Die Art der Beschädigung wird analog
