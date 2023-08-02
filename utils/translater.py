@@ -1,7 +1,7 @@
 from json import load
 from pathlib import Path
 
-from pydantic import BaseModel, root_validator
+from pydantic import BaseModel, model_validator
 
 translations_file = Path(__file__).parent.parent / "docs/translations/translations.json"
 
@@ -10,11 +10,11 @@ class Translations(BaseModel):
     de: dict[str, str]
     fr: dict[str, str]
 
-    @root_validator
-    def check_translation_keys(cls, values):
+    @model_validator(mode="after")
+    def check_translation_keys(self):
         from itertools import combinations
 
-        vals = values.get("de"), values.get("fr")
+        vals = self.de, self.fr
         for a, b in combinations(vals, 2):
             try:
                 assert a.keys() == b.keys()
@@ -23,7 +23,7 @@ class Translations(BaseModel):
                 raise ValueError(
                     f"The keys of the translations must be the same for all languages. Found the following difference: {key_diff}"
                 )
-        return values
+        return self
 
 
 with open(translations_file) as f:

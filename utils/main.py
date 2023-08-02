@@ -1,11 +1,12 @@
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional, TypedDict
+from typing import Optional
 
 import tomllib
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, field_validator
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
+from typing_extensions import TypedDict
 
 CUR_DIR = Path(__file__).parent.parent.absolute()
 DIST_DIR = CUR_DIR / "dist"
@@ -44,7 +45,8 @@ class SSRQConfig(BaseModel):
     authors: list[str]
     schemas: list[SSRQSchemaType]
 
-    @validator("schemas", pre=True)
+    @field_validator("schemas", mode="before")
+    @classmethod
     def version_issemver(cls, schemas: list[SSRQSchemaType]) -> list[SSRQSchemaType]:
         import semver  # type: ignore
 
