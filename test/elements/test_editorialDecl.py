@@ -12,7 +12,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-editorialDecl-with-p",
-            "<editorialDecl><p><ref target='https://schema.ssrq-sds-fds.ch/main/base/transcription'/></p></editorialDecl>",
+            "<editorialDecl><p><ref target='https://schema.ssrq-sds-fds.ch/latest/base/transcription'/></p></editorialDecl>",
             True,
         ),
         (
@@ -41,7 +41,7 @@ def test_editorialDecl_rng(
     [
         (
             "valid-editorialDecl-content",
-            "<editorialDecl><p><ref target='https://schema.ssrq-sds-fds.ch/main/base/transcription'/></p></editorialDecl>",
+            "<editorialDecl><p><ref target='https://schema.ssrq-sds-fds.ch/latest/base/transcription'/></p></editorialDecl>",
             True,
         ),
         (
