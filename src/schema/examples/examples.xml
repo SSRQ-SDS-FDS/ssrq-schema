@@ -33,6 +33,38 @@
       <p>Esempio di nota di un impiegato</p>
       <xi:include href="ab.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-add-de">
+      <p>Nachtrag von gleicher Hand oberhalb der Zeile</p>
+      <xi:include href="add.xml" xpointer="ex-add"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-add-en">
+      <p>Addendum by the same hand above the line</p>
+      <xi:include href="add.xml" xpointer="ex-add"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-add-fr">
+      <p>Ajout de la même main au-dessus de la ligne</p>
+      <xi:include href="add.xml" xpointer="ex-add"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-add-it">
+      <p>Addendum della stessa mano sopra la linea</p>
+      <xi:include href="add.xml" xpointer="ex-add"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-add-margin-de">
+      <p>Hinzufügung am linken Rand, markiert durch ein spezielles Zeichen</p>
+      <xi:include href="add.xml" xpointer="ex-add-margin"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-add-margin-en">
+      <p>Addition on the left margin, marked by a special sign</p>
+      <xi:include href="add.xml" xpointer="ex-add-margin"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-add-margin-fr">
+      <p>Ajout dans la marge de gauche, marqué par un signe spécial</p>
+      <xi:include href="add.xml" xpointer="ex-add-margin"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-add-margin-it">
+      <p>Aggiunta sul margine sinistro, contrassegnata da un segno speciale</p>
+      <xi:include href="add.xml" xpointer="ex-add-margin"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-addSpan-de">
       <p>Beispiel für eine umfangreichere Hinzufügung</p>
       <xi:include href="addSpan.xml"/>
