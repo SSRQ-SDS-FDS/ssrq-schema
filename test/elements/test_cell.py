@@ -18,6 +18,11 @@ import pytest
             True,
         ),
         (
+            "valid-cell-with-alignment",
+            "<cell rend='align-bottom'>foo <anchor xml:id='del1'/></cell>",
+            True,
+        ),
+        (
             "cell-with-invalid-attr",
             "<cell xml:id='bar'>foo</cell>",
             False,
