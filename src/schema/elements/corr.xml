@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="corr" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="corr" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-05-24">Enthält eine durch einen Editor vorgenommene Korrektur.</desc>
   <desc xml:lang="en" versionDate="2023-05-24">Contains a correction made by an editor.</desc>
   <desc xml:lang="fr" versionDate="2023-05-24">Contient une correction faite par un éditeur.</desc>
@@ -20,42 +20,10 @@
   <attList>
     <attDef ident="cert" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-24">
-    <p>Beispiel für eine Korrektur.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <choice>
-        <sic>digintates</sic>
-        <corr>dignitates</corr>
-      </choice>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-24">
-    <p>Example of a correction.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <choice>
-        <sic>digintates</sic>
-        <corr>dignitates</corr>
-      </choice>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-24">
-    <p>Exemple de correction.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <choice>
-        <sic>digintates</sic>
-        <corr>dignitates</corr>
-      </choice>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-24">
-    <p>Esempio di correzione.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <choice>
-        <sic>digintates</sic>
-        <corr>dignitates</corr>
-      </choice>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-de"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-en"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-it"/>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>Enthält die korrekte Form zum Beispiel eines Verschreibers, der mit <gi>sic</gi> kenntlich gemacht wird.
             Die Korrektur stammt immer vom Editor und nicht aus der Hand des Schreibers des Dokuments. Bei irrtümlichen
