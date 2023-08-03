@@ -264,17 +264,19 @@ Julianischer Kalender (alter Stil)
 
 Das im edierten Stück angegebene Datum bzw. der Datierungstext wird belassen. Die Normalisierung und Kennzeichnung des
 Datums oder der Zeitspanne erfolgt mit den entsprechenden Attributen im ISO-Stil, d. h. im Gregorianischen Kalender bzw.
-im neuen Stil. Zusätzlich wird jedoch das Attribut @datingMethod mit dem Wert "#julian" verwendet.
+im neuen Stil. Zusätzlich wird jedoch das Attribut `@datingMethod` mit dem Wert `julian` verwendet.
 
-`<date from-custom="1588-09-13" to-custom="1588-09-30" datingMethod="#julian">Zwischen 3. und 20
-September 1588</date>`
+```xml
+<date from-custom="1588-09-13" to-custom="1588-09-30" datingMethod="julian">Zwischen 3. und 20
+September 1588</date>
+```
 
 Bei Stücken, die doppelt, d. h. nach dem alten und neuen Stil, datiert sind, wird nach dem neuen Stil bzw. dem
 Gregorianischen Kalender datiert.
 
-Beispiel einer Doppeldatierung mit Bruchstrich: 25/15. octobris anno 90
-
-`<date when-custom="1590-10-25" datingMethod="#Gregorian">25/15. octobris anno 90</date>`
+```xml
+--8<-- "src/examples/date.xml:13:13"
+```
 
 ### Kalenderwechsel
 
