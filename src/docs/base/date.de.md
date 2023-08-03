@@ -255,7 +255,7 @@ sondern als gregorianisch angenommen.
 `<date when="1588-09-13" to="1588-10-30" calendar="Gregorian">Zwischen 13. und 30. September 1588</date>`
 
 Automatische Umrechnung vom Alten in den Neuen Stil:
-[[http://www.manuscripta-mediaevalia.de/gaeste/grotefend/grotefend.htm]](http://www.manuscripta-mediaevalia.de/gaeste/grotefend/grotefend.htm])
+[[http://www.manuscripta-mediaevalia.de/gaeste/grotefend/grotefend.htm]](http://www.manuscripta-mediaevalia.de/gaeste/grotefend/grotefend.html)
 (Rechner)
 
 **Digitale Edition:**
@@ -267,8 +267,7 @@ Datums oder der Zeitspanne erfolgt mit den entsprechenden Attributen im ISO-Stil
 im neuen Stil. Zusätzlich wird jedoch das Attribut `@datingMethod` mit dem Wert `julian` verwendet.
 
 ```xml
-<date from-custom="1588-09-13" to-custom="1588-09-30" datingMethod="julian">Zwischen 3. und 20
-September 1588</date>
+--8<-- "src/examples/date.xml:10:10"
 ```
 
 Bei Stücken, die doppelt, d. h. nach dem alten und neuen Stil, datiert sind, wird nach dem neuen Stil bzw. dem
@@ -338,10 +337,12 @@ und @when ausgezeichnet. Zur Kennzeichnung, dass es sich um einen Termin handelt
 eingefügt.
 
 Zum Beispiel bei einem Termin:
-> wellind und doch nit länger dann bis `<date type="deadline" when="--04-16">zuͦ mittem aprellen</date>`
+> wellind und doch nit länger dann bis `<date type="deadline" when-custom="--04-16">zuͦ mittem aprellen</date>`
 
 Schonfrist von Fischen vom 3. Januar bis 4. März
 
-`<date from="--01-03" to="--03-04"/>`
+```xml
+<date from-custom="--01-03" to-custom="--03-04"/>
+```
 
 Bewegliche Feiertage: z.B. Fastenzeit: von Aschermittwoch bis Karfreitag mit Taxonomie lösen
