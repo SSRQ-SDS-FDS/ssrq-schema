@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="bibl" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="bibl" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-18">Enthält eine bibliographische Angabe mit Seitenangaben.</desc>
   <desc xml:lang="en" versionDate="2023-07-18">Contains a bibliographical reference with page references.</desc>
   <desc xml:lang="fr" versionDate="2023-07-18">Contient une référence bibliographique avec des références de pages.
@@ -17,36 +17,18 @@
       <textNode/>
     </alternate>
   </content>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-    <p>Erfassung mit Verweis auf Literaturdatenbank</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <bibl><ref target="http://zotero.org/groups/5048222/items/M8D9EG5B"/>, S. 93
-            </bibl>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
-    <p>Saisie avec référence à la base de données bibliographiques</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <bibl><ref target="http://zotero.org/groups/5048222/items/M8D9EG5B"/>, S. 93
-            </bibl>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-    <p>Erfassung mit Verweis auf weiteres Stück</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <bibl>
-        <ref target="urn:ssrq:SSRQ-ZH-NF_II_11-74-1">SSRQ ZH NF II/11, Nr. 74</ref>
-      </bibl>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
-    <p>Saisie avec référence à une autre pièce</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <bibl>
-        <ref target="urn:ssrq:SSRQ-ZH-NF_II_11-74-1">SSRQ ZH NF II/11, Nr. 74</ref>
-      </bibl>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-bibl-zot-de"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-zot-en"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-zot-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-zot-it"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-doc-de"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-doc-en"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-doc-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-doc-it"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-url-de"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-url-en"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-url-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-bibl-url-it"/>
   <remarks xml:lang="de" versionDate="2023-07-18">
     <p>Das Kindelement <gi>ref</gi> verweist auf externe Websites, weitere edierte Stücke oder die
             Zotero-Literaturdatenbank.
