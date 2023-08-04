@@ -21,7 +21,7 @@ Die Wiedergabe erfolgt originalgetreu gemäss der Druckvorlage:
 - Zusammen- und Getrenntschreibung
 - Konsonantenverdoppelungen
 - Schreibvarianten der Eigennamen
-- Römische Ziffern (BEISPIEL: am .x. tag des monats Mey Anno M.D.xxv.)
+- Römische Ziffern (z. B. «am .x. tag des monats Mey Anno M.D.xxv.»)
 
 ### 2 Normalisierungen
 
