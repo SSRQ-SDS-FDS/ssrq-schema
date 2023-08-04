@@ -2,7 +2,7 @@
 title: Transkriptionsrichtlinien
 ---
 
-# Transkriptionsregeln deutschsprachiger Texte der Sammlung Schweizerischer Rechtsquellen (SSRQ)
+# Transkriptionsregeln deutschsprachiger und lateinischer Texte der Sammlung Schweizerischer Rechtsquellen (SSRQ)
 
 Grundsätzlich gilt, dass sämtliche Texte aus den Textvorlagen im geraden Schrifttypus erscheinen. Alle Texte des
 Bearbeitenden werden kursiv geschrieben.
@@ -119,7 +119,9 @@ am unteren Blattende befindliche Wort wird weggelassen bzw. auf der nächsten Se
 
 ## Buchstaben und Zeichen
 
->B.1 Die buchstabengetreue Wiedergabe bildet die Grundregel.
+>B.1 Die buchstabengetreue Wiedergabe der Handschrift bildet die Grundregel.
+
+Entsprechend erfolgen keine Anpassungen an klassisches Latein. 
 
 ### Versalien
 
@@ -146,19 +148,21 @@ Nasalstrich über m in Kombination mit b/p wird ignoriert: «nempt» (statt «ne
 
 >B.1.3 Einige Buchstaben (i/j, s, u/v, y) werden normalisiert.
 
- Vokale:
+ **Vokale:**
  
 - e caudata (ę) wird vom gewöhnlichen e unterschieden.
 - I und j werden nicht entsprechend der Schaftlänge unterschieden. Konsequente graphematische Unterscheidung zwischen
   vokalischem i vor Konsonanten und konsonantischem j vor Vokalen. Bei Fällen, in denen lediglich ein Dehnungs-h zwischen j und Vollvokal geschoben wird (wie z. B. jhe
   und jhenigen), soll das j nicht durch ein i ersetzt werden.
-  -  In lateinischen Texten wird y oder j als i wiedergegeben. 
+- In lateinischen Texten wird y oder j als i wiedergegeben. (Ausnahme: Eigennamen, z. B. Johannes)
 - Distinktionszeichen über u, welche einer Verwechslung mit n vorbeugen sollen, werden nicht wiedergegeben.
 - U und v werden unabhängig von der Vorlage lautgetreu wiedergegeben, nämlich der Vokal mit u und der Konsonant mit v.
 - Zwei Punkte oder ein Strich über y werden weggelassen.
 
- Konsonanten bzw. Buchstabenverbindungen:
+ **Konsonanten bzw. Buchstabenverbindungen:**
 
+- In lateinischen Texten wird c / t  gemäss Vorlage transkribiert, falls nicht unterscheidbar nach der Praxis des Schreibers an anderen Stellen, sonst nach Wörterbuch. 
+- Der Gebrauch von n anstelle von m (z. B. cunque) in lateinischen Texten wird übernommen, wenn der Buchstabe ausgeschrieben ist.
 - Von den verschiedenen Schreibweisen des Buchstabens s (normal, lang, ß) wird nur ß als besondere Form unterschieden.
   Langes s wird als gewöhnliches s geschrieben. Dreifache s (sss, sß, ßs) werden mit ss bzw. ß transkribiert (Dreifaches
   s wird zu ss, die Kombinationen sß, ßs zu ß.). Anlautendes ß wird als s wiedergegeben. Ist am langen s noch ein
@@ -166,8 +170,8 @@ Nasalstrich über m in Kombination mit b/p wird ignoriert: «nempt» (statt «ne
   zu einem runden s erkennbar oder handelt es sich lediglich um einen Bindungsbogen zum nächsten Buchstaben, wird «ß»
   transkribiert. Da sich zahlreiche Übergangsformen finden, liegt die Entscheidung im Ermessen des Bearbeitenden.
   Insbesondere wenn sich beide Formen innerhalb desselben Textes finden, sind diese in der Transkription zu
-  unterscheiden.
-
+  
+ 
 BEISPIELE: 
 Beispiel ß mit Bindebogen
 [to do [Datei:Beispiel ß mit Bindebogen.gif]]
@@ -175,6 +179,7 @@ Beispiel ß mit Bindebogen
 Beispiel mit ss und ß
 [to do [Datei:Beispiel mi ss und ß.gif]]
 
+- In lateinischen Texten wird das Schluss-s als einfaches s transkribiert und nicht als Scharf-s, da es sich lediglich um eine Ligatur handelt. 
 - cz, sz, tz werden gemäss Vorlage wiedergegeben. Lassen sich t und c nicht eindeutig unterscheiden, dann wird tz
   verwendet.
 - dz, dc, wz etc. werden gemäss Vorlage wiedergegeben oder aufgelöst.
@@ -229,7 +234,7 @@ Eidgenossen grossgeschrieben), walser
 
 >B.3.2 Respektsbezeichnungen und Anreden werden kleingeschrieben.
 
-BEISPIELE: üwer gnaden, gott
+BEISPIELE: üwer gnaden, gott, deus, dominus, virgo
 
 ### Heiligennamen, Festbezeichnungen
 
@@ -279,6 +284,8 @@ Bei Flur- und Ortsnamen sollte die Zusammen- und Getrenntschreibung immer der Vo
 Bindestriche (Auslassungsstriche) werden berücksichtigt und in der heute gebräuchlichen Form dargestellt. Bei Worttrennungen durch Zeilenwechsel in der Vorlage – ausgezeichnet mit  [[lb]](../elements/lb.de.md) @break="no" – entfällt in der
 Textwiedergabe der Trennstrich.
 
+Lateinische Begriffe, die einzeln dekliniert werden können, werden getrennt geschrieben (z. B. Jahreszahlen, die in Papsturkunden in der Regel zusammen geschrieben sind). Wendungen mit Genitiv-Attribut werden in Einzelfällen als Kompositum zusammengeschrieben (z. B. christifideles). 
+
 ## Hervorhebungen
 
 >B.5 Hervorhebungen (Versalien, verlängerte Buchstaben, Unterstreichungen, Farben etc.) und lateinische Schrift in deutschen Texten werden nicht dargestellt.
@@ -300,9 +307,7 @@ Abkürzungen werden mit [[abbr]](../elements/abbr.de.md) getaggt, mit dem Abkür
 
 `to do: Beispiel in abbr  hinzufügen, dann kann dieses Beispiel hier gelöscht werden<abbr>etc</abbr>`
 
-Kürzel, wie lobl., m. g. h., tit. oder s. v., werden konsequent als Kürzel belassen und
-  mit [[abbr]](../elements/abbr.de.md) ausgezeichnet. Die Auflösung erfolgt im Abkürzungsverzeichns.
-
+Kürzel, wie lobl., m. g. h., tit. oder s. v., werden konsequent als Kürzel belassen und mit [[abbr]](../elements/abbr.de.md) ausgezeichnet. Die Auflösung erfolgt im Abkürzungsverzeichns.
 
 ### Abbkürzungen auflösen
 
@@ -315,6 +320,8 @@ Endungen werden stillschweigend aufgelöst.
 Auflösungen wurden früher in Zweifelsfällen in [   ] gesetzt, in der digitalen Edition werden sie
 mit [[choice]](../elements/choice.de.md), [[abbr]](../elements/abbr.de.md) und [[expan]](../elements/expan.de.md)
 getaggt.
+
+Die gebräuchlichen lateinischen Abkürzungen werden stillschweigend aufgelöst, sofern nicht Zweifel an der korrekten Auflösung bestehen. Die Auflösung erfolgt gemäss (mittellateinischem) Wörterbuch, ausser bei abweichender Praxis des Schreibers.
 
 ### Abkürzungen von Mass- und Münzbezeichnungen
 
@@ -377,13 +384,7 @@ Wahrscheinlichkeit der Lesung kann mit @cert angegeben werden. Falls dies nicht 
 
 ### Schreib-, Sprach- und Stilfehler
 
->B.7.6 Schreib-, Sprach- und Stilfehler werden mit [[choice]](../elements/choice.de.md) zusammen mit
-[[sic]](../elements/sic.de.md) getaggt und mithilfe von [[corr]](../elements/corr.de.md) korrigiert.
-
-Schreib-, Sprach- und Stilfehler werden im Text nicht korrigiert. In der analogen Edition wurden sie in einer
-textkritischen Anmerkung erläutert oder mit einem [!] gekennzeichnet.
-In der digitalen Edition werden solche Fehler mit [[choice]](../elements/choice.de.md) zusammen mit
-[[sic]](../elements/sic.de.md) getaggt und mithilfe von [[corr]](../elements/corr.de.md) korrigiert.
+>B.7.6 Schreib-, Sprach- und Stilfehler werden mit [[sic]](../elements/sic.de.md) gekennzeichnet und allenfalls  mit [[choice]](../elements/choice.de.md) zusammen mit [[sic]](../elements/sic.de.md) und [[corr]](../elements/corr.de.md) korrigiert.
 
 ### Bewusste Auslassungen von Text durch den Bearbeitenden
 
@@ -469,23 +470,18 @@ konnte. In der digitalen Edition werden Marginalien mit [[add]](../elements/add.
 
 ## Anmerkungen
 
->B.9 Für Anmerkungen wird [[note]](../elements/note.de.md) verwendet.
+>B.9 Für sachkritische Anmerkungen jeglicher Art wird [[note]](../elements/note.de.md) verwendet.
 
 Für textkritische Anmerkungen wurden in der analogen Edition Kleinbuchstaben in alphabetischer Reihenfolge und für
 sachkritische Anmerkungen arabische Ziffern verwendet. Worterklärungen, z. B. für lateinische Wendungen etc.,
 erfolgen in der Glossardatenbank. Bei speziellen Wortformen, bei denen ein allgemeiner Glossareintrag [[term]](../elements/term.de.md) nicht genügt, um
-sie zu verstehen, ist eine sachkritische Fussnote notwendig, in der die Übersetzung angeboten wird.
-
-In der digitalen Edition wird  [[note]](../elements/note.de.md) für sachkritische Anmerkungen jeglicher Art
-verwendet.
-
-HIER WEITER
+sie zu verstehen, ist eine sachkritische Anmerkung notwendig, in der die Übersetzung angeboten wird.
 
 ## Textvarianten
 
 ### Doppel- oder Mehrfachausfertigungen
 
-Bei Doppel- oder Mehrfachausfertigungen entscheidet sich der Bearbeitende für einen einzigen Text. Varianten und
+>B.10.1 Bei Doppel- oder Mehrfachausfertigungen entscheidet sich der Bearbeitende für einen einzigen Text. Varianten und
 deren Besonderheiten können mit Hilfe von [[app]](../elements/app.de.md) angemerkt werden. Inhaltliche Abweichungen
 der anderen Originale von der Editionsvorlage müssen zwingend angemerkt werden.
 
@@ -494,7 +490,7 @@ einem Kommentar dargelegt werden. Dasselbe gilt im Falle von Abschriften.
 
 ### Abschriften
 
-Falls nur Abschriften vorhanden sind, soll die geeignetste, d. h. die der Originalvorlage am nächsten kommende,
+>B.10.2 Falls nur Abschriften eines Texts vorhanden sind, soll die geeignetste, d. h. die der Originalvorlage am nächsten kommende,
 ediert werden. Kriterien sind: Alter, Vollständigkeit, Sorgfalt, Beglaubigung, Vidimus oder Transsumpt etc. Varianten
 können angemerkt werden. Inhaltliche Abweichungen der anderen Abschriften von der Editionsvorlage müssen zwingend
 angemerkt werden.
@@ -507,79 +503,58 @@ und sollte in einem Kommentar beschrieben werden.
 
 ### Abschnitte
 
-Wo es zum besseren Verständnis notwendig erscheint, wurde der Text in der analogen Edition mit Hilfe von
-Gedankenstrichen, Alineas, paragraphenweiser Nummerierung in eckigen Klammern, Mitten von Titeln etc. unterteilt. In der
-digitalen Edition erfolgt die Gliederung eines Textes nach der Vorlage mit den tags [[div]](../elements/div.de.md) und
-[[p]](../elements/p.de.md) – allenfalls mit einer Nummerierung innerhalb von [[seg]](../elements/seg) mit @n.
+>B.11.1.1 Die Gliederung der Textvorlage wird übernommen. Originale Abschnitte werden mit [[p]](../elements/p.de.md)  – ohne zusätzliches [[div]](../elements/div.de.md) – ausgezeichnet. Sofern ein Original stärker gegliedert oder strukturiert ist, kann man [[p]](../elements/p.de.md) innerhalb von [[div]](../elements/div.de.md), gegebenenfalls zusammen mit @type,  verwenden. 
+ 
+>B.11.1.2  Die inhaltliche Strukturierung eines Textes durch den Bearbeitenden in Absätze erfolgt mit [[seg]](../elements/seg.de.md). Absätze können mit @n nummeriert werden.
 
-Urkunden sollten gemäss ihrem formalen Aufbau strukturiert werden (vgl. Diplomatik z. B.
-[[http://www.hist-hh.uni-bamberg.de/hilfswiss/diplomatik.html]](http://www.hist-hh.uni-bamberg.de/hilfswiss/diplomatik.html]),
-[[http://wwws.phil.uni-passau.de/histhw/TutMA/hiwi2.html]](http://wwws.phil.uni-passau.de/histhw/TutMA/hiwi2.html),
-[[http://theleme.enc.sorbonne.fr/cours/diplomatique]](http://theleme.enc.sorbonne.fr/cours/diplomatique)).
-Die inhaltliche Strukturierung eines Textes durch den Bearbeitenden in Absätze erfolgt mit
-[[seg]](../elements/seg.de.md).
+[to do: Beispiele für p und div. Sinnvolles Beispiel für seg und p erfassen, dasjenige, das zur Zeit vorliegt, ist falsch, da p und seg verwendet, was ja keinen Sinn macht...]
+
+Wo es zum besseren Verständnis notwendig erscheint, wird der Text mit Hilfe von Alineas und paragraphenweiser Nummerierung in eckigen Klammern, Mitten von Titeln etc. unterteilt. 
+Urkunden sollten gemäss ihrem formalen Aufbau strukturiert werden (vgl. z. B.  [Diplomatik](http://www.hist-hh.uni-bamberg.de/hilfswiss/diplomatik.html)).
+
 
 In der Regel sollten Absätze nach einem Punkt und nicht nach einem Komma erfolgen.
 
-Kommentare bitte mit [[div]](../elements/div.de.md) (falls eine Nummerierung notwendig ist) oder
-[[p]](../elements/p.de.md) strukturieren, dadurch wird die Lesbarkeit erhöht.
+Bei längeren Paratexten (Einleitung, Kommentar) können Kapitel durch [[div]](../elements/div.de.md) mit @n nummeriert und gegebenenfalls mit @type näher bezeichnet werden. Der Text eines Kommentars kann innerhalb von [[div]](../elements/div.de.md) mit [[p]](../elements/p.de.md)  in Absätze strukturiert werden.
 
-### Zeilenwechsel und Seitenwechsel
+### Zeilen- und Seitenangaben
+
+>B.11.2  Zeilen werden am Zeilenanfang ab der ersten Zeile mit [[lb]](../elements/lb.de.md) und die Seiten zu Beginn mit [[pb]](../elements/pb.de.md)
+und @n ausgezeichnet.
 
 Zeilenwechsel wurden in der analogen Edition mit / und Seitenwechsel mit // wiedergegeben. In der digitalen Edition
-werden die Zeilenwechsel mit [[lb]](../elements/lb.de.md) und die Seitenwechsel mit [[pb]](../elements/pb.de.md)
-ausgezeichnet.
+werden alle Zeilen am Zeilenanfang mit [[lb]](../elements/lb.de.md) und die Seiten mit [[pb]](../elements/pb.de.md)
+ausgezeichnet. 
 
 ### Interpunktion
 
-Die Interpunktion folgt, so weit möglich und sinnvoll, den heute im entsprechenden Sprachgebiet üblichen Regeln.
+>B.11.3 Die Interpunktion folgt, so weit möglich und sinnvoll, den heute im entsprechenden Sprachgebiet üblichen Regeln.
 Gibt es in der Vorlage Textstellen, deren syntaktische Konstruktion nicht nach heutigen Satzbaumustern analysiert werden
 kann oder deren Sinn schwer verständlich ist, wird besser auf Interpunktion verzichtet.
 
+Für die Interpunktion von lateinischen Texten kann grundsätzlich die moderne deutsche Kommasetzung als Richtschnur gelten. Voraussetzung für eine korrekte Interpunktion ist das Verständnis des Quellentextes in seinem ganzen Aufbau (Urkundenformular) wie im einzelnen Wortlaut. Im Zweifelsfall ist ein Komma besser wegzulassen als zu setzen. Verschachtelungen sind durch die Kommasetzung korrekt wiederzugeben. 
+
 ### Originale Titel und Zwischentitel
 
-Originale Titel und Zwischentitel können mit [[head]](../elements/head.de.md) ausgezeichnet und optisch abgehoben
-werden.
+>B.11.4 Originale Titel und Zwischentitel werden mit [[head]](../elements/head.de.md) ausgezeichnet, optisch mit @type abgehoben und mit @n nummeriert. Titel, die der Bearbeitende einfügt, sind mit @resp versehen.
 
 ### Direkte Rede
 
-Direkte Rede, die in der analogen Edition mit « » hervorgehoben wurde, wird in der digitalen Edition mit
-[[q]](../elements/q.de.md) ausgezeichnet.
+>B.11.5 Direkte Rede im Editionstext wird  mit [[q]](../elements/q.de.md) ausgezeichnet.
 
 ### Zitate
 
-Zitate innerhalb eines Textes (z. B. inserierte Urkunden) werden mit [[quote]](../elements/quote.de.md) ausgezeichnet
+>B.11.6 Zitate innerhalb eines Textes (z. B. inserierte Urkunden) werden mit [[quote]](../elements/quote.de.md) ausgezeichnet
 und am Schluss des Zitats mit einer sachkritischen Anmerkung [[note]](../elements/note.de.md) versehen, in der auf den
 zitierten Originaltext verwiesen wird. Ist der Originaltext ediert, kann anstelle von [[note]](../elements/note.de.md)
 mit der @xml:id auf das Stück verwiesen werden.
 
+Innerhalb der Paratexte (Anmerkungen, Kommentar, Einleitung) benutzen wir [[quote]](../elements/quote.de.md) für Zitate aus der Forschungsliteratur.
+
 ### Tabellen
 
-Einige Quellen, wie z. B. Rechnungen oder Zollordnungen, enthalten Tabellen, die auch als solche in der Edition
-umgesetzt werden sollen. Für die Darstellung von Tabellen verwenden wir [[table]](../elements/table.de.md) mit
+>B.11.7 Für die Darstellung von Tabellen verwenden wir [[table]](../elements/table.de.md) mit
 [[row]](../elements/row.de.md) und [[cell]](../elements/cell).
 
-# Transkriptionsregeln lateinischer Texte der Sammlung Schweizerischer Rechtsquellen (SSRQ)
-
-- Die Transkription folgt wie bei deutschen Texten dem Grundsatz der buchstabengetreuen Wiedergabe der Handschrift mit
-  Grossschreibung der Eigennamen (aber nicht von Nomina sacra wie deus, dominus, virgo) sowie am Satzanfang.
-  Entsprechend erfolgen keine Anpassungen an klassisches Latein.
-- Abkürzungen werden stillschweigend aufgelöst, sofern nicht Zweifel an der korrekten Auflösung bestehen. Die
-  Auflösung erfolgt gemäss (mittellateinischem) Wörterbuch, ausser bei abweichender Praxis des Schreibers.
-- Konsonantisches u wird als v, vokalisches v als u transkribiert.
-- i / j werden nicht unterschieden, d.h. es wird kein j transkribiert (Ausnahme: Eigennamen, z. B. Johannes).
-- e caudata (ę) wird gemäss bisheriger Praxis der SSRQ umgesetzt.
-- Schluss-s wird als einfaches s transkribiert und nicht als Scharf-s, da es sich lediglich um eine Ligatur handelt.
-- c / t wird gemäss Vorlage transkribiert, falls nicht unterscheidbar nach der Praxis des Schreibers an anderen Stellen,
-  sonst nach Wörterbuch.
-- Der Gebrauch von n anstelle von m (z.B. cunque) wird übernommen, wenn der Buchstabe ausgeschrieben ist.
-- Fehler werden – namentlich in Urkunden – in der Regel nicht emendiert, sondern mit [[sic]] ausgezeichnet oder im
-  Apparat diskutiert.
-- Römische Ziffern werden in Kleinbuchstaben gesetzt.
-- Begriffe, die einzeln dekliniert werden können, werden getrennt geschrieben (z. B. Jahreszahlen, die in Papsturkunden
-  in der Regel zusammen geschrieben sind). Wendungen mit Genitiv-Attribut werden in Einzelfällen als Kompositum
-  zusammengeschrieben (christifideles).
-- Für die Interpunktion kann grundsätzlich die moderne deutsche Kommasetzung als Richtschnur gelten. Voraussetzung für
-  eine korrekte Interpunktion ist das Verständnis des Quellentextes in seinem ganzen Aufbau (Urkundenformular) wie im
-  Einzelnen Wortlaut. Im Zweifelsfall ist ein Komma besser wegzulassen als zu setzen. Verschachtelungen sind durch die
-  Kommasetzung korrekt wiederzugeben.
+Einige Quellen, wie z. B. Rechnungen oder Zollordnungen, enthalten Tabellen, die auch als solche in der Edition
+umgesetzt werden.
