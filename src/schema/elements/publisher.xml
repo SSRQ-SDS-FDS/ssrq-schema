@@ -54,38 +54,8 @@
   <xi:include href="examples.xml" xpointer="ex-docImprint-1-en"/>
   <xi:include href="examples.xml" xpointer="ex-docImprint-1-fr"/>
   <xi:include href="examples.xml" xpointer="ex-docImprint-1-it"/>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-12">
-    <p>Beispiel für tei:publisher mit @cert</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <docImprint>
-        <pubPlace>Zürich</pubPlace>
-        <publisher cert="low">Heidegger und Rahn</publisher>
-      </docImprint>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-12">
-    <p>Exemple pour tei:publisher avec @cert</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <docImprint>
-        <pubPlace>Zürich</pubPlace>
-        <publisher cert="low">Heidegger und Rahn</publisher>
-      </docImprint>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-12">
-    <p>Beispiel für tei:publisher innerhalb von tei:publicationStmt</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <publicationStmt>
-        <publisher>SSRQ-SDS-FDS</publisher>
-      </publicationStmt>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-12">
-    <p>Exemple de tei:publisher au sein de tei:publicationStmt</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <publicationStmt>
-        <publisher>SSRQ-SDS-FDS</publisher>
-      </publicationStmt>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-publisher-cert-de"/>
+  <xi:include href="examples.xml" xpointer="ex-publisher-cert-en"/>
+  <xi:include href="examples.xml" xpointer="ex-publisher-cert-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-publisher-cert-it"/>
 </elementSpec>
