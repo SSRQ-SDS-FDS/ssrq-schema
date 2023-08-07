@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="hi" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="hi" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-19">Beschreibt die graphische Hervorhebung von Text.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Describes the graphical highlighting of text.</desc>
   <desc xml:lang="fr" versionDate="2023-07-19">Décrit la mise en surbrillance graphique du texte.</desc>
@@ -95,32 +95,18 @@
       </valList>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Auszeichnung hochgestellter Buchstaben</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">deß 1729<hi rend="sup">ten</hi> jahrs
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Distinction des lettres en exposant</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">deß 1729<hi rend="sup">ten</hi> jahrs
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Beispiele einer Unterstreichung von späterer Hand – das Attribut hand
-            ist ein Verweis auf eine handNote
-        </p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <hi rend="underline" hand="laterHand">unterstrichener Text mit anderer Tinte</hi>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Exemples de soulignement par une main ultérieure - l'attribut hand
-            est une référence à une handNote
-        </p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <hi rend="underline" hand="laterHand">unterstrichener Text mit anderer Tinte</hi>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-hi-sup-de"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-sup-en"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-sup-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-sup-it"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-underline-de"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-underline-en"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-underline-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-underline-it"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-num-de"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-num-en"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-num-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-num-it"/>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>Die Rechtsquellenstiftung macht keine faksimilierenden Transkriptionen, weshalb Versalien, Einzüge etc. nicht
             dargestellt werden. Punkte vor hochgestellten Buchstaben bei Aufzählungen, Datierungen, Abkürzungen usw.

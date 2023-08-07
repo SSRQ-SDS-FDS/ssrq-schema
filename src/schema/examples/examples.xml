@@ -676,6 +676,54 @@
       <p>Titolo aggiunto dalla redazione per meglio strutturare il testo</p>
       <xi:include href="head.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-hi-sup-de">
+      <p>Auszeichnung eines hochgestellten Buchstabens</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-sup"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-hi-sup-en">
+      <p>Encoding of a superscript letter</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-sup"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-hi-sup-fr">
+      <p>Codage d'une lettre en exposant</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-sup"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-hi-sup-it">
+      <p>Codifica di una lettera apice</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-sup"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-hi-underline-de">
+      <p>Beispiele einer Unterstreichung von späterer Hand – das Attribut <att>hand</att> ist ein Verweis auf eine <gi>handNote</gi></p>
+      <xi:include href="hi.xml" xpointer="ex-hi-underline"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-hi-underline-en">
+      <p>Examples of a later hand underline - the <att>hand</att> attribute is a reference to a <gi>handNote</gi></p>
+      <xi:include href="hi.xml" xpointer="ex-hi-underline"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-hi-underline-fr">
+      <p>Exemples de soulignement ultérieur de la main - l'attribut <att>hand</att> est une référence à une <gi>handNote</gi></p>
+      <xi:include href="hi.xml" xpointer="ex-hi-underline"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-hi-underline-it">
+      <p>Esempi di sottolineatura successiva della mano - l'attributo <att>hand</att> è un riferimento a una <gi>handNote</gi></p>
+      <xi:include href="hi.xml" xpointer="ex-hi-underline"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-hi-num-de">
+      <p>Erfassung einer römischen Ziffer</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-num"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-hi-num-en">
+      <p>Encoding of a Roman numeral</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-num"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-hi-num-fr">
+      <p>Codage d'un chiffre romain</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-num"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-hi-num-it">
+      <p>Cattura di numeri romani</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-num"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-head-table-de">
       <p>Beispiel für eine Überschrift in einer Tabelle</p>
       <xi:include href="table.xml"/>
