@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="time" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="time" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Enthält eine Zeitangabe.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains a time specification.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient une spécification de temps.</desc>
@@ -87,32 +87,18 @@
       </datatype>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-16">
-    <p>Erfassung eines Zeitpunkts</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <time when-custom="08:48:00">8 Uhr 48</time>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-16">
-    <p>Saisie d'un moment</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <time when-custom="08:48:00">8 Uhr 48</time>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-16">
-    <p>Erfassung von Zeitperioden, die nicht mit ISO 8601 beschrieben werden können</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            ...
-            <time period="byNight">nachtz</time>
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-16">
-    <p>Saisie de périodes de temps qui ne peuvent pas être décrites avec ISO 8601</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            ...
-            <time period="byNight">nachtz</time>
-        </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-time-duriso-de"/>
+  <xi:include href="examples.xml" xpointer="ex-time-duriso-en"/>
+  <xi:include href="examples.xml" xpointer="ex-time-duriso-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-time-duriso-it"/>
+  <xi:include href="examples.xml" xpointer="ex-time-duriso-de"/>
+  <xi:include href="examples.xml" xpointer="ex-time-period-en"/>
+  <xi:include href="examples.xml" xpointer="ex-time-period-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-time-period-it"/>
+  <xi:include href="examples.xml" xpointer="ex-time-point-de"/>
+  <xi:include href="examples.xml" xpointer="ex-time-point-en"/>
+  <xi:include href="examples.xml" xpointer="ex-time-point-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-time-point-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>Mithilfe der zugelassenen Attribute können die Angaben in einem normalisierten Format maschinenlesbar
             ausgedrückt werden. Das Format ist die vom W3C definierte Untermenge von ISO 8601. Zeitpunkte werden
