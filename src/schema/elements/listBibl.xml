@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="listBibl" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="listBibl" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-19">Enthält mit <gi>bibl</gi> kodierte bibliographische Angaben.
     </desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains bibliographic information encoded with <gi>bibl</gi>.
@@ -25,20 +25,12 @@
       </datatype>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-    <p>Verweise auf Regsten</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <listBibl type="summary">
-        <bibl>Rigendinger 2007, S. 221–223</bibl>
-      </listBibl>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
-    <p>Références à Regsten</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <listBibl type="summary">
-        <bibl>Rigendinger 2007, S. 221–223</bibl>
-      </listBibl>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-edition-de"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-edition-en"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-edition-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-edition-it"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-summary-de"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-summary-en"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-summary-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-summary-it"/>
 </elementSpec>
