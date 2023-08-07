@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="term" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="term" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Enthält ein Stichwort oder Schlagwort.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains a lemma or a keyword.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient un lemme ou un mot-clé.</desc>
@@ -58,26 +58,14 @@
       </datatype>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Glossareinträge des Sarganserländer Bandes in TEI</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">Item alz aber beid <term ref="lem001301.09">
-            partyen
-        </term> der
-            <term ref="lem005912.01">richtung</term>
-            <term ref="lem006058.01">gichtig
-                sind</term>, wie die beschehen ist,
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Une entrée dans le glossaire sur le Sarganserländer Band dans TEI</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">Item alz aber beid <term ref="lem001301.09">
-            partyen
-        </term> der
-            <term ref="lem005912.01">richtung</term>
-            <term ref="lem006058.01">gichtig
-                sind</term>, wie die beschehen ist,
-        </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-term-de"/>
+  <xi:include href="examples.xml" xpointer="ex-term-en"/>
+  <xi:include href="examples.xml" xpointer="ex-term-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-term-it"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-term-de"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-term-en"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-term-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-term-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>Über das Attribut <att>ref</att> werden die Einträge mit den Registerdatenbanken verknüpft.
         </p>

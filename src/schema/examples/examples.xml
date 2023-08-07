@@ -1118,6 +1118,22 @@
       <p>Esempio minimo di documento TEI</p>
       <xi:include href="TEI.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-term-de">
+      <p>Erfassung eines Lemmas</p>
+      <xi:include href="term.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-term-en">
+      <p>Encoding of a lemma</p>
+      <xi:include href="term.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-term-fr">
+      <p>Codage d'un lemme</p>
+      <xi:include href="term.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-term-it">
+      <p>Codifica di un lemma</p>
+      <xi:include href="term.xml"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-text-1-de">
       <p>Beispiel für ein Transkript mit optionalem Kommentarbereich</p>
       <xi:include href="text.xml" xpointer="ex-text-1"/>
