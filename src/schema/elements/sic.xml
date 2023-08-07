@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="sic" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="sic" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Enthält offensichtlich fehlerhaften Text.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains obviously incorrect text.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient un texte manifestement incorrect.</desc>
@@ -23,32 +23,14 @@
       <macroRef key="ssrq.content.entities"/>
     </alternate>
   </content>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-    <p>Einfache Verwendung</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <sic>ernschlich</sic>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-    <p>Facile à utiliser</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <sic>ernschlich</sic>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-    <p>Verwendung mit term</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"><lb/>der
-            <sic><term ref="lem014672.11">hexenry</term></sic>
-            anzenemmen.
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-    <p>Utilisation avec term</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"><lb/>der
-            <sic><term ref="lem014672.11">hexenry</term></sic>
-            anzenemmen.
-        </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-sic-de"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-en"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-it"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-term-de"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-term-en"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-term-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-sic-term-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>Offensichtliche Schreibfehler können mit <gi>corr</gi> korrigiert werden. Auf die Verwendung von "[!]" wird
             verzichtet.
