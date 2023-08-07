@@ -804,6 +804,22 @@
       <p>Esempio di descrizione di un testimone testuale</p>
       <xi:include href="msDesc.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-note-de">
+      <p>Anmerkung der Bearbeitenden</p>
+      <xi:include href="note.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-note-en">
+      <p>Note by the editor</p>
+      <xi:include href="note.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-note-fr">
+      <p>Note de l'éditeur</p>
+      <xi:include href="note.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-note-it">
+      <p>Nota dell'editore</p>
+      <xi:include href="note.xml"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-origDate-abbr-de">
       <p>Originaldatierung mit Abkürzung</p>
       <xi:include href="origDate.xml" xpointer="ex-origDate-abbr"/>
