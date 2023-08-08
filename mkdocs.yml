@@ -48,6 +48,7 @@ plugins:
         fr:
           Base: Bases philologiques
           Elements: Bibliothèque de tags
+site_dir: build/site
 site_name: !ENV [SITE_NAME, 'SSRQ Docs']
 site_url: !ENV DOCS_URL
 theme:

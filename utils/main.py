@@ -9,7 +9,7 @@ from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecu
 from typing_extensions import TypedDict
 
 CUR_DIR = Path(__file__).parent.parent.absolute()
-DIST_DIR = CUR_DIR / "dist"
+BUILD_DIR = CUR_DIR / "build"
 SRC_DIR = CUR_DIR / "src"
 EXAMPLES_DIR = SRC_DIR / "examples"
 COMMON_DIR = SRC_DIR / "common"
@@ -67,7 +67,7 @@ class Schema:
     compiled_odd: str
     rng: str
 
-    def store(self, out_dir: Path = DIST_DIR) -> None:
+    def store(self, out_dir: Path = BUILD_DIR) -> None:
         """Store the compiled ODD and RNG files in the dist directory – the version number is omitted if OMIT_VERSION is True."""
         from os import makedirs
         from os.path import exists
