@@ -1,5 +1,5 @@
 copyright: Copyright &copy; 2023 SSRQ-SDS-FDS
-docs_dir: docs
+docs_dir: src/docs
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -17,7 +17,7 @@ extra_css:
   - assets/css/extra.css
 # This hook creates the odd and generates a markdown-file per element (de, fr)
 hooks:
-  - ./utils/doc_hooks.py
+  - ./utils/docs/doc_hooks.py
 markdown_extensions:
   - footnotes
   - pymdownx.highlight:
@@ -58,8 +58,8 @@ theme:
     - navigation.top
   name: material
 watch:
-  - "docs/assets"
-  - "docs/base"
-  - "docs/translations"
-  - "src"
+  - "src/docs/assets"
+  - "src/docs/base"
+  - "src/docs/translations"
+  - "src/schema"
   - "utils"

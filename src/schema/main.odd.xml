@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>SSRQ Guidelines</title>
+        <author>Bastian Politycki</author>
+        <author>Christian Sonder</author>
+        <author>Pascale Sutter</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>SSRQ-SDS-FDS</publisher>
+        <date when="1970-01-01"/>
+        <idno>{{ version }}</idno>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+                    </licence>
+        </availability>
+      </publicationStmt>
+      <notesStmt>
+        <note>SSRQ specific elements or attributes are part of the module "ssrq.core.module".</note>
+      </notesStmt>
+      <sourceDesc>
+        <p>The main schema used by the Swiss Law Sources to validate TEI XML transcriptions.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <schemaSpec ident="ssrq-main-schema" docLang="de en fr it" xml:lang="en">
+        <!-- TEI modules used -->
+        <moduleRef key="certainty" include="precision"/>
+        <moduleRef key="core" include="abbr add author bibl cb choice corr date del editor expan foreign gap graphic head hi item label lb list listBibl measure measureGrp note num orig p pb publisher pubPlace q quote ref resp respStmt sic term textLang time title unclear"/>
+        <moduleRef key="figures" include="cell figure row table"/>
+        <moduleRef key="header" include="availability editorialDecl encodingDesc extent fileDesc handNote idno keywords licence profileDesc publicationStmt seriesStmt sourceDesc teiHeader textClass titleStmt"/>
+        <moduleRef key="linking" include="ab anchor seg"/>
+        <moduleRef key="msdescription" include="additional altIdentifier bindingDesc condition dimensions foliation handDesc height history material msContents msDesc msIdentifier msItem objectDesc origDate origin origPlace physDesc repository seal sealDesc summary support supportDesc width"/>
+        <moduleRef key="namesdates" include="orgName persName placeName settlement"/>
+        <moduleRef key="tei"/>
+        <moduleRef key="textcrit" include="app lem listWit rdg witness"/>
+        <moduleRef key="textstructure" include="back body div docImprint signed TEI text"/>
+        <moduleRef key="transcr" include="addSpan damage damageSpan delSpan fw handShift space subst supplied"/>
+        <!-- own modules -->
+        <specGrpRef target="commons/modules.odd.xml#ssrq-modules"/>
+        <!-- attribute classes -->
+        <specGrpRef target="commons/classes.odd.xml#ssrq-classes"/>
+        <!-- global constraints -->
+        <specGrpRef target="commons/constraints.odd.xml#constraints"/>
+        <!-- content -->
+        <specGrpRef target="commons/content.odd.xml#ssrq-default-content-types"/>
+        <!-- datatypes -->
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-agent"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-bibl"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-date-time"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-hand"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-measure"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-period"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-place"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-rend"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-role"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-struct"/>
+        <!-- patterns -->
+        <specGrpRef target="commons/patterns.odd.xml#ssrq-patterns"/>
+        <!-- element specifications -->
+        <specGrpRef target="elements/ab.xml"/>
+        <specGrpRef target="elements/abbr.xml"/>
+        <specGrpRef target="elements/add.xml"/>
+        <specGrpRef target="elements/additional.xml"/>
+        <specGrpRef target="elements/addSpan.xml"/>
+        <specGrpRef target="elements/altIdentifier.xml"/>
+        <specGrpRef target="elements/anchor.xml"/>
+        <specGrpRef target="elements/app.xml"/>
+        <specGrpRef target="elements/author.xml"/>
+        <specGrpRef target="elements/availability.xml"/>
+        <specGrpRef target="elements/back.xml"/>
+        <specGrpRef target="elements/bibl.xml"/>
+        <specGrpRef target="elements/bindingDesc.xml"/>
+        <specGrpRef target="elements/body.xml"/>
+        <specGrpRef target="elements/cb.xml"/>
+        <specGrpRef target="elements/cell.xml"/>
+        <specGrpRef target="elements/choice.xml"/>
+        <specGrpRef target="elements/condition.xml"/>
+        <specGrpRef target="elements/corr.xml"/>
+        <specGrpRef target="elements/damage.xml"/>
+        <specGrpRef target="elements/damageSpan.xml"/>
+        <specGrpRef target="elements/date.xml"/>
+        <specGrpRef target="elements/del.xml"/>
+        <specGrpRef target="elements/delSpan.xml"/>
+        <specGrpRef target="elements/dimensions.xml"/>
+        <specGrpRef target="elements/div.xml"/>
+        <specGrpRef target="elements/docImprint.xml"/>
+        <specGrpRef target="elements/editor.xml"/>
+        <specGrpRef target="elements/editorialDecl.xml"/>
+        <specGrpRef target="elements/encodingDesc.xml"/>
+        <specGrpRef target="elements/expan.xml"/>
+        <specGrpRef target="elements/extent.xml"/>
+        <specGrpRef target="elements/figure.xml"/>
+        <specGrpRef target="elements/fileDesc.xml"/>
+        <specGrpRef target="elements/foliation.xml"/>
+        <specGrpRef target="elements/foreign.xml"/>
+        <specGrpRef target="elements/fw.xml"/>
+        <specGrpRef target="elements/gap.xml"/>
+        <specGrpRef target="elements/graphic.xml"/>
+        <specGrpRef target="elements/handDesc.xml"/>
+        <specGrpRef target="elements/handNote.xml"/>
+        <specGrpRef target="elements/handShift.xml"/>
+        <specGrpRef target="elements/head.xml"/>
+        <specGrpRef target="elements/hi.xml"/>
+        <specGrpRef target="elements/history.xml"/>
+        <specGrpRef target="elements/height.xml"/>
+        <specGrpRef target="elements/idno.xml"/>
+        <specGrpRef target="elements/item.xml"/>
+        <specGrpRef target="elements/keywords.xml"/>
+        <specGrpRef target="elements/label.xml"/>
+        <specGrpRef target="elements/lb.xml"/>
+        <specGrpRef target="elements/lem.xml"/>
+        <specGrpRef target="elements/licence.xml"/>
+        <specGrpRef target="elements/list.xml"/>
+        <specGrpRef target="elements/listBibl.xml"/>
+        <specGrpRef target="elements/listWit.xml"/>
+        <specGrpRef target="elements/material.xml"/>
+        <specGrpRef target="elements/measure.xml"/>
+        <specGrpRef target="elements/measureGrp.xml"/>
+        <specGrpRef target="elements/msContents.xml"/>
+        <specGrpRef target="elements/msDesc.xml"/>
+        <specGrpRef target="elements/msIdentifier.xml"/>
+        <specGrpRef target="elements/msItem.xml"/>
+        <specGrpRef target="elements/note.xml"/>
+        <specGrpRef target="elements/num.xml"/>
+        <specGrpRef target="elements/objectDesc.xml"/>
+        <specGrpRef target="elements/orgName.xml"/>
+        <specGrpRef target="elements/orig.xml"/>
+        <specGrpRef target="elements/origDate.xml"/>
+        <specGrpRef target="elements/origin.xml"/>
+        <specGrpRef target="elements/origPlace.xml"/>
+        <specGrpRef target="elements/p.xml"/>
+        <specGrpRef target="elements/pb.xml"/>
+        <specGrpRef target="elements/persName.xml"/>
+        <specGrpRef target="elements/physDesc.xml"/>
+        <specGrpRef target="elements/placeName.xml"/>
+        <specGrpRef target="elements/precision.xml"/>
+        <specGrpRef target="elements/profileDesc.xml"/>
+        <specGrpRef target="elements/publisher.xml"/>
+        <specGrpRef target="elements/publicationStmt.xml"/>
+        <specGrpRef target="elements/pubPlace.xml"/>
+        <specGrpRef target="elements/q.xml"/>
+        <specGrpRef target="elements/quote.xml"/>
+        <specGrpRef target="elements/rdg.xml"/>
+        <specGrpRef target="elements/ref.xml"/>
+        <specGrpRef target="elements/resp.xml"/>
+        <specGrpRef target="elements/respStmt.xml"/>
+        <specGrpRef target="elements/repository.xml"/>
+        <specGrpRef target="elements/row.xml"/>
+        <specGrpRef target="elements/seal.xml"/>
+        <specGrpRef target="elements/sealDesc.xml"/>
+        <specGrpRef target="elements/seg.xml"/>
+        <specGrpRef target="elements/settlement.xml"/>
+        <specGrpRef target="elements/seriesStmt.xml"/>
+        <specGrpRef target="elements/sic.xml"/>
+        <specGrpRef target="elements/signed.xml"/>
+        <specGrpRef target="elements/sourceDesc.xml"/>
+        <specGrpRef target="elements/space.xml"/>
+        <specGrpRef target="elements/subst.xml"/>
+        <specGrpRef target="elements/summary.xml"/>
+        <specGrpRef target="elements/supplied.xml"/>
+        <specGrpRef target="elements/support.xml"/>
+        <specGrpRef target="elements/supportDesc.xml"/>
+        <specGrpRef target="elements/table.xml"/>
+        <specGrpRef target="elements/teiHeader.xml"/>
+        <specGrpRef target="elements/TEI.xml"/>
+        <specGrpRef target="elements/term.xml"/>
+        <specGrpRef target="elements/text.xml"/>
+        <specGrpRef target="elements/textClass.xml"/>
+        <specGrpRef target="elements/textLang.xml"/>
+        <specGrpRef target="elements/time.xml"/>
+        <specGrpRef target="elements/title.xml"/>
+        <specGrpRef target="elements/titleStmt.xml"/>
+        <specGrpRef target="elements/unclear.xml"/>
+        <specGrpRef target="elements/width.xml"/>
+        <specGrpRef target="elements/witness.xml"/>
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>
