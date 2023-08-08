@@ -88,7 +88,7 @@ Handelt es sich hingegen um einen Ausdruck, der in die Umgangssprache eingegange
 
 #### 1.3.1 Vokale
  
-- e caudata (ę) wird vom gewöhnlichen e unterschieden.
+- e caudata (ę) wird im Lateinischen vom gewöhnlichen e unterschieden. – Die Gelehrten des 17. und 18. Jahrhunderts neigten aufgrund von Hyperkorrekturen dazu, die Diphthongierung zu bevorzugen. Wenn ein mittelalterliches Original erhalten ist, sollte die Schreibweise des Ausgangstextes beibehalten werden, d. h. das «ę», das in späteren Kopien wahrscheinlich als «æ» geschrieben wurde, sollte wiedergegeben werden. Wenn nur die spätere Abschrift existiert, sollte man sich an die Schreibweise dieser Abschrift halten und den Diphthong getreu wiedergeben.
 - I und j werden nicht entsprechend der Schaftlänge unterschieden. Konsequente graphematische Unterscheidung zwischen
   vokalischem i vor Konsonanten und konsonantischem j vor Vokalen. Bei Fällen, in denen lediglich ein Dehnungs-h zwischen j und Vollvokal geschoben wird (wie z. B. jhe
   und jhenigen), soll das j nicht durch ein i ersetzt werden. –  In lateinischen Texten wird y oder j als i wiedergegeben (Ausnahme: Eigennamen, z. B. Johannes).
