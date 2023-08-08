@@ -78,6 +78,12 @@ Nasalstrich über m in Kombination mit b/p wird ignoriert: «nempt» (statt «ne
 
 [to do [Datei:Nempt.PNG]]
 
+In französischen Texten wird die Wiederholung von Anfangsbuchstaben beibehalten, aber getrennt vom vorherigen Wort, an das er möglicherweise angehängt wurde: 
+
+Beispiel: `«a sses parents» (und nicht «asses parents»)`
+
+Handelt es sich hingegen um einen Ausdruck, der in die Umgangssprache eingegangen ist, wird die Agglutination beibehalten, wie z. B. «assavoir». Wenn der Ausdruck z. B. «illiaz» (für «il y a») im Ausgangstext agglutiniert ist, sollte er gemäss Vorlage transkribiert werden (und nicht «ill i az»).
+
 ### 1.3 Buchstaben in Form oder Verwendung vom heutigen Gebrauch abweichend
 
 #### 1.3.1 Vokale
