@@ -14,6 +14,7 @@ from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecu
 from ssrq_cli.validate import RNGJingValidator
 from ssrq_cli.xml_utils import ext_etree
 
+from utils.commons import io
 from utils.commons.config import SCHEMA_DIR, XSLTS
 from utils.schema.compile import (
     SPECIFIED_ELEMENTS,
@@ -43,8 +44,7 @@ class SimpleTEIWriter:
         self.path = dir
 
     def write(self, name: str, content: str) -> None:
-        with open(self.path / f"{name}.xml", "w", encoding="utf-8") as f:
-            f.write(content)
+        io.FileHandler.write(dir=self.path, file_name=f"{name}.xml", content=content)
 
     def list(self) -> list[str]:
         return [str(file.absolute()) for file in self.path.glob("*.xml")]
@@ -58,12 +58,6 @@ class SimpleTEIWriter:
 
     def construct_file_pattern(self) -> str:
         return str(self.path.absolute() / "*.xml")
-
-
-def load_example(name: str) -> str:
-    """Load the example file with the given name."""
-    with open(TEST_EXAMPLE_DIR / f"{name}", encoding="utf-8") as f:
-        return f.read()
 
 
 def change_rng_start(rng: str, name: str) -> str:
@@ -107,11 +101,9 @@ def extract_specified_elements_for_rng(schema: SSRQSchemaType) -> list[ElName]:
     Returns:
         list[str]: A list of all specified elements – based on includes by specGrpRef.
     """
-    with open(SCHEMA_DIR / schema["entry"]) as sf:
-        sf = sf.read()
-        specs: list[str] = re.findall(SPECIFIED_ELEMENTS, sf)
+    schema_content = io.FileHandler.read(dir=SCHEMA_DIR, file_name=schema["entry"])
 
-    return specs
+    return re.findall(SPECIFIED_ELEMENTS, schema_content)
 
 
 @pytest.fixture(scope="session")

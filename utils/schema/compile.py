@@ -8,6 +8,7 @@ from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecu
 from typing_extensions import TypedDict
 
 import utils.commons.config as configs
+import utils.commons.io as io
 
 OMIT_VERSION: bool = False
 
@@ -49,37 +50,31 @@ class Schema:
     compiled_odd: str
     rng: str
 
-    def store(self, out_dir: Path = configs.BUILD_DIR) -> None:
-        """Store the compiled ODD and RNG files in the dist directory – the version number is omitted if OMIT_VERSION is True."""
-        from os import makedirs
-        from os.path import exists
 
-        if not exists(out_dir):
-            makedirs(out_dir)
+def store_compiled_schemas(
+    schemas: list[Schema],
+    io: io.ReaderWriter = io.FileHandler,
+    out_dir: Path = configs.BUILD_DIR,
+    use_version: bool = OMIT_VERSION,
+) -> None:
+    for schema in schemas:
+        odd_name = (
+            f"{schema.name}{f'_{schema.version}' if use_version is False else ''}.odd"
+        )
+        rng_name = (
+            f"{schema.name}{f'_{schema.version}' if use_version is False else ''}.rng"
+        )
 
-        with open(
-            f"{out_dir}/{self.name}{f'_{self.version}' if OMIT_VERSION is False else ''}.odd",
-            "w",
-            encoding="utf-8",
-        ) as f:
-            f.write(self.compiled_odd)
-        with open(
-            f"{out_dir}/{self.name}{f'_{self.version}' if OMIT_VERSION is False else ''}.rng",
-            "w",
-            encoding="utf-8",
-        ) as f:
-            f.write(self.rng)
+        io.write(dir=out_dir, file_name=odd_name, content=schema.compiled_odd)
+        io.write(dir=out_dir, file_name=rng_name, content=schema.rng)
 
 
-def load_config() -> SSRQConfig | None:
-    """Load the configuration from pyproject.toml and apply some basic validation using pydantic."""
-    with open(
-        configs.PROJECT_DIR / "pyproject.toml",
-        "rb",
-    ) as f:
-        config = tomllib.load(f)
+def load_config(io: io.ReaderWriter = io.FileHandler) -> SSRQConfig:
+    pyproject_toml = tomllib.loads(
+        io.read(dir=configs.PROJECT_DIR, file_name="pyproject.toml")
+    )
 
-    return SSRQConfig(**config["ssrq"]["schema"]["meta"])
+    return SSRQConfig(**pyproject_toml["ssrq"]["schema"]["meta"])
 
 
 def resolve_relative_paths(doc: str) -> str:
@@ -337,14 +332,11 @@ if __name__ == "__main__":
         OMIT_VERSION = args.omit_version
 
     config = load_config()
-    if config is not None:
-        len_schemas = len(config.schemas)
-        odds = [
-            odd_factory(schema_config=schema, authors=config.authors, print_stats=True)
-            for schema in config.schemas
-        ]
+    len_schemas = len(config.schemas)
+    odds = [
+        odd_factory(schema_config=schema, authors=config.authors, print_stats=True)
+        for schema in config.schemas
+    ]
 
-        for odd in odds:
-            odd.store()
-    else:
-        print("No config found – can't continue")
+    for odd in odds:
+        store_compiled_schemas(schemas=[odd], use_version=OMIT_VERSION)

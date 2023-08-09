@@ -6,7 +6,7 @@ from mkdocs.livereload import LiveReloadServer
 from mkdocs.plugins import event_priority
 
 from utils.docs.odd2md import LANGS, ODD2Md, create_schema_by_entry
-from utils.schema.compile import Schema
+from utils.schema.compile import Schema, store_compiled_schemas
 
 created_schema: dict[str, Schema] = {}
 
@@ -32,7 +32,7 @@ def on_config(config: MkDocsConfig):
 @event_priority(50)
 def on_post_build(config: MkDocsConfig):
     schema = create_main_schema()
-    schema.store(out_dir=Path(config.site_dir))
+    store_compiled_schemas(schemas=[schema], out_dir=Path(config.site_dir))
 
 
 @event_priority(50)

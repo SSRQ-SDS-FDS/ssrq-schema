@@ -1,6 +1,8 @@
 import pytest
 
-from ..conftest import RNG_test_function, load_example
+from utils.commons import io
+
+from ..conftest import TEST_EXAMPLE_DIR, RNG_test_function
 
 
 @pytest.mark.parametrize(
@@ -44,5 +46,7 @@ def test_sourceDesc_rng(
     markup: str,
     result: bool,
 ):
-    markup = markup.format(msDesc=load_example("msDesc.xml"))
+    markup = markup.format(
+        msDesc=io.FileHandler.read(dir=TEST_EXAMPLE_DIR, file_name="msDesc.xml")
+    )
     test_element_with_rng("sourceDesc", name, markup, result, False)

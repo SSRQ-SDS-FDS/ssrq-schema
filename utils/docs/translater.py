@@ -1,10 +1,12 @@
-from json import load
+from json import loads
 
 from pydantic import BaseModel, model_validator
 
+from utils.commons import io
 from utils.commons.config import SRC_DIR
 
-translations_file = SRC_DIR / "docs/translations/translations.json"
+translations_file = "docs/translations/translations.json"
+translations = io.FileHandler.read(dir=SRC_DIR, file_name=translations_file)
 
 
 class Translations(BaseModel):
@@ -27,7 +29,4 @@ class Translations(BaseModel):
         return self
 
 
-with open(translations_file) as f:
-    content = load(f)
-
-TRANSLATE = Translations(**content)
+TRANSLATE = Translations(**loads(translations))
