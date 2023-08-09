@@ -7,8 +7,8 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
   - [Dokumentation](#dokumentation)
     - [Versionierung](#versionierung)
     - [Was ist wo?](#was-ist-wo)
-      - [`doc`](#doc)
-      - [`src`](#src)
+      - [`src/docs`](#srcdocs)
+      - [`src/schema`](#srcschema)
     - [Technisches Setup](#technisches-setup)
       - [Verwendete Software / Technologien](#verwendete-software--technologien)
       - [Einrichtung / Anforderungen an die Umgebung](#einrichtung--anforderungen-an-die-umgebung)
@@ -49,22 +49,45 @@ Die Versionsnummer wird als Tag in der Git-History hinterlegt und ist zudem in d
 
 ### Was ist wo?
 
-Das Repository besteht aus vier verschiedenen Bereichen:
+Das Repository ist wiefolgt aufgeteilt:
 
-1. `doc`: hier befindet sich die Dokumentation, diese wird größtenteils dynamisch aus dem ODD generiert
-2. `src`: hier befinden sich die Quelldateien des Schemas
-3. `test`: der Name sagt es
-4. `dist`: dieser Ordner wird dynamisch generiert und steht nicht unter Versionskontrolle; hier befinden sich die kompilierten Schemadateien
+```
+ssrq-schema/
+├─ .github/
+├─ src/
+│  ├─ docs/
+│  ├─ schema/
+│  │  ├─ commons/
+│  │  ├─ elements/
+│  │  ├─ examples/
+│  │  ├─ main.odd.xml
+├─ utils/
+│  ├─ commons/
+│  ├─ docs/
+│  ├─ schema/
+├─ .gitignore
+├─ .gitmodules
+├─ CITATION.cff
+├─ LICENSE
+├─ mkdocs.yml
+├─ poetry.lock
+├─ pyproject.toml
+├─ README.md
+├─ Taskfile
+```
 
-#### `doc`
+1. `src`: hier befinden sich die Quelldateien des Schemas sowie Teile der Dokumentation (`.md`), die nicht Teil des ODDs sind
+2. `tests`: der Name sagt es
+3. `build`: dieser Ordner wird dynamisch generiert und steht nicht unter Versionskontrolle; hier befinden sich die kompilierten Schemadateien sowie die HTML-Doku
+
+#### `src/docs`
 
 Siehe [Erzeugung der Dokumentation](#erzeugung-der-dokumentation).
 
-#### `src`
+#### `src/schema`
 
-- der Unterordner `lib` enthält als git-Submodule die tei-Stylesheets; die verwendete Branch ist in der Datei `.gitmodules` definiert
 - der Unterordner `elements` enthält die Schema-Deklarationen je Element; pro spezifizierten Element wird eine Datei nach dem Muster `name.odd.xml` erstellt – sofern verschiedene Spezifikationen für unt. Typen (Einleitung, Transkripte, etc.) festgelegt werden, wird der Typ mit `-type` an den Namen angehängt
-- der Unterordner `common` enthält Spezifikationen, die von verschiedenen Teilen des Schemas wiederverwendet werden
+- der Unterordner `commons` enthält Spezifikationen, die von verschiedenen Teilen des Schemas wiederverwendet werden
   - `classes.odd.xml`: Klassendefinitionen
   - `constrains.odd.xml`: globale Schematron-Regeln
   - `content.odd.xml`: Inhaltstypen
@@ -81,6 +104,7 @@ Siehe [Erzeugung der Dokumentation](#erzeugung-der-dokumentation).
 - [mkdocs](https://www.mkdocs.org)
 - [poetry](https://python-poetry.org)
 - [pre-commit](https://pre-commit.com)
+- [pydantic](https://pydantic.dev)
 - [pytest](https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html)
 - [saxonche](https://pypi.org/project/saxonche/)
 - [TEI ODD](https://tei-c.org/guidelines/customization/getting-started-with-p5-odds/)
@@ -219,7 +243,7 @@ def test_text(
 Sollen nur die Tests eines Elements ausgeführt werden, dann kann dazu folgender Befehl verwendet werden:
 
 ```sh
-run test test/elements/test_cell.py
+run test tests/src/schema/elements/test_cell.py
 ```
 
 ### Schema erzeugen
@@ -248,9 +272,9 @@ Die Dokumentation für das Schema zur Validierung der Transkriptionen der ‚St�
 Die Quelldateien für die Dokumentation sind einerseits die einzelnen Elementdefinitionen, diese befinden sich `/src/elements` und andererseits spezifische Dateien für die Dokuseite:
 
 - `mkdocs.yml`: Konfigurationsdatei für `mkdocs`; enthält ebenso Übersetzungen für die Navigation
-- `utils/odd2md.py`: Python-Skript zur Umwandlung der ODD-Datei in einzelne Markdown-Dateien je Element (Quelle ist ein kompiliertes ODD)
-- `utils/hook.py`: Hook (‚Event-Skript‘), welches von `mkdocs` beim Start aufgerufen wird – der Hook bindet wiederum `odd2md.py` ein
-- `docs`: grundlegende Quelldateien für die Dokuseite
+- `utils/docs/odd2md.py`: Python-Skript zur Umwandlung der ODD-Datei in einzelne Markdown-Dateien je Element (Quelle ist ein kompiliertes ODD)
+- `utils/docs/doc_hooks.py`: Hook (‚Event-Skript‘), welches von `mkdocs` beim Start aufgerufen wird – der Hook bindet wiederum `odd2md.py` ein
+- `src/docs`: grundlegende Quelldateien für die Dokuseite
   - `index.md`: Startseite (das Kürzel `.de` oder `.fr` verweist auf die jeweilige Sprachversion)
   - `assets`: CSS, Bilddateien usw.
   - `base`: Markdowndateien mit statischen Beschreibungstexten (bspw. Datierungsrichtlinien)
