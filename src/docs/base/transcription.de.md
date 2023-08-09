@@ -78,29 +78,72 @@ Nasalstrich über m in Kombination mit b/p wird ignoriert: «nempt» (statt «ne
 
 [to do [Datei:Nempt.PNG]]
 
-In französischen Texten wird die Wiederholung von Anfangsbuchstaben beibehalten, aber getrennt vom vorherigen Wort, an das er möglicherweise angehängt wurde: 
+In französischen Texten wird die Wiederholung von Anfangsbuchstaben beibehalten, aber getrennt vom vorherigen Wort, an das er möglicherweise angehängt wurde. 
+Handelt es sich hingegen um einen Ausdruck, der in die Umgangssprache eingegangen ist, wird die Agglutination beibehalten. Wenn der Ausdruck z. B. «illiaz» (für «il y a») im Ausgangstext agglutiniert ist, sollte er gemäss Vorlage transkribiert werden (und nicht «ill i az»).
 
-Beispiel: `«a sses parents» (und nicht «asses parents»)`
+Beispiele: `«a sses parents» (und nicht «asses parents»), «assavoir» (und nicht «a ssavoir»)`
 
-Handelt es sich hingegen um einen Ausdruck, der in die Umgangssprache eingegangen ist, wird die Agglutination beibehalten, wie z. B. «assavoir». Wenn der Ausdruck z. B. «illiaz» (für «il y a») im Ausgangstext agglutiniert ist, sollte er gemäss Vorlage transkribiert werden (und nicht «ill i az»).
 
 ### 1.3 Buchstaben in Form oder Verwendung vom heutigen Gebrauch abweichend
 
 #### 1.3.1 Vokale
  
-- e caudata (ę) wird im Lateinischen vom gewöhnlichen e unterschieden. – Die Gelehrten des 17. und 18. Jahrhunderts neigten aufgrund von Hyperkorrekturen dazu, die Diphthongierung zu bevorzugen. Wenn ein mittelalterliches Original erhalten ist, sollte die Schreibweise des Ausgangstextes beibehalten werden, d. h. das «ę», das in späteren Kopien wahrscheinlich als «æ» geschrieben wurde, sollte wiedergegeben werden. Wenn nur die spätere Abschrift existiert, sollte man sich an die Schreibweise dieser Abschrift halten und den Diphthong getreu wiedergeben.
-- I und j werden nicht entsprechend der Schaftlänge unterschieden. Konsequente graphematische Unterscheidung zwischen
-  vokalischem i vor Konsonanten und konsonantischem j vor Vokalen. Bei Fällen, in denen lediglich ein Dehnungs-h zwischen j und Vollvokal geschoben wird (wie z. B. jhe
-  und jhenigen), soll das j nicht durch ein i ersetzt werden. –  In lateinischen Texten wird y oder j als i wiedergegeben (Ausnahme: Eigennamen, z. B. Johannes).
-- Distinktionszeichen über u, welche einer Verwechslung mit n vorbeugen sollen, werden nicht wiedergegeben.
-- U und v werden unabhängig von der Vorlage lautgetreu wiedergegeben, nämlich der Vokal mit u und der Konsonant mit v.
-- Zwei Punkte oder ein Strich über y werden weggelassen.
+##### e caudata (ę)
+e caudata (ę) wird im Lateinischen vom gewöhnlichen e unterschieden.
+
+Die Gelehrten des 17. und 18. Jahrhunderts neigten aufgrund von Hyperkorrekturen dazu, die Diphthongierung zu bevorzugen. Wenn ein mittelalterliches Original erhalten ist, sollte die Schreibweise des Ausgangstextes beibehalten werden, d. h. das «ę», das in späteren Kopien wahrscheinlich als «æ» geschrieben wurde, sollte wiedergegeben werden. Wenn nur die spätere Abschrift existiert, sollte man sich an die Schreibweise dieser Abschrift halten und den Diphthong getreu wiedergeben.
+
+##### I und j
+I und j werden nicht entsprechend der Schaftlänge unterschieden. Konsequente graphematische Unterscheidung zwischen
+  vokalischem i vor Konsonanten und konsonantischem j vor Vokalen. Bei Fällen, in denen lediglich ein Dehnungs-h zwischen j und Vollvokal geschoben wird , soll das j nicht durch ein i ersetzt werden. 
+  
+  Wenn ein französischer Text die Schreibweise «ieu» etnhält, ist es aus Gründen des Verständnisses besser, «jeu» zu schreiben. Es gilt also, die Bedeutung zu berücksichtigen und Entscheidungen zu treffen, die den Text lesbarer machen. Beispielsweise muss zwischen «majeur» und «maieur» (Bürgermeister) unterschieden werden.
+  
+ Beispiele: `«ich» (und nicht «jch»), «jeu» (und nicht «ieu»); aber «jhe» (und nicht «ihe»),  «jhenige» (und nicht «ihenige»)`
+ 
+ In lateinischen Texten wird y oder j als i wiedergegeben. Das gilt auch für römische Zahlen. Eine Ausnahme sind Eigennamen. 
+ 
+ Beispiele: `«remedii» (und nicht «remedij»),  «xviii» (und nicht «xviij»; aber «Johannes» (und nicht «Iohannes»)`
+ 
+##### u und v
+U und v werden unabhängig von der Vorlage lautgetreu wiedergegeben, nämlich der Vokal mit u und der Konsonant mit v.
+
+Im Lateinischen sollte ein u, das als Konsonant fungiert, mit v transkribiert werden, und die Schreibweise u beibehalten werden, wenn es als Vokal fungiert. 
+Diese Regel gilt im Prinzip auch für das Französische. Ausnahmen können jedoch gerechtfertigt sein. In einem Text aus dem 12. Jahrhundert, der in Altfranzösisch verfasst wurde, kann man beispielsweise die Schreibweise «il savroit» zulassen; in einem Text in Mittelfranzösisch aus dem 15. Jahrhundert sollte man «il sauroit» schreiben.
+
+##### uu
+Die Schreibweise uu sollte im Lateinischen mit w wiedergegeben werden, wenn es sich um einen velaren labialen Halbkonsonanten handelt (insbesondere in Wörtern germanischen Ursprungs). 
+
+Beispiel: `«wadium» (und nicht «uuadium»)`
+
+Ansonsten kann die Wiedergabe je nach Fall variieren (uu, uv, vu).
+
+Beispiele: `equus, euvangelium, vulgaris`
+
+Im Französischen ist die Regel im Prinzip die gleiche: Man kann jedoch präzisieren, dass  in allen Fällen vu geschrieben wird, wenn u ein Vokal ist oder das erste Element eines Diphthongs darstellt. 
+
+Beispiele: `vulgaire, vueil, vuider, nouvel`
+
+In manchen Fällen muss der Bearbeitende eine Wahl treffen, die er konsequent durchhalten muss, insbesondere wenn er mit Vornamen konfrontiert ist: Vuillelmus versus Willelmus, Vuibert versus Wibert. Der sprachliche Kontext kann bei der Auswahl natürlich hilfreich sein, ist aber nicht immer einfach, vor allem in zweisprachigen Regionen wie Freiburg.
+
+##### y
+Zwei Punkte oder ein Strich über y werden weggelassen. Wenn ein Wort in einem mittelalterlichen lateinischen Text auf etwas endet, das visuell wie ein y aussieht, muss es mit einem Doppel-i am Ende transkribiert werden.
+
+Beispiele: `«monasterii» (und nicht «monastery»), julii (und nicht «july»)`
 
 #### 1.3.2 Konsonanten bzw. Buchstabenverbindungen
 
-- In lateinischen Texten wird c / t  gemäss Vorlage transkribiert, falls nicht unterscheidbar nach der Praxis des Schreibers an anderen Stellen, sonst nach Wörterbuch. 
-- Der Gebrauch von n anstelle von m (z. B. cunque) in lateinischen Texten wird übernommen, wenn der Buchstabe ausgeschrieben ist.
-- Von den verschiedenen Schreibweisen des Buchstabens s (normal, lang, ß) wird nur ß als besondere Form unterschieden.
+##### c / t
+In lateinischen Texten wird c / t  gemäss Vorlage transkribiert. Wenn es nicht möglich ist, zwischen c und t zu unterscheiden, wird in der Regel die klassische Form bevorzugt. 
+
+Beispiel:   `«cognitio» (und nicht «cognicio») ` 
+
+##### n / m
+
+Der Gebrauch von n anstelle von m (z. B. cunque) in lateinischen Texten wird übernommen, wenn der Buchstabe ausgeschrieben ist.
+
+##### s / ß
+Von den verschiedenen Schreibweisen des Buchstabens s (normal, lang, ß) wird nur ß als besondere Form unterschieden.
   Langes s wird als gewöhnliches s geschrieben. Dreifache s (sss, sß, ßs) werden mit ss bzw. ß transkribiert (Dreifaches
   s wird zu ss, die Kombinationen sß, ßs zu ß.). Anlautendes ß wird als s wiedergegeben. Ist am langen s noch ein
   angefügtes rundes s erkennbar, wird von einer Ligatur ausgegangen und «ss» transkribiert. Sind hingegen keine Ansätze
@@ -114,18 +157,109 @@ Beispiel ß mit Bindebogen
 Beispiel mit ss und ß
 [to do [Datei:Beispiel mi ss und ß.gif]]
 
-- In lateinischen Texten wird das Schluss-s als einfaches s transkribiert und nicht als Scharf-s, da es sich lediglich um eine Ligatur handelt. 
-- cz, sz, tz werden gemäss Vorlage wiedergegeben. Lassen sich t und c nicht eindeutig unterscheiden, dann wird tz
+ In lateinischen Texten wird das Schluss-s als einfaches s transkribiert und nicht als Scharf-s, da es sich lediglich um eine Ligatur handelt. 
+
+##### cz / sz /tz
+ Cz, sz, tz werden gemäss Vorlage wiedergegeben. Lassen sich t und c nicht eindeutig unterscheiden, dann wird tz
   verwendet.
-- dz, dc, wz etc. werden gemäss Vorlage wiedergegeben oder aufgelöst.
 
+##### dz / dc /wz
+Dz, dc, wz etc. werden gemäss Vorlage wiedergegeben oder gemäss der modernen Schreibweise des entsprechenden Wortes oder der klassischen Schreibweise aufgelöst, wenn der Text auf Lateinisch ist.
 
-### 1. 4 Diakritische Zeichen
+Beispiel: `«vz» wird stillschweigend zu «videlicet» aufgelöst.`
 
-Diakritische Zeichen und übergeschriebene Buchstaben (z. B. aͤ, uͦ etc.) werden buchstabengetreu wiedergegeben.
+### 1. 4 Diakritische Zeichen 
 
-Verwendung der Unicode-Sonderzeichen und der SSRQ-Schrift Lexia Fontes (Tastaturbelegung für das einfache Tippen
-der kombinierten Zeichen liegt für PC und Mac vor).
+Für diakritische Zeichen verwenden wir die Unicode-Sonderzeichen, die SSRQ-Schrift Lexia Fontes sowie eine Tastaturbelegung, die das einfache Tippen
+der kombinierten Zeichen erleichtert.
+
+#### 1.4.1 Deutsch
+
+Diakritische Zeichen und übergeschriebene Buchstaben (z. B. aͤ, uͦ etc.) der deutschsprachigen Texte werden buchstabengetreu wiedergegeben. 
+
+Distinktionszeichen über u, die in deutschen Texten einer Verwechslung mit n vorbeugen sollen, werden nicht wiedergegeben.
+
+#### 1.4.2 Französisch
+
+Die diakritische Zeichen (z. B. Cedille «ç», Trema, Apostroph etc.) des Französischen werden gemäss dem modernen Gebrauch verwendet, sofern keine Ausnahmen vorliegen.
+
+##### Akzente
+
+Bei der Akzentsetzung sollte bei einem Textkorpus ein kohärentes System angewandt werden, das sich so weit wie möglich an den grafischen und typografischen Gepflogenheiten der jeweiligen Zeit orientiert. 
+
+###### Mittelalter
+Bei mittelalterlichen Handschriften sollten keine Akzente hinzugefügt werden, ausser wenn dadurch homophone Verwechslungen aufgrund des atonalen e und des tonischen e vermieden werden können. So erhalten Endsilben auf -e oder -es einen Akzent. 
+
+Beispiele:`  «aprés» meint «après» (nach), während «apres» für «âpres» (bitter) stehen würde; «leve» meint «lève», während «levé» das Partizip des Verbs «lever» (hochheben) ist ` 
+
+Der Artikel «des» wird immer unverändert transkribiert.
+
+Beispiel: ` «des»  (und nicht «dés»)`
+
+###### 16. Jahrhundert (bis in die 1580er Jahre)
+Für Texte aus dem 16. Jahrhundert gelten die Standards, die für die Edition mittelalterlicher Texte festgelegt wurden. Es wird nur der Akzent auf dem Buchstaben e verwendet, um zwischen tonischem und atonischem e  zu unterscheiden. 
+
+Beispiele: `  né, tombé, vous avés, aprés, procés`
+
+Endungen auf -ee werden nicht betont.
+
+Beispiele: `nee, armee `
+
+###### 17. Jahrhundert (ca. 1580 bis  ca. 1715)
+Bei der Bearbeitung von Handschriften aus dem 17. Jahrhundert können Akzente in grösserem Umfang verwendet werden. Insbesondere werden die Endungen auf -ée betont.
+
+ Beispiele: `   née, armée `
+
+Der Akzent auf den Buchstaben a, e und u in einsilbigen Präpositionen und Adverbien wird verwendet, um sie von homographen Wörtern  zu unterscheiden. 
+ 
+ Beispiele: `   à, là, dès, lès, où`
+ 
+Dagegen wird der Buchstabe e innerhalb eines Wortes nicht betont.
+
+Beispiele: `maniere, pere, present`
+
+###### 18. Jahrhundert 
+
+Für Handschriften des 18. Jahrhunderts wird der heutige Sprachgebrauch angewendet.
+
+##### Apostroph
+
+Um die Bedeutung eines Textes zu verdeutlichen und ihn verständlicher zu machen, ist das Hinzufügen von Apostrophen unerlässlich. Beispielsweise muss die Schreibweise «se» für «c'est» mit «s'e» wiedergegeben werden. Da das Pronomen der dritten Person Singular und Plural oft auf «i» reduziert wird, muss ihm ein Apostroph vorangestellt werden, wenn es mit einem Relativpronomen oder einer Konjunktion verbunden ist, damit «qui» nicht mit «qu'il» verwechselt wird. 
+
+Beispiel: `Item ledit detenu a dit et confesé que illiaz quattre ans qu'i deroba une boiste avec l'estuy.`
+
+Das oben genannte Beispiel zeigt auch, dass ein Apostroph hinzugefügt werden sollte, um den bestimmten Artikel, der mit einem Substantiv verbunden sein könnte, zu trennen. 
+
+Beispiel: ` «l'estuy» (und nicht «lestuy»)`
+
+Wenn die Kombination «quil» als relative Präposition fungiert, sollte sie so transkribiert werden. 
+
+Beispiel:  `Item for celuy quil allat querir le maistre d'ovre. `
+
+##### ç
+Dem c, das einen phonetischen Wert als s hat, soll eine Cedille hinzugefügt werden.
+
+Beispiele:  `«François» (und nicht «Francois»), «il sçait« (und nicht «il scait»)`
+
+##### Trema
+Grundsätzlich sollte das Trema entfernt werden, wenn es in Wörtern vorkommt, die heute ohne Trema geschrieben werden (z. B. queüe, veü). 
+Dasselbe gilt für ÿ (vgl. weiter oben). Bei mittelalterlichen Texten kann das Trema jedoch eine phonetische Funktion haben (literarische Texte), in diesem Fall wird es beibehalten.
+
+#### 1.4.3 Italienisch
+
+Die diakritische Zeichen (z. B. Apostroph) des Italienischen werden gemäss dem modernen Gebrauch verwendet, sofern keine Ausnahmen vorliegen.
+
+#### 1.4.4 Latein
+
+Die Schreibweise e caudata (ę) wird beibehalten (vgl. weiter oben). 
+
+### 1. 5 Ligaturen
+
+Auf die Verwendung von Ligaturen wird in der Regel verzichtet. 
+
+Ligaturen können für die Grapheme ae (æ) und oe (œ) verwendet werden, wenn die Diphthonge zu einem langen Vokal monophthongiert wurden. Zum Beispiel kann anstelle von e caudata (ę) in einer späteren Kopie durch Hyperkorrektur die Schreibweise «ae» entstehen, die in diesem Fall mit «æ» transkribiert werden kann.
+
+Der Bearbeitende muss sich darüber im Klaren sein, dass ein mit «æ» transkribiertes «ae» in der digitalen Textverarbeitung nicht denselben Wert hat und nicht als identisches Graphem erkannt wird. Dasselbe gilt für die Ligatur «fl»: Eine Volltextsuche nach dem Wort «f-l-o-r-i-n» führt zu keinem Ergebnis, wenn es die Ligatur «fl» enthält, die als ein  Buchstabe betrachtet wird: «fl-o-r-i-n».
 
 ## 2 Zahlen und Ziffern
 
@@ -133,7 +267,7 @@ Einzelnummern und römische Zahlen werden gemäss Vorlage ziffern- resp. buchsta
 werden kleingeschrieben. Römische Zahlen und Zahlwörter werden mit [[num]](../elements/num.de.md) und @value
 ausgezeichnet.
 
-`[to do: Beispiele mit röm. Ziffern in num  hinzufügen, dann kann dieses Beispiel hier gelöscht werden]<num value="41">xlj</num>`
+`[to do: Beispiele mit röm. Ziffern in num  hinzufügen, dann kann dieses Beispiel hier gelöscht werden]<num value="41">xli</num>`
 
 Zur Bezeichnung von Währungen werden Sonderzeichen
 verwendet.
@@ -159,53 +293,127 @@ Gattungsnamen werden kleingeschrieben. Der Bearbeitende entscheidet, ob es sich 
 Beispiele: `oben am bühel, eidgenossen (wenn es sich wirklich um die schweizerischen Eidgenossen handelt, wird
 Eidgenossen grossgeschrieben), walser`
 
+Wenn ein Substantiv oder eine Gruppe von Substantiven eine Institution bezeichnet, wird es im Französischen grossgeschrieben.
+
+Beispiele: `Le Conseil de Ville, le greffier de la Ville, Ecclesia (aber ecclesia Sancti Nicolaii), la Curia regis, la Cour du roi, la Chambre apostolique des comptes `
+
 ### 3.2 Respektsbezeichnungen und Anreden
 
-Respektsbezeichnungen und Anreden werden kleingeschrieben.
+Respektsbezeichnungen, Titel und Anreden werden in allen Sprachen kleingeschrieben.
 
-Beispiele: `üwer gnaden, gott, deus, dominus, virgo `
+Beispiele: `üwer gnaden,  messeigneurs, le roy, rex Francorum, rex Francie, monsieur l'ambassadeur, monsieur le prevost des marchans de la ville de Paris, honorable et provide homme Pierre Nonans, le cardinal Richelieu, le duc de Savoie, l'abbé prieur de la communauté des Carmes, pontifex Romanus, vostre excellence, excellentia sua, Karolus imperator `
+
+Im Altfranzösischen und Lateinischen wird im Gegensatz zum Deutschen der Name Gottes  gross geschrieben, auch wenn es sich um einen Begriff handelt, der ihn absolut definiert.
+
+Beispiele: `gott, Seigneur, Redemptor, Filius, Dominus `
 
 ### 3.3 Heiligennamen, Festbezeichnungen
 
- Bei Daten und Terminen werden Wochentage und Monatsbezeichnungen sowie Beifügungen zu Heiligennamen und Festbezeichnungen immer kleingeschrieben, Heiligennamen üblicherweise grossgeschrieben.
+#### Deutsch 
+
+ Im Deutschen werden bei Daten und Terminen Wochentage und Monatsbezeichnungen sowie Beifügungen zu Heiligennamen und Festbezeichnungen immer kleingeschrieben, Heiligennamen üblicherweise grossgeschrieben.
 
 Beispiele: `sonntag, idus aprilis, unser frowen tag ze dem ärnde, erzengel Michael, st. Johann baptiste, ostern,
 liechtmess, invocavit, uff donrstag nach sant Jacobs des meren zwölffbotten tag, uff donstag vor unser lieben frowen `
 
-### 3.4 Mehrteilige Eigennamen
+#### Französisch
 
-Bei zusammengesetzten zwei- oder mehrteiligen Eigennamen werden die Bestandteile grossgeschrieben. Bei adjektivischem Gebrauch im Lateinischen werden Eigennamen grossgeschrieben. 
+Auch im Franzöischen werden Wochentage und Monate bei Daten und Fristen immer kleingeschrieben. Religiöse Feste hingegen werden sowohl im Lateinischen als auch im Altfranzösischen grossgeschrieben.
 
-Beispiele: `zum Grossen Münster, an der Underen Straass, ein acker ze dem Bösen Möslin, St. Pelayenstift, episcopus Constantiensis 
+Bespiele: `festum Sancti Michaelis, la feste de la Sant Johan, a festo Nativitatis, Carnisprivium, Adventus, Quatuor tempora, Rogationes, Quadragesima ` 
 
-Die Entscheidung, was ein Flurname ist und wo ein reiner Appellativ vorliegt, ist teilweise schwierig (z. B. egg oder
-Egg?). Viele Orts- und Flurnamen sind mit Hilfe einer alten Karte 1:25'000 oder mit Flurnamensbücher ([ortsnamen.ch](https://ortsnamen.ch/))
+Bei den Festen von Heiligen ist es nicht angebracht, einen Bindestrich zu setzen, wie es im modernen Französisch der Fall wäre (la Saint-Jean). Das Epitheton «saint» wird nicht grossgeschrieben, wenn man von der Person des Heiligen selbst spricht, aber es wird grossgeschrieben, wenn man von seinem Fest spricht.
+
+Beispiele: `sainct Jehan, prie por nous; a la Sainct Jehan `
+
+Heilige Namen werden grossgeschrieben.
+
+Beispiele: ` Deus, le Seigneur, Jesus Christus, in nomine Domini et Filii et Spiritus Sancti, au nom de nostre seigneur Jesu Crist, in nomine Creatoris, in nomine sancte et individue Trinitatis, la saincte Vierge, beata Maria virginis, beata Virgo `
+
+In zusammengesetzten Ausdrücken wird nur das erste Wort grossgeschrieben.
+
+Beispiele: `a Mey quaresma, die qua cantabitur Letare, le jeudi après Jubilate, Rami palmarum, Omnes sancti `
+
+### 3.4 Adjektive (Latein)
+
+Adjektive, die auf Orts- oder Volksnamen gebildet werden, werden im Lateinischen grossgeschrieben, wenn sie sich auf eine Institution, eine Funktion, eine natürliche oder juristische Person usw. beziehen. 
+
+Beispiele: `episcopus Constantiensis. episcopus Lausannensis; maior Lustriaci; diocesis Sedunensis; comes Flandrensis; ecclesia Gebennensis `
+
+Im Gegensatz dazu wird das Adjektiv klein geschrieben, wenn es sich auf ein Objekt (z. B. Währung, Mass) bezieht.
+
+Beispiele: `quinque solidos lausannenses oder quinque solidos lausannensium (im Genitiv Plural, wenn der Ausdruck «bonorum lausannensium» impliziert ist); ad mensuram lausannensem; consuetudines lausannenses, lingua gallica `
+
+### 3.5 Mehrteilige Eigennamen
+
+Bei zusammengesetzten  Eigennamen (vor allem Ortsnamen), die aus zwei oder mehr Teilen bestehen, wird jeder Bestandteil grossgeschrieben.
+
+Beispiele: `zum Grossen Münster, an der Underen Straass, ein acker ze dem Bösen Möslin, St. Pelayenstift, Farvanye lo Pictet (Farvagny-le-Petit), Dompnus Martinus (Dommartin), Lo Landiron (Le Landeron), il a traversé le pont Neuf, il habite la rue des Bouchers, il a acheté un verger dans le quartier des Jardins suspendus `
+
+Die Entscheidung, was ein Flurname ist und wo ein reiner Appellativ vorliegt, ist nicht immer einfach. Viele Orts- und Flurnamen sind mit Hilfe einer alten Karte im Massstab 1:25'000 oder mit Flurnamensbücher ([ortsnamen.ch](https://ortsnamen.ch/))
 heute noch zu identifizieren, so dass man dort mit der Grossschreibung sicher richtig liegt.
 
-### 3.5 Zusammengesetzte Familiennamen
+Beispiele: `Flurname «Egg», aber im zweiten Fall «egg». Ein Feld, das «eis Pereretz» oder «im Sapeit» liegt,  dagegen schreibt man «la domus dicta de bont». `
 
-Bei zusammengesetzten Familiennamen, die im Text in zwei oder mehreren Bestandteilen erscheinen, ist Kleinschreibung des
-Namensattributs (nameLink) empfehlenswert.
+### 3.6 Zusammengesetzte Familiennamen
 
-Beispiele: `Hans am Herd, Hartman von Werdenberg, Peter a Pro 
+Bei zusammengesetzten Familiennamen, die im Text in zwei oder mehreren Bestandteilen vorkommen, ist Kleinschreibung des
+Namensattributs empfehlenswert. Wird das Namensattribut eines Familiennamens in der heutigen Schreibweise gross geschrieben, ist dies auch so in der Edition zu handhaben.
 
-### 3.6 Vorlage
+Beispiele: `Hartman von Werdenberg, Peter a Pro, aber Hans Zum Brunnen (Zumbrunnen), Beat Zur Louben (Zurlauben) `
 
-Bei handschriftlichen Texten des 19. Jahrhunderts sollte man zu Gross- und Kleinschreibung entsprechend der Vorlage übergehen.
+### 3.7 Vorlage
+
+Bei handschriftlichen Texten des 19. Jahrhunderts sollte man im Deutschen zu Gross- und Kleinschreibung entsprechend der Vorlage und im Französischen gemäss heutiger Orthografie übergehen.
 
 ## 4 Zusammen- und Getrenntschreibung
+
+Ob ein Wort gemäss Vorlage zusammen- oder getrennt geschrieben wird, ist nicht immer einfach zu entscheiden. Ein einheitliches System für eine Handschrift, die ediert wird, ist zu befolgen.
+
+Bindestriche (Auslassungsstriche) werden berücksichtigt und in der heute gebräuchlichen Form dargestellt. Bei Worttrennungen durch Zeilenwechsel in der Vorlage – ausgezeichnet mit  [[lb]](../elements/lb.de.md) @break="no" – entfällt in der
+Textwiedergabe der Trennstrich.
+
+Bei Flur- und Ortsnamen sollte die Zusammen- und Getrenntschreibung immer der Vorlage folgen. Bindestriche dürfen nicht verwendet werden. 
+
+Beispiel: `apud Novam Villam (und nicht Novamvillam oder Novam-Villam)`
+
+### Deutsch 
 
 Grundsätzlich folgen Zusammen- und Getrenntschreibung der Vorlage. In Zweifelsfällen kommt die heutige Schreibweise zur Anwendung.  Bei getrennt geschriebenen Komposita kann man dem Handschriftenbefund folgen, wenn wirklich klar und eindeutig getrennt geschrieben wird. Auch bei losen Wortverbindungen, die für heutige echte Komposita stehen, kann man
 der Zusammenschreibung in der Handschrift folgen (z. B. hohengerichten). Ebenso mag man bei stehenden Wendungen wie
 «von alterhar» oder «vor handen sein» (für vorhanden sein) bei der von der heutigen Rechtschreibung abweichenden
 Schreibweise bleiben, sofern solche Schreibweisen nicht in den Handschriften selbst die Ausnahmen bilden.
 
-Bei Flur- und Ortsnamen sollte die Zusammen- und Getrenntschreibung immer der Vorlage folgen.
+### Französisch
+Zusammengeschriebene Wörter werden entsprechend den aktuellen Rechtschreiberegeln getrennt.
 
-Bindestriche (Auslassungsstriche) werden berücksichtigt und in der heute gebräuchlichen Form dargestellt. Bei Worttrennungen durch Zeilenwechsel in der Vorlage – ausgezeichnet mit  [[lb]](../elements/lb.de.md) @break="no" – entfällt in der
-Textwiedergabe der Trennstrich.
+Beispiel: `treshumble -> tres humble `
 
-Lateinische Begriffe, die einzeln dekliniert werden können, werden getrennt geschrieben (z. B. Jahreszahlen, die in Papsturkunden in der Regel zusammen geschrieben sind). Wendungen mit Genitiv-Attribut werden in Einzelfällen als Kompositum zusammengeschrieben (z. B. christifideles). 
+Getrennt geschriebene Wörter, die später zu einem einzigen Wort zusammenwachsen (hauptsächlich Adverbien und Konjunktionen wie z. B. aussi tôt, en fin, long tems, lors que, par tout, sur tout, tous jours), sollten  nicht auseinander geschrieben werden. Es gilt der allgemeine Grundsatz, dass  die Zusammenschreibung dem heutigen Sprachgebrauch folgt.
+
+Beispiele: `Madame, Messire, Lieutenant, Mainmorte, Vichastelain `
+
+Es ist es sinnvoll, "par devant", "demi arpent", "ci annexé" ohne Bindestrich zu schreiben. 
+
+Ob ein Wort gemäss Vorlage zusammen- oder getrennt geschrieben wird, ist nicht immer einfach zu entscheiden: Man kann «toujours» schreiben, sollte aber «tous jours» oder «touz jours» vorziehen; ebenso ist «des ore en avant»  «dorenavant» oder «desorenavant» vorzuziehen. Dasselbe gilt für «minuit"», das besser als «mie nuit» auseinandergeschrieben wird.
+
+### Latein
+Lateinische Begriffe, die einzeln dekliniert werden können, werden getrennt geschrieben (z. B. Jahreszahlen, die in Papsturkunden in der Regel zusammen geschrieben sind).
+
+Beispiele:  `mortuam manum, aber mortuamanum` 
+
+Wendungen mit Genitiv-Attribut werden in Einzelfällen als Kompositum zusammengeschrieben.
+
+Beispiel:  `christifideles` 
+
+Wenn die Deklination des ersten Kompositums weggefallen ist, ist dies ein Zeichen für die Verschmelzung der beiden Elemente. Ein solches Wort muss dann zusammengefasst wiedergegeben werden.
+
+Beispiel: `curia locumtenentis  ` 
+
+Wenn bei einem Orts- oder Flurnamen die Beugung  weggefallen ist, was zeigt, dass die beiden ursprünglichen Begriffe zu einem einzigen geworden sind, sollte man den Namen auch zusammenschreiben.
+
+Beispiel: `apud Novavillam ` 
+
 
 ## 5 Hervorhebungen
 
@@ -226,17 +434,25 @@ Typische, im selben Schriftstück oder in mehreren Schriftstücken wiederkehrend
 
 `to do: Beispiel in abbr  hinzufügen, dann kann dieses Beispiel hier gelöscht werden<abbr>etc</abbr>`
 
-Kürzel, wie lobl., m. g. h., tit. oder s. v., werden konsequent als Kürzel belassen und mit [[abbr]](../elements/abbr.de.md) ausgezeichnet. Die Auflösung erfolgt im Abkürzungsverzeichns.
+Kürzel  werden konsequent als Kürzel belassen und mit [[abbr]](../elements/abbr.de.md) ausgezeichnet. Die Auflösung erfolgt im Abkürzungsverzeichns.
+
+Beispiele:  `lobl., m. g. h., tit.,  s. v., LL.EE., MM., no, art., etc.  `
 
 ### 6.2 Abbkürzungen auflösen
+
+Auflösungen wurden früher in Zweifelsfällen in [   ] gesetzt, in der digitalen Edition werden sie
+mit [[choice]](../elements/choice.de.md), [[abbr]](../elements/abbr.de.md) und [[expan]](../elements/expan.de.md)
+getaggt. 
 
 Abkürzungen in der Textvorlage werden aufgelöst, wenn es möglich und sinnvoll ist. Orthographische Gepflogenheiten des
 Schreibers werden ohne besondere Kennzeichnung berücksichtigt. Einige Abkürzungen (wie z. B. Ao = anno, dz= das) sowie
 Endungen werden stillschweigend aufgelöst. 
 
-Auflösungen wurden früher in Zweifelsfällen in [   ] gesetzt, in der digitalen Edition werden sie
-mit [[choice]](../elements/choice.de.md), [[abbr]](../elements/abbr.de.md) und [[expan]](../elements/expan.de.md)
-getaggt.
+In einigen mehrdeutigen Fällen ist es besser, ein abgekürztes Wort unverändert wiederzugeben.
+
+Beispiele:  `sr (sieur oder seigneur?), monsr (monsieur oder monseigneur?), me (maître oder messire?) `
+
+Bei der Auflösung von Abkürzungen sollte so weit wie möglich auf Schreibweisen zurückgegriffen werden, die in anderen Teilen des bearbeiteten Textes eindeutig belegt sind, ansonsten ist die klassische Form zu bevorzugen (insbesondere für Latein).  In jedem Fall sollte man konsequent bleiben.
 
 Die gebräuchlichen lateinischen Abkürzungen werden stillschweigend aufgelöst, sofern nicht Zweifel an der korrekten Auflösung bestehen. Die Auflösung erfolgt gemäss (mittellateinischem) Wörterbuch, ausser bei abweichender Praxis des Schreibers.
 
