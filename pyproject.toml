@@ -47,7 +47,7 @@ files = ["utils/**/*.py"]
 
 [tool.ruff]
 ignore = ["E501"]
-select = ["E", "F", "I001"]
+select = ["C90", "E", "F", "I001", "RET", "UP"]
 
 [build-system]
 build-backend = "poetry.core.masonry.api"

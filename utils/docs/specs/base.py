@@ -176,7 +176,7 @@ class BaseSpec:
 
         element_attributes = (
             el_attr
-            if len((el_attr := att_list.findall("./tei:attDef", namespaces=NS_MAP))) > 0
+            if len(el_attr := att_list.findall("./tei:attDef", namespaces=NS_MAP)) > 0
             else None
         )
 

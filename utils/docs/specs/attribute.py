@@ -41,7 +41,7 @@ class AttributeSpec:
             doc (Document): The document to add the content values to.
         """
         if self.content is None:
-            return None
+            return
 
         output: list[str] = []
 
@@ -107,10 +107,10 @@ class AttributeSpec:
         desc = self.attr_element.find("./tei:desc", namespaces=NS_MAP)
 
         if desc is not None:
-            return None
+            return
 
         if self.classes is None:
-            return None
+            return
 
         class_descriptions: list[ET.Element] = []
 

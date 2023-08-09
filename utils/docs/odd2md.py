@@ -1,8 +1,6 @@
 import xml.etree.ElementTree as ET
+from collections.abc import Iterator
 from pathlib import Path
-from typing import (
-    Iterator,
-)
 
 from utils.docs.specs.abstract import ODDElement
 from utils.docs.specs.dataspec import DataSpec

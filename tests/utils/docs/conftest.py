@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-from typing import Callable, Optional
+from collections.abc import Callable
 
 import pytest
 from saxonche import PySaxonProcessor, PyXdmItem
@@ -11,14 +11,14 @@ EL_FINDER = Callable[[str], ET.Element | None]
 
 
 def check_result_with_xpath(
-    xml: str, xpath: str, expected_result: Optional[bool]
-) -> Optional[PyXdmItem]:
+    xml: str, xpath: str, expected_result: bool | None
+) -> PyXdmItem | None:
     with PySaxonProcessor(license=False) as proc:
         xml_node = proc.parse_xml(xml_text=xml)
         xp = proc.new_xpath_processor()
         xp.declare_namespace(prefix="tei", uri="http://www.tei-c.org/ns/1.0")
         xp.set_context(xdm_item=xml_node)  # type: ignore
-        eval_result: bool | Optional[PyXdmItem] = (
+        eval_result: bool | PyXdmItem | None = (
             xp.evaluate_single(xpath)
             if expected_result is None
             else xp.effective_boolean_value(xpath)
@@ -26,11 +26,12 @@ def check_result_with_xpath(
         if expected_result is None:
             return eval_result
         assert eval_result == expected_result
+        return None
 
 
 @pytest.fixture(scope="session")
 def example_odd() -> str:
-    with open(TEST_EXAMPLE_DIR / "odd_example.xml", "r") as f:
+    with open(TEST_EXAMPLE_DIR / "odd_example.xml") as f:
         return f.read()
 
 

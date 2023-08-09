@@ -97,7 +97,7 @@ class ElementSpec(BaseSpec):
         self.attributes = self.find_attributes(components=components)
 
         if self.attributes is None:
-            return None
+            return
 
         doc.add_heading(translations["attr"], level=2)
 
@@ -126,7 +126,7 @@ class ElementSpec(BaseSpec):
 
         if self.content is None:
             doc.add_paragraph(translations["isEmpty"])
-            return None
+            return
 
         content_keys, vallists = [i for i in self.content if isinstance(i, str)], [
             i for i in self.content if isinstance(i, ET.Element)
@@ -171,7 +171,7 @@ class ElementSpec(BaseSpec):
 
         if len(examples) == 0:
             doc.add_paragraph(translations["noExamples"])
-            return None
+            return
 
         for index, example in enumerate(examples):
             title, code = self.example_to_string(example=example, lang=lang)
@@ -186,7 +186,7 @@ class ElementSpec(BaseSpec):
         list_ref = self.odd_element.find("tei:listRef", namespaces=NS_MAP)
 
         if list_ref is None:
-            return None
+            return
 
         doc.add_heading(translations["teiRef"], level=2)
 
@@ -210,7 +210,7 @@ class ElementSpec(BaseSpec):
         remarks = self.get_remarks(element=el, lang=lang)
 
         if remarks is None:
-            return None
+            return
 
         doc.add_heading(title, level=2)
 

@@ -1,7 +1,6 @@
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
 
 import tomllib
 from pydantic import BaseModel, field_validator
@@ -72,7 +71,7 @@ class Schema:
             f.write(self.rng)
 
 
-def load_config() -> Optional[SSRQConfig]:
+def load_config() -> SSRQConfig | None:
     """Load the configuration from pyproject.toml and apply some basic validation using pydantic."""
     with open(
         configs.PROJECT_DIR / "pyproject.toml",
@@ -146,9 +145,7 @@ def resolve_embedded_spec_files(doc: str) -> str:
     examples embedded via xinclude."""
 
     result_specs = resolve_specs(doc=doc)
-    result_xi = resolve_xincludes(doc=result_specs)
-
-    return result_xi
+    return resolve_xincludes(doc=result_specs)
 
 
 def check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:

@@ -113,7 +113,7 @@ def validate_odd_with_odd(
         for error in rng_validator.get_invalid():
             if (
                 error.report is not None
-                and len((msgs := filter_errors(error.report))) > 0
+                and len(msgs := filter_errors(error.report)) > 0
             ):
                 exceptions.append(
                     InvalidSpecException(

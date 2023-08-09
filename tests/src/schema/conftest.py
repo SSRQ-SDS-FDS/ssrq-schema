@@ -1,7 +1,8 @@
 import re
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable, Optional, TypeAlias
+from typing import TypeAlias
 
 import pytest
 from pyschval.main import (
@@ -61,7 +62,7 @@ class SimpleTEIWriter:
 
 def load_example(name: str) -> str:
     """Load the example file with the given name."""
-    with open(TEST_EXAMPLE_DIR / f"{name}", "r", encoding="utf-8") as f:
+    with open(TEST_EXAMPLE_DIR / f"{name}", encoding="utf-8") as f:
         return f.read()
 
 
@@ -106,7 +107,7 @@ def extract_specified_elements_for_rng(schema: SSRQSchemaType) -> list[ElName]:
     Returns:
         list[str]: A list of all specified elements – based on includes by specGrpRef.
     """
-    with open(SCHEMA_DIR / schema["entry"], "r") as sf:
+    with open(SCHEMA_DIR / schema["entry"]) as sf:
         sf = sf.read()
         specs: list[str] = re.findall(SPECIFIED_ELEMENTS, sf)
 
@@ -121,15 +122,13 @@ def odds() -> list[tuple[Schema, list[ElName]]]:
     if config is None:
         raise ValueError("No config file found")
 
-    odds = [
+    return [
         (
             odd_factory(schema, authors=config.authors),
             extract_specified_elements_for_rng(schema),
         )
         for schema in config.schemas
     ]
-
-    return odds
 
 
 @pytest.fixture(scope="session")
@@ -169,7 +168,7 @@ def main_constraints(main_schema: Schema) -> str:
 
 
 RNG_test_function: TypeAlias = Callable[
-    [str, str, str, bool, bool], Optional[RNGJingValidator]
+    [str, str, str, bool, bool], RNGJingValidator | None
 ]
 
 
@@ -211,5 +210,6 @@ def test_element_with_rng(
 
         if return_validator:
             return validator
+        return None
 
     return test_element
