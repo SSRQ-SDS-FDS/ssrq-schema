@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="origDate" module="msDescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="origDate" module="msDescription" mode="change">
   <desc xml:lang="de" versionDate="2023-05-12">Enthält Originaldaten des edierten Quellentexts (Ausstellungdatum).
     </desc>
   <desc xml:lang="en" versionDate="2023-05-12">Contains original data of the edited source texts (date of issue).
@@ -95,4 +95,8 @@
             regesta, la data in lingua originale deve essere preceduta da <gi>orig</gi> dopo la data normalizzata.
         </p>
   </remarks>
+  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-de"/>
+  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-en"/>
+  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-it"/>
 </elementSpec>

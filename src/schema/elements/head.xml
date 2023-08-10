@@ -38,6 +38,10 @@
     </attDef>
     <attDef ident="xml:id" mode="delete"/>
   </attList>
+  <xi:include href="examples.xml" xpointer="ex-head-de"/>
+  <xi:include href="examples.xml" xpointer="ex-head-en"/>
+  <xi:include href="examples.xml" xpointer="ex-head-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-head-it"/>
   <xi:include href="examples.xml" xpointer="ex-head-table-de"/>
   <xi:include href="examples.xml" xpointer="ex-head-table-en"/>
   <xi:include href="examples.xml" xpointer="ex-head-table-fr"/>
@@ -46,14 +50,6 @@
   <xi:include href="examples.xml" xpointer="ex-head-figure-en"/>
   <xi:include href="examples.xml" xpointer="ex-head-figure-fr"/>
   <xi:include href="examples.xml" xpointer="ex-head-figure-it"/>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
-    <p>Titel, der vom Bearbeitenden zur besseren Strukturierung des Texts
-            hinzugefügt wird
-        </p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <head resp="PS">Erbrecht</head>
-    </egXML>
-  </exemplum>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>Enthält als Teil des <gi>teiHeader</gi> den Titel des Dokuments und als Teil von <gi>listBibl</gi> die
             Beschreibung des zitierten Kurztitels; in <gi>body</gi> die Überschrift eines Kapitels oder

@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="foreign" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="foreign" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-19">Enthält Text, der in einer anderen Sprache als der Haupttext
         vorliegt.
     </desc>
@@ -26,51 +26,35 @@
     <attDef ident="xml:id" mode="delete"/>
     <attDef ident="xml:lang" mode="change" usage="req"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
-    <p>Absatz mit fremdsprachigen Einschüben</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <p>Versigleter <foreign xml:lang="rm">scütt</foreign> entzwischen der gmeindt Langnetz
-                und der gmeind Fallß <foreign xml:lang="la">ut jntus</foreign> zu sechen.
-            </p>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
-    <p>Paragraphe avec insertions en langues étrangères</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <p>Versigleter <foreign xml:lang="rm">scütt</foreign> entzwischen der gmeindt Langnetz
-                und der gmeind Fallß <foreign xml:lang="la">ut jntus</foreign> zu sechen.
-            </p>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-foreign-de"/>
+  <xi:include href="examples.xml" xpointer="ex-foreign-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-foreign-en"/>
+  <xi:include href="examples.xml" xpointer="ex-foreign-it"/>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>«Actum», «datum» oder «etc.» werden nicht mit <gi>foreign</gi> ausgezeichnet. Längere fremdsprachige
             Textpassagen werden zusätzlich auch in den Metadaten unter <gi>textLang</gi> vermerkt. Handelt es sich um
             einen anderweitig mit einem TEI-Element kennzeichenbaren Satzbestandteil, ist das entsprechende Element
-            mit <att>xml:lang</att> zu versehen. Beispielsweise wird bei einem fremdsprachigen
-            Buchtitel <gi>title</gi> mit <att>xml:lang</att> verwendet.
+            mit <att>xml:lang</att> zu versehen.
         </p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-19">
     <p>"Actum", "datum" or "etc." are not marked with <gi>foreign</gi>. Longer foreign-language text passages are
             also noted in the metadata under <gi>textLang</gi>. If it is a part of the sentence that can be identified
-            with a TEI element, the corresponding element must be provided with <att>xml:lang</att>. For #
-            example, <gi>title</gi> with <att>xml:lang</att> is used for a foreign language book title.
+            with a TEI element, the corresponding element must be provided with <att>xml:lang</att>.
         </p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-19">
     <p>"Actum", "datum" ou "etc." ne sont pas marqués avec <gi>foreign</gi>. Les passages de texte plus longs en
             langue étrangère sont également notés dans les métadonnées sous <gi>textLang</gi>. S'il s'agit d'une partie
             de la phrase qui peut être identifiée par un élément TEI, l'élément correspondant doit être fourni
-            avec <att>xml:lang</att>. Par exemple, <gi>title</gi> avec <att>xml:lang</att> est utilisé pour un titre de
-            livre en langue étrangère.
+            avec <att>xml:lang</att>.
         </p>
   </remarks>
   <remarks xml:lang="it" versionDate="2023-07-19">
     <p>"Actum", "datum" o "etc." non sono contrassegnati con <gi>foreign</gi>. Anche i passaggi di testo in lingua
             straniera più lunghi sono annotati nei metadati in <gi>textLang</gi>. Se è una parte della frase che può
             essere identificata con un elemento TEI, l'elemento corrispondente deve essere fornito
-            con <att>xml:lang</att>. Ad esempio, <gi>title</gi> con <att>xml:lang</att> viene utilizzato per il titolo
-            di un libro in lingua straniera.
+            con <att>xml:lang</att>.
         </p>
   </remarks>
 </elementSpec>

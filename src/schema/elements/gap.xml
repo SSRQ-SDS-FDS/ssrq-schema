@@ -87,42 +87,23 @@
     </attDef>
     <attDef ident="agent" mode="delete"/>
   </attList>
+  <xi:include href="examples.xml" xpointer="ex-gap-line-de"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-line-en"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-line-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-line-it"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-source-de"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-source-en"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-source-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-source-it"/>
   <xi:include href="examples.xml" xpointer="ex-damage-gap-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-gap-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-gap-fr"/>
   <xi:include href="examples.xml" xpointer="ex-damage-gap-it"/>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
-    <p>Unlesbare Zeile ohne Streichung oder Beschädigung</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <gap reason="illegible" unit="line" quantity="1.0"/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
-    <p>Ligne illisible sans rature ou détérioration</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <gap reason="illegible" unit="line" quantity="1.0"/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-26">
-    <p>Loch in einer Editionsvorlage, bei dem keine Ergänzung möglich ist – Masse werden auf 0.5 auf- oder
-            abgerundet.
-        </p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            und sol och der w
-            <damage agent="hole"><gap unit="cm" quantity="3.5"/></damage>
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-26">
-    <p>Trou dans un modèle d'édition pour lequel aucun ajout n'est possible - les mesures sont arrondies à 0,5.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            und sol och der w
-            <damage agent="hole"><gap unit="cm" quantity="3.5"/></damage>
-        </egXML>
-  </exemplum>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>Dies betrifft vor allem gänzlich unleserliche Stellen. Der Grund für eine Auslassung kann
             mit <att>reason</att> angegeben werden. Wenn die Ursache einer Unlesbarkeit aber eine Beschädigung ist,
-            so wird auf <att>reason</att> verzichtet – stattdessen wird der Tag mit <gi>damage</gi> umschlossen. Ist
+            so wird auf <att>reason</att> verzichtet – stattdessen wird der Tag mit
+            <gi>damage</gi> umschlossen. Ist
             der Grund für eine Unlesbarkeit eine Rasur oder eine (heftige) Streichung, wird der Tag in
             ein <gi>del</gi> verschachtelt.
         </p>

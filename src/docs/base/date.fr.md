@@ -285,7 +285,7 @@ La date indiqueé dans la pièce éditée voire le texte de datation est laissé
 signalisation des dates ou des périodes se fait avec les attributs nécessaires selon le style ISO, c'est-à-dire selon le
 calendrier grégorien voire le style nouveau. En outre, il faut ajouter la valeur "Julian" dans l'attribut @calendar.
 
-`<date from="1588-09-13" to="1588-09-30" calendar="Julian">Zwischen 3. und 20 September 1588</date>`
+`<date from="1588-09-13" to="1588-09-30" calendar="julian">Zwischen 3. und 20 September 1588</date>`
 
 ### Changement du calendrier
 

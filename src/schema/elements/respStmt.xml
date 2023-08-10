@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="respStmt" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="respStmt" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-20">Angaben zur Verantwortlichkeit</gloss>
   <gloss xml:lang="en" versionDate="2023-07-20">Responsibility statement</gloss>
   <gloss xml:lang="fr" versionDate="2023-07-20">Informations sur la responsabilité</gloss>
@@ -29,60 +29,8 @@
       <elementRef key="resp"/>
     </sequence>
   </content>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-04">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <persName>Rainer Hugener</persName>
-        <resp key="transcript"/>
-      </respStmt>
-      <respStmt>
-        <persName>Rainer Hugener</persName>
-        <resp key="tagging"/>
-      </respStmt>
-      <respStmt>
-        <persName>Werner Meier</persName>
-        <resp key="facs"/>
-      </respStmt>
-      <respStmt>
-        <persName>Pascale Sutter</persName>
-        <resp key="qualitycheck"/>
-      </respStmt>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-04">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <persName>Rainer Hugener</persName>
-        <resp key="transcript"/>
-      </respStmt>
-      <respStmt>
-        <persName>Rainer Hugener</persName>
-        <resp key="tagging"/>
-      </respStmt>
-      <respStmt>
-        <persName>Werner Meier</persName>
-        <resp key="facs"/>
-      </respStmt>
-      <respStmt>
-        <persName>Pascale Sutter</persName>
-        <resp key="qualitycheck"/>
-      </respStmt>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-04">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-        <resp key="publisher"/>
-      </respStmt>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-04">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-        <resp key="publisher"/>
-      </respStmt>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-respStmt-de"/>
+  <xi:include href="examples.xml" xpointer="ex-respStmt-en"/>
+  <xi:include href="examples.xml" xpointer="ex-respStmt-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-respStmt-it"/>
 </elementSpec>

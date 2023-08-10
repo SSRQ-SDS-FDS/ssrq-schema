@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="cb" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="cb" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2023-05-23">Spaltenbeginn</gloss>
   <gloss xml:lang="en" versionDate="2023-05-23">Column start</gloss>
   <gloss xml:lang="fr" versionDate="2023-05-23">Début de colonne</gloss>
@@ -31,56 +31,8 @@
     <attDef ident="xml:id" mode="delete"/>
     <attDef ident="xml:lang" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Beispiel für den Beginn einer neuen Spalte.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <pb n="1r"/>
-      <cb n="a"/>
-      <p>...</p>
-      <p>...</p>
-      <cb n="b"/>
-      <p>...</p>
-      <p>...</p>
-      <pb n="1v"/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Example of starting a new column.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <pb n="1r"/>
-      <cb n="a"/>
-      <p>...</p>
-      <p>...</p>
-      <cb n="b"/>
-      <p>...</p>
-      <p>...</p>
-      <pb n="1v"/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Exemple de démarrage d'une nouvelle colonne.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <pb n="1r"/>
-      <cb n="a"/>
-      <p>...</p>
-      <p>...</p>
-      <cb n="b"/>
-      <p>...</p>
-      <p>...</p>
-      <pb n="1v"/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-05-23">
-    <p>Esempio di inizio di una nuova colonna.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <pb n="1r"/>
-      <cb n="a"/>
-      <p>...</p>
-      <p>...</p>
-      <cb n="b"/>
-      <p>...</p>
-      <p>...</p>
-      <pb n="1v"/>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-cb-de"/>
+  <xi:include href="examples.xml" xpointer="ex-cb-en"/>
+  <xi:include href="examples.xml" xpointer="ex-cb-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-cb-it"/>
 </elementSpec>

@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="date" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="date" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-19">Enthält ein Datum im Text des Editors.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains a date in the text of the editor.</desc>
   <desc xml:lang="fr" versionDate="2023-07-19">Contient une date dans le texte de l'éditeur.</desc>
@@ -158,66 +158,22 @@
     </attDef>
     <attDef ident="calendar" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-07">
-    <p>Beispielhafte Datierung auf den 03. März 1631</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <date datingMethod="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-07">
-    <p>Exemple de datation au 03 mars 1631</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <date datingMethod="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-07">
-    <p>Beispielhafte Auszeichnung ca. 1510</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <date datingMethod="julian" notBefore-custom="1510-01-01" to-custom="1515-12-31">ca. 1510
-            </date>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-07">
-    <p>Exemple de distinction vers 1510</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <date datingMethod="julian" notBefore-custom="1510-01-01" to-custom="1515-12-31">ca. 1510
-            </date>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-07">
-    <p>Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <date datingMethod="julian" from-custom="1583-05-30" to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
-            </date>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-07">
-    <p>Exemple de distinction de la période allant de la Pentecôte 1583 à la
-            Pentecôte 1584
-        </p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <date datingMethod="julian" from-custom="1583-05-30" to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
-            </date>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-12">
-    <p>Beispielhafte Auszeichnung einer Doppeldatierung. Bei Texten, die doppelt,
-            d. h. nach dem alten und neuen Stil, datiert sind, wird nach dem neuen Stil bzw. dem
-            Gregorianischen Kalender datiert.
-        </p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <date when-custom="1590-10-25" datingMethod="#Gregorian">25/15. octobris anno 90</date>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-12">
-    <p>Exemple d'une double datation. Pour les textes qui sont doublement datés,
-            c'est-à-dire selon l'ancien et le nouveau style, la datation est effectuée selon le
-            nouveau style ou le calendrier grégorien.
-        </p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <date when-custom="1590-10-25" datingMethod="#Gregorian">25/15. octobris anno 90</date>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-date-day-de"/>
+  <xi:include href="examples.xml" xpointer="ex-date-day-en"/>
+  <xi:include href="examples.xml" xpointer="ex-date-day-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-date-day-it"/>
+  <xi:include href="examples.xml" xpointer="ex-date-ca-de"/>
+  <xi:include href="examples.xml" xpointer="ex-date-ca-en"/>
+  <xi:include href="examples.xml" xpointer="ex-date-ca-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-date-ca-it"/>
+  <xi:include href="examples.xml" xpointer="ex-date-from-to-de"/>
+  <xi:include href="examples.xml" xpointer="ex-date-from-to-en"/>
+  <xi:include href="examples.xml" xpointer="ex-date-from-to-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-date-from-to-it"/>
+  <xi:include href="examples.xml" xpointer="ex-date-gregjul-de"/>
+  <xi:include href="examples.xml" xpointer="ex-date-gregjul-en"/>
+  <xi:include href="examples.xml" xpointer="ex-date-gregjul-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-date-gregjul-it"/>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>Datierungen in Quelltexten (Originaldaten) werden mit <gi>origDate</gi> ausgezeichnet.
             Die Datierungsrichtlinien sind zu beachten.

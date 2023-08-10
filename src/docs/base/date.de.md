@@ -264,17 +264,16 @@ Julianischer Kalender (alter Stil)
 
 Das im edierten Stück angegebene Datum bzw. der Datierungstext wird belassen. Die Normalisierung und Kennzeichnung des
 Datums oder der Zeitspanne erfolgt mit den entsprechenden Attributen im ISO-Stil, d. h. im Gregorianischen Kalender bzw.
-im neuen Stil. Zusätzlich wird jedoch das Attribut @datingMethod mit dem Wert "#julian" verwendet.
+im neuen Stil. Zusätzlich wird jedoch das Attribut `@datingMethod` mit dem Wert `julian` verwendet.
 
-`<date from-custom="1588-09-13" to-custom="1588-09-30" datingMethod="#julian">Zwischen 3. und 20
-September 1588</date>`
+```xml
+<date from-custom="1588-09-13" to-custom="1588-09-30" datingMethod="julian">Zwischen 3. und 20
+September 1588</date>
+```
 
 Bei Stücken, die doppelt, d. h. nach dem alten und neuen Stil, datiert sind, wird nach dem neuen Stil bzw. dem
 Gregorianischen Kalender datiert.
 
-Beispiel einer Doppeldatierung mit Bruchstrich: 25/15. octobris anno 90
-
-`<date when-custom="1590-10-25" datingMethod="#Gregorian">25/15. octobris anno 90</date>`
 
 ### Kalenderwechsel
 
@@ -336,10 +335,10 @@ und @when ausgezeichnet. Zur Kennzeichnung, dass es sich um einen Termin handelt
 eingefügt.
 
 Zum Beispiel bei einem Termin:
-> wellind und doch nit länger dann bis `<date type="deadline" when="--04-16">zuͦ mittem aprellen</date>`
+> wellind und doch nit länger dann bis `<date type="deadline" when-custom="--04-16">zuͦ mittem aprellen</date>`
 
 Schonfrist von Fischen vom 3. Januar bis 4. März
 
-`<date from="--01-03" to="--03-04"/>`
+`<date from-custom="--01-03" to-custom="--03-04"/>`
 
 Bewegliche Feiertage: z.B. Fastenzeit: von Aschermittwoch bis Karfreitag mit Taxonomie lösen
