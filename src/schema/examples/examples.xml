@@ -97,21 +97,37 @@
       <p>Esempio di entrata di un attrezzo</p>
       <xi:include href="app.xml"/>
     </exemplum>
-    <exemplum xml:lang="de" xml:id="ex-bibl-zot-de">
-      <p>Bibliographischer Verweis auf Zotero-Literaturdatenbank</p>
-      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
+      <exemplum xml:lang="de" xml:id="ex-availability-de">
+      <p>Beispiel für die Beschreibung der Verfügbarkeit eines Textes</p>
+      <xi:include href="availability.xml"/>
     </exemplum>
-    <exemplum xml:lang="en" xml:id="ex-bibl-zot-en">
-      <p>Bibliographic reference to Zotero literature database</p>
-      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
+    <exemplum xml:lang="en" xml:id="ex-availability-en">
+      <p>Example for describing the availability of a text</p>
+      <xi:include href="availability.xml"/>
     </exemplum>
-    <exemplum xml:lang="fr" xml:id="ex-bibl-zot-fr">
-      <p>Référence bibliographique à la base de données bibliographiques Zotero</p>
-      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
+    <exemplum xml:lang="fr" xml:id="ex-availability-fr">
+      <p>Exemple pour décrire la disponibilité d'un texte</p>
+      <xi:include href="availability.xml"/>
     </exemplum>
-    <exemplum xml:lang="it" xml:id="ex-bibl-zot-it">
-      <p>Riferimento bibliografico al database di letteratura Zotero</p>
-      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
+    <exemplum xml:lang="it" xml:id="ex-availability-it">
+      <p>Esempio per descrivere la disponibilità di un testo</p>
+      <xi:include href="availability.xml"/>
+    </exemplum>
+          <exemplum xml:lang="de" xml:id="ex-back-de">
+      <p>Beispiel für einen Kommentarbereich mit zwei Abschnitten</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-back-en">
+      <p>Example of a comments section with two divisions</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-back-fr">
+      <p>Exemple d'une section de commentaires avec deux divisions</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-back-it">
+      <p>Esempio di una sezione commenti con due divisioni</p>
+      <xi:include href="back.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-bibl-doc-de">
       <p>Verweis auf ein anderes Stück</p>
@@ -145,21 +161,21 @@
       <p>Riferimento esterno</p>
       <xi:include href="bibl.xml" xpointer="ex-bibl-url"/>
     </exemplum>
-    <exemplum xml:lang="de" xml:id="ex-back-de">
-      <p>Beispiel für einen Kommentarbereich mit zwei Abschnitten</p>
-      <xi:include href="back.xml"/>
+          <exemplum xml:lang="de" xml:id="ex-bibl-zot-de">
+      <p>Bibliographischer Verweis auf Zotero-Literaturdatenbank</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
     </exemplum>
-    <exemplum xml:lang="en" xml:id="ex-back-en">
-      <p>Example of a comments section with two divisions</p>
-      <xi:include href="back.xml"/>
+    <exemplum xml:lang="en" xml:id="ex-bibl-zot-en">
+      <p>Bibliographic reference to Zotero literature database</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
     </exemplum>
-    <exemplum xml:lang="fr" xml:id="ex-back-fr">
-      <p>Exemple d'une section de commentaires avec deux divisions</p>
-      <xi:include href="back.xml"/>
+    <exemplum xml:lang="fr" xml:id="ex-bibl-zot-fr">
+      <p>Référence bibliographique à la base de données bibliographiques Zotero</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
     </exemplum>
-    <exemplum xml:lang="it" xml:id="ex-back-it">
-      <p>Esempio di una sezione commenti con due divisioni</p>
-      <xi:include href="back.xml"/>
+    <exemplum xml:lang="it" xml:id="ex-bibl-zot-it">
+      <p>Riferimento bibliografico al database di letteratura Zotero</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-body-de">
       <p>Beispiel für einen Textbereich mit allen möglichen Kindelementen</p>
