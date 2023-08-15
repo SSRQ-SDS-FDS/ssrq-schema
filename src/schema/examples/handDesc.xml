@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+  <handDesc>
+    <handNote xml:id="hand1" n="firstHand" scribe="per123456">
+      <date datingMethod="julian" from-custom="1001-01-01" to-custom="1100-12-31">
+        <precision precision="low" match="@from-custom"/>
+      </date>
+    </handNote>
+    <handNote xml:id="hand2" n="secondHand"/>
+    <handNote xml:id="hand3" n="otherHand"/>
+    <handNote xml:id="hand4" n="laterHand"/>
+  </handDesc>
+</egXML>
