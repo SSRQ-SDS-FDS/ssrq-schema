@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="idno" module="header" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="idno" module="header" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-07">Identifikationsnummer</gloss>
   <gloss xml:lang="en" versionDate="2023-07-07">Identification number</gloss>
   <gloss xml:lang="fr" versionDate="2023-07-07">Numéro d'identification</gloss>
@@ -73,58 +73,21 @@
           <desc xml:lang="de" versionDate="2023-03-03">Universally Unique Identifier</desc>
           <desc xml:lang="en" versionDate="2023-03-03">Universally Unique Identifier</desc>
           <desc xml:lang="fr" versionDate="2023-03-03">Universally Unique Identifier</desc>
+          <desc xml:lang="it" versionDate="2023-03-03">Universally Unique Identifier</desc>
         </valItem>
       </valList>
     </attDef>
     <attDef ident="n" mode="delete"/>
     <attDef ident="xml:id" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-03">
-    <p>Definition der Identifikationsnummer eines Stücks:</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <seriesStmt>
-        <title>Sammlung Schweizerischer Rechtsquellen</title>
-        <respStmt>
-          <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-          <resp>Herausgabe</resp>
-        </respStmt>
-        <idno>SSRQ-FR-I_2_8-1-1</idno>
-        <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
-      </seriesStmt>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-03">
-    <p>Définition du numéro d'identification d'une pièce :</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <seriesStmt>
-        <title>Sammlung Schweizerischer Rechtsquellen</title>
-        <respStmt>
-          <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-          <resp>Herausgabe</resp>
-        </respStmt>
-        <idno>SSRQ-FR-I_2_8-1-1</idno>
-        <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
-      </seriesStmt>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-03">
-    <p>Verweis auf eine Signatur mit Link ins Archivinformationssystem:</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <msIdentifier>
-        <idno xml:lang="de" source="http://scope.stiftsarchiv.sg.ch/detail.aspx?id=30146">StiASG Urk. GG2 T2
-                </idno>
-      </msIdentifier>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-03">
-    <p>Référence à une cote avec lien vers le système d'information des archives :</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <msIdentifier>
-        <idno xml:lang="de" source="http://scope.stiftsarchiv.sg.ch/detail.aspx?id=30146">StiASG Urk. GG2 T2
-                </idno>
-      </msIdentifier>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-de"/>
+  <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-en"/>
+  <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-it"/>
+  <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-de"/>
+  <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-en"/>
+  <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-it"/>
   <remarks xml:lang="de" versionDate="2023-07-17">
     <p>Enthält <gi>idno</gi> die Signatur eines Archivs hat sich diese nach dem System des jeweiligen Archivs zu
             richten.

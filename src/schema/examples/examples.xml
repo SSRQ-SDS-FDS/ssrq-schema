@@ -836,7 +836,39 @@
       <p>Esempio di intestazione in una tabella</p>
       <xi:include href="table.xml"/>
     </exemplum>
-        <exemplum xml:lang="de" xml:id="ex-keywords-de">
+    <exemplum xml:lang="de" xml:id="ex-idno-msIdentifier-de">
+      <p>Beispiel für eine Identifikationsnummer als Teil einer Handschriftensignatur</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-idno-msIdentifier-en">
+      <p>Example of an identification number as part of a manuscript signature</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-idno-msIdentifier-fr">
+      <p>Exemple de numéro d'identification dans le cadre d'une signature manuscrite</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-idno-msIdentifier-it">
+      <p>Esempio di un numero di identificazione come parte di una firma manoscritta</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-idno-seriesStmt-de">
+      <p>Beispiel für Identifikationsnummern als Teil der Reihenangabe</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-idno-seriesStmt-en">
+      <p>Example of identification numbers as part of the series statement</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-idno-seriesStmt-fr">
+      <p>Exemple de numéros d'identification dans le cadre de la déclaration de série</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-idno-seriesStmt-it">
+      <p>Esempio di numeri di identificazione come parte della dichiarazione di serie</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-keywords-de">
       <p>Beispiel für eine Liste von Schlagwörtern</p>
       <xi:include href="keywords.xml"/>
     </exemplum>
@@ -916,6 +948,7 @@
       <p>Esempio di descrizione di un testimone testuale</p>
       <xi:include href="msDesc.xml"/>
     </exemplum>
+<<<<<<< HEAD:src/schema/examples/examples.xml
     <exemplum xml:lang="de" xml:id="ex-note-de">
       <p>Anmerkung der Bearbeitenden</p>
       <xi:include href="note.xml"/>
@@ -947,6 +980,23 @@
     <exemplum xml:lang="it" xml:id="ex-origDate-abbr-it">
       <p>Datazione originale con abbreviazione</p>
       <xi:include href="origDate.xml" xpointer="ex-origDate-abbr"/>
+=======
+    <exemplum xml:lang="de" xml:id="ex-msIdentifier-de">
+      <p>Beispiel für eine Handschriftensignatur</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msIdentifier-en">
+      <p>Example of a manuscript identifier</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msIdentifier-fr">
+      <p>Exemple d'identifiant de manuscrit</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-msIdentifier-it">
+      <p>Esempio di identificatore di manoscritto</p>
+      <xi:include href="msIdentifier.xml"/>
+>>>>>>> c45ec00 ([feat]: added examples for tei:idno, tei:msIdentifier and tei:seriesStmt):src/examples/examples.xml
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-orgName-de">
       <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
@@ -1126,6 +1176,7 @@
       <p>Esempio di paragrafi introdotti dal curatore</p>
       <xi:include href="seg.xml"/>
     </exemplum>
+<<<<<<< HEAD:src/schema/examples/examples.xml
     <exemplum xml:lang="de" xml:id="ex-sic-de">
       <p>Verwendung ohne Kindelemente</p>
       <xi:include href="sic.xml" xpointer="ex-sic"/>
@@ -1157,6 +1208,23 @@
     <exemplum xml:lang="it" xml:id="ex-sic-term-it">
       <p>Da usare in combinazione con <gi>term</gi></p>
       <xi:include href="sic.xml" xpointer="ex-sic"/>
+=======
+    <exemplum xml:lang="de" xml:id="ex-seriesStmt-de">
+      <p>Beispiel für eine Reihenangabe</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-seriesStmt-en">
+      <p>Example of a series statement</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-seriesStmt-fr">
+      <p>Exemple d'énoncé de série</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-seriesStmt-it">
+      <p>Esempio di dichiarazione di serie</p>
+      <xi:include href="seriesStmt.xml"/>
+>>>>>>> c45ec00 ([feat]: added examples for tei:idno, tei:msIdentifier and tei:seriesStmt):src/examples/examples.xml
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-signed-de">
       <p>Beispiel für eine Unterschrift mit Notariatszeichen</p>
