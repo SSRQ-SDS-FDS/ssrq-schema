@@ -97,7 +97,7 @@
       <p>Esempio di entrata di un attrezzo</p>
       <xi:include href="app.xml"/>
     </exemplum>
-      <exemplum xml:lang="de" xml:id="ex-availability-de">
+    <exemplum xml:lang="de" xml:id="ex-availability-de">
       <p>Beispiel für die Beschreibung der Verfügbarkeit eines Textes</p>
       <xi:include href="availability.xml"/>
     </exemplum>
@@ -113,7 +113,7 @@
       <p>Esempio per descrivere la disponibilità di un testo</p>
       <xi:include href="availability.xml"/>
     </exemplum>
-          <exemplum xml:lang="de" xml:id="ex-back-de">
+    <exemplum xml:lang="de" xml:id="ex-back-de">
       <p>Beispiel für einen Kommentarbereich mit zwei Abschnitten</p>
       <xi:include href="back.xml"/>
     </exemplum>
@@ -161,7 +161,7 @@
       <p>Riferimento esterno</p>
       <xi:include href="bibl.xml" xpointer="ex-bibl-url"/>
     </exemplum>
-          <exemplum xml:lang="de" xml:id="ex-bibl-zot-de">
+    <exemplum xml:lang="de" xml:id="ex-bibl-zot-de">
       <p>Bibliographischer Verweis auf Zotero-Literaturdatenbank</p>
       <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
     </exemplum>
@@ -643,7 +643,7 @@
       <p>Esempio della struttura di una descrizione del file</p>
       <xi:include href="fileDesc.xml"/>
     </exemplum>
-        <exemplum xml:lang="de" xml:id="ex-foreign-de">
+    <exemplum xml:lang="de" xml:id="ex-foreign-de">
       <p>Absatz mit fremdsprachigen Einschüben</p>
       <xi:include href="foreign.xml"/>
     </exemplum>
@@ -948,7 +948,6 @@
       <p>Esempio di descrizione di un testimone testuale</p>
       <xi:include href="msDesc.xml"/>
     </exemplum>
-<<<<<<< HEAD:src/schema/examples/examples.xml
     <exemplum xml:lang="de" xml:id="ex-note-de">
       <p>Anmerkung der Bearbeitenden</p>
       <xi:include href="note.xml"/>
@@ -980,7 +979,7 @@
     <exemplum xml:lang="it" xml:id="ex-origDate-abbr-it">
       <p>Datazione originale con abbreviazione</p>
       <xi:include href="origDate.xml" xpointer="ex-origDate-abbr"/>
-=======
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-msIdentifier-de">
       <p>Beispiel für eine Handschriftensignatur</p>
       <xi:include href="msIdentifier.xml"/>
@@ -996,7 +995,6 @@
     <exemplum xml:lang="it" xml:id="ex-msIdentifier-it">
       <p>Esempio di identificatore di manoscritto</p>
       <xi:include href="msIdentifier.xml"/>
->>>>>>> c45ec00 ([feat]: added examples for tei:idno, tei:msIdentifier and tei:seriesStmt):src/examples/examples.xml
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-orgName-de">
       <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
@@ -1096,7 +1094,7 @@
       <p>Esempio di data incerta</p>
       <xi:include href="precision.xml"/>
     </exemplum>
-        <exemplum xml:lang="de" xml:id="ex-profileDesc-de">
+    <exemplum xml:lang="de" xml:id="ex-profileDesc-de">
       <p>Beispiel für den Aufbau der Beschreibung des Textprofils</p>
       <xi:include href="profileDesc.xml"/>
     </exemplum>
@@ -1127,6 +1125,22 @@
     <exemplum xml:lang="it" xml:id="ex-publisher-cert-it">
       <p>Usare con <att>cert</att></p>
       <xi:include href="publisher.xml" xpointer="ex-publisher-cert"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-publicationStmt-de">
+      <p>Beispiel für die Angaben zur Publikation</p>
+      <xi:include href="publicationStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-publicationStmt-en">
+      <p>Example of a publication statement</p>
+      <xi:include href="publicationStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-publicationStmt-fr">
+      <p>Exemple d'informations de publication</p>
+      <xi:include href="publicationStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-publicationStmt-it">
+      <p>Esempio di informazioni sulla pubblicazione</p>
+      <xi:include href="publicationStmt.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-row-de">
       <p>Einfaches Beispiel für Zeilen in einer Tabelle</p>
@@ -1176,7 +1190,22 @@
       <p>Esempio di paragrafi introdotti dal curatore</p>
       <xi:include href="seg.xml"/>
     </exemplum>
-<<<<<<< HEAD:src/schema/examples/examples.xml
+    <exemplum xml:lang="de" xml:id="ex-seriesStmt-de">
+      <p>Beispiel für eine Reihenangabe</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-seriesStmt-en">
+      <p>Example of a series statement</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-seriesStmt-fr">
+      <p>Exemple d'énoncé de série</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-seriesStmt-it">
+      <p>Esempio di dichiarazione di serie</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-sic-de">
       <p>Verwendung ohne Kindelemente</p>
       <xi:include href="sic.xml" xpointer="ex-sic"/>
@@ -1208,23 +1237,6 @@
     <exemplum xml:lang="it" xml:id="ex-sic-term-it">
       <p>Da usare in combinazione con <gi>term</gi></p>
       <xi:include href="sic.xml" xpointer="ex-sic"/>
-=======
-    <exemplum xml:lang="de" xml:id="ex-seriesStmt-de">
-      <p>Beispiel für eine Reihenangabe</p>
-      <xi:include href="seriesStmt.xml"/>
-    </exemplum>
-    <exemplum xml:lang="en" xml:id="ex-seriesStmt-en">
-      <p>Example of a series statement</p>
-      <xi:include href="seriesStmt.xml"/>
-    </exemplum>
-    <exemplum xml:lang="fr" xml:id="ex-seriesStmt-fr">
-      <p>Exemple d'énoncé de série</p>
-      <xi:include href="seriesStmt.xml"/>
-    </exemplum>
-    <exemplum xml:lang="it" xml:id="ex-seriesStmt-it">
-      <p>Esempio di dichiarazione di serie</p>
-      <xi:include href="seriesStmt.xml"/>
->>>>>>> c45ec00 ([feat]: added examples for tei:idno, tei:msIdentifier and tei:seriesStmt):src/examples/examples.xml
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-signed-de">
       <p>Beispiel für eine Unterschrift mit Notariatszeichen</p>
@@ -1394,7 +1406,7 @@
       <p>Esempio di un'area di intestazione con tutte le aree figlio</p>
       <xi:include href="teiHeader.xml"/>
     </exemplum>
-        <exemplum xml:lang="de" xml:id="ex-term-de">
+    <exemplum xml:lang="de" xml:id="ex-term-de">
       <p>Erfassung eines Lemmas</p>
       <xi:include href="term.xml"/>
     </exemplum>
@@ -1409,6 +1421,7 @@
     <exemplum xml:lang="it" xml:id="ex-term-it">
       <p>Codifica di un lemma</p>
       <xi:include href="term.xml"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-text-1-de">
       <p>Beispiel für ein Transkript mit optionalem Kommentarbereich</p>
       <xi:include href="text.xml" xpointer="ex-text-1"/>
