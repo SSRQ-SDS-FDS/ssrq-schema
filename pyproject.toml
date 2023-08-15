@@ -10,7 +10,16 @@ schemas = [
 [tool.poetry]
 authors = ["Bpolitycki <bastian.politycki@unisg.ch>"]
 description = "TEI-ODD schema for the Swiss Law Sources with Python based tooling."
+include = [
+  {path = "src", format = [
+    "sdist",
+    "wheel",
+  ]},
+]
 name = "ssrq-schema"
+packages = [
+  {include = "utils"},
+]
 readme = "README.md"
 version = "0.1.0"
 
