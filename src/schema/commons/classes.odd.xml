@@ -484,7 +484,11 @@
                         estratto facsimile.
                     </desc>
           <datatype>
-            <dataRef key="ssrq.facs.name"/>
+            <rng:list>
+              <rng:oneOrMore>
+                <rng:ref name="ssrq.facs.name"/>
+              </rng:oneOrMore>
+            </rng:list>
           </datatype>
         </attDef>
       </attList>
