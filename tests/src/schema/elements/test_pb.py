@@ -27,6 +27,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-pb-with-multiple-facs",
+            "<pb n='1' facs='StASH_Ordnungen_A_4_328 StASH_Ordnungen_A_4_328_plica'/>",
+            True,
+        ),
+        (
             "valid-pb-with-facs-roman",
             "<pb n='IV' facs='StASH_Ordnungen_A_4_328'/>",
             True,
