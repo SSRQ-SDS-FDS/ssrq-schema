@@ -12,23 +12,18 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-handNote-with-n-attribute",
-            "<handNote xml:id='foo' n='otherHand'/>",
-            True,
-        ),
-        (
             "valid-handNote-with-scribe-attribute",
-            "<handNote xml:id='foo' n='firstHand' scribe='per000123'/>",
+            "<handNote xml:id='foo' scribe='per000123'/>",
             True,
         ),
         (
             "valid-handNote-with-date",
-            "<handNote xml:id='foo' n='otherHand'><date from-custom='1001-01-01' to-custom='1100-12-31'/></handNote>",
+            "<handNote xml:id='foo'><date from-custom='1001-01-01' to-custom='1100-12-31'/></handNote>",
             True,
         ),
         (
             "valid-handNote-with-p",
-            "<handNote xml:id='foo' n='otherHand'><p>bar</p></handNote>",
+            "<handNote xml:id='foo'><p>bar</p></handNote>",
             True,
         ),
         (
@@ -37,7 +32,7 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "invalid-handNote-with-invalid-n-attribute",
+            "invalid-handNote-with-invalid-attribute",
             "<handNote xml:id='foo' n='bar'/>",
             False,
         ),
