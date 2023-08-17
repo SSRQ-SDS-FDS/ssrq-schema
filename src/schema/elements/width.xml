@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="width" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="width" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-07-15">Beschreibt die Breite eines Blattes oder Buchs sowie die Breite der
         Plica.
     </desc>
@@ -32,16 +32,14 @@
     </attDef>
     <attDef ident="quantity" mode="change" usage="req"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-17">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <width unit="cm" quantity="23.0"/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-17">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <width unit="cm" quantity="23.0"/>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-width-cm-de"/>
+  <xi:include href="examples.xml" xpointer="ex-width-cm-en"/>
+  <xi:include href="examples.xml" xpointer="ex-width-cm-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-width-cm-it"/>
+  <xi:include href="examples.xml" xpointer="ex-width-unknown-de"/>
+  <xi:include href="examples.xml" xpointer="ex-width-unknown-en"/>
+  <xi:include href="examples.xml" xpointer="ex-width-unknown-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-width-unknown-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Die Masseinheit für <att>unit</att> ist Zentimeter (cm).
         </p>

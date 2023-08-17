@@ -1678,6 +1678,38 @@
       <p>Esempio di titolo</p>
       <xi:include href="titleStmt.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-width-cm-de">
+      <p>Beispiel für eine Breitenangabe in Zentimetern</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-width-cm-en">
+      <p>Example of a width in centimeters</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-width-cm-fr">
+      <p>Exemple de largeur en centimètres</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-width-cm-it">
+      <p>Esempio di larghezza in centimetri</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-width-unknown-de">
+      <p>Beispiel für eine unbekannte Breitenangabe</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-width-unknown-en">
+      <p>Example of an unknown width</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-width-unknown-fr">
+      <p>Exemple de largeur inconnue</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-width-unknown-it">
+      <p>Esempio di larghezza sconosciuta</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-witness-de">
       <p>Beispiel für mehrere Textzeugenbeschreibungen</p>
       <xi:include href="listWit.xml"/>
