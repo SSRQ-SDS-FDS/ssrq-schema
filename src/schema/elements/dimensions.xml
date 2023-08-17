@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="dimensions" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="dimensions" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-04-19">Masse einer Quelle</desc>
   <desc xml:lang="en" versionDate="2023-04-19">Dimension of a source</desc>
   <desc xml:lang="fr" versionDate="2023-04-19">Dimensions d'une source</desc>
@@ -41,34 +41,10 @@
       </valList>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-19">
-    <p>Modellhafter Aufbau</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <extent>
-        <dimensions type="leaves">
-          <height unit="cm" quantity="16.0"/>
-          <width unit="cm" quantity="23.0"/>
-        </dimensions>
-        <dimensions type="plica">
-          <width unit="cm" quantity="4.0"/>
-        </dimensions>
-      </extent>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-19">
-    <p>Structure modèle</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <extent>
-        <dimensions type="leaves">
-          <height unit="cm" quantity="16.0"/>
-          <width unit="cm" quantity="23.0"/>
-        </dimensions>
-        <dimensions type="plica">
-          <width unit="cm" quantity="4.0"/>
-        </dimensions>
-      </extent>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-extent-de"/>
+  <xi:include href="examples.xml" xpointer="ex-extent-en"/>
+  <xi:include href="examples.xml" xpointer="ex-extent-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-extent-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Wenn <att>type</att> den Wert <val>plica</val> hat, dann ist nur ein <gi>width</gi>-Element als Inhalt
             erlaubt.
