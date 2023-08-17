@@ -3,10 +3,10 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="date" module="core" mode="change">
-  <desc xml:lang="de" versionDate="2023-08-15">Enthält ein Datum.</desc>
-  <desc xml:lang="en" versionDate="2023-08-15">Contains a date.</desc>
-  <desc xml:lang="fr" versionDate="2023-08-15">Contient une date.</desc>
-  <desc xml:lang="it" versionDate="2023-08-15">Contiene una data.</desc>
+  <desc xml:lang="de" versionDate="2023-08-17">Enthält ein Datum.</desc>
+  <desc xml:lang="en" versionDate="2023-08-17">Contains a date.</desc>
+  <desc xml:lang="fr" versionDate="2023-08-17">Contient une date.</desc>
+  <desc xml:lang="it" versionDate="2023-08-17">Contiene una data.</desc>
   <classes mode="replace">
     <memberOf key="att.datable"/>
     <memberOf key="att.datable.custom"/>
@@ -174,24 +174,24 @@
   <xi:include href="examples.xml" xpointer="ex-date-gregjul-en"/>
   <xi:include href="examples.xml" xpointer="ex-date-gregjul-fr"/>
   <xi:include href="examples.xml" xpointer="ex-date-gregjul-it"/>
-  <remarks xml:lang="de" versionDate="2023-08-15">
-    <p>Datierungen von Quelltexten (Ausstellungsdaten) werden mit <gi>origDate</gi> ausgezeichnet.
+  <remarks xml:lang="de" versionDate="2023-08-17">
+    <p>Datierungen in Quelltexten (Originaldaten) und den Paratexten (Einleitung, Kommentare, Fussnoten) werden mit <gi>date</gi> ausgezeichnet.
             Die Datierungsrichtlinien sind zu beachten.
         </p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2023-08-15">
-    <p>Dating of source texts (exhibition dates) is marked with <gi>origDate</gi>. The dating guidelines must be
-        observed.
+  <remarks xml:lang="en" versionDate="2023-08-17">
+    <p>Dating in source texts (original data) and the paratexts (introduction, comments, footnotes) are marked with <gi>date</gi>.
+            The dating guidelines must be observed.
         </p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-08-15">
-    <p>La datation des textes sources (dates d'exposition) est marquée par <gi>origDate</gi>. Les règles de datation
-        doivent être respectées.
+  <remarks xml:lang="fr" versionDate="2023-08-17">
+    <p>La datation dans les textes sources (données originales) et les paratextes (introduction, commentaires, notes de bas de page) sont marquées par <gi>date</gi>.
+            Les règles de datation doivent être respectées.
         </p>
   </remarks>
-  <remarks xml:lang="it" versionDate="2023-08-15">
-    <p>La datazione dei testi di partenza (date delle mostre) è contrassegnata con <gi>origDate</gi>. Le linee guida
-        per la datazione devono essere osservate.
+  <remarks xml:lang="it" versionDate="2023-08-17">
+    <p>La datazione nei testi di origine (dati originali)  e nei paratesti (introduzione, commenti, note a piè di pagina) sono contrassegnate da <gi>data</gi>.
+            Le linee guida per la datazione devono essere osservate.
         </p>
   </remarks>
 </elementSpec>
