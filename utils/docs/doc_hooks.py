@@ -4,7 +4,11 @@ from typing import Any
 from mkdocs.config.defaults import MkDocsConfig  # type: ignore
 from mkdocs.livereload import LiveReloadServer
 from mkdocs.plugins import event_priority
+from mkdocs.structure.files import Files
+from mkdocs.structure.pages import Page
 
+from utils.commons import config as configs
+from utils.docs.extensions.md_xi import md_xi_plugin
 from utils.docs.odd2md import LANGS, ODD2Md, create_schema_by_entry
 from utils.schema.compile import Schema, store_compiled_schemas
 
@@ -36,6 +40,13 @@ def on_config(config: MkDocsConfig):
                 nav_entry["Elements"].append(
                     {md_spec.nav_title: f"elements/{md_spec.filename}"}
                 )
+
+
+@event_priority(50)
+def on_page_markdown(
+    markdown: str, config: MkDocsConfig, page: Page, files: Files
+) -> str:
+    return md_xi_plugin(markdown, xi_base_path=configs.EXAMPLES_DIR)
 
 
 @event_priority(50)

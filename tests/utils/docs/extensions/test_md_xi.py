@@ -8,8 +8,11 @@ from saxonche import (
 from utils.docs.extensions.md_xi import (
     ResolvedXInclude,
     XInclude,
+    build_replacement_pattern_from_resolved,
     find_element_by_xi_pointer,
     find_xi_includes,
+    md_xi_plugin,
+    replace_xi_include_in_markdown,
     resolve_xi_includes,
 )
 
@@ -19,6 +22,10 @@ def tmp_path_with_ex(tmp_path: Path) -> Path:
     with open(tmp_path / "xi_ex.xml", "w") as ex:
         ex.write("<seg xmlns='http://www.tei-c.org/ns/Examples'>world</seg>")
     return tmp_path
+
+
+def fake_on_page_markdown(markdown: str, base_dir: Path) -> str:
+    return md_xi_plugin(markdown, xi_base_path=base_dir)
 
 
 @pytest.mark.parametrize(
@@ -146,3 +153,79 @@ def test_find_element_by_xi_pointer_raises_error_for_unknown_id(
         with PySaxonProcessor(license=False) as proc:
             node = proc.parse_xml(xml_text=xml)
             find_element_by_xi_pointer(saxon_proc=proc, node=node, include=xi)
+
+
+@pytest.mark.parametrize(
+    "resolved_include, expected",
+    [
+        (
+            ResolvedXInclude(
+                include=XInclude(filename="bar.xml", xpointer="foo"), content="bar"
+            ),
+            r"-+xi-include-+\sbar.xml#foo",
+        ),
+        (
+            ResolvedXInclude(
+                include=XInclude(filename="bar.xml", xpointer=None), content="bar"
+            ),
+            r"-+xi-include-+\sbar.xml",
+        ),
+    ],
+)
+def test_build_replacement_pattern_from_resolved(
+    resolved_include: ResolvedXInclude, expected: str
+):
+    assert build_replacement_pattern_from_resolved(resolved_include) == expected
+
+
+@pytest.mark.parametrize(
+    "text, resolved_includes, expected",
+    [
+        ("foo", (), "foo"),
+        (
+            "foo -xi-include- bar.xml#foo baz",
+            (
+                ResolvedXInclude(
+                    include=XInclude(filename="bar.xml", xpointer="foo"), content="bar"
+                ),
+            ),
+            "foo bar baz",
+        ),
+        (
+            """foo -xi-include- bar.xml#foo baz
+            bar -xi-include- baz.xml""",
+            (
+                ResolvedXInclude(
+                    include=XInclude(filename="bar.xml", xpointer="foo"), content="bar"
+                ),
+                ResolvedXInclude(
+                    include=XInclude(filename="baz.xml", xpointer=None), content="foo"
+                ),
+            ),
+            """foo bar baz
+            bar foo""",
+        ),
+    ],
+)
+def test_replace_xi_include_in_markdown(
+    text: str, resolved_includes: tuple[ResolvedXInclude], expected: str
+):
+    assert replace_xi_include_in_markdown(text, resolved_includes) == expected
+
+
+@pytest.mark.parametrize(
+    "markdown, expected",
+    [
+        ("foo", "foo"),
+        (
+            "foo `-xi-include- xi_ex.xml`",
+            """foo `<seg xmlns="http://www.tei-c.org/ns/Examples">world</seg>`""",
+        ),
+    ],
+)
+def test_md_xi_plugin_using_fake_hook(
+    tmp_path_with_ex: Path, markdown: str, expected: str
+):
+    assert (
+        fake_on_page_markdown(markdown=markdown, base_dir=tmp_path_with_ex) == expected
+    )

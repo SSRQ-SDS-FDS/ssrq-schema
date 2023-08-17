@@ -1,5 +1,6 @@
 import re
 from dataclasses import dataclass
+from functools import reduce
 from pathlib import Path
 
 from saxonche import (
@@ -55,7 +56,7 @@ def find_xi_includes(
 
 def resolve_xi_includes(
     includes: list[XInclude], base_path: Path = configs.EXAMPLES_DIR.absolute()
-) -> list[ResolvedXInclude]:
+) -> tuple[ResolvedXInclude, ...]:
     resolved_includes: list[ResolvedXInclude] = []
 
     with PySaxonProcessor(license=False) as proc:
@@ -81,10 +82,15 @@ def resolve_xi_includes(
                 raise ValueError(f"Failed to resolve xincludes for {include.filename}")
 
             resolved_includes.append(
-                ResolvedXInclude(include=include, content=xslt_result)
+                ResolvedXInclude(
+                    include=include,
+                    content=proc.parse_xml(
+                        xml_text=xslt_result
+                    ).__str__(),  # we want the proper string representation of the result, `transform_to_string` produces \n and \t characters
+                )
             )
 
-    return resolved_includes
+    return tuple(resolved_includes)
 
 
 def find_element_by_xi_pointer(
@@ -102,3 +108,43 @@ def find_element_by_xi_pointer(
         return xi_query.get_node_value()
 
     raise ValueError(f"Could not find the id {include.xpointer} in {include.filename}")
+
+
+def build_replacement_pattern_from_resolved(resolved_include: ResolvedXInclude) -> str:
+    return rf"-+xi-include-+\s{resolved_include.include.filename}{'#' + resolved_include.include.xpointer if resolved_include.include.xpointer is not None else ''}"
+
+
+def replace_xi_include_in_markdown(
+    source_text: str, resolved_includes: tuple[ResolvedXInclude, ...]
+) -> str:
+    return reduce(
+        lambda text, include: re.sub(
+            build_replacement_pattern_from_resolved(include), include.content, text
+        ),
+        list(resolved_includes),
+        source_text,
+    )
+
+
+def md_xi_plugin(markdown: str, xi_base_path: Path) -> str:
+    """
+    A simple Markdown extension to resolve XIncludes in Markdown files. This extension
+    can be plugged into MkDocs via the `on_page_markdown` hook. See
+    https://www.mkdocs.org/dev-guide/plugins/#events for more details on the hook
+    system.
+
+    Args:
+        markdown (str): The Markdown text to parse.
+
+    Returns:
+        str: The Markdown text with resolved XIncludes."""
+
+    if (includes := find_xi_includes(markdown)) is None:
+        return markdown
+
+    return replace_xi_include_in_markdown(
+        source_text=markdown,
+        resolved_includes=resolve_xi_includes(
+            includes=includes, base_path=xi_base_path
+        ),
+    )
