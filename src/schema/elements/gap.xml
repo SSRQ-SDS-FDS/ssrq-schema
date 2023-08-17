@@ -76,6 +76,19 @@
         </valItem>
       </valList>
     </attDef>
+    <attDef ident="source" mode="add">
+      <desc xml:lang="de" versionDate="2023-08-17">Verweis auf ein anderes Stück.
+            </desc>
+      <desc xml:lang="en" versionDate="2023-08-17">Reference to another item.
+            </desc>
+      <desc xml:lang="fr" versionDate="2023-08-17">Renvoi à une autre pièce.
+            </desc>
+      <desc xml:lang="it" versionDate="2023-08-17">Si riferisce a un altro pezzo.
+            </desc>
+      <datatype>
+        <dataRef key="ssrq.pointer.urn"/>
+      </datatype>
+    </attDef>
     <attDef ident="unit" mode="change">
       <datatype>
         <rng:choice>
