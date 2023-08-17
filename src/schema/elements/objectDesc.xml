@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="objectDesc" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="objectDesc" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-07-15">Enthält Elemente zur Beschreibung des Materials, der
         Masse, des Erhaltungszustands sowie Aussehens der Quelle.
     </desc>
@@ -127,50 +127,8 @@
       </valList>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-31">
-    <p>Modellhafter Aufbau</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <objectDesc form="original">
-        <supportDesc>
-          <support>
-            <material type="paper"/>
-          </support>
-          <extent>
-            <dimensions type="leaves">
-              <height unit="cm" quantity="16.0"/>
-              <width unit="cm" quantity="23.0"/>
-            </dimensions>
-            <dimensions type="plica">
-              <width unit="cm" quantity="4.0"/>
-            </dimensions>
-            <measure type="text_scope" unit="leaf" quantity="2"/>
-            <measure type="text_scope" unit="page" quantity="4"/>
-          </extent>
-        </supportDesc>
-      </objectDesc>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
-    <p>Structure modèle</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <objectDesc form="original">
-        <supportDesc>
-          <support>
-            <material type="paper"/>
-          </support>
-          <extent>
-            <dimensions type="leaves">
-              <height unit="cm" quantity="16.0"/>
-              <width unit="cm" quantity="23.0"/>
-            </dimensions>
-            <dimensions type="plica">
-              <width unit="cm" quantity="4.0"/>
-            </dimensions>
-            <measure type="text_scope" unit="leaf" quantity="2"/>
-            <measure type="text_scope" unit="page" quantity="4"/>
-          </extent>
-        </supportDesc>
-      </objectDesc>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-objectDesc-de"/>
+  <xi:include href="examples.xml" xpointer="ex-objectDesc-en"/>
+  <xi:include href="examples.xml" xpointer="ex-objectDesc-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-objectDesc-it"/>
 </elementSpec>
