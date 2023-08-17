@@ -1076,6 +1076,38 @@
       <p>Esempio di descrizione di un testimone testuale</p>
       <xi:include href="msDesc.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msItem-ms-de">
+      <p>Beispiel für die Beschreibung eines einzelnen handschriftlichen Dokumentteils</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msItem-ms-en">
+      <p>Example for the description of a single handwritten document part</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msItem-ms-fr">
+      <p>Exemple de description d'une seule partie de document manuscrit</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-msItem-ms-it">
+      <p>Esempio per la descrizione di una singola parte di un documento scritto a mano</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msItem-print-de">
+      <p>Beispiel für die Beschreibung eines einzelnen gedruckten Dokumentteils</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msItem-print-en">
+      <p>Example for the description of a single printed part of a document</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msItem-print-fr">
+      <p>Exemple de description d'une seule partie imprimée d'un document</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-msItem-print-it">
+      <p>Esempio per la descrizione di una singola parte stampata di un documento</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-note-de">
       <p>Anmerkung der Bearbeitenden</p>
       <xi:include href="note.xml"/>
