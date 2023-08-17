@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="condition" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="condition" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-04-14">Beschreibt den Erhaltungszustand und Schäden einer
         Quelle. Detailbeschreibungen, wie Lücken, Löcher etc., erfolgen an der entsprechenden Stelle.
     </desc>
@@ -21,20 +21,8 @@
   <content>
     <elementRef key="p" minOccurs="0" maxOccurs="unbounded"/>
   </content>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-14">
-    <p>Modellhafter Aufbau</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <condition agent="mice">
-        <p>Mäusefrass</p>
-      </condition>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-14">
-    <p>Structure modèle</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <condition agent="mice">
-        <p>Mäusefrass</p>
-      </condition>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-condition-de"/>
+  <xi:include href="examples.xml" xpointer="ex-condition-en"/>
+  <xi:include href="examples.xml" xpointer="ex-condition-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-condition-it"/>
 </elementSpec>
