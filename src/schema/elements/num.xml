@@ -37,43 +37,43 @@
   <xi:include href="examples.xml" xpointer="ex-hi-num-en"/>
   <xi:include href="examples.xml" xpointer="ex-hi-num-fr"/>
   <xi:include href="examples.xml" xpointer="ex-hi-num-it"/>
-  <remarks xml:lang="de" versionDate="2023-07-20">
+  <remarks xml:lang="de" versionDate="2023-08-17">
     <p>Der Wert der Zahl wird im Attribut <att>value</att> maschinenlesbar hinterlegt.
         </p>
     <p>Bei Angaben zu Massen, Gewichten, Währungen etc., in denen innerhalb
             von <gi>measure</gi> mit <att>quantity</att> die Anzahl ausgezeichnet wird,
             wird auf <gi>num</gi> verzichtet. Ebenso wird bei Jahreszahlen, die
-            mit <gi>origDate</gi>und <att>when</att> genauer beschrieben werden,
+            mit <gi>date</gi>und <att>when-custom</att> genauer beschrieben werden,
             auf <gi>num</gi> verzichtet. Innerhalb von einer zeitlichen Angabe
             mit <att>dur</att> wird auf <gi>num</gi> verzichtet.
         </p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-20">
+  <remarks xml:lang="en" versionDate="2023-08-217">
     <p>The value of the number is stored in machine-readable form in the <att>value</att> attribute.
         </p>
     <p>In the case of information on dimensions, weights, currencies, etc., in which <gi>measure</gi> is used to
             mark the number with <att>quantity</att>, <gi>num</gi> is not used. Likewise, <gi>num</gi> is not used for
-            years that are described in more detail with <gi>origDate</gi> and <att>when</att>. Within a time
+            years that are described in more detail with <gi>date</gi> and <att>when-custom</att>. Within a time
             specification with <att>dur</att>, <gi>num</gi> is not used.
         </p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-20">
+  <remarks xml:lang="fr" versionDate="2023-08-17">
     <p>La valeur du nombre est stockée sous une forme lisible par machine dans l'attribut <att>value</att>.
         </p>
     <p>Dans le cas d'informations sur les dimensions, les poids, les devises, etc., dans
             lesquelles <gi>measure</gi> est utilisé pour marquer le nombre avec <att>quantity</att>, <gi>num</gi> n'est
             pas utilisé. De même, <gi>num</gi> n'est pas utilisé pour les années qui sont décrites plus en détail
-            avec <gi>origDate</gi> et <att>when</att>. Dans une spécification de temps
+            avec <gi>date</gi> et <att>when-custom</att>. Dans une spécification de temps
             avec <att>dur</att>, <gi>num</gi> n'est pas utilisé.
         </p>
   </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-20">
+  <remarks xml:lang="it" versionDate="2023-08-17">
     <p>Il valore del numero è memorizzato in forma leggibile dalla macchina nell'attributo <att>value</att>.
         </p>
     <p>Nel caso di informazioni su dimensioni, pesi, valute, ecc., in cui <gi>measure</gi> viene utilizzato
             per contrassegnare il numero con <att>quantity</att>, <gi>num</gi> non viene utilizzato. Allo stesso
             modo, <gi>num</gi> non viene utilizzato per gli anni descritti più dettagliatamente
-            con <gi>origDate</gi> e <att>when</att>. All'interno di una specificazione temporale
+            con <gi>date</gi> e <att>when-custom</att>. All'interno di una specificazione temporale
             con <att>dur</att>, <gi>num</gi> non viene utilizzato.
         </p>
   </remarks>
