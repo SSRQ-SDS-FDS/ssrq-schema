@@ -23,7 +23,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-body-with-pb-div-signed",
-            "<body><pb n='1' facs='abcde_1'/><div><p>bar</p></div><signed><lb/>Rechenschriber</signed></body>",
+            "<body><pb n='1' facs='abcde_1'/><div><p>bar</p></div><div><signed><lb/>Rechenschriber</signed></div></body>",
             True,
         ),
         (
