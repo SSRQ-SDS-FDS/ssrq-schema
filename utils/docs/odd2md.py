@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 from collections.abc import Iterator
+from dataclasses import dataclass
 from pathlib import Path
 
 from utils.docs.specs.abstract import ODDElement
@@ -13,6 +14,12 @@ from utils.schema.compile import Schema, load_config, odd_factory
 
 # default languages used to generate the documentation
 LANGS = ["de", "fr"]
+
+
+@dataclass(frozen=True)
+class ElementMdSpec:
+    filename: str
+    nav_title: str
 
 
 def create_schema_by_entry(entry_point: str) -> Schema | None:
@@ -99,13 +106,19 @@ class ODD2Md:
             odd=schema.compiled_odd if isinstance(schema, Schema) else schema
         )
 
-    def create_md_doc_per_lang(self) -> None:
+    def create_md_doc_per_lang(self) -> list[ElementMdSpec]:
         """Create a markdown documentation per element per language.
 
         Returns:
-            None: Nothing."""
+            list[ElementMdSpec]: A sorted list of ElementMdSpec instances.
+        """
+
+        elements_specs_created: list[ElementMdSpec] = []
 
         for _, element in self.schema.elements.items():
+            elements_specs_created.append(
+                ElementMdSpec(filename=f"{element.ident}.md", nav_title=element.ident)
+            )
             for lang in self.languages:
                 element.to_markdown(
                     components=self.schema.components,
@@ -114,3 +127,5 @@ class ODD2Md:
                     lang_translations=getattr(self.schema.translations, lang),
                     path=self.out_dir,
                 )
+
+        return sorted(elements_specs_created, key=lambda x: x.nav_title)

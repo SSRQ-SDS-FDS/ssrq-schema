@@ -27,6 +27,18 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+nav:
+  - Home: index.md
+  - Base:
+    - Transcription:
+      - base/transcription/index.md
+      - Print: base/transcription/print.md
+      - Hand: base/transcription/hand.md
+    - base/date.md
+  - Elements:
+    - elements/index.md
 plugins:
   - search
   - i18n:
@@ -45,15 +57,25 @@ plugins:
         de:
           Base: Philologische Grundlagen
           Elements: Tag-Bibliothek
+          Hand: B Handschriftliche Texte
+          Home: Startseite
+          Print: A Gedruckte Texte
+          Transcription: Transkriptionsrichtlinien
         fr:
           Base: Bases philologiques
           Elements: Bibliothèque de tags
+          Hand: B Textes manuscrits
+          Home: Page d'accueil
+          Print: A Textes imprimés
+          Transcription: Principes de transcription
 site_dir: build/site
 site_name: !ENV [SITE_NAME, 'SSRQ Docs']
 site_url: !ENV DOCS_URL
 theme:
   favicon: assets/images/favicon-ssrq-32.png
   features:
+    - content.tabs.link
+    - navigation.indexes
     - navigation.path
     - navigation.top
   name: material
