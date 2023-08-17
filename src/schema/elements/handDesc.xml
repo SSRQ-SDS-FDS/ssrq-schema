@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="handDesc" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="handDesc" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-05-22">Beschreibt die Hände und alle Handwechsel.</desc>
   <desc xml:lang="en" versionDate="2023-05-22">Describes the hands and all hand changes.</desc>
   <desc xml:lang="fr" versionDate="2023-05-22">Décrit les mains et tous les changements de mains.</desc>
@@ -14,38 +14,10 @@
   <attList>
     <attDef ident="hands" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-24">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <physDesc>
-        <handDesc>
-          <handNote xml:id="hand1" n="firstHand" scribe="per123456">
-            <date from-custom="1001-01-01" to-custom="1100-12-31">
-              <precision precision="low" match="@from-custom"/>
-            </date>
-          </handNote>
-          <handNote xml:id="hand2" n="secondHand"/>
-          <handNote xml:id="hand3" n="otherHand"/>
-          <handNote xml:id="hand4" n="laterHand"/>
-        </handDesc>
-      </physDesc>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-24">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <physDesc>
-        <handDesc>
-          <handNote xml:id="hand1" n="firstHand" scribe="per123456">
-            <date from-custom="1001-01-01" to-custom="1100-12-31">
-              <precision precision="low" match="@from-custom"/>
-            </date>
-          </handNote>
-          <handNote xml:id="hand2" n="secondHand"/>
-          <handNote xml:id="hand3" n="otherHand"/>
-          <handNote xml:id="hand4" n="laterHand"/>
-        </handDesc>
-      </physDesc>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-handDesc-de"/>
+  <xi:include href="examples.xml" xpointer="ex-handDesc-en"/>
+  <xi:include href="examples.xml" xpointer="ex-handDesc-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-handDesc-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Marginalien, Streichungen, Korrekturen usw. werden direkt an der Stelle im Text ausgezeichnet. Es werden nur
             "wichtige" Schreiber eingetragen.
