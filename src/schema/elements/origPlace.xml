@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="origPlace" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origPlace" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-05-16">Enthält den Austellungs- oder Druckort einer Quelle.</desc>
   <desc xml:lang="en" versionDate="2023-05-16">Contains the place of issue or printing of a source.</desc>
   <desc xml:lang="fr" versionDate="2023-05-16">Contient le lieu d'émission ou d'impression d'une source.</desc>
@@ -45,40 +45,10 @@
       </datatype>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-16">
-    <p>Auszeichnung eines Druckorts</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"><lb/>Getruckt zuͦ
-            <origPlace>Zürich</origPlace>
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-16">
-    <p>Distinction d'un lieu d'impression</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"><lb/>Getruckt zuͦ
-            <origPlace>Zürich</origPlace>
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-16">
-    <p>Als Teil des Header</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <history>
-        <!-- ... -->
-        <origin>
-          <origPlace>Rheineck</origPlace>
-        </origin>
-      </history>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-16">
-    <p>Dans le cadre de l'en-tête</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <history>
-        <!-- ... -->
-        <origin>
-          <origPlace>Rheineck</origPlace>
-        </origin>
-      </history>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-history-de"/>
+  <xi:include href="examples.xml" xpointer="ex-history-en"/>
+  <xi:include href="examples.xml" xpointer="ex-history-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-history-it"/>
   <remarks xml:lang="de" versionDate="2023-07-15">
     <p>In <att>ref</att> wird mit einer ID (locNNNNNN) auf den Ort in der Ortsdatenbank verwiesen, in der
             alle Angaben zu einem Ort zu finden sind.

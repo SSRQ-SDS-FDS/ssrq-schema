@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="origDate" module="msDescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origDate" module="msDescription" mode="change">
   <desc xml:lang="de" versionDate="2023-05-12">Enthält Originaldaten des edierten Quellentexts (Ausstellungdatum).
     </desc>
   <desc xml:lang="en" versionDate="2023-05-12">Contains original data of the edited source texts (date of issue).
@@ -37,25 +37,15 @@
     </attDef>
     <attDef ident="datingMethod" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-12">
-    <p>Originaldatierung bei Urkunden</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <origDate when-custom="1448-05-25" calendar="gregorian">uf sant Urbans tag in dem jár,
-                do man zalt nach Cristi unsers herren gepurt tusend vierhundert und im acht und
-                viertzigosten jâr
-            </origDate>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-12">
-    <p>Datation originale des actes</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <origDate when-custom="1448-05-25" calendar="gregorian">uf sant Urbans tag in dem jár,
-                do man zalt nach Cristi unsers herren gepurt tusend vierhundert und im acht und
-                viertzigosten jâr
-            </origDate>
-    </egXML>
-  </exemplum>
-  <remarks xml:lang="de" versionDate="2023-07-15">
+  <xi:include href="examples.xml" xpointer="ex-history-de"/>
+  <xi:include href="examples.xml" xpointer="ex-history-en"/>
+  <xi:include href="examples.xml" xpointer="ex-history-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-history-it"/>
+  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-de"/>
+  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-en"/>
+  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-it"/>
+    <remarks xml:lang="de" versionDate="2023-07-15">
     <p>Es können auch mehrere Originaldatierungen innerhalb einer Editionsvorlage vorhanden sein.
             Mit <att>when-custom</att> und <att>datingMethod</att> wird das Datum gemäss den Datierungsrichtlinien
             erfasst. Zum Umgang mit Heiligenfesten und anderen kirchlichen Feiertagen vgl. <gi>date</gi>. In den
@@ -95,8 +85,5 @@
             regesta, la data in lingua originale deve essere preceduta da <gi>orig</gi> dopo la data normalizzata.
         </p>
   </remarks>
-  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-de"/>
-  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-en"/>
-  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-it"/>
+
 </elementSpec>
