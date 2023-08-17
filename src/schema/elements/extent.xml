@@ -24,13 +24,13 @@
       <sch:pattern>
         <sch:rule context="tei:extent[count(tei:dimensions[@type]) &gt; 1]">
           <sch:assert test="count(distinct-values(tei:dimensions/@type)) = count(tei:dimensions)">The @type of
-                        each tei:dimensions, which is a child of<sch:name/>, needs to
+                        each tei:dimensions, which is a child of <sch:name/>, needs to
                         be unique.
                     </sch:assert>
         </sch:rule>
         <sch:rule context="tei:extent[count(tei:measure) &gt; 1]">
           <sch:assert test="count(distinct-values(tei:measure/@type)) = count(tei:measure)">The @type of each
-                        tei:measure, which is a child of<sch:name/>, needs to
+                        tei:measure, which is a child of <sch:name/>, needs to
                         be unique.
                     </sch:assert>
         </sch:rule>
