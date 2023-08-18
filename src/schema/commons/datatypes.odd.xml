@@ -261,7 +261,7 @@
     </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-hand">
-    <dataSpec ident="ssrq.hand" mode="add">
+    <dataSpec ident="ssrq.hand">
       <desc xml:lang="de" versionDate="2023-05-11">Gibt Informationen zur Hand eines Textes</desc>
       <desc xml:lang="en" versionDate="2023-05-11">Provides information on the hand of a text</desc>
       <desc xml:lang="fr" versionDate="2023-05-11">Fournit des informations sur la main d'un texte</desc>
@@ -323,16 +323,16 @@
             <desc xml:lang="it" versionDate="2023-05-15">mano secondaria (I)</desc>
           </valItem>
           <valItem ident="laterHand">
-            <desc xml:lang="de" versionDate="2023-05-15">von späterer Hand</desc>
-            <desc xml:lang="en" versionDate="2023-05-15">in a later hand</desc>
-            <desc xml:lang="fr" versionDate="2023-05-15">d’une main plus récente</desc>
-            <desc xml:lang="it" versionDate="2023-05-15">da una mano più recente</desc>
+            <desc xml:lang="de" versionDate="2023-05-15">spätere Hand</desc>
+            <desc xml:lang="en" versionDate="2023-05-15">later hand</desc>
+            <desc xml:lang="fr" versionDate="2023-05-15">main plus récente</desc>
+            <desc xml:lang="it" versionDate="2023-05-15">mano più recente</desc>
           </valItem>
           <valItem ident="otherHand">
-            <desc xml:lang="de" versionDate="2023-05-15">von anderer Hand</desc>
-            <desc xml:lang="en" versionDate="2023-05-15">in another hand</desc>
-            <desc xml:lang="fr" versionDate="2023-05-15">par une autre main</desc>
-            <desc xml:lang="it" versionDate="2023-05-15">da un’altra mano</desc>
+            <desc xml:lang="de" versionDate="2023-05-15">andere Hand</desc>
+            <desc xml:lang="en" versionDate="2023-05-15">another hand</desc>
+            <desc xml:lang="fr" versionDate="2023-05-15">autre main</desc>
+            <desc xml:lang="it" versionDate="2023-05-15">altra mano</desc>
           </valItem>
         </valList>
       </content>
@@ -341,198 +341,148 @@
       <content>
         <valList type="closed">
           <valItem ident="hand10c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 10.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du X<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo X</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 10th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 10. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 10th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du X<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo X</desc>
           </valItem>
           <valItem ident="hand11c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 11.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XI<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XI</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 11th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 11. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 11th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XI<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XI</desc>
           </valItem>
           <valItem ident="hand12c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 12.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XII<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XII</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 12th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 12. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 12th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XII<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XII</desc>
           </valItem>
           <valItem ident="hand13c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 13.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XIII<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIII</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 13th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 13. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 13th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XIII<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIII</desc>
           </valItem>
           <valItem ident="hand14c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 14.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XIV<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIV</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 14th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 14. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 14th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XIV<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIV</desc>
           </valItem>
           <valItem ident="hand15c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 15.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XV<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XV</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 15th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 15. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 15th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XV<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XV</desc>
           </valItem>
           <valItem ident="hand16c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 16.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XVI<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVI</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 16th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 16. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 16th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XVI<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVI</desc>
           </valItem>
           <valItem ident="hand17c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 17.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XVII<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVII</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 17th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 17. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 17th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XVII<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVII</desc>
           </valItem>
           <valItem ident="hand18c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 18.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du
-                            XVIII<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVIII</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 18th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 18. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 18th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XVIII<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVIII</desc>
           </valItem>
           <valItem ident="hand19c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 19.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XIX<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIX</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 19th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 19. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 19th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XIX<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIX</desc>
           </valItem>
           <valItem ident="hand20c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 20.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XX<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XX</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 20th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 20. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 20th century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XX<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XX</desc>
           </valItem>
           <valItem ident="hand21c">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 21.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XXI<hi rend="sup">e</hi> siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XXI</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 21th
-                            century</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 21. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 21st century</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XXI<hi rend="sup">e</hi> siècle</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XXI</desc>
           </valItem>
           <valItem ident="hand10cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 10.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du X<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo X (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 10th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 10. Jh.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 10th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du X<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo X?</desc>
           </valItem>
           <valItem ident="hand11cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 11.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XI<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XI (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 11th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 11. Jh.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 11th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XI<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XI?</desc>
           </valItem>
           <valItem ident="hand12cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 12.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XII<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XII (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 12th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 12. Jh.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 12th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XII<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XII?</desc>
           </valItem>
           <valItem ident="hand13cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 13.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XIII<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIII (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 13th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 13. Jh.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 13th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XIII<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIII?</desc>
           </valItem>
           <valItem ident="hand14cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 14.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XIV<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIV (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 14th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 14. Jh.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 14th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XIV<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIV?</desc>
           </valItem>
           <valItem ident="hand15cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 15.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XV<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XV (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 15th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 15. Jh.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 15th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XV<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XV?</desc>
           </valItem>
           <valItem ident="hand16cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 16.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XVI<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVI (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 16th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 16. Jh.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 16th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XVI<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVI?</desc>
           </valItem>
           <valItem ident="hand17cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 17.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XVII<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVII (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 17th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 17. Jh.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 17th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XVII<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVII?</desc>
           </valItem>
           <valItem ident="hand18cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 18.
-                            Jh.</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du
-                            XVIII<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XVIII (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 18th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 18. Jh.</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 18th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XVIII<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVIII?</desc>
           </valItem>
           <valItem ident="hand19cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 19.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XIX<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XIX (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 19th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 19. Jh.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 19th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XIX<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIX?</desc>
           </valItem>
           <valItem ident="hand20cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 20.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XX<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XX (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 20th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 20. Jh.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 20th century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XX<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XX?</desc>
           </valItem>
           <valItem ident="hand21cf">
-            <desc xml:lang="de" versionDate="2022-05-05">von Hand des 21.
-                            Jh.?</desc>
-            <desc xml:lang="fr" versionDate="2022-05-05">par une main du XXI<hi rend="sup">e</hi> (?) siècle</desc>
-            <desc xml:lang="it" versionDate="2022-09-05">da una mano del secolo XXI (?)</desc>
-            <desc xml:lang="en" versionDate="2022-05-05">in a hand of the 21th
-                            century?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 21. Jhs.?</desc>
+            <desc xml:lang="en" versionDate="2023-08-18">hand of the 21st century?</desc>
+            <desc xml:lang="fr" versionDate="2023-08-18">main du XXI<hi rend="sup">e</hi> siècle?</desc>
+            <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XXI?</desc>
           </valItem>
         </valList>
       </content>
