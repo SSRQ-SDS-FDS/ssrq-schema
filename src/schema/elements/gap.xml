@@ -50,6 +50,7 @@
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="agent" mode="delete"/>
     <attDef ident="reason" mode="replace">
       <desc xml:lang="de" versionDate="2023-05-26">Grund der Lücke</desc>
       <desc xml:lang="en" versionDate="2023-05-26">Reason for the difference</desc>
@@ -98,7 +99,6 @@
         </rng:choice>
       </datatype>
     </attDef>
-    <attDef ident="agent" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-gap-line-de"/>
   <xi:include href="examples.xml" xpointer="ex-gap-line-en"/>
