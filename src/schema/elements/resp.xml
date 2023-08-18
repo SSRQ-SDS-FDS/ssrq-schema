@@ -14,22 +14,8 @@
       <rng:ref name="ssrq.role.resp.fr"/>
     </rng:choice>
   </content>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-08-07">
-    <p>Verantwortlich für das Transkript</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <persName>Claudia Sutter</persName>
-        <resp>Transkription</resp>
-      </respStmt>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-08-07">
-    <p>Responsable de la transcription</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <persName>Claudia Sutter</persName>
-        <resp>Transcription</resp>
-      </respStmt>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-respStmt-de"/>
+  <xi:include href="examples.xml" xpointer="ex-respStmt-en"/>
+  <xi:include href="examples.xml" xpointer="ex-respStmt-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-respStmt-it"/>
 </elementSpec>
