@@ -21,11 +21,7 @@
     </sequence>
   </content>
   <attList>
-    <attDef ident="n" mode="change">
-      <datatype>
-        <dataRef key="ssrq.hand"/>
-      </datatype>
-    </attDef>
+    <attDef ident="n" mode="delete"/>
     <attDef ident="xml:id" mode="change" usage="req"/>
     <attDef ident="xml:lang" mode="delete"/>
   </attList>
