@@ -21,12 +21,11 @@
     </desc>
   <classes mode="replace"/>
   <content>
-    <alternate maxOccurs="unbounded">
-      <elementRef key="gap"/>
-      <elementRef key="pb"/>
-      <elementRef key="div"/>
-      <elementRef key="signed"/>
-    </alternate>
+    <sequence preserveOrder="false">
+      <elementRef key="div" maxOccurs="unbounded"/>
+      <elementRef key="gap" minOccurs="0" maxOccurs="unbounded"/>
+      <elementRef key="pb" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
   </content>
   <xi:include href="examples.xml" xpointer="ex-body-de"/>
   <xi:include href="examples.xml" xpointer="ex-body-en"/>

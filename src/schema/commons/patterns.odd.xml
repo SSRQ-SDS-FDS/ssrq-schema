@@ -76,7 +76,7 @@
       <desc xml:lang="fr" versionDate="2023-04-06">Restriction pour les noms de fichiers ou de fac-similés.</desc>
       <desc xml:lang="it" versionDate="2023-05-15">Restrizione sui nomi di file o fax.</desc>
       <content>
-        <dataRef name="string" restriction="[A-Za-z_\-\.0-9]+([1-9]|[rv])"/>
+        <dataRef name="string" restriction="[A-Za-z_\-\.0-9]+([1-9]|[rv]|plica)"/>
       </content>
     </dataSpec>
     <!-- pointer to SSRQ databases -->

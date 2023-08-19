@@ -45,44 +45,31 @@
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-en"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-fr"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-it"/>
-  <remarks xml:lang="de" versionDate="2023-07-15">
+  <remarks xml:lang="de" versionDate="2023-08-15">
     <p>Es können auch mehrere Originaldatierungen innerhalb einer Editionsvorlage vorhanden sein.
-            Mit <att>when-custom</att> und <att>datingMethod</att> wird das Datum gemäss den Datierungsrichtlinien
-            erfasst. Zum Umgang mit Heiligenfesten und anderen kirchlichen Feiertagen vgl. <gi>date</gi>. In den
-            Kommentaren und Anmerkungen wird <gi>date</gi> verwendet. Das normalisierte Datum eines edierten Stücks
-            wird in den Metadaten erfasst. Der Tag wird in der Retrodigitalisierung für das normalisierte Originaldatum
-            eines Dokuments gemäss den Datierungsrichtlinien verwendet. Bei Regesten muss mit <gi>orig</gi> hinter dem
-            normalisierten Datum das Datum in Originalsprache angefügt werden.
-        </p>
+        Mit <att>when-custom</att> und <att>calendar</att> wird das Datum gemäss den Datierungsrichtlinien
+        erfasst. Zum Umgang mit Heiligenfesten und anderen kirchlichen Feiertagen vgl. <gi>date</gi>. Im Textbereich,
+        den Kommentaren und Anmerkungen wird <gi>date</gi> verwendet. <gi>origDate</gi> wird nur im Kopfbereich für das
+        normalisierte Originaldatum eines Dokuments verwendet.</p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-15">
-    <p>There can also be several original dates within an edition template.
-            With <att>when-custom</att> and <att>datingMethod</att> the date is recorded according to the dating
-            guidelines. For how to deal with holy days and other church holidays, see <gi>date</gi>. <gi>date</gi> is
-            used in the comments and annotations. The normalized date of an edited piece is recorded in the metadata.
-            The day is used in retro-digitization for the normalized original date of a document according to the
-            dating guidelines. In the case of regesta, the date in the original language must be appended
-            with <gi>orig</gi> after the normalized date.
-        </p>
+  <remarks xml:lang="en" versionDate="2023-08-15">
+    <p>There can also be several original dates within an edition template. With <att>when-custom</att> and
+      <att>calendar</att> the date is recorded according to the dating guidelines. For how to deal with holy days and
+      other church holidays, see <gi>date</gi>. <gi>date</gi> is used in the text area, comments and annotations.
+      <gi>origDate</gi> is only used in the header for the normalized original date of a document.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-15">
-    <p>Il peut également y avoir plusieurs dates originales dans un modèle d'édition.
-            Avec <att>when-custom</att> et <att>datingMethod</att> la date est enregistrée conformément aux directives
-            de datation. Pour savoir comment gérer les jours saints et autres fêtes religieuses,
-            voir <gi>date</gi>. <gi>date</gi> est utilisé dans les commentaires et les annotations. La date normalisée
-            d'un morceau édité est enregistrée dans les métadonnées. Le jour est utilisé dans la rétro-numérisation
-            pour la date d'origine normalisée d'un document conformément aux directives de datation. Dans le cas de
-            regesta, la date dans la langue d'origine doit être ajoutée avec <gi>orig</gi> après la date normalisée.
-        </p>
+  <remarks xml:lang="fr" versionDate="2023-08-15">
+    <p>Il peut également y avoir plusieurs dates originales dans un modèle d'édition. Avec <att>when-custom</att> et
+      <att>calendar</att> la date est enregistrée conformément aux directives de datation. Pour savoir comment gérer
+      les jours saints et autres fêtes religieuses, consultez <gi>date</gi>. <gi>date</gi> est utilisé dans la zone de
+      texte, les commentaires et les annotations. <gi>origDate</gi> n'est utilisé dans l'en-tête que pour la date
+      d'origine normalisée d'un document.</p>
   </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-15">
-    <p>Possono anche esserci diverse date originali all'interno di un modello di edizione.
-            Con <att>when-custom</att> e <att>datingMethod</att> la data viene registrata secondo le linee guida per
-            gli appuntamenti. Per come gestire i giorni sacri e le altre festività religiose,
-            vedere <gi>date</gi>. <gi>date</gi> è usato nei commenti e nelle annotazioni. La data normalizzata di un
-            brano modificato viene registrata nei metadati. Il giorno viene utilizzato nella retro-digitalizzazione
-            per la data originale normalizzata di un documento secondo le linee guida di datazione. Nel caso di
-            regesta, la data in lingua originale deve essere preceduta da <gi>orig</gi> dopo la data normalizzata.
-        </p>
+  <remarks xml:lang="it" versionDate="2023-08-15">
+    <p>Possono anche esserci diverse date originali all'interno di un modello di edizione. Con <att>when-custom</att>
+      e <att>calendar</att> la data viene registrata secondo le linee guida per gli appuntamenti. Per sapere come
+      gestire i giorni sacri e le altre festività religiose, vedi <gi>date</gi>. La <gi>data</gi> viene utilizzata
+      nell'area di testo, nei commenti e nelle annotazioni. <gi>origDate</gi> viene utilizzato solo nell'intestazione
+      per la data originale normalizzata di un documento.</p>
   </remarks>
 </elementSpec>

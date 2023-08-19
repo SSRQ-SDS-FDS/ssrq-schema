@@ -8,43 +8,37 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
-    "name, markup, result, message",
+    "name, markup, result",
     [
         (
             "valid-add",
             "<add place='left_top'>bar</add>",
             True,
-            None,
         ),
         (
             "valid-with-attributes",
             "<add place='left_top' type='sign' rend='other_ink'>bar</add>",
             True,
-            None,
+        ),
+        (
+            "valid-with-hand",
+            "<add place='left_top' type='sign' rend='other_ink' hand='foo'>bar</add>",
+            True,
         ),
         (
             "invalid-add-without-place",
             "<add>bar</add>",
             False,
-            None,
         ),
         (
             "valid-add-with-wrong-attribute-values",
             "<add place='baz' type='foo'>bar</add>",
             False,
-            None,
         ),
         (
             "valid-add-with-wrong-attributess",
             "<add place='left_top' att='foo'>bar</add>",
             False,
-            None,
-        ),
-        (
-            "valid-add-with-hand-attribute",
-            "<add place='left_top' hand='otherHand'>bar</add>",
-            False,
-            "without matching ID",
         ),
     ],
 )
@@ -53,17 +47,8 @@ def test_add(
     name: str,
     markup: str,
     result: bool,
-    message: str | None,
 ):
-    test_element_with_rng("add", name, markup, result, True)
-    if message:
-        validation_result = test_element_with_rng("add", name, markup, result, True)
-        file_reports = validation_result.reports[0]
-        assert isinstance(file_reports.report, list)
-        messages = "".join([error.message for error in file_reports.report])
-        assert message in messages
-    else:
-        test_element_with_rng("add", name, markup, result, False)
+    test_element_with_rng("add", name, markup, result, False)
 
 
 @pytest.mark.parametrize(
@@ -72,6 +57,21 @@ def test_add(
         (
             "invalid-empty-add",
             "<add/>",
+            False,
+        ),
+        (
+            "invalid-add-without-matching-handNote",
+            "<add place='left_top' type='sign' rend='other_ink' hand='otherHand'>bar</add>",
+            False,
+        ),
+        (
+            "valid-add-with-matching-handNote",
+            "<div><handNote xml:id='otherHand'/><add place='left_top' type='sign' rend='other_ink' hand='otherHand'>bar</add></div>",
+            True,
+        ),
+        (
+            "invalid-add-with-matching-wrong-element",
+            "<div xml:id='otherHand'><add place='left_top' type='sign' rend='other_ink' hand='otherHand'>bar</add></div>",
             False,
         ),
     ],

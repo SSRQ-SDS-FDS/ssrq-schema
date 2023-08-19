@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="div" module="textstructure" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="div" module="textstructure" mode="change">
   <desc xml:lang="de" versionDate="2023-05-23">Gliedert Quellentexte innerhalb von <gi>body</gi> oder Bemerkungen
         innnerhalb von <gi>back</gi> zusammen mit <gi>p</gi> in Abschnitte.
     </desc>
@@ -20,14 +20,43 @@
     <memberOf key="att.typed"/>
   </classes>
   <content>
-    <alternate maxOccurs="unbounded">
-      <macroRef key="ssrq.content.content"/>
-      <macroRef key="ssrq.content.critical"/>
-      <macroRef key="ssrq.content.display"/>
-      <macroRef key="ssrq.content.entities"/>
-      <macroRef key="ssrq.content.measure"/>
-    </alternate>
+    <rng:choice>
+      <rng:interleave>
+        <rng:group>
+          <rng:ref name="div"/>
+          <rng:oneOrMore>
+            <rng:ref name="div"/>
+          </rng:oneOrMore>
+        </rng:group>
+        <rng:zeroOrMore>
+          <rng:choice>
+            <rng:ref name="cb"/>
+            <rng:ref name="pb"/>
+            <rng:ref name="ssrq.content.anchor.spans"/>
+          </rng:choice>
+        </rng:zeroOrMore>
+      </rng:interleave>
+      <rng:oneOrMore>
+        <rng:choice>
+          <rng:ref name="seg"/>
+          <rng:ref name="p"/>
+          <rng:ref name="ssrq.content.default"/>
+        </rng:choice>
+      </rng:oneOrMore>
+    </rng:choice>
   </content>
+  <constraintSpec scheme="schematron" ident="sch-el-div-text" mode="add">
+    <desc xml:lang="en" versionDate="2023-08-17">Schematron to check the usage of attributes.</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:div">
+          <sch:assert test="string-length(normalize-space(string-join(text(), ''))) = 0">
+                        No text allowed in <sch:name/>.
+                    </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <attList>
     <attDef ident="type" mode="replace">
       <valList type="closed">
