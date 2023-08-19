@@ -9,8 +9,8 @@ from ..conftest import RNG_test_function
         (
             "valid-damage-with-add",
             "<damage agent='water_spot'><add hand='otherHand' place='overwritten'>zuͦ trincken</add></damage>",
-            False,
-            "without matching ID",
+            True,
+            None,
         ),
         (
             "valid-damage-with-gap",

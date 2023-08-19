@@ -805,8 +805,8 @@
     <classSpec ident="att.written" type="atts" mode="change">
       <attList>
         <attDef ident="hand" mode="change">
-          <desc xml:lang="de" versionDate="2023-05-11">Enthält einen Verweis auf die ID eines
-                        <gi>handNote</gi>-Element, das im <gi>teiHeader</gi> deklariert wurde.
+          <desc xml:lang="de" versionDate="2023-08-17">Enthält einen Verweis auf die ID eines
+                        <gi>handNote</gi>-Elements, das im <gi>teiHeader</gi> deklariert wurde.
                     </desc>
           <desc xml:lang="en" versionDate="2023-05-17">Contains a reference to the ID of a
                         <gi>handNote</gi>
@@ -821,8 +821,26 @@
                         dichiarato in <gi>teiHeader</gi>.
                     </desc>
           <datatype>
-            <dataRef name="IDREF"/>
+            <rng:choice>
+              <rng:ref name="ssrq.hand"/>
+              <rng:ref name="ssrq.hand.century"/>
+              <rng:data type="string"/>
+            </rng:choice>
           </datatype>
+          <constraintSpec scheme="schematron" ident="sch-att-hand" mode="add">
+            <desc xml:lang="en" versionDate="2023-08-17">A constraint to check the existence of an ID reference.</desc>
+            <constraint>
+              <sch:pattern>
+                <sch:rule context="tei:*[@hand]">
+                  <sch:let name="handNoteRef" value="@hand"/>
+                  <sch:assert test="exists(id($handNoteRef)) and id($handNoteRef)/name() = 'handNote'">
+                                        The referenced ID (<sch:value-of select="$handNoteRef"/>) must belong to a handNote element.
+                                        Hint: Save the document to automatically generate a handNote.
+                                    </sch:assert>
+                </sch:rule>
+              </sch:pattern>
+            </constraint>
+          </constraintSpec>
         </attDef>
       </attList>
     </classSpec>
