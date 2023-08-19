@@ -18,9 +18,23 @@
     <memberOf key="model.segLike"/>
   </classes>
   <content>
-    <rng:oneOrMore>
-      <rng:ref name="ssrq.content.default"/>
-    </rng:oneOrMore>
+    <rng:choice>
+      <rng:group>
+        <rng:ref name="p"/>
+        <rng:oneOrMore>
+          <rng:ref name="p"/>
+        </rng:oneOrMore>
+      </rng:group>
+      <rng:group>
+        <rng:ref name="seg"/>
+        <rng:oneOrMore>
+          <rng:ref name="seg"/>
+        </rng:oneOrMore>
+      </rng:group>
+      <rng:oneOrMore>
+        <rng:ref name="ssrq.content.default"/>
+      </rng:oneOrMore>
+    </rng:choice>
   </content>
   <attList>
     <attDef ident="cert" mode="delete"/>

@@ -15,7 +15,11 @@
   </classes>
   <content>
     <rng:oneOrMore>
-      <rng:ref name="ssrq.content.default"/>
+      <rng:choice>
+        <rng:ref name="p"/>
+        <rng:ref name="seg"/>
+        <rng:ref name="ssrq.content.default"/>
+      </rng:choice>
     </rng:oneOrMore>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-del" mode="add">

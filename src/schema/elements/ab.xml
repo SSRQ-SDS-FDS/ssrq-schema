@@ -28,25 +28,6 @@
       <rng:ref name="ssrq.content.default"/>
     </rng:oneOrMore>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-ab">
-    <desc xml:lang="en" versionDate="2023-05-02">Constraint for tei:ab</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:ab">
-          <sch:assert test="count(parent::tei:div/tei:ab) = 1" xml:lang="en">
-                        There can only be one
-                        <sch:name/>
-                        element within &lt;div&gt;.
-                    </sch:assert>
-          <sch:assert test="count(parent::tei:div/*) = 1" xml:lang="en">
-                        The
-                        <sch:name/>
-                        element must be the only element within &lt;div&gt;.
-                    </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
   <attList>
     <attDef ident="n" mode="delete"/>
     <attDef ident="place" mode="replace" usage="req">

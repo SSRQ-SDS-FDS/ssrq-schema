@@ -4,6 +4,20 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
   <specGrp xml:id="ssrq-default-content-types">
+    <macroSpec ident="ssrq.content.anchor.spans" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-08-17">Anker- und umspannende Elemente</desc>
+      <desc xml:lang="en" versionDate="2023-08-17">anchor and spanning elements</desc>
+      <desc xml:lang="fr" versionDate="2023-08-17">Eléments d'ancrage et de serrage</desc>
+      <desc xml:lang="it" versionDate="2023-08-17">Elementi di ancoraggio e di campata</desc>
+      <content>
+        <alternate>
+          <elementRef key="addSpan"/>
+          <elementRef key="anchor"/>
+          <elementRef key="damageSpan"/>
+          <elementRef key="delSpan"/>
+        </alternate>
+      </content>
+    </macroSpec>
     <macroSpec ident="ssrq.content.content" mode="add" module="ssrq.core.module">
       <desc xml:lang="de" versionDate="2023-03-23">Inhaltliche Auszeichnung</desc>
       <desc xml:lang="en" versionDate="2023-06-29">Distinction of content</desc>
@@ -26,15 +40,11 @@
         <alternate>
           <elementRef key="abbr"/>
           <elementRef key="add"/>
-          <elementRef key="addSpan"/>
-          <elementRef key="anchor"/>
           <elementRef key="app"/>
           <elementRef key="choice"/>
           <elementRef key="corr"/>
           <elementRef key="damage"/>
-          <elementRef key="damageSpan"/>
           <elementRef key="del"/>
-          <elementRef key="delSpan"/>
           <elementRef key="foreign"/>
           <elementRef key="gap"/>
           <elementRef key="handShift"/>
@@ -55,6 +65,7 @@
       <content>
         <alternate>
           <textNode/>
+          <macroRef key="ssrq.content.anchor.spans"/>
           <macroRef key="ssrq.content.content"/>
           <macroRef key="ssrq.content.critical"/>
           <macroRef key="ssrq.content.display"/>
@@ -72,7 +83,6 @@
         <alternate>
           <elementRef key="ab"/>
           <elementRef key="cb"/>
-          <elementRef key="div"/>
           <elementRef key="figure"/>
           <elementRef key="fw"/>
           <elementRef key="head"/>
@@ -80,11 +90,9 @@
           <elementRef key="label"/>
           <elementRef key="lb"/>
           <elementRef key="orig"/>
-          <elementRef key="p"/>
           <elementRef key="pb"/>
           <elementRef key="q"/>
           <elementRef key="quote"/>
-          <elementRef key="seg"/>
           <elementRef key="signed"/>
           <elementRef key="table"/>
         </alternate>

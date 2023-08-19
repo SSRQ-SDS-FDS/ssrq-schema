@@ -45,22 +45,6 @@ def test_ab_rng(
     "name, markup, result",
     [
         (
-            "valid-ab-inside-div",
-            "<TEI><handNote xml:id='hand20cf'/><div><ab type='archiving_reference' place='left margin' hand='hand20cf'>St. Georgenamt FC 2</ab></div></TEI>",
-            True,
-        ),
-        (
-            "invalid-ab-inside-div-with-following-ab",
-            """<div><ab type='archiving_reference' place='left margin' hand='hand20cf'>St. Georgenamt FC 2</ab>
-                        <ab type='archiving_reference' place='left margin' hand='hand20c?'>St. Georgenamt FC 2</ab></div>""",
-            False,
-        ),
-        (
-            "invalid-ab-inside-div",
-            "<div><ab type='archiving_reference' place='left margin' hand='hand20cf'>St. Georgenamt FC 2</ab><p>foo</p></div>",
-            False,
-        ),
-        (
             "invalid-empty-ab",
             "<ab type='archiving_reference' place='left margin' hand='hand20cf'/>",
             False,
