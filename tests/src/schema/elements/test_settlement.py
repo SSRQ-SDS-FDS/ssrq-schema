@@ -8,22 +8,17 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-settlement",
-            "<settlement>foo</settlement>",
+            "<settlement ref='loc000001' xml:lang='de'>foo</settlement>",
             True,
         ),
         (
             "invalid-settlement",
-            "<settlement><p>bar</p></settlement>",
+            "<settlement ref='loc000001' xml:lang='de'><p>bar</p></settlement>",
             False,
         ),
         (
-            "valid-settlement-with-ref",
-            "<settlement ref='loc000001'>foo</settlement>",
-            True,
-        ),
-        (
             "settlement-with-invalid-ref",
-            "<settlement ref='abcdef'>foo</settlement>",
+            "<settlement ref='abcdef' xml:lang='de'>foo</settlement>",
             False,
         ),
     ],

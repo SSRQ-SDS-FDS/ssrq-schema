@@ -14,10 +14,10 @@
   <classes mode="replace"/>
   <content>
     <sequence>
-      <sequence preserveOrder="false" maxOccurs="unbounded">
-        <elementRef key="idno"/>
-        <elementRef key="repository"/>
+      <sequence maxOccurs="unbounded">
         <elementRef key="settlement" minOccurs="0"/>
+        <elementRef key="repository"/>
+        <elementRef key="idno"/>
       </sequence>
       <elementRef key="altIdentifier" minOccurs="0" maxOccurs="unbounded"/>
     </sequence>

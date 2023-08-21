@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="settlement" module="namesdates" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="settlement" module="namesdates" mode="change">
   <desc xml:lang="de" versionDate="2023-07-11">Erfassung eines Siedlungsnamens (Standort des
         Archivs) innerhalb von <gi>msIdentifier</gi>.
     </desc>
@@ -17,13 +17,15 @@
     </desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
+    <memberOf key="att.global"/>
     <memberOf key="model.placeNamePart"/>
   </classes>
   <content>
     <textNode/>
   </content>
   <attList>
-    <attDef ident="ref" mode="replace">
+    <attDef ident="n" mode="delete"/>
+    <attDef ident="ref" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung des Ortes mit der ID der
                 Ortsdatenbank.
             </desc>
@@ -39,27 +41,20 @@
         <dataRef key="ssrq.pointer.places"/>
       </datatype>
     </attDef>
+    <attDef ident="xml:id" mode="delete"/>
+    <attDef ident="xml:lang" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2023-06-23">ISO-639-1-Sprachkürzel</desc>
+      <desc xml:lang="en" versionDate="2023-06-23">ISO-639-1-Language abbreviation</desc>
+      <desc xml:lang="fr" versionDate="2023-06-23">ISO-639-1-Abréviation de la langue</desc>
+      <desc xml:lang="it" versionDate="2023-06-23">ISO-639-1-Abbreviazione della lingua</desc>
+      <valList type="closed">
+        <valItem ident="de"/>
+        <valItem ident="fr"/>
+      </valList>
+    </attDef>
   </attList>
-  <exemplum xml:lang="de" versionDate="2023-07-11">
-    <p>Beispielhafte Erfassung des Städtenamens eines Archivs</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <msIdentifier>
-        <repository xml:lang="de">Staatsarchiv
-                    <settlement ref="loc000082">St. Gallen</settlement>
-                </repository>
-        <idno xml:lang="de">StASG AA 2 B 001a, fol. 1r–5r</idno>
-      </msIdentifier>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" versionDate="2023-07-11">
-    <p>Exemple de saisie du nom de la ville d'une archive</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <msIdentifier>
-        <repository xml:lang="fr">Archives de l’État de
-                    <settlement ref="loc000284">Fribourg</settlement>
-                </repository>
-        <idno xml:lang="de">StAFR, Thurnrodel 2, fol. 15r–16v</idno>
-      </msIdentifier>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
+  <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
+  <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-msIdentifier-it"/>
 </elementSpec>

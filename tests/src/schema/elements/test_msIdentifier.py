@@ -8,27 +8,42 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-msIdentifier",
-            "<msIdentifier><idno xml:lang='de' source='http://foo.bar'>bar</idno><repository xml:lang='de'>foo</repository></msIdentifier>",
+            """<msIdentifier>
+                    <repository xml:lang='de'>foo</repository>
+                    <idno xml:lang='de' source='http://foo.bar'>bar</idno>
+                </msIdentifier>""",
             True,
         ),
         (
             "valid-msIdentifier-with-multiple-altIdentifier",
-            "<msIdentifier><idno xml:lang='de' source='http://foo.bar'>bar</idno><repository xml:lang='de'>foo</repository><altIdentifier><idno>Nr. Bar</idno></altIdentifier><altIdentifier><idno>Nr. Foo</idno></altIdentifier></msIdentifier>",
+            """<msIdentifier>
+                    <repository xml:lang='de'>foo</repository>
+                    <idno xml:lang='de' source='http://foo.bar'>bar</idno>
+                    <altIdentifier>
+                        <idno>Nr. Bar</idno>
+                    </altIdentifier>
+                    <altIdentifier>
+                        <idno>Nr. Foo</idno>
+                    </altIdentifier>
+                </msIdentifier>""",
             True,
         ),
         (
             "valid-msIdentifie-with-settlement",
-            "<msIdentifier><idno xml:lang='de' source='http://foo.bar'>bar</idno><repository xml:lang='de'>foo</repository><settlement>Zürich</settlement></msIdentifier>",
+            """<msIdentifier>
+                    <settlement ref="loc123456" xml:lang="de">foo</settlement>
+                    <repository xml:lang='de'>foo</repository>
+                    <idno xml:lang='de' source='http://foo.bar'>bar</idno>
+                </msIdentifier>""",
             True,
         ),
         (
-            "invalid-msIdentifier-content",
-            "<msIdentifier><idno xml:lang='de' source='http://foo.bar'>bar</idno></msIdentifier>",
-            False,
-        ),
-        (
-            "invalid-msIdentifier-content",
-            "<msIdentifier><idno xml:lang='de' source='http://foo.bar'>bar</idno><repository xml:lang='de'>foo</repository><idno xml:lang='fr' source='http://foo.bar'>bar</idno></msIdentifier>",
+            "invalid-msIdentifier-missing-content",
+            """<msIdentifier>
+                    <repository xml:lang='de'>foo</repository>
+                    <idno xml:lang='de' source='http://foo.bar'>bar</idno>
+                    <idno xml:lang='fr' source='http://foo.bar'>bar</idno>
+                </msIdentifier>""",
             False,
         ),
     ],
