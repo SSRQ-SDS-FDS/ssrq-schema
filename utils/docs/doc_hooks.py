@@ -15,8 +15,8 @@ from utils.schema.compile import Schema, store_compiled_schemas
 created_schema: dict[str, Schema] = {}
 
 
-def create_main_schema() -> Schema:
-    if created_schema.get("main") is None:
+def create_main_schema(recreate: bool = False) -> Schema:
+    if created_schema.get("main") is None or recreate:
         schema = create_schema_by_entry(entry_point="main.odd.xml")
         if schema is not None:
             created_schema["main"] = schema
@@ -26,7 +26,7 @@ def create_main_schema() -> Schema:
 
 @event_priority(100)
 def on_config(config: MkDocsConfig):
-    schema = create_main_schema()
+    schema = create_main_schema(recreate=True)
     odd2md = ODD2Md(
         schema=schema, languages=LANGS, target_dir=f"{config.docs_dir}/elements"
     )
