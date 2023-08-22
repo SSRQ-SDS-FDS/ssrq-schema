@@ -480,25 +480,31 @@ die übrigen Varianten mit tags auszeichnen. Zu beachten ist:
 
 ### 8.1 Streichungen
 
-Auf einfache Korrekturen, die beim Schreibvorgang entstanden sind, wird nur in Ausnahmefällen hingewiesen. Streichungen wurden in der analogen Transkription mit a–...–a gekennzeichnet und in einer textkritischen Anmerkung
-  aufgeführt. In der digitalen Edition werden Streichungen mit [`<del/>`](../../elements/del.de.md) getagt.  Bei mehrfach gestrichenen Texten müssen [`<delSpan/>`](../../elements/delSpan.de.md)
-  und [`<anchor/>`](../../elements/anchor.de.md)
-  eingesetzt werden.
+Auf einfache Korrekturen, die beim Schreibvorgang entstanden sind, wird nur in Ausnahmefällen hingewiesen. 
 
-  Durch Streichungen unlesbar gewordene Textstellen wurden in der analogen Edition mit [...]a gekennzeichnet und mit
-  einer Anmerkung versehen. In der digitalen Edition werden sie mit [`<del/>`](../../elements/del.de.md) und einem leeren
-  [`<gap/>`](../../elements/gap.de.md) ausgezeichnet.
+Streichungen wurden in der analogen Transkription mit a–...–a gekennzeichnet und in einer textkritischen Anmerkung 
+aufgeführt.
+In der digitalen Edition werden Streichungen mit [`<del/>`](../../elements/del.de.md) getaggt.
 
-`todo: Beispiel aufnehmen und dann hier löschen <del><gap unit="cm" quantity="4"/></del>`
+Bei mehrfach gestrichenen Texten müssen [`<delSpan/>`](../../elements/delSpan.de.md) und 
+[`<anchor/>`](../../elements/anchor.de.md) eingesetzt werden.
+
+Durch Streichungen unlesbar gewordene Textstellen wurden in der analogen Edition mit [...]a gekennzeichnet und mit
+einer Anmerkung versehen.
+In der digitalen Edition werden sie mit [`<del/>`](../../elements/del.de.md) und einem leeren
+[`<gap/>`](../../elements/gap.de.md) ausgezeichnet.
+`todo: Beispiel aufnehmen und dann hier löschen: <del><gap unit="cm" quantity="4"/></del>`
 
 Bei Textstellen, die mehrere Streichungen und/oder Hinzufügungen bzw. Kombinationen davon aufweisen, muss
-  [`<subst/>`](../../elements/subst.de.md) verwendet werden.
+[`<subst/>`](../../elements/subst.de.md) verwendet werden.
 
 ### 8.2 Zusätze oder Nachträge
 
 Zusätze oder Nachträge von erster oder späterer Hand müssen in den Text aufgenommen werden und wurden in der analogen
-Edition in einer textkritischen Anmerkung erklärt. In der digitalen Edition wird der Tag [`<add/>`](../../elements/add.de.md)
-verwendet. Der Ort der Ergänzung muss zwingend in @place und die Hand der ergänzten Stelle kann mit @hand festgehalten werden.
+Edition in einer textkritischen Anmerkung erklärt.
+In der digitalen Edition wird der Tag [`<add/>`](../../elements/add.de.md) verwendet. 
+
+Der Ort der Ergänzung muss zwingend in @place und die Hand der ergänzten Stelle kann mit @hand festgehalten werden.
 
 `to do: Beispiel mit @hand und Jahrhundert aufnehmen und hier anfügen <add hand=hand18c></add>`
 
@@ -507,8 +513,9 @@ verwendet. Der Ort der Ergänzung muss zwingend in @place und die Hand der ergä
 ### 8.3 Rasuren
 
 Mit Rasuren wurde in der analogen Edition gleich verfahren wie mit Streichungen und eine textkritische Anmerkung war
-erforderlich. In der digitalen Edition wird eine Rasur mit  [`<del/>`](../../elements/del.de.md) und
-@rend="rubbing" ausgezeichnet. Wenn bei Rasuren oder auch bei heftigen Streichungen gar nichts mehr lesbar ist, wird ein leeres
+erforderlich.
+In der digitalen Edition wird eine Rasur mit  [`<del/>`](../../elements/del.de.md) und @rend="rubbing" ausgezeichnet.
+Wenn bei Rasuren oder auch bei heftigen Streichungen gar nichts mehr lesbar ist, wird ein leeres
 [`<gap/>`](../../elements/gap.de.md) innerhalb von [`<del/>`](../../elements/del.de.md) verwendet.
 
 `<to do gutes Beispiel für Rubbing aufnehmen und hier verlinken del rend="rubbing"><unclear>unsichere Lesung wegen Rasur</unclear></del>`
@@ -519,7 +526,24 @@ erforderlich. In der digitalen Edition wird eine Rasur mit  [`<del/>`](../../ele
 
 Bei Marginalien entschied sich in der analogen Edition der Bearbeitende, ob es sich um eine kommentierende Randbemerkung
 handelt, welche in die Anmerkungen verbannt wurde, oder um einen Zusatz, der unter Umständen in den Text gesetzt werden
-konnte. In der digitalen Edition werden Marginalien mit [`<add/>`](../../elements/add.de.md) und @place="margin" getaggt.
+konnte.
+In der digitalen Edition werden Marginalien mit [`<add/>`](../../elements/add.de.md) und @place="margin" getaggt.
+
+### 8.5 Klassifikation von Schreibern
+
+Für jeden Schreiber wird ein [`<handNote/>`](../../elements/handnote.de.md)-Element angelegt, welches die Informationen
+zum jeweiligen Schreiber enthält.
+Auf die ID dieses Elements wird mit dem Attribut @hand verwiesen.
+Kann eine Hand einem namentlich bekannten Schreiber zugeordnet werden, wird dieser mithilfe des Attributs @scribe 
+mit dem entsprechenden Eintrag in der Personendatenbank verknüpft.
+
+Eine Hand kann danach klassifiziert werden, ob sie zu den Haupthänden gehört oder nicht:
+Haupthände: `firstHand, secondHand ... ninthHand`, andere Hand: `otherHand`, spätere Hand: `laterHand`.
+Dabei gilt, dass in der digitalen Edition die redaktionellen Eingriffe einer späteren Hand in den Anmerkungen 
+wiedergegeben werden, während solche einer Haupthand oder einer anderen Hand im Editionstext erscheinen.
+
+Alternativ kann mit @hand auch das Jahrhundert der Hand angegeben werden: `hand10c, hand11c, ... hand21c`.
+Ist das Jahrhundert unsicher, wird dies folgendermassen ausgedrückt: `hand10cf, hand11cf, ... hand21cf`.
 
 ## 9 Anmerkungen
 

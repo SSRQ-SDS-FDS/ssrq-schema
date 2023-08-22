@@ -805,21 +805,31 @@
     <classSpec ident="att.written" type="atts" mode="change">
       <attList>
         <attDef ident="hand" mode="change">
-          <desc xml:lang="de" versionDate="2023-08-17">Enthält einen Verweis auf die ID eines
+          <desc xml:lang="de" versionDate="2023-08-22">Enthält einen Verweis auf die ID eines
                         <gi>handNote</gi>-Elements, das im <gi>teiHeader</gi> deklariert wurde.
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-05-17">Contains a reference to the ID of a
-                        <gi>handNote</gi>
-                        element declared in the <gi>teiHeader</gi>.
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-05-17">Contient une référence à l'ID d'un élément
-                        <gi>handNote</gi>
-                        déclaré dans le <gi>teiHeader</gi>.
-                    </desc>
-          <desc xml:lang="it" versionDate="2023-05-17">Contiene un riferimento all'ID di un elemento
-                        <gi>handNote</gi>
-                        dichiarato in <gi>teiHeader</gi>.
-                    </desc>
+              Die Einträge <val>laterHand</val> und <val>otherHand</val> haben unterschiedliche
+              textkritische Relevanz. Vgl. hierzu die
+              <ref target="../../base/transcription/hand/#8-behandlung-redaktioneller-eingriffe-des-schreibers">
+                  Transkriptionsrichtlinien</ref>.
+          </desc>
+          <desc xml:lang="en" versionDate="2023-08-22">Contains a reference to the ID of a <gi>handNote</gi> element
+                declared in the <gi>teiHeader</gi>. The entries <val>laterHand</val> and <val>otherHand</val> have
+                different text-critical relevance. See the
+                <ref target="../../base/transcription/hand/#8-treatment-editorial-interventions-of-the-writer">
+                    transcription guidelines</ref>.
+          </desc>
+          <desc xml:lang="fr" versionDate="2023-08-22">Contient une référence à l'ID d'un élément <gi>handNote</gi>
+                déclaré dans le <gi>teiHeader</gi>. Les entrées <val>laterHand</val> et <val>otherHand</val> ont une
+                pertinence différente pour le texte. Consultez les
+                <ref target="../../base/transcription/hand/#8-treatment-editorial-interventions-of-the-writer">
+                    directives de transcription</ref>.
+          </desc>
+          <desc xml:lang="it" versionDate="2023-08-22">Contiene un riferimento all'ID di un elemento <gi>handNote</gi>
+                dichiarato in <gi>teiHeader</gi>. Le voci <val>laterHand</val> e <val>otherHand</val> hanno diversa
+                rilevanza critica per il testo. Consulta le
+                <ref target="../../base/transcription/hand/#8-treatment-editorial-interventions-of-the-writer">linee
+                    guida per la trascrizione</ref>.
+          </desc>
           <datatype>
             <rng:choice>
               <rng:ref name="ssrq.hand"/>
