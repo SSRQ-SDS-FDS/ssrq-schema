@@ -41,8 +41,8 @@ from ..conftest import RNG_test_function
                             <sourceDesc>
                                 <msDesc>
                                     <msIdentifier>
-                                        <idno xml:lang="de" source="http://foo.bar">bar</idno>
                                         <repository xml:lang="de">foo</repository>
+                                        <idno xml:lang="de" source="http://foo.bar">bar</idno>
                                     </msIdentifier>
                                     <head>Projekt eines Eides für den Förster oder Bannwart in Sax-Forstegg</head>
                                     <msContents>

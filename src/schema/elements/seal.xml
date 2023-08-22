@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="seal" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="seal" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-07-15">Beschreibt ein Siegel.</desc>
   <desc xml:lang="en" versionDate="2023-07-15">Describes a seal.</desc>
   <desc xml:lang="fr" versionDate="2023-07-15">Décrit un sceau.</desc>
@@ -76,30 +76,10 @@
     <attDef ident="xml:id" mode="delete"/>
     <attDef ident="xml:lang" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-31">
-    <p>Beispielhafte Erfassung eines Siegels</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <seal n="1" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
-        <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
-      </seal>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
-    <p>Exemple de saisie d'un sceau</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <seal n="1" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
-        <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
-      </seal>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
-    <p>Saisie d'un moment</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <seal n="1" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
-        <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
-      </seal>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-sealDesc-de"/>
+  <xi:include href="examples.xml" xpointer="ex-sealDesc-en"/>
+  <xi:include href="examples.xml" xpointer="ex-sealDesc-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-sealDesc-it"/>
   <remarks xml:lang="de" versionDate="2023-07-15">
     <p>Die Beschreibung der Siegel erfolgt von links nach rechts. Vgl. hierzu auch die Siegelbeschreibung unter
             Metadaten#Siegel. Der Siegler wird, wenn es sich um eine Person handelt, mit <gi>persName</gi> und dem

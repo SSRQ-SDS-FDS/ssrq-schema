@@ -2,11 +2,11 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="msItem" module="msdescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-15">Enthält Informationen über die einzelnen Teile einer Quelle.</desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Contains information about each part of a source.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-15">Contient des informations sur chaque partie d'une source.</desc>
-  <desc xml:lang="it" versionDate="2023-07-15">Contiene informazioni su ciascuna parte di una fonte.</desc>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="msItem" module="msdescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-08-17">Enthält Informationen über einen einzelnen Teil einer Quelle.</desc>
+  <desc xml:lang="en" versionDate="2023-08-17">Contains information about a single part of a source.</desc>
+  <desc xml:lang="fr" versionDate="2023-08-17">Contient des informations sur une seule partie d'une source.</desc>
+  <desc xml:lang="it" versionDate="2023-08-17">Contiene informazioni su una singola parte di una fonte.</desc>
   <classes mode="replace">
     <memberOf key="model.msItemPart"/>
   </classes>
@@ -17,22 +17,14 @@
       <elementRef key="docImprint"/>
     </alternate>
   </content>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-    <p>Modellhafter Aufbau</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <msItem>
-        <textLang xml:lang="de"/>
-      </msItem>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-30">
-    <p>Structure modèle</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <msItem>
-        <textLang xml:lang="de"/>
-      </msItem>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-msItem-ms-de"/>
+  <xi:include href="examples.xml" xpointer="ex-msItem-ms-en"/>
+  <xi:include href="examples.xml" xpointer="ex-msItem-ms-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-msItem-ms-it"/>
+  <xi:include href="examples.xml" xpointer="ex-msItem-print-de"/>
+  <xi:include href="examples.xml" xpointer="ex-msItem-print-en"/>
+  <xi:include href="examples.xml" xpointer="ex-msItem-print-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-msItem-print-it"/>
   <remarks xml:lang="de" versionDate="2023-07-15">
     <p>Die Textsprachen der Quelle werden mit <gi>textLang</gi> angeben. Bei Handschriften können die Autoren
             mit <gi>author</gi> angegeben werden, bei Druckschriften können innerhalb von <gi>docImprint</gi> der

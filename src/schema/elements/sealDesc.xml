@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="sealDesc" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="sealDesc" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-07-15">Enthält Elemente zur Beschreibung der Siegel.</desc>
   <desc xml:lang="en" versionDate="2023-07-15">Contains elements describing the seals.</desc>
   <desc xml:lang="fr" versionDate="2023-07-15">Contient des éléments décrivant les sceaux.</desc>
@@ -13,26 +13,10 @@
   <content>
     <elementRef key="seal" maxOccurs="unbounded"/>
   </content>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-31">
-    <p>Beispielhafter Aufbau</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <sealDesc>
-        <seal n="1" material="..." shape="..." extent="..." attachment="..." condition="...">
-          <persName role="sigillant" ref="perNNNNNN">NN</persName>
-        </seal>
-      </sealDesc>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-31">
-    <p>Exemple de structure</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <sealDesc>
-        <seal n="1" material="..." shape="..." extent="..." attachment="..." condition="...">
-          <persName role="sigillant" ref="perNNNNNN">NN</persName>
-        </seal>
-      </sealDesc>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-sealDesc-de"/>
+  <xi:include href="examples.xml" xpointer="ex-sealDesc-en"/>
+  <xi:include href="examples.xml" xpointer="ex-sealDesc-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-sealDesc-it"/>
   <remarks xml:lang="de" versionDate="2023-07-15">
     <p>Eine Urkunde, die ohne Siegel ausgestellt wurde, enthält auch keine <gi>sealDesc</gi>. Urkunden, bei denen
             einzelne Siegel fehlen, jedoch schon vgl. <gi>seal</gi>, <att>condition</att>. Bei ausserordentlichen

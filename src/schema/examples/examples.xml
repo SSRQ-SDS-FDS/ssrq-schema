@@ -65,6 +65,22 @@
       <p>Aggiunta sul margine sinistro, contrassegnata da un segno speciale</p>
       <xi:include href="add.xml" xpointer="ex-add-margin"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-additional-de">
+      <p>Beispiel für Literaturhinweise</p>
+      <xi:include href="additional.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-additional-en">
+      <p>Example of bibliographical references</p>
+      <xi:include href="additional.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-additional-fr">
+      <p>Exemple de références bibliographiques</p>
+      <xi:include href="additional.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-additional-it">
+      <p>Esempio di riferimenti bibliografici</p>
+      <xi:include href="additional.xml"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-addSpan-de">
       <p>Beispiel für eine umfangreichere Hinzufügung</p>
       <xi:include href="addSpan.xml"/>
@@ -177,6 +193,22 @@
       <p>Riferimento bibliografico al database di letteratura Zotero</p>
       <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-bindingDesc-de">
+      <p>Beispiel für die Beschreibung einer Bindung</p>
+      <xi:include href="bindingDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-bindingDesc-en">
+      <p>Example of a binding description</p>
+      <xi:include href="bindingDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-bindingDesc-fr">
+      <p>Exemple de description de liaison</p>
+      <xi:include href="bindingDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-bindingDesc-it">
+      <p>Esempio di descrizione vincolante</p>
+      <xi:include href="bindingDesc.xml"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-body-de">
       <p>Beispiel für einen Textbereich mit allen möglichen Kindelementen</p>
       <xi:include href="body.xml"/>
@@ -256,6 +288,22 @@
     <exemplum xml:lang="it" xml:id="ex-choice-sic-it">
       <p>Esempio di correzione</p>
       <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-condition-de">
+      <p>Beispiel für eine Beschreibung des Erhaltungszustands</p>
+      <xi:include href="condition.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-condition-en">
+      <p>Example of a description of the state of conservation</p>
+      <xi:include href="condition.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-condition-fr">
+      <p>Exemple de description de l'état de conservation</p>
+      <xi:include href="condition.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-condition-it">
+      <p>Esempio di descrizione dello stato di conservazione</p>
+      <xi:include href="condition.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-date-day-de">
       <p>Beispielhafte Datierung auf den 03. März 1631</p>
@@ -643,6 +691,22 @@
       <p>Esempio della struttura di una descrizione del file</p>
       <xi:include href="fileDesc.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-foliation-de">
+      <p>Beispiel für eine Beschreibung der Blattzählung</p>
+      <xi:include href="foliation.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-foliation-en">
+      <p>Example of a leaf count description</p>
+      <xi:include href="foliation.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-foliation-fr">
+      <p>Exemple de description du nombre de feuilles</p>
+      <xi:include href="foliation.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-foliation-it">
+      <p>Esempio di descrizione del conteggio delle foglie</p>
+      <xi:include href="foliation.xml"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-foreign-de">
       <p>Absatz mit fremdsprachigen Einschüben</p>
       <xi:include href="foreign.xml"/>
@@ -722,6 +786,54 @@
     <exemplum xml:lang="it" xml:id="ex-head-figure-it">
       <p>Esempio di intestazione per un grafico</p>
       <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-height-cm-de">
+      <p>Beispiel für eine Höhenangabe in Zentimetern</p>
+      <xi:include href="height.xml" xpointer="ex-height-cm"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-height-cm-en">
+      <p>Example of a height in centimeters</p>
+      <xi:include href="height.xml" xpointer="ex-height-cm"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-height-cm-fr">
+      <p>Exemple d'une taille en centimètres</p>
+      <xi:include href="height.xml" xpointer="ex-height-cm"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-height-cm-it">
+      <p>Esempio di altezza in centimetri</p>
+      <xi:include href="height.xml" xpointer="ex-height-cm"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-height-unknown-de">
+      <p>Beispiel für eine unbekannte Höhenangabe</p>
+      <xi:include href="height.xml" xpointer="ex-height-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-height-unknown-en">
+      <p>Example of an unknown height</p>
+      <xi:include href="height.xml" xpointer="ex-height-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-height-unknown-fr">
+      <p>Exemple d'une hauteur inconnue</p>
+      <xi:include href="height.xml" xpointer="ex-height-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-height-unknown-it">
+      <p>Esempio di altezza sconosciuta</p>
+      <xi:include href="height.xml" xpointer="ex-height-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-history-de">
+      <p>Beispiel für Datierung und Herkunft eines Dokuments</p>
+      <xi:include href="history.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-history-en">
+      <p>Example of the dating and provenance of a document</p>
+      <xi:include href="history.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-history-fr">
+      <p>Exemple de datation et de provenance d'un document</p>
+      <xi:include href="history.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-history-it">
+      <p>Esempio di datazione e provenienza di un documento</p>
+      <xi:include href="history.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-gap-line-de">
       <p>Unlesbare Zeile ohne Streichung oder Beschädigung</p>
@@ -932,6 +1044,22 @@
       <p>Esempio di un elenco di testimoni testuali</p>
       <xi:include href="listWit.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msContents-de">
+      <p>Beispiel für eine Beschreibung des Dokumentinhalts</p>
+      <xi:include href="msContents.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msContents-en">
+      <p>Example of a description of the document content</p>
+      <xi:include href="msContents.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msContents-fr">
+      <p>Exemple de description du contenu du document</p>
+      <xi:include href="msContents.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-msContents-it">
+      <p>Esempio di descrizione del contenuto del documento</p>
+      <xi:include href="msContents.xml"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-msDesc-de">
       <p>Beispiel für eine Textzeugenbeschreibung</p>
       <xi:include href="msDesc.xml"/>
@@ -948,6 +1076,38 @@
       <p>Esempio di descrizione di un testimone testuale</p>
       <xi:include href="msDesc.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msItem-ms-de">
+      <p>Beispiel für die Beschreibung eines einzelnen handschriftlichen Dokumentteils</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msItem-ms-en">
+      <p>Example for the description of a single handwritten document part</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msItem-ms-fr">
+      <p>Exemple de description d'une seule partie de document manuscrit</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-msItem-ms-it">
+      <p>Esempio per la descrizione di una singola parte di un documento scritto a mano</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msItem-print-de">
+      <p>Beispiel für die Beschreibung eines einzelnen gedruckten Dokumentteils</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msItem-print-en">
+      <p>Example for the description of a single printed part of a document</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msItem-print-fr">
+      <p>Exemple de description d'une seule partie imprimée d'un document</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-msItem-print-it">
+      <p>Esempio per la descrizione di una singola parte stampata di un documento</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-note-de">
       <p>Anmerkung der Bearbeitenden</p>
       <xi:include href="note.xml"/>
@@ -963,6 +1123,22 @@
     <exemplum xml:lang="it" xml:id="ex-note-it">
       <p>Nota dell'editore</p>
       <xi:include href="note.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-objectDesc-de">
+      <p>Beispiel für eine Quellenbeschreibung</p>
+      <xi:include href="objectDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-objectDesc-en">
+      <p>Example of a source description</p>
+      <xi:include href="objectDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-objectDesc-fr">
+      <p>Exemple de description de source</p>
+      <xi:include href="objectDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-objectDesc-it">
+      <p>Esempio di descrizione di una fonte</p>
+      <xi:include href="objectDesc.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-origDate-abbr-de">
       <p>Originaldatierung mit Abkürzung</p>
@@ -1082,6 +1258,22 @@
       <p>Beispiel für ein unsicheres Datum</p>
       <xi:include href="precision.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-physDesc-de">
+      <p>Beispiel für eine Quellenbeschreibung mit allen Kindelementen</p>
+      <xi:include href="physDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-physDesc-en">
+      <p>Example of a source description with all child elements</p>
+      <xi:include href="physDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-physDesc-fr">
+      <p>Exemple de description de source avec tous les éléments enfants</p>
+      <xi:include href="physDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-physDesc-it">
+      <p>Esempio di descrizione di una fonte con tutti gli elementi figlio</p>
+      <xi:include href="physDesc.xml"/>
+    </exemplum>
     <exemplum xml:lang="en" xml:id="ex-precision-en">
       <p>Example of an uncertain date</p>
       <xi:include href="precision.xml"/>
@@ -1173,6 +1365,22 @@
     <exemplum xml:lang="it" xml:id="ex-respStmt-it">
       <p>Codifica di una singola responsabilità, compreso il nome</p>
       <xi:include href="respStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-sealDesc-de">
+      <p>Beispiel für die Beschreibung von Siegeln</p>
+      <xi:include href="sealDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-sealDesc-en">
+      <p>Example for the description of seals</p>
+      <xi:include href="sealDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-sealDesc-fr">
+      <p>Exemple pour la description des scellés</p>
+      <xi:include href="sealDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-sealDesc-it">
+      <p>Esempio per la descrizione dei sigilli</p>
+      <xi:include href="sealDesc.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-seg-de">
       <p>Beispiel für vom Bearbeitenden eingeführte Absätze</p>
@@ -1285,6 +1493,54 @@
     <exemplum xml:lang="it" xml:id="ex-sourceDesc-msDesc-it">
       <p>Esempio di descrizione di una fonte con testimone testuale</p>
       <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-summary-de">
+      <p>Beispiel für ein Regest</p>
+      <xi:include href="summary.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-summary-en">
+      <p>Example of a summary</p>
+      <xi:include href="summary.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-summary-fr">
+      <p>Exemple de regeste</p>
+      <xi:include href="summary.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-summary-it">
+      <p>Esempio di regesto</p>
+      <xi:include href="summary.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-support-de">
+      <p>Beispiel für eine Beschreibung des Beschreibstoffs einer Quelle</p>
+      <xi:include href="support.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-support-en">
+      <p>Example of a description of the descriptive material of a source</p>
+      <xi:include href="support.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-support-fr">
+      <p>Exemple de description du matériel descriptif d'une source</p>
+      <xi:include href="support.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-support-it">
+      <p>Esempio di descrizione del materiale descrittivo di una fonte</p>
+      <xi:include href="support.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-supportDesc-de">
+      <p>Beispiel für eine Beschreibung des Materiellen einer Quelle</p>
+      <xi:include href="supportDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-supportDesc-en">
+      <p>Example of a description of the material of a source</p>
+      <xi:include href="supportDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-supportDesc-fr">
+      <p>Exemple de description du matériel d'une source</p>
+      <xi:include href="supportDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-supportDesc-it">
+      <p>Esempio di descrizione del materiale di una fonte</p>
+      <xi:include href="supportDesc.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-space-de">
       <p>Beispiel für einen Freiraum von 5 cm</p>
@@ -1517,6 +1773,38 @@
     <exemplum xml:lang="it" xml:id="ex-titleStmt-it">
       <p>Esempio di titolo</p>
       <xi:include href="titleStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-width-cm-de">
+      <p>Beispiel für eine Breitenangabe in Zentimetern</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-width-cm-en">
+      <p>Example of a width in centimeters</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-width-cm-fr">
+      <p>Exemple de largeur en centimètres</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-width-cm-it">
+      <p>Esempio di larghezza in centimetri</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-width-unknown-de">
+      <p>Beispiel für eine unbekannte Breitenangabe</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-width-unknown-en">
+      <p>Example of an unknown width</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-width-unknown-fr">
+      <p>Exemple de largeur inconnue</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-width-unknown-it">
+      <p>Esempio di larghezza sconosciuta</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-witness-de">
       <p>Beispiel für mehrere Textzeugenbeschreibungen</p>
