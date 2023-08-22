@@ -600,3 +600,14 @@ Innerhalb der Paratexte (Anmerkungen, Kommentar, Einleitung) benutzen wir [`<quo
 
 Einige Quellen, wie z. B. Rechnungen oder Zollordnungen, enthalten Tabellen, die auch als solche in der Edition
 umgesetzt werden. Für die Darstellung von Tabellen verwenden wir [`<table/>`](../../elements/table.de.md) mit  [`<row/>`](../../elements/row.de.md) und [`<cell/>`](../../elements/cell.md).
+
+### 11.8 Plica
+
+Enthält ein Dokument eine Plica, dann gelten folgende Regelungen:
+
+- Text unter der Plica wird als Bestandteil der recto-Seite transkribiert.
+
+- Text auf der Plica wird ebenfalls als Bestandteil der recto-Seite transkribiert (obwohl er vom Material her gesehen 
+  eigentlich zur verso-Seite gehören müsste).
+
+- Die Reihenfolge von Text unter bzw. auf der Plica ist in der Transkription beliebig.
