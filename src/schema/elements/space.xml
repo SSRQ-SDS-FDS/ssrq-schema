@@ -32,7 +32,16 @@
         </rng:choice>
       </datatype>
     </attDef>
-    <attDef ident="quantity" mode="change" usage="req"/>
+    <attDef ident="quantity" mode="change" usage="req">
+      <datatype>
+        <rng:choice>
+          <rng:data type="float">
+            <rng:param name="minInclusive">0</rng:param>
+          </rng:data>
+          <rng:data type="positiveInteger"/>
+        </rng:choice>
+      </datatype>
+    </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-space-de"/>
   <xi:include href="examples.xml" xpointer="ex-space-en"/>
