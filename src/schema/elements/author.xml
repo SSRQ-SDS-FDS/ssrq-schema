@@ -3,17 +3,13 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="author" module="core" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-18">Enthält als Teil einer bibliografischen Angabe den Autor
-        einer Publikation und als Teil von <gi>msItem</gi> den Schreiber einer Quelle.
+  <desc xml:lang="de" versionDate="2023-08-17">Enthält als Teil von <gi>msItem</gi> den Schreiber einer Quelle.
     </desc>
-  <desc xml:lang="en" versionDate="2023-07-18">Contains the author of a publication as part of a bibliographic
-        statement and the writer of a source as part of <gi>msItem</gi>.
+  <desc xml:lang="en" versionDate="2023-08-17">Contains the writer of a source as part of <gi>msItem</gi>.
     </desc>
-  <desc xml:lang="fr" versionDate="2023-07-18">Contient l'auteur d'une publication dans le cadre d'une déclaration
-        bibliographique et l'auteur d'une source dans le cadre de <gi>msItem</gi>.
+  <desc xml:lang="fr" versionDate="2023-08-17">Contient l'auteur d'une source dans le cadre de <gi>msItem</gi>.
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-18">Contiene l'autore di una pubblicazione come parte di una dichiarazione
-        bibliografica e l'autore di una fonte come parte di <gi>msItem</gi>.
+  <desc xml:lang="it" versionDate="2023-08-17">Contiene l'autore di una fonte come parte di <gi>msItem</gi>.
     </desc>
   <classes mode="replace">
     <memberOf key="att.naming"/>
@@ -22,7 +18,6 @@
   <content>
     <alternate maxOccurs="unbounded">
       <textNode/>
-      <elementRef key="orgName"/>
       <elementRef key="persName"/>
     </alternate>
   </content>
