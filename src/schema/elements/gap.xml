@@ -132,7 +132,7 @@
     <p>Wird z. B. nur ein Eintrag auf einer Seite eines Ratsprotokolls transkribiert, werden die davorstehenden Einträge weggelassen und die Auslassung mit nur einem <gi>gap</gi> <att>reason</att>= <val>irrelevant</val> (auch wenn mehrere Einträge ausgelassen werden) gekennzeichnet. Die Angabe der nachfolgenden Einträge ist nicht notwendig. Befindet sich der Titel zum Ratsprotokolleintrag eine oder mehrere Seiten weiter vorne, dann sollte dieser ebenfalls transkribiert und die Auslassung mit <gi>gap</gi> gekennzeichnet werden (vgl. Beispiel). </p>
     <p>Für Zeilensprünge in der Vorlage wird nicht <gi>gap</gi>, sondern <gi>supplied</gi> verwendet.
         </p>
-    <p>Lücken in retrodigitalisierten Texten werden mit <gi>gap</gi> <att>reason</att>= <val>missing</val> ausgezeichnet (z. B. SDS NE 1).</p>
+    <p>Lücken in retrodigitalisierten Texten werden mit <tag>gap reason="missing"</tag> ausgezeichnet (z. B. SDS NE 1).</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-08-17">
     <p>This mainly applies to completely illegible passages. The reason for an omission can be specified
@@ -150,7 +150,7 @@
     <p>If, for example, only one entry on one page of a council minute is transcribed, the preceding entries are omitted and the omission is marked with only one <gi>gap</gi> <att>reason</att>= <val>irrelevant</val> (even if several entries are omitted). It is not necessary to specify the subsequent entries. If the title to the Council minutes entry is one or more pages further forward, then this should also be transcribed and the omission marked with <gi>gap</gi> (cf. example). </p>
     <p>For line breaks in the template <gi>gap</gi> is not used, but <gi>supplied</gi>.
         </p>
-    <p>Gaps in retro-digitised texts are marked with <gi>gap</gi> <att>reason</att>= <val>missing</val> (e.g. SDS NE 1).</p>
+    <p>Gaps in retro-digitised texts are marked with <tag>gap reason="missing"</tag> (e.g. SDS NE 1).</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-08-17">
     <p>Cela s'applique principalement aux passages complètement illisibles. La raison d'une omission
@@ -170,7 +170,7 @@
     <p>Si, par exemple, une seule entrée est transcrite sur une page d'un procès-verbal du Conseil, les entrées qui la précèdent sont omises et l'omission est signalée par un seul <gi>gap</gi> <att>reason</att>= <val>non pertinent</val> (même si plusieurs entrées sont omises). L'indication des entrées suivantes n'est pas nécessaire. Si le titre de l'entrée du procès-verbal du Conseil se trouve une ou plusieurs pages plus haut, il faut également le transcrire et signaler l'omission par <gi>gap</gi> (voir exemple). </p>
     <p>Pour les sauts de ligne dans le modèle, <gi>gap</gi> n'est pas utilisé, mais <gi>supplied</gi>.
         </p>
-    <p>Les lacunes dans les textes rétrodigitalisés sont signalées par <gi>gap</gi> <att>reason</att>= <val>missing</val> (par exemple SDS NE 1).</p>
+    <p>Les lacunes dans les textes rétrodigitalisés sont signalées par <tag>gap reason="missing"</tag> (par exemple SDS NE 1).</p>
   </remarks>
   <remarks xml:lang="it" versionDate="2023-08-17">
     <p>Questo vale principalmente per passaggi completamente illeggibili. Il motivo di un'omissione
@@ -189,6 +189,6 @@
     <p>Se, ad esempio, viene trascritta una sola voce di una pagina di un verbale di consiglio, le voci precedenti vengono omesse e l'omissione viene segnalata con un solo <gi>gap</gi> <att>motivo</att>= <val>irrilevante</val> (anche se vengono omesse più voci). Non è necessario specificare le voci successive. Se il titolo della voce del verbale del Consiglio si trova una o più pagine più avanti, anche questo va trascritto e l'omissione va segnalata con <gi>gap</gi> (cfr. esempio). </p>
     <p>Per le interruzioni di riga nel modello <gi>gap</gi> non viene utilizzato, ma <gi>supplied</gi>.
         </p>
-    <p>Le lacune nei testi retrodigitalizzati sono contrassegnate con <gi>gap</gi> <att>reason</att>= <val>missing</val> (ad es. SDS NE 1).</p>
+    <p>Le lacune nei testi retrodigitalizzati sono contrassegnate con <tag>gap reason="missing"</tag> (ad es. SDS NE 1).</p>
   </remarks>
 </elementSpec>

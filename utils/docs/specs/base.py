@@ -394,6 +394,8 @@ class BaseSpec:
                                 if isinstance(child, ET.Element)
                             ]
                         )
+                    case "tag":
+                        output += f"`<{child_text}/>` {tail_text}"
                     case "val":
                         output += f"`{child_text}` {tail_text}"
                     case _:
