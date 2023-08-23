@@ -34,11 +34,11 @@
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-en"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-fr"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-it"/>
-  <remarks xml:lang="de" versionDate="2023-08-22">
+  <remarks xml:lang="de" versionDate="2023-08-23">
     <p>Mit <att>when-custom</att> und <att>calendar</att> wird das Datum gemäss den Datierungsrichtlinien
       erfasst. <gi>origDate</gi> wird nur im Kopfbereich für das
-      normalisierte Originaldatum eines Dokuments verwendet. Im Textbereich,
-        den Kommentaren und Anmerkungen wird <gi>date</gi> verwendet. Zum Umgang mit Heiligenfesten und anderen kirchlichen Feiertagen vgl. <gi>date</gi>. </p>
+      normalisierte Originaldatum eines Dokuments verwendet. Es handelt es sich um die Datierung des Dokuments (Herstellungsdatum) und nicht um die Datierung des Inhalts des Dokuments. Im Textbereich,
+        den Kommentaren und Anmerkungen wird <gi>date</gi> verwendet.  Zum Umgang mit Heiligenfesten und anderen kirchlichen Feiertagen vgl. <gi>date</gi>. </p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-08-22">
     <p>With <att>when-custom</att> and
