@@ -26,6 +26,10 @@
       </rng:choice>
     </rng:zeroOrMore>
   </content>
+  <attList>
+    <attDef ident="datingMethod" mode="delete"/>
+    <attDef ident="period" mode="delete"/>
+  </attList>
   <xi:include href="examples.xml" xpointer="ex-history-de"/>
   <xi:include href="examples.xml" xpointer="ex-history-en"/>
   <xi:include href="examples.xml" xpointer="ex-history-fr"/>

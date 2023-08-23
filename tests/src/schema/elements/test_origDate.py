@@ -16,6 +16,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "invalid-origDate-with-datingMethod",
+            "<origDate when-custom='1448-05-25' datingMethod='gregorian'>bar</origDate>",
+            False,
+        ),
+        (
             "origDate-with-invalid-calendar",
             "<origDate when-custom='1448-05-25' calendar='...'>bar</origDate>",
             False,
