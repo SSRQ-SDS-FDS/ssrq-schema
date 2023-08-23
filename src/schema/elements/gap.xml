@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+    type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="gap" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-19">Beschreibt eine Auslassung durch den Editor.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Describes an omission by the editor.</desc>
@@ -185,9 +185,8 @@
     <p>Se i supplementi successivi non vengono modificati con l'originale ma come pezzo separato, le parti che sono
             già state modificate in un originale precedente possono essere omesse con <gi>gap</gi>. Il pezzo modificato
             viene referenziato con <att>source</att>. In questo caso, viene aggiunto un commento in <gi>note</gi> o
-            in <gi>back</gi>.
-      <p>Se, ad esempio, viene trascritta una sola voce di una pagina di un verbale di consiglio, le voci precedenti vengono omesse e l'omissione viene segnalata con un solo <gi>gap</gi> <att>motivo</att>= <val>irrilevante</val> (anche se vengono omesse più voci). Non è necessario specificare le voci successive. Se il titolo della voce del verbale del Consiglio si trova una o più pagine più avanti, anche questo va trascritto e l'omissione va segnalata con <gi>gap</gi> (cfr. esempio). </p>
-        </p>
+            in <gi>back</gi>.</p>
+    <p>Se, ad esempio, viene trascritta una sola voce di una pagina di un verbale di consiglio, le voci precedenti vengono omesse e l'omissione viene segnalata con un solo <gi>gap</gi> <att>motivo</att>= <val>irrilevante</val> (anche se vengono omesse più voci). Non è necessario specificare le voci successive. Se il titolo della voce del verbale del Consiglio si trova una o più pagine più avanti, anche questo va trascritto e l'omissione va segnalata con <gi>gap</gi> (cfr. esempio). </p>
     <p>Per le interruzioni di riga nel modello <gi>gap</gi> non viene utilizzato, ma <gi>supplied</gi>.
         </p>
     <p>Le lacune nei testi retrodigitalizzati sono contrassegnate con <gi>gap</gi> <att>reason</att>= <val>missing</val> (ad es. SDS NE 1).</p>
