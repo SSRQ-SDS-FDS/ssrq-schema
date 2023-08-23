@@ -528,7 +528,15 @@
             </valItem>
           </valList>
         </attDef>
-        <attDef ident="resp" mode="change"/>
+        <attDef ident="resp" mode="change">
+          <desc xml:lang="de" versionDate="2023-08-23">Enthält das zwei- oder dreistellige Kürzel des Bearbeitenden, der eine Änderung im Originaltext vornimmt.</desc>
+          <desc xml:lang="en" versionDate="2023-08-23">Contains the two- or three-character abbreviation of the editor making a change in the original text.</desc>
+          <desc xml:lang="en" versionDate="2023-08-23">Contient la paraphe de l'éditeur qui a fait un changement dans le texte original, p.e. qui a normalisé une partie du texte ou a inséré un paragraphe.</desc>
+          <desc xml:lang="it" versionDate="2023-08-23">Contiene l'abbreviazione di due o tre caratteri dell'editore che apporta una modifica al testo originale.</desc>
+          <datatype>
+            <dataRef name="string" restriction="[a-zA-Z]{2,3}"/>
+          </datatype>
+        </attDef>
       </attList>
     </classSpec>
     <classSpec ident="att.handFeatures" type="atts" mode="change">
