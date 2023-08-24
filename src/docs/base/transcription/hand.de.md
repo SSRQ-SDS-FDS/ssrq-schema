@@ -480,13 +480,13 @@ die übrigen Varianten mit tags auszeichnen. Zu beachten ist:
 
 ### 8.1 Streichungen
 
-Auf einfache Korrekturen, die beim Schreibvorgang entstanden sind, wird nur in Ausnahmefällen hingewiesen. 
+Auf einfache Korrekturen, die beim Schreibvorgang entstanden sind, wird nur in Ausnahmefällen hingewiesen.
 
-Streichungen wurden in der analogen Transkription mit `a–...–a gekennzeichnet und in einer textkritischen Anmerkung 
+Streichungen wurden in der analogen Transkription mit `a–...–a` gekennzeichnet und in einer textkritischen Anmerkung
 aufgeführt.
 In der digitalen Edition werden Streichungen mit [`<del/>`](../../elements/del.de.md) getaggt.
 
-Bei mehrfach gestrichenen Texten müssen [`<delSpan/>`](../../elements/delSpan.de.md) und 
+Bei mehrfach gestrichenen Texten müssen [`<delSpan/>`](../../elements/delSpan.de.md) und
 [`<anchor/>`](../../elements/anchor.de.md) eingesetzt werden.
 
 Durch Streichungen unlesbar gewordene Textstellen wurden in der analogen Edition mit `[...]a` gekennzeichnet und mit
@@ -502,7 +502,7 @@ Bei Textstellen, die mehrere Streichungen und/oder Hinzufügungen bzw. Kombinati
 
 Zusätze oder Nachträge von erster oder späterer Hand müssen in den Text aufgenommen werden und wurden in der analogen
 Edition in einer textkritischen Anmerkung erklärt.
-In der digitalen Edition wird der Tag [`<add/>`](../../elements/add.de.md) verwendet. 
+In der digitalen Edition wird der Tag [`<add/>`](../../elements/add.de.md) verwendet.
 
 Der Ort der Ergänzung muss zwingend in `@place` und die Hand der ergänzten Stelle kann mit `@hand` festgehalten werden.
 
@@ -534,12 +534,12 @@ In der digitalen Edition werden Marginalien mit [`<add/>`](../../elements/add.de
 Für jeden Schreiber wird ein [`<handNote/>`](../../elements/handnote.de.md)-Element angelegt, welches die Informationen
 zum jeweiligen Schreiber enthält.
 Auf die ID dieses Elements wird mit dem Attribut `@hand` verwiesen.
-Kann eine Hand einem namentlich bekannten Schreiber zugeordnet werden, wird dieser mithilfe des Attributs `@scribe` 
+Kann eine Hand einem namentlich bekannten Schreiber zugeordnet werden, wird dieser mithilfe des Attributs `@scribe`
 mit dem entsprechenden Eintrag in der Personendatenbank verknüpft.
 
 Eine Hand kann danach klassifiziert werden, ob sie zu den Haupthänden gehört oder nicht:
 Haupthände: `firstHand, secondHand ... ninthHand`, andere Hand: `otherHand`, spätere Hand: `laterHand`.
-Dabei gilt, dass in der digitalen Edition die redaktionellen Eingriffe einer späteren Hand in den Anmerkungen 
+Dabei gilt, dass in der digitalen Edition die redaktionellen Eingriffe einer späteren Hand in den Anmerkungen
 wiedergegeben werden, während solche einer Haupthand oder einer anderen Hand im Editionstext erscheinen.
 
 Alternativ kann mit `@hand` auch das Jahrhundert der Hand angegeben werden: `hand10c, hand11c, ... hand21c`.
