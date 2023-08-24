@@ -55,7 +55,7 @@ class Schema:
 
 def store_compiled_schemas(
     schemas: list[Schema],
-    io: io.ReaderWriter = io.FileHandler,
+    io: io.AbstractFileHandler = io.FileHandler,
     out_dir: Path = configs.BUILD_DIR,
     use_version: bool = OMIT_VERSION,
 ) -> None:
@@ -71,7 +71,7 @@ def store_compiled_schemas(
         io.write(dir=out_dir, file_name=rng_name, content=schema.rng)
 
 
-def load_config(io: io.ReaderWriter = io.FileHandler) -> SSRQConfig:
+def load_config(io: io.AbstractFileHandler = io.FileHandler) -> SSRQConfig:
     pyproject_toml = tomllib.loads(
         io.read(dir=configs.PROJECT_DIR, file_name="pyproject.toml")
     )

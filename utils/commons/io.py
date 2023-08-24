@@ -6,7 +6,7 @@ Content: TypeAlias = str
 
 
 @runtime_checkable
-class ReaderWriter(Protocol):
+class AbstractFileHandler(Protocol):
     @staticmethod
     @abstractmethod
     def read(dir: Path, file_name: str) -> Content:
