@@ -32,11 +32,12 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Base:
-      - Transcription:
-          - base/transcription/index.md
-          - Print: base/transcription/print.md
-          - Hand: base/transcription/hand.md
-      - base/dating_guidelines.md
+    - Transcription:
+      - base/transcription/index.md
+      - Common: base/transcription/common.md
+      - Print: base/transcription/print.md
+      - Hand: base/transcription/hand.md
+    - base/dating_guidelines.md
   - Elements:
       - elements/index.md
 plugins:
