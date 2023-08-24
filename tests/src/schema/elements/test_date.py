@@ -81,6 +81,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "date-with-type-holiday-without-period-and-datingMethod",
+            "<date type='holiday'><persName ref='per000351'>Paul</persName>i</date>",
+            True,
+        ),
+        (
             "date-with-valid-period-and-invalid-type",
             "<date period='summer' type='summer holiday'>es war im Sommer</date>",
             False,
