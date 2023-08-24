@@ -3,6 +3,7 @@ from pathlib import Path
 
 import pytest
 
+from utils.docs.helpers.utils import split_tag_and_ns
 from utils.docs.odd2md import (
     LANGS,
     ODD2Md,
@@ -12,7 +13,6 @@ from utils.docs.specs.attributespec import AttributeSpec
 from utils.docs.specs.elementspec import ElementSpec
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODDElement
-from utils.docs.specs.utils import split_tag_and_ns
 
 from .conftest import EL_FINDER, check_result_with_xpath
 
