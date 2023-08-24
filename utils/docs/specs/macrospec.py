@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from utils.docs.specs.base import BaseSpec
+from utils.docs.specs.basespec import BaseSpec
 
 
 class MacroSpec(BaseSpec):

@@ -9,9 +9,9 @@ from utils.docs.odd2md import (
     ODDReader,
 )
 from utils.docs.specs.abstract import ODDElement
-from utils.docs.specs.attribute import AttributeSpec
-from utils.docs.specs.element import ElementSpec
-from utils.docs.specs.ns import NS_MAP
+from utils.docs.specs.attributespec import AttributeSpec
+from utils.docs.specs.elementspec import ElementSpec
+from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.utils import split_tag_and_ns
 
 from .conftest import EL_FINDER, check_result_with_xpath
