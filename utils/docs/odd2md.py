@@ -3,12 +3,12 @@ from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
 
-from utils.docs.specs.abstract import ODDElement
 from utils.docs.specs.classspec import ClassSpec
 from utils.docs.specs.dataspec import DataSpec
 from utils.docs.specs.elementspec import ElementSpec
 from utils.docs.specs.macrospec import MacroSpec
 from utils.docs.specs.namespaces import NS_MAP
+from utils.docs.specs.oddelement import ODDElement
 from utils.docs.translater import TRANSLATE, Translations
 from utils.schema.compile import Schema, load_config, odd_factory
 

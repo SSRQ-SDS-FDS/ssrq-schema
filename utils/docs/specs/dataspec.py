@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from utils.docs.specs.abstract import ODD_COMP_TYPES
+from utils.docs.specs.oddelement import ODD_COMP_TYPES
 
 
 class DataSpec:
