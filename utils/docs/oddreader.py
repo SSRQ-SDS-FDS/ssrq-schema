@@ -7,16 +7,16 @@ from utils.docs.specs.elementspec import ElementSpec
 from utils.docs.specs.macrospec import MacroSpec
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODDElement
-from utils.docs.translater import Translations, TRANSLATE
+from utils.docs.translator import TRANSLATE, Translator
 
 
 class ODDReader:
     odd: ET.Element
     elements: dict[str, ElementSpec]
     components: dict[str, ODDElement]
-    translations: Translations
+    translations: Translator
 
-    def __init__(self, odd: str, translations: Translations = TRANSLATE):
+    def __init__(self, odd: str, translations: Translator = TRANSLATE):
         self.odd = ET.fromstring(odd)
         self.elements = {spec.ident: spec for spec in self._get_element_specs()}
         self.components = {

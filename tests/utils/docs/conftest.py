@@ -5,7 +5,7 @@ import pytest
 from saxonche import PySaxonProcessor, PyXdmItem
 
 from tests.src.schema.conftest import TEST_EXAMPLE_DIR
-from utils.docs.odd2md import NS_MAP
+from utils.docs.specs.namespaces import NS_MAP
 
 EL_FINDER = Callable[[str], ET.Element | None]
 
