@@ -6,8 +6,8 @@ import pytest
 from utils.docs.odd2md import (
     LANGS,
     ODD2Md,
-    ODDReader,
 )
+from utils.docs.oddreader import ODDReader
 from utils.docs.specs.attributespec import AttributeSpec
 from utils.docs.specs.elementspec import ElementSpec
 from utils.docs.specs.namespaces import NS_MAP
