@@ -1,9 +1,9 @@
 import re
 import xml.etree.ElementTree as ET
 
-from utils.docs.specs.abstract import ODD_COMP_TYPES, ODDElement
-from utils.docs.specs.attribute import AttributeSpec
-from utils.docs.specs.ns import NS_MAP
+from utils.docs.specs.attributespec import AttributeSpec
+from utils.docs.specs.namespaces import NS_MAP
+from utils.docs.specs.oddelement import ODD_COMP_TYPES, ODDElement
 from utils.docs.specs.utils import split_tag_and_ns
 
 RE_WHITESPACE_PATTERN = re.compile(r"[\s\n]+")

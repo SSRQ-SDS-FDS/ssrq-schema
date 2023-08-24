@@ -1,7 +1,7 @@
 import pytest
 
-from utils.schema.steps.abstract import Step
 from utils.schema.steps.stats import Stats
+from utils.schema.steps.step import AbstractStep
 
 
 @pytest.fixture
@@ -14,7 +14,7 @@ def stats_example() -> str:
 
 
 def test_stats_isinstance_of_step() -> None:
-    assert isinstance(Stats(), Step)
+    assert isinstance(Stats(), AbstractStep)
 
 
 def test_input_is_output(stats_example: str) -> None:

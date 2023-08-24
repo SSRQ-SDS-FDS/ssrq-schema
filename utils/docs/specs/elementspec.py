@@ -4,9 +4,9 @@ from typing import Self
 
 from snakemd import Document  # type: ignore
 
-from utils.docs.specs.abstract import ODDElement
-from utils.docs.specs.base import BaseSpec
-from utils.docs.specs.ns import NS_MAP
+from utils.docs.specs.basespec import BaseSpec
+from utils.docs.specs.namespaces import NS_MAP
+from utils.docs.specs.oddelement import ODDElement
 
 
 class ElementSpec(BaseSpec):

@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from utils.commons import io
+from utils.commons import filehandler as io
 
 
 @pytest.fixture
@@ -13,7 +13,7 @@ def test_file(tmp_path: Path) -> str:
 
 
 def test_file_handler_is_read_writer_instance():
-    assert isinstance(io.FileHandler(), io.ReaderWriter)
+    assert isinstance(io.FileHandler(), io.AbstractFileHandler)
 
 
 def test_read_content(tmp_path: Path, test_file: str):

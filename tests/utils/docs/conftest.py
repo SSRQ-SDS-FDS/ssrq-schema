@@ -5,7 +5,7 @@ import pytest
 from saxonche import PySaxonProcessor, PyXdmItem
 
 from tests.src.schema.conftest import TEST_EXAMPLE_DIR
-from utils.docs.odd2md import NS_MAP
+from utils.docs.specs.namespaces import NS_MAP
 
 EL_FINDER = Callable[[str], ET.Element | None]
 
@@ -31,7 +31,7 @@ def check_result_with_xpath(
 
 @pytest.fixture(scope="session")
 def example_odd() -> str:
-    from utils.commons import io
+    from utils.commons import filehandler as io
 
     return io.FileHandler.read(dir=TEST_EXAMPLE_DIR, file_name="odd_example.xml")
 

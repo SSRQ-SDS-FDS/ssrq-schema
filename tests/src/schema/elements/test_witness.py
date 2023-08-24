@@ -1,6 +1,6 @@
 import pytest
 
-from utils.commons import io
+from utils.commons import filehandler as io
 
 from ..conftest import TEST_EXAMPLE_DIR, RNG_test_function
 

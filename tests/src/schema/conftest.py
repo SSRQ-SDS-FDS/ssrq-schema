@@ -14,7 +14,7 @@ from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecu
 from ssrq_cli.validate import RNGJingValidator
 from ssrq_cli.xml_utils import ext_etree
 
-from utils.commons import io
+from utils.commons import filehandler as io
 from utils.commons.config import SCHEMA_DIR, XSLTS
 from utils.schema.compile import (
     SPECIFIED_ELEMENTS,

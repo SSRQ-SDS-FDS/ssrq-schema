@@ -5,7 +5,7 @@ T = TypeVar("T")
 
 
 @runtime_checkable
-class Step(Protocol):
+class AbstractStep(Protocol):
     """A protocol, which defines the interface for a step
     in a processing pipeline."""
 

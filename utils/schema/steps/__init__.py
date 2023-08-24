@@ -1,4 +1,4 @@
-from utils.schema.steps.abstract import Step
 from utils.schema.steps.stats import Stats
+from utils.schema.steps.step import AbstractStep
 
-__all__ = ["Step", "Stats"]
+__all__ = ["AbstractStep", "Stats"]
