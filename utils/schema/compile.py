@@ -8,7 +8,7 @@ from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecu
 from typing_extensions import TypedDict
 
 import utils.commons.config as configs
-import utils.commons.io as io
+import utils.commons.filehandler as io
 from utils.commons.logger import LOGGER
 from utils.schema import steps
 

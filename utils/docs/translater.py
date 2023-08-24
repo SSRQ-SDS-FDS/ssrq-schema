@@ -2,7 +2,7 @@ from json import loads
 
 from pydantic import BaseModel, model_validator
 
-from utils.commons import io
+from utils.commons import filehandler as io
 from utils.commons.config import SRC_DIR
 
 translations_file = "docs/translations/translations.json"

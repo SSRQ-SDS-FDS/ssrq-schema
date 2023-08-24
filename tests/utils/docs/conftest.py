@@ -31,7 +31,7 @@ def check_result_with_xpath(
 
 @pytest.fixture(scope="session")
 def example_odd() -> str:
-    from utils.commons import io
+    from utils.commons import filehandler as io
 
     return io.FileHandler.read(dir=TEST_EXAMPLE_DIR, file_name="odd_example.xml")
 

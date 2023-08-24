@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from utils.commons import io
+from utils.commons import filehandler as io
 
 
 @pytest.fixture
