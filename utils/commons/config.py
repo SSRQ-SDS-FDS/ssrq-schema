@@ -2,6 +2,8 @@ from pathlib import Path
 
 PROJECT_DIR = Path(__file__).parent.parent.parent.absolute()
 
+DOCS_LANG = ["de", "fr"]
+
 BUILD_DIR = PROJECT_DIR / "build"
 SRC_DIR = PROJECT_DIR / "src"
 

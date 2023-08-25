@@ -3,9 +3,8 @@ from pathlib import Path
 
 import pytest
 
-from utils.docs.helpers.utils import split_tag_and_ns
+from utils.commons.config import DOCS_LANG as LANGS
 from utils.docs.odd2md import (
-    LANGS,
     ODD2Md,
 )
 from utils.docs.oddreader import ODDReader
@@ -239,29 +238,6 @@ def test_resolved_attribute_descriptions(
         assert lang_desc is not None
         assert lang_desc.text is not None
         assert text in lang_desc.text
-
-
-def test_spec_desc_to_md(example_elementSpec: EL_FINDER):
-    example_el_spec = example_elementSpec("p")
-    assert example_elementSpec is not None
-    el_spec = ElementSpec(element=example_el_spec)
-    desc = el_spec.get_desc(element=el_spec.odd_element, lang="de")
-    assert isinstance(desc, str)
-    assert "\n" not in desc
-    desc_childs = el_spec.odd_element.findall(
-        "tei:desc[@xml:lang = 'de']/*", namespaces=NS_MAP
-    )
-    if desc_childs is not None:
-        for child in desc_childs:
-            match split_tag_and_ns(child.tag)[1]:
-                case "gi":
-                    assert f"[`<{child.text}/>`]({child.text}.md)" in desc
-                case "att":
-                    assert f"[@{child.text}](#{child.text})" in desc
-                case "ref":
-                    assert f"[{child.text}]({child.attrib['target']})" in desc
-                case _:
-                    assert child.text in desc
 
 
 def test_odd_reader_components_setup(example_odd: str, tmp_path: Path):

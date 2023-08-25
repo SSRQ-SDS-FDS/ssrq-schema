@@ -4,9 +4,6 @@ from pathlib import Path
 from utils.docs.oddreader import ODDReader
 from utils.schema.compile import Schema, load_config, odd_factory
 
-# default languages used to generate the documentation
-LANGS = ["de", "fr"]
-
 
 @dataclass(frozen=True)
 class ElementMdSpec:
