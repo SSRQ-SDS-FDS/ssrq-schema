@@ -202,6 +202,8 @@ def test_convert_node_to_iterable():
         ("foo.md", None, "foo.md"),
         ("foo.md", "de", "foo.de.md"),
         ("foo.de.md", "fr", "foo.de.md"),
+        ("foo", "de", "foo"),
+        ("foo.md#bar", "de", "foo.de.md#bar"),
     ],
 )
 def test_process_target_attribute(target: str, lang: str | None, expected: str):

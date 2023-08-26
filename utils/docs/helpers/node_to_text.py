@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 from collections.abc import Iterator
 from dataclasses import dataclass
 from typing import Literal
-from urllib.parse import urlparse
+from urllib import parse
 
 from utils.commons.config import DOCS_LANG
 from utils.docs.helpers.utils import split_tag_and_ns
@@ -269,22 +269,24 @@ def node_has_children(node: ET.Element) -> bool:
 def process_target_attribute(
     target: str, lang: str | None, target_langs: list[str] = DOCS_LANG
 ) -> str:
-    if not points_to_local_file(target) or lang is None:
+    parsed_target = parse.urlparse(target)
+
+    if is_not_link_to_md_file(parsed_target) or lang is None:
         return target
 
-    splitted_target = target.split(".")
-    lang_suffix = splitted_target[-2]
+    splitted_path = parsed_target.path.split(".")
+    lang_suffix = splitted_path[-2]
 
     if lang_suffix in target_langs:
         return target
 
-    splitted_target.insert(len(splitted_target) - 1, lang)
-    return ".".join(splitted_target)
+    splitted_path.insert(len(splitted_path) - 1, lang)
+    return f"{'.'.join(splitted_path)}{f'#{parsed_target.fragment}' if len(parsed_target.fragment) > 0 else ''}"
 
 
-def points_to_local_file(link: str) -> bool:
-    parsed_url = urlparse(link)
-    path = parsed_url.path
-    if path.endswith((".md", ".jpg", ".png", ".gif")):
+def is_not_link_to_md_file(link: parse.ParseResult) -> bool:
+    if not link.path.endswith(".md"):
+        return True
+    if len(link.scheme) > 0:
         return True
     return False
