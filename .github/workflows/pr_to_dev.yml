@@ -31,6 +31,8 @@ jobs:
         run: ./Taskfile fmt-xml
       - name: Lint all .py-files
         run: ./Taskfile lint-only
+      - name: Validate all schema source files
+        run: ./Taskfile validate
       - name: Run all tests using pytest
         run: poetry run pytest -n 4
 

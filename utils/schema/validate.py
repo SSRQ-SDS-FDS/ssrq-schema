@@ -7,6 +7,8 @@ from ssrq_cli.validate.xml import ValidationError  # type: ignore
 from ssrq_cli.xml_utils import ext_etree  # type: ignore
 
 from utils.commons.config import COMMONS_DIR, ELEMENTS_DIR, SCHEMA_DIR
+from utils.docs.helpers.node_to_text import is_not_link_to_md_file
+from utils.docs.specs.namespaces import NS_MAP
 
 ODD_ENTRY_FILES = glob(str(SCHEMA_DIR / "*.xml"))
 COMMON_FILES = glob(str(COMMONS_DIR / "*.xml"))
@@ -30,6 +32,15 @@ class WellFormedException(Exception):
 
 
 class InvalidSpecException(Exception):
+    """Exception raised when some files are not valid."""
+
+    def __init__(self, file: str, msg: str):
+        self.file = file
+        self.msg = msg
+        super().__init__(f"{file}:\n{msg}")
+
+
+class InvalidRefTargetException(Exception):
     """Exception raised when some files are not valid."""
 
     def __init__(self, file: str, msg: str):
@@ -88,6 +99,37 @@ def filter_errors(
     ]
 
 
+def check_ref_targets(
+    files: list[tuple[str, ext_etree._ElementTree]]
+) -> list[InvalidRefTargetException] | None:
+    from urllib.parse import urlparse
+
+    errors: list[InvalidRefTargetException] = []
+
+    for file, tree in files:
+        for ref in tree.findall(".//tei:ref", namespaces=NS_MAP):
+            target = ref.get("target")
+
+            if target is None:
+                errors.append(
+                    InvalidRefTargetException(
+                        file, f"Line {ref.sourceline}: Ref is missing target-attribute."
+                    )
+                )
+                continue
+
+            parsed_target = urlparse(target)
+
+            if is_not_link_to_md_file(parsed_target) and len(parsed_target.scheme) == 0:
+                errors.append(
+                    InvalidRefTargetException(
+                        file,
+                        f"Line {ref.sourceline}: {target} is not a valid external URL and does not point to a static '.md'-documentation-file.",
+                    )
+                )
+    return errors if len(errors) > 0 else None
+
+
 def validate_odd_with_odd(
     sources: list[tuple[list[str], str, str]], odd_url: str = TEI_ODD_RNG
 ) -> None:
@@ -126,6 +168,9 @@ def validate_odd_with_odd(
                         ),
                     )
                 )
+
+        for error in check_ref_targets(file_sources) or []:
+            exceptions.append(error)
 
     if len(exceptions) > 0:
         raise ExceptionGroup("Some files are not valid.", exceptions)
