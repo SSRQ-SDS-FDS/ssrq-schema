@@ -1,7 +1,7 @@
 from collections.abc import Callable
 from typing import Iterable, TypeVar
 
-from pyuca import Collator
+from pyuca import Collator  # type: ignore
 
 __all__ = ["sort_with_uca"]
 

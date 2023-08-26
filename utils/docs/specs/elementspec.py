@@ -4,6 +4,7 @@ from typing import Self
 
 from snakemd import Document  # type: ignore
 
+from utils.docs.helpers.sort import sort_with_uca
 from utils.docs.specs.basespec import BaseSpec
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODDElement
@@ -101,7 +102,7 @@ class ElementSpec(BaseSpec):
 
         doc.add_heading(translations["attr"], level=2)
 
-        for attribute in sorted(self.attributes, key=lambda x: x.ident):
+        for attribute in sort_with_uca(self.attributes, sort_key=lambda x: x.ident):
             doc.add_heading(f"@{attribute.ident}", level=3)
 
             self._desc_to_markdown(el=attribute.attr_element, lang=lang, doc=doc)
@@ -138,7 +139,7 @@ class ElementSpec(BaseSpec):
 
         contents_elements = (
             [
-                f"**{module}**: {' '.join([f'[{element}]({element}.md)' for element in sorted(elements)])}"
+                f"**{module}**: {' '.join([f'[{element}]({element}.md)' for element in sort_with_uca(elements)])}"
                 for module, elements in group_content_by_model[0].items()
             ]
             if len(group_content_by_model[0].keys()) > 0
@@ -242,7 +243,7 @@ class ElementSpec(BaseSpec):
     ) -> None:
         doc.add_paragraph(f"**{translations['restrictedValues']}**")
 
-        sorted_valItems = sorted(val_items, key=lambda x: x.attrib["ident"])
+        sorted_valItems = sort_with_uca(val_items, sort_key=lambda x: x.attrib["ident"])
         content_values = []
 
         for val_item in sorted_valItems:
@@ -253,18 +254,18 @@ class ElementSpec(BaseSpec):
         doc.add_unordered_list(content_values)
 
     def _group_content_by_model(self, elements: dict[str, Self], content: list[str]):
-        elements_by_model: dict[str, list[str]] = {}
-        misc: list[str] = []
+        elements_by_model: dict[str, set[str]] = {}
+        misc: set[str] = set()
 
         for element in content:
             if (
                 element in elements.keys()
                 and (module := elements[element].module) is not None
             ):
-                elements_by_model.setdefault(module, []).append(element)
+                elements_by_model.setdefault(module, set()).add(element)
             else:
-                misc.append(element)
+                misc.add(element)
 
-        return dict(sorted(elements_by_model.items())), {
-            "text" for i in misc if i in ["textNode", "string", "str"]
-        }
+        return dict(
+            sort_with_uca(elements_by_model.items(), sort_key=lambda i: i[0])
+        ), {"text" for i in misc if i in ["textNode", "string", "str"]}
