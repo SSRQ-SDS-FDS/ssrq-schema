@@ -141,7 +141,7 @@ def gi_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
 
     yield RE_WHITESPACE_START_OR_MULTIPLE.sub(
         "",
-        f"[`<{element_name}/>`]({element_name}{f'.{lang}' if lang else ''}.md){tail or ''}",
+        f"[{element_name}]({element_name}{f'.{lang}' if lang else ''}.md){tail or ''}",
     )
 
 
