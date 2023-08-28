@@ -327,23 +327,9 @@ class BaseSpec:
         if remark is None:
             return None
 
-        remark_paragraphs = remark.findall("./tei:p", namespaces=NS_MAP)
+        remark_content = self._desc_node_to_string(desc=remark)
 
-        if len(remark_paragraphs) == 0:
-            remark_content = (
-                self._upper_desc_start(desc=self._desc_node_to_string(desc=remark))
-                if upper
-                else self._desc_node_to_string(desc=remark)
-            )
-        else:
-            remark_content = [
-                self._upper_desc_start(desc=self._desc_node_to_string(desc=p))
-                if upper
-                else self._desc_node_to_string(desc=p)
-                for p in remark_paragraphs
-            ]
-
-        return remark_content
+        return self._upper_desc_start(desc=remark_content) if upper else remark_content
 
     def _upper_desc_start(self, desc: str) -> str:
         return desc[0].upper() + desc[1:]

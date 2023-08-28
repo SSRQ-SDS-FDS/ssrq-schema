@@ -26,7 +26,7 @@ class NodeTransformationError(Exception):
         super().__init__(message)
 
 
-def transform_node_to_text(node: ET.Element) -> Iterator[str]:
+def transform_node_to_text(node: ET.Element, lang: str | None = None) -> Iterator[str]:
     """
     A utility function to convert a ET.Element node to
     a text representation, based on some opionated
@@ -46,19 +46,22 @@ def transform_node_to_text(node: ET.Element) -> Iterator[str]:
             and child_node.tag_name is not None
             and isinstance(child_node.content, ET.Element)
         ):
+            used_lang = (
+                lang_attr if (lang_attr := node.get(f"{{{XML_NS}}}lang")) else lang
+            )
             match child_node.tag_name:
                 case "att":
                     yield from att_to_md(child_node.content)
                 case "gi":
-                    yield from gi_to_md(
-                        child_node.content, node.get(f"{{{XML_NS}}}lang")
-                    )
+                    yield from gi_to_md(child_node.content, used_lang)
                 case "list":
                     yield from list_to_md(child_node.content)
+                case "p":
+                    yield from p_to_md(child_node.content, used_lang)
                 case "ref":
-                    yield from ref_to_md(
-                        child_node.content, node.get(f"{{{XML_NS}}}lang")
-                    )
+                    yield from ref_to_md(child_node.content, used_lang)
+                case "remarks":
+                    yield from remarks_to_md(child_node.content, used_lang)
                 case "tag":
                     yield from tag_to_md(child_node.content)
                 case "val":
@@ -67,7 +70,29 @@ def transform_node_to_text(node: ET.Element) -> Iterator[str]:
                     yield from any_to_md(child_node.content)
             continue
 
-        yield RE_WHITESPACE_START_OR_MULTIPLE.sub("", child_node.content)  # type: ignore
+        yield from node_text_to_md(child_node.content)  # type: ignore
+
+
+def convert_node_to_iterable(node: ET.Element) -> Iterator[Node]:
+    """Creates an iterator over the content of a ElementTree.
+
+    Args:
+        node (ET.Element): The node to convert.
+
+    Yields:
+        Iterable[str | ET.Element]: The content of the node.
+    """
+    if node_has_text_or_tail(node):
+        yield Node(getattr(node, "text"), "text")
+
+    if node_has_children(node):
+        for child in node:
+            yield Node(
+                content=child, type="tag", tag_name=split_tag_and_ns(child.tag)[1]
+            )
+
+    if node_has_text_or_tail(node, "tail"):
+        yield Node(getattr(node, "tail"), "tail")
 
 
 def att_to_md(node: ET.Element) -> Iterator[str]:
@@ -137,6 +162,27 @@ def list_to_md(node: ET.Element) -> Iterator[str]:
     ) + "\n\n" + RE_WHITESPACE_START_OR_MULTIPLE.sub("", node.tail or "")
 
 
+def p_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
+    """Convert a p tag to a markdown representation.
+
+    Args:
+        node (ET.Element): The p node to convert.
+
+    Raises:
+        NodeTransformationError: If the node can't be transformed.
+
+    Yields:
+        str: The markdown representation of the node.
+    """
+
+    if not node_has_text_or_tail(node) and not node_has_children(node):
+        raise NodeTransformationError("Can't transform <p/>-tag without content.")
+
+    yield "\n\n"
+
+    yield from transform_node_to_text(node, lang)
+
+
 def ref_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
     """Convert a ref tag to a markdown representation.
 
@@ -165,6 +211,10 @@ def ref_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
         "",
         f"[{ref_text}]({processed_target}){tail or ''}",
     )
+
+
+def remarks_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
+    yield from transform_node_to_text(node, lang)
 
 
 def tag_to_md(node: ET.Element) -> Iterator[str]:
@@ -234,26 +284,24 @@ def any_to_md(node: ET.Element) -> Iterator[str]:
     yield RE_WHITESPACE_START_OR_MULTIPLE.sub("", f"{node.text or ''}{node.tail or ''}")
 
 
-def convert_node_to_iterable(node: ET.Element) -> Iterator[Node]:
-    """Creates an iterator over the content of a ElementTree.
+def node_text_to_md(text: str | None) -> Iterator[str]:
+    """Convert a node text to a markdown representation.
 
     Args:
-        node (ET.Element): The node to convert.
+        text (str | None): The text to convert.
 
     Yields:
-        Iterable[str | ET.Element]: The content of the node.
+        str: The markdown representation of the node.
     """
-    if node_has_text_or_tail(node):
-        yield Node(getattr(node, "text"), "text")
+    if text is None:
+        return
 
-    if node_has_children(node):
-        for child in node:
-            yield Node(
-                content=child, type="tag", tag_name=split_tag_and_ns(child.tag)[1]
-            )
+    normalized_text = RE_WHITESPACE_START_OR_MULTIPLE.sub("", text)
 
-    if node_has_text_or_tail(node, "tail"):
-        yield Node(getattr(node, "tail"), "tail")
+    if len(normalized_text) == 0:
+        return
+
+    yield normalized_text
 
 
 def node_has_text_or_tail(

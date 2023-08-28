@@ -139,7 +139,7 @@ class ElementSpec(BaseSpec):
 
         contents_elements = (
             [
-                f"**{module}**: {' '.join([f'[{element}]({element}.md)' for element in sort_with_uca(elements)])}"
+                f"**{module}**: {' '.join([f'[{element}]({element}.{lang}.md)' for element in sort_with_uca(elements)])}"
                 for module, elements in group_content_by_model[0].items()
             ]
             if len(group_content_by_model[0].keys()) > 0
