@@ -1,0 +1,2 @@
+Drucke:
+- Schreibvarianten der Eigennamen
