@@ -28,6 +28,21 @@ from utils.docs.helpers import node_to_text
             ),
             "Erfassung Zeitspanne nach [ISO 8601](https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen). Beginnt mit dem Kürzel P (Periode) gefolgt T (Time) und arabischen Ziffern. Sich wiederholende Zeitspannenden werden im vollen Format ausgedrückt und beginnen mit dem Kürzel R (Repeated). Ansonsten werden folgende Werte vergeben \n\n- H = hour\n- M = minute\n- S = second\n\n",
         ),
+        (
+            ET.fromstring(
+                "<remarks xml:lang='de'>Foo <ref target='baz.md'>bar</ref> foo</remarks>"
+            ),
+            "Foo [bar](baz.de.md) foo",
+        ),
+        (
+            ET.fromstring(
+                """<remarks xml:lang='de'><p>Foo <ref target='baz_one.md'>bar one</ref> foo</p>
+                    <p>Foo <ref target='baz_two.md'>bar two</ref> foo</p>
+                </remarks>
+                """
+            ),
+            "\n\n Foo [bar one](baz_one.de.md) foo \n\n Foo [bar two](baz_two.de.md) foo",
+        ),
     ],
 )
 def test_node_to_text_representation_end2end(node: ET.Element, expected: str):
@@ -130,6 +145,15 @@ def test_empty_list_raises_error():
         list(node_to_text.list_to_md(node))
 
 
+def test_p_to_md():
+    node = ET.Element("p")
+    node.text = "foo"
+    assert " ".join(node_to_text.p_to_md(node, None)) == "\n\n foo"
+
+    node.tail = " bar"
+    assert " ".join(node_to_text.p_to_md(node, None)) == "\n\n foo bar"
+
+
 @pytest.mark.parametrize(
     "node, expected",
     [
@@ -150,6 +174,20 @@ def test_ref_to_md(node: ET.Element, expected: str):
 
     assert len(result) == 1
     assert result[0] == expected
+
+
+@pytest.mark.parametrize(
+    "node, expected",
+    [
+        (ET.fromstring("<remarks>foo</remarks>"), "foo"),
+    ],
+)
+def test_remarks_to_md(node: ET.Element, expected: str):
+    """Test if the remarks tag is converted correctly."""
+
+    result = " ".join(node_to_text.remarks_to_md(node, None))
+
+    assert result == expected
 
 
 def test_tag_to_md():
