@@ -39,7 +39,9 @@ def transform_node_to_text(node: ET.Element, lang: str | None = None) -> Iterato
         Iterator[str]: The text representation of the node.
 
     """
-
+    parent_lang_attr = (
+        lang_attr if (lang_attr := node.get(f"{{{XML_NS}}}lang")) else lang
+    )
     for child_node in convert_node_to_iterable(node):
         if (
             child_node.type == "tag"
@@ -47,7 +49,9 @@ def transform_node_to_text(node: ET.Element, lang: str | None = None) -> Iterato
             and isinstance(child_node.content, ET.Element)
         ):
             used_lang = (
-                lang_attr if (lang_attr := node.get(f"{{{XML_NS}}}lang")) else lang
+                lang_attr
+                if (lang_attr := node.get(f"{{{XML_NS}}}lang"))
+                else parent_lang_attr
             )
             match child_node.tag_name:
                 case "att":
@@ -201,9 +205,7 @@ def ref_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
     if target is None:
         raise NodeTransformationError("Can't transform <ref/>-tag without a target.")
 
-    processed_target = (
-        process_target_attribute(target, lang) if target.endswith(".md") else target
-    )
+    processed_target = process_target_attribute(target, lang)
 
     ref_text, tail = node.text, node.tail
 

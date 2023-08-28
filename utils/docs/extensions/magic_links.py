@@ -42,7 +42,9 @@ def replace_with_relative_links(markdown: str, context: File, files: Files) -> s
 
         relative_link = create_relative_link(linker=context, target=target_file)
 
-        markdown = markdown.replace(link, relative_link)
+        markdown = re.sub(
+            pattern=rf"\({link}(#.*)?\)", repl=f"({relative_link}\\1)", string=markdown
+        )
 
     return markdown
 
@@ -58,15 +60,15 @@ def extract_links_from_md(
     return matched_links
 
 
-def filter_markdown_links(links: list[str]) -> list[str] | None:
+def filter_markdown_links(links: list[str]) -> set[str] | None:
     from urllib.parse import urlparse
 
-    filtered_links: list[str] = [
-        link
+    filtered_links: set[str] = {
+        parsed_url.path
         for link in links
         if (parsed_url := urlparse(link)).scheme == ""
         and parsed_url.path.endswith(configs.SUPPORTED_FILE_TYPES)
-    ]
+    }
 
     if len(filtered_links) == 0:
         return None
@@ -108,4 +110,5 @@ def create_relative_link(linker: File, target: File) -> str:
 
     Returns:
         str: The relative link."""
+
     return mkdocs_file_utils.get_relative_url(target.abs_src_path, linker.abs_src_path)
