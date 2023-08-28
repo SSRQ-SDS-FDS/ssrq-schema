@@ -1,4 +1,8 @@
-# A) Allgemeine Regeln
+---
+title: Allgemeine Grundsätze
+---
+
+# 1. Allgemeine Grundsätze
 
 ## Originaltreue
 - Die Transkription erfolgt grundsätzlich originalgetreu gemäss der Vorlage.

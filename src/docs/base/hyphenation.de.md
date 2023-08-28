@@ -1,5 +1,6 @@
-= Trennregeln der SSRQ =
-
+---
+title: Trennregeln
+---
 
 == Trennreglen der SSRQ für deutschsprachige Texte ==
  

@@ -1,0 +1,12 @@
+---
+title: Rechtschreibung und Zeichensetzung
+---
+
+# 2. Rechtschreibung und Zeichensetzung
+- [Normalisierung](normalization.de.md)
+- [Diakritika und Sonderzeichen](special.de.md)
+- [Gross- und Kleinschreibung](versalia.de.md)
+- [Zusammen- und Getrenntschreibung](wordseparation.de.md)
+- [Zahlen und Ziffern](numbers.de.md)
+- [Eigennamen](names.de.md)
+- [Interpunktion](punctuation.de.md)
