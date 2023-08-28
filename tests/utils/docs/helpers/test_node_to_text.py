@@ -12,7 +12,7 @@ from utils.docs.helpers import node_to_text
             ET.fromstring(
                 "<desc xml:lang='de'>Enthält die einfache Hervorhebung mit <gi>hi</gi>-Elementen.</desc>"
             ),
-            "Enthält die einfache Hervorhebung mit [`<hi/>`](hi.de.md)-Elementen.",
+            "Enthält die einfache Hervorhebung mit [`<hi>`](hi.de.md)-Elementen.",
         ),
         (
             ET.fromstring(
@@ -94,17 +94,17 @@ def test_att_to_md(node: ET.Element, expected: str):
         (
             ET.fromstring("<gi>foo</gi>"),
             None,
-            "[`<foo/>`](foo.md)",
+            "[`<foo>`](foo.md)",
         ),
         (
             ET.fromstring("<gi>foo</gi>"),
             "de",
-            "[`<foo/>`](foo.de.md)",
+            "[`<foo>`](foo.de.md)",
         ),
         (
             ET.fromstring("<spec><gi>hi</gi>-Element</spec>")[0],
             "de",
-            "[`<hi/>`](hi.de.md)-Element",
+            "[`<hi>`](hi.de.md)-Element",
         ),
     ],
 )
@@ -126,7 +126,7 @@ def test_gi_to_md(node: ET.Element, lang: str | None, expected: str):
         ),
         (
             ET.fromstring("<list><item>faz <gi>foo</gi></item><item>bar</item></list>"),
-            "\n\n- faz [`<foo/>`](foo.md)\n- bar\n\n",
+            "\n\n- faz [`<foo>`](foo.md)\n- bar\n\n",
         ),
     ],
 )
