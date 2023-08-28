@@ -15,7 +15,7 @@ bei den beiden Zeiträumen 6.–7. Jh. und 6.–8. Jh. der genauere Zeitraum 6.�
 
 ## 2 Eindeutige Datierungen
 
-- Eindeutige Datierungen werden gemäss ISO 8601 innerhalb von [`<date/>`](../elements/date.de.md) oder [`<origDate/>`](../elements/origDate.de.md) mit `@when-custom` normalisiert (YYYY-MM-DD). Nach ISO 8601 und
+- Eindeutige Datierungen werden gemäss ISO 8601 innerhalb von [`<date/>`](date.de.md) oder [`<origDate/>`](origDate.de.md) mit `@when-custom` normalisiert (YYYY-MM-DD). Nach ISO 8601 und
   TEI ist bei der Verwendung des when-Attributs immer der Gregorianische Kalender gemeint, was bei der SSRQ nicht immer der Fall ist, weshalb wir zur
   Präzisierung von `@when-custom` immer auch `@datingMethod` verwenden. Beispiel: [to do Beispiel `<date when-custom="2001-09-11" datingMethod="gregorian">11 Sept 01</date>`]
 - Hierarchisch übergeordnete Leerstellen (Jahr, Monat) werden in `@when-custom` mit einem Bindestrich ("-") angegeben. Beispiele: [to do - `<date when-custom="--09-11">9/11</date>`, `<date when-custom="--09">September</date>`, `<date when-custom="---11">Eleventh of the month</date>`]
@@ -38,7 +38,7 @@ Enthält eine Quelle mehrere Datum-Elemente, müssen alle Datierungen einzeln au
 #### 3.2.1 Durchgehende Zeiträume
 
 Zeiträume werden mit den Attributen `@from-custom` und `@to-custom` zusammen mit
-`@datingMethod` innerhalb von [`<date/>`](../elements/date.de.md) oder [`<origDate/>`](../elements/origDate.de.md) ausgezeichnet. Beispiele: [to do - 1521 Dezember 11 – 1544 April 16: `<date from-custom="1521-12-11" to-custom="1544-04-16" datingMethod="#julian">1521
+`@datingMethod` innerhalb von [`<date/>`](date.de.md) oder [`<origDate/>`](origDate.de.md) ausgezeichnet. Beispiele: [to do - 1521 Dezember 11 – 1544 April 16: `<date from-custom="1521-12-11" to-custom="1544-04-16" datingMethod="#julian">1521
   Dezember 11 - 1544 April 16</date>`
 
 - 1717–1718: `<date from-custom="1717" to-custom="1718" datingMethod="#gregorian">1717-1718</date>`]
@@ -52,10 +52,10 @@ Heumonat</date><date when="1466-07-25"/>`]
 
 #### 3.2.3 Uneindeutige Datierungen, die zugeordnet werden können
 
-Unsichere Jahresangaben, zum Beispiel «wohl 1491», wird mit [`<precision/>`](../elements/precision.de.md)
+Unsichere Jahresangaben, zum Beispiel «wohl 1491», wird mit [`<precision/>`](precision.de.md)
 inkl. Attribute `@match` und `@degree` ausgezeichnet. Beispiel: [to do: `<date when="1491">wohl 1491<precision match="`@when`" degree="0.5"/></date>`]
 
-Datierungen, die nicht eindeutig sind, jedoch zugeordnet werden können, werden als Zeiträume mit `@from-custom` und `@to-custom` zusammen mit `@datingMethod` sowie [`<precision/>`](../elements/precision.de.md) mit `@match` und `@degree` ausgezeichnet.
+Datierungen, die nicht eindeutig sind, jedoch zugeordnet werden können, werden als Zeiträume mit `@from-custom` und `@to-custom` zusammen mit `@datingMethod` sowie [`<precision/>`](precision.de.md) mit `@match` und `@degree` ausgezeichnet.
 
 
 | Beispiel          | Werte `@from-custom` und `@to-custom` | Zeitspanne: Schlüssel |
@@ -72,7 +72,7 @@ Datierungen, die nicht eindeutig sind, jedoch zugeordnet werden können, werden 
 #### 3.2.4 Uneindeutige Datierungen, die nicht zugeordnet werden können
 
 Datierungen, die nicht eindeutig sind und nicht zugeordnet werden können, sollen, falls möglich, mit möglichst präziser Annäherung als Zeiträume
-mit `@notBefore-custom` und `@notAfter-custom` sowie [`<precision/>`](../elements/precision.de.md) mit `@match` und `@degree` ausgezeichnet werden.
+mit `@notBefore-custom` und `@notAfter-custom` sowie [`<precision/>`](precision.de.md) mit `@match` und `@degree` ausgezeichnet werden.
 
 | Beispiel                | Werte `@notBefore-custom` und `@notAfter-custom`                                        | Zeitspanne: Schlüssel |
 | ----------------------- | ----------------------------------------------------------------------------------- | --------------------- |
@@ -86,9 +86,9 @@ mit `@notBefore-custom` und `@notAfter-custom` sowie [`<precision/>`](../element
 
 #### 3.2.5 Datierungen _post quem_ bzw. _ante quem_
 
-_Post quem_-Datierungen erhalten kein [`<precision/>`](../elements/precision.de.md), jedoch das errechnete End- bzw.
-Beginndatum erhält ein [`<precision/>`](../elements/precision.de.md). Wenn bei einer Amtsbezeichnungen nur bekannt ist, bis wann jemand im Amt war, rechnen wir für den Amtsbeginn mit -10 Jahren. Der Inhalt von
-`@notAfter-custom` ist sicher, nicht aber der Inhalt in `@notBefore-custom`, weshalb er ein [`<precision/>`](../elements/precision.de.md) erhält.
+_Post quem_-Datierungen erhalten kein [`<precision/>`](precision.de.md), jedoch das errechnete End- bzw.
+Beginndatum erhält ein [`<precision/>`](precision.de.md). Wenn bei einer Amtsbezeichnungen nur bekannt ist, bis wann jemand im Amt war, rechnen wir für den Amtsbeginn mit -10 Jahren. Der Inhalt von
+`@notAfter-custom` ist sicher, nicht aber der Inhalt in `@notBefore-custom`, weshalb er ein [`<precision/>`](precision.de.md) erhält.
 Beispiel: Amtszeit bis 1499 [to do
 `<date notAfter-custom="1499" notBefore-custom="1489" datingMethod="#julian">bis
 1499<precision match="`@notBefore-custom`" degree="0.5"/></date>`]
@@ -169,7 +169,7 @@ Literatur:
 
 Die unterschiedlichen
 Jahresanfangsstile (_Circumcisionsstil_ (Jahresanfang am 1. Januar), _Annuntiationsstil_ (25. März) oder
-_Natalstil_ (25. Dezember)) müssen in [`<date/>`](../elements/date.de.md) mit Hilfe von `@calendar` vermerkt werden.
+_Natalstil_ (25. Dezember)) müssen in [`<date/>`](date.de.md) mit Hilfe von `@calendar` vermerkt werden.
 
 Der Annuntiationsstil gilt in der Diözese Lausanne und in Freiburg von den Anfängen bis in die 2. Hälfte des 15.
 Jahrhunderts, sonst in der Diözese Lausanne bis in die 1. Hälfte des 16. Jahrhunderts.
@@ -192,7 +192,7 @@ FOLGENDER ABSCHNITT GEHÖRT ZU DATE
 
 # Termine und Fristen
 
-Termine (Weidetermine, Jagdzeitbeschränkungen etc.) werden auch als Datierungen mit [`<date/>`](../elements/date.de.md)
+Termine (Weidetermine, Jagdzeitbeschränkungen etc.) werden auch als Datierungen mit [`<date/>`](date.de.md)
 und `@when` ausgezeichnet. Zur Kennzeichnung, dass es sich um einen Termin handelt, wird `@type` mit dem Inhalt "deadline"
 eingefügt.
 

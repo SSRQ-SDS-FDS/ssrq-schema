@@ -19,11 +19,11 @@ Beispiel: `WJR —> wir`
 
     Ausnahmen: Im folgenden Beispiel wird der Strich über dem `m` am besten ignoriert und einfach mit `umb` (statt `ummb`) transkribiert.
 
-    ![Umb.gif](/assets/images/Umb.gif)
+    ![Umb.gif](Umb.gif)
 
     Nasalstrich über `m` in Kombination mit `b/p` wird ignoriert: `nempt` (statt `nemmpt`).
 
-    ![Nempt.png](/assets/images/Nempt.png)
+    ![Nempt.png](Nempt.png)
 
 === "Franzözische Texte"
 
@@ -214,7 +214,7 @@ Der Bearbeitende muss sich darüber im Klaren sein, dass ein mit «æ» transkri
 ## 2 Zahlen und Ziffern
 
 Einzelnummern und römische Zahlen werden gemäss Vorlage ziffern- resp. buchstabengetreu wiedergegeben. Römische Zahlen
-werden kleingeschrieben. Römische Zahlen und Zahlwörter werden mit [`<num/>`](../../elements/num.de.md) und @value
+werden kleingeschrieben. Römische Zahlen und Zahlwörter werden mit [`<num/>`](num.de.md) und @value
 ausgezeichnet.
 
 `[to do: Beispiele mit röm. Ziffern in num  hinzufügen, dann kann dieses Beispiel hier gelöscht werden]<num value="41">xli</num>`
@@ -222,7 +222,7 @@ ausgezeichnet.
 Zur Bezeichnung von Währungen werden Sonderzeichen
 verwendet.
 
-Eine Originaldatierung mit römischen Ziffern wird mit [`<origDate/>`](../../elements/origDate.de.md) und @when ausgezeichnet. Monatsnamen mit römischen Ziffern sollten ausgeschrieben werden.
+Eine Originaldatierung mit römischen Ziffern wird mit [`<origDate/>`](origDate.de.md) und @when ausgezeichnet. Monatsnamen mit römischen Ziffern sollten ausgeschrieben werden.
 
 ```
 
@@ -320,7 +320,7 @@ Bei handschriftlichen Texten des 19. Jahrhunderts sollte man im Deutschen zu Gro
 
 Ob ein Wort gemäss Vorlage zusammen- oder getrennt geschrieben wird, ist nicht immer einfach zu entscheiden. Ein einheitliches System für eine Handschrift, die ediert wird, ist zu befolgen.
 
-Bindestriche (Auslassungsstriche) werden berücksichtigt und in der heute gebräuchlichen Form dargestellt. Bei Worttrennungen durch Zeilenwechsel in der Vorlage – ausgezeichnet mit  [`<lb/>`](../../elements/lb.de.md) @break="no" – entfällt in der
+Bindestriche (Auslassungsstriche) werden berücksichtigt und in der heute gebräuchlichen Form dargestellt. Bei Worttrennungen durch Zeilenwechsel in der Vorlage – ausgezeichnet mit  [`<lb/>`](lb.de.md) @break="no" – entfällt in der
 Textwiedergabe der Trennstrich.
 
 Bei Flur- und Ortsnamen sollte die Zusammen- und Getrenntschreibung immer der Vorlage folgen. Bindestriche dürfen nicht verwendet werden.
@@ -369,7 +369,7 @@ Beispiel: `apud Novavillam `
 
 Hervorhebungen (Versalien, verlängerte Buchstaben, Unterstreichungen, Farben etc.) und lateinische Schrift in deutschen Texten werden nicht dargestellt.
 
-Hochgestellte Buchstaben werden mit [`<hi/>`](../../elements/hi.de.md) @rend="sup" wiedergegeben.
+Hochgestellte Buchstaben werden mit [`<hi/>`](hi.de.md) @rend="sup" wiedergegeben.
 
 to do: Beispiel in hi hinzufügen, dann kann dieses Beispiel hier gelöscht werden `deß 1729<hi rend="sup">ten</hi> jahrs
 
@@ -378,20 +378,20 @@ to do: Beispiel in hi hinzufügen, dann kann dieses Beispiel hier gelöscht werd
 ### 6.1 Häufige Abkürzungen
 
 Typische, im selben Schriftstück oder in mehreren Schriftstücken wiederkehrende Abkürzungen werden stehen
-  gelassen. Abkürzungen werden mit [`<abbr/>`](../../elements/abbr.de.md) getaggt, mit dem Abkürzungsverzeichnis verlinkt oder, wenn fehlend, ins
+  gelassen. Abkürzungen werden mit [`<abbr/>`](abbr.de.md) getaggt, mit dem Abkürzungsverzeichnis verlinkt oder, wenn fehlend, ins
   Abkürzungsverzeichnis aufgenommen. Es werden keine Kürzungspunkte verwendet, da die Abkürzungen durch die Auszeichnung
   bereits als solche gekennzeichnet sind.
 
 `to do: Beispiel in abbr  hinzufügen, dann kann dieses Beispiel hier gelöscht werden<abbr>etc</abbr>`
 
-Kürzel  werden konsequent als Kürzel belassen und mit [`<abbr/>`](../../elements/abbr.de.md) ausgezeichnet. Die Auflösung erfolgt im Abkürzungsverzeichns.
+Kürzel  werden konsequent als Kürzel belassen und mit [`<abbr/>`](abbr.de.md) ausgezeichnet. Die Auflösung erfolgt im Abkürzungsverzeichns.
 
 Beispiele:  `lobl., m. g. h., tit.,  s. v., LL.EE., MM., no, art., etc.  `
 
 ### 6.2 Abbkürzungen auflösen
 
 Auflösungen wurden früher in Zweifelsfällen in [   ] gesetzt, in der digitalen Edition werden sie
-mit [`<choice/>`](../../elements/choice.de.md), [`<abbr/>`](../../elements/abbr.de.md) und [`<expan/>`](../../elements/expan.de.md)
+mit [`<choice/>`](choice.de.md), [`<abbr/>`](abbr.de.md) und [`<expan/>`](expan.de.md)
 getaggt.
 
 Abkürzungen in der Textvorlage werden aufgelöst, wenn es möglich und sinnvoll ist. Orthographische Gepflogenheiten des
@@ -413,13 +413,13 @@ Abkürzungen von Mass- und Münzbezeichnungen werden ausser in Fliesstexten (Kom
 Zur Liste der Mass- und Münzbezeichnungen vgl. (to do: Verlinkung mit Liste im Portal bzw. Wiki Tastaturbelegung -> CURRENCY SYMBOLS).
 
 Zur Auszeichnung der Währungen, Masse und Gewichte
-vgl. [`<measure/>`](../../elements/measure.de.md).
+vgl. [`<measure/>`](measure.de.md).
 
 ## 7 Behandlung von Lücken, Schäden und Mängeln in der Textvorlage
 
 ### 7.1 Lücken vom Schreiber
 
-Vom Schreiber zwecks späterer Ergänzung bewusst gelassene Lücken (Auslassungen) wurden in analogen Bänden durch drei Auslassungspunkte ohne Klammer gekennzeichnet und in einer textkritischen Anmerkung unter Angabe der Grösse der Textlücke erläutert. In der digitalen Edition werden sie mit  [`<space/>`](../../elements/space.de.md)  getagt unter Angabe der Lückengrösse mit @unit und @quantity.
+Vom Schreiber zwecks späterer Ergänzung bewusst gelassene Lücken (Auslassungen) wurden in analogen Bänden durch drei Auslassungspunkte ohne Klammer gekennzeichnet und in einer textkritischen Anmerkung unter Angabe der Grösse der Textlücke erläutert. In der digitalen Edition werden sie mit  [`<space/>`](space.de.md)  getagt unter Angabe der Lückengrösse mit @unit und @quantity.
 
 Referenzpunkte bzw. Reverenzpunkte vor Namen oder Amtsbezeichnungen wurden in der analogen Edition durch 2 Punkte ohne
 Klammer wiedergegeben. In der digitalen Edition werden sie ebenfalls mit 2 Punkten ohne Klammer wiedergegeben.
@@ -432,45 +432,45 @@ Vom Schreiber in (   ) gesetzte Textteile werden identisch wiedergegeben.
 
 Vom Schreiber irrtümlich weggelassene Textteile (z. B. beim Abschreiben übersprungene Zeile) wurden in der analogen Edition durch einen Ersatztext aus einer anderen originalen oder kopialen Quelle oder durch den Bearbeitenden selbst im Sinne einer sinngemässen Textwiedergabe in [ ]a ergänzt. Eine Anmerkung war notwendig.
 
-In der digitalen Edition wird die Lücke mit [`<supplied/>`](../../elements/supplied.de.md) getaggt. Mit @reason wird der
+In der digitalen Edition wird die Lücke mit [`<supplied/>`](supplied.de.md) getaggt. Mit @reason wird der
 Grund der Lücke und mit @resp das Kürzel des Bearbeitenden angegeben. Falls notwendig, kann eine
-[`<note/>`](../../elements/note.de.md) gesetzt werden. Bei Ergänzungen anhand einer anderen Vorlage (2. Original, Kopie etc.)
-wird mit @source auf diesen Textzeugen referenziert. Vgl. dazu auch [`<app/>`](../../elements/app.de.md).
+[`<note/>`](note.de.md) gesetzt werden. Bei Ergänzungen anhand einer anderen Vorlage (2. Original, Kopie etc.)
+wird mit @source auf diesen Textzeugen referenziert. Vgl. dazu auch [`<app/>`](app.de.md).
 
 Ein Textverlust infolge Mäusefrass, verblasster Tinte, Brand, Pilzbefall, Rissen, Löchern, Kassation usw. wird
-mit [`<damage/>`](../../elements/damage.de.md) und [`<gap/>`](../../elements/gap.de.md) gekennzeichnet und falls möglich innerhalb
-von  [`<damage/>`](../../elements/damage.de.md) mit [`<supplied/>`](../../elements/supplied.de.md) – oder bei Unsicherheit mit
-[`<unclear/>`](../../elements/unclear.de.md) und @cert – ergänzt. Der Schaden wird innerhalb von
-[`<damage/>`](../../elements/damage.de.md) mit @agent näher bezeichnet.
+mit [`<damage/>`](damage.de.md) und [`<gap/>`](gap.de.md) gekennzeichnet und falls möglich innerhalb
+von  [`<damage/>`](damage.de.md) mit [`<supplied/>`](supplied.de.md) – oder bei Unsicherheit mit
+[`<unclear/>`](unclear.de.md) und @cert – ergänzt. Der Schaden wird innerhalb von
+[`<damage/>`](damage.de.md) mit @agent näher bezeichnet.
 
 ### 7.4 Irrtümliche Wiederholungen
 
-Irrtümliche Wiederholungen von Silben, Wörtern und Satzteilen sollen mit [`<choice/>`](../../elements/choice.de.md) und
-[`<sic/>`](../../elements/sic.de.md) angemerkt und mit [`<corr/>`](../../elements/corr.de.md) normalisiert werden.
+Irrtümliche Wiederholungen von Silben, Wörtern und Satzteilen sollen mit [`<choice/>`](choice.de.md) und
+[`<sic/>`](sic.de.md) angemerkt und mit [`<corr/>`](corr.de.md) normalisiert werden.
 
 ### 7.5 Unsichere Lesung
 
 Bei Wörtern mit unsicherer Lesung wurden bei der analogen Edition in einer textkritischen Anmerkung denkbare
 Lesevarianten angeführt. Sie konnten zusätzlich mit [?] gekennzeichnet werden.
-In der digitalen Edition werden unsichere Lesungen mit [`<unclear/>`](../../elements/unclear.de.md) getaggt. Die
+In der digitalen Edition werden unsichere Lesungen mit [`<unclear/>`](unclear.de.md) getaggt. Die
 Wahrscheinlichkeit der Lesung kann mit @cert angegeben werden. Falls dies nicht genügt, kann auch eine Anmerkung mit
-[`<note/>`](../../elements/note.de.md) gemacht werden.
+[`<note/>`](note.de.md) gemacht werden.
 
 ### 7.6 Schreib-, Sprach- und Stilfehler
 
 Schreib-, Sprach- und Stilfehler werden im Text nicht korrigiert. In der analogen Edition wurden sie in einer textkritischen Anmerkung erläutert oder mit einem [!] gekennzeichnet.
-In der digitalen Edition werden solche Fehler mit [`<sic/>`](../../elements/sic.de.md) gekennzeichnet und allenfalls  mit [`<choice/>`](../../elements/choice.de.md) zusammen mit [`<sic/>`](../../elements/sic.de.md) und [`<corr/>`](../../elements/corr.de.md) korrigiert.
+In der digitalen Edition werden solche Fehler mit [`<sic/>`](sic.de.md) gekennzeichnet und allenfalls  mit [`<choice/>`](choice.de.md) zusammen mit [`<sic/>`](sic.de.md) und [`<corr/>`](corr.de.md) korrigiert.
 
 ### 7.7 Bewusste Auslassungen von Text durch den Bearbeitenden
 
 Bewusste Auslassungen von Text durch den Bearbeitenden (Teilabdruck) werden in der analogen Edition mit [...] und in der
-digitalen mit [`<gap/>`](../../elements/gap.de.md) @reason="irrelevant" wiedergegeben. Dies sollte, wenn möglich, vermieden
+digitalen mit [`<gap/>`](gap.de.md) @reason="irrelevant" wiedergegeben. Dies sollte, wenn möglich, vermieden
 werden.
 
 Werden spätere Nachträge nicht beim Original, sondern als eigenständiges Stück ediert, können die Teile, die bereits in
-einem früheren Original ediert wurden, mit [`<gap/>`](../../elements/gap.de.md) weggelassen werden. Auf das bereits edierte
-Stück wird mit @source verwiesen. Eine Anmerkung in [`<note/>`](../../elements/note.md) oder eine Bemerkung in
-[`<back/>`](../../elements/back.de.md) ist nötig.
+einem früheren Original ediert wurden, mit [`<gap/>`](gap.de.md) weggelassen werden. Auf das bereits edierte
+Stück wird mit @source verwiesen. Eine Anmerkung in [`<note/>`](note.de.md) oder eine Bemerkung in
+[`<back/>`](back.de.md) ist nötig.
 
 ## 8 Behandlung redaktioneller Eingriffe des Schreibers
 
@@ -484,25 +484,25 @@ Auf einfache Korrekturen, die beim Schreibvorgang entstanden sind, wird nur in A
 
 Streichungen wurden in der analogen Transkription mit `a–...–a` gekennzeichnet und in einer textkritischen Anmerkung
 aufgeführt.
-In der digitalen Edition werden Streichungen mit [`<del/>`](../../elements/del.de.md) getaggt.
+In der digitalen Edition werden Streichungen mit [`<del/>`](del.de.md) getaggt.
 
-Bei mehrfach gestrichenen Texten müssen [`<delSpan/>`](../../elements/delSpan.de.md) und
-[`<anchor/>`](../../elements/anchor.de.md) eingesetzt werden.
+Bei mehrfach gestrichenen Texten müssen [`<delSpan/>`](delSpan.de.md) und
+[`<anchor/>`](anchor.de.md) eingesetzt werden.
 
 Durch Streichungen unlesbar gewordene Textstellen wurden in der analogen Edition mit `[...]a` gekennzeichnet und mit
 einer Anmerkung versehen.
-In der digitalen Edition werden sie mit [`<del/>`](../../elements/del.de.md) und einem leeren
-[`<gap/>`](../../elements/gap.de.md) ausgezeichnet.
+In der digitalen Edition werden sie mit [`<del/>`](del.de.md) und einem leeren
+[`<gap/>`](gap.de.md) ausgezeichnet.
 `todo: Beispiel aufnehmen und dann hier löschen: <del><gap unit="cm" quantity="4"/></del>`
 
 Bei Textstellen, die mehrere Streichungen und/oder Hinzufügungen bzw. Kombinationen davon aufweisen, muss
-[`<subst/>`](../../elements/subst.de.md) verwendet werden.
+[`<subst/>`](subst.de.md) verwendet werden.
 
 ### 8.2 Zusätze oder Nachträge
 
 Zusätze oder Nachträge von erster oder späterer Hand müssen in den Text aufgenommen werden und wurden in der analogen
 Edition in einer textkritischen Anmerkung erklärt.
-In der digitalen Edition wird der Tag [`<add/>`](../../elements/add.de.md) verwendet.
+In der digitalen Edition wird der Tag [`<add/>`](add.de.md) verwendet.
 
 Der Ort der Ergänzung muss zwingend in `@place` und die Hand der ergänzten Stelle kann mit `@hand` festgehalten werden.
 
@@ -514,9 +514,9 @@ Der Ort der Ergänzung muss zwingend in `@place` und die Hand der ergänzten Ste
 
 Mit Rasuren wurde in der analogen Edition gleich verfahren wie mit Streichungen und eine textkritische Anmerkung war
 erforderlich.
-In der digitalen Edition wird eine Rasur mit  [`<del/>`](../../elements/del.de.md) und `@rend="rubbing"` ausgezeichnet.
+In der digitalen Edition wird eine Rasur mit  [`<del/>`](del.de.md) und `@rend="rubbing"` ausgezeichnet.
 Wenn bei Rasuren oder auch bei heftigen Streichungen gar nichts mehr lesbar ist, wird ein leeres
-[`<gap/>`](../../elements/gap.de.md) innerhalb von [`<del/>`](../../elements/del.de.md) verwendet.
+[`<gap/>`](gap.de.md) innerhalb von [`<del/>`](del.de.md) verwendet.
 
 `<to do gutes Beispiel für Rubbing aufnehmen und hier verlinken del rend="rubbing"><unclear>unsichere Lesung wegen Rasur</unclear></del>`
 
@@ -527,11 +527,11 @@ Wenn bei Rasuren oder auch bei heftigen Streichungen gar nichts mehr lesbar ist,
 Bei Marginalien entschied sich in der analogen Edition der Bearbeitende, ob es sich um eine kommentierende Randbemerkung
 handelt, welche in die Anmerkungen verbannt wurde, oder um einen Zusatz, der unter Umständen in den Text gesetzt werden
 konnte.
-In der digitalen Edition werden Marginalien mit [`<add/>`](../../elements/add.de.md) und `@place="margin"` getaggt.
+In der digitalen Edition werden Marginalien mit [`<add/>`](add.de.md) und `@place="margin"` getaggt.
 
 ### 8.5 Klassifikation von Schreibern
 
-Für jeden Schreiber wird ein [`<handNote/>`](../../elements/handnote.de.md)-Element angelegt, welches die Informationen
+Für jeden Schreiber wird ein [`<handNote/>`](handNote.de.md)-Element angelegt, welches die Informationen
 zum jeweiligen Schreiber enthält.
 Auf die ID dieses Elements wird mit dem Attribut `@hand` verwiesen.
 Kann eine Hand einem namentlich bekannten Schreiber zugeordnet werden, wird dieser mithilfe des Attributs `@scribe`
@@ -549,15 +549,15 @@ Ist das Jahrhundert unsicher, wird dies folgendermassen ausgedrückt: `hand10cf,
 
 Für textkritische Anmerkungen wurden in der analogen Edition Kleinbuchstaben in alphabetischer Reihenfolge und für
 sachkritische Anmerkungen arabische Ziffern verwendet. Worterklärungen, z. B. für lateinische Wendungen etc.,
-erfolgen in der Glossardatenbank. Bei speziellen Wortformen, bei denen ein allgemeiner Glossareintrag [`<term/>`](../../elements/term.de.md) nicht genügt, um
-sie zu verstehen, ist eine sachkritische Anmerkung notwendig, in der die Übersetzung angeboten wird.  Für sachkritische Anmerkungen jeglicher Art wird [`<note/>`](../../elements/note.de.md) verwendet.
+erfolgen in der Glossardatenbank. Bei speziellen Wortformen, bei denen ein allgemeiner Glossareintrag [`<term/>`](term.de.md) nicht genügt, um
+sie zu verstehen, ist eine sachkritische Anmerkung notwendig, in der die Übersetzung angeboten wird.  Für sachkritische Anmerkungen jeglicher Art wird [`<note/>`](note.de.md) verwendet.
 
 ## 10 Textvarianten
 
 ### 10.1 Doppel- oder Mehrfachausfertigungen
 
 Bei Doppel- oder Mehrfachausfertigungen entscheidet sich der Bearbeitende für einen einzigen Text. Varianten und
-deren Besonderheiten können mit Hilfe von [`<app/>`](../../elements/app.de.md) angemerkt werden. Inhaltliche Abweichungen
+deren Besonderheiten können mit Hilfe von [`<app/>`](app.de.md) angemerkt werden. Inhaltliche Abweichungen
 der anderen Originale von der Editionsvorlage müssen zwingend angemerkt werden.
 
 Bei mehreren vorhandenen Originalen sollten wenn möglich die Kriterien, die zur Wahl der Editionsvorlage beitrugen, in
@@ -578,8 +578,8 @@ und sollte in einem Kommentar beschrieben werden.
 
 ### 11.1 Abschnitte
 
-Die Gliederung der Textvorlage wird übernommen. Originale Abschnitte werden nur mit [`<p/>`](../../elements/p.de.md) ausgezeichnet. Sofern ein Original stärker gegliedert oder strukturiert ist, kann man [`<p/>`](../../elements/p.de.md) innerhalb von [`<div/>`](../../elements/div.de.md)verwenden.
-Die inhaltliche Strukturierung eines Textes durch den Bearbeitenden in Absätze erfolgt mit [`<seg/>`](../../elements/seg.de.md). Absätze können mit @n nummeriert werden.
+Die Gliederung der Textvorlage wird übernommen. Originale Abschnitte werden nur mit [`<p/>`](p.de.md) ausgezeichnet. Sofern ein Original stärker gegliedert oder strukturiert ist, kann man [`<p/>`](p.de.md) innerhalb von [`<div/>`](div.de.md)verwenden.
+Die inhaltliche Strukturierung eines Textes durch den Bearbeitenden in Absätze erfolgt mit [`<seg/>`](seg.de.md). Absätze können mit @n nummeriert werden.
 
 [to do: Beispiele für p und div. Sinnvolles Beispiel für seg und p erfassen, dasjenige, das zur Zeit vorliegt, ist falsch, da p und seg verwendet, was ja keinen Sinn macht...]
 
@@ -588,11 +588,11 @@ Urkunden sollten gemäss ihrem formalen Aufbau strukturiert werden (vgl. z. B.  
 
 In der Regel sollten Absätze nach einem Punkt und nicht nach einem Komma erfolgen.
 
-Bei längeren Paratexten (Einleitung, Kommentar) können Kapitel durch [`<div/>`](../../elements/div.de.md) mit @n nummeriert und gegebenenfalls mit @type näher bezeichnet werden. Der Text eines Kommentars kann innerhalb von [`<div/>`](../../elements/div.de.md) mit [`<p/>`](../../elements/p.de.md)  in Absätze strukturiert werden.
+Bei längeren Paratexten (Einleitung, Kommentar) können Kapitel durch [`<div/>`](div.de.md) mit @n nummeriert und gegebenenfalls mit @type näher bezeichnet werden. Der Text eines Kommentars kann innerhalb von [`<div/>`](div.de.md) mit [`<p/>`](p.de.md)  in Absätze strukturiert werden.
 
 ### 11.2 Zeilen- und Seitenangaben
 
-Zeilenwechsel wurden in der analogen Edition mit / und Seitenwechsel mit // wiedergegeben. In der digitalen Edition werden Zeilen am Zeilenanfang ab der ersten Zeile mit [`<lb/>`](../../elements/lb.de.md) und die Seiten zu Beginn mit [`<pb/>`](../../elements/pb.de.md)
+Zeilenwechsel wurden in der analogen Edition mit / und Seitenwechsel mit // wiedergegeben. In der digitalen Edition werden Zeilen am Zeilenanfang ab der ersten Zeile mit [`<lb/>`](lb.de.md) und die Seiten zu Beginn mit [`<pb/>`](pb.de.md)
 und @n ausgezeichnet.
 
 ### 11.3 Interpunktion
@@ -605,25 +605,25 @@ Für die Interpunktion von lateinischen Texten kann grundsätzlich die moderne d
 
 ### 11.4 Originale Titel und Zwischentitel
 
-Originale Titel und Zwischentitel werden mit [`<head/>`](../../elements/head.de.md) ausgezeichnet, optisch mit @type abgehoben und mit @n nummeriert. Titel, die der Bearbeitende einfügt, sind mit @resp versehen.
+Originale Titel und Zwischentitel werden mit [`<head/>`](head.de.md) ausgezeichnet, optisch mit @type abgehoben und mit @n nummeriert. Titel, die der Bearbeitende einfügt, sind mit @resp versehen.
 
 ### 11.5 Direkte Rede
 
-Direkte Rede,  die in der analogen Edition mit « » hervorgehoben wurde, wird  mit [`<q/>`](../../elements/q.de.md) ausgezeichnet.
+Direkte Rede,  die in der analogen Edition mit « » hervorgehoben wurde, wird  mit [`<q/>`](q.de.md) ausgezeichnet.
 
 ### 11.6 Zitate
 
-Zitate innerhalb eines Textes (z. B. inserierte Urkunden) werden mit [`<quote/>`](../../elements/quote.de.md) ausgezeichnet
-und am Schluss des Zitats mit einer sachkritischen Anmerkung [`<note/>`](../../elements/note.de.md) versehen, in der auf den
-zitierten Originaltext verwiesen wird. Ist der Originaltext ediert, kann anstelle von [`<note/>`](../../elements/note.de.md)
+Zitate innerhalb eines Textes (z. B. inserierte Urkunden) werden mit [`<quote/>`](quote.de.md) ausgezeichnet
+und am Schluss des Zitats mit einer sachkritischen Anmerkung [`<note/>`](note.de.md) versehen, in der auf den
+zitierten Originaltext verwiesen wird. Ist der Originaltext ediert, kann anstelle von [`<note/>`](note.de.md)
 mit der @xml:id auf das Stück verwiesen werden.
 
-Innerhalb der Paratexte (Anmerkungen, Kommentar, Einleitung) benutzen wir [`<quote/>`](../../elements/quote.de.md) für Zitate aus der Forschungsliteratur.
+Innerhalb der Paratexte (Anmerkungen, Kommentar, Einleitung) benutzen wir [`<quote/>`](quote.de.md) für Zitate aus der Forschungsliteratur.
 
 ### 11.7 Tabellen
 
 Einige Quellen, wie z. B. Rechnungen oder Zollordnungen, enthalten Tabellen, die auch als solche in der Edition
-umgesetzt werden. Für die Darstellung von Tabellen verwenden wir [`<table/>`](../../elements/table.de.md) mit  [`<row/>`](../../elements/row.de.md) und [`<cell/>`](../../elements/cell.md).
+umgesetzt werden. Für die Darstellung von Tabellen verwenden wir [`<table/>`](table.de.md) mit  [`<row/>`](row.de.md) und [`<cell/>`](cell.de.md).
 
 ### 11.8 Plica
 
@@ -631,7 +631,7 @@ Enthält ein Dokument eine Plica, dann gelten folgende Regelungen:
 
 - Text unter der Plica wird als Bestandteil der recto-Seite transkribiert.
 
-- Text auf der Plica wird ebenfalls als Bestandteil der recto-Seite transkribiert (obwohl er vom Material her gesehen 
+- Text auf der Plica wird ebenfalls als Bestandteil der recto-Seite transkribiert (obwohl er vom Material her gesehen
   eigentlich zur verso-Seite gehören müsste).
 
 - Die Reihenfolge von Text unter bzw. auf der Plica ist in der Transkription beliebig.

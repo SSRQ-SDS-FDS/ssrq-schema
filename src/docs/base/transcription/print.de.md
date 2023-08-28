@@ -27,8 +27,8 @@ Die Wiedergabe erfolgt originalgetreu gemäss der Druckvorlage:
 
 ## 3 Druckfehler
 
-Eindeutige Druckfehler werden mit [<choice/>](../../elements/choice.de.md), [<sic/>](../../elements/sic.de.md) und
-[<corr/>](../../elements/corr.de.md) korrigiert.
+Eindeutige Druckfehler werden mit [<choice/>](choice.de.md), [<sic/>](sic.de.md) und
+[<corr/>](corr.de.md) korrigiert.
 
 ## 4 Abkürzungen
 

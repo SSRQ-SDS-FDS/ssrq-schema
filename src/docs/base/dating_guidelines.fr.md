@@ -18,7 +18,7 @@ title: Directives de datation
 - le style de la Circoncision (début de l\'année le 1er janvier), de
   l\'Annonciation (25 mars) ou de la Nativité (25 décembre) doit être
   indiqué
-- plusieurs tags [[date]](../elements/date.fr.md) dans l\'index sont
+- plusieurs tags [[date]](date.fr.md) dans l\'index sont
   possibles (pour la rétronumérisation), mais pas pour l\'édition numérique.
 
 # Datation certaine
@@ -48,7 +48,7 @@ title: Directives de datation
 
 Il faut utiliser plusieurs éléments de datations. (L'utilisation de plusieurs éléments de datation doit être commentée
 et se référer à la pièce. La datation de commentaires, de pièces similaires ou de copies ne font pas l'objet de cette
-datation (éventuellement utiliser [[note]](../elements/note.fr.md) dans ces cas). En générale, ces datations sont
+datation (éventuellement utiliser [`<note/>`](note.fr.md) dans ces cas). En générale, ces datations sont
 traitées de la même façon.)
 
 ### Exemples
@@ -58,7 +58,7 @@ traitées de la même façon.)
 
 ## Durées de temps ou périodes
 
-Des durées de temps ou périodes sont indiquées dans [[date]](../elements/date.fr.md) à l'aide des attributs
+Des durées de temps ou périodes sont indiquées dans [[date]](date.fr.md) à l'aide des attributs
 @from et @to. Depuis 2019: @from-custom et @to-custom avec @datingMethod.
 
 ### Exemples
@@ -82,7 +82,7 @@ Des durées de temps ou périodes sont indiquées dans [[date]](../elements/date
 ## Datation ambiguë, mais qui peut être résolues
 
 Rétronumérisation : Une indication de l'an ambiguë, p.e. "probablement 1491", est repris
-avec [[precision]](../elements/precision.fr.md) et les attributs @match et @degree.
+avec [`<precision/>`](precision.fr.md) et les attributs @match et @degree.
 
 `<date when="1491">wohl 1491<precision match="@when" degree="0.5"/></date>`
 
@@ -114,7 +114,7 @@ Des datations qui ne sont pas claires, mais qui peuvent être résolues, sont co
 `<date from-custom="1401" to-custom="1450" datingMethod="#julian">première moitié du XVe siècle</date>`
 
 À chaque fois avec @notBefore, @notAfter, depuis 2019 @notBefore-custom, @notAfter-custom et
-[[precision]](../elements/precision.fr.md) avec @match et @degree.
+[[precision]](precision.fr.md) avec @match et @degree.
 
 <table>
 <thead>
@@ -205,7 +205,7 @@ Des datations qui ne sont pas claires et qui ne peuvent pas être résolues, doi
 intervalles (analogue à 4., le plus proche possible) :
 
 À chaque fois avec @notBefore, @notAfter, depuis 2019 @notBefore-custom, @notAfter-custom et
-[[precision]](../elements/precision.fr.md) avec @match et @degree
+[[precision]](precision.fr.md) avec @match et @degree
 
 <table>
 <thead>
@@ -294,7 +294,7 @@ Lucerne: le jour du changement: le 12 janvier 1584 ancien style = 22 janvier 158
 ## Style de début de l'année
 
 Les différents styles de début de l'année (Circoncision (1er janvier), Annonciation (25 mars) ou Nativité (25 décembre))
-doivent être annotés dans [[date]](../elements/date.fr.md) à l'aide de @calendar.
+doivent être annotés dans [`<date/>`](date.fr.md) à l'aide de @calendar.
 
 **Style de l'Annonciation**
 
@@ -316,7 +316,7 @@ Comme le 4 février se trouve dans la période entre le 1er janvier (ou entre le
 # Dates fixes et délais
 
 Des dates fixes (délais de pâturage, saison de chasse restreinte etc.) sont également indiquées avec
-[[date]](../elements/date.fr.md) et @when. Pour signaler qu'il s'agit d'une date fixe ou d'un délai, il faut ajouter
+[[date]](date.fr.md) et @when. Pour signaler qu'il s'agit d'une date fixe ou d'un délai, il faut ajouter
 dans @type la valeur "deadline".
 
 Par exemple pour une date fixe :

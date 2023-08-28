@@ -4,7 +4,7 @@ title: Startseite
 
 # Transkriptionsrichtlinien und TEI-Dokumentation
 
-![SSRQ Logo](assets/images/ssrq-logo.svg)
+![SSRQ Logo](ssrq-logo.svg)
 
 ## Hintergrund
 
@@ -29,8 +29,8 @@ Der Fokus bei XML liegt auf der Anhäufung der Daten und nicht auf der graﬁsch
 
 > «The Text Encoding Initiative» (TEI) is a consortium which collectively develops and maintains a standard for the representation of texts in digital form. Its chief deliverable is a set of Guidelines which specify encoding methods for machine-readable texts, chieﬂy in the humanities, social sciences and linguistics.[^3]
 
-Der Vorteil der Vorgaben der TEI ist, dass die meisten Deﬁnitionen, welche für XML unabdingbar sind, jedoch mühsam erarbeitet werden müssten, bereits durch die TEI gegeben sind. So genannte DTDs[4] müssen nicht selbst erstellt werden. Gleichzeitig bedeutet dies jedoch, dass nicht beliebige Kombinationen von XML-Elementen vorgenommen werden können. Vor allem die Listen müssen nach den Vorgaben erstellt werden und können nur einige wenige vordeﬁnierte Elemente enthalten. Auf diese Weise kann eine Einheitlichkeit in der Erstellung der Register erzielt werden.
-Das Konzept der eSSRQ[5] sieht vor, dass (möglichst) alle Informationen zu einem Ort, einer Person oder einer Organisation aufgenommen werden können. Als Folge wird so gut wie jeder Listeneintrag Leerstellen aufweisen, was in Hinblick auf den dauernd ändernden Forschungsstand und zukünftige Erkenntnisse nicht weiter tragisch ist.
+Der Vorteil der Vorgaben der TEI ist, dass die meisten Deﬁnitionen, welche für XML unabdingbar sind, jedoch mühsam erarbeitet werden müssten, bereits durch die TEI gegeben sind. So genannte DTDs müssen nicht selbst erstellt werden. Gleichzeitig bedeutet dies jedoch, dass nicht beliebige Kombinationen von XML-Elementen vorgenommen werden können. Vor allem die Listen müssen nach den Vorgaben erstellt werden und können nur einige wenige vordeﬁnierte Elemente enthalten. Auf diese Weise kann eine Einheitlichkeit in der Erstellung der Register erzielt werden.
+Das Konzept der eSSRQ sieht vor, dass (möglichst) alle Informationen zu einem Ort, einer Person oder einer Organisation aufgenommen werden können. Als Folge wird so gut wie jeder Listeneintrag Leerstellen aufweisen, was in Hinblick auf den dauernd ändernden Forschungsstand und zukünftige Erkenntnisse nicht weiter tragisch ist.
 
 [^1]:
     Vgl. Sahle, Patrick: Projektskizze zur elektronischen Bearbeitung und digitalen Edition von Zürcher Rechtsquellen (eRQZH) im Rahmen des Editionsunternehmens «Sammlung Schweizerischer Rechtsquellen (SSRQ)», namens des Schweizerischen Juristenvereins herausgegeben von dessen Rechtsquellenstiftung. (Unpublizierte Projektskizze. Endfassung vom 9. September 2008.)

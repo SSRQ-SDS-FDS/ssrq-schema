@@ -132,7 +132,7 @@ La disposition des touches pour la dactylographie simple des signes combinés ex
 ## Nombres et chiffres
 
 Les nombres simples et les chiffres romains sont restitués selon la graphie du texte source. Les chiffres romains sont
-écrits en minuscules. Les chiffres romains sont signalés par [`<num/>`](../../elements/num.fr.md) et @value.
+écrits en minuscules. Les chiffres romains sont signalés par [`<num/>`](num.fr.md) et @value.
 
 `<num value="41">xlj</num>`
 
@@ -141,7 +141,7 @@ arabes sont restitués en toutes lettres (7bre = septembre, 8bre = octobre, 9bre
 
 Pour la désignation de monnaies des signes particuliers sont utilisés.
 
-Une datation exprimée en chiffres romains est signalée par [`<origDate/>`](../../elements/origDate.fr.md) et @when.
+Une datation exprimée en chiffres romains est signalée par [`<origDate/>`](origDate.fr.md) et @when.
 
 ```
 ... qual cosa si è essequito sino nell'
@@ -255,7 +255,7 @@ Villam (et non Novamvillam ou Novam-Villam). En revanche, si la flexion est tomb
 originaux n'en font plus qu'un, il convient d'écrire: apud Novavillam.
 
 Les traits d'union présents dans le texte source en raison d'un changement de ligne ne doivent pas être retranscrits. En
-revanche, il convient de signaler, pour une édition digitale, cette césure par [`<lb/>`](../../elements/lb.fr.md) @break="
+revanche, il convient de signaler, pour une édition digitale, cette césure par [`<lb/>`](lb.fr.md) @break="
 no" .
 
 ```
@@ -270,7 +270,7 @@ Les mises en évidence volontaires présentes dans le texte source, comme les ma
 elongata), soulignements, couleur(s), etc., tout comme d'éventuels passages rédigés en latin dans un texte français (ou
 allemand), ne sont pas signalées de façon particulière dans l'édition.
 
-Les lettres suscrites sont assorties des tag et attribut [`<hi/>`](../../elements/hi.fr.md) @rend="sup".
+Les lettres suscrites sont assorties des tag et attribut [`<hi/>`](hi.fr.md) @rend="sup".
 
 `deß 1729<hi rend="sup">ten</hi> jahrs`
 
@@ -288,7 +288,7 @@ restituées. Toutefois, dans certains cas ambigus, il peut être préférable de
 exemple sr (sieur ou seigneur ?), monsr (monsieur ou monseigneur ?), me (maître ou messire ?).
 D'autres abréviations typiques, courantes et répétitives, qui sont aisément intelligibles, peuvent être conservées (
 led., lad., l.[livre], s.[sol], d.[denier]). Dans ce cas, il convient de les intégrer (et de les relier) à la liste des
-abréviations et de les assortir du tag [`<abbr/>`](../../elements/abbr.fr.md).
+abréviations et de les assortir du tag [`<abbr/>`](abbr.fr.md).
 Pour résoudre les abréviations, on se référera autant que possible aux graphies clairement attestées dans d'autres
 parties du texte édité, faute de quoi il convient de privilégier la forme classique (en particulier pour le latin). Par
 exemple: cogn' -> cognitio plutôt que cognicio (sauf si le scribe l'écrit ainsi à d'autres endroits du texte). Dans tous
@@ -299,7 +299,7 @@ les cas, il convient de rester conséquent.
 #### ...
 
 Les abréviations quasi figées ou qui font l'objet d'un usage systématique (comme LL.EE., MM., no, art., etc.) sont
-reproduites telles quelles et assorties du tag [`<abbr/>`](../../elements/abbr.fr.md). La résolution de l'abréviation est
+reproduites telles quelles et assorties du tag [`<abbr/>`](abbr.fr.md). La résolution de l'abréviation est
 indiquée dans la
 liste des abréviations.
 
@@ -310,7 +310,7 @@ liste des abréviations.
 Les abréviations présentes dans le texte source sont résolues lorsque cela est possible et raisonnable. Les habitudes
 orthographiques du scribe sont traitées sans indication particulière. Les résolutions incertaines habituellement
 indiquées par [   ] (dans une édition analogique), sont, pour une édition digitale, assorties des
-tags [`<choice/>`](../../elements/choice.fr.md), [`<abbr/>`](../../elements/abbr.fr.md) et [`<expan/>`](../../elements/expan.fr.md).
+tags [`<choice/>`](choice.fr.md), [`<abbr/>`](abbr.fr.md) et [`<expan/>`](expan.fr.md).
 
 obg[e]n[ann]t[er]:
 
@@ -332,7 +332,7 @@ Les abréviations d'unités monétaires et de mesure ne doivent pas être résol
 bas de page ou éventuel commentaire, mais données dans la liste des abréviations. C'est ici que les signes spéciaux
 correspondants doivent être mentionnés.
 Sur les unités monétaires et de mesure, voir disposition des touches-> CURRENCY SYMBOLS.
-Sur les désignations de monnaies, de poids et mesures, voir [`<measure/>`](../../elements/measure.fr.md).
+Sur les désignations de monnaies, de poids et mesures, voir [`<measure/>`](measure.fr.md).
 
 ## Traitement des lacunes, des dommages et défauts issus du texte source
 
@@ -341,7 +341,7 @@ Sur les désignations de monnaies, de poids et mesures, voir [`<measure/>`](../.
 Les lacunes laissées volontairement par le scribe en vue d'une explication plus tardive sont, pour une édition
 analogique, rendues par trois points de suspension sans parenthèses, avec un renvoi à une note de bas de page de
 l'apparat critique, dans laquelle est donnée l'indication de la taille de cette lacune.
-Pour une édition digitale, les lacunes sont assorties du tag [`<space/>`](../../elements/space.fr.md) et l'indication de la
+Pour une édition digitale, les lacunes sont assorties du tag [`<space/>`](space.fr.md) et l'indication de la
 taille de la
 lacune est introduite par @unit et @quantity.
 
@@ -370,32 +370,32 @@ formulé entièrement par l'éditeur lui-même en fonction du sens et du context
 Une note de bas de page est alors nécessaire pour expliquer le cas et la méthode suivie pour restituer le texte
 manquant.
 
-Pour une édition digitale, les lacunes sont marquées par le tag [`<supplied/>`](../../elements/supplied.fr.md), alors que la
+Pour une édition digitale, les lacunes sont marquées par le tag [`<supplied/>`](supplied.fr.md), alors que la
 cause de la
 lacune est introduite par l'attribut @reason et la reconstitution du texte manquant par l'éditeur par l'
-attribut @resp. En cas de nécessité, une note explicative [`<note/>`](../../elements/note.fr.md) peut être ajoutée.
+attribut @resp. En cas de nécessité, une note explicative [`<note/>`](note.fr.md) peut être ajoutée.
 
 En cas d'une restitution faite grâce à un autre document (2e original ou copie), il convient d'effectuer un renvoi vers
-ce texte témoin, à l'aide de @wit. Voir aussi à ce propos: [`<app/>`](../../elements/app.fr.md).
+ce texte témoin, à l'aide de @wit. Voir aussi à ce propos: [`<app/>`](app.fr.md).
 
 `<supplied reason="omitted" unit="line" quantity="1" resp="PS"/>hier folgt die Ergänzung</supplied>`
 
 Les pertes de texte dues à des dommages causés par des rongeurs, un incendie, un dégât d'eau, des champignons, des
-déchirures, des trous, une encre devenue trop pâle, etc. sont signalées par [`<damage/>`](../../elements/damage.fr.md) et
-[`<gap/>`](../../elements/gap.fr.md); et,
-si possible, sont expliquées à l'intérieur de <damage> avec [`<supplied/>`](../../elements/supplied.fr.md) ou, en cas
+déchirures, des trous, une encre devenue trop pâle, etc. sont signalées par [`<damage/>`](damage.fr.md) et
+[`<gap/>`](gap.fr.md); et,
+si possible, sont expliquées à l'intérieur de <damage> avec [`<supplied/>`](supplied.fr.md) ou, en cas
 d'incertitude,
-avec [`<unclear/>`](../../elements/unclear.fr.md) et @cert. La cause du dommage est définie plus précisément à l'intérieur
-de [`<damage/>`](../../elements/damage.fr.md) avec @agent.
+avec [`<unclear/>`](unclear.fr.md) et @cert. La cause du dommage est définie plus précisément à l'intérieur
+de [`<damage/>`](damage.fr.md) avec @agent.
 
 `<damage agent="mice"><gap unit="cm" quantity="3"/></damage>`
 
 ### Répétitions erronées
 
 Les répétitions erronées de syllabes, de mots ou de parties de phrase sont marquées
-par [`<choice/>`](../../elements/choice.fr.md),
-[`<sic/>`](../../elements/sic.fr.md) et la forme correcte (corrigée)
-avec [`<corr/>`](../../elements/corr.fr.md).
+par [`<choice/>`](choice.fr.md),
+[`<sic/>`](sic.fr.md) et la forme correcte (corrigée)
+avec [`<corr/>`](corr.fr.md).
 
 ```
 <choice>
@@ -411,9 +411,9 @@ apparat critique) dans laquelle seront données, le cas échéant, les différen
 pose problème. Il est aussi permis de signaler, dans le corps du texte, ces incertitudes par le signe [?].
 
 Pour une édition digitale, les mots dont la lecture demeure incertaine sont assortis du
-tag [`<unclear/>`](../../elements/unclear.fr.md). La
+tag [`<unclear/>`](unclear.fr.md). La
 lecture jugée probable/vraisemblable par l'éditeur peut être ajoutée par @cert. Si cela ne suffit pas, il
-est toujours possible d'insérer une note de page (apparat critique) [`<note/>`](../../elements/note.fr.md) pour mieux
+est toujours possible d'insérer une note de page (apparat critique) [`<note/>`](note.fr.md) pour mieux
 expliquer le cas.
 
 `ve<unclear cert="high">stik</unclear>lich`
@@ -422,9 +422,9 @@ expliquer le cas.
 
 Les erreurs typographiques, de langue et de style ne sont pas corrigées dans le texte. Pour une édition analogique,
 elles sont expliquées en note de bas de page (apparat critique) ou simplement signalées dans le corps du texte par
-un [!]. Pour une édition digitale, de telles erreurs sont assorties des tags [`<choice/>`](../../elements/choice.fr.md) et
-[`<sic/>`](../../elements/sic.fr.md);
-et la correction (c'est-à-dire la forme juste) est introduite à l'aide du tag [`<corr/>`](../../elements/corr.fr.md).
+un [!]. Pour une édition digitale, de telles erreurs sont assorties des tags [`<choice/>`](choice.fr.md) et
+[`<sic/>`](sic.fr.md);
+et la correction (c'est-à-dire la forme juste) est introduite à l'aide du tag [`<corr/>`](corr.fr.md).
 
 ```
 <choice>
@@ -436,19 +436,19 @@ et la correction (c'est-à-dire la forme juste) est introduite à l'aide du tag 
 ### Omissions volontaires de texte par l'éditeur
 
 Les omissions volontaires de texte par l'éditeur sont, pour une édition analogique, notées par [...]. Pour une édition
-digitale, il convient d'ajouter en sus les tag et attribut [`<gap/>`](../../elements/gap.fr.md) @reason="irrelevant" (non
+digitale, il convient d'ajouter en sus les tag et attribut [`<gap/>`](gap.fr.md) @reason="irrelevant" (non
 pertinent).
 
 Ceci devrait toutefois, dans la mesure du possible, être évité; l'idée étant d'éditer un texte intégralement.
 
 Si un complément ou un texte plus tardif (avec quelques variantes par exemple) est édité, non pas avec l'original, mais
 en tant que pièce à part entière, les parties de texte éventuellement déjà éditées dans une version plus ancienne (et
-qui sont donc identiques) peuvent, dans ce cas, être omises, et accompagnées du tag [`<gap/>`](../../elements/gap.fr.md). Le
+qui sont donc identiques) peuvent, dans ce cas, être omises, et accompagnées du tag [`<gap/>`](gap.fr.md). Le
 passage
 concerné et déjà édité dans la première pièce sera assorti de l'attribut @source. Une
 note de bas de page
-explicative [`<note/>`](../../elements/note.fr.md) ou une remarque introduite avec
-[`<back/>`](../../elements/back.fr.md) demeure toutefois nécessaire.
+explicative [`<note/>`](note.fr.md) ou une remarque introduite avec
+[`<back/>`](back.fr.md) demeure toutefois nécessaire.
 
 ## Traitement des interventions rédactionnelles du scribe
 
@@ -462,12 +462,12 @@ autres versions par un tag. Il convient de prendre garde à:
   etc.), ne sont signalées que dans des cas exceptionnels.
 * Les éléments cancellés sont indiqués, pour une édition analogique, par a–...–a et spécifiés dans une note de bas de
   page de l'apparat critique (critique textuelle). Pour une édition digitale, les éléments cancellés sont indiqués
-  par [`<del/>`](../../elements/del.fr.md).
+  par [`<del/>`](del.fr.md).
 
 `und <del>umb</del>`
 
-En cas de multiples textes biffés, il convient de les indiquer par [`<delSpan/>`](../../elements/delSpan.fr.md) et
-[`<anchor/>`](../../elements/anchor.fr.md).
+En cas de multiples textes biffés, il convient de les indiquer par [`<delSpan/>`](delSpan.fr.md) et
+[`<anchor/>`](anchor.fr.md).
 
 ```
 <p>
@@ -481,17 +481,17 @@ En cas de multiples textes biffés, il convient de les indiquer par [`<delSpan/>
 
 * Les passages devenus illisibles parce qu'ils ont été fortement cancellés sont mentionnés, pour une édition analogique,
   par [...]a et accompagnés d'une note de bas de page explicative. Pour une édition digitale, ils sont simplement
-  accompagnés du tag [`<del/>`](../../elements/del.fr.md).
+  accompagnés du tag [`<del/>`](del.fr.md).
   `<del rend="strikethrough"><gap unit="cm" quantity="4"/></del>`
 * Pour les passages où plusieurs éléments sont cancellés et/ou ajoutés, ou une combinaison des deux, il convient
-  d'utiliser le tag [`<subst/>`](../../elements/subst.fr.md).
+  d'utiliser le tag [`<subst/>`](subst.fr.md).
 
 ### Ajouts ou compléments
 
 Les ajouts ou compléments réalisés par la même main que le texte d'origine ou par une main plus tardive doivent être
 intégrés au texte. Pour une édition analogique, ils doivent être expliqués dans une note de bas de page de l'appart
 critique (critique textuelle). Pour une édition digitale, ils sont simplement accompagnés du
-tag [`<add/>`](../../elements/add.fr.md).
+tag [`<add/>`](add.fr.md).
 
 * Un ajout ou complément, pour une édition analogique, qui est intégré au corps du texte, doit être précédé d'une
   remarque explicative écrite en italique. Par exemple: Ajout d'une main du XVIIIe siècle.
@@ -510,14 +510,14 @@ tag [`<add/>`](../../elements/add.fr.md).
 Pour une édition analogique, les ratures (surfaces grattées) sont traitées de la même manière que les éléments
 cancellés (lettres, phrases ou mots biffés), à savoir signalées en note de bas de page, dans l'apparat critique (
 critique textuelle). Pour une édition digitale, de telles ratures sont simplement accompagnées du
-tag [`<del/>`](../../elements/del.fr.md)
+tag [`<del/>`](del.fr.md)
 et de l'attribut @rend="rubbing".
 
 `<del rend="rubbing"><unclear unit="cm" quantity="6">unsichere Lesung wegen Rasur</unclear></del>`
 
 Si les ratures (zones effacées) ou éléments fortement biffés ne sont plus lisibles, on le signale par un espace
-vide [`<gap/>`](../../elements/gap.fr.md) à l'intérieur du tag
-[`<del/>`](../../elements/del.fr.md).
+vide [`<gap/>`](gap.fr.md) à l'intérieur du tag
+[`<del/>`](del.fr.md).
 
 `<del rend="rubbing"><gap unit="cm" quantity="1"/></del>`
 
@@ -526,7 +526,7 @@ vide [`<gap/>`](../../elements/gap.fr.md) à l'intérieur du tag
 En présence d'annotations marginales (apostilles), l'éditeur décide, pour une édition analogique, s'il s'agit d'un
 élément faisant partie du contenu du texte, devant alors éventuellement être intégré dans le corps du texte, ou d'une
 simple mention marginale à valeur de commentaire, à reléguer en note de bas de page. Pour une édition digitale, le
-principe est le même, mais on ajoute le tag [`<add/>`](../../elements/add.fr.md).
+principe est le même, mais on ajoute le tag [`<add/>`](add.fr.md).
 
 `<add place="margin">+</add>`
 
@@ -537,14 +537,14 @@ alphabétique) lorsqu'il s'agit de critique textuelle (apparat critique); et ell
 l'apparat savant (scientifique). Les explications (définitions) de mots, par exemple pour
 des tournures latines, des mots rares ou compliqués, sont faites dans le glossaire.
 
-Pour une édition digitale, le principe est identique, mais on ajoute le tag [`<note/>`](../../elements/note.fr.md).
+Pour une édition digitale, le principe est identique, mais on ajoute le tag [`<note/>`](note.fr.md).
 
 ## Variantes textuelles
 
 ### ...
 
 Si le texte original existe à double ou en plusieurs versions, l'éditeur en choisit une. Les variantes et
-particularités peuvent être signalées par [`<app/>`](../../elements/app.fr.md). Les éventuelles différences de contenu
+particularités peuvent être signalées par [`<app/>`](app.fr.md). Les éventuelles différences de contenu
 présentes dans les
 autres versions doivent impérativement être mentionnées en note.
 
@@ -570,9 +570,9 @@ explicative.
 
 Pour une édition analogique, lorsque cela paraît indispensable à une meilleure compréhension, le texte est divisé à
 l'aide de tirets, d'alinéas, d'une numérotation des paragraphes insérée entre parenthèses carrées, de titres, etc.
-Pour une édition digitale, cela est aussi possible avec les tags [`<div/>`](../../elements/div.fr.md) et
-[`<p/>`](../../elements/p.fr.md), avec possibilité
-également, au besoin, d'introduire une numérotation avec [`<seg/>`](../../elements/seg.fr.md) et @n.
+Pour une édition digitale, cela est aussi possible avec les tags [`<div/>`](div.fr.md) et
+[`<p/>`](p.fr.md), avec possibilité
+également, au besoin, d'introduire une numérotation avec [`<seg/>`](seg.fr.md) et @n.
 Une telle structuration s'effectue selon des considérations et réflexions liées au contenu, peu importe que de tels
 éléments soient présents dans le texte source ou non. On veille dans tous les cas à ce que le texte soit conçu de façon
 intelligible et plaisante.
@@ -587,8 +587,8 @@ En principe, les alinéas se font après un point et non après une virgule.
 ### Changements de lignes et de pages
 
 Pour une édition analogique, les changements de lignes sont marqués par / et les changements de pages par //. Pour une
-édition digitale, les changements de lignes sont distingués par [`<lb/>`](../../elements/lb.fr.md) et les changements de pages
-par [`<pb/>`](../../elements/pb.fr.md).
+édition digitale, les changements de lignes sont distingués par [`<lb/>`](lb.fr.md) et les changements de pages
+par [`<pb/>`](pb.fr.md).
 
 ### Ponctuation
 
@@ -600,19 +600,19 @@ toute ponctuation.
 
 ### Titres originaux et intertitres
 
-Les titres originaux et les intertitres peuvent être distingués par [`<head/>`](../../elements/head.fr.md) et être ainsi
+Les titres originaux et les intertitres peuvent être distingués par [`<head/>`](head.fr.md) et être ainsi
 visuellement démarqués.
 
 ### Discours direct
 
-Les discours directs, qui sont marqués par « » dans une édition analogique, le sont par [`<q/>`](../../elements/q.fr.md) dans
+Les discours directs, qui sont marqués par « » dans une édition analogique, le sont par [`<q/>`](q.fr.md) dans
 une version digitale.
 
 ### Citation
 
-Les citations à l'intérieur d'un texte (comme un document inséré) sont marquées par [`<quote/>`](../../elements/quote.fr.md)
+Les citations à l'intérieur d'un texte (comme un document inséré) sont marquées par [`<quote/>`](quote.fr.md)
 et se terminent
-avec un appel de note [`<note/>`](../../elements/note.fr.md) renvoyant à l'apparat critique, où l'on indique la référence au
+avec un appel de note [`<note/>`](note.fr.md) renvoyant à l'apparat critique, où l'on indique la référence au
 texte original
 qui est ainsi cité. Si ce texte original a déjà été publié, au lieu d'utiliser <note>, on marque la citation
 par @xml:id, qui renvoie alors à la pièce déjà éditée.
@@ -621,6 +621,6 @@ par @xml:id, qui renvoie alors à la pièce déjà éditée.
 
 Certaines sources primaires, comme des comptabilités, des taxes de douane, des comptes de péage, peuvent contenir des
 tableaux, qui doivent être restitués sous cette forme dans l'édition. Pour la présentation des tableaux, il convient
-d'appliquer [`<table/>`](../../elements/table.fr.md)
-avec [`<row/>`](../../elements/row.fr.md)
-et [`<cell/>`](../../elements/cell.fr.md).
+d'appliquer [`<table/>`](table.fr.md)
+avec [`<row/>`](row.fr.md)
+et [`<cell/>`](cell.fr.md).

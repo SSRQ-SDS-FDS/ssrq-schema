@@ -37,6 +37,8 @@ def markdown() -> str:
     This is a [link_d](foo.md) to a file with a [link_e](https://link_e.com)
     inside and a [link_f](https://link_f.com) at the end.
 
+    This is another link to a file [link_g](bar.md#abc) with a fragment!.
+
     """
 
 
@@ -55,9 +57,10 @@ def test_replace_with_relative_links(files: Files, markdown: str):
 
     assert filtered_links is not None
 
-    assert len(filtered_links) == 1
+    assert len(filtered_links) == 2
 
-    assert filtered_links[0] == "../one/foo.md"
+    assert "../one/foo.md" in filtered_links
+    assert "bar.md" in filtered_links
 
 
 def test_filter_markdown_links():
@@ -70,7 +73,13 @@ def test_filter_markdown_links():
         "https://link_f.com",
     ]
 
-    assert magic_links.filter_markdown_links(links) == [
+    filter_result = magic_links.filter_markdown_links(links)
+
+    assert filter_result is not None
+
+    filter_result = list(filter_result)
+
+    assert filter_result == [
         "foo.md",
     ]
 
@@ -87,6 +96,7 @@ def test_extract_links_from_md(markdown: str):
         "foo.md",
         "https://link_e.com",
         "https://link_f.com",
+        "bar.md#abc",
     ]
 
 
