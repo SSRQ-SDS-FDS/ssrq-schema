@@ -2,6 +2,8 @@ from pathlib import Path
 
 PROJECT_DIR = Path(__file__).parent.parent.parent.absolute()
 
+DOCS_LANG = ["de", "fr"]
+
 BUILD_DIR = PROJECT_DIR / "build"
 SRC_DIR = PROJECT_DIR / "src"
 
@@ -12,6 +14,7 @@ EXAMPLES_DIR = SCHEMA_DIR / "examples"
 
 UTILS_DIR = PROJECT_DIR / "utils"
 SCHEMA_UTILS_DIR = UTILS_DIR / "schema"
+SUPPORTED_FILE_TYPES = ("md", "gif", "jpg", "jpeg", "png", "svg")
 TEI_STYLESHEETS = SCHEMA_UTILS_DIR / "lib/tei_stylesheets/odds"
 XSLT_BASE_DIR = SCHEMA_UTILS_DIR / "xsl"
 XSLTS = {

@@ -3,9 +3,9 @@ import xml.etree.ElementTree as ET
 from snakemd import Document  # type: ignore
 
 from utils.commons.logger import LOGGER
+from utils.docs.helpers.utils import split_tag_and_ns, translate_datatype
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODDElement
-from utils.docs.specs.utils import split_tag_and_ns, translate_datatype
 
 
 class AttributeSpec:

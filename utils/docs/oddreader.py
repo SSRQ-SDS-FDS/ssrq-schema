@@ -1,13 +1,13 @@
 from typing import Iterator
 from xml.etree import ElementTree as ET
 
+from utils.docs.helpers.translator import TRANSLATE, Translator
 from utils.docs.specs.classspec import ClassSpec
 from utils.docs.specs.dataspec import DataSpec
 from utils.docs.specs.elementspec import ElementSpec
 from utils.docs.specs.macrospec import MacroSpec
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODDElement
-from utils.docs.translator import TRANSLATE, Translator
 
 
 class ODDReader:

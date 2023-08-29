@@ -1,11 +1,9 @@
 from dataclasses import dataclass
 from pathlib import Path
 
+from utils.docs.helpers.sort import sort_with_uca
 from utils.docs.oddreader import ODDReader
 from utils.schema.compile import Schema, load_config, odd_factory
-
-# default languages used to generate the documentation
-LANGS = ["de", "fr"]
 
 
 @dataclass(frozen=True)
@@ -82,4 +80,4 @@ class ODD2Md:
                     path=self.out_dir,
                 )
 
-        return sorted(elements_specs_created, key=lambda x: x.nav_title)
+        return sort_with_uca(elements_specs_created, sort_key=lambda el: el.nav_title)

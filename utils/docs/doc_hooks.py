@@ -8,8 +8,10 @@ from mkdocs.structure.files import Files
 from mkdocs.structure.pages import Page
 
 from utils.commons import config as configs
+from utils.commons.config import DOCS_LANG
+from utils.docs.extensions.magic_links import replace_with_relative_links
 from utils.docs.extensions.md_xi import md_xi_plugin
-from utils.docs.odd2md import LANGS, ODD2Md, create_schema_by_entry
+from utils.docs.odd2md import ODD2Md, create_schema_by_entry
 from utils.schema.compile import Schema, store_compiled_schemas
 
 created_schema: dict[str, Schema] = {}
@@ -28,7 +30,7 @@ def create_main_schema(recreate: bool = False) -> Schema:
 def on_config(config: MkDocsConfig):
     schema = create_main_schema(recreate=True)
     odd2md = ODD2Md(
-        schema=schema, languages=LANGS, target_dir=f"{config.docs_dir}/elements"
+        schema=schema, languages=DOCS_LANG, target_dir=f"{config.docs_dir}/elements"
     )
     created_md_specs = odd2md.create_md_doc_per_lang()
 
@@ -46,7 +48,11 @@ def on_config(config: MkDocsConfig):
 def on_page_markdown(
     markdown: str, config: MkDocsConfig, page: Page, files: Files
 ) -> str:
-    return md_xi_plugin(markdown, xi_base_path=configs.EXAMPLES_DIR)
+    return replace_with_relative_links(
+        markdown=md_xi_plugin(markdown, xi_base_path=configs.EXAMPLES_DIR),
+        context=page.file,
+        files=files,
+    )
 
 
 @event_priority(50)

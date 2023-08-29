@@ -17,6 +17,7 @@ Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit 
       - [Anpassung von Inhaltstypen](#anpassung-von-inhaltstypen)
       - [Anpassung von Attributwerten](#anpassung-von-attributwerten)
       - [Anpassung / Erstellung von Tests](#anpassung--erstellung-von-tests)
+      - [Links zwischen Bestandteilen des Schemas und der (übrigen) Dokuseite](#links-zwischen-bestandteilen-des-schemas-und-der-übrigen-dokuseite)
     - [Schema erzeugen](#schema-erzeugen)
       - [Erzeugung einer neuen Version und Upload](#erzeugung-einer-neuen-version-und-upload)
       - [Erzeugung der Dokumentation](#erzeugung-der-dokumentation)
@@ -245,6 +246,24 @@ Sollen nur die Tests eines Elements ausgeführt werden, dann kann dazu folgender
 ```sh
 run test tests/src/schema/elements/test_cell.py
 ```
+
+#### Links zwischen Bestandteilen des Schemas und der (übrigen) Dokuseite
+
+Aus dem Schema wird statisch eine Dokumentationsseite erzeugt (siehe oben). Einige Bestandteile dieser Seite liegen statisch als `.md`-Dateien vor. Verknüpfungen zwischen Schema und diesen Einzeldateien (oder umgekehrt) können über direkten Verweis auf die jeweilige Datei vorgenommen werden.
+
+Aus dem Schema heraus:
+
+```xml
+<ref target="print.md"
+````
+
+Oder aus einer Markdown-Datei auf ein Element:
+
+```md
+Der Tag [TEI][tei.de.md]
+```
+
+Die relative Pfaden (von a zu b) werden während des Build-Prozesses automatisch aufgelöst und müssen **nicht** händisch nachgeführt werden.
 
 ### Schema erzeugen
 

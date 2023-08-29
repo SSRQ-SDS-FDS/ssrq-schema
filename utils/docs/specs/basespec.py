@@ -1,12 +1,10 @@
-import re
 import xml.etree.ElementTree as ET
 
+from utils.docs.helpers.node_to_text import transform_node_to_text
+from utils.docs.helpers.utils import split_tag_and_ns
 from utils.docs.specs.attributespec import AttributeSpec
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODD_COMP_TYPES, ODDElement
-from utils.docs.specs.utils import split_tag_and_ns
-
-RE_WHITESPACE_PATTERN = re.compile(r"[\s\n]+")
 
 
 class BaseSpec:
@@ -329,75 +327,12 @@ class BaseSpec:
         if remark is None:
             return None
 
-        remark_paragraphs = remark.findall("./tei:p", namespaces=NS_MAP)
+        remark_content = self._desc_node_to_string(desc=remark)
 
-        if len(remark_paragraphs) == 0:
-            remark_content = (
-                self._upper_desc_start(desc=self._desc_node_to_string(desc=remark))
-                if upper
-                else self._desc_node_to_string(desc=remark)
-            )
-        else:
-            remark_content = [
-                self._upper_desc_start(desc=self._desc_node_to_string(desc=p))
-                if upper
-                else self._desc_node_to_string(desc=p)
-                for p in remark_paragraphs
-            ]
-
-        return remark_content
+        return self._upper_desc_start(desc=remark_content) if upper else remark_content
 
     def _upper_desc_start(self, desc: str) -> str:
         return desc[0].upper() + desc[1:]
 
-    def _desc_node_to_string(self, desc: ET.Element):
-        """
-        This method converts a desc like node to a string.
-
-        Args:
-            desc (ET.Element): The desc like node.
-
-        Returns:
-            str: The string representation of the desc like node.
-
-        ToDo:
-            * Fix the bug that leading whitespace, which has a meaning, is removed.
-        """
-        output = ""
-        if desc.text is not None:
-            output += RE_WHITESPACE_PATTERN.sub(" ", desc.text)
-        if len(desc) > 0:
-            for child in desc:
-                tag_name = split_tag_and_ns(child.tag)[1]
-                tail_text = (
-                    RE_WHITESPACE_PATTERN.sub(" ", child.tail)
-                    if child.tail is not None
-                    else ""
-                )
-                child_text = (
-                    RE_WHITESPACE_PATTERN.sub(" ", child.text)
-                    if child.text is not None
-                    else ""
-                )
-                match tag_name:
-                    case "gi":
-                        output += f"[`<{child_text}/>`]({child_text}.md){tail_text if tail_text.startswith('-') else ' ' + tail_text}".strip()
-                    case "att":
-                        output += f"[@{child_text}](#{child_text}) {tail_text}".strip()
-                    case "ref":
-                        output += f"[{child_text}]({child.attrib['target']}) {tail_text}".strip()
-                    case "list":
-                        output += "\n\n" + "\n".join(
-                            [
-                                "- " + self._desc_node_to_string(child)
-                                for child in child
-                                if isinstance(child, ET.Element)
-                            ]
-                        )
-                    case "tag":
-                        output += f"`<{child_text}/>` {tail_text}"
-                    case "val":
-                        output += f"`{child_text}` {tail_text}"
-                    case _:
-                        output += (child_text + tail_text).strip()
-        return re.sub((r"\s+([\.,:;])"), r"\1", output)
+    def _desc_node_to_string(self, desc: ET.Element) -> str:
+        return " ".join(transform_node_to_text(desc))

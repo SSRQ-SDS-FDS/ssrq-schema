@@ -1,24 +1,17 @@
 import logging
-import sys
+
+from rich import logging as rich_logging
 
 
 def setup_logger():
-    logger = logging.getLogger("ssrq_schema_logger")
-    logger.setLevel(logging.DEBUG)
-
-    stream_handler = logging.StreamHandler(sys.stdout)
-    stream_handler.setLevel(logging.DEBUG)
-
-    # Create a formatter and set it on the stream handler
-    formatter = logging.Formatter(
-        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(message)s",
+        datefmt="[%X]",
+        handlers=[rich_logging.RichHandler()],
     )
-    stream_handler.setFormatter(formatter)
 
-    # Add the stream handler to the logger
-    logger.addHandler(stream_handler)
-
-    return logger
+    return logging.getLogger("rich")
 
 
 LOGGER = setup_logger()

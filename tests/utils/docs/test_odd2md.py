@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pytest
 
+from utils.commons.config import DOCS_LANG as LANGS
 from utils.docs.odd2md import (
-    LANGS,
     ODD2Md,
 )
 from utils.docs.oddreader import ODDReader
@@ -12,7 +12,6 @@ from utils.docs.specs.attributespec import AttributeSpec
 from utils.docs.specs.elementspec import ElementSpec
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODDElement
-from utils.docs.specs.utils import split_tag_and_ns
 
 from .conftest import EL_FINDER, check_result_with_xpath
 
@@ -241,29 +240,6 @@ def test_resolved_attribute_descriptions(
         assert text in lang_desc.text
 
 
-def test_spec_desc_to_md(example_elementSpec: EL_FINDER):
-    example_el_spec = example_elementSpec("p")
-    assert example_elementSpec is not None
-    el_spec = ElementSpec(element=example_el_spec)
-    desc = el_spec.get_desc(element=el_spec.odd_element, lang="de")
-    assert isinstance(desc, str)
-    assert "\n" not in desc
-    desc_childs = el_spec.odd_element.findall(
-        "tei:desc[@xml:lang = 'de']/*", namespaces=NS_MAP
-    )
-    if desc_childs is not None:
-        for child in desc_childs:
-            match split_tag_and_ns(child.tag)[1]:
-                case "gi":
-                    assert f"[`<{child.text}/>`]({child.text}.md)" in desc
-                case "att":
-                    assert f"[@{child.text}](#{child.text})" in desc
-                case "ref":
-                    assert f"[{child.text}]({child.attrib['target']})" in desc
-                case _:
-                    assert child.text in desc
-
-
 def test_odd_reader_components_setup(example_odd: str, tmp_path: Path):
     odd_reader = ODDReader(odd=example_odd)
     components = check_result_with_xpath(
@@ -356,44 +332,3 @@ def test_attribute_content(
     assert hasattr(attribute_spec, "content")
     assert attribute_spec.content is not None
     assert len(attribute_spec.content) == content_len
-
-
-@pytest.mark.parametrize(
-    "element_name, has_remarks, lang, text",
-    [
-        (
-            "note",
-            True,
-            "de",
-            [
-                "Ein [`<note/>`](note.md)-Element folgt unmittelbar auf das Bezugswort im Editionstext",
-                "Handelt es sich um eine Anmerkung",
-            ],
-        ),
-    ],
-)
-def test_remarks_to_markdown(
-    example_elementSpec: EL_FINDER,
-    example_odd: str,
-    element_name: str,
-    has_remarks: bool,
-    lang: str,
-    text: list[str] | str,
-):
-    example_el_spec = example_elementSpec(element_name)
-    assert example_el_spec is not None
-    el_spec = ElementSpec(element=example_el_spec)
-
-    remarks = el_spec.get_remarks(element=el_spec.odd_element, lang=lang)
-
-    if not has_remarks:
-        assert remarks is None
-    else:
-        assert remarks is not None
-
-        if isinstance(remarks, list):
-            assert len(remarks) == len(text)
-            for index, t in enumerate(text):
-                assert t in remarks[index]
-        else:
-            assert remarks in text

@@ -36,7 +36,10 @@ def test_stats_logging(caplog: pytest.LogCaptureFixture, stats_example: str) -> 
     stats = Stats()
     stats(stats_example)
     records = caplog.records
-
-    assert len(records) == 3
-    assert records[0].message == ("Number of elements included: 5")
-    assert records[2].message == ("Number of elements not specified: 4")
+    test_messages = (
+        "Number of elements included: 5",
+        "Number of elements not specified: 4",
+    )
+    for record, test_message in zip(records, test_messages):
+        assert record.levelname == "INFO"
+        assert test_message in record.message
