@@ -3,7 +3,7 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origDate" module="msDescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-05-12">Enthält Originaldaten des edierten Quellentexts (Ausstellungdatum).
+  <desc xml:lang="de" versionDate="2023-08-22">Enthält Originaldaten des edierten Quellentexts (Ausstellungsdatum).
     </desc>
   <desc xml:lang="en" versionDate="2023-05-12">Contains original data of the edited source texts (date of issue).
     </desc>
@@ -27,15 +27,8 @@
     </rng:zeroOrMore>
   </content>
   <attList>
-    <attDef ident="period" mode="change">
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.period.days"/>
-          <rng:ref name="ssrq.period.seasons"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
     <attDef ident="datingMethod" mode="delete"/>
+    <attDef ident="period" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-history-de"/>
   <xi:include href="examples.xml" xpointer="ex-history-en"/>
@@ -45,31 +38,30 @@
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-en"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-fr"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-it"/>
-  <remarks xml:lang="de" versionDate="2023-08-15">
-    <p>Es können auch mehrere Originaldatierungen innerhalb einer Editionsvorlage vorhanden sein.
-        Mit <att>when-custom</att> und <att>calendar</att> wird das Datum gemäss den <ref target="dating_guidelines.md">Datierungsrichtlinien</ref>
-        erfasst. Zum Umgang mit Heiligenfesten und anderen kirchlichen Feiertagen vgl. <gi>date</gi>. Im Textbereich,
-        den Kommentaren und Anmerkungen wird <gi>date</gi> verwendet. <gi>origDate</gi> wird nur im Kopfbereich für das
-        normalisierte Originaldatum eines Dokuments verwendet.</p>
+  <remarks xml:lang="de" versionDate="2023-08-23">
+    <p>Mit <att>when-custom</att> und <att>calendar</att> wird das Datum gemäss den Datierungsrichtlinien
+      erfasst. <gi>origDate</gi> wird nur im Kopfbereich für das
+      normalisierte Originaldatum eines Dokuments verwendet. Es handelt es sich um die Datierung des Dokuments (Herstellungsdatum) und nicht um die Datierung des Inhalts des Dokuments. Im Textbereich,
+        den Kommentaren und Anmerkungen wird <gi>date</gi> verwendet.  Zum Umgang mit Heiligenfesten und anderen kirchlichen Feiertagen vgl. <gi>date</gi>. </p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2023-08-15">
-    <p>There can also be several original dates within an edition template. With <att>when-custom</att> and
-      <att>calendar</att> the date is recorded according to the <ref target="dating_guidelines.md">dating guidelines</ref>. For how to deal with holy days and
-      other church holidays, see <gi>date</gi>. <gi>date</gi> is used in the text area, comments and annotations.
-      <gi>origDate</gi> is only used in the header for the normalized original date of a document.</p>
+  <remarks xml:lang="en" versionDate="2023-08-22">
+    <p>With <att>when-custom</att> and
+      <att>calendar</att> the date is recorded according to the dating guidelines. <gi>origDate</gi> is only used in the header for the normalized original date of a document. <gi>date</gi> is used in the text area, comments and annotations.
+      For how to deal with holy days and
+      other church holidays, see <gi>date</gi>. </p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-08-15">
-    <p>Il peut également y avoir plusieurs dates originales dans un modèle d'édition. Avec <att>when-custom</att> et
-      <att>calendar</att> la date est enregistrée conformément aux <ref target="dating_guidelines.md">directives de datation</ref>. Pour savoir comment gérer
-      les jours saints et autres fêtes religieuses, consultez <gi>date</gi>. <gi>date</gi> est utilisé dans la zone de
-      texte, les commentaires et les annotations. <gi>origDate</gi> n'est utilisé dans l'en-tête que pour la date
-      d'origine normalisée d'un document.</p>
+  <remarks xml:lang="fr" versionDate="2023-08-22">
+    <p>Avec <att>when-custom</att> et
+      <att>calendar</att> la date est enregistrée conformément aux directives de datation.  <gi>origDate</gi> n'est utilisé dans l'en-tête que pour la date
+      d'origine normalisée d'un document.  <gi>date</gi> est utilisé dans la zone de
+      texte, les commentaires et les annotations. Pour savoir comment gérer
+      les jours saints et autres fêtes religieuses, consultez <gi>date</gi>.</p>
   </remarks>
-  <remarks xml:lang="it" versionDate="2023-08-15">
-    <p>Possono anche esserci diverse date originali all'interno di un modello di edizione. Con <att>when-custom</att>
-      e <att>calendar</att> la data viene registrata secondo le linee <ref target="dating_guidelines.md">guida per gli appuntamenti</ref>. Per sapere come
-      gestire i giorni sacri e le altre festività religiose, vedi <gi>date</gi>. La <gi>data</gi> viene utilizzata
-      nell'area di testo, nei commenti e nelle annotazioni. <gi>origDate</gi> viene utilizzato solo nell'intestazione
-      per la data originale normalizzata di un documento.</p>
+  <remarks xml:lang="it" versionDate="2023-08-22">
+    <p>Con <att>when-custom</att>
+      e <att>calendar</att> la data viene registrata secondo le linee guida per gli appuntamenti.  <gi>origDate</gi> viene utilizzato solo nell'intestazione
+      per la data originale normalizzata di un documento. La <gi>data</gi> viene utilizzata
+      nell'area di testo, nei commenti e nelle annotazioni. Per sapere come
+      gestire i giorni sacri e le altre festività religiose, vedi <gi>date</gi>.</p>
   </remarks>
 </elementSpec>

@@ -11,7 +11,7 @@ from ..conftest import RNG_test_function
             """<history>
                     <origin>
                         <origDate when-custom="1366-06-29" calendar="gregorian"/>
-                        <origPlace>Rheineck</origPlace>
+                        <origPlace ref='loc000650'>Rheineck</origPlace>
                    </origin>
                 </history>""",
             True,

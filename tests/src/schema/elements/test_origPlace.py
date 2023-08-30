@@ -11,13 +11,18 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "valid-origPlace",
-            "<origPlace>foo</origPlace>",
-            True,
+            "invalid-origPlace-without-ref",
+            "<origPlace >foo</origPlace>",
+            False,
         ),
         (
             "valid-origPlace-with-ref",
             "<origPlace ref='loc000001'>foo</origPlace>",
+            True,
+        ),
+        (
+            "valid-origPlace-with-ref-and-cert",
+            "<origPlace ref='loc000001' cert='low'>foo</origPlace>",
             True,
         ),
         (
