@@ -8,22 +8,22 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-origin",
-            " <origin><origDate when-custom='1366-06-29' calendar='gregorian'/><origPlace>Rheineck</origPlace></origin>",
+            " <origin><origDate when-custom='1366-06-29' calendar='gregorian'/><origPlace ref='loc000650'>Rheineck</origPlace></origin>",
             True,
         ),
         (
             "valid-origin-with-lang",
-            " <origin xml:lang='de'><origDate when-custom='1366-06-29' calendar='gregorian'/><origPlace>Rheineck</origPlace></origin>",
+            " <origin xml:lang='de'><origDate when-custom='1366-06-29' calendar='gregorian'/><origPlace ref='loc000650'>Rheineck</origPlace></origin>",
             True,
         ),
         (
             "invalid-origin-with-note",
-            " <origin><origDate when-custom='1366-06-29' calendar='gregorian'/><origPlace>Rheineck</origPlace><note>some text</note></origin>",
+            " <origin><origDate when-custom='1366-06-29' calendar='gregorian'/><origPlace ref='loc000650'>Rheineck</origPlace><note>some text</note></origin>",
             False,
         ),
         (
             "invalid-origin-with-wrong-order-of-child",
-            " <origin><origPlace>Rheineck</origPlace><origDate when-custom='1366-06-29' calendar='gregorian'/></origin>",
+            " <origin><origPlace ref='loc000650'>Rheineck</origPlace><origDate when-custom='1366-06-29' calendar='gregorian'/></origin>",
             False,
         ),
     ],

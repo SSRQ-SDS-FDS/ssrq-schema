@@ -9,6 +9,7 @@
   <desc xml:lang="it" versionDate="2023-05-16">Contiene il luogo di emissione o stampa di una fonte.</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
+    <memberOf key="att.global.responsibility"/>
     <memberOf key="model.pPart.msdesc"/>
   </classes>
   <content>
@@ -30,7 +31,7 @@
     </constraint>
   </constraintSpec>
   <attList>
-    <attDef ident="ref" mode="replace">
+    <attDef ident="ref" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung des Ortes mit der ID der
                 Ortsdatenbank.
             </desc>
@@ -44,6 +45,7 @@
         <dataRef key="ssrq.pointer.places"/>
       </datatype>
     </attDef>
+    <attDef ident="resp" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-history-de"/>
   <xi:include href="examples.xml" xpointer="ex-history-en"/>
