@@ -1,61 +1,71 @@
 # Normalisierung
 
 ## c versus t
+
 In lateinischen Texten wird «c» bzw. «t» gemäss Vorlage transkribiert.
 Wenn es nicht möglich ist, zwischen «c» und «t» zu unterscheiden, wird in der
 Regel die klassische Form bevorzugt.
 
-Beispiel:  
-«cognitio» und nicht: «cognicio»
+Beispiel: «cognitio» und nicht: «cognicio»
 
 ## cz versus sz versus tz
-«Cz», «sz», «tz» werden gemäss Vorlage wiedergegeben.
-Lassen sich «c» und «t» nicht eindeutig unterscheiden, dann wird «tz» verwendet.
+
+«cz», «sz», «tz» werden gemäss Vorlage wiedergegeben.
+Lassen sich «c» und «t» nicht eindeutig unterscheiden, 
+dann wird «tz» verwendet.
 
 ## dz versus dc versus wz
-«Dz», «dc», «wz» etc. werden gemäss Vorlage wiedergegeben.
+
+=== "Allgemeine Regel"
+
+    «dz», «dc», «wz» etc. werden gemäss Vorlage wiedergegeben.
 
 === "Lateinische Texte"
-Wenn der Text auf Lateinisch ist, werden die Formen gemäss der modernen
-Schreibweise des entsprechenden Wortes oder der klassischen Schreibweise
-aufgelöst, 
 
-Beispiel:  
-«vz» wird stillschweigend zu «videlicet» aufgelöst.
+    Wenn der Text auf Lateinisch ist, werden die Formen gemäss der modernen
+    Schreibweise des entsprechenden Wortes oder der klassischen Schreibweise
+    aufgelöst.
+
+    Beispiel: «vz» wird stillschweigend zu «videlicet» aufgelöst.
 
 ## i-j-Ausgleich
-«I» und «J» werden nicht anhand der Schaftlänge unterschieden.
-Vokalisches «i» vor Konsonanten und konsonantisches «j» vor Vokalen werden
-konsequent graphematisch unterschieden.
-Bei Fällen, in denen lediglich ein Dehnungs-h zwischen «j» und Vollvokal
-geschoben wird, soll das «j» nicht durch ein «i» ersetzt werden.
 
-Beispiele:  
-«ich» und nicht: «jch»  
-aber: «jhe» und nicht: «ihe»  
-«jhenige» und nicht: «ihenige»
+=== "Allgemeine Regeln"
+
+    «I» und «J» werden nicht anhand der Schaftlänge unterschieden.
+    Vokalisches «i» und konsonantisches «j» werden konsequent graphematisch 
+    unterschieden.
+    Bei Fällen, in denen lediglich ein Dehnungs-h zwischen «j» und Vollvokal
+    geschoben wird, soll das «j» nicht durch ein «i» ersetzt werden.
+    
+    Beispiele:  
+    «ich» und nicht: «jch»  
+    aber: «jhe» und nicht: «ihe»  
+    «jhenige» und nicht: «ihenige»
 
 === "Französische Texte"
-Ausnahme: Wenn ein französischer Text die Schreibweise «ieu» enthält, ist es
-aus Gründen des Verständnisses besser, «jeu» zu schreiben.
-Es gilt also, die Bedeutung zu berücksichtigen und Entscheidungen zu treffen,
-die den Text lesbarer machen.
 
-Beispiel:  
-Es muss zwischen «majeur» (grösser) und «maieur» (Bürgermeister)
-unterschieden werden.
+    Ausnahme: Wenn ein französischer Text die Schreibweise «ieu» enthält, 
+    ist es aus Gründen des Verständnisses besser, «jeu» zu schreiben.
+    Es gilt also, die Bedeutung zu berücksichtigen und Entscheidungen zu 
+    treffen, die den Text lesbarer machen.
+    
+    Beispiel: Es muss zwischen «majeur» (grösser) und «maieur» (Bürgermeister)
+    unterschieden werden.
 
 === "Lateinische Texte"
-In lateinischen Texten wird «y» oder «j» als «i» wiedergegeben.
-Das gilt auch für römische Zahlen.
-Eine Ausnahme sind [Eigennamen](names.de.md).
 
-Beispiele:  
-«remedii» und nicht: «remedij»  
-«xviii» und nicht: «xviij»  
-Ausnahme: «Johannes» und nicht: «Iohannes»
+    In lateinischen Texten wird «y» oder «j» als «i» wiedergegeben.
+    Das gilt auch für römische Zahlen.
+    Eine Ausnahme sind [Eigennamen](names.de.md).
+    
+    Beispiele:  
+    «remedii» und nicht: «remedij»  
+    «xviii» und nicht: «xviij»  
+    Ausnahme: «Johannes» und nicht: «Iohannes»
 
 ## n versus m
+
 Der Gebrauch von «n» anstelle von «m» in lateinischen Texten wird übernommen,
 wenn der Buchstabe ausgeschrieben ist.
 
@@ -63,126 +73,138 @@ Beispiel:
 «cunque» 
 
 ## s-Formen
-Von den verschiedenen Schreibweisen des Buchstabens «s» («s», «ſ», «ß») wird
-nur «ß» als besondere Form unterschieden.
+=== "Allgemeine Regeln"
 
-«ſ» (Schaft-s, langes s) wird durch ein normales «s» wiedergegeben.
-
-Dreifaches «s» («sss») wird mit «ss», die Kombination «sß», «ßs») mit «ß»
-transkribiert.
-
-Anlautendes «ß» wird als «s» wiedergegeben.
-
-Ist am «ſ» noch ein angefügtes «s» erkennbar, wird von einer Ligatur
-ausgegangen und «ss» transkribiert.
-Sind hingegen keine Ansätze zu einem «s» erkennbar oder handelt es sich 
-lediglich um einen Bindungsbogen zum nächsten Buchstaben, wird «ß» 
-transkribiert.
-Da sich zahlreiche Übergangsformen finden, liegt die Entscheidung im Ermessen
-des Bearbeitenden.
-Insbesondere wenn sich beide Formen innerhalb desselben Textes finden, sind
-diese in der Transkription zu unterscheiden.
-
-Beispiel «ß» mit Bindebogen:  
-[Datei:Beispiel ß mit Bindebogen.gif]
-
-Beispiel mit «ss» und «ß»:  
-[Datei:Beispiel mi ss und ß.gif]
+    Von den verschiedenen Schreibweisen des Buchstabens «s» («s», «ſ», «ß») 
+    wird nur «ß» als besondere Form unterschieden.
+    
+    «ſ» (Schaft-s, langes s) wird durch ein normales «s» wiedergegeben.
+    
+    Dreifaches «s» («sss») wird mit «ss», die Kombinationen «sß» und «ßs» 
+    mit «ß» transkribiert.
+    
+    Anlautendes «ß» wird als «s» wiedergegeben.
+    
+    Ist am «ſ» noch ein angefügtes «s» erkennbar, wird von einer Ligatur
+    ausgegangen und «ss» transkribiert.
+    Sind hingegen keine Ansätze zu einem «s» erkennbar oder handelt es sich 
+    lediglich um einen Bindungsbogen zum nächsten Buchstaben, wird «ß» 
+    transkribiert.
+    Da sich zahlreiche Übergangsformen finden, liegt die Entscheidung im 
+    Ermessen des Bearbeitenden.
+    Insbesondere wenn sich beide Formen innerhalb desselben Textes finden,
+    sind diese in der Transkription zu unterscheiden.
+    
+    Beispiel «ß» mit Bindebogen:  
+    [Datei:Beispiel ß mit Bindebogen.gif]
+    
+    Beispiel mit «ss» und «ß»:  
+    [Datei:Beispiel mi ss und ß.gif]
 
 === "Lateinische Texte"
-In lateinischen Texten wird das Schluss-s als einfaches «s» transkribiert und
-nicht als «ß», da es sich lediglich um eine Ligatur handelt.
+
+    In lateinischen Texten wird das Schluss-s als einfaches «s» transkribiert 
+    und nicht als «ß», da es sich lediglich um eine Ligatur handelt.
 
 ## u-v-Ausgleich
-Vokalisches «u» und konsonantisches «v» werden unabhängig von der Vorlage
-lautgetreu wiedergegeben.
+
+=== "Allgemeine Regel"
+
+    Vokalisches «u» und konsonantisches «v» werden unabhängig von der Vorlage
+    lautgetreu wiedergegeben.
 
 === "Französische Texte"
-Diese Regel gilt im Prinzip auch für das Französische.
-Ausnahmen können jedoch gerechtfertigt sein.
-In einem Text aus dem 12. Jahrhundert, der in Altfranzösisch verfasst wurde,
-kann man beispielsweise die Schreibweise «il savroit» zulassen; in einem Text
-in Mittelfranzösisch aus dem 15. Jahrhundert sollte man «il sauroit» schreiben.
+
+    Diese Regel gilt im Prinzip auch für das Französische.
+    Ausnahmen können jedoch gerechtfertigt sein.
+    In einem Text aus dem 12. Jahrhundert, der in Altfranzösisch verfasst 
+    wurde, kann man beispielsweise die Schreibweise «il savroit» zulassen; 
+    in einem Text in Mittelfranzösisch aus dem 15. Jahrhundert sollte man 
+    «il sauroit» schreiben.
 
 === "Lateinische Texte"
-Im Lateinischen sollte ein «u», das als Konsonant fungiert, mit «v»
-transkribiert werden, und die Schreibweise «u» beibehalten werden, wenn es als
-Vokal fungiert.
+
+    Im Lateinischen sollte ein «u», das als Konsonant fungiert, mit «v»
+    transkribiert werden, und die Schreibweise «u» beibehalten werden, 
+    wenn es als Vokal fungiert.
 
 ## uu-w-Ausgleich
-Die Schreibweise «uu» sollte im Lateinischen mit «w» wiedergegeben werden,
-wenn es sich um einen velaren labialen Halbkonsonanten handelt (insbesondere
-in Wörtern germanischen Ursprungs).
-
-Beispiel:  
-«wadium» und nicht: «uuadium»
-
-Ansonsten kann die Wiedergabe je nach Fall variieren («uu», «uv», «vu»).
-
-Beispiele:  
-«equus», «euvangelium», «vulgaris»
-
-=== "Französische Texte"
-
-Im Französischen ist die Regel im Prinzip die gleiche:
-Man kann jedoch präzisieren, dass in allen Fällen «vu» geschrieben wird, wenn
-«u» ein Vokal ist oder das erste Element eines Diphthongs darstellt.
-
-Beispiele:  
-«vulgaire», «vueil», «vuider», «nouvel»
-
-In manchen Fällen muss der Bearbeitende eine Wahl treffen, die er konsequent
-durchhalten muss, insbesondere wenn er mit Vornamen konfrontiert ist:
-
-Beispiele:  
-«Vuillelmus» versus «Willelmus»  
-«Vuibert» versus «Wibert»
-
-Der sprachliche Kontext kann bei der Auswahl natürlich hilfreich sein, ist
-aber nicht immer einfach, vor allem in zweisprachigen Regionen wie Freiburg.
-
-## y
-Zwei Punkte oder ein Strich über «y» werden weggelassen.
 
 === "Lateinische Texte"
 
-Wenn ein Wort in einem mittelalterlichen lateinischen Text auf etwas endet,
-das visuell wie ein «y» aussieht, muss es mit einem doppelten «i» am Ende
-transkribiert werden.
+    Die Schreibweise «uu» sollte im Lateinischen mit «w» wiedergegeben werden,
+    wenn es sich um einen velaren labialen Halbkonsonanten handelt (insbesondere
+    in Wörtern germanischen Ursprungs).
+    
+    Beispiel: «wadium» und nicht: «uuadium»
+    
+    Ansonsten kann die Wiedergabe je nach Fall variieren («uu», «uv», «vu»).
+    
+    Beispiele: «equus», «euvangelium», «vulgaris»
 
-Beispiele:  
-«monasterii» und nicht: «monastery»  
-«julii» und nicht: «july»  
+=== "Französische Texte"
+
+    Im Französischen ist die Regel im Prinzip die gleiche:
+    Man kann jedoch präzisieren, dass in allen Fällen «vu» geschrieben wird, 
+    wenn «u» ein Vokal ist oder das erste Element eines Diphthongs darstellt.
+    
+    Beispiele: «vulgaire», «vueil», «vuider», «nouvel»
+    
+    In manchen Fällen muss der Bearbeitende eine Wahl treffen, die er konsequent
+    durchhalten muss, insbesondere wenn er mit Vornamen konfrontiert ist:
+    
+    Beispiele:  
+    «Vuillelmus» versus «Willelmus»  
+    «Vuibert» versus «Wibert»
+    
+    Der sprachliche Kontext kann bei der Auswahl natürlich hilfreich sein, ist
+    aber nicht immer einfach, vor allem in zweisprachigen Regionen wie Freiburg.
+
+## y
+
+=== "Allgemeine Regel"
+
+    Zwei Punkte oder ein Strich über «y» werden weggelassen.
+
+=== "Lateinische Texte"
+
+    Wenn ein Wort in einem mittelalterlichen lateinischen Text auf etwas endet,
+    das visuell wie ein «y» aussieht, muss es mit einem doppelten «i» am Ende
+    transkribiert werden.
+    
+    Beispiele:  
+    «monasterii» und nicht: «monastery»  
+    «julii» und nicht: «july»  
 
 ## Konsonantenverdoppelung
 
-Konsonantenverdoppelungen werden buchstabengetreu wiedergegeben und
-Abkürzungsstriche werden aufgelöst.
-Ein Strich über «m» oder «n» – nicht aber über «mm» oder «nn» – wird
-stillschweigend als «mm» oder «nn» aufgelöst.
+=== "Allgemeine Regeln"
 
-Ausnahmen:  
-Im folgenden Beispiel wird der Strich über dem «m» am besten
-ignoriert und einfach mit «umb» statt «ummb» transkribiert.
-
-![Umb.gif](/assets/images/Umb.gif)
-
-Abkürzungsstrich über «m» in Kombination mit «b» oder «p» wird ignoriert.
-
-Beispiel:  
-«nempt» statt «nemmpt»
-
-![Nempt.png](/assets/images/Nempt.png)
+    Konsonantenverdoppelungen werden buchstabengetreu wiedergegeben und
+    Abkürzungsstriche (bzw. Nasalstriche) werden aufgelöst.
+    Ein Strich über «m» oder «n» – nicht aber über «mm» oder «nn» – wird
+    stillschweigend als «mm» oder «nn» aufgelöst.
+    
+    Ausnahmen: Im folgenden Beispiel wird der Strich über dem «m» am besten
+    ignoriert und einfach mit «umb» statt «ummb» transkribiert.
+    
+    ![Umb.gif](/assets/images/Umb.gif)
+    
+    Abkürzungsstrich über «m» in Kombination mit «b» oder «p» wird ignoriert.
+    
+    Beispiel: «nempt» statt «nemmpt»
+    
+    ![Nempt.png](/assets/images/Nempt.png)
 
 === "Französische Texte"
 
-Die Wiederholung von Anfangsbuchstaben wird beibehalten, aber getrennt vom
-vorherigen Wort, an das er möglicherweise angehängt wurde.
-Handelt es sich hingegen um einen Ausdruck, der in die Umgangssprache
-eingegangen ist, wird die Agglutination beibehalten.
-Wenn der Ausdruck z. B. «illiaz» (für «il y a») im Ausgangstext agglutiniert 
-ist, sollte er gemäss Vorlage transkribiert werden (und nicht «ill i az»).
-
-Beispiele:  
-«a sses parents» und nicht: «asses parents»
-«assavoir» und nicht: «a ssavoi»
+    Die Wiederholung von Anfangsbuchstaben wird beibehalten, aber getrennt vom
+    vorherigen Wort, an das er möglicherweise angehängt wurde.
+    Handelt es sich hingegen um einen Ausdruck, der in die Umgangssprache
+    eingegangen ist, wird die Agglutination beibehalten.
+    Wenn der Ausdruck z. B. «illiaz» (für «il y a») im Ausgangstext agglutiniert 
+    ist, sollte er gemäss Vorlage transkribiert werden (und nicht «ill i az»).
+    
+    Beispiele:  
+    «a sses parents» und nicht: «asses parents»  
+    «assavoir» und nicht: «a ssavoi»
