@@ -32,44 +32,45 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Base:
-    - Transcription:
-      - base/transcription/index.md
-      - Print: base/transcription/print.md
-      - Hand: base/transcription/hand.md
-    - base/dating_guidelines.md
+      - Transcription:
+          - base/transcription/index.md
+          - Print: base/transcription/print.md
+          - Hand: base/transcription/hand.md
+      - base/dating_guidelines.md
   - Elements:
-    - elements/index.md
+      - elements/index.md
 plugins:
   - search
   - i18n:
-      default_language: de
       docs_structure: suffix
+      fallback_to_default: true
       languages:
-        default:
+        - locale: de
+          default: true
           build: true
           name: Default (de)
           site_name: SSRQ Dokumentation
-        fr:
-          build: true
+          nav_translations:
+            Base: Philologische Grundlagen
+            Elements: Tag-Bibliothek
+            Hand: B Handschriftliche Texte
+            Home: Startseite
+            Print: A Gedruckte Texte
+            Transcription: Transkriptionsrichtlinien
+        - locale: fr
+          build: !ENV [BUILD_FR, true]
           name: Français
           site_name: SDS Documentation
-      nav_translations:
-        de:
-          Base: Philologische Grundlagen
-          Elements: Tag-Bibliothek
-          Hand: B Handschriftliche Texte
-          Home: Startseite
-          Print: A Gedruckte Texte
-          Transcription: Transkriptionsrichtlinien
-        fr:
-          Base: Bases philologiques
-          Elements: Bibliothèque de tags
-          Hand: B Textes manuscrits
-          Home: Page d'accueil
-          Print: A Textes imprimés
-          Transcription: Principes de transcription
-site_dir: build/site
-site_name: !ENV [SITE_NAME, 'SSRQ Docs']
+          nav_translations:
+            Base: Bases philologiques
+            Elements: Bibliothèque de tags
+            Hand: B Textes manuscrits
+            Home: Page d'accueil
+            Print: A Textes imprimés
+            Transcription: Principes de transcription
+      reconfigure_material: true
+      reconfigure_search: true
+site_name: !ENV [SITE_NAME, "SSRQ Docs"]
 site_url: !ENV DOCS_URL
 theme:
   favicon: assets/images/favicon-ssrq-32.png
