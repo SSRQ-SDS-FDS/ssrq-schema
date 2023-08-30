@@ -8,5 +8,4 @@ title: Rechtschreibung und Zeichensetzung
 - [Gross- und Kleinschreibung](versalia.de.md)
 - [Zusammen- und Getrenntschreibung](wordseparation.de.md)
 - [Zahlen und Ziffern](numbers.de.md)
-- [Eigennamen](names.de.md)
 - [Interpunktion](punctuation.de.md)

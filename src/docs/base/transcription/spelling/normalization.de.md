@@ -57,7 +57,7 @@ dann wird «tz» verwendet.
 
     In lateinischen Texten wird «y» oder «j» als «i» wiedergegeben.
     Das gilt auch für römische Zahlen.
-    Eine Ausnahme sind [Eigennamen](names.de.md).
+    Eine Ausnahme sind Eigennamen.
     
     Beispiele:  
     «remedii» und nicht: «remedij»  
