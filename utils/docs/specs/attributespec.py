@@ -1,4 +1,5 @@
 import xml.etree.ElementTree as ET
+from typing import Literal, cast
 
 from snakemd import Document  # type: ignore
 
@@ -7,12 +8,15 @@ from utils.docs.helpers.utils import split_tag_and_ns, translate_datatype
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODDElement
 
+UsageStatus = Literal["opt", "rec", "req"]
+
 
 class AttributeSpec:
     attr_element: ET.Element
     content: list[ET.Element] | None
     classes: list[ET.Element] | None
     ident: str
+    usage_status: UsageStatus
 
     def __init__(
         self,
@@ -23,6 +27,7 @@ class AttributeSpec:
         self.ident = element.attrib["ident"]
         self.classes = element_classes
         self._add_description()
+        self._get_usage_status()
 
     def add_content(self, components: dict[str, ODDElement]) -> None:
         self.content = self._resolve_content(
@@ -165,6 +170,26 @@ class AttributeSpec:
                     definitions.append(d)
 
         return definitions[0]
+
+    def _get_usage_status(self) -> None:
+        usage_attr = self.attr_element.get("usage")
+
+        if usage_attr is not None:
+            self.usage_status = cast(UsageStatus, usage_attr)
+            return
+
+        if self.classes is not None:
+            for spec in self.classes:
+                if (
+                    att_def := spec.find(
+                        f".//tei:attDef[@ident = '{self.ident}'][@usage]",
+                        namespaces=NS_MAP,
+                    )
+                ) is not None:
+                    self.usage_status = cast(UsageStatus, att_def.get("usage"))
+                    return
+
+        self.usage_status = "opt"
 
     def _resolve_content(
         self, element: ET.Element, components: dict[str, ODDElement]

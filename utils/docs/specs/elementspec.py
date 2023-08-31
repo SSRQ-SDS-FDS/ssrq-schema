@@ -103,7 +103,14 @@ class ElementSpec(BaseSpec):
         doc.add_heading(translations["attr"], level=2)
 
         for attribute in sort_with_uca(self.attributes, sort_key=lambda x: x.ident):
-            doc.add_heading(f"@{attribute.ident}", level=3)
+            doc.add_heading(
+                f"@{attribute.ident}",
+                level=3,
+            )
+
+            doc.add_paragraph(
+                f"{translations['usage']} {translations[attribute.usage_status]}"
+            )
 
             self._desc_to_markdown(el=attribute.attr_element, lang=lang, doc=doc)
 
