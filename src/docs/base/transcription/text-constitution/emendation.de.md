@@ -3,7 +3,7 @@
 ## Drucktexte
 
 Eindeutige Druckfehler werden mit [`<choice>`](choice.de.md), 
-[`<sic/>`](sic.de.md) und [`<corr>`](corr.de.md) korrigiert.
+[`<sic>`](sic.de.md) und [`<corr>`](corr.de.md) korrigiert.
 
 ## Handschriftliche Texte
 
@@ -79,7 +79,7 @@ mit [`<sic>`](sic.de.md) und [`<corr>`](corr.de.md) korrigiert.
 
 Bewusste Auslassungen von Text durch den Bearbeitenden (Teilabdruck) werden
 in der analogen Edition mit `[...]` und in der digitalen mit 
-[`<gap reason="irrelevant">`](gap.de.md) wiedergegeben.
+[`<gap reason="irrelevant"/>`](gap.de.md) wiedergegeben.
 Dies sollte, wenn möglich, vermieden werden.
 
 Werden spätere Nachträge nicht beim Original, sondern als eigenständiges
@@ -112,7 +112,7 @@ in [`<back>`](back.de.md) ist nötig.
     In der digitalen Edition werden Streichungen mit [`<del>`](del.de.md)
     getaggt.
     
-    Bei komplexe, hierarchieübergreifenden Streichungen müssen 
+    Bei komplexen, hierarchieübergreifenden Streichungen müssen 
     [`<delSpan/>`](delSpan.de.md) und [`<anchor/>`](anchor.de.md)
     eingesetzt werden.
     
@@ -145,3 +145,7 @@ in [`<back>`](back.de.md) ist nötig.
     In der digitalen Edition wird der Tag [`<add>`](add.de.md) verwendet.
     Der Ort der Ergänzung muss und die Hand der ergänzten Stelle kann
     festgehalten werden.
+
+    Bei komplexen, hierarchieübergreifenden Zusätzen müssen 
+    [`<addSpan/>`](addSpan.de.md) und [`<anchor/>`](anchor.de.md)
+    eingesetzt werden.
