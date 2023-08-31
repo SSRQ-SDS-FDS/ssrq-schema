@@ -1,61 +1,88 @@
-## 11 Strukturierung der Texte
+# Textstruktur
 
-### 11.1 Abschnitte
+## Abschnitte und Absätze
 
-Die Gliederung der Textvorlage wird übernommen. Originale Abschnitte werden nur mit [`<p/>`](../../elements/p.de.md) ausgezeichnet. Sofern ein Original stärker gegliedert oder strukturiert ist, kann man [`<p/>`](../../elements/p.de.md) innerhalb von [`<div/>`](../../elements/div.de.md)verwenden.
-Die inhaltliche Strukturierung eines Textes durch den Bearbeitenden in Absätze erfolgt mit [`<seg/>`](../../elements/seg.de.md). Absätze können mit @n nummeriert werden.
+=== "Struktur des edierten Textes"
 
-[to do: Beispiele für p und div. Sinnvolles Beispiel für seg und p erfassen, dasjenige, das zur Zeit vorliegt, ist falsch, da p und seg verwendet, was ja keinen Sinn macht...]
+    Die Gliederung der Textvorlage wird übernommen.
+    
+    Originale Absätze werden mit [`<p>`](p.de.md) ausgezeichnet.
+    In der Regel sollten diese Absätze nach einem Punkt und nicht
+    nach einem Komma erfolgen.
+    
+    Sofern ein Original stärker gegliedert oder strukturiert ist, kann man
+    [`<div>`](div.de.md) zur Auszeichnung größerer Abschnitte verwenden.
+    
+    Reicht die Gliederung des Textes mit [`<p>`](p.de.md) und 
+    [`<div>`](div.de.md) nicht aus, kann der Bearbeitende die Abschnitte 
+    oder Absätze mit [`<seg>`](seg.de.md) weiter nach inhaltlichen Kriterien 
+    unterteilen.
+    
+    Wo es zum besseren Verständnis notwendig erscheint, wird der Text mithilfe
+    von Alineas und absatzweiser Nummerierung in eckigen Klammern, 
+    Mitten von Titeln etc. unterteilt.
+    
+    Urkunden sollten gemäss ihrem formalen Aufbau strukturiert werden (vgl.
+    [Diplomatik](http://www.hist-hh.uni-bamberg.de/hilfswiss/diplomatik.html)).
 
-Wo es zum besseren Verständnis notwendig erscheint, wird der Text mit Hilfe von Alineas und paragraphenweiser Nummerierung in eckigen Klammern, Mitten von Titeln etc. unterteilt.
-Urkunden sollten gemäss ihrem formalen Aufbau strukturiert werden (vgl. z. B.  [Diplomatik](http://www.hist-hh.uni-bamberg.de/hilfswiss/diplomatik.html)).
+=== "Struktur der editorischen Paratexte"
 
-In der Regel sollten Absätze nach einem Punkt und nicht nach einem Komma erfolgen.
+    Bei längeren Paratexten (Einleitung, Kommentar) können die Kapitel mit
+    [`<div>`](div.de.md) nummeriert und ggf. näher bezeichnet werden. 
+    
+    Der Text eines Kommentars kann innerhalb von [`<div>`](div.de.md) mit 
+    [`<p>`](p.de.md) in Absätze strukturiert werden.
 
-Bei längeren Paratexten (Einleitung, Kommentar) können Kapitel durch [`<div/>`](../../elements/div.de.md) mit @n nummeriert und gegebenenfalls mit @type näher bezeichnet werden. Der Text eines Kommentars kann innerhalb von [`<div/>`](../../elements/div.de.md) mit [`<p/>`](../../elements/p.de.md)  in Absätze strukturiert werden.
+## Seiten, Spalten und Zeilen
 
-### 11.2 Zeilen- und Seitenangaben
+Zeilenwechsel wurden in der analogen Edition mit / und Seitenwechsel mit // 
+wiedergegeben. 
 
-Zeilenwechsel wurden in der analogen Edition mit / und Seitenwechsel mit // wiedergegeben. In der digitalen Edition werden Zeilen am Zeilenanfang ab der ersten Zeile mit [`<lb/>`](../../elements/lb.de.md) und die Seiten zu Beginn mit [`<pb/>`](../../elements/pb.de.md)
-und @n ausgezeichnet.
+In der digitalen Edition werden Zeilen am Zeilenanfang ab der ersten Zeile 
+mit [`<lb/>`](lb.de.md) ausgezeichnet. Spaltenanfänge werden mit 
+[`<cb/>`](cb.de.md) und Seitenanfänge mit [`<pb/>`](pb.de.md) ausgezeichnet.
 
-### 11.3 Interpunktion
+## Titel und Zwischentitel
 
-Die Interpunktion folgt, so weit möglich und sinnvoll, den heute im entsprechenden Sprachgebiet üblichen Regeln.
-Gibt es in der Vorlage Textstellen, deren syntaktische Konstruktion nicht nach heutigen Satzbaumustern analysiert werden
-kann oder deren Sinn schwer verständlich ist, wird besser auf Interpunktion verzichtet.
+Originale Titel und Zwischentitel und solche, die der Bearbeitende einfügt, 
+werden mit [`<head>`](head.de.md) ausgezeichnet.
 
-Für die Interpunktion von lateinischen Texten kann grundsätzlich die moderne deutsche Kommasetzung als Richtschnur gelten. Voraussetzung für eine korrekte Interpunktion ist das Verständnis des Quellentextes in seinem ganzen Aufbau (Urkundenformular) wie im einzelnen Wortlaut. Im Zweifelsfall ist ein Komma besser wegzulassen als zu setzen. Verschachtelungen sind durch die Kommasetzung korrekt wiederzugeben.
+## Direkte Rede und Zitate
 
-### 11.4 Originale Titel und Zwischentitel
+=== "im edierten Text"
 
-Originale Titel und Zwischentitel werden mit [`<head/>`](../../elements/head.de.md) ausgezeichnet, optisch mit @type abgehoben und mit @n nummeriert. Titel, die der Bearbeitende einfügt, sind mit @resp versehen.
+    Direkte Rede, die in der analogen Edition mit `«...»` hervorgehoben wurde,
+    wird in der digitalen Edition mit [`<q>`](q.de.md) ausgezeichnet.
+    
+    Zitate innerhalb eines Textes (z. B. inserierte Urkunden) werden mit
+    [`<quote>`](quote.de.md) ausgezeichnet und am Schluss des Zitats mit
+    einer sachkritischen Anmerkung mit [`<note>`](note.de.md) versehen,
+    in der auf den zitierten Originaltext verwiesen wird.
+    Ist der Originaltext ediert, kann statt einer Anmerkung auf das Stück
+    verwiesen werden.
 
-### 11.5 Direkte Rede
+=== "in den editorischen Paratexten"
 
-Direkte Rede,  die in der analogen Edition mit « » hervorgehoben wurde, wird  mit [`<q/>`](../../elements/q.de.md) ausgezeichnet.
+    Innerhalb der editorischen Paratexte (Anmerkungen, Kommentar, Einleitung)
+    benutzen wir [`<quote>`](quote.de.md) für Zitate aus der 
+    Forschungsliteratur.
 
-### 11.6 Zitate
+## Tabellen
 
-Zitate innerhalb eines Textes (z. B. inserierte Urkunden) werden mit [`<quote/>`](../../elements/quote.de.md) ausgezeichnet
-und am Schluss des Zitats mit einer sachkritischen Anmerkung [`<note/>`](../../elements/note.de.md) versehen, in der auf den
-zitierten Originaltext verwiesen wird. Ist der Originaltext ediert, kann anstelle von [`<note/>`](../../elements/note.de.md)
-mit der @xml:id auf das Stück verwiesen werden.
+Einige Quellen, wie z. B. Rechnungen oder Zollordnungen, enthalten Tabellen,
+die auch als solche in der Edition umgesetzt werden. 
 
-Innerhalb der Paratexte (Anmerkungen, Kommentar, Einleitung) benutzen wir [`<quote/>`](../../elements/quote.de.md) für Zitate aus der Forschungsliteratur.
+Für die Darstellung von Tabellen verwenden wir [`<table>`](table.de.md)
+in Kombination mit [`<row>`](row.de.md) und [`<cell>`](cell.de.md).
 
-### 11.7 Tabellen
+## Plica
 
-Einige Quellen, wie z. B. Rechnungen oder Zollordnungen, enthalten Tabellen, die auch als solche in der Edition
-umgesetzt werden. Für die Darstellung von Tabellen verwenden wir [`<table/>`](../../elements/table.de.md) mit  [`<row/>`](../../elements/row.de.md) und [`<cell/>`](../../elements/cell.md).
-
-### 11.8 Plica
-
-Enthält ein Dokument eine Plica, dann gelten folgende Regelungen:
+Enthält ein Dokument eine Plica (getaggt mit [`<ab>`](ab.de.md)),
+dann gelten folgende Regelungen:
 
 - Text unter der Plica wird als Bestandteil der recto-Seite transkribiert.
-
-- Text auf der Plica wird ebenfalls als Bestandteil der recto-Seite transkribiert (obwohl er vom Material her gesehen 
-  eigentlich zur verso-Seite gehören müsste).
-
-- Die Reihenfolge von Text unter bzw. auf der Plica ist in der Transkription beliebig.
+- Text auf der Plica wird ebenfalls als Bestandteil der recto-Seite
+  transkribiert (obwohl er vom Material her gesehen eigentlich zur verso-Seite
+  gehören müsste).
+- Die Reihenfolge von Text unter bzw. auf der Plica ist in der Transkription
+  beliebig.
