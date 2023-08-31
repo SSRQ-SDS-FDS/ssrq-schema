@@ -2,10 +2,10 @@
 
 ## Allgemeine Regeln
 
-Arabische und römische Zahlen werden gemäss Vorlage ziffern- bzw. 
-buchstabengetreu wiedergegeben. 
+Arabische und römische Zahlen werden gemäss Vorlage ziffern- bzw.
+buchstabengetreu wiedergegeben.
 
-Römische Zahlen werden kleingeschrieben (vgl. [`<num/>`](num.de.md))
+Römische Zahlen werden kleingeschrieben (vgl. [`<num>`](num.de.md))
 
 Beispiel: «am .x. tag des monats Mey Anno m.d.xxv.»
 
@@ -15,7 +15,7 @@ Zur Bezeichnung von Währungen werden Sonderzeichen verwendet.
 
 ## Datumsangaben
 
-Datierungen mit arabischen und römischen Zahlen werden 
-mit [`<date/>`](date.de.md) ausgezeichnet. 
+Datierungen mit arabischen und römischen Zahlen werden
+mit [`<date>`](date.de.md) ausgezeichnet.
 
 Monatsnamen mit römischen Ziffern sollten ausgeschrieben werden.

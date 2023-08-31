@@ -34,25 +34,41 @@ nav:
   - Base:
     - Transcription:
       - base/transcription/index.md
-      - Common: base/transcription/common.md
-<<<<<<< HEAD
-      - Print: base/transcription/print.md
-      - Hand: base/transcription/hand.md
+      - base/transcription/common.md
+      - Spelling:
+        - base/transcription/spelling/index.md
+        - base/transcription/spelling/normalization.md
+        - base/transcription/spelling/special.md
+        - base/transcription/spelling/versalia.md
+        - base/transcription/spelling/wordseparation.md
+        - base/transcription/spelling/numbers.md
+        - base/transcription/spelling/punctuation.md
+      - Constitution:
+        - base/transcription/text-constitution/index.md
+        - base/transcription/text-constitution/emendation.md
+        - base/transcription/text-constitution/abbreviations.md
+        - base/transcription/text-constitution/variants.md
+        - base/transcription/text-constitution/paratext.md
+        - base/transcription/text-constitution/highlighting.md
+        - base/transcription/text-constitution/textstructure.md
+        - base/transcription/text-constitution/notes.md
+        - base/transcription/text-constitution/scribes-and-hands.md
+      - Semantic:
+        - base/transcription/semantic-markup/index.md
+        - base/transcription/semantic-markup/persons.md
+        - base/transcription/semantic-markup/organisations.md
+        - base/transcription/semantic-markup/places.md
+        - base/transcription/semantic-markup/keyword_entries.md
+        - base/transcription/semantic-markup/lemmata.md
     - base/dating_guidelines.md
-=======
-      - Spelling: base/transcription/spelling/index.md
-      - Textconstitution: base/transcription/text-constitution/index.md
-      - Semantic: base/transcription/semantic-markup/index.md
-    - base/date.md
-    - base/hyphenation.md
->>>>>>> f0c9876 ([feat]: adjusted links and text structure of documentation page)
+    - Hyphenation: base/hyphenation.md
   - Elements:
       - elements/index.md
 plugins:
   - search
   - i18n:
       docs_structure: suffix
-      fallback_to_default: true
+      fallback_to_default: false
       languages:
         - locale: de
           default: true
@@ -61,10 +77,12 @@ plugins:
           site_name: SSRQ Dokumentation
           nav_translations:
             Base: Philologische Grundlagen
+            Constitution: Textkonstitution
             Elements: Tag-Bibliothek
-            Hand: B Handschriftliche Texte
+            Hyphenation: Trennregeln
             Home: Startseite
-            Print: A Gedruckte Texte
+            Semantic: Inhaltliche Auszeichnung
+            Spelling: Orthographie
             Transcription: Transkriptionsrichtlinien
         - locale: fr
           build: !ENV [BUILD_FR, true]
@@ -73,9 +91,8 @@ plugins:
           nav_translations:
             Base: Bases philologiques
             Elements: Bibliothèque de tags
-            Hand: B Textes manuscrits
             Home: Page d'accueil
-            Print: A Textes imprimés
+            Hyphenation: Règles de séparation
             Transcription: Principes de transcription
       reconfigure_material: true
       reconfigure_search: true
