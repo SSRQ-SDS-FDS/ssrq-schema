@@ -1,7 +1,10 @@
-## 5 Hervorhebungen
+# Hervorhebungen
 
-Hervorhebungen (Versalien, verlängerte Buchstaben, Unterstreichungen, Farben etc.) und lateinische Schrift in deutschen Texten werden nicht dargestellt.
+Initialen und Dekorationen werden im einleitenden Kommentar erwähnt.
 
-Hochgestellte Buchstaben werden mit [`<hi/>`](../../elements/hi.de.md) @rend="sup" wiedergegeben.
+Hervorhebungen durch Versalien, verlängerte Buchstaben, Unterstreichungen,
+verschiedene Farben etc. und lateinische Schrift in deutschen Texten werden
+nicht dargestellt.
 
-to do: Beispiel in hi hinzufügen, dann kann dieses Beispiel hier gelöscht werden `deß 1729<hi rend="sup">ten</hi> jahrs
+Hochgestellte Buchstaben werden mit [`<hi rend="sup">`](hi.de.md)
+wiedergegeben.
