@@ -1,45 +1,78 @@
-Drucke:
-Die Handhabung entspricht derjenigen der [handschriftlichen Quellen](#b-handschriftliche-texte).
+# Abkürzungen
 
-Hss:
-## 6 Abkürzungen
+## Allgemeine Regeln
 
-### 6.1 Häufige Abkürzungen
+Typische, im selben Schriftstück oder in mehreren Schriftstücken 
+wiederkehrende Abkürzungen werden stehen gelassen. 
 
-Typische, im selben Schriftstück oder in mehreren Schriftstücken wiederkehrende Abkürzungen werden stehen
-  gelassen. Abkürzungen werden mit [`<abbr/>`](../../elements/abbr.de.md) getaggt, mit dem Abkürzungsverzeichnis verlinkt oder, wenn fehlend, ins
-  Abkürzungsverzeichnis aufgenommen. Es werden keine Kürzungspunkte verwendet, da die Abkürzungen durch die Auszeichnung
-  bereits als solche gekennzeichnet sind.
+Abkürzungen werden mit [`<abbr>`](abbr.de.md) getaggt, mit dem 
+Abkürzungsverzeichnis verlinkt oder, wenn fehlend, ins Abkürzungsverzeichnis 
+aufgenommen. 
+Es werden keine Kürzungspunkte verwendet, da die Abkürzungen durch die 
+Auszeichnung bereits als solche gekennzeichnet sind.
 
-`to do: Beispiel in abbr  hinzufügen, dann kann dieses Beispiel hier gelöscht werden<abbr>etc</abbr>`
+Kürzel werden konsequent als Kürzel belassen und mit 
+[`<abbr>`](abbr.de.md) ausgezeichnet. 
+Die Auflösung erfolgt im Abkürzungsverzeichnis.
 
-Kürzel  werden konsequent als Kürzel belassen und mit [`<abbr/>`](../../elements/abbr.de.md) ausgezeichnet. Die Auflösung erfolgt im Abkürzungsverzeichns.
+Beispiele:  
+lobl.  
+m. g. h.  
+tit.  
+s. v.  
+LL.EE.  
+MM.  
+no  
+art.  
+etc.
 
-Beispiele:  `lobl., m. g. h., tit.,  s. v., LL.EE., MM., no, art., etc.  `
+## Auflösen von Abkürzungen
 
-### 6.2 Abbkürzungen auflösen
+=== "Allgemeine Regeln"
 
-Auflösungen wurden früher in Zweifelsfällen in [   ] gesetzt, in der digitalen Edition werden sie
-mit [`<choice/>`](../../elements/choice.de.md), [`<abbr/>`](../../elements/abbr.de.md) und [`<expan/>`](../../elements/expan.de.md)
-getaggt.
+    Auflösungen wurden in analogen Editionen in Zweifelsfällen in eckige 
+    Klammern gesetzt, in der digitalen Edition werden sie mit 
+    [`<choice>`](choice.de.md) in Kombination mit [`<abbr>`](abbr.de.md) und 
+    [`<expan>`](expan.de.md) getaggt.
+    
+    Abkürzungen in der Textvorlage werden aufgelöst, wenn es möglich und 
+    sinnvoll ist. 
 
-Abkürzungen in der Textvorlage werden aufgelöst, wenn es möglich und sinnvoll ist. Orthographische Gepflogenheiten des
-Schreibers werden ohne besondere Kennzeichnung berücksichtigt. Einige Abkürzungen (wie z. B. Ao = anno, dz= das) sowie
-Endungen werden stillschweigend aufgelöst.
+    Orthographische Gepflogenheiten des Schreibers werden ohne besondere 
+    Kennzeichnung berücksichtigt. 
+    Einige Abkürzungen wie z. B. «Ao» = «anno» sowie Endungen werden 
+    stillschweigend aufgelöst 
+    (vgl. [Normalisierung](normalization.de.md)).
+    
+    In einigen mehrdeutigen Fällen ist es besser, ein abgekürztes Wort 
+    unverändert wiederzugeben.
 
-In einigen mehrdeutigen Fällen ist es besser, ein abgekürztes Wort unverändert wiederzugeben.
+    Beispiele:  
+    «sr» = «sieur» oder: «seigneur»?  
+    «monsr» = «monsieur» oder: «monseigneur»?  
+    «me» = «maître oder: «messire»?
 
-Beispiele:  `sr (sieur oder seigneur?), monsr (monsieur oder monseigneur?), me (maître oder messire?) `
+    Bei der Auflösung von Abkürzungen sollte so weit wie möglich auf
+    Schreibweisen zurückgegriffen werden, die in anderen Teilen des
+    bearbeiteten Textes eindeutig belegt sind, ansonsten ist die
+    klassische Form zu bevorzugen (insbesondere für Latein).
+    In jedem Fall sollte man konsequent bleiben.
 
-Bei der Auflösung von Abkürzungen sollte so weit wie möglich auf Schreibweisen zurückgegriffen werden, die in anderen Teilen des bearbeiteten Textes eindeutig belegt sind, ansonsten ist die klassische Form zu bevorzugen (insbesondere für Latein).  In jedem Fall sollte man konsequent bleiben.
+=== "Lateinische Texte"
 
-Die gebräuchlichen lateinischen Abkürzungen werden stillschweigend aufgelöst, sofern nicht Zweifel an der korrekten Auflösung bestehen. Die Auflösung erfolgt gemäss (mittellateinischem) Wörterbuch, ausser bei abweichender Praxis des Schreibers.
+    Die gebräuchlichen lateinischen Abkürzungen werden stillschweigend
+    aufgelöst, sofern nicht Zweifel an der korrekten Auflösung bestehen.
 
-### 6.3 Abkürzungen von Mass- und Münzbezeichnungen
+    Die Auflösung erfolgt gemäss (mittellateinischem) Wörterbuch, ausser
+    bei abweichender Praxis des Schreibers.
 
-Abkürzungen von Mass- und Münzbezeichnungen werden ausser in Fliesstexten (Kommentaren, Bemerkungen) nicht aufgelöst und erscheinen im Abkürzungsverzeichnis. Es werden die entsprechenden Sonderzeichen verwendet.
+## Abkürzungen von Mass- und Münzbezeichnungen
 
-Zur Liste der Mass- und Münzbezeichnungen vgl. (to do: Verlinkung mit Liste im Portal bzw. Wiki Tastaturbelegung -> CURRENCY SYMBOLS).
+Abkürzungen von Mass- und Münzbezeichnungen werden ausser in editorischen
+Paratexten (Kommentaren, Anmerkungen) nicht aufgelöst und erscheinen im 
+Abkürzungsverzeichnis. 
+Es werden die entsprechenden Sonderzeichen verwendet (vgl. die [Liste
+der Mass- und Münzeinheiten]).
 
-Zur Auszeichnung der Währungen, Masse und Gewichte
-vgl. [`<measure/>`](../../elements/measure.de.md).
+Währungen, Masse und Gewichte werden mit [`<measure>`](measure.de.md) und
+ggf. mit [`<measureGrp>`](measureGrp.de.md) getaggt.
