@@ -14,11 +14,18 @@
   <classes mode="replace">
     <memberOf key="att.naming"/>
     <memberOf key="model.respLike"/>
+    <memberOf key="att.global.responsibility"/>
   </classes>
   <content>
-    <alternate maxOccurs="unbounded">
-      <textNode/>
-      <elementRef key="persName"/>
+    <alternate>
+        <sequence preserveOrder="false" maxOccurs="unbounded">
+            <elementRef minOccurs="0" key="persName"/>
+            <textNode/>
+        </sequence>
+        <sequence preserveOrder="false" maxOccurs="unbounded">
+            <elementRef key="orgName"/>
+            <textNode/>
+        </sequence>
     </alternate>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-author">
@@ -52,6 +59,7 @@
         </valItem>
       </valList>
     </attDef>
+    <attDef ident="resp" mode="delete"/>
   </attList>
   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-05">
     <p>Angabe des Schreibers eines Stücks mit Erfassung des Personennamens</p>
