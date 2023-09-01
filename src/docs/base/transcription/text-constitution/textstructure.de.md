@@ -23,7 +23,14 @@
     Mitten von Titeln etc. unterteilt.
     
     Urkunden sollten gemäss ihrem formalen Aufbau strukturiert werden (vgl.
-    [Diplomatik](http://www.hist-hh.uni-bamberg.de/hilfswiss/diplomatik.html)).
+    [Diplomatik
+    (dt.)](http://www.hist-hh.uni-bamberg.de/hilfswiss/diplomatik.html), 
+    [Diplomatik (frz.)](http://theleme.enc.sorbonne.fr/cours/diplomatique).
+
+    Mit «actum» eingeleitete Schlussformeln von Urkunden, werden wie Absätze
+    behandelt. Nach «actum» folgt nach einem Komma «coram consilio», 
+    «coram senatu», «presentibus» etc. Am Ende der Formeln wird ein Punkt
+    eingesetzt (vgl. [Interpunktion](punctuation.de.md)).
 
 === "Struktur der editorischen Paratexte"
 

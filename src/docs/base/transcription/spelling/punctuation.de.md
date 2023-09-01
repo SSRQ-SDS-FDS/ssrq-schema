@@ -167,4 +167,4 @@ ein Anachronismus.
     
     Der Schlusspunkt fällt dagegen weg, wenn nur «Stadtschreiber» 
     geschrieben steht. 
-    Vgl. die Beispiele zu [Schlussformeln](textstructure.de.md)
+    Vgl. die Angaben zu [Schlussformeln](textstructure.de.md)
