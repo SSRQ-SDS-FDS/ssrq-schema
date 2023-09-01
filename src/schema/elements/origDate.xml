@@ -39,27 +39,27 @@
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-fr"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-it"/>
   <remarks xml:lang="de" versionDate="2023-08-23">
-    <p>Mit <att>when-custom</att> und <att>calendar</att> wird das Datum gemäss den Datierungsrichtlinien
+    <p>Mit <att>when-custom</att> und <att>calendar</att> wird das Datum gemäss den <ref target="dating_guidelines.md">Datierungsrichtlinien</ref>
       erfasst. <gi>origDate</gi> wird nur im Kopfbereich für das
       normalisierte Originaldatum eines Dokuments verwendet. Es handelt es sich um die Datierung des Dokuments (Herstellungsdatum) und nicht um die Datierung des Inhalts des Dokuments. Im Textbereich,
         den Kommentaren und Anmerkungen wird <gi>date</gi> verwendet.  Zum Umgang mit Heiligenfesten und anderen kirchlichen Feiertagen vgl. <gi>date</gi>. </p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-08-22">
     <p>With <att>when-custom</att> and
-      <att>calendar</att> the date is recorded according to the dating guidelines. <gi>origDate</gi> is only used in the header for the normalized original date of a document. <gi>date</gi> is used in the text area, comments and annotations.
+      <att>calendar</att> the date is recorded according to the <ref target="dating_guidelines.md">dating guidelines</ref>. <gi>origDate</gi> is only used in the header for the normalized original date of a document. <gi>date</gi> is used in the text area, comments and annotations.
       For how to deal with holy days and
       other church holidays, see <gi>date</gi>. </p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-08-22">
     <p>Avec <att>when-custom</att> et
-      <att>calendar</att> la date est enregistrée conformément aux directives de datation.  <gi>origDate</gi> n'est utilisé dans l'en-tête que pour la date
+      <att>calendar</att> la date est enregistrée conformément aux <ref target="dating_guidelines.md">directives de datation</ref>.  <gi>origDate</gi> n'est utilisé dans l'en-tête que pour la date
       d'origine normalisée d'un document.  <gi>date</gi> est utilisé dans la zone de
       texte, les commentaires et les annotations. Pour savoir comment gérer
       les jours saints et autres fêtes religieuses, consultez <gi>date</gi>.</p>
   </remarks>
   <remarks xml:lang="it" versionDate="2023-08-22">
     <p>Con <att>when-custom</att>
-      e <att>calendar</att> la data viene registrata secondo le linee guida per gli appuntamenti.  <gi>origDate</gi> viene utilizzato solo nell'intestazione
+      e <att>calendar</att> la data viene registrata secondo le linee <ref target="dating_guidelines.md">guida per gli appuntamenti</ref>.  <gi>origDate</gi> viene utilizzato solo nell'intestazione
       per la data originale normalizzata di un documento. La <gi>data</gi> viene utilizzata
       nell'area di testo, nei commenti e nelle annotazioni. Per sapere come
       gestire i giorni sacri e le altre festività religiose, vedi <gi>date</gi>.</p>
