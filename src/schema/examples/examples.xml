@@ -995,6 +995,22 @@
       <p>Esempio di datazione e luogo di emissione di un documento</p>
       <xi:include href="history.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-gap-missing-de">
+      <p>Beispiel eines fehlenden Textes, der in retrodigitalisierten Vorlage nicht vorhanden ist</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-missing"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-gap-missing-en">
+      <p>Example of missing text not present in retro-digitised template</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-missing"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-gap-missing-fr">
+      <p>Exemple d'un texte manquant qui n'est pas présent dans le modèle rétro-numérisé</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-missing"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-gap-missing-it">
+      <p>Esempio di testo mancante che non è presente nel modello retrodigitalizzato</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-missing"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-gap-line-de">
       <p>Unlesbare Zeile ohne Streichung oder Beschädigung</p>
       <xi:include href="gap.xml" xpointer="ex-gap-line"/>

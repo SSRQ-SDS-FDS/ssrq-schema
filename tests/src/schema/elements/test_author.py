@@ -12,17 +12,22 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-author-with-persName",
-            "<author role='scribe'><persName ref='per002336'>Adam Böniger</persName>, Landschreiber von Glarus</author>",
+            "<author role='scribe'><persName ref='per002336'>Adam Böniger</persName></author>",
             True,
         ),
         (
-            "valid-author-without-persName",
-            "<author role='scribe'>Adam Böniger, Landschreiber von Glarus</author>",
+            "valid-author-with-multiple-persName",
+            "<author role='scribe'><persName ref='per002336'>Adam Böniger</persName> <persName>Hans Müller</persName></author>",
             True,
+        ),
+        (
+            "invalid-author-with-persName-orgName",
+            "<author role='scribe'><persName ref='per002336'>Adam Böniger</persName> <orgName>Staatskanzlei</orgName></author>",
+            False,
         ),
         (
             "invalid-author-with-key",
-            "<author role='scribe' key='bar'>Adam Böniger, Landschreiber von Glarus</author>",
+            "<author role='scribe' key='bar'><persName ref='per002336'>Adam Böniger</persName></author>",
             False,
         ),
         (
