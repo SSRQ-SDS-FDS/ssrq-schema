@@ -18,14 +18,14 @@
   </classes>
   <content>
     <alternate>
-        <sequence preserveOrder="false" maxOccurs="unbounded">
-            <elementRef minOccurs="0" key="persName"/>
-            <textNode/>
-        </sequence>
-        <sequence preserveOrder="false" maxOccurs="unbounded">
-            <elementRef key="orgName"/>
-            <textNode/>
-        </sequence>
+      <sequence preserveOrder="false" maxOccurs="unbounded">
+        <elementRef minOccurs="0" key="persName"/>
+        <textNode/>
+      </sequence>
+      <sequence preserveOrder="false" maxOccurs="unbounded">
+        <elementRef key="orgName"/>
+        <textNode/>
+      </sequence>
     </alternate>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-author">
