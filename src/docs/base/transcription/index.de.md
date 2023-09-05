@@ -2,12 +2,8 @@
 title: Transkriptionsrichtlinien
 ---
 
-# Transkriptionsregeln der Sammlung Schweizerischer Rechtsquellen (SSRQ)
-
-Grundsätzlich gilt, dass sämtliche Texte aus den Textvorlagen im geraden Schrifttypus erscheinen. Alle Texte des
-Bearbeitenden werden kursiv geschrieben.
-
-Zu den Einzelheiten siehe Richtlinien für unterschiedliche Dokumenttypen:
-
-- [A Gedruckte Texte](./print.de.md)
-- [B Handschriftliche Texte](hand.de.md)
+# Transkriptionsrichtlinien der Sammlung Schweizerischer Rechtsquellen (SSRQ)
+1. [Allgemeine Grundsätze](common.de.md)
+2. [Rechtschreibung und Zeichensetzung](spelling/index.de.md)
+3. [Textkonstitution](text-constitution/index.de.md)
+4. [Inhaltliche Auszeichnung](semantic-markup/index.de.md)

@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="p" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="p" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Beschreibt einen Absatz.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes a paragraph.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Décrit un paragraphe.</desc>
@@ -50,39 +50,25 @@
     <attDef ident="n" mode="delete"/>
     <attDef ident="xml:id" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-22">
-    <p>Beispielhafte Verwendung in Kombination mit seg</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <p>
-        <seg><lb/>Man sol ôch zuͦ den selben meyen oder herbst taͤding richten<lb/>umb
-                    eigen oder umb erb und von keiner sunderbaren sache,<lb/>es sy denn beider teil
-                    wille.
-                </seg>
-      </p>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-22">
-    <p>Exemple d'utilisation en combinaison avec seg.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <p>
-        <seg><lb/>Man sol ôch zuͦ den selben meyen oder herbst taͤding richten<lb/>umb
-                    eigen oder umb erb und von keiner sunderbaren sache,<lb/>es sy denn beider teil
-                    wille.
-                </seg>
-      </p>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-p-seg-de"/>
+  <xi:include href="examples.xml" xpointer="ex-p-seg-en"/>
+  <xi:include href="examples.xml" xpointer="ex-p-seg-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-p-seg-it"/>
+  <xi:include href="examples.xml" xpointer="ex-p-actum-de"/>
+  <xi:include href="examples.xml" xpointer="ex-p-actum-en"/>
+  <xi:include href="examples.xml" xpointer="ex-p-actum-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-p-actum-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>In der Transkription werden damit originale Absätze ausgezeichnet. Eine inhaltliche Gliederung des Textes
             durch den Bearbeitenden erfolgt mit <gi>seg</gi>. Vgl. dazu auch die Ausführungen "Strukturierung der Texte"
-            in den <ref target="hand.md#11-strukturierung-der-texte">SSRQ-Transkriptionsrichtlinien</ref> und die Beschreibung von <gi>div</gi>. Wird in einer Urkunde der Text
+            in den <ref target="textstructure.md">SSRQ-Transkriptionsrichtlinien</ref> und die Beschreibung von <gi>div</gi>. Wird in einer Urkunde der Text
             durch einen Abstand oder eine Initiale inhaltlich strukturiert, kann der Absatz mit <gi>p</gi> ausgezeichnet
             werden. Paragraphenzeichen allerdings werden nicht speziell ausgezeichnet.
         </p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-20">
     <p>In the transcription, this is used to mark original paragraphs. The text is structured by the editor
-            with <gi>seg</gi>. See also the explanations "Structuring of the texts" in the <ref target="hand.md#11-strukturierung-der-texte">SSRQ transcription guidelines</ref>
+            with <gi>seg</gi>. See also the explanations "Structuring of the texts" in the <ref target="textstructure.md">SSRQ transcription guidelines</ref>
             and the description of <gi>div</gi>. If the text in a certificate is structured by a space or an initial,
             the paragraph can be marked with <gi>p</gi>. Paragraph signs, however, are not specially marked.
         </p>
@@ -90,14 +76,14 @@
   <remarks xml:lang="fr" versionDate="2023-07-20">
     <p>Dans la transcription, ceci est utilisé pour marquer les paragraphes originaux. Le texte est structuré par
             l'éditeur avec <gi>seg</gi>. Voir aussi les explications "Structuration des textes" dans les consignes de
-            <ref target="hand.md#11-strukturierung-der-texte">transcription SSRQ et la description</ref> de <gi>div</gi>. Si le texte d'un certificat est structuré par un
+            <ref target="textstructure.md">transcription SSRQ et la description</ref> de <gi>div</gi>. Si le texte d'un certificat est structuré par un
             espace ou une initiale, le paragraphe peut être marqué d'un <gi>p</gi>. Les signes de paragraphe, cependant,
             ne sont pas spécialement marqués.
         </p>
   </remarks>
   <remarks xml:lang="it" versionDate="2023-07-20">
     <p>Nella trascrizione, viene utilizzato per contrassegnare i paragrafi originali. Il testo è strutturato
-            dall'editor con <gi>seg</gi>. Vedi anche le spiegazioni "Strutturazione dei testi" nelle linee <ref target="hand.md#11-strukturierung-der-texte">guida di
+            dall'editor con <gi>seg</gi>. Vedi anche le spiegazioni "Strutturazione dei testi" nelle linee <ref target="textstructure.md">guida di
             trascrizione SSRQ</ref> e la descrizione di <gi>div</gi>. Se il testo in un certificato è strutturato da uno
             spazio o da un'iniziale, il paragrafo può essere contrassegnato con <gi>p</gi>. I segni di paragrafo,
             tuttavia, non sono contrassegnati in modo speciale.
