@@ -56,6 +56,7 @@
 - Masse, Gewichte, Währungen: [`<measure>`](measure.de.md)
     [`<measureGrp>`](measureGrp.de.md)
 - Register:
+    - Lemmata: [`<term>`](term.de.md)
     - Personen: [`<persName>`](persName.de.md)
     - Organisationen: [`<orgName>`](orgName.de.md)
     - Orte: [`<placeName>`](placeName.de.md)
@@ -97,9 +98,9 @@
         - Zählung: [`<foliation>`](foliation.de.md)
         - Erhaltungszustand: [`<condition>`](condition.de.md)
 
-### Beschreibung der Kodierung:
+### Beschreibung der Kodierung
 - [`<encodingDesc>`](encodingDesc.de.md) [`<editorialDecl>`](editorialDecl.de.md)
 
-### Beschreibung des Textprofils:
+### Beschreibung des Textprofils
 - [`<profileDesc>`](profileDesc.de.md) [`<textClass>`](textClass.de.md)
 - Schlagwörter: [`<keywords>`](keywords.de.md) [`<term>`](term.de.md)
