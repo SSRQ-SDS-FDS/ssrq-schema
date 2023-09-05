@@ -146,7 +146,7 @@ dieser Abschrift halten und den Diphthong getreu wiedergeben.
 
 ## Ligaturen
 
-In Drucken werden Ligaturen werden in Einzelbuchstaben aufgelöst.
+In Drucken werden Ligaturen  in Einzelbuchstaben aufgelöst.
 
 Auch in handschriftlichen Texten wird auf die Verwendung von Ligaturen in der 
 Regel verzichtet.
@@ -163,23 +163,3 @@ hat und nicht als identisches Graphem erkannt wird. Dasselbe gilt für die
 Ligatur «fl»: Eine Volltextsuche nach dem Wort «f-l-o-r-i-n» führt zu keinem 
 Ergebnis, wenn es die Ligatur «fl» enthält, die als ein Zeichen betrachtet 
 wird: «fl-o-r-i-n».
-
-### Fallbeispiel, die Ligatur tt
-
-![File:Ligatur_tt.gif]
-
-«Die Ligatur tt hat dieselbe Grundform wie in der zweiten Hälfte des 16. 
-Jahrhunderts: die beiden aufeinanderfolgenden Schäfte sind in der Mitte von 
-einem waagrechten Querstrich durchschnitten. Der Anstrich des zweiten t 
-verbindet das untere Ende des ersten mit dem oberen Ende des zweiten Schaftes. 
-Je nach dem Stil des jeweiligen Schreibers ist jedoch diese Ligatur 
-verschieden gestaltet.»<ref>Hellmut Gutzwiller, Die Entwicklung der Schrift 
-in der Neuzeit, in: Archiv für Diplomatik 38, 1992, S. 410.</ref>
-
-«In der Verbindung tt sind die zwei spitzbogenförmig miteinander verbundenen 
-t von einem waagrechten Strich durchzogen.» <ref>Hellmut Gutzwiller, Die 
-Entwicklung der Schrift vom 12. bis ins 19. Jahrhundert, 1981, S. 88.</ref>.
-
-Beispiel für die tt-Ligatur aus dem Jahr 1669 (StAZH C III 8, Nr. 141, S. 4):
-
-![File:Ligatur_tt_StAZH_C_III_8_Nr._141_S_4.png]
