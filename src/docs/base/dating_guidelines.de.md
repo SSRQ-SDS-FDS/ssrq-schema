@@ -12,7 +12,7 @@ Erfassung und Abfrage von Datierungen und Zeiträumen.
 Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
 
 - Ältere Datierungen stehen vor neueren Datierungen, z. B. steht bei den beiden
-  folgenden Zeiträumen «7.–10. Jh.» vor «8.–9. Jh.». 
+  folgenden Zeiträumen «7.–10. Jh.» vor «8.–9. Jh.».
 - Alles, was vor einem Datum sein könnte, wird auch vor diesem eingeordnet,
   so steht z. B. «18. Jh.» (01.01.1701–31.12.1800) vor «1800».
 - Wenn zwei Datierungen mit unterschiedlichen Zeiträumen am selben Datum
@@ -22,9 +22,9 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
 ## 2 Eindeutige Datierungen
 
 - Eindeutige Datierungen werden gemäss
-  [ISO 8601](https://de.wikipedia.org/wiki/ISO_8601) innerhalb von 
-  [`<date>`](date.de.md) oder [`<origDate>`](origDate.de.md) mit 
-  dem Attribut `@when-custom` normalisiert. 
+  [ISO 8601](https://de.wikipedia.org/wiki/ISO_8601) innerhalb von
+  [`<date>`](date.de.md) oder [`<origDate>`](origDate.de.md) mit
+  dem Attribut `@when-custom` normalisiert.
 - Das Datumsformat lautet grundsätzlich: `YYYY-MM-DD`, d. h. vierstellige
   Jahresangabe, zweistellige Monatsangabe, zweistellige Tagesangabe, die ggf.
   mit führenden Nullen aufgefüllt werden.
@@ -33,20 +33,37 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
   gemeint, was bei der SSRQ allerdings nicht immer der Fall ist.
   Deshalb verwenden wir statt `@when` das allgemeinere Attribut
   `@when-custom` in Kombination mit `@datingMethod`, um den Kalender
-  zu spezifizieren.  
-  Beispiele:  
-    - `<date when-custom="2001-09-11" datingMethod="gregorian">11 Sept 2001</date>`  
-    - `<date when-custom="1001-09-11" datingMethod="julian">11 Sept 1001</date>`
+  zu spezifizieren.
+  Beispiele:
+
+    ```xml
+    <date when-custom="2001-09-11" datingMethod="gregorian">11 Sept 2001</date>
+    ```
+
+    ```xml
+    <date when-custom="1001-09-11" datingMethod="julian">11 Sept 1001</date>
+    ```
+
 - Hierarchisch übergeordnete Leerstellen (z. B. fehlendes Jahr, fehlender
-  Monat) werden in `@when-custom` mit einem Bindestrich ("-") angegeben.  
-  Beispiele:  
-    - `<date when-custom="--09-11">11.09.</date>`  
-    - `<date when-custom="--09">September</date>`  
-    - `<date when-custom="---11">Elfter Tag eines Monats</date>`
+  Monat) werden in `@when-custom` mit einem Bindestrich ("-") angegeben.
+  Beispiele:
+
+    ```xml
+    <date when-custom="--09-11">11.09.</date>
+    ```
+
+    ```xml
+    <date when-custom="--09">September</date>
+    ```
+
+    ```xml
+    <date when-custom="---11">Elfter Tag eines Monats</date>
+    ```
+
 - Hierarchisch untergeordnete Leerstellen (z. B. fehlender Tag) werden hingegen
   nicht mit `@when-custom` ausgezeichnet, sondern wie eine uneindeutige
-  Datierung als Zeitraum mit `@from-custom` und `@to-custom` ausgezeichnet.  
-  Beispiel:  
+  Datierung als Zeitraum mit `@from-custom` und `@to-custom` ausgezeichnet.
+  Beispiel:
   `<date from-custom="1001-09-01" to-custom="1001-09-30" datingMethod="julian">September 1001</date>`
 - Datierungen nach Heiligen- oder Festtagen werden mithilfe der HTML-Version des
   [Grotefend](http://www.manuscripta-mediaevalia.de/gaeste/grotefend/grotefend.htm)
@@ -59,10 +76,13 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
 
 Enthält eine Quelle mehrere Daten, müssen alle einzeln ausgezeichnet werden.
 Wenn die Datierung eines Stücks nicht sicher ist, muss die Datierung in Form
-eines Zeitraums angegeben werden.  
-Beispiel:  
-`<date when-custom="1736-11-08" datingMethod="gregorian">8./22. November 1736</date>
- <date when-custom="1736-11-22" datingMethod="gregorian"/>`
+eines Zeitraums angegeben werden.
+Beispiel:
+
+```xml
+<date when-custom="1736-11-08" datingMethod="gregorian">8./22. November 1736</date>
+ <date when-custom="1736-11-22" datingMethod="gregorian"/>
+```
 
 ### 3.2 Zeiträume
 
@@ -70,48 +90,66 @@ Beispiel:
 
 Zeiträume werden mit den Attributen `@from-custom` und `@to-custom` zusammen mit
 `@datingMethod` innerhalb von [`<date>`](date.de.md) oder
-[`<origDate>`](origDate.de.md) ausgezeichnet.  
-Beispiele:  
-- `<date from-custom="1521-12-11" to-custom="1544-04-16"
-  datingMethod="julian">11. Dezember 1521 - 16. April 1544</date>`  
-- `<date from-custom="1717-01-01" to-custom="1718-12-31"
-  datingMethod="gregorian">1717-1718</date>`
+[`<origDate>`](origDate.de.md) ausgezeichnet.
+Beispiele:
+```xml
+    <date from-custom="1521-12-11" to-custom="1544-04-16"
+    datingMethod="julian">11. Dezember 1521 - 16. April 1544</date>
+```
+
+```xml
+<date from-custom="1717-01-01" to-custom="1718-12-31"
+  datingMethod="gregorian">1717-1718</date>
+```
 
 #### 3.2.2 Unterbrochene Zeiträume
 
 Liegen unterbrochene Zeiträumen vor, werden diese wie mehrere Zeiträume
-behandelt.  
-Beispiele:  
-- `<date from-custom="1610-01-01" to-custom="1610-12-31"
+behandelt.
+Beispiele:
+
+```xml
+<date from-custom="1610-01-01" to-custom="1610-12-31"
   datingMethod="gregorian">1610, 1620–1635</date>
-  <date from-custom="1620-01-01" to-custom="1635-12-31
-  datingMethod="gregorian"/>`  
-- `<date when-custom="1466-05-25" datingMethod="julian">25. Mai und 25.
-  Heumonat 1466</date><date when="1466-07-25"/>`
+```
+
+```xml
+<date from-custom="1620-01-01" to-custom="1635-12-31
+  datingMethod="gregorian"/>
+```
+
+```xml
+<date when-custom="1466-05-25" datingMethod="julian">25. Mai und 25.
+  Heumonat 1466</date><date when="1466-07-25"/>
+```
 
 #### 3.2.3 Uneindeutige Datierungen, die zugeordnet werden können
 
 Unsichere Jahresangaben, zum Beispiel «wohl 1491», werden mit
-[`<precision>`](precision.de.md) ausgezeichnet.  
-Beispiel:  
-`<date from-custom="1491-01-01" to-custom="1491-12-31">wohl 1491
-<precision match="@from-custom @to-custom" precision="medium"/></date>`
+[`<precision>`](precision.de.md) ausgezeichnet.
+Beispiel:
+
+```xml
+<date from-custom="1491-01-01" to-custom="1491-12-31">wohl 1491
+    <precision match="@from-custom @to-custom" precision="medium"/>
+</date>
+```
 
 Datierungen, die nicht eindeutig sind, jedoch zugeordnet werden können,
 werden als Zeiträume mit `@from-custom` und `@to-custom` zusammen mit
 `@datingMethod` sowie [`<precision>`](precision.de.md) ausgezeichnet.
 
 | Beispiel          | Werte `@from-custom` und `@to-custom` | Zeitspanne: Schlüssel |
-|-------------------|---------------------------------------| ------- |
-| 15. Jh.           | 1401-01-01/1500-12-31                 | 100 Jahre |
-| 1. Hälfte 15. Jh. | 1401-01-01/1450-12-31                 | 50 Jahre |
- | Anfang 15. Jh.   | 1401-01-01/1425-12-31                 | 25 Jahre |
-| Ende 15. Jh.      | 1475-01-01/1500-12-31                 | 25 Jahre |
-| Ca. 1510          | 1500-01-01/1520-12-31                 | +/-10 Jahre |
-| Mitte 15. Jh.     | 1440-01-01/1460-12-31                 | +/-10 Jahre |
-| Mitte 1555        | 1555-06-01/1555-07-31                 | +/-1 Monat |
-| Ende März         | --03-22/--03-31                       | 10 Tage |
-| Anfang Juli       | --07-01/--07-10                       | 10 Tage |
+| ----------------- | ------------------------------------- | --------------------- |
+| 15. Jh.           | 1401-01-01/1500-12-31                 | 100 Jahre             |
+| 1. Hälfte 15. Jh. | 1401-01-01/1450-12-31                 | 50 Jahre              |
+| Anfang 15. Jh.    | 1401-01-01/1425-12-31                 | 25 Jahre              |
+| Ende 15. Jh.      | 1475-01-01/1500-12-31                 | 25 Jahre              |
+| Ca. 1510          | 1500-01-01/1520-12-31                 | +/-10 Jahre           |
+| Mitte 15. Jh.     | 1440-01-01/1460-12-31                 | +/-10 Jahre           |
+| Mitte 1555        | 1555-06-01/1555-07-31                 | +/-1 Monat            |
+| Ende März         | --03-22/--03-31                       | 10 Tage               |
+| Anfang Juli       | --07-01/--07-10                       | 10 Tage               |
 
 #### 3.2.4 Uneindeutige Datierungen, die nicht zugeordnet werden können
 
@@ -120,16 +158,16 @@ sollen mit möglichst präziser Annäherung als Zeiträume mit `@notBefore-custo
 und `@notAfter-custom` sowie [`<precision>`](precision.de.md) ausgezeichnet
 werden.
 
-| Beispiel              | Werte `@notBefore-custom` und `@notAfter-custom` | Zeitspanne: Schlüssel |
-|-----------------------|-------------------------------------------------|-----------------------|
-| vor 1700              | 1675-01-01/1699-12-31                           | -25 Jahre             |
-| nach 1700             | 1701-01-01/1725-12-31                           | +25 Jahre             |
-| um 1700               | 1690-01-01/1710-12-31                           | +/-10 Jahre           |
-| wohl 1700 oder 1700?  | 1700-01-01/1700-12-31                           | 1 Jahr                |
-| vor 20. November 1700 | 1700-01-01/1700-11-19                           | von Jahresanfang      |
-| nach 20. November 1700 | 1700-11-21/1700-12-31                           | bis Jahresende        |
-| vor Oktober 1700      | 1700-07-01/1700-09-30                           | -3 Monate             |
-| nach Oktober 1700     | 1700-11-01/1701-01-31                           | +3 Monate             |
+| Beispiel               | Werte `@notBefore-custom` und `@notAfter-custom` | Zeitspanne: Schlüssel |
+| ---------------------- | ------------------------------------------------ | --------------------- |
+| vor 1700               | 1675-01-01/1699-12-31                            | -25 Jahre             |
+| nach 1700              | 1701-01-01/1725-12-31                            | +25 Jahre             |
+| um 1700                | 1690-01-01/1710-12-31                            | +/-10 Jahre           |
+| wohl 1700 oder 1700?   | 1700-01-01/1700-12-31                            | 1 Jahr                |
+| vor 20. November 1700  | 1700-01-01/1700-11-19                            | von Jahresanfang      |
+| nach 20. November 1700 | 1700-11-21/1700-12-31                            | bis Jahresende        |
+| vor Oktober 1700       | 1700-07-01/1700-09-30                            | -3 Monate             |
+| nach Oktober 1700      | 1700-11-01/1701-01-31                            | +3 Monate             |
 
 #### 3.2.5 Datierungen _post quem_ bzw. _ante quem_
 
@@ -139,11 +177,14 @@ jedoch das errechnete End- bzw. Beginndatum.
 Wenn bei Amtsbezeichnungen nur bekannt ist, bis wann jemand im Amt war,
 rechnen wir für den Amtsbeginn mit -10 Jahren.
 Der Inhalt von `@notAfter-custom` ist sicher, nicht aber der Inhalt in
-`@notBefore-custom`, weshalb er ein [`<precision>`](precision.de.md) erhält.  
-Beispiel:  
-`<date notBefore-custom="1489-01-01" notAfter-custom="1499-12-31
+`@notBefore-custom`, weshalb er ein [`<precision>`](precision.de.md) erhält.
+Beispiel:
+
+```xml
+<date notBefore-custom="1489-01-01" notAfter-custom="1499-12-31
 datingMethod="julian">[Amtszeit] bis 1499<precision match="@notBefore-custom"
-precision="medium/></date>`
+precision="medium/></date>
+```
 
 Dasselbe gilt auch umgekehrt für Datierungen _ante quem_.
 
@@ -159,7 +200,7 @@ ist ein Kommentar obligatorisch.
 ## 5 Neuer Stil / Alter Stil
 
 1. Es wird grundsätzlich nach dem Neuen Stil, d. h. dem Gregorianischer
-   Kalender, datiert. 
+   Kalender, datiert.
    Wenn ein Dokument nicht von einer Behörde stammt, die nachgewiesenermassen
    nach Altem Stil, d. h. dem Julianischer Kalender, datiert (z. B. die
    Kanzleien von Zürich und Bern), wird bei einem unkommentierten Datum von
@@ -170,11 +211,16 @@ ist ein Kommentar obligatorisch.
    an einer Datierung nach Neuem Stil vorliegen, wird dies in einer
    Anmerkung mit [`<note>`](note.de.md) festgehalten.
 
-Beispiele:  
-- `<date from-custom="1588-09-03" to-custom="1588-09-30"
-  datingMethod="julian">Zwischen 3. und 30. September 1588</date>`  
-- `<date from-custom="1588-09-03" to-custom="1588-09-30"
-  datingMethod="gregorian">Zwischen 3. und 30. September 1588</date>`
+Beispiele:
+```xml
+<date from-custom="1588-09-03" to-custom="1588-09-30"
+  datingMethod="julian">Zwischen 3. und 30. September 1588</date
+```
+
+```xml
+<date from-custom="1588-09-03" to-custom="1588-09-30
+  datingMethod="gregorian">Zwischen 3. und 30. September 1588</date>
+```
 
 Die Umrechnung vom Alten in den Neuen Stil kann mit der HTML-Version des
 [Grotefend](http://www.manuscripta-mediaevalia.de/gaeste/grotefend/grotefend.htm)
@@ -220,15 +266,15 @@ ab der zweiten Hälfte des 18. Jahrhunderts. In den evangelischen Gemeinden
 erfolgte der Übergang zwischen 1783 (Oberengadin und Bergell) und 1812
 (Schiers und Grüsch).
 
-Literatur hierzu:  
+Literatur hierzu:
 [HLS (Kalender)](http://www.hls-dhs-dss.ch/textes/d/D12812.php)
 
 ## 7 Jahresanfangsstile
 
-Die unterschiedlichen Jahresanfangsstile:  
-_Circumcisionsstil_ (Jahresanfang am 1. Januar),  
-_Annuntiationsstil_ (Jahresanfang am 25. März) und  
-_Natalstil_ (Jahresanfang am 25. Dezember)  
+Die unterschiedlichen Jahresanfangsstile:
+_Circumcisionsstil_ (Jahresanfang am 1. Januar),
+_Annuntiationsstil_ (Jahresanfang am 25. März) und
+_Natalstil_ (Jahresanfang am 25. Dezember)
 müssen in [`<date>`](date.de.md) mithilfe von `@datingMethod` vermerkt werden.
 
 Der Annuntiationsstil gilt in der Diözese Lausanne und in Freiburg vom
@@ -238,14 +284,14 @@ Lausanne bis in die 1. Hälfte des 16. Jahrhunderts.
 In SDS FR I/2/6 wird der Annuntiationsstil mit «n. st.» (= «nouveau style»)
 angezeigt, das Datum wird aber gemäss modernem Kalender aufgelöst.
 
-Beispiel:  
-> Ordonnance au sujet des voies de fait.  
-> [http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5](http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5)  
-> 1364 (n. st.) février 4.  
-> In der Quelle steht folgende Datierung: 
+Beispiel:
+> Ordonnance au sujet des voies de fait.
+> [http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5](http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5)
+> 1364 (n. st.) février 4.
+> In der Quelle steht folgende Datierung:
 > ... lo quar jor dou moys de febrier, in l’ant de Nostre Segnour corant per
-> mil CCC et sexante et troys (1363) ...  
+> mil CCC et sexante et troys (1363) ...
 
 Weil nun der 4. Februar in der Zeit zwischen dem 1. Januar (oder allenfalls 25.
-Dezember) und dem 25. März (= Annuntiation Mariä) liegt, ediert die 
+Dezember) und dem 25. März (= Annuntiation Mariä) liegt, ediert die
 Bearbeitende zu Recht den «4. Februar 1363» als den «4. Februar 1364».
