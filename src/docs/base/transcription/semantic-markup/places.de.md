@@ -7,10 +7,17 @@ Orte und Räume  werden im edierten Text  immer ausgezeichnet. Kommt ein Ort inn
 Güter, die über Personen identifiziert werden, z. B. «Heini Rütiners acker», werden nur dann als Ort ausgezeichnet, wenn es sich um ein identifizierbares Gut einer genannten Person oder einer genannten Familie, d. h. um einen Flurnamen, handelt. Wenn dies nicht der Fall ist, wird nur die Person bzw. die Familie ausgezeichnet.
 
 Orte, die einer Organisation zugeordnet werden können und sich innerhalb eines  [`<orgName>`](orgName.de.md) befinden, müssen nicht zusätzlich mit  [`<placeName>`](placeName.de.md)  ausgezeichnet werden. 
+Bei adjektivisch verwendeten Ortsnamen in Kommentaren und Anmerkungen muss der Ort nicht mit [`<placeName>`](placeName.de.md)  ausgezeichnet werden. Die ID bei [`<orgName>`](orgName.de.md)  bzw.  [`<persName>`](persName.de.md) als Instrument der Identifikation reicht. Dem Bearbeitenden ist überlassen, ob sie/er «der Rat der Stadt Zürich» oder «der Zürcher Rat» schreibt.
+
+Zu Ortsnamen innerhalb von Personennamen vgl. Personen(persons.de.md).
 
 Beispiele:  
  des Klosters <placeName ref="loc007756">Selnau</placeName>  – Ort mit ID des Klosters Selnau in Zürich
  
   <orgName ref="org000001">gotzhus ze Pfaͤvers</orgName>
+  
+  der Zürcher Bürger <persName>Hensli Müller</persName> ...
+
+der <orgName>Winterthurer Rat</orgName> beschloss...
  
  Die Ortsnamen werden anhand der heutigen administrativen und politischen Zugehörigkeit in die «SSRQ Datenbank historischer Ortsnamen» aufgenommen: Land, Kanton, Gemeinde/Gemeindeteil. Zudem wird  die Kategorie des Ortsnamens (z. B. Alp, Bach, Herrschaft usw.), die immer auf der Quelle fusst, erfasst. Wenn möglich wird ein Ort mit weiteren Daten (z. B. ortsnamen.ch) verknüpft.
