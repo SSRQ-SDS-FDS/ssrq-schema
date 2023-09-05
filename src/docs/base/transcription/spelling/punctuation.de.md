@@ -145,7 +145,7 @@ ein Anachronismus.
     «Schultheiss und Rat zu Bern»  
     «Weibel und Land Entlebuch»
   
-    Die Anschrift auf der Briefaussenseite, die gewöhnlich an den Anfang eines
+    Bei der Anschrift auf der Briefaussenseite, die gewöhnlich an den Anfang eines
     Briefes gesetzt wird, wird ebenfalls kein Punkt gesetzt.
   
     Beispiele:  
@@ -167,4 +167,4 @@ ein Anachronismus.
     
     Der Schlusspunkt fällt dagegen weg, wenn nur «Stadtschreiber» 
     geschrieben steht. 
-    Vgl. die Angaben zu [Schlussformeln](textstructure.de.md)
+    Vgl. die Angaben zu [Schlussformeln](textstructure.de.md).
