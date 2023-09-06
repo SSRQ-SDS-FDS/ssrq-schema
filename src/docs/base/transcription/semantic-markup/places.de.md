@@ -23,7 +23,7 @@ Beispiele:
 der <orgName>Winterthurer Rat</orgName> beschloss...
  
 ##Orte innerhalb von Personennamen
-Zu Ortsnamen innerhalb von Personennamen vgl. Personen(persons.de.md).
+Zu Ortsnamen innerhalb von Personennamen vgl. [Personen](persons.de.md).
 
 ##Datenbankerfassung
- Die Ortsnamen werden anhand der heutigen administrativen und politischen Zugehörigkeit in die «SSRQ Datenbank historischer Ortsnamen» aufgenommen: Land, Kanton, Gemeinde/Gemeindeteil. Zudem wird  die Kategorie des Ortsnamens (z. B. Alp, Bach, Herrschaft usw.), die immer auf der Quelle fusst, erfasst. Wenn möglich wird ein Ort mit weiteren Daten (z. B. ortsnamen.ch) verknüpft.
+ Die Ortsnamen werden anhand der heutigen administrativen und politischen Zugehörigkeit in die [«SSRQ Datenbank historischer Ortsnamen»](https://www.ssrq-sds-fds.ch/places-db-edit/search/search-form.xq) aufgenommen: Land, Kanton, Gemeinde/Gemeindeteil. Zudem wird  die Kategorie des Ortsnamens (z. B. Alp, Bach, Herrschaft usw.), die immer auf der Quelle fusst, erfasst. Wenn möglich wird ein Ort mit weiteren Daten (z. B. [ortsnamen.ch](https://ortsnamen.ch/de/)) verknüpft.
