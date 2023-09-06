@@ -10,23 +10,25 @@ In der [Personendatenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/) wird de
 
 Funktionen und Titel werden zusammen mit einer Datierung bei der Person in der [Datenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/) erfasst.
 
-Beispiele: 
-Abt <persName>Johann</persName> von <placeName>Pfäffers</placeName>
+Beispiele:   
+`Abt <persName>Johann</persName> von <placeName>Pfäffers</placeName>`
 
-<persName>Johans</persName>, abt von <placeName>Pfävers</placeName>
+`<persName>Johans</persName>, abt von <placeName>Pfävers</placeName> `
+
 
 ##Orte innerhalb von Personennamen
 
 Bei zusammengesetzten Personennamen, bei denen es klar ist, dass es sich beim «von NN» um einen Nachnamen und nicht um eine Ortsbezeichnung handelt, wird der ganze Personenname mit [`<persName>`](persName.de.md) umfasst.
 
-Beispiel: 
+Orte innerhalb von Personennamen werden nur ausgezeichnet, wenn nicht sicher ist, ob es sich um einen Nachnamen oder eine Herkunftsbezeichnung handelt. Im Mittelalter sind die Nachnamen oftmals noch nicht ausgebildet und die Zuordnung ist unsicher.
 
-<persName>Hans Ulrich von Ems</placeName>
+Beispiel:  
+`<persName>Hans Ulrich von Ems</placeName>`
 
 Orte innerhalb von Personennamen werden nur ausgezeichnet, wenn nicht sicher ist, ob es sich um einen Nachnamen oder eine Herkunftsbezeichnung handelt. Im Mittelalter sind die Nachnamen oftmals noch nicht ausgebildet und die Zuordnung ist unsicher.
 
-Beispiel: 
-<persName>Hans von <placeName>Gümmlingen</placeName></persName>
+Beispiel:   
+`<persName>Hans von <placeName>Gümmlingen</placeName></persName>`
 
 ##Unsichere Zuordnung von Personen
 
@@ -36,6 +38,7 @@ Die beiden Personen können nun separat ausgezeichnet und in die [Datenbank](htt
 Wenn Personen gleichen Namens und/oder Vornamens vorkommen – z. B. Vater und Sohn/Söhne –, wird eine Identität nur bei grosser Wahrscheinlichkeit angenommen. Hauptkriterien für die Identität sind Seltenheit der Namen oder Vornamen, übereinstimmende Zusatznamen, zeitliche Nähe, Kongruenz von Beruf/Amt/Funktion und Wohn-/Herkunftsort, wobei jeweils nicht alle Kriterien zutreffen müssen. In Zweifelsfällen erfolgt eine entsprechende Bemerkung in der [Datenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/) oder die Personen werden einzeln aufgenommen. Daraus folgt, dass einzeln aufgeführte Personen mit gleichem Familien- und Vornamen in der [Personendatenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/) identisch sein können, obwohl sie separat aufgeführt sind. Eingehendere Forschungen würden hier möglicherweise zu Berichtigungen führen. 
 
 ##Datenbankerfassung																		
+
 Die Personen- und Familiennamen sind unter der heute gebräuchlichen Schreibweise gemäss [HLS](https://hls-dhs-dss.ch/de/), [HBLS](https://www.digibern.ch/katalog/historisch-biographisches-lexikon-der-schweiz) und dem [«Familiennamenbuch der Schweiz»](https://hls-dhs-dss.ch/famn/?pagename=famn2) aufgeführt. Namen, die sich dort nicht zuordnen lassen, sind von den Bearbeitenden standardisiert worden. Das Fehlen eines Familiennamens oder eines Vornamens wird mit der Abkürzung NN (Nomen nominandum) angegeben. Verkürzte Vornamen wie «Jörg» oder «Trina» werden in der Regel zu gebräuchlichen Vornamen (Georg bzw. Katharina) normalisiert; Ausnahmen bilden Kürzel, deren Normalisierung sich nicht aus den sprachwissenschaftlichen Hilfsmitteln erschliessen lässt. 
 
 Wenn bei einer Ehefrau der Ledigenname und der vom Ehemann übernommene Familienname bekannt sind, wird sie unter beiden verzeichnet. Angehörige geistlicher Institutionen wie Bischöfe, Äbte, Mönche etc. werden – falls bekannt – nicht nur unter ihrem Familiennamen, sondern auch unter der entsprechenden Institution aufgeführt. Diese Institutionen erscheinen immer in normalisierter Form, ebenso Familiennamen von Adligen, bei denen nur der Vorname erwähnt wird, der Familienname allerdings bekannt ist. 
