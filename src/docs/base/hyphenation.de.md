@@ -25,7 +25,7 @@ title: Trennregeln
 
 2. Zusammengesetzte Wörter trennt man nach ihren Bestandteilen (z. B. per-egrinus, post-ea).
 
-3. Folgendes ist zu beachten:
+Folgendes ist zu beachten:
 
 - st wird getrennt: s-t (z. B. hos-tis).
 
@@ -37,9 +37,9 @@ title: Trennregeln
 
 Im Französischen erfolgt die Worttrennung am Ende einer Zeile meistens nach Sprechsilben.
 
-1. Ein einzelner Konsonant zwischen zwei Vokalen gehört zur Folgesilbe. (cou-per)
+1. Ein einzelner Konsonant zwischen zwei Vokalen gehört zur Folgesilbe (z. B. cou-per).
 
-2. Zwei aufeinanderfolgende Konsonanten werden getrennt. (al-ler, as-sez)
+2. Zwei aufeinanderfolgende Konsonanten werden getrennt (z. B. al-ler, as-sez).
 
 Ausnahmen:
 
@@ -49,11 +49,12 @@ Ausnahmen:
 
 - ch, ph, gn, th und ll (wenn es [j] gesprochen wird) (pê-cher)
 
-3. Folgen drei oder mehr Konsonanten aufeinander, wird nach dem zweiten Konsonanten getrennt. (comp-ter, obs-cur)
 
-4. Aufeinanderfolgende Vokale nicht trennen. (bien, mais)
+3. Folgen drei oder mehr Konsonanten aufeinander, wird nach dem zweiten Konsonanten getrennt (z. B. comp-ter, obs-cur).
 
-5. Durch einen Apostroph verbundene Wörter werden nicht an der Verbindungsstelle getrennt. (au-jour-d’hui)
+4. Aufeinanderfolgende Vokale nicht trennen (z. B. bien, mais).
+
+5. Durch einen Apostroph verbundene Wörter werden nicht an der Verbindungsstelle getrennt (z. B. au-jour-d’hui).
 
 6. Tonlose Endsilben nicht abtrennen.
 
