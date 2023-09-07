@@ -21,9 +21,9 @@
           <sch:assert test="./tei:p/tei:ref">
             The <sch:name/> must contain a paragraph with a link.
           </sch:assert>
-          <sch:assert test="./tei:p/tei:ref[@target='https://schema.ssrq-sds-fds.ch/latest/base/transcription']">
+          <sch:assert test="./tei:p/tei:ref[@target='https://p.ssrq-sds-fds.ch/guidelines/transcription']">
             The link inside <sch:name/> must point to the latest transcription guidelines:
-            &lt;p&gt;&lt;ref target="https://schema.ssrq-sds-fds.ch/latest/base/transcription"/&gt;&lt;/p&gt;.
+            &lt;p&gt;&lt;ref target="https://p.ssrq-sds-fds.ch/guidelines/transcription"/&gt;&lt;/p&gt;.
           </sch:assert>
         </sch:rule>
       </sch:pattern>
