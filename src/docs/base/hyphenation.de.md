@@ -2,7 +2,7 @@
 title: Trennregeln
 ---
 
-== Trennreglen der SSRQ für deutschsprachige Texte ==
+=== Trennregeln der SSRQ für deutschsprachige Texte
  
 1. Im Prinzip gelten die Trennregeln des neuen Duden (Duden K 164–168). Das heisst, dass bei deutschen Wörtern beim Zusammenfall mehrerer Konsonanten der letzte Konsonant auf die folgende Zeile kommt. Ungetrennt bleiben allein ck, ch und sch sowie das «historische» und im heutigen Deutsch nicht mehr verwendete th (vgl. unten 6.). Hingegen wird st in deutschen Wörtern getrennt.
  
@@ -19,7 +19,7 @@ title: Trennregeln
 7. W als Teil von Diphthongen euw, auw, ouw, aw, ew, uw usw. (Thurgeuwisch, Frawenfeld) sollte nicht abgetrennt werden.  Also Thur/geuwisch statt Thurgeu/wisch, Frawen/feld statt Fra/wenfeld (w ist in diesen Fällen kein Konsonant, sondern Teil eines Vokals).
 
 
-== Trennregeln der SSRQ für lateinische Texte ==
+=== Trennregeln der SSRQ für lateinische Texte 
 
 1. Die lateinischen Wörter werden wie die deutschen nach Silben getrennt (z. B. cir-cum-ve-ni-re).
 
@@ -33,7 +33,7 @@ title: Trennregeln
 
 
 
-== Trennregeln der SSRQ für französische Texte ==
+===  Trennregeln der SSRQ für französische Texte 
 
 Im Französischen erfolgt die Worttrennung am Ende einer Zeile meistens nach Sprechsilben.
 
@@ -65,4 +65,4 @@ Ausnahmen:
 
 10. Eigennamen, wenn möglich, nicht trennen.
 
-Vgl. http://monsu.desiderio.free.fr/atelier/coupe.html; http://www.aidenet.eu/grammaire01s.htm; https://de.wiktionary.org/wiki/Hilfe:Worttrennung#Franz.C3.B6sisch
+Zu den französischen Trennregeln vgl.  auch [Les coupures de mots à l'écrit](http://monsu.desiderio.free.fr/atelier/coupe.html), [La Coupure des mots](http://www.aidenet.eu/grammaire01s.htm) und [Worttrennung «Französisch»](https://de.wiktionary.org/wiki/Hilfe:Worttrennung#Franz.C3.B6sisch).
