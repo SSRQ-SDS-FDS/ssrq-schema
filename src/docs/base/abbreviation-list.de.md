@@ -76,7 +76,7 @@ kommen und nicht aufgelöst werden.
      = Pfund (Währung)  
      = Schilling (Währung)
 
-=== "Abkürzungen für Archive"
+=== "Archive"
 
     ACV = Archives cantonales vaudoises  
     ADBR = Archives départementales du Bas-Rhi  

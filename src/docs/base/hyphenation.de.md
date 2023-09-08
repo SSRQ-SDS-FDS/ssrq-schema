@@ -2,6 +2,12 @@
 title: Trennregeln
 ---
 
+# Trennregeln
+
+Die folgenden Trennregeln gelten für die gedruckten (analogen) Editionen.
+
+In den digitalen Editionen erfolgt die Trennung dynamisch nach Fenstergrösse.
+
 === "Deutschsprachige Texte"
  
     1. Im Prinzip gelten die Trennregeln des neuen Duden (Duden K 164–168).
