@@ -49,7 +49,7 @@
         <sch:pattern>
           <sch:rule context="*[@facs]">
             <sch:report test="matches(@facs, '\._')" xml:lang="en">
-                            It's not allowed to use '_.' as part of the facsimile name.
+                            It's not allowed to use '._' as part of the facsimile name.
                         </sch:report>
             <sch:report test="matches(@facs, '__')" xml:lang="en">
                             An underscore should not be followed by another underscore.
