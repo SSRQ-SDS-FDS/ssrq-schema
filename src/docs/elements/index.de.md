@@ -8,7 +8,8 @@
 ## Tags im Textbereich
 
 ### Textkritische Auszeichnungen
-- Abkürzungen und deren Auflösung: [`<abbr>`](abbr.de.md) [`<expan>`](expan.de.md)
+- Abkürzungen und deren Auflösung: [`<abbr>`](abbr.de.md)
+  [`<expan>`](expan.de.md)
 - Fehler und deren Korrektur: [`<sic>`](sic.de.md) [`<corr>`](corr.de.md)
 - Auswahl aus einer von zwei Varianten: [`<choice>`](choice.de.md)
 - Apparateinträge mit Lemma und Lesarten: [`<app>`](app.de.md)
@@ -70,9 +71,11 @@
     - Titel und Reihe: [`<titleStmt>`](titleStmt.de.md) [`<title>`](title.de.md)
         [`<publicationStmt>`](publicationStmt.de.md)
         [`<seriesStmt>`](seriesStmt.de.md)
-    - Verantwortliche: [`<editor>`](editor.de.md), [`<publisher>`](publisher.de.md)
-      [`<respStmt>`](respStmt.de.md) [`<resp>`](resp.de.md)
-    - Lizenz: [`<availability>`](availability.de.md) [`<licence>`](licence.de.md)
+    - Verantwortliche: [`<editor>`](editor.de.md),
+      [`<publisher>`](publisher.de.md) [`<respStmt>`](respStmt.de.md)
+      [`<resp>`](resp.de.md)
+    - Lizenz: [`<availability>`](availability.de.md)
+      [`<licence>`](licence.de.md)
 - Beschreibung der Quelle: [`<sourceDesc>`](sourceDesc.de.md)
   [`<msDesc>`](msDesc.de.md)
     - Textzeugen: [`<listWit>`](listWit.de.md) [`<witness>`](witness.de.md)
@@ -83,8 +86,9 @@
       [`<msItem>`](msItem.de.md) [`<author>`](author.de.md)
       [`<textLang>`](textLang.de.md) [`<docImprint>`](docImprint.de.md)
       [`<summary>`](summary.de.md)
-    - Geschichte der Quelle: [`<history>`](history.de.md) [`<origin>`](origin.de.md)
-      [`<origDate>`](origDate.de.md) [`<origPlace>`](origPlace.de.md)
+    - Geschichte der Quelle: [`<history>`](history.de.md)
+      [`<origin>`](origin.de.md) [`<origDate>`](origDate.de.md)
+      [`<origPlace>`](origPlace.de.md)
     - Zusätzliche Angaben: [`<additional>`](additional.de.md)
     - Physische Beschreibung der Quelle: [`<physDesc>`](physDesc.de.md)
         - Bindung: [`<bindingDesc>`](bindingDesc.de.md)
@@ -99,8 +103,9 @@
         - Erhaltungszustand: [`<condition>`](condition.de.md)
 
 ### Beschreibung der Kodierung
-- [`<encodingDesc>`](encodingDesc.de.md) [`<editorialDecl>`](editorialDecl.de.md)
+- [`<encodingDesc>`](encodingDesc.de.md)
+  [`<editorialDecl>`](editorialDecl.de.md)
 
 ### Beschreibung des Textprofils
 - [`<profileDesc>`](profileDesc.de.md) [`<textClass>`](textClass.de.md)
-- Schlagwörter: [`<keywords>`](keywords.de.md) [`<term>`](term.de.md)
+- Schlagworte: [`<keywords>`](keywords.de.md) [`<term>`](term.de.md)
