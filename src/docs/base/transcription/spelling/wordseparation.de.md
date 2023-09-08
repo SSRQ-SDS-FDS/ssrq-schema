@@ -43,7 +43,7 @@
     
     Beispiele: «Madame», «Messire», «Lieutenant», «Mainmorte», «Vichastelain»
     
-    Es ist  sinnvoll, «par devant», «demi arpent», «ci annexé» ohne 
+    Es ist sinnvoll, «par devant», «demi arpent», «ci annexé» ohne 
     Bindestrich zu schreiben.
     
     Zweifelsfälle: Man kann «toujours» schreiben, sollte aber «tous jours» 

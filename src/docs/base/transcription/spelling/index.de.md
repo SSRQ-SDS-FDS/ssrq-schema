@@ -1,8 +1,8 @@
 ---
-title: Rechtschreibung und Zeichensetzung
+title: Orthographie
 ---
 
-# 2. Rechtschreibung und Zeichensetzung
+# 2. Orthographie
 - [Normalisierung](normalization.de.md)
 - [Diakritika, Sonderzeichen und Ligaturen](special.de.md)
 - [Gross- und Kleinschreibung](versalia.de.md)
