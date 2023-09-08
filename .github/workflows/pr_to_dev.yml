@@ -35,7 +35,7 @@ jobs:
         run: ./Taskfile validate
       - name: Run all tests using pytest
         run: poetry run pytest -n 4
-
+        
   publish:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
