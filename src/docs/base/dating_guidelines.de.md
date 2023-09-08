@@ -29,7 +29,8 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
   Jahresangabe, zweistellige Monatsangabe, zweistellige Tagesangabe, die ggf.
   mit führenden Nullen aufgefüllt werden.
 - Nach ISO 8601 und TEI ist bei der Verwendung des `@when`-Attributs immer der
-  gregorianische [Kalender](https://hls-dhs-dss.ch/de/articles/012812/2018-01-15/)
+  gregorianische
+  [Kalender](https://hls-dhs-dss.ch/de/articles/012812/2018-01-15/)
   gemeint, was bei der SSRQ allerdings nicht immer der Fall ist.
   Deshalb verwenden wir statt `@when` das allgemeinere Attribut
   `@when-custom` in Kombination mit `@datingMethod`, um den Kalender
@@ -81,7 +82,7 @@ Beispiel:
 
 ```xml
 <date when-custom="1736-11-08" datingMethod="gregorian">8./22. November 1736</date>
- <date when-custom="1736-11-22" datingMethod="gregorian"/>
+<date when-custom="1736-11-22" datingMethod="gregorian"/>
 ```
 
 ### 3.2 Zeiträume
@@ -92,14 +93,15 @@ Zeiträume werden mit den Attributen `@from-custom` und `@to-custom` zusammen mi
 `@datingMethod` innerhalb von [`<date>`](date.de.md) oder
 [`<origDate>`](origDate.de.md) ausgezeichnet.
 Beispiele:
+
 ```xml
-    <date from-custom="1521-12-11" to-custom="1544-04-16"
-    datingMethod="julian">11. Dezember 1521 - 16. April 1544</date>
+<date from-custom="1521-12-11" to-custom="1544-04-16"
+      datingMethod="julian">11. Dezember 1521 - 16. April 1544</date>
 ```
 
 ```xml
 <date from-custom="1717-01-01" to-custom="1718-12-31"
-  datingMethod="gregorian">1717-1718</date>
+      datingMethod="gregorian">1717-1718</date>
 ```
 
 #### 3.2.2 Unterbrochene Zeiträume
@@ -110,17 +112,17 @@ Beispiele:
 
 ```xml
 <date from-custom="1610-01-01" to-custom="1610-12-31"
-  datingMethod="gregorian">1610, 1620–1635</date>
+      datingMethod="gregorian">1610, 1620–1635</date>
 ```
 
 ```xml
-<date from-custom="1620-01-01" to-custom="1635-12-31
-  datingMethod="gregorian"/>
+<date from-custom="1620-01-01" to-custom="1635-12-31"
+      datingMethod="gregorian"/>
 ```
 
 ```xml
 <date when-custom="1466-05-25" datingMethod="julian">25. Mai und 25.
-  Heumonat 1466</date><date when="1466-07-25"/>
+    Heumonat 1466</date><date when="1466-07-25"/>
 ```
 
 #### 3.2.3 Uneindeutige Datierungen, die zugeordnet werden können
@@ -181,9 +183,10 @@ Der Inhalt von `@notAfter-custom` ist sicher, nicht aber der Inhalt in
 Beispiel:
 
 ```xml
-<date notBefore-custom="1489-01-01" notAfter-custom="1499-12-31
-datingMethod="julian">[Amtszeit] bis 1499<precision match="@notBefore-custom"
-precision="medium/></date>
+<date notBefore-custom="1489-01-01" notAfter-custom="1499-12-31"
+      datingMethod="julian">[Amtszeit] bis 1499
+    <precision match="@notBefore-custom" precision="medium"/>
+</date>
 ```
 
 Dasselbe gilt auch umgekehrt für Datierungen _ante quem_.
@@ -208,12 +211,15 @@ ist ein Kommentar obligatorisch.
 2. Bei Stücken, die doppelt, d. h. nach dem alten und neuen Stil, datiert sind,
    wird nach dem neuen Stil datiert.
 3. Wo nicht sicher ist, nach welchem Stil datiert wurde und begründete Zweifel
-   an einer Datierung nach neuem Stil vorliegen, wird dies innerhalb von`@datingMethod` mit dem Wert `unkown`  festgehalten.  Eine
-   Anmerkung mit [`<note>`](note.de.md) ist in der Regel sinnvoll.
+   an einer Datierung nach neuem Stil vorliegen, wird dies innerhalb von
+   `@datingMethod` mit dem Wert `unkown` festgehalten.
+   Eine Anmerkung mit [`<note>`](note.de.md) ist in der Regel sinnvoll.
 
 
-Datiert eine Quelle nach dem julianischen [Kalender](http://www.hls-dhs-dss.ch/textes/d/D12812.php), also dem alten Stil, wird
-das im edierten Stück angegebene Datum belassen. Die Normalisierung und Kennzeichnung des Datums oder der Zeitspanne erfolgt mit
+Datiert eine Quelle nach dem julianischen
+[Kalender](http://www.hls-dhs-dss.ch/textes/d/D12812.php), also dem alten Stil,
+wird das im edierten Stück angegebene Datum belassen. Die Normalisierung und
+Kennzeichnung des Datums oder der Zeitspanne erfolgt mit
 den entsprechenden Attributen, d. h. im gregorianischen Kalender bzw. im neuen
 Stil. Zusätzlich wird jedoch das Attribut `@datingMethod` mit dem Wert
 `gregorian` verwendet (vgl. Beispiel 2 unten).
@@ -223,19 +229,21 @@ Die Umrechnung vom alten in den neuen Stil kann mit dem Rechner des
 vorgenommen werden.
 
 Beispiele:  
+
 ```xml
 <date from-custom="1588-09-03" to-custom="1588-09-20"
-  datingMethod="julian">Zwischen 3. und 20. September 1588</date
+      datingMethod="julian">Zwischen 3. und 20. September 1588</date>
 ```
+
 ```xml
-<date from-custom="1588-09-13" to-custom="1588-09-30
-  datingMethod="gregorian">Zwischen 3. und 20. September 1588</date>
+<date from-custom="1588-09-13" to-custom="1588-09-30"
+      datingMethod="gregorian">Zwischen 3. und 20. September 1588</date>
 ```
 
 ```xml
 <date from-custom="1588-09-03" to-custom="1588-09-20"
-  datingMethod="unknown">Zwischen 3. und 20. September 1588</date>
-  <note>Es finden sich keine Informationen zum Kalenderwechsel.</note>
+      datingMethod="unknown">Zwischen 3. und 20. September 1588</date>
+<note>Es finden sich keine Informationen zum Kalenderwechsel.</note>
 ```
 
 ## 6 Kalenderwechsel
@@ -243,7 +251,8 @@ Beispiele:
 Die sieben katholischen Orte gingen – mit Ausnahme von Ob- und Nidwalden –
 am 12./22. Januar 1584 zum neuen Stil über. Obwalden und Nidwalden nahmen den
 neuen Kalender einen Monat später an. 
-In Luzern  war der Tag der Umstellung am 12. Januar 1584 alten Stils = 22. Januar 1584 neuen Stils (StALU RP 39, fol. 7r).
+In Luzern war der Tag der Umstellung am 12. Januar 1584 alten Stils = 22.
+Januar 1584 neuen Stils (StALU RP 39, fol. 7r).
 
 In der gemeineidgenössischen Vogtei Thurgau führte die Anwendung des neuen
 Stils 1584 zu Spannungen zwischen Zürich und den fünf inneren Orten.
@@ -271,7 +280,6 @@ ab der zweiten Hälfte des 18. Jahrhunderts. In den evangelischen Gemeinden
 erfolgte der Übergang zwischen 1783 (Oberengadin und Bergell) und 1812
 (Schiers und Grüsch).
 
-
 ## 7 Jahresanfangsstile
 
 Die unterschiedlichen Jahresanfangsstile:
@@ -284,12 +292,18 @@ Der Annuntiationsstil gilt in der Diözese Lausanne und in Freiburg vom
 Anfang bis in die 2. Hälfte des 15. Jahrhunderts, sonst in der Diözese
 Lausanne bis in die 1. Hälfte des 16. Jahrhunderts.
 
-In [SDS FR I/2/6](http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5)  wird der Annuntiationsstil mit «n. st.» (= «nouveau style»)
-angezeigt, das Datum wird aber gemäss modernem Kalender aufgelöst. Beispiel:
-` Ordonnance au sujet des voies de fait.
-  1364 (n. st.) février 4. –
+In [SDS FR I/2/6](http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5)
+wird der Annuntiationsstil mit «n. st.» (= «nouveau style»)
+angezeigt, das Datum wird aber gemäss modernem Kalender aufgelöst.  
+Beispiel:
+
+``` Ordonnance au sujet des voies de fait.
+ 1364 (n. st.) février 4. –
  In der Quelle steht folgende Datierung:
  «... lo quar jor dou moys de febrier, in l’ant de Nostre Segnour corant per
- mil CCC et sexante et troys (1363) ...» ` Weil nun der 4. Februar in der Zeit zwischen dem 1. Januar (oder allenfalls 25.
+ mil CCC et sexante et troys (1363) ...» 
+```
+ 
+Weil nun der 4. Februar in der Zeit zwischen dem 1. Januar (oder allenfalls 25.
 Dezember) und dem 25. März (= Annuntiation Mariä) liegt, ediert die
 Bearbeitende zu Recht den «4. Februar 1363» als den «4. Februar 1364».
