@@ -61,7 +61,7 @@ def test_orgName(
         ),
         (
             "orgName-inside-respStmt-with-invalid-content",
-            "<respStmt><orgName>bar</orgName></respStmt>",
+            "<seriesStmt><respStmt><orgName>bar</orgName></respStmt></seriesStmt>",
             False,
         ),
     ],
