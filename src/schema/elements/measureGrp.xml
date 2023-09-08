@@ -17,6 +17,7 @@
         <elementRef key="app"/>
         <elementRef key="cell"/>
         <elementRef key="lb"/>
+        <textNode/>
       </alternate>
     </sequence>
   </content>
@@ -24,7 +25,7 @@
     <p>Währungsbezeichnungen, die man auf Anhieb nicht umrechnen kann:</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">... buͦß verfallen sin
             <measureGrp><measure quantity="3" unit="lb" type="currency">druͤ pfund
-                </measure><measure quantity="5" unit="ß" type="currency">fuͤnf schilling
+                </measure> und <measure quantity="5" unit="ß" type="currency">fuͤnf schilling
                     pfenig
                 </measure></measureGrp>
             .
@@ -34,7 +35,7 @@
     <p>Unité monétaire qui ne peut pas être convertie :</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">... buͦß verfallen sin
             <measureGrp><measure quantity="3" unit="lb" type="currency">druͤ pfund
-                </measure><measure quantity="5" unit="ß" type="currency">fuͤnf schilling
+                </measure> und <measure quantity="5" unit="ß" type="currency">fuͤnf schilling
                     pfenig
                 </measure></measureGrp>
             .
