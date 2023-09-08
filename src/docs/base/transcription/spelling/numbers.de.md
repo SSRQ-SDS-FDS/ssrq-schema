@@ -5,7 +5,7 @@
 Arabische und römische Zahlen werden gemäss Vorlage ziffern- bzw.
 buchstabengetreu wiedergegeben.
 
-Römische Zahlen werden kleingeschrieben (vgl. [`<num>`](num.de.md))
+Römische Zahlen werden kleingeschrieben (vgl. [`<num>`](num.de.md)).
 
 Beispiel: «am .x. tag des monats Mey Anno m.d.xxv.»
 
