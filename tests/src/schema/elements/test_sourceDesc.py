@@ -25,7 +25,7 @@ from ..conftest import TEST_EXAMPLE_DIR, RNG_test_function
                             </physDesc>
                             <history>
                                 <origin>
-                                    <origDate calendar="gregorian" when-custom="1600-01-01"/>
+                                    <origDate type='document' calendar="gregorian" when-custom="1600-01-01"/>
                                 </origin>
                             </history>
                         </msDesc>

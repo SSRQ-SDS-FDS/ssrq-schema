@@ -23,7 +23,7 @@ from ..conftest import RNG_test_function
                                     </physDesc>
                                     <history>
                                         <origin>
-                                            <origDate calendar="unknown" from-custom="1000-01-01" to-custom="1099-12-31">11. Jahrhundert</origDate>
+                                            <origDate type='document' calendar="unknown" from-custom="1000-01-01" to-custom="1099-12-31">11. Jahrhundert</origDate>
                                         </origin>
                                     </history>
                                 </msDesc>
@@ -48,7 +48,7 @@ from ..conftest import RNG_test_function
                                     </physDesc>
                                     <history>
                                         <origin>
-                                            <origDate calendar="unknown" from-custom="1000-01-01" to-custom="1099-12-31">11. Jahrhundert</origDate>
+                                            <origDate type='document' calendar="unknown" from-custom="1000-01-01" to-custom="1099-12-31">11. Jahrhundert</origDate>
                                         </origin>
                                     </history>
                                 </msDesc>
@@ -67,7 +67,7 @@ from ..conftest import RNG_test_function
                                     </physDesc>
                                     <history>
                                         <origin>
-                                            <origDate calendar="unknown" from-custom="1000-01-01" to-custom="1099-12-31">11. Jahrhundert</origDate>
+                                            <origDate type='document' calendar="unknown" from-custom="1000-01-01" to-custom="1099-12-31">11. Jahrhundert</origDate>
                                         </origin>
                                     </history>
                                 </msDesc>
@@ -97,7 +97,7 @@ from ..conftest import RNG_test_function
                                     </physDesc>
                                     <history>
                                         <origin>
-                                            <origDate calendar="unknown" from-custom="1000-01-01" to-custom="1099-12-31">11. Jahrhundert</origDate>
+                                            <origDate type='document' calendar="unknown" from-custom="1000-01-01" to-custom="1099-12-31">11. Jahrhundert</origDate>
                                         </origin>
                                     </history>
                                 </msDesc>

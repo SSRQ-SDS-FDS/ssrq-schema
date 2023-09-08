@@ -10,7 +10,7 @@ from ..conftest import RNG_test_function
             "valid-history",
             """<history>
                     <origin>
-                        <origDate when-custom="1366-06-29" calendar="gregorian"/>
+                        <origDate type='document' when-custom="1366-06-29" calendar="gregorian"/>
                         <origPlace ref='loc000650'>Rheineck</origPlace>
                    </origin>
                 </history>""",

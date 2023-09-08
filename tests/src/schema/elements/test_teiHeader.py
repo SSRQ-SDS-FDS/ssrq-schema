@@ -70,7 +70,7 @@ from ..conftest import RNG_test_function
                                     </physDesc>
                                     <history>
                                         <origin>
-                                            <origDate calendar="unknown" from-custom="1615-04-15" to-custom="1700-12-31"/>
+                                            <origDate type="document" calendar="unknown" from-custom="1615-04-15" to-custom="1700-12-31"/>
                                         </origin>
                                     </history>
                                 </msDesc>
