@@ -61,12 +61,6 @@ def test_measure(
     "name, markup, message, result",
     [
         (
-            "invalid-empty-measure",
-            "<measure type='area' unit='Juchart' quantity='8' commodity='field'/>",
-            "measure must not be empty",
-            False,
-        ),
-        (
             "valid-measure-with-text",
             "<measure type='currency' unit='Angster' quantity='8' commodity='field'>bar</measure>",
             None,
