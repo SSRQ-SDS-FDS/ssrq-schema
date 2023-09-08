@@ -46,8 +46,8 @@ from ..conftest import RNG_test_function
                             <head>Projekt eines Eides für den Förster oder Bannwart in
                                 Sax-Forstegg</head>
                             <msContents>
-                                <summary>
-                                    <p xml:lang="de">foo</p>
+                                <summary xml:lang="de">
+                                    <p>foo</p>
                                 </summary>
                                 <msItem>
                                     <textLang xml:lang="de"/>
@@ -109,8 +109,8 @@ from ..conftest import RNG_test_function
                                 <head>Projekt eines Eides für den Förster oder Bannwart in
                                     Sax-Forstegg</head>
                                 <msContents>
-                                    <summary>
-                                        <p xml:lang="de">foo</p>
+                                    <summary xml:lang="de">
+                                        <p>foo</p>
                                     </summary>
                                     <msItem>
                                         <textLang xml:lang="de"/>
