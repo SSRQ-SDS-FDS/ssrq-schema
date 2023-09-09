@@ -14,7 +14,7 @@ EXAMPLES_DIR = SCHEMA_DIR / "examples"
 UTILS_DIR = PROJECT_DIR / "utils"
 SCHEMA_UTILS_DIR = UTILS_DIR / "schema"
 TEI_STYLESHEETS = SCHEMA_UTILS_DIR / "lib/tei_stylesheets/odds"
-XSLT_BASE_DIR = SCHEMA_UTILS_DIR / "xsl"
+XSLT_BASE_DIR = SCHEMA_UTILS_DIR / "xslt"
 
 # XSLT Stylesheets
 XSLTS = {
