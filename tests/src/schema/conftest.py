@@ -44,7 +44,9 @@ class SimpleTEIWriter:
         self.path = dir
 
     def write(self, name: str, content: str) -> None:
-        io.FileHandler.write(dir=self.path, file_name=f"{name}.xml", content=content)
+        io.FileHandler.write(
+            directory=self.path, file_name=f"{name}.xml", content=content
+        )
 
     def list(self) -> list[str]:
         return [str(file.absolute()) for file in self.path.glob("*.xml")]
@@ -101,7 +103,9 @@ def extract_specified_elements_for_rng(schema: SSRQSchemaType) -> list[ElName]:
     Returns:
         list[str]: A list of all specified elements – based on includes by specGrpRef.
     """
-    schema_content = io.FileHandler.read(dir=SCHEMA_DIR, file_name=schema["entry"])
+    schema_content = io.FileHandler.read(
+        directory=SCHEMA_DIR, file_name=schema["entry"]
+    )
 
     return re.findall(SPECIFIED_ELEMENTS, schema_content)
 

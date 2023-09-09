@@ -47,6 +47,6 @@ def test_sourceDesc_rng(
     result: bool,
 ):
     markup = markup.format(
-        msDesc=io.FileHandler.read(dir=TEST_EXAMPLE_DIR, file_name="msDesc.xml")
+        msDesc=io.FileHandler.read(directory=TEST_EXAMPLE_DIR, file_name="msDesc.xml")
     )
     test_element_with_rng("sourceDesc", name, markup, result, False)
