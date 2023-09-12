@@ -6,7 +6,7 @@ from utils.commons import filehandler as io
 from utils.commons.config import SRC_DIR
 
 translations_file = "docs/translations/translations.json"
-translations = io.FileHandler.read(dir=SRC_DIR, file_name=translations_file)
+translations = io.FileHandler.read(directory=SRC_DIR, file_name=translations_file)
 
 
 class Translator(BaseModel):
