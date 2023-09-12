@@ -116,13 +116,11 @@
                  for any elements that uses @calendar. -->
       <constraintSpec scheme="schematron" ident="calendar" mode="delete"/>
       <attList>
-        <attDef ident="calendar" mode="replace" usage="req">
-          <desc xml:lang="de" versionDate="2023-06-29">verwendeter Kalender (im Inhalt des Elements)</desc>
-          <desc xml:lang="en" versionDate="2023-06-29">calendar used (in the content of the element)</desc>
-          <desc xml:lang="fr" versionDate="2023-06-29">calendrier utilisé (dans le contenu de l'élément)
-                    </desc>
-          <desc xml:lang="it" versionDate="2023-06-29">calendario utilizzato (nel contenuto dell'elemento)
-                    </desc>
+        <attDef ident="calendar" mode="replace">
+          <desc xml:lang="de" versionDate="2023-09-12">verwendeter Kalender</desc>
+          <desc xml:lang="en" versionDate="2023-09-12">calendar used</desc>
+          <desc xml:lang="fr" versionDate="2023-09-12">calendrier utilisé</desc>
+          <desc xml:lang="it" versionDate="2023-09-12">calendario utilizzato</desc>
           <datatype>
             <dataRef key="ssrq.date.calendar"/>
           </datatype>
@@ -197,23 +195,7 @@
         </constraint>
       </constraintSpec>
       <attList>
-        <attDef ident="datingMethod" mode="replace">
-          <desc xml:lang="de" versionDate="2023-05-31">verwendeter Kalender (in den Attributen der Klasse
-                        att.datable.custom)
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-05-31">calendar used (in the attributes of the class
-                        att.datable.custom)
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-05-31">calendrier utilisé (dans les attributes de la classe
-                        att.datable.custom)
-                    </desc>
-          <desc xml:lang="it" versionDate="2023-05-31">calendario utilizzato (negli attributi della classe
-                        att.datable.custom)
-                    </desc>
-          <datatype>
-            <dataRef key="ssrq.date.calendar"/>
-          </datatype>
-        </attDef>
+        <attDef ident="datingMethod" mode="delete"/>
         <attDef ident="datingPoint" mode="delete"/>
         <attDef ident="from-custom" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-16">Gibt den Startpunkt eines Zeitraums gemäss ISO 8601
@@ -241,7 +223,7 @@
                             1584
                         </p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date datingMethod="julian" from-custom="1583-05-30" to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
+              <date calendar="julian" from-custom="1583-05-30" to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
                             </date>
             </egXML>
           </exemplum>
@@ -261,7 +243,7 @@
           </datatype>
           <exemplum type="ssrq-doc-example" versionDate="2023-05-16">
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date datingMethod="julian" notBefore-custom="1510-01-01" to-custom="1515-12-31">ca. 1510
+              <date calendar="julian" notBefore-custom="1510-01-01" to-custom="1515-12-31">ca. 1510
                             </date>
             </egXML>
           </exemplum>
@@ -284,7 +266,7 @@
           </datatype>
           <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date datingMethod="julian" notBefore-custom="1510-01-01" to-custom="1515-12-31">ca. 1510
+              <date calendar="julian" notBefore-custom="1510-01-01" to-custom="1515-12-31">ca. 1510
                             </date>
             </egXML>
           </exemplum>
@@ -312,7 +294,7 @@
                             1584
                         </p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date datingMethod="julian" from-custom="1583-05-30" to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
+              <date calendar="julian" from-custom="1583-05-30" to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
                             </date>
             </egXML>
           </exemplum>
@@ -332,7 +314,7 @@
             <p xml:lang="fr">Exemple de datation au 03 mars 1631</p>
             <p xml:lang="it">Esemplare datato 3 marzo 1631</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date datingMethod="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
+              <date calendar="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
             </egXML>
           </exemplum>
         </attDef>
