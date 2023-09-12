@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="pb" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="pb" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Beschreibt einen Seitenanfang im Original.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes the beginning of a page in the original.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Décrit le début d'une page dans l'original.</desc>
@@ -51,74 +51,18 @@
     </attDef>
     <attDef ident="xml:lang" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-    <p>Beispiel für eine Originalfoliierung</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <pb n="1r" type="original"/>
-      <lb/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-    <p>Exemple pour des folios originaux</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <pb n="1r" type="original"/>
-      <lb/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-    <p>Trennung von Worten über Seitenwechsel</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            geschri
-            <pb/>
-            <lb break="no"/>ben
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-    <p>Séparation des mots sur le changement de page</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            geschri
-            <pb/>
-            <lb break="no"/>ben
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-09-12">
-    <p>Blattzählung von Vorsatz- und Titelblättern mit römischen Ziffern:</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <pb n="Ir" facs="Burgerarchiv_Grabs_U_1640-1_Ir"/>
-      <head>Urbar oder libell der
-                <orgName>burgern zue
-                    <placeName>Werdenberg</placeName>
-                </orgName>
-                er, vidimiert und
-                renoviert anno salutis
-                <date from-custom="1640-01-01" to-custom="1640-12-31" calendar="unknown">1640</date>
-            </head>
-      <pb n="1" facs="Burgerarchiv_Grabs_U_1640-1_1"/>
-      <p><lb/>Ich, <persName>Jacob Felldtmann</persName>, der junger, der zeith der hochgeachten
-                woledlen gestrengen frommen ehren
-                ...
-            </p>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-    <p>Pagination de plusieurs pages de titre ou pages de garde avec des chiffres romains :</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <pb n="Ir"/>
-      <head>Urbar oder libell der
-                <orgName>burgern zue
-                    <placeName>Werdenberg</placeName>
-                </orgName>
-                er, vidimiert und
-                renoviert anno salutis
-                <date when="1640">1640</date>
-            </head>
-      <pb n="1"/>
-      <p><lb/>Ich, <persName>Jacob Felldtmann</persName>, der junger, der zeith der hochgeachten
-                woledlen gestrengen frommen ehren
-                ...
-            </p>
-    </egXML>
-  </exemplum>
+    <xi:include href="examples.xml" xpointer="ex-pb-break-de"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-break-en"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-break-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-break-it"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-original-de"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-original-en"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-original-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-original-it"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-with-title-de"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-with-title-en"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-with-title-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-with-title-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p><gi>pb</gi>
             wird am Anfang der Seite aufgeführt und enthält in der Regel die Foliierung [z. B. n="109v"]
