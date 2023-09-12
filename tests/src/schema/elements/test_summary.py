@@ -12,7 +12,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-summary",
-            "<summary><p xml:lang='de'>foo</p></summary>",
+            "<summary xml:lang='de'><p>foo</p></summary>",
             True,
         ),
         (
@@ -36,16 +36,11 @@ def test_summary_rng(
     [
         (
             "valid-summary",
-            "<summary><p xml:lang='de'>foo</p><p xml:lang='fr'>foo</p></summary>",
+            "<summary xml:lang='de'><p>foo</p><p>foo</p></summary>",
             True,
         ),
         (
-            "invalid-summary-without-xml-lang",
-            "<summary><p>foo</p></summary>",
-            False,
-        ),
-        (
-            "partial-valid-summary",
+            "invalid-summary-with-p-bearing.xml-lang",
             "<summary><p>foo</p><p xml:lang='fr'>foo</p></summary>",
             False,
         ),

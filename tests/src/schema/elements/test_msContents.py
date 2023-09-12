@@ -10,7 +10,7 @@ from ..conftest import RNG_test_function
             "valid-msContents-with-summary",
             """
             <msContents>
-                <summary>
+                <summary xml:lang='de'>
                     <p>Graf Heinrich II. von Werdenberg-Heiligenberg(-Rheineck) verleiht den Brüdern
                         Konrad, Heinz und Hans Grafer den Zoll von St. Ulrich und die Schenke in
                         Sevelen.</p>
@@ -37,7 +37,7 @@ from ..conftest import RNG_test_function
             "invalid-msContents-without-msItem",
             """
             <msContents>
-                <summary>
+                <summary xml:lang='de'>
                     <p>Graf Heinrich II. von Werdenberg-Heiligenberg(-Rheineck) verleiht den Brüdern
                         Konrad, Heinz und Hans Grafer den Zoll von St. Ulrich und die Schenke in
                         Sevelen.</p>

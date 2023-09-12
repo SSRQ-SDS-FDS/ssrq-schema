@@ -46,8 +46,8 @@ from ..conftest import RNG_test_function
                                     </msIdentifier>
                                     <head>Projekt eines Eides für den Förster oder Bannwart in Sax-Forstegg</head>
                                     <msContents>
-                                        <summary>
-                                            <p xml:lang="de">foo</p>
+                                        <summary xml:lang="de">
+                                            <p>foo</p>
                                         </summary>
                                         <msItem>
                                             <textLang xml:lang="de"/>
@@ -70,7 +70,7 @@ from ..conftest import RNG_test_function
                                     </physDesc>
                                     <history>
                                         <origin>
-                                            <origDate calendar="unknown" from-custom="1615-04-15" to-custom="1700-12-31"/>
+                                            <origDate type="document" calendar="unknown" from-custom="1615-04-15" to-custom="1700-12-31"/>
                                         </origin>
                                     </history>
                                 </msDesc>

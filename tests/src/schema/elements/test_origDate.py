@@ -12,27 +12,27 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-origDate",
-            "<origDate when-custom='1448-05-25' calendar='gregorian'>bar</origDate>",
+            "<origDate type='document' when-custom='1448-05-25' calendar='gregorian'>bar</origDate>",
             True,
         ),
         (
             "invalid-origDate-with-datingMethod",
-            "<origDate when-custom='1448-05-25' datingMethod='gregorian'>bar</origDate>",
+            "<origDate type='document' when-custom='1448-05-25' datingMethod='gregorian'>bar</origDate>",
             False,
         ),
         (
             "origDate-with-invalid-calendar",
-            "<origDate when-custom='1448-05-25' calendar='...'>bar</origDate>",
+            "<origDate type='document' when-custom='1448-05-25' calendar='...'>bar</origDate>",
             False,
         ),
         (
             "invalid-origDate-without-calendar",
-            "<origDate when-custom='1448-05-25'>bar</origDate>",
+            "<origDate type='document' when-custom='1448-05-25'>bar</origDate>",
             False,
         ),
         (
             "origDate-with-invalid-calendar",
-            "<origDate when-custom='1448-05-25' calendar='Modern'>bar</origDate>",
+            "<origDate type='document' when-custom='1448-05-25' calendar='Modern'>bar</origDate>",
             False,
         ),
     ],
@@ -51,17 +51,17 @@ def test_element(
     [
         (
             "valid-origDate-with-text",
-            "<origDate when-custom='1448-05-25' calendar='gregorian'>bar</origDate>",
+            "<origDate type='document' when-custom='1448-05-25' calendar='gregorian'>bar</origDate>",
             True,
         ),
         (
             "valid-origDate-without-text",
-            "<origDate when-custom='1448-05-25' calendar='gregorian'/>",
+            "<origDate type='document' when-custom='1448-05-25' calendar='gregorian'/>",
             True,
         ),
         (
             "invalid-origDate-with-calendar-only",
-            "<origDate calendar='gregorian'>bar</origDate>",
+            "<origDate type='document' calendar='gregorian'>bar</origDate>",
             False,
         ),
     ],

@@ -29,18 +29,20 @@
     <desc versionDate="2023-06-19" xml:lang="en">Schematron rules for tei:orgName</desc>
     <constraint>
       <sch:pattern>
-        <sch:rule context="tei:orgName[parent::tei:respStmt]">
+        <sch:rule context="tei:orgName[ancestor::tei:seriesStmt]">
           <sch:let name="ssrq" value="('Fondation des sources du droit de la Société suisse des juristes', 'Rechtsquellenstiftung des Schweizerischen Juristenvereins')"/>
           <sch:let name="content" value="normalize-space(.)"/>
+          <sch:assert test="$content = $ssrq">The content of
+                        <sch:name/>
+                        must match <sch:value-of select="string-join($ssrq, ' or ')"/>.
+                    </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:orgName[parent::tei:respStmt]">
           <sch:report test=".[@ref] or .[@role]">If
                         <sch:name/>
                         is used as part of
                         respStmt no attributes are allowed.
                     </sch:report>
-          <sch:assert test="$content = $ssrq">The content of
-                        <sch:name/>
-                        must match<sch:value-of select="string-join($ssrq, ' or ')"/>.
-                    </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>

@@ -49,7 +49,7 @@
         <sch:pattern>
           <sch:rule context="*[@facs]">
             <sch:report test="matches(@facs, '\._')" xml:lang="en">
-                            It's not allowed to use '_.' as part of the facsimile name.
+                            It's not allowed to use '._' as part of the facsimile name.
                         </sch:report>
             <sch:report test="matches(@facs, '__')" xml:lang="en">
                             An underscore should not be followed by another underscore.
@@ -62,9 +62,9 @@
       <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
       <constraint>
         <sch:pattern>
-          <sch:rule context="tei:publisher|tei:pubPlace|tei:*[name() = ('ab', 'abbr', 'add', 'bibl', 'del', 'div', 'expan', 'foreign', 'fw', 'head', 'hi', 'item', 'label', 'lem', 'licence', 'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'q', 'quote', 'repository', 'seg', 'settlement', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
+          <sch:rule context="tei:*[name() = ('ab', 'abbr', 'add', 'bibl', 'del', 'div', 'expan', 'foreign', 'fw', 'head', 'hi', 'item', 'label', 'lem', 'licence', 'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'publisher', 'pubPlace', 'q', 'quote', 'repository', 'seg', 'settlement', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
             <sch:assert test="string-length(normalize-space(.)) &gt; 0"><sch:name/>
-                            should not be empty.
+                            must not be empty.
                         </sch:assert>
           </sch:rule>
         </sch:pattern>

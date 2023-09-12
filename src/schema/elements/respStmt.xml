@@ -26,7 +26,7 @@
         <elementRef key="persName" maxOccurs="unbounded"/>
         <elementRef key="orgName"/>
       </alternate>
-      <elementRef key="resp"/>
+      <elementRef key="resp" maxOccurs="unbounded"/>
     </sequence>
   </content>
   <xi:include href="examples.xml" xpointer="ex-respStmt-de"/>

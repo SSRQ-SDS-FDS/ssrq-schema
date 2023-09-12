@@ -12,7 +12,12 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-respStmt",
+            "valid-respStmt-multiple-resps",
+            "<respStmt><persName>Friedrich Emil Welti</persName><resp>Transkription</resp><resp>Erstellung Faksimile</resp></respStmt>",
+            True,
+        ),
+        (
+            "valid-respStmt-orgName",
             "<respStmt><orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName><resp>Herausgabe</resp></respStmt>",
             True,
         ),

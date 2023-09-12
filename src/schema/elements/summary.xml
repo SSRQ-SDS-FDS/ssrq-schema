@@ -11,7 +11,9 @@
   <desc xml:lang="en" versionDate="2023-07-15">Describes the content of the source in detail.</desc>
   <desc xml:lang="fr" versionDate="2023-07-15">Décrit en détail le contenu de la source.</desc>
   <desc xml:lang="it" versionDate="2023-07-15">Descrive in dettaglio il contenuto della fonte.</desc>
-  <classes mode="replace"/>
+  <classes mode="replace">
+    <memberOf key="att.global"/>
+  </classes>
   <content>
     <elementRef key="p" maxOccurs="unbounded"/>
   </content>
@@ -20,14 +22,19 @@
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:summary/tei:p">
-          <sch:assert test=".[@xml:lang]"><sch:name/>
-                        as part of tei:summary should always
+          <sch:assert test="not(.[@xml:lang])"><sch:name/>
+                        as part of tei:summary should not
                         have an attribute xml:lang.
                     </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
   </constraintSpec>
+  <attList>
+    <attDef ident="n" mode="delete"/>
+    <attDef ident="xml:id" mode="delete"/>
+    <attDef ident="xml:lang" mode="change" usage="req"/>
+  </attList>
   <xi:include href="examples.xml" xpointer="ex-summary-de"/>
   <xi:include href="examples.xml" xpointer="ex-summary-en"/>
   <xi:include href="examples.xml" xpointer="ex-summary-fr"/>

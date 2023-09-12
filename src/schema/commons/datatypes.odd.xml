@@ -132,7 +132,7 @@
             <desc xml:lang="it" versionDate="2023-05-15">graffetta</desc>
           </valItem>
           <valItem ident="water_spot">
-            <desc xml:lang="de" versionDate="2023-05-02">wasserfleck</desc>
+            <desc xml:lang="de" versionDate="2023-05-02">Wasserfleck</desc>
             <desc xml:lang="en" versionDate="2023-05-15">water spot</desc>
             <desc xml:lang="fr" versionDate="2023-05-15">des traces d’eau ou d’humidité</desc>
             <desc xml:lang="it" versionDate="2023-05-15">tracce d’umidità</desc>
@@ -206,18 +206,6 @@
             </desc>
       <content>
         <valList type="closed">
-          <valItem ident="annunciation">
-            <desc xml:lang="de" versionDate="2023-03-17">Annuntiationsstil</desc>
-            <desc xml:lang="en" versionDate="2023-03-17">annunciation Style</desc>
-            <desc xml:lang="fr" versionDate="2023-05-15">le style de l’Annonciation</desc>
-            <desc xml:lang="it" versionDate="2023-05-15">stile dell’Annunciazione</desc>
-          </valItem>
-          <valItem ident="circumcision">
-            <desc versionDate="2023-03-17" xml:lang="de">Circumcisionsstil</desc>
-            <desc versionDate="2023-03-17" xml:lang="en">Circumcision Style</desc>
-            <desc versionDate="2023-03-17" xml:lang="fr">le style de la Circoncision</desc>
-            <desc versionDate="2023-03-17" xml:lang="it">stile della Circoncisione</desc>
-          </valItem>
           <valItem ident="gregorian">
             <desc versionDate="2023-03-17" xml:lang="de">Gregorianischer Kalender</desc>
             <desc versionDate="2023-03-17" xml:lang="en">Gregorian calendar</desc>
@@ -230,7 +218,13 @@
             <desc versionDate="2023-03-17" xml:lang="fr">le calendrier julien</desc>
             <desc versionDate="2023-03-17" xml:lang="it">il calendario giuliano</desc>
           </valItem>
-          <valItem ident="natal">
+          <valItem ident="julian_annunciation">
+            <desc xml:lang="de" versionDate="2023-03-17">Annuntiationsstil</desc>
+            <desc xml:lang="en" versionDate="2023-03-17">annunciation Style</desc>
+            <desc xml:lang="fr" versionDate="2023-05-15">le style de l’Annonciation</desc>
+            <desc xml:lang="it" versionDate="2023-05-15">stile dell’Annunciazione</desc>
+          </valItem>
+          <valItem ident="julian_natal">
             <desc xml:lang="de" versionDate="2023-03-17">Natalstil</desc>
             <desc xml:lang="en" versionDate="2023-03-17">Christmas Style or Nativity Style</desc>
             <desc xml:lang="fr" versionDate="2023-05-15">le style de la Nativité</desc>
@@ -2075,6 +2069,12 @@
       <desc xml:lang="it" versionDate="2023-05-30">Dimensioni per descrivere le dimensioni del testo</desc>
       <content>
         <valList type="closed">
+          <valItem ident="double_leaf">
+            <desc xml:lang="de" versionDate="2023-09-08">Doppelblatt</desc>
+            <desc xml:lang="en" versionDate="2023-09-08">Double leaf</desc>
+            <desc xml:lang="fr" versionDate="2023-09-08">Feuille double</desc>
+            <desc xml:lang="it" versionDate="2023-09-08">Doppio lenzuolo</desc>
+          </valItem>
           <valItem ident="leaf">
             <desc xml:lang="de" versionDate="2023-05-30">Blatt</desc>
             <desc xml:lang="en" versionDate="2023-05-30">leaf</desc>

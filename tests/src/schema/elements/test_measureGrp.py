@@ -8,7 +8,7 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-measureGrp",
-            "<measureGrp><lb/><measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure><measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure></measureGrp>",
+            "<measureGrp><lb/><measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure> und <measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure></measureGrp>",
             True,
         ),
         (

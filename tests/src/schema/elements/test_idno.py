@@ -57,6 +57,11 @@ def test_idno(
         ),
         (
             "valid-series-idno",
+            "<seriesStmt><idno>SSRQ-SG-III_4-77</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "valid-series-idno",
             "<seriesStmt><idno type='uuid'>73988c1a-40e1-4527-94b7-736d418b29d0</idno></seriesStmt>",
             True,
         ),

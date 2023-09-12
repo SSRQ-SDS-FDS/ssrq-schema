@@ -25,14 +25,6 @@
     <desc xml:lang="en" versionDate="2023-03-23">Constrains for tei:measure</desc>
     <constraint>
       <sch:pattern>
-        <sch:rule abstract="true" id="measure-not-empty">
-          <sch:assert test="matches(string(), '[\S\s]+[\S]+') and not(./*)"><sch:name/>
-                        must not be empty!
-                    </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:measure[@unit][not(@type)]">
-          <sch:extends rule="measure-not-empty"/>
-        </sch:rule>
         <sch:rule context="tei:measure[@type = 'age']">
           <sch:let name="age" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.time']//tei:valItem/@ident), '|'), '&quot;')}}"/>
           <sch:assert test="matches(@unit, concat('^', $age, '$'))"><sch:value-of select="./@unit"/>
@@ -40,7 +32,6 @@
                         from the following list:
                         <sch:value-of select="string-join(tokenize($age, '\|'), ', ')"/>
                     </sch:assert>
-          <sch:extends rule="measure-not-empty"/>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'area']">
           <sch:let name="area" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.area']//tei:valItem/@ident, '|'), '&quot;')}}"/>
@@ -49,7 +40,6 @@
                         from the following list:
                         <sch:value-of select="string-join(tokenize($area, '\|'), ', ')"/>
                     </sch:assert>
-          <sch:extends rule="measure-not-empty"/>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'currency']">
           <sch:let name="currency" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.currency']//tei:valItem/@ident, '|'), '&quot;')}}"/>
@@ -58,7 +48,6 @@
                         following list:
                         <sch:value-of select="string-join(tokenize($currency, '\|'), ', ')"/>
                     </sch:assert>
-          <sch:extends rule="measure-not-empty"/>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'length']">
           <sch:let name="length" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.length', 'ssrq.measure.lengths.base.cm', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
@@ -67,7 +56,11 @@
                         from the following list:
                         <sch:value-of select="string-join(tokenize($length, '\|'), ', ')"/>
                     </sch:assert>
-          <sch:extends rule="measure-not-empty"/>
+        </sch:rule>
+        <sch:rule context="tei:measure[not(@type = 'text_scope')]">
+          <sch:assert test="string-length(normalize-space(.)) &gt; 0"><sch:name/>
+                            must not be empty.
+                        </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'text_scope']">
           <sch:let name="scope" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.scope']//tei:valItem/@ident), '|'), '&quot;')}}"/>
@@ -80,8 +73,7 @@
                         <sch:value-of select="string-join(tokenize($scope, '\|'), ', ')"/>
                     </sch:assert>
           <sch:assert test="string-length(text()) = 0 and not(*)"><sch:name/>
-                        of type
-                        'text_scope' must be empty.
+                        of type 'text_scope' must be empty.
                     </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'undefined']">
@@ -91,7 +83,6 @@
                         choose from the following list:
                         <sch:value-of select="string-join(tokenize($various, '\|'), ', ')"/>
                     </sch:assert>
-          <sch:extends rule="measure-not-empty"/>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'volume']">
           <sch:let name="volume" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.lengths.base.klafter', 'ssrq.measure.capacity', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
@@ -100,7 +91,6 @@
                         from the following list:
                         <sch:value-of select="string-join(tokenize($volume, '\|'), ', ')"/>
                     </sch:assert>
-          <sch:extends rule="measure-not-empty"/>
         </sch:rule>
       </sch:pattern>
     </constraint>

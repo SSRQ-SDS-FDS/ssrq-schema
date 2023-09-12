@@ -10,7 +10,7 @@
   <classes mode="replace"/>
   <content>
     <sequence>
-      <elementRef key="summary" minOccurs="0"/>
+      <elementRef key="summary" minOccurs="0" maxOccurs="unbounded"/>
       <elementRef key="msItem"/>
     </sequence>
   </content>
