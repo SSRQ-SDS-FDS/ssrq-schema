@@ -81,19 +81,19 @@
             <lb break="no"/>ben
         </egXML>
   </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
+  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-09-12">
     <p>Blattzählung von Vorsatz- und Titelblättern mit römischen Ziffern:</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <pb n="Ir"/>
+      <pb n="Ir" facs="Burgerarchiv_Grabs_U_1640-1_Ir"/>
       <head>Urbar oder libell der
                 <orgName>burgern zue
                     <placeName>Werdenberg</placeName>
                 </orgName>
                 er, vidimiert und
                 renoviert anno salutis
-                <date when="1640">1640</date>
+                <date from-custom="1640-01-01" to-custom="1640-12-31" calendar="unknown">1640</date>
             </head>
-      <pb n="1"/>
+      <pb n="1" facs="Burgerarchiv_Grabs_U_1640-1_1"/>
       <p><lb/>Ich, <persName>Jacob Felldtmann</persName>, der junger, der zeith der hochgeachten
                 woledlen gestrengen frommen ehren
                 ...
