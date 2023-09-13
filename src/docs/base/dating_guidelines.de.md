@@ -220,53 +220,45 @@ verwendet wurden, gelten folgende Regelungen:
 
 1. In den Quellen vorkommende Daten werden so belassen, wie sie in der Quelle
    stehen. Sie werden nicht auf den neuen Stil umgeschrieben. In den Attributen
-   (`@when-custom`, etc.) wird das Datum nach dem in der Quelle verwendeten
-   Kalender zugrunde gelegt.
+   (`@when-custom` etc.) wird das Datum nach dem in der Quelle verwendeten
+   Kalender zugrunde gelegt.  
+   Beispiel:  
+    ```
+    <date from-custom="1588-09-03" to-custom="1588-09-20"
+          calendar="julian">Zwischen 3. und 20. September 1588</date>
+    ```
 2. Gibt eine Quelle ein Datum in beiden Stilen an (doppelte Datierung), wird
-   in den Attributen das Datum nach dem neuen Stil verwendet.
+   in den Attributen das Datum nach dem neuen Stil verwendet.  
+   Beispiel:  
+    ```
+    <date when-custom="1588-09-20" 
+          calendar="gregorian">20./10. September 1588</date>
+    ```
 3. Wenn ein Dokument nicht von einer Behörde stammt, die nachgewiesenermassen
    nach altem Stil datiert (z. B. die Kanzleien von Zürich und Bern), wird bei
    einem unkommentierten Datum von einer Datierung nach neuem Stil ausgegangen.
 4. Wo nicht sicher ist, nach welchem Stil datiert wurde und begründete Zweifel
    an einer Datierung nach neuem Stil vorliegen, wird dies innerhalb von
    `@calendar` mit dem Wert `unknown` festgehalten.
-   Eine Anmerkung mit [`<note>`](note.de.md) ist in diesen Fällen sinnvoll.
+   Eine Anmerkung mit [`<note>`](note.de.md) ist in diesen Fällen sinnvoll.  
+   Beispiel:  
+    ```
+    <date from-custom="1588-09-03" to-custom="1588-09-20"
+          calendar="unknown">Zwischen 3. und 20. September 1588</date>
+    <note>Es finden sich keine Informationen zum Kalenderwechsel.</note>
+    ```
 5. In den editorischen Paratexten (z. B. Einleitungen, Kommentare, etc.) sollten
    die Bearbeitenden den neuen Stil verwenden, sofern sie nicht explizit auf
-   die Verwendung des alten Stils hinweisen möchten.
-
-Beispiele:  
-
-```
-Angabe nach altem Stil in der Quelle wird so belassen:
-<date from-custom="1588-09-03" to-custom="1588-09-20"
-      calendar="julian">Zwischen 3. und 20. September 1588</date>
-```
-
-```
-Angabe eines Datum nach neuem Stil, wenn die Quelle beide Stile hat:
-<date when-custom="1588-09-20" 
-      calendar="gregorian">20./10. September 1588</date>
-
-```
-
-```
-Angabe eines Datums, wenn der verwendete Kalender unklar ist:
-<date from-custom="1588-09-03" to-custom="1588-09-20"
-      calendar="unknown">Zwischen 3. und 20. September 1588</date>
-<note>Es finden sich keine Informationen zum Kalenderwechsel.</note>
-```
-
-```
-Angabe eines Datums in den Kommentaren mit expliziter Erwähnung des Datums
-in der Quelle nach altem Stil:
-am <date when-custom="1588-09-03" calendar="julian">3. September 1588</date>
-<note>Der Verkauf des Landguts XY an die Familie Soundso wurde nicht,
- wie in der Quelle steht, am <date when-custom="1588-09-03" calendar="julian">
- 3. September 1588</date>, sondern bereits am <date when-custom="1588-08-13"
- calendar="gregorian">am 13. August 1588</date> abgeschlossen. Dies geht aus
- XYZ hervor, vgl. <bibl><ref>Hinz 1962, S. 63.</ref></bibl></note>
-```
+   die Verwendung des alten Stils hinweisen möchten.  
+   Beispiel:  
+   ```
+    am <date when-custom="1588-09-03" calendar="julian">3. September 1588</date>
+    <note>Der Verkauf des Landguts XY an die Familie Soundso wurde nicht,
+     wie in der Quelle steht, am <date when-custom="1588-09-03" calendar="julian">
+     3. September 1588</date>, sondern bereits am <date when-custom="1588-08-13"
+     calendar="gregorian">am 13. August 1588</date> abgeschlossen. Dies geht aus
+     XYZ hervor, vgl. <bibl><ref>Hinz 1962, S. 63.</ref></bibl></note>
+   ```
 
 Die sieben katholischen Orte gingen – mit Ausnahme von Ob- und Nidwalden –
 am 12./22. Januar 1584 zum neuen Stil über. Obwalden und Nidwalden nahmen den
@@ -300,10 +292,10 @@ ab der zweiten Hälfte des 18. Jahrhunderts. In den evangelischen Gemeinden
 erfolgte der Übergang zwischen 1783 (Oberengadin und Bergell) und 1812
 (Schiers und Grüsch).
 
-## 7 Jahresanfangsstile
+## 6 Jahresanfangsstile
 
-Die unterschiedlichen Jahresanfangsstile:
-_Circumcisionsstil_ (Jahresanfang am 1. Januar),
+Die vom üblichen Jahresanfangsstil, dem
+_Circumcisionsstil_ (Jahresanfang am 1. Januar), abweichenden Stile:
 _Annuntiationsstil_ (Jahresanfang am 25. März) und
 _Natalstil_ (Jahresanfang am 25. Dezember)
 müssen in [`<date>`](date.de.md) mithilfe von `@calendar` vermerkt werden.
@@ -317,9 +309,9 @@ wird der Annuntiationsstil mit «n. st.» (= «nouveau style»)
 angezeigt, das Datum wird aber gemäss modernem Kalender aufgelöst.  
 Beispiel:
 
-``` Ordonnance au sujet des voies de fait.
- 1364 (n. st.) février 4. –
- In der Quelle steht folgende Datierung:
+```
+ Ordonnance au sujet des voies de fait. 1364 (n. st.) février 4. –  
+ In der Quelle steht folgende Datierung:  
  «... <date calendar="julian_annunciation" when-custom="1363-02-04">lo quar jor
  dou moys de febrier, in l’ant de Nostre Segnour corant per
  mil CCC et sexante et troys</date> ...» 
