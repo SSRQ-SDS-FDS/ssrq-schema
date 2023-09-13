@@ -212,7 +212,7 @@ ist ein Kommentar obligatorisch.
 
 ## 5 Neuer Stil / alter Stil
 
-Für die Zeit der
+Für die Zeit nach der
 [Kalenderreform](http://www.hls-dhs-dss.ch/textes/d/D12812.php),
 d. h. die Zeit, in der sowohl der julianische Kalender (alter Stil)
 als auch der gregorianische Kalender (neuer Stil)
@@ -220,8 +220,8 @@ verwendet wurden, gelten folgende Regelungen:
 
 1. In den Quellen vorkommende Daten werden so belassen, wie sie in der Quelle
    stehen. Sie werden nicht auf den neuen Stil umgeschrieben. In den Attributen
-   (`@when-custom` etc.) wird das Datum nach dem in der Quelle verwendeten
-   Kalender zugrunde gelegt.  
+   (`@when-custom`, `from-custom`, `to-custom` etc.) wird das Datum nach dem 
+   in der Quelle verwendeten Kalender zugrunde gelegt.  
    Beispiel:  
     ```
     <date from-custom="1588-09-03" to-custom="1588-09-20"
@@ -231,8 +231,8 @@ verwendet wurden, gelten folgende Regelungen:
    in den Attributen das Datum nach dem neuen Stil verwendet.  
    Beispiel:  
     ```
-    <date when-custom="1588-09-20" 
-          calendar="gregorian">20./10. September 1588</date>
+    <date when-custom="1590-10-25" 
+          calendar="gregorian">25/15. octobris anno 90</date>
     ```
 3. Wenn ein Dokument nicht von einer Behörde stammt, die nachgewiesenermassen
    nach altem Stil datiert (z. B. die Kanzleien von Zürich und Bern), wird bei
@@ -247,17 +247,18 @@ verwendet wurden, gelten folgende Regelungen:
           calendar="unknown">Zwischen 3. und 20. September 1588</date>
     <note>Es finden sich keine Informationen zum Kalenderwechsel.</note>
     ```
-5. In den editorischen Paratexten (z. B. Einleitungen, Kommentare, etc.) sollten
+5. In den editorischen Paratexten (z. B. Einleitungen, Kommentare etc.) sollten
    die Bearbeitenden den neuen Stil verwenden, sofern sie nicht explizit auf
    die Verwendung des alten Stils hinweisen möchten.  
    Beispiel:  
    ```
     am <date when-custom="1588-09-03" calendar="julian">3. September 1588</date>
     <note>Der Verkauf des Landguts XY an die Familie Soundso wurde nicht,
-     wie in der Quelle steht, am <date when-custom="1588-09-03" calendar="julian">
-     3. September 1588</date>, sondern bereits am <date when-custom="1588-08-13"
-     calendar="gregorian">am 13. August 1588</date> abgeschlossen. Dies geht aus
-     XYZ hervor, vgl. <bibl><ref>Hinz 1962, S. 63.</ref></bibl></note>
+    wie in der Quelle steht, am <date when-custom="1588-09-03" calendar="julian">
+    3. September 1588</date>, sondern bereits <date from-custom="1587-01-01"
+    to-custom="1587-12-31 calendar="gregorian">1587</date> abgeschlossen. 
+    Dies geht aus XYZ hervor, vgl. <bibl><ref>Hinz 1962, S. 63.</ref></bibl>
+    </note>
    ```
 
 Die sieben katholischen Orte gingen – mit Ausnahme von Ob- und Nidwalden –
@@ -298,7 +299,8 @@ Die vom üblichen Jahresanfangsstil, dem
 _Circumcisionsstil_ (Jahresanfang am 1. Januar), abweichenden Stile:
 _Annuntiationsstil_ (Jahresanfang am 25. März) und
 _Natalstil_ (Jahresanfang am 25. Dezember)
-müssen in [`<date>`](date.de.md) mithilfe von `@calendar` vermerkt werden.
+müssen in [`<date>`](date.de.md) und
+[`<origDate>`](origDate.de.md) mithilfe von `@calendar` vermerkt werden.
 
 Der Annuntiationsstil gilt in der Diözese Lausanne und in Freiburg vom
 Anfang bis in die 2. Hälfte des 15. Jahrhunderts, sonst in der Diözese
