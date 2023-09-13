@@ -68,12 +68,7 @@ def test_dependency_of_unit_and_quantity(
             True,
         ),
         (
-            "incorrect-facs",
-            "<pb facs='foo._1r'/>",
-            False,
-        ),
-        (
-            "incorrect-facs",
+            "incorrect-facs-with-two-underscores",
             "<pb facs='foo__1r'/>",
             False,
         ),

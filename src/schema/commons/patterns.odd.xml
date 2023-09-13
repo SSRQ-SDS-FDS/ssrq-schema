@@ -71,12 +71,12 @@
     </dataSpec>
     <!-- file names -->
     <dataSpec ident="ssrq.facs.name" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2023-04-06">Restriktion für Datei- bzw. Faksimilenamen.</desc>
-      <desc xml:lang="en" versionDate="2023-04-06">Restriction for file or facsimile names.</desc>
-      <desc xml:lang="fr" versionDate="2023-04-06">Restriction pour les noms de fichiers ou de fac-similés.</desc>
-      <desc xml:lang="it" versionDate="2023-05-15">Restrizione sui nomi di file o fax.</desc>
+      <desc xml:lang="de" versionDate="2023-09-13">Einschränkung für Faksimilenamen</desc>
+      <desc xml:lang="en" versionDate="2023-09-13">Restriction for facsimile names</desc>
+      <desc xml:lang="fr" versionDate="2023-09-13">Restriction concernant les noms de télécopie</desc>
+      <desc xml:lang="it" versionDate="2023-09-13">Limitazione per i nomi di fax</desc>
       <content>
-        <dataRef name="string" restriction="[A-Za-z_\-\.0-9]+([1-9]|[rv]|plica)"/>
+        <dataRef name="string" restriction="[A-Za-z_\-0-9]+([1-9]|[rv]|plica)"/>
       </content>
     </dataSpec>
     <!-- pointer to SSRQ databases -->
