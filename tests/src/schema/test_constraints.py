@@ -68,12 +68,7 @@ def test_dependency_of_unit_and_quantity(
             True,
         ),
         (
-            "incorrect-facs",
-            "<pb facs='foo._1r'/>",
-            False,
-        ),
-        (
-            "incorrect-facs",
+            "incorrect-facs-with-two-underscores",
             "<pb facs='foo__1r'/>",
             False,
         ),
@@ -95,32 +90,32 @@ def test_facs_naming_conventions(
     [
         (
             "correct-datable-with-when",
-            "<date datingMethod='gregorian' when-custom='2020'/>",
+            "<date calendar='gregorian' when-custom='2020'/>",
             True,
         ),
         (
             "incorrect-datable-combination-when-to-custom",
-            "<date datingMethod='gregorian' when-custom='2020' to-custom='2020-12-31'/>",
+            "<date calendar='gregorian' when-custom='2020' to-custom='2020-12-31'/>",
             False,
         ),
         (
             "correct-datable-combination-from-to",
-            "<date datingMethod='gregorian' from-custom='2020-01-01' to-custom='2020-12-31'/>",
+            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31'/>",
             True,
         ),
         (
             "incorrect-datable-from-without-to",
-            "<date datingMethod='gregorian' from-custom='2020-01-01' />",
+            "<date calendar='gregorian' from-custom='2020-01-01' />",
             False,
         ),
         (
             "incorrect-datable-combination-from-to-notBefore",
-            "<date datingMethod='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notBefore-custom='2019'/>",
+            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notBefore-custom='2019'/>",
             False,
         ),
         (
             "incorrect-datable-combination-from-to-notAfter",
-            "<date datingMethod='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notAfter-custom='2019'/>",
+            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notAfter-custom='2019'/>",
             False,
         ),
     ],

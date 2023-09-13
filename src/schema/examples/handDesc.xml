@@ -2,15 +2,15 @@
 <egXML xmlns="http://www.tei-c.org/ns/Examples">
   <handDesc>
     <handNote xml:id="firstHand" scribe="per123456">
-      <date datingMethod="julian" from-custom="1001-01-01" to-custom="1100-12-31">
+      <date calendar="gregorian" from-custom="1001-01-01" to-custom="1100-12-31">
         <precision precision="low" match="@from-custom"/>
       </date>
     </handNote>
     <handNote xml:id="hand18c">
-      <date datingMethod="gregorian" from-custom="1701-01-01" to-custom="1800-12-31"/>
+      <date calendar="gregorian" from-custom="1701-01-01" to-custom="1800-12-31"/>
     </handNote>
     <handNote xml:id="hand18cf">
-      <date datingMethod="gregorian" from-custom="1701-01-01" to-custom="1800-12-31">
+      <date calendar="gregorian" from-custom="1701-01-01" to-custom="1800-12-31">
         <precision precision="low" match="@from-custom"/>
       </date>
     </handNote>

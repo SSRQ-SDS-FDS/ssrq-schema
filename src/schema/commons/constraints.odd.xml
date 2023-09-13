@@ -42,17 +42,14 @@
       </constraint>
     </constraintSpec>
     <constraintSpec scheme="schematron" ident="sch-gl-3">
-      <desc xml:lang="en" versionDate="2023-04-06">A dot ('.') should not be followed by an underscore ('_') in
-                @facs.
+      <desc xml:lang="en" versionDate="2023-04-06">Global constraint to ensure pattern of
+          facsimile names
             </desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="*[@facs]">
-            <sch:report test="matches(@facs, '\._')" xml:lang="en">
-                            It's not allowed to use '._' as part of the facsimile name.
-                        </sch:report>
             <sch:report test="matches(@facs, '__')" xml:lang="en">
-                            An underscore should not be followed by another underscore.
+                            An underscore should not be followed by another underscore in @facs.
                         </sch:report>
           </sch:rule>
         </sch:pattern>

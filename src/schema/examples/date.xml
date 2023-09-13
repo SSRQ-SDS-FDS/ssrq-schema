@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<div xmlns="http://www.tei-c.org/ns/1.0"><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-day"><date datingMethod="gregorian" when-custom="1631-03-03">März, 03, 1631</date></egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-ca"><date datingMethod="julian" notBefore-custom="1510-01-01" notAfter-custom="1520-12-31">ca.
-    1510</date></egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-from-to"><date datingMethod="julian" from-custom="1583-05-30" to-custom="1584-05-21">von
+<div xmlns="http://www.tei-c.org/ns/1.0"><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-day"><date calendar="gregorian" when-custom="1631-03-03">März, 03, 1631</date></egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-ca"><date calendar="julian" notBefore-custom="1510-01-01" notAfter-custom="1520-12-31">ca.
+    1510</date></egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-from-to"><date calendar="julian" from-custom="1583-05-30" to-custom="1584-05-21">von
     Pfingstmontag 1583 bis Pfingstmontag 1584</date></egXML>rg
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-abbr"><date datingMethod="julian" when-custom="1623-08-25">25.<hi rend="sup">ten</hi>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-abbr"><date calendar="julian" when-custom="1623-08-25">25.<hi rend="sup">ten</hi>
             <abbr>Aug</abbr> 1623</date></egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-deadline">
         wellind
-    und doch nit länger dann bis <date type="deadline" datingMethod="unknown" when-custom="--04-16">zuͦ
+    und doch nit länger dann bis <date type="deadline" calendar="unknown" when-custom="--04-16">zuͦ
     mittem aprellen</date>
     </egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-holiday">
         ... samstag nach <date type="holiday"><persName ref="per000351">Paul</persName>i</date> ...
@@ -13,8 +13,8 @@
         ... <date dur-iso="P14D">vierzehn Tage</date> ...
     </egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-duriso-repeated">
         ... <date dur-iso="R/P1Y">jährlich</date> ...
-    </egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-gregjul"><date when-custom="1590-10-25" datingMethod="gregorian">25/15. octobris anno 90</date></egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-period"><date period="summer">somer</date> unnd <date period="winter">wintter</date>
+    </egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-gregjul"><date when-custom="1590-10-25" calendar="gregorian">25/15. octobris anno 90</date></egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-period"><date period="summer">somer</date> unnd <date period="winter">wintter</date>
     </egXML><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-date-roman"><lb/> qual cosa si è essequito sino nell'
-        <lb/> anno <date when-custom="1558" datingMethod="julian">mdlviii</date> all'hora più oltra è apparso a
+        <lb/> anno <date when-custom="1558" calendar="julian">mdlviii</date> all'hora più oltra è apparso a
         <lb/> n[ost]ri sig[no]ri et superiori
     </egXML></div>

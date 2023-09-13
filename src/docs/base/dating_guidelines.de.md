@@ -18,14 +18,19 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
 - Wenn zwei Datierungen mit unterschiedlichen Zeiträumen am selben Datum
   starten, dann steht die genauere Datierung vor der ungenaueren, z. B.
   «6.–7. Jh.» vor «6.–8. Jh.» und «1300–1350» vor «1300–1375».
+- Wenn zwei Datierungen mit dem gleichen Zeitraum vorliegen, bei einer der
+  Datierungen jedoch der zugrunde liegende Kalender unbekannt ist
+  (d. h. `@calendar="unknown"`), dann steht die Datierung mit bekanntem
+  Kalender zuerst, also `<date calendar="julian" when="1590-01-01/>` vor
+  `<date calendar="unknown" when="1590-01-01/>`.
 
 ## 2 Eindeutige Datierungen
 
 - Eindeutige Datierungen werden gemäss
   [ISO 8601](https://de.wikipedia.org/wiki/ISO_8601) innerhalb von
   [`<date>`](date.de.md) oder [`<origDate>`](origDate.de.md) mit
-  dem Attribut `@when-custom` normalisiert.
-- Das Datumsformat lautet grundsätzlich: `YYYY-MM-DD`, d. h. vierstellige
+  dem Attribut `@when-custom` auf folgendes Datumsformat hin normalisiert:
+  `YYYY-MM-DD`, d. h. vierstellige
   Jahresangabe, zweistellige Monatsangabe, zweistellige Tagesangabe, die ggf.
   mit führenden Nullen aufgefüllt werden.
 - Nach ISO 8601 und TEI ist bei der Verwendung des `@when`-Attributs immer der
@@ -33,31 +38,36 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
   [Kalender](https://hls-dhs-dss.ch/de/articles/012812/2018-01-15/)
   gemeint, was bei der SSRQ allerdings nicht immer der Fall ist.
   Deshalb verwenden wir statt `@when` das allgemeinere Attribut
-  `@when-custom` in Kombination mit `@datingMethod`, um den Kalender
-  zu spezifizieren.
+  `@when-custom` in Kombination mit `@calendar`, um den Kalender
+  zu spezifizieren. Wenn der verwendete Kalender unbekannt ist, wird
+  `calendar="unknown"` benutzt.
   Beispiele:
 
-    ```xml
-    <date when-custom="2001-09-11" datingMethod="gregorian">11 Sept 2001</date>
+    ```
+    <date when-custom="2001-09-11" calendar="gregorian">11 Sept 2001</date>
     ```
 
-    ```xml
-    <date when-custom="1001-09-11" datingMethod="julian">11 Sept 1001</date>
+    ```
+    <date when-custom="1001-09-11" calendar="julian">11 Sept 1001</date>
+    ```
+  
+    ```
+    <date when-custom="1601-09-11" calendar="unknown">11 Sept 1601</date>
     ```
 
 - Hierarchisch übergeordnete Leerstellen (z. B. fehlendes Jahr, fehlender
   Monat) werden in `@when-custom` mit einem Bindestrich ("-") angegeben.
   Beispiele:
 
-    ```xml
+    ```
     <date when-custom="--09-11">11.09.</date>
     ```
 
-    ```xml
+    ```
     <date when-custom="--09">September</date>
     ```
 
-    ```xml
+    ```
     <date when-custom="---11">Elfter Tag eines Monats</date>
     ```
 
@@ -65,7 +75,7 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
   nicht mit `@when-custom` ausgezeichnet, sondern wie eine uneindeutige
   Datierung als Zeitraum mit `@from-custom` und `@to-custom` ausgezeichnet.
   Beispiel:
-  `<date from-custom="1001-09-01" to-custom="1001-09-30" datingMethod="julian">September 1001</date>`
+  `<date from-custom="1001-09-01" to-custom="1001-09-30" calendar="julian">September 1001</date>`
 - Datierungen nach Heiligen- oder Festtagen werden mithilfe der HTML-Version des
   [Grotefend](http://www.manuscripta-mediaevalia.de/gaeste/grotefend/grotefend.htm)
   aufgelöst. Dort gibt auch es verschiedene Hilfsmittel, wie z. B. einen
@@ -80,9 +90,9 @@ Wenn die Datierung eines Stücks nicht sicher ist, muss die Datierung in Form
 eines Zeitraums angegeben werden.
 Beispiel:
 
-```xml
-<date when-custom="1736-11-08" datingMethod="gregorian">8./22. November 1736</date>
-<date when-custom="1736-11-22" datingMethod="gregorian"/>
+```
+<date when-custom="1736-11-08" calendar="gregorian">8./22. November 1736</date>
+<date when-custom="1736-11-22" calendar="gregorian"/>
 ```
 
 ### 3.2 Zeiträume
@@ -90,18 +100,18 @@ Beispiel:
 #### 3.2.1 Durchgehende Zeiträume
 
 Zeiträume werden mit den Attributen `@from-custom` und `@to-custom` zusammen mit
-`@datingMethod` innerhalb von [`<date>`](date.de.md) oder
+`@calendar` innerhalb von [`<date>`](date.de.md) oder
 [`<origDate>`](origDate.de.md) ausgezeichnet.
 Beispiele:
 
-```xml
+```
 <date from-custom="1521-12-11" to-custom="1544-04-16"
-      datingMethod="julian">11. Dezember 1521 - 16. April 1544</date>
+      calendar="julian">11. Dezember 1521 - 16. April 1544</date>
 ```
 
-```xml
+```
 <date from-custom="1717-01-01" to-custom="1718-12-31"
-      datingMethod="gregorian">1717-1718</date>
+      calendar="gregorian">1717-1718</date>
 ```
 
 #### 3.2.2 Unterbrochene Zeiträume
@@ -110,18 +120,18 @@ Liegen unterbrochene Zeiträumen vor, werden diese wie mehrere Zeiträume
 behandelt.
 Beispiele:
 
-```xml
+```
 <date from-custom="1610-01-01" to-custom="1610-12-31"
-      datingMethod="gregorian">1610, 1620–1635</date>
+      calendar="gregorian">1610, 1620–1635</date>
 ```
 
-```xml
+```
 <date from-custom="1620-01-01" to-custom="1635-12-31"
-      datingMethod="gregorian"/>
+      calendar="gregorian"/>
 ```
 
-```xml
-<date when-custom="1466-05-25" datingMethod="julian">25. Mai und 25.
+```
+<date when-custom="1466-05-25" calendar="julian">25. Mai und 25.
     Heumonat 1466</date><date when="1466-07-25"/>
 ```
 
@@ -131,15 +141,15 @@ Unsichere Jahresangaben, zum Beispiel «wohl 1491», werden mit
 [`<precision>`](precision.de.md) ausgezeichnet.
 Beispiel:
 
-```xml
-<date from-custom="1491-01-01" to-custom="1491-12-31">wohl 1491
+```
+<date from-custom="1491-01-01" to-custom="1491-12-31" calendar="julian">wohl 1491
     <precision match="@from-custom @to-custom" precision="medium"/>
 </date>
 ```
 
 Datierungen, die nicht eindeutig sind, jedoch zugeordnet werden können,
 werden als Zeiträume mit `@from-custom` und `@to-custom` zusammen mit
-`@datingMethod` sowie [`<precision>`](precision.de.md) ausgezeichnet.
+`@calendar` sowie [`<precision>`](precision.de.md) ausgezeichnet.
 
 | Beispiel          | Werte `@from-custom` und `@to-custom` | Zeitspanne: Schlüssel |
 | ----------------- | ------------------------------------- | --------------------- |
@@ -182,9 +192,9 @@ Der Inhalt von `@notAfter-custom` ist sicher, nicht aber der Inhalt in
 `@notBefore-custom`, weshalb er ein [`<precision>`](precision.de.md) erhält.
 Beispiel:
 
-```xml
+```
 <date notBefore-custom="1489-01-01" notAfter-custom="1499-12-31"
-      datingMethod="julian">[Amtszeit] bis 1499
+      calendar="julian">[Amtszeit] bis 1499
     <precision match="@notBefore-custom" precision="medium"/>
 </date>
 ```
@@ -200,53 +210,63 @@ Ein erklärender Kommentar ist notwendig.
 Weicht eine Datierung im Regest von einer Datierung im Quellentext ab,
 ist ein Kommentar obligatorisch.
 
-## 5 Neuer Stil / Alter Stil
+## 5 Neuer Stil / alter Stil
 
-1. Es wird grundsätzlich nach dem neuen Stil, d. h. dem gregorianischer
-   Kalender, datiert.
-   Wenn ein Dokument nicht von einer Behörde stammt, die nachgewiesenermassen
-   nach altem Stil, d. h. dem julianischer Kalender, datiert (z. B. die
-   Kanzleien von Zürich und Bern), wird bei einem unkommentierten Datum von
-   einer Datierung nach neuem Stil ausgegangen.
-2. Bei Stücken, die doppelt, d. h. nach dem alten und neuen Stil, datiert sind,
-   wird nach dem neuen Stil datiert.
-3. Wo nicht sicher ist, nach welchem Stil datiert wurde und begründete Zweifel
+Für die Zeit der
+[Kalenderreform](http://www.hls-dhs-dss.ch/textes/d/D12812.php),
+d. h. die Zeit, in der sowohl der julianische Kalender (alter Stil)
+als auch der gregorianische Kalender (neuer Stil)
+verwendet wurden, gelten folgende Regelungen:
+
+1. In den Quellen vorkommende Daten werden so belassen, wie sie in der Quelle
+   stehen. Sie werden nicht auf den neuen Stil umgeschrieben. In den Attributen
+   (`@when-custom`, etc.) wird das Datum nach dem in der Quelle verwendeten
+   Kalender zugrunde gelegt.
+2. Gibt eine Quelle ein Datum in beiden Stilen an (doppelte Datierung), wird
+   in den Attributen das Datum nach dem neuen Stil verwendet.
+3. Wenn ein Dokument nicht von einer Behörde stammt, die nachgewiesenermassen
+   nach altem Stil datiert (z. B. die Kanzleien von Zürich und Bern), wird bei
+   einem unkommentierten Datum von einer Datierung nach neuem Stil ausgegangen.
+4. Wo nicht sicher ist, nach welchem Stil datiert wurde und begründete Zweifel
    an einer Datierung nach neuem Stil vorliegen, wird dies innerhalb von
-   `@datingMethod` mit dem Wert `unkown` festgehalten.
-   Eine Anmerkung mit [`<note>`](note.de.md) ist in der Regel sinnvoll.
-
-
-Datiert eine Quelle nach dem julianischen
-[Kalender](http://www.hls-dhs-dss.ch/textes/d/D12812.php), also dem alten Stil,
-wird das im edierten Stück angegebene Datum belassen. Die Normalisierung und
-Kennzeichnung des Datums oder der Zeitspanne erfolgt mit
-den entsprechenden Attributen, d. h. im gregorianischen Kalender bzw. im neuen
-Stil. Zusätzlich wird jedoch das Attribut `@datingMethod` mit dem Wert
-`gregorian` verwendet (vgl. Beispiel 2 unten).
-
-Die Umrechnung vom alten in den neuen Stil kann mit dem Rechner des
-[Grotefend](http://www.manuscripta-mediaevalia.de/gaeste/grotefend/grotefend.htm)
-vorgenommen werden.
+   `@calendar` mit dem Wert `unknown` festgehalten.
+   Eine Anmerkung mit [`<note>`](note.de.md) ist in diesen Fällen sinnvoll.
+5. In den editorischen Paratexten (z. B. Einleitungen, Kommentare, etc.) sollten
+   die Bearbeitenden den neuen Stil verwenden, sofern sie nicht explizit auf
+   die Verwendung des alten Stils hinweisen möchten.
 
 Beispiele:  
 
-```xml
+```
+Angabe nach altem Stil in der Quelle wird so belassen:
 <date from-custom="1588-09-03" to-custom="1588-09-20"
-      datingMethod="julian">Zwischen 3. und 20. September 1588</date>
+      calendar="julian">Zwischen 3. und 20. September 1588</date>
 ```
 
-```xml
-<date from-custom="1588-09-13" to-custom="1588-09-30"
-      datingMethod="gregorian">Zwischen 3. und 20. September 1588</date>
+```
+Angabe eines Datum nach neuem Stil, wenn die Quelle beide Stile hat:
+<date when-custom="1588-09-20" 
+      calendar="gregorian">20./10. September 1588</date>
+
 ```
 
-```xml
+```
+Angabe eines Datums, wenn der verwendete Kalender unklar ist:
 <date from-custom="1588-09-03" to-custom="1588-09-20"
-      datingMethod="unknown">Zwischen 3. und 20. September 1588</date>
+      calendar="unknown">Zwischen 3. und 20. September 1588</date>
 <note>Es finden sich keine Informationen zum Kalenderwechsel.</note>
 ```
 
-## 6 Kalenderwechsel
+```
+Angabe eines Datums in den Kommentaren mit expliziter Erwähnung des Datums
+in der Quelle nach altem Stil:
+am <date when-custom="1588-09-03" calendar="julian">3. September 1588</date>
+<note>Der Verkauf des Landguts XY an die Familie Soundso wurde nicht,
+ wie in der Quelle steht, am <date when-custom="1588-09-03" calendar="julian">
+ 3. September 1588</date>, sondern bereits am <date when-custom="1588-08-13"
+ calendar="gregorian">am 13. August 1588</date> abgeschlossen. Dies geht aus
+ XYZ hervor, vgl. <bibl><ref>Hinz 1962, S. 63.</ref></bibl></note>
+```
 
 Die sieben katholischen Orte gingen – mit Ausnahme von Ob- und Nidwalden –
 am 12./22. Januar 1584 zum neuen Stil über. Obwalden und Nidwalden nahmen den
@@ -286,7 +306,7 @@ Die unterschiedlichen Jahresanfangsstile:
 _Circumcisionsstil_ (Jahresanfang am 1. Januar),
 _Annuntiationsstil_ (Jahresanfang am 25. März) und
 _Natalstil_ (Jahresanfang am 25. Dezember)
-müssen in [`<date>`](date.de.md) mithilfe von `@datingMethod` vermerkt werden.
+müssen in [`<date>`](date.de.md) mithilfe von `@calendar` vermerkt werden.
 
 Der Annuntiationsstil gilt in der Diözese Lausanne und in Freiburg vom
 Anfang bis in die 2. Hälfte des 15. Jahrhunderts, sonst in der Diözese
@@ -300,8 +320,9 @@ Beispiel:
 ``` Ordonnance au sujet des voies de fait.
  1364 (n. st.) février 4. –
  In der Quelle steht folgende Datierung:
- «... lo quar jor dou moys de febrier, in l’ant de Nostre Segnour corant per
- mil CCC et sexante et troys (1363) ...» 
+ «... <date calendar="julian_annunciation" when-custom="1363-02-04">lo quar jor
+ dou moys de febrier, in l’ant de Nostre Segnour corant per
+ mil CCC et sexante et troys</date> ...» 
 ```
  
 Weil nun der 4. Februar in der Zeit zwischen dem 1. Januar (oder allenfalls 25.

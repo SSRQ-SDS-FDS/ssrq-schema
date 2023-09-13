@@ -28,9 +28,9 @@
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
-          <sch:assert test=".[@datingMethod]">The attribute @datingMethod is required, when
+          <sch:assert test=".[@calendar]">The attribute @calendar is required, when
                         <sch:name/>
-                        is used outside of the publicationStmt.
+                        is used outside the publicationStmt.
                     </sch:assert>
         </sch:rule>
         <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
@@ -39,11 +39,11 @@
                         is part of the publicationStmt it must contain @type with a value of
                         electronic or print.
                     </sch:assert>
-          <sch:assert test=".[@when-custom][not(@datingMethod|@dur-iso|@from-custom|@to-custom|@notAfter-custom|@notBefore-custom|@period)]">
+          <sch:assert test=".[@when-custom][not(@calendar|@dur-iso|@from-custom|@to-custom|@notAfter-custom|@notBefore-custom|@period)]">
                         If
                         <sch:name/>
                         is part of the publicationStmt it must contain @when-custom and may not contain
-                        @dating-method, @dur-iso, @from-custom, @to-custom, @notAfter-custom, @notBefore-custom or
+                        @calendar, @dur-iso, @from-custom, @to-custom, @notAfter-custom, @notBefore-custom or
                         @period.
                     </sch:assert>
           <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)">
@@ -156,7 +156,6 @@
         </valItem>
       </valList>
     </attDef>
-    <attDef ident="calendar" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-date-abbr-de"/>
   <xi:include href="examples.xml" xpointer="ex-date-abbr-en"/>

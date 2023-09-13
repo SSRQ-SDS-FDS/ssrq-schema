@@ -27,12 +27,6 @@
         </desc>
     <constraint>
       <sch:pattern>
-        <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
-          <sch:assert test=".[@datingMethod]">The attribute @datingMethod is required, when
-                        <sch:name/>
-                        is used outside of the publicationStmt.
-                    </sch:assert>
-        </sch:rule>
         <sch:rule context="tei:publisher[ancestor::tei:publicationStmt]">
           <sch:assert test="text() = 'SSRQ-SDS-FDS'">If
                         <sch:name/>

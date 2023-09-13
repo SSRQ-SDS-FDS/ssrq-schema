@@ -12,47 +12,47 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "date-with-valid-when",
-            "<date when-custom='1756-02-12' datingMethod='gregorian'>12. Februar 1756</date>",
+            "<date when-custom='1756-02-12' calendar='gregorian'>12. Februar 1756</date>",
             True,
         ),
         (
             "date-with-valid-when-without-year",
-            "<date when-custom='--02-12' datingMethod='gregorian'>12. Februar</date>",
+            "<date when-custom='--02-12' calendar='gregorian'>12. Februar</date>",
             True,
         ),
         (
             "date-with-invalid-when-month-too-large",
-            "<date when-custom='1756-92-12' datingMethod='gregorian'>12. Februar 1756</date>",
+            "<date when-custom='1756-92-12' calendar='gregorian'>12. Februar 1756</date>",
             False,
         ),
         (
             "date-with-invalid-when-year-only",
-            "<date when-custom='1756' datingMethod='gregorian'>1756</date>",
+            "<date when-custom='1756' calendar='gregorian'>1756</date>",
             False,
         ),
         (
             "date-with-when-instead-of-when-custom",
-            "<date when='1756-02-12' datingMethod='gregorian'>12. Februar 1756</date>",
+            "<date when='1756-02-12' calendar='gregorian'>12. Februar 1756</date>",
             False,
         ),
         (
             "valid-date-with-from-to",
-            "<date datingMethod='julian' from-custom='1583-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
+            "<date calendar='julian' from-custom='1583-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
             True,
         ),
         (
             "date-with-invalid-from-to",
-            "<date datingMethod='julian' from-custom='1501' to-custom='1600'>15. Jahrhundert</date>",
+            "<date calendar='julian' from-custom='1501' to-custom='1600'>15. Jahrhundert</date>",
             False,
         ),
         (
             "valid-date-with-notBefore-notAfter",
-            "<date datingMethod='julian' from-custom='1510-01-01' notAfter-custom='1515-12-12'>ca. 1510</date>",
+            "<date calendar='julian' from-custom='1510-01-01' notAfter-custom='1515-12-12'>ca. 1510</date>",
             True,
         ),
         (
             "date-with-invalid-notBefore-notAfter",
-            "<date datingMethod='julian' from-custom='1510' notAfter-custom='1515'>ca. 1510</date>",
+            "<date calendar='julian' from-custom='1510' notAfter-custom='1515'>ca. 1510</date>",
             False,
         ),
         (
@@ -81,7 +81,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "date-with-type-holiday-without-period-and-datingMethod",
+            "date-with-type-holiday-without-period-and-calendar",
             "<date type='holiday'><persName ref='per000351'>Paul</persName>i</date>",
             True,
         ),
@@ -97,7 +97,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "valid-date-with-precision",
-            "<date datingMethod='julian' notBefore-custom='1341-01-01' notAfter-custom='1355-12-31'>Um 1346 und um 1350 <precision precision='low' match='@notBefore-custom @notAfter-custom'/></date>",
+            "<date calendar='julian' notBefore-custom='1341-01-01' notAfter-custom='1355-12-31'>Um 1346 und um 1350 <precision precision='low' match='@notBefore-custom @notAfter-custom'/></date>",
             True,
         ),
     ],
@@ -115,27 +115,27 @@ def test_date_rng(
     "name, markup, result",
     [
         (
-            "valid-date-with-datingMethod",
-            "<date when-custom='1756-02-12' datingMethod='gregorian'>12. Februar 1756</date>",
+            "valid-date-with-calendar",
+            "<date when-custom='1756-02-12' calendar='gregorian'>12. Februar 1756</date>",
             True,
         ),
         (
-            "invalid-date-without-datingMethod",
+            "invalid-date-without-calendar",
             "<date when-custom='1756-02-12'>12. Februar 1756</date>",
             False,
         ),
         (
             "valid-date-with-from-to",
-            "<date datingMethod='julian' from-custom='1583-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
+            "<date calendar='julian' from-custom='1583-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
             True,
         ),
         (
             "date-with-invalid-timespan",
-            "<date datingMethod='julian' from-custom='1589-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
+            "<date calendar='julian' from-custom='1589-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
             False,
         ),
         (
-            "date-with-valid-dur-iso-without-datingMethod",
+            "date-with-valid-dur-iso-without-calendar",
             "<date dur-iso='R/P3.5Y'>Alle drei einhalb Jahre</date>",
             True,
         ),

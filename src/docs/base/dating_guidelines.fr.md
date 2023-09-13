@@ -26,7 +26,7 @@ title: Directives de datation
 (avec un texte de datation certaine):
 
 - Les dates sont normalisées selon ISO 8601 dans @when/fr ou @when (YYYY-MM-DD). Selon ISO 8601 et TEI, @when comprend
-  toujours le calendrier grégorien. Depuis 2019: @when-custom avec @datingMethod.
+  toujours le calendrier grégorien. Depuis 2019: @when-custom avec @calendar.
 - Les degrés hiérarchiques supérieurs de la datation (année, mois) sont indiqués dans @when avec un tiret ("-"). Les
   degrés inférieurs qui font par exemple défaut (le jour n'est pas connu) ne sont pas signalés de façon particulière.
 - La datation selon les jours de fêtes/des saints sont résolu à l'aide du Grotefend. Sur le site web:
@@ -59,14 +59,14 @@ traitées de la même façon.)
 ## Durées de temps ou périodes
 
 Des durées de temps ou périodes sont indiquées dans [[date]](date.fr.md) à l'aide des attributs
-@from et @to. Depuis 2019: @from-custom et @to-custom avec @datingMethod.
+@from et @to. Depuis 2019: @from-custom et @to-custom avec @calendar.
 
 ### Exemples
 
 - 1521 décembre 11 – 1544 avril
-  16: `<date from-custom="1521-12-11" to-custom="1544-04-16" datingMethod="#julian">1521 Dezember 11 - 1544
+  16: `<date from-custom="1521-12-11" to-custom="1544-04-16" calendar="#julian">1521 Dezember 11 - 1544
   April 16</date>`
-- 1717–1718: `<date from-custom="1717" to-custom="1718" datingMethod="#gregorian">1717-1718</date>`
+- 1717–1718: `<date from-custom="1717" to-custom="1718" calendar="#gregorian">1717-1718</date>`
 
 ## Des durées de temps ou périodes interrompues
 
@@ -87,7 +87,7 @@ avec [`<precision/>`](precision.fr.md) et les attributs @match et @degree.
 `<date when="1491">wohl 1491<precision match="@when" degree="0.5"/></date>`
 
 Des datations qui ne sont pas claires, mais qui peuvent être résolues, sont codées comme des intervalles.
-À chaque fois avec @from, @to, depuis 2019 @from-custom, @to-custom avec @datingMethod.
+À chaque fois avec @from, @to, depuis 2019 @from-custom, @to-custom avec @calendar.
 
 <table>
 <thead>
@@ -111,7 +111,7 @@ Des datations qui ne sont pas claires, mais qui peuvent être résolues, sont co
 </tbody>
 </table>
 
-`<date from-custom="1401" to-custom="1450" datingMethod="#julian">première moitié du XVe siècle</date>`
+`<date from-custom="1401" to-custom="1450" calendar="#julian">première moitié du XVe siècle</date>`
 
 À chaque fois avec @notBefore, @notAfter, depuis 2019 @notBefore-custom, @notAfter-custom et
 [[precision]](precision.fr.md) avec @match et @degree.
@@ -194,9 +194,9 @@ Rétronumérisation:
 degree="0.5"/></date>`
 
 Portail:
-`<date notBefore-custom="1500" notAfter-custom="1520" datingMethod="#julian">env.
+`<date notBefore-custom="1500" notAfter-custom="1520" calendar="#julian">env.
 1510<precision match="@notBefore-custom, @notAfter-custom" degree="0.5"/></date>`<br/>
-`<date notBefore-custom="1386-07-01" notAfter-custom="1386-07-10" datingMethod="#julian">1386 début juillet<precision
+`<date notBefore-custom="1386-07-01" notAfter-custom="1386-07-10" calendar="#julian">1386 début juillet<precision
 match="@notBefore-custom, @notAfter-custom" degree="0.5"/></date>`
 
 ## datation ambiguë qui ne peuvent pas être résolues
@@ -241,7 +241,7 @@ intervalles (analogue à 4., le plus proche possible) :
 
 Des datations *post quem* ne doivent pas être mises en question, mais la date indiquée pour le début et la fin.
 
-`<date notBefore-custom="1730-11-21" notAfter-custom="1730-12-31" datingMethod="#gregorian">1730
+`<date notBefore-custom="1730-11-21" notAfter-custom="1730-12-31" calendar="#gregorian">1730
 après le 20 novembre<precision match="@notAfter-custom" degree="0.5"/></date>`
 
 ## "falsification" / changement de date
