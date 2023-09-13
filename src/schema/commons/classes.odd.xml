@@ -472,16 +472,16 @@
       <attList>
         <attDef ident="facs" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-17">Ordnet eine Textseite einem
-                        Faksimile oder einem faksimilierten Ausschnitt zu.
+                        Faksimile oder einem faksimilierten Ausschnitt zu. Folgende Zeichen sind nicht erlaubt: Umlaute, Sonderzeichen, Klammern, Punkte, Kommata, Doppelpunkte. Binde- und Unterstriche sind erlaubt.
                     </desc>
           <desc xml:lang="en" versionDate="2023-04-06">Assigns a facsimile or facsimile
-                        extract to a page of text.
+                        extract to a page of text. The following characters are not allowed: umlauts, special characters, brackets, full stops, commas, colons. Hyphens and underscores are allowed.
                     </desc>
           <desc xml:lang="fr" versionDate="2023-04-06">Associe une page de texte à un
-                        fac-similé ou à un extrait de fac-similé.
+                        fac-similé ou à un extrait de fac-similé. Les caractères suivants ne sont pas autorisés : trémas, caractères spéciaux, parenthèses, points, virgules, deux points. Les traits d'union et de soulignement sont autorisés.
                     </desc>
           <desc xml:lang="it" versionDate="2023-05-17">Associa una pagina di testo a un facsimile o un
-                        estratto facsimile.
+                        estratto facsimile. Non sono ammessi i seguenti caratteri: dieresi, caratteri speciali, parentesi, punti, virgole e due punti. Sono ammessi i trattini e i trattini bassi.
                     </desc>
           <datatype>
             <rng:list>
