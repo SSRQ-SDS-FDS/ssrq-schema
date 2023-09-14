@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="orig" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="orig" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Enthält innerhalb von Einleitungen, Kommentaren und Anmerkungen
         Textteile, die in Originalsprache verfasst sind.
     </desc>
@@ -28,12 +28,8 @@
     <attDef ident="n" mode="delete"/>
     <attDef ident="xml:id" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-24">
-    <p>Beispiel für einen originalsprachlichen Ausdruck in einer Anmerkung.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <note>Am Beispiel von Seebach lässt sich beobachten, wie Nachträge aus Beschlüssen
-                der <orig>bursamy</orig> [...] zustande kommen.
-            </note>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-orig-de"/>
+  <xi:include href="examples.xml" xpointer="ex-orig-en"/>
+  <xi:include href="examples.xml" xpointer="ex-orig-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-orig-it"/>
 </elementSpec>
