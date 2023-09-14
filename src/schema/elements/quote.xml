@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="quote" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="quote" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Enthält ein Zitat innerhalb eines Originaltextes.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains a citation within an original text.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient une citation dans un texte original.</desc>
@@ -42,18 +42,10 @@
       </valList>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
-    <p>Zitat einer im Originaltext inserierten Urkunde</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <add place="below" hand="otherHand">Hinfûr soll man leßen des banholtzes halb ein
-                gschrift, stât ze end dis buchs, fahent an:
-                <quote>Wir Johannes Mantss.</quote>
-                <note>Mit
-                    dem Verweis betreffend Bannholz ist StAZH G I 102, fol. 33r-v gemeint.
-                </note>
-            </add>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-quote-de"/>
+  <xi:include href="examples.xml" xpointer="ex-quote-en"/>
+  <xi:include href="examples.xml" xpointer="ex-quote-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-quote-it"/>
   <remarks xml:lang="de" versionDate="2023-08-18">
     <p>Enthält z. B. eine inserierte Urkunde oder eine Bibelstelle. Idealerweise folgt am Schluss des Zitats eine
             sachkritische Anmerkung mit <gi>note</gi> mit einem Verweis auf den Originaltext oder eine Edition
