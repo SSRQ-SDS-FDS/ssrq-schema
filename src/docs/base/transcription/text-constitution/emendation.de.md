@@ -20,10 +20,8 @@ ohne Klammer gekennzeichnet und in einer textkritischen Anmerkung unter
 Angabe der Grösse der Textlücke erläutert.
 In der digitalen Edition werden sie mit [`<space/>`](space.de.md) getaggt.
 
-Referenzpunkte bzw. Reverenzpunkte vor Namen oder Amtsbezeichnungen
-wurden in der analogen Edition durch 2 Punkte ohne Klammer wiedergegeben.
-In der digitalen Edition werden sie ebenfalls mit 2 Punkten ohne Klammer
-wiedergegeben.
+Reverenzpunkte vor Namen oder Amtsbezeichnungen werden
+durch zwei Punkte ohne Klammer wiedergegeben.
 
 ### Weggelassene Textteile
 

@@ -4,7 +4,7 @@
 
 === "Struktur des edierten Textes"
 
-    Die Gliederung der Textvorlage wird übernommen.
+    Die Gliederung der Editionsvorlage wird übernommen.
     
     Originale Absätze werden mit [`<p>`](p.de.md) ausgezeichnet.
     In der Regel sollten diese Absätze nach einem Punkt und nicht
@@ -42,7 +42,7 @@
 
 ## Seiten, Spalten und Zeilen
 
-Zeilenwechsel wurden in der analogen Edition mit / und Seitenwechsel mit // 
+Zeilenwechsel wurden in der analogen Edition mit `/` und Seitenwechsel mit `//` 
 wiedergegeben. 
 
 In der digitalen Edition werden Zeilen am Zeilenanfang ab der ersten Zeile 

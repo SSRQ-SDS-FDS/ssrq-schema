@@ -4,8 +4,8 @@
 
 === "Allgemeine Regeln"
 
-    Ob ein Wort gemäss Vorlage zusammen- oder getrennt geschrieben wird,
-    ist nicht immer einfach zu entscheiden.
+    Ob ein Wort gemäss Vorlage zusammengeschrieben oder getrennt geschrieben
+    wird, ist nicht immer einfach zu entscheiden.
     Ein einheitliches System für eine Handschrift,
     die ediert wird, ist zu befolgen.
     
@@ -18,7 +18,8 @@
     immer der Vorlage folgen.
     Bindestriche dürfen nicht verwendet werden.
     
-    Beispiel: «apud Novam Villam» und nicht: «Novamvillam» oder: «Novam-Villam»
+    Beispiel:  
+    «apud Novam Villam» und nicht «Novamvillam» oder «Novam-Villam»
 
 === "Deutsche Texte"
 
@@ -32,7 +33,8 @@
     Zusammengeschriebene Wörter werden entsprechend den aktuellen 
     Rechtschreibregeln getrennt.
 
-    Beispiel: «treshumble» wird «tres humble» transkribiert.
+    Beispiel:  
+    «treshumble» wird «tres humble» transkribiert.
 
     Getrennt geschriebene Wörter, die später zu einem einzigen Wort
     zusammenwachsen (hauptsächlich Adverbien und Konjunktionen wie z. B. 
@@ -41,7 +43,8 @@
     Es gilt der allgemeine Grundsatz, dass die Zusammenschreibung dem 
     heutigen Sprachgebrauch folgt.
     
-    Beispiele: «Madame», «Messire», «Lieutenant», «Mainmorte», «Vichastelain»
+    Beispiele:
+    «Madame», «Messire», «Lieutenant», «Mainmorte», «Vichastelain»
     
     Es ist sinnvoll, «par devant», «demi arpent», «ci annexé» ohne 
     Bindestrich zu schreiben.
@@ -114,12 +117,12 @@
     Zusammenziehung einer Präposition mit dem nachfolgenden Artikel, 
     Adjektiv oder Substantiv ist nach heutiger Schreibweise aufzuheben,
     da die Beurteilung der Frage, ob Zusammen- oder Getrenntschreibung
-    vorliegt, oft eine Ermessensfrage ist und sich beim Lesen oft ein
+    vorliegt, eine Ermessensfrage ist und sich beim Lesen oft ein
     unbeabsichtigter neuer Sinn ergibt.
 
     Beispiele:  
     «nach burschaft» > «nachburschaft» (Gefahr falscher Sinnbildung)  
-    «on all uß zug» > «un all ußzug»  
+    «on all uß zug» > «on all ußzug»  
     «vonainem landvogt» > «von ainem landvogt»  
     «zů satz» > «zůsatz»  
     «zeHagenwil» > «ze Hagenwil»  
@@ -188,7 +191,8 @@
     Er kann auch generell weggelassen werden, da die Erfassung des 
     Satzsinns nie von diesen modernen Zusätzen abhängt.
 
-    Beispiel: «in wyn oder wirtzhüsern»
+    Beispiel:  
+    «in wyn oder wirtzhüsern»
 
 === "Orts- und Flurnamen"
 

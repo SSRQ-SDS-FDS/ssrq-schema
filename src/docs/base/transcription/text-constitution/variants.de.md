@@ -17,7 +17,7 @@ Dasselbe gilt im Falle von Abschriften.
 ## Abschriften
 
 Falls nur Abschriften eines Texts vorhanden sind, soll die geeignetste,
-d. h. die der Originalvorlage am nächsten kommende, ediert werden.
+d. h. die dem Original am nächsten kommende, ediert werden.
 Kriterien sind: Alter, Vollständigkeit, Sorgfalt, Beglaubigung,
 Vidimus oder Transsumpt etc.
 Varianten können angemerkt werden.
