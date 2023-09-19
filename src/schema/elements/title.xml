@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="title" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="title" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Enthält als Teil des <gi>titleStmt</gi> den Titel des
         Rechtsquellenbandes bzw. der Editionseinheit, als Teil des <gi>seriesStmt</gi> den Titel der Serie.
     </desc>
@@ -31,22 +31,10 @@
     <attDef ident="n" mode="delete"/>
     <attDef ident="xml:id" mode="delete"/>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-12">
-    <p>Einfacher Titel</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <title>Rechtsquellen der Stadt und Herrschaft Rapperswil (mit den Höfen Busskirch/Jona,
-                Kempraten und Wagen)
-            </title>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-12">
-    <p>Titre simple</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <title>Rechtsquellen der Stadt und Herrschaft Rapperswil (mit den Höfen Busskirch/Jona,
-                Kempraten und Wagen)
-            </title>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-title-de"/>
+  <xi:include href="examples.xml" xpointer="ex-title-en"/>
+  <xi:include href="examples.xml" xpointer="ex-title-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-title-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>Ein Buchtitel, der innerhalb einer Quelle zitiert wird, wird ebenfalls
             mit <gi>title</gi> und <att>xml:lang</att> ausgezeichnet.

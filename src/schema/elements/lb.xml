@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="lb" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="lb" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-08-17">Beschreibt den Beginn einer Zeile.</desc>
   <desc xml:lang="en" versionDate="2023-04-21">Describes the beginning of a line.</desc>
   <desc xml:lang="fr" versionDate="2023-04-21">Décrit le début d'une ligne.</desc>
@@ -38,28 +38,10 @@
       </valList>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-19">
-    <p>Modellhafte Benutzung – Achtung: immer leerer Tag</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <lb/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-19">
-    <p>Utilisation comme modèle - Attention : jour toujours vide</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <lb/>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-13">
-    <p>Worttrennung über den Zeilenwechsel</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">geschri<lb break="no"/>ben
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-13">
-    <p>Séparation des mots via le saut de ligne</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">geschri<lb break="no"/>ben
-        </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-lb-de"/>
+  <xi:include href="examples.xml" xpointer="ex-lb-en"/>
+  <xi:include href="examples.xml" xpointer="ex-lb-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-lb-it"/>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>Wird vor jeder Zeile an den Anfang der Zeile gesetzt, auch vor der ersten Zeile des Textes und wenn ein neuer
             Abschnitt beginnt. Wird auch bei Texten mit nur einer Zeile verwendet. Einrückungen werden nicht

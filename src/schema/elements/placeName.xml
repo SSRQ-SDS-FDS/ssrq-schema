@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="placeName" module="namesdates" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="placeName" module="namesdates" mode="change">
   <desc xml:lang="de" versionDate="2023-04-20">Zeichnet topographische Bezeichnungen (einen Ort oder einen Flurnamen)
         aus.
     </desc>
@@ -38,28 +38,8 @@
       </datatype>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-07-11">
-    <p>Erfassung eines (historischen) Ortsnamens (mit Verweis auf die SSRQ-Datenbank)</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <placeName ref="loc000284">Freiburg</placeName>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en" type="ssrq-doc-example" versionDate="2023-07-11">
-    <p>Recording of a (historical) place name (with reference to the SSRQ database)</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <placeName ref="loc000284">Fribourg</placeName>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-07-11">
-    <p>Saisie d'un nom de lieu (historique) (avec référence à la base de données SSRQ)</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <placeName ref="loc000284">Frybourg</placeName>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="it" type="ssrq-doc-example" versionDate="2023-07-11">
-    <p>Registrazione di un toponimo (storico) (con riferimento al database SSRQ)</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <placeName ref="loc000284">Friburgo</placeName>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-placeName-de"/>
+  <xi:include href="examples.xml" xpointer="ex-placeName-en"/>
+  <xi:include href="examples.xml" xpointer="ex-placeName-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-placeName-it"/>
 </elementSpec>
