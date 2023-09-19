@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="measure" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="measure" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Massangabe jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains a measurement of any type.</desc>
   <desc xml:lang="fr" versionDate="2023-07-19">Contient une mesure de chaque type.</desc>
@@ -112,34 +112,24 @@
       </datatype>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
-    <p>Währungsbezeichnung:</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">umb
-            <measure type="currency" origin="ZH" unit="lb" quantity="2">zwai phunt nuwer Zuricher
-            </measure>
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
-    <p>Masseinheit:</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            ... item oben här
-            <measure type="area" unit="Juchart" quantity="8" commodity="field">acht juchart acher</measure>
-            aneinanderen, genannt
-            ....
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-23">
-    <p>Masseinheit:</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">Item <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull
-        </measure> git <measure type="currency" unit="ß" quantity="2">ij ß</measure>.
-        </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-05">
-    <p>Altersangabe:</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">... wan das jeman unser lannttluͤtten, er
-            sye jung oder alltt,
-            <measure type="age" unit="year" quantity="14">ob vierzechen jarenn</measure>
-            von ainem paner endrunne ...
-        </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-measure-age-de"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-age-en"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-age-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-age-it"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-price-de"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-price-en"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-price-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-price-it"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-area-de"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-area-en"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-area-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-area-it"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-de"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-en"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-it"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-de"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-en"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-it"/>
 </elementSpec>
