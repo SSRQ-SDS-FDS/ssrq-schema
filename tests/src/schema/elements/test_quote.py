@@ -16,7 +16,12 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "invalid-quote",
+            "valid-quote-with-attributes",
+            "<quote type='insert' source='http://foo.bar'>bar baz foo</quote>",
+            True,
+        ),
+        (
+            "quote-with-invalid-attribute",
             "<quote xml:lang='fr'>bar baz foo</quote>",
             False,
         ),
