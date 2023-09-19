@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+    type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="adminInfo" module="msdescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-09-19">Enthält Informationen zur Aufbewahrung eines Dokuments. Wird bspw. im Falle verlorener Manuskripte verwendet.</desc>
+  <desc xml:lang="en" versionDate="2023-09-19">Contains information on the storage of a document. Used, for example, in the case of lost manuscripts.</desc>
+  <desc xml:lang="fr" versionDate="2023-09-19">Contient des informations sur le stockage d'un document. Utilisé, par exemple, dans le cas de manuscrits perdus.</desc>
+  <desc xml:lang="it" versionDate="2023-09-19">Contiene informazioni sulla conservazione di un documento. Si usa, ad esempio, nel caso di manoscritti perduti.</desc>
+  <classes mode="replace"/>
+  <content>
+    <elementRef key="custodialHist"/>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-adminInfo-de"/>
+  <xi:include href="examples.xml" xpointer="ex-adminInfo-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-adminInfo-en"/>
+  <xi:include href="examples.xml" xpointer="ex-adminInfo-it"/>
+</elementSpec>
