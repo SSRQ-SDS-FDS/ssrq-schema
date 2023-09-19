@@ -1784,19 +1784,35 @@
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-summary-de">
       <p>Beispiel für ein Regest</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-summary-en">
       <p>Example of a summary</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-summary-fr">
       <p>Exemple de regeste</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
     </exemplum>
     <exemplum xml:lang="it" xml:id="ex-summary-it">
       <p>Esempio di regesto</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-summary-list-de">
+      <p>Beispiel für ein Regest mit einer Aufzählung</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-summary-list-en">
+      <p>Example of a regest with an enumeration</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-summary-list-fr">
+      <p>Exemple de Regest avec une énumération</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-summary-list-it">
+      <p>Esempio di regest con un'enumerazione</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-support-de">
       <p>Beispiel für eine Beschreibung des Beschreibstoffs einer Quelle</p>
