@@ -1630,6 +1630,22 @@
       <p>Esempio per i fogli originali</p>
       <xi:include href="pb.xml" xpointer="ex-pb-original"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-pb-with-section-de">
+      <p>Beispiel für eine Zählung von Pergamentstücken</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-pb-with-section-en">
+      <p>Example of counting pieces of parchment</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-pb-with-section-fr">
+      <p>Exemple de comptage de morceaux de parchemin</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-pb-with-section-it">
+      <p>Esempio di conteggio dei pezzi di pergamena</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-pb-with-title-de">
       <p>Blattzählung von Vorsatz- und Titelblättern mit römischen Ziffern</p>
       <xi:include href="pb.xml" xpointer="ex-pb-with-title"/>
@@ -2044,19 +2060,35 @@
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-summary-de">
       <p>Beispiel für ein Regest</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-summary-en">
       <p>Example of a summary</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-summary-fr">
       <p>Exemple de regeste</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
     </exemplum>
     <exemplum xml:lang="it" xml:id="ex-summary-it">
       <p>Esempio di regesto</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-summary-list-de">
+      <p>Beispiel für ein Regest mit einer Aufzählung</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-summary-list-en">
+      <p>Example of a regest with an enumeration</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-summary-list-fr">
+      <p>Exemple de Regest avec une énumération</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-summary-list-it">
+      <p>Esempio di regest con un'enumerazione</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-support-de">
       <p>Beispiel für eine Beschreibung des Beschreibstoffs einer Quelle</p>
