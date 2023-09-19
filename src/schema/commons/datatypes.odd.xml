@@ -38,7 +38,7 @@
           <valItem ident="faded_ink">
             <desc xml:lang="de" versionDate="2023-05-16">verblasste Tinte</desc>
             <desc xml:lang="en" versionDate="2023-05-16">faded ink</desc>
-            <desc xml:lang="fr" versionDate="2023-05-26">l’estompage de l’encre</desc>
+            <desc xml:lang="fr" versionDate="2023-09-15">l’affaiblissement de l’encre</desc>
             <desc xml:lang="it" versionDate="2023-05-16">inchiostro sbiadito</desc>
           </valItem>
           <valItem ident="fold">
@@ -1346,8 +1346,8 @@
             <desc xml:lang="de" type="plural" versionDate="2023-03-17">Kannen</desc>
             <desc xml:lang="en" type="singular" versionDate="2023-03-17">pot</desc>
             <desc xml:lang="en" type="plural" versionDate="2023-03-17">pots</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">kanne (pot)</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">kannen (pots)</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2023-09-15">channe</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2023-09-15">channes</desc>
             <desc xml:lang="it" type="singular" versionDate="2023-03-17">brocca</desc>
             <desc xml:lang="it" type="plural" versionDate="2023-03-17">brocche</desc>
           </valItem>
@@ -1356,8 +1356,8 @@
             <desc xml:lang="de" type="plural" versionDate="2023-03-17">Köpfe</desc>
             <desc xml:lang="en" type="singular" versionDate="2023-03-17">kopf</desc>
             <desc xml:lang="en" type="plural" versionDate="2023-03-17">köpfe</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">kopf</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">köpfe</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2023-09-15">coupe</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2023-09-15">coupes</desc>
             <desc xml:lang="it" type="singular" versionDate="2023-03-17">kopf</desc>
             <desc xml:lang="it" type="plural" versionDate="2023-03-17">köpfe</desc>
           </valItem>
@@ -1398,7 +1398,8 @@
           <valItem ident="Mass">
             <desc xml:lang="de" versionDate="2023-03-17">Mass</desc>
             <desc xml:lang="en" versionDate="2023-03-17">mass</desc>
-            <desc xml:lang="fr" versionDate="2023-03-17">mass</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2023-09-15">pot</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2023-09-15">pots</desc>
             <desc xml:lang="it" versionDate="2023-03-17">mass</desc>
           </valItem>
           <valItem ident="Mäss">
@@ -2760,7 +2761,6 @@
             <desc xml:lang="en" versionDate="2022-05-10">at the bottom of the verso in the middle</desc>
             <desc xml:lang="fr" versionDate="2022-05-10">au verso en bas au milieu</desc>
             <desc xml:lang="it" versionDate="2022-09-05">sul verso inferiore in mezzo</desc>
-            <desc xml:lang="en" versionDate="2022-05-10">at the bottom of the verso in the middle</desc>
           </valItem>
           <valItem ident="verso_bottom_right">
             <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite unten rechts</desc>
@@ -2768,11 +2768,23 @@
             <desc xml:lang="fr" versionDate="2022-05-10">au verso en bas à droite</desc>
             <desc xml:lang="it" versionDate="2022-09-05">sul verso inferiore a destra</desc>
           </valItem>
+          <valItem ident="verso_left_margin">
+            <desc xml:lang="de" versionDate="2023-09-15">auf der Rückseite am linken Rand</desc>
+            <desc xml:lang="en" versionDate="2023-09-15">on the left margin of the verso</desc>
+            <desc xml:lang="fr" versionDate="2023-09-15">au verso dans la marge de gauche</desc>
+            <desc xml:lang="it" versionDate="2023-09-15">sul verso sul margine sinistro</desc>
+          </valItem>
           <valItem ident="verso_middle">
             <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite in der Mitte</desc>
             <desc xml:lang="en" versionDate="2022-05-10">in the middle of the verso</desc>
             <desc xml:lang="fr" versionDate="2022-05-10">au centre du verso de la page</desc>
             <desc xml:lang="it" versionDate="2022-09-05">sul verso in mezzo</desc>
+          </valItem>
+          <valItem ident="verso_right_margin">
+            <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite am rechten Rand</desc>
+            <desc xml:lang="en" versionDate="2023-09-15">on the right margin of the verso</desc>
+            <desc xml:lang="fr" versionDate="2023-09-15">au verso dans la marge de droite</desc>
+            <desc xml:lang="it" versionDate="2023-09-15">sul verso sul margine destro</desc>
           </valItem>
         </valList>
       </content>
