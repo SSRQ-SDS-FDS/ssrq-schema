@@ -220,7 +220,7 @@ verwendet wurden, gelten folgende Regelungen:
 
 1. In den Quellen vorkommende Daten werden so belassen, wie sie in der Quelle
    stehen. Sie werden nicht auf den neuen Stil umgeschrieben. In den Attributen
-   (`@when-custom`, etc.) wird das Datum nach dem in der Quelle verwendeten
+   (`@when-custom` etc.) wird das Datum nach dem in der Quelle verwendeten
    Kalender zugrunde gelegt.
 2. Gibt eine Quelle ein Datum in beiden Stilen an (doppelte Datierung), wird
    in den Attributen das Datum nach dem neuen Stil verwendet.
@@ -231,7 +231,7 @@ verwendet wurden, gelten folgende Regelungen:
    an einer Datierung nach neuem Stil vorliegen, wird dies innerhalb von
    `@calendar` mit dem Wert `unknown` festgehalten.
    Eine Anmerkung mit [`<note>`](note.de.md) ist in diesen Fällen sinnvoll.
-5. In den editorischen Paratexten (z. B. Einleitungen, Kommentare, etc.) sollten
+5. In den editorischen Paratexten (z. B. Einleitungen, Kommentare etc.) sollten
    die Bearbeitenden den neuen Stil verwenden, sofern sie nicht explizit auf
    die Verwendung des alten Stils hinweisen möchten.
 
