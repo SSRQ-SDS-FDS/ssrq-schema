@@ -50,7 +50,7 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
     ```
     <date when-custom="1001-09-11" calendar="julian">11 Sept 1001</date>
     ```
-  
+
     ```
     <date when-custom="1601-09-11" calendar="unknown">11 Sept 1601</date>
     ```
@@ -220,18 +220,18 @@ verwendet wurden, gelten folgende Regelungen:
 
 1. In den Quellen vorkommende Daten werden so belassen, wie sie in der Quelle
    stehen. Sie werden nicht auf den neuen Stil umgeschrieben. In den Attributen
-   (`@when-custom`, `from-custom`, `to-custom` etc.) wird das Datum nach dem 
-   in der Quelle verwendeten Kalender zugrunde gelegt.  
-   Beispiel:  
+   (`@when-custom`, `@from-custom`, `@to-custom` etc.) wird das Datum nach dem
+   in der Quelle verwendeten Kalender zugrunde gelegt.
+   Beispiel:
     ```
     <date from-custom="1588-09-03" to-custom="1588-09-20"
           calendar="julian">Zwischen 3. und 20. September 1588</date>
     ```
 2. Gibt eine Quelle ein Datum in beiden Stilen an (doppelte Datierung), wird
-   in den Attributen das Datum nach dem neuen Stil verwendet.  
-   Beispiel:  
+   in den Attributen das Datum nach dem neuen Stil verwendet.
+   Beispiel:
     ```
-    <date when-custom="1590-10-25" 
+    <date when-custom="1590-10-25"
           calendar="gregorian">25/15. octobris anno 90</date>
     ```
 3. Wenn ein Dokument nicht von einer Behörde stammt, die nachgewiesenermassen
@@ -240,8 +240,8 @@ verwendet wurden, gelten folgende Regelungen:
 4. Wo nicht sicher ist, nach welchem Stil datiert wurde und begründete Zweifel
    an einer Datierung nach neuem Stil vorliegen, wird dies innerhalb von
    `@calendar` mit dem Wert `unknown` festgehalten.
-   Eine Anmerkung mit [`<note>`](note.de.md) ist in diesen Fällen sinnvoll.  
-   Beispiel:  
+   Eine Anmerkung mit [`<note>`](note.de.md) ist in diesen Fällen sinnvoll.
+   Beispiel:
     ```
     <date from-custom="1588-09-03" to-custom="1588-09-20"
           calendar="unknown">Zwischen 3. und 20. September 1588</date>
@@ -249,21 +249,21 @@ verwendet wurden, gelten folgende Regelungen:
     ```
 5. In den editorischen Paratexten (z. B. Einleitungen, Kommentare etc.) sollten
    die Bearbeitenden den neuen Stil verwenden, sofern sie nicht explizit auf
-   die Verwendung des alten Stils hinweisen möchten.  
-   Beispiel:  
+   die Verwendung des alten Stils hinweisen möchten.
+   Beispiel:
    ```
     am <date when-custom="1588-09-03" calendar="julian">3. September 1588</date>
     <note>Der Verkauf des Landguts XY an die Familie Soundso wurde nicht,
     wie in der Quelle steht, am <date when-custom="1588-09-03" calendar="julian">
     3. September 1588</date>, sondern bereits <date from-custom="1587-01-01"
-    to-custom="1587-12-31 calendar="gregorian">1587</date> abgeschlossen. 
+    to-custom="1587-12-31 calendar="gregorian">1587</date> abgeschlossen.
     Dies geht aus XYZ hervor, vgl. <bibl><ref>Hinz 1962, S. 63.</ref></bibl>
     </note>
    ```
 
 Die sieben katholischen Orte gingen – mit Ausnahme von Ob- und Nidwalden –
 am 12./22. Januar 1584 zum neuen Stil über. Obwalden und Nidwalden nahmen den
-neuen Kalender einen Monat später an. 
+neuen Kalender einen Monat später an.
 In Luzern war der Tag der Umstellung am 12. Januar 1584 alten Stils = 22.
 Januar 1584 neuen Stils (StALU RP 39, fol. 7r).
 
@@ -308,17 +308,17 @@ Lausanne bis in die 1. Hälfte des 16. Jahrhunderts.
 
 In [SDS FR I/2/6](http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5)
 wird der Annuntiationsstil mit «n. st.» (= «nouveau style»)
-angezeigt, das Datum wird aber gemäss modernem Kalender aufgelöst.  
+angezeigt, das Datum wird aber gemäss modernem Kalender aufgelöst.
 Beispiel:
 
 ```
- Ordonnance au sujet des voies de fait. 1364 (n. st.) février 4. –  
- In der Quelle steht folgende Datierung:  
+ Ordonnance au sujet des voies de fait. 1364 (n. st.) février 4. –
+ In der Quelle steht folgende Datierung:
  «... <date calendar="julian_annunciation" when-custom="1363-02-04">lo quar jor
  dou moys de febrier, in l’ant de Nostre Segnour corant per
- mil CCC et sexante et troys</date> ...» 
+ mil CCC et sexante et troys</date> ...»
 ```
- 
+
 Weil nun der 4. Februar in der Zeit zwischen dem 1. Januar (oder allenfalls 25.
 Dezember) und dem 25. März (= Annuntiation Mariä) liegt, ediert die
 Bearbeitende zu Recht den «4. Februar 1363» als den «4. Februar 1364».
