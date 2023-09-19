@@ -8,7 +8,9 @@
   <desc xml:lang="fr" versionDate="2023-07-20">Contient une citation dans un texte original.</desc>
   <desc xml:lang="it" versionDate="2023-07-20">Contiene una citazione all'interno di un testo originale.</desc>
   <classes mode="replace">
+    <memberOf key="att.typed"/>
     <memberOf key="model.quoteLike"/>
+    <memberOf key="ssrq.att.source"/>
   </classes>
   <content>
     <rng:oneOrMore>
@@ -28,6 +30,18 @@
       </sch:pattern>
     </constraint>
   </constraintSpec>
+  <attList>
+    <attDef ident="type" mode="replace">
+      <valList type="closed">
+        <valItem ident="insert">
+          <desc xml:lang="de" versionDate="2023-09-19">Zitat ist ein Insert.</desc>
+          <desc xml:lang="en" versionDate="2023-09-19">Quote is an insert.</desc>
+          <desc xml:lang="fr" versionDate="2023-09-19">La citation est un encart.</desc>
+          <desc xml:lang="it" versionDate="2023-09-19">La citazione è un inserto.</desc>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
   <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-30">
     <p>Zitat einer im Originaltext inserierten Urkunde</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
