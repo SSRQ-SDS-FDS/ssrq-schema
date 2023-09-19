@@ -1770,6 +1770,38 @@
       <p>Esempio di citazione da un documento pubblicizzato nel testo originale</p>
       <xi:include href="quote.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-ref-print-de">
+      <p>Beispiel für einen Verweis auf eine gedruckte Quelle</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-print"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-ref-print-en">
+      <p>Example of a reference to a printed source</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-print"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-ref-print-fr">
+      <p>Exemple de référence à une source imprimée</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-print"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-ref-print-it">
+      <p>Esempio di riferimento a una fonte stampata</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-print"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-ref-urn-de">
+      <p>Beispiel für einen Verweis auf eine Online-Quelle</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-urn"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-ref-urn-en">
+      <p>Example of a reference to an online source</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-urn"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-ref-urn-fr">
+      <p>Exemple de référence à une source en ligne</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-urn"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-ref-urn-it">
+      <p>Esempio di riferimento a una fonte online</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-urn"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-row-de">
       <p>Einfaches Beispiel für Zeilen in einer Tabelle</p>
       <xi:include href="table.xml"/>
