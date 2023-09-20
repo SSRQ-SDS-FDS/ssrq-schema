@@ -9,7 +9,10 @@
   <desc xml:lang="it" versionDate="2023-07-14">Contiene riferimenti a edizioni, regesti e letteratura.</desc>
   <classes mode="replace"/>
   <content>
-    <elementRef key="listBibl" maxOccurs="unbounded"/>
+    <sequence>
+      <elementRef key="adminInfo" minOccurs="0"/>
+      <elementRef key="listBibl" maxOccurs="unbounded"/>
+    </sequence>
   </content>
   <xi:include href="examples.xml" xpointer="ex-additional-de"/>
   <xi:include href="examples.xml" xpointer="ex-additional-en"/>

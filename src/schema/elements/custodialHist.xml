@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+    type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="custodialHist" module="msdescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-09-19">Enthält Informationen zur Aufbewahrungsgeschichte eines Dokuments.</desc>
+  <desc xml:lang="en" versionDate="2023-09-19">Contains information on the custodial history of a document.</desc>
+  <desc xml:lang="fr" versionDate="2023-09-19">Contient des informations sur l'historique de conservation d'un document.</desc>
+  <desc xml:lang="it" versionDate="2023-09-19">Contiene informazioni sulla cronologia di conservazione di un documento.</desc>
+  <classes mode="replace"/>
+  <content>
+    <elementRef key="custEvent"/>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-adminInfo-de"/>
+  <xi:include href="examples.xml" xpointer="ex-adminInfo-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-adminInfo-en"/>
+  <xi:include href="examples.xml" xpointer="ex-adminInfo-it"/>
+</elementSpec>

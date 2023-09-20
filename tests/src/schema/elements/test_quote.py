@@ -17,7 +17,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "valid-quote-with-attributes",
-            "<quote type='insert' source='http://foo.bar'>bar baz foo</quote>",
+            "<quote type='fully_inserted' source='http://foo.bar'>bar baz foo</quote>",
             True,
         ),
         (
