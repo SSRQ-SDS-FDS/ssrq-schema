@@ -4,7 +4,8 @@
 
 Versalien werden nur buchstabengetreu übernommen.
 
-Beispiel: «WJR» wird transkribiert als «wir».
+Beispiel:  
+«WJR» wird transkribiert als «wir».
 
 ## Kleinschreibung
 
@@ -13,7 +14,7 @@ Beispiel: «WJR» wird transkribiert als «wir».
     Bei handschriftlichen Texten bis zum Ende des 18. Jahrhunderts gilt
     grundsätzlich Kleinschreibung.
     
-    Grossgeschrieben werden nur Satzanfänge und Eigennamen (Personen-, 
+    Grossgeschrieben werden nur Satzanfänge und Eigennamen (Personen-,
     Familien-, Organisations-, Orts- und Flurnamen).
     Zu beachten sind die folgenden Besonderheiten.
 
@@ -21,8 +22,7 @@ Beispiel: «WJR» wird transkribiert als «wir».
 
     Bei handschriftlichen Texten des 19. Jahrhunderts sollte man im Deutschen
     zu Gross- und Kleinschreibung entsprechend der Vorlage und im Französischen
-    gemäss heutiger Orthografie übergehen.
-
+    gemäss heutiger Orthographie übergehen.
 
 ## Gattungsnamen
 
@@ -99,7 +99,7 @@ Beispiel: «WJR» wird transkribiert als «wir».
 === "Frz. Beispiele"
 
     «Seigneur», «le Seigneur»  
-    «au nom de nostre seigneur Jesu Crist»  
+    «au nom de nostre Seigneur Jesu Crist»  
     «la saincte Vierge»
 
 === "Lat. Beispiele"
@@ -125,8 +125,7 @@ Beispiel: «WJR» wird transkribiert als «wir».
     üblicherweise grossgeschrieben.
     
     Beispiele:  
-    «sonntag»  
-    «idus aprilis»  
+    «sonntag»
     «unser frowen tag ze dem ärnde»  
     «erzengel Michael»  
     «st. Johann baptiste»  
@@ -135,7 +134,7 @@ Beispiel: «WJR» wird transkribiert als «wir».
     «uff donrstag nach sant Jacobs des meren zwölffbotten tag»  
     «uff donstag vor unser lieben frowen»
 
-=== "Französische und Lateinische Texte"
+=== "Französische und lateinische Texte"
 
     Auch im Französischen werden Wochentage und Monate bei Daten und Fristen 
     immer kleingeschrieben. 
@@ -143,6 +142,7 @@ Beispiel: «WJR» wird transkribiert als «wir».
     Altfranzösischen grossgeschrieben.
     
     Bespiele:  
+    «idus aprilis»  
     «la feste de la Sant Johan»  
     «a festo Nativitatis»  
     «festum Sancti Michaelis»
@@ -158,7 +158,9 @@ Beispiel: «WJR» wird transkribiert als «wir».
     des Heiligen selbst spricht, aber es wird grossgeschrieben, wenn man von 
     seinem Fest spricht.
     
-    Beispiele:  «sainct Jehan, prie por nous», «a la Sainct Jehan»
+    Beispiele:  
+    «sainct Jehan, prie por nous»  
+    «a la Sainct Jehan»
 
 ## Zusammengesetzte Ausdrücke
 

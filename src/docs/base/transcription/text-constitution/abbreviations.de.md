@@ -48,9 +48,9 @@ etc.
     unverändert wiederzugeben.
 
     Beispiele:  
-    «sr» = «sieur» oder: «seigneur»?  
-    «monsr» = «monsieur» oder: «monseigneur»?  
-    «me» = «maître oder: «messire»?
+    frz. «sr» = «sieur» oder «seigneur»?  
+    frz. «monsr» = «monsieur» oder «monseigneur»?  
+    frz. «me» = «maître oder «messire»?
 
     Bei der Auflösung von Abkürzungen sollte so weit wie möglich auf
     Schreibweisen zurückgegriffen werden, die in anderen Teilen des
@@ -71,8 +71,8 @@ etc.
 Abkürzungen von Mass- und Münzbezeichnungen werden ausser in editorischen
 Paratexten (Kommentaren, Anmerkungen) nicht aufgelöst und erscheinen im 
 Abkürzungsverzeichnis. 
-Es werden die entsprechenden Sonderzeichen verwendet (vgl. die [Liste
-der Mass- und Münzeinheiten]).
+Es werden die entsprechenden Sonderzeichen verwendet (vgl. die Liste
+der Mass- und Münzeinheiten).
 
 Währungen, Masse und Gewichte werden mit [`<measure>`](measure.de.md) und
 ggf. mit [`<measureGrp>`](measureGrp.de.md) getaggt.

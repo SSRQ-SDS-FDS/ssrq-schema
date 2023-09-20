@@ -49,9 +49,9 @@ Beispiel:
 
 ## Unsichere Zuordnung von Personen
 
-Was macht man, wenn aus einem Text nicht hervorgeht, ob es sich z. B. um
-Wilhelm V. (1434, 1439) oder Wilhelm VIII. (1462, 1483) handelt? –
-Es wird eine sachkritische Fussnote [`<note>`](note.de.md) gesetzt,
+Wenn aus einem Text nicht hervorgeht, ob es sich z. B. um
+Wilhelm V. (1434, 1439) oder Wilhelm VIII. (1462, 1483) handelt,
+dann wird eine sachkritische Fussnote [`<note>`](note.de.md) gesetzt,
 in der beide Personen namentlich genannt werden.
 Die beiden Personen können nun separat ausgezeichnet und in die
 [Personendatenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/)
@@ -80,8 +80,8 @@ Schreibweise gemäss [HLS](https://hls-dhs-dss.ch/de/),
 und dem
 [«Familiennamenbuch der Schweiz»](https://hls-dhs-dss.ch/famn/?pagename=famn2)
 aufgeführt.
-Namen, die sich dort nicht zuordnen lassen, sind von den Bearbeitenden
-standardisiert worden.
+Namen, die sich dort nicht zuordnen lassen, werden von den Bearbeitenden
+standardisiert.
 Das Fehlen eines Familiennamens oder eines Vornamens wird mit der Abkürzung
 «NN» («Nomen nominandum») angegeben. 
 Verkürzte Vornamen wie «Jörg» oder «Trina» werden in der Regel zu
