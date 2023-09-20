@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.tei-c.org/ns/1.0">
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-measureGrp-area">
+    <measureGrp><measure type="area" unit="Juchart" quantity="3" commodity="field">dryg juchart akkers</measure>
+        minder
+        <measure type="area" unit="Mitmal" quantity="0.5" commodity="field">ains halben mitmels</measure>
+    </measureGrp>
+    <note>Es sind 3 Jucharten weniger 0.5 Mitmal (= 1/8 Juchart) = 2 7/8 Jucharten.</note>
+  </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-measureGrp-currencies">
+        buͦß verfallen sin
+        <measureGrp><measure quantity="3" unit="lb" type="currency">druͤ pfund</measure>
+            und
+            <measure quantity="5" unit="ß" type="currency">fuͤnf schilling pfenig</measure>
+        </measureGrp>.
+        ...
+  </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-measureGrp-wheat">
+    <measureGrp><measure commodity="wheat" unit="Scheffel" quantity="10" type="volume">zehen schoͤffel</measure>
+         und
+         <measure commodity="wheat" unit="Viertel" quantity="1" type="volume">ain viertail waissen</measure>
+    </measureGrp>
+  </egXML>
+</div>

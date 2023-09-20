@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="label" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="label" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-19">Enthält Randanmerkungen, die in den Editionstext integriert werden.
     </desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains marginal notes that are integrated into the edition text.
@@ -69,16 +69,8 @@
       </valList>
     </attDef>
   </attList>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-05-25">
-    <p>Angabe einer Randanmerkung</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <label type="keyword" place="left margin">Complices</label>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-05-25">
-    <p>Indication d'une note marginale</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <label type="keyword" place="left margin">Complices</label>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-label-de"/>
+  <xi:include href="examples.xml" xpointer="ex-label-en"/>
+  <xi:include href="examples.xml" xpointer="ex-label-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-label-it"/>
 </elementSpec>

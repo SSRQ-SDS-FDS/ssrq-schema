@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="ref" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="ref" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-04-28">Enthält einen Verweis.</desc>
   <classes mode="replace">
     <memberOf key="att.pointing"/>
@@ -28,38 +28,14 @@
       </sch:pattern>
     </constraint>
   </constraintSpec>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-    <p>Verweis auf gedruckte Quellen</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <bibl>
-        <ref target="https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858">SSRQ SG
-                    III/2, Nr. 231
-                </ref>
-      </bibl>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-    <p>Référence aux sources imprimées</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <bibl>
-        <ref target="https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858">SSRQ SG
-                    III/2, Nr. 231
-                </ref>
-      </bibl>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-04-28">
-    <p>Verweis auf anderes Dokument</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <ref target="urn:ssrq:SSRQ-ZH-NF_I_2_1-4-1">SSRQ ZH NF I/2/1 4-1</ref>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-04-28">
-    <p>Référence à un autre document</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <ref target="urn:ssrq:SSRQ-ZH-NF_I_2_1-4-1">SSRQ ZH NF I/2/1 4-1</ref>
-    </egXML>
-  </exemplum>
+  <xi:include href="examples.xml" xpointer="ex-ref-print-de"/>
+  <xi:include href="examples.xml" xpointer="ex-ref-print-en"/>
+  <xi:include href="examples.xml" xpointer="ex-ref-print-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-ref-print-it"/>
+  <xi:include href="examples.xml" xpointer="ex-ref-urn-de"/>
+  <xi:include href="examples.xml" xpointer="ex-ref-urn-en"/>
+  <xi:include href="examples.xml" xpointer="ex-ref-urn-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-ref-urn-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>Der Verweis kann auf ein anderes Dokument, die Einleitung, das Register eines retrodigitalisierten Bandes,
             einen Eintrag im HLS, zitierte Literatur etc. zeigen. Es ist sinnvoll, Links auf weitere, nicht edierte,

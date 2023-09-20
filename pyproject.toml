@@ -38,13 +38,13 @@ pre-commit = "^3.4.0"
 pyschval = {git = "https://github.com/SSRQ-SDS-FDS/py-schematron-validator.git", rev = "main"}
 pytest = "^7.4.2"
 pytest-xdist = "^3.2.0"
-ruff = "^0.0.289"
+ruff = "^0.0.290"
 ssrq-cli = {git = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-cli.git", rev = "main"}
 types-requests = "^2.31.0.1"
 
 [tool.poetry.group.docs.dependencies]
 mike = "^1.1.2"
-mkdocs-material = "^9.2.8"
+mkdocs-material = "^9.3.1"
 mkdocs-static-i18n = "^1.0"
 pyuca = "^1.2"
 snakemd = "^2.1.0"

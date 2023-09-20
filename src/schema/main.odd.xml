@@ -35,7 +35,7 @@
         <moduleRef key="figures" include="cell figure row table"/>
         <moduleRef key="header" include="availability editorialDecl encodingDesc extent fileDesc handNote idno keywords licence profileDesc publicationStmt seriesStmt sourceDesc teiHeader textClass titleStmt"/>
         <moduleRef key="linking" include="ab anchor seg"/>
-        <moduleRef key="msdescription" include="additional altIdentifier bindingDesc condition dimensions foliation handDesc height history material msContents msDesc msIdentifier msItem objectDesc origDate origin origPlace physDesc repository seal sealDesc summary support supportDesc width"/>
+        <moduleRef key="msdescription" include="additional adminInfo altIdentifier bindingDesc condition custEvent custodialHist dimensions foliation handDesc height history material msContents msDesc msIdentifier msItem objectDesc origDate origin origPlace physDesc repository seal sealDesc summary support supportDesc width"/>
         <moduleRef key="namesdates" include="orgName persName placeName settlement"/>
         <moduleRef key="tei"/>
         <moduleRef key="textcrit" include="app lem listWit rdg witness"/>
@@ -67,6 +67,7 @@
         <specGrpRef target="elements/abbr.xml"/>
         <specGrpRef target="elements/add.xml"/>
         <specGrpRef target="elements/additional.xml"/>
+        <specGrpRef target="elements/adminInfo.xml"/>
         <specGrpRef target="elements/addSpan.xml"/>
         <specGrpRef target="elements/altIdentifier.xml"/>
         <specGrpRef target="elements/anchor.xml"/>
@@ -82,6 +83,8 @@
         <specGrpRef target="elements/choice.xml"/>
         <specGrpRef target="elements/condition.xml"/>
         <specGrpRef target="elements/corr.xml"/>
+        <specGrpRef target="elements/custEvent.xml"/>
+        <specGrpRef target="elements/custodialHist.xml"/>
         <specGrpRef target="elements/damage.xml"/>
         <specGrpRef target="elements/damageSpan.xml"/>
         <specGrpRef target="elements/date.xml"/>
