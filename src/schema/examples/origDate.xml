@@ -3,4 +3,12 @@
   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-origDate-abbr">
     <origDate when-custom="1669-11-10" calendar="gregorian">10. <abbr>9bris</abbr> 1669</origDate>
   </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-origDate-multiple">
+    <origin>
+      <origDate type="content" when-custom="1473-04-26" calendar="julian"/>
+      <origDate type="document" notBefore-custom="1660-11-01" notAfter-custom="1685-11-01" calendar="unknown"><precision match="@notAfter-custom" precision="medium"/>
+            nach 1. November 1660
+        </origDate>
+    </origin>
+  </egXML>
 </div>

@@ -129,6 +129,22 @@
       <p>Esempio di riferimenti bibliografici</p>
       <xi:include href="additional.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-adminInfo-de">
+      <p>Beispiel administrativer Informationen zum Verlust eines Dokuments nach Erstedition</p>
+      <xi:include href="adminInfo.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-adminInfo-en">
+      <p>Example of administrative information on the loss of a document after creation</p>
+      <xi:include href="adminInfo.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-adminInfo-fr">
+      <p>Exemple d'information administrative sur la perte d'un document après sa création</p>
+      <xi:include href="adminInfo.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-adminInfo-it">
+      <p>Esempio di informazione amministrativa sulla perdita di un documento dopo la sua creazione</p>
+      <xi:include href="adminInfo.xml"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-addSpan-de">
       <p>Beispiel für eine umfangreichere Hinzufügung</p>
       <xi:include href="addSpan.xml"/>
@@ -1508,32 +1524,6 @@
       <p>Esempio di descrizione di una fonte</p>
       <xi:include href="objectDesc.xml"/>
     </exemplum>
-    <exemplum xml:lang="de" xml:id="ex-orgName-de">
-      <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
-                nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
-                Nennung des Bürgermeisters.
-            </p>
-      <xi:include href="orgName.xml"/>
-    </exemplum>
-    <exemplum xml:lang="en" xml:id="ex-orgName-en">
-      <p>Institutions / functions are always identified as organisations - but not the people.
-                As shown below, this also applies to the naming of the mayor.
-            </p>
-      <xi:include href="orgName.xml"/>
-    </exemplum>
-    <exemplum xml:lang="fr" xml:id="ex-orgName-fr">
-      <p>Les institutions/fonctions sont toujours identifiées comme des organisations, mais
-                pas les personnes. Comme indiqué ci-dessous, cela s'applique également à la
-                désignation du maire.
-            </p>
-      <xi:include href="orgName.xml"/>
-    </exemplum>
-    <exemplum xml:lang="it" xml:id="ex-orgName-it">
-      <p>Le istituzioni/funzioni sono sempre identificate come organizzazioni, ma non le
-                persone. Come illustrato di seguito, questo vale anche per il nome del sindaco.
-            </p>
-      <xi:include href="orgName.xml"/>
-    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-orig-de">
       <p>Beispiel für einen originalsprachlichen Ausdruck in einem Kommentar</p>
       <xi:include href="orig.xml"/>
@@ -1565,6 +1555,52 @@
     <exemplum xml:lang="it" xml:id="ex-origDate-abbr-it">
       <p>Datazione originale con abbreviazione</p>
       <xi:include href="origDate.xml" xpointer="ex-origDate-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-origDate-multiple-de">
+      <p>Beispiel für die Unterscheidung von Herstellungsdatum und Datum
+       des Inhalts eines Dokuments</p>
+      <xi:include href="origDate.xml" xpointer="ex-origDate-multiple"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-origDate-multiple-en">
+      <p>Example of distinguishing between date of manufacture and date
+       the content of a document</p>
+      <xi:include href="origDate.xml" xpointer="ex-origDate-multiple"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-origDate-multiple-fr">
+      <p>Exemple de distinction entre date de fabrication et date
+       le contenu d'un document</p>
+      <xi:include href="origDate.xml" xpointer="ex-origDate-multiple"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-origDate-multiple-it">
+      <p>Esempio di distinzione tra data di produzione e data
+       il contenuto di un documento</p>
+      <xi:include href="origDate.xml" xpointer="ex-origDate-multiple"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-orgName-de">
+      <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
+                nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
+                Nennung des Bürgermeisters.
+            </p>
+      <xi:include href="orgName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-orgName-en">
+      <p>Institutions / functions are always identified as organisations - but not the people.
+                As shown below, this also applies to the naming of the mayor.
+            </p>
+      <xi:include href="orgName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-orgName-fr">
+      <p>Les institutions/fonctions sont toujours identifiées comme des organisations, mais
+                pas les personnes. Comme indiqué ci-dessous, cela s'applique également à la
+                désignation du maire.
+            </p>
+      <xi:include href="orgName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-orgName-it">
+      <p>Le istituzioni/funzioni sono sempre identificate come organizzazioni, ma non le
+                persone. Come illustrato di seguito, questo vale anche per il nome del sindaco.
+            </p>
+      <xi:include href="orgName.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-p-actum-de">
       <p>Beispiel für eine Schlussformel</p>
@@ -1629,6 +1665,22 @@
     <exemplum xml:lang="it" xml:id="ex-pb-original-it">
       <p>Esempio per i fogli originali</p>
       <xi:include href="pb.xml" xpointer="ex-pb-original"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-pb-with-section-de">
+      <p>Beispiel für eine Zählung von Pergamentstücken</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-pb-with-section-en">
+      <p>Example of counting pieces of parchment</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-pb-with-section-fr">
+      <p>Exemple de comptage de morceaux de parchemin</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-pb-with-section-it">
+      <p>Esempio di conteggio dei pezzi di pergamena</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-pb-with-title-de">
       <p>Blattzählung von Vorsatz- und Titelblättern mit römischen Ziffern</p>
@@ -2044,19 +2096,35 @@
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-summary-de">
       <p>Beispiel für ein Regest</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-summary-en">
       <p>Example of a summary</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-summary-fr">
       <p>Exemple de regeste</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
     </exemplum>
     <exemplum xml:lang="it" xml:id="ex-summary-it">
       <p>Esempio di regesto</p>
-      <xi:include href="summary.xml"/>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-summary-list-de">
+      <p>Beispiel für ein Regest mit einer Aufzählung</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-summary-list-en">
+      <p>Example of a regest with an enumeration</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-summary-list-fr">
+      <p>Exemple de Regest avec une énumération</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="it" xml:id="ex-summary-list-it">
+      <p>Esempio di regest con un'enumerazione</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-support-de">
       <p>Beispiel für eine Beschreibung des Beschreibstoffs einer Quelle</p>

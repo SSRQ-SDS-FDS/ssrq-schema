@@ -12,16 +12,17 @@ vgl. die Beispiele von [`<add>`](add.de.md).
 
 Kann eine Hand einem namentlich bekannten Schreiber zugeordnet werden,
 wird dieser in dem [`<handNote/>`](handNote.de.md)-Element mit dem
-entsprechenden Eintrag in der Personendatenbank verknüpft.
+entsprechenden Eintrag in der Personendatenbank verknüpft (vgl.
+[Personen](persons.de.md)).
 
 ## Klassifikation der Hände
 
 Eine Hand kann danach klassifiziert werden, ob sie zu den Haupthänden gehört
-oder nicht:
+oder nicht.
 
-Haupthände sind: `firstHand`, `secondHand` ... `ninthHand`,
-eine andere Hand hat die Kennung: `otherHand`,
-eine spätere Hand die Kennung: `laterHand`.
+Haupthände sind `firstHand`, `secondHand` ... `ninthHand`,
+eine andere Hand hat die Kennung `otherHand`,
+eine spätere Hand die Kennung `laterHand`.
 
 Dabei gilt, dass in der digitalen Edition die redaktionellen Eingriffe einer
 späteren Hand in den Anmerkungen wiedergegeben werden, während solche einer
