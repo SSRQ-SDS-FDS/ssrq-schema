@@ -75,13 +75,7 @@
           <desc xml:lang="fr" versionDate="2023-05-16">Référence aux bases de données du SDS.</desc>
           <desc xml:lang="it" versionDate="2023-05-16">Riferimento alle banche dati della FDS.</desc>
           <datatype>
-            <rng:choice>
-              <rng:ref name="ssrq.pointer.keywords"/>
-              <rng:ref name="ssrq.pointer.lemma"/>
-              <rng:ref name="ssrq.pointer.org"/>
-              <rng:ref name="ssrq.pointer.persons"/>
-              <rng:ref name="ssrq.pointer.places"/>
-            </rng:choice>
+            <dataRef key="ssrq.pointer.databases"/>
           </datatype>
         </attDef>
       </attList>
