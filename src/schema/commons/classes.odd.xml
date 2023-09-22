@@ -331,6 +331,27 @@
           </sch:pattern>
         </constraint>
       </constraintSpec>
+      <constraintSpec scheme="schematron" ident="sch-att-dimensions-2">
+        <desc xml:lang="en" versionDate="2023-03-01">Mutually dependent for all elements: @unit and @quantity</desc>
+        <constraint>
+          <sch:pattern>
+            <sch:rule context="tei:*">
+              <sch:report test="@quantity and not(@unit)" xml:lang="en">
+                            If the @quantity attribute is specified on the
+                            <sch:name/>
+                            element, @unit must be present,
+                            too.
+                        </sch:report>
+              <sch:report test="@unit and not(@quantity)" xml:lang="en">
+                            If the @unit attribute is specified on the
+                            <sch:name/>
+                            element, @quantity must be present,
+                            too.
+                        </sch:report>
+            </sch:rule>
+          </sch:pattern>
+        </constraint>
+      </constraintSpec>
       <attList>
         <attDef ident="extent" mode="delete"/>
         <attDef ident="precision" mode="delete"/>
