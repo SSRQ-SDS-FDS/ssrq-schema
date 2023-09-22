@@ -500,6 +500,20 @@
               </rng:oneOrMore>
             </rng:list>
           </datatype>
+          <constraintSpec scheme="schematron" ident="sch-att-facs">
+            <desc xml:lang="en" versionDate="2023-04-06">Global constraint to ensure pattern of
+          facsimile names
+            </desc>
+            <constraint>
+              <sch:pattern>
+                <sch:rule context="*[@facs]">
+                  <sch:report test="matches(@facs, '__')" xml:lang="en">
+                            An underscore should not be followed by another underscore in @facs.
+                        </sch:report>
+                </sch:rule>
+              </sch:pattern>
+            </constraint>
+          </constraintSpec>
         </attDef>
       </attList>
     </classSpec>
