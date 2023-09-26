@@ -32,7 +32,7 @@
     <dataRef name="string" restriction="\S+.*"/>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-idno">
-    <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:idno</desc>
+    <desc xml:lang="en" versionDate="2023-09-26">Constraints for tei:idno</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:idno[parent::tei:seriesStmt]">
@@ -57,6 +57,13 @@
                         <sch:name/>
                         element needs an attribute @xml:lang if it's inside tei:msIdentifier.
                     </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern>
+        <sch:rule context="tei:TEI">
+          <sch:assert test="count(distinct-values(//tei:idno/text())) = count(//tei:idno)">
+                            The value of every tei:idno should be unique.
+                        </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
