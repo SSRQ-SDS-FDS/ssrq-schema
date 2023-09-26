@@ -2,10 +2,12 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
   <specGrp xml:id="ssrq-classes">
+    <!--
+        There are currently (2023-09-26) 81 attribute classes specified in
+        TEI P5 Version 4.6.0, all of which are either explicitly deleted or
+        changed in this document.
+    -->
     <!-- TEI attribute classes deleted from schema -->
-    <!-- There are currently (2023-06-29) 81 attribute classes specified in TEI P5 4.6.0,
-             all of which are either explicitly deleted or changed in this document.
-        -->
     <classSpec ident="att.anchoring" type="atts" mode="delete"/>
     <classSpec ident="att.ascribed" type="atts" mode="delete"/>
     <classSpec ident="att.ascribed.directed" type="atts" mode="delete"/>
