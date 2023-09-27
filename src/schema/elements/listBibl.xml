@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="listBibl" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2023-09-14">Liste bibliographischer Angaben</gloss>
+  <desc xml:lang="de" versionDate="2023-07-19">Enthält mit <gi>bibl</gi> kodierte bibliographische Angaben.
+    </desc>
+  <desc xml:lang="en" versionDate="2023-07-19">Contains bibliographic information encoded with <gi>bibl</gi>.
+    </desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient des informations bibliographiques encodées avec <gi>bibl</gi>.
+    </desc>
+  <classes mode="replace">
+    <memberOf key="att.typed"/>
+    <memberOf key="model.biblLike"/>
+  </classes>
+  <content>
+    <elementRef key="bibl" maxOccurs="unbounded"/>
+  </content>
+  <attList>
+    <attDef ident="type" mode="change" usage="req">
+      <datatype>
+        <dataRef key="ssrq.bibl.types"/>
+      </datatype>
+    </attDef>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-edition-de"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-edition-en"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-edition-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-summary-de"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-summary-en"/>
+  <xi:include href="examples.xml" xpointer="ex-listBibl-summary-fr"/>
+</elementSpec>

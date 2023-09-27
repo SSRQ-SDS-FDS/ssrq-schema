@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="history" module="msdescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-15">Enthält Informationen zur Geschichte eines
+        Dokuments. Dazu zählen beispielsweise Datierung oder der Ausstellungsort.
+    </desc>
+  <desc xml:lang="en" versionDate="2023-07-15">Contains information about the history of a document. These include,
+        for example, dating or the place of issue.
+    </desc>
+  <desc xml:lang="fr" versionDate="2023-07-15">Contient des informations sur l'historique d'un document. Ceux-ci
+        incluent, par exemple, la datation ou le lieu d'émission.
+    </desc>
+  <classes mode="replace"/>
+  <content>
+    <elementRef key="origin"/>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-history-de"/>
+  <xi:include href="examples.xml" xpointer="ex-history-en"/>
+  <xi:include href="examples.xml" xpointer="ex-history-fr"/>
+</elementSpec>

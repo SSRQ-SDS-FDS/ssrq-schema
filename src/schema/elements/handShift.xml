@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="handShift" module="transcr" mode="change">
+  <gloss xml:lang="de" versionDate="2023-03-15">Handwechsel</gloss>
+  <gloss xml:lang="en" versionDate="2023-03-15">Change of hands</gloss>
+  <gloss xml:lang="fr" versionDate="2023-03-15">Changement de main</gloss>
+  <desc xml:lang="de" versionDate="2023-05-11">Gibt den Wechsel einer Hand an.</desc>
+  <desc xml:lang="en" versionDate="2023-05-11">Indicates the change of a hand.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-11">Indique le changement d'une main.</desc>
+  <classes mode="replace">
+    <memberOf key="att.written"/>
+  </classes>
+  <content>
+    <empty/>
+  </content>
+  <attList>
+    <attDef ident="hand" mode="change" usage="req"/>
+    <attDef ident="new" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-handShift-de"/>
+  <xi:include href="examples.xml" xpointer="ex-handShift-en"/>
+  <xi:include href="examples.xml" xpointer="ex-handShift-fr"/>
+</elementSpec>

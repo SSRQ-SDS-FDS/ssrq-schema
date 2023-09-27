@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="cb" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2023-08-23">Spaltenanfang</gloss>
+  <gloss xml:lang="en" versionDate="2023-05-23">Column start</gloss>
+  <gloss xml:lang="fr" versionDate="2023-05-23">Début de colonne</gloss>
+  <desc xml:lang="de" versionDate="2023-05-23">Beschreibt den Beginn einer neuen Spalte.</desc>
+  <desc xml:lang="en" versionDate="2023-05-23">Describes the beginning of a new column.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-23">Décrit le début d'une nouvelle colonne.</desc>
+  <classes mode="replace">
+    <memberOf key="att.gobal"/>
+    <memberOf key="model.milestoneLike"/>
+  </classes>
+  <attList>
+    <attDef ident="n" mode="replace">
+      <desc xml:lang="de" versionDate="2023-05-23">Enthält Angaben zur originalen Spaltenzählung.</desc>
+      <desc xml:lang="en" versionDate="2023-05-23">Contains information about the original column count.</desc>
+      <desc xml:lang="fr" versionDate="2023-05-23">Contient des informations sur le nombre de colonnes
+                d'origine.
+            </desc>
+      <datatype>
+        <dataRef name="string" restriction="[a-z]{1}"/>
+      </datatype>
+    </attDef>
+    <attDef ident="xml:id" mode="delete"/>
+    <attDef ident="xml:lang" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-cb-de"/>
+  <xi:include href="examples.xml" xpointer="ex-cb-en"/>
+  <xi:include href="examples.xml" xpointer="ex-cb-fr"/>
+</elementSpec>

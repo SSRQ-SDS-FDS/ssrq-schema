@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="corr" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-24">Enthält eine durch einen Editor vorgenommene Korrektur.</desc>
+  <desc xml:lang="en" versionDate="2023-05-24">Contains a correction made by an editor.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-24">Contient une correction faite par un éditeur.</desc>
+  <classes mode="replace">
+    <memberOf key="att.global.responsibility"/>
+    <memberOf key="model.choicePart"/>
+    <memberOf key="model.pPart.transcriptional"/>
+  </classes>
+  <content>
+    <rng:oneOrMore>
+      <rng:ref name="ssrq.content.default"/>
+    </rng:oneOrMore>
+  </content>
+  <attList>
+    <attDef ident="cert" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-de"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-choice-sic-en"/>
+  <remarks xml:lang="de" versionDate="2023-07-19">
+    <p>Enthält die korrekte Form zum Beispiel eines Verschreibers, der mit <gi>sic</gi> kenntlich gemacht wird.
+            Die Korrektur stammt immer vom Editor und nicht aus der Hand des Schreibers des Dokuments. Bei irrtümlichen
+            Wiederholungen von Wörtern enthält <gi>corr</gi> die korrekte Form. Ein leeres <gi>corr</gi> ist möglich,
+            wenn ein überflüssiges Wort durch den Editor getilgt wird.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-19">
+    <p>Contains the correct form, for example, of a prescriber, identified with <gi>sic</gi>. The correction always
+            comes from the editor and not from the hand of the writer of the document. For erroneous repetitions of
+            words, <gi>corr</gi> contains the correct form. An empty <gi>corr</gi> is possible if a superfluous word is
+            deleted by the editor.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-19">
+    <p>Contient le formulaire correct, par exemple, d'un prescripteur, identifié par <gi>sic</gi>. La correction
+            vient toujours de l'éditeur et non de la main du rédacteur du document. Pour les répétitions erronées de
+            mots, <gi>corr</gi> contient la forme correcte. Un <gi>corr</gi> vide est possible si un mot superflu est
+            supprimé par l'éditeur.
+        </p>
+  </remarks>
+</elementSpec>

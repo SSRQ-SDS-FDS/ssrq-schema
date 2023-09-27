@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="measure" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Massangabe jeder Art.</desc>
+  <desc xml:lang="en" versionDate="2023-07-19">Contains a measurement of any type.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient une mesure de chaque type.</desc>
+  <classes mode="replace">
+    <memberOf key="att.measurement"/>
+    <memberOf key="att.typed"/>
+    <memberOf key="model.measureLike"/>
+  </classes>
+  <content>
+    <alternate maxOccurs="unbounded">
+      <textNode/>
+      <macroRef key="ssrq.content.critical"/>
+      <macroRef key="ssrq.content.display"/>
+      <macroRef key="ssrq.content.content"/>
+      <macroRef key="ssrq.content.entities"/>
+    </alternate>
+  </content>
+  <constraintSpec scheme="schematron" mode="change" ident="sch-measure" module="core">
+    <desc xml:lang="en" versionDate="2023-03-23">Constrains for tei:measure</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:measure[@type = 'age']">
+          <sch:let name="age" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.time']//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $age, '$'))"><sch:value-of select="./@unit"/>
+                        is no valid time measurement – you need to choose
+                        from the following list:
+                        <sch:value-of select="string-join(tokenize($age, '\|'), ', ')"/>
+                    </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'area']">
+          <sch:let name="area" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.area']//tei:valItem/@ident, '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $area, '$'))"><sch:value-of select="./@unit"/>
+                        is not a valid area measurement – you need to choose
+                        from the following list:
+                        <sch:value-of select="string-join(tokenize($area, '\|'), ', ')"/>
+                    </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'currency']">
+          <sch:let name="currency" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.currency']//tei:valItem/@ident, '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $currency, '$'))"><sch:value-of select="./@unit"/>
+                        is not valid currency – you need to choose from the
+                        following list:
+                        <sch:value-of select="string-join(tokenize($currency, '\|'), ', ')"/>
+                    </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'length']">
+          <sch:let name="length" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.length', 'ssrq.measure.lengths.base.cm', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $length, '$'))"><sch:value-of select="./@unit"/>
+                        is not valid length measurement– you need to choose
+                        from the following list:
+                        <sch:value-of select="string-join(tokenize($length, '\|'), ', ')"/>
+                    </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:measure[not(@type = 'text_scope')]">
+          <sch:assert test="string-length(normalize-space(.)) &gt; 0"><sch:name/>
+                            must not be empty.
+                        </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'text_scope']">
+          <sch:let name="scope" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.scope']//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test=".[parent::tei:extent]"><sch:name/>
+                        of type 'text_scope' must be a child of tei:extent.
+                    </sch:assert>
+          <sch:assert test="matches(@unit, concat('^', $scope, '$'))"><sch:value-of select="./@unit"/>
+                        is no valid scope measurement – you need to choose
+                        from the following list:
+                        <sch:value-of select="string-join(tokenize($scope, '\|'), ', ')"/>
+                    </sch:assert>
+          <sch:assert test="string-length(text()) = 0 and not(*)"><sch:name/>
+                        of type 'text_scope' must be empty.
+                    </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'undefined']">
+          <sch:let name="various" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.various']//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $various, '$'))"><sch:value-of select="./@unit"/>
+                        is not part of unspecific measurements– you need to
+                        choose from the following list:
+                        <sch:value-of select="string-join(tokenize($various, '\|'), ', ')"/>
+                    </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'volume']">
+          <sch:let name="volume" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.lengths.base.klafter', 'ssrq.measure.capacity', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $volume, '$'))"><sch:value-of select="./@unit"/>
+                        is not valid capacity measurement– you need to choose
+                        from the following list:
+                        <sch:value-of select="string-join(tokenize($volume, '\|'), ', ')"/>
+                    </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="commodity" mode="replace">
+      <datatype>
+        <dataRef key="ssrq.measure.att.commodity"/>
+      </datatype>
+    </attDef>
+    <attDef ident="origin" mode="add" module="ssrq.core.module">
+      <datatype>
+        <dataRef key="ssrq.measure.att.origin"/>
+      </datatype>
+    </attDef>
+    <attDef ident="type" mode="replace" usage="req">
+      <datatype>
+        <dataRef key="ssrq.measure.att.type"/>
+      </datatype>
+    </attDef>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-measure-age-de"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-age-en"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-age-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-price-de"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-price-en"/>
+  <xi:include href="examples.xml" xpointer="ex-measure-price-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-area-de"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-area-en"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-area-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-de"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-en"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-de"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-en"/>
+  <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-fr"/>
+</elementSpec>

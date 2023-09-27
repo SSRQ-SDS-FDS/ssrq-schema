@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="damage" module="transcr" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-13">Bezeichnet einen beschädigten Abschnitt.</desc>
+  <desc xml:lang="en" versionDate="2023-07-13">Denotes a damaged section.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-13">Indique une section endommagée.</desc>
+  <classes mode="replace">
+    <memberOf key="att.damaged"/>
+  </classes>
+  <content>
+    <sequence>
+      <alternate maxOccurs="unbounded">
+        <elementRef key="add"/>
+        <elementRef key="gap"/>
+        <elementRef key="supplied"/>
+        <elementRef key="unclear"/>
+      </alternate>
+    </sequence>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-damage-add-de"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-add-en"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-add-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-gap-de"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-gap-en"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-gap-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-supplied-de"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-supplied-en"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-supplied-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-unclear-de"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-unclear-en"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-unclear-fr"/>
+  <remarks xml:lang="de" versionDate="2023-07-13">
+    <p>Die Art der Beschädigung wird mit <att>agent</att> näher beschrieben. Soweit möglich, wird der fehlende Text
+            mit <gi>supplied</gi> oder bei unsicherer Lesung mit <gi>unclear</gi> ergänzt. Wenn kein Text ergänzt werden
+            kann, wird <gi>gap</gi> verwendet. Je nach Stärke der Beschädigung kann auch eine Kombination der Tags
+            <gi>unclear</gi>, <gi>supplied</gi> und <gi>gap</gi> verwendet werden. Bei längeren Textpassagen,
+            wenn <gi>damage</gi> alleine nicht mehr reicht, ist <gi>damageSpan</gi> zu verwenden.
+        </p>
+    <p>In der Regel werden mit <gi>damage</gi> physikalische Zerstörungen und nicht mutwillige Eingriffe
+            ausgezeichnet. Eine Rasur wird mit <gi>del</gi> ausgezeichnet. Eine Beschreibung von grösseren Schäden
+            erfolgt zusätzlich pauschal in den Metadaten.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-13">
+    <p>The type of damage is described in more detail with <att>agent</att>. As far as possible, the missing text
+            is supplemented with <gi>supplied</gi> or, if reading is uncertain, with <gi>unclear</gi>. If no text can
+            be added, <gi>gap</gi> is used. A combination of the <gi>unclear</gi>, <gi>supplied</gi>,
+            and <gi>gap</gi> tags can also be used, depending on the severity of the corruption. For longer text
+            passages, when <gi>damage</gi> alone is no longer sufficient, <gi>damageSpan</gi> should be used.
+        </p>
+    <p>As a rule, <gi>damage</gi> is used to mark physical destruction and non-wanton interference. A shave is
+            marked with <gi>del</gi>. A general description of major damage is also given in the metadata.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-13">
+    <p>Le type de dommage est décrit plus en détail avec <att>agent</att>. Dans la mesure du possible, le texte
+            manquant est complété par <gi>supplied</gi> ou, si la lecture est incertaine, par <gi>unclear</gi>. Si
+            aucun texte ne peut être ajouté, <gi>gap</gi> est utilisé. Une combinaison des
+            balises <gi>unclear</gi>, <gi>supplied</gi> et <gi>gap</gi> peut également être utilisée, selon la gravité
+            de la corruption. Pour les passages de texte plus longs, lorsque <gi>damage</gi> seul ne suffit
+            plus, <gi>damageSpan</gi> doit être utilisé.
+        </p>
+    <p>En règle générale, <gi>damage</gi> est utilisé pour marquer la destruction physique et l'interférence non
+            gratuite. Un rasage est marqué par <gi>del</gi>. Une description générale des dommages majeurs est
+            également donnée dans les métadonnées.
+        </p>
+  </remarks>
+</elementSpec>

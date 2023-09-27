@@ -90,7 +90,9 @@ venv.bak/
 # mkdocs documentation
 /site
 # ignore docs generated for elements
-/docs/elements/*.md
+/src/docs/elements/*.md
+# Do not ignore the index pages
+!/src/docs/elements/index*.md
 
 # mypy
 .mypy_cache/

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="div" module="textstructure" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-23">Gliedert Quellentexte innerhalb von <gi>body</gi> oder Bemerkungen
+        innnerhalb von <gi>back</gi> zusammen mit <gi>p</gi> in Abschnitte.
+    </desc>
+  <desc xml:lang="en" versionDate="2023-05-23">Sections source text within <gi>body</gi> or comments
+        within <gi>back</gi> together with <gi>p</gi>.
+    </desc>
+  <desc xml:lang="fr" versionDate="2023-05-23">Sections le texte source dans <gi>body</gi> ou les commentaires
+        dans <gi>back</gi> avec <gi>p</gi>.
+    </desc>
+  <classes mode="replace">
+    <memberOf key="att.global"/>
+    <memberOf key="att.typed"/>
+  </classes>
+  <content>
+    <rng:choice>
+      <rng:interleave>
+        <rng:group>
+          <rng:ref name="div"/>
+          <rng:oneOrMore>
+            <rng:ref name="div"/>
+          </rng:oneOrMore>
+        </rng:group>
+        <rng:zeroOrMore>
+          <rng:choice>
+            <rng:ref name="cb"/>
+            <rng:ref name="pb"/>
+            <rng:ref name="ssrq.content.anchor.spans"/>
+          </rng:choice>
+        </rng:zeroOrMore>
+      </rng:interleave>
+      <rng:oneOrMore>
+        <rng:choice>
+          <rng:ref name="seg"/>
+          <rng:ref name="p"/>
+          <rng:ref name="ssrq.content.default"/>
+        </rng:choice>
+      </rng:oneOrMore>
+    </rng:choice>
+  </content>
+  <constraintSpec scheme="schematron" ident="sch-el-div-text" mode="add">
+    <desc xml:lang="en" versionDate="2023-08-17">Schematron to check the usage of attributes.</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:div">
+          <sch:assert test="string-length(normalize-space(string-join(text(), ''))) = 0">
+                        No text allowed in <sch:name/>.
+                    </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="type" mode="replace">
+      <valList type="closed">
+        <valItem ident="part"/>
+        <valItem ident="chapter"/>
+        <valItem ident="section"/>
+        <valItem ident="subsection"/>
+      </valList>
+    </attDef>
+    <attDef ident="xml:id" mode="delete"/>
+    <attDef ident="xml:lang" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-div-back-de"/>
+  <xi:include href="examples.xml" xpointer="ex-div-back-en"/>
+  <xi:include href="examples.xml" xpointer="ex-div-back-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-div-body-de"/>
+  <xi:include href="examples.xml" xpointer="ex-div-body-en"/>
+  <xi:include href="examples.xml" xpointer="ex-div-body-fr"/>
+  <remarks xml:lang="de" versionDate="2023-08-21">
+    <p>Originale Absätze werden nur mit <gi>p</gi> (ohne zusätzliches <gi>div</gi>) gekennzeichnet. Sofern das
+            Original stärker gegliedert oder strukturiert ist, kann man beides verwenden, gegebenenfalls zusammen
+            mit <att>type</att>. Abschnitte, die der Bearbeitende zur inhaltlichen Strukturierung (lesbarer Text)
+            einfügt, werden hingegen mit <gi>seg</gi> ausgezeichnet.</p>
+    <p>Weitere Hinweise zur Strukturierung von Quellentexten finden sich in den
+        <ref target="textstructure.md">Transkriptionsrichtlinien</ref>.
+        Zur Strukturierung von Schlussformeln vgl. die Beispiele auf der Seite Schlussformeln.</p>
+    <p>Bei längeren Paratexten (Einleitung, Kommentar) können Kapitel durch <gi>div</gi> mit <att>n</att> nummeriert
+        und gegebenenfalls mit <att>type</att> näher bezeichnet werden.</p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-08-21">
+    <p>Original paragraphs are only marked with <gi>p</gi> (without an additional <gi>div</gi>). If the original is
+        more articulated or structured, you can use both, possibly together with <att>type</att>. Sections that the
+        editor inserts to structure the content (readable text) are marked with <gi>seg</gi>.</p>
+    <p>Further information on structuring source texts can be found in the
+        <ref target="textstructure.md">Transcription Guidelines</ref>. For
+        the structuring of closing formulas, see the examples on the Closing Formulas page.</p>
+    <p>For longer paratexts (introduction, comment), chapters can be numbered with <gi>div</gi> with <att>n</att> and,
+        if necessary, with <att>type</att>.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-08-21">
+    <p>Les paragraphes originaux ne sont marqués que d'un <gi>p</gi> (sans un <gi>div</gi> supplémentaire). Si
+        l'original est plus articulé ou structuré, vous pouvez utiliser les deux, éventuellement avec <att>type</att>.
+        Les sections que l'éditeur insère pour structurer le contenu (texte lisible) sont marquées par <gi>seg</gi>.</p>
+    <p>De plus amples informations sur la structuration des textes sources peuvent être trouvées dans le
+        <ref target="textstructure.md">Directives de transcription</ref>.
+        Pour la structuration des formules de clôture, voir les exemples sur la page Formules de clôture.</p>
+    <p>Dans le cas de paratextes plus longs (introduction, commentaire), les chapitres peuvent être numérotés avec
+        <gi>div</gi> avec <att>n</att> et, si nécessaire, avec <att> tapez</att>.</p>
+  </remarks>
+</elementSpec>

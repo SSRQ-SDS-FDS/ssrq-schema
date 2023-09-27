@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="num" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-30">Enthält eine Zahl im transkribierten Quelltext.</desc>
+  <desc xml:lang="en" versionDate="2023-05-30">Contains a number in the transcribed source text.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-30">Contient un nombre dans le texte source transcrit.</desc>
+  <classes mode="replace">
+    <memberOf key="model.measureLike"/>
+  </classes>
+  <content>
+    <alternate maxOccurs="unbounded">
+      <textNode/>
+      <elementRef key="hi"/>
+      <elementRef key="lb"/>
+      <elementRef key="pb"/>
+    </alternate>
+  </content>
+  <attList>
+    <attDef ident="value" mode="change" usage="req">
+      <desc xml:lang="de" versionDate="2023-05-31">Zahlenwert in arabischen Ziffern</desc>
+      <desc xml:lang="en" versionDate="2023-05-31">Numerical value in Arabic numerals</desc>
+      <desc xml:lang="fr" versionDate="2023-05-31">Valeur numérique en chiffres arabes</desc>
+      <datatype>
+        <rng:choice>
+          <rng:data type="float"/>
+          <rng:data type="int"/>
+        </rng:choice>
+      </datatype>
+    </attDef>
+    <attDef ident="type" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-hi-num-de"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-num-en"/>
+  <xi:include href="examples.xml" xpointer="ex-hi-num-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-num-de"/>
+  <xi:include href="examples.xml" xpointer="ex-num-en"/>
+  <xi:include href="examples.xml" xpointer="ex-num-fr"/>
+  <remarks xml:lang="de" versionDate="2023-08-17">
+    <p>Der Wert der Zahl wird im Attribut <att>value</att> maschinenlesbar hinterlegt.
+        </p>
+    <p>Bei Angaben zu Massen, Gewichten, Währungen etc., in denen innerhalb
+            von <gi>measure</gi> mit <att>quantity</att> die Anzahl ausgezeichnet wird,
+            wird auf <gi>num</gi> verzichtet. Ebenso wird bei Jahreszahlen, die
+            mit <gi>date</gi>und <att>when-custom</att> genauer beschrieben werden,
+            auf <gi>num</gi> verzichtet. Innerhalb von einer zeitlichen Angabe
+            mit <att>dur</att> wird auf <gi>num</gi> verzichtet.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-08-21">
+    <p>The value of the number is stored in machine-readable form in the <att>value</att> attribute.
+        </p>
+    <p>In the case of information on dimensions, weights, currencies, etc., in which <gi>measure</gi> is used to
+            mark the number with <att>quantity</att>, <gi>num</gi> is not used. Likewise, <gi>num</gi> is not used for
+            years that are described in more detail with <gi>date</gi> and <att>when-custom</att>. Within a time
+            specification with <att>dur</att>, <gi>num</gi> is not used.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-08-17">
+    <p>La valeur du nombre est stockée sous une forme lisible par machine dans l'attribut <att>value</att>.
+        </p>
+    <p>Dans le cas d'informations sur les dimensions, les poids, les devises, etc., dans
+            lesquelles <gi>measure</gi> est utilisé pour marquer le nombre avec <att>quantity</att>, <gi>num</gi> n'est
+            pas utilisé. De même, <gi>num</gi> n'est pas utilisé pour les années qui sont décrites plus en détail
+            avec <gi>date</gi> et <att>when-custom</att>. Dans une spécification de temps
+            avec <att>dur</att>, <gi>num</gi> n'est pas utilisé.
+        </p>
+  </remarks>
+</elementSpec>

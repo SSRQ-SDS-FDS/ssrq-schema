@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origPlace" module="msdescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-16">Enthält den Austellungs- oder Druckort einer Quelle.</desc>
+  <desc xml:lang="en" versionDate="2023-05-16">Contains the place of issue or printing of a source.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-16">Contient le lieu d'émission ou d'impression d'une source.</desc>
+  <classes mode="replace">
+    <memberOf key="att.canonical"/>
+    <memberOf key="att.global.responsibility"/>
+    <memberOf key="model.pPart.msdesc"/>
+  </classes>
+  <content>
+    <rng:oneOrMore>
+      <rng:ref name="ssrq.content.default"/>
+    </rng:oneOrMore>
+  </content>
+  <constraintSpec scheme="schematron" ident="sch-el-origPlace">
+    <desc xml:lang="en" versionDate="2023-05-16">Constraint for tei:origPlace</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:origPlace[parent::tei:origin]">
+          <sch:assert test=".[@*] or string-length(normalize-space(string())) &gt; 0">If
+                        <sch:name/>
+                        is part tei:origin, it must have an attribute or a text node.
+                    </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="ref" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung des Ortes mit der ID der
+                Ortsdatenbank.
+            </desc>
+      <desc xml:lang="en" versionDate="2023-03-28">Linking the place with the ID of the
+                database of places.
+            </desc>
+      <desc xml:lang="fr" versionDate="2023-03-28">Relier le lieu à l'ID de la base de données
+                des lieux.
+            </desc>
+      <datatype>
+        <dataRef key="ssrq.pointer.places"/>
+      </datatype>
+    </attDef>
+    <attDef ident="resp" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-history-de"/>
+  <xi:include href="examples.xml" xpointer="ex-history-en"/>
+  <xi:include href="examples.xml" xpointer="ex-history-fr"/>
+  <remarks xml:lang="de" versionDate="2023-08-23">
+    <p>In <att>ref</att> wird mit einer ID (locNNNNNN) auf den Ort in der Ortsdatenbank verwiesen, in der
+      alle Angaben zu einem Ort zu finden sind. Topographische Bezeichnungen im edierten Text werden  mit <gi>placeName</gi> ausgezeichnet.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-08-23">
+    <p>In <att>ref</att>, an ID (locNNNNNN) refers to the place in the place database, in which all information
+      about a place can be found. Topographical designations in the edited text are marked with <gi>placeName</gi>.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-08-23">
+    <p>Dans <att>ref</att>, un ID (locNNNNNN) fait référence au lieu dans la base de données des lieux, dans
+      laquelle toutes les informations sur un lieu peuvent être trouvées. Les désignations topographiques dans le texte édité sont signalées par <gi>placeName</gi>.
+        </p>
+  </remarks>
+</elementSpec>

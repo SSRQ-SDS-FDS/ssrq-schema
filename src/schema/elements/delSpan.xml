@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="delSpan" module="transcr" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet grössere Abschnitte, die aus dem Text getilgt wurden.</desc>
+  <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections deleted from the text.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui ont été supprimées du texte.
+    </desc>
+  <classes mode="replace">
+    <memberOf key="att.global.rendition"/>
+    <memberOf key="att.spanning"/>
+    <memberOf key="att.written"/>
+  </classes>
+  <content>
+    <empty/>
+  </content>
+  <attList>
+    <attDef ident="rend" mode="replace">
+      <datatype>
+        <dataRef key="ssrq.rend.del"/>
+      </datatype>
+    </attDef>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-delSpan-de"/>
+  <xi:include href="examples.xml" xpointer="ex-delSpan-en"/>
+  <xi:include href="examples.xml" xpointer="ex-delSpan-fr"/>
+  <remarks xml:lang="de" versionDate="2023-07-13">
+    <p>Mit <att>spanTo</att> wird zwingend auf den Endpunkt der Tilgung verwiesen, der
+            mit <gi>anchor</gi> markiert wird.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-13">
+    <p>With <att>spanTo</att> a mandatory reference is made to the end point of the erasure, which is marked
+            with <gi>anchor</gi>.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-13">
+    <p>Avec <att>spanTo</att> une référence obligatoire est faite au point final de l'effacement, qui est marqué
+            par <gi>anchor</gi>.
+        </p>
+  </remarks>
+</elementSpec>

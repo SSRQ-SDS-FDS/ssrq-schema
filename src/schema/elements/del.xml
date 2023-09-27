@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="del" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-24">Enthält Text, der von einem Schreiber getilgt wurde.</desc>
+  <desc xml:lang="en" versionDate="2023-05-24">Contains text deleted by a writer.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-24">Contient du texte effacé par un scribe.</desc>
+  <classes>
+    <memberOf key="att.global.rendition"/>
+    <memberOf key="att.written"/>
+    <memberOf key="model.linePart"/>
+    <memberOf key="model.pPart.transcriptional"/>
+  </classes>
+  <content>
+    <rng:oneOrMore>
+      <rng:choice>
+        <rng:ref name="p"/>
+        <rng:ref name="seg"/>
+        <rng:ref name="ssrq.content.default"/>
+      </rng:choice>
+    </rng:oneOrMore>
+  </content>
+  <constraintSpec scheme="schematron" ident="sch-el-del" mode="add">
+    <desc versionDate="2023-06-01" xml:lang="en">Schematron rules for tei:del</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:del[parent::tei:subst][not(text())][not(*[not(self::tei:gap)])]">
+          <sch:assert test=".[tei:gap]"><sch:name/>
+                        inside tei:subst must contain at least a tei:gap.
+                    </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="rend" mode="replace">
+      <datatype>
+        <dataRef key="ssrq.rend.del"/>
+      </datatype>
+    </attDef>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-del-de"/>
+  <xi:include href="examples.xml" xpointer="ex-del-en"/>
+  <xi:include href="examples.xml" xpointer="ex-del-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-del-gap-de"/>
+  <xi:include href="examples.xml" xpointer="ex-del-gap-en"/>
+  <xi:include href="examples.xml" xpointer="ex-del-gap-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-subst-de"/>
+  <xi:include href="examples.xml" xpointer="ex-subst-en"/>
+  <xi:include href="examples.xml" xpointer="ex-subst-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-del-unclear-de"/>
+  <xi:include href="examples.xml" xpointer="ex-del-unclear-en"/>
+  <xi:include href="examples.xml" xpointer="ex-del-unclear-fr"/>
+  <remarks xml:lang="de" versionDate="2023-07-19">
+    <p>Mit <gi>del</gi> werden keine Streichungen, die vom Editor stammen, ausgezeichnet, sondern nur solche, die
+            sich in der Quelle befinden. Bei mehrfach gestrichenen Texten, oder wenn Streichungen Hierarchiegrenzen
+            überschreiten, müssen <gi>delSpan</gi> und <gi>anchor</gi> benutzt werden.
+        </p>
+    <p>Rasuren werden mit dem Attribut <att>rend</att> = <val>rubbing</val> ausgezeichnet. Wenn bei Rasuren oder
+            auch bei heftigen Streichungen gar nichts mehr lesbar ist, wird ein leeres <gi>gap</gi> innerhalb
+            von <gi>del</gi> verwendet.
+        </p>
+    <p>Das Attribut <att>hand</att> wird für Streichungen mit anderer Tinte verwendet. Bei späteren Texteingriffen
+            (Streichung mit Korrektur) wird <att>hand</att> bei <gi>add</gi> innerhalb von <gi>subst</gi> nachgewiesen.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-19">
+    <p>With <gi>del</gi> no deletions that come from the editor are marked, only those that
+            are in the source. If text is deleted several times or if deletions cross hierarchical
+            boundaries, <gi>delSpan</gi> and <gi>anchor</gi> must be used.
+        </p>
+    <p>Shaves are marked with the attribute <att>rend</att> = <val>rubbing</val>. If nothing
+            is legible after shaving or heavy stroking, an empty <gi>gap</gi> is used within <gi>del</gi>.
+        </p>
+    <p>The <att>hand</att> attribute is used for strokes with other ink. In later text
+            interventions (deletion with correction), <att>hand</att> is found
+            at <gi>add</gi> within <gi>subst</gi>.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-19">
+    <p>Avec <gi>del</gi>, aucune suppression provenant de l'éditeur n'est marquée, seules celles qui se trouvent
+            dans la source. Si le texte est supprimé plusieurs fois ou si les suppressions franchissent les limites
+            hiérarchiques, <gi>delSpan</gi> et <gi>anchor</gi> doivent être utilisés.
+        </p>
+    <p>Les rasages sont marqués avec l'attribut <att>rend</att> = <val>rubbing</val>. Si rien n'est lisible après
+            le rasage ou les coups lourds, un <gi>gap</gi> vide est utilisé dans <gi>del</gi>.
+        </p>
+    <p>L'attribut <att>hand</att> est utilisé pour les traits avec une autre encre. Dans les interventions
+            textuelles ultérieures (suppression avec correction), <att>hand</att> se trouve
+            à <gi>add</gi> dans <gi>subst</gi>.
+        </p>
+  </remarks>
+</elementSpec>

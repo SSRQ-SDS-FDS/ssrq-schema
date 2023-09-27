@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="msContents" module="msdescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-15">Enthält das Regest und die Textsprache der Quelle.</desc>
+  <desc xml:lang="en" versionDate="2023-07-15">Contains the regest and text language of the source.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-15">Contient le registre et la langue du texte de la source.</desc>
+  <classes mode="replace"/>
+  <content>
+    <sequence>
+      <elementRef key="summary" minOccurs="0" maxOccurs="unbounded"/>
+      <elementRef key="msItem"/>
+    </sequence>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-msContents-de"/>
+  <xi:include href="examples.xml" xpointer="ex-msContents-en"/>
+  <xi:include href="examples.xml" xpointer="ex-msContents-fr"/>
+</elementSpec>

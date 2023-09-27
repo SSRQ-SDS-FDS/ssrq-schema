@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="list" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-19">Beschreibt eine Liste oder Aufzählung jeder Art.</desc>
+  <desc xml:lang="en" versionDate="2023-07-19">Describes a list or enumeration of any kind.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Décrit une liste ou une énumération de tout type.</desc>
+  <classes mode="replace">
+    <memberOf key="att.global.rendition"/>
+    <memberOf key="model.listLike"/>
+  </classes>
+  <content>
+    <elementRef key="item" maxOccurs="unbounded"/>
+  </content>
+  <attList>
+    <attDef ident="rend" mode="replace">
+      <desc xml:lang="de" versionDate="2023-07-19">Angabe zur Darstellung der Liste</desc>
+      <desc xml:lang="en" versionDate="2023-07-19">Specification for displaying the list</desc>
+      <desc xml:lang="fr" versionDate="2023-07-19">Spécification d'affichage de la liste</desc>
+      <valList type="closed">
+        <valItem ident="bulleted">
+          <desc xml:lang="de" versionDate="2023-07-19">Liste mit Bullet-Points</desc>
+          <desc xml:lang="en" versionDate="2023-07-19">List with bullet points</desc>
+          <desc xml:lang="fr" versionDate="2023-07-19">Liste avec des puces</desc>
+        </valItem>
+        <valItem ident="numbered">
+          <desc xml:lang="de" versionDate="2023-04-13">Nummerierte Liste</desc>
+          <desc xml:lang="en" versionDate="2023-04-13">Numbered list</desc>
+          <desc xml:lang="fr" versionDate="2023-04-13">Liste numérotée</desc>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-list-de"/>
+  <xi:include href="examples.xml" xpointer="ex-list-en"/>
+  <xi:include href="examples.xml" xpointer="ex-list-fr"/>
+</elementSpec>

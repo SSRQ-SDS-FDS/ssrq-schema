@@ -1,0 +1,1874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <macroSpec ident="ssrq-examples">
+    <!-- Naming conventions inside this file are the following:
+        A) The xml:id of an exemplum:
+            - start always with "ex"
+            - continues with the name of the main element, which is part of the exemplum
+            - semantically meaningful parts of the id are separated by a dash ("-")
+            - ends always with a language abbreviation ("de", "en", "fr", "it").
+        B) Translations inside of <p>:
+            - start always with a capital letter
+            - do *not* end with a punctuation mark
+        C) Order of Elements
+            - all exempla are ordered by their xml:id
+            - the languages are ordered alphabetically ("de", "en", "fr", "it")
+    -->
+    <exemplum xml:lang="de" xml:id="ex-ab-de">
+      <p>Beispiel für einen Kanzleivermerk</p>
+      <xi:include href="ab.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-ab-en">
+      <p>Example of a clerk's note</p>
+      <xi:include href="ab.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-ab-fr">
+      <p>Exemple de note de service</p>
+      <xi:include href="ab.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-abbr-de">
+      <p>Beispiel einer nicht aufgelösten Abkürzung</p>
+      <xi:include href="abbr.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-abbr-en">
+      <p>Abbreviation not transcribed</p>
+      <xi:include href="abbr.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-abbr-fr">
+      <p>Abréviation non transcrite</p>
+      <xi:include href="abbr.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-add-de">
+      <p>Nachtrag von gleicher Hand oberhalb der Zeile</p>
+      <xi:include href="add.xml" xpointer="ex-add"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-add-en">
+      <p>Addendum by the same hand above the line</p>
+      <xi:include href="add.xml" xpointer="ex-add"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-add-fr">
+      <p>Ajout de la même main au-dessus de la ligne</p>
+      <xi:include href="add.xml" xpointer="ex-add"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-add-century-de">
+      <p>Beispiel für eine Hinzufügung einer Hand des 18. Jahrhunderts</p>
+      <xi:include href="add.xml" xpointer="ex-add-century"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-add-century-en">
+      <p>Example of an addition of a hand of the 18th century</p>
+      <xi:include href="add.xml" xpointer="ex-add-century"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-add-century-fr">
+      <p>Exemple d'ajout d'une main du 18ème siècle</p>
+      <xi:include href="add.xml" xpointer="ex-add-century"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-add-later-de">
+      <p>Beispiel für eine Hinzufügung von späterer Hand</p>
+      <xi:include href="add.xml" xpointer="ex-add-later"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-add-later-en">
+      <p>Example of a later hand addition</p>
+      <xi:include href="add.xml" xpointer="ex-add-later"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-add-later-fr">
+      <p>Exemple d'un ajout de main ultérieur</p>
+      <xi:include href="add.xml" xpointer="ex-add-later"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-add-margin-de">
+      <p>Hinzufügung am linken Rand, markiert durch ein spezielles Zeichen</p>
+      <xi:include href="add.xml" xpointer="ex-add-margin"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-add-margin-en">
+      <p>Addition on the left margin, marked by a special sign</p>
+      <xi:include href="add.xml" xpointer="ex-add-margin"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-add-margin-fr">
+      <p>Ajout dans la marge de gauche, marqué par un signe spécial</p>
+      <xi:include href="add.xml" xpointer="ex-add-margin"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-additional-de">
+      <p>Beispiel für Literaturhinweise</p>
+      <xi:include href="additional.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-additional-en">
+      <p>Example of bibliographical references</p>
+      <xi:include href="additional.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-additional-fr">
+      <p>Exemple de références bibliographiques</p>
+      <xi:include href="additional.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-adminInfo-de">
+      <p>Beispiel administrativer Informationen zum Verlust eines Dokuments nach Erstedition</p>
+      <xi:include href="adminInfo.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-adminInfo-en">
+      <p>Example of administrative information on the loss of a document after creation</p>
+      <xi:include href="adminInfo.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-adminInfo-fr">
+      <p>Exemple d'information administrative sur la perte d'un document après sa création</p>
+      <xi:include href="adminInfo.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-addSpan-de">
+      <p>Beispiel für eine umfangreichere Hinzufügung</p>
+      <xi:include href="addSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-addSpan-en">
+      <p>Example of a larger addition</p>
+      <xi:include href="addSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-addSpan-fr">
+      <p>Exemple d'un ajout plus important</p>
+      <xi:include href="addSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-app-de">
+      <p>Beispiel für einen Apparateintrag</p>
+      <xi:include href="app.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-app-en">
+      <p>Example of an apparatus entry</p>
+      <xi:include href="app.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-app-fr">
+      <p>Exemple d'entrée d'appareil</p>
+      <xi:include href="app.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-author-de">
+      <p>Beispiel für die Angabe des Autors eines Stücks</p>
+      <xi:include href="author.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-author-en">
+      <p>Example of identifying the author of a piece</p>
+      <xi:include href="author.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-author-fr">
+      <p>Exemple d'identification de l'auteur d'une pièce</p>
+      <xi:include href="author.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-availability-de">
+      <p>Beispiel für die Beschreibung der Verfügbarkeit eines Textes</p>
+      <xi:include href="availability.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-availability-en">
+      <p>Example for describing the availability of a text</p>
+      <xi:include href="availability.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-availability-fr">
+      <p>Exemple pour décrire la disponibilité d'un texte</p>
+      <xi:include href="availability.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-back-de">
+      <p>Beispiel für einen Kommentarbereich mit zwei Abschnitten</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-back-en">
+      <p>Example of a comments section with two divisions</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-back-fr">
+      <p>Exemple d'une section de commentaires avec deux divisions</p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-bibl-doc-de">
+      <p>Verweis auf ein anderes Stück</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-doc"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-bibl-doc-en">
+      <p>Reference to another piece</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-doc"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-bibl-doc-fr">
+      <p>Référence à une autre pièce</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-doc"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-bibl-url-de">
+      <p>Externer Verweis</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-url"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-bibl-url-en">
+      <p>External reference</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-url"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-bibl-url-fr">
+      <p>Référence externe</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-url"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-bibl-zot-de">
+      <p>Bibliographischer Verweis auf Zotero-Literaturdatenbank</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-bibl-zot-en">
+      <p>Bibliographic reference to Zotero literature database</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-bibl-zot-fr">
+      <p>Référence bibliographique à la base de données bibliographiques Zotero</p>
+      <xi:include href="bibl.xml" xpointer="ex-bibl-lit"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-bindingDesc-de">
+      <p>Beispiel für die Beschreibung einer Bindung</p>
+      <xi:include href="bindingDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-bindingDesc-en">
+      <p>Example of a binding description</p>
+      <xi:include href="bindingDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-bindingDesc-fr">
+      <p>Exemple de description de liaison</p>
+      <xi:include href="bindingDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-body-de">
+      <p>Beispiel für einen Textbereich mit allen möglichen Kindelementen</p>
+      <xi:include href="body.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-body-en">
+      <p>Example of a text area with all possible child elements</p>
+      <xi:include href="body.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-body-fr">
+      <p>Exemple d'une zone de texte avec tous les éléments enfants possibles</p>
+      <xi:include href="body.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-cb-de">
+      <p>Beispiel für den Beginn einer neuen Spalte</p>
+      <xi:include href="cb.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-cb-en">
+      <p>Example for the beginning of a new column</p>
+      <xi:include href="cb.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-cb-fr">
+      <p>Exemple de début de colonne</p>
+      <xi:include href="cb.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-cell-de">
+      <p>Einfaches Beispiel für Zellen in einer Tabelle</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-cell-en">
+      <p>Simple example of cells in a table</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-cell-fr">
+      <p>Exemple simple de cellules dans un tableau</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-choice-abbr-de">
+      <p>Beispiel für eine aufgelöste Abkürzung</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-choice-abbr-en">
+      <p>Example of a resolved abbreviation</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-choice-abbr-fr">
+      <p>Exemple d'abréviation résolue</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-choice-sic-de">
+      <p>Beispiel für eine Korrektur</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-choice-sic-en">
+      <p>Example of a correction</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-choice-sic-fr">
+      <p>Exemple de correction</p>
+      <xi:include href="choice.xml" xpointer="ex-choice-sic"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-condition-de">
+      <p>Beispiel für eine Beschreibung des Erhaltungszustands</p>
+      <xi:include href="condition.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-condition-en">
+      <p>Example of a description of the state of conservation</p>
+      <xi:include href="condition.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-condition-fr">
+      <p>Exemple de description de l'état de conservation</p>
+      <xi:include href="condition.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-day-de">
+      <p>Beispielhafte Datierung auf den 03. März 1631</p>
+      <xi:include href="date.xml" xpointer="ex-date-day"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-day-en">
+      <p>Exemplary dating to 03 March 1631</p>
+      <xi:include href="date.xml" xpointer="ex-date-day"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-day-fr">
+      <p>Exemple de datation au 03 mars 1631</p>
+      <xi:include href="date.xml" xpointer="ex-date-day"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-ca-de">
+      <p>Beispielhafte Auszeichnung ca. 1510</p>
+      <xi:include href="date.xml" xpointer="ex-date-ca"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-ca-en">
+      <p>Exemplary award ca. 1510</p>
+      <xi:include href="date.xml" xpointer="ex-date-ca"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-ca-fr">
+      <p>Exemple de distinction vers 1510</p>
+      <xi:include href="date.xml" xpointer="ex-date-ca"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-deadline-de">
+      <p>Beispiel für einen Termin bzw. eine Frist</p>
+      <xi:include href="date.xml" xpointer="ex-date-deadline"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-deadline-en">
+      <p>Example of a deadline or time limit</p>
+      <xi:include href="date.xml" xpointer="ex-date-deadline"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-deadline-fr">
+      <p>Exemple d'une date ou d'un délai</p>
+      <xi:include href="date.xml" xpointer="ex-date-deadline"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-holiday-de">
+      <p>Beispiel eines Heiligentages</p>
+      <xi:include href="date.xml" xpointer="ex-date-holiday"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-holiday-en">
+      <p>Example of a saint's day</p>
+      <xi:include href="date.xml" xpointer="ex-date-holiday"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-holiday-fr">
+      <p>Exemple de fête des saints</p>
+      <xi:include href="date.xml" xpointer="ex-date-holiday"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-from-to-de">
+      <p>Auszeichnung eines Zeitraums</p>
+      <xi:include href="date.xml" xpointer="ex-date-from-to"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-from-to-en">
+      <p>Encoding of a period</p>
+      <xi:include href="date.xml" xpointer="ex-date-from-to"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-from-to-fr">
+      <p>Distinction d'une période</p>
+      <xi:include href="date.xml" xpointer="ex-date-from-to"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-duriso-de">
+      <p>Beispiel einer Zeitspanne mit <att>dur-iso</att></p>
+      <xi:include href="date.xml" xpointer="ex-date-duriso"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-duriso-en">
+      <p>Example of a time span with <att>dur-iso</att></p>
+      <xi:include href="date.xml" xpointer="ex-date-duriso"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-duriso-fr">
+      <p>Exemple de période avec <att>dur-iso</att></p>
+      <xi:include href="date.xml" xpointer="ex-date-duriso"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-duriso-repeated-de">
+      <p>Wiederholungen bzw. wiederholende Zeitabstände lassen sich nur mit dem vollen ISO-8601-Format ausdrücken</p>
+      <xi:include href="date.xml" xpointer="ex-date-duriso-repeated"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-duriso-repeated-en">
+      <p>Repetitions or repeating time intervals can only be expressed with the full ISO-8601 format</p>
+      <xi:include href="date.xml" xpointer="ex-date-duriso-repeated"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-duriso-repeated-fr">
+      <p>Les répétitions ou les intervalles de temps répétitifs ne peuvent être exprimés qu'avec le format complet ISO-8601.</p>
+      <xi:include href="date.xml" xpointer="ex-date-duriso-repeated"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-gregjul-de">
+      <p>Bei Texten, die doppelt, d. h. nach dem alten und neuen Stil, datiert sind, wird nach dem neuen Stil bzw. dem Gregorianischen Kalender datiert.</p>
+      <xi:include href="date.xml" xpointer="ex-date-gregjul"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-gregjul-en">
+      <p>In the case of texts that are dated twice, i.e. according to the old and new styles, they are dated according to the new style or the Gregorian calendar.</p>
+      <xi:include href="date.xml" xpointer="ex-date-gregjul"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-gregjul-fr">
+      <p>Exemple d'une double datation. Pour les textes qui sont doublement datés,
+            c'est-à-direitelon l'ancien et le nouveau style, la datation est effectuée selon le
+            nouveau style ou le calendrier grégorien.</p>
+      <xi:include href="date.xml" xpointer="ex-date-gregjul"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-period-de">
+      <p>Auszeichnung einer Jahreszeit</p>
+      <xi:include href="date.xml" xpointer="ex-date-period"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-period-en">
+      <p>Encoding of a season</p>
+      <xi:include href="date.xml" xpointer="ex-date-period"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-period-fr">
+      <p>Encodage d'une saison</p>
+      <xi:include href="date.xml" xpointer="ex-date-period"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-roman-de">
+      <p>Beispiel für ein Datum mit römischen Ziffern</p>
+      <xi:include href="date.xml" xpointer="ex-date-roman"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-roman-en">
+      <p>Example of a date with Roman numerals</p>
+      <xi:include href="date.xml" xpointer="ex-date-roman"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-roman-fr">
+      <p>Exemple de date avec des chiffres romains</p>
+      <xi:include href="date.xml" xpointer="ex-date-roman"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-damage-add-de">
+      <p>Beispiel für eine beschädigte Stelle, in die eine andere Hand Text eingetragen hat</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-add"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-damage-add-en">
+      <p>Example of a damaged area where text has been written by another hand</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-add"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-damage-add-fr">
+      <p>Exemple d'une zone endommagée où le texte a été écrit par une autre main</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-add"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-damage-gap-de">
+      <p>Beispiel für eine beschädigte Stelle, deren Text unlesbar ist</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-gap"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-damage-gap-en">
+      <p>Example of a damaged spot where the text is unreadable</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-gap"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-damage-gap-fr">
+      <p>Exemple d'endroit endommagé où le texte est illisible</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-gap"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-damage-supplied-de">
+      <p>Beispiel für eine beschädigte Stelle, deren Text ergänzt wurde</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-supplied"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-damage-supplied-en">
+      <p>Example of a damaged passage whose text has been added</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-supplied"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-damage-supplied-fr">
+      <p>Exemple de passage endommagé dont le texte a été ajouté</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-supplied"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-damage-unclear-de">
+      <p>Beispiel für eine beschädigte Stelle, deren Lesung unsicher ist</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-damage-unclear-en">
+      <p>Example of a damaged passage whose reading is uncertain</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-damage-unclear-fr">
+      <p>Exemple de passage endommagé dont la lecture est incertaine</p>
+      <xi:include href="damage.xml" xpointer="ex-damage-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-damageSpan-de">
+      <p>Beispiel für einen umfangreicheren Schaden</p>
+      <xi:include href="damageSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-damageSpan-en">
+      <p>Example of a more extensive damage</p>
+      <xi:include href="damageSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-damageSpan-fr">
+      <p>Exemple d'un dommage plus important</p>
+      <xi:include href="damageSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-abbr-de">
+      <p>Datierung mit Abkürzung</p>
+      <xi:include href="date.xml" xpointer="ex-date-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-abbr-en">
+      <p>Dating with abbreviation</p>
+      <xi:include href="date.xml" xpointer="ex-date-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-abbr-fr">
+      <p>Rencontres avec abréviation</p>
+      <xi:include href="date.xml" xpointer="ex-date-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-del-de">
+      <p>Beispiel für eine einfache Streichung</p>
+      <xi:include href="del.xml" xpointer="ex-del"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-del-en">
+      <p>Example of a simple deletion</p>
+      <xi:include href="del.xml" xpointer="ex-del"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-del-fr">
+      <p>Exemple de suppression simple</p>
+      <xi:include href="del.xml" xpointer="ex-del"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-del-gap-de">
+      <p>Unlesbare Textstelle aufgrund von Rasur</p>
+      <xi:include href="del.xml" xpointer="ex-del-gap"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-del-gap-en">
+      <p>Unreadable text passage due to rubbing</p>
+      <xi:include href="del.xml" xpointer="ex-del-gap"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-del-gap-fr">
+      <p>Passage de texte illisible en raison du frottement</p>
+      <xi:include href="del.xml" xpointer="ex-del-gap"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-del-unclear-de">
+      <p>Unsichere Lesung wegen Streichung</p>
+      <xi:include href="del.xml" xpointer="ex-del-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-del-unclear-en">
+      <p>Unsafe reading due to deletion</p>
+      <xi:include href="del.xml" xpointer="ex-del-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-del-unclear-fr">
+      <p>Lecture incertaine en raison de la suppression</p>
+      <xi:include href="del.xml" xpointer="ex-del-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-delSpan-de">
+      <p>Beispiel für eine umfangreichere Tilgung</p>
+      <xi:include href="delSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-delSpan-en">
+      <p>Example of a larger deletion</p>
+      <xi:include href="delSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-delSpan-fr">
+      <p>Exemple de suppression plus importante</p>
+      <xi:include href="delSpan.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-div-back-de">
+      <p>Beispiel für nummerierte Abschnitte innerhalb von <gi>back</gi></p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-div-back-en">
+      <p>Example of numbered divisions within <gi>back</gi></p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-div-back-fr">
+      <p>Exemple de divisions numérotées dans <gi>back</gi></p>
+      <xi:include href="back.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-div-body-de">
+      <p>Beispiel für einen Abschnitt innerhalb von <gi>body</gi></p>
+      <xi:include href="div.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-div-body-en">
+      <p>Example of a division inside <gi>body</gi></p>
+      <xi:include href="div.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-div-body-fr">
+      <p>Exemple de division à l'intérieur du <gi>body</gi></p>
+      <xi:include href="div.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-docImprint-1-de">
+      <p>Beispiel für ein Impressum mit Druckort und Druckerei</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-1"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-docImprint-1-en">
+      <p>Example of an imprint with place of printing and printer</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-1"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-docImprint-1-fr">
+      <p>Exemple d'empreinte avec lieu d'impression et imprimeur</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-1"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-docImprint-2-de">
+      <p>Beispiel für ein Impressum mit mehreren Druckorten</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-docImprint-2-en">
+      <p>Example of an imprint with several places of printing</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-docImprint-2-fr">
+      <p>Exemple d'empreinte avec plusieurs lieux d'impression</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-docImprint-3-de">
+      <p>Beispiel für ein Impressum mit einer Druckerei</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-3"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-docImprint-3-en">
+      <p>Example of an imprint with a printing company</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-3"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-docImprint-3-fr">
+      <p>Exemple d'empreinte avec une imprimerie</p>
+      <xi:include href="docImprint.xml" xpointer="ex-docImprint-3"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-editor-de">
+      <p>Angabe der Bearbeitenden eines Bandes</p>
+      <xi:include href="editor.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-editor-en">
+      <p>Indication of the editors of a volume</p>
+      <xi:include href="editor.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-editor-fr">
+      <p>Indication des personnes ayant travaillé sur un volume</p>
+      <xi:include href="editor.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-editorialDecl-de">
+      <p>Beispiel für den Link zu den Transkriptionsrichtlinien</p>
+      <xi:include href="editorialDecl.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-editorialDecl-en">
+      <p>Sample transcription guidelines link</p>
+      <xi:include href="editorialDecl.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-editorialDecl-fr">
+      <p>Exemple de lien vers les directives de transcription</p>
+      <xi:include href="editorialDecl.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-encodingDesc-de">
+      <p>Beispiel für den Aufbau der Beschreibung der Transkriptionsrichtlinien</p>
+      <xi:include href="encodingDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-encodingDesc-en">
+      <p>Example of the structure of the description of the transcription guidelines</p>
+      <xi:include href="encodingDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-encodingDesc-fr">
+      <p>Exemple de la structure de la description des directives de transcription</p>
+      <xi:include href="encodingDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-extent-de">
+      <p>Beispiel für die Massangabe einer Quelle</p>
+      <xi:include href="extent.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-extent-en">
+      <p>Example of the dimension of a source</p>
+      <xi:include href="extent.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-extent-fr">
+      <p>Exemple de mesure d'une source</p>
+      <xi:include href="extent.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-figure-1-de">
+      <p>Beispiel für ein Notariatszeichen</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-figure-1-en">
+      <p>Example of a notarial sign</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-figure-1-fr">
+      <p>Exemple d'enseigne notariale</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-figure-2-de">
+      <p>Beispiel eines Stammbaums</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-figure-2-en">
+      <p>Example of a family tree</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-figure-2-fr">
+      <p>Exemple d'arbre généalogique</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-fileDesc-de">
+      <p>Beispiel für den Aufbau einer Dateibeschreibung</p>
+      <xi:include href="fileDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-fileDesc-en">
+      <p>Example of the structure of a file description</p>
+      <xi:include href="fileDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-fileDesc-fr">
+      <p>Exemple de structure d'une description de fichier</p>
+      <xi:include href="fileDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-foliation-de">
+      <p>Beispiel für eine Beschreibung der Blattzählung</p>
+      <xi:include href="foliation.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-foliation-en">
+      <p>Example of a leaf count description</p>
+      <xi:include href="foliation.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-foliation-fr">
+      <p>Exemple de description du nombre de feuilles</p>
+      <xi:include href="foliation.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-foreign-de">
+      <p>Absatz mit fremdsprachigen Einschüben</p>
+      <xi:include href="foreign.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-foreign-en">
+      <p>Paragraph with foreign language inserts</p>
+      <xi:include href="foreign.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-foreign-fr">
+      <p>Paragraphe avec insertions en langues étrangères</p>
+      <xi:include href="foreign.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-fw-de">
+      <p>Beispiel für eine Kustode</p>
+      <xi:include href="fw.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-fw-en">
+      <p>Example of a custodian</p>
+      <xi:include href="fw.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-fw-fr">
+      <p>Exemple de gardien</p>
+      <xi:include href="fw.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-handDesc-de">
+      <p>Beispiel für mehrere Beschreibungen von bekannten und unbekannten Schreiberhänden</p>
+      <xi:include href="handDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-handDesc-en">
+      <p>Example of several descriptions of known and unknown scribal hands</p>
+      <xi:include href="handDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-handDesc-fr">
+      <p>Exemple de plusieurs descriptions de mains de scribes connues et inconnues</p>
+      <xi:include href="handDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-handShift-de">
+      <p>Beispiel für einen Handwechsel</p>
+      <xi:include href="handShift.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-handShift-en">
+      <p>Example of a hand shift</p>
+      <xi:include href="handShift.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-handShift-fr">
+      <p>Exemple de changement de main</p>
+      <xi:include href="handShift.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-head-figure-de">
+      <p>Beispiel für eine Überschrift einer Graphik</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-head-figure-en">
+      <p>Example of a heading for a graphic</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-head-figure-fr">
+      <p>Exemple de titre pour un graphique</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-height-cm-de">
+      <p>Beispiel für eine Höhenangabe in Zentimetern</p>
+      <xi:include href="height.xml" xpointer="ex-height-cm"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-height-cm-en">
+      <p>Example of a height in centimeters</p>
+      <xi:include href="height.xml" xpointer="ex-height-cm"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-height-cm-fr">
+      <p>Exemple d'une taille en centimètres</p>
+      <xi:include href="height.xml" xpointer="ex-height-cm"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-height-unknown-de">
+      <p>Beispiel für eine unbekannte Höhenangabe</p>
+      <xi:include href="height.xml" xpointer="ex-height-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-height-unknown-en">
+      <p>Example of an unknown height</p>
+      <xi:include href="height.xml" xpointer="ex-height-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-height-unknown-fr">
+      <p>Exemple d'une hauteur inconnue</p>
+      <xi:include href="height.xml" xpointer="ex-height-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-history-de">
+      <p>Beispiel für die Datierung und den Ausstellungsort eines Dokuments</p>
+      <xi:include href="history.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-history-en">
+      <p>Example of the dating and place of issue of a document</p>
+      <xi:include href="history.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-history-fr">
+      <p>Exemple de datation et de lieu d'émission d'un document</p>
+      <xi:include href="history.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-gap-missing-de">
+      <p>Beispiel eines fehlenden Textes, der in retrodigitalisierten Vorlage nicht vorhanden ist</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-missing"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-gap-missing-en">
+      <p>Example of missing text not present in retro-digitised template</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-missing"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-gap-missing-fr">
+      <p>Exemple d'un texte manquant qui n'est pas présent dans le modèle rétro-numérisé</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-missing"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-gap-line-de">
+      <p>Unlesbare Zeile ohne Streichung oder Beschädigung</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-line"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-gap-line-en">
+      <p>Illegible line without deletion or damage</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-line"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-gap-line-fr">
+      <p>Ligne illisible sans rature ou détérioration</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-line"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-gap-source-de">
+      <p>Auslassung eines Textausschnittes, der bereits in einem anderen Stück ediert ist</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-source"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-gap-source-en">
+      <p>Omission of a text excerpt already edited in another play</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-source"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-gap-source-fr">
+      <p>Omission d'un extrait de texte déjà édité dans une autre pièce</p>
+      <xi:include href="gap.xml" xpointer="ex-gap-source"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-head-de">
+      <p>Titel, der von den Bearbeitenden zur besseren Strukturierung des Texts
+            hinzugefügt wird</p>
+      <xi:include href="head.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-head-en">
+      <p>Title added by the editors to better structure the text</p>
+      <xi:include href="head.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-head-fr">
+      <p>Titre ajouté par les éditeurs pour mieux structurer le texte</p>
+      <xi:include href="head.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-hi-sup-de">
+      <p>Auszeichnung eines hochgestellten Buchstabens</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-sup"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-hi-sup-en">
+      <p>Encoding of a superscript letter</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-sup"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-hi-sup-fr">
+      <p>Codage d'une lettre en exposant</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-sup"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-hi-underline-de">
+      <p>Beispiele einer Unterstreichung von späterer Hand – das Attribut <att>hand</att> ist ein Verweis auf eine <gi>handNote</gi></p>
+      <xi:include href="hi.xml" xpointer="ex-hi-underline"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-hi-underline-en">
+      <p>Examples of a later hand underline - the <att>hand</att> attribute is a reference to a <gi>handNote</gi></p>
+      <xi:include href="hi.xml" xpointer="ex-hi-underline"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-hi-underline-fr">
+      <p>Exemples de soulignement ultérieur de la main - l'attribut <att>hand</att> est une référence à une <gi>handNote</gi></p>
+      <xi:include href="hi.xml" xpointer="ex-hi-underline"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-hi-num-de">
+      <p>Erfassung einer römischen Ziffer</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-num"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-hi-num-en">
+      <p>Encoding of a Roman numeral</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-num"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-hi-num-fr">
+      <p>Codage d'un chiffre romain</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-num"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-head-table-de">
+      <p>Beispiel für eine Überschrift in einer Tabelle</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-head-table-en">
+      <p>Example of a heading in a table</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-head-table-fr">
+      <p>Exemple d'en-tête dans un tableau</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-idno-msIdentifier-de">
+      <p>Beispiel für eine Identifikationsnummer als Teil einer Handschriftensignatur</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-idno-msIdentifier-en">
+      <p>Example of an identification number as part of a manuscript signature</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-idno-msIdentifier-fr">
+      <p>Exemple de numéro d'identification dans le cadre d'une signature manuscrite</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-idno-seriesStmt-de">
+      <p>Beispiel für Identifikationsnummern als Teil der Reihenangabe</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-idno-seriesStmt-en">
+      <p>Example of identification numbers as part of the series statement</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-idno-seriesStmt-fr">
+      <p>Exemple de numéros d'identification dans le cadre de la déclaration de série</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-keywords-de">
+      <p>Beispiel für eine Liste von Schlagwörtern</p>
+      <xi:include href="keywords.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-keywords-en">
+      <p>Example of a list of keywords</p>
+      <xi:include href="keywords.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-keywords-fr">
+      <p>Exemple de liste de mots clés</p>
+      <xi:include href="keywords.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-label-de">
+      <p>Beispiel für eine Randanmerkung</p>
+      <xi:include href="label.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-label-en">
+      <p>Example of a marginal note</p>
+      <xi:include href="label.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-label-fr">
+      <p>Exemple de note marginale</p>
+      <xi:include href="label.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-lb-de">
+      <p>Beispiel für eine Worttrennung am Zeilenende</p>
+      <xi:include href="lb.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-lb-en">
+      <p>Example of word separation at the end of a line</p>
+      <xi:include href="lb.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-lb-fr">
+      <p>Exemple de séparation de mots en fin de ligne</p>
+      <xi:include href="lb.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-list-de">
+      <p>Beispiel für eine Liste mit einfachen Einträgen</p>
+      <xi:include href="list.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-list-en">
+      <p>Example of a list with simple entries</p>
+      <xi:include href="list.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-list-fr">
+      <p>Exemple de liste avec des entrées simples</p>
+      <xi:include href="list.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-listBibl-edition-de">
+      <p>Verweis auf Editionen</p>
+      <xi:include href="listBibl.xml" xpointer="ex-listBibl-edition"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-listBibl-edition-en">
+      <p>Reference to editions</p>
+      <xi:include href="listBibl.xml" xpointer="ex-listBibl-edition"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-listBibl-edition-fr">
+      <p>Référence aux éditions</p>
+      <xi:include href="listBibl.xml" xpointer="ex-listBibl-edition"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-listBibl-summary-de">
+      <p>Verweis auf Regesten</p>
+      <xi:include href="listBibl.xml" xpointer="ex-listBibl-summary"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-listBibl-summary-en">
+      <p>Reference to summaries</p>
+      <xi:include href="listBibl.xml" xpointer="ex-listBibl-summary"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-listBibl-summary-fr">
+      <p>Référence aux résumés</p>
+      <xi:include href="listBibl.xml" xpointer="ex-listBibl-summary"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-listWit-de">
+      <p>Beispiel für eine Textzeugenliste</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-listWit-en">
+      <p>Example of a text witness list</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-listWit-fr">
+      <p>Exemple de liste de témoins texte</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-measure-age-de">
+      <p>Beispiel für eine Altersangabe</p>
+      <xi:include href="measure.xml" xpointer="ex-measure-age"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-measure-age-en">
+      <p>Example of an age statement</p>
+      <xi:include href="measure.xml" xpointer="ex-measure-age"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-measure-age-fr">
+      <p>Exemple de déclaration d'âge</p>
+      <xi:include href="measure.xml" xpointer="ex-measure-age"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-measure-price-de">
+      <p>Beispiel für einen Preis</p>
+      <xi:include href="measure.xml" xpointer="ex-measure-price"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-measure-price-en">
+      <p>Example of a price</p>
+      <xi:include href="measure.xml" xpointer="ex-measure-price"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-measure-price-fr">
+      <p>Exemple de prix</p>
+      <xi:include href="measure.xml" xpointer="ex-measure-price"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-measureGrp-area-de">
+      <p>Beispiel für verschiedene Flächenangaben</p>
+      <xi:include href="measureGrp.xml" xpointer="ex-measureGrp-area"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-measureGrp-area-en">
+      <p>Example of different area specifications</p>
+      <xi:include href="measureGrp.xml" xpointer="ex-measureGrp-area"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-measureGrp-area-fr">
+      <p>Exemple de différentes spécifications de zone</p>
+      <xi:include href="measureGrp.xml" xpointer="ex-measureGrp-area"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-measureGrp-currencies-de">
+      <p>Beispiel für Währungsbezeichnungen, die man auf Anhieb nicht umrechnen kann</p>
+      <xi:include href="measureGrp.xml" xpointer="ex-measureGrp-currencies"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-measureGrp-currencies-en">
+      <p>Example of currency names that cannot be converted straight away</p>
+      <xi:include href="measureGrp.xml" xpointer="ex-measureGrp-currencies"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-measureGrp-currencies-fr">
+      <p>Exemple de noms de devises qui ne peuvent pas être convertis immédiatement</p>
+      <xi:include href="measureGrp.xml" xpointer="ex-measureGrp-currencies"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-measureGrp-wheat-de">
+      <p>Beispiel für verschiedene Mengenangaben von Getreide</p>
+      <xi:include href="measureGrp.xml" xpointer="ex-measureGrp-wheat"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-measureGrp-wheat-en">
+      <p>Example of different amounts of grain</p>
+      <xi:include href="measureGrp.xml" xpointer="ex-measureGrp-wheat"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-measureGrp-wheat-fr">
+      <p>Exemple de différentes quantités de céréales</p>
+      <xi:include href="measureGrp.xml" xpointer="ex-measureGrp-wheat"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msContents-de">
+      <p>Beispiel für eine Beschreibung des Dokumentinhalts</p>
+      <xi:include href="msContents.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msContents-en">
+      <p>Example of a description of the document content</p>
+      <xi:include href="msContents.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msContents-fr">
+      <p>Exemple de description du contenu du document</p>
+      <xi:include href="msContents.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msDesc-de">
+      <p>Beispiel für eine Textzeugenbeschreibung</p>
+      <xi:include href="msDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msDesc-en">
+      <p>Example of a text witness description</p>
+      <xi:include href="msDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msDesc-fr">
+      <p>Exemple de description textuelle d'un témoin</p>
+      <xi:include href="msDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msIdentifier-de">
+      <p>Beispiel für eine Handschriftensignatur</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msIdentifier-en">
+      <p>Example of a manuscript identifier</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msIdentifier-fr">
+      <p>Exemple d'identifiant de manuscrit</p>
+      <xi:include href="msIdentifier.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msItem-ms-de">
+      <p>Beispiel für die Beschreibung eines einzelnen handschriftlichen Dokumentteils</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msItem-ms-en">
+      <p>Example for the description of a single handwritten document part</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msItem-ms-fr">
+      <p>Exemple de description d'une seule partie de document manuscrit</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-ms"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-msItem-print-de">
+      <p>Beispiel für die Beschreibung eines einzelnen gedruckten Dokumentteils</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-msItem-print-en">
+      <p>Example for the description of a single printed part of a document</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-msItem-print-fr">
+      <p>Exemple de description d'une seule partie imprimée d'un document</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-note-de">
+      <p>Anmerkung der Bearbeitenden</p>
+      <xi:include href="note.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-note-en">
+      <p>Note by the editor</p>
+      <xi:include href="note.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-note-fr">
+      <p>Note de l'éditeur</p>
+      <xi:include href="note.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-num-de">
+      <p>Beispiel für eine römische Zahl</p>
+      <xi:include href="num.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-num-en">
+      <p>Roman numeral example</p>
+      <xi:include href="num.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-num-fr">
+      <p>Exemple de chiffres romains</p>
+      <xi:include href="num.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-objectDesc-de">
+      <p>Beispiel für eine Quellenbeschreibung</p>
+      <xi:include href="objectDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-objectDesc-en">
+      <p>Example of a source description</p>
+      <xi:include href="objectDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-objectDesc-fr">
+      <p>Exemple de description de source</p>
+      <xi:include href="objectDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-orig-de">
+      <p>Beispiel für einen originalsprachlichen Ausdruck in einem Kommentar</p>
+      <xi:include href="orig.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-orig-en">
+      <p>Example of an original language expression in a comment</p>
+      <xi:include href="orig.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-orig-fr">
+      <p>Exemple d'expression en langue originale dans un commentaire</p>
+      <xi:include href="orig.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-origDate-abbr-de">
+      <p>Originaldatierung mit Abkürzung</p>
+      <xi:include href="origDate.xml" xpointer="ex-origDate-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-origDate-abbr-en">
+      <p>Original dating with abbreviation</p>
+      <xi:include href="origDate.xml" xpointer="ex-origDate-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-origDate-abbr-fr">
+      <p>Datation originale avec abréviation</p>
+      <xi:include href="origDate.xml" xpointer="ex-origDate-abbr"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-origDate-multiple-de">
+      <p>Beispiel für die Unterscheidung von Herstellungsdatum und Datum
+       des Inhalts eines Dokuments</p>
+      <xi:include href="origDate.xml" xpointer="ex-origDate-multiple"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-origDate-multiple-en">
+      <p>Example of distinguishing between date of manufacture and date
+       the content of a document</p>
+      <xi:include href="origDate.xml" xpointer="ex-origDate-multiple"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-origDate-multiple-fr">
+      <p>Exemple de distinction entre date de fabrication et date
+       le contenu d'un document</p>
+      <xi:include href="origDate.xml" xpointer="ex-origDate-multiple"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-orgName-de">
+      <p>Als Organisation werden stets die Instituionen / Funktionen gekennzeichnet – jedoch
+                nicht die Personen. Dies gilt, wie nachfolgend zeigt, auch für die namentliche
+                Nennung des Bürgermeisters.
+            </p>
+      <xi:include href="orgName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-orgName-en">
+      <p>Institutions / functions are always identified as organisations - but not the people.
+                As shown below, this also applies to the naming of the mayor.
+            </p>
+      <xi:include href="orgName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-orgName-fr">
+      <p>Les institutions/fonctions sont toujours identifiées comme des organisations, mais
+                pas les personnes. Comme indiqué ci-dessous, cela s'applique également à la
+                désignation du maire.
+            </p>
+      <xi:include href="orgName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-p-actum-de">
+      <p>Beispiel für eine Schlussformel</p>
+      <xi:include href="p.xml" xpointer="ex-p-actum"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-p-actum-en">
+      <p>Example of a closing formula</p>
+      <xi:include href="p.xml" xpointer="ex-p-actum"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-p-actum-fr">
+      <p>Exemple de formule de clôture</p>
+      <xi:include href="p.xml" xpointer="ex-p-actum"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-p-seg-de">
+      <p>Beispiel für einen Absatz mit Untergliederung</p>
+      <xi:include href="p.xml" xpointer="ex-p-seg"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-p-seg-en">
+      <p>Example of a paragraph with subdivision</p>
+      <xi:include href="p.xml" xpointer="ex-p-seg"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-p-seg-fr">
+      <p>Exemple de paragraphe avec subdivision</p>
+      <xi:include href="p.xml" xpointer="ex-p-seg"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-pb-break-de">
+      <p>Trennung von Worten über Seitenwechsel</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-break"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-pb-break-en">
+      <p>Separation of words spanning over page break</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-break"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-pb-break-fr">
+      <p>Séparation des mots sur le changement de page</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-break"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-pb-original-de">
+      <p>Beispiel für eine Originalfoliierung</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-original"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-pb-original-en">
+      <p>Example of original foiling</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-original"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-pb-original-fr">
+      <p>Exemple pour des folios originaux</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-original"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-pb-with-section-de">
+      <p>Beispiel für eine Zählung von Pergamentstücken</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-pb-with-section-en">
+      <p>Example of counting pieces of parchment</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-pb-with-section-fr">
+      <p>Exemple de comptage de morceaux de parchemin</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-section"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-pb-with-title-de">
+      <p>Blattzählung von Vorsatz- und Titelblättern mit römischen Ziffern</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-title"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-pb-with-title-en">
+      <p>Page counting of endpapers and title pages with Roman numerals</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-title"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-pb-with-title-fr">
+      <p>Pagination de plusieurs pages de titre ou pages de garde avec des chiffres romains</p>
+      <xi:include href="pb.xml" xpointer="ex-pb-with-title"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-persName-1-de">
+      <p>Beispiel für einen einfachen Personennamen</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-1"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-persName-1-en">
+      <p>Example of a simple personal name</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-1"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-persName-1-fr">
+      <p>Exemple de nom de personne</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-1"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-persName-2-de">
+      <p>Auszeichnung eines Heiligen – nur der Name wird erfasst</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-persName-2-en">
+      <p>Tagging of a saint</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-persName-2-fr">
+      <p>Marquage d'un saint</p>
+      <xi:include href="persName.xml" xpointer="ex-persName-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-persName-3-de">
+      <p>Verwendung mit
+                <att>role</att>
+            </p>
+      <xi:include href="persName.xml" xpointer="ex-persName-3"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-persName-3-en">
+      <p>Use with
+                <att>role</att>
+            </p>
+      <xi:include href="persName.xml" xpointer="ex-persName-3"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-persName-3-fr">
+      <p>Utilisation avec
+                <att>role</att>
+            </p>
+      <xi:include href="persName.xml" xpointer="ex-persName-3"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-precision-de">
+      <p>Beispiel für ein unsicheres Datum</p>
+      <xi:include href="precision.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-physDesc-de">
+      <p>Beispiel für eine Quellenbeschreibung mit allen Kindelementen</p>
+      <xi:include href="physDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-physDesc-en">
+      <p>Example of a source description with all child elements</p>
+      <xi:include href="physDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-physDesc-fr">
+      <p>Exemple de description de source avec tous les éléments enfants</p>
+      <xi:include href="physDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-placeName-de">
+      <p>Beispiel für die Erfassung eines historischen Ortsnamens mit Verweis
+        auf die SSRQ-Datenbank</p>
+      <xi:include href="placeName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-placeName-en">
+      <p>Example of recording a historical place name with a reference
+        to the SSRQ database</p>
+      <xi:include href="placeName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-placeName-fr">
+      <p>Exemple d'enregistrement d'un nom de lieu historique avec une référence
+        à la base de données SSRQ</p>
+      <xi:include href="placeName.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-precision-en">
+      <p>Example of an uncertain date</p>
+      <xi:include href="precision.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-precision-fr">
+      <p>Exemple de date incertaine</p>
+      <xi:include href="precision.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-profileDesc-de">
+      <p>Beispiel für den Aufbau der Beschreibung des Textprofils</p>
+      <xi:include href="profileDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-profileDesc-en">
+      <p>Example of the structure of the description of the text profile</p>
+      <xi:include href="profileDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-profileDesc-fr">
+      <p>Exemple de structure de la description du profil de texte</p>
+      <xi:include href="profileDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-publisher-cert-de">
+      <p>Verwendung mit <att>cert</att></p>
+      <xi:include href="publisher.xml" xpointer="ex-publisher-cert"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-publisher-cert-en">
+      <p>Use with <att>cert</att></p>
+      <xi:include href="publisher.xml" xpointer="ex-publisher-cert"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-publisher-cert-fr">
+      <p>Utiliser avec <att>cert</att></p>
+      <xi:include href="publisher.xml" xpointer="ex-publisher-cert"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-publicationStmt-de">
+      <p>Beispiel für die Angaben zur Publikation</p>
+      <xi:include href="publicationStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-publicationStmt-en">
+      <p>Example of a publication statement</p>
+      <xi:include href="publicationStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-publicationStmt-fr">
+      <p>Exemple d'informations de publication</p>
+      <xi:include href="publicationStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-q-de">
+      <p>Beispiel für direkte Rede im Text</p>
+      <xi:include href="q.xml" xpointer="ex-q"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-q-en">
+      <p>Beispiel für direkte Rede im Text</p>
+      <xi:include href="q.xml" xpointer="ex-q"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-q-fr">
+      <p>Beispiel für direkte Rede im Text</p>
+      <xi:include href="q.xml" xpointer="ex-q"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-q-editor-de">
+      <p>Beispiel für eine Hervorhebung in editorischen Paratexten (Kommentare, Einleitung etc.)</p>
+      <xi:include href="q.xml" xpointer="ex-q-editor"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-q-editor-en">
+      <p>Example of highlighting in editorial paratexts (comments, introduction, etc.)</p>
+      <xi:include href="q.xml" xpointer="ex-q-editor"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-q-editor-fr">
+      <p>Exemple de mise en avant dans des paratextes éditoriaux (commentaires, introduction, etc.)</p>
+      <xi:include href="q.xml" xpointer="ex-q-editor"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-quote-de">
+      <p>Beispiel für einen Hinweis auf eine Urkunde mit Zitat des Anfangs der Urkunde</p>
+      <xi:include href="quote.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-quote-en">
+      <p>Example of a reference to a document with a quote from the beginning of the document</p>
+      <xi:include href="quote.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-quote-fr">
+      <p>Exemple de référence à un document avec une citation du début du document</p>
+      <xi:include href="quote.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-ref-print-de">
+      <p>Beispiel für einen Verweis auf eine gedruckte Quelle</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-print"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-ref-print-en">
+      <p>Example of a reference to a printed source</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-print"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-ref-print-fr">
+      <p>Exemple de référence à une source imprimée</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-print"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-ref-urn-de">
+      <p>Beispiel für einen Verweis auf eine Online-Quelle</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-urn"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-ref-urn-en">
+      <p>Example of a reference to an online source</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-urn"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-ref-urn-fr">
+      <p>Exemple de référence à une source en ligne</p>
+      <xi:include href="ref.xml" xpointer="ex-ref-urn"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-row-de">
+      <p>Einfaches Beispiel für Zeilen in einer Tabelle</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-row-en">
+      <p>Simple example of rows in a table</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-row-fr">
+      <p>Exemple simple de lignes dans un tableau</p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-respStmt-de">
+      <p>Codierung einer einzelnen Verantwortlichkeit, inklusive des Namens</p>
+      <xi:include href="respStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-respStmt-en">
+      <p>Coding of a single responsibility, including the name</p>
+      <xi:include href="respStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-respStmt-fr">
+      <p>Codifica di una singola responsabilità, compreso il nome</p>
+      <xi:include href="respStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-sealDesc-de">
+      <p>Beispiel für die Beschreibung von Siegeln</p>
+      <xi:include href="sealDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-sealDesc-en">
+      <p>Example for the description of seals</p>
+      <xi:include href="sealDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-sealDesc-fr">
+      <p>Exemple pour la description des scellés</p>
+      <xi:include href="sealDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-seg-de">
+      <p>Beispiel für vom Bearbeitenden eingeführte Absätze</p>
+      <xi:include href="seg.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-seg-en">
+      <p>Example of paragraphs introduced by the editor</p>
+      <xi:include href="seg.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-seg-fr">
+      <p>Exemple de paragraphes introduits par l'éditeur</p>
+      <xi:include href="seg.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-seriesStmt-de">
+      <p>Beispiel für eine Reihenangabe</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-seriesStmt-en">
+      <p>Example of a series statement</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-seriesStmt-fr">
+      <p>Exemple d'énoncé de série</p>
+      <xi:include href="seriesStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-sic-de">
+      <p>Verwendung ohne Kindelemente</p>
+      <xi:include href="sic.xml" xpointer="ex-sic"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-sic-en">
+      <p>Use without child elements</p>
+      <xi:include href="sic.xml" xpointer="ex-sic"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-sic-fr">
+      <p>Utilisation sans éléments enfants</p>
+      <xi:include href="sic.xml" xpointer="ex-sic"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-sic-term-de">
+      <p>Verwendung von <gi>sic</gi> in Kombination mit <gi>term</gi></p>
+      <xi:include href="sic.xml" xpointer="ex-sic-term"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-sic-term-en">
+      <p>Use of <gi>sic</gi> in combination with <gi>term</gi></p>
+      <xi:include href="sic.xml" xpointer="ex-sic-term"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-sic-term-fr">
+      <p>Utiliser de <gi>sic</gi>en combinaison avec <gi>term</gi></p>
+      <xi:include href="sic.xml" xpointer="ex-sic-term"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-signed-de">
+      <p>Beispiel für eine Unterschrift mit Notariatszeichen</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-signed-en">
+      <p>Example of a signature with a notary's mark</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-signed-fr">
+      <p>Exemple de signature avec marque de notaire</p>
+      <xi:include href="figure.xml" xpointer="ex-figure-1"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-sourceDesc-listWit-de">
+      <p>Beispiel für eine Quellenbeschreibung mit einer Liste von Textzeugen</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-sourceDesc-listWit-en">
+      <p>Example of a source description with a list of text witnesses</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-sourceDesc-listWit-fr">
+      <p>Exemple d'une description de source avec une liste de témoins de texte</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-listWit"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-sourceDesc-msDesc-de">
+      <p>Beispiel für eine Quellenbeschreibung mit einem Textzeugen</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-sourceDesc-msDesc-en">
+      <p>Example of a source description with a text witness</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-sourceDesc-msDesc-fr">
+      <p>Exemple de description de source avec un témoin de texte</p>
+      <xi:include href="sourceDesc.xml" xpointer="ex-sourceDesc-msDesc"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-summary-de">
+      <p>Beispiel für ein Regest</p>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-summary-en">
+      <p>Example of a summary</p>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-summary-fr">
+      <p>Exemple de regeste</p>
+      <xi:include href="summary.xml" xpointer="ex-summary"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-summary-list-de">
+      <p>Beispiel für ein Regest mit einer Aufzählung</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-summary-list-en">
+      <p>Example of a regest with an enumeration</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-summary-list-fr">
+      <p>Exemple de Regest avec une énumération</p>
+      <xi:include href="summary.xml" xpointer="ex-summary-list"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-support-de">
+      <p>Beispiel für eine Beschreibung des Beschreibstoffs einer Quelle</p>
+      <xi:include href="support.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-support-en">
+      <p>Example of a description of the descriptive material of a source</p>
+      <xi:include href="support.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-support-fr">
+      <p>Exemple de description du matériel descriptif d'une source</p>
+      <xi:include href="support.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-supportDesc-de">
+      <p>Beispiel für eine Beschreibung des Materiellen einer Quelle</p>
+      <xi:include href="supportDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-supportDesc-en">
+      <p>Example of a description of the material of a source</p>
+      <xi:include href="supportDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-supportDesc-fr">
+      <p>Exemple de description du matériel d'une source</p>
+      <xi:include href="supportDesc.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-space-de">
+      <p>Beispiel für einen Freiraum von 5 cm</p>
+      <xi:include href="space.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-space-en">
+      <p>Example of a free space of 5 cm</p>
+      <xi:include href="space.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-space-fr">
+      <p>Exemple d'un espace libre de 5 cm</p>
+      <xi:include href="space.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-subst-de">
+      <p>Beispiel für eine Ersetzung</p>
+      <xi:include href="subst.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-subst-en">
+      <p>Example of a replacement</p>
+      <xi:include href="subst.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-subst-fr">
+      <p>Exemple de remplacement</p>
+      <xi:include href="subst.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-supplied-de">
+      <p>Beispiel für eine Ergänzung</p>
+      <xi:include href="supplied.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-supplied-en">
+      <p>Example of an addition</p>
+      <xi:include href="supplied.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-supplied-fr">
+      <p>Exemple d'ajout</p>
+      <xi:include href="supplied.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-table-de">
+      <p>Beispiel für eine Preisliste für Wein mit vier Spalten, wovon die letzten drei Spalten mit «gbz», «xr»
+                bzw. «dn» überschrieben sind
+            </p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-table-en">
+      <p>Example of a price list for wine with four columns, of which the last three columns are titled "gbz",
+                "xr" and "dn"
+            </p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-table-fr">
+      <p>Exemple d'une liste de prix pour un vin à quatre colonnes, dont les trois dernières colonnes sont
+                intitulées "gbz", "xr" et "dn"
+            </p>
+      <xi:include href="table.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-textClass-de">
+      <p>Beispiel für den Aufbau der Textklassifikation</p>
+      <xi:include href="textClass.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-textClass-en">
+      <p>Example of the structure of the text classification</p>
+      <xi:include href="textClass.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-textClass-fr">
+      <p>Exemple de structure de la classification de texte</p>
+      <xi:include href="textClass.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-textLang-de">
+      <p>Beispiel für die Angabe mehrerer Textsprachen</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-textLang-en">
+      <p>Example of specifying multiple text languages</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-textLang-fr">
+      <p>Exemple de spécification de plusieurs langues de texte</p>
+      <xi:include href="msItem.xml" xpointer="ex-msItem-print"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-TEI-de">
+      <p>Minimalbeispiel für ein TEI-Dokument</p>
+      <xi:include href="TEI.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-TEI-en">
+      <p>Minimal example of a TEI document</p>
+      <xi:include href="TEI.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-TEI-fr">
+      <p>Exemple minimal d'un document TEI</p>
+      <xi:include href="TEI.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-teiHeader-de">
+      <p>Beispiel für einen Kopfbereich mit allen Kindbereichen</p>
+      <xi:include href="teiHeader.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-teiHeader-en">
+      <p>Example of a header area with all child areas</p>
+      <xi:include href="teiHeader.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-teiHeader-fr">
+      <p>Exemple d'une zone d'en-tête avec toutes les zones enfants</p>
+      <xi:include href="teiHeader.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-term-de">
+      <p>Erfassung eines Lemmas</p>
+      <xi:include href="term.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-term-en">
+      <p>Encoding of a lemma</p>
+      <xi:include href="term.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-term-fr">
+      <p>Codage d'un lemme</p>
+      <xi:include href="term.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-text-1-de">
+      <p>Beispiel für ein Transkript mit optionalem Kommentarbereich</p>
+      <xi:include href="text.xml" xpointer="ex-text-1"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-text-1-en">
+      <p>Example of a transcript with an optional comment section</p>
+      <xi:include href="text.xml" xpointer="ex-text-1"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-text-1-fr">
+      <p>Exemple de transcription avec une section de commentaires facultative</p>
+      <xi:include href="text.xml" xpointer="ex-text-1"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-text-2-de">
+      <p>Beispiel für ein Regest ohne Kommentarbereich</p>
+      <xi:include href="text.xml" xpointer="ex-text-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-text-2-en">
+      <p>Example of a regest without a comment section</p>
+      <xi:include href="text.xml" xpointer="ex-text-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-text-2-fr">
+      <p>Exemple de registre sans section de commentaire</p>
+      <xi:include href="text.xml" xpointer="ex-text-2"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-time-duriso-de">
+      <p>Angabe einer Zeitspanne</p>
+      <xi:include href="time.xml" xpointer="ex-time-duriso"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-time-duriso-en">
+      <p>Specification of a time span</p>
+      <xi:include href="time.xml" xpointer="ex-time-duriso"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-time-duriso-fr">
+      <p>Spécification d'une période de temps</p>
+      <xi:include href="time.xml" xpointer="ex-time-duriso"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-time-period-de">
+      <p>Erfassung von Zeitperioden, die nicht mit ISO 8601 beschrieben werden können</p>
+      <xi:include href="time.xml" xpointer="ex-time-period"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-time-period-en">
+      <p>Recording of time periods that cannot be described with ISO 8601</p>
+      <xi:include href="time.xml" xpointer="ex-time-period"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-time-period-fr">
+      <p>Enregistrement des périodes de temps qui ne peuvent être décrites par la norme ISO 8601</p>
+      <xi:include href="time.xml" xpointer="ex-time-period"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-time-point-de">
+      <p>Erfassung eines Zeitpunkts</p>
+      <xi:include href="time.xml" xpointer="ex-time-point"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-time-point-en">
+      <p>Recording of a point in time</p>
+      <xi:include href="time.xml" xpointer="ex-time-point"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-time-point-fr">
+      <p>Enregistrement d'un moment dans le temps</p>
+      <xi:include href="time.xml" xpointer="ex-time-point"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-title-de">
+      <p>Beispiel für einen Bandtitel</p>
+      <xi:include href="title.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-title-en">
+      <p>Example of a volume title</p>
+      <xi:include href="title.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-title-fr">
+      <p>Exemple de titre de volume</p>
+      <xi:include href="title.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-titleStmt-de">
+      <p>Beispiel für eine Titelangabe</p>
+      <xi:include href="titleStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-titleStmt-en">
+      <p>Example of a title statement</p>
+      <xi:include href="titleStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-titleStmt-fr">
+      <p>Exemple de titre</p>
+      <xi:include href="titleStmt.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-unclear-de">
+      <p>Beispiel für eine unsichere Lesung ohne Beschädigung</p>
+      <xi:include href="unclear.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-unclear-en">
+      <p>Example of an unsafe reading without damage</p>
+      <xi:include href="unclear.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-unclear-fr">
+      <p>Exemple de lecture dangereuse sans dommage</p>
+      <xi:include href="unclear.xml"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-width-cm-de">
+      <p>Beispiel für eine Breitenangabe in Zentimetern</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-width-cm-en">
+      <p>Example of a width in centimeters</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-width-cm-fr">
+      <p>Exemple de largeur en centimètres</p>
+      <xi:include href="width.xml" xpointer="ex-width-cm"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-width-unknown-de">
+      <p>Beispiel für eine unbekannte Breitenangabe</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-width-unknown-en">
+      <p>Example of an unknown width</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-width-unknown-fr">
+      <p>Exemple de largeur inconnue</p>
+      <xi:include href="width.xml" xpointer="ex-width-unknown"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-witness-de">
+      <p>Beispiel für mehrere Textzeugenbeschreibungen</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-witness-en">
+      <p>Example of multiple text witness descriptions</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-witness-fr">
+      <p>Exemple de plusieurs descriptions de témoins textuels</p>
+      <xi:include href="listWit.xml"/>
+    </exemplum>
+  </macroSpec>
+</div>

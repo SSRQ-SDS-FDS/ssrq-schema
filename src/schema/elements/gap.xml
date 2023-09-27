@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+    type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="gap" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-19">Beschreibt eine Auslassung durch den Editor.</desc>
+  <desc xml:lang="en" versionDate="2023-07-19">Describes an omission by the editor.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Décrit une omission par l'éditeur.</desc>
+  <classes mode="replace">
+    <memberOf key="att.dimensions"/>
+    <memberOf key="ssrq.att.source"/>
+  </classes>
+  <content>
+    <empty/>
+  </content>
+  <constraintSpec scheme="schematron" ident="sch-el-gap">
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:gap[parent::tei:damage]">
+          <sch:report test="@reason" xml:lang="en">If
+                        <sch:name/>
+                        is a child of
+                        tei:damage, @reason cannot be specififed on tei:gap.
+                    </sch:report>
+          <sch:report test="not(@unit) or not(@quantity)" xml:lang="en">If tei:gap is a
+                        child of tei:damage, @unit and @quantity need to specified on tei:gap.
+                    </sch:report>
+        </sch:rule>
+        <sch:rule context="tei:gap[not(parent::tei:damage) and @reason]">
+          <sch:report test="@reason = 'illegible' and (not(@unit) or not(@quantity))">If @reason is
+                        specified on the
+                        <sch:name/>
+                        element and its value is "illegible", @unit and
+                        @quantity must be present, too.
+                    </sch:report>
+          <sch:report test="@source">On the
+                        <sch:name/>
+                        element, @source cannot occur
+                        together with @reason. Those attributes are mutually exclusive.
+                    </sch:report>
+        </sch:rule>
+        <sch:rule context="tei:gap[not(parent::tei:damage) and @source]">
+          <sch:report test="@unit or @quantity or @reason">If @source is specified on the
+                        <sch:name/>
+                        element, @unit, @quantity and @reason are forbidden.
+                    </sch:report>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="agent" mode="delete"/>
+    <attDef ident="reason" mode="replace">
+      <desc xml:lang="de" versionDate="2023-05-26">Grund der Lücke</desc>
+      <desc xml:lang="en" versionDate="2023-05-26">Reason for the difference</desc>
+      <desc xml:lang="fr" versionDate="2023-05-26">Raison de l'écart</desc>
+      <valList type="closed">
+        <valItem ident="illegible">
+          <desc xml:lang="de" versionDate="2023-05-26">unleserlich</desc>
+          <desc xml:lang="en" versionDate="2023-05-26">illegible</desc>
+          <desc xml:lang="fr" versionDate="2023-05-26">illisible</desc>
+        </valItem>
+        <valItem ident="irrelevant">
+          <desc xml:lang="de" versionDate="2023-05-26">irrelevant</desc>
+          <desc xml:lang="en" versionDate="2023-05-26">irrelevant</desc>
+          <desc xml:lang="fr" versionDate="2023-05-26">insignifiant</desc>
+        </valItem>
+        <valItem ident="missing">
+          <desc xml:lang="de" versionDate="2023-05-26">fehlt</desc>
+          <desc xml:lang="en" versionDate="2023-05-26">missing</desc>
+          <desc xml:lang="fr" versionDate="2023-05-26">manquant</desc>
+        </valItem>
+      </valList>
+    </attDef>
+    <attDef ident="source" mode="replace">
+      <desc xml:lang="de" versionDate="2023-08-17">Verweis auf ein anderes Stück.
+            </desc>
+      <desc xml:lang="en" versionDate="2023-08-17">Reference to another item.
+            </desc>
+      <desc xml:lang="fr" versionDate="2023-08-17">Renvoi à une autre pièce.
+            </desc>
+      <datatype>
+        <dataRef key="ssrq.pointer.urn"/>
+      </datatype>
+    </attDef>
+    <attDef ident="unit" mode="change">
+      <datatype>
+        <rng:choice>
+          <rng:ref name="ssrq.measure.lengths.base.cm"/>
+          <rng:ref name="ssrq.measure.lengths.base.line"/>
+          <rng:ref name="ssrq.measure.typography"/>
+          <rng:ref name="ssrq.measure.scope"/>
+        </rng:choice>
+      </datatype>
+    </attDef>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-gap-line-de"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-line-en"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-line-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-missing-de"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-missing-en"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-missing-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-source-de"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-source-en"/>
+  <xi:include href="examples.xml" xpointer="ex-gap-source-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-gap-de"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-gap-en"/>
+  <xi:include href="examples.xml" xpointer="ex-damage-gap-fr"/>
+  <remarks xml:lang="de" versionDate="2023-08-17">
+    <p>Dies betrifft vor allem gänzlich unleserliche Stellen. Der Grund für eine Auslassung kann
+            mit <att>reason</att> angegeben werden. Wenn die Ursache einer Unlesbarkeit aber eine Beschädigung ist,
+            so wird auf <att>reason</att> verzichtet – stattdessen wird der Tag mit
+            <gi>damage</gi> umschlossen. Ist
+            der Grund für eine Unlesbarkeit eine Rasur oder eine (heftige) Streichung, wird der Tag in
+            ein <gi>del</gi> verschachtelt.
+        </p>
+    <p>Die Grösse der Auslassung wird mit <att>unit</att> und <att>quantity</att> angegeben. Massangaben werden
+            auf 0.5 auf- oder abgerundet.
+        </p>
+    <p>Werden spätere Nachträge nicht beim Original, sondern als eigenständiges Stück ediert, können die Teile,
+            die bereits in einem früheren Original ediert wurden, mit <gi>gap</gi> weggelassen werden. Auf das
+            edierte Stück wird mit <att>source</att> verwiesen. In diesem Fall wird eine Anmerkung
+            in <gi>note</gi> oder eine Bemerkung in <gi>back</gi> ergänzt.
+        </p>
+    <p>Wird z. B. nur ein Eintrag auf einer Seite eines Ratsprotokolls transkribiert, werden die davorstehenden Einträge weggelassen und die Auslassung mit nur einem <gi>gap</gi> <att>reason</att>= <val>irrelevant</val> (auch wenn mehrere Einträge ausgelassen werden) gekennzeichnet. Die Angabe der nachfolgenden Einträge ist nicht notwendig. Befindet sich der Titel zum Ratsprotokolleintrag eine oder mehrere Seiten weiter vorne, dann sollte dieser ebenfalls transkribiert und die Auslassung mit <gi>gap</gi> gekennzeichnet werden (vgl. Beispiel). </p>
+    <p>Für Zeilensprünge in der Vorlage wird nicht <gi>gap</gi>, sondern <gi>supplied</gi> verwendet.
+        </p>
+    <p>Lücken in retrodigitalisierten Texten werden mit <tag>gap reason="missing"</tag> ausgezeichnet (z. B. SDS NE 1).</p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-08-17">
+    <p>This mainly applies to completely illegible passages. The reason for an omission can be specified
+            with <att>reason</att>. However, if the cause of illegibility is damage, <att>reason</att> is not used -
+            instead the tag is enclosed in <gi>damage</gi>. If the reason for illegibility is a shave or a (heavy)
+            deletion, the tag is nested in a <gi>del</gi>.
+        </p>
+    <p>The size of the omission is specified with <att>unit</att> and <att>quantity</att>. Measurements are rounded
+            up or down to 0.5.
+        </p>
+    <p>If later supplements are not edited with the original but as a separate piece, the parts that have already
+            been edited in an earlier original can be omitted with <gi>gap</gi>. The edited piece is referenced
+            with <att>source</att>. In this case, a comment is added in <gi>note</gi> or in <gi>back</gi>.
+        </p>
+    <p>If, for example, only one entry on one page of a council minute is transcribed, the preceding entries are omitted and the omission is marked with only one <gi>gap</gi> <att>reason</att>= <val>irrelevant</val> (even if several entries are omitted). It is not necessary to specify the subsequent entries. If the title to the Council minutes entry is one or more pages further forward, then this should also be transcribed and the omission marked with <gi>gap</gi> (cf. example). </p>
+    <p>For line breaks in the template <gi>gap</gi> is not used, but <gi>supplied</gi>.
+        </p>
+    <p>Gaps in retro-digitised texts are marked with <tag>gap reason="missing"</tag> (e.g. SDS NE 1).</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-08-17">
+    <p>Cela s'applique principalement aux passages complètement illisibles. La raison d'une omission
+            peut être spécifiée avec <att>reason</att>. Cependant, si la cause de l'illisibilité est un
+            dommage, <att>reason</att> n'est pas utilisé - à la place, la balise est entourée de <gi>damage</gi>.
+            Si la raison de l'illisibilité est un rasage ou une suppression (lourde), la balise est imbriquée dans
+            un <gi>del</gi>.
+        </p>
+    <p>La taille de l'omission est spécifiée avec <att>unit</att> et <att>quantity</att>. Les mesures sont
+            arrondies vers le haut ou vers le bas à 0,5.
+        </p>
+    <p>Si les suppléments ultérieurs ne sont pas édités avec l'original mais comme une pièce séparée, les parties
+            qui ont déjà été éditées dans un original antérieur peuvent être omises avec <gi>gap</gi>. La pièce éditée
+            est référencée avec <att>source</att>. Dans ce cas, un commentaire est ajouté en <gi>note</gi> ou
+            en <gi>back</gi>.
+        </p>
+    <p>Si, par exemple, une seule entrée est transcrite sur une page d'un procès-verbal du Conseil, les entrées qui la précèdent sont omises et l'omission est signalée par un seul <gi>gap</gi> <att>reason</att>= <val>non pertinent</val> (même si plusieurs entrées sont omises). L'indication des entrées suivantes n'est pas nécessaire. Si le titre de l'entrée du procès-verbal du Conseil se trouve une ou plusieurs pages plus haut, il faut également le transcrire et signaler l'omission par <gi>gap</gi> (voir exemple). </p>
+    <p>Pour les sauts de ligne dans le modèle, <gi>gap</gi> n'est pas utilisé, mais <gi>supplied</gi>.
+        </p>
+    <p>Les lacunes dans les textes rétrodigitalisés sont signalées par <tag>gap reason="missing"</tag> (par exemple SDS NE 1).</p>
+  </remarks>
+</elementSpec>

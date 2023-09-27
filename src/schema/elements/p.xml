@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="p" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-20">Beschreibt einen Absatz.</desc>
+  <desc xml:lang="en" versionDate="2023-07-20">Describes a paragraph.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-20">Décrit un paragraphe.</desc>
+  <classes mode="replace">
+    <memberOf key="att.global"/>
+    <memberOf key="model.pLike"/>
+  </classes>
+  <content>
+    <rng:choice>
+      <rng:oneOrMore>
+        <rng:choice>
+          <rng:ref name="bibl"/>
+          <rng:ref name="list"/>
+          <rng:ref name="ref"/>
+          <rng:ref name="ssrq.content.default"/>
+        </rng:choice>
+      </rng:oneOrMore>
+      <rng:group>
+        <rng:ref name="seg"/>
+        <rng:oneOrMore>
+          <rng:ref name="seg"/>
+        </rng:oneOrMore>
+      </rng:group>
+    </rng:choice>
+  </content>
+  <constraintSpec scheme="schematron" ident="sch-el-p">
+    <desc xml:lang="en" versionDate="2023-05-22">Ensure all <gi>p</gi> elements have
+            a <att>xml:lang</att> when they are siblings.
+        </desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:p[@xml:lang][following-sibling::tei:p|preceding-sibling::tei:p]">
+          <sch:assert test="every $p in ./following-sibling::tei:p|./preceding-sibling::tei:p satisfies $p[@xml:lang]" xml:lang="en">If @xml:lang is used on
+                        <sch:name/>
+                        the preceding and following
+                        <sch:name/>
+                        also have to use it!
+                    </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="n" mode="delete"/>
+    <attDef ident="xml:id" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-p-seg-de"/>
+  <xi:include href="examples.xml" xpointer="ex-p-seg-en"/>
+  <xi:include href="examples.xml" xpointer="ex-p-seg-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-p-actum-de"/>
+  <xi:include href="examples.xml" xpointer="ex-p-actum-en"/>
+  <xi:include href="examples.xml" xpointer="ex-p-actum-fr"/>
+  <remarks xml:lang="de" versionDate="2023-07-20">
+    <p>In der Transkription werden damit originale Absätze ausgezeichnet. Eine inhaltliche Gliederung des Textes
+            durch den Bearbeitenden erfolgt mit <gi>seg</gi>. Vgl. dazu auch die Ausführungen "Strukturierung der Texte"
+            in den <ref target="textstructure.md">SSRQ-Transkriptionsrichtlinien</ref> und die Beschreibung von <gi>div</gi>. Wird in einer Urkunde der Text
+            durch einen Abstand oder eine Initiale inhaltlich strukturiert, kann der Absatz mit <gi>p</gi> ausgezeichnet
+            werden. Paragraphenzeichen allerdings werden nicht speziell ausgezeichnet.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-20">
+    <p>In the transcription, this is used to mark original paragraphs. The text is structured by the editor
+            with <gi>seg</gi>. See also the explanations "Structuring of the texts" in the <ref target="textstructure.md">SSRQ transcription guidelines</ref>
+            and the description of <gi>div</gi>. If the text in a certificate is structured by a space or an initial,
+            the paragraph can be marked with <gi>p</gi>. Paragraph signs, however, are not specially marked.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-20">
+    <p>Dans la transcription, ceci est utilisé pour marquer les paragraphes originaux. Le texte est structuré par
+            l'éditeur avec <gi>seg</gi>. Voir aussi les explications "Structuration des textes" dans les consignes de
+            <ref target="textstructure.md">transcription SSRQ et la description</ref> de <gi>div</gi>. Si le texte d'un certificat est structuré par un
+            espace ou une initiale, le paragraphe peut être marqué d'un <gi>p</gi>. Les signes de paragraphe, cependant,
+            ne sont pas spécialement marqués.
+        </p>
+  </remarks>
+</elementSpec>

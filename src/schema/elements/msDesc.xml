@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="msDesc" module="msdescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-30">Beschreibt das edierte Quellenstück mit
+        Aufbewahrungsort, Material, Layout, Schreiber, Siegel und Bibliographie zu Sekundärliteratur
+        (Metadaten).
+    </desc>
+  <desc xml:lang="en" versionDate="2023-05-30">Describes the edited source document, including
+        place of preservation, material, layout, scribe, seal and bibliography on secondary
+        literature (metadata).
+    </desc>
+  <desc xml:lang="fr" versionDate="2023-05-30">Décrit la pièce de source éditée avec le lieu de
+        conservation, le matériau, la mise en page, le scribe, le sceau et la bibliographie sur la
+        littérature secondaire (métadonnées).
+    </desc>
+  <classes mode="replace">
+    <memberOf key="model.biblLike"/>
+  </classes>
+  <content>
+    <sequence>
+      <elementRef key="msIdentifier" minOccurs="0"/>
+      <elementRef key="head" maxOccurs="unbounded"/>
+      <elementRef key="msContents" minOccurs="0"/>
+      <elementRef key="physDesc" minOccurs="0"/>
+      <elementRef key="history"/>
+      <elementRef key="additional" minOccurs="0"/>
+    </sequence>
+  </content>
+  <constraintSpec scheme="schematron" ident="sch-el-msDesc">
+    <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:msDesc to ensure the usage of either tei:physDesc or tei:adminInfo.</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:msDesc[not(tei:physDesc)]">
+          <sch:assert test=".[//tei:adminInfo]">If no tei:physDesc is given, tei:adminInfo is required!</sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <xi:include href="examples.xml" xpointer="ex-msDesc-de"/>
+  <xi:include href="examples.xml" xpointer="ex-msDesc-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-msDesc-en"/>
+</elementSpec>

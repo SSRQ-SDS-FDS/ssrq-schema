@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="teiHeader" module="header" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-04">Enthält alle Metadaten zum edierten Dokument.</desc>
+  <desc xml:lang="en" versionDate="2023-05-04">Contains all metadata about the edited document.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-04">Contient toutes les métadonnées sur le document modifié.</desc>
+  <classes mode="replace"/>
+  <content>
+    <sequence>
+      <elementRef key="fileDesc"/>
+      <elementRef key="encodingDesc"/>
+      <elementRef key="profileDesc" minOccurs="0"/>
+    </sequence>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-teiHeader-de"/>
+  <xi:include href="examples.xml" xpointer="ex-teiHeader-en"/>
+  <xi:include href="examples.xml" xpointer="ex-teiHeader-fr"/>
+</elementSpec>

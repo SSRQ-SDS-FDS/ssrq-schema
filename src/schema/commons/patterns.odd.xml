@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0">
+  <specGrp xml:id="ssrq-patterns">
+    <!-- dates and times -->
+    <dataSpec ident="ssrq.date.point" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-05-05">SSRQ definiertes Muster für Zeitpunkte – basierend auf Tagen
+            </desc>
+      <desc xml:lang="en" versionDate="2023-05-05">SLS defined pattern for time points - based on days</desc>
+      <desc xml:lang="fr" versionDate="2023-05-05">SDS modèle défini pour l'heure - basé sur les jours</desc>
+      <content>
+        <dataRef name="string" restriction="(\d{4}|-)-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.time.point" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-05-16">SSRQ definiertes Muster für Zeitpunkte – basierend auf
+                Sekunden
+            </desc>
+      <desc xml:lang="en" versionDate="2023-06-29">SLS defined pattern for time points - based on seconds</desc>
+      <desc xml:lang="fr" versionDate="2023-06-29">SDS modèle défini pour les points temporels - basé sur les
+                secondes
+            </desc>
+      <content>
+        <dataRef name="string" restriction="(2[0-4]|[0-1][0-9]):[0-5][0-9]:[0-5][0-9]"/>
+      </content>
+    </dataSpec>
+    <!-- numbering of folia, pages and (parchment) sections -->
+    <dataSpec ident="ssrq.foliation" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-07-15">Blattzählung</desc>
+      <desc xml:lang="en" versionDate="2023-07-15">Foliation</desc>
+      <desc xml:lang="fr" versionDate="2023-07-15">Foliation</desc>
+      <content>
+        <dataRef name="string" restriction="((\d+)|([IVXLC]+))[rv]"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pagination" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-07-15">Seitenzählung</desc>
+      <desc xml:lang="en" versionDate="2023-07-15">Pagination</desc>
+      <desc xml:lang="fr" versionDate="2023-07-15">Pagination</desc>
+      <content>
+        <dataRef name="string" restriction="(\d+)|([IVXLC]+)"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.section" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-07-15">Abschnittszählung</desc>
+      <desc xml:lang="en" versionDate="2023-07-15">Section numbering</desc>
+      <desc xml:lang="fr" versionDate="2023-07-15">Numérotation des sections</desc>
+      <content>
+        <dataRef name="string" restriction="s(\d+)"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.numbering" mode="add" module="ssrq.core.module">
+      <content>
+        <alternate>
+          <dataRef key="ssrq.foliation"/>
+          <dataRef key="ssrq.pagination"/>
+          <dataRef key="ssrq.section"/>
+        </alternate>
+      </content>
+    </dataSpec>
+    <!-- file names -->
+    <dataSpec ident="ssrq.facs.name" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-09-13">Einschränkung für Faksimilenamen</desc>
+      <desc xml:lang="en" versionDate="2023-09-13">Restriction for facsimile names</desc>
+      <desc xml:lang="fr" versionDate="2023-09-13">Restriction concernant les noms de télécopie</desc>
+      <content>
+        <dataRef name="string" restriction="[A-Za-z_\-0-9]+([1-9]|[rv]|plica)"/>
+      </content>
+    </dataSpec>
+    <!-- pointer to SSRQ databases -->
+    <dataSpec ident="ssrq.pointer.keywords" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Schlagwort-IDs zur
+                Verknüpfung mit der Schlagwort- und Lemmadatenbank
+            </desc>
+      <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for keyword IDs for
+                linking to the keyword and lemma database
+            </desc>
+      <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des ID de mots-clés pour
+                la liaison avec la base de données des mots-clés et des lemmes
+            </desc>
+      <content>
+        <dataRef name="string" restriction="key\d{6}$?"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pointer.lemma" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Lemma-IDs zur
+                Verknüpfung mit der Schlagwort- und Lemmadatenbank
+            </desc>
+      <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for lemma IDs for
+                linking to the keyword and lemma database
+            </desc>
+      <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des ID de lemmes pour la
+                liaison avec la base de données des mots-clés et des lemmes
+            </desc>
+      <content>
+        <dataRef name="string" restriction="lem\d{6}(\.1?\d{2})?"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pointer.org" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Org-IDs zur
+                Verknüpfung mit der Personen- und Organisationsdatenbank
+            </desc>
+      <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for org-IDs for
+                linking with the person and organisation database
+            </desc>
+      <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des org-ID pour
+                l'établissement d'un lien avec la base de données des personnes et des organisations
+            </desc>
+      <content>
+        <dataRef name="string" restriction="org\d{6}(\.\d{2})?"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pointer.persons" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Personen-IDs zur
+                Verknüpfung mit der Personen- und Organisationsdatenbank
+            </desc>
+      <desc xml:lang="en" versionDate="2022-08-19">Defines the pattern for person IDs for
+                linking with the person and organisation database
+            </desc>
+      <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle d'identifiant de personne
+                pour le lien avec la base de données des personnes et des organisations
+            </desc>
+      <content>
+        <dataRef name="string" restriction="per\d{6}[abc]?(\.\d{2})?"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pointer.places" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2024-04-20">Definiert das Muster für Place-IDs zur
+                Verknüpfung mit der Ortsdatenbank
+            </desc>
+      <desc xml:lang="en" versionDate="2024-04-20">Defines the pattern for place-IDs for
+                linking with the places database
+            </desc>
+      <desc xml:lang="fr" versionDate="2024-04-20">Définit le modèle des place-ID pour
+                l'établissement d'un lien avec la base de données des lieux
+            </desc>
+      <content>
+        <dataRef name="string" restriction="loc\d{6}(\.\d{2})?"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pointer.databases" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-09-22">Verweis auf einen beliebigen SSRQ-Datenbankeintrag</desc>
+      <desc xml:lang="en" versionDate="2023-09-22">Reference to any SSRQ database entry</desc>
+      <desc xml:lang="fr" versionDate="2023-09-22">Référence à toute entrée de la base de données SSRQ</desc>
+      <content>
+        <alternate>
+          <dataRef key="ssrq.pointer.keywords"/>
+          <dataRef key="ssrq.pointer.lemma"/>
+          <dataRef key="ssrq.pointer.org"/>
+          <dataRef key="ssrq.pointer.persons"/>
+          <dataRef key="ssrq.pointer.places"/>
+        </alternate>
+      </content>
+    </dataSpec>
+    <!-- pointer to external resources -->
+    <dataSpec ident="ssrq.pointer.doi" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-05-15">Definiert das Muster für Verweise als DOI.</desc>
+      <desc xml:lang="en" versionDate="2023-05-15">Defines the pattern for links as a DOI.</desc>
+      <desc xml:lang="fr" versionDate="2023-05-15">Définit le modèle des liens en tant qu'DOI.</desc>
+      <content>
+        <dataRef name="string" restriction="doi:10\.\d{4}/.*"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pointer.url" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-03-07">Definiert das Muster für Verweise als URL.</desc>
+      <desc xml:lang="en" versionDate="2023-05-15">Defines the pattern for links as a URL.</desc>
+      <desc xml:lang="fr" versionDate="2023-05-15">Définit le modèle des liens en tant qu'URL.</desc>
+      <content>
+        <dataRef name="anyURI" restriction="(https?|ftp)://[^\s/$.?#].[^\s]*"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pointer.urn" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-03-07">Definiert das Muster für Verweise als
+                Referenz auf andere TEI-Stücke inklusive Fragment-Bezeichnern.
+            </desc>
+      <desc xml:lang="en" versionDate="2023-03-07">Defines the pattern for references as
+                reference to other TEI documents including fragment identifiers.
+            </desc>
+      <desc xml:lang="fr" versionDate="2023-03-07">Définit le modèle pour les références comme
+                référence à d'autres pièces TEI y compris les identificateurs de fragments.
+            </desc>
+      <content>
+        <dataRef name="string" restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)(-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)))?(#[A-Za-z0-9_]+)?"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pointer.target" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2022-12-08">Definiert das Muster für Verweise als
+                Referenz auf andere TEI-Stücke, als Hyperlink oder als DOI.
+            </desc>
+      <desc xml:lang="en" versionDate="2022-12-08">Defines the pattern for references as
+                reference to other TEI documents, as hyperlink or as DOI.
+            </desc>
+      <desc xml:lang="fr" versionDate="2022-12-08">Définit le modèle pour les références comme
+                référence à d'autres pièces TEI, comme hyperlien ou comme DOI.
+            </desc>
+      <content>
+        <alternate>
+          <dataRef key="ssrq.pointer.doi"/>
+          <dataRef key="ssrq.pointer.url"/>
+          <dataRef key="ssrq.pointer.urn"/>
+        </alternate>
+      </content>
+    </dataSpec>
+  </specGrp>
+</div>

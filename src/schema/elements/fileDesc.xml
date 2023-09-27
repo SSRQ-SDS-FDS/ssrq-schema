@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="fileDesc" module="header" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-17">Enthält Elemente zur Beschreibung der edierten
+        Vorlage und der digitalen Erfassung.
+    </desc>
+  <desc xml:lang="en" versionDate="2023-07-17">Contains elements describing the edited template and the digital
+        capture.
+    </desc>
+  <desc xml:lang="fr" versionDate="2023-07-17">Contient des éléments décrivant le modèle édité et la capture
+        numérique.
+    </desc>
+  <classes mode="replace"/>
+  <content>
+    <sequence>
+      <elementRef key="titleStmt"/>
+      <elementRef key="publicationStmt"/>
+      <elementRef key="seriesStmt"/>
+      <elementRef key="sourceDesc"/>
+    </sequence>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-fileDesc-de"/>
+  <xi:include href="examples.xml" xpointer="ex-fileDesc-en"/>
+  <xi:include href="examples.xml" xpointer="ex-fileDesc-fr"/>
+</elementSpec>

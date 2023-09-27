@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="author" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-08-17">Enthält als Teil von <gi>msItem</gi> den Schreiber einer Quelle.
+    </desc>
+  <desc xml:lang="en" versionDate="2023-08-17">Contains the writer of a source as part of <gi>msItem</gi>.
+    </desc>
+  <desc xml:lang="fr" versionDate="2023-08-17">Contient l'auteur d'une source dans le cadre de <gi>msItem</gi>.
+    </desc>
+  <classes mode="replace">
+    <memberOf key="att.global.responsibility"/>
+    <memberOf key="att.naming"/>
+    <memberOf key="model.respLike"/>
+  </classes>
+  <content>
+    <alternate>
+      <sequence preserveOrder="false" maxOccurs="unbounded">
+        <elementRef minOccurs="0" key="persName"/>
+        <textNode/>
+      </sequence>
+      <sequence preserveOrder="false" maxOccurs="unbounded">
+        <elementRef key="orgName"/>
+        <textNode/>
+      </sequence>
+    </alternate>
+  </content>
+  <constraintSpec scheme="schematron" ident="sch-el-author">
+    <desc xml:lang="en" versionDate="2023-05-02">Constraint for tei:author to ensure, that the
+            element is not empty!
+        </desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:author[not(*)]">
+          <sch:assert test="string-length(normalize-space(.)) &gt; 0" xml:lang="en">If
+                        <sch:name/>
+                        has no child elements it needs to have text
+                        content!
+                    </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="role" mode="replace">
+      <desc xml:lang="de" versionDate="2023-05-05">Rolle des Schreibenden</desc>
+      <desc xml:lang="en" versionDate="2023-05-05">Role of the writer</desc>
+      <desc xml:lang="fr" versionDate="2023-05-05">Rôle du rédacteur</desc>
+      <valList type="closed" mode="replace">
+        <valItem ident="scribe">
+          <desc xml:lang="de" versionDate="2022-05-12">Schreiber</desc>
+          <desc xml:lang="fr" versionDate="2022-05-12">scripteur</desc>
+          <desc xml:lang="en" versionDate="2022-05-12">scribe</desc>
+        </valItem>
+      </valList>
+    </attDef>
+    <attDef ident="resp" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-author-de"/>
+  <xi:include href="examples.xml" xpointer="ex-author-en"/>
+  <xi:include href="examples.xml" xpointer="ex-author-fr"/>
+</elementSpec>

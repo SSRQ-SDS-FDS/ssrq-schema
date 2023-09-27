@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="availability" module="header" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-17">Beschreibt die Verfügbarkeit eines Textes.</desc>
+  <desc xml:lang="en" versionDate="2023-07-17">Describes the availability of a text.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-17">Décrit la disponibilité d'un texte.</desc>
+  <classes mode="replace">
+    <memberOf key="model.publicationStmtPart.detail"/>
+  </classes>
+  <content>
+    <elementRef key="licence"/>
+  </content>
+  <attList>
+    <attDef ident="status" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-availability-de"/>
+  <xi:include href="examples.xml" xpointer="ex-availability-en"/>
+  <xi:include href="examples.xml" xpointer="ex-availability-fr"/>
+  <remarks xml:lang="de" versionDate="2023-07-17">
+    <p>Gibt Einschränkungen bezüglich des Gebrauchs oder der Weitergabe, Lizensierungen usw. an. Wir benutzen den
+            Tag, um die Institution, die uns Faksimiles zur Verfügung gestellt hat, zu erwähnen. Ein Faksimile kann von
+            einem Drittanbieter (und nicht von der Institution, indem die Quelle archiviert ist) erstellt werden. Eine
+            Quelle kann im AVN liegen, das Faksimile wurde aber von der BPUN zur Verfügung gestellt bzw. erstellt.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-17">
+    <p>Indicates restrictions on use or disclosure, licensing, etc. We use the tag to mention the institution that
+            provided us with facsimiles. A facsimile can be produced by a third party (rather than the institution where
+            the source is archived). A source may be in the AVN, but the facsimile was made available or created by the
+            BPUN.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-17">
+    <p>Indique les restrictions d'utilisation ou de divulgation, les licences, etc. Nous utilisons l'étiquette pour
+            mentionner l'institution qui nous a fourni les fac-similés. Un fac-similé peut être produit par un tiers
+            (plutôt que par l'institution où la source est archivée). Une source peut être dans l'AVN, mais le
+            fac-similé a été mis à disposition ou créé par le BPUN.
+        </p>
+  </remarks>
+</elementSpec>

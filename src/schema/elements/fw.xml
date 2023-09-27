@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="fw" module="transcr" mode="change">
+  <gloss xml:lang="de" versionDate="2023-07-13">forme work</gloss>
+  <gloss xml:lang="en" versionDate="2023-07-13">forme work</gloss>
+  <gloss xml:lang="fr" versionDate="2023-07-13">forme work</gloss>
+  <desc xml:lang="de" versionDate="2023-08-18">Enthält Kustoden bzw. Reklamanten. Das sich am unteren Blattende befindliche Wort wird in der Regel weggelassen bzw. auf der nächsten Seite transkribiert.</desc>
+  <desc xml:lang="en" versionDate="2023-08-18">Contains catchwords and reclamants. The word at the bottom of the page is usually omitted or transcribed on the next page.</desc>
+  <desc xml:lang="fr" versionDate="2023-08-18">Contient des mots clés et des réclamations. Le mot qui se trouve au bas de la page est généralement omis ou transcrit sur la page suivante.</desc>
+  <classes mode="replace">
+    <memberOf key="att.typed"/>
+  </classes>
+  <content>
+    <rng:oneOrMore>
+      <rng:ref name="ssrq.content.default"/>
+    </rng:oneOrMore>
+  </content>
+  <attList>
+    <attDef ident="type" mode="replace" usage="req">
+      <valList type="closed">
+        <valItem ident="catchword">
+          <desc xml:lang="de" versionDate="2023-05-22">Kustode</desc>
+          <desc xml:lang="fr" versionDate="2023-05-22">dépositaire</desc>
+          <desc xml:lang="en" versionDate="2023-05-22">catchword</desc>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-fw-de"/>
+  <xi:include href="examples.xml" xpointer="ex-fw-en"/>
+  <xi:include href="examples.xml" xpointer="ex-fw-fr"/>
+</elementSpec>

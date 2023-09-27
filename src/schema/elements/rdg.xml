@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="rdg" module="textcrit" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-13">Enthält eine von der Editionsvorlage abweichende Textvariante.</desc>
+  <desc xml:lang="en" versionDate="2023-07-13">Contains a text variant that differs from the edition template.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-13">Contient une variante de texte qui diffère du modèle d'édition.</desc>
+  <classes mode="replace">
+    <memberOf key="att.witnessed"/>
+  </classes>
+  <content>
+    <rng:oneOrMore>
+      <rng:ref name="ssrq.content.default"/>
+    </rng:oneOrMore>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-app-de"/>
+  <xi:include href="examples.xml" xpointer="ex-app-en"/>
+  <xi:include href="examples.xml" xpointer="ex-app-fr"/>
+  <remarks xml:lang="de" versionDate="2023-08-18">
+    <p>In <att>wit</att> wird auf den anderen Textzeugen, auf dem die Lesart basiert, verwiesen. Bei Auslassungen kann ein leeres <gi>rdg</gi> verwendet werden.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-08-18">
+    <p>In <att>wit</att>, reference is made to the other textual witness on which the reading is based. An
+            empty <gi>rdg</gi> can be used for omissions.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-08-18">
+    <p>Dans <att>wit</att>, il est fait référence à l'autre témoin textuel sur lequel la lecture est basée. Un <gi>rdg</gi> vide peut être utilisé pour les omissions.
+        </p>
+  </remarks>
+</elementSpec>

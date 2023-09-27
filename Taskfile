@@ -67,7 +67,7 @@ function test-only {
 
 function compile {
     validate
-    cmd python utils/main.py
+    cmd python utils/schema/compile.py
 }
 
 function build-docs {
@@ -80,7 +80,7 @@ function serve-docs {
 
 function validate {
     echo "Checking the xml sources..."
-    cmd python utils/validate.py
+    cmd python utils/schema/validate.py
 }
 
 function help {

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="q" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-20">Enthält in der Transkription Text in direkter Rede.</desc>
+  <desc xml:lang="en" versionDate="2023-07-20">Contains text in direct speech in the transcription.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-20">Contient du texte au discours direct dans la transcription.</desc>
+  <classes mode="replace">
+    <memberOf key="model.hiLike"/>
+  </classes>
+  <content>
+    <rng:oneOrMore>
+      <rng:ref name="ssrq.content.default"/>
+    </rng:oneOrMore>
+  </content>
+  <attList>
+    <attDef ident="type" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-q-de"/>
+  <xi:include href="examples.xml" xpointer="ex-q-en"/>
+  <xi:include href="examples.xml" xpointer="ex-q-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-q-editor-de"/>
+  <xi:include href="examples.xml" xpointer="ex-q-editor-en"/>
+  <xi:include href="examples.xml" xpointer="ex-q-editor-fr"/>
+  <remarks xml:lang="de" versionDate="2023-07-20">
+    <p><gi>q</gi>
+            wird z. B. bei Zeugenaussagen verwendet. In der Darstellung wird der Tag mit Anführungszeichen
+            hervorgehoben. Zitate und Inserte innerhalb eines Quellentextes werden hingegen
+            mit <gi>quote</gi> ausgezeichnet.
+        </p>
+    <p>Wird in einem Quellenstück der Name eines Dokuments oder eines Gebets genannt, dann wird dieses nicht mit
+            dem Tag <gi>q</gi> oder <gi>quote</gi> ausgezeichnet, aber der Titel gross geschrieben. Das Gleiche gilt
+            für historische Werktitel innerhalb der Paratexte.
+        </p>
+    <p>Innerhalb der Paratexte (Anmerkungen, Kommentar, Einleitung) kann der Tag <gi>q</gi> bei modalisierender
+            Funktion, d. h. ironisierend, distanzierend, übertragen etc., oder für Hervorhebungen verwendet werden.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-20">
+    <p><gi>q</gi>
+            becomes e. g. used in witness statements. In the display, the tag is highlighted with quotation
+            marks. Quotations and inserts within a source text, on the other hand, are marked with <gi>quote</gi>.
+        </p>
+    <p>When a source piece mentions the name of a document or a prayer, it is not marked with
+            the <gi>q</gi> or <gi>quote</gi> tag, but the title is capitalized. The same applies to historical work
+            titles within the paratexts.
+        </p>
+    <p>Within the paratexts (notes, comments, introduction), the <gi>q</gi> tag can be used with a modalizing
+            function, i. e. ironic, distancing, transferred etc., or used for emphasis.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-20">
+    <p><gi>q</gi>
+            devient par ex. utilisé dans les déclarations de témoins. Dans l'affichage, la balise est mise
+            en surbrillance avec des guillemets. Les citations et les insertions dans un texte source, en revanche, sont
+            signalées par <gi>quote</gi>.
+        </p>
+    <p>Lorsqu'une pièce source mentionne le nom d'un document ou d'une prière, elle n'est pas marquée de la
+            balise <gi>q</gi> ou <gi>quote</gi>, mais le titre est en majuscule. Il en va de même pour les titres
+            d'œuvres historiques dans les paratextes.
+        </p>
+    <p>Dans les paratextes (notes, commentaires, introduction), la balise <gi>q</gi> peut être utilisée avec une
+            fonction modalisante, i. e. ironique, distanciant, transféré etc., ou utilisé pour l'emphase.
+        </p>
+  </remarks>
+</elementSpec>

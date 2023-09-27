@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+  <specGrp xml:id="constraints">
+    <constraintSpec scheme="schematron" ident="trim-attributes">
+      <desc xml:lang="en" versionDate="2023-03-01">The value of an attribute should never start with some kind of
+                whitespace
+            </desc>
+      <constraint>
+        <sch:pattern>
+          <sch:rule context="@*">
+            <sch:report test="matches(., '^(?:\s+|\t+|\n)(.*)$')" xml:lang="en">
+                            The value of
+                            <sch:name/>
+                            should not start with whitespace.
+                        </sch:report>
+          </sch:rule>
+        </sch:pattern>
+      </constraint>
+    </constraintSpec>
+    <constraintSpec scheme="schematron" ident="duplicate-attribute-values">
+      <desc xml:lang="en" versionDate="2023-07-25">Global constraint to ensure that no attribute has a duplicate
+                value
+            </desc>
+      <constraint>
+        <sch:pattern>
+          <sch:rule context="//@*">
+            <sch:assert test="count(distinct-values(tokenize(.))) = count(tokenize(.))">
+                            An attribute should not have duplicate values
+                        </sch:assert>
+          </sch:rule>
+        </sch:pattern>
+      </constraint>
+    </constraintSpec>
+    <constraintSpec scheme="schematron" ident="non-empty-elements">
+      <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
+      <constraint>
+        <sch:pattern>
+          <sch:rule context="tei:*[name() = ('ab', 'abbr', 'add', 'bibl', 'custEvent', 'del', 'div', 'expan', 'foreign', 'fw', 'head', 'hi', 'item', 'label', 'lem', 'licence', 'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'publisher', 'pubPlace', 'q', 'quote', 'repository', 'seg', 'settlement', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
+            <sch:assert test="string-length(normalize-space(.)) &gt; 0"><sch:name/>
+                            must not be empty.
+                        </sch:assert>
+          </sch:rule>
+        </sch:pattern>
+      </constraint>
+    </constraintSpec>
+  </specGrp>
+</div>

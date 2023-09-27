@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="textClass" module="header" mode="change">
+  <desc xml:lang="de" versionDate="2023-04-20">Enthält Elemente zur Beschreibung eines Textes mithilfe von
+        Schlagworten.
+    </desc>
+  <desc xml:lang="en" versionDate="2023-04-20">Contains elements for describing a text using keywords.
+    </desc>
+  <desc xml:lang="fr" versionDate="2023-04-20">Contient des éléments pour décrire un texte à l'aide de mots-clés.
+    </desc>
+  <classes mode="replace">
+    <memberOf key="model.profileDescPart"/>
+  </classes>
+  <content>
+    <elementRef key="keywords"/>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-textClass-de"/>
+  <xi:include href="examples.xml" xpointer="ex-textClass-en"/>
+  <xi:include href="examples.xml" xpointer="ex-textClass-fr"/>
+</elementSpec>

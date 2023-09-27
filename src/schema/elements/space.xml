@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="space" module="transcr" mode="change">
+  <desc xml:lang="de" versionDate="2023-05-11">Zeichnet eine Lücke aus, die vom Schreiber bewusst zwecks späterer
+        Ergänzung offen gelassen wurde.
+    </desc>
+  <desc xml:lang="en" versionDate="2023-05-11">Denotes a gap that the writer deliberately left open for later
+        completion.
+    </desc>
+  <desc xml:lang="fr" versionDate="2023-05-11">Désigne une lacune que l'auteur a délibérément laissée ouverte pour une
+        réalisation ultérieure.
+    </desc>
+  <classes mode="replace">
+    <memberOf key="att.dimensions"/>
+  </classes>
+  <content>
+    <empty/>
+  </content>
+  <attList>
+    <attDef ident="dim" mode="delete"/>
+    <attDef ident="unit" mode="replace" usage="req">
+      <datatype>
+        <rng:choice>
+          <rng:ref name="ssrq.measure.lengths.base.cm"/>
+          <rng:ref name="ssrq.measure.lengths.base.line"/>
+          <rng:ref name="ssrq.measure.typography"/>
+        </rng:choice>
+      </datatype>
+    </attDef>
+    <attDef ident="quantity" mode="change" usage="req">
+      <datatype>
+        <rng:choice>
+          <rng:data type="float">
+            <rng:param name="minInclusive">0</rng:param>
+          </rng:data>
+          <rng:data type="positiveInteger"/>
+        </rng:choice>
+      </datatype>
+    </attDef>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-space-de"/>
+  <xi:include href="examples.xml" xpointer="ex-space-en"/>
+  <xi:include href="examples.xml" xpointer="ex-space-fr"/>
+  <remarks xml:lang="de" versionDate="2023-07-14">
+    <p>Die Grösse der Lücke wird zwingend mit <att>unit</att> und <att>quantity</att> angegeben. Dabei handelt
+            es sich um einen leeren Tag. Lücken infolge unbewusster Zeilensprünge werden hingegen
+            mit <gi>supplied</gi> ausgezeichnet.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-14">
+    <p>The size of the gap must be specified with <att>unit</att> and <att>quantity</att>. This is an empty tag.
+            Gaps due to unintentional line jumps, on the other hand, are marked with <gi>supplied</gi>.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-14">
+    <p>La taille de l'écart doit être spécifiée avec <att>unit</att> et <att>quantity</att>. C'est une tag vide.
+            Les lacunes dues à des sauts de ligne involontaires, en revanche, sont marquées par <gi>supplied</gi>.
+        </p>
+  </remarks>
+</elementSpec>

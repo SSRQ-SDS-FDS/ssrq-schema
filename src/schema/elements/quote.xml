@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="quote" module="core" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-20">Enthält ein Zitat innerhalb eines Originaltextes.</desc>
+  <desc xml:lang="en" versionDate="2023-07-20">Contains a citation within an original text.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-20">Contient une citation dans un texte original.</desc>
+  <classes mode="replace">
+    <memberOf key="att.typed"/>
+    <memberOf key="model.quoteLike"/>
+    <memberOf key="ssrq.att.source"/>
+  </classes>
+  <content>
+    <rng:oneOrMore>
+      <rng:ref name="ssrq.content.default"/>
+    </rng:oneOrMore>
+  </content>
+  <constraintSpec scheme="schematron" ident="sch-el-quote" mode="add">
+    <desc versionDate="2023-05-31" xml:lang="en">Schematron rules for tei:quote</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:quote">
+          <sch:report role="warning" test="not(.[following-sibling::*[1][self::tei:note]])"><sch:name/>
+                        should
+                        be followed by a tei:note element.
+                    </sch:report>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="type" mode="replace">
+      <valList type="closed">
+        <valItem ident="fully_inserted">
+          <desc xml:lang="de" versionDate="2023-09-19">Zitat ist ein vollständiges Insert einer anderen Urkunde.</desc>
+          <desc xml:lang="en" versionDate="2023-09-19">Quotation is a complete insert of another document.</desc>
+          <desc xml:lang="fr" versionDate="2023-09-19">La citation est un insert complet d’un autre document.</desc>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-quote-de"/>
+  <xi:include href="examples.xml" xpointer="ex-quote-en"/>
+  <xi:include href="examples.xml" xpointer="ex-quote-fr"/>
+  <remarks xml:lang="de" versionDate="2023-08-18">
+    <p>Enthält z. B. eine inserierte Urkunde oder eine Bibelstelle. Idealerweise folgt am Schluss des Zitats eine
+            sachkritische Anmerkung mit <gi>note</gi> mit einem Verweis auf den Originaltext oder eine Edition
+            desselben.
+        </p>
+    <p>Für direkte Rede in Quellentexten verwenden wir <gi>q</gi>. Wird in einem Quellenstück der Name eines
+      Dokuments oder eines Gebets genannt, dann wird dieses nicht mit dem Tag <gi>q</gi> oder <gi>quote</gi> ausgezeichnet, aber
+            der Titel grossgeschrieben. Das Gleiche gilt für historische Werktitel innerhalb der Paratexte. Innerhalb
+            der Paratexte (Anmerkungen, Kommentar, Einleitung) benutzen wir <gi>quote</gi> für Zitate aus der
+            Forschungsliteratur.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-08-18">
+    <p>Contains e.g. an advertised document or a passage from the Bible. Ideally, the citation should be followed
+            by a factual comment with <gi>note</gi> with a reference to the original text or an edition of the same.
+        </p>
+    <p>For direct speech in source texts, we use <gi>q</gi>. If the name of a document or a prayer is mentioned in
+      a source piece, then this is not marked with the tag  <gi>q</gi> or <gi>quote</gi>, but the title is capitalized. The same
+            applies to historical work titles within the paratexts. Within the paratexts (notes, commentary,
+            introduction) we use <gi>quote</gi> for citations from the research literature.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-08-18">
+    <p>Contient par ex. un document annoncé ou un passage de la Bible. Idéalement, la citation doit être suivie
+            d'un commentaire factuel avec <gi>note</gi> avec une référence au texte original ou à une édition de
+            celui-ci.
+        </p>
+    <p>Pour la parole directe dans les textes sources, nous utilisons <gi>q</gi>. Si le nom d'un document ou d'une
+      prière est mentionné dans une pièce source, cela n'est pas marqué avec la balise  <gi>q</gi> ou <gi>quote</gi>, mais le
+            titre est en majuscule. Il en va de même pour les titres d'œuvres historiques dans les paratextes. Dans les
+            paratextes (notes, commentaire, introduction), nous utilisons <gi>quote</gi> pour les citations de la
+            littérature de recherche.</p>
+  </remarks>
+</elementSpec>

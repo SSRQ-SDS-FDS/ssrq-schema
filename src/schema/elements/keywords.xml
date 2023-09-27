@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="keywords" module="header" mode="change">
+  <gloss xml:lang="de" versionDate="2023-09-12">Schlagworte</gloss>
+  <desc xml:lang="de" versionDate="2023-07-18">Enthält die wichtigsten Schlagworte zum Inhalt einer Quelle.</desc>
+  <desc xml:lang="en" versionDate="2023-07-18">Contains the most important keywords for the content of a source.
+    </desc>
+  <desc xml:lang="fr" versionDate="2023-07-18">Contient les mots clés les plus importants pour le contenu d'une
+        source.
+    </desc>
+  <classes mode="replace"/>
+  <content>
+    <elementRef key="term" maxOccurs="unbounded"/>
+  </content>
+  <attList>
+    <attDef ident="scheme" mode="delete"/>
+  </attList>
+  <xi:include href="examples.xml" xpointer="ex-keywords-de"/>
+  <xi:include href="examples.xml" xpointer="ex-keywords-en"/>
+  <xi:include href="examples.xml" xpointer="ex-keywords-fr"/>
+  <remarks xml:lang="de" versionDate="2023-07-18">
+    <p>Die Liste mit den Schlagworten ersetzt das klassische Sachregister der analogen Bände. Die Schlagworte
+            beziehen sich in der Regel auf das gesamte Stück. Bei längeren Nummern bzw. bei der Edition eines Buches
+            werden die Keywords gemäss der Strukturierung in Artikel oder Absätze vergeben. Die Schlagworte sollten nach
+            einer kontrollierten Wortliste vergeben werden.
+        </p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-07-18">
+    <p>The list of keywords replaces the classic subject index of the analogue volumes. The catchphrases usually
+            refer to the entire piece. With longer numbers or with the edition of a book, the keywords are assigned
+            according to the structure in articles or paragraphs. The keywords should be assigned according to a
+            controlled word list.
+        </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2023-07-18">
+    <p>La liste des mots-clés remplace l'index classique des sujets des volumes analogiques. Les slogans se réfèrent
+            généralement à la pièce entière. Avec des numéros plus longs ou avec l'édition d'un livre, les mots-clés
+            sont attribués selon la structure en articles ou en paragraphes. Les mots clés doivent être attribués selon
+            une liste de mots contrôlés.
+        </p>
+  </remarks>
+</elementSpec>

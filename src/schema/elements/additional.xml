@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="additional" module="msDescription" mode="change">
+  <desc xml:lang="de" versionDate="2023-07-14">Enthält Hinweise auf Editionen, Regesten und Literatur.</desc>
+  <desc xml:lang="en" versionDate="2023-07-14">Contains references to editions, regesta and literature.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-14">Contient des références aux éditions, regesta et littérature.</desc>
+  <classes mode="replace"/>
+  <content>
+    <sequence>
+      <elementRef key="adminInfo" minOccurs="0"/>
+      <elementRef key="listBibl" maxOccurs="unbounded"/>
+    </sequence>
+  </content>
+  <xi:include href="examples.xml" xpointer="ex-additional-de"/>
+  <xi:include href="examples.xml" xpointer="ex-additional-en"/>
+  <xi:include href="examples.xml" xpointer="ex-additional-fr"/>
+</elementSpec>
