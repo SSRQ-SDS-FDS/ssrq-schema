@@ -11,8 +11,6 @@
   <desc xml:lang="fr" versionDate="2023-07-19">Contient du texte dans une langue différente de celle du texte
         principal.
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-19">Contiene testo in una lingua diversa dal testo principale.
-    </desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
   </classes>
@@ -29,7 +27,6 @@
   <xi:include href="examples.xml" xpointer="ex-foreign-de"/>
   <xi:include href="examples.xml" xpointer="ex-foreign-fr"/>
   <xi:include href="examples.xml" xpointer="ex-foreign-en"/>
-  <xi:include href="examples.xml" xpointer="ex-foreign-it"/>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>«Actum», «datum» oder «etc.» werden nicht mit <gi>foreign</gi> ausgezeichnet. Längere fremdsprachige
             Textpassagen werden zusätzlich auch in den Metadaten unter <gi>textLang</gi> vermerkt. Handelt es sich um
@@ -48,13 +45,6 @@
             langue étrangère sont également notés dans les métadonnées sous <gi>textLang</gi>. S'il s'agit d'une partie
             de la phrase qui peut être identifiée par un élément TEI, l'élément correspondant doit être fourni
             avec <att>xml:lang</att>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-19">
-    <p>"Actum", "datum" o "etc." non sono contrassegnati con <gi>foreign</gi>. Anche i passaggi di testo in lingua
-            straniera più lunghi sono annotati nei metadati in <gi>textLang</gi>. Se è una parte della frase che può
-            essere identificata con un elemento TEI, l'elemento corrispondente deve essere fornito
-            con <att>xml:lang</att>.
         </p>
   </remarks>
 </elementSpec>

@@ -10,8 +10,6 @@
     </desc>
   <desc xml:lang="fr" versionDate="2023-07-11">Paragraphes insérés par l'éditeur pour structurer le texte source.
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-11">Paragrafi inseriti dall'editor per strutturare il testo di partenza.
-    </desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="att.global.responsibility"/>
@@ -44,11 +42,9 @@
   <xi:include href="examples.xml" xpointer="ex-seg-de"/>
   <xi:include href="examples.xml" xpointer="ex-seg-en"/>
   <xi:include href="examples.xml" xpointer="ex-seg-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-seg-it"/>
   <xi:include href="examples.xml" xpointer="ex-p-seg-de"/>
   <xi:include href="examples.xml" xpointer="ex-p-seg-en"/>
   <xi:include href="examples.xml" xpointer="ex-p-seg-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-p-seg-it"/>
   <remarks xml:lang="de" versionDate="2023-07-11">
     <p>Innerhalb von <gi>p</gi>verwendet. Dagegen werden <gi>div</gi> und <gi>p</gi> nur für originale Absätze
             verwendet.
@@ -77,16 +73,6 @@
             d'"hyperstructuration" s'il vous plait : numéroter seulement là où la structure du texte le permet (cf.
             exemples dans les volumes imprimés du SSRQ). Pour la structuration des formules de clôture, voir les
             exemples sur la page Formules de clôture.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-11">
-    <p>Usato all'interno di <gi>p</gi>. D'altra parte, <gi>div</gi> e <gi>p</gi> sono usati solo per i paragrafi
-            originali.
-        </p>
-    <p>Con testi originali più lunghi come aperture o urbaria, può avere senso numerare articoli, paragrafi o
-            capoversi con <gi>seg</gi> con <att>n</att>. Ma nessuna "iperstrutturazione" per favore: numerazione solo
-            dove la struttura del testo lo consente (cfr. esempi nei volumi a stampa della SSRQ). Per la strutturazione
-            delle formule di chiusura, vedere gli esempi nella pagina Formule di chiusura.
         </p>
   </remarks>
 </elementSpec>

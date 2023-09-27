@@ -6,11 +6,9 @@
   <gloss xml:lang="de" versionDate="2023-06-30">Abkürzung</gloss>
   <gloss xml:lang="en" versionDate="2023-06-30">Abbreviation</gloss>
   <gloss xml:lang="fr" versionDate="2023-06-30">Abréviation</gloss>
-  <gloss xml:lang="it" versionDate="2023-06-30">Abbreviazione</gloss>
   <desc xml:lang="de" versionDate="2023-05-23">Enthält eine Abkürzung.</desc>
   <desc xml:lang="en" versionDate="2023-05-23">Contains an abbreviation.</desc>
   <desc xml:lang="fr" versionDate="2023-05-23">Contient une abréviation.</desc>
-  <desc xml:lang="it" versionDate="2023-05-23">Contiene un'abbreviazione.</desc>
   <classes mode="replace">
     <memberOf key="model.choicePart"/>
     <memberOf key="model.pPart.editorial"/>
@@ -30,15 +28,12 @@
   <xi:include href="examples.xml" xpointer="ex-abbr-de"/>
   <xi:include href="examples.xml" xpointer="ex-abbr-en"/>
   <xi:include href="examples.xml" xpointer="ex-abbr-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-abbr-it"/>
   <xi:include href="examples.xml" xpointer="ex-choice-abbr-de"/>
   <xi:include href="examples.xml" xpointer="ex-choice-abbr-fr"/>
   <xi:include href="examples.xml" xpointer="ex-choice-abbr-en"/>
-  <xi:include href="examples.xml" xpointer="ex-choice-abbr-it"/>
   <xi:include href="examples.xml" xpointer="ex-date-abbr-de"/>
   <xi:include href="examples.xml" xpointer="ex-date-abbr-en"/>
   <xi:include href="examples.xml" xpointer="ex-date-abbr-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-abbr-it"/>
   <remarks xml:lang="de" versionDate="2023-06-30">
     <p>Es werden keine Kürzungspunkte verwendet, da die Abkürzungen durch die Auszeichnung bereits als solche
             gekennzeichnet sind.
@@ -80,21 +75,6 @@
         </p>
     <p>Les abréviations de dimensions et les désignations de pièces ne sont pas résolues sauf en texte continu
             (commentaires, remarques). Les caractères spéciaux correspondants sont utilisés.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-06-30">
-    <p>Non vengono utilizzati punti di abbreviazione, poiché le abbreviazioni sono già contrassegnate come tali
-            dal markup.
-        </p>
-    <p>Le convenzioni ortografiche dello scrittore sono prese in considerazione senza identificazione speciale.
-            L'ovvio è tacitamente risolto, ad es. B. tratti nasali, affissi («-er», «con-», «per-»). Xsti è
-            implicitamente risolto in Cristo, così come Ao = anno, wz = was o dz = das.
-        </p>
-    <p>Le abbreviazioni nel modello di testo vengono espanse con l'aiuto di <gi>choice</gi> e <gi>expan</gi> se
-            possibile e utile.
-        </p>
-    <p>Le abbreviazioni di dimensioni e designazioni di monete non vengono risolte se non nel testo continuo
-            (commenti, osservazioni). Vengono utilizzati i caratteri speciali corrispondenti.
         </p>
   </remarks>
 </elementSpec>

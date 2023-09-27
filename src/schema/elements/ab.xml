@@ -6,14 +6,10 @@
   <gloss xml:lang="de" versionDate="2023-06-30">Anonymer Textblock</gloss>
   <gloss xml:lang="en" versionDate="2023-06-30">anonymous block</gloss>
   <gloss xml:lang="fr" versionDate="2023-06-30">bloc anonyme</gloss>
-  <gloss xml:lang="it" versionDate="2023-06-30">blocco anonimo</gloss>
   <desc xml:lang="de" versionDate="2023-06-30">Enthält eine beliebige Textebene ohne klar definierte Zuordnung.</desc>
   <desc xml:lang="en" versionDate="2023-06-30">Contains any text level without a clearly defined assignment.</desc>
   <desc xml:lang="fr" versionDate="2023-06-30">Contient un niveau de texte quelconque sans affectation clairement
         définie.
-    </desc>
-  <desc xml:lang="it" versionDate="2023-06-30">Contiene qualsiasi livello di testo senza un'assegnazione chiaramente
-        definita.
     </desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
@@ -40,9 +36,6 @@
       <desc xml:lang="fr" versionDate="2023-05-02">Lieu d'une note dorsale, d'une note, d'une note
                 d'enregistrement ou d'une note de chancellerie
             </desc>
-      <desc xml:lang="it" versionDate="2023-06-30">Posizione di un avviso dorsale, avviso, avviso di registro o
-                avviso clericale
-            </desc>
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.place"/>
@@ -54,55 +47,46 @@
       <desc xml:lang="de" versionDate="2023-05-02">Klassifikation des Elements</desc>
       <desc xml:lang="en" versionDate="2023-05-02">Classification of the element</desc>
       <desc xml:lang="fr" versionDate="2023-05-02">Classification de l'élément</desc>
-      <desc xml:lang="it" versionDate="2023-06-30">Classificazione dell'elemento</desc>
       <valList type="closed">
         <valItem ident="address">
           <desc xml:lang="de">Anschrift</desc>
           <desc xml:lang="en">Adress</desc>
           <desc xml:lang="fr">Adresse</desc>
-          <desc xml:lang="it">Inscriptio</desc>
         </valItem>
         <valItem ident="archiving_reference">
           <desc xml:lang="de">Registraturvermerk</desc>
           <desc xml:lang="en">Registratur’s sign</desc>
           <desc xml:lang="fr">Note d’archives</desc>
-          <desc xml:lang="it">Nota dell'archivio</desc>
         </valItem>
         <valItem ident="chancery_notation">
           <desc xml:lang="de">Kanzleivermerk</desc>
           <desc xml:lang="en">Chancery notation</desc>
           <desc xml:lang="fr">Annotation issue d’une chancellerie</desc>
-          <desc xml:lang="it">Nota di cancellaria</desc>
         </valItem>
         <valItem ident="computatio">
           <desc xml:lang="de">Komputierungsvermerk</desc>
           <desc xml:lang="en">Computatio</desc>
           <desc xml:lang="fr">Annotation du computeur</desc>
-          <desc xml:lang="it">Computatio</desc>
         </valItem>
         <valItem ident="dorsal">
           <desc xml:lang="de">Vermerk</desc>
           <desc xml:lang="en">Note</desc>
           <desc xml:lang="fr">Note</desc>
-          <desc xml:lang="it">Nota</desc>
         </valItem>
         <valItem ident="marginal_note">
           <desc xml:lang="de">Marginalie</desc>
           <desc xml:lang="en">Marginal note</desc>
           <desc xml:lang="fr">Note</desc>
-          <desc xml:lang="it">Marginalia</desc>
         </valItem>
         <valItem ident="sigillant">
           <desc xml:lang="de">Sieglervermerk</desc>
           <desc xml:lang="en">Sigillant’s notes</desc>
           <desc xml:lang="fr">Annotation d’un sceau</desc>
-          <desc xml:lang="it">Nota del sigillante</desc>
         </valItem>
         <valItem ident="tax">
           <desc xml:lang="de">Taxvermerk</desc>
           <desc xml:lang="en">Tax note</desc>
           <desc xml:lang="fr">Annotation de taxation</desc>
-          <desc xml:lang="it">Nota di tassazione</desc>
         </valItem>
       </valList>
     </attDef>
@@ -111,7 +95,6 @@
   <xi:include href="examples.xml" xpointer="ex-ab-de"/>
   <xi:include href="examples.xml" xpointer="ex-ab-fr"/>
   <xi:include href="examples.xml" xpointer="ex-ab-en"/>
-  <xi:include href="examples.xml" xpointer="ex-ab-it"/>
   <remarks xml:lang="de" versionDate="2023-06-30">
     <p>Wir verwenden den Tag immer zusammen mit <att>type</att> und <att>place</att> für Vermerke, Dorsualnotizen,
             Kanzleivermerke und Registraturvermerke sowie für Marginalien.
@@ -159,22 +142,6 @@
             dorsale figure au verso d'un missile, suivie de l'adresse et de deux autres mentions dorsales, l'adresse
             figure tout de même en premier lieu. Si le sens de lecture auquel on doit se référer n'est pas uniforme,
             c'est-à-dire si une mention dorsale est à l'envers, un commentaire est nécessaire.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-06-30">
-    <p>Utilizziamo sempre il tag insieme a <att>type</att> e <att>place</att> per annotazioni, note dorsali, note
-            clericali e note anagrafiche oltre che per marginalia.
-        </p>
-    <p>Nei documenti pontifici le annotazioni sono riportate nel seguente ordine: prima le annotazioni sotto la
-            plica, poi le annotazioni sulla plica da sinistra a destra e infine le annotazioni sul retro del documento
-            da sinistra a destra.
-        </p>
-    <p>Le annotazioni e le note dorsali sono riportate in ordine cronologico. Le note create contemporaneamente
-            sono sempre elencate per prime a causa dell'ordine cronologico. Le annotazioni contemporanee sono registrate
-            in ordine di lettura dall'alto verso il basso e da sinistra a destra. se ad es. Ad esempio, se una missiva
-            ha una nota dorsale sul retro, seguita dall'indirizzo e infine altre due note dorsali, l'indirizzo viene
-            comunque prima. Se la direzione di lettura verso cui orientarsi non è uniforme, cioè una nota dorsale è
-            capovolta, è necessario un commento.
         </p>
   </remarks>
 </elementSpec>

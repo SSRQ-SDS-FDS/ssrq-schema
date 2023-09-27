@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-09-19">Beschreibt ein Ereignis in der Aufbewahrungsgeschichte eines Dokuments.</desc>
   <desc xml:lang="en" versionDate="2023-09-19">Describes an event in the custodial history of a document.</desc>
   <desc xml:lang="fr" versionDate="2023-09-19">Décrit un événement dans l'historique de conservation d'un document.</desc>
-  <desc xml:lang="it" versionDate="2023-09-19">Descrive un evento nella storia della conservazione di un documento.</desc>
   <classes mode="replace">
     <memberOf key="att.datable"/>
     <memberOf key="att.datable.custom"/>
@@ -20,13 +19,11 @@
       <desc xml:lang="de" versionDate="2023-09-19">Art des Ereignisses.</desc>
       <desc xml:lang="en" versionDate="2023-09-19">Type of event.</desc>
       <desc xml:lang="fr" versionDate="2023-09-19">Type d'événement.</desc>
-      <desc xml:lang="it" versionDate="2023-09-19">Tipo di evento.</desc>
       <valList type="closed">
         <valItem ident="lost">
           <desc xml:lang="de" versionDate="2023-09-19">Verlust des Dokuments.</desc>
           <desc xml:lang="en" versionDate="2023-09-19">Loss of the document.</desc>
           <desc xml:lang="fr" versionDate="2023-09-19">Perte du document.</desc>
-          <desc xml:lang="it" versionDate="2023-09-19">Perdita del documento.</desc>
         </valItem>
       </valList>
     </attDef>
@@ -34,5 +31,4 @@
   <xi:include href="examples.xml" xpointer="ex-adminInfo-de"/>
   <xi:include href="examples.xml" xpointer="ex-adminInfo-fr"/>
   <xi:include href="examples.xml" xpointer="ex-adminInfo-en"/>
-  <xi:include href="examples.xml" xpointer="ex-adminInfo-it"/>
 </elementSpec>

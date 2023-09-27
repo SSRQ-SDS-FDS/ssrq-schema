@@ -10,9 +10,6 @@
   <desc xml:lang="fr" versionDate="2023-07-18">Contient les mots clés les plus importants pour le contenu d'une
         source.
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-18">Contiene le parole chiave più importanti per il contenuto di una
-        fonte.
-    </desc>
   <classes mode="replace"/>
   <content>
     <elementRef key="term" maxOccurs="unbounded"/>
@@ -23,7 +20,6 @@
   <xi:include href="examples.xml" xpointer="ex-keywords-de"/>
   <xi:include href="examples.xml" xpointer="ex-keywords-en"/>
   <xi:include href="examples.xml" xpointer="ex-keywords-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-keywords-it"/>
   <remarks xml:lang="de" versionDate="2023-07-18">
     <p>Die Liste mit den Schlagworten ersetzt das klassische Sachregister der analogen Bände. Die Schlagworte
             beziehen sich in der Regel auf das gesamte Stück. Bei längeren Nummern bzw. bei der Edition eines Buches
@@ -43,13 +39,6 @@
             généralement à la pièce entière. Avec des numéros plus longs ou avec l'édition d'un livre, les mots-clés
             sont attribués selon la structure en articles ou en paragraphes. Les mots clés doivent être attribués selon
             une liste de mots contrôlés.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-18">
-    <p>L'elenco delle parole chiave sostituisce il classico indice per materia dei volumi analoghi. Gli slogan di
-            solito si riferiscono all'intero pezzo. Con numeri più lunghi o con l'edizione di un libro, le parole chiave
-            vengono assegnate secondo la struttura in articoli o paragrafi. Le parole chiave devono essere assegnate in
-            base a un elenco di parole controllato.
         </p>
   </remarks>
 </elementSpec>

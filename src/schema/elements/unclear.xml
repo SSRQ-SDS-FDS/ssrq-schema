@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-20">Enthält eine unsichere Lesung.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains an uncertain reading.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient une lecture incertaine.</desc>
-  <desc xml:lang="it" versionDate="2023-07-20">Contiene una lettura incerta.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
   </classes>
@@ -22,11 +21,9 @@
   <xi:include href="examples.xml" xpointer="ex-unclear-de"/>
   <xi:include href="examples.xml" xpointer="ex-unclear-en"/>
   <xi:include href="examples.xml" xpointer="ex-unclear-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-unclear-it"/>
   <xi:include href="examples.xml" xpointer="ex-damage-unclear-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-unclear-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-unclear-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-unclear-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>Ist die Ursache eine Beschädigung, dann wird diese durch <gi>damage</gi> angegeben. Mit <att>cert</att> kann
             angegeben werden, wie sicher die Lesung ist. Erweist sich eine Stelle als absolut unlesbar, so wird sie
@@ -42,12 +39,6 @@
     <p>Si la cause est un dommage, cela est indiqué par <gi>damage</gi>. <att>cert</att> peut être utilisé pour
             spécifier le degré de sécurité de la lecture. Si un passage s'avère absolument illisible, il est marqué
             d'un <gi>gap</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-20">
-    <p>Se la causa è un danno, questo è indicato da <gi>damage</gi>. <att>cert</att> può essere utilizzato per
-            specificare quanto è sicura la lettura. Se un passaggio risulta essere assolutamente illeggibile, viene
-            contrassegnato con <gi>gap</gi>.
         </p>
   </remarks>
 </elementSpec>

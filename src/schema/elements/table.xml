@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-11">Beschreibt eine Tabelle.</desc>
   <desc xml:lang="en" versionDate="2023-07-11">Describes a table.</desc>
   <desc xml:lang="fr" versionDate="2023-07-11">Décrit un tableau.</desc>
-  <desc xml:lang="it" versionDate="2023-07-11">Descrive una tabella.</desc>
   <classes mode="replace"/>
   <content>
     <sequence preserveOrder="false">
@@ -24,7 +23,6 @@
   <xi:include href="examples.xml" xpointer="ex-table-de"/>
   <xi:include href="examples.xml" xpointer="ex-table-en"/>
   <xi:include href="examples.xml" xpointer="ex-table-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-table-it"/>
   <remarks xml:lang="de" versionDate="2023-07-11">
     <p>Wird zusammen mit <gi>row</gi> (Zeile) und <gi>cell</gi> (Zelle) für die Darstellung von Tabellen benötigt.
             Es wird von oben nach unten und von links nach rechts gezählt. Wenn immer möglich eine Tabelle als
@@ -56,17 +54,6 @@
             cas, le "Ditto-Mark" (U+0022) est utilisé (à transcrire avec la chaîne de caractères "). Une barre oblique
             apparaît également dans les tableaux comme valeur nulle (voir exemple ci-dessous). Dans la transcription, le
             chiffre -tiret demi-cadratin large - (U+2012) utilisé (à translittérer avec la chaîne de caractères ‒).
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-11">
-    <p>È richiesto insieme a <gi>row</gi> (riga) e <gi>cell</gi> (cella) per visualizzare le tabelle. Si conta
-            dall'alto verso il basso e da sinistra a destra. Quando possibile, una tabella può essere presentata come
-            testo continuo, non dovrebbe essere presentata sotto forma di tabella. Nelle tabelle e negli elenchi,
-            specialmente nei mandati stampati, le virgolette vengono utilizzate come caratteri di sottolineatura per
-            ripetere parole o numeri dalla riga superiore (vedi esempio sotto). In questi casi viene utilizzato il
-            "Ditto-Mark" (U+0022) (da trascrivere con la stringa di caratteri "). Nelle tabelle compare anche una barra
-            come valore zero (vedi esempio sotto). Nella trascrizione, la cifra -wide en trattino - (U+2012) utilizzato
-            (da traslitterare con la stringa di caratteri ‒).
         </p>
   </remarks>
 </elementSpec>

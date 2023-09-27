@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-20">Enthält ein Stichwort oder Schlagwort.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains a lemma or a keyword.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient un lemme ou un mot-clé.</desc>
-  <desc xml:lang="it" versionDate="2023-07-20">Contiene un lemma o una parola chiave.</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="model.emphLike"/>
@@ -49,7 +48,6 @@
       <desc xml:lang="en" versionDate="2023-07-20">Reference to lemma and keyword database.</desc>
       <desc xml:lang="fr" versionDate="2023-07-20">Référence aux bases de données de lemmes et de mots-clés.
             </desc>
-      <desc xml:lang="it" versionDate="2023-07-20">Riferimenti a database di lemmi e parole chiave.</desc>
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.pointer.keywords"/>
@@ -61,11 +59,9 @@
   <xi:include href="examples.xml" xpointer="ex-term-de"/>
   <xi:include href="examples.xml" xpointer="ex-term-en"/>
   <xi:include href="examples.xml" xpointer="ex-term-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-term-it"/>
   <xi:include href="examples.xml" xpointer="ex-sic-term-de"/>
   <xi:include href="examples.xml" xpointer="ex-sic-term-en"/>
   <xi:include href="examples.xml" xpointer="ex-sic-term-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-sic-term-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>Über das Attribut <att>ref</att> werden die Einträge mit den Registerdatenbanken verknüpft.
         </p>
@@ -76,10 +72,6 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-20">
     <p>Les entrées sont liées aux bases de données du registre via l'attribut <att>ref</att>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-20">
-    <p>Le voci sono collegate ai database del registro tramite l'attributo <att>ref</att>.
         </p>
   </remarks>
 </elementSpec>

@@ -12,9 +12,6 @@
   <desc xml:lang="fr" versionDate="2023-07-15">Contient des éléments décrivant le matériau, la masse, l'état de
         conservation et l'apparence de la source.
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-15">Contiene elementi che descrivono il materiale, la massa, lo stato di
-        conservazione e l'aspetto della fonte.
-    </desc>
   <classes mode="replace">
     <memberOf key="model.physDescPart"/>
   </classes>
@@ -26,103 +23,86 @@
       <desc xml:lang="de" versionDate="2023-05-31">Beschreibung der (physischen) Überlieferungsform.</desc>
       <desc xml:lang="en" versionDate="2023-05-31">Description of (the physical) form of transmission.</desc>
       <desc xml:lang="fr" versionDate="2023-05-31">Description de la forme (physique) de transmission.</desc>
-      <desc xml:lang="it" versionDate="2023-05-31">Descrizione della forma (fisica) di trasmissione.</desc>
       <valList type="closed">
         <valItem ident="book">
           <desc xml:lang="de" versionDate="2023-05-31">Buch</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Book</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Livre</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Libro</desc>
         </valItem>
         <valItem ident="booklet">
           <desc xml:lang="de" versionDate="2023-05-31">Heft</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Booklet</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Cahier</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Fascicolo</desc>
         </valItem>
         <valItem ident="copy">
           <desc xml:lang="de" versionDate="2023-05-31">Abschrift</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Copy</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Copie</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Copia</desc>
         </valItem>
         <valItem ident="draft">
           <desc xml:lang="de" versionDate="2023-05-31">Entwurf</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Draft</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Brouillon</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Bozza</desc>
         </valItem>
         <valItem ident="entry">
           <desc xml:lang="de" versionDate="2023-05-31">Eintrag</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Entry</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Entrée</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Entrata</desc>
         </valItem>
         <valItem ident="excerpt">
           <desc xml:lang="de" versionDate="2023-05-31">Auszug</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Excerpt</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Extrait</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Estratto</desc>
         </valItem>
         <valItem ident="fragment">
           <desc xml:lang="de" versionDate="2023-05-31">Fragment</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Fragment</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Fragment</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Frammento</desc>
         </valItem>
         <valItem ident="insert">
           <desc xml:lang="de" versionDate="2023-05-31">Insert</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Insert</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Insert</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Inserto</desc>
         </valItem>
         <valItem ident="original">
           <desc xml:lang="de" versionDate="2023-05-31">Original</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Original</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Original</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Originale</desc>
         </valItem>
         <valItem ident="partial_copy">
           <desc xml:lang="de" versionDate="2023-05-31">Teilabschrift</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Partial copy</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Copie partielle</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Copia parziale</desc>
         </valItem>
         <valItem ident="photocopy">
           <desc xml:lang="de" versionDate="2023-05-31">Fotokopie</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Photocopy</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Photocopie</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Fotocopia</desc>
         </valItem>
         <valItem ident="print">
           <desc xml:lang="de" versionDate="2022-05-31">Druck</desc>
           <desc xml:lang="en" versionDate="2022-05-31">Print</desc>
           <desc xml:lang="fr" versionDate="2022-05-31">Impression</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Stampa</desc>
         </valItem>
         <valItem ident="rotulus">
           <desc xml:lang="de" versionDate="2022-05-31">Rotulus</desc>
           <desc xml:lang="en" versionDate="2022-05-31">Rotulus</desc>
           <desc xml:lang="fr" versionDate="2022-05-31">Rotulus</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Rotulo</desc>
         </valItem>
         <valItem ident="summary">
           <desc xml:lang="de" versionDate="2022-05-31">Regest</desc>
           <desc xml:lang="en" versionDate="2022-05-31">Summary</desc>
           <desc xml:lang="fr" versionDate="2022-05-31">Regeste</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Regest</desc>
         </valItem>
         <valItem ident="translation">
           <desc xml:lang="de" versionDate="2022-05-31">Übersetzung</desc>
           <desc xml:lang="en" versionDate="2022-05-31">Transltion</desc>
           <desc xml:lang="fr" versionDate="2022-05-31">Traduction</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Traduzione</desc>
         </valItem>
         <valItem ident="vidimus">
           <desc xml:lang="de" versionDate="2022-05-31">Vidimus</desc>
           <desc xml:lang="en" versionDate="2022-05-31">Vidimus</desc>
           <desc xml:lang="fr" versionDate="2022-05-31">Vidimus</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">Vidimus</desc>
         </valItem>
       </valList>
     </attDef>
@@ -130,5 +110,4 @@
   <xi:include href="examples.xml" xpointer="ex-objectDesc-de"/>
   <xi:include href="examples.xml" xpointer="ex-objectDesc-en"/>
   <xi:include href="examples.xml" xpointer="ex-objectDesc-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-objectDesc-it"/>
 </elementSpec>

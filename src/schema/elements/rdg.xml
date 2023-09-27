@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-13">Enthält eine von der Editionsvorlage abweichende Textvariante.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Contains a text variant that differs from the edition template.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Contient une variante de texte qui diffère du modèle d'édition.</desc>
-  <desc xml:lang="it" versionDate="2023-07-13">Contiene una variante di testo diversa dal modello di edizione.</desc>
   <classes mode="replace">
     <memberOf key="att.witnessed"/>
   </classes>
@@ -18,7 +17,6 @@
   <xi:include href="examples.xml" xpointer="ex-app-de"/>
   <xi:include href="examples.xml" xpointer="ex-app-en"/>
   <xi:include href="examples.xml" xpointer="ex-app-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-app-it"/>
   <remarks xml:lang="de" versionDate="2023-08-18">
     <p>In <att>wit</att> wird auf den anderen Textzeugen, auf dem die Lesart basiert, verwiesen. Bei Auslassungen kann ein leeres <gi>rdg</gi> verwendet werden.
         </p>
@@ -30,10 +28,6 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-08-18">
     <p>Dans <att>wit</att>, il est fait référence à l'autre témoin textuel sur lequel la lecture est basée. Un <gi>rdg</gi> vide peut être utilisé pour les omissions.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-08-18">
-    <p>In <att>wit</att>, si fa riferimento all'altro testimone testuale su cui si basa la lettura. Un <gi>rdg</gi> vuoto può essere utilizzato per le omissioni.
         </p>
   </remarks>
 </elementSpec>

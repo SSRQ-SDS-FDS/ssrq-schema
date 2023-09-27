@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-20">Beschreibt einen Seitenanfang im Original.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes the beginning of a page in the original.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Décrit le début d'une page dans l'original.</desc>
-  <desc xml:lang="it" versionDate="2023-07-20">Descrive l'inizio di una pagina nell'originale.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="att.global.facs"/>
@@ -28,9 +27,6 @@
       <desc xml:lang="fr" versionDate="2023-07-15">Spécification de la pagination originale, de la foliation ou de
                 la numérotation des sections.
             </desc>
-      <desc xml:lang="it" versionDate="2023-07-15">Specifica dell'impaginazione, della foliazione o della
-                numerazione delle sezioni originali.
-            </desc>
       <datatype>
         <dataRef key="ssrq.numbering"/>
       </datatype>
@@ -39,13 +35,11 @@
       <desc xml:lang="de" versionDate="2023-06-16">Typ des Seitenfangs</desc>
       <desc xml:lang="en" versionDate="2023-06-16">Type of page change</desc>
       <desc xml:lang="fr" versionDate="2023-06-16">Type d'appendice latéral</desc>
-      <desc xml:lang="it" versionDate="2023-06-16">Tipo di cambio pagina</desc>
       <valList type="closed">
         <valItem ident="original">
           <desc xml:lang="de" versionDate="2023-04-06">Originalseitenwechsel</desc>
           <desc xml:lang="en" versionDate="2023-04-06">Original pagination</desc>
           <desc xml:lang="fr" versionDate="2023-04-06">Saut de page original</desc>
-          <desc xml:lang="it" versionDate="2023-04-06">Impaginazione originale</desc>
         </valItem>
       </valList>
     </attDef>
@@ -54,19 +48,15 @@
   <xi:include href="examples.xml" xpointer="ex-pb-break-de"/>
   <xi:include href="examples.xml" xpointer="ex-pb-break-en"/>
   <xi:include href="examples.xml" xpointer="ex-pb-break-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-break-it"/>
   <xi:include href="examples.xml" xpointer="ex-pb-original-de"/>
   <xi:include href="examples.xml" xpointer="ex-pb-original-en"/>
   <xi:include href="examples.xml" xpointer="ex-pb-original-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-original-it"/>
   <xi:include href="examples.xml" xpointer="ex-pb-with-section-de"/>
   <xi:include href="examples.xml" xpointer="ex-pb-with-section-en"/>
   <xi:include href="examples.xml" xpointer="ex-pb-with-section-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-with-section-it"/>
   <xi:include href="examples.xml" xpointer="ex-pb-with-title-de"/>
   <xi:include href="examples.xml" xpointer="ex-pb-with-title-en"/>
   <xi:include href="examples.xml" xpointer="ex-pb-with-title-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-with-title-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p><gi>pb</gi>
             wird am Anfang der Seite aufgeführt und enthält in der Regel die Foliierung [z. B. n="109v"]
@@ -125,27 +115,6 @@
             fourni avec <att>type</att> = <val>original</val>. Les feuilles blanches ou les pages blanches sont
             comptées. S'il n'y a pas de numéro de page d'origine, un numéro de page est introduit. Les signatures de
             feuille ne sont pas transcrites.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-20">
-    <p><gi>pb</gi>
-            è elencato nella parte superiore della pagina e di solito contiene la foliazione [ad es.
-            n="109v"] o impaginazione [ad es. n="22"] in <att>n</att>. Un'impaginazione originale o una foliazione
-            originale è contrassegnata con <att>type</att> = <val>original</val>. Nel caso di una fonte con sventatura
-            originale, anche il verso è contrassegnato con <att>type</att> = <val>original</val>.
-        </p>
-    <p>Se un testo sorgente è lungo solo una pagina (ad esempio un certificato), <gi>pb</gi> è richiesto solo
-            per il collegamento ai facsimili. Se un testo scorre su fronte e retro di un singolo foglio
-            (2 pagine), <gi>pb</gi> viene impostato senza attributi sulla prima e sulla seconda pagina. Le pagine di
-            tre o più sono numerate con <att>n</att>. Su uno slittino si nota il cambio di lato nel punto in cui è
-            stato cucito un nuovo pezzo di pergamena. Se sono presenti più frontespizi o carte di guardia prima
-            dell'inizio del contenuto vero e proprio e dell'effettiva impaginazione, si consiglia di numerare le
-            pagine <att>n</att> con numeri romani + (I, II, III, IV ecc.), come si usa nei manoscritti. Durante la
-            stampa, il conteggio dei fogli (foliazione) inizia con il foglio del titolo. Il frontespizio non è
-            particolarmente contrassegnato. Viene adottato un numero di pagina o di foglio esistente e fornito
-            con <att>type</att> = <val>original</val>. Vengono conteggiati i fogli o le pagine bianche. Se non esiste
-            un numero di pagina originale, viene introdotto un numero di pagina. Le segnature dei fogli non vengono
-            trascritte.
         </p>
   </remarks>
 </elementSpec>

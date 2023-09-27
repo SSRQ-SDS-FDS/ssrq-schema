@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-08-18">Bezeichnet grössere Hinzufügungen.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Denotes major additions.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Désigne des ajouts majeurs.</desc>
-  <desc xml:lang="it" versionDate="2023-07-13">Denota aggiunte importanti.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.placement"/>
@@ -26,7 +25,6 @@
   <xi:include href="examples.xml" xpointer="ex-addSpan-de"/>
   <xi:include href="examples.xml" xpointer="ex-addSpan-en"/>
   <xi:include href="examples.xml" xpointer="ex-addSpan-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-addSpan-it"/>
   <remarks xml:lang="de" versionDate="2023-07-11">
     <p>Mit <att>spanTo</att> wird zwingend auf den Endpunkt der Hinzufügung verwiesen, der
             mit <gi>anchor</gi> markiert wird.
@@ -55,16 +53,6 @@
             hand</att>. Si nécessaire, à l'intérieur de <att>rend</att>, il est possible de spécifier comment l'ajout a
             été effectué (crayon, autre encre, etc.). Si un ajout est la main du premier scribe, alors la main n'est pas
             spécifiquement notée.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-11">
-    <p><att>spanTo</att>
-            è usato per riferirsi al punto finale dell'addizione, che è contrassegnata con <gi>anchor</gi>.
-        </p>
-    <p>Il luogo dell'addizione deve essere in <att>luogo</att> e la mano del luogo dell'addizione si può tenere con
-            <att>mano</att>. Se necessario, all'interno di <att>rend</att> si può specificare come è stata fatta
-            l'aggiunta (matita, altro inchiostro, ecc.). Se un'aggiunta è la mano del primo scrivano, allora la mano non
-            è specificatamente annotata.
         </p>
   </remarks>
 </elementSpec>

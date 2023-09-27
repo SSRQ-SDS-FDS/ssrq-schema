@@ -12,9 +12,6 @@
   <desc xml:lang="fr" versionDate="2023-07-24">
         Contient un passage dont il existe une variante de texte qui diffère du modèle d'édition.
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-24">
-        Contiene un passaggio di cui esiste una variante testuale che differisce dal template dell'edizione.
-    </desc>
   <classes mode="replace"/>
   <content>
     <rng:oneOrMore>
@@ -24,7 +21,6 @@
   <xi:include href="examples.xml" xpointer="ex-app-de"/>
   <xi:include href="examples.xml" xpointer="ex-app-en"/>
   <xi:include href="examples.xml" xpointer="ex-app-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-app-it"/>
   <remarks xml:lang="de" versionDate="2023-07-13">
     <p>Die abweichende Textvariante wird in <gi>rdg</gi> wiedergegeben.
         </p>
@@ -35,10 +31,6 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-13">
     <p>La variante de texte déviante est rendue dans <gi>rdg</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-13">
-    <p>La variante del testo deviante è resa in <gi>rdg</gi>.
         </p>
   </remarks>
 </elementSpec>

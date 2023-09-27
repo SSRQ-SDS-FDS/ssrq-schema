@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-20">Enthält offensichtlich fehlerhaften Text.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains obviously incorrect text.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient un texte manifestement incorrect.</desc>
-  <desc xml:lang="it" versionDate="2023-07-20">Contiene testo ovviamente errato.</desc>
   <classes mode="replace">
     <memberOf key="model.choicePart"/>
     <memberOf key="model.pPart.transcriptional"/>
@@ -26,11 +25,9 @@
   <xi:include href="examples.xml" xpointer="ex-sic-de"/>
   <xi:include href="examples.xml" xpointer="ex-sic-en"/>
   <xi:include href="examples.xml" xpointer="ex-sic-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-sic-it"/>
   <xi:include href="examples.xml" xpointer="ex-sic-term-de"/>
   <xi:include href="examples.xml" xpointer="ex-sic-term-en"/>
   <xi:include href="examples.xml" xpointer="ex-sic-term-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-sic-term-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>Offensichtliche Schreibfehler können mit <gi>corr</gi> korrigiert werden. Auf die Verwendung von "[!]" wird
             verzichtet.
@@ -42,10 +39,6 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-20">
     <p>Les fautes d'orthographe évidentes peuvent être corrigées avec <gi>corr</gi>. "[!]" N'est pas utilisé.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-20">
-    <p>Errori ortografici evidenti possono essere corretti con <gi>corr</gi>. "[!]" non viene utilizzato.
         </p>
   </remarks>
 </elementSpec>

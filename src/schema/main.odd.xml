@@ -18,9 +18,6 @@
                     </licence>
         </availability>
       </publicationStmt>
-      <notesStmt>
-        <note>SSRQ specific elements or attributes are part of the module "ssrq.core.module".</note>
-      </notesStmt>
       <sourceDesc>
         <p>The main schema used by the Swiss Law Sources to validate TEI XML transcriptions.</p>
       </sourceDesc>
@@ -28,7 +25,7 @@
   </teiHeader>
   <text>
     <body>
-      <schemaSpec ident="ssrq-main-schema" docLang="de en fr it" xml:lang="en">
+      <schemaSpec ident="ssrq-main-schema" docLang="de en fr">
         <!-- TEI modules used -->
         <moduleRef key="certainty" include="precision"/>
         <moduleRef key="core" include="abbr add author bibl cb choice corr date del editor expan foreign gap graphic head hi item label lb list listBibl measure measureGrp note num orig p pb publisher pubPlace q quote ref resp respStmt sic term textLang time title unclear"/>
@@ -47,7 +44,7 @@
         <specGrpRef target="commons/classes.odd.xml#ssrq-classes"/>
         <!-- global constraints -->
         <specGrpRef target="commons/constraints.odd.xml#constraints"/>
-        <!-- content -->
+        <!-- content types -->
         <specGrpRef target="commons/content.odd.xml#ssrq-default-content-types"/>
         <!-- datatypes -->
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-agent"/>

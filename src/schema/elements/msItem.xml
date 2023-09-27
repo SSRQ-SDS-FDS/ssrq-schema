@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-08-17">Enthält Informationen über einen einzelnen Teil einer Quelle.</desc>
   <desc xml:lang="en" versionDate="2023-08-17">Contains information about a single part of a source.</desc>
   <desc xml:lang="fr" versionDate="2023-08-17">Contient des informations sur une seule partie d'une source.</desc>
-  <desc xml:lang="it" versionDate="2023-08-17">Contiene informazioni su una singola parte di una fonte.</desc>
   <classes mode="replace">
     <memberOf key="model.msItemPart"/>
   </classes>
@@ -20,11 +19,9 @@
   <xi:include href="examples.xml" xpointer="ex-msItem-ms-de"/>
   <xi:include href="examples.xml" xpointer="ex-msItem-ms-en"/>
   <xi:include href="examples.xml" xpointer="ex-msItem-ms-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-msItem-ms-it"/>
   <xi:include href="examples.xml" xpointer="ex-msItem-print-de"/>
   <xi:include href="examples.xml" xpointer="ex-msItem-print-en"/>
   <xi:include href="examples.xml" xpointer="ex-msItem-print-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-msItem-print-it"/>
   <remarks xml:lang="de" versionDate="2023-07-15">
     <p>Die Textsprachen der Quelle werden mit <gi>textLang</gi> angeben. Bei Handschriften können die Autoren
             mit <gi>author</gi> angegeben werden, bei Druckschriften können innerhalb von <gi>docImprint</gi> der
@@ -41,12 +38,6 @@
     <p>Les langues de texte de la source sont spécifiées avec <gi>textLang</gi>. Dans le cas de manuscrits, les
             auteurs peuvent être spécifiés avec <gi>author</gi>, dans le cas de publications imprimées, le lieu
             d'impression et l'imprimeur peuvent être spécifiés dans <gi>docImprint</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-15">
-    <p>Le lingue del testo della sorgente sono specificate con <gi>textLang</gi>. Nel caso di manoscritti, gli
-            autori possono essere indicati con <gi>author</gi>, nel caso di stampati il luogo di stampa e il tipografo
-            possono essere indicati all'interno di <gi>docImprint</gi>.
         </p>
   </remarks>
 </elementSpec>

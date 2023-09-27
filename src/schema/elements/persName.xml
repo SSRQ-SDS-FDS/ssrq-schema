@@ -11,8 +11,6 @@
   <desc xml:lang="fr" versionDate="2024-04-20">Distingue une personne et ne comprend généralement que le prénom et le
         nom.
     </desc>
-  <desc xml:lang="it" versionDate="2024-04-20">Identifica una persona e di solito include solo il nome e il cognome.
-    </desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="att.naming"/>
@@ -49,9 +47,6 @@
       <desc xml:lang="fr" versionDate="2023-04-20">Relier la personne à l'ID de la base de données
                 des personnes et des organisations.
             </desc>
-      <desc xml:lang="it" versionDate="2023-04-20">Associazione della persona con l'ID della persona e database
-                dell'organizzazione.
-            </desc>
       <datatype>
         <dataRef key="ssrq.pointer.persons"/>
       </datatype>
@@ -66,8 +61,6 @@
       <desc xml:lang="fr" versionDate="2023-04-20">Distinction du rôle d'une personne dans le texte
                 source.
             </desc>
-      <desc xml:lang="it" versionDate="2023-04-20">Marcatura del ruolo di una persona nel testo di partenza.
-            </desc>
       <datatype>
         <dataRef key="ssrq.role.person"/>
       </datatype>
@@ -76,13 +69,10 @@
   <xi:include href="examples.xml" xpointer="ex-persName-1-de"/>
   <xi:include href="examples.xml" xpointer="ex-persName-1-en"/>
   <xi:include href="examples.xml" xpointer="ex-persName-1-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-persName-1-it"/>
   <xi:include href="examples.xml" xpointer="ex-persName-2-de"/>
   <xi:include href="examples.xml" xpointer="ex-persName-2-en"/>
   <xi:include href="examples.xml" xpointer="ex-persName-2-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-persName-2-it"/>
   <xi:include href="examples.xml" xpointer="ex-persName-3-de"/>
   <xi:include href="examples.xml" xpointer="ex-persName-3-en"/>
   <xi:include href="examples.xml" xpointer="ex-persName-3-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-persName-3-it"/>
 </elementSpec>

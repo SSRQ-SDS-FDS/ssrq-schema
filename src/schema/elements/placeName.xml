@@ -9,8 +9,6 @@
   <desc xml:lang="en" versionDate="2023-04-20">Indicates topographical designations (a place or a field name).</desc>
   <desc xml:lang="fr" versionDate="2023-04-20">Distingue les désignations topographiques (un lieu ou un lieu-dit).
     </desc>
-  <desc xml:lang="it" versionDate="2023-04-20">Contrassegna designazioni topografiche (un luogo o un nome di campo).
-    </desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="model.placeNamePart"/>
@@ -31,8 +29,6 @@
       <desc xml:lang="fr" versionDate="2023-03-28">Relier le lieu à l'ID de la base de données
                 des lieux.
             </desc>
-      <desc xml:lang="it" versionDate="2023-03-28">Associazione del luogo con l'ID del database dei luoghi.
-            </desc>
       <datatype>
         <dataRef key="ssrq.pointer.places"/>
       </datatype>
@@ -41,5 +37,4 @@
   <xi:include href="examples.xml" xpointer="ex-placeName-de"/>
   <xi:include href="examples.xml" xpointer="ex-placeName-en"/>
   <xi:include href="examples.xml" xpointer="ex-placeName-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-placeName-it"/>
 </elementSpec>

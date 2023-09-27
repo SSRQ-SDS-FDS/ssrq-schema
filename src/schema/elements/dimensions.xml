@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-04-19">Masse einer Quelle</desc>
   <desc xml:lang="en" versionDate="2023-04-19">Dimension of a source</desc>
   <desc xml:lang="fr" versionDate="2023-04-19">Dimensions d'une source</desc>
-  <desc xml:lang="it" versionDate="2023-04-19">Dimensione di una fonte</desc>
   <classes mode="replace">
     <memberOf key="att.typed"/>
     <memberOf key="model.pPart.msdesc"/>
@@ -44,7 +43,6 @@
   <xi:include href="examples.xml" xpointer="ex-extent-de"/>
   <xi:include href="examples.xml" xpointer="ex-extent-en"/>
   <xi:include href="examples.xml" xpointer="ex-extent-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-extent-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Wenn <att>type</att> den Wert <val>plica</val> hat, dann ist nur ein <gi>width</gi>-Element als Inhalt
             erlaubt.
@@ -57,11 +55,6 @@
   <remarks xml:lang="fr" versionDate="2023-07-14">
     <p>Si <att>type</att> a la valeur <val>plica</val> alors un seul élément <gi>width</gi> est autorisé comme
             contenu.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-14">
-    <p>Se <att>type</att> ha valore <val>plica</val> allora solo un elemento <gi>width</gi> è consentito come
-            contenuto.
         </p>
   </remarks>
 </elementSpec>

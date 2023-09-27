@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-19">Beschreibt eine Auslassung durch den Editor.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Describes an omission by the editor.</desc>
   <desc xml:lang="fr" versionDate="2023-07-19">Décrit une omission par l'éditeur.</desc>
-  <desc xml:lang="it" versionDate="2023-07-19">Descrive un'omissione dell'editore.</desc>
   <classes mode="replace">
     <memberOf key="att.dimensions"/>
     <memberOf key="ssrq.att.source"/>
@@ -55,25 +54,21 @@
       <desc xml:lang="de" versionDate="2023-05-26">Grund der Lücke</desc>
       <desc xml:lang="en" versionDate="2023-05-26">Reason for the difference</desc>
       <desc xml:lang="fr" versionDate="2023-05-26">Raison de l'écart</desc>
-      <desc xml:lang="it" versionDate="2023-05-26">Motivo della differenza</desc>
       <valList type="closed">
         <valItem ident="illegible">
           <desc xml:lang="de" versionDate="2023-05-26">unleserlich</desc>
           <desc xml:lang="en" versionDate="2023-05-26">illegible</desc>
           <desc xml:lang="fr" versionDate="2023-05-26">illisible</desc>
-          <desc xml:lang="it" versionDate="2023-05-26">illeggibile</desc>
         </valItem>
         <valItem ident="irrelevant">
           <desc xml:lang="de" versionDate="2023-05-26">irrelevant</desc>
           <desc xml:lang="en" versionDate="2023-05-26">irrelevant</desc>
           <desc xml:lang="fr" versionDate="2023-05-26">insignifiant</desc>
-          <desc xml:lang="it" versionDate="2023-05-26">irrilevante</desc>
         </valItem>
         <valItem ident="missing">
           <desc xml:lang="de" versionDate="2023-05-26">fehlt</desc>
           <desc xml:lang="en" versionDate="2023-05-26">missing</desc>
           <desc xml:lang="fr" versionDate="2023-05-26">manquant</desc>
-          <desc xml:lang="it" versionDate="2023-05-26">mancante</desc>
         </valItem>
       </valList>
     </attDef>
@@ -83,8 +78,6 @@
       <desc xml:lang="en" versionDate="2023-08-17">Reference to another item.
             </desc>
       <desc xml:lang="fr" versionDate="2023-08-17">Renvoi à une autre pièce.
-            </desc>
-      <desc xml:lang="it" versionDate="2023-08-17">Si riferisce a un altro pezzo.
             </desc>
       <datatype>
         <dataRef key="ssrq.pointer.urn"/>
@@ -104,19 +97,15 @@
   <xi:include href="examples.xml" xpointer="ex-gap-line-de"/>
   <xi:include href="examples.xml" xpointer="ex-gap-line-en"/>
   <xi:include href="examples.xml" xpointer="ex-gap-line-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-gap-line-it"/>
   <xi:include href="examples.xml" xpointer="ex-gap-missing-de"/>
   <xi:include href="examples.xml" xpointer="ex-gap-missing-en"/>
   <xi:include href="examples.xml" xpointer="ex-gap-missing-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-gap-missing-it"/>
   <xi:include href="examples.xml" xpointer="ex-gap-source-de"/>
   <xi:include href="examples.xml" xpointer="ex-gap-source-en"/>
   <xi:include href="examples.xml" xpointer="ex-gap-source-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-gap-source-it"/>
   <xi:include href="examples.xml" xpointer="ex-damage-gap-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-gap-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-gap-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-gap-it"/>
   <remarks xml:lang="de" versionDate="2023-08-17">
     <p>Dies betrifft vor allem gänzlich unleserliche Stellen. Der Grund für eine Auslassung kann
             mit <att>reason</att> angegeben werden. Wenn die Ursache einer Unlesbarkeit aber eine Beschädigung ist,
@@ -175,24 +164,5 @@
     <p>Pour les sauts de ligne dans le modèle, <gi>gap</gi> n'est pas utilisé, mais <gi>supplied</gi>.
         </p>
     <p>Les lacunes dans les textes rétrodigitalisés sont signalées par <tag>gap reason="missing"</tag> (par exemple SDS NE 1).</p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-08-17">
-    <p>Questo vale principalmente per passaggi completamente illeggibili. Il motivo di un'omissione
-            può essere specificato con <att>reason</att>. Tuttavia, se la causa dell'illeggibilità è un
-            danno, <att>reason</att> non viene utilizzato, ma il tag viene racchiuso tra <gi>damage</gi>.
-            Se il motivo dell'illeggibilità è una rasatura o una (pesante) cancellazione, il tag è annidato
-            in un <gi>del</gi>.
-        </p>
-    <p>La dimensione dell'omissione è specificata con <att>unit</att> e <att>quantity</att>. Le misure sono
-            arrotondate per eccesso o per difetto a 0,5.
-        </p>
-    <p>Se i supplementi successivi non vengono modificati con l'originale ma come pezzo separato, le parti che sono
-            già state modificate in un originale precedente possono essere omesse con <gi>gap</gi>. Il pezzo modificato
-            viene referenziato con <att>source</att>. In questo caso, viene aggiunto un commento in <gi>note</gi> o
-            in <gi>back</gi>.</p>
-    <p>Se, ad esempio, viene trascritta una sola voce di una pagina di un verbale di consiglio, le voci precedenti vengono omesse e l'omissione viene segnalata con un solo <gi>gap</gi> <att>motivo</att>= <val>irrilevante</val> (anche se vengono omesse più voci). Non è necessario specificare le voci successive. Se il titolo della voce del verbale del Consiglio si trova una o più pagine più avanti, anche questo va trascritto e l'omissione va segnalata con <gi>gap</gi> (cfr. esempio). </p>
-    <p>Per le interruzioni di riga nel modello <gi>gap</gi> non viene utilizzato, ma <gi>supplied</gi>.
-        </p>
-    <p>Le lacune nei testi retrodigitalizzati sono contrassegnate con <tag>gap reason="missing"</tag> (ad es. SDS NE 1).</p>
   </remarks>
 </elementSpec>

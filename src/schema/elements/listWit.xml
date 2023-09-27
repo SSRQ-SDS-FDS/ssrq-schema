@@ -6,11 +6,9 @@
   <gloss xml:lang="de" versionDate="2023-07-13">Textzeugenliste</gloss>
   <gloss xml:lang="en" versionDate="2023-07-13">Text witness list</gloss>
   <gloss xml:lang="fr" versionDate="2023-07-13">Liste des témoins textuelle</gloss>
-  <gloss xml:lang="it" versionDate="2023-07-13">Elenco dei testimoni di testo</gloss>
   <desc xml:lang="de" versionDate="2023-07-13">Enthält die Stückbeschreibungen der Quellen.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Contains the piece descriptions of the sources.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Contient les descriptions des pièces des sources.</desc>
-  <desc xml:lang="it" versionDate="2023-07-13">Contiene le descrizioni dei pezzi delle fonti.</desc>
   <classes mode="replace">
     <memberOf key="model.listLike"/>
   </classes>
@@ -22,7 +20,6 @@
   <xi:include href="examples.xml" xpointer="ex-listWit-de"/>
   <xi:include href="examples.xml" xpointer="ex-listWit-en"/>
   <xi:include href="examples.xml" xpointer="ex-listWit-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-listWit-it"/>
   <remarks xml:lang="de" versionDate="2023-07-13">
     <p>Für jede Quelle wird ein <gi>witness</gi> erstellt.
         </p>
@@ -33,10 +30,6 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-13">
     <p>Un <gi>witness</gi> est créé pour chaque source.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-13">
-    <p>Per ogni fonte viene creato un <gi>witness</gi>.
         </p>
   </remarks>
 </elementSpec>

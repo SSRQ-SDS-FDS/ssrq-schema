@@ -10,9 +10,6 @@
             </desc>
       <desc xml:lang="en" versionDate="2023-05-05">SLS defined pattern for time points - based on days</desc>
       <desc xml:lang="fr" versionDate="2023-05-05">SDS modèle défini pour l'heure - basé sur les jours</desc>
-      <desc xml:lang="it" versionDate="2023-05-05">Modello definito da FDS per i punti temporali, basato sui
-                giorni
-            </desc>
       <content>
         <dataRef name="string" restriction="(\d{4}|-)-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])"/>
       </content>
@@ -25,9 +22,6 @@
       <desc xml:lang="fr" versionDate="2023-06-29">SDS modèle défini pour les points temporels - basé sur les
                 secondes
             </desc>
-      <desc xml:lang="it" versionDate="2023-06-29">Schema definito da FDS per i punti temporali - basato sui
-                secondi
-            </desc>
       <content>
         <dataRef name="string" restriction="(2[0-4]|[0-1][0-9]):[0-5][0-9]:[0-5][0-9]"/>
       </content>
@@ -37,7 +31,6 @@
       <desc xml:lang="de" versionDate="2023-07-15">Blattzählung</desc>
       <desc xml:lang="en" versionDate="2023-07-15">Foliation</desc>
       <desc xml:lang="fr" versionDate="2023-07-15">Foliation</desc>
-      <desc xml:lang="it" versionDate="2023-07-15">Foliazione</desc>
       <content>
         <dataRef name="string" restriction="((\d+)|([IVXLC]+))[rv]"/>
       </content>
@@ -46,7 +39,6 @@
       <desc xml:lang="de" versionDate="2023-07-15">Seitenzählung</desc>
       <desc xml:lang="en" versionDate="2023-07-15">Pagination</desc>
       <desc xml:lang="fr" versionDate="2023-07-15">Pagination</desc>
-      <desc xml:lang="it" versionDate="2023-07-15">Paginazione</desc>
       <content>
         <dataRef name="string" restriction="(\d+)|([IVXLC]+)"/>
       </content>
@@ -55,7 +47,6 @@
       <desc xml:lang="de" versionDate="2023-07-15">Abschnittszählung</desc>
       <desc xml:lang="en" versionDate="2023-07-15">Section numbering</desc>
       <desc xml:lang="fr" versionDate="2023-07-15">Numérotation des sections</desc>
-      <desc xml:lang="it" versionDate="2023-07-15">Numerazione delle sezioni</desc>
       <content>
         <dataRef name="string" restriction="s(\d+)"/>
       </content>
@@ -74,7 +65,6 @@
       <desc xml:lang="de" versionDate="2023-09-13">Einschränkung für Faksimilenamen</desc>
       <desc xml:lang="en" versionDate="2023-09-13">Restriction for facsimile names</desc>
       <desc xml:lang="fr" versionDate="2023-09-13">Restriction concernant les noms de télécopie</desc>
-      <desc xml:lang="it" versionDate="2023-09-13">Limitazione per i nomi di fax</desc>
       <content>
         <dataRef name="string" restriction="[A-Za-z_\-0-9]+([1-9]|[rv]|plica)"/>
       </content>
@@ -90,9 +80,6 @@
       <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des ID de mots-clés pour
                 la liaison avec la base de données des mots-clés et des lemmes
             </desc>
-      <desc xml:lang="it" versionDate="2023-05-15">Definisce il modello per gli ID soggetto per il collegamento al
-                database soggetto e lemma
-            </desc>
       <content>
         <dataRef name="string" restriction="key\d{6}$?"/>
       </content>
@@ -106,9 +93,6 @@
             </desc>
       <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des ID de lemmes pour la
                 liaison avec la base de données des mots-clés et des lemmes
-            </desc>
-      <desc xml:lang="it" versionDate="2023-05-15">Definisce il modello per gli ID lemma per il collegamento al
-                database soggetto e lemma
             </desc>
       <content>
         <dataRef name="string" restriction="lem\d{6}(\.1?\d{2})?"/>
@@ -124,9 +108,6 @@
       <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle des org-ID pour
                 l'établissement d'un lien avec la base de données des personnes et des organisations
             </desc>
-      <desc xml:lang="it" versionDate="2023-05-15">Definisce il modello per gli ID organizzazione da collegare al
-                database delle persone e dell'organizzazione
-            </desc>
       <content>
         <dataRef name="string" restriction="org\d{6}(\.\d{2})?"/>
       </content>
@@ -140,9 +121,6 @@
             </desc>
       <desc xml:lang="fr" versionDate="2022-08-19">Définit le modèle d'identifiant de personne
                 pour le lien avec la base de données des personnes et des organisations
-            </desc>
-      <desc xml:lang="it" versionDate="2023-05-15">Definisce il modello per gli ID persona da collegare al
-                database delle persone e dell'organizzazione
             </desc>
       <content>
         <dataRef name="string" restriction="per\d{6}[abc]?(\.\d{2})?"/>
@@ -158,11 +136,22 @@
       <desc xml:lang="fr" versionDate="2024-04-20">Définit le modèle des place-ID pour
                 l'établissement d'un lien avec la base de données des lieux
             </desc>
-      <desc xml:lang="it" versionDate="2023-05-15">Definisce il modello per gli ID luogo da collegare al database
-                dei luoghi
-            </desc>
       <content>
         <dataRef name="string" restriction="loc\d{6}(\.\d{2})?"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pointer.databases" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-09-22">Verweis auf einen beliebigen SSRQ-Datenbankeintrag</desc>
+      <desc xml:lang="en" versionDate="2023-09-22">Reference to any SSRQ database entry</desc>
+      <desc xml:lang="fr" versionDate="2023-09-22">Référence à toute entrée de la base de données SSRQ</desc>
+      <content>
+        <alternate>
+          <dataRef key="ssrq.pointer.keywords"/>
+          <dataRef key="ssrq.pointer.lemma"/>
+          <dataRef key="ssrq.pointer.org"/>
+          <dataRef key="ssrq.pointer.persons"/>
+          <dataRef key="ssrq.pointer.places"/>
+        </alternate>
       </content>
     </dataSpec>
     <!-- pointer to external resources -->
@@ -170,7 +159,6 @@
       <desc xml:lang="de" versionDate="2023-05-15">Definiert das Muster für Verweise als DOI.</desc>
       <desc xml:lang="en" versionDate="2023-05-15">Defines the pattern for links as a DOI.</desc>
       <desc xml:lang="fr" versionDate="2023-05-15">Définit le modèle des liens en tant qu'DOI.</desc>
-      <desc xml:lang="it" versionDate="2023-05-15">Definisce il modello per i collegamenti come un DOI.</desc>
       <content>
         <dataRef name="string" restriction="doi:10\.\d{4}/.*"/>
       </content>
@@ -179,7 +167,6 @@
       <desc xml:lang="de" versionDate="2023-03-07">Definiert das Muster für Verweise als URL.</desc>
       <desc xml:lang="en" versionDate="2023-05-15">Defines the pattern for links as a URL.</desc>
       <desc xml:lang="fr" versionDate="2023-05-15">Définit le modèle des liens en tant qu'URL.</desc>
-      <desc xml:lang="it" versionDate="2023-05-15">Definisce il modello per i collegamenti come un URL.</desc>
       <content>
         <dataRef name="anyURI" restriction="(https?|ftp)://[^\s/$.?#].[^\s]*"/>
       </content>
@@ -194,9 +181,6 @@
       <desc xml:lang="fr" versionDate="2023-03-07">Définit le modèle pour les références comme
                 référence à d'autres pièces TEI y compris les identificateurs de fragments.
             </desc>
-      <desc xml:lang="it" versionDate="2023-05-15">Definisce il modello per i collegamenti come riferimento ad
-                altri pezzi TEI inclusi gli identificatori di frammento.
-            </desc>
       <content>
         <dataRef name="string" restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)(-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)))?(#[A-Za-z0-9_]+)?"/>
       </content>
@@ -210,9 +194,6 @@
             </desc>
       <desc xml:lang="fr" versionDate="2022-12-08">Définit le modèle pour les références comme
                 référence à d'autres pièces TEI, comme hyperlien ou comme DOI.
-            </desc>
-      <desc xml:lang="it" versionDate="2023-05-15">Definisce il modello per i riferimenti come riferimento ad
-                altri pezzi TEI, come collegamento ipertestuale o come DOI.
             </desc>
       <content>
         <alternate>

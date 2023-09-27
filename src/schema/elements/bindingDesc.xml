@@ -11,9 +11,6 @@
   <desc xml:lang="fr" versionDate="2023-07-14">Contient des informations sur la structure physique ou la reliure d'un
         texte.
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-14">Contiene informazioni sulla struttura fisica o sulla rilegatura di un
-        testo.
-    </desc>
   <classes mode="replace">
     <memberOf key="model.physDescPart"/>
   </classes>
@@ -23,7 +20,6 @@
   <xi:include href="examples.xml" xpointer="ex-bindingDesc-de"/>
   <xi:include href="examples.xml" xpointer="ex-bindingDesc-en"/>
   <xi:include href="examples.xml" xpointer="ex-bindingDesc-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-bindingDesc-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Mit diesem Tag können Details wie die Art der Bindung (z. B. Buchbindung, Broschur) angegeben werden. Die
             Beschreibung wird als Freitext in <gi>p</gi> angegeben.
@@ -37,11 +33,6 @@
   <remarks xml:lang="fr" versionDate="2023-07-14">
     <p>Cette balise permet d'indiquer des détails tels que le type de reliure (par exemple, reliure de livre,
             brochage). La description est donnée en texte libre dans <gi>p</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-14">
-    <p>Questo tag può essere utilizzato per specificare dettagli come il tipo di rilegatura (ad es. rilegatura di
-            libri, brochure). La descrizione è data come testo libero in <gi>p</gi>.
         </p>
   </remarks>
 </elementSpec>

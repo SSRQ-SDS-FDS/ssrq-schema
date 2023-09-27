@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-05-24">Enthält eine durch einen Editor vorgenommene Korrektur.</desc>
   <desc xml:lang="en" versionDate="2023-05-24">Contains a correction made by an editor.</desc>
   <desc xml:lang="fr" versionDate="2023-05-24">Contient une correction faite par un éditeur.</desc>
-  <desc xml:lang="it" versionDate="2023-05-24">Contiene una correzione apportata da un editor.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
     <memberOf key="model.choicePart"/>
@@ -23,7 +22,6 @@
   <xi:include href="examples.xml" xpointer="ex-choice-sic-de"/>
   <xi:include href="examples.xml" xpointer="ex-choice-sic-fr"/>
   <xi:include href="examples.xml" xpointer="ex-choice-sic-en"/>
-  <xi:include href="examples.xml" xpointer="ex-choice-sic-it"/>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>Enthält die korrekte Form zum Beispiel eines Verschreibers, der mit <gi>sic</gi> kenntlich gemacht wird.
             Die Korrektur stammt immer vom Editor und nicht aus der Hand des Schreibers des Dokuments. Bei irrtümlichen
@@ -43,13 +41,6 @@
             vient toujours de l'éditeur et non de la main du rédacteur du document. Pour les répétitions erronées de
             mots, <gi>corr</gi> contient la forme correcte. Un <gi>corr</gi> vide est possible si un mot superflu est
             supprimé par l'éditeur.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-19">
-    <p>Contiene la forma corretta di, ad esempio, prescrittore, identificato con <gi>sic</gi>. La correzione viene
-            sempre dall'editore e non dalla mano di chi scrive il documento. Per ripetizioni errate di
-            parole, <gi>corr</gi> contiene la forma corretta. Un <gi>corr</gi> vuoto è possibile se una parola
-            superflua viene cancellata dall'editor.
         </p>
   </remarks>
 </elementSpec>

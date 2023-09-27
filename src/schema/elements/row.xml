@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-11">Beschreibt eine Zeile einer Tabelle.</desc>
   <desc xml:lang="en" versionDate="2023-07-11">Describes a row of a table.</desc>
   <desc xml:lang="fr" versionDate="2023-07-11">Décrit une ligne d'un tableau.</desc>
-  <desc xml:lang="it" versionDate="2023-07-11">Descrive una riga di una tabella.</desc>
   <classes mode="replace"/>
   <content>
     <alternate maxOccurs="unbounded">
@@ -17,7 +16,6 @@
   <xi:include href="examples.xml" xpointer="ex-row-de"/>
   <xi:include href="examples.xml" xpointer="ex-row-en"/>
   <xi:include href="examples.xml" xpointer="ex-row-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-row-it"/>
   <remarks xml:lang="de" versionDate="2023-07-11">
     <p>Wird zusammen mit <gi>table</gi> (Tabelle) und <gi>cell</gi> (Zelle) für die Darstellung von Tabellen
             benötigt.
@@ -29,11 +27,6 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-11">
     <p>Est nécessaire avec <gi>table</gi> (table) et <gi>cell</gi> (cellule) pour afficher les tableaux.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-11">
-    <p>È richiesto insieme a <gi>table</gi> (tabella) e <gi>cell</gi> (cella) per la visualizzazione delle
-            tabelle.
         </p>
   </remarks>
 </elementSpec>

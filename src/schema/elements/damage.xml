@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-13">Bezeichnet einen beschädigten Abschnitt.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Denotes a damaged section.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Indique une section endommagée.</desc>
-  <desc xml:lang="it" versionDate="2023-07-13">Indica una sezione danneggiata.</desc>
   <classes mode="replace">
     <memberOf key="att.damaged"/>
   </classes>
@@ -23,19 +22,15 @@
   <xi:include href="examples.xml" xpointer="ex-damage-add-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-add-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-add-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-add-it"/>
   <xi:include href="examples.xml" xpointer="ex-damage-gap-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-gap-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-gap-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-gap-it"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-supplied-it"/>
   <xi:include href="examples.xml" xpointer="ex-damage-unclear-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-unclear-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-unclear-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-unclear-it"/>
   <remarks xml:lang="de" versionDate="2023-07-13">
     <p>Die Art der Beschädigung wird mit <att>agent</att> näher beschrieben. Soweit möglich, wird der fehlende Text
             mit <gi>supplied</gi> oder bei unsicherer Lesung mit <gi>unclear</gi> ergänzt. Wenn kein Text ergänzt werden
@@ -70,19 +65,6 @@
     <p>En règle générale, <gi>damage</gi> est utilisé pour marquer la destruction physique et l'interférence non
             gratuite. Un rasage est marqué par <gi>del</gi>. Une description générale des dommages majeurs est
             également donnée dans les métadonnées.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-13">
-    <p>Il tipo di danno è descritto più dettagliatamente con <att>agent</att>. Per quanto possibile, il testo
-            mancante è integrato con <gi>supplied</gi> o, se la lettura è incerta, con <gi>unclear</gi>. Se non è
-            possibile aggiungere testo, viene utilizzato <gi>gap</gi>. È inoltre possibile utilizzare una combinazione
-            dei tag <gi>unclear</gi>, <gi>supplied</gi> e <gi>gap</gi>, a seconda della gravità del danneggiamento.
-            Per passaggi di testo più lunghi, quando <gi>damage</gi> da solo non è più sufficiente, si dovrebbe
-            usare <gi>damageSpan</gi>.
-        </p>
-    <p>Di norma, il <gi>damage</gi> viene utilizzato per contrassegnare la distruzione fisica e l'interferenza non
-            arbitraria. Una rasatura è contrassegnata con <gi>del</gi>. Nei metadati viene fornita anche una
-            descrizione generale dei danni maggiori.
         </p>
   </remarks>
 </elementSpec>

@@ -4,28 +4,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
   <specGrp xml:id="constraints">
-    <constraintSpec scheme="schematron" ident="sch-gl-1">
-      <desc xml:lang="en" versionDate="2023-03-01">Mutually dependent for all elements: @unit and @quantity</desc>
-      <constraint>
-        <sch:pattern>
-          <sch:rule context="tei:*">
-            <sch:report test="@quantity and not(@unit)" xml:lang="en">
-                            If the @quantity attribute is specified on the
-                            <sch:name/>
-                            element, @unit must be present,
-                            too.
-                        </sch:report>
-            <sch:report test="@unit and not(@quantity)" xml:lang="en">
-                            If the @unit attribute is specified on the
-                            <sch:name/>
-                            element, @quantity must be present,
-                            too.
-                        </sch:report>
-          </sch:rule>
-        </sch:pattern>
-      </constraint>
-    </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-gl-2">
+    <constraintSpec scheme="schematron" ident="trim-attributes">
       <desc xml:lang="en" versionDate="2023-03-01">The value of an attribute should never start with some kind of
                 whitespace
             </desc>
@@ -41,45 +20,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-gl-3">
-      <desc xml:lang="en" versionDate="2023-04-06">Global constraint to ensure pattern of
-          facsimile names
-            </desc>
-      <constraint>
-        <sch:pattern>
-          <sch:rule context="*[@facs]">
-            <sch:report test="matches(@facs, '__')" xml:lang="en">
-                            An underscore should not be followed by another underscore in @facs.
-                        </sch:report>
-          </sch:rule>
-        </sch:pattern>
-      </constraint>
-    </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-gl-4">
-      <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
-      <constraint>
-        <sch:pattern>
-          <sch:rule context="tei:*[name() = ('ab', 'abbr', 'add', 'bibl', 'custEvent', 'del', 'div', 'expan', 'foreign', 'fw', 'head', 'hi', 'item', 'label', 'lem', 'licence', 'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'publisher', 'pubPlace', 'q', 'quote', 'repository', 'seg', 'settlement', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
-            <sch:assert test="string-length(normalize-space(.)) &gt; 0"><sch:name/>
-                            must not be empty.
-                        </sch:assert>
-          </sch:rule>
-        </sch:pattern>
-      </constraint>
-    </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-gl-5">
-      <desc xml:lang="en" versionDate="2023-06-08">Global constraint to ensure that every idno is unique</desc>
-      <constraint>
-        <sch:pattern>
-          <sch:rule context="tei:TEI">
-            <sch:assert test="count(distinct-values(//tei:idno/text())) = count(//tei:idno)">
-                            The value of every tei:idno should be unique.
-                        </sch:assert>
-          </sch:rule>
-        </sch:pattern>
-      </constraint>
-    </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-gl-6">
+    <constraintSpec scheme="schematron" ident="duplicate-attribute-values">
       <desc xml:lang="en" versionDate="2023-07-25">Global constraint to ensure that no attribute has a duplicate
                 value
             </desc>
@@ -88,6 +29,18 @@
           <sch:rule context="//@*">
             <sch:assert test="count(distinct-values(tokenize(.))) = count(tokenize(.))">
                             An attribute should not have duplicate values
+                        </sch:assert>
+          </sch:rule>
+        </sch:pattern>
+      </constraint>
+    </constraintSpec>
+    <constraintSpec scheme="schematron" ident="non-empty-elements">
+      <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
+      <constraint>
+        <sch:pattern>
+          <sch:rule context="tei:*[name() = ('ab', 'abbr', 'add', 'bibl', 'custEvent', 'del', 'div', 'expan', 'foreign', 'fw', 'head', 'hi', 'item', 'label', 'lem', 'licence', 'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'publisher', 'pubPlace', 'q', 'quote', 'repository', 'seg', 'settlement', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
+            <sch:assert test="string-length(normalize-space(.)) &gt; 0"><sch:name/>
+                            must not be empty.
                         </sch:assert>
           </sch:rule>
         </sch:pattern>

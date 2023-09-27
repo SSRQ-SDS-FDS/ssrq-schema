@@ -10,8 +10,6 @@
   <desc xml:lang="fr" versionDate="2023-07-19">Contient des notes marginales qui sont intégrées dans le texte de
         l'édition.
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-19">Contiene note marginali integrate nel testo dell'edizione.
-    </desc>
   <classes mode="replace">
     <memberOf key="att.placement"/>
     <memberOf key="att.typed"/>
@@ -42,19 +40,16 @@
       <desc xml:lang="de" versionDate="2023-05-25">Ort der Randanmerkung</desc>
       <desc xml:lang="en" versionDate="2023-05-25">Location of the marginal note</desc>
       <desc xml:lang="fr" versionDate="2023-05-25">Emplacement de la note marginale</desc>
-      <desc xml:lang="it" versionDate="2023-05-25">Posizione della nota marginale</desc>
       <valList type="closed">
         <valItem ident="left_margin">
           <desc xml:lang="de">am linken Rand</desc>
           <desc xml:lang="en">in the left margin</desc>
           <desc xml:lang="fr">dans la marge de gauche</desc>
-          <desc xml:lang="it">sul margine sinistro</desc>
         </valItem>
         <valItem ident="right_margin">
           <desc xml:lang="de">am rechten Rand</desc>
           <desc xml:lang="en">in the right margin</desc>
           <desc xml:lang="fr">dans la marge de droite</desc>
-          <desc xml:lang="it">sul margine destro</desc>
         </valItem>
       </valList>
     </attDef>
@@ -64,7 +59,6 @@
           <desc xml:lang="de" versionDate="2023-05-25">Schlüsselwort</desc>
           <desc xml:lang="en" versionDate="2023-05-25">keyword</desc>
           <desc xml:lang="fr" versionDate="2023-05-25">mot-clé</desc>
-          <desc xml:lang="it" versionDate="2023-05-25">parola chiave</desc>
         </valItem>
       </valList>
     </attDef>
@@ -72,5 +66,4 @@
   <xi:include href="examples.xml" xpointer="ex-label-de"/>
   <xi:include href="examples.xml" xpointer="ex-label-en"/>
   <xi:include href="examples.xml" xpointer="ex-label-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-label-it"/>
 </elementSpec>

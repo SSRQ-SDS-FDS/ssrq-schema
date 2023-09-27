@@ -7,7 +7,6 @@
   <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections deleted from the text.</desc>
   <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui ont été supprimées du texte.
     </desc>
-  <desc xml:lang="it" versionDate="2023-05-20">Indica sezioni più grandi che sono state eliminate dal testo.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.spanning"/>
@@ -26,7 +25,6 @@
   <xi:include href="examples.xml" xpointer="ex-delSpan-de"/>
   <xi:include href="examples.xml" xpointer="ex-delSpan-en"/>
   <xi:include href="examples.xml" xpointer="ex-delSpan-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-delSpan-it"/>
   <remarks xml:lang="de" versionDate="2023-07-13">
     <p>Mit <att>spanTo</att> wird zwingend auf den Endpunkt der Tilgung verwiesen, der
             mit <gi>anchor</gi> markiert wird.
@@ -40,11 +38,6 @@
   <remarks xml:lang="fr" versionDate="2023-07-13">
     <p>Avec <att>spanTo</att> une référence obligatoire est faite au point final de l'effacement, qui est marqué
             par <gi>anchor</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-13">
-    <p>Con <att>spanTo</att> viene fatto un riferimento obbligatorio al punto finale della cancellazione, che è
-            contrassegnato con <gi>anchor</gi>.
         </p>
   </remarks>
 </elementSpec>
