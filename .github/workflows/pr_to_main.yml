@@ -3,13 +3,15 @@ name: test_and_release
 on:
   pull_request:
     branches: ['main']
+  push:
+    branches: ['main']
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  ci:
+  test:
     strategy:
       fail-fast: false
       matrix:
@@ -17,6 +19,7 @@ jobs:
         poetry-version: ['1.2.2']
 
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
 
     steps:
       - name: Checkout repo
@@ -47,3 +50,31 @@ jobs:
         run: ./Taskfile lint-only
       - name: Run all tests using pytest
         run: poetry run pytest -n 4
+
+  publish:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PRE_COMMIT_ALLOW_NO_CONFIG: 1
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0
+      - name: Setup SSH and Python with Poetry
+        uses: ./.github/actions/setup
+        with:
+          ssh-key: ${{ secrets.CLI_SECRET_KEY }}
+      - name: Set docs-url
+        run: |
+          url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
+          echo "DOCS_URL=${url}" >> "$GITHUB_ENV"
+      - name: Build and publish
+        uses: ./.github/actions/mike
+        with:
+          version-name: 'main'

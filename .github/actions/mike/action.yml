@@ -40,5 +40,10 @@ runs:
         fi
 
       shell: bash
-    # - name: Deploy release
-      # Todo
+    - name: Deploy concrete docs version
+      if: ${{ inputs.version-name == 'main' }}
+      run: |
+        VERSION_NUMBER=$(grep -oE '"SLS TEI-Schema".*\sversion\s?=\s?"([0-9a-zA-Z.-]+)"' pyproject.toml | sed -n 's/.*version = "\(.*\)".*/\1/p')
+        poetry run mike deploy ${VERSION_NUMBER} latest --update-aliases --no-redirect --push
+        poetry run mike set-default latest --push
+      shell: base

@@ -86,7 +86,7 @@ plugins:
             Spelling: Orthographie
             Transcription: Transkriptionsrichtlinien
         - locale: fr
-          build: !ENV [BUILD_FR, true]
+          build: !ENV [BUILD_FR, false]
           name: Français
           site_name: SDS Documentation
           nav_translations:
