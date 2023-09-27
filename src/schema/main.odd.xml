@@ -3,7 +3,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>SSRQ Guidelines</title>
+        <title>{{ title }}</title>
         <author>Bastian Politycki</author>
         <author>Christian Sonder</author>
         <author>Pascale Sutter</author>
@@ -19,7 +19,7 @@
         </availability>
       </publicationStmt>
       <sourceDesc>
-        <p>The main schema used by the Swiss Law Sources to validate TEI XML transcriptions.</p>
+        <p>{{ description }}</p>
       </sourceDesc>
     </fileDesc>
   </teiHeader>

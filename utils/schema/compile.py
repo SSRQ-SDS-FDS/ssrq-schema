@@ -180,6 +180,8 @@ def fill_template_with_metadata(authors: list[str], schema: SSRQSchemaType) -> s
             xml_file_name=f"{str(configs.SCHEMA_DIR)}/{schema['entry']}"
         )
 
+        xsltproc.set_parameter("description", proc.make_string_value(schema["description"]))  # type: ignore
+        xsltproc.set_parameter("title", proc.make_string_value(schema["title"]))  # type: ignore
         xsltproc.set_parameter("version", proc.make_string_value(schema["version"]))  # type: ignore
 
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
@@ -316,4 +318,4 @@ if __name__ == "__main__":
     ]
 
     for odd in odds:
-        store_compiled_schemas(schemas=[odd], use_version=OMIT_VERSION)
+        store_compiled_schemas(schemas=[odd], omit_version=OMIT_VERSION)
