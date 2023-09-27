@@ -57,14 +57,14 @@ def store_compiled_schemas(
     schemas: list[Schema],
     io: io.AbstractFileHandler = io.FileHandler,
     out_dir: Path = configs.BUILD_DIR,
-    use_version: bool = OMIT_VERSION,
+    omit_version: bool = OMIT_VERSION,
 ) -> None:
     for schema in schemas:
         odd_name = (
-            f"{schema.name}{f'_{schema.version}' if use_version is False else ''}.odd"
+            f"{schema.name}{f'_{schema.version}' if omit_version is False else ''}.odd"
         )
         rng_name = (
-            f"{schema.name}{f'_{schema.version}' if use_version is False else ''}.rng"
+            f"{schema.name}{f'_{schema.version}' if omit_version is False else ''}.rng"
         )
 
         io.write(directory=out_dir, file_name=odd_name, content=schema.compiled_odd)

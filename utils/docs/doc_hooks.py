@@ -58,7 +58,9 @@ def on_page_markdown(
 @event_priority(50)
 def on_post_build(config: MkDocsConfig):
     schema = create_main_schema()
-    store_compiled_schemas(schemas=[schema], out_dir=Path(config.site_dir))
+    store_compiled_schemas(
+        schemas=[schema], out_dir=Path(config.site_dir), omit_version=True
+    )
 
 
 @event_priority(50)
