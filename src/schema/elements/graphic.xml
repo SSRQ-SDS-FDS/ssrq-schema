@@ -12,9 +12,6 @@
   <desc xml:lang="fr" versionDate="2023-03-15">Contient des informations sur une image ou une
         illustration graphique faisant partie du texte ou référence externe.
     </desc>
-  <desc xml:lang="it" versionDate="2023-03-15">Contiene informazioni su un'immagine o illustrazione
-        grafica come parte del testo o riferimento esterno.
-    </desc>
   <classes mode="replace">
     <memberOf key="att.internetMedia"/>
     <memberOf key="att.resourced"/>
@@ -39,7 +36,6 @@
       <desc xml:lang="de" versionDate="2023-03-15">MimeType der eingebundenen Bilddatei</desc>
       <desc xml:lang="en" versionDate="2023-03-15">MimeType of the included image file</desc>
       <desc xml:lang="fr" versionDate="2023-03-15">MimeType du fichier d'image intégré</desc>
-      <desc xml:lang="it" versionDate="2023-03-15">MimeType del file immagine incorporato</desc>
       <valList type="closed">
         <valItem ident="image/jpg"/>
         <valItem ident="image/png"/>
@@ -50,31 +46,26 @@
       <desc xml:lang="de" versionDate="2023-03-15">Typ der Graphik</desc>
       <desc xml:lang="en" versionDate="2023-03-15">Graphic type</desc>
       <desc xml:lang="fr" versionDate="2023-03-15">Type de graphique</desc>
-      <desc xml:lang="it" versionDate="2023-03-15">Tipo di grafica</desc>
       <valList type="closed">
         <valItem ident="familytree">
           <desc xml:lang="de" versionDate="2023-03-15">Stammbaum</desc>
           <desc xml:lang="en" versionDate="2023-03-15">familytree</desc>
           <desc xml:lang="fr" versionDate="2023-03-15">pédigrée</desc>
-          <desc xml:lang="it" versionDate="2023-03-15">albero genealogico</desc>
         </valItem>
         <valItem ident="figure">
           <desc xml:lang="de" versionDate="2023-03-15">Visualisierung</desc>
           <desc xml:lang="en" versionDate="2023-03-15">visualisation</desc>
           <desc xml:lang="fr" versionDate="2023-03-15">visualisation</desc>
-          <desc xml:lang="it" versionDate="2023-03-15">visualizzazione</desc>
         </valItem>
         <valItem ident="graphic">
           <desc xml:lang="de" versionDate="2023-03-15">Illustration</desc>
           <desc xml:lang="en" versionDate="2023-03-15">illustration</desc>
           <desc xml:lang="fr" versionDate="2023-03-15">illustration</desc>
-          <desc xml:lang="it" versionDate="2023-03-15">illustrazione</desc>
         </valItem>
         <valItem ident="map">
           <desc xml:lang="de" versionDate="2023-03-15">Karte</desc>
           <desc xml:lang="en" versionDate="2023-03-15">map</desc>
           <desc xml:lang="fr" versionDate="2023-03-15">carte</desc>
-          <desc xml:lang="it" versionDate="2023-03-15">mappa</desc>
         </valItem>
       </valList>
     </attDef>
@@ -82,5 +73,4 @@
   <xi:include href="examples.xml" xpointer="ex-figure-2-de"/>
   <xi:include href="examples.xml" xpointer="ex-figure-2-en"/>
   <xi:include href="examples.xml" xpointer="ex-figure-2-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-2-it"/>
 </elementSpec>

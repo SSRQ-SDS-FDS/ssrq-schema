@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-13">Beschreibt eine Zelle einer Tabelle.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Describes a cell of a table.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Décrit une cellule dans un tableau.</desc>
-  <desc xml:lang="it" versionDate="2023-07-13">Descrive una cella in una tabella.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.tableDecoration"/>
@@ -21,13 +20,11 @@
       <desc xml:lang="de" versionDate="2023-08-02">Textausrichtung innerhalb einer Tabellenzellen in der Vorlage</desc>
       <desc xml:lang="en" versionDate="2023-08-02">Text alignment within a table cell in the source document</desc>
       <desc xml:lang="fr" versionDate="2023-08-02">Alignement du texte dans une cellule de tableau du document source</desc>
-      <desc xml:lang="it" versionDate="2023-08-02">Allineamento del testo in una cella di tabella nel documento di origine</desc>
       <valList type="closed">
         <valItem ident="align-bottom">
           <desc xml:lang="de" versionDate="2023-08-02">Am unteren Ende der Zelle ausgerichtet</desc>
           <desc xml:lang="en" versionDate="2023-08-02">Aligned at the bottom of the cell</desc>
           <desc xml:lang="fr" versionDate="2023-08-02">Aligné au bas de la cellule</desc>
-          <desc xml:lang="it" versionDate="2023-08-02">Allineato alla parte inferiore della cella</desc>
         </valItem>
       </valList>
     </attDef>
@@ -35,7 +32,6 @@
   <xi:include href="examples.xml" xpointer="ex-cell-de"/>
   <xi:include href="examples.xml" xpointer="ex-cell-en"/>
   <xi:include href="examples.xml" xpointer="ex-cell-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-cell-it"/>
   <remarks xml:lang="de" versionDate="2023-07-11">
     <p>Wird innerhalb von <gi>table</gi> zusammen mit <gi>row</gi> (Zeile) für die Darstellung von Tabellen
             benötigt. Mit <att>role</att> = <val>label</val> wird eine Spaltenüberschrift, z. B. eine Währung eines
@@ -52,12 +48,6 @@
     <p>Est requis dans <gi>table</gi> avec <gi>row</gi> (ligne) pour afficher les tableaux. Avec
             <att>role</att>
             = <val>label</val> un en-tête de colonne, par ex. B. une devise d'une entrée de colonne spécifiée.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-11">
-    <p>È richiesto all'interno di <gi>table</gi> insieme a <gi>row</gi> (riga) per visualizzare le tabelle. Con
-            <att>role</att>
-            = <val>label</val> un'intestazione di colonna, ad es. B. una valuta di una voce di colonna specificata.
         </p>
   </remarks>
 </elementSpec>

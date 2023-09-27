@@ -6,7 +6,6 @@
   <gloss xml:lang="de" versionDate="2023-07-07">Identifikationsnummer</gloss>
   <gloss xml:lang="en" versionDate="2023-07-07">Identification number</gloss>
   <gloss xml:lang="fr" versionDate="2023-07-07">Numéro d'identification</gloss>
-  <gloss xml:lang="it" versionDate="2023-07-07">Numero identificativo</gloss>
   <desc xml:lang="de" versionDate="2023-07-17">Enthält im <gi>seriesStmt</gi> eine UUID
         (mit <att>type</att> = <val>UUID</val>), das Bandkürzel (Kanton, Teil, Stücknummer) der Sammlung Schweizerischer
         Rechtsquellen oder enthält im <gi>msIdentifier</gi> die Archivsignatur einer Quelle.
@@ -18,10 +17,6 @@
   <desc xml:lang="fr" versionDate="2023-07-17">Contient un UUID en <gi>seriesStmt</gi> (avec <att>type</att> = <val>
         UUID</val>), l'abréviation de volume (canton, partie, numéro d'article) de la collection des sources juridiques
         suisses ou contient dans <gi>msIdentifier</gi> la signature d'archive d'une source.
-    </desc>
-  <desc xml:lang="it" versionDate="2023-07-17">Contiene un UUID in <gi>seriesStmt</gi> (con <att>type</att> = <val>
-        UUID</val>), l'abbreviazione del volume (cantone, parte, numero articolo) della raccolta di fonti giuridiche
-        svizzere o contiene in <gi>msIdentifier</gi> la firma dell'archivio di una fonte.
     </desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
@@ -80,7 +75,6 @@
           <desc xml:lang="de" versionDate="2023-03-03">Universally Unique Identifier</desc>
           <desc xml:lang="en" versionDate="2023-03-03">Universally Unique Identifier</desc>
           <desc xml:lang="fr" versionDate="2023-03-03">Universally Unique Identifier</desc>
-          <desc xml:lang="it" versionDate="2023-03-03">Universally Unique Identifier</desc>
         </valItem>
       </valList>
     </attDef>
@@ -90,11 +84,9 @@
   <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-de"/>
   <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-en"/>
   <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-it"/>
   <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-de"/>
   <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-en"/>
   <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-it"/>
   <remarks xml:lang="de" versionDate="2023-07-17">
     <p>Enthält <gi>idno</gi> die Signatur eines Archivs hat sich diese nach dem System des jeweiligen Archivs zu
             richten.
@@ -172,30 +164,6 @@
                     majuscules, minuscules, chiffres et points.
                 </item><item>Une abréviation de la pièce composée d'un nombre quelconque de chiffres.</item><item>Un trait d'union.</item><item>Un identifiant final composé d'un nombre quelconque de chiffres ou d'au moins trois lettres
                     minuscules (par exemple B. pour nommer une pièce spéciale comme "lit", "intro" ou "huissier").
-                </item></list>
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-17">
-    <p>Se <gi>idno</gi> contiene la firma di un archivio, deve essere conforme al sistema del rispettivo archivio.
-        </p>
-    <p>Se <gi>idno</gi> contiene un UUID, deve corrispondere alla seguente espressione regolare:
-            <val>^[0-9A-Fa-f]{8}-[0-9A-Fa - f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>. L'UUID è
-            strutturato come segue:
-            <list><item>Esattamente otto caratteri del seguente insieme: le cifre "0-9", le lettere maiuscole "A-F" o le
-                    lettere minuscole "a-f".
-                </item><item>Un trattino.</item><item>Esattamente quattro caratteri del set precedente.</item><item>Un trattino.</item><item>La cifra "4" seguita da tre caratteri del set precedente.</item><item>Un trattino.</item><item>Esattamente un carattere del set seguente: "8", "9", "A", "B", "a" , "b" seguito esattamente da
-                    tre caratteri del set precedente.
-                </item><item>Un trattino.</item><item>Esattamente dodici caratteri del set precedente.</item></list>
-        </p>
-    <p>Contiene <gi>idno</gi> a abbreviazione di banda dell'SSRQ, deve corrispondere alla seguente espressione
-            regolare: <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?: (
-            (?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$</val>. Le abbreviazioni di banda sono strutturate come segue:
-            <list><item>Il prefisso "SSRQ" o "SDS" o "FDS".</item><item>Un trattino.</item><item>L'abbreviazione del cantone composta da due lettere maiuscole.</item><item>Un trattino.</item><item>Un'abbreviazione del volume composta da un numero qualsiasi di lettere maiuscole, minuscole, cifre
-                    e caratteri di sottolineatura.
-                </item><item>Un trattino.</item><item>La divisione in capitoli del volume (opzionale) composta da qualsiasi numero di lettere maiuscole,
-                    minuscole, cifre e punti.
-                </item><item>Un'abbreviazione del pezzo composta da qualsiasi numero di cifre.</item><item>Un trattino.</item><item>Un identificatore finale composto da qualsiasi numero di cifre o almeno tre lettere minuscole (es.
-                    B. per nominare un pezzo speciale come "lit", "intro" o "ufficiale giudiziario").
                 </item></list>
         </p>
   </remarks>

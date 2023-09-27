@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-20">Enthält in der Transkription Text in direkter Rede.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains text in direct speech in the transcription.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient du texte au discours direct dans la transcription.</desc>
-  <desc xml:lang="it" versionDate="2023-07-20">Contiene testo in discorso diretto nella trascrizione.</desc>
   <classes mode="replace">
     <memberOf key="model.hiLike"/>
   </classes>
@@ -21,11 +20,9 @@
   <xi:include href="examples.xml" xpointer="ex-q-de"/>
   <xi:include href="examples.xml" xpointer="ex-q-en"/>
   <xi:include href="examples.xml" xpointer="ex-q-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-q-it"/>
   <xi:include href="examples.xml" xpointer="ex-q-editor-de"/>
   <xi:include href="examples.xml" xpointer="ex-q-editor-en"/>
   <xi:include href="examples.xml" xpointer="ex-q-editor-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-q-editor-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p><gi>q</gi>
             wird z. B. bei Zeugenaussagen verwendet. In der Darstellung wird der Tag mit Anführungszeichen
@@ -65,20 +62,6 @@
         </p>
     <p>Dans les paratextes (notes, commentaires, introduction), la balise <gi>q</gi> peut être utilisée avec une
             fonction modalisante, i. e. ironique, distanciant, transféré etc., ou utilisé pour l'emphase.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-20">
-    <p><gi>q</gi>
-            diventa ad es. utilizzato nelle dichiarazioni dei testimoni. Nella visualizzazione, il tag è
-            evidenziato tra virgolette. Le citazioni e gli inserti all'interno di un testo sorgente, invece, sono
-            contrassegnati con <gi>quote</gi>.
-        </p>
-    <p>Quando un pezzo sorgente menziona il nome di un documento o di una preghiera, non è contrassegnato con il
-            tag <gi>q</gi> o <gi>quote</gi>, ma il titolo è in maiuscolo. Lo stesso vale per i titoli di opere storiche
-            all'interno dei paratesti.
-        </p>
-    <p>All'interno dei paratesti (note, commenti, introduzione), il tag <gi>q</gi> può essere utilizzato con una
-            funzione di modalizzazione, i. e. ironico, distaccato, trasferito ecc. o usato per enfatizzare.
         </p>
   </remarks>
 </elementSpec>

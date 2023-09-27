@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-15">Beschreibt ein Siegel.</desc>
   <desc xml:lang="en" versionDate="2023-07-15">Describes a seal.</desc>
   <desc xml:lang="fr" versionDate="2023-07-15">Décrit un sceau.</desc>
-  <desc xml:lang="it" versionDate="2023-07-15">Descrive un sigillo.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="att.global.facs"/>
@@ -45,9 +44,6 @@
       <desc xml:lang="fr" versionDate="2023-05-31">Comptage consécutif des sceaux de gauche à droite (en fonction
                 des fentes de sceaux ou des sceaux réellement présents)
             </desc>
-      <desc xml:lang="it" versionDate="2023-05-31">Conteggio consecutivo dei sigilli da sinistra a destra (in base
-                alle fessure dei sigilli o ai sigilli effettivamente presenti)
-            </desc>
       <datatype>
         <dataRef name="positiveInteger"/>
       </datatype>
@@ -56,19 +52,16 @@
       <desc xml:lang="de" versionDate="2023-05-31">Beschreibt den Anbringungsort des Siegels</desc>
       <desc xml:lang="en" versionDate="2023-05-31">Describes the location of the seal</desc>
       <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'emplacement du sceau</desc>
-      <desc xml:lang="it" versionDate="2023-05-31">Descrive la posizione del sigillo</desc>
       <valList type="closed">
         <valItem ident="end">
           <desc xml:lang="de" versionDate="2023-05-31">am Ende der Urkunde</desc>
           <desc xml:lang="en" versionDate="2023-05-31">at the end of the act</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">en bas de l’acte</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">in fondo all'atto</desc>
         </valItem>
         <valItem ident="overleaf">
           <desc xml:lang="de" versionDate="2023-05-31">auf der anderen Seite des Blattes</desc>
           <desc xml:lang="en" versionDate="2023-05-31">on the other side of the page</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">sur l’autre page de la feuille</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">sull'altra pagina del foglio</desc>
         </valItem>
       </valList>
     </attDef>
@@ -79,7 +72,6 @@
   <xi:include href="examples.xml" xpointer="ex-sealDesc-de"/>
   <xi:include href="examples.xml" xpointer="ex-sealDesc-en"/>
   <xi:include href="examples.xml" xpointer="ex-sealDesc-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-sealDesc-it"/>
   <remarks xml:lang="de" versionDate="2023-08-23">
     <p>Die Beschreibung der Siegel erfolgt von links nach rechts. Der Siegler wird, wenn es sich um eine Person handelt, mit <gi>persName</gi> und dem
             Attribut <att>role</att> = <val>sigillant</val> oder, wenn es sich um eine Institution handelt,
@@ -165,34 +157,6 @@
             sceau est manquant ou pourquoi le document est resté descellé.
         </p>
     <p>Sur les sceaux impériaux : [Posse Otto: Die Siegel der deutschen Kaiser und Könige von 751–1806 und 1871–1913,
-            5 Bde., Dresden 1909–1913] (http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-08-23">
-    <p>I sigilli sono descritti da sinistra a destra. Se si tratta di una persona, il sigillante viene contrassegnato con <gi>persName</gi> e
-            l'attributo <att>role</att> = <val>sigillant</val> o, se si tratta di un'istituzione, con <gi>orgName</gi> e
-            lo stesso attributo. Se i nomi dei sigillanti sono sulla plica o striscia di pergamena, all'interno
-            di <gi>persName</gi> un <gi>orig</gi> dovrebbe racchiudere il nome scritto a mano.
-        </p>
-    <p>In caso di identificazioni di sigilli incerte, se ad es. Ad esempio, se il sigillante non è nominato nel
-            certificato, non viene fornito alcun <gi>orgName</gi> o <gi>persName</gi>. Se i sigilli non possono essere
-            assegnati con certezza in caso di più sigilli, l'identificazione del sigillo viene lasciata aperta.
-        </p>
-    <p>I sigilli sono numerati con <att>n</att>. Sarebbe auspicabile che l'edizione non comprendesse solo un
-            facsimile del testo, ma anche una foto dei sigilli, compresa la scala (fronte e retro). Se così fosse per tutti i
-            sigilli, <att>extent</att> potrebbe essere omessa.
-        </p>
-    <p>L. S. = Locus sigilli è registrato con <gi>figure</gi>. Se un documento è stato emesso senza sigillo, non
-            viene registrato alcun sigillo. Un commento sui sigilli può essere scritto come richiesto.
-        </p>
-    <p>È importante confrontare l'annuncio del sigillo nel testo e il sigillo stesso.
-            <list><item>Tutti i sigillatori annunciati hanno apposto i loro sigilli all'atto?</item><item>C'è un sigillo di un sigillante non annunciato?</item><item>È stato possibile che un sigillo sia stato contraffatto o apposto in seguito?</item></list></p>
-    <p>È da verificare se il sigillo corrisponde al sigillo annunciato. Gli annunci di sigilli, compresi i sigilli
-            mancanti e le impronte dei sigilli, sono menzionati nel registro (<gi>summary</gi>). Se manca un sigillo annunciato, questo è
-            da annotare in <att>condition</att> con <val>absent</val>. Inoltre, una nota (<gi>note</gi>) deve descrivere
-            perché manca il sigillo o perché il documento è rimasto aperto.
-        </p>
-    <p>Sui sigilli imperiali: [Posse Otto: Die Siegel der deutschen Kaiser und Könige von 751–1806 und 1871–1913,
             5 Bde., Dresden 1909–1913] (http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).
         </p>
   </remarks>

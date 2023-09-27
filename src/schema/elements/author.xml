@@ -9,8 +9,6 @@
     </desc>
   <desc xml:lang="fr" versionDate="2023-08-17">Contient l'auteur d'une source dans le cadre de <gi>msItem</gi>.
     </desc>
-  <desc xml:lang="it" versionDate="2023-08-17">Contiene l'autore di una fonte come parte di <gi>msItem</gi>.
-    </desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
     <memberOf key="att.naming"/>
@@ -49,13 +47,11 @@
       <desc xml:lang="de" versionDate="2023-05-05">Rolle des Schreibenden</desc>
       <desc xml:lang="en" versionDate="2023-05-05">Role of the writer</desc>
       <desc xml:lang="fr" versionDate="2023-05-05">Rôle du rédacteur</desc>
-      <desc xml:lang="it" versionDate="2023-05-05">Ruolo dello scrittore</desc>
       <valList type="closed" mode="replace">
         <valItem ident="scribe">
           <desc xml:lang="de" versionDate="2022-05-12">Schreiber</desc>
           <desc xml:lang="fr" versionDate="2022-05-12">scripteur</desc>
           <desc xml:lang="en" versionDate="2022-05-12">scribe</desc>
-          <desc xml:lang="it" versionDate="2022-09-13">scriba</desc>
         </valItem>
       </valList>
     </attDef>
@@ -64,5 +60,4 @@
   <xi:include href="examples.xml" xpointer="ex-author-de"/>
   <xi:include href="examples.xml" xpointer="ex-author-en"/>
   <xi:include href="examples.xml" xpointer="ex-author-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-author-it"/>
 </elementSpec>

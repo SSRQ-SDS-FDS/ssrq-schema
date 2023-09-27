@@ -12,9 +12,6 @@
   <desc xml:lang="fr" versionDate="2023-05-23">Comprend des signatures et des signatures avec des marques de notaire
         et se trouve généralement à la fin d'un texte.
     </desc>
-  <desc xml:lang="it" versionDate="2023-05-23">Include firme e firme con segni notarili e si trova solitamente alla
-        fine di un testo.
-    </desc>
   <classes mode="replace">
     <memberOf key="model.divBottomPart"/>
     <memberOf key="model.divTopPart"/>
@@ -27,7 +24,6 @@
   <xi:include href="examples.xml" xpointer="ex-signed-de"/>
   <xi:include href="examples.xml" xpointer="ex-signed-en"/>
   <xi:include href="examples.xml" xpointer="ex-signed-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-signed-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Folgen nach einer Unterschrift noch verschiedene Vermerke (<gi>ab</gi>), dann muss <gi>signed</gi> innerhalb
             eines <gi>div</gi> stehen.
@@ -40,11 +36,6 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-14">
     <p>Si une signature est suivie de divers commentaires (<gi>ab</gi>), alors <gi>signed</gi> doit être dans
-            un <gi>div</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-14">
-    <p>Se una firma è seguita da vari commenti (<gi>ab</gi>), allora <gi>signed</gi> deve trovarsi all'interno di
             un <gi>div</gi>.
         </p>
   </remarks>

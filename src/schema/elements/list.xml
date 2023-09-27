@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-19">Beschreibt eine Liste oder Aufzählung jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Describes a list or enumeration of any kind.</desc>
   <desc xml:lang="fr" versionDate="2023-07-19">Décrit une liste ou une énumération de tout type.</desc>
-  <desc xml:lang="it" versionDate="2023-07-19">Descrive un elenco o un'enumerazione di qualsiasi tipo.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="model.listLike"/>
@@ -19,19 +18,16 @@
       <desc xml:lang="de" versionDate="2023-07-19">Angabe zur Darstellung der Liste</desc>
       <desc xml:lang="en" versionDate="2023-07-19">Specification for displaying the list</desc>
       <desc xml:lang="fr" versionDate="2023-07-19">Spécification d'affichage de la liste</desc>
-      <desc xml:lang="it" versionDate="2023-07-19">Specifica per la visualizzazione dell'elenco</desc>
       <valList type="closed">
         <valItem ident="bulleted">
           <desc xml:lang="de" versionDate="2023-07-19">Liste mit Bullet-Points</desc>
           <desc xml:lang="en" versionDate="2023-07-19">List with bullet points</desc>
           <desc xml:lang="fr" versionDate="2023-07-19">Liste avec des puces</desc>
-          <desc xml:lang="it" versionDate="2023-07-19">Elenco con punti elenco</desc>
         </valItem>
         <valItem ident="numbered">
           <desc xml:lang="de" versionDate="2023-04-13">Nummerierte Liste</desc>
           <desc xml:lang="en" versionDate="2023-04-13">Numbered list</desc>
           <desc xml:lang="fr" versionDate="2023-04-13">Liste numérotée</desc>
-          <desc xml:lang="it" versionDate="2023-04-13">Elenco numerato</desc>
         </valItem>
       </valList>
     </attDef>
@@ -39,5 +35,4 @@
   <xi:include href="examples.xml" xpointer="ex-list-de"/>
   <xi:include href="examples.xml" xpointer="ex-list-en"/>
   <xi:include href="examples.xml" xpointer="ex-list-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-list-it"/>
 </elementSpec>

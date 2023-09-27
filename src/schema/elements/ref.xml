@@ -31,11 +31,9 @@
   <xi:include href="examples.xml" xpointer="ex-ref-print-de"/>
   <xi:include href="examples.xml" xpointer="ex-ref-print-en"/>
   <xi:include href="examples.xml" xpointer="ex-ref-print-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-ref-print-it"/>
   <xi:include href="examples.xml" xpointer="ex-ref-urn-de"/>
   <xi:include href="examples.xml" xpointer="ex-ref-urn-en"/>
   <xi:include href="examples.xml" xpointer="ex-ref-urn-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-ref-urn-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>Der Verweis kann auf ein anderes Dokument, die Einleitung, das Register eines retrodigitalisierten Bandes,
             einen Eintrag im HLS, zitierte Literatur etc. zeigen. Es ist sinnvoll, Links auf weitere, nicht edierte,
@@ -84,23 +82,6 @@
             la référence archivistique, mais il suffit de faire le lien avec le numéro d'item de l'unité d'édition (voir
             exemple ci-dessous). Il est également possible de référencer d'une pièce à l'autre au sein de votre propre
             unité d'édition. Nous utilisons le <gi>idno</gi> pour cela.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-20">
-    <p>Il riferimento può indicare un altro documento, l'introduzione, l'indice di un volume retrodigitalizzato, una
-            voce nell'HLS, la letteratura citata, ecc. Ha senso inserire collegamenti all'interno di <gi>ref</gi> ad
-            altri pezzi di origine che non sono modificati ma sono elencati individualmente in un sistema informativo di
-            archivio. Non ha senso se un singolo certificato è collegato all'intero stock di certificati perché il
-            singolo certificato non è quotato. Nel caso di voci di un libro che non si desidera elencare singolarmente
-            in un sistema informativo d'archivio (se possibile), è possibile creare un collegamento al libro (intero)
-            elencato nel catalogo d'archivio. In caso di collegamenti ad altre edizioni, si dà prima il numero di
-            chiamata della fonte se il materiale archivistico è stato consultato (autopsia) o se il numero di chiamata
-            può essere verificato e collegato tramite interrogazione. Se un elemento d'archivio è stato valutato sulla
-            base di un'edizione, è necessario specificare solo l'edizione. Se si vuole fare riferimento a una fonte che
-            è redatta in un'unità di edizione del SSRQ, non è necessario ripetere il riferimento archivistico, ma è
-            sufficiente collegarsi al numero dell'articolo dell'unità di edizione (vedi esempio sotto). È anche
-            possibile fare riferimento da un pezzo all'altro all'interno della propria unità di edizione.
-            Usiamo <gi>idno</gi> per questo.
         </p>
   </remarks>
 </elementSpec>

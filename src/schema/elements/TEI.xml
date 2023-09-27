@@ -6,15 +6,12 @@
   <gloss xml:lang="de" versionDate="2023-03-09">TEI Dokument</gloss>
   <gloss xml:lang="en" versionDate="2023-03-09">TEI Dokument</gloss>
   <gloss xml:lang="fr" versionDate="2023-03-09">Document TEI</gloss>
-  <gloss xml:lang="it" versionDate="2023-03-09">documento TEI</gloss>
   <desc xml:lang="de" versionDate="2023-07-14">Beinhaltet ein einzelnes Dokument (Stück) als sogenanntes
         Root-Element.
     </desc>
   <desc xml:lang="en" versionDate="2023-07-14">Contains a single document (piece) as a so-called root element.
     </desc>
   <desc xml:lang="fr" versionDate="2023-07-14">Contient un seul document (morceau) en tant qu'élément dit root.
-    </desc>
-  <desc xml:lang="it" versionDate="2023-07-14">Contiene un singolo documento (pezzo) come cosiddetto elemento root.
     </desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
@@ -40,7 +37,6 @@
   <xi:include href="examples.xml" xpointer="ex-TEI-de"/>
   <xi:include href="examples.xml" xpointer="ex-TEI-en"/>
   <xi:include href="examples.xml" xpointer="ex-TEI-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-TEI-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Mit <att>xml:lang</att> wird die Sprache der Bearbeitung angegeben.
         </p>
@@ -51,10 +47,6 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-14">
     <p>La langue du traitement est spécifiée avec <att>xml:lang</att>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-14">
-    <p><att>xml:lang</att>specifica la lingua di editing.
         </p>
   </remarks>
 </elementSpec>

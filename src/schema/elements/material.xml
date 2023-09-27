@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-04-14">Beschreibt das Trägermaterial.</desc>
   <desc xml:lang="en" versionDate="2023-04-14">Describes the support material.</desc>
   <desc xml:lang="fr" versionDate="2023-04-14">Décrit le matériau de support.</desc>
-  <desc xml:lang="it" versionDate="2023-04-14">Descrive il materiale di supporto.</desc>
   <classes mode="replace">
     <memberOf key="model.pPart.msdesc"/>
   </classes>
@@ -18,19 +17,16 @@
       <desc xml:lang="de" versionDate="2023-04-14">Trägermaterial</desc>
       <desc xml:lang="en" versionDate="2023-04-14">Carrier material</desc>
       <desc xml:lang="fr" versionDate="2023-04-14">Matériel de support</desc>
-      <desc xml:lang="it" versionDate="2023-04-14">Materiale portante</desc>
       <valList type="closed">
         <valItem ident="paper">
           <desc xml:lang="de" versionDate="2023-04-14">Papier</desc>
           <desc xml:lang="en" versionDate="2023-04-14">paper</desc>
           <desc xml:lang="fr" versionDate="2023-04-14">papier</desc>
-          <desc xml:lang="it" versionDate="2023-04-14">carta</desc>
         </valItem>
         <valItem ident="parchment">
           <desc xml:lang="de" versionDate="2023-04-14">Pergament</desc>
           <desc xml:lang="en" versionDate="2023-04-14">parchment</desc>
           <desc xml:lang="fr" versionDate="2023-04-14">parchment</desc>
-          <desc xml:lang="it" versionDate="2023-04-14">pergamena</desc>
         </valItem>
       </valList>
     </attDef>
@@ -40,5 +36,4 @@
   <xi:include href="examples.xml" xpointer="ex-support-de"/>
   <xi:include href="examples.xml" xpointer="ex-support-en"/>
   <xi:include href="examples.xml" xpointer="ex-support-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-support-it"/>
 </elementSpec>

@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-05-24">Enthält Text, der von einem Schreiber hinzugefügt wurde.</desc>
   <desc xml:lang="en" versionDate="2023-05-24">Contains text added by a writer.</desc>
   <desc xml:lang="fr" versionDate="2023-05-24">Contient du texte ajouté par un rédacteur.</desc>
-  <desc xml:lang="it" versionDate="2023-05-24">Contiene testo aggiunto da uno scrittore.</desc>
   <classes>
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.placement"/>
@@ -44,7 +43,6 @@
           <desc xml:lang="de" versionDate="2023-05-24">Hinzufügung durch spezielles Zeichen markiert.</desc>
           <desc xml:lang="en" versionDate="2023-05-24">Addition marked by special sign.</desc>
           <desc xml:lang="fr" versionDate="2023-05-24">Ajout signalé par un signe spécial.</desc>
-          <desc xml:lang="it" versionDate="2023-05-24">Aggiunta contrassegnata da apposito segno.</desc>
         </valItem>
       </valList>
     </attDef>
@@ -52,27 +50,21 @@
   <xi:include href="examples.xml" xpointer="ex-add-de"/>
   <xi:include href="examples.xml" xpointer="ex-add-en"/>
   <xi:include href="examples.xml" xpointer="ex-add-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-add-it"/>
   <xi:include href="examples.xml" xpointer="ex-add-century-de"/>
   <xi:include href="examples.xml" xpointer="ex-add-century-en"/>
   <xi:include href="examples.xml" xpointer="ex-add-century-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-add-century-it"/>
   <xi:include href="examples.xml" xpointer="ex-add-later-de"/>
   <xi:include href="examples.xml" xpointer="ex-add-later-en"/>
   <xi:include href="examples.xml" xpointer="ex-add-later-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-add-later-it"/>
   <xi:include href="examples.xml" xpointer="ex-add-margin-de"/>
   <xi:include href="examples.xml" xpointer="ex-add-margin-en"/>
   <xi:include href="examples.xml" xpointer="ex-add-margin-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-add-margin-it"/>
   <xi:include href="examples.xml" xpointer="ex-damage-add-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-add-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-add-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-add-it"/>
   <xi:include href="examples.xml" xpointer="ex-subst-de"/>
   <xi:include href="examples.xml" xpointer="ex-subst-en"/>
   <xi:include href="examples.xml" xpointer="ex-subst-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-subst-it"/>
   <remarks xml:lang="de" versionDate="2023-07-18">
     <p>Der Ort der Ergänzung muss zwingend in <att>place</att> und die Hand der ergänzten Stelle kann
             mit <att>hand</att> festgehalten werden. Falls notwendig, kann innerhalb von <att>rend</att> angegeben
@@ -150,33 +142,6 @@
             d'informations, par ex. Pour envoyer le mandat imprimé, des ajouts à des parties individuelles du texte ou
             des informations non liées à la pièce, <gi>add</gi> doit être marqué avec <att>hand</att> = <val>otherHand
             </val> .
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-18">
-    <p>Il luogo dell'addizione deve essere in <att>place</att> e la mano del luogo aggiunto può essere tenuta
-            con <att>hand</att>. Se necessario, <att>rend</att> può indicare come è stata fatta l'aggiunta (matita,
-            altro inchiostro, ecc.). Se un'aggiunta è la mano del primo scrivano, allora la mano non è specificatamente
-            annotata.
-        </p>
-    <p>Il problema è lo stesso del caso di <gi>del</gi>. Gli inserimenti che superano i limiti della gerarchia
-            devono essere contrassegnati con <gi>addSpan</gi> e <gi>anchor</gi>.
-        </p>
-    <p>Se un'aggiunta sostituisce una cancellazione, dovrebbe essere usato <gi>subst</gi>. Nessun supplemento o
-            aggiunta da altri testi testimoni è contrassegnato con questo. Viene utilizzato solo per le aggiunte nello
-            stesso testo. Un addendum alla fine di un testo scritto da un'altra mano viene convertito
-            con <gi>add</gi> e <gi>handShift</gi>.
-        </p>
-    <p>I titoli aggiunti successivamente sulle copertine (libretto, doppia pagina) non sono in <gi>ab</gi>, ma
-            all'interno di una <gi>head</gi> con <gi>add</gi> con <att>hand</att> = <val>otherHand</val> che
-            indica la posizione in <att>place</att>.
-        </p>
-    <p>Le aggiunte che vengono cancellate devono essere etichettate con tag combinati, vale a
-            dire <gi>del</gi> contenente un <gi>add</gi> (e non viceversa).
-        </p>
-    <p>Le chiare annotazioni dorsali che fanno riferimento al contenuto di una stampa e/o ne registrano la datazione
-            devono essere contrassegnate come annotazioni dorsali con <gi>ab</gi>. Se invece si tratta di maggiori
-            informazioni, ad es. Per l'invio del mandato stampato, aggiunte a singole parti del testo o informazioni non
-            relative al brano, <gi>add</gi> deve essere taggato con <att>hand</att> = <val>otherHand</val> .
         </p>
   </remarks>
 </elementSpec>

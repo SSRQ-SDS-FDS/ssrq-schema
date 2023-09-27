@@ -15,9 +15,6 @@
         physiquement sur une pièce source ou un livre (transcription / édition, cet-à-dire données
         primaires) ainsi que le commentaire de la pièce éditée.
     </desc>
-  <desc xml:lang="it" versionDate="2023-04-04">Contiene tutti i caratteri fisicamente presenti su un brano sorgente o
-        in un libro (trascrizione edizione, cioè dati primari) nonché il commento di un brano editato.
-    </desc>
   <classes mode="replace">
     <memberOf key="att.typed"/>
     <memberOf key="model.resource"/>
@@ -35,19 +32,16 @@
           <desc xml:lang="de" versionDate="2023-09-12">Sammlung von Stücken</desc>
           <desc xml:lang="en" versionDate="2023-09-12">Collection of source documents</desc>
           <desc xml:lang="fr" versionDate="2023-09-12">Collection de documents sources</desc>
-          <desc xml:lang="it" versionDate="2023-09-12">Raccolta dei documenti originali</desc>
         </valItem>
         <valItem ident="summary">
           <desc xml:lang="de" versionDate="2023-04-05">Regest des Quellstücks</desc>
           <desc xml:lang="en" versionDate="2023-04-05">Regest of the source document</desc>
           <desc xml:lang="fr" versionDate="2023-04-05">Enregistrement du document source</desc>
-          <desc xml:lang="it" versionDate="2023-04-05">Regest del documento di origine</desc>
         </valItem>
         <valItem ident="transcript">
           <desc xml:lang="de" versionDate="2023-04-06">Transkript des Quellstücks</desc>
           <desc xml:lang="en" versionDate="2023-04-06">Transcript of the source document</desc>
           <desc xml:lang="fr" versionDate="2023-04-06">Transcription du document source</desc>
-          <desc xml:lang="it" versionDate="2023-04-06">Trascrizione del documento di origine</desc>
         </valItem>
       </valList>
     </attDef>
@@ -55,9 +49,7 @@
   <xi:include href="examples.xml" xpointer="ex-text-1-de"/>
   <xi:include href="examples.xml" xpointer="ex-text-1-en"/>
   <xi:include href="examples.xml" xpointer="ex-text-1-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-text-1-it"/>
   <xi:include href="examples.xml" xpointer="ex-text-2-de"/>
   <xi:include href="examples.xml" xpointer="ex-text-2-en"/>
   <xi:include href="examples.xml" xpointer="ex-text-2-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-text-2-it"/>
 </elementSpec>

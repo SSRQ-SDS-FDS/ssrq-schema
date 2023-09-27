@@ -12,9 +12,6 @@
   <desc xml:lang="fr" versionDate="2023-07-15">Contient le nom de l'archive dans laquelle se trouve la source sans
         abréviation.
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-15">Contiene il nome dell'archivio in cui si trova la fonte senza
-        abbreviazione.
-    </desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
   </classes>
@@ -28,7 +25,6 @@
       <desc xml:lang="de" versionDate="2023-06-23">ISO-639-1-Sprachkürzel</desc>
       <desc xml:lang="en" versionDate="2023-06-23">ISO-639-1-Language abbreviation</desc>
       <desc xml:lang="fr" versionDate="2023-06-23">ISO-639-1-Abréviation de la langue</desc>
-      <desc xml:lang="it" versionDate="2023-06-23">ISO-639-1-Abbreviazione della lingua</desc>
       <valList type="closed">
         <valItem ident="de"/>
         <valItem ident="fr"/>
@@ -38,5 +34,4 @@
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-msIdentifier-it"/>
 </elementSpec>

@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Überschrift oder einen Titel.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains a heading or title.</desc>
   <desc xml:lang="fr" versionDate="2023-07-19">Contient un en-tête ou un titre.</desc>
-  <desc xml:lang="it" versionDate="2023-07-19">Contiene un'intestazione o un titolo.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="att.global.responsibility"/>
@@ -41,15 +40,12 @@
   <xi:include href="examples.xml" xpointer="ex-head-de"/>
   <xi:include href="examples.xml" xpointer="ex-head-en"/>
   <xi:include href="examples.xml" xpointer="ex-head-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-head-it"/>
   <xi:include href="examples.xml" xpointer="ex-head-table-de"/>
   <xi:include href="examples.xml" xpointer="ex-head-table-en"/>
   <xi:include href="examples.xml" xpointer="ex-head-table-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-head-table-it"/>
   <xi:include href="examples.xml" xpointer="ex-head-figure-de"/>
   <xi:include href="examples.xml" xpointer="ex-head-figure-en"/>
   <xi:include href="examples.xml" xpointer="ex-head-figure-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-head-figure-it"/>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>Enthält als Teil des <gi>teiHeader</gi> den Titel des Dokuments und als Teil von <gi>listBibl</gi> die
             Beschreibung des zitierten Kurztitels; in <gi>body</gi> die Überschrift eines Kapitels oder
@@ -66,12 +62,6 @@
     <p>Contient le titre du document dans le cadre de <gi>teiHeader</gi> et la description du titre abrégé cité dans
             le cadre de <gi>listBibl</gi> ; en <gi>body</gi> le titre d'un chapitre ou d'un sous-chapitre,
             en <gi>figure</gi> la légende d'une illustration, d'un graphique, d'un arbre généalogique etc.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-19">
-    <p>Contiene il titolo del documento come parte del <gi>teiHeader</gi> e la descrizione del titolo breve citato
-            come parte della <gi>listBibl</gi>; in <gi>body</gi> l'intestazione di un capitolo o sottocapitolo,
-            in <gi>figure</gi> la legenda di un'illustrazione, di un grafico, di un albero genealogico ecc.
         </p>
   </remarks>
 </elementSpec>

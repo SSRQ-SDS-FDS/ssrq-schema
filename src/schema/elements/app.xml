@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-13">Enthält einen Apparateintrag.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Contains a apparatus entry.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Contient une entrée d'appareil.</desc>
-  <desc xml:lang="it" versionDate="2023-07-13">Contiene una voce dell'apparato.</desc>
   <classes mode="replace">
     <memberOf key="model.global.edit"/>
   </classes>
@@ -25,7 +24,6 @@
   <xi:include href="examples.xml" xpointer="ex-app-de"/>
   <xi:include href="examples.xml" xpointer="ex-app-en"/>
   <xi:include href="examples.xml" xpointer="ex-app-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-app-it"/>
   <remarks xml:lang="de" versionDate="2023-08-18">
     <p>Ermöglicht verschiedene Lesarten eines Wortes oder eines Textabschnittes anzuzeigen unter Bezugnahme auf ein
             anderes Dokument oder mehrere andere Dokumente. Muss sich unmittelbar, ohne Leerschlag, an das Wort
@@ -132,40 +130,6 @@
             à l'aide d'un autre témoin de texte. Au lieu d'utiliser <gi>app</gi> et <gi>rdg</gi>, nous utilisons
             <gi>damage</gi>
             avec <gi>supplied</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-13">
-    <p>Permette di visualizzare diverse letture di una parola o di un passaggio di testo con riferimento ad un altro
-            documento o documenti. Deve seguire immediatamente la parola senza spazi.
-        </p>
-    <p>Se ci sono più testimoni testuali (originali, copie) di un pezzo, l'altro testimone testuale può essere
-            consultato se c'è una lacuna. Devono essere annotate le deviazioni nel contenuto degli altri originali o
-            copie dal modello di edizione. Le deviazioni possono anche essere contrassegnate con due originali, in modo
-            che entrambe le versioni non debbano essere trascritte.
-        </p>
-    <p>Per brevi supplementi, ad es. B. mezza frase, puoi cavartela con un <gi>lem</gi> vuoto (vedi esempio sotto).
-            Nel caso di integrazioni più lunghe o da altre fonti testuali, tuttavia, è consigliabile creare un pezzo
-            separato per esse. I testi già modificati di un testimone testuale precedente possono essere omessi
-            con <gi>gap</gi>. Tuttavia, deve essere referenziato con <att>source</att> al testo modificato che viene
-            omesso. È richiesta un'osservazione (commento in <gi>back</gi>). Un <gi>lem</gi> vuoto può essere
-            utilizzato anche quando un originale ha omesso una parola o una frase che era inclusa in una bozza.
-        </p>
-    <p>Se un duplicato o una trascrizione presenta un'omissione significativa (ovvero, una parola o una frase è
-            stata omessa), è possibile sostituire un <gi>rdg</gi> vuoto (vedere l'esempio seguente). Per letture
-            alternative da altre edizioni o dalla letteratura moderna, invece, si usa
-            <gi>note</gi>
-            con <gi>quote</gi>. Di regola non sono indicate le deviazioni nella trascrizione da brani originali già
-            editi. Se la nuova edizione differisce significativamente in termini di contenuto o lettura, è richiesta
-            una <gi>note</gi>. Anche le deviazioni nell'ortografia di un altro originale o copie devono essere annotate
-            solo se forniscono ulteriori approfondimenti.
-        </p>
-    <p>Se ci sono più originali, i criteri che hanno contribuito alla selezione del modello di edizione dovrebbero,
-            se possibile, essere spiegati in un commento in <gi>back</gi>. Lo stesso vale per le copie. Attenzione:
-            i rovesci sono considerati tradizioni indipendenti.
-        </p>
-    <p>Se una parte di un originale non è più leggibile a causa di un danneggiamento, la perdita del testo può
-            essere integrata con l'aiuto di un altro testimone del testo. Invece di usare <gi>app</gi> e <gi>rdg</gi>,
-            usiamo <gi>damage</gi> insieme a <gi>supplied</gi>.
         </p>
   </remarks>
 </elementSpec>

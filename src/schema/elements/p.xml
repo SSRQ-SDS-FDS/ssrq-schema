@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-20">Beschreibt einen Absatz.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes a paragraph.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Décrit un paragraphe.</desc>
-  <desc xml:lang="it" versionDate="2023-07-20">Descrive un paragrafo.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="model.pLike"/>
@@ -53,11 +52,9 @@
   <xi:include href="examples.xml" xpointer="ex-p-seg-de"/>
   <xi:include href="examples.xml" xpointer="ex-p-seg-en"/>
   <xi:include href="examples.xml" xpointer="ex-p-seg-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-p-seg-it"/>
   <xi:include href="examples.xml" xpointer="ex-p-actum-de"/>
   <xi:include href="examples.xml" xpointer="ex-p-actum-en"/>
   <xi:include href="examples.xml" xpointer="ex-p-actum-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-p-actum-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>In der Transkription werden damit originale Absätze ausgezeichnet. Eine inhaltliche Gliederung des Textes
             durch den Bearbeitenden erfolgt mit <gi>seg</gi>. Vgl. dazu auch die Ausführungen "Strukturierung der Texte"
@@ -79,14 +76,6 @@
             <ref target="textstructure.md">transcription SSRQ et la description</ref> de <gi>div</gi>. Si le texte d'un certificat est structuré par un
             espace ou une initiale, le paragraphe peut être marqué d'un <gi>p</gi>. Les signes de paragraphe, cependant,
             ne sont pas spécialement marqués.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-20">
-    <p>Nella trascrizione, viene utilizzato per contrassegnare i paragrafi originali. Il testo è strutturato
-            dall'editor con <gi>seg</gi>. Vedi anche le spiegazioni "Strutturazione dei testi" nelle linee <ref target="textstructure.md">guida di
-            trascrizione SSRQ</ref> e la descrizione di <gi>div</gi>. Se il testo in un certificato è strutturato da uno
-            spazio o da un'iniziale, il paragrafo può essere contrassegnato con <gi>p</gi>. I segni di paragrafo,
-            tuttavia, non sono contrassegnati in modo speciale.
         </p>
   </remarks>
 </elementSpec>

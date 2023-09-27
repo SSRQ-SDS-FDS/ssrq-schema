@@ -12,9 +12,6 @@
   <desc xml:lang="fr" versionDate="2023-05-11">Désigne une lacune que l'auteur a délibérément laissée ouverte pour une
         réalisation ultérieure.
     </desc>
-  <desc xml:lang="it" versionDate="2023-05-17">Si riferisce a una lacuna che l'autore ha deliberatamente lasciato
-        aperto per una successiva realizzazione.
-    </desc>
   <classes mode="replace">
     <memberOf key="att.dimensions"/>
   </classes>
@@ -46,7 +43,6 @@
   <xi:include href="examples.xml" xpointer="ex-space-de"/>
   <xi:include href="examples.xml" xpointer="ex-space-en"/>
   <xi:include href="examples.xml" xpointer="ex-space-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-space-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Die Grösse der Lücke wird zwingend mit <att>unit</att> und <att>quantity</att> angegeben. Dabei handelt
             es sich um einen leeren Tag. Lücken infolge unbewusster Zeilensprünge werden hingegen
@@ -61,12 +57,6 @@
   <remarks xml:lang="fr" versionDate="2023-07-14">
     <p>La taille de l'écart doit être spécifiée avec <att>unit</att> et <att>quantity</att>. C'est une tag vide.
             Les lacunes dues à des sauts de ligne involontaires, en revanche, sont marquées par <gi>supplied</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-14">
-    <p>La dimensione del gap deve essere specificata con <att>unit</att> e <att>quantity</att>. Questo è un tag
-            vuoto. Gli spazi vuoti dovuti a salti di linea involontari, invece, sono contrassegnati
-            con <gi>supplied</gi>.
         </p>
   </remarks>
 </elementSpec>

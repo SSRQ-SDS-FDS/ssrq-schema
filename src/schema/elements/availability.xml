@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-17">Beschreibt die Verfügbarkeit eines Textes.</desc>
   <desc xml:lang="en" versionDate="2023-07-17">Describes the availability of a text.</desc>
   <desc xml:lang="fr" versionDate="2023-07-17">Décrit la disponibilité d'un texte.</desc>
-  <desc xml:lang="it" versionDate="2023-07-17">Descrive la disponibilità di un testo.</desc>
   <classes mode="replace">
     <memberOf key="model.publicationStmtPart.detail"/>
   </classes>
@@ -19,7 +18,6 @@
   <xi:include href="examples.xml" xpointer="ex-availability-de"/>
   <xi:include href="examples.xml" xpointer="ex-availability-en"/>
   <xi:include href="examples.xml" xpointer="ex-availability-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-availability-it"/>
   <remarks xml:lang="de" versionDate="2023-07-17">
     <p>Gibt Einschränkungen bezüglich des Gebrauchs oder der Weitergabe, Lizensierungen usw. an. Wir benutzen den
             Tag, um die Institution, die uns Faksimiles zur Verfügung gestellt hat, zu erwähnen. Ein Faksimile kann von
@@ -39,13 +37,6 @@
             mentionner l'institution qui nous a fourni les fac-similés. Un fac-similé peut être produit par un tiers
             (plutôt que par l'institution où la source est archivée). Une source peut être dans l'AVN, mais le
             fac-similé a été mis à disposition ou créé par le BPUN.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-17">
-    <p>Indica restrizioni sull'uso o divulgazione, licenze, ecc. Usiamo il tag per menzionare l'istituzione che ci
-            ha fornito i facsimili. Un facsimile può essere prodotto da una terza parte (piuttosto che dall'istituzione
-            in cui è archiviata la fonte). Una fonte può essere nell'AVN, ma il facsimile è stato reso disponibile o
-            creato dal BPUN.
         </p>
   </remarks>
 </elementSpec>

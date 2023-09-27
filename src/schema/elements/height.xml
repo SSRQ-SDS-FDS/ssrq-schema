@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-03-21">Beschreibt die Höhe eines Blattes oder Buches.</desc>
   <desc xml:lang="en" versionDate="2023-03-21">Describes the height of a sheet or book.</desc>
   <desc xml:lang="fr" versionDate="2023-03-21">Décrit la hauteur d'une feuille ou d'un livre.</desc>
-  <desc xml:lang="it" versionDate="2023-03-21">Descrive l'altezza di un foglio o di un libro.</desc>
   <classes mode="replace">
     <memberOf key="att.dimensions"/>
     <memberOf key="model.dimLike"/>
@@ -29,11 +28,9 @@
   <xi:include href="examples.xml" xpointer="ex-height-cm-de"/>
   <xi:include href="examples.xml" xpointer="ex-height-cm-en"/>
   <xi:include href="examples.xml" xpointer="ex-height-cm-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-height-cm-it"/>
   <xi:include href="examples.xml" xpointer="ex-height-unknown-de"/>
   <xi:include href="examples.xml" xpointer="ex-height-unknown-en"/>
   <xi:include href="examples.xml" xpointer="ex-height-unknown-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-height-unknown-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Die Masseinheit für <att>unit</att> ist Zentimeter (cm).
         </p>
@@ -44,10 +41,6 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-14">
     <p>L'unité de mesure pour <att>unit</att> est le centimètre (cm).
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-14">
-    <p>L'unità di misura per <att>unit</att> è il centimetro (cm).
         </p>
   </remarks>
 </elementSpec>

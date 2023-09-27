@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-20">Enthält den Publikationsort.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains the place of publication.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient le lieu de publication.</desc>
-  <desc xml:lang="it" versionDate="2023-07-20">Contiene il luogo di pubblicazione.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
   </classes>
@@ -19,7 +18,6 @@
   <xi:include href="examples.xml" xpointer="ex-docImprint-1-de"/>
   <xi:include href="examples.xml" xpointer="ex-docImprint-1-en"/>
   <xi:include href="examples.xml" xpointer="ex-docImprint-1-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-docImprint-1-it"/>
   <remarks xml:lang="de" versionDate="2023-07-20">
     <p>Dies kann sowohl der Publikationsort der elektronischen Edition sein als auch der Publikationsort des
             in der Literaturliste aufgeführten Artikels oder Buches. Bei Druckschriften wird innerhalb
@@ -36,12 +34,6 @@
     <p>Il peut s'agir à la fois du lieu de publication de l'édition électronique et du lieu de publication de
             l'article ou du livre répertorié dans la bibliographie. Dans le cas des publications, le lieu d'impression
             est nommé avec <gi>pubPlace</gi> dans <gi>docImprint</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-20">
-    <p>Questo può essere sia il luogo di pubblicazione dell'edizione elettronica sia il luogo di pubblicazione
-            dell'articolo o del libro elencati nella bibliografia. Nel caso di pubblicazioni, il luogo di stampa è
-            indicato con <gi>pubPlace</gi> all'interno di <gi>docImprint</gi>.
         </p>
   </remarks>
 </elementSpec>

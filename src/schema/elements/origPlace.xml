@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-05-16">Enthält den Austellungs- oder Druckort einer Quelle.</desc>
   <desc xml:lang="en" versionDate="2023-05-16">Contains the place of issue or printing of a source.</desc>
   <desc xml:lang="fr" versionDate="2023-05-16">Contient le lieu d'émission ou d'impression d'une source.</desc>
-  <desc xml:lang="it" versionDate="2023-05-16">Contiene il luogo di emissione o stampa di una fonte.</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="att.global.responsibility"/>
@@ -50,7 +49,6 @@
   <xi:include href="examples.xml" xpointer="ex-history-de"/>
   <xi:include href="examples.xml" xpointer="ex-history-en"/>
   <xi:include href="examples.xml" xpointer="ex-history-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-history-it"/>
   <remarks xml:lang="de" versionDate="2023-08-23">
     <p>In <att>ref</att> wird mit einer ID (locNNNNNN) auf den Ort in der Ortsdatenbank verwiesen, in der
       alle Angaben zu einem Ort zu finden sind. Topographische Bezeichnungen im edierten Text werden  mit <gi>placeName</gi> ausgezeichnet.
@@ -64,11 +62,6 @@
   <remarks xml:lang="fr" versionDate="2023-08-23">
     <p>Dans <att>ref</att>, un ID (locNNNNNN) fait référence au lieu dans la base de données des lieux, dans
       laquelle toutes les informations sur un lieu peuvent être trouvées. Les désignations topographiques dans le texte édité sont signalées par <gi>placeName</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-08-23">
-    <p>In <att>ref</att>, un ID (locNNNNNN) si riferisce al luogo nel database dei luoghi, in cui si possono trovare
-      tutte le informazioni su un luogo. Le denominazioni topografiche nel testo edito sono contrassegnate da <gi>placeName</gi>.
         </p>
   </remarks>
 </elementSpec>

@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-05-30">Enthält eine Zahl im transkribierten Quelltext.</desc>
   <desc xml:lang="en" versionDate="2023-05-30">Contains a number in the transcribed source text.</desc>
   <desc xml:lang="fr" versionDate="2023-05-30">Contient un nombre dans le texte source transcrit.</desc>
-  <desc xml:lang="it" versionDate="2023-05-30">Contiene un numero nel testo di origine trascritto.</desc>
   <classes mode="replace">
     <memberOf key="model.measureLike"/>
   </classes>
@@ -23,7 +22,6 @@
       <desc xml:lang="de" versionDate="2023-05-31">Zahlenwert in arabischen Ziffern</desc>
       <desc xml:lang="en" versionDate="2023-05-31">Numerical value in Arabic numerals</desc>
       <desc xml:lang="fr" versionDate="2023-05-31">Valeur numérique en chiffres arabes</desc>
-      <desc xml:lang="it" versionDate="2023-05-31">Valore numerico in numeri arabi</desc>
       <datatype>
         <rng:choice>
           <rng:data type="float"/>
@@ -36,11 +34,9 @@
   <xi:include href="examples.xml" xpointer="ex-hi-num-de"/>
   <xi:include href="examples.xml" xpointer="ex-hi-num-en"/>
   <xi:include href="examples.xml" xpointer="ex-hi-num-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-num-it"/>
   <xi:include href="examples.xml" xpointer="ex-num-de"/>
   <xi:include href="examples.xml" xpointer="ex-num-en"/>
   <xi:include href="examples.xml" xpointer="ex-num-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-num-it"/>
   <remarks xml:lang="de" versionDate="2023-08-17">
     <p>Der Wert der Zahl wird im Attribut <att>value</att> maschinenlesbar hinterlegt.
         </p>
@@ -69,16 +65,6 @@
             pas utilisé. De même, <gi>num</gi> n'est pas utilisé pour les années qui sont décrites plus en détail
             avec <gi>date</gi> et <att>when-custom</att>. Dans une spécification de temps
             avec <att>dur</att>, <gi>num</gi> n'est pas utilisé.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-08-17">
-    <p>Il valore del numero è memorizzato in forma leggibile dalla macchina nell'attributo <att>value</att>.
-        </p>
-    <p>Nel caso di informazioni su dimensioni, pesi, valute, ecc., in cui <gi>measure</gi> viene utilizzato
-            per contrassegnare il numero con <att>quantity</att>, <gi>num</gi> non viene utilizzato. Allo stesso
-            modo, <gi>num</gi> non viene utilizzato per gli anni descritti più dettagliatamente
-            con <gi>date</gi> e <att>when-custom</att>. All'interno di una specificazione temporale
-            con <att>dur</att>, <gi>num</gi> non viene utilizzato.
         </p>
   </remarks>
 </elementSpec>

@@ -12,9 +12,6 @@
   <desc xml:lang="fr" versionDate="2023-07-07">Contient soit un commentaire factuel sur un seul passage du texte de
         l'édition, soit un commentaire dans l'original.
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-07">Contiene un commento fattuale su un singolo passaggio nel testo
-        dell'edizione o un commento nell'originale.
-    </desc>
   <classes mode="replace">
     <memberOf key="att.placement"/>
     <memberOf key="att.typed"/>
@@ -37,15 +34,11 @@
       <desc xml:lang="fr" versionDate="2023-07-07">Type d'annotation ; si cet attribut n'est pas attribué, il
                 s'agit d'une annotation de l'éditeur.
             </desc>
-      <desc xml:lang="it" versionDate="2023-07-07">Tipo di annotazione; se questo attributo non è assegnato, si
-                tratta di un'annotazione dell'editore.
-            </desc>
       <valList type="closed">
         <valItem ident="original">
           <desc xml:lang="de" versionDate="2023-07-07">Anmerkung im Original</desc>
           <desc xml:lang="en" versionDate="2023-07-07">note in the original</desc>
           <desc xml:lang="fr" versionDate="2023-07-07">note dans l'original</desc>
-          <desc xml:lang="it" versionDate="2023-07-07">nota in originale</desc>
         </valItem>
       </valList>
     </attDef>
@@ -53,7 +46,6 @@
   <xi:include href="examples.xml" xpointer="ex-note-de"/>
   <xi:include href="examples.xml" xpointer="ex-note-en"/>
   <xi:include href="examples.xml" xpointer="ex-note-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-note-it"/>
   <remarks xml:lang="de" versionDate="2023-07-07">
     <p>Ein <gi>note</gi>-Element folgt unmittelbar auf das Bezugswort im Editionstext. Wird
             Originaltext zitiert, wird dieser mit <gi>orig</gi> ausgezeichnet.
@@ -76,14 +68,6 @@
         </p>
     <p>S'il s'agit d'une annotation dans l'original, l'attribut <att>type</att> avec la
             valeur <val>original</val> est utilisé.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-07">
-    <p>Un elemento <gi>note</gi> segue immediatamente la parola di riferimento nel testo dell'edizione. Se il testo
-            originale è citato, è contrassegnato con <gi>orig</gi>.
-        </p>
-    <p>Se si tratta di un'annotazione nell'originale, viene utilizzato l'attributo <att>type</att> con valore
-            <val>original</val>.
         </p>
   </remarks>
 </elementSpec>

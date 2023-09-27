@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-31">Enthält eine Ersetzung.</desc>
   <desc xml:lang="en" versionDate="2023-07-31">Contains a substitution.</desc>
   <desc xml:lang="fr" versionDate="2023-07-31">Contient un remplacement.</desc>
-  <desc xml:lang="it" versionDate="2023-07-31">Contiene una sostituzione.</desc>
   <classes mode="replace"/>
   <content>
     <sequence>
@@ -17,7 +16,6 @@
   <xi:include href="examples.xml" xpointer="ex-subst-de"/>
   <xi:include href="examples.xml" xpointer="ex-subst-en"/>
   <xi:include href="examples.xml" xpointer="ex-subst-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-subst-it"/>
   <remarks xml:lang="de" versionDate="2023-08-02">
     <p>Gruppiert eine oder mehrere Tilgungen (oder überschüssigen Text) mit einer oder mehreren Hinzufügungen, wenn
             die Kombination als einzelner Eingriff in den Text zu betrachten ist.
@@ -31,11 +29,6 @@
   <remarks xml:lang="fr" versionDate="2023-08-02">
     <p>Regroupe une suppression avec un ajout lorsque la combinaison
             doit être considérée comme une seule intrusion dans le texte.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-08-02">
-    <p>Raggruppa una cancellatura con una aggiunta quando la combinazione è da
-            considerarsi un'unica intrusione nel testo.
         </p>
   </remarks>
 </elementSpec>

@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-14">Enthält eine Ergänzung durch den Bearbeitenden.</desc>
   <desc xml:lang="en" versionDate="2023-07-14">Contains an addition by the editor.</desc>
   <desc xml:lang="fr" versionDate="2023-07-14">Contient un ajout de l'éditeur.</desc>
-  <desc xml:lang="it" versionDate="2023-07-14">Contiene un'aggiunta dell'editore.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
     <memberOf key="ssrq.att.source"/>
@@ -41,13 +40,11 @@
       <desc xml:lang="de" versionDate="2023-06-21">Grund der Ergänzung</desc>
       <desc xml:lang="en" versionDate="2023-06-21">reason for addition</desc>
       <desc xml:lang="fr" versionDate="2023-06-21">raison de l'ajout</desc>
-      <desc xml:lang="it" versionDate="2023-06-21">motivo dell'aggiunta</desc>
       <valList type="closed">
         <valItem ident="omitted">
           <desc xml:lang="de" versionDate="2023-06-21">weggelassen</desc>
           <desc xml:lang="en" versionDate="2023-06-21">omitted</desc>
           <desc xml:lang="fr" versionDate="2023-06-21">omis</desc>
-          <desc xml:lang="it" versionDate="2023-06-21">omesso</desc>
         </valItem>
       </valList>
     </attDef>
@@ -55,11 +52,9 @@
   <xi:include href="examples.xml" xpointer="ex-supplied-de"/>
   <xi:include href="examples.xml" xpointer="ex-supplied-en"/>
   <xi:include href="examples.xml" xpointer="ex-supplied-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-supplied-it"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-supplied-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Wenn ein Bearbeitender eine Passage frei ergänzt, weist er sich in <att>resp</att> mit seinem Kürzel aus.
             Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf diese
@@ -79,13 +74,6 @@
             texte est complété à l'aide d'un autre modèle de texte, celui-ci est référencé par <att>source</att>. La
             raison d'un ajout peut être spécifiée avec <att>reason</att>. Une note dans <gi>note</gi> ou un commentaire
             dans <gi>back</gi> est requis.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-14">
-    <p>Se un curatore aggiunge liberamente un passaggio, si identifica in <att>resp</att> con la sua sigla. Se un
-            testo viene integrato utilizzando un altro modello di testo, questo viene referenziato
-            con <att>source</att>. Il motivo di un'aggiunta può essere specificato con <att>reason</att>. È richiesta
-            una nota in <gi>note</gi> o un commento in <gi>back</gi>.
         </p>
   </remarks>
 </elementSpec>

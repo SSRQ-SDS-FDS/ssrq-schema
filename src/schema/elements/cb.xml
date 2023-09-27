@@ -6,11 +6,9 @@
   <gloss xml:lang="de" versionDate="2023-08-23">Spaltenanfang</gloss>
   <gloss xml:lang="en" versionDate="2023-05-23">Column start</gloss>
   <gloss xml:lang="fr" versionDate="2023-05-23">Début de colonne</gloss>
-  <gloss xml:lang="it" versionDate="2023-05-23">Inizio colonna</gloss>
   <desc xml:lang="de" versionDate="2023-05-23">Beschreibt den Beginn einer neuen Spalte.</desc>
   <desc xml:lang="en" versionDate="2023-05-23">Describes the beginning of a new column.</desc>
   <desc xml:lang="fr" versionDate="2023-05-23">Décrit le début d'une nouvelle colonne.</desc>
-  <desc xml:lang="it" versionDate="2023-05-23">Descrive l'inizio di una nuova colonna.</desc>
   <classes mode="replace">
     <memberOf key="att.gobal"/>
     <memberOf key="model.milestoneLike"/>
@@ -22,8 +20,6 @@
       <desc xml:lang="fr" versionDate="2023-05-23">Contient des informations sur le nombre de colonnes
                 d'origine.
             </desc>
-      <desc xml:lang="it" versionDate="2023-05-23">Contiene informazioni sul conteggio delle colonne originali.
-            </desc>
       <datatype>
         <dataRef name="string" restriction="[a-z]{1}"/>
       </datatype>
@@ -34,5 +30,4 @@
   <xi:include href="examples.xml" xpointer="ex-cb-de"/>
   <xi:include href="examples.xml" xpointer="ex-cb-en"/>
   <xi:include href="examples.xml" xpointer="ex-cb-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-cb-it"/>
 </elementSpec>

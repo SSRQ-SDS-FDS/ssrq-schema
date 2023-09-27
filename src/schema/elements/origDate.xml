@@ -6,11 +6,11 @@
   <desc xml:lang="de" versionDate="2023-09-13">Enthält im Kopfbereich das
       Entstehungsdatum eines Dokuments.
     </desc>
-  <desc xml:lang="en" versionDate="2023-09-13">...
+  <desc xml:lang="en" versionDate="2023-09-13">Contains this in the head area
+      the date of creation of a document.
     </desc>
-  <desc xml:lang="fr" versionDate="2023-09-13">...
-    </desc>
-  <desc xml:lang="it" versionDate="2023-09-13">...
+  <desc xml:lang="fr" versionDate="2023-09-13">Contient ceci dans la zone de
+      la tête la date de création d'un document.
     </desc>
   <classes mode="replace">
     <memberOf key="att.datable"/>
@@ -35,13 +35,11 @@
           <desc xml:lang="de" versionDate="2023-09-08">Datierung des Inhalts des Dokuments</desc>
           <desc xml:lang="en" versionDate="2023-09-08">Dating the contents of the document</desc>
           <desc xml:lang="fr" versionDate="2023-09-08">Datation du contenu du document</desc>
-          <desc xml:lang="it" versionDate="2023-09-08">Datazione del contenuto del documento</desc>
         </valItem>
         <valItem ident="document">
           <desc xml:lang="de" versionDate="2023-09-08">Datierung des Dokuments als Textträger</desc>
           <desc xml:lang="en" versionDate="2023-09-08">Dating the document as a text carrier</desc>
           <desc xml:lang="fr" versionDate="2023-09-08">Datation du document comme support de texte</desc>
-          <desc xml:lang="it" versionDate="2023-09-08">Datazione del documento come portatore di testo</desc>
         </valItem>
       </valList>
     </attDef>
@@ -49,15 +47,12 @@
   <xi:include href="examples.xml" xpointer="ex-history-de"/>
   <xi:include href="examples.xml" xpointer="ex-history-en"/>
   <xi:include href="examples.xml" xpointer="ex-history-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-history-it"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-de"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-en"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-abbr-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-origDate-abbr-it"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-multiple-de"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-multiple-en"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-multiple-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-origDate-multiple-it"/>
   <remarks xml:lang="de" versionDate="2023-09-13">
     <p>Bei Kopien muss sowohl das Herstellungsdatum des Dokuments
       (<tag>origDate type="document"</tag>)

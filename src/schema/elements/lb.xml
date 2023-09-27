@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-08-17">Beschreibt den Beginn einer Zeile.</desc>
   <desc xml:lang="en" versionDate="2023-04-21">Describes the beginning of a line.</desc>
   <desc xml:lang="fr" versionDate="2023-04-21">Décrit le début d'une ligne.</desc>
-  <desc xml:lang="it" versionDate="2023-04-21">Descrive l'inizio di una riga.</desc>
   <classes mode="replace">
     <memberOf key="att.breaking"/>
     <memberOf key="att.global.facs"/>
@@ -28,11 +27,6 @@
                 avec juste ici et les traits d'union ou tirets supplémentaires avec '-', analogues aux textes
                 manuscrits.
             </desc>
-      <desc xml:lang="it" versionDate="2023-07-19">Mostra se c'è un'interruzione di riga all'interno di una
-                parola, anche se l'interruzione di riga coincide con l'interruzione di pagina. Nei testi a stampa i
-                trattini si trascrivono con just hereby e trattini o trattini aggiuntivi con '-', analogamente ai testi
-                scritti a mano.
-            </desc>
       <valList type="closed">
         <valItem ident="no"/>
       </valList>
@@ -41,7 +35,6 @@
   <xi:include href="examples.xml" xpointer="ex-lb-de"/>
   <xi:include href="examples.xml" xpointer="ex-lb-en"/>
   <xi:include href="examples.xml" xpointer="ex-lb-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-lb-it"/>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>Wird vor jeder Zeile an den Anfang der Zeile gesetzt, auch vor der ersten Zeile des Textes und wenn ein neuer
             Abschnitt beginnt. Wird auch bei Texten mit nur einer Zeile verwendet. Einrückungen werden nicht
@@ -56,11 +49,6 @@
   <remarks xml:lang="fr" versionDate="2023-07-19">
     <p>Placé au début de la ligne avant chaque ligne, y compris avant la première ligne de texte et au début d'un
             nouveau paragraphe. Également utilisé pour les textes d'une seule ligne. Les indentations sont ignorées.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-19">
-    <p>Posizionato all'inizio della riga prima di ogni riga, anche prima della prima riga di testo e quando inizia
-            un nuovo paragrafo. Utilizzato anche per testi con una sola riga. I rientri vengono ignorati.
         </p>
   </remarks>
 </elementSpec>

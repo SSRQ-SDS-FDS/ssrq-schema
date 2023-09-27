@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-14">Gibt Unsicherheit bei Datierungen an.</desc>
   <desc xml:lang="en" versionDate="2023-07-14">Indicates uncertainty in dating.</desc>
   <desc xml:lang="fr" versionDate="2023-07-14">Indique une incertitude dans la datation.</desc>
-  <desc xml:lang="it" versionDate="2023-07-14">Indica incertezza nella datazione.</desc>
   <classes mode="replace">
     <memberOf key="att.scoping"/>
     <memberOf key="model.certLike"/>
@@ -35,7 +34,6 @@
   <xi:include href="examples.xml" xpointer="ex-precision-de"/>
   <xi:include href="examples.xml" xpointer="ex-precision-en"/>
   <xi:include href="examples.xml" xpointer="ex-precision-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-precision-it"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Mit <att>match</att> wird auf ein oder mehrere Attribute von <gi>date</gi> Bezug genommen.
             Mit <att>precision</att> wird der Grad der Unsicherheit angegeben.
@@ -51,12 +49,6 @@
     <p><att>match</att>
             est utilisé pour faire référence à un ou plusieurs attributs de <gi>date</gi>. <att>precision</att> spécifie
             le degré d'incertitude.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-14">
-    <p><att>match</att>
-            è usato per fare riferimento a uno o più attributi di <gi>date</gi>. <att>precision</att> specifica il grado
-            di incertezza.
         </p>
   </remarks>
 </elementSpec>

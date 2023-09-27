@@ -6,7 +6,6 @@
   <desc xml:lang="de" versionDate="2023-07-15">Enthält Elemente zur Beschreibung der Siegel.</desc>
   <desc xml:lang="en" versionDate="2023-07-15">Contains elements describing the seals.</desc>
   <desc xml:lang="fr" versionDate="2023-07-15">Contient des éléments décrivant les sceaux.</desc>
-  <desc xml:lang="it" versionDate="2023-07-15">Contiene elementi che descrivono i sigilli.</desc>
   <classes mode="replace">
     <memberOf key="model.physDescPart"/>
   </classes>
@@ -16,7 +15,6 @@
   <xi:include href="examples.xml" xpointer="ex-sealDesc-de"/>
   <xi:include href="examples.xml" xpointer="ex-sealDesc-en"/>
   <xi:include href="examples.xml" xpointer="ex-sealDesc-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-sealDesc-it"/>
   <remarks xml:lang="de" versionDate="2023-07-15">
     <p>Eine Urkunde, die ohne Siegel ausgestellt wurde, enthält auch keine <gi>sealDesc</gi>. Urkunden, bei denen
             einzelne Siegel fehlen, jedoch schon vgl. <gi>seal</gi>, <att>condition</att>. Bei ausserordentlichen
@@ -34,12 +32,6 @@
     <p>Un certificat délivré sans sceau ne contient pas non plus de <gi>sealDesc</gi>. Documents dans lesquels des
             sceaux individuels manquent, mais déjà cf. <gi>seal</gi>, <att>condition</att>. Dans le cas de découvertes
             extraordinaires (par exemple, des reproductions), un commentaire doit être écrit.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-07-15">
-    <p>Anche un certificato emesso senza sigillo non contiene un <gi>sealDesc</gi>. Documenti in cui mancano
-            singoli sigilli, ma già cfr <gi>sigillo</gi>, <att>condizione</att>. In caso di ritrovamenti straordinari
-            (es. riproduzioni) va scritto un commento.
         </p>
   </remarks>
 </elementSpec>

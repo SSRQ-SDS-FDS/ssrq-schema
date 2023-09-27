@@ -12,9 +12,6 @@
   <desc xml:lang="fr" versionDate="2023-07-11">Point final d'un ajout important (<gi>addSpan</gi>), d'une suppression
         (<gi>delSpan</gi>) ou d'une corruption (<gi>damageSpan</gi>).
     </desc>
-  <desc xml:lang="it" versionDate="2023-07-11">Endpoint di aggiunta estesa (<gi>addSpan</gi>), eliminazione
-        (<gi>delSpan</gi>) o danneggiamento (<gi>damageSpan</gi>).
-    </desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
   </classes>
@@ -33,15 +30,12 @@
   <xi:include href="examples.xml" xpointer="ex-addSpan-de"/>
   <xi:include href="examples.xml" xpointer="ex-addSpan-en"/>
   <xi:include href="examples.xml" xpointer="ex-addSpan-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-addSpan-it"/>
   <xi:include href="examples.xml" xpointer="ex-delSpan-de"/>
   <xi:include href="examples.xml" xpointer="ex-delSpan-en"/>
   <xi:include href="examples.xml" xpointer="ex-delSpan-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-delSpan-it"/>
   <xi:include href="examples.xml" xpointer="ex-damageSpan-de"/>
   <xi:include href="examples.xml" xpointer="ex-damageSpan-en"/>
   <xi:include href="examples.xml" xpointer="ex-damageSpan-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damageSpan-it"/>
   <remarks xml:lang="de" versionDate="2023-08-18">
     <p>Als Wert des Attributs <att>xml:id</att> ist der erste Teil des Namens der entsprechenden Elemente
             (<gi>addSpan</gi>, <gi>delSpan</gi> bzw. <gi>damageSpan</gi>) sowie eine fortlaufende Nummer zu wählen:
@@ -58,12 +52,6 @@
     <p>La valeur de l'attribut <att>xml:id</att> est la première partie du nom des éléments correspondants
             (<gi>addSpan</gi>, <gi>delSpan</gi> ou <gi>damageSpan</gi>) et a pour composer un numéro consécutif :
             ex. add1, add2 etc. ou del1, del2 etc. ou damage1, damage2 etc.
-        </p>
-  </remarks>
-  <remarks xml:lang="it" versionDate="2023-08-18">
-    <p>Il valore dell'attributo <att>xml:id</att> è la prima parte del nome degli elementi corrispondenti
-            (<gi>addSpan</gi>, <gi>delSpan</gi> o <gi>damageSpan</gi>) e a per comporre un numero consecutivo: es.
-            add1, add2 ecc. o del1, del2 ecc. o damage1, damage2 ecc.
         </p>
   </remarks>
 </elementSpec>
