@@ -9,7 +9,7 @@ from ..conftest import RNG_test_function
         (
             "valid-physDesc",
             """<physDesc>
-            <objectDesc form='copy'>
+            <objectDesc>
                      <supportDesc>
                         <support>
                            <material type='paper'/>

@@ -13,7 +13,7 @@ from ..conftest import RNG_test_function
                                 <msDesc>
                                     <head>foo</head>
                                     <physDesc>
-                                        <objectDesc form="book">
+                                        <objectDesc>
                                             <supportDesc>
                                                 <support>
                                                     <material type="paper"/>
@@ -38,7 +38,7 @@ from ..conftest import RNG_test_function
                                 <msDesc>
                                     <head>foo</head>
                                     <physDesc>
-                                        <objectDesc form="book">
+                                        <objectDesc>
                                             <supportDesc>
                                                 <support>
                                                     <material type="paper"/>
@@ -57,7 +57,7 @@ from ..conftest import RNG_test_function
                                 <msDesc>
                                     <head>foo</head>
                                     <physDesc>
-                                        <objectDesc form="book">
+                                        <objectDesc>
                                             <supportDesc>
                                                 <support>
                                                     <material type="paper"/>
@@ -87,7 +87,7 @@ from ..conftest import RNG_test_function
                                 <msDesc>
                                     <head>foo</head>
                                     <physDesc>
-                                        <objectDesc form="book">
+                                        <objectDesc>
                                             <supportDesc>
                                                 <support>
                                                     <material type="paper"/>
