@@ -72,6 +72,9 @@ def test_seal_sealDesc(
                 <seal n="2" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
                     <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
                 </seal>
+                <seal n="3" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
+                    <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
+                </seal>
             </sealDesc>
             """,
             True,
@@ -83,7 +86,10 @@ def test_seal_sealDesc(
                 <seal n="1" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
                     <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
                 </seal>
-                <seal n="1" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
+                <seal n="2" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
+                    <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
+                </seal>
+                <seal n="2" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
                     <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
                 </seal>
             </sealDesc>
