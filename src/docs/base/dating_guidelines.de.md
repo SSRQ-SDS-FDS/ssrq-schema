@@ -59,15 +59,11 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
   Monat) werden in `@when-custom` mit einem Bindestrich ("-") angegeben.
   Beispiele:
 
-    ```
+    ```xml
     <date when-custom="--09-11">11.09.</date>
     ```
 
-    ```
-    <date when-custom="--09">September</date>
-    ```
-
-    ```
+    ```xml
     <date when-custom="---11">Elfter Tag eines Monats</date>
     ```
 
