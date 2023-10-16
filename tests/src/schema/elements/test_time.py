@@ -22,6 +22,11 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
+            "time-with-invalid-when-custom-after-midnight",
+            "<time when-custom='24:00:01'>kurz nach Mitternacht</time>",
+            False,
+        ),
+        (
             "time-with-valid-dur-iso",
             "<time dur-iso='R/PT10H'>alle zehn Stunden</time>",
             True,
