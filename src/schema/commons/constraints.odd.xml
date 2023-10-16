@@ -16,6 +16,11 @@
                             <sch:name/>
                             should not start with whitespace.
                         </sch:report>
+            <sch:report test="matches(., '^(.*)(?:\s+|\t+|\n)$')" xml:lang="en">
+                            The value of
+                            <sch:name/>
+                            should not end with whitespace.
+                        </sch:report>
           </sch:rule>
         </sch:pattern>
       </constraint>
