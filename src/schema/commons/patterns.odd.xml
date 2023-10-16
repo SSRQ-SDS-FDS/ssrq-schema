@@ -32,7 +32,7 @@
       <desc xml:lang="en" versionDate="2023-07-15">Foliation</desc>
       <desc xml:lang="fr" versionDate="2023-07-15">Foliation</desc>
       <content>
-        <dataRef name="string" restriction="((\d+)|([IVXLC]+))[rv]"/>
+        <dataRef name="string" restriction="((\d+)|([IVXLC]+))([ab]|bis)?[rv]"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.pagination" mode="add" module="ssrq.core.module">
@@ -40,7 +40,7 @@
       <desc xml:lang="en" versionDate="2023-07-15">Pagination</desc>
       <desc xml:lang="fr" versionDate="2023-07-15">Pagination</desc>
       <content>
-        <dataRef name="string" restriction="(\d+)|([IVXLC]+)"/>
+        <dataRef name="string" restriction="((\d+(\.\d+)?|([IVXLC]+))([ab]|bis)?)|cover"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.section" mode="add" module="ssrq.core.module">

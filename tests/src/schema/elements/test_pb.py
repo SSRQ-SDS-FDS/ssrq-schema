@@ -17,6 +17,21 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-pb-n-with-ab",
+            "<pb n='1a'/>",
+            True,
+        ),
+        (
+            "valid-pb-as-cover",
+            "<pb n='cover'/>",
+            True,
+        ),
+        (
+            "valid-pb-digit-dot-digit",
+            "<pb n='1.32'/>",
+            True,
+        ),
+        (
             "valid-pb-without-type-with-r",
             "<pb n='12r'/>",
             True,
