@@ -148,7 +148,7 @@ werden als Zeiträume mit `@from-custom` und `@to-custom` zusammen mit
 `@calendar` sowie [`<precision>`](precision.de.md) ausgezeichnet.
 
 | Beispiel          | Werte `@from-custom` und `@to-custom` | Zeitspanne: Schlüssel |
-| ----------------- | ------------------------------------- | --------------------- |
+|-------------------|---------------------------------------|-----------------------|
 | 15. Jh.           | 1401-01-01/1500-12-31                 | 100 Jahre             |
 | 1. Hälfte 15. Jh. | 1401-01-01/1450-12-31                 | 50 Jahre              |
 | Anfang 15. Jh.    | 1401-01-01/1425-12-31                 | 25 Jahre              |
@@ -156,8 +156,10 @@ werden als Zeiträume mit `@from-custom` und `@to-custom` zusammen mit
 | Ca. 1510          | 1500-01-01/1520-12-31                 | +/-10 Jahre           |
 | Mitte 15. Jh.     | 1440-01-01/1460-12-31                 | +/-10 Jahre           |
 | Mitte 1555        | 1555-06-01/1555-07-31                 | +/-1 Monat            |
+| Anfang März       | --03-01/--03-10                       | 10 Tage               |
+| Mitte Februar     | --04-09/--04-19                       | +- 5 Tage             |
+| Mitte März        | --03-10/--03-20                       | +- 5 Tage             |
 | Ende März         | --03-22/--03-31                       | 10 Tage               |
-| Anfang Juli       | --07-01/--07-10                       | 10 Tage               |
 
 #### 3.2.4 Uneindeutige Datierungen, die nicht zugeordnet werden können
 
