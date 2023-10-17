@@ -48,6 +48,17 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             """,
             False,
         ),
+        (
+            "valid-seal-with-optional-material",
+            """
+            <sealDesc>
+                <seal n="1" shape="round" attachment="sealed_on_a_parchment_tag" condition="absent">
+                    <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
+                </seal>
+            </sealDesc>
+            """,
+            True,
+        ),
     ],
 )
 def test_seal_sealDesc(
