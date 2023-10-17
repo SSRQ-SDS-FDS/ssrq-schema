@@ -36,9 +36,9 @@ class SSRQConfig(BaseModel):
         import semver  # type: ignore
 
         for schema in schemas:
-            if semver.VersionInfo.isvalid(schema["version"]) is False:
+            if semver.VersionInfo.is_valid(schema["version"]) is False:
                 raise ValueError("version must be a semantic version string")
-            if semver.VersionInfo.isvalid(schema["tei_version"]) is False:
+            if semver.VersionInfo.is_valid(schema["tei_version"]) is False:
                 raise ValueError(
                     "the selected tei version must be a semantic version string"
                 )
