@@ -15,7 +15,7 @@ from ..conftest import TEST_EXAMPLE_DIR, RNG_test_function
                     <msDesc>
                         <head>foo</head>
                         <physDesc>
-                            <objectDesc form="book">
+                            <objectDesc>
                                 <supportDesc>
                                     <support>
                                         <material type="paper"/>
@@ -39,7 +39,7 @@ from ..conftest import TEST_EXAMPLE_DIR, RNG_test_function
                     <msDesc>
                         <head>foo</head>
                         <physDesc>
-                            <objectDesc form="book">
+                            <objectDesc>
                                 <supportDesc>
                                     <support>
                                         <material type="paper"/>
@@ -63,7 +63,7 @@ from ..conftest import TEST_EXAMPLE_DIR, RNG_test_function
                     <msDesc>
                         <head>foo</head>
                         <physDesc>
-                            <objectDesc form="book">
+                            <objectDesc>
                                 <supportDesc>
                                     <support>
                                         <material type="paper"/>
