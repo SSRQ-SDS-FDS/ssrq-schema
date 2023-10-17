@@ -26,8 +26,8 @@
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:seal[preceding-sibling::tei:seal]">
-          <sch:let name="expectedNumber" value="./preceding-sibling::tei:seal/@n + 1"/>
-          <sch:assert test="./@n = $expectedNumber">The value of @n must be equal to<sch:value-of select="$expectedNumber"/>.
+          <sch:let name="expectedNumber" value="count(./preceding-sibling::tei:seal) + 1"/>
+          <sch:assert test="./@n = $expectedNumber">The value of @n must be equal to <sch:value-of select="$expectedNumber"/>.
                     </sch:assert>
         </sch:rule>
       </sch:pattern>
@@ -137,7 +137,7 @@
             le même attribut. Si les noms des scelleurs figurent sur le plica ou la bande de parchemin,
             dans <gi>persName</gi> un <gi>orig</gi> doit inclure le nom manuscrit.
         </p>
-    <p>Si l'identification du sceau est incertaine, p. e. quand le sigillant n'est pas mentionné dans le texte, on n'ajoute pas de  <gi>orgName</gi> ou <gi>persName</gi>. Si on n'arrive pas à clairement attribuer les sigillant à leurs sceaux, il faut laisser l'identification des sceaux ouverte. 
+    <p>Si l'identification du sceau est incertaine, p. e. quand le sigillant n'est pas mentionné dans le texte, on n'ajoute pas de  <gi>orgName</gi> ou <gi>persName</gi>. Si on n'arrive pas à clairement attribuer les sigillant à leurs sceaux, il faut laisser l'identification des sceaux ouverte.
             ouverte.
         </p>
     <p>Les sceaux sont numérotés avec <att>n</att>. Il serait souhaitable que l'édition comprenne non seulement un
@@ -147,7 +147,7 @@
     <p>L. S. = Locus sigilli est indiqué  avec <gi>figure</gi>. Si un document a été délivré sans sceau, aucun
             sceau n'est enregistré. Un commentaire sur les sceaux peut être écrit au besoin.
         </p>
-    <p>Il est important de comparer l'annonce du sceau dans l'acte avec le sceau. 
+    <p>Il est important de comparer l'annonce du sceau dans l'acte avec le sceau.
             <list><item>Tous les scelleurs annoncés ont-ils apposé leurs sceaux sur l'acte ?</item><item>Existe-t-il un sceau d'un scellant non annoncé ?</item><item>Un sceau a-t-il pu être forgé ou apposé plus tard ?</item></list></p>
     <p>On doit vérifier si tous les sceaux correspondent à l'annonce dans le texte. Les annonces de sceau, y compris les sceaux
             manquants
