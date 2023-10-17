@@ -255,7 +255,7 @@ class ElementSpec(BaseSpec):
 
         for val_item in sorted_valItems:
             content_values.append(
-                f"{val_item.attrib['ident']}{': ' + desc if len((desc := self.get_desc(element=val_item, lang=lang))) > 0 else ''}"
+                f"{val_item.attrib['ident']}{': ' + desc if len(desc := self.get_desc(element=val_item, lang=lang)) > 0 else ''}"
             )
 
         doc.add_unordered_list(content_values)
