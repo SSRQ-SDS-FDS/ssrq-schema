@@ -21,6 +21,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "date-with-valid-when-without-year-and-month",
+            "<date when-custom='---12' calendar='gregorian'>Immer am 12.</date>",
+            True,
+        ),
+        (
             "date-with-invalid-when-month-too-large",
             "<date when-custom='1756-92-12' calendar='gregorian'>12. Februar 1756</date>",
             False,
@@ -28,6 +33,21 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         (
             "date-with-invalid-when-year-only",
             "<date when-custom='1756' calendar='gregorian'>1756</date>",
+            False,
+        ),
+        (
+            "date-with-invalid-when-month-only",
+            "<date when-custom='--09' calendar='gregorian'>September</date>",
+            False,
+        ),
+        (
+            "date-with-invalid-day",
+            "<date when-custom='0001-01-00' calendar='unknown'>foo</date>",
+            False,
+        ),
+        (
+            "date-with-invalid-negative-year",
+            "<date when-custom='-1337-01-01' calendar='unknown'>foo</date>",
             False,
         ),
         (

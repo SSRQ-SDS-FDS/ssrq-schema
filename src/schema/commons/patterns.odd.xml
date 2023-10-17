@@ -11,7 +11,7 @@
       <desc xml:lang="en" versionDate="2023-05-05">SLS defined pattern for time points - based on days</desc>
       <desc xml:lang="fr" versionDate="2023-05-05">SDS modèle défini pour l'heure - basé sur les jours</desc>
       <content>
-        <dataRef name="string" restriction="(\d{4}|-)-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])"/>
+        <dataRef name="string" restriction="(((\d{4}|-)-(0[1-9]|1[0-2]))|--)-(0[1-9]|[1-2][0-9]|3[0-1])"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.time.point" mode="add" module="ssrq.core.module">
