@@ -41,6 +41,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             False,
         ),
         (
+            "date-with-invalid-day",
+            "<date when-custom='0001-01-00' calendar='unknown'>foo</date>",
+            False,
+        ),
+        (
+            "date-with-invalid-negative-year",
+            "<date when-custom='-1337-01-01' calendar='unknown'>foo</date>",
+            False,
+        ),
+        (
             "date-with-when-instead-of-when-custom",
             "<date when='1756-02-12' calendar='gregorian'>12. Februar 1756</date>",
             False,
