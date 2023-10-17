@@ -11,13 +11,23 @@ from .conftest import SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "with-whitespace",
+            "starts-with-whitespace",
             "<TEI type=' foo'></TEI>",
             False,
         ),
         (
-            "without-whitespace",
+            "ends-with-whitespace",
+            "<TEI type='foo '></TEI>",
+            False,
+        ),
+        (
+            "valid-without-whitespace",
             "<TEI type='bar'></TEI>",
+            True,
+        ),
+        (
+            "multiple-values-with-whitespace-in-between",
+            "<TEI type='bar foo'></TEI>",
             True,
         ),
     ],
@@ -25,7 +35,7 @@ from .conftest import SimpleTEIWriter, add_tei_namespace
 def test_attribute_whitespace_constraint(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
-    """Test the if the validation fails, when an attribute starts with whitespace."""
+    """Test the if the validation fails, when an attribute starts or ends with whitespace."""
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = validate_chunk(
         files=writer.list(), isosch=main_constraints
