@@ -17,6 +17,21 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-pb-n-with-ab",
+            "<pb n='1a'/>",
+            True,
+        ),
+        (
+            "valid-pb-as-cover",
+            "<pb n='cover'/>",
+            True,
+        ),
+        (
+            "valid-pb-digit-dot-digit",
+            "<pb n='1.32'/>",
+            True,
+        ),
+        (
             "valid-pb-without-type-with-r",
             "<pb n='12r'/>",
             True,
@@ -51,9 +66,10 @@ from ..conftest import RNG_test_function
             "<pb n='1XIV'/>",
             False,
         ),
+        ("pb-with-valid-roman-numerals", "<pb n='MDCLXVI'/>", True),
         (
-            "pb-with-invalid-roman-n",
-            "<pb n='MV'/>",
+            "pb-with-invalid-roman-numerals",
+            "<pb n='PVI'/>",
             False,
         ),
         (
@@ -61,6 +77,8 @@ from ..conftest import RNG_test_function
             "<pb n='s1'/>",
             True,
         ),
+        ("pb-with-invalid-zero-numbering", "<pb n='0'/>", False),
+        ("pb-with-invalid-leading-zero-numbering", "<pb n='01r'/>", False),
     ],
 )
 def test_pb(
