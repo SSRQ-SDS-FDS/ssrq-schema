@@ -8,7 +8,7 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-damage-with-add",
-            "<damage agent='water_spot'><add hand='otherHand' place='overwritten'>zuͦ trincken</add></damage>",
+            "<damage agent='water'><add hand='otherHand' place='overwritten'>zuͦ trincken</add></damage>",
             True,
             None,
         ),
@@ -20,7 +20,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-damage-with-supplied",
-            "<damage agent='water_spot'><supplied source='73988c1a-40e1-4527-94b7-736d418b29d0'>verthruwen</supplied></damage>",
+            "<damage agent='water'><supplied source='73988c1a-40e1-4527-94b7-736d418b29d0'>verthruwen</supplied></damage>",
             False,
             "without matching ID",
         ),
