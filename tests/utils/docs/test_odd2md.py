@@ -107,7 +107,8 @@ def test_find_el_content(
     assert el_spec.odd_type == "elementSpec"
 
     el_spec.content = el_spec.find_content_elements(
-        element=el_spec.odd_element, components=odd_reader.components  # type: ignore
+        element=el_spec.odd_element,
+        components=odd_reader.components,  # type: ignore
     )
 
     if has_content:

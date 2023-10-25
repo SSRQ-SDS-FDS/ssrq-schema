@@ -161,9 +161,12 @@ def list_to_md(node: ET.Element) -> Iterator[str]:
     if not node_has_children(node):
         raise NodeTransformationError("Can't transform <list/>-tag without children.")
 
-    yield "\n\n" + "\n".join(
-        ["- " + " ".join(transform_node_to_text(item)) for item in node]
-    ) + "\n\n" + RE_WHITESPACE_START_OR_MULTIPLE.sub("", node.tail or "")
+    yield (
+        "\n\n"
+        + "\n".join(["- " + " ".join(transform_node_to_text(item)) for item in node])
+        + "\n\n"
+        + RE_WHITESPACE_START_OR_MULTIPLE.sub("", node.tail or "")
+    )
 
 
 def p_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
