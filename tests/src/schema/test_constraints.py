@@ -174,6 +174,16 @@ def test_datable_custom_attr(
             "<head/>",
             False,
         ),
+        (
+            "invalid-idno-with-whitespace-only",
+            "<idno> </idno>",
+            False,
+        ),
+        (
+            "invalid-empty-idno",
+            "<idno/>",
+            False,
+        ),
     ],
 )
 def test_text_content_constraint_gl4(

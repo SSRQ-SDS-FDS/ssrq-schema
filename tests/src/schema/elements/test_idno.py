@@ -22,16 +22,6 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             False,
         ),
         (
-            "invalid-idno-with-whitespace-only",
-            "<idno> </idno>",
-            False,
-        ),
-        (
-            "invalid-empty-idno",
-            "<idno/>",
-            False,
-        ),
-        (
             "idno-archive-invalid",
             " <idno xml:lang='de' source='foo.bar'>foo</idno>",
             False,
