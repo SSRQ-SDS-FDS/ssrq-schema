@@ -1,8 +1,8 @@
-# SSRQ-Schema
+# SSRQ-Schema [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10040701.svg)](https://doi.org/10.5281/zenodo.10040701)
 
 Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit dem XML-Schema der Sammlung der Schweizerischen Rechtsquellen.
 
-- [SSRQ-Schema](#ssrq-schema)
+- [SSRQ-Schema ](#ssrq-schema-)
   - [Initiale Zielsetzung der Entwicklung](#initiale-zielsetzung-der-entwicklung)
   - [Dokumentation](#dokumentation)
     - [Versionierung](#versionierung)
