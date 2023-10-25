@@ -12,7 +12,7 @@
   <content>
     <sequence>
       <elementRef key="origDate" maxOccurs="unbounded"/>
-      <elementRef key="origPlace" minOccurs="0"/>
+      <elementRef key="origPlace" minOccurs="0" maxOccurs="unbounded"/>
     </sequence>
   </content>
   <attList>

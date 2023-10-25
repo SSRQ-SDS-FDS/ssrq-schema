@@ -30,18 +30,9 @@
     <attDef ident="calendar" mode="change" usage="req"/>
     <attDef ident="period" mode="delete"/>
     <attDef ident="type" mode="replace" usage="req">
-      <valList type="closed">
-        <valItem ident="content">
-          <desc xml:lang="de" versionDate="2023-09-08">Datierung des Inhalts des Dokuments</desc>
-          <desc xml:lang="en" versionDate="2023-09-08">Dating the contents of the document</desc>
-          <desc xml:lang="fr" versionDate="2023-09-08">Datation du contenu du document</desc>
-        </valItem>
-        <valItem ident="document">
-          <desc xml:lang="de" versionDate="2023-09-08">Datierung des Dokuments als Textträger</desc>
-          <desc xml:lang="en" versionDate="2023-09-08">Dating the document as a text carrier</desc>
-          <desc xml:lang="fr" versionDate="2023-09-08">Datation du document comme support de texte</desc>
-        </valItem>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.orig.type"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-history-de"/>

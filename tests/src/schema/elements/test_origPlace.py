@@ -11,18 +11,18 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "invalid-origPlace-without-ref",
+            "invalid-origPlace-without-ref-and-type",
             "<origPlace >foo</origPlace>",
             False,
         ),
         (
             "valid-origPlace-with-ref",
-            "<origPlace ref='loc000001'>foo</origPlace>",
+            "<origPlace ref='loc000001' type='document'>foo</origPlace>",
             True,
         ),
         (
             "valid-origPlace-with-ref-and-cert",
-            "<origPlace ref='loc000001' cert='low'>foo</origPlace>",
+            "<origPlace ref='loc000001' cert='low' type='document'>foo</origPlace>",
             True,
         ),
         (
@@ -46,11 +46,11 @@ def test_origPlace_rng(
     [
         (
             "valid-origPlace-with-ref",
-            "<origin><origPlace ref='loc000001'>foo</origPlace></origin>",
+            "<origin><origPlace ref='loc000001' type='content'>foo</origPlace></origin>",
             True,
         ),
         (
-            "valid-origPlace-without-attr-or-text",
+            "invalid-origPlace-without-attr-or-text",
             "<origin><origPlace/></origin>",
             False,
         ),
