@@ -136,9 +136,10 @@ class ElementSpec(BaseSpec):
             doc.add_paragraph(translations["isEmpty"])
             return
 
-        content_keys, vallists = [i for i in self.content if isinstance(i, str)], [
-            i for i in self.content if isinstance(i, ET.Element)
-        ]
+        content_keys, vallists = (
+            [i for i in self.content if isinstance(i, str)],
+            [i for i in self.content if isinstance(i, ET.Element)],
+        )
 
         group_content_by_model = self._group_content_by_model(
             elements=elements, content=content_keys

@@ -1,26 +1,22 @@
 [ssrq.schema.meta]
 authors = [
-  "Bastian Politycki <bastian.politycki@unisg.ch>",
-  "Pascale Sutter <pascale.sutter@unisg.ch>",
-  "Christian Sonder <christian.sonder@unisg.ch>",
+    "Bastian Politycki <bastian.politycki@unisg.ch>",
+    "Pascale Sutter <pascale.sutter@unisg.ch>",
+    "Christian Sonder <christian.sonder@unisg.ch>",
 ]
 schemas = [
-  {title = "SLS TEI-Schema", description = "The main schema used by the Swiss Law Sources to validate TEI XML transcriptions", entry = "main.odd.xml", name = "TEI_Schema", version = "1.0.0", tei_version = "4.5.0"},
+    { title = "SLS TEI-Schema", description = "The main schema used by the Swiss Law Sources to validate TEI XML transcriptions", entry = "main.odd.xml", name = "TEI_Schema", version = "1.0.0", tei_version = "4.5.0" },
 ]
 
 [tool.poetry]
-authors = ["Bpolitycki <bastian.politycki@unisg.ch>", "ChristianSonderUniSG <christian.sonder@unisg.ch>"]
+authors = [
+    "Bpolitycki <bastian.politycki@unisg.ch>",
+    "ChristianSonderUniSG <christian.sonder@unisg.ch>",
+]
 description = "TEI-ODD schema for the Swiss Law Sources with Python based tooling."
-include = [
-  {path = "src", format = [
-    "sdist",
-    "wheel",
-  ]},
-]
+include = [{ path = "src", format = ["sdist", "wheel"] }]
 name = "ssrq-schema"
-packages = [
-  {include = "utils"},
-]
+packages = [{ include = "utils" }]
 readme = "README.md"
 version = "0.1.0"
 
@@ -33,14 +29,13 @@ saxonche-stubs = "^0.6.0"
 semver = "^3.0.2"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.10.1"
 mypy = "^1.6.1"
 pre-commit = "^3.5.0"
-pyschval = {git = "https://github.com/SSRQ-SDS-FDS/py-schematron-validator.git", rev = "main"}
+pyschval = { git = "https://github.com/SSRQ-SDS-FDS/py-schematron-validator.git", rev = "main" }
 pytest = "^7.4.3"
 pytest-xdist = "^3.2.0"
 ruff = "^0.1.2"
-ssrq-cli = {git = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-cli.git", rev = "main"}
+ssrq-cli = { git = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-cli.git", rev = "main" }
 types-requests = "^2.31.0.10"
 
 [tool.poetry.group.docs.dependencies]

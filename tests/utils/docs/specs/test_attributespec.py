@@ -33,7 +33,8 @@ def test_attribute_without_usage_status_with_class():
         },
     )
     class_attribute_definition = ET.Element(
-        ET.QName(NS_MAP["tei"], "attDef"), attrib={"ident": "foo", "usage": "rec"}  # type: ignore
+        ET.QName(NS_MAP["tei"], "attDef"),
+        attrib={"ident": "foo", "usage": "rec"},  # type: ignore
     )
     example_class.append(class_attribute_definition)
     attribute = AttributeSpec(element, element_classes=[example_class])

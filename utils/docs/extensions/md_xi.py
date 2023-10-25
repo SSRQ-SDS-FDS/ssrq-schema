@@ -70,7 +70,8 @@ def resolve_xi_includes(
             )
 
             xslt_proc.set_parameter(  # type: ignore
-                "path_base", proc.make_string_value(base_path.as_uri())  # type: ignore
+                "path_base",
+                proc.make_string_value(base_path.as_uri()),  # type: ignore
             )
 
             xsl: PyXsltExecutable = xslt_proc.compile_stylesheet(  # type: ignore
