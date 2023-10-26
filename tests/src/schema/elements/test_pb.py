@@ -38,7 +38,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-pb-with-facs",
-            "<pb n='1' facs='StASH_Ordnungen_A_4_328'/>",
+            "<pb n='1' facs='StAZH_F_III_12__Nr_1__S__10'/>",
             True,
         ),
         (

@@ -66,7 +66,7 @@
       <desc xml:lang="en" versionDate="2023-09-13">Restriction for facsimile names</desc>
       <desc xml:lang="fr" versionDate="2023-09-13">Restriction concernant les noms de télécopie</desc>
       <content>
-        <dataRef name="string" restriction="[A-Za-z_\-0-9]+([1-9]|[rv]|plica)"/>
+        <dataRef name="string" restriction="[A-Za-z_\-\d]+(\d|[rv]|plica)"/>
       </content>
     </dataSpec>
     <!-- pointer to SSRQ databases -->
