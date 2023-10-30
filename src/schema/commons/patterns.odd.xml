@@ -203,5 +203,33 @@
         </alternate>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.witness.id" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-10-30">Definiert das Muster für die ID eines weiteren Textzeugens einer
+                Quelle.
+            </desc>
+      <desc xml:lang="en" versionDate="2023-10-30">Defines the pattern for the ID of another witness of a source.
+            </desc>
+      <desc xml:lang="fr" versionDate="2023-10-30">Définit le modèle pour l'ID d'un autre témoin d'une source.
+            </desc>
+      <content>
+        <!--
+            This restriction has two parts
+                1) A prefix "id-ssrq-". This prefix is used to make sure, that the xml:id is a valid token of
+                the XS:ID datatype (id est a NCName without colons). This is necessary, because the following
+                UUID may start with a letter, which is forbidden as first char in NCNames.
+                2) A UUID Version 4. This is used, because UUIDs are (potentially) persistant and globally
+                unique. This allows publishing the XML-files while still work in progress.
+        -->
+        <dataRef name="ID" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.witness.pointer" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-10-30">Definiert einen Pointer auf IDs vom Typ ssrq.witness.id, und erlaubt die Verwendung von Teilangaben über '#part'.</desc>
+      <desc xml:lang="en" versionDate="2023-10-30">Defines a pointer to IDs of type ssrq.witness.id, and allows the use of partial information via '#part'.</desc>
+      <desc xml:lang="fr" versionDate="2023-10-30">Définit un pointeur vers des ID de type ssrq.witness.id, et permet l'utilisation d'informations partielles via '#part'.</desc>
+      <content>
+        <dataRef name="string" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#\d+)?"/>
+      </content>
+    </dataSpec>
   </specGrp>
 </div>

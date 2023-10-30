@@ -737,7 +737,11 @@
                         texte déclarés avec <gi>witness</gi> dans le <gi>teiHeader</gi>.
                     </desc>
           <datatype>
-            <dataRef name="IDREFS"/>
+            <rng:list>
+              <rng:oneOrMore>
+                <rng:ref name="ssrq.witness.pointer"/>
+              </rng:oneOrMore>
+            </rng:list>
           </datatype>
           <constraintSpec scheme="schematron" ident="sch-att-wit">
             <desc xml:lang="en" versionDate="2023-06-22">Make sure, the referenced ID belongs to a witness
@@ -746,17 +750,13 @@
             <constraint>
               <sch:pattern>
                 <sch:rule context="tei:*[@wit]">
-                  <sch:let name="wits" value="tokenize(@wit, ' ')"/>
+                  <sch:let name="wits" value="for $wit in tokenize(@wit, ' ') return replace($wit, '^(id-ssrq-[\w\d-]+)(#\d+)?$', '$1')"/>
                   <!--This rule is introduced, because @wit should not point to any other element
                                         type than a witness, and this: <anyElement xml:id="foo"/> <rdg wit="foo"/>
                                         would be valid XML.
                                     -->
                   <sch:assert test="every $wit in $wits satisfies id($wit)/name() = 'witness'" xml:lang="en">
                                         Every referenced ID in @wit must belong to a witness element.
-                                    </sch:assert>
-                  <!-- This rule is introduced, because <rdg wit="foo foo"/> would be valid XML. -->
-                  <sch:assert test="count($wits) = count(distinct-values($wits))" xml:lang="en">
-                                        Every ID may be referenced just once.
                                     </sch:assert>
                 </sch:rule>
               </sch:pattern>
