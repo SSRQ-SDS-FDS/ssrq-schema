@@ -750,7 +750,7 @@
             <constraint>
               <sch:pattern>
                 <sch:rule context="tei:*[@wit]">
-                  <sch:let name="wits" value="for $wit in tokenize(@wit, ' ') return replace($wit, '^(id-ssrq-[\w\d-]+)(#\d+)?$', '$1')"/>
+                  <sch:let name="wits" value="for $wit in tokenize(@wit, ' ') return replace($wit, '^(id-ssrq-[\w\d-]+)(#(\d+|fol\d+[rv]?|[pn]\d+))?$', '$1')"/>
                   <!--This rule is introduced, because @wit should not point to any other element
                                         type than a witness, and this: <anyElement xml:id="foo"/> <rdg wit="foo"/>
                                         would be valid XML.

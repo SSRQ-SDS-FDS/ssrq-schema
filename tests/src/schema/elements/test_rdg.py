@@ -12,7 +12,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-rdg",
-            "<rdg wit='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e'>bar</rdg>",
+            "<rdg wit='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e#fol30r'>bar</rdg>",
             True,
         ),
         (
@@ -49,7 +49,7 @@ def test_rdg(
             """<TEI>
                 <witness xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'/>
                 <witness xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e'/>
-                <rdg wit='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e#3'>bar</rdg>
+                <rdg wit='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e#fol30r'>bar</rdg>
             </TEI>""",
             True,
         ),
