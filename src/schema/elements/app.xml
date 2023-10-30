@@ -12,7 +12,12 @@
   <content>
     <sequence>
       <elementRef key="lem"/>
-      <elementRef key="rdg" maxOccurs="unbounded"/>
+      <sequence preserveOrder="false">
+        <alternate maxOccurs="unbounded">
+          <elementRef key="note"/>
+          <elementRef key="rdg"/>
+        </alternate>
+      </sequence>
     </sequence>
   </content>
   <attList>
@@ -21,9 +26,12 @@
     <attDef ident="to" mode="delete"/>
     <attDef ident="type" mode="delete"/>
   </attList>
-  <xi:include href="examples.xml" xpointer="ex-app-de"/>
-  <xi:include href="examples.xml" xpointer="ex-app-en"/>
-  <xi:include href="examples.xml" xpointer="ex-app-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-app-rdg-de"/>
+  <xi:include href="examples.xml" xpointer="ex-app-rdg-en"/>
+  <xi:include href="examples.xml" xpointer="ex-app-rdg-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-app-note-de"/>
+  <xi:include href="examples.xml" xpointer="ex-app-note-en"/>
+  <xi:include href="examples.xml" xpointer="ex-app-note-fr"/>
   <remarks xml:lang="de" versionDate="2023-08-18">
     <p>Ermöglicht verschiedene Lesarten eines Wortes oder eines Textabschnittes anzuzeigen unter Bezugnahme auf ein
             anderes Dokument oder mehrere andere Dokumente. Muss sich unmittelbar, ohne Leerschlag, an das Wort

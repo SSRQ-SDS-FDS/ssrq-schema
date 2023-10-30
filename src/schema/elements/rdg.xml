@@ -14,9 +14,9 @@
       <rng:ref name="ssrq.content.default"/>
     </rng:oneOrMore>
   </content>
-  <xi:include href="examples.xml" xpointer="ex-app-de"/>
-  <xi:include href="examples.xml" xpointer="ex-app-en"/>
-  <xi:include href="examples.xml" xpointer="ex-app-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-app-rdg-de"/>
+  <xi:include href="examples.xml" xpointer="ex-app-rdg-en"/>
+  <xi:include href="examples.xml" xpointer="ex-app-rdg-fr"/>
   <remarks xml:lang="de" versionDate="2023-08-18">
     <p>In <att>wit</att> wird auf den anderen Textzeugen, auf dem die Lesart basiert, verwiesen. Bei Auslassungen kann ein leeres <gi>rdg</gi> verwendet werden. Verweise auf Teilabschnitte können über ein <val>#</val> angehängt werden.
         </p>

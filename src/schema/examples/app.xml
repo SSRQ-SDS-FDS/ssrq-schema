@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<egXML xmlns="http://www.tei-c.org/ns/Examples">
-  <app>
-    <lem>lxxxvii</lem>
-    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e#3">
+<div xmlns="http://www.tei-c.org/ns/1.0">
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-app-rdg">
+    <app>
+      <lem>lxxxvii</lem>
+      <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e#3">
             quadringentesimo
         </rdg>
-    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiii</rdg>
-  </app>
-</egXML>
+      <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiii</rdg>
+    </app>
+  </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-app-note">
+    <app>
+      <lem>graffschafft und gericht fuͤren oder ob man <lb/>jemant da fachen
+                und usser miner herren <term ref="lem003769.02">biet</term> fuͤren
+                welte</lem>
+      <rdg wit="SSRQ-SG-III_4-129-1, Art. 2">ampt unnd <lb/>gepiet
+                fachen oder füerenn</rdg>
+      <note type="text_comparison">
+        <ref target="urn:ssrq:SSRQ-SG-III_4-129-1">SSRQ-SG-III_4-129-1, Art. 2</ref>
+        <orig>ampt unnd <lb/>gepiet
+                    fachen oder füerenn</orig>
+      </note>
+    </app>
+  </egXML>
+</div>

@@ -125,17 +125,29 @@
       <p>Exemple d'un ajout plus important</p>
       <xi:include href="addSpan.xml"/>
     </exemplum>
-    <exemplum xml:lang="de" xml:id="ex-app-de">
+    <exemplum xml:lang="de" xml:id="ex-app-note-de">
+      <p>Beispiel für einen Apparat mit Textvergleich</p>
+      <xi:include href="app.xml" xpointer="ex-app-note"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-app-note-en">
+      <p>Example of an apparatus with text comparison</p>
+      <xi:include href="app.xml" xpointer="ex-app-note"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-app-note-fr">
+      <p>Exemple d'un appareil avec comparaison de texte</p>
+      <xi:include href="app.xml" xpointer="ex-app-note"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-app-rdg-de">
       <p>Beispiel für einen Apparateintrag</p>
-      <xi:include href="app.xml"/>
+      <xi:include href="app.xml" xpointer="ex-app-rdg"/>
     </exemplum>
-    <exemplum xml:lang="en" xml:id="ex-app-en">
+    <exemplum xml:lang="en" xml:id="ex-app-rdg-en">
       <p>Example of an apparatus entry</p>
-      <xi:include href="app.xml"/>
+      <xi:include href="app.xml" xpointer="ex-app-rdg"/>
     </exemplum>
-    <exemplum xml:lang="fr" xml:id="ex-app-fr">
+    <exemplum xml:lang="fr" xml:id="ex-app-rdg-fr">
       <p>Exemple d'entrée d'appareil</p>
-      <xi:include href="app.xml"/>
+      <xi:include href="app.xml" xpointer="ex-app-rdg"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-author-de">
       <p>Beispiel für die Angabe des Autors eines Stücks</p>
