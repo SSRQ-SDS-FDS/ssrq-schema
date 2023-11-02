@@ -26,6 +26,12 @@
                         Must contain either a resp or a source attribute.
                     </sch:assert>
         </sch:rule>
+        <sch:rule context="tei:supplied[@source]">
+          <sch:let name="sources" value="for $source in tokenize(@source, ' ') return replace($source, '^(id-ssrq-[\w\d-]+)(#(\d+|fol\d+[rv]?|[pn]\d+))?$', '$1')"/>
+          <sch:assert test="every $source in $sources satisfies exists(id($source))" xml:lang="en">
+                        Every referenced ID in @source must belong to an element with the same ID.
+                    </sch:assert>
+        </sch:rule>
       </sch:pattern>
     </constraint>
   </constraintSpec>
@@ -33,7 +39,11 @@
     <attDef ident="cert" mode="delete"/>
     <attDef ident="source" mode="replace">
       <datatype>
-        <dataRef name="IDREFS"/>
+        <rng:list>
+          <rng:oneOrMore>
+            <rng:ref name="ssrq.witness.pointer"/>
+          </rng:oneOrMore>
+        </rng:list>
       </datatype>
     </attDef>
     <attDef ident="reason" mode="replace">
