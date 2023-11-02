@@ -4,7 +4,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="note" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-10-30">Enthält entweder eine sachkritische Anmerkung zu einer
-        Einzelstelle im Editionstext, Anmerkung im Original oder den Verweis auf einen weiteren Textzeugen in dem der jeweilige Text wiederverwendet wird.
+        Einzelstelle im Editionstext, eine Anmerkung im Original oder den Verweis auf einen weiteren Textzeugen in dem der jeweilige Text wiederverwendet wird.
     </desc>
   <desc xml:lang="en" versionDate="2023-10-30">Contains either a factual comment on a single passage of the text of
         the edition, a comment in the original, or a reference to another textual witness in which the respective text is reused.
@@ -25,16 +25,17 @@
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-note">
     <desc xml:lang="en" versionDate="2023-10-30">Constraint for
-            <gi>note</gi>, to ensure the childs inside <gi>app</gi>.
+            <gi>note</gi>, to ensure the children inside <gi>app</gi>.
         </desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:note[parent::tei:app]">
           <sch:assert test="every $child in * satisfies $child/name() = ('ref', 'orig')">
-                        If a note is used inside a critical apparatus, only ref and orig are allowed as childs.
+                        If a note is used inside a critical apparatus, only ref and orig are
+                        allowed as children.
                     </sch:assert>
           <sch:assert test="count(*) = 2">
-                        A note inside a critical apparatus must have exactly two childs.
+                        A note inside a critical apparatus must have exactly two children.
                     </sch:assert>
           <sch:assert test="string-length(normalize-space(text())) = 0">
                         A note inside a critical apparatus must not have text content.
@@ -45,7 +46,7 @@
         </sch:rule>
         <sch:rule context="tei:note[@type = 'text_comparison']">
           <sch:assert test="parent::tei:app">
-                        A note with type text_comparison must be inside a critical apparatus.
+                        A note with type "text_comparison" must be inside a critical apparatus.
                     </sch:assert>
         </sch:rule>
       </sch:pattern>
