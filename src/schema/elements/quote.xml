@@ -12,9 +12,17 @@
     <memberOf key="ssrq.att.source"/>
   </classes>
   <content>
-    <rng:oneOrMore>
-      <rng:ref name="ssrq.content.default"/>
-    </rng:oneOrMore>
+    <rng:choice>
+      <rng:group>
+        <rng:ref name="seg"/>
+        <rng:oneOrMore>
+          <rng:ref name="seg"/>
+        </rng:oneOrMore>
+      </rng:group>
+      <rng:oneOrMore>
+        <rng:ref name="ssrq.content.default"/>
+      </rng:oneOrMore>
+    </rng:choice>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-quote" mode="add">
     <desc versionDate="2023-05-31" xml:lang="en">Schematron rules for tei:quote</desc>
