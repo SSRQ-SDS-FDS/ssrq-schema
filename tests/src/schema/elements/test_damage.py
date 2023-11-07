@@ -27,6 +27,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-damage-with-unit-and-quantity",
+            "<damage agent='faded_ink' unit='character' quantity='3'><unclear>die</unclear></damage>",
+            True,
+        ),
+        (
             "invalid-damage-without-agent",
             "<damage><unclear>die</unclear></damage>",
             False,
