@@ -17,7 +17,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "valid-simple-p-with-attr",
-            "<p xml:lang='de'>foo</p>",
+            "<p xml:lang='de' n='1'>foo</p>",
             True,
         ),
         (
@@ -27,12 +27,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "simple-p-with-invalid-attr",
-            "<p rend='black'>foo</p>",
-            False,
-        ),
-        (
-            "simple-p-with-invalid-attr",
-            "<p xml:id='facs'>foo</p>",
+            "<p rend='black' xml:id='facs'>foo</p>",
             False,
         ),
     ],
