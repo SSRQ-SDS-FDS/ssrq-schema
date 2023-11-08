@@ -11,22 +11,17 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "valid-simple-term",
-            "<term>foo</term>",
+            "valid-term-with-keyref",
+            "<term ref='key123456'>foo</term>",
             True,
         ),
         (
-            "valid-simple-term-with-lemref",
-            "<term ref='lem001301.09'>foo</term>",
+            "valid-term-with-lemref",
+            "<term ref='lem123456'>foo</term>",
             True,
         ),
         (
-            "valid-simple-term-with-keyref",
-            "<term ref='key003521'>foo</term>",
-            True,
-        ),
-        (
-            "simple-term-with-invalid-keyref",
+            "invalid-term-with-wrong-keyref",
             "<term ref='cey003521'>foo</term>",
             False,
         ),
@@ -50,28 +45,53 @@ def test_term(
     "name, markup, result",
     [
         (
-            "valid-simple-term-with-lemref",
-            "<term ref='lem001301.09'>foo</term>",
-            True,
+            "invalid-term-without-attributes",
+            "<term>foo</term>",
+            False,
         ),
         (
-            "invalid-empty-term",
+            "invalid-empty-term-without-attributes",
             "<term/>",
             False,
         ),
         (
-            "valid-term-inside-keywords",
-            "<keywords><term ref='key001301'>foo</term></keywords>",
+            "valid-empty-term-with-keyref-inside-keywords",
+            "<keywords><term ref='key123456'/></keywords>",
             True,
         ),
         (
-            "invalid-term-inside-keywords-with-lemref",
-            "<keywords><term ref='lem001301.09'>foo</term></keywords>",
+            "invalid-empty-term-with-lemref-inside-keywords",
+            "<keywords><term ref='lem123456'/></keywords>",
             False,
         ),
         (
-            "invalid-term-inside-keywords-without-ref",
-            "<keywords><term>foo</term></keywords>",
+            "valid-empty-term-with-keyref-elsewhere-with-indextype",
+            "<text><term ref='key123456' type='index'/></text>",
+            True,
+        ),
+        (
+            "invalid-empty-term-with-keyref-elsewhere-without-indextype",
+            "<text><term ref='key123456'/></text>",
+            False,
+        ),
+        (
+            "invalid-empty-term-with-lemref-elsewhere",
+            "<text><term ref='lem123456'/></text>",
+            False,
+        ),
+        (
+            "valid-term-without-ref-but-with-type",
+            "<term type='unknown'>foo</term>",
+            True,
+        ),
+        (
+            "invalid-term-with-ref-and-with-wrong-type",
+            "<term type='unknown' ref='key123456'>foo</term>",
+            False,
+        ),
+        (
+            "invalid-term-without-ref-but-with-wrong-type",
+            "<term type='index'>foo</term>",
             False,
         ),
     ],

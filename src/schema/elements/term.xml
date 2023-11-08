@@ -8,6 +8,7 @@
   <desc xml:lang="fr" versionDate="2023-07-20">Contient un lemme ou un mot-clé.</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
+    <memberOf key="att.typed"/>
     <memberOf key="model.emphLike"/>
   </classes>
   <content>
@@ -30,14 +31,41 @@
     </alternate>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-term">
-    <desc xml:lang="en" versionDate="2023-05-22">Constraint to ensure, that text or a reference is used!</desc>
+    <desc xml:lang="en" versionDate="2023-11-07">Constraints to ensure the correct usage of tei:term.</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:term">
-          <sch:assert test="if (./parent::tei:keywords) then .[@ref][not(contains(@ref, 'lem'))] else @ref or string-length(normalize-space(string())) &gt; 0" xml:lang="en"><sch:name/>
-                        must have an attribute or a text node. If it is a child
-                        of tei:keywords, the attribute @ref must match the regular expression "key\d{6}$?".
-                    </sch:assert>
+          <sch:report test=".[not(@*)][not(text())][not(./node())]"><sch:name/> should have at least an attribute, text content or child nodes with text-content.
+          </sch:report>
+          <sch:assert test=".[(@ref and not(@type)) or (not(@ref) and @type) or (@ref and @type)]"><sch:name/> should have a @ref, a @type or both.
+          </sch:assert>
+          <sch:report test=".[not(text())][not(./node())][contains(@ref, 'lem')]">
+            If <sch:name/> has no text content or child nodes, the @ref-attribute must not reference
+            a lemma, but a keyword.
+          </sch:report>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern>
+        <sch:rule context="tei:term[not(ancestor::tei:keywords)][not(text())][not(./node())]">
+          <sch:assert test=".[@type eq 'index']">
+            If <sch:name/> is used outside tei:keywords and has no text content or child nodes,
+            then it must have a @type-attribute with the value 'index'.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern>
+        <sch:rule context="tei:term[not(ancestor::tei:keywords)][text() or ./node()]">
+          <sch:assert test=".[not(@type eq 'index')]">
+            If <sch:name/> is used outside tei:keywords and has text content or child nodes,
+            then it must not have a @type-attribute with the value 'index'.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern>
+        <sch:rule context="tei:term[@ref]">
+          <sch:assert test=".[not(@type eq 'unknown')]">
+            If <sch:name/> has a @ref-attribute, it cannot be of @type 'unknown'.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
@@ -54,6 +82,20 @@
           <rng:ref name="ssrq.pointer.lemma"/>
         </rng:choice>
       </datatype>
+    </attDef>
+    <attDef ident="type" mode="replace">
+      <valList type="closed">
+        <valItem ident="index">
+          <desc xml:lang="de" versionDate="2023-11-07">In der unmittelbar vorangehenden Passage geht um das in <att>ref</att> referenzierte Thema.</desc>
+          <desc xml:lang="en" versionDate="2023-11-07">The immediately preceding passage is about the topic referenced in <att>ref</att>.</desc>
+          <desc xml:lang="fr" versionDate="2023-11-07">Le passage qui précède immédiatement concerne le sujet référencé dans <att>ref</att>.</desc>
+        </valItem>
+        <valItem ident="unknown">
+          <desc xml:lang="de" versionDate="2023-11-07">Der markierte Ausdruck oder seine Bedeutung sind unbekannt.</desc>
+          <desc xml:lang="en" versionDate="2023-11-07">The highlighted expression or its meaning is unknown.</desc>
+          <desc xml:lang="fr" versionDate="2023-11-07">L'expression mise en évidence ou sa signification est inconnue.</desc>
+        </valItem>
+      </valList>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-term-de"/>
