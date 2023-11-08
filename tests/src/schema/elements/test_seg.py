@@ -26,6 +26,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-seg-with-p-and-other-content",
+            "<seg><head>foo</head><p><lb/>Und sonderlich sol soͤlich unser gebott</p><add place='left_top'>baz</add></seg>",
+            True,
+        ),
+        (
+            "invalid-seg-with-p-and-other-content",
+            "<seg><head>foo</head><p><lb/>Und sonderlich sol soͤlich unser gebott</p><add place='left_top'>baz</add><note>lorem ipsum</note></seg>",
+            False,
+        ),
+        (
             "seg-with-invalid-child",
             "<seg n='1'><text>foo</text></seg>",
             False,
