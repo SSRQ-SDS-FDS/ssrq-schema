@@ -17,12 +17,13 @@
   </classes>
   <content>
     <rng:choice>
-      <rng:group>
-        <rng:ref name="p"/>
-        <rng:oneOrMore>
+      <rng:oneOrMore>
+        <rng:choice>
           <rng:ref name="p"/>
-        </rng:oneOrMore>
-      </rng:group>
+          <rng:ref name="add"/>
+          <rng:ref name="head"/>
+        </rng:choice>
+      </rng:oneOrMore>
       <rng:group>
         <rng:ref name="seg"/>
         <rng:oneOrMore>
