@@ -33,7 +33,7 @@
                     </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'area']">
-          <sch:let name="area" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.area']//tei:valItem/@ident, '|'), '&quot;')}}"/>
+          <sch:let name="area" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = ('ssrq.measure.area', 'ssrq.measure.lengths.base.klafter')]//tei:valItem/@ident, '|'), '&quot;')}}"/>
           <sch:assert test="matches(@unit, concat('^', $area, '$'))"><sch:value-of select="./@unit"/>
                         is not a valid area measurement – you need to choose
                         from the following list:
@@ -49,7 +49,7 @@
                     </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'length']">
-          <sch:let name="length" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.length', 'ssrq.measure.lengths.base.cm', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:let name="length" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.length', 'ssrq.measure.lengths.base.cm', 'ssrq.measure.parts.vierling', 'ssrq.measure.lengths.base.klafter')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
           <sch:assert test="matches(@unit, concat('^', $length, '$'))"><sch:value-of select="./@unit"/>
                         is not valid length measurement– you need to choose
                         from the following list:
