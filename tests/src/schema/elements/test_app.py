@@ -24,11 +24,16 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-app-without-lem",
+            "valid-app-without-lem",
             """<app>
-                    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">quadringentesimo</rdg>
+                  <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">Da aber ein urteil gfellt wird vom
+                    gricht, mag derselben bschwerliche teill da <lb/>danen vorr einen
+                      <abbr>hrn</abbr> landvogt <term ref="lem001043">appellieren</term>. Da auch
+                    volgendts daselbsten denen widerumb <lb/>der beschwerte zum appellaz ußspruch
+                    mit seiner gegenwartt für mein gned<lb break="no"/>ig herren unnd weiter nicht
+                    kommen.</rdg>
                 </app>""",
-            False,
+            True,
         ),
         (
             "invalid-app-without-rdg",
