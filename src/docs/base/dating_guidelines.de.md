@@ -291,6 +291,8 @@ ab der zweiten Hälfte des 18. Jahrhunderts. In den evangelischen Gemeinden
 erfolgte der Übergang zwischen 1783 (Oberengadin und Bergell) und 1812
 (Schiers und Grüsch).
 
+In Genf fand der Kalenderwechsel am 13. Dezember 1700 statt ([SDS GE 4, Nr. 2947](https://www.ssrq-sds-fds.ch/online/GE_4/index.html#p_672)).
+
 ## 6 Jahresanfangsstile
 
 Die vom üblichen Jahresanfangsstil, dem
