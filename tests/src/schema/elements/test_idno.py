@@ -46,8 +46,28 @@ def test_idno(
             True,
         ),
         (
-            "valid-series-idno",
+            "valid-series-idno-without-tradtion-part",
             "<seriesStmt><idno>SSRQ-SG-III_4-77</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "valid-series-idno",
+            "<seriesStmt><idno>SSRQ-FR-I_2_8-1-1</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "valid-series-idno-with-case",
+            "<seriesStmt><idno>SDS-NE-4-1.0-1</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "valid-series-idno-with-case-and-opening",
+            "<seriesStmt><idno>SDS-NE-4-1.A.1-1</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "valid-series-idno-for-paratext",
+            "<seriesStmt><idno>SDS-NE-4-lit</idno></seriesStmt>",
             True,
         ),
         (
