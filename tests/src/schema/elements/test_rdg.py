@@ -30,6 +30,32 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<rdg>foo</rdg>",
             False,
         ),
+        (
+            "valid-rdg-with-different-wit-values",
+            """
+            <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d
+                      id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d#123
+                      id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d#p123
+                      id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d#p123-234
+                      id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d#n123
+                      id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d#n123-234
+                      id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d#fol123r
+                      id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d#fol123v
+                      id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d#fol123r-124v">bar</rdg>""",
+            True,
+        ),
+        (
+            "invalid-rdg-with-incorrect-wit-value-1",
+            """
+            <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d#s123">bar</rdg>""",
+            False,
+        ),
+        (
+            "invalid-rdg-with-incorrect-wit-value-2",
+            """
+            <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d#fol123">bar</rdg>""",
+            False,
+        ),
     ],
 )
 def test_rdg(
