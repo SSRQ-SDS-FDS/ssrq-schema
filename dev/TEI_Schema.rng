@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-11-22T12:12:36Z. .
+Schema generated from ODD source 2023-11-22T15:55:12Z. .
 TEI Edition: Version 4.5.0. Last updated on
         25th October 2022, revision 3e98e619e
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.5.0/
@@ -687,12 +687,12 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.5.0/
    </define>
    <define name="ssrq.pointer.urn">
       <data type="string">
-         <param name="pattern">urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)(-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)))?(#[A-Za-z0-9_]+)?</param>
+         <param name="pattern">urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-((([A-Za-z0-9]+\.)*)([0-9]+)(-([0-9]+))?|([a-z]{3,}))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\-\d+)?))?</param>
       </data>
    </define>
    <define name="ssrq.witness.pointer">
       <data type="string">
-         <param name="pattern">id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv]?|[pn]\d+))?</param>
+         <param name="pattern">id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\-\d+)?))?</param>
       </data>
    </define>
    <define name="att.dimensions.attribute.quantity">
@@ -1069,7 +1069,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.5.0/
                   <param name="pattern">(https?|ftp)://[^\s/$.?#].[^\s]*</param>
                </data>
                <data type="string">
-                  <param name="pattern">urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)(-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)))?(#[A-Za-z0-9_]+)?</param>
+                  <param name="pattern">urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-((([A-Za-z0-9]+\.)*)([0-9]+)(-([0-9]+))?|([a-z]{3,}))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\-\d+)?))?</param>
                </data>
             </choice>
          </attribute>
@@ -2705,7 +2705,7 @@ Normalization 12. Critical Apparatus]</a:documentation>
             <attribute name="source">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Reference to another item. </a:documentation>
                <data type="string">
-                  <param name="pattern">urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)(-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)))?(#[A-Za-z0-9_]+)?</param>
+                  <param name="pattern">urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-((([A-Za-z0-9]+\.)*)([0-9]+)(-([0-9]+))?|([a-z]{3,}))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\-\d+)?))?</param>
                </data>
             </attribute>
          </optional>
