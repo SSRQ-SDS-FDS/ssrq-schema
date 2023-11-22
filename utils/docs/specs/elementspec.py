@@ -69,7 +69,7 @@ class ElementSpec(BaseSpec):
         self._list_tei_references(translations=lang_translations, doc=doc)
 
         if path is not None:
-            return doc.dump(name=f"{self.ident}.{lang}", dir=path)
+            return doc.dump(name=f"{self.ident}.{lang}", directory=path)
         return doc.__str__()
 
     def _add_title(self, lang: str, doc: Document) -> None:
