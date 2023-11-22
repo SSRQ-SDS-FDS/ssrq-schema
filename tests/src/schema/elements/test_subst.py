@@ -17,6 +17,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-subst-with-lb",
+            "<subst><del>foo</del><lb/><add place='inline'>bar</add></subst>",
+            True,
+        ),
+        (
             "invalid-subst-with-attributes",
             "<subst type='bla'><add place='left_top'>bar</add><del>foo</del></subst>",
             False,

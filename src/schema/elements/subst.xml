@@ -9,13 +9,17 @@
   <classes mode="replace"/>
   <content>
     <sequence preserveOrder="false">
-      <elementRef key="del"/>
       <elementRef key="add"/>
+      <elementRef key="del"/>
+      <elementRef key="lb" minOccurs="0"/>
     </sequence>
   </content>
   <xi:include href="examples.xml" xpointer="ex-subst-de"/>
   <xi:include href="examples.xml" xpointer="ex-subst-en"/>
   <xi:include href="examples.xml" xpointer="ex-subst-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-subst-lb-de"/>
+  <xi:include href="examples.xml" xpointer="ex-subst-lb-en"/>
+  <xi:include href="examples.xml" xpointer="ex-subst-lb-fr"/>
   <remarks xml:lang="de" versionDate="2023-11-16">
     <p>Gruppiert eine Tilgung (oder überschüssigen Text) mit einer Hinzufügung
         in beliebiger Reihenfolge, wenn die Kombination als einzelner Eingriff
