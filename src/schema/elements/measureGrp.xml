@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="measureGrp" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="measureGrp" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Gruppe von Massen.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains a group of measurements.</desc>
   <desc xml:lang="fr" versionDate="2023-07-19">Contient un groupe de mesures.</desc>
@@ -10,16 +10,33 @@
     <memberOf key="model.measureLike"/>
   </classes>
   <content>
-    <sequence preserveOrder="false">
-      <elementRef key="measure" minOccurs="2" maxOccurs="unbounded"/>
-      <alternate minOccurs="0" maxOccurs="unbounded">
-        <elementRef key="app"/>
-        <elementRef key="cell"/>
-        <elementRef key="lb"/>
-        <textNode/>
-      </alternate>
-    </sequence>
+    <alternate>
+      <sequence>
+        <elementRef key="cell" minOccurs="2" maxOccurs="unbounded"/>
+      </sequence>
+      <sequence preserveOrder="false">
+        <elementRef key="measure" minOccurs="2" maxOccurs="unbounded"/>
+        <alternate minOccurs="0" maxOccurs="unbounded">
+          <elementRef key="app"/>
+          <elementRef key="lb"/>
+          <textNode/>
+        </alternate>
+      </sequence>
+    </alternate>
   </content>
+  <constraintSpec scheme="schematron" ident="sch-measureGrp">
+    <desc xml:lang="en" versionDate="2023-05-02">Constraint for tei:measureGrp to ensure, that the
+            element contains at least two tei:measure-elements!
+        </desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:measureGrp">
+          <sch:assert test="count(.//tei:measure) &gt;= 2" xml:lang="en"><sch:name/> should have at least two measures als descendants.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <xi:include href="examples.xml" xpointer="ex-measureGrp-area-de"/>
   <xi:include href="examples.xml" xpointer="ex-measureGrp-area-en"/>
   <xi:include href="examples.xml" xpointer="ex-measureGrp-area-fr"/>

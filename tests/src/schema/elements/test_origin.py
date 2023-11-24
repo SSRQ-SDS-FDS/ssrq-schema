@@ -13,6 +13,7 @@ from ..conftest import RNG_test_function
                    <origDate type='content' when-custom='1000-01-12' calendar='gregorian'/>
                    <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
                    <origPlace type='content' ref='loc123456'>Wuppertal</origPlace>
+                   <orgName role="issuer" ref="org123456">Kleiner Rat</orgName>
                 </origin>""",
             True,
         ),
