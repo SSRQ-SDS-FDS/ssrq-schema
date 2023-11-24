@@ -11,7 +11,7 @@
          </titleStmt>
          <publicationStmt>
             <publisher>SSRQ-SDS-FDS</publisher>
-            <date when="2023-11-23Z"/>
+            <date when="2023-11-24Z"/>
             <idno>1.0.0</idno>
             <availability>
                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
@@ -4705,39 +4705,77 @@ Measures</ref>
                          ident="measureGrp">
                <gloss versionDate="2007-07-04" xml:lang="en">measure group</gloss>
                <gloss versionDate="2009-01-06" xml:lang="fr">groupe de mesures</gloss>
-               <desc xmlns:xi="http://www.w3.org/2001/XInclude"
+               <desc xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude"
                      rend="replace"
                      xml:lang="de"
                      versionDate="2023-07-19">Enthält eine Gruppe von Massen.</desc>
-               <desc xmlns:xi="http://www.w3.org/2001/XInclude"
+               <desc xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude"
                      rend="replace"
                      xml:lang="en"
                      versionDate="2023-07-19">Contains a group of measurements.</desc>
-               <desc xmlns:xi="http://www.w3.org/2001/XInclude"
+               <desc xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude"
                      rend="replace"
                      xml:lang="fr"
                      versionDate="2023-07-19">Contient un groupe de mesures.</desc>
                <classes>
-                  <memberOf xmlns:xi="http://www.w3.org/2001/XInclude" key="model.measureLike"/>
+                  <memberOf xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                            xmlns:xi="http://www.w3.org/2001/XInclude"
+                            key="model.measureLike"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="1" preserveOrder="false">
-                     <elementRef xmlns:xi="http://www.w3.org/2001/XInclude"
-                                 key="measure"
-                                 minOccurs="2"
-                                 maxOccurs="unbounded"/>
-                     <alternate minOccurs="0" maxOccurs="unbounded">
-                        <elementRef xmlns:xi="http://www.w3.org/2001/XInclude" key="app"/>
-                        <elementRef xmlns:xi="http://www.w3.org/2001/XInclude" key="cell"/>
-                        <elementRef xmlns:xi="http://www.w3.org/2001/XInclude" key="lb"/>
-                        <textNode xmlns:xi="http://www.w3.org/2001/XInclude"/>
-                     </alternate>
-                  </sequence>
+                  <alternate minOccurs="1" maxOccurs="1">
+                     <sequence minOccurs="1" maxOccurs="1">
+                        <elementRef xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                                    xmlns:xi="http://www.w3.org/2001/XInclude"
+                                    key="cell"
+                                    minOccurs="2"
+                                    maxOccurs="unbounded"/>
+                     </sequence>
+                     <sequence minOccurs="1" maxOccurs="1" preserveOrder="false">
+                        <elementRef xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                                    xmlns:xi="http://www.w3.org/2001/XInclude"
+                                    key="measure"
+                                    minOccurs="2"
+                                    maxOccurs="unbounded"/>
+                        <alternate minOccurs="0" maxOccurs="unbounded">
+                           <elementRef xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                                       xmlns:xi="http://www.w3.org/2001/XInclude"
+                                       key="app"/>
+                           <elementRef xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                                       xmlns:xi="http://www.w3.org/2001/XInclude"
+                                       key="lb"/>
+                           <textNode xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                                     xmlns:xi="http://www.w3.org/2001/XInclude"/>
+                        </alternate>
+                     </sequence>
+                  </alternate>
                </content>
+               <constraintSpec xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                               xmlns:xi="http://www.w3.org/2001/XInclude"
+                               scheme="schematron"
+                               ident="sch-measureGrp">
+                  <desc xml:lang="en" versionDate="2023-05-02">Constraint for tei:measureGrp to ensure, that the
+            element contains at least two tei:measure-elements!
+        </desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:measureGrp">
+                           <sch:assert test="count(.//tei:measure) &gt;= 2" xml:lang="en">
+                              <sch:name/> should have at least two measures als descendants.
+          </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <attList/>
                <exemplum xml:lang="de" xml:id="ex-measureGrp-area-de">
-                  <p xmlns:xi="http://www.w3.org/2001/XInclude">Beispiel für verschiedene Flächenangaben</p>
+                  <p xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude">Beispiel für verschiedene Flächenangaben</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <measureGrp>
                         <measure type="area" unit="Juchart" quantity="3" commodity="field">dryg juchart akkers</measure>
@@ -4748,8 +4786,10 @@ Measures</ref>
                   </egXML>
                </exemplum>
                <exemplum xml:lang="en" xml:id="ex-measureGrp-area-en">
-                  <p xmlns:xi="http://www.w3.org/2001/XInclude">Example of different area specifications</p>
+                  <p xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude">Example of different area specifications</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <measureGrp>
                         <measure type="area" unit="Juchart" quantity="3" commodity="field">dryg juchart akkers</measure>
@@ -4760,8 +4800,10 @@ Measures</ref>
                   </egXML>
                </exemplum>
                <exemplum xml:lang="fr" xml:id="ex-measureGrp-area-fr">
-                  <p xmlns:xi="http://www.w3.org/2001/XInclude">Exemple de différentes spécifications de zone</p>
+                  <p xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude">Exemple de différentes spécifications de zone</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <measureGrp>
                         <measure type="area" unit="Juchart" quantity="3" commodity="field">dryg juchart akkers</measure>
@@ -4772,8 +4814,10 @@ Measures</ref>
                   </egXML>
                </exemplum>
                <exemplum xml:lang="de" xml:id="ex-measureGrp-currencies-de">
-                  <p xmlns:xi="http://www.w3.org/2001/XInclude">Beispiel für Währungsbezeichnungen, die man auf Anhieb nicht umrechnen kann</p>
+                  <p xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude">Beispiel für Währungsbezeichnungen, die man auf Anhieb nicht umrechnen kann</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                          xmlns:xi="http://www.w3.org/2001/XInclude">
         buͦß verfallen sin
         <measureGrp>
@@ -4785,8 +4829,10 @@ Measures</ref>
   </egXML>
                </exemplum>
                <exemplum xml:lang="en" xml:id="ex-measureGrp-currencies-en">
-                  <p xmlns:xi="http://www.w3.org/2001/XInclude">Example of currency names that cannot be converted straight away</p>
+                  <p xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude">Example of currency names that cannot be converted straight away</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                          xmlns:xi="http://www.w3.org/2001/XInclude">
         buͦß verfallen sin
         <measureGrp>
@@ -4798,8 +4844,10 @@ Measures</ref>
   </egXML>
                </exemplum>
                <exemplum xml:lang="fr" xml:id="ex-measureGrp-currencies-fr">
-                  <p xmlns:xi="http://www.w3.org/2001/XInclude">Exemple de noms de devises qui ne peuvent pas être convertis immédiatement</p>
+                  <p xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude">Exemple de noms de devises qui ne peuvent pas être convertis immédiatement</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                          xmlns:xi="http://www.w3.org/2001/XInclude">
         buͦß verfallen sin
         <measureGrp>
@@ -4811,8 +4859,10 @@ Measures</ref>
   </egXML>
                </exemplum>
                <exemplum xml:lang="de" xml:id="ex-measureGrp-wheat-de">
-                  <p xmlns:xi="http://www.w3.org/2001/XInclude">Beispiel für verschiedene Mengenangaben von Getreide</p>
+                  <p xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude">Beispiel für verschiedene Mengenangaben von Getreide</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <measureGrp>
                         <measure commodity="wheat" unit="Scheffel" quantity="10" type="volume">zehen schoͤffel</measure>
@@ -4822,8 +4872,10 @@ Measures</ref>
                   </egXML>
                </exemplum>
                <exemplum xml:lang="en" xml:id="ex-measureGrp-wheat-en">
-                  <p xmlns:xi="http://www.w3.org/2001/XInclude">Example of different amounts of grain</p>
+                  <p xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude">Example of different amounts of grain</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <measureGrp>
                         <measure commodity="wheat" unit="Scheffel" quantity="10" type="volume">zehen schoͤffel</measure>
@@ -4833,8 +4885,10 @@ Measures</ref>
                   </egXML>
                </exemplum>
                <exemplum xml:lang="fr" xml:id="ex-measureGrp-wheat-fr">
-                  <p xmlns:xi="http://www.w3.org/2001/XInclude">Exemple de différentes quantités de céréales</p>
+                  <p xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                     xmlns:xi="http://www.w3.org/2001/XInclude">Exemple de différentes quantités de céréales</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <measureGrp>
                         <measure commodity="wheat" unit="Scheffel" quantity="10" type="volume">zehen schoͤffel</measure>
@@ -12186,8 +12240,11 @@ The element <name/> may appear once only
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -12198,8 +12255,11 @@ The element <name/> may appear once only
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -12210,8 +12270,11 @@ The element <name/> may appear once only
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -12414,8 +12477,11 @@ The element <name/> may appear once only
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -12428,8 +12494,11 @@ The element <name/> may appear once only
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -12442,8 +12511,11 @@ The element <name/> may appear once only
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -14339,8 +14411,11 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -14351,8 +14426,11 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -14363,8 +14441,11 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -14404,6 +14485,7 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                                  key="origPlace"
                                  minOccurs="0"
                                  maxOccurs="unbounded"/>
+                     <elementRef xmlns:xi="http://www.w3.org/2001/XInclude" key="orgName" minOccurs="0"/>
                   </sequence>
                </content>
                <attList>
@@ -14416,8 +14498,11 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -14428,8 +14513,11 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>
@@ -14440,8 +14528,11 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                          xmlns:xi="http://www.w3.org/2001/XInclude">
                      <history>
                         <origin>
-                           <origDate from-custom="1532-05-20" to-custom="1532-12-31" calendar="julian">20. Mai – 31. Dezember 1532</origDate>
-                           <origPlace ref="loc000701">Schaffhausen</origPlace>
+                           <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
+                           <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
+                           <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
+                           <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
+                           <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
                         </origin>
                      </history>
                   </egXML>

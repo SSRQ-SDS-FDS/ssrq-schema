@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-11-23T08:42:58Z. .
+Schema generated from ODD source 2023-11-24T13:35:06Z. .
 TEI Edition: Version 4.5.0. Last updated on
         25th October 2022, revision 3e98e619e
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.5.0/
@@ -3181,23 +3181,41 @@ Measures]</a:documentation>
    <define name="measureGrp">
       <element name="measureGrp">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(measure group) Contains a group of measurements. [10.3.4. Dimensions]</a:documentation>
-         <interleave>
+         <choice>
             <group>
-               <ref name="measure"/>
-               <ref name="measure"/>
+               <ref name="cell"/>
+               <ref name="cell"/>
                <zeroOrMore>
-                  <ref name="measure"/>
+                  <ref name="cell"/>
                </zeroOrMore>
             </group>
-            <zeroOrMore>
-               <choice>
-                  <ref name="app"/>
-                  <ref name="cell"/>
-                  <ref name="lb"/>
-                  <text/>
-               </choice>
-            </zeroOrMore>
-         </interleave>
+            <interleave>
+               <group>
+                  <ref name="measure"/>
+                  <ref name="measure"/>
+                  <zeroOrMore>
+                     <ref name="measure"/>
+                  </zeroOrMore>
+               </group>
+               <zeroOrMore>
+                  <choice>
+                     <ref name="app"/>
+                     <ref name="lb"/>
+                     <text/>
+                  </choice>
+               </zeroOrMore>
+            </interleave>
+         </choice>
+         <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:xi="http://www.w3.org/2001/XInclude">
+            <sch:rule context="tei:measureGrp">
+               <sch:assert test="count(.//tei:measure) &gt;= 2" xml:lang="en">
+                  <sch:name/> should have at least two measures als descendants.
+          </sch:assert>
+            </sch:rule>
+         </sch:pattern>
       </element>
    </define>
    <define name="date">
@@ -3418,7 +3436,7 @@ Measures]</a:documentation>
             <ref name="item"/>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="ssrq-main-schema-list-gloss-list-must-have-labels-constraint-rule-30">
+                  id="ssrq-main-schema-list-gloss-list-must-have-labels-constraint-rule-31">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -4874,6 +4892,9 @@ The element <name/> may appear once only
             <zeroOrMore>
                <ref name="origPlace"/>
             </zeroOrMore>
+            <optional>
+               <ref name="orgName"/>
+            </optional>
          </group>
          <ref name="att.global.attribute.xmllang"/>
          <empty/>
@@ -5482,7 +5503,7 @@ The element <name/> may appear once only
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(added span of text) Denotes major additions. [11.3.1.4. Additions and Deletions]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="ssrq-main-schema-addSpan-addSpan-requires-spanTo-constraint-assert-65">
+                  id="ssrq-main-schema-addSpan-addSpan-requires-spanTo-constraint-assert-66">
             <rule context="tei:addSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -5492,7 +5513,7 @@ The element <name/> may appear once only
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="ssrq-main-schema-addSpan-addSpan-requires-spanTo-fr-constraint-assert-66">
+                  id="ssrq-main-schema-addSpan-addSpan-requires-spanTo-fr-constraint-assert-67">
             <rule context="tei:addSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -5560,7 +5581,7 @@ The element <name/> may appear once only
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(damaged span of text) Denotes larger sections that are damaged. [11.3.3.1. Damage, Illegibility, and Supplied Text]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="ssrq-main-schema-damageSpan-damageSpan-requires-spanTo-constraint-assert-67">
+                  id="ssrq-main-schema-damageSpan-damageSpan-requires-spanTo-constraint-assert-68">
             <rule context="tei:damageSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -5570,7 +5591,7 @@ The element <name/> may appear once only
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="ssrq-main-schema-damageSpan-damageSpan-requires-spanTo-fr-constraint-assert-68">
+                  id="ssrq-main-schema-damageSpan-damageSpan-requires-spanTo-fr-constraint-assert-69">
             <rule context="tei:damageSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -5589,7 +5610,7 @@ The element <name/> may appear once only
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(deleted span of text) Denotes larger sections deleted from the text. [11.3.1.4. Additions and Deletions]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="ssrq-main-schema-delSpan-delSpan-requires-spanTo-constraint-assert-69">
+                  id="ssrq-main-schema-delSpan-delSpan-requires-spanTo-constraint-assert-70">
             <rule context="tei:delSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -5599,7 +5620,7 @@ The element <name/> may appear once only
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="ssrq-main-schema-delSpan-delSpan-requires-spanTo-fr-constraint-assert-70">
+                  id="ssrq-main-schema-delSpan-delSpan-requires-spanTo-fr-constraint-assert-71">
             <rule context="tei:delSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -5717,7 +5738,7 @@ The element <name/> may appear once only
             </optional>
          </interleave>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="ssrq-main-schema-subst-substContents1-constraint-assert-72">
+                  id="ssrq-main-schema-subst-substContents1-constraint-assert-73">
             <rule context="tei:subst">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
