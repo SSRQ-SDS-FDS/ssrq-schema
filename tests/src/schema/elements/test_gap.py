@@ -25,6 +25,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<gap reason='illegible' unit='line' quantity='eins'/>",
             False,
         ),
+        (
+            "gap-with-valid-source",
+            "<gap source='urn:ssrq:SSRQ-ZH-NF_II_11-74-1#n17.1-17.4'/>",
+            True,
+        ),
     ],
 )
 def test_gap_rng(

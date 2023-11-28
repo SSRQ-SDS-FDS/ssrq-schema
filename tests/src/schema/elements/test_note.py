@@ -55,13 +55,23 @@ def test_note(
             True,
         ),
         (
+            "valid-note-inside-app-without-orig",
+            "<app><note type='text_comparison'><ref target='http://example.com'/></note></app>",
+            True,
+        ),
+        (
             "invalid-note-inside-app-with-text",
             "<app><note type='text_comparison'><ref target='http://example.com'/><orig>baz</orig> baz</note></app>",
             False,
         ),
         (
-            "invalid-note-inside-app-without-require-element",
-            "<app><note type='text_comparison'><ref target='http://example.com'/></note></app>",
+            "invalid-note-inside-app-without-required-ref",
+            "<app><note type='text_comparison'><orig>foo</orig></note></app>",
+            False,
+        ),
+        (
+            "invalid-note-inside-app-without-two-refs",
+            "<app><note type='text_comparison'><ref target='http://example.com'/><ref target='http://example.org'/><orig>foo</orig></note></app>",
             False,
         ),
     ],
