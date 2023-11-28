@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-11-28T09:30:35Z. .
+Schema generated from ODD source 2023-11-28T12:44:32Z. .
 TEI Edition: Version 4.5.0. Last updated on
         25th October 2022, revision 3e98e619e
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.5.0/
@@ -3564,7 +3564,7 @@ Measures]</a:documentation>
                <sch:assert test="count(*) = 2">
                         A note inside a critical apparatus must have exactly two children.
                     </sch:assert>
-               <sch:assert test="string-length(normalize-space(text())) = 0">
+               <sch:assert test="every $t in text()[normalize-space()] satisfies string-length($t) = 0">
                         A note inside a critical apparatus must not have text content.
                     </sch:assert>
                <sch:assert test=".[@type]">
@@ -5778,7 +5778,10 @@ The element <name/> may appear once only
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                <list>
                   <oneOrMore>
-                     <ref name="ssrq.witness.pointer"/>
+                     <choice>
+                        <ref name="ssrq.witness.pointer"/>
+                        <ref name="ssrq.pointer.urn"/>
+                     </choice>
                   </oneOrMore>
                </list>
             </attribute>

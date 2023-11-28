@@ -6772,7 +6772,7 @@ Measures</ref>
                            <sch:assert test="count(*) = 2">
                         A note inside a critical apparatus must have exactly two children.
                     </sch:assert>
-                           <sch:assert test="string-length(normalize-space(text())) = 0">
+                           <sch:assert test="every $t in text()[normalize-space()] satisfies string-length($t) = 0">
                         A note inside a critical apparatus must not have text content.
                     </sch:assert>
                            <sch:assert test=".[@type]">
@@ -18444,7 +18444,10 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                      <datatype>
                         <rng:list>
                            <rng:oneOrMore>
-                              <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.witness.pointer"/>
+                              <rng:choice>
+                                 <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.witness.pointer"/>
+                                 <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.pointer.urn"/>
+                              </rng:choice>
                            </rng:oneOrMore>
                         </rng:list>
                      </datatype>
