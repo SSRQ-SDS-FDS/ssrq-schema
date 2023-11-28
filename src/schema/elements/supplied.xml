@@ -41,7 +41,10 @@
       <datatype>
         <rng:list>
           <rng:oneOrMore>
-            <rng:ref name="ssrq.witness.pointer"/>
+            <rng:choice>
+              <rng:ref name="ssrq.witness.pointer"/>
+              <rng:ref name="ssrq.pointer.urn"/>
+            </rng:choice>
           </rng:oneOrMore>
         </rng:list>
       </datatype>

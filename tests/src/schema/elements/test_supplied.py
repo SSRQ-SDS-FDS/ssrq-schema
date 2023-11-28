@@ -64,6 +64,14 @@ def test_supplied(
             True,
         ),
         (
+            "valid-supplied-source-with-urn:ssrq",
+            """
+            <TEI>
+                <supplied source='urn:ssrq:SSRQ-ZH-NF_II_11-74-1'>foo</supplied>
+            </TEI>""",
+            True,
+        ),
+        (
             "invalid-empty-supplied-source-with-ref-to-bibl",
             """
             <TEI>

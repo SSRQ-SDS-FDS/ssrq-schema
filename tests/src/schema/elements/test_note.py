@@ -49,6 +49,21 @@ def test_note(
             "<note/>",
             False,
         ),
+        (
+            "valid-note-inside-app",
+            "<app><note type='text_comparison'> <ref target='http://example.com'/><orig>baz</orig> </note></app>",
+            True,
+        ),
+        (
+            "invalid-note-inside-app-with-text",
+            "<app><note type='text_comparison'><ref target='http://example.com'/><orig>baz</orig> baz</note></app>",
+            False,
+        ),
+        (
+            "invalid-note-inside-app-without-require-element",
+            "<app><note type='text_comparison'><ref target='http://example.com'/></note></app>",
+            False,
+        ),
     ],
 )
 def test_note_constraints(
