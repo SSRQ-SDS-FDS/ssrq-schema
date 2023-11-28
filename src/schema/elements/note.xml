@@ -34,8 +34,11 @@
                         If a note is used inside a critical apparatus, only ref and orig are
                         allowed as children.
                     </sch:assert>
-          <sch:assert test="count(*) = 2">
-                        A note inside a critical apparatus must have exactly two children.
+          <sch:assert test="count(tei:ref) = 1">
+                        A note inside a critical apparatus must have exactly one ref as a child.
+                    </sch:assert>
+          <sch:assert test="count(tei:orig) = 1 or count(tei:orig) = 0">
+                        A note inside a critical apparatus may have one or no orig as a child.
                     </sch:assert>
           <sch:assert test="every $t in text()[normalize-space()] satisfies string-length($t) = 0">
                         A note inside a critical apparatus must not have text content.
