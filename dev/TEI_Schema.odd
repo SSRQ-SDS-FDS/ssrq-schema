@@ -15609,9 +15609,9 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                               <sch:rule context="tei:*[@wit]">
                                  <sch:let name="wits"
                                           value="for $wit in tokenize(@wit, ' ') return replace($wit, '^(id-ssrq-[\w\d-]+)(#(\d+|fol\d+[rv]?|[pn]\d+))?$', '$1')"/>
-                                 <sch:assert test="every $wit in $wits satisfies id($wit)/name() = 'witness'"
+                                 <sch:assert test="every $wit in $wits satisfies id($wit)/name() = ('witness', 'bibl')"
                                              xml:lang="en">
-                                        Every referenced ID in @wit must belong to a witness element.
+                                        Every referenced ID in @wit must belong to a witness or bibl element.
                                     </sch:assert>
                               </sch:rule>
                            </sch:pattern>

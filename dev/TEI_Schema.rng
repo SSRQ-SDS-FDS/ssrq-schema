@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-12-04T15:51:00Z. .
+Schema generated from ODD source 2023-12-04T17:28:21Z. .
 TEI Edition: Version 4.5.0. Last updated on
         25th October 2022, revision 3e98e619e
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.5.0/
@@ -5216,9 +5216,9 @@ The element <name/> may appear once only
       <sch:rule context="tei:*[@wit]">
          <sch:let name="wits"
                   value="for $wit in tokenize(@wit, ' ') return replace($wit, '^(id-ssrq-[\w\d-]+)(#(\d+|fol\d+[rv]?|[pn]\d+))?$', '$1')"/>
-         <sch:assert test="every $wit in $wits satisfies id($wit)/name() = 'witness'"
+         <sch:assert test="every $wit in $wits satisfies id($wit)/name() = ('witness', 'bibl')"
                      xml:lang="en">
-                                        Every referenced ID in @wit must belong to a witness element.
+                                        Every referenced ID in @wit must belong to a witness or bibl element.
                                     </sch:assert>
       </sch:rule>
    </sch:pattern>
