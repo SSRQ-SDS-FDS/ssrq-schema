@@ -74,7 +74,7 @@ def test_rdg(
             "valid-wit-references",
             """<TEI>
                 <witness xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'/>
-                <witness xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e'/>
+                <bibl xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e'>foo</bibl>
                 <rdg wit='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e#fol30r'>bar</rdg>
             </TEI>""",
             True,

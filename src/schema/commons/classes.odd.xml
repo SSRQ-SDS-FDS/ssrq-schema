@@ -754,8 +754,8 @@
                                         type than a witness, and this: <anyElement xml:id="foo"/> <rdg wit="foo"/>
                                         would be valid XML.
                                     -->
-                  <sch:assert test="every $wit in $wits satisfies id($wit)/name() = 'witness'" xml:lang="en">
-                                        Every referenced ID in @wit must belong to a witness element.
+                  <sch:assert test="every $wit in $wits satisfies id($wit)/name() = ('witness', 'bibl')" xml:lang="en">
+                                        Every referenced ID in @wit must belong to a witness or bibl element.
                                     </sch:assert>
                 </sch:rule>
               </sch:pattern>
