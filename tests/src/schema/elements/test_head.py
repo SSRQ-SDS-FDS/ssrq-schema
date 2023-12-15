@@ -26,6 +26,11 @@ from ..conftest import RNG_test_function
             "<head scribe='baz'>foo</head>",
             False,
         ),
+        (
+            "valid-head-with-p",
+            "<head><p>foo</p><p>bar</p></head>",
+            True,
+        ),
     ],
 )
 def test_head_rng(
