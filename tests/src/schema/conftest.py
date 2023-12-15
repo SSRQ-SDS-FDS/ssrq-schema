@@ -129,7 +129,7 @@ def odds() -> list[tuple[Schema, list[ElName]]]:
 
 @pytest.fixture(scope="session")
 def change_rng_start_per_odd(
-    odds: list[tuple[Schema, list[ElName]]]
+    odds: list[tuple[Schema, list[ElName]]],
 ) -> dict[str, dict[str, str]]:
     """Change the start element of the RNG file to the given name."""
     return {

@@ -100,7 +100,7 @@ def filter_errors(
 
 
 def check_ref_targets(
-    files: list[tuple[str, ext_etree._ElementTree]]
+    files: list[tuple[str, ext_etree._ElementTree]],
 ) -> list[InvalidRefTargetException] | None:
     from urllib.parse import urlparse
 
