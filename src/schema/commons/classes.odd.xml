@@ -506,11 +506,17 @@
           </valList>
         </attDef>
         <attDef ident="resp" mode="change">
-          <desc xml:lang="de" versionDate="2023-09-19">Enthält das zwei- oder dreistellige Kürzel des Bearbeitenden.</desc>
-          <desc xml:lang="en" versionDate="2023-09-19">Contains the two- or three-character abbreviation of the editor.</desc>
-          <desc xml:lang="en" versionDate="2023-09-19">Contient l'abréviation à deux ou trois chiffres de l'éditeur.</desc>
+          <desc xml:lang="de" versionDate="2023-12-18">Enthält die zwei- oder dreistelligen Kürzel der Bearbeitenden.</desc>
+          <desc xml:lang="en" versionDate="2023-12-18">Contains the two- or three-character abbreviations of the editors.</desc>
+          <desc xml:lang="en" versionDate="2023-12-18">Contient les abréviations à deux ou trois chiffres des éditeurs.</desc>
           <datatype>
-            <dataRef name="string" restriction="[a-zA-Z]{2,3}"/>
+            <rng:list>
+              <rng:oneOrMore>
+                <rng:data type="string">
+                  <rng:param name="pattern">[A-Z]{2,3}</rng:param>
+                </rng:data>
+              </rng:oneOrMore>
+            </rng:list>
           </datatype>
         </attDef>
       </attList>
