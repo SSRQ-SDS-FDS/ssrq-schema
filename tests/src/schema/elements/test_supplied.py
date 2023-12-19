@@ -31,6 +31,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "supplied-valid-with-multiple-resps",
+            "<supplied resp='CS BP'>foo</supplied>",
+            True,
+        ),
+        (
             "supplied-valid-with-multiple-attributes",
             "<supplied resp='CS' reason='omitted'>foo</supplied>",
             True,
