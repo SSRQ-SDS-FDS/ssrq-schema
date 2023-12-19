@@ -11,7 +11,7 @@
          </titleStmt>
          <publicationStmt>
             <publisher>SSRQ-SDS-FDS</publisher>
-            <date when="2023-12-15Z"/>
+            <date when="2023-12-19Z"/>
             <idno>1.0.0</idno>
             <availability>
                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
@@ -382,17 +382,23 @@
                      <desc xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            rend="replace"
                            xml:lang="de"
-                           versionDate="2023-09-19">Enthält das zwei- oder dreistellige Kürzel des Bearbeitenden.</desc>
+                           versionDate="2023-12-18">Enthält die zwei- oder dreistelligen Kürzel der Bearbeitenden.</desc>
                      <desc xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            rend="replace"
                            xml:lang="en"
-                           versionDate="2023-09-19">Contains the two- or three-character abbreviation of the editor.</desc>
+                           versionDate="2023-12-18">Contains the two- or three-character abbreviations of the editors.</desc>
                      <desc xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            rend="replace"
                            xml:lang="en"
-                           versionDate="2023-09-19">Contient l'abréviation à deux ou trois chiffres de l'éditeur.</desc>
+                           versionDate="2023-12-18">Contient les abréviations à deux ou trois chiffres des éditeurs.</desc>
                      <datatype xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                        <dataRef name="string" restriction="[a-zA-Z]{2,3}"/>
+                        <rng:list>
+                           <rng:oneOrMore>
+                              <rng:data type="string">
+                                 <rng:param name="pattern">[A-Z]{2,3}</rng:param>
+                              </rng:data>
+                           </rng:oneOrMore>
+                        </rng:list>
                      </datatype>
                   </attDef>
                </attList>
