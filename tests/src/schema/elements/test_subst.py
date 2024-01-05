@@ -17,8 +17,8 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-subst-with-lb",
-            "<subst><del>foo</del><lb/><add place='inline'>bar</add></subst>",
+            "valid-subst-with-lb-and-pb",
+            "<subst><del>foo</del><pb/><lb/><add place='inline'>bar</add></subst>",
             True,
         ),
         (
