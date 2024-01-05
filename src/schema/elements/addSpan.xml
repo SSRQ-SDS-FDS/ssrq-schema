@@ -10,6 +10,7 @@
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.placement"/>
     <memberOf key="att.spanning"/>
+    <memberOf key="att.typed"/>
     <memberOf key="att.written"/>
   </classes>
   <content>
@@ -19,6 +20,11 @@
     <attDef ident="rend" mode="replace">
       <datatype>
         <dataRef key="ssrq.rend.add"/>
+      </datatype>
+    </attDef>
+    <attDef ident="type" mode="replace">
+      <datatype>
+        <dataRef key="ssrq.type.add"/>
       </datatype>
     </attDef>
   </attList>
