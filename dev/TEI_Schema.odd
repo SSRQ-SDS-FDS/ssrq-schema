@@ -3572,13 +3572,9 @@ Normalization</ref>
                      </datatype>
                   </attDef>
                   <attDef xmlns:xi="http://www.w3.org/2001/XInclude" ident="type" mode="replace">
-                     <valList type="closed">
-                        <valItem ident="sign">
-                           <desc xml:lang="de" versionDate="2023-05-24">Hinzufügung durch spezielles Zeichen markiert.</desc>
-                           <desc xml:lang="en" versionDate="2023-05-24">Addition marked by special sign.</desc>
-                           <desc xml:lang="fr" versionDate="2023-05-24">Ajout signalé par un signe spécial.</desc>
-                        </valItem>
-                     </valList>
+                     <datatype>
+                        <dataRef key="ssrq.type.add"/>
+                     </datatype>
                   </attDef>
                </attList>
                <exemplum xml:lang="de" xml:id="ex-add-de">
@@ -17598,6 +17594,7 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                   <memberOf key="att.global.rendition"/>
                   <memberOf key="att.placement"/>
                   <memberOf key="att.spanning"/>
+                  <memberOf key="att.typed"/>
                   <memberOf key="att.written"/>
                </classes>
                <content>
@@ -17619,6 +17616,11 @@ Schilling entrichten. Der Zins ist aber mit der einmaligen Zahlung von acht Guld
                   <attDef ident="rend" mode="replace">
                      <datatype>
                         <dataRef key="ssrq.rend.add"/>
+                     </datatype>
+                  </attDef>
+                  <attDef ident="type" mode="replace">
+                     <datatype>
+                        <dataRef key="ssrq.type.add"/>
                      </datatype>
                   </attDef>
                </attList>
