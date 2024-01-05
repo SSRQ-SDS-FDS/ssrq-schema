@@ -3,6 +3,22 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
+  <specGrp xml:id="ssrq-add-type">
+    <dataSpec ident="ssrq.type.add" mode="add">
+      <desc xml:lang="de" versionDate="2024-01-05">Art der Hinzufügung</desc>
+      <desc xml:lang="en" versionDate="2024-01-05">Kind of addition</desc>
+      <desc xml:lang="fr" versionDate="2024-01-05">Type d'ajout</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="sign">
+            <desc xml:lang="de" versionDate="2023-05-24">Hinzufügung durch spezielles Zeichen markiert.</desc>
+            <desc xml:lang="en" versionDate="2023-05-24">Addition marked by special sign.</desc>
+            <desc xml:lang="fr" versionDate="2023-05-24">Ajout signalé par un signe spécial.</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+  </specGrp>
   <specGrp xml:id="ssrq-agent">
     <dataSpec ident="ssrq.agent" mode="add">
       <desc xml:lang="de" versionDate="2023-05-11">Beschreibt die Art einer Beschädigung.</desc>

@@ -14,7 +14,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-addSpan-with-attributes",
-            "<addSpan hand='otherHand' place='below' rend='other_ink' spanTo='add1'/>",
+            "<addSpan type='sign' hand='otherHand' place='below' rend='other_ink' spanTo='add1'/>",
             False,
             "without matching ID",
         ),
