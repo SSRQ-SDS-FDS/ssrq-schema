@@ -11,6 +11,10 @@ def setup_logger():
         handlers=[rich_logging.RichHandler()],
     )
 
+    # disable snakemd logger by setting it to ERROR
+    snakemd_logger = logging.getLogger("snakemd")
+    snakemd_logger.setLevel(logging.ERROR)
+
     return logging.getLogger("rich")
 
 
