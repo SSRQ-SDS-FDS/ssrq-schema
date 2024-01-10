@@ -14,9 +14,17 @@
     </desc>
   <classes mode="replace"/>
   <content>
-    <rng:oneOrMore>
-      <rng:ref name="ssrq.content.default"/>
-    </rng:oneOrMore>
+    <rng:choice>
+      <rng:oneOrMore>
+        <rng:ref name="ssrq.content.default"/>
+      </rng:oneOrMore>
+      <rng:group>
+        <rng:ref name="seg"/>
+        <rng:oneOrMore>
+          <rng:ref name="seg"/>
+        </rng:oneOrMore>
+      </rng:group>
+    </rng:choice>
   </content>
   <xi:include href="examples.xml" xpointer="ex-app-rdg-de"/>
   <xi:include href="examples.xml" xpointer="ex-app-rdg-en"/>

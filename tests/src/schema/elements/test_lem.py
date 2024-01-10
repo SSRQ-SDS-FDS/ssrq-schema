@@ -16,6 +16,21 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-lem-with-seg",
+            "<lem><seg>foo</seg><seg>bar</seg></lem>",
+            True,
+        ),
+        (
+            "invalid-lem-with-seg-and-mixed-content",
+            "<lem><seg>foo</seg> bar</lem>",
+            False,
+        ),
+        (
+            "invalid-lem-with-just-one-seg",
+            "<lem><seg>foo</seg></lem>",
+            False,
+        ),
+        (
             "lem-with-invalid-attribute",
             "<lem att='xyz'>bar</lem>",
             False,
