@@ -31,6 +31,16 @@ from ..conftest import RNG_test_function
             "<head><p>foo</p><p>bar</p></head>",
             True,
         ),
+        (
+            "valid-head-with-seg",
+            "<head><seg>foo</seg><seg>bar</seg></head>",
+            True,
+        ),
+        (
+            "invalid-head-with-just-one-seg",
+            "<head><seg>foo</seg></head>",
+            False,
+        ),
     ],
 )
 def test_head_rng(
