@@ -19,9 +19,10 @@
     <rng:choice>
       <rng:oneOrMore>
         <rng:choice>
-          <rng:ref name="p"/>
           <rng:ref name="add"/>
           <rng:ref name="head"/>
+          <rng:ref name="p"/>
+          <rng:ref name="pb"/>
         </rng:choice>
       </rng:oneOrMore>
       <rng:group>
