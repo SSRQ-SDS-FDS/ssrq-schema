@@ -22,8 +22,8 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-table-with-head-and-pb",
-            "<table><head>bar</head> <pb n='32' facs='fol_32v'/><row><cell>foo</cell></row></table>",
+            "valid-table-with-head-and-breaks",
+            "<table><head>bar</head> <pb n='32' facs='fol_32v'/><cb n='a'/><row><cell>foo</cell></row><cb n='b'/></table>",
             True,
         ),
         (

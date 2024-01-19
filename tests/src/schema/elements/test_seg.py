@@ -27,7 +27,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "valid-seg-with-p-and-other-content",
-            "<seg><head>foo</head><p><lb/>Und sonderlich sol soͤlich unser gebott</p><add place='left_top'>baz</add><table><row><cell>foo</cell></row></table></seg>",
+            "<seg><head>foo</head><pb/><cb/><p><lb/>Und sonderlich sol soͤlich unser gebott</p><add place='left_top'>baz</add><cb/><table><row><cell>foo</cell></row></table></seg>",
             True,
         ),
         (
