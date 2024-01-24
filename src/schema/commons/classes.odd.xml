@@ -326,6 +326,18 @@
           </sch:pattern>
         </constraint>
       </constraintSpec>
+      <constraintSpec scheme="schematron" ident="sch-att-dimensions-3">
+        <desc xml:lang="en" versionDate="2024-01-24">Prevent that quantity is zero</desc>
+        <constraint>
+          <sch:pattern>
+            <sch:rule context="tei:*[number(@quantity)=0 or number(@quantity)=0.0]">
+              <sch:report test="not(@type='currency')" xml:lang="en">
+                  @quantity may only be zero, if it occurs in combination with @type="currency".
+              </sch:report>
+            </sch:rule>
+          </sch:pattern>
+        </constraint>
+      </constraintSpec>
       <attList>
         <attDef ident="extent" mode="delete"/>
         <attDef ident="precision" mode="delete"/>
