@@ -47,6 +47,16 @@ def test_msDesc(
             True,
         ),
         (
+            "valid-msDesc-without-physDesc-and-adminInfo-and-text-type-collection",
+            "<TEI><msDesc><history/></msDesc><text type='collection'/></TEI>",
+            True,
+        ),
+        (
+            "invalid-msDesc-without-physDesc-and-adminInfo-and-text-type-transcript",
+            "<TEI><msDesc><history/></msDesc><text type='transcript'/></TEI>",
+            False,
+        ),
+        (
             "invalid-msDesc-without-physDesc-and-without-adminInfo",
             "<msDesc></msDesc>",
             False,
