@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+    type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="msDesc" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-05-30">Beschreibt das edierte Quellenstück mit
         Aufbewahrungsort, Material, Layout, Schreiber, Siegel und Bibliographie zu Sekundärliteratur
@@ -32,7 +32,10 @@
     <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:msDesc to ensure the usage of either tei:physDesc or tei:adminInfo.</desc>
     <constraint>
       <sch:pattern>
-        <sch:rule context="tei:msDesc[not(tei:physDesc)]">
+        <sch:rule context="tei:msDesc[ancestor::tei:TEI//tei:text[@type = 'collection']]">
+          <sch:assert test=".[not(//tei:adminInfo)][not(tei:physDesc)]">Neither tei:physDesc nor tei:adminInfo are allowed for documents with tei:text/@type = 'collection'.</sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:msDesc[not(tei:physDesc)][not(ancestor::tei:TEI//tei:text[@type = 'collection'])]">
           <sch:assert test=".[//tei:adminInfo]">If no tei:physDesc is given, tei:adminInfo is required!</sch:assert>
         </sch:rule>
       </sch:pattern>
