@@ -73,6 +73,38 @@ def test_dependency_of_unit_and_quantity(
     "name, markup, result",
     [
         (
+            "invalid-quantity-with-zero-length",
+            """
+             <p>
+                <height unit='cm' quantity='0'/>
+                <width unit='cm' quantity='0.0'/>
+                <measure type="length" unit="cm" quantity="00">0 cm</measure>
+             </p>
+            """,
+            False,
+        ),
+        (
+            "valid-quantity-with-zero-currency",
+            "<measure type='currency' unit='lb' quantity='0'>0 lb</measure>",
+            True,
+        ),
+    ],
+)
+def test_quantity_constraint(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """Test if the validation fails, when an attribute starts with whitespace."""
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = validate_chunk(
+        files=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
             "correct-facs",
             "<pb facs='foo_1r'/>",
             True,
