@@ -45,6 +45,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<supplied cert='bar'>foo</supplied>",
             False,
         ),
+        (
+            "valid-supplied-with-paragraphs",
+            "<supplied resp='CS'><p>foo</p><p>bar</p></supplied>",
+            True,
+        ),
     ],
 )
 def test_supplied(
