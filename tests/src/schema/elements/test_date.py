@@ -161,8 +161,18 @@ def test_date_rng(
         ),
         (
             "valid-date-inside-pubStmt",
-            "<publicationStmt><date type='electronic' when-custom='2019-08-15'/></publicationStmt>",
+            "<publicationStmt><date type='print' when-custom='2019-08-15'/></publicationStmt>",
             True,
+        ),
+        (
+            "valid-date-inside-pubStmt-from-to",
+            "<publicationStmt><date type='electronic' from-custom='2019-01-01' to-custom='2019-12-31'/></publicationStmt>",
+            True,
+        ),
+        (
+            "invalid-date-inside-pubStmt-from",
+            "<publicationStmt><date type='print' from-custom='2019-01-01'/></publicationStmt>",
+            False,
         ),
         (
             "invalid-date-inside-pubStmt",

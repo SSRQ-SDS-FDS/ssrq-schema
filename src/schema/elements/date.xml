@@ -33,17 +33,18 @@
                     </sch:assert>
         </sch:rule>
         <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
-          <sch:assert test=".[@type][@type/data(.) = ('electronic', 'print')]">If
+          <sch:assert test=".[@type][@type/data(.) = ('electronic', 'print')]">
+                        If
                         <sch:name/>
                         is part of the publicationStmt it must contain @type with a value of
                         electronic or print.
                     </sch:assert>
-          <sch:assert test=".[@when-custom][not(@calendar|@dur-iso|@from-custom|@to-custom|@notAfter-custom|@notBefore-custom|@period)]">
+          <sch:assert test=".[@when-custom or (@from-custom and @to-custom)][not(@calendar|@dur-iso|@notAfter-custom|@notBefore-custom|@period)]">
                         If
                         <sch:name/>
-                        is part of the publicationStmt it must contain @when-custom and may not contain
-                        @calendar, @dur-iso, @from-custom, @to-custom, @notAfter-custom, @notBefore-custom or
-                        @period.
+                        is part of the publicationStmt it must contain @when-custom or @from-custom
+                        and to-custom, and may not contain @calendar, @dur-iso, @notAfter-custom,
+                        @notBefore-custom or @period.
                     </sch:assert>
           <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)">
                         If
