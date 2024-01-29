@@ -21,6 +21,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-ab-with-rend",
+            "<ab type='dorsal' place='cover' rend='pencil'><lb/>Copiert - 976 fol</ab>",
+            True,
+        ),
+        (
             "valid-ab-with-hand",
             " <ab type='archiving_reference' place='left_margin' hand='hand20cf'>St. Georgenamt FC 2</ab>",
             True,
