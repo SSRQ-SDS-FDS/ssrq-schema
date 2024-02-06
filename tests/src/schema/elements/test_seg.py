@@ -1,8 +1,6 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
 from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
@@ -24,6 +22,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "valid-seg-with-mixed-content",
             "<seg><lb/>Und sonderlich sol soͤlich unser gebott</seg>",
             True,
+        ),
+        (
+            "valid-seg-with-p-and-other-content",
+            "<seg><head>foo</head><pb/><cb/><p><lb/>Und sonderlich sol soͤlich unser gebott</p><add place='left_top'>baz</add><cb/><table><row><cell>foo</cell></row></table></seg>",
+            True,
+        ),
+        (
+            "invalid-seg-with-p-and-other-content",
+            "<seg><head>foo</head><p><lb/>Und sonderlich sol soͤlich unser gebott</p><add place='left_top'>baz</add><note>lorem ipsum</note></seg>",
+            False,
         ),
         (
             "seg-with-invalid-child",
@@ -60,7 +68,7 @@ def test_seg_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result

@@ -1,6 +1,8 @@
 import pytest
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -50,3 +52,29 @@ def test_handNote(
     result: bool,
 ):
     test_element_with_rng("handNote", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-handNote-with-reference",
+            "<TEI><handNote xml:id='foo'/><p hand='foo'>bar</p></TEI>",
+            True,
+        ),
+        (
+            "invalid-handNote-without-reference",
+            "<TEI><handNote xml:id='foo'/><p hand='foos'>bar</p></TEI>",
+            False,
+        ),
+    ],
+)
+def test_handNote_constraint(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """Test the if the validation fails, when a handNote is not referenced"""
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].report.is_valid() is result

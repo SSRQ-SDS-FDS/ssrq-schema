@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<egXML xmlns="http://www.tei-c.org/ns/Examples">
-  <subst>
-    <del>zugeschafft</del>
-    <add place="above">angethan</add>
-  </subst>
-</egXML>
+<div xmlns="http://www.tei-c.org/ns/1.0">
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-subst">
+    <subst>
+      <del>zugeschafft</del>
+      <add place="above">angethan</add>
+    </subst>
+  </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-subst-lb">
+    <subst>
+      <del>ihr gnaden</del>
+      <lb/>
+      <add hand="hand17c" place="left margin">man</add>
+    </subst>
+  </egXML>
+</div>

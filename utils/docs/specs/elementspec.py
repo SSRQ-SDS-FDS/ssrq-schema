@@ -69,7 +69,7 @@ class ElementSpec(BaseSpec):
         self._list_tei_references(translations=lang_translations, doc=doc)
 
         if path is not None:
-            return doc.dump(name=f"{self.ident}.{lang}", dir=path)
+            return doc.dump(name=f"{self.ident}.{lang}", directory=path)
         return doc.__str__()
 
     def _add_title(self, lang: str, doc: Document) -> None:
@@ -136,9 +136,10 @@ class ElementSpec(BaseSpec):
             doc.add_paragraph(translations["isEmpty"])
             return
 
-        content_keys, vallists = [i for i in self.content if isinstance(i, str)], [
-            i for i in self.content if isinstance(i, ET.Element)
-        ]
+        content_keys, vallists = (
+            [i for i in self.content if isinstance(i, str)],
+            [i for i in self.content if isinstance(i, ET.Element)],
+        )
 
         group_content_by_model = self._group_content_by_model(
             elements=elements, content=content_keys
@@ -255,7 +256,7 @@ class ElementSpec(BaseSpec):
 
         for val_item in sorted_valItems:
             content_values.append(
-                f"{val_item.attrib['ident']}{': ' + desc if len((desc := self.get_desc(element=val_item, lang=lang))) > 0 else ''}"
+                f"{val_item.attrib['ident']}{': ' + desc if len(desc := self.get_desc(element=val_item, lang=lang)) > 0 else ''}"
             )
 
         doc.add_unordered_list(content_values)

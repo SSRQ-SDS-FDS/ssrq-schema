@@ -17,8 +17,8 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-body-with-pb-div",
-            "<body><pb n='1' facs='abcde_1'/><div><p>bar</p></div></body>",
+            "valid-body-with-multiple-elements",
+            "<body><pb n='1' facs='abcde_1'/><div><p>bar</p></div><gap/><ab type='dorsal' place='verso'>foo</ab></body>",
             True,
         ),
         (

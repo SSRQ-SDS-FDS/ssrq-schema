@@ -11,7 +11,7 @@
       <desc xml:lang="en" versionDate="2023-05-05">SLS defined pattern for time points - based on days</desc>
       <desc xml:lang="fr" versionDate="2023-05-05">SDS modèle défini pour l'heure - basé sur les jours</desc>
       <content>
-        <dataRef name="string" restriction="(\d{4}|-)-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])"/>
+        <dataRef name="string" restriction="(((\d{4}|-)-(0[1-9]|1[0-2]))|--)-(0[1-9]|[1-2][0-9]|3[0-1])"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.time.point" mode="add" module="ssrq.core.module">
@@ -23,7 +23,7 @@
                 secondes
             </desc>
       <content>
-        <dataRef name="string" restriction="(2[0-4]|[0-1][0-9]):[0-5][0-9]:[0-5][0-9]"/>
+        <dataRef name="string" restriction="(((2[0-3]|[0-1][0-9]):[0-5][0-9]:[0-5][0-9])|24:00:00)"/>
       </content>
     </dataSpec>
     <!-- numbering of folia, pages and (parchment) sections -->
@@ -32,7 +32,7 @@
       <desc xml:lang="en" versionDate="2023-07-15">Foliation</desc>
       <desc xml:lang="fr" versionDate="2023-07-15">Foliation</desc>
       <content>
-        <dataRef name="string" restriction="((\d+)|([IVXLC]+))[rv]"/>
+        <dataRef name="string" restriction="(([1-9]\d*)|([IVXLCDM]+))([ab]|bis)?[rv]"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.pagination" mode="add" module="ssrq.core.module">
@@ -40,7 +40,7 @@
       <desc xml:lang="en" versionDate="2023-07-15">Pagination</desc>
       <desc xml:lang="fr" versionDate="2023-07-15">Pagination</desc>
       <content>
-        <dataRef name="string" restriction="(\d+)|([IVXLC]+)"/>
+        <dataRef name="string" restriction="(([1-9]\d*(\.[1-9]\d*)?|([IVXLCDM]+))([ab]|bis)?)|cover"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.section" mode="add" module="ssrq.core.module">
@@ -48,7 +48,7 @@
       <desc xml:lang="en" versionDate="2023-07-15">Section numbering</desc>
       <desc xml:lang="fr" versionDate="2023-07-15">Numérotation des sections</desc>
       <content>
-        <dataRef name="string" restriction="s(\d+)"/>
+        <dataRef name="string" restriction="s([1-9]\d*)"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.numbering" mode="add" module="ssrq.core.module">
@@ -66,7 +66,7 @@
       <desc xml:lang="en" versionDate="2023-09-13">Restriction for facsimile names</desc>
       <desc xml:lang="fr" versionDate="2023-09-13">Restriction concernant les noms de télécopie</desc>
       <content>
-        <dataRef name="string" restriction="[A-Za-z_\-0-9]+([1-9]|[rv]|plica)"/>
+        <dataRef name="string" restriction="[A-Za-z_\-\d]+(\d|[IVXLCDM]|[rv]|plica)"/>
       </content>
     </dataSpec>
     <!-- pointer to SSRQ databases -->
@@ -182,7 +182,7 @@
                 référence à d'autres pièces TEI y compris les identificateurs de fragments.
             </desc>
       <content>
-        <dataRef name="string" restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)(-((([A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)))?(#[A-Za-z0-9_]+)?"/>
+        <dataRef name="string" restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-((([A-Za-z0-9]+\.)*)([0-9]+)(-([0-9]+))?|([a-z]{3,}))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.pointer.target" mode="add" module="ssrq.core.module">
@@ -201,6 +201,34 @@
           <dataRef key="ssrq.pointer.url"/>
           <dataRef key="ssrq.pointer.urn"/>
         </alternate>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.witness.id" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-10-30">Definiert das Muster für die ID eines weiteren Textzeugens einer
+                Quelle.
+            </desc>
+      <desc xml:lang="en" versionDate="2023-10-30">Defines the pattern for the ID of another witness of a source.
+            </desc>
+      <desc xml:lang="fr" versionDate="2023-10-30">Définit le modèle pour l'ID d'un autre témoin d'une source.
+            </desc>
+      <content>
+        <!--
+            This restriction has two parts
+                1) A prefix "id-ssrq-". This prefix is used to make sure, that the xml:id is a valid token of
+                the XS:ID datatype (id est a NCName without colons). This is necessary, because the following
+                UUID may start with a letter, which is forbidden as first char in NCNames.
+                2) A UUID Version 4. This is used, because UUIDs are (potentially) persistant and globally
+                unique. This allows publishing the XML-files while still work in progress.
+        -->
+        <dataRef name="ID" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.witness.pointer" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-10-30">Definiert einen Pointer auf IDs vom Typ ssrq.witness.id, und erlaubt die Verwendung von Teilangaben über '#part'.</desc>
+      <desc xml:lang="en" versionDate="2023-10-30">Defines a pointer to IDs of type ssrq.witness.id, and allows the use of partial information via '#part'.</desc>
+      <desc xml:lang="fr" versionDate="2023-10-30">Définit un pointeur vers des ID de type ssrq.witness.id, et permet l'utilisation d'informations partielles via '#part'.</desc>
+      <content>
+        <dataRef name="string" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
       </content>
     </dataSpec>
   </specGrp>

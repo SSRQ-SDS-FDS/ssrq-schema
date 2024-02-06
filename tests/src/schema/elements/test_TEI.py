@@ -55,7 +55,7 @@ from ..conftest import RNG_test_function
                                     </msItem>
                                 </msContents>
                                 <physDesc>
-                                    <objectDesc form='copy'>
+                                    <objectDesc>
                                         <supportDesc>
                                             <support>
                                             <material type="paper"/>
@@ -143,7 +143,7 @@ from ..conftest import RNG_test_function
                                     </msItem>
                                 </msContents>
                                 <physDesc>
-                                    <objectDesc form='copy'>
+                                    <objectDesc >
                                         <supportDesc>
                                             <support>
                                             <material type="paper"/>

@@ -8,7 +8,7 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-objectDesc",
-            """<objectDesc form='copy'>
+            """<objectDesc>
                 <supportDesc>
                     <support>
                         <material type='paper'/>
@@ -27,7 +27,7 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "objectDesc-with-invalid-form",
+            "objectDesc-with-invalid-attribute-form",
             """<objectDesc form='bar'>
                 <supportDesc>
                     <support>

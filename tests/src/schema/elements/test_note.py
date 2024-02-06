@@ -1,8 +1,6 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
 from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
@@ -49,13 +47,38 @@ def test_note(
             "<note/>",
             False,
         ),
+        (
+            "valid-note-inside-app",
+            "<app><note type='text_comparison'> <ref target='http://example.com'/><orig>baz</orig> </note></app>",
+            True,
+        ),
+        (
+            "valid-note-inside-app-without-orig",
+            "<app><note type='text_comparison'><ref target='http://example.com'/></note></app>",
+            True,
+        ),
+        (
+            "invalid-note-inside-app-with-text",
+            "<app><note type='text_comparison'><ref target='http://example.com'/><orig>baz</orig> baz</note></app>",
+            False,
+        ),
+        (
+            "invalid-note-inside-app-without-required-ref",
+            "<app><note type='text_comparison'><orig>foo</orig></note></app>",
+            False,
+        ),
+        (
+            "invalid-note-inside-app-without-two-refs",
+            "<app><note type='text_comparison'><ref target='http://example.com'/><ref target='http://example.org'/><orig>foo</orig></note></app>",
+            False,
+        ),
     ],
 )
 def test_note_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result

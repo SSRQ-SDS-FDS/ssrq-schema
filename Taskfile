@@ -9,14 +9,14 @@ function cmd {
 
 
 function fmt {
-  cmd black . "${@}"
+  cmd ruff format . "${@}"
   cmd ruff --fix . "${@}"
   fmt-xml
 }
 
 function fmt-check {
-    echo "Checking the format with black..."
-    cmd black --check ${src}
+    echo "Checking the format with ruff..."
+    cmd ruff format --check ${src}
 }
 
 function fmt-xml {

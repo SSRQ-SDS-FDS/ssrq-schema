@@ -38,13 +38,9 @@
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace">
-      <valList type="closed">
-        <valItem ident="sign">
-          <desc xml:lang="de" versionDate="2023-05-24">Hinzufügung durch spezielles Zeichen markiert.</desc>
-          <desc xml:lang="en" versionDate="2023-05-24">Addition marked by special sign.</desc>
-          <desc xml:lang="fr" versionDate="2023-05-24">Ajout signalé par un signe spécial.</desc>
-        </valItem>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.type.add"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-add-de"/>

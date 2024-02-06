@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="addSpan" module="transcr" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="addSpan" module="transcr" mode="change">
   <desc xml:lang="de" versionDate="2023-08-18">Bezeichnet grössere Hinzufügungen.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Denotes major additions.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Désigne des ajouts majeurs.</desc>
@@ -10,15 +10,29 @@
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.placement"/>
     <memberOf key="att.spanning"/>
+    <memberOf key="att.typed"/>
     <memberOf key="att.written"/>
   </classes>
   <content>
     <empty/>
   </content>
   <attList>
+    <attDef ident="place" mode="replace">
+      <datatype>
+        <rng:choice>
+          <rng:ref name="ssrq.place"/>
+          <rng:ref name="ssrq.place.add"/>
+        </rng:choice>
+      </datatype>
+    </attDef>
     <attDef ident="rend" mode="replace">
       <datatype>
         <dataRef key="ssrq.rend.add"/>
+      </datatype>
+    </attDef>
+    <attDef ident="type" mode="replace">
+      <datatype>
+        <dataRef key="ssrq.type.add"/>
       </datatype>
     </attDef>
   </attList>

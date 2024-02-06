@@ -1,50 +1,52 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
 from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
-    "name, markup, result, message",
+    "name, markup, result",
     [
         (
             "valid-supplied-source",
-            "<supplied source='73988c1a-40e1-4527-94b7-736d418b29d0'>foo</supplied>",
-            False,
-            "without matching ID",
+            "<supplied source='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'>foo</supplied>",
+            True,
         ),
         (
             "invalid-supplied-source",
             "<supplied source='bar'>foo</supplied>",
             False,
-            None,
         ),
         (
             "supplied-valid-with-reason",
             "<supplied reason='omitted'>foo</supplied>",
             True,
-            None,
         ),
         (
             "supplied-valid-with-resp",
             "<supplied resp='CS'>foo</supplied>",
             True,
-            None,
+        ),
+        (
+            "supplied-valid-with-multiple-resps",
+            "<supplied resp='CS BP'>foo</supplied>",
+            True,
         ),
         (
             "supplied-valid-with-multiple-attributes",
             "<supplied resp='CS' reason='omitted'>foo</supplied>",
             True,
-            None,
         ),
         (
             "supplied-with-invalid-attribute",
             "<supplied cert='bar'>foo</supplied>",
             False,
-            None,
+        ),
+        (
+            "valid-supplied-with-paragraphs",
+            "<supplied resp='CS'><p>foo</p><p>bar</p></supplied>",
+            True,
         ),
     ],
 )
@@ -53,42 +55,51 @@ def test_supplied(
     name: str,
     markup: str,
     result: bool,
-    message: str | None,
 ):
-    test_element_with_rng("supplied", name, markup, result, True)
-    if message:
-        validation_result = test_element_with_rng(
-            "supplied", name, markup, result, True
-        )
-        file_reports = validation_result.reports[0]
-        assert isinstance(file_reports.report, list)
-        messages = "".join([error.message for error in file_reports.report])
-        assert message in messages
-    else:
-        test_element_with_rng("supplied", name, markup, result, False)
+    test_element_with_rng("supplied", name, markup, result, False)
 
 
 @pytest.mark.parametrize(
     "name, markup, result",
     [
         (
-            "invalid-empty-supplied-source",
-            "<supplied source='73988c1a-40e1-4527-94b7-736d418b29d0'/>",
-            False,
-        ),
-        (
-            "valid-supplied-source",
-            "<supplied source='73988c1a-40e1-4527-94b7-736d418b29d0'>foo</supplied>",
+            "valid-supplied-source-with-ref-to-bibl",
+            """
+            <TEI>
+                <bibl xml:id='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</bibl>
+                <supplied source='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</supplied>
+            </TEI>""",
             True,
         ),
         (
-            "invalid-supplied-source",
+            "valid-supplied-source-with-urn:ssrq",
+            """
+            <TEI>
+                <supplied source='urn:ssrq:SSRQ-ZH-NF_II_11-74-1'>foo</supplied>
+            </TEI>""",
+            True,
+        ),
+        (
+            "invalid-empty-supplied-source-with-ref-to-bibl",
+            """
+            <TEI>
+                <bibl xml:id='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</bibl>
+                <supplied source='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'/>
+            </TEI>""",
+            False,
+        ),
+        (
+            "invalid-supplied-without-attribute",
             "<supplied>foo</supplied>",
             False,
         ),
         (
-            "invalid-supplied-conflicting-attributes",
-            "<supplied source='73988c1a-40e1-4527-94b7-736d418b29d0' resp='foo'>bar</supplied>",
+            "invalid-supplied-with-conflicting-attributes",
+            """
+            <TEI>
+                <bibl xml:id='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</bibl>
+                <supplied resp='foo' source='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</supplied>
+            </TEI>""",
             False,
         ),
     ],
@@ -97,7 +108,7 @@ def test_supplied_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result

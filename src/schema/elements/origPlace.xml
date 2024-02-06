@@ -9,6 +9,7 @@
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="att.global.responsibility"/>
+    <memberOf key="att.typed"/>
     <memberOf key="model.pPart.msdesc"/>
   </classes>
   <content>
@@ -45,6 +46,11 @@
       </datatype>
     </attDef>
     <attDef ident="resp" mode="delete"/>
+    <attDef ident="type" mode="replace" usage="req">
+      <datatype>
+        <dataRef key="ssrq.orig.type"/>
+      </datatype>
+    </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-history-de"/>
   <xi:include href="examples.xml" xpointer="ex-history-en"/>

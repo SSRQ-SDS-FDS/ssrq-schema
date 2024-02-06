@@ -18,7 +18,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-corr-with-resp-attribute",
-            "<corr resp='bar'>foo</corr>",
+            "<corr resp='BAR'>foo</corr>",
             True,
         ),
         (

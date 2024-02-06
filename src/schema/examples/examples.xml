@@ -125,17 +125,41 @@
       <p>Exemple d'un ajout plus important</p>
       <xi:include href="addSpan.xml"/>
     </exemplum>
-    <exemplum xml:lang="de" xml:id="ex-app-de">
+    <exemplum xml:lang="de" xml:id="ex-app-note-de">
+      <p>Beispiel für einen Apparat mit Textvergleich</p>
+      <xi:include href="app.xml" xpointer="ex-app-note"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-app-note-en">
+      <p>Example of an apparatus with text comparison</p>
+      <xi:include href="app.xml" xpointer="ex-app-note"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-app-note-fr">
+      <p>Exemple d'un appareil avec comparaison de texte</p>
+      <xi:include href="app.xml" xpointer="ex-app-note"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-app-without-lem-de">
+      <p>Beispiel für einen Apparateintrag ohne Lemma</p>
+      <xi:include href="app.xml" xpointer="ex-app-without-lem"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-app-without-lem-en">
+      <p>Example of an apparatus entry without a lemma</p>
+      <xi:include href="app.xml" xpointer="ex-app-without-lem"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-app-without-lem-fr">
+      <p>Exemple d'entrée d'appareil sans lemme</p>
+      <xi:include href="app.xml" xpointer="ex-app-without-lem"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-app-rdg-de">
       <p>Beispiel für einen Apparateintrag</p>
-      <xi:include href="app.xml"/>
+      <xi:include href="app.xml" xpointer="ex-app-rdg"/>
     </exemplum>
-    <exemplum xml:lang="en" xml:id="ex-app-en">
+    <exemplum xml:lang="en" xml:id="ex-app-rdg-en">
       <p>Example of an apparatus entry</p>
-      <xi:include href="app.xml"/>
+      <xi:include href="app.xml" xpointer="ex-app-rdg"/>
     </exemplum>
-    <exemplum xml:lang="fr" xml:id="ex-app-fr">
+    <exemplum xml:lang="fr" xml:id="ex-app-rdg-fr">
       <p>Exemple d'entrée d'appareil</p>
-      <xi:include href="app.xml"/>
+      <xi:include href="app.xml" xpointer="ex-app-rdg"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-author-de">
       <p>Beispiel für die Angabe des Autors eines Stücks</p>
@@ -365,6 +389,18 @@
       <p>Exemple de période avec <att>dur-iso</att></p>
       <xi:include href="date.xml" xpointer="ex-date-duriso"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-duriso-period-de">
+      <p>Beispiel für eine sich wöchentlich wiederholende Datumsangabe im ISO-8601-Format</p>
+      <xi:include href="date.xml" xpointer="ex-date-duriso-period"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-duriso-period-en">
+      <p>Example of a weekly repeating date in ISO 8601 format</p>
+      <xi:include href="date.xml" xpointer="ex-date-duriso-period"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-duriso-period-fr">
+      <p>Exemple de date répétitive hebdomadaire au format ISO 8601</p>
+      <xi:include href="date.xml" xpointer="ex-date-duriso-period"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-date-duriso-repeated-de">
       <p>Wiederholungen bzw. wiederholende Zeitabstände lassen sich nur mit dem vollen ISO-8601-Format ausdrücken</p>
       <xi:include href="date.xml" xpointer="ex-date-duriso-repeated"/>
@@ -414,6 +450,18 @@
     <exemplum xml:lang="fr" xml:id="ex-date-roman-fr">
       <p>Exemple de date avec des chiffres romains</p>
       <xi:include href="date.xml" xpointer="ex-date-roman"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-deadline-2-de">
+      <p>Beispiel für eine Deadline mit einem Zeitraum</p>
+      <xi:include href="date.xml" xpointer="ex-date-deadline-2"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-deadline-2-en">
+      <p>Example of a deadline with a period</p>
+      <xi:include href="date.xml" xpointer="ex-date-deadline-2"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-deadline-2-fr">
+      <p>Exemple de délai avec un point</p>
+      <xi:include href="date.xml" xpointer="ex-date-deadline-2"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-damage-add-de">
       <p>Beispiel für eine beschädigte Stelle, in die eine andere Hand Text eingetragen hat</p>
@@ -1638,15 +1686,27 @@
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-subst-de">
       <p>Beispiel für eine Ersetzung</p>
-      <xi:include href="subst.xml"/>
+      <xi:include href="subst.xml" xpointer="ex-subst"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-subst-en">
       <p>Example of a replacement</p>
-      <xi:include href="subst.xml"/>
+      <xi:include href="subst.xml" xpointer="ex-subst"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-subst-fr">
       <p>Exemple de remplacement</p>
-      <xi:include href="subst.xml"/>
+      <xi:include href="subst.xml" xpointer="ex-subst"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-subst-lb-de">
+      <p>Beispiel für eine Ersetzung mit Zeilenumbruch</p>
+      <xi:include href="subst.xml" xpointer="ex-subst-lb"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-subst-lb-en">
+      <p>Example of a replacement with a line break</p>
+      <xi:include href="subst.xml" xpointer="ex-subst-lb"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-subst-lb-fr">
+      <p>Exemple de remplacementavec un saut de ligne</p>
+      <xi:include href="subst.xml" xpointer="ex-subst-lb"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-supplied-de">
       <p>Beispiel für eine Ergänzung</p>

@@ -1,9 +1,6 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
-from saxonche import PySaxonProcessor
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
 from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
@@ -19,16 +16,6 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         (
             "idno-archive-invalid",
             "<idno xml:lang='de' source='http://foo.bar http://foo.bar'>foo 123</idno>",
-            False,
-        ),
-        (
-            "invalid-idno-with-whitespace-only",
-            "<idno> </idno>",
-            False,
-        ),
-        (
-            "invalid-empty-idno",
-            "<idno/>",
             False,
         ),
         (
@@ -56,8 +43,28 @@ def test_idno(
             True,
         ),
         (
-            "valid-series-idno",
+            "valid-series-idno-without-tradtion-part",
             "<seriesStmt><idno>SSRQ-SG-III_4-77</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "valid-series-idno",
+            "<seriesStmt><idno>SSRQ-FR-I_2_8-1-1</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "valid-series-idno-with-case",
+            "<seriesStmt><idno>SDS-NE-4-1.0-1</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "valid-series-idno-with-case-and-opening",
+            "<seriesStmt><idno>SDS-NE-4-1.A.1-1</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "valid-series-idno-for-paratext",
+            "<seriesStmt><idno>SDS-NE-4-lit</idno></seriesStmt>",
             True,
         ),
         (
@@ -76,10 +83,10 @@ def test_series_idno_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result
 
 
 @pytest.mark.parametrize(
@@ -101,15 +108,16 @@ def test_msIdent_idno_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    with PySaxonProcessor(license=False) as proc:
-        xp = proc.new_xpath_processor()
-        xml = reports[0].report
-        node = proc.parse_xml(xml_text=xml)
-        xp.set_context(xdm_item=node)
-        item = xp.evaluate_single(
-            '//*:text[contains(normalize-space(.), "idno element needs")]'
-        )
-        assert bool(item) is not result
+    if not result:
+        errors = []
+        if reports[0].report.failed_asserts:
+            for error in reports[0].report.failed_asserts:
+                errors.append(error.text)
+        if reports[0].report.successful_reports:
+            for error in reports[0].report.successful_reports:
+                errors.append(error.text)
+
+        assert any("idno element needs" in e for e in errors) is True

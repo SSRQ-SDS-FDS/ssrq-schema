@@ -1,8 +1,6 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
 from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
@@ -48,6 +46,17 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             """,
             False,
         ),
+        (
+            "valid-seal-with-optional-material",
+            """
+            <sealDesc>
+                <seal n="1" shape="round" attachment="sealed_on_a_parchment_tag" condition="absent">
+                    <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
+                </seal>
+            </sealDesc>
+            """,
+            True,
+        ),
     ],
 )
 def test_seal_sealDesc(
@@ -72,6 +81,9 @@ def test_seal_sealDesc(
                 <seal n="2" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
                     <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
                 </seal>
+                <seal n="3" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
+                    <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
+                </seal>
             </sealDesc>
             """,
             True,
@@ -83,7 +95,10 @@ def test_seal_sealDesc(
                 <seal n="1" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
                     <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
                 </seal>
-                <seal n="1" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
+                <seal n="2" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
+                    <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
+                </seal>
+                <seal n="2" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
                     <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
                 </seal>
             </sealDesc>
@@ -96,7 +111,7 @@ def test_seal_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result

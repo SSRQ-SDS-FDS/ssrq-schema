@@ -1,8 +1,6 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
 from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
@@ -21,6 +19,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "date-with-valid-when-without-year-and-month",
+            "<date when-custom='---12' calendar='gregorian'>Immer am 12.</date>",
+            True,
+        ),
+        (
             "date-with-invalid-when-month-too-large",
             "<date when-custom='1756-92-12' calendar='gregorian'>12. Februar 1756</date>",
             False,
@@ -28,6 +31,21 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         (
             "date-with-invalid-when-year-only",
             "<date when-custom='1756' calendar='gregorian'>1756</date>",
+            False,
+        ),
+        (
+            "date-with-invalid-when-month-only",
+            "<date when-custom='--09' calendar='gregorian'>September</date>",
+            False,
+        ),
+        (
+            "date-with-invalid-day",
+            "<date when-custom='0001-01-00' calendar='unknown'>foo</date>",
+            False,
+        ),
+        (
+            "date-with-invalid-negative-year",
+            "<date when-custom='-1337-01-01' calendar='unknown'>foo</date>",
             False,
         ),
         (
@@ -141,8 +159,18 @@ def test_date_rng(
         ),
         (
             "valid-date-inside-pubStmt",
-            "<publicationStmt><date type='electronic' when-custom='2019-08-15'/></publicationStmt>",
+            "<publicationStmt><date type='print' when-custom='2019-08-15'/></publicationStmt>",
             True,
+        ),
+        (
+            "valid-date-inside-pubStmt-from-to",
+            "<publicationStmt><date type='electronic' from-custom='2019-01-01' to-custom='2019-12-31'/></publicationStmt>",
+            True,
+        ),
+        (
+            "invalid-date-inside-pubStmt-from",
+            "<publicationStmt><date type='print' from-custom='2019-01-01'/></publicationStmt>",
+            False,
         ),
         (
             "invalid-date-inside-pubStmt",
@@ -155,7 +183,7 @@ def test_date_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result

@@ -36,9 +36,9 @@ class SSRQConfig(BaseModel):
         import semver  # type: ignore
 
         for schema in schemas:
-            if semver.VersionInfo.isvalid(schema["version"]) is False:
+            if semver.VersionInfo.is_valid(schema["version"]) is False:
                 raise ValueError("version must be a semantic version string")
-            if semver.VersionInfo.isvalid(schema["tei_version"]) is False:
+            if semver.VersionInfo.is_valid(schema["tei_version"]) is False:
                 raise ValueError(
                     "the selected tei version must be a semantic version string"
                 )
@@ -88,7 +88,8 @@ def resolve_relative_paths(doc: str) -> str:
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(xml_text=doc)
         xsltproc.set_parameter(  # type: ignore
-            "path_base", proc.make_string_value(configs.SCHEMA_DIR.absolute().as_uri())  # type: ignore
+            "path_base",
+            proc.make_string_value(configs.SCHEMA_DIR.absolute().as_uri()),  # type: ignore
         )
 
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
@@ -123,7 +124,8 @@ def resolve_xincludes(doc: str) -> str:
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(xml_text=doc)
         xsltproc.set_parameter(  # type: ignore
-            "path_base", proc.make_string_value(configs.EXAMPLES_DIR.absolute().as_uri())  # type: ignore
+            "path_base",
+            proc.make_string_value(configs.EXAMPLES_DIR.absolute().as_uri()),  # type: ignore
         )
 
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
@@ -180,7 +182,9 @@ def fill_template_with_metadata(authors: list[str], schema: SSRQSchemaType) -> s
             xml_file_name=f"{str(configs.SCHEMA_DIR)}/{schema['entry']}"
         )
 
-        xsltproc.set_parameter("description", proc.make_string_value(schema["description"]))  # type: ignore
+        xsltproc.set_parameter(
+            "description", proc.make_string_value(schema["description"])
+        )  # type: ignore
         xsltproc.set_parameter("title", proc.make_string_value(schema["title"]))  # type: ignore
         xsltproc.set_parameter("version", proc.make_string_value(schema["version"]))  # type: ignore
 

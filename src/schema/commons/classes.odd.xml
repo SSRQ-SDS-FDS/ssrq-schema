@@ -326,6 +326,18 @@
           </sch:pattern>
         </constraint>
       </constraintSpec>
+      <constraintSpec scheme="schematron" ident="sch-att-dimensions-3">
+        <desc xml:lang="en" versionDate="2024-01-24">Prevent that quantity is zero</desc>
+        <constraint>
+          <sch:pattern>
+            <sch:rule context="tei:*[number(@quantity)=0 or number(@quantity)=0.0]">
+              <sch:report test="not(@type='currency')" xml:lang="en">
+                  @quantity may only be zero, if it occurs in combination with @type="currency".
+              </sch:report>
+            </sch:rule>
+          </sch:pattern>
+        </constraint>
+      </constraintSpec>
       <attList>
         <attDef ident="extent" mode="delete"/>
         <attDef ident="precision" mode="delete"/>
@@ -506,11 +518,17 @@
           </valList>
         </attDef>
         <attDef ident="resp" mode="change">
-          <desc xml:lang="de" versionDate="2023-09-19">Enthält das zwei- oder dreistellige Kürzel des Bearbeitenden.</desc>
-          <desc xml:lang="en" versionDate="2023-09-19">Contains the two- or three-character abbreviation of the editor.</desc>
-          <desc xml:lang="en" versionDate="2023-09-19">Contient l'abréviation à deux ou trois chiffres de l'éditeur.</desc>
+          <desc xml:lang="de" versionDate="2023-12-18">Enthält die zwei- oder dreistelligen Kürzel der Bearbeitenden.</desc>
+          <desc xml:lang="en" versionDate="2023-12-18">Contains the two- or three-character abbreviations of the editors.</desc>
+          <desc xml:lang="en" versionDate="2023-12-18">Contient les abréviations à deux ou trois chiffres des éditeurs.</desc>
           <datatype>
-            <dataRef name="string" restriction="[a-zA-Z]{2,3}"/>
+            <rng:list>
+              <rng:oneOrMore>
+                <rng:data type="string">
+                  <rng:param name="pattern">[A-Z]{2,3}</rng:param>
+                </rng:data>
+              </rng:oneOrMore>
+            </rng:list>
           </datatype>
         </attDef>
       </attList>
@@ -572,7 +590,6 @@
               <rng:ref name="ssrq.measure.capacity"/>
               <rng:ref name="ssrq.measure.currency"/>
               <rng:ref name="ssrq.measure.lengths.base.cm"/>
-              <rng:ref name="ssrq.measure.lengths.base.klafter"/>
               <rng:ref name="ssrq.measure.length"/>
               <rng:ref name="ssrq.measure.various"/>
               <rng:ref name="ssrq.measure.weight"/>
@@ -737,7 +754,11 @@
                         texte déclarés avec <gi>witness</gi> dans le <gi>teiHeader</gi>.
                     </desc>
           <datatype>
-            <dataRef name="IDREFS"/>
+            <rng:list>
+              <rng:oneOrMore>
+                <rng:ref name="ssrq.witness.pointer"/>
+              </rng:oneOrMore>
+            </rng:list>
           </datatype>
           <constraintSpec scheme="schematron" ident="sch-att-wit">
             <desc xml:lang="en" versionDate="2023-06-22">Make sure, the referenced ID belongs to a witness
@@ -746,17 +767,13 @@
             <constraint>
               <sch:pattern>
                 <sch:rule context="tei:*[@wit]">
-                  <sch:let name="wits" value="tokenize(@wit, ' ')"/>
+                  <sch:let name="wits" value="for $wit in tokenize(@wit, ' ') return tokenize($wit, '#')[1]"/>
                   <!--This rule is introduced, because @wit should not point to any other element
                                         type than a witness, and this: <anyElement xml:id="foo"/> <rdg wit="foo"/>
                                         would be valid XML.
                                     -->
-                  <sch:assert test="every $wit in $wits satisfies id($wit)/name() = 'witness'" xml:lang="en">
-                                        Every referenced ID in @wit must belong to a witness element.
-                                    </sch:assert>
-                  <!-- This rule is introduced, because <rdg wit="foo foo"/> would be valid XML. -->
-                  <sch:assert test="count($wits) = count(distinct-values($wits))" xml:lang="en">
-                                        Every ID may be referenced just once.
+                  <sch:assert test="every $wit in $wits satisfies id($wit)/name() = ('witness', 'bibl')" xml:lang="en">
+                                        Every referenced ID in @wit must belong to a witness or bibl element.
                                     </sch:assert>
                 </sch:rule>
               </sch:pattern>
@@ -930,7 +947,7 @@
             </valItem>
           </valList>
         </attDef>
-        <attDef ident="material" mode="add" usage="req">
+        <attDef ident="material" mode="add">
           <desc xml:lang="de" versionDate="2023-05-31">Beschreibt das Material eines Siegels</desc>
           <desc xml:lang="en" versionDate="2023-05-31">Describes the material of a seal</desc>
           <desc xml:lang="fr" versionDate="2023-05-31">Décrit le matériau d'un sceau</desc>

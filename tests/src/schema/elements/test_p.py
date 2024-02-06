@@ -1,8 +1,6 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
 from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
@@ -17,7 +15,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "valid-simple-p-with-attr",
-            "<p xml:lang='de'>foo</p>",
+            "<p xml:lang='de' n='1'>foo</p>",
             True,
         ),
         (
@@ -27,12 +25,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "simple-p-with-invalid-attr",
-            "<p rend='black'>foo</p>",
-            False,
-        ),
-        (
-            "simple-p-with-invalid-attr",
-            "<p xml:id='facs'>foo</p>",
+            "<p rend='black' xml:id='facs'>foo</p>",
             False,
         ),
     ],
@@ -70,7 +63,7 @@ def test_p_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result

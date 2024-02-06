@@ -3,6 +3,22 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
+  <specGrp xml:id="ssrq-add-type">
+    <dataSpec ident="ssrq.type.add" mode="add">
+      <desc xml:lang="de" versionDate="2024-01-05">Art der Hinzufügung</desc>
+      <desc xml:lang="en" versionDate="2024-01-05">Kind of addition</desc>
+      <desc xml:lang="fr" versionDate="2024-01-05">Type d'ajout</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="sign">
+            <desc xml:lang="de" versionDate="2023-05-24">Hinzufügung durch spezielles Zeichen markiert.</desc>
+            <desc xml:lang="en" versionDate="2023-05-24">Addition marked by special sign.</desc>
+            <desc xml:lang="fr" versionDate="2023-05-24">Ajout signalé par un signe spécial.</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+  </specGrp>
   <specGrp xml:id="ssrq-agent">
     <dataSpec ident="ssrq.agent" mode="add">
       <desc xml:lang="de" versionDate="2023-05-11">Beschreibt die Art einer Beschädigung.</desc>
@@ -35,6 +51,11 @@
             <desc xml:lang="en" versionDate="2023-05-16">faded ink</desc>
             <desc xml:lang="fr" versionDate="2023-09-15">l’affaiblissement de l’encre</desc>
           </valItem>
+          <valItem ident="fire">
+            <desc xml:lang="de" versionDate="2023-05-02">Rauch/Brandschaden</desc>
+            <desc xml:lang="en" versionDate="2023-05-16">smoke/fire</desc>
+            <desc xml:lang="fr" versionDate="2023-05-16">la fumée/le feu</desc>
+          </valItem>
           <valItem ident="fold">
             <desc xml:lang="de" versionDate="2023-05-16">Falte</desc>
             <desc xml:lang="en" versionDate="2023-05-16">fold</desc>
@@ -45,7 +66,7 @@
             <desc xml:lang="en" versionDate="2023-05-16">lost folio</desc>
             <desc xml:lang="fr" versionDate="2023-05-16">la perte de la page/feuille</desc>
           </valItem>
-          <valItem ident="glued_page">
+          <valItem ident="glue">
             <desc xml:lang="de" versionDate="2023-05-16">zusammengeklebte Seiten</desc>
             <desc xml:lang="en" versionDate="2023-05-16">glued pages</desc>
             <desc xml:lang="fr" versionDate="2023-05-16">pages collées</desc>
@@ -78,12 +99,17 @@
           <valItem ident="mice">
             <desc xml:lang="de" versionDate="2023-05-02">Mäusefrass</desc>
             <desc xml:lang="en" versionDate="2023-05-16">mice</desc>
-            <desc xml:lang="fr" versionDate="2023-05-16">des dents de rongeurs</desc>
+            <desc xml:lang="fr" versionDate="2023-11-06">des rongeurs</desc>
           </valItem>
           <valItem ident="mildew">
             <desc xml:lang="de" versionDate="2023-05-02">Pilzbefall/Schimmel</desc>
             <desc xml:lang="en" versionDate="2023-05-16">mold</desc>
             <desc xml:lang="fr" versionDate="2023-05-16">la moisissure</desc>
+          </valItem>
+          <valItem ident="other">
+            <desc xml:lang="de" versionDate="2023-10-19">Sonstiger Schaden</desc>
+            <desc xml:lang="en" versionDate="2023-10-19">other damage</desc>
+            <desc xml:lang="fr" versionDate="2023-10-19">autres dommages</desc>
           </valItem>
           <valItem ident="overbinding">
             <desc xml:lang="de" versionDate="2023-05-16">verdeckender Einband</desc>
@@ -100,17 +126,22 @@
             <desc xml:lang="en" versionDate="2023-05-16">restoration</desc>
             <desc xml:lang="fr" versionDate="2023-05-16">la restauration</desc>
           </valItem>
-          <valItem ident="smoke">
-            <desc xml:lang="de" versionDate="2023-05-02">Rauch/Brandschaden</desc>
-            <desc xml:lang="en" versionDate="2023-05-16">smoke/fire</desc>
-            <desc xml:lang="fr" versionDate="2023-05-16">la fumée/le feu</desc>
+          <valItem ident="signs_of_wear">
+            <desc xml:lang="de" versionDate="2023-10-19">Abnutzungs-/Gebrauchsspuren</desc>
+            <desc xml:lang="en" versionDate="2023-10-19">signs of wear</desc>
+            <desc xml:lang="fr" versionDate="2023-10-19">signes d'usure/utilisation</desc>
+          </valItem>
+          <valItem ident="spot">
+            <desc xml:lang="de" versionDate="2023-10-19">Fleck/Verfärbung</desc>
+            <desc xml:lang="en" versionDate="2023-10-19">stain or discoloration</desc>
+            <desc xml:lang="fr" versionDate="2023-10-19">tache ou décoloration</desc>
           </valItem>
           <valItem ident="stapling">
             <desc xml:lang="de" versionDate="2023-05-02">Heftklammer</desc>
             <desc xml:lang="en" versionDate="2023-05-15">stapling</desc>
             <desc xml:lang="fr" versionDate="2023-05-15">une agrafe</desc>
           </valItem>
-          <valItem ident="water_spot">
+          <valItem ident="water">
             <desc xml:lang="de" versionDate="2023-05-02">Wasserfleck</desc>
             <desc xml:lang="en" versionDate="2023-05-15">water spot</desc>
             <desc xml:lang="fr" versionDate="2023-05-15">des traces d’eau ou d’humidité</desc>
@@ -465,7 +496,7 @@
             <desc xml:lang="en" versionDate="2023-03-21">cloth</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">étoffe</desc>
           </valItem>
-          <valItem ident="dried fruit">
+          <valItem ident="dried_fruit">
             <desc xml:lang="de" versionDate="2023-03-21">Dörrobst</desc>
             <desc xml:lang="en" versionDate="2023-03-21">dried fruit</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">fruit sec</desc>
@@ -909,6 +940,11 @@
             <desc xml:lang="en" versionDate="2023-03-21">of Werdenberg</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">de Werdenberg</desc>
           </valItem>
+          <valItem ident="Wil">
+            <desc xml:lang="de" versionDate="2023-12-19">Wiler</desc>
+            <desc xml:lang="en" versionDate="2023-12-19">of Wil</desc>
+            <desc xml:lang="fr" versionDate="2023-12-19">de Wil</desc>
+          </valItem>
           <valItem ident="Winterthur">
             <desc xml:lang="de" versionDate="2023-03-21">Winterthurer</desc>
             <desc xml:lang="en" versionDate="2023-03-21">of Winterthur</desc>
@@ -1012,6 +1048,11 @@
           <desc xml:lang="fr" type="singular" versionDate="2023-03-17">kammer</desc>
           <desc xml:lang="fr" type="plural" versionDate="2023-03-17">kammern</desc>
         </valItem>
+        <valItem ident="Klafter">
+          <desc xml:lang="de" versionDate="2023-03-17">Klafter</desc>
+          <desc xml:lang="en" versionDate="2023-03-17">klafter</desc>
+          <desc xml:lang="fr" versionDate="2023-05-15">brasses</desc>
+        </valItem>
         <valItem ident="Kuhsömmerung">
           <desc xml:lang="de" type="singular" versionDate="2023-03-17">Kuhsömmerung</desc>
           <desc xml:lang="de" type="plural" versionDate="2023-03-17">Kuhsömmerungen</desc>
@@ -1052,11 +1093,24 @@
           <desc xml:lang="en" versionDate="2023-03-17">mitmal</desc>
           <desc xml:lang="fr" versionDate="2023-03-17">mal/metmal</desc>
         </valItem>
+        <valItem ident="Mütt">
+          <desc xml:lang="de" versionDate="2023-03-17">Mütt</desc>
+          <desc xml:lang="en" versionDate="2023-03-17">mütt</desc>
+          <desc xml:lang="fr" versionDate="2023-03-17">muid</desc>
+        </valItem>
         <valItem ident="Rute">
           <desc xml:lang="de" type="singular" versionDate="2023-03-17">Rute</desc>
           <desc xml:lang="de" type="plural" versionDate="2023-03-17">Ruten</desc>
           <desc xml:lang="en" versionDate="2023-03-17">rod</desc>
           <desc xml:lang="fr" versionDate="2023-03-17">perche</desc>
+        </valItem>
+        <valItem ident="Schuh">
+          <desc xml:lang="de" type="singular" versionDate="2023-03-17">Schuh</desc>
+          <desc xml:lang="de" type="plural" versionDate="2023-03-17">Schuhe</desc>
+          <desc xml:lang="en" type="singular" versionDate="2023-03-17">shoe</desc>
+          <desc xml:lang="en" type="plural" versionDate="2023-03-17">shoes</desc>
+          <desc xml:lang="fr" type="singular" versionDate="2023-03-17">chaussure</desc>
+          <desc xml:lang="fr" type="plural" versionDate="2023-03-17">chaussures</desc>
         </valItem>
         <valItem ident="Schuppose">
           <desc xml:lang="de" type="singular" versionDate="2023-03-17">Schuppose</desc>
@@ -1073,6 +1127,18 @@
           <desc xml:lang="de" versionDate="2023-03-17">Tagwen</desc>
           <desc xml:lang="en" versionDate="2023-03-17">tagwen</desc>
           <desc xml:lang="fr" versionDate="2023-03-17">tagwen</desc>
+        </valItem>
+        <valItem ident="Vierling">
+          <desc xml:lang="de" versionDate="2023-03-17">Vierling</desc>
+          <desc xml:lang="en" type="singular" versionDate="2023-03-17">quarter</desc>
+          <desc xml:lang="en" type="plural" versionDate="2023-03-17">quarters</desc>
+          <desc xml:lang="fr" type="singular" versionDate="2023-03-17">un quart</desc>
+          <desc xml:lang="fr" type="plural" versionDate="2023-03-17">quarts</desc>
+        </valItem>
+        <valItem ident="Zeile">
+          <desc xml:lang="de" versionDate="2024-01-16">Zeile</desc>
+          <desc xml:lang="en" versionDate="2024-01-16">line</desc>
+          <desc xml:lang="fr" versionDate="2024-01-16">ligne</desc>
         </valItem>
       </valList>
     </dataSpec>
@@ -1133,6 +1199,11 @@
             <desc xml:lang="fr" type="singular" versionDate="2023-09-15">channe</desc>
             <desc xml:lang="fr" type="plural" versionDate="2023-09-15">channes</desc>
           </valItem>
+          <valItem ident="Klafter">
+            <desc xml:lang="de" versionDate="2023-03-17">Klafter</desc>
+            <desc xml:lang="en" versionDate="2023-03-17">klafter</desc>
+            <desc xml:lang="fr" versionDate="2023-05-15">brasses</desc>
+          </valItem>
           <valItem ident="Kopf">
             <desc xml:lang="de" type="singular" versionDate="2023-03-17">Kopf</desc>
             <desc xml:lang="de" type="plural" versionDate="2023-03-17">Köpfe</desc>
@@ -1160,14 +1231,6 @@
             <desc xml:lang="de" versionDate="2023-03-17">Legel</desc>
             <desc xml:lang="en" versionDate="2023-03-17">legel</desc>
             <desc xml:lang="fr" versionDate="2023-03-17">legel</desc>
-          </valItem>
-          <valItem ident="Linie">
-            <desc xml:lang="de" type="singular" versionDate="2023-03-17">Linie</desc>
-            <desc xml:lang="de" type="plural" versionDate="2023-03-17">Linien</desc>
-            <desc xml:lang="en" type="singular" versionDate="2023-03-17">line</desc>
-            <desc xml:lang="en" type="plural" versionDate="2023-03-17">lines</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">ligne</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">lignes</desc>
           </valItem>
           <valItem ident="Mass">
             <desc xml:lang="de" versionDate="2023-03-17">Mass</desc>
@@ -1383,13 +1446,13 @@
             <desc xml:lang="fr" type="singular" versionDate="2023-03-17">écu petit</desc>
             <desc xml:lang="fr" type="plural" versionDate="2023-03-17">écus petits</desc>
           </valItem>
-          <valItem ident="Engrogne">
-            <desc xml:lang="de" type="singular" versionDate="2023-03-17">Engrogne</desc>
-            <desc xml:lang="de" type="plural" versionDate="2023-03-17">Engrognes</desc>
-            <desc xml:lang="en" type="singular" versionDate="2023-03-17">Engrogne</desc>
-            <desc xml:lang="en" type="plural" versionDate="2023-03-17">Engrognes</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">Engrogne</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">Engrognes</desc>
+          <valItem ident="engrogne">
+            <desc xml:lang="de" type="singular" versionDate="2024-01-18">engrogne</desc>
+            <desc xml:lang="de" type="plural" versionDate="2024-01-18">engrognes</desc>
+            <desc xml:lang="en" type="singular" versionDate="2024-01-18">engrogne</desc>
+            <desc xml:lang="en" type="plural" versionDate="2024-01-18">engrognes</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2024-01-18">engrogne</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2024-01-18">engrognes</desc>
           </valItem>
           <valItem ident="fl">
             <desc xml:lang="de" versionDate="2023-03-17">Gulden</desc>
@@ -1522,6 +1585,14 @@
             <desc xml:lang="fr" type="singular" versionDate="2023-03-17">plappart</desc>
             <desc xml:lang="fr" type="plural" versionDate="2023-03-17">plapparts</desc>
           </valItem>
+          <valItem ident="Quart">
+            <desc xml:lang="de" type="singular" versionDate="2024-01-09">Quart (cart)</desc>
+            <desc xml:lang="de" type="plural" versionDate="2024-01-09">Quarts</desc>
+            <desc xml:lang="en" type="singular" versionDate="2024-01-09">quart (cart)</desc>
+            <desc xml:lang="en" type="plural" versionDate="2024-01-09">quarts</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2024-01-09">quart (cart)</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2024-01-09">quarts</desc>
+          </valItem>
           <valItem ident="S">
             <desc xml:lang="de" versionDate="2023-03-17">Sol</desc>
             <desc xml:lang="en" versionDate="2023-05-16">sol</desc>
@@ -1622,13 +1693,27 @@
             <desc xml:lang="fr" type="singular" versionDate="2023-03-17">pied</desc>
             <desc xml:lang="fr" type="plural" versionDate="2023-03-17">pieds</desc>
           </valItem>
+          <valItem ident="Klafter">
+            <desc xml:lang="de" versionDate="2023-03-17">Klafter</desc>
+            <desc xml:lang="en" versionDate="2023-03-17">klafter</desc>
+            <desc xml:lang="fr" versionDate="2023-05-15">brasses</desc>
+          </valItem>
+          <valItem ident="Linie">
+            <desc xml:lang="de" type="singular" versionDate="2023-03-17">Linie</desc>
+            <desc xml:lang="de" type="plural" versionDate="2023-03-17">Linien</desc>
+            <desc xml:lang="en" type="singular" versionDate="2023-03-17">line</desc>
+            <desc xml:lang="en" type="plural" versionDate="2023-03-17">lines</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">ligne</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">lignes</desc>
+          </valItem>
           <valItem ident="Meile">
-            <desc xml:lang="de" type="singular" versionDate="2023-03-17">Meile</desc>
-            <desc xml:lang="de" type="plural" versionDate="2023-03-17">Meilen</desc>
-            <desc xml:lang="en" type="singular" versionDate="2023-03-17">mile</desc>
-            <desc xml:lang="en" type="plural" versionDate="2023-03-17">miles</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">mille</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">milles</desc>
+            <!-- vgl. https://de.wikipedia.org/wiki/Leuge#Leugen_in_sp%C3%A4teren_Epochen -->
+            <desc xml:lang="de" type="singular" versionDate="2024-01-22">Meile/Leuge</desc>
+            <desc xml:lang="de" type="plural" versionDate="2024-01-22">Meilen/Leugen</desc>
+            <desc xml:lang="en" type="singular" versionDate="2024-01-22">lieue</desc>
+            <desc xml:lang="en" type="plural" versionDate="2024-01-22">lieues</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2024-01-22">lega</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2024-01-22">leghe</desc>
           </valItem>
           <valItem ident="Schritt">
             <desc xml:lang="de" type="singular" versionDate="2023-03-17">Schritt</desc>
@@ -1670,17 +1755,6 @@
             <desc xml:lang="de" versionDate="2023-03-17">cm</desc>
             <desc xml:lang="en" versionDate="2023-03-17">cm</desc>
             <desc xml:lang="fr" versionDate="2023-03-17">cm</desc>
-          </valItem>
-        </valList>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.measure.lengths.base.klafter">
-      <content>
-        <valList type="closed">
-          <valItem ident="Klafter">
-            <desc xml:lang="de" versionDate="2023-03-17">Klafter</desc>
-            <desc xml:lang="en" versionDate="2023-03-17">klafter</desc>
-            <desc xml:lang="fr" versionDate="2023-05-15">brasses</desc>
           </valItem>
         </valList>
       </content>
@@ -2019,6 +2093,31 @@
             <desc xml:lang="en" versionDate="2023-03-17">hundredweight</desc>
             <desc xml:lang="fr" type="singular" versionDate="2023-03-17">quintal</desc>
             <desc xml:lang="fr" type="plural" versionDate="2023-03-17">quintaux</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+  </specGrp>
+  <specGrp xml:id="ssrq-orig-type">
+    <dataSpec ident="ssrq.orig.type" mode="add">
+      <desc xml:lang="de" versionDate="2023-10-14">Geschlossene Liste von Werten,
+      die ausdrücken, auf was sich ein <gi>origDate</gi> bzw. ein <gi>origPlace</gi>
+      bezieht.</desc>
+      <desc xml:lang="en" versionDate="2023-10-14">Closed list of values,
+      which express what an <gi>origDate</gi> or an <gi>origPlace</gi> refers to.</desc>
+      <desc xml:lang="fr" versionDate="2023-10-14">Liste fermée de valeurs,
+      qui expriment à quoi un <gi>origDate</gi> ou un <gi>origPlace</gi> fait référence.</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="content">
+            <desc xml:lang="de" versionDate="2023-09-08">Datierung des Inhalts des Dokuments</desc>
+            <desc xml:lang="en" versionDate="2023-09-08">Dating the contents of the document</desc>
+            <desc xml:lang="fr" versionDate="2023-09-08">Datation du contenu du document</desc>
+          </valItem>
+          <valItem ident="document">
+            <desc xml:lang="de" versionDate="2023-09-08">Datierung des Dokuments als Textträger</desc>
+            <desc xml:lang="en" versionDate="2023-09-08">Dating the document as a text carrier</desc>
+            <desc xml:lang="fr" versionDate="2023-09-08">Datation du document comme support de texte</desc>
           </valItem>
         </valList>
       </content>
@@ -2424,10 +2523,18 @@
           <valItem ident="subpunction">
             <desc xml:lang="de" versionDate="2023-05-16">Streichung durch Unterpunktung</desc>
             <desc xml:lang="en" versionDate="2023-05-02">deletion by subpunctuation</desc>
-            <desc xml:lang="fr" versionDate="2023-05-02">suppression par exponctuation</desc>
+            <desc xml:lang="fr" versionDate="2023-10-11">suppression par subponctuation</desc>
+          </valItem>
+          <valItem ident="expunction">
+            <!-- Ein fehlerhaftes Wort streichen, indem man einen Punkt über den Buchstaben setzte
+            oder das zu streichende Wort mit Punkten umgab. Zur Definition vgl.
+            https://www.lalanguefrancaise.com/dictionnaire/definition/exponction -->
+            <desc xml:lang="de" versionDate="2023-11-10">Streichung durch Expunction</desc>
+            <desc xml:lang="en" versionDate="2023-11-10">deletion by expunctuation</desc>
+            <desc xml:lang="fr" versionDate="2023-11-10">suppression par exponctuation</desc>
           </valItem>
           <valItem ident="underline">
-            <desc xml:lang="de" versionDate="2023-05-02">Streichung mit Unterstreichen</desc>
+            <desc xml:lang="de" versionDate="2023-11-13">Streichung durch Unterstreichen</desc>
             <desc xml:lang="en" versionDate="2023-05-02">deletion by underlining</desc>
             <desc xml:lang="fr" versionDate="2023-05-02">la suppression a été soulignée</desc>
           </valItem>
