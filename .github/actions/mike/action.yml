@@ -12,8 +12,8 @@ runs:
     - name: Configure Git user
       shell: bash
       run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
     - name: Deploy dev
       if: ${{ inputs.version-name == 'dev' }}
       run: |
@@ -44,6 +44,6 @@ runs:
       if: ${{ inputs.version-name == 'main' }}
       run: |
         VERSION_NUMBER=$(grep -oE '"SLS TEI-Schema".*\sversion\s?=\s?"([0-9a-zA-Z.-]+)"' pyproject.toml | sed -n 's/.*version = "\(.*\)".*/\1/p')
-        poetry run mike deploy ${VERSION_NUMBER} latest --update-aliases --no-redirect --push
+        poetry run mike deploy ${VERSION_NUMBER} latest --update-aliases --alias-type=copy --push
         poetry run mike set-default latest --push
       shell: bash
