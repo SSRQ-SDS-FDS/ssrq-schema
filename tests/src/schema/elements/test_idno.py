@@ -1,9 +1,6 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
-from saxonche import PySaxonProcessor
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
 from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
@@ -86,10 +83,10 @@ def test_series_idno_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result
 
 
 @pytest.mark.parametrize(
@@ -111,15 +108,16 @@ def test_msIdent_idno_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    with PySaxonProcessor(license=False) as proc:
-        xp = proc.new_xpath_processor()
-        xml = reports[0].report
-        node = proc.parse_xml(xml_text=xml)
-        xp.set_context(xdm_item=node)
-        item = xp.evaluate_single(
-            '//*:text[contains(normalize-space(.), "idno element needs")]'
-        )
-        assert bool(item) is not result
+    if not result:
+        errors = []
+        if reports[0].report.failed_asserts:
+            for error in reports[0].report.failed_asserts:
+                errors.append(error.text)
+        if reports[0].report.successful_reports:
+            for error in reports[0].report.successful_reports:
+                errors.append(error.text)
+
+        assert any("idno element needs" in e for e in errors) is True

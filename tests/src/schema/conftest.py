@@ -5,11 +5,8 @@ from pathlib import Path
 from typing import TypeAlias
 
 import pytest
-from pyschval.main import (
-    XSLT_FILES,
-    create_schematron_stylesheet,
-    extract_schematron_from_relaxng,
-)
+from pyschval.schematron.create import create_schematron_stylesheet
+from pyschval.schematron.extract import extract_schematron_from_relaxng
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
 from ssrq_cli.validate import RNGJingValidator
 from ssrq_cli.xml_utils import ext_etree
@@ -156,11 +153,9 @@ def main_schema(odds: list[tuple[Schema, list[ElName]]]) -> Schema:
 @pytest.fixture(scope="session")
 def main_constraints(main_schema: Schema) -> str:
     """A fixture, which returns the schematron rules from the main schema."""
-    extracted_rules = extract_schematron_from_relaxng(
-        main_schema.rng, XSLT_FILES["extract-sch"]
-    )
+    extracted_rules = extract_schematron_from_relaxng(main_schema.rng)
 
-    return create_schematron_stylesheet(extracted_rules, XSLT_FILES["schxslt"])
+    return create_schematron_stylesheet(extracted_rules)
 
 
 RNG_test_function: TypeAlias = Callable[
