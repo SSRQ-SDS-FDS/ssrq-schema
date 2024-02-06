@@ -1,4 +1,4 @@
-from pyschval.main import XSLT_FILES, create_schematron_stylesheet
+from pyschval.schematron.create import create_schematron_stylesheet
 
 
 def test_schematron_compilation(
@@ -6,8 +6,6 @@ def test_schematron_compilation(
 ):
     """Test if the schematron file can be compiled."""
 
-    compiled_schema = create_schematron_stylesheet(
-        main_constraints, XSLT_FILES["schxslt"]
-    )
+    compiled_schema = create_schematron_stylesheet(main_constraints)
 
     assert isinstance(compiled_schema, str) is True

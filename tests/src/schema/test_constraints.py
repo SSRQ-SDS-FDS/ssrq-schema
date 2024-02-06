@@ -1,8 +1,6 @@
 import pytest
-from pyschval.main import (
-    SchematronResult,
-    validate_chunk,
-)
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
 from .conftest import SimpleTEIWriter, add_tei_namespace
 
@@ -37,10 +35,10 @@ def test_attribute_whitespace_constraint(
 ):
     """Test the if the validation fails, when an attribute starts or ends with whitespace."""
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result
 
 
 @pytest.mark.parametrize(
@@ -63,10 +61,10 @@ def test_dependency_of_unit_and_quantity(
 ):
     """Test the if the validation fails, when an attribute starts with whitespace."""
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result
 
 
 @pytest.mark.parametrize(
@@ -95,10 +93,10 @@ def test_quantity_constraint(
 ):
     """Test if the validation fails, when an attribute starts with whitespace."""
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result
 
 
 @pytest.mark.parametrize(
@@ -121,10 +119,10 @@ def test_facs_naming_conventions(
 ):
     """Test the if the validation fails, when an attribute starts with whitespace."""
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result
 
 
 @pytest.mark.parametrize(
@@ -167,10 +165,10 @@ def test_datable_custom_attr(
 ):
     """Tests the various constraints definied for att.datable.custom."""
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result
 
 
 @pytest.mark.parametrize(
@@ -223,10 +221,10 @@ def test_text_content_constraint_gl4(
 ):
     """Tests the global constraint, which ensure the usage of text() for multiple elements."""
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result
 
 
 @pytest.mark.parametrize(
@@ -249,10 +247,10 @@ def test_constraint_attspanning(
 ):
     """Tests the global constraint for @spanTo."""
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result
 
 
 @pytest.mark.parametrize(
@@ -275,7 +273,7 @@ def test_duplicate_attribute_values_constraint_gl6(
 ):
     """Tests the global constraint, which ensures that no attribute has duplicate attribute values."""
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result

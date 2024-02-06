@@ -1,5 +1,6 @@
 import pytest
-from pyschval.main import SchematronResult, validate_chunk
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
 from utils.commons import filehandler as io
 
@@ -73,7 +74,7 @@ def test_msDesc_constraint(
 ):
     """Test the constraint, which ensures the usage of tei:adminInfo if tei:physDesc is not used."""
     writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = validate_chunk(
-        files=writer.list(), isosch=main_constraints
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
     )
-    assert reports[0].is_valid() is result
+    assert reports[0].report.is_valid() is result

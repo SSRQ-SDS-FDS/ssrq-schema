@@ -21,7 +21,7 @@ readme = "README.md"
 version = "0.1.0"
 
 [tool.poetry.dependencies]
-pydantic = "^2.5.3"
+pydantic = "^2.6.1"
 python = "^3.11"
 requests = "^2.31.0"
 saxonche = "^12.4.2"
@@ -32,7 +32,7 @@ semver = "^3.0.2"
 mypy = "^1.8.0"
 pre-commit = "^3.6.0"
 pyschval = { git = "https://github.com/SSRQ-SDS-FDS/py-schematron-validator.git", rev = "main" }
-pytest = "^7.4.4"
+pytest = "^8.0.0"
 pytest-xdist = "^3.5.0"
 ruff = "^0.1.14"
 ssrq-cli = { git = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-cli.git", rev = "main" }
@@ -41,7 +41,7 @@ types-requests = "^2.31.0.20240125"
 [tool.poetry.group.docs.dependencies]
 mike = "^2.0.0"
 mkdocs-material = "^9.5.5"
-mkdocs-static-i18n = "^1.2"
+mkdocs-static-i18n = "1.2.0"
 pyuca = "^1.2"
 snakemd = "^2.2.0"
 
