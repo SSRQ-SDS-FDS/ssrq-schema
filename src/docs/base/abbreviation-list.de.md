@@ -78,18 +78,31 @@ kommen und nicht aufgelöst werden.
 
 === "Archive"
 
+    AASM = Archives de l’Abbaye de Saint-Maurice
+    AAV = Vatikanisches Apostolisches Archiv
     ACV = Archives cantonales vaudoises  
+    Aco = Archives communales 
     ADBR = Archives départementales du Bas-Rhi  
+    ADCO = Archives départementales de la Côte d’Or
+    ADDoubs = Archives départementales du Doubs
     AEF = Archives de l’État de Fribourg  
+    AEG = Archives d'État de Genève
     AEN = Archives de l’État de Neuchâtel  
+    AEvF = Archives de l’Évêché de Fribourg 
+    AMun. Dijon = Archives municipales de Dijon
+    APA = Archivio della Penitenzieria Apostolica
+    AST = Archivio di Stato di Torino
     AT-OeStA/HHStA = Österreichisches Staatsarchiv/Haus-,
     Hof- und Staatsarchiv  
+    AVL =  Archives de la Ville de Lausanne
     AVN = Archives de la Ville de Neuchâtel  
     BAC = Bischöfliches Archiv Chur  
     BAF = Bürgerarchiv Frauenfeld  
-    BBB = Burgerbibliothek Bern  
     BASG = Bischöfliches Archiv St. Gallen  
     BayHStA = Bayrisches Hauptstaatsarchiv  
+    BBB = Burgerbibliothek Bern  
+    BCUL = Bibliothèque cantonale universitaire de Lausanne
+    BGE = Bibliothèque de Genève
     EAF = Erzbischöfliches Archiv Freiburg  
     EKGA = Evangelisches Kirchgemeindearchiv  
     ERKGA = Evangelisch-Reformiertes Kirchgemeindearchiv  
@@ -111,6 +124,7 @@ kommen und nicht aufgelöst werden.
     StAAG = Staatsarchiv Aargau  
     StAAR = Staatsarchiv Appenzell Ausserrhoden  
     StadtA = Stadtarchiv  
+    StABE = Staatsarchiv Bern
     StAFR = Staatsarchiv Freiburg  
     StAGR = Staatsarchiv Graubünden  
     StALU = Staatsarchiv Luzern  
