@@ -177,7 +177,7 @@ Stattdessen sollten Brüche mit dem Tag [`<num>`](num.de.md)
 kodiert werden:
 
 Beispiele:  
-`<num value="0.5">1/2</date>` und nicht `½`  
+`<num value="0.5">1/2</num>` und nicht `½`  
 `<num value="0.75">3/4</num>` und nicht `¾`
 
 ## Code-Tabelle für Sonderzeichen
