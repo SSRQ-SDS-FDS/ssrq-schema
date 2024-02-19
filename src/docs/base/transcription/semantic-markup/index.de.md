@@ -6,7 +6,7 @@ title: Inhaltliche Auszeichnung
 
 Die Register der Editionseinheiten dienen nicht nur dem Zweck der inhaltlichen
 Vermittlung in Kurzform, sondern müssen auch einer Vielzahl von
-unterschiedlichen Nutzergruppen gerecht werden.
+unterschiedlichen Gruppen gerecht werden.
 Die Sammlung Schweizerischer Rechtsquellen kennt nicht ein Zielpublikum;
 es sind im Gegenteil Forschende aus unterschiedlichen Fachrichtungen,
 aber auch interessierte Laien, welche die Quellensammlung nutzen.
