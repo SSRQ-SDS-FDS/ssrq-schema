@@ -256,10 +256,10 @@ kombinierendem Trema (U+0308) erfasst werden.
 | Zeigehand                               | `☛`                   | U+261B               |
 | Paragraphenzeichen                      | `§`                   | U+00A7               |
 | Absatzzeichen                           | `¶`                   | U+00B6               |
-| Copyrightzeichen                        | `©`                   | U+00A9               |
 | Kreuz                                   | `†`                   | U+2020               |
 | Doppelkreuz                             | `‡`                   | U+2021               |
 | Dreifachkreuz                           | ``                   | U+F1D2               |
+| Heiratssymbol                           | `⚭`                   | U+26AD               |
 | **Satzzeichen**                         |                       |                      |
 | Halbgeviertstrich                       | `–`                   | U+2013               |
 | Hochpunkt                               | `·`                   | U+00B7               |
