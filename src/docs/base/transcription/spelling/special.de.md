@@ -184,23 +184,25 @@ Beispiele:
 
 Die unten stehende Tabelle zeigt, wie die einzelnen Zeichen kodiert werden sollten.
 
-Dabei gilt, dass es für einige der angegebenen Zeichen mehrere Möglichkeiten
-der Codierung gibt. So kann beispielsweise das e caudata sowohl als einzelnes
-Zeichen `ę` (U+0119) kodiert werden als auch als Grundbuchstabe
-`e` (U+0065) mit einem kombinierenden Ogonek `ę` (U+0328).
-
-Grundsätzlich wird die kombinierende Variante bevorzugt, weil die kombinierenden
-Zeichen an alle Grundbuchstaben angehängt werden können.
+Für einige der angegebenen Zeichen hat es mehrere Möglichkeiten der Codierung: 
+So kann beispielsweise das e caudata sowohl als einzelnes Zeichen `ę` (U+0119) kodiert werden als 
+auch als Grundbuchstabe `e` (U+0065) mit einem kombinierenden Ogonek `ę` (U+0328).
 Z. B. lassen sich `Ą ą Ę ę Į į Ǫ ǫ Ų ų` erzeugen, indem, wie beim e caudata, zuerst
 der Grundbuchstabe eingegeben wird und anschliessend das kombinierende Ogonek.
+
+Es können bei Bedarf auch mehrere kombinierende Zeichen mit einem Grundbuchstaben verwendet werden,
+z. B. ǟ (= a + kombinierendes Trema + kombinierendes Längenzeichen) oder uͦ̈ (= o + Superskript o +
+kombinierendes Trema).
+
+Grundsätzlich gilt, dass die kombinierende Variante bevorzugt wird, weil die kombinierenden
+Zeichen an alle Grundbuchstaben angehängt werden können. Ausnahme: Der Einfachheit halber können 
+die deutschen Umlaute `Ä ä Ö ö Ü ü` direkt als Einzelzeichen eingegeben werden und müssen nicht 
+als Grundbuchstabe mit kombinierendem Trema (U+0308) erfasst werden.
+
 In der Tabelle wird daher bei kombinierenden Zeichen beispielhaft das `a`
 verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 
-Ausnahme: Der Einfachheit halber können die deutschen Umlaute `Ä ä Ö ö Ü ü`
-direkt als Einzelzeichen eingegeben werden und müssen nicht als Grundbuchstabe mit 
-kombinierendem Trema (U+0308) erfasst werden. 
-
-| Beschreibung                            | Zeichen               | Unicode-Codepunkt(e) |
+| Beschreibung                            | Sonderzeichen         | Unicode-Codepunkt(e) |
 |-----------------------------------------|-----------------------|----------------------|
 | **Ligaturen**                           |                       |                      |
 | A+E-Ligatur                             | `Æ`                   | U+00C6               |
@@ -229,22 +231,23 @@ kombinierendem Trema (U+0308) erfasst werden.
 | Buchstabe mit Superskript v             | `aͮ`                  | a + U+036E           |
 | Buchstabe mit Superskript w             | `a`                  | a + U+F03C           |
 | **Sonstige modifizierte Buchstaben**    |                       |                      |
-| h mit Strich                            | `ħ`                   | U+0127               |
-| i mit Strich                            | `Ɉ`                   | U+0248               |
+| i mit Strich (= eineinhalb)             | `ɨ`                   | U+0268               |
 | i mit zwei Strichen                     | ``                   | U+E8A1               |
+| J mit Strich                            | `Ɉ`                   | U+0248               |
 | j mit Strich                            | `ɉ`                   | U+0249               |
-| j mit zwei Strichen                     | ``                   | U+E8A1               |
+| j mit zwei Strichen                     | ``                   | U+E8A2               |
 | q mit Strich                            | `ꝗ`                   | U+A757               |
 | t mit Strich                            | `ŧ`                   | U+0167               |
-| v mit Strich                            | ``                   | U+E8BB               |
+| v mit Strich (= viereinhalb)            | ``                   | U+E8BB               |
 | v mit diagonalem Strich                 | `ꝟ`                   | U+A75F               |
 | v mit zwei Strichen                     | ``                   | U+E8BC               |
 | x mit Strich oben                       | ``                   | U+E8BD               |
-| x mit Strich unten                      | ``                   | U+E8BE               |
+| x mit Strich unten  (= neuneinhalb)     | ``                   | U+E8BE               |
 | x mit zwei Strichen unten               | ``                   | U+E8CE               |
 | **Währungen und Einheiten**             |                       |                      |
 | Floren                                  | ``                   | U+F2E8               |
 | Groschen                                | ``                   | U+F2E9               |
+| h mit Strich (= Haller)                 | `ħ`                   | U+0127               |
 | Helbling                                | ``                   | U+F2FB               |
 | Krone                                   | ``                   | U+F2FA               |
 | Pfennig                                 | `₰`                   | U+20B0               |
@@ -253,29 +256,36 @@ kombinierendem Trema (U+0308) erfasst werden.
 | Schilling                               | ``                   | U+F2F7               |
 | Scudi                                   | ``                   | U+F2F9               |
 | **Sonstige Symbole**                    |                       |                      |
-| Zeigehand                               | `☛`                   | U+261B               |
+| Zeigehand                               | `☞`                   | U+261E               |
 | Paragraphenzeichen                      | `§`                   | U+00A7               |
 | Absatzzeichen                           | `¶`                   | U+00B6               |
 | Kreuz                                   | `†`                   | U+2020               |
 | Doppelkreuz                             | `‡`                   | U+2021               |
 | Dreifachkreuz                           | ``                   | U+F1D2               |
 | Heiratssymbol                           | `⚭`                   | U+26AD               |
-| **Satzzeichen**                         |                       |                      |
-| Halbgeviertstrich                       | `–`                   | U+2013               |
+| Kreissymbol                             | `○`                   | U+25CB               |
+| Marssymbol (Abk. für Dienstab)          | `♂`                   | U+2642               |
+| Copyrightsymbol                         | `©`                   | U+00a9               |
+| **Satzzeichen und dergleichen**         |                       |                      |
+| Punkt (Kolon)                           | `.`                   | U+002E               |
+| Komma                                   | `,`                   | U+002C               |
+| Semikolon                               | `;`                   | U+003B               |
+| Doppelpunkt                             | `:`                   | U+003A               |
 | Hochpunkt                               | `·`                   | U+00B7               |
+| Apostroph                               | `’`                   | U+2019               |
+| Ausrufezeichen                          | `!`                   | U+0021               |
+| Fragezeichen                            | `?`                   | U+003F               |
 | Auslassungszeichen                      | `…`                   | U+2026               |
 | Ein Punk vor zweien                     | `⁖`                   | U+2056               |
 | Ein Punkt über zweien                   | `∵`                   | U+2235               |
 | Vier Punkte                             | `⁘`                   | U+2058               |
+| Halbgeviertstrich                       | `–`                   | U+2013               |
 | Einfache vertikale Linie                | <code>&#x007c;</code> | U+007C               |
 | Doppelte vertikale Linie                | `‖`                   | U+2016               |
 | Doppelter Solidus                       | `⫽`                   | U+2AFD               |
-| Apostroph                               | `’`                   | U+2019               |
-| Einfaches dt. Anführungszeichen links   | `‚`                   | U+201A               |
-| Einfaches dt. Anführungszeichen rechts  | `‘`                   | U+2018               |
-| Doppelte dt. Anführungszeichen links    | `„`                   | U+201E               |
-| Doppelte dt. Anführungszeichen rechts   | `“`                   | U+201C               |
 | Einfaches frz. Anführungszeichen links  | `‹`                   | U+2039               |
 | Einfaches frz. Anführungszeichen rechts | `›`                   | U+203A               |
 | Doppelte frz. Anführungszeichen links   | `«`                   | U+00AB               |
 | Doppelte frz. Anführungszeichen rechts  | `»`                   | U+00BB               |
+| Malkreuz                                | `×`                   | U+00D7               |
+| Ordinalzeichen (in 1º, 2º, etc.)        | `º`                   | U+00BA               |
