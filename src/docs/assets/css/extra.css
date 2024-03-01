@@ -34,10 +34,17 @@
     font-weight: 400;
 }
 
+@font-face {
+    font-family: 'Libertinus Serif';
+    src: url('../fonts/LibertinusSerif-Regular.otf') format('opentype');
+    font-style: normal;
+    font-weight: 400;
+}
+
 :root {
     --md-primary-fg-color: #994443;
     --md-footer-bg-color: #e1e1de;
-    --md-code-font: "Lexia Fontes";
+    --md-code-font: "Lexia Fontes", "Libertinus Serif";
     --md-text-font: Roboto, "Lexia Fontes";
 
     --md-accent-fg-color: #994443;

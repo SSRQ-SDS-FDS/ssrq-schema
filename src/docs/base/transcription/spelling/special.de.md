@@ -211,25 +211,25 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | o+e-Ligatur                             | `œ`                   | U+0153               |
 | s+z-Ligatur                             | `ß`                   | U+00DF               |
 | **Kombinierende Diakritika**            |                       |                      |
-| Buchstabe mit Gravis                    | `à`                  | a + U+0300           |
-| Buchstabe mit Akut                      | `á`                  | a + U+0301           |
-| Buchstabe mit Zirkumflex                | `â`                  | a + U+0302           |
-| Buchstabe mit Tilde                     | `ã`                  | a + U+0303           |
-| Buchstabe mit Längenzeichen             | `ā`                  | a + U+0304           |
-| Buchstabe mit Punkt                     | `ȧ`                  | a + U+0307           |
-| Buchstabe mit Trema                     | `ä`                  | a + U+0308           |
-| Buchstabe mit Haken                     | `ǎ`                  | a + U+030C           |
-| Buchstabe mit vertikalem Strich         | `a̍`                  | a + U+030D           |
-| Buchstabe mit Cedille                   | `a̧`                  | a + U+0327           |
-| Buchstabe mit Ogonek                    | `ą`                  | a + U+0328           |
+| Buchstabe mit Gravis                    | `à`                  | Buchstabe + U+0300   |
+| Buchstabe mit Akut                      | `á`                  | Buchstabe + U+0301   |
+| Buchstabe mit Zirkumflex                | `â`                  | Buchstabe + U+0302   |
+| Buchstabe mit Tilde                     | `ã`                  | Buchstabe + U+0303   |
+| Buchstabe mit Längenzeichen             | `ā`                  | Buchstabe + U+0304   |
+| Buchstabe mit Punkt                     | `ȧ`                  | Buchstabe + U+0307   |
+| Buchstabe mit Trema                     | `ä`                  | Buchstabe + U+0308   |
+| Buchstabe mit Haken                     | `ǎ`                  | Buchstabe + U+030C   |
+| Buchstabe mit vertikalem Strich         | `a̍`                  | Buchstabe + U+030D   |
+| Buchstabe mit Cedille                   | `a̧`                  | Buchstabe + U+0327   |
+| Buchstabe mit Ogonek                    | `ą`                  | Buchstabe + U+0328   |
 | **Kombinierende Superkripte**           |                       |                      |
-| Buchstabe mit Superskript a             | `aͣ`                  | a + U+0363           |
-| Buchstabe mit Superskript e             | `aͤ`                  | a + U+0364           |
-| Buchstabe mit Superskript i             | `aͥ`                  | a + U+0365           |
-| Buchstabe mit Superskript o             | `aͦ`                  | a + U+0366           |
-| Buchstabe mit Superskript u             | `aͧ`                  | a + U+0367           |
-| Buchstabe mit Superskript v             | `aͮ`                  | a + U+036E           |
-| Buchstabe mit Superskript w             | `a`                  | a + U+F03C           |
+| Buchstabe mit Superskript a             | `aͣ`                  | Buchstabe + U+0363   |
+| Buchstabe mit Superskript e             | `aͤ`                  | Buchstabe + U+0364   |
+| Buchstabe mit Superskript i             | `aͥ`                  | Buchstabe + U+0365   |
+| Buchstabe mit Superskript o             | `aͦ`                  | Buchstabe + U+0366   |
+| Buchstabe mit Superskript u             | `aͧ`                  | Buchstabe + U+0367   |
+| Buchstabe mit Superskript v             | `aͮ`                  | Buchstabe + U+036E   |
+| Buchstabe mit Superskript w             | `a`                  | Buchstabe + U+F03C   |
 | **Sonstige modifizierte Buchstaben**    |                       |                      |
 | i mit Strich (= eineinhalb)             | `ɨ`                   | U+0268               |
 | i mit zwei Strichen                     | ``                   | U+E8A1               |
@@ -289,3 +289,83 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | Doppelte frz. Anführungszeichen rechts  | `»`                   | U+00BB               |
 | Malkreuz                                | `×`                   | U+00D7               |
 | Ordinalzeichen (in 1º, 2º, etc.)        | `º`                   | U+00BA               |
+
+## Griechische und hebräische Schrift
+
+Passagen in griechischer und hebräischer Schrift werden ebenfalls direkt in Unicode kodiert.
+Hierbei gilt, dass die griechischen Akzente, Spiritus sowie *iota subscriptum* bzw. 
+*adscriptum* und die hebräischen Vokalisierungszeichen mit kombinierenden Zeichen dargestellt
+werden sollen.
+Als Beispiele hierfür dienen das gr. Alpha und das hebr. Alef.
+
+| Beschreibung                                          | Sonderzeichen | Unicode-Codepunkt(e)                 |
+|-------------------------------------------------------|---------------|--------------------------------------|
+| **Griechische Buchstaben**                            |               |                                      |
+| Alpha                                                 | `Α`, `α`      | U+0391, U+03B1                       |
+| Beta                                                  | `Β`, `β`      | U+0392, U+03B2                       |
+| Gamma                                                 | `Γ`, `γ`      | U+0393, U+03B3                       |
+| Delta                                                 | `Δ`, `δ`      | U+0394, U+03B4                       |
+| Epsilon                                               | `Ε`, `ε`      | U+0395, U+03B5                       |
+| Zeta                                                  | `Ζ`, `ζ`      | U+0396, U+03B6                       |
+| Eta                                                   | `Η`, `η`      | U+0397, U+03B7                       |
+| Theta                                                 | `Θ`, `θ`      | U+0398, U+03B8                       |
+| Iota                                                  | `Ι`, `ι`      | U+0399, U+03B9                       |
+| Kappa                                                 | `Κ`, `κ`      | U+039A, U+03BA                       |
+| Lambda                                                | `Λ`, `λ`      | U+039B, U+03BB                       |
+| My                                                    | `Μ`, `μ`      | U+039C, U+03BC                       |
+| Ny                                                    | `Ν`, `ν`      | U+039D, U+03BD                       |
+| Xi                                                    | `Ξ`, `ξ`      | U+039E, U+03BE                       |
+| Omicron                                               | `Ο`, `ο`      | U+039F, U+03BF                       |
+| Pi                                                    | `Π`, `π`      | U+03A0, U+03C0                       |
+| Rho                                                   | `Ρ`, `ρ`      | U+03A1, U+03C1                       |
+| Sigma                                                 | `Σ`, `ς`, `σ` | U+03A3, U+03C2, U+03C3               |
+| Tau                                                   | `Τ`, `τ`      | U+03A4, U+03C4                       |
+| Ypsilon                                               | `Υ`, `υ`      | U+03A5, U+03C5                       |
+| Phi                                                   | `Φ`, `φ`      | U+03A6, U+03C6                       |
+| Chi                                                   | `Χ`, `χ`      | U+03A7, U+03C7                       |
+| Psi                                                   | `Ψ`, `ψ`      | U+03A8, U+03C8                       |
+| Omega                                                 | `Ω`, `ω`      | U+03A9, U+03C9                       |
+| **Griechische Diakritika**                            |               |                                      |
+| Buchstabe mit Gravis                                  | `ὰ`          | Buchstabe + U+0300                   |
+| Buchstabe mit Akut                                    | `ά`          | Buchstabe + U+0301                   |
+| Buchstabe mit Zirkumflex                              | `ᾶ`          | Buchstabe + U+0342                   |
+| Buchstabe mit *spiritus lenis*                        | `ἀ`          | Buchstabe + U+0313                   |
+| Buchstabe mit *spiritus asper*                        | `ἁ`          | Buchstabe + U+0314                   |
+| Buchstabe mit *iota sub- bzw. adscriptum*             | `ᾳ`          | Buchstabe + U+0345                   |
+| Buchstabe mit Spiritus und Akzent                     | `ἅ`         | Buchstabe + U+0314 + U+0301          |
+| Buchstabe mit Spiritus, Akzent und *iota subscriptum* | `ᾅ`        | Buchstabe + U+0314 + U+0301 + U+0345 |
+| **Hebräische Buchstaben**                             |               |                                      |
+| Alef                                                  | `א`           | U+05D0                               |
+| Bet                                                   | `ב`           | U+05D1                               |
+| Gimel                                                 | `ג`           | U+05D2                               |
+| Dalet                                                 | `ד`           | U+05D3                               |
+| He                                                    | `ה`           | U+05D4                               |
+| Waw                                                   | `ו`           | U+05D5                               |
+| Sajin                                                 | `ז`           | U+05D6                               |
+| Chet                                                  | `ח`           | U+05D7                               |
+| Tet                                                   | `ט`           | U+05D8                               |
+| Jud                                                   | `י`           | U+05D9                               |
+| Kaf                                                   | `כ`, `ך`      | U+05DA, U+05DB                       |
+| Lamed                                                 | `ל`           | U+05DC                               |
+| Mem                                                   | `מ`, `ם`      | U+05DD, U+05DE                       |
+| Nun                                                   | `נ`, `ן`      | U+05DF, U+05E0                       |
+| Samech                                                | `ס`           | U+05E1                               |
+| Ajin                                                  | `ע`           | U+05E2                               |
+| Pe                                                    | `פ`, `ף`      | U+05E3, U+05E4                       |
+| Zade                                                  | `צ`, `ץ`      | U+05E5, U+05E6                       |
+| Kuf                                                   | `ק`           | U+05E7                               |
+| Resch                                                 | `ר`           | U+05E8                               |
+| Sin, Schin                                            | `ש`           | U+05E9                               |
+| Taw                                                   | `ת`           | U+05EA                               |
+| **Hebräische Diakritika**                             |               |                                      |
+| Buchstabe mit Schwa                                   | `אְ`          | Buchstabe + U+05B0                   |
+| Buchstabe mit Schwa und Seggol                        | `אֱ`          | Buchstabe + U+05B1                   |
+| Buchstabe mit Schwa und Patach                        | `אֲ`          | Buchstabe + U+05B2                   |
+| Buchstabe mit Schwa und Qamäz                         | `אֳ`          | Buchstabe + U+05B3                   |
+| Buchstabe mit Chiriq                                  | `אִ`          | Buchstabe + U+05B4                   |
+| Buchstabe mit Sere                                    | `אֵ`          | Buchstabe + U+05B5                   |
+| Buchstabe mit Seggol                                  | `אֶ`          | Buchstabe + U+05B6                   |
+| Buchstabe mit Patach                                  | `אַ`          | Buchstabe + U+05B7                   |
+| Buchstabe mit Qamäz                                   | `אַָ`         | Buchstabe + U+05B8                   |
+| Buchstabe mit Choläm                                  | `אֹ`          | Buchstabe + U+05B9                   |
+| Buchstabe mit Qubbuz                                  | `אֻ`          | Buchstabe + U+05BB                   |
