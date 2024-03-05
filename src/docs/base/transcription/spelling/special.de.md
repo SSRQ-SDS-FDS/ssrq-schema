@@ -191,8 +191,8 @@ Z. B. lassen sich `Ą ą Ę ę Į į Ǫ ǫ Ų ų` erzeugen, indem, wie
 der Grundbuchstabe eingegeben wird und anschliessend das kombinierende Ogonek.
 
 Es können bei Bedarf auch mehrere kombinierende Zeichen mit einem Grundbuchstaben verwendet werden,
-z. B. ǟ (= a + kombinierendes Trema + kombinierendes Längenzeichen) oder uͦ̈ (= o + Superskript o +
-kombinierendes Trema).
+z. B. `ā̧` (= a + kombinierendes Längenzeichen + kombinierende Cedille) oder `uͦ̈` (= o + Superskript 
+o + kombinierendes Trema).
 
 Grundsätzlich gilt, dass die kombinierende Variante bevorzugt wird, weil die kombinierenden
 Zeichen an alle Grundbuchstaben angehängt werden können. Ausnahme: Der Einfachheit halber können 
@@ -233,7 +233,6 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | **Sonstige modifizierte Buchstaben**    |                       |                      |
 | i mit Strich (= eineinhalb)             | `ɨ`                   | U+0268               |
 | i mit zwei Strichen                     | ``                   | U+E8A1               |
-| J mit Strich                            | `???                   | U+0248               |
 | j mit Strich                            | `ɉ`                   | U+0249               |
 | j mit zwei Strichen                     | ``                   | U+E8A2               |
 | q mit Strich                            | `ꝗ`                   | U+A757               |
@@ -245,16 +244,16 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | x mit Strich unten  (= neuneinhalb)     | ``                   | U+E8BE               |
 | x mit zwei Strichen unten               | ``                   | U+E8CE               |
 | **Währungen und Einheiten**             |                       |                      |
-| Florin                                 | ``                   | U+F2E8               |
-| Gulden                              | ``                   | U+F2E9               |
+| Florin                                  | ``                   | U+F2E8               |
+| Gulden                                  | ``                   | U+F2E9               |
 | h mit Strich (= Haller)                 | `ħ`                   | U+0127               |
 | Helbling                                | ``                   | U+F2FB               |
 | Krone                                   | ``                   | U+F2FA               |
-| Pfennig/Denar                                 | `₰`                   | U+20B0               |
+| Pfennig/Denar                           | `₰`                   | U+20B0               |
 | Pfund (Währung)                         | ``                   | U+F2EA               |
 | Pfund (Gewicht)                         | `℔`                   | U+2114               |
 | Schilling                               | ``                   | U+F2F7               |
-| Scudo                               | ``                   | U+F2F9               |
+| Scudo                                   | ``                   | U+F2F9               |
 | **Sonstige Symbole**                    |                       |                      |
 | Zeigehand                               | `☞`                   | U+261E               |
 | Paragraphenzeichen                      | `§`                   | U+00A7               |
