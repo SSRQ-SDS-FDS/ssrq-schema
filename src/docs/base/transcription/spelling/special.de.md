@@ -233,7 +233,7 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | **Sonstige modifizierte Buchstaben**    |                       |                      |
 | i mit Strich (= eineinhalb)             | `ɨ`                   | U+0268               |
 | i mit zwei Strichen                     | ``                   | U+E8A1               |
-| J mit Strich                            | `Ɉ`                   | U+0248               |
+| J mit Strich                            | `???                   | U+0248               |
 | j mit Strich                            | `ɉ`                   | U+0249               |
 | j mit zwei Strichen                     | ``                   | U+E8A2               |
 | q mit Strich                            | `ꝗ`                   | U+A757               |
@@ -245,16 +245,16 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | x mit Strich unten  (= neuneinhalb)     | ``                   | U+E8BE               |
 | x mit zwei Strichen unten               | ``                   | U+E8CE               |
 | **Währungen und Einheiten**             |                       |                      |
-| Floren                                  | ``                   | U+F2E8               |
-| Groschen                                | ``                   | U+F2E9               |
+| Florin                                 | ``                   | U+F2E8               |
+| Gulden                              | ``                   | U+F2E9               |
 | h mit Strich (= Haller)                 | `ħ`                   | U+0127               |
 | Helbling                                | ``                   | U+F2FB               |
 | Krone                                   | ``                   | U+F2FA               |
-| Pfennig                                 | `₰`                   | U+20B0               |
+| Pfennig/Denar                                 | `₰`                   | U+20B0               |
 | Pfund (Währung)                         | ``                   | U+F2EA               |
 | Pfund (Gewicht)                         | `℔`                   | U+2114               |
 | Schilling                               | ``                   | U+F2F7               |
-| Scudi                                   | ``                   | U+F2F9               |
+| Scudo                               | ``                   | U+F2F9               |
 | **Sonstige Symbole**                    |                       |                      |
 | Zeigehand                               | `☞`                   | U+261E               |
 | Paragraphenzeichen                      | `§`                   | U+00A7               |
@@ -264,7 +264,7 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | Dreifachkreuz                           | ``                   | U+F1D2               |
 | Heiratssymbol                           | `⚭`                   | U+26AD               |
 | Kreissymbol                             | `○`                   | U+25CB               |
-| Marssymbol (Abk. für Dienstab)          | `♂`                   | U+2642               |
+| Marssymbol (Abk. für Dienstag)          | `♂`                   | U+2642               |
 | Copyrightsymbol                         | `©`                   | U+00a9               |
 | **Satzzeichen und dergleichen**         |                       |                      |
 | Punkt (Kolon)                           | `.`                   | U+002E               |
