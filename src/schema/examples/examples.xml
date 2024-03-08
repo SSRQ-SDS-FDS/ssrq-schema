@@ -884,6 +884,18 @@
       <p>Titre ajouté par les éditeurs pour mieux structurer le texte</p>
       <xi:include href="head.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-hi-rotated-de">
+      <p>Auszeichnung eines um 90 Grad gedrehten Textes</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-rotated"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-hi-rotated-en">
+      <p>Markup of a text rotated by 90 degrees clockwise</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-rotated"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-hi-rotated-fr">
+      <p>Balisage d'un texte pivoté de 90 degrés dans le sens des aiguilles d'une montre</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-rotated"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-hi-sup-de">
       <p>Auszeichnung eines hochgestellten Buchstabens</p>
       <xi:include href="hi.xml" xpointer="ex-hi-sup"/>
