@@ -37,7 +37,6 @@
     <classSpec ident="att.global.analytic" type="atts" mode="delete"/>
     <classSpec ident="att.global.change" type="atts" mode="delete"/>
     <classSpec ident="att.global.linking" type="atts" mode="delete"/>
-    <classSpec ident="att.global.source" type="atts" mode="delete"/>
     <classSpec ident="att.identified" type="atts" mode="delete"/>
     <classSpec ident="att.internetMedia" type="atts" mode="delete"/>
     <classSpec ident="att.interpLike" type="atts" mode="delete"/>
@@ -529,6 +528,32 @@
                 </rng:data>
               </rng:oneOrMore>
             </rng:list>
+          </datatype>
+        </attDef>
+      </attList>
+    </classSpec>
+    <classSpec ident="att.global.source" type="atts" mode="change">
+      <attList>
+        <attDef ident="source" mode="change">
+          <desc xml:lang="de" versionDate="2023-03-07">Verweis auf ein anderes Stück
+                        (bspw. im Falle der Mehrfachüberlieferung) oder auf ein
+                        Archivinformationssystem.
+                </desc>
+          <desc xml:lang="en" versionDate="2023-03-07">Reference to another item (e.g. in
+                        the case of multiple records) or to an archival information system.
+                    </desc>
+          <desc xml:lang="fr" versionDate="2023-03-07">Renvoi à une autre pièce (par ex.
+                        en cas de livraison multiple) ou à un système d'information archivistique.
+                    </desc>
+          <datatype>
+            <rng:choice>
+              <rng:list>
+                <rng:oneOrMore>
+                  <rng:ref name="ssrq.pointer.urn"/>
+                </rng:oneOrMore>
+              </rng:list>
+              <rng:ref name="ssrq.pointer.url"/>
+            </rng:choice>
           </datatype>
         </attDef>
       </attList>
@@ -1032,52 +1057,6 @@
           </valList>
         </attDef>
       </attList>
-    </classSpec>
-    <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2023-03-07">Stellt ein Attribut <att>source</att> bereit, dessen
-                Semantik dem der TEI entspricht.
-            </desc>
-      <desc xml:lang="en" versionDate="2023-03-07">Provides a common <att>source</att> attribute
-                semantically identical to the TEI specification.
-            </desc>
-      <desc xml:lang="fr" versionDate="2023-05-17">Fournit un attribut <att>source</att> dont la sémantique
-                correspond à celle de la TEI.
-            </desc>
-      <attList>
-        <attDef ident="source" mode="add">
-          <desc xml:lang="de" versionDate="2023-03-07">Verweis auf ein anderes Stück
-                        (bspw. im Falle der Mehrfachüberlieferung) oder auf ein
-                        Archivinformationssystem.
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-03-07">Reference to another item (e.g. in
-                        the case of multiple records) or to an archival information system.
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-03-07">Renvoi à une autre pièce (par ex.
-                        en cas de livraison multiple) ou à un système d'information archivistique.
-                    </desc>
-          <datatype>
-            <rng:choice>
-              <rng:list>
-                <rng:oneOrMore>
-                  <rng:ref name="ssrq.pointer.urn"/>
-                </rng:oneOrMore>
-              </rng:list>
-              <rng:ref name="ssrq.pointer.url"/>
-            </rng:choice>
-          </datatype>
-        </attDef>
-      </attList>
-      <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-03">
-        <p xml:lang="de">Lesung rekonstruiert durch eine andere Überlieferung</p>
-        <p xml:lang="en">Reading reconstructed from another tradition</p>
-        <p xml:lang="fr">La lecture reconstruite à partir d'une autre tradition</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <p>Zum ersten soll <supplied source="urn:ssrq:SSRQ-SG-III_4-189-1">man wissen,
-                        das
-                    </supplied> niemand
-                    </p>
-        </egXML>
-      </exemplum>
     </classSpec>
   </specGrp>
 </div>
