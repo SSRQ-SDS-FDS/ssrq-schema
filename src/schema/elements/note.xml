@@ -47,10 +47,14 @@
                         A note inside a critical apparatus must have a type attribute.
                     </sch:assert>
         </sch:rule>
-        <sch:rule context="tei:note[@type = 'text_comparison']">
+        <sch:rule context="tei:note[@type='text_comparison']">
           <sch:assert test="parent::tei:app">
                         A note with type "text_comparison" must be inside a critical apparatus.
                     </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:note[not(@type='original')]">
+          <sch:report test="./@place">Attribute place is only allowed if attribute type has the value "original".
+            </sch:report>
         </sch:rule>
       </sch:pattern>
     </constraint>

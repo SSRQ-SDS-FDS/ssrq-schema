@@ -72,6 +72,16 @@ def test_note(
             "<app><note type='text_comparison'><ref target='http://example.com'/><ref target='http://example.org'/><orig>foo</orig></note></app>",
             False,
         ),
+        (
+            "valid-note-with-place",
+            "<note type='original' place='above'>Foo</note>",
+            True,
+        ),
+        (
+            "invalid-note-with-place",
+            "<note place='above'>Foo</note>",
+            False,
+        ),
     ],
 )
 def test_note_constraints(
