@@ -309,17 +309,6 @@
               <rng:ref name="ssrq.measure.unknown"/>
             </rng:choice>
           </datatype>
-          <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
-            <p xml:lang="de">Loch in einer Editionsvorlage, bei dem keine Ergänzung möglich ist</p>
-            <p xml:lang="en">Hole in an edition template where no addition is possible</p>
-            <p xml:lang="fr">Trou à cause d'un dommage dans le texte source que l'éditeur ne peut pas
-                            compléter
-                        </p>
-            <p xml:lang="de">Buco in un modello di edizione in cui non è possibile alcuna aggiunta</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">und sol och der w
-                            <damage agent="hole"><gap unit="cm" quantity="3.5"/></damage>
-                        </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="scope" mode="delete"/>
         <attDef ident="unit" mode="replace">
@@ -329,12 +318,6 @@
           <datatype>
             <dataRef key="ssrq.measure.lengths.base.cm"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-05-17">
-            <p>Angabe eines Längenmasses</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <width unit="cm"/>
-            </egXML>
-          </exemplum>
         </attDef>
       </attList>
     </classSpec>
