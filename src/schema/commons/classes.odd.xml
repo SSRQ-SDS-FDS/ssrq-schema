@@ -139,14 +139,6 @@
                         ou les jours de la semaine. En revanche, l'attribut <att>dur-iso</att> est utilisé pour des
                         périodes telles que "quatre semaines".
                     </desc>
-          <exemplum type="ssrq-doc-example">
-            <p xml:lang="de">Sommer und Winter</p>
-            <p xml:lang="fr">Été et hiver</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples"><date period="summer">somer</date>
-                            unnd
-                            <date period="winter">wintter</date>
-                        </egXML>
-          </exemplum>
         </attDef>
       </attList>
     </classSpec>
@@ -195,17 +187,6 @@
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-            <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
-            <p xml:lang="en">Exemplary award for the period from Pentecost 1583 to Pentecost 1584</p>
-            <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte 1583 à la Pentecôte
-                            1584
-                        </p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date calendar="julian" from-custom="1583-05-30" to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
-                            </date>
-            </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="notAfter-custom" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss ISO 8601 an.
@@ -218,12 +199,6 @@
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" versionDate="2023-05-16">
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date calendar="julian" notBefore-custom="1510-01-01" to-custom="1515-12-31">ca. 1510
-                            </date>
-            </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="notBefore-custom" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-16">Gibt den Startpunkt eines Zeitraums gemäss ISO 8601
@@ -238,12 +213,6 @@
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date calendar="julian" notBefore-custom="1510-01-01" to-custom="1515-12-31">ca. 1510
-                            </date>
-            </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="to-custom" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss ISO 8601 an.
@@ -256,17 +225,6 @@
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-            <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
-            <p xml:lang="en">Exemplary award for the period from Pentecost 1583 to Pentecost 1584</p>
-            <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte 1583 à la Pentecôte
-                            1584
-                        </p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date calendar="julian" from-custom="1583-05-30" to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
-                            </date>
-            </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="when-custom" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-07">Gibt ein Datum gemäss ISO 8601 an.</desc>
@@ -276,14 +234,6 @@
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-            <p xml:lang="de">Beispielhafte Datierung auf den 03. März 1631</p>
-            <p xml:lang="en">Exemplary dating to March 3, 1631</p>
-            <p xml:lang="fr">Exemple de datation au 03 mars 1631</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date calendar="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
-            </egXML>
-          </exemplum>
         </attDef>
       </attList>
     </classSpec>
