@@ -182,7 +182,7 @@
                 référence à d'autres pièces TEI y compris les identificateurs de fragments.
             </desc>
       <content>
-        <dataRef name="string" restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-((([A-Za-z0-9]+\.)*)([0-9]+)(-([0-9]+))?|([a-z]{3,}))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
+        <dataRef name="string" restriction="urn:ssrq:(SSRQ|SDS|FDS)-(AG|AR_AI|BE|BS_BL|FR|GE|GL|GR|JU|LU|NE|OW_NW|SG|SH|SO|SZ|TI|TG|UR|VD|VS|ZG|ZH|RsQ)-(((AF|NF|[A-Z])_)?((I|II|III|B)_)?([1-9]_)?([1-9]\d*)(\.[1-9])?)-((([A-Z\d]+\.)*(\d+)(-1))|(lit|intro|bailiffs))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.pointer.target" mode="add" module="ssrq.core.module">

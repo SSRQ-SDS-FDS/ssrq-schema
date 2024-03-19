@@ -38,33 +38,23 @@ def test_idno(
     "name, markup, result",
     [
         (
-            "valid-series-idno",
-            "<seriesStmt><idno>SSRQ-SG-III_4-77-1</idno></seriesStmt>",
-            True,
-        ),
-        (
-            "valid-series-idno-without-tradtion-part",
+            "invalid-series-idno-without-tradtion-part",
             "<seriesStmt><idno>SSRQ-SG-III_4-77</idno></seriesStmt>",
+            False,
+        ),
+        (
+            "valid-simple-idno",
+            "<seriesStmt><idno>SDS-NE-1-1-1</idno></seriesStmt>",
             True,
         ),
         (
-            "valid-series-idno",
-            "<seriesStmt><idno>SSRQ-FR-I_2_8-1-1</idno></seriesStmt>",
+            "valid-complex-idno",
+            "<seriesStmt><idno>SSRQ-ZH-NF_II_1_10.2-23.A.478-1</idno></seriesStmt>",
             True,
         ),
         (
-            "valid-series-idno-with-case",
-            "<seriesStmt><idno>SDS-NE-4-1.0-1</idno></seriesStmt>",
-            True,
-        ),
-        (
-            "valid-series-idno-with-case-and-opening",
-            "<seriesStmt><idno>SDS-NE-4-1.A.1-1</idno></seriesStmt>",
-            True,
-        ),
-        (
-            "valid-series-idno-for-paratext",
-            "<seriesStmt><idno>SDS-NE-4-lit</idno></seriesStmt>",
+            "valid-idno-with-suffix",
+            "<seriesStmt><idno>FDS-TI-A_1-lit</idno></seriesStmt>",
             True,
         ),
         (
