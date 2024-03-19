@@ -231,20 +231,6 @@
           </valItem>
         </valList>
       </content>
-      <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-05-15">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <date from-custom="1588-09-03" to-custom="1588-09-20" calendar="julian">Zwischen 3.
-                        und 20 September 1588
-                    </date>
-        </egXML>
-      </exemplum>
-      <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-05-15">
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <date when="1363-02-04" calendar="julian_annunciation">
-                        le quatre jour du mois de février en l’ans Notre Seigneur courant 1363
-                    </date>
-        </egXML>
-      </exemplum>
     </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-hand">
@@ -777,22 +763,6 @@
           </valItem>
         </valList>
       </content>
-      <exemplum xml:lang="de" type="ssrq-doc-example" versionDate="2023-03-21">
-        <p>Masseinheit</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">Item
-                    <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull
-                    </measure>
-                    git <measure type="currency" unit="ß" quantity="2">ij ß</measure>.
-                </egXML>
-      </exemplum>
-      <exemplum xml:lang="fr" type="ssrq-doc-example" versionDate="2023-03-21">
-        <p>Unité de mesure :</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">Item
-                    <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull
-                    </measure>
-                    git <measure type="currency" unit="ß" quantity="2">ij ß</measure>.
-                </egXML>
-      </exemplum>
     </dataSpec>
     <dataSpec ident="ssrq.measure.att.origin">
       <desc xml:lang="de" versionDate="2023-05-16">Herkunft eines Masses.</desc>
