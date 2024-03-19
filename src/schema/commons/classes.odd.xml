@@ -523,20 +523,6 @@
                     </desc>
           <desc xml:lang="fr" versionDate="2023-06-29">Dans le cas des dimensions, spécifie l'expansion.
                     </desc>
-          <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
-            <p>Unbestimmte Anzahl Pfund (0 verwenden)</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <measure type="currency" unit="lb" quantity="0">etlich hundert pfund
-                            </measure>
-            </egXML>
-          </exemplum>
-          <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-17">
-            <p>Pour un nombre inconnu de livres (utiliser 0)</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <measure type="currency" unit="lb" quantity="0">etlich hundert pfund
-                            </measure>
-            </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="unit" mode="replace" usage="req">
           <desc xml:lang="de" versionDate="2023-06-29">Masseinheit oder Währung</desc>
