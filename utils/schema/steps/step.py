@@ -10,5 +10,4 @@ class AbstractStep(Protocol):
     in a processing pipeline."""
 
     @abstractmethod
-    def __call__(self, value: T) -> T:
-        ...
+    def __call__(self, value: T) -> T: ...

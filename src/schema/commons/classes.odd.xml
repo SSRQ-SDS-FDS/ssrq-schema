@@ -37,7 +37,6 @@
     <classSpec ident="att.global.analytic" type="atts" mode="delete"/>
     <classSpec ident="att.global.change" type="atts" mode="delete"/>
     <classSpec ident="att.global.linking" type="atts" mode="delete"/>
-    <classSpec ident="att.global.source" type="atts" mode="delete"/>
     <classSpec ident="att.identified" type="atts" mode="delete"/>
     <classSpec ident="att.internetMedia" type="atts" mode="delete"/>
     <classSpec ident="att.interpLike" type="atts" mode="delete"/>
@@ -140,14 +139,6 @@
                         ou les jours de la semaine. En revanche, l'attribut <att>dur-iso</att> est utilisé pour des
                         périodes telles que "quatre semaines".
                     </desc>
-          <exemplum type="ssrq-doc-example">
-            <p xml:lang="de">Sommer und Winter</p>
-            <p xml:lang="fr">Été et hiver</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples"><date period="summer">somer</date>
-                            unnd
-                            <date period="winter">wintter</date>
-                        </egXML>
-          </exemplum>
         </attDef>
       </attList>
     </classSpec>
@@ -196,17 +187,6 @@
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-            <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
-            <p xml:lang="en">Exemplary award for the period from Pentecost 1583 to Pentecost 1584</p>
-            <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte 1583 à la Pentecôte
-                            1584
-                        </p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date calendar="julian" from-custom="1583-05-30" to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
-                            </date>
-            </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="notAfter-custom" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss ISO 8601 an.
@@ -219,12 +199,6 @@
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" versionDate="2023-05-16">
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date calendar="julian" notBefore-custom="1510-01-01" to-custom="1515-12-31">ca. 1510
-                            </date>
-            </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="notBefore-custom" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-16">Gibt den Startpunkt eines Zeitraums gemäss ISO 8601
@@ -239,12 +213,6 @@
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date calendar="julian" notBefore-custom="1510-01-01" to-custom="1515-12-31">ca. 1510
-                            </date>
-            </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="to-custom" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss ISO 8601 an.
@@ -257,17 +225,6 @@
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-            <p xml:lang="de">Beispielhafte Auszeichnung des Zeitraums Pfingsten 1583 bis Pfingsten 1584</p>
-            <p xml:lang="en">Exemplary award for the period from Pentecost 1583 to Pentecost 1584</p>
-            <p xml:lang="fr">Exemple de distinction de la période allant de la Pentecôte 1583 à la Pentecôte
-                            1584
-                        </p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date calendar="julian" from-custom="1583-05-30" to-custom="1584-05-21">von Pfingstmontag 1583 bis Pfingstmontag 1584
-                            </date>
-            </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="when-custom" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-07">Gibt ein Datum gemäss ISO 8601 an.</desc>
@@ -277,14 +234,6 @@
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" versionDate="2023-05-07">
-            <p xml:lang="de">Beispielhafte Datierung auf den 03. März 1631</p>
-            <p xml:lang="en">Exemplary dating to March 3, 1631</p>
-            <p xml:lang="fr">Exemple de datation au 03 mars 1631</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <date calendar="gregorian" when-custom="1631-03-03">März, 03, 1631</date>
-            </egXML>
-          </exemplum>
         </attDef>
       </attList>
     </classSpec>
@@ -360,17 +309,6 @@
               <rng:ref name="ssrq.measure.unknown"/>
             </rng:choice>
           </datatype>
-          <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
-            <p xml:lang="de">Loch in einer Editionsvorlage, bei dem keine Ergänzung möglich ist</p>
-            <p xml:lang="en">Hole in an edition template where no addition is possible</p>
-            <p xml:lang="fr">Trou à cause d'un dommage dans le texte source que l'éditeur ne peut pas
-                            compléter
-                        </p>
-            <p xml:lang="de">Buco in un modello di edizione in cui non è possibile alcuna aggiunta</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">und sol och der w
-                            <damage agent="hole"><gap unit="cm" quantity="3.5"/></damage>
-                        </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="scope" mode="delete"/>
         <attDef ident="unit" mode="replace">
@@ -380,12 +318,6 @@
           <datatype>
             <dataRef key="ssrq.measure.lengths.base.cm"/>
           </datatype>
-          <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-05-17">
-            <p>Angabe eines Längenmasses</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <width unit="cm"/>
-            </egXML>
-          </exemplum>
         </attDef>
       </attList>
     </classSpec>
@@ -533,6 +465,32 @@
         </attDef>
       </attList>
     </classSpec>
+    <classSpec ident="att.global.source" type="atts" mode="change">
+      <attList>
+        <attDef ident="source" mode="change">
+          <desc xml:lang="de" versionDate="2023-03-07">Verweis auf ein anderes Stück
+                        (bspw. im Falle der Mehrfachüberlieferung) oder auf ein
+                        Archivinformationssystem.
+                </desc>
+          <desc xml:lang="en" versionDate="2023-03-07">Reference to another item (e.g. in
+                        the case of multiple records) or to an archival information system.
+                    </desc>
+          <desc xml:lang="fr" versionDate="2023-03-07">Renvoi à une autre pièce (par ex.
+                        en cas de livraison multiple) ou à un système d'information archivistique.
+                    </desc>
+          <datatype>
+            <rng:choice>
+              <rng:list>
+                <rng:oneOrMore>
+                  <rng:ref name="ssrq.pointer.urn"/>
+                </rng:oneOrMore>
+              </rng:list>
+              <rng:ref name="ssrq.pointer.url"/>
+            </rng:choice>
+          </datatype>
+        </attDef>
+      </attList>
+    </classSpec>
     <classSpec ident="att.handFeatures" type="atts" mode="change">
       <attList>
         <attDef ident="medium" mode="delete"/>
@@ -565,20 +523,6 @@
                     </desc>
           <desc xml:lang="fr" versionDate="2023-06-29">Dans le cas des dimensions, spécifie l'expansion.
                     </desc>
-          <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-17">
-            <p>Unbestimmte Anzahl Pfund (0 verwenden)</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <measure type="currency" unit="lb" quantity="0">etlich hundert pfund
-                            </measure>
-            </egXML>
-          </exemplum>
-          <exemplum type="ssrq-doc-example" xml:lang="fr" versionDate="2023-03-17">
-            <p>Pour un nombre inconnu de livres (utiliser 0)</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <measure type="currency" unit="lb" quantity="0">etlich hundert pfund
-                            </measure>
-            </egXML>
-          </exemplum>
         </attDef>
         <attDef ident="unit" mode="replace" usage="req">
           <desc xml:lang="de" versionDate="2023-06-29">Masseinheit oder Währung</desc>
@@ -704,14 +648,6 @@
               </sch:rule>
             </constraint>
           </constraintSpec>
-          <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-05-17">
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <p><delSpan spanTo="del1"/>
-                                ...
-                                <anchor xml:id="del1"/>
-                            </p>
-            </egXML>
-          </exemplum>
         </attDef>
       </attList>
     </classSpec>
@@ -1032,52 +968,6 @@
           </valList>
         </attDef>
       </attList>
-    </classSpec>
-    <classSpec ident="ssrq.att.source" type="atts" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2023-03-07">Stellt ein Attribut <att>source</att> bereit, dessen
-                Semantik dem der TEI entspricht.
-            </desc>
-      <desc xml:lang="en" versionDate="2023-03-07">Provides a common <att>source</att> attribute
-                semantically identical to the TEI specification.
-            </desc>
-      <desc xml:lang="fr" versionDate="2023-05-17">Fournit un attribut <att>source</att> dont la sémantique
-                correspond à celle de la TEI.
-            </desc>
-      <attList>
-        <attDef ident="source" mode="add">
-          <desc xml:lang="de" versionDate="2023-03-07">Verweis auf ein anderes Stück
-                        (bspw. im Falle der Mehrfachüberlieferung) oder auf ein
-                        Archivinformationssystem.
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-03-07">Reference to another item (e.g. in
-                        the case of multiple records) or to an archival information system.
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-03-07">Renvoi à une autre pièce (par ex.
-                        en cas de livraison multiple) ou à un système d'information archivistique.
-                    </desc>
-          <datatype>
-            <rng:choice>
-              <rng:list>
-                <rng:oneOrMore>
-                  <rng:ref name="ssrq.pointer.urn"/>
-                </rng:oneOrMore>
-              </rng:list>
-              <rng:ref name="ssrq.pointer.url"/>
-            </rng:choice>
-          </datatype>
-        </attDef>
-      </attList>
-      <exemplum type="ssrq-doc-example" xml:lang="de" versionDate="2023-03-03">
-        <p xml:lang="de">Lesung rekonstruiert durch eine andere Überlieferung</p>
-        <p xml:lang="en">Reading reconstructed from another tradition</p>
-        <p xml:lang="fr">La lecture reconstruite à partir d'une autre tradition</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <p>Zum ersten soll <supplied source="urn:ssrq:SSRQ-SG-III_4-189-1">man wissen,
-                        das
-                    </supplied> niemand
-                    </p>
-        </egXML>
-      </exemplum>
     </classSpec>
   </specGrp>
 </div>
