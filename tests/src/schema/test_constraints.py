@@ -298,7 +298,7 @@ def test_duplicate_attribute_values_constraint_gl6(
             False,
         ),
         (
-            "valid-node-with-text-using-nbsp",
+            "valid-node-with-text",
             "<p>foo</p>",
             True,
         ),
