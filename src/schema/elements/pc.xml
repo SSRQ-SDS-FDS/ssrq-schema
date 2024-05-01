@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+    type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="pc" module="analysis" mode="change">
+  <desc xml:lang="de" versionDate="2024-04-30">Beinhaltet ein Satzzeichen, welches unter Berücksichtigung sprachlicher Regelungen besonders verarbeitet wird (bspw. durch Ergänzung eines Leerzeichen).</desc>
+  <desc xml:lang="en" versionDate="2024-04-30">Contains a punctuation mark, which is processed specially considering linguistic regulations (for example, by adding a space).</desc>
+  <desc xml:lang="en" versionDate="2024-04-30">Contient une ponctuation, qui est traitée spécialement en tenant compte des règles linguistiques (par exemple, en ajoutant un espace).</desc>
+  <classes mode="replace"/>
+  <content>
+    <rng:data type="string">
+      <rng:param name="pattern">[;:?!]</rng:param>
+    </rng:data>
+  </content>
+  <attList>
+    <attDef ident="force" mode="delete"/>
+    <attDef ident="unit" mode="delete"/>
+    <attDef ident="pre" mode="delete"/>
+  </attList>
+</elementSpec>

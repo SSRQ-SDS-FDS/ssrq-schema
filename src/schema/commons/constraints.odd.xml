@@ -51,5 +51,15 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
+    <constraintSpec scheme="schematron" ident="non-breaking-whitespace">
+      <desc xml:lang="en" versionDate="2024-04-30">Global constraint to ensure a nbsp is never used.</desc>
+      <constraint>
+        <sch:pattern>
+          <sch:rule context="text()">
+            <sch:report role="warning" test="matches(., ' ')">It is not allowed to use a non-breaking space in the text.</sch:report>
+          </sch:rule>
+        </sch:pattern>
+      </constraint>
+    </constraintSpec>
   </specGrp>
 </div>

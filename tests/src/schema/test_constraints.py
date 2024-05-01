@@ -277,3 +277,39 @@ def test_duplicate_attribute_values_constraint_gl6(
         input=writer.list(), isosch=main_constraints
     )
     assert reports[0].report.is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "invalid-node-with-text-using-nbsp-as-html-entity-160",
+            "<p>&#160;foo</p>",
+            False,
+        ),
+        (
+            "invalid-node-with-text-using-nbsp-as-html-entity-xA0",
+            "<p>&#xA0;foo</p>",
+            False,
+        ),
+        (
+            "invalid-node-with-text-using-nbsp-in-unicode-notation",
+            "<p> foo</p>",
+            False,
+        ),
+        (
+            "valid-node-with-text",
+            "<p>foo</p>",
+            True,
+        ),
+    ],
+)
+def test_uses_nbsp_in_text_node(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """Tests the global constraint, which ensures that no non-breaking-space is used."""
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].report.is_valid() is result
