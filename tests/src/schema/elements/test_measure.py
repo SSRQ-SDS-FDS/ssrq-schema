@@ -43,6 +43,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<measure type='currency' origin='ZH' quantity='2'>zwai phunt nuwer Zuricher</measure>",
             False,
         ),
+        (
+            "valid-measure-with-unknown-quantity",
+            "<measure type='currency' origin='ZH' unit='lb' quantity='unknown'>zwai phunt nuwer Zuricher</measure>",
+            True,
+        ),
     ],
 )
 def test_measure(

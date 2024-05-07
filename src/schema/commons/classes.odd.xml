@@ -514,7 +514,7 @@
         <attDef ident="scriptRef" mode="delete"/>
       </attList>
     </classSpec>
-    <classSpec ident="att.measurement" type="atts" mode="change">
+    <classSpec ident="att.measurement" type="atts" mode="replace">
       <attList>
         <attDef ident="commodity" mode="change"/>
         <attDef ident="quantity" mode="change">
@@ -523,6 +523,12 @@
                     </desc>
           <desc xml:lang="fr" versionDate="2023-06-29">Dans le cas des dimensions, spécifie l'expansion.
                     </desc>
+          <datatype>
+            <rng:choice>
+              <rng:ref name="teidata.numeric"/>
+              <rng:ref name="ssrq.measure.unknown"/>
+            </rng:choice>
+          </datatype>
         </attDef>
         <attDef ident="unit" mode="replace" usage="req">
           <desc xml:lang="de" versionDate="2023-06-29">Masseinheit oder Währung</desc>
