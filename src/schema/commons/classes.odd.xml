@@ -103,8 +103,8 @@
     </classSpec>
     <classSpec ident="att.datable" type="atts" mode="change">
       <classes mode="replace"/>
-      <!-- This removes the TEI default constraints, which requires text content
-                 for any elements that uses @calendar. -->
+      <!-- This removes the TEI default constraint, which requires text content for any elements
+        that use @calendar. -->
       <constraintSpec scheme="schematron" ident="calendar" mode="delete"/>
       <attList>
         <attDef ident="calendar" mode="replace">
@@ -114,18 +114,6 @@
           <datatype>
             <dataRef key="ssrq.date.calendar"/>
           </datatype>
-          <constraintSpec scheme="schematron" ident="sch-att-calendar" mode="replace">
-            <desc xml:lang="en" versionDate="2023-06-13">Schematron to check the usage of attributes.</desc>
-            <constraint>
-              <sch:pattern>
-                <sch:rule context="tei:*[@calendar]">
-                  <sch:assert test=".[@when-custom|@notBefore-custom|@notAfter-custom|@from-custom|@to-custom]">
-                                        More attributes must be used together with @calendar to specify the date.
-                                    </sch:assert>
-                </sch:rule>
-              </sch:pattern>
-            </constraint>
-          </constraintSpec>
         </attDef>
         <attDef ident="period" mode="change">
           <desc xml:lang="de" versionDate="2023-05-11">Verweist auf eine benannte Periode wie Jahreszeiten
@@ -146,31 +134,6 @@
       <desc xml:lang="de" versionDate="2023-05-05">Attribute zur Auszeichnung von Datierungen</desc>
       <desc xml:lang="en" versionDate="2023-05-05">Attributes for the distinction of dating</desc>
       <desc xml:lang="fr" versionDate="2023-05-05">Attributs pour le marquage des datations</desc>
-      <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
-        <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for att.datable.custom</desc>
-        <constraint>
-          <sch:pattern>
-            <sch:rule context="tei:*[@when-custom]">
-              <sch:report test="@notBefore-custom|@notAfter-custom|@from-custom|@to-custom">The
-                                @when-custom attribute cannot be used with any other
-                                att.datable.custom attributes.
-                            </sch:report>
-            </sch:rule>
-            <sch:rule context="tei:*[@from-custom or @to-custom]">
-              <sch:report test="@notBefore-custom|@notAfter-custom">The usage of
-                                @notBefore-custom|@notAfter-custom is not allowed together with
-                                @from-custom|@to-custom.
-                            </sch:report>
-              <sch:assert test="@from-custom and @to-custom">@from-custom and
-                                @to-custom must always be used together.
-                            </sch:assert>
-              <sch:assert test="if (matches(@from-custom, '^\d{4}-\d{2}-\d{2}$') and matches(@from-custom, '^\d{4}-\d{2}-\d{2}$')) then (number(translate(@to-custom, '-', '')) - number(translate(@from-custom, '-', ''))) &gt; 0 else true()">
-                                Invalid timespan – the @to-custom attribute must be a point later in time.
-                            </sch:assert>
-            </sch:rule>
-          </sch:pattern>
-        </constraint>
-      </constraintSpec>
       <attList>
         <attDef ident="datingMethod" mode="delete"/>
         <attDef ident="datingPoint" mode="delete"/>
@@ -239,54 +202,6 @@
     </classSpec>
     <classSpec ident="att.dimensions" type="atts" mode="change">
       <classes mode="replace"/>
-      <constraintSpec scheme="schematron" ident="sch-att-dimensions">
-        <desc xml:lang="en" versionDate="2023-05-22">If <att>unit</att> has the value unknown,
-                    <att>quantity</att>
-                    must be unknown too.
-                </desc>
-        <constraint>
-          <sch:pattern>
-            <sch:rule context="tei:height[@unit = 'unknown']|tei:width[@unit = 'unknown']">
-              <sch:assert test="./@quantity = 'unknown'" xml:lang="en">When @unit is unknown, @quantity
-                                must be unknown too.
-                            </sch:assert>
-            </sch:rule>
-          </sch:pattern>
-        </constraint>
-      </constraintSpec>
-      <constraintSpec scheme="schematron" ident="sch-att-dimensions-2">
-        <desc xml:lang="en" versionDate="2023-03-01">Mutually dependent for all elements: @unit and @quantity</desc>
-        <constraint>
-          <sch:pattern>
-            <sch:rule context="tei:*">
-              <sch:report test="@quantity and not(@unit)" xml:lang="en">
-                            If the @quantity attribute is specified on the
-                            <sch:name/>
-                            element, @unit must be present,
-                            too.
-                        </sch:report>
-              <sch:report test="@unit and not(@quantity)" xml:lang="en">
-                            If the @unit attribute is specified on the
-                            <sch:name/>
-                            element, @quantity must be present,
-                            too.
-                        </sch:report>
-            </sch:rule>
-          </sch:pattern>
-        </constraint>
-      </constraintSpec>
-      <constraintSpec scheme="schematron" ident="sch-att-dimensions-3">
-        <desc xml:lang="en" versionDate="2024-01-24">Prevent that quantity is zero</desc>
-        <constraint>
-          <sch:pattern>
-            <sch:rule context="tei:*[number(@quantity)=0 or number(@quantity)=0.0]">
-              <sch:report test="not(@type='currency')" xml:lang="en">
-                  @quantity may only be zero, if it occurs in combination with @type="currency".
-              </sch:report>
-            </sch:rule>
-          </sch:pattern>
-        </constraint>
-      </constraintSpec>
       <attList>
         <attDef ident="extent" mode="delete"/>
         <attDef ident="precision" mode="delete"/>
@@ -401,20 +316,6 @@
               </rng:oneOrMore>
             </rng:list>
           </datatype>
-          <constraintSpec scheme="schematron" ident="sch-att-facs">
-            <desc xml:lang="en" versionDate="2023-04-06">Global constraint to ensure pattern of
-          facsimile names
-            </desc>
-            <constraint>
-              <sch:pattern>
-                <sch:rule context="*[@facs]">
-                  <sch:report test="matches(@facs, '__')" xml:lang="en">
-                            An underscore should not be followed by another underscore in @facs.
-                        </sch:report>
-                </sch:rule>
-              </sch:pattern>
-            </constraint>
-          </constraintSpec>
         </attDef>
       </attList>
     </classSpec>
@@ -633,21 +534,8 @@
           <datatype>
             <dataRef name="IDREF"/>
           </datatype>
-          <constraintSpec scheme="schematron" ident="spanTo-points-to-following" mode="replace">
-            <desc xml:lang="en" versionDate="2023-06-22">The @spanTo attribute must point to an element
-                            following the current element – this rules replaces the original TEI constraint, because
-                            we're using xs:IDREF.
-                        </desc>
-            <constraint>
-              <sch:rule context="tei:*[@spanTo]">
-                <sch:assert test="id(@spanTo) and following::*[@xml:id=(current()/@spanTo)]">
-                                    The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the
-                                    current element
-                                    <sch:name/>
-                                </sch:assert>
-              </sch:rule>
-            </constraint>
-          </constraintSpec>
+          <!-- This removes the TEI default constraint, because we use another datatype -->
+          <constraintSpec scheme="schematron" ident="spanTo-points-to-following" mode="delete"/>
         </attDef>
       </attList>
     </classSpec>
@@ -696,25 +584,6 @@
               </rng:oneOrMore>
             </rng:list>
           </datatype>
-          <constraintSpec scheme="schematron" ident="sch-att-wit">
-            <desc xml:lang="en" versionDate="2023-06-22">Make sure, the referenced ID belongs to a witness
-                            element.
-                        </desc>
-            <constraint>
-              <sch:pattern>
-                <sch:rule context="tei:*[@wit]">
-                  <sch:let name="wits" value="for $wit in tokenize(@wit, ' ') return tokenize($wit, '#')[1]"/>
-                  <!--This rule is introduced, because @wit should not point to any other element
-                                        type than a witness, and this: <anyElement xml:id="foo"/> <rdg wit="foo"/>
-                                        would be valid XML.
-                                    -->
-                  <sch:assert test="every $wit in $wits satisfies id($wit)/name() = ('witness', 'bibl')" xml:lang="en">
-                                        Every referenced ID in @wit must belong to a witness or bibl element.
-                                    </sch:assert>
-                </sch:rule>
-              </sch:pattern>
-            </constraint>
-          </constraintSpec>
         </attDef>
       </attList>
     </classSpec>
@@ -743,20 +612,6 @@
               <rng:data type="string"/>
             </rng:choice>
           </datatype>
-          <constraintSpec scheme="schematron" ident="sch-att-hand" mode="add">
-            <desc xml:lang="en" versionDate="2023-08-17">A constraint to check the existence of an ID reference.</desc>
-            <constraint>
-              <sch:pattern>
-                <sch:rule context="tei:*[@hand]">
-                  <sch:let name="handNoteRef" value="@hand"/>
-                  <sch:assert test="exists(id($handNoteRef)) and id($handNoteRef)/name() = 'handNote'">
-                                        The referenced ID (<sch:value-of select="$handNoteRef"/>) must belong to a handNote element.
-                                        Hint: Save the document to automatically generate a handNote.
-                                    </sch:assert>
-                </sch:rule>
-              </sch:pattern>
-            </constraint>
-          </constraintSpec>
         </attDef>
       </attList>
     </classSpec>
