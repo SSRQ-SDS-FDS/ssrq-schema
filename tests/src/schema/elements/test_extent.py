@@ -23,6 +23,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<extent/>",
             False,
         ),
+        (
+            "invalid-extent-with-wrong-child",
+            "<extent><foo/></extent>",
+            False,
+        ),
     ],
 )
 def test_extent_rng(
