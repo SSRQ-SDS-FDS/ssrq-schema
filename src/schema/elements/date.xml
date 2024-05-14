@@ -23,7 +23,7 @@
     </rng:zeroOrMore>
   </content>
   <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
-    <desc versionDate="2023-05-05" xml:lang="en">Schematron rules for att.datable.custom</desc>
+    <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for att.datable.custom</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
@@ -103,39 +103,46 @@
             </desc>
       <valList type="closed">
         <valItem ident="deadline">
-          <desc xml:lang="de">Termin/Frist</desc>
-          <desc xml:lang="en">period</desc>
-          <desc xml:lang="fr">délai</desc>
+          <desc xml:lang="de" versionDate="2024-05-08">Termin/Frist</desc>
+          <desc xml:lang="en" versionDate="2024-05-08">period</desc>
+          <desc xml:lang="fr" versionDate="2024-05-08">délai</desc>
+          <desc xml:lang="it" versionDate="2024-05-08">scadenza</desc>
         </valItem>
         <valItem ident="deadline_floating_holiday">
-          <desc xml:lang="de">beweglicher Feiertag als Termin/Frist</desc>
-          <desc xml:lang="en">floating holiday (deadline)</desc>
-          <desc xml:lang="fr">des fêtes sans date fixe comme délai</desc>
+          <desc xml:lang="de" versionDate="2024-05-08">beweglicher Feiertag als Termin/Frist</desc>
+          <desc xml:lang="en" versionDate="2024-05-08">floating holiday (deadline)</desc>
+          <desc xml:lang="fr" versionDate="2024-05-08">des fêtes sans date fixe comme délai</desc>
+          <desc xml:lang="it" versionDate="2024-05-08">festività religiose senza una data fissa come scadenza</desc>
         </valItem>
         <valItem ident="deadline_holiday">
-          <desc xml:lang="de">Kirchenfest als Termin/Frist</desc>
-          <desc xml:lang="en">feast day (period)</desc>
-          <desc xml:lang="fr">des fêtes religieuses comme délai</desc>
+          <desc xml:lang="de" versionDate="2024-05-08">Kirchenfest als Termin/Frist</desc>
+          <desc xml:lang="en" versionDate="2024-05-08">feast day (period)</desc>
+          <desc xml:lang="fr" versionDate="2024-05-08">des fêtes religieuses comme délai</desc>
+          <desc xml:lang="it" versionDate="2024-05-08">festività religiose come scadenza</desc>
         </valItem>
         <valItem ident="electronic">
-          <desc xml:lang="de">elektronische Publikation</desc>
-          <desc xml:lang="en">electronic publication</desc>
-          <desc xml:lang="fr">publication numérique</desc>
+          <desc xml:lang="de" versionDate="2024-05-08">elektronische Publikation</desc>
+          <desc xml:lang="en" versionDate="2024-05-08">electronic publication</desc>
+          <desc xml:lang="fr" versionDate="2024-05-08">publication numérique</desc>
+          <desc xml:lang="it" versionDate="2024-05-08">pubblicazione digitale</desc>
         </valItem>
         <valItem ident="floating_holiday">
-          <desc xml:lang="de">beweglicher Feiertag</desc>
-          <desc xml:lang="en">floating holiday</desc>
-          <desc xml:lang="fr">des fêtes sans date fixe</desc>
+          <desc xml:lang="de" versionDate="2024-05-08">beweglicher Feiertag</desc>
+          <desc xml:lang="en" versionDate="2024-05-08">floating holiday</desc>
+          <desc xml:lang="fr" versionDate="2024-05-08">des fêtes sans date fixe</desc>
+          <desc xml:lang="it" versionDate="2024-05-08">festività senza una data fissa</desc>
         </valItem>
         <valItem ident="holiday">
-          <desc xml:lang="de">Kirchenfest</desc>
-          <desc xml:lang="en">feast day</desc>
-          <desc xml:lang="fr">des fêtes religieuses</desc>
+          <desc xml:lang="de" versionDate="2024-05-08">Kirchenfest</desc>
+          <desc xml:lang="en" versionDate="2024-05-08">feast day</desc>
+          <desc xml:lang="fr" versionDate="2024-05-08">des fêtes religieuses</desc>
+          <desc xml:lang="it" versionDate="2024-05-08">festività religiose</desc>
         </valItem>
         <valItem ident="print">
-          <desc xml:lang="de">Druck</desc>
-          <desc xml:lang="en">print</desc>
-          <desc xml:lang="fr">imprimé</desc>
+          <desc xml:lang="de" versionDate="2024-05-08">Druck</desc>
+          <desc xml:lang="en" versionDate="2024-05-08">print</desc>
+          <desc xml:lang="fr" versionDate="2024-05-08">imprimé</desc>
+          <desc xml:lang="it" versionDate="2024-05-08">stampa</desc>
         </valItem>
       </valList>
     </attDef>
