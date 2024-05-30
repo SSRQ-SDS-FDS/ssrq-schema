@@ -52,8 +52,8 @@ testpaths = ["tests"]
 files = ["utils/**/*.py"]
 
 [tool.ruff]
-ignore = ["E501"]
-select = ["C90", "E", "F", "I001", "RET", "UP"]
+lint.ignore = ["E501"]
+lint.select = ["C90", "E", "F", "I001", "RET", "UP"]
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
