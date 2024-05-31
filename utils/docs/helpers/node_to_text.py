@@ -9,10 +9,9 @@ from utils.commons.config import DOCS_LANG
 from utils.docs.helpers.utils import split_tag_and_ns
 from utils.docs.specs.namespaces import XML_NS
 
-RE_WHITESPACE_START_OR_MULTIPLE = re.compile(
-    r"^\s+|\s+$|\s+(?=-\S+)|\s+(?=\s)"
-)  # This is a regex to remove whitespace from the start and end of a string,
-# and also to remove whitespace before a hyphen and whitespace before a space.
+"""This is a regex to remove whitespace from the start and end of a string,
+  and also to remove whitespace before a hyphen and whitespace before a space."""
+RE_WHITESPACE_START_OR_MULTIPLE = re.compile(r"^\s+|\s+$|\s+(?=-\S+)|\s+(?=\s)")
 
 
 @dataclass(frozen=True)
