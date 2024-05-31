@@ -43,9 +43,9 @@ def test_idno(
             True,
         ),
         (
-            "valid-series-idno-without-tradtion-part",
+            "invalid-series-idno-without-tradtion-part",
             "<seriesStmt><idno>SSRQ-SG-III_4-77</idno></seriesStmt>",
-            True,
+            False,
         ),
         (
             "valid-series-idno",
