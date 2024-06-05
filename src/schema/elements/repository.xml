@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="repository" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="repository" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-07-15">Enthält ohne Abkürzung den Namen des Archivs, in welchem die Quelle
         liegt.
     </desc>
@@ -21,14 +21,13 @@
   <attList>
     <attDef ident="n" mode="delete"/>
     <attDef ident="xml:id" mode="delete"/>
-    <attDef ident="xml:lang" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2023-06-23">ISO-639-1-Sprachkürzel</desc>
-      <desc xml:lang="en" versionDate="2023-06-23">ISO-639-1-Language abbreviation</desc>
-      <desc xml:lang="fr" versionDate="2023-06-23">ISO-639-1-Abréviation de la langue</desc>
-      <valList type="closed">
-        <valItem ident="de"/>
-        <valItem ident="fr"/>
-      </valList>
+    <attDef ident="xml:lang" mode="change" usage="req">
+      <datatype>
+        <rng:choice>
+          <rng:ref name="ssrq.lang.de"/>
+          <rng:ref name="ssrq.lang.fr"/>
+        </rng:choice>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
