@@ -1703,12 +1703,13 @@ files = [
 
 [[package]]
 name = "saxonche-stubs"
-version = "0.7.1"
+version = "0.7.2"
 description = "Type stubs for saxonche"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "saxonche_stubs-0.7.1-py3-none-any.whl", hash = "sha256:947902d413e56947940d72fc509955ab6d0d4b47cd0be02e7103202504a9fed6"},
+    {file = "saxonche_stubs-0.7.2-py3-none-any.whl", hash = "sha256:8818562851f2631c374630418da95335b7e33fa0dd8e5b7749df5d3d602aca91"},
+    {file = "saxonche_stubs-0.7.2.tar.gz", hash = "sha256:29b55c8ae8181be4ded520d73d282efa9c7c2a25f54d4f06f65af7deb9fe3cdb"},
 ]
 
 [package.dependencies]
@@ -2081,4 +2082,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "fadaa7995480b3129f3bfc64042108a55c2fd75ea96524d1f1da8f1d3c082581"
+content-hash = "b5b174cd66d18b68b626023644daf8fe0ec3be1f61374fb254fc9d094216acc3"
