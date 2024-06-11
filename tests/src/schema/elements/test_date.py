@@ -159,22 +159,22 @@ def test_date_rng(
         ),
         (
             "valid-date-inside-pubStmt",
-            "<publicationStmt><date type='print' when-custom='2019-08-15'/></publicationStmt>",
+            "<teiHeader><publicationStmt><date type='print' when-custom='2019-08-15'/></publicationStmt></teiHeader>",
             True,
         ),
         (
             "valid-date-inside-pubStmt-from-to",
-            "<publicationStmt><date type='electronic' from-custom='2019-01-01' to-custom='2019-12-31'/></publicationStmt>",
+            "<teiHeader><publicationStmt><date type='electronic' from-custom='2019-01-01' to-custom='2019-12-31'/></publicationStmt></teiHeader>",
             True,
         ),
         (
             "invalid-date-inside-pubStmt-from",
-            "<publicationStmt><date type='print' from-custom='2019-01-01'/></publicationStmt>",
+            "<teiHeader><publicationStmt><date type='print' from-custom='2019-01-01'/></publicationStmt></teiHeader>",
             False,
         ),
         (
             "invalid-date-inside-pubStmt",
-            "<publicationStmt><date type='holiday' when-custom='2019-08-15'/></publicationStmt>",
+            "<teiHeader><publicationStmt><date type='holiday' when-custom='2019-08-15'/></publicationStmt></teiHeader>",
             False,
         ),
     ],
