@@ -130,32 +130,32 @@ def test_facs_naming_conventions(
     [
         (
             "correct-datable-with-when",
-            "<date calendar='gregorian' when-custom='2020'/>",
+            "<date calendar='gregorian' when-custom='2020'>2020</date>",
             True,
         ),
         (
             "incorrect-datable-combination-when-to-custom",
-            "<date calendar='gregorian' when-custom='2020' to-custom='2020-12-31'/>",
+            "<date calendar='gregorian' when-custom='2020' to-custom='2020-12-31'>2020</date>",
             False,
         ),
         (
             "correct-datable-combination-from-to",
-            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31'/>",
+            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31'>2020</date>",
             True,
         ),
         (
             "incorrect-datable-from-without-to",
-            "<date calendar='gregorian' from-custom='2020-01-01' />",
+            "<date calendar='gregorian' from-custom='2020-01-01'>2020</date>",
             False,
         ),
         (
             "incorrect-datable-combination-from-to-notBefore",
-            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notBefore-custom='2019'/>",
+            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notBefore-custom='2019'>2020</date>",
             False,
         ),
         (
             "incorrect-datable-combination-from-to-notAfter",
-            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notAfter-custom='2019'/>",
+            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notAfter-custom='2019'>2020</date>",
             False,
         ),
     ],
@@ -212,6 +212,16 @@ def test_datable_custom_attr(
         (
             "invalid-empty-idno",
             "<idno/>",
+            False,
+        ),
+        (
+            "valid-empty-date-in-teiHeader",
+            "<teiHeader><date/></teiHeader>",
+            True,
+        ),
+        (
+            "invalid-empty-date-outside-teiHeader",
+            "<text><date/></text>",
             False,
         ),
     ],
