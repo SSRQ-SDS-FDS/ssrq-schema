@@ -251,44 +251,16 @@
           <desc xml:lang="de" versionDate="2023-05-23">ISO-639-1-Sprachkürzel</desc>
           <desc xml:lang="en" versionDate="2023-05-23">ISO-639-1-Language abbreviation</desc>
           <desc xml:lang="fr" versionDate="2023-05-23">ISO-639-1-Abréviation de la langue</desc>
-          <valList type="closed">
-            <valItem ident="de">
-              <desc xml:lang="de" versionDate="2023-06-30">Deutsch</desc>
-              <desc xml:lang="en" versionDate="2023-06-30">German</desc>
-              <desc xml:lang="fr" versionDate="2023-06-30">Allemand</desc>
-              <desc xml:lang="it" versionDate="2023-06-30">Tedesco</desc>
-            </valItem>
-            <valItem ident="fr">
-              <desc xml:lang="de" versionDate="2023-06-30">Französisch</desc>
-              <desc xml:lang="en" versionDate="2023-06-30">French</desc>
-              <desc xml:lang="fr" versionDate="2023-06-30">Français</desc>
-              <desc xml:lang="it" versionDate="2023-06-30">Francese</desc>
-            </valItem>
-            <valItem ident="he">
-              <desc xml:lang="de" versionDate="2023-06-30">Hebräisch</desc>
-              <desc xml:lang="en" versionDate="2023-06-30">Hebrew</desc>
-              <desc xml:lang="fr" versionDate="2023-06-30">Hébreu</desc>
-              <desc xml:lang="it" versionDate="2023-06-30">Ebraico</desc>
-            </valItem>
-            <valItem ident="it">
-              <desc xml:lang="de" versionDate="2023-06-30">Italienisch</desc>
-              <desc xml:lang="en" versionDate="2023-06-30">Italian</desc>
-              <desc xml:lang="fr" versionDate="2023-06-30">Italien</desc>
-              <desc xml:lang="it" versionDate="2023-06-30">Italiano</desc>
-            </valItem>
-            <valItem ident="la">
-              <desc xml:lang="de" versionDate="2023-06-30">Latein</desc>
-              <desc xml:lang="en" versionDate="2023-06-30">Latin</desc>
-              <desc xml:lang="fr" versionDate="2023-06-30">Latin</desc>
-              <desc xml:lang="it" versionDate="2023-06-30">Latino</desc>
-            </valItem>
-            <valItem ident="rm">
-              <desc xml:lang="de" versionDate="2023-09-01">Rätoromanisch</desc>
-              <desc xml:lang="en" versionDate="2023-06-30">Romansh</desc>
-              <desc xml:lang="fr" versionDate="2023-06-30">Romanche</desc>
-              <desc xml:lang="it" versionDate="2023-06-30">Romancio</desc>
-            </valItem>
-          </valList>
+          <datatype>
+            <rng:choice>
+              <rng:ref name="ssrq.lang.de"/>
+              <rng:ref name="ssrq.lang.fr"/>
+              <rng:ref name="ssrq.lang.he"/>
+              <rng:ref name="ssrq.lang.it"/>
+              <rng:ref name="ssrq.lang.la"/>
+              <rng:ref name="ssrq.lang.rm"/>
+            </rng:choice>
+          </datatype>
         </attDef>
         <attDef ident="xml:space" mode="delete"/>
       </attList>
