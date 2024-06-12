@@ -19,6 +19,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-expan-with-attributes",
+            "<expan cert='high' resp='CS'>foo</expan>",
+            True,
+        ),
+        (
             "invalid-expan-with-wrong-attribute",
             "<expan att='foo'>bar</expan>",
             False,
