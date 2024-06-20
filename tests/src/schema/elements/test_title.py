@@ -7,22 +7,27 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid_title",
+            "valid-title",
             "<title>foo</title>",
             True,
         ),
         (
-            "valid_title-with-xml-lang",
+            "valid_title-with-elements",
+            "<title>foo<pc>:</pc> X<hi rend='sup'>e</hi> partie</title>",
+            True,
+        ),
+        (
+            "valid-title-with-xml-lang",
             "<title xml:lang='de'>foo</title>",
             True,
         ),
         (
-            "invalid_title-with-wrong-attribute",
+            "invalid-title-with-wrong-attribute",
             "<title att='bar'>foo</title>",
             False,
         ),
         (
-            "invalid_title",
+            "invalid-title",
             "<title><p>foo</p></title>",
             False,
         ),
