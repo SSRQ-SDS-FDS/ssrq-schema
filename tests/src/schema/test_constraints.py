@@ -130,32 +130,32 @@ def test_facs_naming_conventions(
     [
         (
             "correct-datable-with-when",
-            "<date calendar='gregorian' when-custom='2020'/>",
+            "<date calendar='gregorian' when-custom='2020'>2020</date>",
             True,
         ),
         (
             "incorrect-datable-combination-when-to-custom",
-            "<date calendar='gregorian' when-custom='2020' to-custom='2020-12-31'/>",
+            "<date calendar='gregorian' when-custom='2020' to-custom='2020-12-31'>2020</date>",
             False,
         ),
         (
             "correct-datable-combination-from-to",
-            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31'/>",
+            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31'>2020</date>",
             True,
         ),
         (
             "incorrect-datable-from-without-to",
-            "<date calendar='gregorian' from-custom='2020-01-01' />",
+            "<date calendar='gregorian' from-custom='2020-01-01'>2020</date>",
             False,
         ),
         (
             "incorrect-datable-combination-from-to-notBefore",
-            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notBefore-custom='2019'/>",
+            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notBefore-custom='2019'>2020</date>",
             False,
         ),
         (
             "incorrect-datable-combination-from-to-notAfter",
-            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notAfter-custom='2019'/>",
+            "<date calendar='gregorian' from-custom='2020-01-01' to-custom='2020-12-31' notAfter-custom='2019'>2020</date>",
             False,
         ),
     ],
@@ -212,6 +212,16 @@ def test_datable_custom_attr(
         (
             "invalid-empty-idno",
             "<idno/>",
+            False,
+        ),
+        (
+            "valid-empty-date-in-teiHeader",
+            "<teiHeader><date/></teiHeader>",
+            True,
+        ),
+        (
+            "invalid-empty-date-outside-teiHeader",
+            "<text><date/></text>",
             False,
         ),
     ],
@@ -272,6 +282,42 @@ def test_duplicate_attribute_values_constraint_gl6(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Tests the global constraint, which ensures that no attribute has duplicate attribute values."""
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].report.is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "invalid-node-with-text-using-nbsp-as-html-entity-160",
+            "<p>&#160;foo</p>",
+            False,
+        ),
+        (
+            "invalid-node-with-text-using-nbsp-as-html-entity-xA0",
+            "<p>&#xA0;foo</p>",
+            False,
+        ),
+        (
+            "invalid-node-with-text-using-nbsp-in-unicode-notation",
+            "<p> foo</p>",
+            False,
+        ),
+        (
+            "valid-node-with-text",
+            "<p>foo</p>",
+            True,
+        ),
+    ],
+)
+def test_uses_nbsp_in_text_node(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """Tests the global constraint, which ensures that no non-breaking-space is used."""
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
         input=writer.list(), isosch=main_constraints

@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origin" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origin" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-05-16">Enthält Informationen zur Herkunft eines Dokuments.</desc>
   <desc xml:lang="en" versionDate="2023-05-16">Contains information on the origin of a document.</desc>
   <desc xml:lang="fr" versionDate="2023-05-16">Contient des informations sur l'origine d'un document.</desc>
@@ -11,11 +11,24 @@
   </classes>
   <content>
     <sequence>
-      <elementRef key="origDate" maxOccurs="unbounded"/>
+      <elementRef key="origDate"/>
+      <elementRef key="origDate" minOccurs="0"/>
       <elementRef key="origPlace" minOccurs="0" maxOccurs="unbounded"/>
       <elementRef key="orgName" minOccurs="0"/>
     </sequence>
   </content>
+  <constraintSpec scheme="schematron" ident="origDate.type" mode="add">
+    <desc xml:lang="en" versionDate="2024-06-05">Schematron rule for tei:origDate/@type</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:origin">
+          <sch:assert test="count(distinct-values(tei:origDate/@type)) = count(tei:origDate)">
+            When there are two <sch:name/>s, their type attributes must be different.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <attList>
     <attDef ident="n" mode="delete"/>
     <attDef ident="xml:id" mode="delete"/>

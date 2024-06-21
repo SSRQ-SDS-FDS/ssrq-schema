@@ -20,8 +20,8 @@
     </desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
+    <memberOf key="att.global.source"/>
     <memberOf key="att.typed"/>
-    <memberOf key="ssrq.att.source"/>
   </classes>
   <content>
     <textNode/>
@@ -38,7 +38,7 @@
       </sch:pattern>
       <sch:pattern>
         <sch:rule context="tei:idno[parent::tei:seriesStmt][not(@type)]">
-          <sch:assert test="matches(., '^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)(?:-([0-9]+))?|([a-z]{3,}))$')">
+          <sch:assert test="matches(., '^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-(1))|(lit|intro|bailiffs))$')">
                         The idno must match the defined schema – see the examples in the docs.
                     </sch:assert>
         </sch:rule>
@@ -76,6 +76,7 @@
           <desc xml:lang="de" versionDate="2023-03-03">Universally Unique Identifier</desc>
           <desc xml:lang="en" versionDate="2023-03-03">Universally Unique Identifier</desc>
           <desc xml:lang="fr" versionDate="2023-03-03">Universally Unique Identifier</desc>
+          <desc xml:lang="it" versionDate="2023-03-03">Universally Unique Identifier</desc>
         </valItem>
       </valList>
     </attDef>

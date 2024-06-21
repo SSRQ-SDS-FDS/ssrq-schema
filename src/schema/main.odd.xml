@@ -27,6 +27,7 @@
     <body>
       <schemaSpec ident="ssrq-main-schema" docLang="de en fr">
         <!-- TEI modules used -->
+        <moduleRef key="analysis" include="pc"/>
         <moduleRef key="certainty" include="precision"/>
         <moduleRef key="core" include="abbr add author bibl cb choice corr date del editor expan foreign gap graphic head hi item label lb list listBibl measure measureGrp note num orig p pb publisher pubPlace q quote ref resp respStmt sic term textLang time title unclear"/>
         <moduleRef key="figures" include="cell figure row table"/>
@@ -52,6 +53,7 @@
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-bibl"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-date-time"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-hand"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-lang"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-measure"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-orig-type"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-period"/>
@@ -138,6 +140,7 @@
         <specGrpRef target="elements/origPlace.xml"/>
         <specGrpRef target="elements/p.xml"/>
         <specGrpRef target="elements/pb.xml"/>
+        <specGrpRef target="elements/pc.xml"/>
         <specGrpRef target="elements/persName.xml"/>
         <specGrpRef target="elements/physDesc.xml"/>
         <specGrpRef target="elements/placeName.xml"/>

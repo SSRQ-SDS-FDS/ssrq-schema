@@ -14,8 +14,13 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "valid-quote-with-attributes",
+            "valid-quote-with-attributes-fully-inserted",
             "<quote type='fully_inserted' source='http://foo.bar'>bar baz foo</quote>",
+            True,
+        ),
+        (
+            "valid-quote-with-attributes-partially-inserted",
+            "<quote type='partially_inserted' source='http://foo.bar'>bar baz foo</quote>",
             True,
         ),
         ("valid-quote-with-two-segs", "<quote><seg>1</seg><seg>2</seg></quote>", True),

@@ -17,5 +17,4 @@ class ODDElement(Protocol):
     @abstractmethod
     def to_markdown(
         self, lang: str, lang_translations: dict[str, str], path: Path | None = None
-    ) -> None | str:
-        ...
+    ) -> None | str: ...

@@ -16,7 +16,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         (
             "valid-note-with-type-and-place",
             "<note type='original' place='left_margin'>foo</note>",
-            True,
+            False,
         ),
         (
             "invalid-note-with-wrong-attribute-value",

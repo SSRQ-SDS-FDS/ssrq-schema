@@ -9,9 +9,9 @@ from utils.commons.config import DOCS_LANG
 from utils.docs.helpers.utils import split_tag_and_ns
 from utils.docs.specs.namespaces import XML_NS
 
-RE_WHITESPACE_START_OR_MULTIPLE = re.compile(
-    r"^\s+|\s+$|\s+(?=-\S+)|\s+(?=\s)"
-)  # This is a regex to remove whitespace from the start and end of a string, and also to remove whitespace before a hyphen and whitespace before a space.
+"""This is a regex to remove whitespace from the start and end of a string,
+  and also to remove whitespace before a hyphen and whitespace before a space."""
+RE_WHITESPACE_START_OR_MULTIPLE = re.compile(r"^\s+|\s+$|\s+(?=-\S+)|\s+(?=\s)")
 
 
 @dataclass(frozen=True)
@@ -28,12 +28,13 @@ class NodeTransformationError(Exception):
 
 def transform_node_to_text(node: ET.Element, lang: str | None = None) -> Iterator[str]:
     """
-    A utility function to convert a ET.Element node to
-    a text representation, based on some opionated
+    A utility function to convert an ET.Element node to
+    a text representation, based on some opinionated
     transformation rules.
 
     Args:
         node (ET.Element): The node to convert.
+        lang: The language of the node.
 
     Yields:
         Iterator[str]: The text representation of the node.
@@ -53,28 +54,32 @@ def transform_node_to_text(node: ET.Element, lang: str | None = None) -> Iterato
                 if (lang_attr := node.get(f"{{{XML_NS}}}lang"))
                 else parent_lang_attr
             )
-            match child_node.tag_name:
-                case "att":
-                    yield from att_to_md(child_node.content)
-                case "gi":
-                    yield from gi_to_md(child_node.content, used_lang)
-                case "list":
-                    yield from list_to_md(child_node.content)
-                case "p":
-                    yield from p_to_md(child_node.content, used_lang)
-                case "ref":
-                    yield from ref_to_md(child_node.content, used_lang)
-                case "remarks":
-                    yield from remarks_to_md(child_node.content, used_lang)
-                case "tag":
-                    yield from tag_to_md(child_node.content)
-                case "val":
-                    yield from val_to_md(child_node.content)
-                case _:
-                    yield from any_to_md(child_node.content)
+            yield from match_node_tag_name(child_node, used_lang)
             continue
 
         yield from node_text_to_md(child_node.content)  # type: ignore
+
+
+def match_node_tag_name(child_node, used_lang):
+    match child_node.tag_name:
+        case "att":
+            yield from att_to_md(child_node.content)
+        case "gi":
+            yield from gi_to_md(child_node.content, used_lang)
+        case "list":
+            yield from list_to_md(child_node.content)
+        case "p":
+            yield from p_to_md(child_node.content, used_lang)
+        case "ref":
+            yield from ref_to_md(child_node.content, used_lang)
+        case "remarks":
+            yield from remarks_to_md(child_node.content, used_lang)
+        case "tag":
+            yield from tag_to_md(child_node.content)
+        case "val":
+            yield from val_to_md(child_node.content)
+        case _:
+            yield from any_to_md(child_node.content)
 
 
 def convert_node_to_iterable(node: ET.Element) -> Iterator[Node]:
@@ -127,6 +132,7 @@ def gi_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
 
     Args:
         node (ET.Element): The node to convert.
+        lang: The language of the node.
 
     Raises:
         NodeTransformationError: If the node can't be transformed.
@@ -174,6 +180,7 @@ def p_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
 
     Args:
         node (ET.Element): The p node to convert.
+        lang: The language of the node.
 
     Raises:
         NodeTransformationError: If the node can't be transformed.
@@ -195,6 +202,7 @@ def ref_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
 
     Args:
         node (ET.Element): The ref node to convert.
+        lang: The language of the node.
 
     Raises:
         NodeTransformationError: If the ref has no target.

@@ -28,6 +28,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<p rend='black' xml:id='facs'>foo</p>",
             False,
         ),
+        (
+            "invalid-p-with-corr",
+            "<p xml:lang='de'><corr>foo</corr></p>",
+            False,
+        ),
     ],
 )
 def test_p(
