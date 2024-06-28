@@ -21,6 +21,11 @@ from ..conftest import RNG_test_function
             "<bibl><ref target='http://zotero.org/groups/5048222/items/M8D9EG5B'/>, S. 93</bibl>",
             True,
         ),
+        (
+            "valid-bibl-with-pc-and-ref",
+            "<bibl><ref target='http://zotero.org/groups/5048222/items/M8D9EG5B'/><pc>:</pc> S. 93</bibl>",
+            True,
+        ),
     ],
 )
 def test_bibl(
