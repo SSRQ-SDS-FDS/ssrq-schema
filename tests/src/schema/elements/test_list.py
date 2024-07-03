@@ -12,6 +12,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-list",
+            "<list><head>foo</head><item>foo</item></list>",
+            True,
+        ),
+        (
             "invalid-list",
             "<list/>",
             False,
