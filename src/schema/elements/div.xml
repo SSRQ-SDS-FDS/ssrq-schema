@@ -35,6 +35,7 @@
       </rng:interleave>
       <rng:oneOrMore>
         <rng:choice>
+          <rng:ref name="list"/>
           <rng:ref name="seg"/>
           <rng:ref name="p"/>
           <rng:ref name="ssrq.content.default"/>

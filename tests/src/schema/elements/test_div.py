@@ -19,6 +19,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-div-with-list",
+            "<div type='chapter' n='1'><list><item>foo</item></list></div>",
+            True,
+        ),
+        (
             "invalid-div-with-wrong-type",
             "<div type='bar'><p>foo</p></div>",
             False,
