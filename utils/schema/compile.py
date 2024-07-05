@@ -95,7 +95,7 @@ def resolve_relative_paths(doc: str) -> str:
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(configs.XSLTS["path"])
         )
-        result: str = xsl.transform_to_string(xdm_node=document)
+        result: str = xsl.transform_to_string(xdm_node=document)  # type: ignore
 
     if result is None:
         raise ValueError("Failed to resolve relative paths")
@@ -111,7 +111,7 @@ def resolve_specs(doc: str) -> str:
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(configs.XSLTS["specs"])
         )
-        result: str = xsl.transform_to_string(xdm_node=document)
+        result: str = xsl.transform_to_string(xdm_node=document)  # type: ignore
 
     if result is None:
         raise ValueError("Failed to include tei:specGrpRefs")
@@ -131,7 +131,7 @@ def resolve_xincludes(doc: str) -> str:
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(configs.XSLTS["xi"])
         )
-        result: str = xsl.transform_to_string(xdm_node=document)
+        result: str = xsl.transform_to_string(xdm_node=document)  # type: ignore
 
     if result is None:
         raise ValueError("Failed to resolve xincludes")
@@ -140,8 +140,9 @@ def resolve_xincludes(doc: str) -> str:
 
 
 def resolve_embedded_spec_files(doc: str) -> str:
-    """A helper function, which first resolves the content of all embeddes specs and then resolves the
-    examples embedded via xinclude."""
+    """A helper function, which first resolves the content
+    of all embeddes specs and then resolves the examples
+    embedded via xinclude."""
 
     result_specs = resolve_specs(doc=doc)
     return resolve_xincludes(doc=result_specs)
@@ -166,7 +167,8 @@ def check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:
             raise ExceptionGroup("File not found", bundled_exceptions)
     except ExceptionGroup as errors:
         print(
-            f"The following files in schema {schema['entry']} are missing – fix the paths before you continue:"
+            f"The following files in schema {schema['entry']} are missing – "
+            f"fix the paths before you continue:"
         )
         for e in errors.exceptions:
             print(e)
@@ -208,7 +210,7 @@ def compile_odd_to_odd(odd: str, tei_version: str) -> str:
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(configs.XSLTS["odd2odd"])
         )
-        result: str = xsl.transform_to_string(xdm_node=document)
+        result: str = xsl.transform_to_string(xdm_node=document)  # type: ignore
 
     if result is None:
         raise ValueError("No result from XSLT transformation")
@@ -225,7 +227,7 @@ def resolve_sch_let(odd: str) -> str:
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(configs.XSLTS["vars"])
         )
-        result: str = xsl.transform_to_string(xdm_node=document)
+        result: str = xsl.transform_to_string(xdm_node=document)  # type: ignore
 
     if result is None:
         raise ValueError("No result from XSLT transformation, while cleaning")
@@ -243,7 +245,7 @@ def compile_odd_to_rng(odd: str, tei_version: str) -> str:
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(configs.XSLTS["odd2rng"])
         )
-        result: str = xsl.transform_to_string(xdm_node=document)
+        result: str = xsl.transform_to_string(xdm_node=document)  # type: ignore
 
     if result is None:
         raise ValueError("No result from XSLT transformation")
@@ -285,7 +287,7 @@ def odd_factory(
             xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
                 stylesheet_file=str(configs.XSLTS["clean"])
             )
-            result: str = xsl.transform_to_string(xdm_node=document)
+            result: str = xsl.transform_to_string(xdm_node=document)  # type: ignore
 
         if result is None:
             raise ValueError("No result from XSLT transformation, while cleaning")
