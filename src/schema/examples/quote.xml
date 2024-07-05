@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<egXML xmlns="http://www.tei-c.org/ns/Examples">
-  <add place="below" hand="otherHand">Hinfûr soll man leßen des banholtzes halb ein
-                gschrift, stât ze end dis buchs, fahent an:
-                <quote type="partially_inserted">Wir Johannes Mantss.</quote>
-                <note>Mit dem Verweis betreffend Bannholz ist StAZH G I 102, fol. 33r-v gemeint.
-                </note>
-            </add>
-</egXML>
+<div xmlns="http://www.tei-c.org/ns/1.0">
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-quote-partially">
+    <add place="below" hand="otherHand">Hinfûr soll man leßen des banholtzes halb ein
+            gschrift, stât ze end dis buchs, fahent an:
+            <quote type="partially_inserted">Wir Johannes Mantss.</quote>
+            <note>Mit dem Verweis betreffend Bannholz ist StAZH G I 102, fol. 33r-v gemeint.</note>
+        </add>
+  </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-quote-fully">
+    <p>
+      <quote type="fully_inserted">
+                Domine castellane, ego <persName ref="per030236a.01">Jacobus Arconcerii</persName>,
+                procurator fiscalis et fidei a reverendo in
+                <persName ref="per000353a.17">Christo</persName> patre et domino [hier der Rest
+                des Zitats] conducere possim et valeam sicut ipsius
+                <persName ref="per030242a.01">Johannis</persName> demerita exposcunt.
+            </quote>
+    </p>
+  </egXML>
+</div>

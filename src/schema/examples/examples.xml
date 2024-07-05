@@ -1506,15 +1506,27 @@
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-quote-de">
       <p>Beispiel für einen Hinweis auf eine Urkunde mit Zitat des Anfangs der Urkunde</p>
-      <xi:include href="quote.xml"/>
+      <xi:include href="quote.xml" xpointer="ex-quote-partially"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-quote-en">
       <p>Example of a reference to a document with a quote from the beginning of the document</p>
-      <xi:include href="quote.xml"/>
+      <xi:include href="quote.xml" xpointer="ex-quote-partially"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-quote-fr">
       <p>Exemple de référence à un document avec une citation du début du document</p>
-      <xi:include href="quote.xml"/>
+      <xi:include href="quote.xml" xpointer="ex-quote-partially"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-quote-fully-de">
+      <p>Beispiel für ein Zitat einer vollständigen Urkunde</p>
+      <xi:include href="quote.xml" xpointer="ex-quote-fully"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-quote-fully-en">
+      <p>Example of a quote of a complete document</p>
+      <xi:include href="quote.xml" xpointer="ex-quote-fully"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-quote-fully-fr">
+      <p>Exemple de citation d'un document complet</p>
+      <xi:include href="quote.xml" xpointer="ex-quote-fully"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-ref-print-de">
       <p>Beispiel für einen Verweis auf eine gedruckte Quelle</p>
