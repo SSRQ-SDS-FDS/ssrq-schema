@@ -77,7 +77,7 @@ def resolve_xi_includes(
             xsl: PyXsltExecutable = xslt_proc.compile_stylesheet(  # type: ignore
                 stylesheet_file=str(configs.XSLTS["xi"])
             )
-            xslt_result: str = xsl.transform_to_string(xdm_node=document)
+            xslt_result: str = xsl.transform_to_string(xdm_node=document)  # type: ignore
 
             if xslt_result is None:
                 raise ValueError(f"Failed to resolve xincludes for {include.filename}")
@@ -136,6 +136,7 @@ def md_xi_plugin(markdown: str, xi_base_path: Path) -> str:
 
     Args:
         markdown (str): The Markdown text to parse.
+        xi_base_path (Path): The Path
 
     Returns:
         str: The Markdown text with resolved XIncludes."""
