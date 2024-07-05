@@ -7,14 +7,14 @@ title: Datierungsrichtlinien
 Die Datierungsrichtlinien ermöglichen eine einheitliche und sprachunabhängige
 Erfassung und Abfrage von Datierungen und Zeiträumen.
 
-## 1 Sortierlogik
+## 1 Sortierlogik und Ausgabe
 
 Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
 
 - Ältere Datierungen stehen vor neueren Datierungen, z. B. steht bei den beiden
   folgenden Zeiträumen «7.–10. Jh.» vor «8.–9. Jh.».
 - Alles, was vor einem Datum sein könnte, wird auch vor diesem eingeordnet,
-  so steht z. B. «18. Jh.» (01.01.1701–31.12.1800) vor «1800».
+  so steht z. B. «18. Jh.» (1.1.1701–31.12.1800) vor «1800».
 - Wenn zwei Datierungen mit unterschiedlichen Zeiträumen am selben Datum
   starten, dann steht die genauere Datierung vor der ungenaueren, z. B.
   «6.–7. Jh.» vor «6.–8. Jh.» und «1300–1350» vor «1300–1375».
@@ -23,6 +23,8 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
   (d. h. `@calendar="unknown"`), dann steht die Datierung mit bekanntem
   Kalender zuerst, also `<date calendar="julian" when="1590-01-01/>` vor
   `<date calendar="unknown" when="1590-01-01/>`.
+
+Die Ausgabe aller Datumsangaben erfolgt ohne führende Nullen, z. B. 1.1.1810 statt 01.01.1810
 
 ## 2 Eindeutige Datierungen
 
@@ -60,7 +62,7 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
   Beispiele:
 
     ```xml
-    <date when-custom="--09-11">11.09.</date>
+    <date when-custom="--09-11">11.9.</date>
     ```
 
     ```xml
