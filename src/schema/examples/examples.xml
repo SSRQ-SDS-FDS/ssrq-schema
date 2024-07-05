@@ -1018,15 +1018,39 @@
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-list-de">
       <p>Beispiel für eine Liste mit einfachen Einträgen</p>
-      <xi:include href="list.xml"/>
+      <xi:include href="list.xml" xpointer="ex-list"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-list-en">
       <p>Example of a list with simple entries</p>
-      <xi:include href="list.xml"/>
+      <xi:include href="list.xml" xpointer="ex-list"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-list-fr">
       <p>Exemple de liste avec des entrées simples</p>
-      <xi:include href="list.xml"/>
+      <xi:include href="list.xml" xpointer="ex-list"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-list-head-de">
+      <p>Beispiel für eine Liste mit einer Überschrift</p>
+      <xi:include href="list.xml" xpointer="ex-list-head"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-list-head-en">
+      <p>Example of a list with a heading</p>
+      <xi:include href="list.xml" xpointer="ex-list-head"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-list-head-fr">
+      <p>Exemple de liste avec un en-tête</p>
+      <xi:include href="list.xml" xpointer="ex-list-head"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-list-complex-de">
+      <p>Beispiel für eine komplexe Liste</p>
+      <xi:include href="list.xml" xpointer="ex-list-complex"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-list-complex-en">
+      <p>Example of a complex list</p>
+      <xi:include href="list.xml" xpointer="ex-list-complex"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-list-complex-fr">
+      <p>Exemple de liste complexe</p>
+      <xi:include href="list.xml" xpointer="ex-list-complex"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-listBibl-edition-de">
       <p>Verweis auf Editionen</p>

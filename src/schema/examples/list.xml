@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<egXML xmlns="http://www.tei-c.org/ns/Examples">
-  <list>
-    <item>Apfel</item>
-    <item>Fisch</item>
-    <item>...</item>
-  </list>
-</egXML>
+<div xmlns="http://www.tei-c.org/ns/1.0">
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-list">
+    <list>
+      <item>Apfel</item>
+      <item>Fisch</item>
+      <item>...</item>
+    </list>
+  </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-list-head">
+    <list>
+      <head>Lebensmittel</head>
+      <item>Apfel</item>
+      <item>Fisch</item>
+      <item>...</item>
+    </list>
+  </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-list-complex">
+    <list>
+      <head>Lebensmittel</head>
+      <pb n="1r"/>
+      <cb n="a"/>
+      <item>Apfel</item>
+      <item>Fisch</item>
+      <item>...</item>
+      <cb n="b"/>
+      <item>Tomate</item>
+      <item>Banane</item>
+      <item>...</item>
+      <delSpan spanTo="del1"/>
+      <item>Aubergine</item>
+      <item>Avocado</item>
+      <anchor xml:id="del1"/>
+    </list>
+  </egXML>
+</div>
