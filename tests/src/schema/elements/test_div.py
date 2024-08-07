@@ -66,6 +66,31 @@ def test_div(
             "<div><p>foo</p> hello</div>",
             False,
         ),
+        (
+            "valid-xml-lang-in-back",
+            "<back><div xml:lang='de'><p>foo</p></div><div xml:lang='fr'><p>bar</p></div></back>",
+            True,
+        ),
+        (
+            "invalid-xml-lang-in-back-just-one-div",
+            "<back><div xml:lang='de'><p>foo</p></div></back>",
+            False,
+        ),
+        (
+            "invalid-xml-lang-in-back-just-one-xml-lang",
+            "<back><div xml:lang='de'><p>foo</p></div><div><p>bar</p></div></back>",
+            False,
+        ),
+        (
+            "invalid-xml-lang-in-back-just-same-xml-lang",
+            "<back><div xml:lang='de'><p>foo</p></div><div xml:lang='de'><p>bar</p></div></back>",
+            False,
+        ),
+        (
+            "invalid-xml-lang-in-body",
+            "<body><div xml:lang='de'><p>foo</p></div></body>",
+            False,
+        ),
     ],
 )
 def test_div_text_constraint(
