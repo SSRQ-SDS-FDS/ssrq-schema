@@ -10,7 +10,7 @@ function cmd {
 
 function fmt {
   cmd ruff format . "${@}"
-  cmd ruff --fix . "${@}"
+  cmd ruff check --fix . "${@}"
   fmt-xml
 }
 
@@ -26,7 +26,7 @@ function fmt-xml {
 
 function lint-only {
     echo "Linting using ruff..."
-    cmd ruff ${src}
+    cmd ruff check ${src}
 }
 
 function install {

@@ -37,9 +37,12 @@
   <xi:include href="examples.xml" xpointer="ex-num-de"/>
   <xi:include href="examples.xml" xpointer="ex-num-en"/>
   <xi:include href="examples.xml" xpointer="ex-num-fr"/>
-  <remarks xml:lang="de" versionDate="2023-08-17">
+  <remarks xml:lang="de" versionDate="2024-02-29">
     <p>Der Wert der Zahl wird im Attribut <att>value</att> maschinenlesbar hinterlegt.
         </p>
+    <p>Im Falle einer Bruchzahl werden Nenner und Zähler mit einem Schrägstrich
+      voneinander getrennt und der Wert der Zahl als Dezimalzahl im Attribut <att>val</att>
+      hinterlegt.</p>
     <p>Bei Angaben zu Massen, Gewichten, Währungen etc., in denen innerhalb
             von <gi>measure</gi> mit <att>quantity</att> die Anzahl ausgezeichnet wird,
             wird auf <gi>num</gi> verzichtet. Ebenso wird bei Jahreszahlen, die
@@ -48,18 +51,24 @@
             mit <att>dur</att> wird auf <gi>num</gi> verzichtet.
         </p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2023-08-21">
+  <remarks xml:lang="en" versionDate="2024-02-29">
     <p>The value of the number is stored in machine-readable form in the <att>value</att> attribute.
         </p>
+    <p>In the case of a fractional number, the denominator and numerator are separated by a
+                slash from each other and the value of the number as a decimal number in
+                the <att>val</att> attribute deposited.</p>
     <p>In the case of information on dimensions, weights, currencies, etc., in which <gi>measure</gi> is used to
             mark the number with <att>quantity</att>, <gi>num</gi> is not used. Likewise, <gi>num</gi> is not used for
             years that are described in more detail with <gi>date</gi> and <att>when-custom</att>. Within a time
             specification with <att>dur</att>, <gi>num</gi> is not used.
         </p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-08-17">
+  <remarks xml:lang="fr" versionDate="2024-02-29">
     <p>La valeur du nombre est stockée sous une forme lisible par machine dans l'attribut <att>value</att>.
         </p>
+    <p>Dans le cas d'un nombre fractionnaire, le dénominateur et le numérateur sont séparés
+                d'une barre oblique et la valeur du nombre sous forme de nombre décimal dans
+                l'attribut <att>val</att> déposé.</p>
     <p>Dans le cas d'informations sur les dimensions, les poids, les devises, etc., dans
             lesquelles <gi>measure</gi> est utilisé pour marquer le nombre avec <att>quantity</att>, <gi>num</gi> n'est
             pas utilisé. De même, <gi>num</gi> n'est pas utilisé pour les années qui sont décrites plus en détail

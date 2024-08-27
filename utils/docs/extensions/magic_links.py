@@ -80,7 +80,7 @@ def init_file_lookup_table(files: Files) -> dict[str, list[File]]:
     file_list: dict[str, list[File]] = defaultdict(list)
 
     for file in files:
-        filename = PurePath(file.abs_src_path).name
+        filename = PurePath(file.abs_src_path).name  # type: ignore
         file_list[filename].append(file)
 
     return file_list
@@ -111,4 +111,4 @@ def create_relative_link(linker: File, target: File) -> str:
     Returns:
         str: The relative link."""
 
-    return mkdocs_file_utils.get_relative_url(target.abs_src_path, linker.abs_src_path)
+    return mkdocs_file_utils.get_relative_url(target.abs_src_path, linker.abs_src_path)  # type: ignore

@@ -20,12 +20,14 @@
   <content>
     <alternate maxOccurs="unbounded">
       <textNode/>
+      <elementRef key="pc"/>
       <elementRef key="hi"/>
     </alternate>
   </content>
   <attList>
     <attDef ident="level" mode="delete"/>
     <attDef ident="n" mode="delete"/>
+    <attDef ident="type" mode="delete"/>
     <attDef ident="xml:id" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-title-de"/>

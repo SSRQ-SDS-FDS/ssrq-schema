@@ -317,16 +317,28 @@
       <p>Exemple de description de l'état de conservation</p>
       <xi:include href="condition.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-date-annunciation-de">
+      <p>Beispielhafte Datierung im Annuntiationsstil</p>
+      <xi:include href="date.xml" xpointer="ex-date-annunciation"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-date-annunciation-en">
+      <p>Exemplary dating in the annunciation style</p>
+      <xi:include href="date.xml" xpointer="ex-date-annunciation"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-date-annunciation-fr">
+      <p>Datation exemplaire dans le style de l'annonciation</p>
+      <xi:include href="date.xml" xpointer="ex-date-annunciation"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-date-day-de">
-      <p>Beispielhafte Datierung auf den 03. März 1631</p>
+      <p>Beispielhafte Datierung auf den 3. März 1631</p>
       <xi:include href="date.xml" xpointer="ex-date-day"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-date-day-en">
-      <p>Exemplary dating to 03 March 1631</p>
+      <p>Exemplary dating to 3 March 1631</p>
       <xi:include href="date.xml" xpointer="ex-date-day"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-date-day-fr">
-      <p>Exemple de datation au 03 mars 1631</p>
+      <p>Exemple de datation au 3 mars 1631</p>
       <xi:include href="date.xml" xpointer="ex-date-day"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-date-ca-de">
@@ -692,15 +704,15 @@
       <xi:include href="extent.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-figure-1-de">
-      <p>Beispiel für ein Notariatszeichen</p>
+      <p>Beispiel für eine Unterschrift mit Notariatszeichen</p>
       <xi:include href="figure.xml" xpointer="ex-figure-1"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-figure-1-en">
-      <p>Example of a notarial sign</p>
+      <p>Example of a notarial sign with signature</p>
       <xi:include href="figure.xml" xpointer="ex-figure-1"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-figure-1-fr">
-      <p>Exemple d'enseigne notariale</p>
+      <p>Exemple de signature avec marque de notaire</p>
       <xi:include href="figure.xml" xpointer="ex-figure-1"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-figure-2-de">
@@ -884,6 +896,18 @@
       <p>Titre ajouté par les éditeurs pour mieux structurer le texte</p>
       <xi:include href="head.xml"/>
     </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-hi-rotated-de">
+      <p>Auszeichnung eines um 90 Grad gedrehten Textes</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-rotated"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-hi-rotated-en">
+      <p>Markup of a text rotated by 90 degrees clockwise</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-rotated"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-hi-rotated-fr">
+      <p>Balisage d'un texte pivoté de 90 degrés dans le sens des aiguilles d'une montre</p>
+      <xi:include href="hi.xml" xpointer="ex-hi-rotated"/>
+    </exemplum>
     <exemplum xml:lang="de" xml:id="ex-hi-sup-de">
       <p>Auszeichnung eines hochgestellten Buchstabens</p>
       <xi:include href="hi.xml" xpointer="ex-hi-sup"/>
@@ -994,15 +1018,39 @@
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-list-de">
       <p>Beispiel für eine Liste mit einfachen Einträgen</p>
-      <xi:include href="list.xml"/>
+      <xi:include href="list.xml" xpointer="ex-list"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-list-en">
       <p>Example of a list with simple entries</p>
-      <xi:include href="list.xml"/>
+      <xi:include href="list.xml" xpointer="ex-list"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-list-fr">
       <p>Exemple de liste avec des entrées simples</p>
-      <xi:include href="list.xml"/>
+      <xi:include href="list.xml" xpointer="ex-list"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-list-head-de">
+      <p>Beispiel für eine Liste mit einer Überschrift</p>
+      <xi:include href="list.xml" xpointer="ex-list-head"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-list-head-en">
+      <p>Example of a list with a heading</p>
+      <xi:include href="list.xml" xpointer="ex-list-head"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-list-head-fr">
+      <p>Exemple de liste avec un en-tête</p>
+      <xi:include href="list.xml" xpointer="ex-list-head"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-list-complex-de">
+      <p>Beispiel für eine komplexe Liste</p>
+      <xi:include href="list.xml" xpointer="ex-list-complex"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-list-complex-en">
+      <p>Example of a complex list</p>
+      <xi:include href="list.xml" xpointer="ex-list-complex"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-list-complex-fr">
+      <p>Exemple de liste complexe</p>
+      <xi:include href="list.xml" xpointer="ex-list-complex"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-listBibl-edition-de">
       <p>Verweis auf Editionen</p>
@@ -1063,6 +1111,18 @@
     <exemplum xml:lang="fr" xml:id="ex-measure-price-fr">
       <p>Exemple de prix</p>
       <xi:include href="measure.xml" xpointer="ex-measure-price"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-measure-unclear-de">
+      <p>Beispiel für eine unklare Mengenangabe</p>
+      <xi:include href="measure.xml" xpointer="ex-measure-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-measure-unclear-en">
+      <p>Example of an unclear quantity statement</p>
+      <xi:include href="measure.xml" xpointer="ex-measure-unclear"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-measure-unclear-fr">
+      <p>Exemple d'une déclaration de quantité peu claire</p>
+      <xi:include href="measure.xml" xpointer="ex-measure-unclear"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-measureGrp-area-de">
       <p>Beispiel für verschiedene Flächenangaben</p>
@@ -1470,15 +1530,27 @@
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-quote-de">
       <p>Beispiel für einen Hinweis auf eine Urkunde mit Zitat des Anfangs der Urkunde</p>
-      <xi:include href="quote.xml"/>
+      <xi:include href="quote.xml" xpointer="ex-quote-partially"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-quote-en">
       <p>Example of a reference to a document with a quote from the beginning of the document</p>
-      <xi:include href="quote.xml"/>
+      <xi:include href="quote.xml" xpointer="ex-quote-partially"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-quote-fr">
       <p>Exemple de référence à un document avec une citation du début du document</p>
-      <xi:include href="quote.xml"/>
+      <xi:include href="quote.xml" xpointer="ex-quote-partially"/>
+    </exemplum>
+    <exemplum xml:lang="de" xml:id="ex-quote-fully-de">
+      <p>Beispiel für ein Zitat einer vollständigen Urkunde</p>
+      <xi:include href="quote.xml" xpointer="ex-quote-fully"/>
+    </exemplum>
+    <exemplum xml:lang="en" xml:id="ex-quote-fully-en">
+      <p>Example of a quote of a complete document</p>
+      <xi:include href="quote.xml" xpointer="ex-quote-fully"/>
+    </exemplum>
+    <exemplum xml:lang="fr" xml:id="ex-quote-fully-fr">
+      <p>Exemple de citation d'un document complet</p>
+      <xi:include href="quote.xml" xpointer="ex-quote-fully"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-ref-print-de">
       <p>Beispiel für einen Verweis auf eine gedruckte Quelle</p>
@@ -1541,15 +1613,15 @@
       <xi:include href="sealDesc.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-seg-de">
-      <p>Beispiel für vom Bearbeitenden eingeführte Absätze</p>
+      <p>Beispiel für vom Bearbeitenden eingeführte Absätze mit nicht originaler Nummerierung</p>
       <xi:include href="seg.xml"/>
     </exemplum>
     <exemplum xml:lang="en" xml:id="ex-seg-en">
-      <p>Example of paragraphs introduced by the editor</p>
+      <p>Example of paragraphs introduced by the editor with non-original numbering</p>
       <xi:include href="seg.xml"/>
     </exemplum>
     <exemplum xml:lang="fr" xml:id="ex-seg-fr">
-      <p>Exemple de paragraphes introduits par l'éditeur</p>
+      <p>Exemple de paragraphes introduits par l'éditeur avec une numérotage non originale</p>
       <xi:include href="seg.xml"/>
     </exemplum>
     <exemplum xml:lang="de" xml:id="ex-seriesStmt-de">

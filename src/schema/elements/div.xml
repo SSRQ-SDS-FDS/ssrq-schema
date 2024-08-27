@@ -35,6 +35,7 @@
       </rng:interleave>
       <rng:oneOrMore>
         <rng:choice>
+          <rng:ref name="list"/>
           <rng:ref name="seg"/>
           <rng:ref name="p"/>
           <rng:ref name="ssrq.content.default"/>
@@ -43,13 +44,36 @@
     </rng:choice>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-div-text" mode="add">
-    <desc xml:lang="en" versionDate="2023-08-17">Schematron to check the usage of attributes.</desc>
+    <desc xml:lang="en" versionDate="2024-08-06">Schematron to check the use of text content.</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:div">
           <sch:assert test="string-length(normalize-space(string-join(text(), ''))) = 0">
                         No text allowed in <sch:name/>.
                     </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <constraintSpec scheme="schematron" ident="sch-el-div-xml-lang" mode="add">
+    <desc xml:lang="en" versionDate="2024-08-06">Schematron to check the use <att>xml:lang</att>.</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:div[@xml:lang]">
+          <sch:let name="divs-in-back" value="count(./parent::tei:back/tei:div)"/>
+          <sch:assert test=".[parent::tei:back]">
+            The attribute xml:lang for tei:div is allowed only in tei:back.
+          </sch:assert>
+          <sch:assert test="$divs-in-back gt 1">
+            If xml:lang is specified for tei:div, there must be at least two tei:divs.
+          </sch:assert>
+          <sch:report test="./parent::tei:back/tei:div[not(@xml:lang)]">
+            If xml:lang is specified for tei:div, all sibling tei:divs must have this attribute.
+          </sch:report>
+          <sch:assert test="count(distinct-values(./parent::tei:back/tei:div/@xml:lang)) = $divs-in-back">
+            If xml:lang is specified for tei:div, at least another tei:div with another
+            language has to be specified
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
@@ -84,7 +108,6 @@
       </valList>
     </attDef>
     <attDef ident="xml:id" mode="delete"/>
-    <attDef ident="xml:lang" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-div-back-de"/>
   <xi:include href="examples.xml" xpointer="ex-div-back-en"/>
@@ -92,7 +115,7 @@
   <xi:include href="examples.xml" xpointer="ex-div-body-de"/>
   <xi:include href="examples.xml" xpointer="ex-div-body-en"/>
   <xi:include href="examples.xml" xpointer="ex-div-body-fr"/>
-  <remarks xml:lang="de" versionDate="2023-08-21">
+  <remarks xml:lang="de" versionDate="2024-08-06">
     <p>Originale Absätze werden nur mit <gi>p</gi> (ohne zusätzliches <gi>div</gi>) gekennzeichnet. Sofern das
             Original stärker gegliedert oder strukturiert ist, kann man beides verwenden, gegebenenfalls zusammen
             mit <att>type</att>. Abschnitte, die der Bearbeitende zur inhaltlichen Strukturierung (lesbarer Text)
@@ -102,8 +125,10 @@
         Zur Strukturierung von Schlussformeln vgl. die Beispiele auf der Seite Schlussformeln.</p>
     <p>Bei längeren Paratexten (Einleitung, Kommentar) können Kapitel durch <gi>div</gi> mit <att>n</att> nummeriert
         und gegebenenfalls mit <att>type</att> näher bezeichnet werden.</p>
+    <p>Im <gi>back</gi>-Bereich kann mit <att>xml:lang</att> die Sprache des Kommentars spezifiziert werdenn,
+    wenn es sich um eine mehrsprachige Editionseinheit handelt.</p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2023-08-21">
+  <remarks xml:lang="en" versionDate="2024-08-06">
     <p>Original paragraphs are only marked with <gi>p</gi> (without an additional <gi>div</gi>). If the original is
         more articulated or structured, you can use both, possibly together with <att>type</att>. Sections that the
         editor inserts to structure the content (readable text) are marked with <gi>seg</gi>.</p>
@@ -112,8 +137,10 @@
         the structuring of closing formulas, see the examples on the Closing Formulas page.</p>
     <p>For longer paratexts (introduction, comment), chapters can be numbered with <gi>div</gi> with <att>n</att> and,
         if necessary, with <att>type</att>.</p>
+    <p>In the <gi>back</gi> area, the language of the comment can be specified with <att>xml:lang</att>,
+    if it is a multilingual edition unit.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-08-21">
+  <remarks xml:lang="fr" versionDate="2024-08-06">
     <p>Les paragraphes originaux ne sont marqués que d'un <gi>p</gi> (sans un <gi>div</gi> supplémentaire). Si
         l'original est plus articulé ou structuré, vous pouvez utiliser les deux, éventuellement avec <att>type</att>.
         Les sections que l'éditeur insère pour structurer le contenu (texte lisible) sont marquées par <gi>seg</gi>.</p>
@@ -122,5 +149,7 @@
         Pour la structuration des formules de clôture, voir les exemples sur la page Formules de clôture.</p>
     <p>Dans le cas de paratextes plus longs (introduction, commentaire), les chapitres peuvent être numérotés avec
         <gi>div</gi> avec <att>n</att> et, si nécessaire, avec <att> tapez</att>.</p>
+    <p>Dans la zone <gi>back</gi>, la langue du commentaire peut être spécifiée avec <att>xml:lang</att>,
+    s'il s'agit d'une unité d'édition multilingue.</p>
   </remarks>
 </elementSpec>

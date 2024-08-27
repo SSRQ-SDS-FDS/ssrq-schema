@@ -29,6 +29,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-num-with-fraction",
+            "<num value='1.25'>5/4</num>",
+            True,
+        ),
+        (
             "num-with-invalid-floating-point",
             "<num value='3.1/2'>dreieinhalb</num>",
             False,

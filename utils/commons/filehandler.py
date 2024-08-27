@@ -9,13 +9,11 @@ Content: TypeAlias = str
 class AbstractFileHandler(Protocol):
     @staticmethod
     @abstractmethod
-    def read(directory: Path, file_name: str) -> Content:
-        ...
+    def read(directory: Path, file_name: str) -> Content: ...
 
     @staticmethod
     @abstractmethod
-    def write(directory: Path, file_name: str, content: Content) -> None:
-        ...
+    def write(directory: Path, file_name: str, content: Content) -> None: ...
 
 
 class FileHandler:

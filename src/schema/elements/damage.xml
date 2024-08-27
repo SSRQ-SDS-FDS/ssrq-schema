@@ -11,14 +11,28 @@
     <memberOf key="att.dimensions"/>
   </classes>
   <content>
-    <sequence>
-      <alternate maxOccurs="unbounded">
+    <alternate>
+      <alternate maxOccurs="1">
         <elementRef key="add"/>
         <elementRef key="gap"/>
         <elementRef key="supplied"/>
         <elementRef key="unclear"/>
       </alternate>
-    </sequence>
+      <alternate>
+        <sequence preserveOrder="false">
+          <elementRef key="gap"/>
+          <elementRef key="supplied"/>
+        </sequence>
+        <sequence preserveOrder="false">
+          <elementRef key="gap"/>
+          <elementRef key="unclear"/>
+        </sequence>
+        <sequence preserveOrder="false">
+          <elementRef key="supplied"/>
+          <elementRef key="unclear"/>
+        </sequence>
+      </alternate>
+    </alternate>
   </content>
   <attList>
     <attDef ident="unit" mode="replace">

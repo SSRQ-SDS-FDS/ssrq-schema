@@ -4,7 +4,7 @@ title: Orthographie
 
 # 2. Orthographie
 - [Normalisierung](normalization.de.md)
-- [Diakritika, Sonderzeichen und Ligaturen](special.de.md)
+- [Sonderzeichen](special.de.md)
 - [Gross- und Kleinschreibung](versalia.de.md)
 - [Zusammen- und Getrenntschreibung](wordseparation.de.md)
 - [Zahlen und Ziffern](numbers.de.md)

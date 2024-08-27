@@ -12,26 +12,17 @@
   <content>
     <alternate maxOccurs="unbounded">
       <elementRef key="dimensions"/>
-      <elementRef key="measure"/>
     </alternate>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-extent">
     <desc xml:lang="en" versionDate="2023-04-19">Constraint for tei:extent to ensure unique
-            dimensions-types
-        </desc>
+        dimensions-types</desc>
     <constraint>
       <sch:pattern>
-        <sch:rule context="tei:extent[count(tei:dimensions[@type]) &gt; 1]">
-          <sch:assert test="count(distinct-values(tei:dimensions/@type)) = count(tei:dimensions)">The @type of
-                        each tei:dimensions, which is a child of <sch:name/>, needs to
-                        be unique.
-                    </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:extent[count(tei:measure) &gt; 1]">
-          <sch:assert test="count(distinct-values(tei:measure/@type)) = count(tei:measure)">The @type of each
-                        tei:measure, which is a child of <sch:name/>, needs to
-                        be unique.
-                    </sch:assert>
+        <sch:rule context="tei:extent[count(tei:dimensions) &gt; 1]">
+          <sch:assert test="count(distinct-values(tei:dimensions/@type)) = count(tei:dimensions)">
+              The @type of each tei:dimensions inside extent needs to be unique.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>

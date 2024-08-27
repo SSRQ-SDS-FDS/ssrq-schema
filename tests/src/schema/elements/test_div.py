@@ -19,6 +19,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-div-with-list",
+            "<div type='chapter' n='1'><list><item>foo</item></list></div>",
+            True,
+        ),
+        (
             "invalid-div-with-wrong-type",
             "<div type='bar'><p>foo</p></div>",
             False,
@@ -59,6 +64,31 @@ def test_div(
         (
             "invalid-div-with-text",
             "<div><p>foo</p> hello</div>",
+            False,
+        ),
+        (
+            "valid-xml-lang-in-back",
+            "<back><div xml:lang='de'><p>foo</p></div><div xml:lang='fr'><p>bar</p></div></back>",
+            True,
+        ),
+        (
+            "invalid-xml-lang-in-back-just-one-div",
+            "<back><div xml:lang='de'><p>foo</p></div></back>",
+            False,
+        ),
+        (
+            "invalid-xml-lang-in-back-just-one-xml-lang",
+            "<back><div xml:lang='de'><p>foo</p></div><div><p>bar</p></div></back>",
+            False,
+        ),
+        (
+            "invalid-xml-lang-in-back-just-same-xml-lang",
+            "<back><div xml:lang='de'><p>foo</p></div><div xml:lang='de'><p>bar</p></div></back>",
+            False,
+        ),
+        (
+            "invalid-xml-lang-in-body",
+            "<body><div xml:lang='de'><p>foo</p></div></body>",
             False,
         ),
     ],

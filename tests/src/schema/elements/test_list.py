@@ -12,6 +12,25 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-list-with-head",
+            "<list><head>foo</head><item>foo</item></list>",
+            True,
+        ),
+        (
+            "valid-list-with-multiple-elements",
+            """<list>
+                <head>foo</head>
+                <pb n='1r'/>
+                <cb n='a'/>
+                <item>foo</item>
+                <item>foo</item>
+                <cb n='b'/>
+                <item>bar</item>
+                <item>bar</item>
+            </list>""",
+            True,
+        ),
+        (
             "invalid-list",
             "<list/>",
             False,
