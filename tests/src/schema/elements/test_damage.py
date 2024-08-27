@@ -32,6 +32,26 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "damage-with-valid-child-element-combination-unclear-supplied",
+            "<damage agent='faded_ink' unit='character' quantity='3'><unclear>die</unclear><supplied resp='MA'>bar</supplied></damage>",
+            True,
+        ),
+        (
+            "damage-with-valid-child-element-combination-gap-supplied",
+            "<damage agent='faded_ink'><gap quantity='3' unit='cm'/><supplied resp='MA'>bar</supplied></damage>",
+            True,
+        ),
+        (
+            "damage-with-valid-child-element-combination-gap-unclear",
+            "<damage agent='faded_ink'><gap quantity='3' unit='cm'/><unclear>bar</unclear></damage>",
+            True,
+        ),
+        (
+            "damage-with-invalid-child-element-combination-gap-add",
+            "<damage agent='faded_ink' unit='character' quantity='3'><unclear>die</unclear><add> hand='otherHand' place='overwritten'>foo</add></damage>",
+            False,
+        ),
+        (
             "invalid-damage-without-agent",
             "<damage><unclear>die</unclear></damage>",
             False,
