@@ -7,7 +7,7 @@
     Ob ein Wort gemäss Vorlage zusammengeschrieben oder getrennt geschrieben
     wird, ist nicht immer einfach zu entscheiden.
     Ein einheitliches System für eine Handschrift,
-    die ediert wird, ist zu befolgen.
+    die ediert wird, ist zu befolgen. Bei Drucken erfolgt die Zusammen- und Getrenntschreibung originalgetreu der Vorlage.
     
     Bindestriche (Auslassungsstriche) werden berücksichtigt und in der heute
     gebräuchlichen Form dargestellt.
