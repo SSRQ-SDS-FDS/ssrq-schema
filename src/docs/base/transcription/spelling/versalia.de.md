@@ -14,6 +14,8 @@ Beispiel:
     Bei handschriftlichen Texten bis zum Ende des 18. Jahrhunderts gilt
     grundsätzlich Kleinschreibung.
     
+    Bei Drucken erfolgt die Klein- und Grossschreibung originalgetreu gemäss Vorlage.
+    
     Grossgeschrieben werden nur Satzanfänge und Eigennamen (Personen-,
     Familien-, Organisations-, Orts- und Flurnamen).
     Zu beachten sind die folgenden Besonderheiten.
