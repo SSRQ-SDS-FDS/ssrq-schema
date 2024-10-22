@@ -7,25 +7,35 @@ kommen und nicht aufgelöst werden.
 
 === "Moderne Abkürzungen"
 
+    a. S. = alter Stil (Julianischer Kalender)
     Abt. = Abteilung  
     Anm. = Anmerkung  
     Art. = Artikel  
     art. = article  
     Bd. = Band  
+    Bde. = Bände
     ca. = circa  
+    cm = Zentimeter
     Cod. = Codex  
     d. h. = das heisst  
-    fol. = Folio  
+    ebd. = ebenda
+    f. = folgende Seite
+    ff. = folgende Seiten
+    fol. = Folio (Blatt)
+    hl. = heilig
     Jh. = Jahrhundert  
-    Ms. = Manuskript  
+    Ms. = Manuskript 
+    n. S. = neuer Stil (Gregorianischer Kalender) 
     Nr. = Nummer  
-    r = recto  
+    r = recto (Vorderseite eines nummerierten Blattes)
     S. = Seite  
+    s. = siehe
     SDS = Sources du droit suisse  
+    Sp. = Spalte
     SSRQ = Sammlung Schweizerischer Rechtsquellen  
     St. = Sankt  
     Urk. = Urkunde  
-    v = verso  
+    v = verso (Rückseite eines nummerierten Blattes)
     vgl. = vergleiche
 
 === "Historische Abkürzungen"
