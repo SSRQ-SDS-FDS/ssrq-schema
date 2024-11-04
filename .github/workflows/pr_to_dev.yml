@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: 'recursive'
       - name: Setup SSH and Python with Poetry
@@ -35,7 +35,7 @@ jobs:
         run: ./Taskfile validate
       - name: Run all tests using pytest
         run: poetry run pytest -n 4
-        
+
   publish:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
@@ -48,7 +48,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: 'recursive'
           fetch-depth: 0

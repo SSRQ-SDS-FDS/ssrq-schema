@@ -212,7 +212,7 @@ def test_TEI_main_rng(
 ):
     rng_test = test_element_with_rng("TEI", name, markup, result, True)
     if message is not None and rng_test is not None:
-        file_reports = rng_test.reports[0]
-        assert isinstance(file_reports.report, list)
-        messages = "".join([error.message for error in file_reports.report])
+        assert rng_test is not None
+        reports = [err.message for info in rng_test for err in info.report]
+        messages = "".join(reports)
         assert message in messages

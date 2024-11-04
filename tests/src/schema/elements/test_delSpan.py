@@ -36,9 +36,9 @@ def test_delSpan(
     test_element_with_rng("delSpan", name, markup, result, True)
     if message:
         validation_result = test_element_with_rng("delSpan", name, markup, result, True)
-        file_reports = validation_result.reports[0]
-        assert isinstance(file_reports.report, list)
-        messages = "".join([error.message for error in file_reports.report])
+        assert validation_result is not None
+        reports = [err.message for info in validation_result for err in info.report]
+        messages = "".join(reports)
         assert message in messages
     else:
         test_element_with_rng("delSpan", name, markup, result, False)
