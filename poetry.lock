@@ -1974,14 +1974,14 @@ pyzotero = "^1.5.19"
 requests = "^2.32.3"
 result = "^0.17.0"
 saxonche = "^12.4.2"
-ssrq-utils = {git = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-utils.git"}
+ssrq-utils = {git = "https://github.com/SSRQ-SDS-FDS/ssrq-utils.git"}
 typer = "^0.12.3"
 
 [package.source]
 type = "git"
 url = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-cli.git"
 reference = "main"
-resolved_reference = "efb3cbd38d235d838f55dbeccb72bdb03f500de8"
+resolved_reference = "6180eb3bb02653764fb988e0b7bcafc072f9151e"
 
 [[package]]
 name = "ssrq-utils"
@@ -1997,7 +1997,7 @@ pydantic = "^2.7.2"
 
 [package.source]
 type = "git"
-url = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-utils.git"
+url = "https://github.com/SSRQ-SDS-FDS/ssrq-utils.git"
 reference = "HEAD"
 resolved_reference = "6bcdb411b1f8b113535461b64b42cf681fe7e03b"
 
