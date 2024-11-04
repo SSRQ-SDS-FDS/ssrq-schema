@@ -1,8 +1,8 @@
 import re
+import tomllib
 from dataclasses import dataclass
 from pathlib import Path
 
-import tomllib
 from pydantic import BaseModel, field_validator
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
 from typing_extensions import TypedDict

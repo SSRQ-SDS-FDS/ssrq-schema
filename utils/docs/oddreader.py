@@ -1,4 +1,4 @@
-from typing import Iterator
+from collections.abc import Iterator
 from xml.etree import ElementTree as ET
 
 from utils.docs.helpers.translator import TRANSLATE, Translator
