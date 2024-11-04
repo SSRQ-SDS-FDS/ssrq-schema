@@ -84,6 +84,7 @@ from ..conftest import RNG_test_function
         ),
         ("pb-with-invalid-zero-numbering", "<pb n='0'/>", False),
         ("pb-with-invalid-leading-zero-numbering", "<pb n='01r'/>", False),
+        ("pb-with-valid-recto", "<pb n='r'/>", True),
     ],
 )
 def test_pb(
