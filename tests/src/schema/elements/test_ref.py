@@ -62,6 +62,16 @@ def test_ref_rng(
             "<ref target='https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'/>",
             True,
         ),
+        (
+            "invalid-ref-not-in-bibl",
+            "<ref target='urn:ssrq:SSRQ-ZH-NF_I_2_1-105-1'>SSRQ ZH NF I/2/1 105-1</ref>",
+            False,
+        ),
+        (
+            "valid-ref-in-bibl",
+            "<bibl><ref target='urn:ssrq:SSRQ-ZH-NF_I_2_1-105-1'>SSRQ ZH NF I/2/1 105-1</ref></bibl>",
+            True,
+        ),
     ],
 )
 def test_ref_constraint(

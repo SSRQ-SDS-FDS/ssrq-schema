@@ -28,13 +28,25 @@
       </sch:pattern>
     </constraint>
   </constraintSpec>
+  <constraintSpec scheme="schematron" ident="sch-ref-in-bibl" mode="add">
+    <desc xml:lang="en" versionDate="2024-11-04">Specific schematron rule for tei:ref</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:ref[contains(@target, 'urn:ssrq')]">
+          <sch:assert test="./ancestor::tei:bibl">If <sch:name/> contains a reference to
+              another SLS-document, it should be enclosed in tei:bibl.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <xi:include href="examples.xml" xpointer="ex-ref-print-de"/>
   <xi:include href="examples.xml" xpointer="ex-ref-print-en"/>
   <xi:include href="examples.xml" xpointer="ex-ref-print-fr"/>
   <xi:include href="examples.xml" xpointer="ex-ref-urn-de"/>
   <xi:include href="examples.xml" xpointer="ex-ref-urn-en"/>
   <xi:include href="examples.xml" xpointer="ex-ref-urn-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-20">
+  <remarks xml:lang="de" versionDate="2024-11-04">
     <p>Der Verweis kann auf ein anderes Dokument, die Einleitung, das Register eines retrodigitalisierten Bandes,
             einen Eintrag im HLS, zitierte Literatur etc. zeigen. Es ist sinnvoll, Links auf weitere, nicht edierte,
             aber in einem Archivinformationssystem einzeln verzeichnete Quellenstücke innerhalb von <gi>ref</gi> zu
@@ -50,8 +62,9 @@
             eigenen Editionseinheit von einem Stück auf ein anderes zu referenzieren. Wir verwenden dafür
             die <gi>idno</gi>.
         </p>
+    <p>Verweise auf andere Stücke werden in <gi>bibl</gi> eingeschlossen.</p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-20">
+  <remarks xml:lang="en" versionDate="2024-11-04">
     <p>The reference can point to another document, the introduction, the index of a retrodigitized volume, an entry
             in the HLS, cited literature, etc. It makes sense to place links within <gi>ref</gi> to other source pieces
             that are not edited but are individually listed in an archive information system. It does not make sense if
@@ -66,6 +79,7 @@
             It is also possible to reference from one piece to another within your own edition unit. We use
             the <gi>idno</gi> for this.
         </p>
+    <p>References to other pieces are included in <gi>bibl</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-20">
     <p>La référence peut pointer vers un autre document, l'introduction, l'index d'un volume rétronumérisé, une
@@ -83,5 +97,6 @@
             exemple ci-dessous). Il est également possible de référencer d'une pièce à l'autre au sein de votre propre
             unité d'édition. Nous utilisons le <gi>idno</gi> pour cela.
         </p>
+    <p>Les références à d'autres pièces sont incluses dans <gi>bibl</gi>.</p>
   </remarks>
 </elementSpec>
