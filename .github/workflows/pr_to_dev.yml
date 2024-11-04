@@ -22,9 +22,7 @@ jobs:
       - name: Setup SSH and Python with Poetry
         uses: ./.github/actions/setup
         with:
-          ssh-key: |
-            ${{ secrets.CLI_SECRET_KEY }}
-            ${{ secrets.SSRQ_UTILS_SECRET_KEY }}
+          ssh-key: ${{ secrets.CLI_SECRET_KEY }}
       - name: Setup xmllint
         uses: Bpolitycki/setup-xmllint-action@1.0.1
       - name: Check the formatting of .py-files
@@ -57,9 +55,7 @@ jobs:
       - name: Setup SSH and Python with Poetry
         uses: ./.github/actions/setup
         with:
-          ssh-key: |
-            ${{ secrets.CLI_SECRET_KEY }}
-            ${{ secrets.SSRQ_UTILS_SECRET_KEY }}
+          ssh-key: ${{ secrets.CLI_SECRET_KEY }}
       - name: Set docs-url
         run: |
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
