@@ -111,17 +111,21 @@
       </datatype>
     </attDef>
   </attList>
-  <remarks xml:lang="de" versionDate="2024-03-19">
+  <remarks xml:lang="de" versionDate="2024-11-04">
     <p>Kann an einer Stelle keine genaue Mengenangabe gemacht werden, wird hierfür
-        in <att>quantity</att> der Wert <val>0</val> verwendet.</p>
+        in <att>quantity</att> der Wert <val>0</val> verwendet. Stehen mehrere
+    zusammengehörige Mengenangaben nebeneinander, werden diese mit <gi>measureGrp</gi>
+    zu einer Gruppe zusammengefasst.</p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2024-03-19">
+  <remarks xml:lang="en" versionDate="2024-11-04">
     <p>If an exact quantity cannot be given at one point, then the value <val>0</val> is used
-        in <att>quantity</att>.</p>
+        in <att>quantity</att>. If there are several related quantities next to each other,
+        they are combined into a group with <gi>measureGrp</gi>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2024-03-19">
+  <remarks xml:lang="fr" versionDate="2024-11-04">
     <p>Si une quantité exacte ne peut être donnée en un seul endroit, la valeur <val>0</val> est
-        utilisée dans <att>quantité</att>.</p>
+        utilisée dans <att>quantité</att>. Si plusieurs quantités liées sont côte à côte, elles
+        sont combinées en un groupe à l'aide de <gi>measureGrp</gi>.</p>
   </remarks>
   <xi:include href="examples.xml" xpointer="ex-measure-age-de"/>
   <xi:include href="examples.xml" xpointer="ex-measure-age-en"/>
