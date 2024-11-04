@@ -37,6 +37,7 @@ pytest-xdist = "^3.6.1"
 ruff = "^0.7.2"
 ssrq-cli = { git = "ssh://git@github.com/SSRQ-SDS-FDS/ssrq-cli.git", rev = "main" }
 types-requests = "^2.32.0.20241016"
+lxml-stubs = "^0.5.1"
 
 [tool.poetry.group.docs.dependencies]
 mike = "^2.1.3"

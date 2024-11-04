@@ -1,10 +1,10 @@
 from glob import glob
 
 import requests
+from lxml import etree
 from saxonche import PySaxonProcessor
-from ssrq_cli.validate import RNGJingValidator  # type: ignore
-from ssrq_cli.validate.xml import ValidationError  # type: ignore
-from ssrq_cli.xml_utils import ext_etree  # type: ignore
+from ssrq_cli.validate.rng import validate_with_rng
+from ssrq_cli.validate.types import RNGValidationError
 
 from utils.commons.config import COMMONS_DIR, ELEMENTS_DIR, SCHEMA_DIR
 from utils.docs.helpers.node_to_text import is_not_link_to_md_file
@@ -81,16 +81,16 @@ def parse_files(files: list[str]):
     Returns:
         list[tuple[str, ext_etree._ElementTree]]: List of tuples of the form (file, parsed_file).
     """
-    parser = ext_etree.XMLParser(recover=True)
-    parsed_files: list[tuple[str, ext_etree._ElementTree]] = [
-        (file, ext_etree.parse(file, parser=parser)) for file in files
+    parser = etree.XMLParser(recover=True)
+    parsed_files: list[tuple[str, etree._ElementTree]] = [
+        (file, etree.parse(file, parser=parser)) for file in files
     ]
     return parsed_files
 
 
 def filter_errors(
-    list_errors: list[ValidationError], list_filter_msgs: list[str] = FILTER_MSGS
-) -> list[ValidationError]:
+    list_errors: list[RNGValidationError], list_filter_msgs: list[str] = FILTER_MSGS
+) -> list[RNGValidationError]:
     """Filter the list of errors to remove the ones that are expected."""
     return [
         error
@@ -100,7 +100,7 @@ def filter_errors(
 
 
 def check_ref_targets(
-    files: list[tuple[str, ext_etree._ElementTree]],
+    files: list[tuple[str, etree._ElementTree]],
 ) -> list[InvalidRefTargetException] | None:
     from urllib.parse import urlparse
 
@@ -146,20 +146,17 @@ def validate_odd_with_odd(
     exceptions: list[Exception] = []
 
     for files, pattern, dir_path in sources:
-        rng_validator = RNGJingValidator()
         file_sources = parse_files(files)
-        rng_validator.validate(
-            sources=file_sources, schema=schema, file_pattern=pattern
-        )
+        validation = validate_with_rng(pattern=pattern, schema=schema)
 
-        for error in rng_validator.get_invalid():
-            if (
-                error.report is not None
-                and len(msgs := filter_errors(error.report)) > 0
-            ):
+        if validation.is_err():
+            raise Exception(f"Could not validate the schema: {validation.unwrap_err()}")
+
+        for info in validation.unwrap():
+            if info.report and len(msgs := filter_errors(info.report)) > 0:
                 exceptions.append(
                     InvalidSpecException(
-                        f"{dir_path}/{error.file}",
+                        f"{dir_path}/{info.source}",
                         msg="\n".join(
                             [
                                 f"Line {msg.line}; Column {msg.column}: {msg.message}"
