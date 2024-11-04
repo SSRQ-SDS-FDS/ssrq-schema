@@ -2,6 +2,8 @@
 
 ## Regeln für Drucktexte 
 
+Bei Drucken wird die Interpunktion originalgetreu gemäss Vorlage transkribiert.
+
 Die Virgel (`/`) wird transkribiert, in der Regel mit Leerzeichen 
 davor und danach. 
 
