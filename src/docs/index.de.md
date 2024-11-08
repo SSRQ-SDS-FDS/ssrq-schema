@@ -81,7 +81,8 @@ Sammlung gleichermassen Rechnung trägt.
 
 Das [vollständige, kompilierte Schema](https://schema.ssrq-sds-fds.ch/latest/TEI_Schema.rng) 
 kann frei heruntergeladen und weitergenutzt werden. Seine Entwicklung erfolgt öffentlich 
-einsehbar auf der Plattform [GitHub](https://github.com/SSRQ-SDS-FDS/ssrq-schema).
+einsehbar auf der Plattform [GitHub](https://github.com/SSRQ-SDS-FDS/ssrq-schema), es wird nachhaltig auf 
+[Zenodo](https://zenodo.org/records/13379935) publiziert.
 
 [^2]:
     Zit. nach Wikipedia: [Extensible Markup Language]
