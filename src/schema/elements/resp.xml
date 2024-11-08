@@ -2,16 +2,16 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="resp" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="resp" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Beschreibt die Art der Verantwortung.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes the nature of the responsibility.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Décrit la nature de la responsabilité.</desc>
   <classes mode="replace"/>
   <content>
-    <rng:choice>
-      <rng:ref name="ssrq.role.resp.de"/>
-      <rng:ref name="ssrq.role.resp.fr"/>
-    </rng:choice>
+    <alternate>
+      <macroRef key="ssrq.role.resp.de"/>
+      <macroRef key="ssrq.role.resp.fr"/>
+    </alternate>
   </content>
   <xi:include href="examples.xml" xpointer="ex-respStmt-de"/>
   <xi:include href="examples.xml" xpointer="ex-respStmt-en"/>

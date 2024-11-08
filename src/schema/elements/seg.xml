@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="seg" module="linking" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="seg" module="linking" mode="change">
   <desc xml:lang="de" versionDate="2023-07-11">Absätze, die vom Bearbeitenden
         zur Strukturierung des Quellentextes eingefügt werden.
     </desc>
@@ -16,28 +16,24 @@
     <memberOf key="model.segLike"/>
   </classes>
   <content>
-    <rng:choice>
-      <rng:oneOrMore>
-        <rng:choice>
-          <rng:ref name="add"/>
-          <rng:ref name="cb"/>
-          <rng:ref name="head"/>
-          <rng:ref name="list"/>
-          <rng:ref name="p"/>
-          <rng:ref name="pb"/>
-          <rng:ref name="table"/>
-        </rng:choice>
-      </rng:oneOrMore>
-      <rng:group>
-        <rng:ref name="seg"/>
-        <rng:oneOrMore>
-          <rng:ref name="seg"/>
-        </rng:oneOrMore>
-      </rng:group>
-      <rng:oneOrMore>
-        <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-    </rng:choice>
+    <alternate>
+      <alternate maxOccurs="unbounded">
+        <elementRef key="add"/>
+        <elementRef key="cb"/>
+        <elementRef key="head"/>
+        <elementRef key="list"/>
+        <elementRef key="p"/>
+        <elementRef key="pb"/>
+        <elementRef key="table"/>
+      </alternate>
+      <sequence>
+        <elementRef key="seg"/>
+        <elementRef key="seg" maxOccurs="unbounded"/>
+      </sequence>
+      <sequence maxOccurs="unbounded">
+        <macroRef key="ssrq.content.default"/>
+      </sequence>
+    </alternate>
   </content>
   <attList>
     <attDef ident="cert" mode="delete"/>

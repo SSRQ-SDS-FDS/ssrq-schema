@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="orgName" module="namesdates" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="orgName" module="namesdates" mode="change">
   <desc xml:lang="de" versionDate="2023-03-28">Zeichnet eine Organisation bzw. Institution, wie
         Klöster, Zünfte, Räte, Nachbarschaft etc., aus.
     </desc>
@@ -18,9 +18,9 @@
     <memberOf key="model.nameLike.agent"/>
   </classes>
   <content>
-    <rng:oneOrMore>
-      <rng:ref name="ssrq.content.default"/>
-    </rng:oneOrMore>
+    <sequence maxOccurs="unbounded">
+      <macroRef key="ssrq.content.default"/>
+    </sequence>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-orgName" mode="add">
     <desc versionDate="2023-06-19" xml:lang="en">Schematron rules for tei:orgName</desc>

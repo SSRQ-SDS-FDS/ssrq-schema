@@ -15,13 +15,11 @@
     <memberOf key="model.pPart.transcriptional"/>
   </classes>
   <content>
-    <rng:oneOrMore>
-      <rng:choice>
-        <rng:ref name="p"/>
-        <rng:ref name="seg"/>
-        <rng:ref name="ssrq.content.default"/>
-      </rng:choice>
-    </rng:oneOrMore>
+    <alternate maxOccurs="unbounded">
+      <elementRef key="p"/>
+      <elementRef key="seg"/>
+      <macroRef key="ssrq.content.default"/>
+    </alternate>
   </content>
   <attList>
     <attDef ident="place" mode="replace" usage="req">

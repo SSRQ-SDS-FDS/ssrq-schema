@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origDate" module="msDescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origDate" module="msDescription" mode="change">
   <desc xml:lang="de" versionDate="2023-09-13">Enthält im Kopfbereich das
       Entstehungsdatum eines Dokuments.
     </desc>
@@ -19,12 +19,10 @@
     <memberOf key="model.pPart.msdesc"/>
   </classes>
   <content>
-    <rng:zeroOrMore>
-      <rng:choice>
-        <rng:ref name="ssrq.content.default"/>
-        <rng:ref name="precision"/>
-      </rng:choice>
-    </rng:zeroOrMore>
+    <alternate minOccurs="0" maxOccurs="unbounded">
+      <elementRef key="precision"/>
+      <macroRef key="ssrq.content.default"/>
+    </alternate>
   </content>
   <attList>
     <attDef ident="calendar" mode="change" usage="req"/>

@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="div" module="textstructure" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="div" module="textstructure" mode="change">
   <desc xml:lang="de" versionDate="2023-05-23">Gliedert Quellentexte innerhalb von <gi>body</gi> oder Bemerkungen
         innnerhalb von <gi>back</gi> zusammen mit <gi>p</gi> in Abschnitte.
     </desc>
@@ -17,31 +17,25 @@
     <memberOf key="att.typed"/>
   </classes>
   <content>
-    <rng:choice>
-      <rng:interleave>
-        <rng:group>
-          <rng:ref name="div"/>
-          <rng:oneOrMore>
-            <rng:ref name="div"/>
-          </rng:oneOrMore>
-        </rng:group>
-        <rng:zeroOrMore>
-          <rng:choice>
-            <rng:ref name="cb"/>
-            <rng:ref name="pb"/>
-            <rng:ref name="ssrq.content.anchor.spans"/>
-          </rng:choice>
-        </rng:zeroOrMore>
-      </rng:interleave>
-      <rng:oneOrMore>
-        <rng:choice>
-          <rng:ref name="list"/>
-          <rng:ref name="seg"/>
-          <rng:ref name="p"/>
-          <rng:ref name="ssrq.content.default"/>
-        </rng:choice>
-      </rng:oneOrMore>
-    </rng:choice>
+    <alternate>
+      <sequence preserveOrder="false">
+        <sequence>
+          <elementRef key="div"/>
+          <elementRef key="div" maxOccurs="unbounded"/>
+        </sequence>
+        <alternate minOccurs="0" maxOccurs="unbounded">
+          <elementRef key="cb"/>
+          <elementRef key="pb"/>
+          <elementRef key="ssrq.content.anchor.spans"/>
+        </alternate>
+      </sequence>
+      <alternate maxOccurs="unbounded">
+        <elementRef key="list"/>
+        <elementRef key="seg"/>
+        <elementRef key="p"/>
+        <macroRef key="ssrq.content.default"/>
+      </alternate>
+    </alternate>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-div-text" mode="add">
     <desc xml:lang="en" versionDate="2024-08-06">Schematron to check the use of text content.</desc>
