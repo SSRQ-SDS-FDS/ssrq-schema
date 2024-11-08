@@ -45,8 +45,9 @@
     - Label: [`<label>`](label.de.md)
     - Sonstiger Textblock: [`<ab>`](ab.de.md)
     - Anmerkungen, Fussnoten: [`<note>`](note.de.md)
-    - Verweise, bibliographische Angaben: [`<ref>`](ref.de.md)
-      [`<bibl>`](bibl.de.md) [`<listBibl>`](listBibl.de.md)
+    - Verweise, bibliographische Angaben: 
+      [`<bibl>`](bibl.de.md) [`<ref>`](ref.de.md) [`<listBibl>`](listBibl.de.md)
+    - Satzzeichen, die sprachabhängig verarbeitet werden: [`<pc>`](pc.de.md)
 - Sprachwechsel: [`<foreign>`](foreign.de.md) [`<orig>`](orig.de.md)
 - Hervorhebungen: [`<hi>`](hi.de.md)
 
@@ -57,11 +58,10 @@
 - Masse, Gewichte, Währungen: [`<measure>`](measure.de.md)
     [`<measureGrp>`](measureGrp.de.md)
 - Register:
-    - Lemmata: [`<term>`](term.de.md)
+    - Lemmata und Schlagworte: [`<term>`](term.de.md)
     - Personen: [`<persName>`](persName.de.md)
     - Organisationen: [`<orgName>`](orgName.de.md)
     - Orte: [`<placeName>`](placeName.de.md)
-    - Schlagwörter: [`<term>`](term.de.md)
 
 ## Tags im Kopfbereich
 
@@ -84,12 +84,13 @@
       [`<repository>`](repository.de.md) [`<settlement>`](settlement.de.md)
     - Beschreibung der Quelleninhalte: [`<msContents>`](msContents.de.md)
       [`<msItem>`](msItem.de.md) [`<author>`](author.de.md)
-      [`<textLang>`](textLang.de.md) [`<docImprint>`](docImprint.de.md)
+      [`<textLang>`](textLang.de.md) [`<docImprint>`](docImprint.de.md) [`<pubPlace>`](pubPlace.de.md) [`<publisher>`](publisher.de.md)
       [`<summary>`](summary.de.md)
     - Geschichte der Quelle: [`<history>`](history.de.md)
       [`<origin>`](origin.de.md) [`<origDate>`](origDate.de.md)
       [`<origPlace>`](origPlace.de.md)
-    - Zusätzliche Angaben: [`<additional>`](additional.de.md)
+      - Zusätzliche Angaben: [`<additional>`](additional.de.md) [`<adminInfo>`](adminInfo.de.md)
+      [`<custodialHist>`](custodialHist.de.md) [`<custEvent>`](custEvent.de.md)
     - Physische Beschreibung der Quelle: [`<physDesc>`](physDesc.de.md)
         - Bindung: [`<bindingDesc>`](bindingDesc.de.md)
         - Hände: [`<handDesc>`](handDesc.de.md) [`<handNote>`](handNote.de.md)
