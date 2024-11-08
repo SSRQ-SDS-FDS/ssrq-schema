@@ -9,12 +9,10 @@ Beispiel:
 
 ## Kleinschreibung
 
-=== "Allgemeine Regeln"
+=== "Hss. bis zum 18. Jh."
 
     Bei handschriftlichen Texten bis zum Ende des 18. Jahrhunderts gilt
     grundsätzlich Kleinschreibung.
-    
-    Bei Drucken erfolgt die Klein- und Grossschreibung originalgetreu gemäss Vorlage.
     
     Grossgeschrieben werden nur Satzanfänge und Eigennamen (Personen-,
     Familien-, Organisations-, Orts- und Flurnamen).
@@ -25,6 +23,10 @@ Beispiel:
     Bei handschriftlichen Texten des 19. Jahrhunderts sollte man im Deutschen
     zu Gross- und Kleinschreibung entsprechend der Vorlage und im Französischen
     gemäss heutiger Orthographie übergehen.
+
+=== "Drucke"
+
+    Bei Drucken erfolgt die Klein- und Grossschreibung originalgetreu gemäss Vorlage.
 
 ## Gattungsnamen
 

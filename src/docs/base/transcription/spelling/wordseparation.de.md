@@ -2,12 +2,12 @@
 
 ## Regeln für alle Sprachen
 
-=== "Allgemeine Regeln"
+=== "Allgemeine Regeln für Hss."
 
     Ob ein Wort gemäss Vorlage zusammengeschrieben oder getrennt geschrieben
     wird, ist nicht immer einfach zu entscheiden.
     Ein einheitliches System für eine Handschrift,
-    die ediert wird, ist zu befolgen. Bei Drucken erfolgt die Zusammen- und Getrenntschreibung originalgetreu der Vorlage.
+    die ediert wird, ist zu befolgen.
     
     Bindestriche (Auslassungsstriche) werden berücksichtigt und in der heute
     gebräuchlichen Form dargestellt.
@@ -81,6 +81,9 @@
     
     Beispiel: «apud Novavillam»
 
+=== "Drucke"
+
+    Bei Drucken erfolgt die Zusammen- und Getrenntschreibung originalgetreu der Vorlage.
 
 ## Sonderregeln für deutsche Texte bei stark abweichendem Sprachgebrauch
 
