@@ -7,36 +7,36 @@ kommen und nicht aufgelöst werden.
 
 === "Moderne Abkürzungen"
 
-    a. S. = alter Stil (Julianischer Kalender)
+    a. S. = alter Stil (Julianischer Kalender)  
     Abt. = Abteilung  
     Anm. = Anmerkung  
     Art. = Artikel  
     art. = article  
     Bd. = Band  
-    Bde. = Bände
+    Bde. = Bände  
     ca. = circa  
-    cm = Zentimeter
+    cm = Zentimeter  
     Cod. = Codex  
     d. h. = das heisst  
-    ebd. = ebenda
-    f. = folgende Seite
-    ff. = folgende Seiten
-    fol. = Folio (Blatt)
-    hl. = heilig
+    ebd. = ebenda  
+    f. = folgende Seite  
+    ff. = folgende Seiten  
+    fol. = Folio (Blatt)  
+    hl. = heilig  
     Jh. = Jahrhundert  
-    Ms. = Manuskript 
-    n. S. = neuer Stil (Gregorianischer Kalender) 
+    Ms. = Manuskript  
+    n. S. = neuer Stil (Gregorianischer Kalender)  
     Nr. = Nummer  
-    r = recto (Vorderseite eines nummerierten Blattes)
+    r = recto (Vorderseite eines nummerierten Blattes)  
     S. = Seite  
-    s. = siehe
+    s. = siehe  
     SDS = Sources du droit suisse  
-    Sp. = Spalte
+    Sp. = Spalte  
     SSRQ = Sammlung Schweizerischer Rechtsquellen  
     St. = Sankt  
     Urk. = Urkunde  
-    v = verso (Rückseite eines nummerierten Blattes)
-    vgl. = vergleiche
+    v = verso (Rückseite eines nummerierten Blattes)  
+    vgl. = vergleiche  
 
 === "Historische Abkürzungen"
 
@@ -84,7 +84,7 @@ kommen und nicht aufgelöst werden.
     ħ = Haller (Währung)  
     ℔ = Pfund (Gewicht)  
      = Pfund (Währung)  
-     = Schilling (Währung)
+     = Schilling (Währung)  
 
 === "Archive"
 
@@ -139,4 +139,4 @@ kommen und nicht aufgelöst werden.
     VLA = Vorarlberger Landesarchiv  
     winbib = Winterthurer Bibliotheken  
     ZBZ = Zentralbibliothek Zürich  
-    ZGA = Zivilgemeindearchiv
+    ZGA = Zivilgemeindearchiv  
