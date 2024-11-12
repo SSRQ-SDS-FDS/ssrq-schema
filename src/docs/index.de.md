@@ -18,8 +18,8 @@ fungieren zugleich als «editorischer Bericht».
 [Editio](https://editio.ssrq-online.ch/).
 - Die [retrodigitalisierte Sammlung](https://www.ssrq-sds-fds.ch/online/cantons.html) erschliesst
 die analog erschienenen Bände als OCR-PDF.
-- Die [Projekthomepage](https://www.ssrq-sds-fds.ch/home/) informiert Sie über die
-aktuell laufenden Editionsprojekte und gibt Ihnen eine Übersicht über die Geschichte der
+- Die [Projektwebseite](https://www.ssrq-sds-fds.ch/home/) informiert über die
+aktuell laufenden Editionsprojekte und gibt eine Übersicht über die Geschichte der
 Sammlung seit den 1890er Jahren.
 
 ## Technologie und Standardisierung
