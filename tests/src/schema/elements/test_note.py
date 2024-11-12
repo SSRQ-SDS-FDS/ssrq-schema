@@ -68,7 +68,7 @@ def test_note(
             False,
         ),
         (
-            "invalid-note-inside-app-without-two-refs",
+            "invalid-note-inside-app-with-two-refs",
             "<app><note type='text_comparison'><ref target='http://example.com'/><ref target='http://example.org'/><orig>foo</orig></note></app>",
             False,
         ),

@@ -49,17 +49,17 @@ def test_ref_rng(
     [
         (
             "valid-ref-without-target",
-            "<ref>abcde</ref>",
+            "<bibl><ref>abcde</ref></bibl>",
             True,
         ),
         (
             "invalid-ref-without-target-and-text",
-            "<ref></ref>",
+            "<bibl><ref></ref></bibl>",
             False,
         ),
         (
             "valid-ref-without-text",
-            "<ref target='https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'/>",
+            "<bibl>ref target='https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'/></bibl>",
             True,
         ),
         (
