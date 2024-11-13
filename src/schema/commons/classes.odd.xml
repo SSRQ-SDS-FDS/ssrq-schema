@@ -404,8 +404,8 @@
     </classSpec>
     <classSpec ident="att.measurement" type="atts" mode="replace">
       <attList>
-        <attDef ident="commodity" mode="change"/>
-        <attDef ident="quantity" mode="change">
+        <attDef ident="commodity" mode="replace"/>
+        <attDef ident="quantity" mode="replace">
           <desc xml:lang="de" versionDate="2023-03-17">Gibt bei Abmessungen die Ausdehnung an.</desc>
           <desc xml:lang="en" versionDate="2023-06-29">In the case of dimensions, specifies the expansion.
                     </desc>
