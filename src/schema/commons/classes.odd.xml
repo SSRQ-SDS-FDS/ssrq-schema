@@ -3,8 +3,8 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
   <specGrp xml:id="ssrq-classes">
     <!--
-        There are currently (2023-09-26) 81 attribute classes specified in
-        TEI P5 Version 4.6.0, all of which are either explicitly deleted or
+        There are currently (2024-11-13) 84 attribute classes specified in
+        TEI P5 Version 4.8.1, all of which are either explicitly deleted or
         changed in this document.
     -->
     <!-- TEI attribute classes deleted from schema -->
@@ -14,6 +14,7 @@
     <classSpec ident="att.breaking" type="atts" mode="delete"/>
     <classSpec ident="att.citeStructurePart" type="atts" mode="delete"/>
     <classSpec ident="att.citing" type="atts" mode="delete"/>
+    <classSpec ident="att.cmc" type="atts" mode="delete"/>
     <classSpec ident="att.combinable" type="atts" mode="delete"/>
     <classSpec ident="att.coordinated" type="atts" mode="delete"/>
     <classSpec ident="att.cReferencing" type="atts" mode="delete"/>
@@ -38,6 +39,7 @@
     <classSpec ident="att.global.change" type="atts" mode="delete"/>
     <classSpec ident="att.global.linking" type="atts" mode="delete"/>
     <classSpec ident="att.identified" type="atts" mode="delete"/>
+    <classSpec ident="att.indentation" type="atts" mode="delete"/>
     <classSpec ident="att.internetMedia" type="atts" mode="delete"/>
     <classSpec ident="att.interpLike" type="atts" mode="delete"/>
     <classSpec ident="att.lexikographic" type="atts" mode="delete"/>
@@ -67,6 +69,21 @@
     <classSpec ident="att.transcriptional" type="atts" mode="delete"/>
     <classSpec ident="att.translatable" type="atts" mode="delete"/>
     <!-- Modified TEI attribute classes -->
+    <classSpec ident="att.calendarSystem" type="atts" mode="change">
+      <!-- This removes the TEI default constraint, which requires text content for any elements
+            that use @calendar. -->
+      <constraintSpec scheme="schematron" ident="calendar_attr_on_empty_element" mode="delete"/>
+      <attList>
+        <attDef ident="calendar" mode="change">
+          <desc xml:lang="de" versionDate="2023-09-12">verwendeter Kalender</desc>
+          <desc xml:lang="en" versionDate="2023-09-12">calendar used</desc>
+          <desc xml:lang="fr" versionDate="2023-09-12">calendrier utilisé</desc>
+          <datatype>
+            <dataRef key="ssrq.date.calendar"/>
+          </datatype>
+        </attDef>
+      </attList>
+    </classSpec>
     <classSpec ident="att.canonical" type="atts" mode="change">
       <attList>
         <attDef ident="key" mode="delete"/>
@@ -103,18 +120,7 @@
     </classSpec>
     <classSpec ident="att.datable" type="atts" mode="change">
       <classes mode="replace"/>
-      <!-- This removes the TEI default constraint, which requires text content for any elements
-        that use @calendar. -->
-      <constraintSpec scheme="schematron" ident="calendar" mode="delete"/>
       <attList>
-        <attDef ident="calendar" mode="replace">
-          <desc xml:lang="de" versionDate="2023-09-12">verwendeter Kalender</desc>
-          <desc xml:lang="en" versionDate="2023-09-12">calendar used</desc>
-          <desc xml:lang="fr" versionDate="2023-09-12">calendrier utilisé</desc>
-          <datatype>
-            <dataRef key="ssrq.date.calendar"/>
-          </datatype>
-        </attDef>
         <attDef ident="period" mode="change">
           <desc xml:lang="de" versionDate="2023-05-11">Verweist auf eine benannte Periode wie Jahreszeiten
                         oder Wochentage. Für Zeitspannen wie „vier Wochen“ wird hingegen das Attribut <att>dur-iso</att> verwendet.
