@@ -32,8 +32,8 @@
     <desc xml:lang="en" versionDate="2024-11-04">Specific schematron rule for tei:ref</desc>
     <constraint>
       <sch:pattern>
-        <sch:rule context="tei:ref[not(ancestor::tei:editorialDecl)][not(ancestor::tei:note[@type='text_comparison'])]">
-          <sch:assert test="./ancestor::tei:bibl">If <sch:name/> is not part of tei:editorialDecl
+        <sch:rule context="tei:ref[not(ancestor::tei:editorialDecl)][not(parent::tei:note[@type='text_comparison'])]">
+          <sch:assert test="./parent::tei:bibl">If <sch:name/> is not part of tei:editorialDecl
               or tei:note with @type="text_comparison", it should be enclosed in tei:bibl.
           </sch:assert>
         </sch:rule>
