@@ -8,7 +8,7 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-docImprint",
-            "<docImprint><pubPlace>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
+            "<docImprint><pubPlace ref='loc123456'>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
             True,
         ),
         (
@@ -18,7 +18,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "invalid-docImprint-with-attribute",
-            "<docImprint type='foo'><pubPlace>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
+            "<docImprint type='foo'><pubPlace ref='loc123456'>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
             False,
         ),
         (
@@ -28,12 +28,12 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-docImprint-without-publisher",
-            "<docImprint><pubPlace>Bern</pubPlace></docImprint>",
+            "<docImprint><pubPlace ref='loc123456'>Bern</pubPlace></docImprint>",
             True,
         ),
         (
             "valid-docImprint-with-multiple-places",
-            "<docImprint><pubPlace>Bern</pubPlace><pubPlace>St. Gallen</pubPlace><publisher>Heidegger</publisher></docImprint>",
+            "<docImprint><pubPlace ref='loc123456'>Bern</pubPlace><pubPlace ref='loc123457'>St. Gallen</pubPlace><publisher>Heidegger</publisher></docImprint>",
             True,
         ),
     ],

@@ -12,8 +12,23 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-publisher",
+            "valid-publisher-with-persName",
+            "<publisher><persName>foo</persName></publisher>",
+            True,
+        ),
+        (
+            "valid-publisher-with-orgName",
+            "<publisher><orgName>Foo und Co.</orgName></publisher>",
+            True,
+        ),
+        (
+            "invalid-publisher-with-wrong-child",
             "<publisher><p>foo</p></publisher>",
+            False,
+        ),
+        (
+            "invalid-publisher-with-mixed-content",
+            "<publisher><orgName>Foo und Co.</orgName> KG</publisher>",
             False,
         ),
         (
@@ -27,7 +42,7 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-publisher-with-cert",
+            "invalid-publisher-with--wrong-cert",
             "<publisher cert='unsicher'>foo</publisher>",
             False,
         ),
