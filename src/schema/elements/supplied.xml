@@ -11,12 +11,10 @@
     <memberOf key="att.global.source"/>
   </classes>
   <content>
-    <rng:oneOrMore>
-      <rng:choice>
-        <rng:ref name="p"/>
-        <rng:ref name="ssrq.content.default"/>
-      </rng:choice>
-    </rng:oneOrMore>
+    <alternate minOccurs="0" maxOccurs="unbounded">
+      <elementRef key="p"/>
+      <macroRef key="ssrq.content.default"/>
+    </alternate>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-supplied">
     <desc xml:lang="en" versionDate="2023-05-02">Constraint for

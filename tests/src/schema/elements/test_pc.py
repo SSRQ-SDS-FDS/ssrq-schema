@@ -12,6 +12,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "invalid-pc-with-multiple-chars",
+            "<pc>;:</pc>",
+            False,
+        ),
+        (
             "invalid-pc-with-wrong-char",
             "<pc>-</pc>",
             False,

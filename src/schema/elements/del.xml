@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="del" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="del" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-05-24">Enthält Text, der von einem Schreiber getilgt wurde.</desc>
   <desc xml:lang="en" versionDate="2023-05-24">Contains text deleted by a writer.</desc>
   <desc xml:lang="fr" versionDate="2023-05-24">Contient du texte effacé par un scribe.</desc>
@@ -13,13 +13,11 @@
     <memberOf key="model.pPart.transcriptional"/>
   </classes>
   <content>
-    <rng:oneOrMore>
-      <rng:choice>
-        <rng:ref name="p"/>
-        <rng:ref name="seg"/>
-        <rng:ref name="ssrq.content.default"/>
-      </rng:choice>
-    </rng:oneOrMore>
+    <alternate maxOccurs="unbounded">
+      <elementRef key="seg"/>
+      <elementRef key="p"/>
+      <macroRef key="ssrq.content.default"/>
+    </alternate>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-del" mode="add">
     <desc versionDate="2023-06-01" xml:lang="en">Schematron rules for tei:del</desc>

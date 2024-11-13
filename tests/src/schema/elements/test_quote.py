@@ -23,7 +23,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<quote type='partially_inserted' source='http://foo.bar'>bar baz foo</quote>",
             True,
         ),
-        ("valid-quote-with-two-segs", "<quote><seg>1</seg><seg>2</seg></quote>", True),
+        (
+            "valid-quote-with-two-segs",
+            "<quote><seg>1</seg><seg>2</seg></quote>",
+            True,
+        ),
         (
             "invalid-quote-with-two-seg-default-mixed",
             "<quote><seg>1</seg>baz</quote>",

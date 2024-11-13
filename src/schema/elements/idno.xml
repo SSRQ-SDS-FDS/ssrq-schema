@@ -26,6 +26,7 @@
   <content>
     <textNode/>
   </content>
+  <constraintSpec ident="calendar-check-idno" mode="delete"/>
   <constraintSpec scheme="schematron" ident="sch-el-idno">
     <desc xml:lang="en" versionDate="2023-09-26">Constraints for tei:idno</desc>
     <constraint>
@@ -65,6 +66,7 @@
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="calendar" mode="delete"/>
     <attDef ident="source" mode="change">
       <datatype>
         <dataRef key="ssrq.pointer.url"/>

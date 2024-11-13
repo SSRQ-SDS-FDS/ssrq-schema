@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="p" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="p" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Beschreibt einen Absatz.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes a paragraph.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Décrit un paragraphe.</desc>
@@ -11,22 +11,18 @@
     <memberOf key="model.pLike"/>
   </classes>
   <content>
-    <rng:choice>
-      <rng:oneOrMore>
-        <rng:choice>
-          <rng:ref name="bibl"/>
-          <rng:ref name="list"/>
-          <rng:ref name="ref"/>
-          <rng:ref name="ssrq.content.default"/>
-        </rng:choice>
-      </rng:oneOrMore>
-      <rng:group>
-        <rng:ref name="seg"/>
-        <rng:oneOrMore>
-          <rng:ref name="seg"/>
-        </rng:oneOrMore>
-      </rng:group>
-    </rng:choice>
+    <alternate>
+      <alternate maxOccurs="unbounded">
+        <elementRef key="bibl"/>
+        <elementRef key="list"/>
+        <elementRef key="ref"/>
+        <macroRef key="ssrq.content.default"/>
+      </alternate>
+      <sequence>
+        <elementRef key="seg"/>
+        <elementRef key="seg" maxOccurs="unbounded"/>
+      </sequence>
+    </alternate>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-p">
     <desc xml:lang="en" versionDate="2023-05-22">Ensure all <gi>p</gi> elements have

@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="lem" module="textcrit" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="lem" module="textcrit" mode="change">
   <desc xml:lang="de" versionDate="2023-07-24">
         Enthält eine Passage, von der es eine von der Editionsvorlage abweichende Textvariante gibt.
     </desc>
@@ -14,17 +14,15 @@
     </desc>
   <classes mode="replace"/>
   <content>
-    <rng:choice>
-      <rng:oneOrMore>
-        <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-      <rng:group>
-        <rng:ref name="seg"/>
-        <rng:oneOrMore>
-          <rng:ref name="seg"/>
-        </rng:oneOrMore>
-      </rng:group>
-    </rng:choice>
+    <alternate>
+      <sequence maxOccurs="unbounded">
+        <macroRef key="ssrq.content.default"/>
+      </sequence>
+      <sequence>
+        <elementRef key="seg"/>
+        <elementRef key="seg" maxOccurs="unbounded"/>
+      </sequence>
+    </alternate>
   </content>
   <xi:include href="examples.xml" xpointer="ex-app-rdg-de"/>
   <xi:include href="examples.xml" xpointer="ex-app-rdg-en"/>

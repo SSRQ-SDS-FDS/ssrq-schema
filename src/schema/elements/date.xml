@@ -7,6 +7,7 @@
   <desc xml:lang="en" versionDate="2023-08-17">Contains a date.</desc>
   <desc xml:lang="fr" versionDate="2023-08-17">Contient une date.</desc>
   <classes mode="replace">
+    <memberOf key="att.calendarSystem"/>
     <memberOf key="att.datable"/>
     <memberOf key="att.datable.custom"/>
     <memberOf key="att.duration.iso"/>
@@ -15,12 +16,10 @@
     <memberOf key="model.publicationStmtPart.detail"/>
   </classes>
   <content>
-    <rng:zeroOrMore>
-      <rng:choice>
-        <rng:ref name="ssrq.content.default"/>
-        <rng:ref name="precision"/>
-      </rng:choice>
-    </rng:zeroOrMore>
+    <alternate minOccurs="0" maxOccurs="unbounded">
+      <elementRef key="precision"/>
+      <macroRef key="ssrq.content.default"/>
+    </alternate>
   </content>
   <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
     <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for att.datable.custom</desc>
