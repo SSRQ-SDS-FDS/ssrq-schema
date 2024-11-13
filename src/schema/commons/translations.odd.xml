@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+    type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0">
+  <specGrp xml:id="ssrq-combined-translations">
+    <dataSpec ident="ssrq.labels" xml:id="ssrq.translations.global">
+      <valList>
+        <valItem ident="abbr">
+          <desc xml:lang="de">Abkürzung</desc>
+          <desc xml:lang="fr">Abréviation</desc>
+          <desc xml:lang="en">Abbreviation</desc>
+          <desc xml:lang="it">Abbreviazione</desc>
+        </valItem>
+        <valItem ident="abbr-expanded">
+          <desc xml:lang="de">Aufgelöste Abkürzung</desc>
+          <desc xml:lang="fr">Résolution d’abréviation</desc>
+          <desc xml:lang="en">Resolved abbreviation</desc>
+          <desc xml:lang="it">Risoluzione dell'abbreviazione</desc>
+        </valItem>
+        <valItem ident="abbr-nonexpanded">
+          <desc xml:lang="de">In der Vorlage</desc>
+          <desc xml:lang="fr">À l’original</desc>
+          <desc xml:lang="en">In the original</desc>
+          <desc xml:lang="it">Nell'originale</desc>
+        </valItem>
+        <valItem ident="abbr-unclear">
+          <desc xml:lang="de">Abkürzung, unsichere Lesung</desc>
+          <desc xml:lang="fr">Abréviation, lecture incertaine</desc>
+          <desc xml:lang="en">Abbreviation, uncertain reading</desc>
+          <desc xml:lang="it">Abbreviazione, lettura incerta</desc>
+        </valItem>
+        <valItem ident="add">
+          <desc xml:lang="de">Hinzufügung</desc>
+          <desc xml:lang="fr">Ajout</desc>
+          <desc xml:lang="en">Addition</desc>
+          <desc xml:lang="it">Aggiunta</desc>
+        </valItem>
+        <valItem ident="added-in">
+          <desc xml:lang="de">Zusatz in</desc>
+          <desc xml:lang="fr">Ajout dans</desc>
+          <desc xml:lang="en">Added in</desc>
+          <desc xml:lang="it">Aggiunta in</desc>
+        </valItem>
+        <valItem ident="alt-rdg-in">
+          <desc xml:lang="de">Textvariante in</desc>
+          <desc xml:lang="fr">Variante dans</desc>
+          <desc xml:lang="en">Text variant in</desc>
+          <desc xml:lang="it">Versione alternativa in</desc>
+        </valItem>
+        <valItem ident="amount">
+          <desc xml:lang="de">Menge</desc>
+          <desc xml:lang="fr">Quantité</desc>
+          <desc xml:lang="en">Amount</desc>
+          <desc xml:lang="it">Quantità</desc>
+        </valItem>
+        <valItem ident="and">
+          <desc xml:lang="de">und</desc>
+          <desc xml:lang="fr">et</desc>
+          <desc xml:lang="en">and</desc>
+          <desc xml:lang="it">e</desc>
+        </valItem>
+        <valItem ident="add-type">
+          <desc xml:lang="de">mit Einfügungszeichen</desc>
+          <desc xml:lang="fr">avec un signe d‘insertion</desc>
+          <desc xml:lang="en">by insertion mark</desc>
+          <desc xml:lang="it">con un caracttere di inserimento</desc>
+        </valItem>
+        <valItem ident="by">
+          <desc xml:lang="de">von</desc>
+          <desc xml:lang="fr">de</desc>
+          <desc xml:lang="en">by</desc>
+          <desc xml:lang="it">da</desc>
+        </valItem>
+        <valItem ident="by-laterHand">
+          <desc xml:lang="de">von späterer Hand</desc>
+          <desc xml:lang="fr">d’une main plus récente</desc>
+          <desc xml:lang="it">da una mano più recente</desc>
+          <desc xml:lang="en">in a later hand</desc>
+        </valItem>
+        <valItem ident="by-otherHand">
+          <desc xml:lang="de">von anderer Hand</desc>
+          <desc xml:lang="fr">par une autre main</desc>
+          <desc xml:lang="it">da un’altra mano</desc>
+          <desc xml:lang="en">in another hand</desc>
+        </valItem>
+        <valItem ident="byScribe">
+          <desc xml:lang="de">von</desc>
+          <desc xml:lang="fr">par</desc>
+          <desc xml:lang="en">by</desc>
+          <desc xml:lang="it">da</desc>
+        </valItem>
+        <valItem ident="century-abbr">
+          <desc xml:lang="de">Jh.</desc>
+          <desc xml:lang="fr">s.</desc>
+          <desc xml:lang="en">c.</desc>
+          <desc xml:lang="it">sec.</desc>
+        </valItem>
+        <valItem ident="century-ordinal">
+          <desc xml:lang="de">.</desc>
+          <desc xml:lang="fr">
+            <hi rend="sup">e</hi>
+          </desc>
+          <desc xml:lang="en">.</desc>
+          <desc xml:lang="it">°</desc>
+        </valItem>
+        <valItem ident="comments">
+          <desc xml:lang="de">Kommentar</desc>
+          <desc xml:lang="fr">Commentaires</desc>
+          <desc xml:lang="en">Comments</desc>
+          <desc xml:lang="it">Commenti</desc>
+        </valItem>
+        <valItem ident="compare">
+          <desc xml:lang="de">Vgl.</desc>
+          <desc xml:lang="fr">Cf.</desc>
+          <desc xml:lang="en">See</desc>
+          <desc xml:lang="it">Cfr.</desc>
+        </valItem>
+        <valItem ident="condition">
+          <desc xml:lang="de">Erhaltungszustand</desc>
+          <desc xml:lang="fr">État de conservation</desc>
+          <desc xml:lang="en">Condition</desc>
+          <desc xml:lang="it">Stato di conservazione</desc>
+        </valItem>
+        <valItem ident="copy">
+          <desc xml:lang="de">Kopie</desc>
+          <desc xml:lang="fr">Copie</desc>
+          <desc xml:lang="en">Copy</desc>
+          <desc xml:lang="it">Copia</desc>
+        </valItem>
+        <valItem ident="corr">
+          <desc xml:lang="de">Korrektur</desc>
+          <desc xml:lang="fr">Correction</desc>
+          <desc xml:lang="en">Correction</desc>
+          <desc xml:lang="it">Correzione</desc>
+        </valItem>
+        <valItem ident="corrected">
+          <desc xml:lang="de">Korrigiert</desc>
+          <desc xml:lang="fr">À corriger en</desc>
+          <desc xml:lang="en">Corrected</desc>
+          <desc xml:lang="it">Da correggere in</desc>
+        </valItem>
+        <valItem ident="corrected-from">
+          <desc xml:lang="de">korrigiert aus</desc>
+          <desc xml:lang="fr">corrigé de</desc>
+          <desc xml:lang="en">corrected from</desc>
+          <desc xml:lang="it">corretto da</desc>
+        </valItem>
+        <valItem ident="damage">
+          <desc xml:lang="de">Beschädigung</desc>
+          <desc xml:lang="fr">Endommagé</desc>
+          <desc xml:lang="en">Damage</desc>
+          <desc xml:lang="it">Danneggiato</desc>
+        </valItem>
+        <valItem ident="date">
+          <desc xml:lang="de">Datum</desc>
+          <desc xml:lang="fr">Date</desc>
+          <desc xml:lang="en">Date</desc>
+          <desc xml:lang="it">Data</desc>
+        </valItem>
+        <valItem ident="day">
+          <desc xml:lang="de">Tag</desc>
+          <desc xml:lang="de" type="plural">Tage</desc>
+          <desc xml:lang="fr">jour</desc>
+          <desc xml:lang="fr" type="plural">jours</desc>
+          <desc xml:lang="en">day</desc>
+          <desc xml:lang="en" type="plural">days</desc>
+          <desc xml:lang="it">giorno</desc>
+          <desc xml:lang="it" type="plural">giorni</desc>
+        </valItem>
+        <valItem ident="de">
+          <desc xml:lang="de">Deutsch</desc>
+          <desc xml:lang="fr">allemand</desc>
+          <desc xml:lang="en">German</desc>
+          <desc xml:lang="it">tedesco</desc>
+        </valItem>
+        <valItem ident="del">
+          <desc xml:lang="de">Streichung</desc>
+          <desc xml:lang="fr">suppression</desc>
+          <desc xml:lang="en">deletion</desc>
+          <desc xml:lang="it">soppressione</desc>
+        </valItem>
+        <valItem ident="del-add">
+          <desc xml:lang="de">Streichung der Hinzufügung</desc>
+          <desc xml:lang="fr">Suppression de l’ajout</desc>
+          <desc xml:lang="en">Deletion of the addition</desc>
+          <desc xml:lang="it">Soppressione dell'aggiunta</desc>
+        </valItem>
+        <valItem ident="del-fw">
+          <desc xml:lang="de">Streichung der Wiederholung</desc>
+          <desc xml:lang="fr">Suppression de la répétition</desc>
+          <desc xml:lang="en">Deletion of the repetition</desc>
+          <desc xml:lang="it">Soppressione della ripetizione</desc>
+        </valItem>
+        <valItem ident="del-gap">
+          <desc xml:lang="de">Streichung mit Textverlust</desc>
+          <desc xml:lang="fr">Passage cancellé avec perte de texte</desc>
+          <desc xml:lang="en">Deletion with text loss</desc>
+          <desc xml:lang="it">Passaggio eliminato con perdita di testo</desc>
+        </valItem>
+        <valItem ident="Deutsch">
+          <desc xml:lang="de">Deutsch</desc>
+          <desc xml:lang="fr">allemand</desc>
+          <desc xml:lang="en">German</desc>
+          <desc xml:lang="it">tedesco</desc>
+        </valItem>
+        <valItem ident="duration">
+          <desc xml:lang="de">Zeitspanne</desc>
+          <desc xml:lang="fr">Période</desc>
+          <desc xml:lang="en">Duration</desc>
+          <desc xml:lang="it">Periodo</desc>
+        </valItem>
+        <valItem ident="edited-by">
+          <desc xml:lang="de">bearb. von</desc>
+          <desc xml:lang="fr">éd. par</desc>
+          <desc xml:lang="en">ed. by</desc>
+          <desc xml:lang="it">a cura di</desc>
+        </valItem>
+        <valItem ident="editor">
+          <desc xml:lang="de">Hg.</desc>
+          <desc xml:lang="fr">éd.</desc>
+          <desc xml:lang="en">ed.</desc>
+          <desc xml:lang="it">ed.</desc>
+        </valItem>
+        <valItem ident="en">
+          <desc xml:lang="de">Englisch</desc>
+          <desc xml:lang="fr">anglais</desc>
+          <desc xml:lang="en">English</desc>
+          <desc xml:lang="it">inglese</desc>
+        </valItem>
+        <valItem ident="first-female">
+          <desc xml:lang="de">1.</desc>
+          <desc xml:lang="fr">1<hi rend="sup">re</hi>
+                        </desc>
+          <desc xml:lang="en">1.</desc>
+          <desc xml:lang="it">1.</desc>
+        </valItem>
+        <valItem ident="first-male">
+          <desc xml:lang="de">1.</desc>
+          <desc xml:lang="fr">1<hi rend="sup">er</hi>
+                        </desc>
+          <desc xml:lang="en">1.</desc>
+          <desc xml:lang="it">1.</desc>
+        </valItem>
+        <valItem ident="format">
+          <desc xml:lang="de">Format B × H</desc>
+          <desc xml:lang="fr">Dimensions l × h</desc>
+          <desc xml:lang="en">Format h × w</desc>
+          <desc xml:lang="it">Formato l × a</desc>
+        </valItem>
+        <valItem ident="fourth-male">
+          <desc xml:lang="de">4.</desc>
+          <desc xml:lang="fr">4<hi rend="sup">e</hi>
+                        </desc>
+          <desc xml:lang="en">4.</desc>
+          <desc xml:lang="it">4.</desc>
+        </valItem>
+        <valItem ident="fr">
+          <desc xml:lang="de">Französisch</desc>
+          <desc xml:lang="fr">français</desc>
+          <desc xml:lang="en">French</desc>
+          <desc xml:lang="it">francese</desc>
+        </valItem>
+        <valItem ident="français">
+          <desc xml:lang="de">Französisch</desc>
+          <desc xml:lang="fr">français</desc>
+          <desc xml:lang="en">French</desc>
+          <desc xml:lang="it">francese</desc>
+        </valItem>
+        <valItem ident="from">
+          <desc xml:lang="de">von</desc>
+          <desc xml:lang="fr">de</desc>
+          <desc xml:lang="en">from</desc>
+          <desc xml:lang="it">da</desc>
+        </valItem>
+        <valItem ident="gap-in-orig">
+          <desc xml:lang="de">Lücke in der Vorlage</desc>
+          <desc xml:lang="fr">Lacune dans le texte source</desc>
+          <desc xml:lang="en">Gap in the original</desc>
+          <desc xml:lang="it">Lacuna nell'originale</desc>
+        </valItem>
+        <valItem ident="half-cent-abbr">
+          <desc xml:lang="de">Hälfte</desc>
+          <desc xml:lang="fr">moitié du</desc>
+          <desc xml:lang="en">half</desc>
+          <desc xml:lang="it">metà del</desc>
+        </valItem>
+        <valItem ident="handswitch">
+          <desc xml:lang="de">Handwechsel</desc>
+          <desc xml:lang="fr">Changement de main</desc>
+          <desc xml:lang="en">Change of hand</desc>
+          <desc xml:lang="it">Cambio di mano</desc>
+        </valItem>
+        <valItem ident="he">
+          <desc xml:lang="de">Hebräisch</desc>
+          <desc xml:lang="fr">hébraïque</desc>
+          <desc xml:lang="en">Hebrew</desc>
+          <desc xml:lang="it">ebraico</desc>
+        </valItem>
+        <valItem ident="hour">
+          <desc xml:lang="de">Stunde</desc>
+          <desc xml:lang="de" type="plural">Stunden</desc>
+          <desc xml:lang="fr">heure</desc>
+          <desc xml:lang="fr" type="plural">heures</desc>
+          <desc xml:lang="en">hour</desc>
+          <desc xml:lang="en" type="plural">hours</desc>
+          <desc xml:lang="it">ora</desc>
+          <desc xml:lang="it" type="plural">ore</desc>
+        </valItem>
+        <valItem ident="in">
+          <desc xml:lang="de">in</desc>
+          <desc xml:lang="fr">dans</desc>
+          <desc xml:lang="en">in</desc>
+          <desc xml:lang="it">in</desc>
+        </valItem>
+        <valItem ident="irrelevant">
+          <desc xml:lang="de">Editorisch irrelevant</desc>
+          <desc xml:lang="fr">Non-pertinence éditoriale</desc>
+          <desc xml:lang="en">Editorially irrelevant</desc>
+          <desc xml:lang="it">Irrilevanza editoriale</desc>
+        </valItem>
+        <valItem ident="la">
+          <desc xml:lang="de">Latein</desc>
+          <desc xml:lang="fr">latin</desc>
+          <desc xml:lang="en">Latin</desc>
+          <desc xml:lang="it">latino</desc>
+        </valItem>
+        <valItem ident="Latein">
+          <desc xml:lang="de">Latein</desc>
+          <desc xml:lang="fr">latin</desc>
+          <desc xml:lang="en">Latin</desc>
+          <desc xml:lang="it">latino</desc>
+        </valItem>
+        <valItem ident="lang-switch">
+          <desc xml:lang="de">Sprachwechsel</desc>
+          <desc xml:lang="fr">Changement de langue</desc>
+          <desc xml:lang="en">Language change</desc>
+          <desc xml:lang="it">Cambio di lingua</desc>
+        </valItem>
+        <valItem ident="language">
+          <desc xml:lang="de">Sprache</desc>
+          <desc xml:lang="fr">Langue</desc>
+          <desc xml:lang="en">Language</desc>
+          <desc xml:lang="it">Lingua</desc>
+        </valItem>
+        <valItem ident="languages">
+          <desc xml:lang="de">Sprachen</desc>
+          <desc xml:lang="fr">Langues</desc>
+          <desc xml:lang="en">Languages</desc>
+          <desc xml:lang="it">Lingue</desc>
+        </valItem>
+        <valItem ident="mainScribe">
+          <desc xml:lang="de">Anlagehand</desc>
+          <desc xml:lang="fr">main principale</desc>
+          <desc xml:lang="en">main hand</desc>
+          <desc xml:lang="it">mano principale</desc>
+        </valItem>
+        <valItem ident="marginal-note">
+          <desc xml:lang="de">Marginalie</desc>
+          <desc xml:lang="fr">Note</desc>
+          <desc xml:lang="en">Marginal note</desc>
+          <desc xml:lang="it">marginalia</desc>
+        </valItem>
+        <valItem ident="mid-cent-abbr">
+          <desc xml:lang="de">Mitte</desc>
+          <desc xml:lang="fr">milieu du</desc>
+          <desc xml:lang="en">mid</desc>
+          <desc xml:lang="it">metà del</desc>
+          <!-- ???? Hälfte oder Mitte → metà steht für beides [BR] -->
+        </valItem>
+        <valItem ident="minute">
+          <desc xml:lang="de">Minute</desc>
+          <desc xml:lang="de" type="plural">Minuten</desc>
+          <desc xml:lang="fr">minute</desc>
+          <desc xml:lang="fr" type="plural">minutes</desc>
+          <desc xml:lang="en">minute</desc>
+          <desc xml:lang="en" type="plural">minutes</desc>
+          <desc xml:lang="it">minuto</desc>
+          <desc xml:lang="it" type="plural">minuti</desc>
+        </valItem>
+        <valItem ident="missing">
+          <desc xml:lang="de">fehlt</desc>
+          <desc xml:lang="fr">manquant</desc>
+          <desc xml:lang="en">missing</desc>
+          <desc xml:lang="it">mancante</desc>
+        </valItem>
+        <valItem ident="month">
+          <desc xml:lang="de">Monat</desc>
+          <desc xml:lang="de" type="plural">Monate</desc>
+          <desc xml:lang="fr">mois</desc>
+          <desc xml:lang="en">month</desc>
+          <desc xml:lang="en" type="plural">months</desc>
+          <desc xml:lang="it">mese</desc>
+          <desc xml:lang="it" type="plural">mesi</desc>
+        </valItem>
+        <valItem ident="notAfter">
+          <desc xml:lang="de">nicht nach</desc>
+          <desc xml:lang="fr">pas après</desc>
+          <desc xml:lang="en">not after</desc>
+          <desc xml:lang="it">non dopo</desc>
+        </valItem>
+        <valItem ident="notBefore">
+          <desc xml:lang="de">nicht vor</desc>
+          <desc xml:lang="fr">pas avant</desc>
+          <desc xml:lang="en">not before</desc>
+          <desc xml:lang="it">non prima</desc>
+        </valItem>
+        <valItem ident="old-style-abbr">
+          <desc xml:lang="de">a. S.</desc>
+          <desc xml:lang="fr">a. s.</desc>
+          <desc xml:lang="en">O.S.</desc>
+          <desc xml:lang="it">v. s.</desc>
+          <!-- vecchio stile -->
+        </valItem>
+        <valItem ident="omitted-in">
+          <desc xml:lang="de">Auslassung in</desc>
+          <desc xml:lang="fr">Omission dans</desc>
+          <desc xml:lang="en">Omitted in</desc>
+          <desc xml:lang="it">Omissione in</desc>
+        </valItem>
+        <valItem ident="organisation">
+          <desc xml:lang="de">Organisation:</desc>
+          <desc xml:lang="fr">Organisation :</desc>
+          <desc xml:lang="en">Organisation:</desc>
+          <desc xml:lang="it">Organizzazione:</desc>
+        </valItem>
+        <valItem ident="origDate">
+          <desc xml:lang="de">Originaldatierung</desc>
+          <desc xml:lang="fr">Date</desc>
+          <desc xml:lang="en">Date of origin</desc>
+          <desc xml:lang="it">Data di origine</desc>
+        </valItem>
+        <valItem ident="origPlace">
+          <desc xml:lang="de">Ausstellungsort</desc>
+          <desc xml:lang="fr">Lieu d’origine</desc>
+          <desc xml:lang="en">Place of origin</desc>
+          <desc xml:lang="it">Luogo di origine</desc>
+        </valItem>
+        <valItem ident="original">
+          <desc xml:lang="de">Original</desc>
+          <desc xml:lang="fr">Original</desc>
+          <desc xml:lang="en">Original</desc>
+          <desc xml:lang="it">Originale</desc>
+        </valItem>
+        <valItem ident="other-source">
+          <desc xml:lang="de">Überlieferung</desc>
+          <desc xml:lang="fr">Tradition</desc>
+          <desc xml:lang="en">Transmission</desc>
+          <desc xml:lang="it">Tradizione</desc>
+        </valItem>
+        <valItem ident="page-abbr">
+          <desc xml:lang="de">S.</desc>
+          <desc xml:lang="fr">p.</desc>
+          <desc xml:lang="en">p.</desc>
+          <desc xml:lang="it">p.</desc>
+        </valItem>
+        <valItem ident="pb">
+          <desc xml:lang="de">Seitenumbruch</desc>
+          <desc xml:lang="fr">Saut de page</desc>
+          <desc xml:lang="en">Page break</desc>
+          <desc xml:lang="it">Interruzione di pagina</desc>
+        </valItem>
+        <valItem ident="peau">
+          <desc xml:lang="de">Pergamentstück</desc>
+          <desc xml:lang="fr">peau</desc>
+          <desc xml:lang="en">piece of parchment</desc>
+          <desc xml:lang="it">pezzo di pergamena</desc>
+        </valItem>
+        <valItem ident="person">
+          <desc xml:lang="de">Person</desc>
+          <desc xml:lang="fr">Personne</desc>
+          <desc xml:lang="en">Person</desc>
+          <desc xml:lang="it">Persona</desc>
+        </valItem>
+        <valItem ident="place">
+          <desc xml:lang="de">Ort</desc>
+          <desc xml:lang="fr">Lieu</desc>
+          <desc xml:lang="en">Place</desc>
+          <desc xml:lang="it">Luogo</desc>
+        </valItem>
+        <valItem ident="quarter-cent-abbr">
+          <desc xml:lang="de">Viertel</desc>
+          <desc xml:lang="fr">quart du</desc>
+          <desc xml:lang="en">quarter</desc>
+          <desc xml:lang="it">quarto del</desc>
+        </valItem>
+        <valItem ident="repeated-duration">
+          <desc xml:lang="de">Wiederholte Zeitspanne</desc>
+          <desc xml:lang="fr">Durée répétée</desc>
+          <desc xml:lang="en">Repeated duration</desc>
+          <desc xml:lang="it">Durata ripetuta</desc>
+        </valItem>
+        <valItem ident="replace">
+          <desc xml:lang="de">ersetzt</desc>
+          <desc xml:lang="fr">remplace</desc>
+          <desc xml:lang="en">replaces</desc>
+          <desc xml:lang="it">sostituisce</desc>
+        </valItem>
+        <valItem ident="replace-del">
+          <desc xml:lang="de">ersetzt Streichung</desc>
+          <desc xml:lang="fr">remplace une suppression</desc>
+          <desc xml:lang="en">replaces deletion</desc>
+          <desc xml:lang="it">sostituisce una cancellazione</desc>
+        </valItem>
+        <valItem ident="rubbing">
+          <desc xml:lang="de">Streichung durch Textlöschung/Rasur</desc>
+          <desc xml:lang="fr">suppression par grattage</desc>
+          <desc xml:lang="en">deletion by scraping</desc>
+          <desc xml:lang="it">eliminazione tramite cancellazione/rasatura del testo</desc>
+        </valItem>
+        <valItem ident="scriptor">
+          <desc xml:lang="de">Schreiber</desc>
+          <desc xml:lang="fr">Scripteur</desc>
+          <desc xml:lang="en">Scribe</desc>
+          <desc xml:lang="it">Scriba</desc>
+        </valItem>
+        <valItem ident="second-female">
+          <desc xml:lang="de">2.</desc>
+          <desc xml:lang="fr">2<hi rend="sup">e</hi>
+                        </desc>
+          <desc xml:lang="en">2.</desc>
+          <desc xml:lang="it">2.</desc>
+        </valItem>
+        <valItem ident="second-male">
+          <desc xml:lang="de">2.</desc>
+          <desc xml:lang="fr">2<hi rend="sup">e</hi>
+                        </desc>
+          <desc xml:lang="en">2.</desc>
+          <desc xml:lang="it">2.</desc>
+        </valItem>
+        <valItem ident="secondaryScribe">
+          <desc xml:lang="de">Nachtragshand</desc>
+          <desc xml:lang="fr">main secondaire</desc>
+          <desc xml:lang="en">other hand</desc>
+          <desc xml:lang="it">mano secondaria</desc>
+        </valItem>
+        <valItem ident="sic">
+          <desc xml:lang="de">Auffällige Schreibung</desc>
+          <desc xml:lang="fr">Ainsi</desc>
+          <desc xml:lang="en">Notable spelling</desc>
+          <desc xml:lang="it">sic</desc>
+        </valItem>
+        <valItem ident="sigle">
+          <desc xml:lang="de">Siegel</desc>
+          <desc xml:lang="de" type="plural">Siegel</desc>
+          <desc xml:lang="fr">sceau</desc>
+          <desc xml:lang="fr" type="plural">sceaux</desc>
+          <desc xml:lang="en">seal</desc>
+          <desc xml:lang="en" type="plural">seals</desc>
+          <desc xml:lang="it">sigillo</desc>
+          <desc xml:lang="it" type="plural">sigilli</desc>
+        </valItem>
+        <valItem ident="signature">
+          <desc xml:lang="de">Signatur</desc>
+          <desc xml:lang="fr">Cote</desc>
+          <desc xml:lang="en">Shelfmark</desc>
+          <desc xml:lang="it">Collocazione</desc>
+        </valItem>
+        <valItem ident="signatureAlt">
+          <desc xml:lang="de">Frühere Signatur</desc>
+          <desc xml:lang="fr">Ancienne cote</desc>
+          <desc xml:lang="en">Former shelfmark</desc>
+          <desc xml:lang="it">Precedente collocazione</desc>
+        </valItem>
+        <valItem ident="signed">
+          <desc xml:lang="de">Unterschrift</desc>
+          <desc xml:lang="fr">Signature</desc>
+          <desc xml:lang="en">Signature</desc>
+          <desc xml:lang="it">Firma</desc>
+        </valItem>
+        <valItem ident="source-article">
+          <desc xml:lang="de">Art.</desc>
+          <desc xml:lang="fr">art.</desc>
+          <desc xml:lang="en">art.</desc>
+          <desc xml:lang="it">art.</desc>
+        </valItem>
+        <valItem ident="source-page">
+          <desc xml:lang="de">S.</desc>
+          <desc xml:lang="fr">p.</desc>
+          <desc xml:lang="en">p.</desc>
+          <desc xml:lang="it">p.</desc>
+        </valItem>
+        <valItem ident="source-parchment">
+          <desc xml:lang="de">Pergament</desc>
+          <desc xml:lang="fr">peau</desc>
+          <desc xml:lang="en">parchment</desc>
+          <desc xml:lang="it">pergamena</desc>
+        </valItem>
+        <valItem ident="summary">
+          <desc xml:lang="de">Regest</desc>
+          <desc xml:lang="fr">Résumé</desc>
+          <desc xml:lang="en">Summary</desc>
+          <desc xml:lang="it">Regesto</desc>
+        </valItem>
+        <valItem ident="supplied">
+          <desc xml:lang="de">sinngemäss ergänzt</desc>
+          <desc xml:lang="fr">complété(e) par analogie</desc>
+          <desc xml:lang="en">restored by analogy</desc>
+          <desc xml:lang="it">completato per analogia</desc>
+        </valItem>
+        <valItem ident="supplied-after">
+          <desc xml:lang="de">ergänzt nach</desc>
+          <desc xml:lang="fr">complété à l’aide de</desc>
+          <desc xml:lang="en">restored following</desc>
+          <desc xml:lang="it">completato con l'aiuto di</desc>
+        </valItem>
+        <valItem ident="surface">
+          <desc xml:lang="de">Beschreibstoff</desc>
+          <desc xml:lang="fr">Support d’écriture</desc>
+          <desc xml:lang="en">Substrate</desc>
+          <desc xml:lang="it">Supporto alla scrittura</desc>
+        </valItem>
+        <valItem ident="term">
+          <desc xml:lang="de">Begriff</desc>
+          <desc xml:lang="fr">Terme</desc>
+          <desc xml:lang="en">Term</desc>
+          <desc xml:lang="it">Termine</desc>
+        </valItem>
+        <valItem ident="third-male">
+          <desc xml:lang="de">3.</desc>
+          <desc xml:lang="fr">3<hi rend="sup">e</hi>
+                        </desc>
+          <desc xml:lang="en">3.</desc>
+          <desc xml:lang="it">3.</desc>
+        </valItem>
+        <valItem ident="through">
+          <desc xml:lang="de">durch</desc>
+          <desc xml:lang="fr">par</desc>
+          <desc xml:lang="en">through</desc>
+          <desc xml:lang="it">da</desc>
+          <!-- ??? → wird benutzt bei 'Danneggiato', 'da' sollte also korrekt sein [BR] -->
+        </valItem>
+        <valItem ident="time">
+          <desc xml:lang="de">Zeit</desc>
+          <desc xml:lang="fr">Heure</desc>
+          <desc xml:lang="en">Time</desc>
+          <desc xml:lang="it">Tempo</desc>
+        </valItem>
+        <valItem ident="to">
+          <desc xml:lang="de">bis</desc>
+          <desc xml:lang="fr">à</desc>
+          <desc xml:lang="en">to</desc>
+          <desc xml:lang="it">a</desc>
+        </valItem>
+        <valItem ident="unclear-rdg">
+          <desc xml:lang="de">unsichere Lesung</desc>
+          <desc xml:lang="fr">lecture incertaine</desc>
+          <desc xml:lang="en">uncertain reading</desc>
+          <desc xml:lang="it">lettura incerta</desc>
+        </valItem>
+        <valItem ident="underlined">
+          <desc xml:lang="de">Unterstrichen</desc>
+          <desc xml:lang="fr">Souligné</desc>
+          <desc xml:lang="en">Underlined</desc>
+          <desc xml:lang="it">Sottolineato</desc>
+        </valItem>
+        <valItem ident="unreadable">
+          <desc xml:lang="de">unlesbar</desc>
+          <desc xml:lang="fr">illisible</desc>
+          <desc xml:lang="en">unreadable</desc>
+          <desc xml:lang="it">illeggibile</desc>
+        </valItem>
+        <valItem ident="week">
+          <desc xml:lang="de">Woche</desc>
+          <desc xml:lang="de" type="plural">Wochen</desc>
+          <desc xml:lang="fr">semaine</desc>
+          <desc xml:lang="fr" type="plural">semaines</desc>
+          <desc xml:lang="en">week</desc>
+          <desc xml:lang="en" type="plural">weeks</desc>
+          <desc xml:lang="it">settimana</desc>
+          <desc xml:lang="it" type="plural">settimane</desc>
+        </valItem>
+        <valItem ident="year">
+          <desc xml:lang="de">Jahr</desc>
+          <desc xml:lang="de" type="plural">Jahre</desc>
+          <desc xml:lang="fr">année</desc>
+          <desc xml:lang="fr" type="plural">années</desc>
+          <desc xml:lang="en">year</desc>
+          <desc xml:lang="en" type="plural">years</desc>
+          <desc xml:lang="it">anno</desc>
+          <desc xml:lang="it" type="plural">anni</desc>
+        </valItem>
+      </valList>
+    </dataSpec>
+  </specGrp>
+</div>
