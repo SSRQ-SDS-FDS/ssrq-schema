@@ -20,7 +20,9 @@
   <content>
     <textNode/>
   </content>
+  <constraintSpec ident="calendar-check-settlement" mode="delete"/>
   <attList>
+    <attDef ident="calendar" mode="delete"/>
     <attDef ident="n" mode="delete"/>
     <attDef ident="ref" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung des Ortes mit der ID der

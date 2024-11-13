@@ -26,6 +26,7 @@
       </sequence>
     </alternate>
   </content>
+  <constraintSpec ident="calendar-check-author" mode="delete"/>
   <constraintSpec scheme="schematron" ident="sch-el-author">
     <desc xml:lang="en" versionDate="2023-05-02">Constraint for tei:author to ensure, that the
             element is not empty!
@@ -43,6 +44,7 @@
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="calendar" mode="delete"/>
     <attDef ident="role" mode="replace">
       <desc xml:lang="de" versionDate="2023-05-05">Rolle des Schreibenden</desc>
       <desc xml:lang="en" versionDate="2023-05-05">Role of the writer</desc>

@@ -21,6 +21,7 @@
       <elementRef key="p" minOccurs="0"/>
     </sequence>
   </content>
+  <constraintSpec ident="calendar-check-seal" mode="delete"/>
   <constraintSpec scheme="schematron" ident="sch-el-seal" mode="add">
     <desc versionDate="2023-06-01" xml:lang="en">Schematron rules for tei:seal</desc>
     <constraint>
@@ -34,6 +35,7 @@
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="calendar" mode="delete"/>
     <attDef ident="n" mode="change" usage="req">
       <desc xml:lang="de" versionDate="2023-05-31">Fortlaufende Zählung der Siegel von links nach rechts (anhand
                 der Siegelschlitze bzw. der tatsächlich vorhandenen Siegel)

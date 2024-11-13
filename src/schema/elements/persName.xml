@@ -21,6 +21,7 @@
       <macroRef key="ssrq.content.default"/>
     </sequence>
   </content>
+  <constraintSpec ident="calendar-check-persName" mode="delete"/>
   <constraintSpec scheme="schematron" ident="sch-persName-custom" mode="add">
     <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for
             <gi>persName</gi>
@@ -37,6 +38,7 @@
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="calendar" mode="delete"/>
     <attDef ident="ref" mode="replace">
       <desc xml:lang="de" versionDate="2023-04-20">Verknüpfung der Person mit der ID der
                 Personen- und Organisationsdatenbank.

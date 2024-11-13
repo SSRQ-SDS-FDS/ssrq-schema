@@ -10,6 +10,10 @@
   <content>
     <elementRef key="idno"/>
   </content>
+  <constraintSpec ident="calendar-check-altIdentifier" mode="delete"/>
+  <attList>
+    <attDef ident="calendar" mode="delete"/>
+  </attList>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>

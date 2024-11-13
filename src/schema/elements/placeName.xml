@@ -18,7 +18,9 @@
       <macroRef key="ssrq.content.default"/>
     </sequence>
   </content>
+  <constraintSpec ident="calendar-check-placeName" mode="delete"/>
   <attList>
+    <attDef ident="calendar" mode="delete"/>
     <attDef ident="ref" mode="replace">
       <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung des Ortes mit der ID der
                 Ortsdatenbank.

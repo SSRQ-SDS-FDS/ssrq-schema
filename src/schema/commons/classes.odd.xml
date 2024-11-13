@@ -70,9 +70,6 @@
     <classSpec ident="att.translatable" type="atts" mode="delete"/>
     <!-- Modified TEI attribute classes -->
     <classSpec ident="att.calendarSystem" type="atts" mode="change">
-      <!-- This removes the TEI default constraint, which requires text content for any elements
-            that use @calendar. -->
-      <constraintSpec scheme="schematron" ident="calendar_attr_on_empty_element" mode="delete"/>
       <attList>
         <attDef ident="calendar" mode="change">
           <desc xml:lang="de" versionDate="2023-09-12">verwendeter Kalender</desc>
@@ -81,6 +78,9 @@
           <datatype>
             <dataRef key="ssrq.date.calendar"/>
           </datatype>
+          <!-- This removes the TEI default constraint, which requires text content for any elements
+            that use @calendar. -->
+          <constraintSpec scheme="schematron" ident="calendar_attr_on_empty_element" mode="delete"/>
         </attDef>
       </attList>
     </classSpec>
