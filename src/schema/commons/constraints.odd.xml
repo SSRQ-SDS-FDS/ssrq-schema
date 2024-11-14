@@ -16,23 +16,23 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-data-custom">
+    <constraintSpec scheme="schematron" ident="sch-att-data-custom">
       <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for att.datable.custom</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="tei:*[@when-custom]">
             <sch:report test="@notBefore-custom|@notAfter-custom|@from-custom|@to-custom">
-                The @when-custom attribute cannot be used with any other att.datable.custom attributes.
+                The @when-custom attribute cannot be used with any other att.datable.custom attribute.
             </sch:report>
           </sch:rule>
           <sch:rule context="tei:*[@from-custom or @to-custom]">
+            <sch:assert test="@from-custom and @to-custom">
+                @from-custom and @to-custom must always be used together.
+            </sch:assert>
             <sch:report test="@notBefore-custom|@notAfter-custom">
                 The usage of @notBefore-custom and @notAfter-custom is not allowed together with
                 @from-custom and @to-custom.
             </sch:report>
-            <sch:assert test="@from-custom and @to-custom">
-                @from-custom and @to-custom must always be used together.
-            </sch:assert>
             <sch:assert test="if (matches(@from-custom, '^\d{4}-\d{2}-\d{2}$') and matches(@from-custom, '^\d{4}-\d{2}-\d{2}$')) then (number(translate(@to-custom, '-', '')) - number(translate(@from-custom, '-', ''))) &gt; 0 else true()">
                 Invalid timespan – the @to-custom attribute must be a point later in time.
             </sch:assert>
@@ -56,17 +56,14 @@
       </constraint>
     </constraintSpec>
     <constraintSpec scheme="schematron" ident="sch-att-dimensions-2">
-      <desc xml:lang="en" versionDate="2024-05-08"><att>unit</att> and <att>quantity</att> are
-          mutually dependent.</desc>
+      <desc xml:lang="en" versionDate="2024-11-14"><att>unit</att> and <att>quantity</att> must be
+        used together.</desc>
       <constraint>
         <sch:pattern>
-          <sch:rule context="tei:*">
-            <sch:report test="@quantity and not(@unit)" xml:lang="en">
-                If the @quantity attribute is specified on any element, @unit must be present, too.
-            </sch:report>
-            <sch:report test="@unit and not(@quantity)" xml:lang="en">
-                If the @unit attribute is specified on any element, @quantity must be present, too.
-            </sch:report>
+          <sch:rule context="tei:*[@unit or @quantity]">
+            <sch:assert test="@quantity and @unit" xml:lang="en">
+                @unit and @quantity must be used together.
+            </sch:assert>
           </sch:rule>
         </sch:pattern>
       </constraint>
@@ -83,7 +80,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="spanTo">
+    <constraintSpec scheme="schematron" ident="sch-att-spanTo">
       <desc xml:lang="en" versionDate="2024-05-08">The @spanTo attribute must point to an element
         following the current element.</desc>
       <constraint>
@@ -116,9 +113,9 @@
           <sch:rule context="tei:*[@wit]">
             <sch:let name="wits" value="for $wit in tokenize(@wit, ' ') return tokenize($wit, '#')[1]"/>
             <!--This rule is introduced, because @wit should not point to any other element
-                  type than a witness, and this: <anyElement xml:id="foo"/> <rdg wit="foo"/>
-                  would be valid XML. -->
-            <sch:assert test="every $wit in $wits satisfies id($wit)/name() = ('witness', 'bibl')" xml:lang="en">
+                  type than witness or bibl, and this: <anyElement xml:id="foo"/> <rdg wit="foo"/>
+                  should not be valid. -->
+            <sch:assert test="every $wit in $wits satisfies id($wit)/name() = ('bibl', 'witness')" xml:lang="en">
                 Every referenced ID in @wit must belong to a witness or bibl element.
             </sch:assert>
           </sch:rule>
@@ -140,63 +137,60 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="trim-attributes">
-      <desc xml:lang="en" versionDate="2023-03-01">The value of an attribute should never start with some kind of
-                whitespace
-            </desc>
+    <constraintSpec scheme="schematron" ident="sch-trim-attributes">
+      <desc xml:lang="en" versionDate="2024-11-15">The value of an attribute should not start
+        or end with whitespace.</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="@*">
-            <sch:report test="matches(., '^(?:\s+|\t+|\n)(.*)$')" xml:lang="en">
-                            The value of
-                            <sch:name/>
-                            should not start with whitespace.
-                        </sch:report>
-            <sch:report test="matches(., '^(.*)(?:\s+|\t+|\n)$')" xml:lang="en">
-                            The value of
-                            <sch:name/>
-                            should not end with whitespace.
-                        </sch:report>
+            <sch:report test="matches(., '^(\s+|\t+|\n)(.*)$')" xml:lang="en">
+              The value of <sch:name/> should not start with whitespace.
+            </sch:report>
+            <sch:report test="matches(., '^(.*)(\s+|\t+|\n)$')" xml:lang="en">
+              The value of <sch:name/> should not end with whitespace.
+            </sch:report>
           </sch:rule>
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="duplicate-attribute-values">
-      <desc xml:lang="en" versionDate="2023-07-25">Global constraint to ensure that no attribute has a duplicate
-                value
-            </desc>
+    <constraintSpec scheme="schematron" ident="sch-duplicate-attribute-values">
+      <desc xml:lang="en" versionDate="2023-11-14">Global constraint to ensure that no attribute
+        has duplicate values.</desc>
       <constraint>
         <sch:pattern>
-          <sch:rule context="//@*">
+          <sch:rule context="@*">
             <sch:assert test="count(distinct-values(tokenize(.))) = count(tokenize(.))">
-                            An attribute should not have duplicate values
-                        </sch:assert>
+              An attribute should not have duplicate values.
+            </sch:assert>
           </sch:rule>
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="non-empty-elements">
+    <constraintSpec scheme="schematron" ident="sch-non-empty-elements">
       <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="tei:*[name() = ('ab', 'abbr', 'add', 'bibl', 'custEvent', 'del', 'div', 'expan', 'foreign', 'fw', 'head', 'hi', 'idno', 'item', 'label', 'lem', 'licence', 'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'publisher', 'pubPlace', 'q', 'quote', 'repository', 'seg', 'settlement', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
-            <sch:assert test="string-length(normalize-space(.)) &gt; 0"><sch:name/>
-                            must not be empty.
-                        </sch:assert>
+            <sch:assert test="string-length(normalize-space(.)) &gt; 0">
+              The element <sch:name/> must not be empty.
+            </sch:assert>
           </sch:rule>
           <sch:rule context="tei:date[not(ancestor::tei:teiHeader)][not(*)]">
-            <sch:assert test="string-length(normalize-space(.)) &gt; 0"><sch:name/> must not be empty.
-              </sch:assert>
+            <sch:assert test="string-length(normalize-space(.)) &gt; 0">
+              The element <sch:name/> must not be empty when outside the teiHeader.
+            </sch:assert>
           </sch:rule>
         </sch:pattern>
       </constraint>
     </constraintSpec>
     <constraintSpec scheme="schematron" ident="non-breaking-whitespace">
-      <desc xml:lang="en" versionDate="2024-04-30">Global constraint to ensure a nbsp is never used.</desc>
+      <desc xml:lang="en" versionDate="2024-11-15">Global constraint to ensure no nbsp is used.</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="text()">
-            <sch:report role="warning" test="matches(., ' ')">It is not allowed to use a non-breaking space in the text.</sch:report>
+            <sch:report role="warning" test="matches(., ' ')">
+              It is not allowed to use a non-breaking space in the text.
+            </sch:report>
           </sch:rule>
         </sch:pattern>
       </constraint>
