@@ -2,13 +2,13 @@ name: test_and_publish_dev
 
 on:
   pull_request:
-    branches: ['dev']
+    branches: ["dev"]
   push:
-    branches: ['dev']
+    branches: ["dev"]
   workflow_dispatch:
 
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          submodules: "recursive"
       - name: Setup SSH and Python with Poetry
         uses: ./.github/actions/setup
         with:
@@ -34,7 +34,7 @@ jobs:
       - name: Validate all schema source files
         run: ./Taskfile validate
       - name: Run all tests using pytest
-        run: poetry run pytest -n 4
+        run: poetry run pytest -n auto
 
   publish:
     runs-on: ubuntu-latest
@@ -50,7 +50,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          submodules: "recursive"
           fetch-depth: 0
       - name: Setup SSH and Python with Poetry
         uses: ./.github/actions/setup
@@ -63,4 +63,4 @@ jobs:
       - name: Build and publish
         uses: ./.github/actions/mike
         with:
-          version-name: 'dev'
+          version-name: "dev"

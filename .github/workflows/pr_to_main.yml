@@ -2,9 +2,9 @@ name: test_and_release
 
 on:
   pull_request:
-    branches: ['main']
+    branches: ["main"]
   push:
-    branches: ['main']
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ['3.11']
+        python-version: ["3.11"]
 
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          submodules: "recursive"
       - name: Setup SSH and Python with Poetry
         uses: ./.github/actions/setup
         with:
@@ -40,7 +40,7 @@ jobs:
       - name: Lint all .py-files
         run: ./Taskfile lint-only
       - name: Run all tests using pytest
-        run: poetry run pytest -n 4
+        run: poetry run pytest -n auto
 
   publish:
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          submodules: "recursive"
           fetch-depth: 0
       - name: Setup SSH and Python with Poetry
         uses: ./.github/actions/setup
@@ -68,4 +68,4 @@ jobs:
       - name: Build and publish
         uses: ./.github/actions/mike
         with:
-          version-name: 'main'
+          version-name: "main"
