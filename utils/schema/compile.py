@@ -178,7 +178,6 @@ def check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:
 
 def fill_template_with_metadata(authors: list[str], schema: SSRQSchemaType) -> str:
     with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")  # type: ignore
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(
             xml_file_name=f"{str(configs.SCHEMA_DIR)}/{schema['entry']}"
