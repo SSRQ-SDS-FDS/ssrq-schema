@@ -12,12 +12,32 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-abbr-with-mixed-content",
+            "valid-abbr-with-hi",
             "<abbr><hi rend='sup'>foo</hi>bar</abbr>",
             True,
         ),
         (
-            "invalid-abbr-with-attribute",
+            "valid-abbr-with-lb",
+            "<abbr>foo<lb/>bar</abbr>",
+            True,
+        ),
+        (
+            "valid-abbr-with-sic",
+            "<abbr><sic>foobar</sic></abbr>",
+            True,
+        ),
+        (
+            "valid-abbr-with-unclear",
+            "<abbr><unclear>foobar</unclear></abbr>",
+            True,
+        ),
+        (
+            "invalid-abbr-with-wrong-element",
+            "<abbr>foo<elem>bar</elem></abbr>",
+            False,
+        ),
+        (
+            "invalid-abbr-with-attributes",
             "<abbr att='foo'>bar</abbr>",
             False,
         ),
