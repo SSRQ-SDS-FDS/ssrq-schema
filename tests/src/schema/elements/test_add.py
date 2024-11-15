@@ -33,12 +33,22 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-add-with-seg-content",
-            "<add place='left_top'><seg>bar</seg></add>",
+            "<add place='left_top'><seg>foo</seg><seg>bar</seg></add>",
             True,
         ),
         (
-            "valid-add-with-mixed-content",
+            "invalid-add-with-one-seg",
+            "<add place='left_top'><seg>foo</seg></add>",
+            False,
+        ),
+        (
+            "invalid-add-with-mixed-content",
             "<add place='left_top'><seg>bar</seg> foo <unclear>bar</unclear></add>",
+            False,
+        ),
+        (
+            "valid-add-with-mixed-content",
+            "<add place='left_top'><del>bar</del> foo <unclear>bar</unclear></add>",
             True,
         ),
         (

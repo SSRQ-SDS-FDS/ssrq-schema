@@ -16,10 +16,15 @@
     <memberOf key="model.pPart.transcriptional"/>
   </classes>
   <content>
-    <alternate maxOccurs="unbounded">
-      <elementRef key="p"/>
-      <elementRef key="seg"/>
-      <macroRef key="ssrq.content.default"/>
+    <alternate>
+      <sequence>
+        <elementRef key="seg"/>
+        <elementRef key="seg" maxOccurs="unbounded"/>
+      </sequence>
+      <alternate maxOccurs="unbounded">
+        <elementRef key="p"/>
+        <macroRef key="ssrq.content.default"/>
+      </alternate>
     </alternate>
   </content>
   <attList>
