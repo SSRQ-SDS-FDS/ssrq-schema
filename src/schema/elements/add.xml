@@ -3,7 +3,8 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="add" module="core" mode="change">
-  <desc xml:lang="de" versionDate="2023-05-24">Enthält Text, der von einem Schreiber hinzugefügt wurde.</desc>
+  <desc xml:lang="de" versionDate="2023-05-24">Enthält Text, der von einem Schreiber hinzugefügt
+      wurde.</desc>
   <desc xml:lang="en" versionDate="2023-05-24">Contains text added by a writer.</desc>
   <desc xml:lang="fr" versionDate="2023-05-24">Contient du texte ajouté par un rédacteur.</desc>
   <classes>
@@ -60,82 +61,74 @@
   <xi:include href="examples.xml" xpointer="ex-subst-en"/>
   <xi:include href="examples.xml" xpointer="ex-subst-fr"/>
   <remarks xml:lang="de" versionDate="2023-07-18">
-    <p>Der Ort der Ergänzung muss zwingend in <att>place</att> und die Hand der ergänzten Stelle kann
-            mit <att>hand</att> festgehalten werden. Falls notwendig, kann innerhalb von <att>rend</att> angegeben
-            werden, wie die Ergänzung (mit Bleistift, anderer Tinte etc.) vorgenommen wurde. Handelt es sich bei einer
-            Ergänzung um die Hand des ersten Schreibers, dann wird die Hand nicht speziell angemerkt.
+    <p>Der Ort der Ergänzung muss zwingend in <att>place</att> und die Hand der ergänzten Stelle
+        kann mit <att>hand</att> festgehalten werden. Falls notwendig, kann innerhalb
+        von <att>rend</att> angegeben werden, wie die Ergänzung (mit Bleistift, anderer Tinte etc.)
+        vorgenommen wurde. Handelt es sich bei einer Ergänzung um die Hand des ersten Schreibers,
+        dann wird die Hand nicht speziell angemerkt.</p>
+    <p>Es besteht die gleiche Problemlage wie im Fall von <gi>del</gi>. Einfügungen, die
+        Hierarchiegrenzen überschreiten, müssen mit <gi>addSpan</gi> und <gi>anchor</gi>
+        ausgezeichnet werden.</p>
+    <p>Ersetzt eine Hinzufügung eine Streichung, sollte <gi>subst</gi> verwendet werden. Damit
+        werden keine Nachträge bzw. Zusätze aus anderen Textzeugen ausgezeichnet. Es wird nur für
+        Hinzufügungen im selben Text verwendet. Ein Nachtrag am Schluss eines Textes von anderer
+        Hand wird mit <gi>add</gi> und <gi>handShift</gi> umgesetzt.
         </p>
-    <p>Es besteht die gleiche Problemlage wie im Fall von <gi>del</gi>. Einfügungen, die Hierarchiegrenzen
-            überschreiten, müssen mit <gi>addSpan</gi> und <gi>anchor</gi> ausgezeichnet werden.
-        </p>
-    <p>Ersetzt eine Hinzufügung eine Streichung, sollte <gi>subst</gi> verwendet werden. Damit werden keine
-            Nachträge bzw. Zusätze aus anderen Textzeugen ausgezeichnet. Es wird nur für Hinzufügungen im selben Text
-            verwendet. Ein Nachtrag am Schluss eines Textes von anderer Hand wird
-            mit <gi>add</gi> und <gi>handShift</gi> umgesetzt.
-        </p>
-    <p>Nachträglich hinzugefügte Titel auf Umschlägen (Heft, Doppelblatt) werden nicht in <gi>ab</gi>, sondern
-            innerhalb eines <gi>head</gi> mit <gi>add</gi> mit <att>hand</att> = <val>otherHand</val> unter Angabe des
-            Ortes in <att>place</att> erfasst.
-        </p>
-    <p>Hinzufügungen, die gestrichen werden, müssen mit kombinierten Tags ausgezeichnet werden, und zwar
-            mit <gi>del</gi>, das ein <gi>add</gi> enthält (und nicht anders herum).
-        </p>
-    <p>Klare Dorsualvermerke, die einen Verweis auf den Inhalt eines Drucks machen und/oder dessen Datierung
-            aufnehmen, sind als Dorsualvermerke mit <gi>ab</gi> zu taggen. Handelt es sich hingegen um weitere
-            Informationen z. B. zur Versendung des gedruckten Mandats, Ergänzungen zu einzelnen Textteilen oder nicht
-            mit dem Stück zusammenhängende Informationen ist <gi>add</gi> mit <att>hand</att> = <val>otherHand</val> zu
-            taggen.
-        </p>
+    <p>Nachträglich hinzugefügte Titel auf Umschlägen (Heft, Doppelblatt) werden nicht
+        in <gi>ab</gi>, sondern innerhalb eines <gi>head</gi> mit <gi>add</gi>
+        mit <att>hand</att> = <val>otherHand</val> unter Angabe des Ortes in <att>place</att>
+        erfasst.</p>
+    <p>Hinzufügungen, die gestrichen werden, müssen mit kombinierten Tags ausgezeichnet werden,
+        und zwar mit <gi>del</gi>, das ein <gi>add</gi> enthält (und nicht andersherum).</p>
+    <p>Klare Dorsualvermerke, die einen Verweis auf den Inhalt eines Drucks machen und/oder dessen
+        Datierung aufnehmen, sind als Dorsualvermerke mit <gi>ab</gi> zu taggen. Handelt es sich
+        hingegen um weitere Informationen z. B. zur Versendung des gedruckten Mandats, Ergänzungen
+        zu einzelnen Textteilen oder nicht mit dem Stück zusammenhängende Informationen
+        ist <gi>add</gi> mit <att>hand</att> = <val>otherHand</val> zu taggen.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-18">
-    <p>The place of the addition must be in <att>place</att> and the hand of the added place can be held
-            with <att>hand</att>. If necessary, <att>rend</att> can indicate how the addition (pencil, other ink, etc.)
-            was made. If an addition is the hand of the first scribe, then the hand is not specifically noted.
-        </p>
-    <p>The problem is the same as in the case of <gi>del</gi>. Insertions that cross hierarchy boundaries must be
-            marked up with <gi>addSpan</gi> and <gi>anchor</gi>.
-        </p>
-    <p>If an addition replaces a deletion, <gi>subst</gi> should be used. No supplements or additions from other
-            text witnesses are marked with this. It is only used for additions in the same text. An addendum at the end
-            of a text by another hand is converted with <gi>add</gi> and <gi>handShift</gi>.
-        </p>
+    <p>The place of the addition must be in <att>place</att> and the hand of the added place can
+        be held with <att>hand</att>. If necessary, <att>rend</att> can indicate how the addition
+        (pencil, other ink, etc.) was made. If an addition is the hand of the first scribe, then
+        the hand is not specifically noted.</p>
+    <p>The problem is the same as in the case of <gi>del</gi>. Insertions that cross hierarchy
+        boundaries must be marked up with <gi>addSpan</gi> and <gi>anchor</gi>.</p>
+    <p>If an addition replaces a deletion, <gi>subst</gi> should be used. No supplements or
+        additions from other text witnesses are marked with this. It is only used for additions in
+        the same text. An addendum at the end of a text by another hand is converted
+        with <gi>add</gi> and <gi>handShift</gi>.</p>
     <p>Subsequently added titles on covers (booklet, double page) are not in <gi>ab</gi>, but within
-            a <gi>head</gi> with <gi>add</gi> with <att>hand</att> = <val>otherHand</val> stating the location
-            in <att>place</att>.
-        </p>
+        a <gi>head</gi> with <gi>add</gi> with <att>hand</att> = <val>otherHand</val> stating the
+        location in <att>place</att>.</p>
     <p>Additions that are deleted must be tagged with combined tags, namely <gi>del</gi> containing
-            an <gi>add</gi> (and not the other way around).
-        </p>
-    <p>Clear dorsal annotations that make a reference to the content of a print and/or record its dating are to be
-            tagged as dorsal annotations with <gi>ab</gi>. If, on the other hand, it is more information, e.g. For
-            sending the printed mandate, additions to individual parts of the text or information not related to the
-            piece, <gi>add</gi> should be tagged with <att>hand</att> = <val>otherHand</val>.
-        </p>
+        an <gi>add</gi> (and not the other way around).</p>
+    <p>Clear dorsal annotations that make a reference to the content of a print and/or record its
+        dating are to be tagged as dorsal annotations with <gi>ab</gi>. If, on the other hand, it
+        is more information, e.g. For sending the printed mandate, additions to individual parts of
+        the text or information not related to the piece, <gi>add</gi> should be tagged
+        with <att>hand</att> = <val>otherHand</val>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-18">
-    <p>La place de l'addition doit être en <att>place</att> et la main de la place ajoutée peut être tenue avec
-            la <att>main</att>. Si nécessaire, <att>rend</att> peut indiquer comment l'ajout (crayon, autre encre, etc.)
-            a été effectué. Si un ajout est la main du premier scribe, alors la main n'est pas spécifiquement notée.
-        </p>
-    <p>Le problème est le même que dans le cas de <gi>del</gi>. Les insertions qui traversent les limites de la
-            hiérarchie doivent être balisées avec <gi>addSpan</gi> et <gi>anchor</gi>.
-        </p>
-    <p>Si un ajout remplace une suppression, <gi>subst</gi> doit être utilisé. Aucun supplément ou ajout d'autres
-            témoins de texte n'est marqué avec cela. Il n'est utilisé que pour les ajouts dans le même texte. Un
-            addendum à la fin d'un texte d'une autre main est converti avec <gi>add</gi> et <gi>handShift</gi>.
-        </p>
-    <p>Les titres ajoutés ultérieurement sur les couvertures (livret, double page) ne sont pas en <gi>ab</gi>, mais
-            à l'intérieur d'un <gi>head</gi> avec <gi>add</gi> avec <att>hand</att> = <val>otherHand</val> indiquant
-            l'emplacement à <att>place</att>.
-        </p>
+    <p>La place de l'addition doit être en <att>place</att> et la main de la place ajoutée peut
+        être tenue avec la <att>main</att>. Si nécessaire, <att>rend</att> peut indiquer comment
+        l'ajout (crayon, autre encre, etc.) a été effectué. Si un ajout est la main du premier
+        scribe, alors la main n'est pas spécifiquement notée.</p>
+    <p>Le problème est le même que dans le cas de <gi>del</gi>. Les insertions qui traversent les
+        limites de la hiérarchie doivent être balisées avec <gi>addSpan</gi> et <gi>anchor</gi>.</p>
+    <p>Si un ajout remplace une suppression, <gi>subst</gi> doit être utilisé. Aucun supplément ou
+        ajout d'autres témoins de texte n'est marqué avec cela. Il n'est utilisé que pour les
+        ajouts dans le même texte. Un addendum à la fin d'un texte d'une autre main est converti
+        avec <gi>add</gi> et <gi>handShift</gi>.</p>
+    <p>Les titres ajoutés ultérieurement sur les couvertures (livret, double page) ne sont pas
+        en <gi>ab</gi>, mais à l'intérieur d'un <gi>head</gi> avec <gi>add</gi>
+        avec <att>hand</att> = <val>otherHand</val> indiquant l'emplacement à <att>place</att>.</p>
     <p>Les ajouts qui sont supprimés doivent être balisés avec des balises combinées, à
-            savoir <gi>del</gi> contenant un <gi>add</gi> (et non l'inverse).
-        </p>
-    <p>Les annotations dorsales claires qui font référence au contenu d'une empreinte et/ou enregistrent sa datation
-            doivent être marquées comme des annotations dorsales avec <gi>ab</gi>. Si, en revanche, il s'agit de plus
-            d'informations, par ex. Pour envoyer le mandat imprimé, des ajouts à des parties individuelles du texte ou
-            des informations non liées à la pièce, <gi>add</gi> doit être marqué avec <att>hand</att> = <val>otherHand
-            </val> .
-        </p>
+        savoir <gi>del</gi> contenant un <gi>add</gi> (et non l'inverse).</p>
+    <p>Les annotations dorsales claires qui font référence au contenu d'une empreinte et/ou
+        enregistrent sa datation doivent être marquées comme des annotations dorsales
+        avec <gi>ab</gi>. Si, en revanche, il s'agit de plus d'informations, par ex. Pour envoyer
+        le mandat imprimé, des ajouts à des parties individuelles du texte ou des informations non
+        liées à la pièce, <gi>add</gi> doit être marqué
+        avec <att>hand</att> = <val>otherHand</val>.</p>
   </remarks>
 </elementSpec>
