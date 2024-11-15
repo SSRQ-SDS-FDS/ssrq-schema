@@ -7,12 +7,67 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid-additional",
-            "<additional><listBibl type='literature'><bibl>foo</bibl></listBibl></additional>",
+            "valid-additional-with-listBibl",
+            """
+            <additional>
+                <listBibl type='literature'><bibl>foo</bibl></listBibl>
+            </additional>
+            """,
             True,
         ),
         (
-            "invalid-additional-without-listBibl",
+            "valid-additional-with-multiple-listBibl",
+            """
+                <additional>
+                    <listBibl type='edition'><bibl>foo</bibl></listBibl>
+                    <listBibl type='literature'><bibl>foo</bibl></listBibl>
+                </additional>
+                """,
+            True,
+        ),
+        (
+            "valid-additional-with-adminInfo-and-listBibl",
+            """
+            <additional>
+                <adminInfo>
+                    <custodialHist>
+                        <custEvent type="lost" notBefore-custom="1858-09-01" calendar="gregorian">
+                            Verlust nicht vor Erscheinen der Erstedition des 19. Jahrhunderts.
+                        </custEvent>
+                    </custodialHist>
+                </adminInfo>
+                <listBibl type='literature'><bibl>foo</bibl></listBibl>
+            </additional>
+            """,
+            True,
+        ),
+        (
+            "invalid-additional-with-wrong-child-order",
+            """
+            <additional>
+                <listBibl type='literature'><bibl>foo</bibl></listBibl>
+                <adminInfo>
+                    <custodialHist>
+                        <custEvent type="lost" notBefore-custom="1858-09-01" calendar="gregorian">
+                            Verlust nicht vor Erscheinen der Erstedition des 19. Jahrhunderts.
+                        </custEvent>
+                    </custodialHist>
+                </adminInfo>
+            </additional>
+            """,
+            False,
+        ),
+        (
+            "invalid-additional-with-attributes",
+            """
+            <additional att='foo'>
+                <listBibl type='literature'><bibl>foo</bibl></listBibl>
+            </additional>
+            """,
+            False,
+        ),
+        (
+            "invalid-empty-additional",
             "<additional/>",
             False,
         ),
