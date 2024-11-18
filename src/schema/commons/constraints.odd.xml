@@ -170,7 +170,7 @@
       <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
       <constraint>
         <sch:pattern>
-          <sch:rule context="tei:*[name() = ('ab', 'abbr', 'add', 'bibl', 'custEvent', 'del', 'div', 'expan', 'foreign', 'fw', 'head', 'hi', 'idno', 'item', 'label', 'lem', 'licence', 'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'publisher', 'pubPlace', 'q', 'quote', 'repository', 'seg', 'settlement', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
+          <sch:rule context="tei:*[name() = ('ab', 'abbr', 'add', 'author', 'bibl', 'custEvent', 'del', 'div', 'expan', 'foreign', 'fw', 'head', 'hi', 'idno', 'item', 'label', 'lem', 'licence', 'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'publisher', 'pubPlace', 'q', 'quote', 'repository', 'seg', 'settlement', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
             <sch:assert test="string-length(normalize-space(.)) &gt; 0">
               The element <sch:name/> must not be empty.
             </sch:assert>
