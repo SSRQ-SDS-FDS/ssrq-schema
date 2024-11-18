@@ -493,9 +493,9 @@ def test_pointer_keywords_and_lemmata_rng(
     test_element_with_rng("term", name, markup, result, False)
 
 
-# ToDO: Test for ssrq.pointer.doi
-# ToDO: Test for ssrq.pointer.url
-# ToDO: Test for ssrq.pointer.urn
-# ToDO: Test for ssrq.pointer.target
-# ToDO: Test for ssrq.witness.id
-# ToDO: Test for ssrq.witness.pointer
+# ToDo: Add tests for ssrq.pointer.doi
+# ToDo: Add tests for ssrq.pointer.url
+# ToDo: Add tests for ssrq.pointer.urn
+# ToDo: Add tests for ssrq.pointer.target
+# ToDo: Add tests for ssrq.witness.id
+# ToDo: Add tests for ssrq.witness.pointer
