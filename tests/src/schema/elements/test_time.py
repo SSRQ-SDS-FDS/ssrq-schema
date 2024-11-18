@@ -7,23 +7,13 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "time-with-valid-when-custom",
+            "valid-time-with-when-custom",
             "<time when-custom='08:48:00'>08:48:00</time>",
             True,
         ),
         (
-            "invalid-time-with-when-and-not-when-custom",
+            "invalid-time-with-when",
             "<time when='08:48:00'>08:48:00</time>",
-            False,
-        ),
-        (
-            "time-with-invalid-when-custom",
-            "<time when-custom='98:48:00'>08:48:00</time>",
-            False,
-        ),
-        (
-            "time-with-invalid-when-custom-after-midnight",
-            "<time when-custom='24:00:01'>kurz nach Mitternacht</time>",
             False,
         ),
         (

@@ -2,7 +2,7 @@ import pytest
 from pyschval.schematron.validate import apply_schematron_validation
 from pyschval.types.result import SchematronResult
 
-from .conftest import SimpleTEIWriter, add_tei_namespace
+from ..conftest import SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(

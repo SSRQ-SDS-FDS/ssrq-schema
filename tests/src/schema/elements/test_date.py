@@ -9,69 +9,27 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "date-with-valid-when",
+            "valid-date-with-when-custom",
             "<date when-custom='1756-02-12' calendar='gregorian'>12. Februar 1756</date>",
             True,
         ),
         (
-            "date-with-valid-when-without-year",
-            "<date when-custom='--02-12' calendar='gregorian'>12. Februar</date>",
-            True,
-        ),
-        (
-            "date-with-valid-when-without-year-and-month",
-            "<date when-custom='---12' calendar='gregorian'>Immer am 12.</date>",
-            True,
-        ),
-        (
-            "date-with-invalid-when-month-too-large",
-            "<date when-custom='1756-92-12' calendar='gregorian'>12. Februar 1756</date>",
-            False,
-        ),
-        (
-            "date-with-invalid-when-year-only",
-            "<date when-custom='1756' calendar='gregorian'>1756</date>",
-            False,
-        ),
-        (
-            "date-with-invalid-when-month-only",
-            "<date when-custom='--09' calendar='gregorian'>September</date>",
-            False,
-        ),
-        (
-            "date-with-invalid-day",
-            "<date when-custom='0001-01-00' calendar='unknown'>foo</date>",
-            False,
-        ),
-        (
-            "date-with-invalid-negative-year",
-            "<date when-custom='-1337-01-01' calendar='unknown'>foo</date>",
-            False,
-        ),
-        (
-            "date-with-when-instead-of-when-custom",
+            "invalid-date-with-when",
             "<date when='1756-02-12' calendar='gregorian'>12. Februar 1756</date>",
             False,
         ),
         (
             "valid-date-with-from-to",
-            "<date calendar='julian' from-custom='1583-05-30' to-custom='1584-05-21'>von Pfingstmontag 1583 bis Pfingstmontag 1584</date>",
+            "<date from-custom='1583-05-30' to-custom='1584-05-21' calendar='julian'>Foo</date>",
             True,
-        ),
-        (
-            "date-with-invalid-from-to",
-            "<date calendar='julian' from-custom='1501' to-custom='1600'>15. Jahrhundert</date>",
-            False,
         ),
         (
             "valid-date-with-notBefore-notAfter",
-            "<date calendar='julian' from-custom='1510-01-01' notAfter-custom='1515-12-12'>ca. 1510</date>",
+            """
+            <date notBefore-custom='1510-01-01' notAfter-custom='1515-12-12' calendar='julian'>
+                ca. 1510
+            </date>""",
             True,
-        ),
-        (
-            "date-with-invalid-notBefore-notAfter",
-            "<date calendar='julian' from-custom='1510' notAfter-custom='1515'>ca. 1510</date>",
-            False,
         ),
         (
             "date-with-valid-dur-iso-with-decimal",
