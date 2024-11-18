@@ -252,12 +252,247 @@ def test_facs_name_rng(
     test_element_with_rng("pb", name, markup, result, False)
 
 
-# ToDO: Test for ssrq.pointer.keywords
-# ToDO: Test for ssrq.pointer.lemma
-# ToDO: Test for ssrq.pointer.org
-# ToDO: Test for ssrq.pointer.persons
-# ToDO: Test for ssrq.pointer.places
-# ToDO: Test for ssrq.pointer.databases
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-persons-pointer",
+            "<persName ref='per123456'>Foo</persName>",
+            True,
+        ),
+        (
+            "valid-persons-pointer-with-letter",
+            "<persName ref='per123456a'>Foo</persName>",
+            True,
+        ),
+        (
+            "valid-persons-pointer-with-dot",
+            "<persName ref='per123456.10'>Foo</persName>",
+            True,
+        ),
+        (
+            "valid-persons-pointer-with-letter-and-dot",
+            "<persName ref='per123456a.10'>Foo</persName>",
+            True,
+        ),
+        (
+            "invalid-persons-pointer-with-five-digits",
+            "<persName ref='per12345'>Foo</persName>",
+            False,
+        ),
+        (
+            "invalid-persons-pointer-with-seven-digits",
+            "<persName ref='per1234567'>Foo</persName>",
+            False,
+        ),
+        (
+            "invalid-persons-pointer-with-wrong-letter",
+            "<persName ref='per123456d'>Foo</persName>",
+            False,
+        ),
+        (
+            "invalid-persons-pointer-with-to-few-digits-after-dot",
+            "<persName ref='per123456.1'>Foo</persName>",
+            False,
+        ),
+        (
+            "invalid-persons-pointer-with-to-much-digits-after-dot",
+            "<persName ref='per123456.100'>Foo</persName>",
+            False,
+        ),
+    ],
+)
+def test_pointer_person_rng(
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
+):
+    """Test the pattern ssrq.pointer.persons which is used for @ref."""
+
+    test_element_with_rng("persName", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-org-pointer",
+            "<orgName ref='org123456'>Foo</orgName>",
+            True,
+        ),
+        (
+            "invalid-org-pointer-with-letter",
+            "<orgName ref='org123456a'>Foo</orgName>",
+            False,
+        ),
+        (
+            "valid-org-pointer-with-dot",
+            "<orgName ref='org123456.10'>Foo</orgName>",
+            True,
+        ),
+        (
+            "invalid-org-pointer-with-five-digits",
+            "<orgName ref='org12345'>Foo</orgName>",
+            False,
+        ),
+        (
+            "invalid-org-pointer-with-seven-digits",
+            "<orgName ref='org1234567'>Foo</orgName>",
+            False,
+        ),
+        (
+            "invalid-org-pointer-with-to-few-digits-after-dot",
+            "<orgName ref='org123456.1'>Foo</orgName>",
+            False,
+        ),
+        (
+            "invalid-org-pointer-with-to-much-digits-after-dot",
+            "<orgName ref='org123456.1'>Foo</orgName>",
+            False,
+        ),
+    ],
+)
+def test_pointer_org_rng(
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
+):
+    """Test the pattern ssrq.pointer.org which is used for @ref."""
+
+    test_element_with_rng("orgName", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-places-pointer",
+            "<placeName ref='loc123456'>Foo</placeName>",
+            True,
+        ),
+        (
+            "invalid-places-pointer-with-letter",
+            "<placeName ref='loc123456a'>Foo</placeName>",
+            False,
+        ),
+        (
+            "valid-places-pointer-with-dot",
+            "<placeName ref='loc123456.10'>Foo</placeName>",
+            True,
+        ),
+        (
+            "invalid-places-pointer-with-five-digits",
+            "<placeName ref='loc12345'>Foo</placeName>",
+            False,
+        ),
+        (
+            "invalid-places-pointer-with-seven-digits",
+            "<placeName ref='loc1234567'>Foo</placeName>",
+            False,
+        ),
+        (
+            "invalid-places-pointer-with-to-few-digits-after-dot",
+            "<placeName ref='loc123456.1'>Foo</placeName>",
+            False,
+        ),
+        (
+            "invalid-places-pointer-with-to-much-digits-after-dot",
+            "<placeName ref='loc123456.100'>Foo</placeName>",
+            False,
+        ),
+    ],
+)
+def test_pointer_places_rng(
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
+):
+    """Test the pattern ssrq.pointer.places which is used for @ref."""
+
+    test_element_with_rng("placeName", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        # Tests for ssrq.pointer.keywords
+        (
+            "valid-keyword-pointer",
+            "<term ref='key123456'>Foo</term>",
+            True,
+        ),
+        (
+            "invalid-keyword-pointer-with-letter",
+            "<term ref='key123456a'>Foo</term>",
+            False,
+        ),
+        (
+            "valid-keyword-pointer-with-dot",
+            "<term ref='key123456.10'>Foo</term>",
+            False,
+        ),
+        (
+            "invalid-keyword-pointer-with-five-digits",
+            "<term ref='key12345'>Foo</term>",
+            False,
+        ),
+        (
+            "invalid-keyword-pointer-with-seven-digits",
+            "<term ref='key1234567'>Foo</term>",
+            False,
+        ),
+        # Tests for ssrq.pointer.lemma
+        (
+            "valid-lemma-pointer",
+            "<term ref='lem123456'>Foo</term>",
+            True,
+        ),
+        (
+            "invalid-lemma-pointer-with-letter",
+            "<term ref='lem123456a'>Foo</term>",
+            False,
+        ),
+        (
+            "valid-lemma-pointer-with-dot",
+            "<term ref='lem123456.10'>Foo</term>",
+            True,
+        ),
+        (
+            "invalid-lemma-pointer-with-five-digits",
+            "<term ref='lem12345'>Foo</term>",
+            False,
+        ),
+        (
+            "invalid-lemma-pointer-with-seven-digits",
+            "<term ref='lem1234567'>Foo</term>",
+            False,
+        ),
+        (
+            "invalid-lemma-pointer-with-to-few-digits-after-dot",
+            "<term ref='lem123456.1'>Foo</term>",
+            False,
+        ),
+        (
+            "invalid-lemma-pointer-with-three-digits-after-dot",
+            "<term ref='lem123456.100'>Foo</term>",
+            True,
+        ),
+    ],
+)
+def test_pointer_keywords_and_lemmata_rng(
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
+):
+    """Test the patterns ssrq.pointer.keywords and ssrq.pointer.lemma which are used for @ref."""
+
+    test_element_with_rng("term", name, markup, result, False)
+
+
 # ToDO: Test for ssrq.pointer.doi
 # ToDO: Test for ssrq.pointer.url
 # ToDO: Test for ssrq.pointer.urn

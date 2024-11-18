@@ -19,11 +19,6 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "orgName-with-invalid-ref",
-            "<orgName ref='abcdefg' role='recipient'>bar</orgName>",
-            False,
-        ),
-        (
             "orgName-with-invalid-role",
             "<orgName ref='org000001' role='xyz'>bar</orgName>",
             False,

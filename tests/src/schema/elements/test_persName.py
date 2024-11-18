@@ -8,18 +8,13 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-persName",
-            "<persName ref='per000001'>bar</persName>",
+            "<persName ref='per123456'>bar</persName>",
             True,
         ),
         (
             "valid-persName-with-role",
             "<persName ref='per000001' role='witness'>bar</persName>",
             True,
-        ),
-        (
-            "persName-with-invalid-ref",
-            "<persName ref='abcdefg' role='recipient'>bar</persName>",
-            False,
         ),
         (
             "persName-with-invalid-role",

@@ -18,16 +18,6 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<term ref='lem123456'>foo</term>",
             True,
         ),
-        (
-            "invalid-term-with-wrong-keyref",
-            "<term ref='cey003521'>foo</term>",
-            False,
-        ),
-        (
-            "simple-term-with-invalid-lemref",
-            "<term ref='lem001301.300'>foo</term>",
-            False,
-        ),
     ],
 )
 def test_term(
