@@ -18,23 +18,8 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-pb-with-facs",
-            "<pb n='1' facs='StAZH_F_III_12__Nr_1__S__10'/>",
+            "<pb n='1' facs='StAZH_F_III_12_Nr_1_S_10'/>",
             True,
-        ),
-        (
-            "valid-pb-with-multiple-facs",
-            "<pb n='1' facs='StASH_Ordnungen_A_4_328 StASH_Ordnungen_A_4_328_plica'/>",
-            True,
-        ),
-        (
-            "pb-with-invalid-facs",
-            "<pb n='1' facs='StASH_Ordnungen_A_4_328u'/>",
-            False,
-        ),
-        (
-            "pb-with-invalid-facs",
-            "<pb n='1' facs='StASH_Ordnungen A_4_328'/>",
-            False,
         ),
     ],
 )

@@ -195,7 +195,63 @@ def test_numbering_rng(
     test_element_with_rng("pb", name, markup, result, False)
 
 
-# ToDO: Test for ssrq.facs.name
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-facs-name-with-plica-ending",
+            "<pb n='r' facs='Foo_plica'/>",
+            True,
+        ),
+        (
+            "valid-facs-name-with-rv-ending1",
+            "<pb n='r' facs='Foo_r'/>",
+            True,
+        ),
+        (
+            "valid-facs-name-with-rv-ending2",
+            "<pb n='r' facs='Foo_v'/>",
+            True,
+        ),
+        (
+            "valid-facs-name-with-number_ending",
+            "<pb n='r' facs='Foo_100'/>",
+            True,
+        ),
+        (
+            "valid-facs-name-with-roman_ending",
+            "<pb n='r' facs='Foo_MDCCLXXVII'/>",
+            True,
+        ),
+        (
+            "valid-facs-name-with-dashes",
+            "<pb n='r' facs='Foo_MDCCLXXVII-1'/>",
+            True,
+        ),
+        (
+            "valid-facs-name-with-multiple-values",
+            "<pb n='1' facs='Foo_100 Foo_101'/>",
+            True,
+        ),
+        (
+            "invalid-facs-name-with-random-ending",
+            "<pb n='1' facs='Foo_100u'/>",
+            False,
+        ),
+    ],
+)
+def test_facs_name_rng(
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
+):
+    """Test the pattern ssrq.facs.name which is used in @facs for tei:pb.
+    Compare the test for "__" (schematron constraint) in test_constraints.py"""
+
+    test_element_with_rng("pb", name, markup, result, False)
+
+
 # ToDO: Test for ssrq.pointer.keywords
 # ToDO: Test for ssrq.pointer.lemma
 # ToDO: Test for ssrq.pointer.org
