@@ -89,13 +89,6 @@ def test_date_point_rng(
     test_element_with_rng("date", name, markup, result, False)
 
 
-# (
-#   :
-#   [0-5][0-9]
-#   :
-#   [0-5][0-9])
-
-
 @pytest.mark.parametrize(
     "name, markup, result",
     [
@@ -162,9 +155,46 @@ def test_time_point_rng(
     test_element_with_rng("time", name, markup, result, False)
 
 
-# ToDO: Test for ssrq.foliation
-# ToDO: Test for ssrq.pagination
-# ToDO: Test for ssrq.section
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        # Tests for ssrq.foliation
+        ("valid-foliation-with-recto", "<pb n='r'/>", True),
+        ("valid-foliation-with-verso", "<pb n='v'/>", True),
+        ("valid-foliation-with-digits", "<pb n='100r'/>", True),
+        ("invalid-foliation-with-leading-zero", "<pb n='01r'/>", False),
+        ("invalid-foliation-with-zero", "<pb n='0r'/>", False),
+        ("valid-foliation-roman", "<pb n='MDCCLXXVIIr'/>", True),
+        ("valid-foliation-with-bis", "<pb n='1bisr'/>", True),
+        ("valid-foliation-with-a", "<pb n='1ar'/>", True),
+        ("invalid-foliation-with-a-and-bis", "<pb n='1abisr'/>", False),
+        # Tests for ssrq.pagination
+        ("valid-pagination-with-digits", "<pb n='100'/>", True),
+        ("invalid-pagination-with-leading-zero", "<pb n='01'/>", False),
+        ("invalid-pagination-with-zero", "<pb n='0'/>", False),
+        ("valid-pagination-roman", "<pb n='MDCCLXXVII'/>", True),
+        ("invalid-pagination-mixed", "<pb n='1XIV'/>", False),
+        ("valid-pagination-with-bis", "<pb n='1bis'/>", True),
+        ("valid-pagination-with-a", "<pb n='1a'/>", True),
+        ("valid-pagination-with-dot", "<pb n='1.32'/>", True),
+        ("valid-pagination-cover", "<pb n='cover'/>", True),
+        # Tests for ssrq.section
+        ("valid-section", "<pb n='s1'/>", True),
+        ("invalid-section-with-leading-zero", "<pb n='s01'/>", False),
+    ],
+)
+def test_numbering_rng(
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
+):
+    """Test the patterns ssrq.foliation, ssrq.pagination, ssrq.section and ssrq.numbering which
+    are used in @n for tei:pb."""
+
+    test_element_with_rng("pb", name, markup, result, False)
+
+
 # ToDO: Test for ssrq.facs.name
 # ToDO: Test for ssrq.pointer.keywords
 # ToDO: Test for ssrq.pointer.lemma
