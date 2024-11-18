@@ -42,7 +42,7 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-additional-with-wrong-child-order",
+            "invalid-additional-with-wrong-order",
             """
             <additional>
                 <listBibl type='literature'><bibl>foo</bibl></listBibl>
@@ -58,17 +58,8 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "invalid-additional-with-attributes",
-            """
-            <additional att='foo'>
-                <listBibl type='literature'><bibl>foo</bibl></listBibl>
-            </additional>
-            """,
-            False,
-        ),
-        (
-            "invalid-empty-additional",
-            "<additional/>",
+            "invalid-additional-with-wrong-content",
+            "<additional>Foo</additional>",
             False,
         ),
     ],

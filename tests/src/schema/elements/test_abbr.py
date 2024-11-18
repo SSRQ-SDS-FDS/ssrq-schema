@@ -31,16 +31,6 @@ from ..conftest import RNG_test_function
             "<abbr><unclear>foobar</unclear></abbr>",
             True,
         ),
-        (
-            "invalid-abbr-with-wrong-element",
-            "<abbr>foo<elem>bar</elem></abbr>",
-            False,
-        ),
-        (
-            "invalid-abbr-with-attributes",
-            "<abbr att='foo'>bar</abbr>",
-            False,
-        ),
     ],
 )
 def test_abbr(

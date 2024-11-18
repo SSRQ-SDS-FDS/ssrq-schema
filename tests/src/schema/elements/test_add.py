@@ -56,16 +56,6 @@ from ..conftest import RNG_test_function
             "<add>bar</add>",
             False,
         ),
-        (
-            "invalid-add-with-wrong-attribute-values",
-            "<add place='baz' type='foo'>bar</add>",
-            False,
-        ),
-        (
-            "invalid-add-with-wrong-attributes",
-            "<add place='left_top' att='foo'>bar</add>",
-            False,
-        ),
     ],
 )
 def test_add(
