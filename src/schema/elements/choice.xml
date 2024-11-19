@@ -3,13 +3,12 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="choice" module="core" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-19">Enthält zwei Elemente zur alternativen Auszeichnung einer Textpassage.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-19">Contains two elements for alternative markup of a text passage.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient deux éléments pour le marquage alternatif d'un passage de
-        texte.
-    </desc>
+  <desc xml:lang="de" versionDate="2023-07-19">Enthält zwei Elemente zur alternativen Auszeichnung
+    einer Textpassage.</desc>
+  <desc xml:lang="en" versionDate="2023-07-19">Contains two elements for alternative markup of a
+    text passage.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient deux éléments pour le marquage alternatif
+    d'un passage de texte.</desc>
   <classes mode="replace">
     <memberOf key="model.linePart"/>
     <memberOf key="model.pPart.editorial"/>
@@ -34,17 +33,15 @@
   <xi:include href="examples.xml" xpointer="ex-choice-sic-en"/>
   <remarks xml:lang="de" versionDate="2023-07-19">
     <p>Der Tag enthält Elemente zur Auflösung von Abkürzungen oder zur Korrektur von Verschreibern.
-            Die Auflösung der Abkürzung bzw. die Korrekturen stehen nach dem originalen Text.
-        </p>
+      Die Auflösung der Abkürzung bzw. die Korrekturen stehen nach dem originalen Text.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-19">
-    <p>The tag contains elements for breaking up abbreviations or correcting spelling mistakes. The resolution of
-            the abbreviation and the corrections are given after the original text.
-        </p>
+    <p>The tag contains elements for breaking up abbreviations or correcting spelling mistakes.
+      The resolution of the abbreviation and the corrections are given after the original text.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-19">
-    <p>La balise contient des éléments permettant de décomposer les abréviations ou de corriger les fautes
-            d'orthographe. La résolution de l'abréviation et les corrections sont données après le texte original.
-        </p>
+    <p>La balise contient des éléments permettant de décomposer les abréviations ou de corriger
+      les fautes d'orthographe. La résolution de l'abréviation et les corrections sont données
+      après le texte original.</p>
   </remarks>
 </elementSpec>
