@@ -14,7 +14,7 @@ from ..conftest import RNG_test_function
         (
             "valid-condition-with-multiple-p-as-content",
             "<condition agent='mice'><p>Mäusefrass</p><p>Foo</p></condition>",
-            True,
+            False,
         ),
         (
             "valid-condition-without-content",
