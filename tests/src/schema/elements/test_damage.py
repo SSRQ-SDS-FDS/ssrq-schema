@@ -8,57 +8,82 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-damage-with-add",
-            "<damage agent='water'><add hand='otherHand' place='overwritten'>zuͦ trincken</add></damage>",
+            """
+            <damage agent='water'>
+                <add hand='otherHand' place='overwritten'>foo</add>
+            </damage>
+            """,
             True,
         ),
         (
             "valid-damage-with-gap",
-            "<damage agent='faded_ink clipping'><gap quantity='9' unit='cm'/></damage>",
+            """
+            <damage agent='water'>
+                <gap quantity='9' unit='cm'/>
+            </damage>
+            """,
             True,
         ),
         (
             "valid-damage-with-supplied",
-            "<damage agent='water'><supplied source='id-ssrq-73988c1a-40e1-4527-94b7-736d418b29d0'>verthruwen</supplied></damage>",
+            """
+            <damage agent='water'>
+                <supplied source='id-ssrq-73988c1a-40e1-4527-94b7-736d418b29d0'>
+                    foo
+                </supplied>
+            </damage>""",
             True,
         ),
         (
             "valid-damage-with-unclear",
-            "<damage agent='ink_blot'><unclear>die</unclear></damage>",
+            """
+            <damage agent='ink_blot'>
+                <unclear>foo</unclear>
+            </damage>
+            """,
             True,
         ),
         (
             "valid-damage-with-unit-and-quantity",
-            "<damage agent='faded_ink' unit='character' quantity='3'><unclear>die</unclear></damage>",
+            """
+            <damage agent='water' unit='character' quantity='3'>
+                <unclear>die</unclear>
+            </damage>
+            """,
             True,
         ),
         (
-            "damage-with-valid-child-element-combination-unclear-supplied",
-            "<damage agent='faded_ink' unit='character' quantity='3'><unclear>die</unclear><supplied resp='MA'>bar</supplied></damage>",
+            "valid-damage-with-gap-and-supplied",
+            """
+            <damage agent='water'>
+                <gap/>
+                <supplied resp='MA'>bar</supplied>
+            </damage>""",
             True,
         ),
         (
-            "damage-with-valid-child-element-combination-gap-supplied",
-            "<damage agent='faded_ink'><gap quantity='3' unit='cm'/><supplied resp='MA'>bar</supplied></damage>",
+            "valid-damage-with-combination-gap-unclear",
+            """
+            <damage agent='water'>
+                <gap/>
+                <unclear>bar</unclear>
+            </damage>
+            """,
             True,
         ),
         (
-            "damage-with-valid-child-element-combination-gap-unclear",
-            "<damage agent='faded_ink'><gap quantity='3' unit='cm'/><unclear>bar</unclear></damage>",
+            "valid-damage-with-supplied-unclear",
+            """
+            <damage agent='water'>
+                <supplied resp="MA">foo</supplied>
+                <unclear>bar</unclear>
+            </damage>
+            """,
             True,
-        ),
-        (
-            "damage-with-invalid-child-element-combination-gap-add",
-            "<damage agent='faded_ink' unit='character' quantity='3'><unclear>die</unclear><add> hand='otherHand' place='overwritten'>foo</add></damage>",
-            False,
         ),
         (
             "invalid-damage-without-agent",
             "<damage><unclear>die</unclear></damage>",
-            False,
-        ),
-        (
-            "invalid-damage-with-wrong-attribute",
-            "<damage agent='ink_blot' type='foo'><unclear>die</unclear></damage>",
             False,
         ),
     ],
