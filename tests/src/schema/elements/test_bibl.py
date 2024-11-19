@@ -7,13 +7,23 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "simple-valid-bibl",
+            "valid-bibl",
             "<bibl>foo</bibl>",
             True,
         ),
         (
-            "invalid-simple-bibl-with-attr",
+            "valid-bibl-with-xml-id",
+            "<bibl xml:id='id-ssrq-12345678-1234-4123-8123-123456789012'>foo</bibl>",
+            True,
+        ),
+        (
+            "invalid-bibl-with-attr",
             "<bibl type='lit'>foo</bibl>",
+            False,
+        ),
+        (
+            "invalid-bibl-with-default-content",
+            "<bibl><p>foo</p></bibl>",
             False,
         ),
         (
@@ -23,7 +33,10 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-bibl-with-pc-and-ref",
-            "<bibl><ref target='http://zotero.org/groups/5048222/items/M8D9EG5B'/><pc>:</pc> S. 93</bibl>",
+            """
+            <bibl>
+                <ref target='http://zotero.org/groups/5048222/items/M8D9EG5B'/><pc>:</pc> S. 93
+            </bibl>""",
             True,
         ),
     ],

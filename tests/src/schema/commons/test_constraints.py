@@ -465,8 +465,18 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-availability",
+            "<availability/>",
+            False,
+        ),
+        (
             "invalid-empty-bibl",
             "<bibl/>",
+            False,
+        ),
+        (
+            "invalid-empty-body",
+            "<body/>",
             False,
         ),
         (

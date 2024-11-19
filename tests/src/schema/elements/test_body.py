@@ -7,32 +7,45 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "invalid-empty-body",
-            "<body/>",
-            False,
-        ),
-        (
             "valid-body-with-div",
             "<body><div><p>bar</p></div></body>",
             True,
         ),
         (
+            "valid-body-with-ab",
+            "<body><ab type='dorsal' place='verso'>foo</ab><div><p>bar</p></div></body>",
+            True,
+        ),
+        (
+            "valid-body-with-pb",
+            "<body><pb n='1' facs='abcde_1'/><div><p>bar</p></div></body>",
+            True,
+        ),
+        (
+            "valid-body-with-gap",
+            "<body><gap/><div><p>bar</p></div></body>",
+            True,
+        ),
+        (
             "valid-body-with-multiple-elements",
-            "<body><pb n='1' facs='abcde_1'/><div><p>bar</p></div><gap/><ab type='dorsal' place='verso'>foo</ab></body>",
+            """
+            <body>
+                <pb n="1"/>
+                <div><p>bar</p></div>
+                <gap/>
+                <div><p>bar</p></div>
+                <ab type='dorsal' place='verso'>foo</ab>
+            </body>
+            """,
             True,
         ),
         (
-            "valid-body-with-pb-div-signed",
-            "<body><pb n='1' facs='abcde_1'/><div><p>bar</p></div><div><signed><lb/>Rechenschriber</signed></div></body>",
-            True,
-        ),
-        (
-            "invalid-body-with-text-only",
+            "invalid-body-with-text-content",
             "<body>foo</body>",
             False,
         ),
         (
-            "invalid-body-with-p-as-child",
+            "invalid-body-with-default-content",
             "<body><p>foo</p></body>",
             False,
         ),
