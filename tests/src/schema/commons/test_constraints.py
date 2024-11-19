@@ -485,6 +485,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-custodialHist",
+            "<custodialHist/>",
+            False,
+        ),
+        (
             "invalid-empty-del",
             "<del/>",
             False,
