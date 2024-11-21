@@ -175,11 +175,6 @@
               The element <sch:name/> must not be empty.
             </sch:assert>
           </sch:rule>
-          <sch:rule context="tei:date[not(ancestor::tei:teiHeader)][not(*)]">
-            <sch:assert test="string-length(normalize-space(.)) &gt; 0">
-              The element <sch:name/> must not be empty when outside the teiHeader.
-            </sch:assert>
-          </sch:rule>
         </sch:pattern>
       </constraint>
     </constraintSpec>

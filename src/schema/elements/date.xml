@@ -21,35 +21,33 @@
       <macroRef key="ssrq.content.default"/>
     </alternate>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
-    <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for att.datable.custom</desc>
+  <constraintSpec scheme="schematron" ident="sch-date" mode="add">
+    <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for tei:date</desc>
     <constraint>
       <sch:pattern>
-        <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
-          <sch:assert test=".[@calendar]">The attribute @calendar is required, when
-                        <sch:name/>
-                        is used outside the publicationStmt.
-                    </sch:assert>
+        <sch:rule context="tei:date[not(ancestor::tei:teiHeader)]">
+          <sch:assert test="string-length(normalize-space(.)) &gt; 0 or child::*">
+              The element date must not be empty when outside the teiHeader.
+            </sch:assert>
         </sch:rule>
         <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
-          <sch:assert test=".[@type][@type/data(.) = ('electronic', 'print')]">
-                        If
-                        <sch:name/>
-                        is part of the publicationStmt it must contain @type with a value of
-                        electronic or print.
-                    </sch:assert>
-          <sch:assert test=".[@when-custom or (@from-custom and @to-custom)][not(@calendar|@dur-iso|@notAfter-custom|@notBefore-custom|@period)]">
-                        If
-                        <sch:name/>
-                        is part of the publicationStmt it must contain @when-custom or @from-custom
-                        and to-custom, and may not contain @calendar, @dur-iso, @notAfter-custom,
-                        @notBefore-custom or @period.
-                    </sch:assert>
           <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)">
-                        If
-                        <sch:name/>
-                        is part of the publicationStmt it must not have any content.
-                    </sch:assert>
+            If date is part of the publicationStmt it must be empty.
+          </sch:assert>
+          <sch:assert test=".[@type][@type/data(.) = ('electronic', 'print')]">
+            If date is part of the publicationStmt it must contain @type with a value of
+            'electronic' or 'print'.
+          </sch:assert>
+          <sch:assert test=".[@when-custom or (@from-custom and @to-custom)][not(@calendar|@dur-iso|@notAfter-custom|@notBefore-custom|@period)]">
+            If date is part of the publicationStmt it must contain @when-custom or @from-custom
+            and to-custom, and may not contain @calendar, @dur-iso, @notAfter-custom,
+            @notBefore-custom or @period.
+          </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
+          <sch:assert test=".[@calendar]">
+            The attribute @calendar is required, when date is used outside the publicationStmt.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
@@ -57,26 +55,26 @@
   <attList>
     <attDef ident="dur-iso" mode="change">
       <desc xml:lang="de" versionDate="2023-05-09">Erfassung Zeitspanne
-                nach <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
-                Beginnt mit dem Kürzel P (Periode) gefolgt von arabischen Ziffern. Sich
-                wiederholende Zeitspannenden werden im vollen Format ausgedrückt und beginnen mit
-                dem Kürzel R (Repeated). Ansonsten werden folgende Werte vergeben
-                <list><item>Y = year</item><item>M = month</item><item>W = week</item><item>D = day</item><item>H = hour</item></list>
-            </desc>
+        nach <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+        Beginnt mit dem Kürzel P (Periode) gefolgt von arabischen Ziffern. Sich
+        wiederholende Zeitspannenden werden im vollen Format ausgedrückt und beginnen mit
+        dem Kürzel R (Repeated). Ansonsten werden folgende Werte vergeben:
+        <list><item>Y = year</item><item>M = month</item><item>W = week</item><item>D = day</item><item>H = hour</item></list>
+    </desc>
       <desc xml:lang="en" versionDate="2023-05-09">Recording period according
-                to <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
-                Begins with the abbreviation P (Period) followed by Arabic numerals. Repeating time
-                spans are expressed in full format and begin with the abbreviation R (Repeated).
-                Otherwise, the following values are assigned
-                <list><item>Y = year</item><item>M = month</item><item>W = week</item><item>D = day</item><item>H = hour</item></list>
-            </desc>
+        to <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+        Begins with the abbreviation P (Period) followed by Arabic numerals. Repeating time
+        spans are expressed in full format and begin with the abbreviation R (Repeated).
+        Otherwise, the following values are assigned:
+        <list><item>Y = year</item><item>M = month</item><item>W = week</item><item>D = day</item><item>H = hour</item></list>
+        </desc>
       <desc xml:lang="fr" versionDate="2023-05-09">Saisie Période
-                selon <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
-                Commence par l'abréviation P (période) suivie de chiffres arabes. Les périodes
-                répétitives sont exprimées au format complet et commencent par l'abréviation R
-                (Repeated). Sinon, les valeurs suivantes sont attribuées
-                <list><item>Y = year</item><item>M = month</item><item>W = week</item><item>D = day</item><item>H = hour</item></list>
-            </desc>
+      selon <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+      Commence par l'abréviation P (période) suivie de chiffres arabes. Les périodes
+      répétitives sont exprimées au format complet et commencent par l'abréviation R
+      (Repeated). Sinon, les valeurs suivantes sont attribuées :
+      <list><item>Y = year</item><item>M = month</item><item>W = week</item><item>D = day</item><item>H = hour</item></list>
+        </desc>
       <datatype>
         <dataRef name="string" restriction="(R/)?P(\d+(\.\d+)?[YMWDH])+"/>
       </datatype>
@@ -91,15 +89,12 @@
     </attDef>
     <attDef ident="type" mode="replace">
       <desc xml:lang="de" versionDate="2023-05-12">Nähere Charakterisierung einer Datierung –
-                wird für Termine und Fristen verwendet sowie für Art der Publikation
-            </desc>
+          wird für Termine und Fristen verwendet sowie für Art der Publikation</desc>
       <desc xml:lang="en" versionDate="2023-05-12">More detailed characterisation of a dating
-                - used for dates and deadlines as well as for type of publication
-            </desc>
+          - used for dates and deadlines as well as for type of publication</desc>
       <desc xml:lang="fr" versionDate="2023-05-12">Caractérisation plus détaillée d'une
-                datation - utilisée pour les dates et les délais ainsi que pour le type de
-                publication
-            </desc>
+          datation — utilisée pour les dates et les délais ainsi que pour le type de
+          publication</desc>
       <valList type="closed">
         <valItem ident="deadline">
           <desc xml:lang="de" versionDate="2024-05-08">Termin/Frist</desc>
@@ -111,7 +106,8 @@
           <desc xml:lang="de" versionDate="2024-05-08">beweglicher Feiertag als Termin/Frist</desc>
           <desc xml:lang="en" versionDate="2024-05-08">floating holiday (deadline)</desc>
           <desc xml:lang="fr" versionDate="2024-05-08">des fêtes sans date fixe comme délai</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">festività religiose senza una data fissa come scadenza</desc>
+          <desc xml:lang="it" versionDate="2024-05-08">festività religiose senza una data fissa
+              come scadenza</desc>
         </valItem>
         <valItem ident="deadline_holiday">
           <desc xml:lang="de" versionDate="2024-05-08">Kirchenfest als Termin/Frist</desc>
@@ -189,32 +185,27 @@
   <xi:include href="examples.xml" xpointer="ex-date-roman-en"/>
   <xi:include href="examples.xml" xpointer="ex-date-roman-fr"/>
   <remarks xml:lang="de" versionDate="2023-09-05">
-    <p>Datierungen in Quelltexten (Originaldaten) und den Paratexten (Einleitung, Kommentare, Fussnoten) werden mit <gi>date</gi> ausgezeichnet.
-            Die <ref target="dating_guidelines.md">Datierungsrichtlinien</ref> sind zu beachten.
-        </p>
-    <p>Termine (Weidetermine, Jagdzeitbeschränkungen etc.) werden auch als
-          Datierungen behandelt. Zur Kennzeichnung, dass es sich um einen
-          Termin handelt, wird <att>type</att> mit dem Inhalt <val>deadline</val>
-            eingefügt.
-      </p>
+    <p>Datierungen in Quelltexten (Originaldaten) und den Paratexten (Einleitung, Kommentare,
+        Fussnoten) werden mit <gi>date</gi> ausgezeichnet. Die
+        <ref target="dating_guidelines.md">Datierungsrichtlinien</ref> sind zu beachten.</p>
+    <p>Termine (Weidetermine, Jagdzeitbeschränkungen etc.) werden auch als Datierungen behandelt.
+        Zur Kennzeichnung, dass es sich um einen Termin handelt, wird <att>type</att> mit dem
+        Inhalt <val>deadline</val> eingefügt.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-09-05">
-    <p>Dating in source texts (original data) and the paratexts (introduction, comments, footnotes) are marked with <gi>date</gi>.
-            The <ref target="dating_guidelines.md">dating guidelines</ref> must be observed.
-        </p>
-    <p>Dates (grazing dates, hunting time restrictions, etc.) are also treated
-        as dates. <att>type</att> with the content <val>deadline</val> is
-        inserted to indicate that it is an appointment.
-      </p>
+    <p>Dating in source texts (original data) and the paratexts (introduction, comments, footnotes)
+        are marked with <gi>date</gi>. The
+        <ref target="dating_guidelines.md">dating guidelines</ref> must be observed.</p>
+    <p>Dates (grazing dates, hunting time restrictions, etc.) are also treated as dates.
+        <att>type</att> with the content <val>deadline</val> is inserted to indicate that it is
+        an appointment.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-09-05">
-    <p>La datation dans les textes sources (données originales) et les paratextes (introduction, commentaires, notes de bas de page) sont marquées par <gi>date</gi>.
-            Les <ref target="dating_guidelines.md">règles de datation</ref> doivent être respectées.
-        </p>
-    <p>Les dates (dates de pâturage, restrictions de temps de chasse,
-          etc.) sont également traitées comme des dates. Un <att>type</att>
-          avec le contenu <val>deadline</val> est inséré pour indiquer
-          qu'il s'agit d'un rendez-vous.
-      </p>
+    <p>La datation dans les textes sources (données originales) et les paratextes (introduction,
+        commentaires, notes de bas de page) sont marquées par <gi>date</gi>. Les
+        <ref target="dating_guidelines.md">règles de datation</ref> doivent être respectées.</p>
+    <p>Les dates (dates de pâturage, restrictions de temps de chasse, etc.) sont également traitées
+        comme des dates. Un <att>type</att> avec le contenu <val>deadline</val> est inséré pour
+        indiquer qu'il s'agit d'un rendez-vous.</p>
   </remarks>
 </elementSpec>
