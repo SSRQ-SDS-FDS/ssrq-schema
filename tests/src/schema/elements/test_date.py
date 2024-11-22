@@ -93,9 +93,6 @@ def test_date_rng(
             </text>    
             """,
             False,
-            # ToDo: Warum ist dieser Test True? Die Schematron-Regel
-            # tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]
-            # müsste greifen, so dass gelten müsste assert test=".[@calendar]"
         ),
         (
             "invalid-date-outside-teiHeader-without-content",
