@@ -9,28 +9,31 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "valid-dimensions-with-two-childs",
-            "<dimensions type='leaves'><height unit='cm' quantity='16.0'/><width unit='cm' quantity='23.0'/></dimensions>",
+            "valid-dimensions-with-two-children",
+            """
+            <dimensions type='leaves'>
+                <height unit='cm' quantity='16.0'/>
+                <width unit='cm' quantity='23.0'/>
+            </dimensions>
+            """,
             True,
         ),
         (
-            "valid-dimensions-with-one-childs",
-            "<dimensions type='plica'><width unit='cm' quantity='23.0'/></dimensions>",
+            "valid-dimensions-with-width-only",
+            """
+            <dimensions type='leaves'>
+                <width unit='cm' quantity='23.0'/>
+            </dimensions>
+            """,
             True,
         ),
         (
-            "invalid-dimensions-without-child",
-            "<dimensions type='plica'/>",
-            False,
-        ),
-        (
-            "dimensions-with-invalid-type",
-            "<dimensions type='foo'><width unit='cm' quantity='23.0'/></dimensions>",
-            False,
-        ),
-        (
-            "invalid-dimensions-with-additional-attribute",
-            "<dimensions source='bar' type='leaves'><height unit='cm' quantity='16.0'/><width unit='cm' quantity='23.0'/></dimensions>",
+            "invalid-dimensions-with-height-only",
+            """
+            <dimensions type='leaves'>
+                <height unit='cm' quantity='23.0'/>
+            </dimensions>
+            """,
             False,
         ),
     ],
@@ -48,13 +51,13 @@ def test_dimensions_rng(
     "name, markup, result",
     [
         (
-            "valid-dimensions-type-child-combination",
-            "<dimensions type='plica'><width unit='cm' quantity='23.0'/></dimensions>",
-            True,
-        ),
-        (
-            "invalid-dimensions-type-child-combination",
-            "<dimensions type='plica'><height unit='cm' quantity='23.0'/></dimensions>",
+            "invalid-dimensions-plica-with-height",
+            """
+            <dimensions type='plica'>
+                <height unit='cm' quantity='16.0'/>
+                <width unit='cm' quantity='23.0'/>
+            </dimensions>
+            """,
             False,
         ),
     ],

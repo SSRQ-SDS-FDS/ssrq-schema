@@ -495,6 +495,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-dimensions",
+            "<dimensions type='leaves'/>",
+            False,
+        ),
+        (
             "invalid-empty-div",
             "<div/>",
             False,
