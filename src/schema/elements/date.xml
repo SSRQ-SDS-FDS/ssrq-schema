@@ -21,14 +21,17 @@
       <macroRef key="ssrq.content.default"/>
     </alternate>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-date" mode="add">
+  <constraintSpec scheme="schematron" ident="sch-data-custom" mode="add">
     <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for tei:date</desc>
     <constraint>
       <sch:pattern>
-        <sch:rule context="tei:date[not(ancestor::tei:teiHeader)]">
+        <sch:rule context="tei:date[not(ancestor::tei:teiHeader)] | tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
           <sch:assert test="string-length(normalize-space(.)) &gt; 0 or child::*">
               The element date must not be empty when outside the teiHeader.
-            </sch:assert>
+          </sch:assert>
+          <sch:assert test=".[@calendar]">
+            The attribute @calendar is required, when date is used outside the publicationStmt.
+        </sch:assert>
         </sch:rule>
         <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
           <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)">
@@ -42,11 +45,6 @@
             If date is part of the publicationStmt it must contain @when-custom or @from-custom
             and to-custom, and may not contain @calendar, @dur-iso, @notAfter-custom,
             @notBefore-custom or @period.
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
-          <sch:assert test=".[@calendar]">
-            The attribute @calendar is required, when date is used outside the publicationStmt.
           </sch:assert>
         </sch:rule>
       </sch:pattern>
