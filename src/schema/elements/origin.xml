@@ -17,7 +17,7 @@
       <elementRef key="orgName" minOccurs="0"/>
     </sequence>
   </content>
-  <constraintSpec ident="calendar-check-origin" mode="delete"/>
+  <constraintSpec scheme="schematron" ident="calendar-check-origin" mode="delete"/>
   <constraintSpec scheme="schematron" ident="origDate.type" mode="add">
     <desc xml:lang="en" versionDate="2024-06-05">Schematron rule for tei:origDate/@type</desc>
     <constraint>

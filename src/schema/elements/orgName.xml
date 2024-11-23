@@ -22,7 +22,7 @@
       <macroRef key="ssrq.content.default"/>
     </sequence>
   </content>
-  <constraintSpec ident="calendar-check-orgName" mode="delete"/>
+  <constraintSpec scheme="schematron" ident="calendar-check-orgName" mode="delete"/>
   <constraintSpec scheme="schematron" ident="sch-el-orgName" mode="add">
     <desc versionDate="2023-06-19" xml:lang="en">Schematron rules for tei:orgName</desc>
     <constraint>

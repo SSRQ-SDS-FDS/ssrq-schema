@@ -18,7 +18,7 @@
   </content>
   <attList>
     <attDef ident="calendar" mode="change">
-      <constraintSpec ident="calendar-check-custEvent" mode="delete"/>
+      <constraintSpec scheme="schematron" ident="calendar-check-custEvent" mode="delete"/>
     </attDef>
     <attDef ident="type" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2023-09-19">Art des Ereignisses.</desc>

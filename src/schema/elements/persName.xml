@@ -21,7 +21,7 @@
       <macroRef key="ssrq.content.default"/>
     </sequence>
   </content>
-  <constraintSpec ident="calendar-check-persName" mode="delete"/>
+  <constraintSpec scheme="schematron" ident="calendar-check-persName" mode="delete"/>
   <constraintSpec scheme="schematron" ident="sch-persName-custom" mode="add">
     <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for
             <gi>persName</gi>

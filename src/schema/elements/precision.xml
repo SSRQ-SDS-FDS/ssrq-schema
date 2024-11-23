@@ -14,7 +14,7 @@
   <content>
     <empty/>
   </content>
-  <constraintSpec ident="calendar-check-precision" mode="delete"/>
+  <constraintSpec scheme="schematron" ident="calendar-check-precision" mode="delete"/>
   <constraintSpec scheme="schematron" ident="sch-el-precision">
     <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:precision test-matches</desc>
     <constraint>

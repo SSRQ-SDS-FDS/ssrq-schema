@@ -17,7 +17,7 @@
       <macroRef key="ssrq.content.default"/>
     </sequence>
   </content>
-  <constraintSpec ident="calendar-check-origPlace" mode="delete"/>
+  <constraintSpec scheme="schematron" ident="calendar-check-origPlace" mode="delete"/>
   <constraintSpec scheme="schematron" ident="sch-el-origPlace">
     <desc xml:lang="en" versionDate="2023-05-16">Constraint for tei:origPlace</desc>
     <constraint>

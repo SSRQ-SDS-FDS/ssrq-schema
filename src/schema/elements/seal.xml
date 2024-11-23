@@ -21,7 +21,7 @@
       <elementRef key="p" minOccurs="0"/>
     </sequence>
   </content>
-  <constraintSpec ident="calendar-check-seal" mode="delete"/>
+  <constraintSpec scheme="schematron" ident="calendar-check-seal" mode="delete"/>
   <constraintSpec scheme="schematron" ident="sch-el-seal" mode="add">
     <desc versionDate="2023-06-01" xml:lang="en">Schematron rules for tei:seal</desc>
     <constraint>
