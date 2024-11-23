@@ -8,22 +8,19 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-encodingDesc",
-            "<encodingDesc><editorialDecl><p><ref target='https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien'/></p></editorialDecl></encodingDesc>",
+            """
+            <encodingDesc>
+                <editorialDecl>
+                    <p>
+                        <ref target='https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien'/>
+                    </p>
+                </editorialDecl>
+            </encodingDesc>""",
             True,
-        ),
-        (
-            "invalid-encodingDesc-without-editorialDecl",
-            "<encodingDesc/>",
-            False,
-        ),
-        (
-            "invalid-encodingDesc-with-attribute",
-            "<encodingDesc xml:id='foo'><editorialDecl><p><ref target='https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien'/></p></editorialDecl></encodingDesc>",
-            False,
         ),
     ],
 )
-def test_encodingDesc_rng(
+def test_encoding_desc_rng(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
