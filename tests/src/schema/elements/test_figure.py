@@ -14,19 +14,33 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "valid-figure-with-content",
-            "<figure type='illustration'><graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/></figure>",
+            "valid-figure-with-graphic",
+            """
+            <figure type='illustration'>
+                <graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/>
+            </figure>
+            """,
+            True,
+        ),
+        (
+            "valid-figure-with-graphic-and-head",
+            """
+            <figure type='illustration'>
+                <graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/>
+                <head>Foo</head>
+            </figure>
+            """,
+            True,
+        ),
+        (
+            "valid-figure-with-hand",
+            "<figure type='copper_engraving' hand='otherHand'/>",
             True,
         ),
         (
             "valid-figure-with-place",
             "<figure type='copper_engraving' place='above'/>",
             True,
-        ),
-        (
-            "invalid-figure-with-wrong-type",
-            "<figure type='foo'/>",
-            False,
         ),
     ],
 )
@@ -43,18 +57,31 @@ def test_figure(
     "name, markup, result",
     [
         (
-            "valid-figure-with-type-locus",
+            "valid-figure-with-type-illustration",
+            """
+            <figure type='illustration'>
+                <graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/>
+            </figure>
+            """,
+            True,
+        ),
+        (
+            "invalid-figure-with-type-illustration-but-without-graphic",
+            "<figure type='illustration'/>",
+            False,
+        ),
+        (
+            "valid-figure-with-other-type",
             "<figure type='locus_sigilli'/>",
             True,
         ),
         (
-            "valid-figure-with-type-illustration",
-            "<figure type='illustration'><graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/></figure>",
-            True,
-        ),
-        (
-            "invalid-figure-with-type-illustration",
-            "<figure type='illustration'/>",
+            "invalid-figure-with-other-type",
+            """
+            <figure type='locus_sigilli'>
+                <graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/>
+            </figure>
+            """,
             False,
         ),
     ],

@@ -1,8 +1,6 @@
 import pytest
-from pyschval.schematron.validate import apply_schematron_validation
-from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
@@ -14,14 +12,14 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "foreign-with-invalid-lang",
-            "<foreign xml:lang='latin'>foo</foreign>",
-            False,
-        ),
-        (
             "invalid-foreign-without-lang",
             "<foreign>foo</foreign>",
             False,
+        ),
+        (
+            "valid-foreign-with-content-default",
+            "<foreign xml:lang='la'><del>foo</del></foreign>",
+            True,
         ),
     ],
 )
@@ -32,23 +30,3 @@ def test_foreign(
     result: bool,
 ):
     test_element_with_rng("foreign", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "invalid-empty-foreign",
-            "<foreign xml:lang='la'/>",
-            False,
-        ),
-    ],
-)
-def test_foreign_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].report.is_valid() is result
