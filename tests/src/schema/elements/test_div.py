@@ -9,29 +9,57 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "valid-div",
+            "valid-div-with-type",
+            "<div type='chapter'><p>foo</p></div>",
+            True,
+        ),
+        (
+            "valid-div-with-n",
+            "<div n='1'><p>foo</p></div>",
+            True,
+        ),
+        (
+            "valid-div-with-p",
             "<div><p>foo</p></div>",
             True,
         ),
         (
-            "valid-div-with-type-and-n",
-            "<div type='chapter' n='1'><p>foo</p></div>",
-            True,
-        ),
-        (
             "valid-div-with-list",
-            "<div type='chapter' n='1'><list><item>foo</item></list></div>",
+            "<div><list><item>foo</item></list></div>",
             True,
         ),
         (
-            "invalid-div-with-wrong-type",
-            "<div type='bar'><p>foo</p></div>",
+            "valid-div-with-seg",
+            "<div><seg>foo</seg></div>",
+            True,
+        ),
+        (
+            "valid-div-with-content-default",
+            "<div><del>foo</del></div>",
+            True,
+        ),
+        (
+            "invalid-div-with-one-div",
+            "<div><div>foo</div></div>",
             False,
         ),
         (
-            "invalid-div-with-wrong-attribute",
-            "<div wit='bar'><p>foo</p></div>",
-            False,
+            "valid-div-with-two-divs",
+            "<div><div>foo</div><div>bar</div></div>",
+            True,
+        ),
+        (
+            "valid-div-with-two-divs-and-milestones",
+            """
+            <div>
+                <addSpan spanTo='add1'/>
+                <pb n='1'/>
+                <div>foo</div>
+                <cb n='a'/>
+                <div>bar</div>
+                <anchor xml:id='add1'/>
+            </div>""",
+            True,
         ),
     ],
 )
@@ -49,16 +77,7 @@ def test_div(
     [
         (
             "valid-div-without-text",
-            "<div><p>foo</p>     </div>",
-            True,
-        ),
-        (
-            "valid-div-without-text-with-linebreaks",
-            """<div><p>foo</p>
-            <p>bar</p>
-            <p>baz</p>
-            </div>
-            """,
+            "<div><p>foo</p></div>",
             True,
         ),
         (
@@ -87,7 +106,7 @@ def test_div(
             False,
         ),
         (
-            "invalid-xml-lang-in-body",
+            "invalid-div-with-xml-lang-in-body",
             "<body><div xml:lang='de'><p>foo</p></div></body>",
             False,
         ),
