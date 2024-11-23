@@ -8,17 +8,22 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-docImprint",
-            "<docImprint><pubPlace ref='loc123456'>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
+            """
+            <docImprint>
+                <pubPlace ref='loc123456'>Bern</pubPlace>
+                <publisher>Heidegger</publisher>
+            </docImprint>
+            """,
             True,
         ),
         (
-            "invalid-empty-docImprint",
-            "<docImprint></docImprint>",
-            False,
-        ),
-        (
-            "invalid-docImprint-with-attribute",
-            "<docImprint type='foo'><pubPlace ref='loc123456'>Bern</pubPlace><publisher>Heidegger</publisher></docImprint>",
+            "invalid-docImprint-with-wrong-order",
+            """
+            <docImprint>
+                <publisher>Heidegger</publisher>
+                <pubPlace ref='loc123456'>Bern</pubPlace>
+            </docImprint>
+            """,
             False,
         ),
         (
@@ -33,12 +38,17 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-docImprint-with-multiple-places",
-            "<docImprint><pubPlace ref='loc123456'>Bern</pubPlace><pubPlace ref='loc123457'>St. Gallen</pubPlace><publisher>Heidegger</publisher></docImprint>",
+            """
+            <docImprint>
+                <pubPlace ref='loc123456'>Bern</pubPlace>
+                <pubPlace ref='loc123457'>St. Gallen</pubPlace>
+                <publisher>Heidegger</publisher>
+            </docImprint>""",
             True,
         ),
     ],
 )
-def test_docImprint(
+def test_doc_imprint(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

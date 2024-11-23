@@ -505,6 +505,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-docImprint",
+            "<docImprint/>",
+            False,
+        ),
+        (
             "invalid-empty-expan",
             "<expan/>",
             False,
