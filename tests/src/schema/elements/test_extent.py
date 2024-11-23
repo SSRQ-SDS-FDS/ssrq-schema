@@ -10,23 +10,28 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-extent-with-one-dimensions",
-            "<extent><dimensions type='leaves'><height unit='cm' quantity='16.0'/><width unit='cm' quantity='23.0'/></dimensions></extent>",
+            """
+            <extent>
+                <dimensions type='leaves'>
+                    <height unit='cm' quantity='16.0'/>
+                    <width unit='cm' quantity='23.0'/>
+                </dimensions>
+            </extent>""",
             True,
         ),
         (
             "valid-extent-with-two-dimensions",
-            "<extent><dimensions type='leaves'><height unit='cm' quantity='16.0'/><width unit='cm' quantity='23.0'/></dimensions><dimensions type='plica'><width unit='cm' quantity='4.0'/></dimensions></extent>",
+            """
+            <extent>
+                <dimensions type='leaves'>
+                    <height unit='cm' quantity='16.0'/>
+                    <width unit='cm' quantity='23.0'/>
+                </dimensions>
+                <dimensions type='plica'>
+                    <width unit='cm' quantity='4.0'/>
+                </dimensions>
+            </extent>""",
             True,
-        ),
-        (
-            "invalid-extent-without-child",
-            "<extent/>",
-            False,
-        ),
-        (
-            "invalid-extent-with-wrong-child",
-            "<extent><foo/></extent>",
-            False,
         ),
     ],
 )
@@ -43,13 +48,17 @@ def test_extent_rng(
     "name, markup, result",
     [
         (
-            "valid-extent-with-unique-dimensions-type",
-            "<extent><dimensions type='leaves'><height unit='cm' quantity='16.0'/><width unit='cm' quantity='23.0'/></dimensions><dimensions type='plica'><width unit='cm' quantity='4.0'/></dimensions></extent>",
-            True,
-        ),
-        (
             "invalid-extent-with-doubled-dimensions-type",
-            "<extent><dimensions type='leaves'><height unit='cm' quantity='16.0'/><width unit='cm' quantity='23.0'/></dimensions><dimensions type='leaves'><width unit='cm' quantity='4.0'/></dimensions></extent>",
+            """
+            <extent>
+                <dimensions type='leaves'>
+                    <height unit='cm' quantity='16.0'/>
+                    <width unit='cm' quantity='23.0'/>
+                </dimensions>
+                <dimensions type='leaves'>
+                    <width unit='cm' quantity='4.0'/>
+                </dimensions>
+            </extent>""",
             False,
         ),
     ],

@@ -525,6 +525,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-extent",
+            "<extent/>",
+            False,
+        ),
+        (
             "invalid-empty-foreign",
             "<foreign xml:lang='la'/>",
             False,
