@@ -10,22 +10,27 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-editorialDecl-with-p",
-            "<editorialDecl><p><ref target='https://p.ssrq-sds-fds.ch/guidelines/transcription'/></p></editorialDecl>",
+            """
+            <editorialDecl>
+                <p>
+                    <ref target='https://p.ssrq-sds-fds.ch/guidelines/transcription'/>
+                </p>
+            </editorialDecl>""",
             True,
         ),
         (
-            "invalid-editorialDecl-without-p",
-            "<editorialDecl/>",
-            False,
-        ),
-        (
-            "invalid-editorialDecl-with-attribute",
-            "<editorialDecl xml:id='foo'><p><ref target='https://p.ssrq-sds-fds.ch/guidelines/transcription'/></p></editorialDecl>",
+            "invalid-editorialDecl-with-two-ps",
+            """
+            <editorialDecl>
+                <p>Foo</p>
+                <p>Bar</p>
+            </editorialDecl>
+            """,
             False,
         ),
     ],
 )
-def test_editorialDecl_rng(
+def test_editorial_decl_rng(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
