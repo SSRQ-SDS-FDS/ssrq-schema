@@ -14,23 +14,23 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "valid-height-with-unknown-values",
-            "<height quantity='unknown' unit='unknown'/>",
-            True,
-        ),
-        (
-            "invalid-height-missing-unit",
+            "invalid-height-without-unit",
             "<height quantity='3'/>",
             False,
         ),
         (
-            "invalid-height-wrong-unit",
-            "<height quantity='3' unit='bar'/>",
+            "invalid-height-without-quantity",
+            "<height unit='cm'/>",
             False,
         ),
         (
-            "invalid-height-wrong-quantity",
-            "<height quantity='bar' unit='cm'/>",
+            "invalid-height-wihout-unit-and-quantity",
+            "<height/>",
+            False,
+        ),
+        (
+            "invalid-height-with-content",
+            "<height quantity='3' unit='cm'>foo</height>",
             False,
         ),
     ],
