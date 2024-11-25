@@ -7,28 +7,28 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "handShift-valid",
+            "valid-handShift",
             "<handShift hand='secondHand'/>",
             True,
         ),
         (
-            "handShift-invalid",
+            "invalid-handShift-with-content",
             "<handShift hand='secondHand'>foo</handShift>",
             False,
         ),
         (
-            "handShift-invalid-attribute",
-            "<handShift scribe='per035807'/>",
+            "invalid-handShift-with-wrong-attribute",
+            "<handShift new='foo'/>",
             False,
         ),
         (
-            "handShift-invalid-without-attribute",
+            "invalid-handShift-without-attribute",
             "<handShift/>",
             False,
         ),
     ],
 )
-def test_handShift(
+def test_hand_shift(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
