@@ -3,13 +3,12 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="label" module="core" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-19">Enthält Randanmerkungen, die in den Editionstext integriert werden.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-19">Contains marginal notes that are integrated into the edition text.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient des notes marginales qui sont intégrées dans le texte de
-        l'édition.
-    </desc>
+  <desc xml:lang="de" versionDate="2023-07-19">Enthält Randanmerkungen, die in den Editionstext
+    integriert werden.</desc>
+  <desc xml:lang="en" versionDate="2023-07-19">Contains marginal notes that are integrated into
+    the edition text.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient des notes marginales qui sont intégrées
+    dans le texte de l'édition.</desc>
   <classes mode="replace">
     <memberOf key="att.placement"/>
     <memberOf key="att.typed"/>
@@ -26,11 +25,9 @@
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:label[not(parent::list)]">
-          <sch:assert test="preceding-sibling::*[1][self::tei:lb]">The first preceding
-                        sibling of
-                        <sch:name/>
-                        must be tei:lb.
-                    </sch:assert>
+          <sch:assert test="preceding-sibling::*[1][self::tei:lb]">
+            tei:label must follow after a tei:lb.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>

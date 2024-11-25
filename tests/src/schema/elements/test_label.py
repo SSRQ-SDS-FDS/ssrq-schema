@@ -18,6 +18,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<label type='keyword'>bar baz foo</label>",
             False,
         ),
+        (
+            "invalid-label-without-type",
+            "<label place='left_margin'>bar baz foo</label>",
+            False,
+        ),
     ],
 )
 def test_element(
@@ -32,11 +37,6 @@ def test_element(
 @pytest.mark.parametrize(
     "name, markup, result",
     [
-        (
-            "invalid-empty-label",
-            "<label type='keyword' place='left_margin'/>",
-            False,
-        ),
         (
             "valid-label-after-lb",
             "<p><lb/><label type='keyword' place='left_margin'>bar baz foo</label></p>",
