@@ -49,12 +49,12 @@ def test_msDesc(
         ),
         (
             "valid-msDesc-without-physDesc-and-adminInfo-and-text-type-collection",
-            "<TEI><msDesc><history/></msDesc><text type='collection'/></TEI>",
+            "<TEI><msDesc><history>foo</history></msDesc><text type='collection'/></TEI>",
             True,
         ),
         (
             "invalid-msDesc-without-physDesc-and-adminInfo-and-text-type-transcript",
-            "<TEI><msDesc><history/></msDesc><text type='transcript'/></TEI>",
+            "<TEI><msDesc><history>foo</history></msDesc><text type='transcript'/></TEI>",
             False,
         ),
         (

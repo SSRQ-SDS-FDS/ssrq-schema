@@ -8,18 +8,15 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-history",
-            """<history>
-                    <origin>
-                        <origDate type='document' when-custom="1366-06-29" calendar="gregorian"/>
-                        <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
-                   </origin>
-                </history>""",
+            """
+            <history>
+                <origin>
+                    <origDate type='document' when-custom="1366-06-29" calendar="gregorian"/>
+                    <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
+               </origin>
+            </history>
+            """,
             True,
-        ),
-        (
-            "invalid-history",
-            "<history/>",
-            False,
         ),
     ],
 )

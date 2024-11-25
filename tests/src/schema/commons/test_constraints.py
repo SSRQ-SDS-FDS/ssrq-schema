@@ -555,6 +555,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-history",
+            "<history/>",
+            False,
+        ),
+        (
             "invalid-empty-idno",
             "<idno xml:lang='de' source='http://foo.bar'/>",
             False,
