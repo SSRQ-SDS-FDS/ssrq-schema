@@ -7,28 +7,23 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid-simple-head",
+            "valid-head",
             "<head>foo</head>",
             True,
         ),
         (
-            "valid-head-with-type",
-            "<head type='title'>foo</head>",
+            "valid-head-with-content-default",
+            "<head><del>foo</del>bar</head>",
             True,
-        ),
-        (
-            "invalid-head-with-mixed-types",
-            "<head type='title literature'>foo</head>",
-            False,
-        ),
-        (
-            "invalid-head-with-scribe",
-            "<head scribe='baz'>foo</head>",
-            False,
         ),
         (
             "valid-head-with-p",
             "<head><p>foo</p><p>bar</p></head>",
+            True,
+        ),
+        (
+            "valid-head-with-bibl",
+            "<head><bibl>foo</bibl></head>",
             True,
         ),
         (
@@ -40,6 +35,36 @@ from ..conftest import RNG_test_function
             "invalid-head-with-just-one-seg",
             "<head><seg>foo</seg></head>",
             False,
+        ),
+        (
+            "valid-head-with-type",
+            "<head type='title'>foo</head>",
+            True,
+        ),
+        (
+            "valid-head-with-place",
+            "<head place='above'>foo</head>",
+            True,
+        ),
+        (
+            "valid-head-with-resp",
+            "<head resp='CS'>foo</head>",
+            True,
+        ),
+        (
+            "valid-head-with-n",
+            "<head n='1'>foo</head>",
+            True,
+        ),
+        (
+            "valid-head-with-xml-lang",
+            "<head xml:lang='de'>foo</head>",
+            True,
+        ),
+        (
+            "valid-head-with-hand",
+            "<head hand='otherHand'>foo</head>",
+            True,
         ),
     ],
 )
