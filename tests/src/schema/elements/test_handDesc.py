@@ -26,14 +26,9 @@ from ..conftest import RNG_test_function
             "<handDesc><p>Foo</p></handDesc>",
             False,
         ),
-        (
-            "invalid-empty-handDesc",
-            "<handDesc/>",
-            False,
-        ),
     ],
 )
-def test_handDesc(
+def test_hand_desc(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

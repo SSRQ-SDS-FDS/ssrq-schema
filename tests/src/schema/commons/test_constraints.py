@@ -540,6 +540,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-handDesc",
+            "<handDesc/>",
+            False,
+        ),
+        (
             "invalid-empty-head",
             "<head/>",
             False,
