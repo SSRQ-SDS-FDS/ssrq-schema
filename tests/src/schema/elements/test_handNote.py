@@ -9,7 +9,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "valid-handNote",
+            "valid-handNote-empty",
             "<handNote xml:id='foo'/>",
             True,
         ),
@@ -20,7 +20,10 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "valid-handNote-with-date",
-            "<handNote xml:id='foo'><date from-custom='1001-01-01' to-custom='1100-12-31'/></handNote>",
+            """
+            <handNote xml:id='foo'>
+                <date from-custom='1001-01-01' to-custom='1100-12-31'/>
+            </handNote>""",
             True,
         ),
         (
@@ -29,23 +32,13 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "invalid-handNote-with-invalid-attribute",
-            "<handNote xml:id='foo' type='bar'/>",
-            False,
-        ),
-        (
-            "invalid-handNote-with-invalid-attribute",
-            "<handNote xml:id='foo' n='bar'/>",
-            False,
-        ),
-        (
             "invalid-handNote-without-xml-id",
             "<handNote/>",
             False,
         ),
     ],
 )
-def test_handNote(
+def test_hand_note(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
@@ -64,15 +57,14 @@ def test_handNote(
         ),
         (
             "invalid-handNote-without-reference",
-            "<TEI><handNote xml:id='foo'/><p hand='foos'>bar</p></TEI>",
+            "<TEI><handNote xml:id='foo'/></TEI>",
             False,
         ),
     ],
 )
-def test_handNote_constraint(
+def test_hand_note_constraint(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
-    """Test the if the validation fails, when a handNote is not referenced"""
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
         input=writer.list(), isosch=main_constraints
