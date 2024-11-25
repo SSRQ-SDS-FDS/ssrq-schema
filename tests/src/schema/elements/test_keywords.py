@@ -12,13 +12,17 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-keywords-with-scheme",
-            "<keywords scheme='http://www.ssrq-sds-fds.ch/taxonomie'><term ref='key000192'/></keywords>",
-            False,
+            "valid-keywords-with-multiple-terms",
+            "<keywords><term ref='key000192'/><term ref='key000193'/></keywords>",
+            True,
         ),
         (
-            "invalid-keywords-without-term",
-            "<keywords/>",
+            "invalid-keywords-with-scheme",
+            """
+            <keywords scheme='http://www.ssrq-sds-fds.ch/taxonomie'>
+                <term ref='key000192'/>
+            </keywords>
+            """,
             False,
         ),
     ],

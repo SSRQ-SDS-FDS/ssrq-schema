@@ -570,6 +570,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-keywords",
+            "<keywords/>",
+            False,
+        ),
+        (
             "invalid-empty-label",
             "<label type='keyword' place='left_margin'/>",
             False,
