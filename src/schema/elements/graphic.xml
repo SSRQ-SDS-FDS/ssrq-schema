@@ -26,7 +26,9 @@
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:graphic">
-          <sch:assert test="not(contains(@url, '/'))">The usage of a '/' is not allowed</sch:assert>
+          <sch:assert test="not(contains(@url, '/'))">
+            The usage of a '/' is not allowed in @url
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
