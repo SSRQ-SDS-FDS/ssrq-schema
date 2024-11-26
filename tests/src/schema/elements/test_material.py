@@ -7,18 +7,28 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid-material",
+            "valid-material-paper",
             "<material type='paper'/>",
             True,
         ),
         (
-            "invalid-material-wihout-type",
-            "<material>Paper</material>",
+            "valid-material-parchment",
+            "<material type='parchment'/>",
+            True,
+        ),
+        (
+            "invalid-material-wrong-type",
+            "<material type='stone'/>",
             False,
         ),
         (
-            "material-with-invalid-type",
-            "<material type='stone'/>",
+            "invalid-material-without-type",
+            "<material/>",
+            False,
+        ),
+        (
+            "invalid-material-with-content",
+            "<material>Paper</material>",
             False,
         ),
     ],
