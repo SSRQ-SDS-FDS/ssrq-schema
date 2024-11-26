@@ -170,7 +170,7 @@
       <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
       <constraint>
         <sch:pattern>
-          <sch:rule context="tei:*[name() = ('ab', 'abbr', 'add', 'author', 'availability', 'bibl', 'body', 'custEvent', 'custodialHist', 'del', 'dimensions', 'div', 'docImprint', 'editorialDecl', 'encodingDesc', 'expan', 'extent', 'foreign', 'fw', 'handDesc', 'head', 'hi', 'history', 'idno', 'item', 'keywords', 'label', 'lem', 'licence', 'list', 'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'publisher', 'pubPlace', 'q', 'quote', 'repository', 'seg', 'settlement', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
+          <sch:rule context="tei:*[name() = ('ab', 'abbr', 'add', 'author', 'availability', 'bibl', 'body', 'custEvent', 'custodialHist', 'del', 'dimensions', 'div', 'docImprint', 'editorialDecl', 'encodingDesc', 'expan', 'extent', 'foreign', 'fw', 'handDesc', 'head', 'hi', 'history', 'idno', 'item', 'keywords', 'label', 'lem', 'licence', 'list', 'listBibl', 'note', 'num', 'orgName', 'orig', 'p', 'persName', 'placeName', 'publisher', 'pubPlace', 'q', 'quote', 'repository', 'seg', 'settlement', 'signed', 'supplied', 'time', 'title', 'unclear')][not(*)]">
             <sch:assert test="string-length(normalize-space(.)) &gt; 0">
               The element <sch:name/> must not be empty.
             </sch:assert>

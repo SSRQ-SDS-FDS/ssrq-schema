@@ -595,6 +595,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-listBibl",
+            "<listBibl type='literature'/>",
+            False,
+        ),
+        (
             "invalid-empty-note",
             "<note/>",
             False,
