@@ -17,10 +17,7 @@
   </classes>
   <content>
     <alternate>
-      <sequence>
-        <elementRef key="seg"/>
-        <elementRef key="seg" maxOccurs="unbounded"/>
-      </sequence>
+      <elementRef key="seg" minOccurs="2" maxOccurs="unbounded"/>
       <alternate maxOccurs="unbounded">
         <elementRef key="p"/>
         <macroRef key="ssrq.content.default"/>

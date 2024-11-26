@@ -16,10 +16,7 @@
   <content>
     <alternate>
       <sequence preserveOrder="false">
-        <sequence>
-          <elementRef key="div"/>
-          <elementRef key="div" maxOccurs="unbounded"/>
-        </sequence>
+        <elementRef key="div" minOccurs="2" maxOccurs="unbounded"/>
         <alternate minOccurs="0" maxOccurs="unbounded">
           <elementRef key="cb"/>
           <elementRef key="pb"/>

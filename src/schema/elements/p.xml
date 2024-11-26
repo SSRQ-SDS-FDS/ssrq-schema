@@ -18,10 +18,7 @@
         <elementRef key="ref"/>
         <macroRef key="ssrq.content.default"/>
       </alternate>
-      <sequence>
-        <elementRef key="seg"/>
-        <elementRef key="seg" maxOccurs="unbounded"/>
-      </sequence>
+      <elementRef key="seg" minOccurs="2" maxOccurs="unbounded"/>
     </alternate>
   </content>
   <constraintSpec scheme="schematron" ident="sch-el-p">

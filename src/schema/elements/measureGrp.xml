@@ -11,9 +11,7 @@
   </classes>
   <content>
     <alternate>
-      <sequence>
-        <elementRef key="cell" minOccurs="2" maxOccurs="unbounded"/>
-      </sequence>
+      <elementRef key="cell" minOccurs="2" maxOccurs="unbounded"/>
       <sequence preserveOrder="false">
         <elementRef key="measure" minOccurs="2" maxOccurs="unbounded"/>
         <alternate minOccurs="0" maxOccurs="unbounded">

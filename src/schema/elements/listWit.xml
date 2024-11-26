@@ -13,9 +13,7 @@
     <memberOf key="model.listLike"/>
   </classes>
   <content>
-    <sequence maxOccurs="unbounded">
-      <elementRef key="witness"/>
-    </sequence>
+    <elementRef key="witness" maxOccurs="unbounded"/>
   </content>
   <xi:include href="examples.xml" xpointer="ex-listWit-de"/>
   <xi:include href="examples.xml" xpointer="ex-listWit-en"/>
