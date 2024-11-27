@@ -610,6 +610,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-measureGrp",
+            "<measureGrp/>",
+            False,
+        ),
+        (
             "invalid-empty-note",
             "<note/>",
             False,
