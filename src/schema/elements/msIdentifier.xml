@@ -3,12 +3,12 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="msIdentifier" module="msdescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-15">Beschreibt den aktuellen und ehemalige Aufbewahrungsorte der Quelle.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Describes the current and historical locations of the source.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-15">Décrit les emplacements actuels et historiques de la source.
-    </desc>
+  <desc xml:lang="de" versionDate="2023-07-15">Beschreibt den aktuellen und ehemalige
+    Aufbewahrungsorte der Quelle.</desc>
+  <desc xml:lang="en" versionDate="2023-07-15">Describes the current and historical locations of
+    the source.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-15">Décrit les emplacements actuels et historiques de
+    la source.</desc>
   <classes mode="replace"/>
   <content>
     <sequence>
@@ -20,7 +20,7 @@
       <elementRef key="altIdentifier" minOccurs="0" maxOccurs="unbounded"/>
     </sequence>
   </content>
-  <!-- This overrides an erroneous constraint in the TEI guideline -->
+  <!-- This overrides an erroneous constraint in the TEI guidelines -->
   <constraintSpec scheme="schematron" ident="msId_minimal" mode="delete"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
