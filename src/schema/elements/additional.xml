@@ -13,7 +13,7 @@
   <content>
     <sequence>
       <elementRef key="adminInfo" minOccurs="0"/>
-      <elementRef key="listBibl" maxOccurs="unbounded"/>
+      <elementRef key="listBibl" minOccurs="0" maxOccurs="unbounded"/>
     </sequence>
   </content>
   <xi:include href="examples.xml" xpointer="ex-additional-de"/>

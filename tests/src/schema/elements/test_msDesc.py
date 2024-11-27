@@ -2,10 +2,7 @@ import pytest
 from pyschval.schematron.validate import apply_schematron_validation
 from pyschval.types.result import SchematronResult
 
-from utils.commons import filehandler as io
-
 from ..conftest import (
-    TEST_EXAMPLE_DIR,
     RNG_test_function,
     SimpleTEIWriter,
     add_tei_namespace,
@@ -16,26 +13,173 @@ from ..conftest import (
     "name, markup, result",
     [
         (
-            "valid-msDesc",
-            "{msDesc}",
+            "valid-msDesc-with-physDesc",
+            """
+            <msDesc>
+                <head>Foo</head>
+                  <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
+                    </origin>
+                </history>
+            </msDesc>
+            """,
             True,
         ),
         (
-            "invalid-msDesc",
-            "<msDesc><p>foo</p></msDesc>",
-            False,
+            "valid-msDesc-with-adminInfo",
+            """
+            <msDesc>
+                <head>Foo</head>
+                  <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
+                    </origin>
+                </history>
+                <additional>
+                    <adminInfo>
+                        <custodialHist>
+                            <custEvent type="lost">Foo</custEvent>
+                        </custodialHist>
+                    </adminInfo>
+                </additional>
+            </msDesc>
+            """,
+            True,
+        ),
+        (
+            "valid-msDesc-with-multiple-heads",
+            """
+            <msDesc>
+                <head>Foo</head>
+                <head>Bar</head>
+                  <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
+                    </origin>
+                </history>
+            </msDesc>
+            """,
+            True,
+        ),
+        (
+            "valid-msDesc-with-msIdentifier",
+            """
+            <msDesc>
+                <msIdentifier>
+                    <repository xml:lang="de">Foo</repository>
+                    <idno xml:lang="de">Foo</idno>
+                </msIdentifier>
+                <head>Foo</head>
+                  <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
+                    </origin>
+                </history>
+            </msDesc>
+            """,
+            True,
+        ),
+        (
+            "valid-msDesc-with-msContents",
+            """
+            <msDesc>
+                <head>Foo</head>
+                 <msContents>
+                    <msItem>
+                        <textLang xml:lang="de"/>
+                    </msItem>
+                 </msContents>
+                  <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
+                    </origin>
+                </history>
+            </msDesc>
+            """,
+            True,
+        ),
+        (
+            "valid-msDesc-with-additional",
+            """
+            <msDesc>
+                <head>Foo</head>
+                  <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
+                    </origin>
+                </history>
+                <additional>
+                    <listBibl type="edition">
+                        <bibl>Foo</bibl>
+                    </listBibl>
+                </additional>
+            </msDesc>
+            """,
+            True,
         ),
     ],
 )
-def test_msDesc(
+def test_ms_desc_rng(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
     result: bool,
 ):
-    markup = markup.format(
-        msDesc=io.FileHandler.read(directory=TEST_EXAMPLE_DIR, file_name="msDesc.xml")
-    )
     test_element_with_rng("msDesc", name, markup, result, False)
 
 
@@ -44,37 +188,47 @@ def test_msDesc(
     [
         (
             "valid-msDesc-without-physDesc-with-adminInfo",
-            "<msDesc><additional><adminInfo/></additional></msDesc>",
+            "<msDesc><adminInfo/></msDesc>",
+            True,
+        ),
+        (
+            "valid-msDesc-with-physDesc-and-without-adminInfo",
+            """<msDesc><physDesc/></msDesc>""",
             True,
         ),
         (
             "valid-msDesc-without-physDesc-and-adminInfo-and-text-type-collection",
-            "<TEI><msDesc><history>foo</history></msDesc><text type='collection'/></TEI>",
+            "<TEI><msDesc/><text type='collection'/></TEI>",
             True,
+        ),
+        (
+            "invalid-msDesc-with-physDesc-and-text-type-collection",
+            "<TEI><msDesc><physDesc/></msDesc><text type='collection'/></TEI>",
+            False,
+        ),
+        (
+            "invalid-msDesc-with-adminInfo-and-text-type-collection",
+            "<TEI><msDesc><adminInfo/></msDesc><text type='collection'/></TEI>",
+            False,
         ),
         (
             "invalid-msDesc-without-physDesc-and-adminInfo-and-text-type-transcript",
-            "<TEI><msDesc><history>foo</history></msDesc><text type='transcript'/></TEI>",
+            "<TEI><msDesc/><text type='transcript'/></TEI>",
             False,
-        ),
-        (
-            "invalid-msDesc-without-physDesc-and-without-adminInfo",
-            "<msDesc></msDesc>",
-            False,
-        ),
-        (
-            "valid-msDesc-with-physDesc-and-without-adminInfo",
-            "<msDesc><physDesc/></msDesc>",
-            True,
         ),
     ],
 )
-def test_msDesc_constraint(
+def test_ms_desc_constraint(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
-    """Test the constraint, which ensures the usage of tei:adminInfo if tei:physDesc is not used."""
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
         input=writer.list(), isosch=main_constraints
     )
+    if (
+        reports[0].report.is_valid() is not result
+        and reports[0].report.failed_asserts is not None
+    ):
+        print("\nSchematron error message: " + reports[0].report.failed_asserts[0].text)
+
     assert reports[0].report.is_valid() is result

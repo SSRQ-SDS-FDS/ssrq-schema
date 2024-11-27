@@ -26,6 +26,21 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-additional-with-adminInfo",
+            """
+            <additional>
+                <adminInfo>
+                    <custodialHist>
+                        <custEvent type="lost" notBefore-custom="1858-09-01" calendar="gregorian">
+                            Verlust nicht vor Erscheinen der Erstedition des 19. Jahrhunderts.
+                        </custEvent>
+                    </custodialHist>
+                </adminInfo>
+            </additional>
+            """,
+            True,
+        ),
+        (
             "valid-additional-with-adminInfo-and-listBibl",
             """
             <additional>
