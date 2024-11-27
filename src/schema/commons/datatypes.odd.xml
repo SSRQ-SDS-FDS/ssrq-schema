@@ -567,6 +567,90 @@
       </content>
     </dataSpec>
   </specGrp>
+  <specGrp xml:id="ssrq-dimensions">
+    <dataSpec ident="ssrq.dimensions.scope">
+      <desc xml:lang="de" versionDate="2023-05-30">Masse zur Beschreibung des Textumfangs</desc>
+      <desc xml:lang="en" versionDate="2023-05-30">Mass for the description of the text
+        volume</desc>
+      <desc xml:lang="fr" versionDate="2023-05-30">Dimensions pour décrire la taille du texte</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="double_leaf">
+            <desc xml:lang="de" versionDate="2023-09-08">Doppelblatt</desc>
+            <desc xml:lang="en" versionDate="2023-09-08">Double leaf</desc>
+            <desc xml:lang="fr" versionDate="2023-09-08">Feuille double</desc>
+            <desc xml:lang="it" versionDate="2023-09-08">Doppio lenzuolo</desc>
+          </valItem>
+          <valItem ident="leaf">
+            <desc xml:lang="de" versionDate="2023-05-30">Blatt</desc>
+            <desc xml:lang="en" versionDate="2023-05-30">leaf</desc>
+            <desc xml:lang="fr" versionDate="2023-05-30">feuille</desc>
+            <desc xml:lang="it" versionDate="2023-05-30">foglio</desc>
+          </valItem>
+          <valItem ident="page">
+            <desc xml:lang="de" versionDate="2023-05-30">Seite</desc>
+            <desc xml:lang="en" versionDate="2023-05-30">page</desc>
+            <desc xml:lang="fr" versionDate="2023-05-30">page</desc>
+            <desc xml:lang="it" versionDate="2023-05-30">pagina</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.dimensions.typography">
+      <desc xml:lang="de" versionDate="2023-03-17">Masseinheiten im Zusammenhang mit der
+        typographischen Gestaltung </desc>
+      <desc xml:lang="en" versionDate="2023-03-17">Units of measurement regarding the typographic
+        design</desc>
+      <desc xml:lang="fr" versionDate="2023-03-17">Unités de mesure en rapport avec la conception
+        typographique </desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="character">
+            <desc xml:lang="de" type="singular" versionDate="2023-03-17">Buchstabe</desc>
+            <desc xml:lang="de" type="plural" versionDate="2023-03-17">Buchstaben</desc>
+            <desc xml:lang="en" type="singular" versionDate="2023-03-17">character</desc>
+            <desc xml:lang="en" type="plural" versionDate="2023-03-17">characters</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">lettre</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">lettres</desc>
+            <desc xml:lang="it" type="singular" versionDate="2023-03-17">lettera</desc>
+            <desc xml:lang="it" type="plural" versionDate="2023-03-17">lettere</desc>
+          </valItem>
+          <valItem ident="word">
+            <desc xml:lang="de" type="singular" versionDate="2023-03-17">Wort</desc>
+            <desc xml:lang="de" type="plural" versionDate="2023-03-17">Wörter</desc>
+            <desc xml:lang="en" type="singular" versionDate="2023-03-17">word</desc>
+            <desc xml:lang="en" type="plural" versionDate="2023-03-17">words</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">mot</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">mots</desc>
+            <desc xml:lang="it" type="singular" versionDate="2023-03-17">parola</desc>
+            <desc xml:lang="it" type="plural" versionDate="2023-03-17">parole</desc>
+          </valItem>
+          <valItem ident="line">
+            <desc xml:lang="de" type="singular" versionDate="2023-03-17">Zeile</desc>
+            <desc xml:lang="de" type="plural" versionDate="2023-03-17">Zeilen</desc>
+            <desc xml:lang="en" type="singular" versionDate="2023-03-17">line</desc>
+            <desc xml:lang="en" type="plural" versionDate="2023-03-17">lines</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">ligne</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">lignes</desc>
+            <desc xml:lang="it" type="singular" versionDate="2023-04-28">riga</desc>
+            <desc xml:lang="it" type="plural" versionDate="2023-04-28">righe</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.dimensions.unknown">
+      <content>
+        <valList type="closed">
+          <valItem ident="unknown">
+            <desc xml:lang="de" versionDate="2023-05-22">unbekannt</desc>
+            <desc xml:lang="en" versionDate="2023-05-22">unknown</desc>
+            <desc xml:lang="fr" versionDate="2023-05-22">inconnu</desc>
+            <desc xml:lang="it" versionDate="2023-05-22">sconosciuto</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+  </specGrp>
   <specGrp xml:id="ssrq-measure">
     <dataSpec ident="ssrq.measure.att.commodity">
       <desc xml:lang="de" versionDate="2023-07-19">Enthält die gemessene Substanz.</desc>
@@ -1207,12 +1291,6 @@
             <desc xml:lang="en" versionDate="2023-03-21">length</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">mesure de longueur</desc>
             <desc xml:lang="it" versionDate="2023-03-21">misura lineare</desc>
-          </valItem>
-          <valItem ident="text_scope">
-            <desc xml:lang="de" versionDate="2023-05-30">Textumfang</desc>
-            <desc xml:lang="en" versionDate="2023-05-30">Scope</desc>
-            <desc xml:lang="fr" versionDate="2023-05-30">Taille du texte</desc>
-            <desc xml:lang="it" versionDate="2023-05-30">Volume del testo</desc>
           </valItem>
           <valItem ident="undefined">
             <desc xml:lang="de" versionDate="2023-03-21">Ungefähres Mass/Gewicht</desc>
@@ -2194,34 +2272,6 @@
         </valList>
       </content>
     </dataSpec>
-    <dataSpec ident="ssrq.measure.scope">
-      <desc xml:lang="de" versionDate="2023-05-30">Masse zur Beschreibung des Textumfangs</desc>
-      <desc xml:lang="en" versionDate="2023-05-30">Mass for the description of the text
-        volume</desc>
-      <desc xml:lang="fr" versionDate="2023-05-30">Dimensions pour décrire la taille du texte</desc>
-      <content>
-        <valList type="closed">
-          <valItem ident="double_leaf">
-            <desc xml:lang="de" versionDate="2023-09-08">Doppelblatt</desc>
-            <desc xml:lang="en" versionDate="2023-09-08">Double leaf</desc>
-            <desc xml:lang="fr" versionDate="2023-09-08">Feuille double</desc>
-            <desc xml:lang="it" versionDate="2023-09-08">Doppio lenzuolo</desc>
-          </valItem>
-          <valItem ident="leaf">
-            <desc xml:lang="de" versionDate="2023-05-30">Blatt</desc>
-            <desc xml:lang="en" versionDate="2023-05-30">leaf</desc>
-            <desc xml:lang="fr" versionDate="2023-05-30">feuille</desc>
-            <desc xml:lang="it" versionDate="2023-05-30">foglio</desc>
-          </valItem>
-          <valItem ident="page">
-            <desc xml:lang="de" versionDate="2023-05-30">Seite</desc>
-            <desc xml:lang="en" versionDate="2023-05-30">page</desc>
-            <desc xml:lang="fr" versionDate="2023-05-30">page</desc>
-            <desc xml:lang="it" versionDate="2023-05-30">pagina</desc>
-          </valItem>
-        </valList>
-      </content>
-    </dataSpec>
     <dataSpec ident="ssrq.measure.time">
       <desc xml:lang="de" versionDate="2023-03-17">Zeiträume für Altersangaben</desc>
       <desc xml:lang="en" versionDate="2023-03-17">Time periods for ages</desc>
@@ -2257,60 +2307,6 @@
             <desc xml:lang="fr" type="plural" versionDate="2023-03-17">ans</desc>
             <desc xml:lang="it" type="singular" versionDate="2023-03-17">anno</desc>
             <desc xml:lang="it" type="plural" versionDate="2023-03-17">anni</desc>
-          </valItem>
-        </valList>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.measure.typography">
-      <desc xml:lang="de" versionDate="2023-03-17">Masseinheiten im Zusammenhang mit der
-        typographischen Gestaltung </desc>
-      <desc xml:lang="en" versionDate="2023-03-17">Units of measurement regarding the typographic
-        design</desc>
-      <desc xml:lang="fr" versionDate="2023-03-17">Unités de mesure en rapport avec la conception
-        typographique </desc>
-      <content>
-        <valList type="closed">
-          <valItem ident="character">
-            <desc xml:lang="de" type="singular" versionDate="2023-03-17">Buchstabe</desc>
-            <desc xml:lang="de" type="plural" versionDate="2023-03-17">Buchstaben</desc>
-            <desc xml:lang="en" type="singular" versionDate="2023-03-17">character</desc>
-            <desc xml:lang="en" type="plural" versionDate="2023-03-17">characters</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">lettre</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">lettres</desc>
-            <desc xml:lang="it" type="singular" versionDate="2023-03-17">lettera</desc>
-            <desc xml:lang="it" type="plural" versionDate="2023-03-17">lettere</desc>
-          </valItem>
-          <valItem ident="word">
-            <desc xml:lang="de" type="singular" versionDate="2023-03-17">Wort</desc>
-            <desc xml:lang="de" type="plural" versionDate="2023-03-17">Wörter</desc>
-            <desc xml:lang="en" type="singular" versionDate="2023-03-17">word</desc>
-            <desc xml:lang="en" type="plural" versionDate="2023-03-17">words</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">mot</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">mots</desc>
-            <desc xml:lang="it" type="singular" versionDate="2023-03-17">parola</desc>
-            <desc xml:lang="it" type="plural" versionDate="2023-03-17">parole</desc>
-          </valItem>
-          <valItem ident="line">
-            <desc xml:lang="de" type="singular" versionDate="2023-03-17">Zeile</desc>
-            <desc xml:lang="de" type="plural" versionDate="2023-03-17">Zeilen</desc>
-            <desc xml:lang="en" type="singular" versionDate="2023-03-17">line</desc>
-            <desc xml:lang="en" type="plural" versionDate="2023-03-17">lines</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">ligne</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">lignes</desc>
-            <desc xml:lang="it" type="singular" versionDate="2023-04-28">riga</desc>
-            <desc xml:lang="it" type="plural" versionDate="2023-04-28">righe</desc>
-          </valItem>
-        </valList>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.measure.unknown">
-      <content>
-        <valList type="closed">
-          <valItem ident="unknown">
-            <desc xml:lang="de" versionDate="2023-05-22">unbekannt</desc>
-            <desc xml:lang="en" versionDate="2023-05-22">unknown</desc>
-            <desc xml:lang="fr" versionDate="2023-05-22">inconnu</desc>
-            <desc xml:lang="it" versionDate="2023-05-22">sconosciuto</desc>
           </valItem>
         </valList>
       </content>

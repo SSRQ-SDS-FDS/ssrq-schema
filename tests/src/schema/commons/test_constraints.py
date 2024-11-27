@@ -605,6 +605,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-measure",
+            "<measure type='age' unit='year' quantity='unknown'/>",
+            False,
+        ),
+        (
             "invalid-empty-note",
             "<note/>",
             False,
