@@ -3,14 +3,12 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="persName" module="namesdates" mode="change">
-  <desc xml:lang="de" versionDate="2024-04-20">Zeichnet eine Person aus und umfasst in der Regel nur den Vor- und
-        Nachnamen.
-    </desc>
-  <desc xml:lang="en" versionDate="2024-04-20">Indicates a person and usually includes only the first and last name.
-    </desc>
-  <desc xml:lang="fr" versionDate="2024-04-20">Distingue une personne et ne comprend généralement que le prénom et le
-        nom.
-    </desc>
+  <desc xml:lang="de" versionDate="2024-04-20">Zeichnet eine Person aus und umfasst in der Regel
+      nur den Vor- und Nachnamen.</desc>
+  <desc xml:lang="en" versionDate="2024-04-20">Indicates a person and usually includes only the
+      first and last name.</desc>
+  <desc xml:lang="fr" versionDate="2024-04-20">Distingue une personne et ne comprend généralement
+      que le prénom et le nom.</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="att.naming"/>
@@ -23,16 +21,14 @@
   </content>
   <constraintSpec scheme="schematron" ident="calendar-check-persName" mode="delete"/>
   <constraintSpec scheme="schematron" ident="sch-persName-custom" mode="add">
-    <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for
-            <gi>persName</gi>
-        </desc>
+    <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for tei:persName.</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:persName[ancestor::tei:editor]">
-          <sch:assert test="not(@ref|@role)">If
-                        <sch:name/>
-                        is part of the editor it must not contain the attributes @ref or @role.
-                    </sch:assert>
+          <sch:assert test="not(@ref|@role)">
+              If tei:persName is part of tei:editor it must not contain the attributes
+              @ref or @role.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
@@ -40,29 +36,23 @@
   <attList>
     <attDef ident="calendar" mode="delete"/>
     <attDef ident="ref" mode="replace">
-      <desc xml:lang="de" versionDate="2023-04-20">Verknüpfung der Person mit der ID der
-                Personen- und Organisationsdatenbank.
-            </desc>
+      <desc xml:lang="de" versionDate="2023-04-20">Verknüpfung der Person mit der ID der Personen-
+          und Organisationsdatenbank.</desc>
       <desc xml:lang="en" versionDate="2023-04-20">Linking the person with the ID of the database
-                of persons and organisations.
-            </desc>
+          of persons and organisations.</desc>
       <desc xml:lang="fr" versionDate="2023-04-20">Relier la personne à l'ID de la base de données
-                des personnes et des organisations.
-            </desc>
+          des personnes et des organisations.</desc>
       <datatype>
         <dataRef key="ssrq.pointer.persons"/>
       </datatype>
     </attDef>
     <attDef ident="role" mode="change">
       <desc xml:lang="de" versionDate="2023-04-20">Auszeichnung der Rolle einer Person im
-                Quellentext.
-            </desc>
+          Quellentext.</desc>
       <desc xml:lang="en" versionDate="2023-04-20">Distinction of the role of a person in the source
-                text.
-            </desc>
+          text.</desc>
       <desc xml:lang="fr" versionDate="2023-04-20">Distinction du rôle d'une personne dans le texte
-                source.
-            </desc>
+          source.</desc>
       <datatype>
         <dataRef key="ssrq.role.person"/>
       </datatype>

@@ -35,7 +35,7 @@ from ..conftest import RNG_test_function
             "invalid-pb-with-content",
             "<pb>foo</pb>",
             False,
-        )
+        ),
     ],
 )
 def test_pb(
