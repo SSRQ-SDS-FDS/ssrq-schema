@@ -10,22 +10,32 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-orgName",
-            "<orgName ref='org000001'>bar</orgName>",
+            "<orgName>bar</orgName>",
             True,
+        ),
+        (
+            "valid-orgName-with-content-default",
+            "<orgName><del>foo</del> bar</orgName>",
+            True,
+        ),
+        (
+            "invalid-orgName-with-wrong-content",
+            "<orgName><p>foo</p></orgName>",
+            False,
         ),
         (
             "valid-orgName-with-role",
-            "<orgName ref='org000001' role='recipient'>bar</orgName>",
+            "<orgName role='recipient'>bar</orgName>",
             True,
         ),
         (
-            "orgName-with-invalid-role",
-            "<orgName ref='org000001' role='xyz'>bar</orgName>",
-            False,
+            "valid-orgName-with-ref",
+            "<orgName ref='org123456'>bar</orgName>",
+            True,
         ),
     ],
 )
-def test_orgName(
+def test_org_name(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
@@ -38,32 +48,49 @@ def test_orgName(
     "name, markup, result",
     [
         (
-            "valid-orgName-inside-respStmt",
-            "<respStmt><orgName>Fondation des sources du droit de la Société suisse des juristes</orgName></respStmt>",
+            "valid-orgName-de-inside-seriesStmt",
+            "<seriesStmt><orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName></seriesStmt>",
             True,
         ),
         (
-            "valid-orgName-inside-respStmt",
-            "<respStmt><orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName></respStmt>",
+            "valid-orgName-fr-inside-seriesStmt",
+            "<seriesStmt><orgName>Fondation des sources du droit de la Société suisse des juristes</orgName></seriesStmt>",
             True,
         ),
         (
-            "invalid-orgName-inside-respStmt-with-attr",
-            "<respStmt><orgName ref='bar'>Fondation des sources du droit de la Société suisse des juristes</orgName></respStmt>",
+            "invalid-orgName-inside-seriesStmt",
+            "<seriesStmt><orgName>bar</orgName></seriesStmt>",
             False,
         ),
         (
-            "orgName-inside-respStmt-with-invalid-content",
-            "<seriesStmt><respStmt><orgName>bar</orgName></respStmt></seriesStmt>",
+            "valid-orgName-inside-respStmt",
+            "<respStmt><orgName>bar</orgName></respStmt>",
+            True,
+        ),
+        (
+            "invalid-orgName-inside-respStmt-with-ref",
+            "<respStmt><orgName ref='org123456'>bar</orgName></respStmt>",
+            False,
+        ),
+        (
+            "invalid-orgName-inside-respStmt-with-role",
+            "<respStmt><orgName role='recipient'>bar</orgName></respStmt>",
             False,
         ),
     ],
 )
-def test_orgName_constraints(
+def test_org_name_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
         input=writer.list(), isosch=main_constraints
     )
+
+    if (
+        reports[0].report.is_valid() is not result
+        and reports[0].report.failed_asserts is not None
+    ):
+        print("\nSchematron error message: " + reports[0].report.failed_asserts[0].text)
+
     assert reports[0].report.is_valid() is result
