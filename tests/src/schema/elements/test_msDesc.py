@@ -193,7 +193,18 @@ def test_ms_desc_rng(
         ),
         (
             "valid-msDesc-with-physDesc-and-without-adminInfo",
-            """<msDesc><physDesc/></msDesc>""",
+            """
+            <msDesc>
+                <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                </physDesc>
+            </msDesc>""",
             True,
         ),
         (
@@ -203,7 +214,22 @@ def test_ms_desc_rng(
         ),
         (
             "invalid-msDesc-with-physDesc-and-text-type-collection",
-            "<TEI><msDesc><physDesc/></msDesc><text type='collection'/></TEI>",
+            """
+            <TEI>
+                <msDesc>
+                    <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                    </physDesc>
+                </msDesc>
+                <text type='collection'/>
+            </TEI>
+            """,
             False,
         ),
         (
