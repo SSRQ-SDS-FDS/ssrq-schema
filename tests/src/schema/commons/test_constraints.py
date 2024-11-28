@@ -640,6 +640,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-objectDesc",
+            "<objectDesc/>",
+            False,
+        ),
+        (
             "invalid-empty-orgName",
             "<orgName ref='org000001'/>",
             False,
