@@ -8,6 +8,11 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-pb",
+            "<pb/>",
+            True,
+        ),
+        (
+            "valid-pb-with-n",
             "<pb n='1'/>",
             True,
         ),
@@ -21,6 +26,16 @@ from ..conftest import RNG_test_function
             "<pb n='1' facs='StAZH_F_III_12_Nr_1_S_10'/>",
             True,
         ),
+        (
+            "invalid-pb-with-break",
+            "<pb break='no'/>",
+            False,
+        ),
+        (
+            "invalid-pb-with-content",
+            "<pb>foo</pb>",
+            False,
+        )
     ],
 )
 def test_pb(
