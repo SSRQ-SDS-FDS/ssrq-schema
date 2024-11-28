@@ -655,6 +655,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-origPlace",
+            "<origPlace type='content' ref='loc123456'/>",
+            False,
+        ),
+        (
             "invalid-empty-p",
             "<p/>",
             False,
