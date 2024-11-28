@@ -3,15 +3,12 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origDate" module="msDescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-09-13">Enthält im Kopfbereich das
-      Entstehungsdatum eines Dokuments.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-09-13">Contains this in the head area
-      the date of creation of a document.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-09-13">Contient ceci dans la zone de
-      la tête la date de création d'un document.
-    </desc>
+  <desc xml:lang="de" versionDate="2023-09-13">Enthält im Kopfbereich das Entstehungsdatum eines
+    Dokuments.</desc>
+  <desc xml:lang="en" versionDate="2023-09-13">Contains this in the head area the date of creation
+    of a document.</desc>
+  <desc xml:lang="fr" versionDate="2023-09-13">Contient ceci dans la zone de la tête la date de
+    création d'un document.</desc>
   <classes mode="replace">
     <memberOf key="att.calendarSystem"/>
     <memberOf key="att.datable"/>
@@ -45,26 +42,30 @@
   <xi:include href="examples.xml" xpointer="ex-origDate-multiple-fr"/>
   <remarks xml:lang="de" versionDate="2023-09-13">
     <p>Bei Kopien muss sowohl das Herstellungsdatum des Dokuments
-      (<tag>origDate type="document"</tag>)
-      als auch das ursprüngliche Entstehungsdatum des Inhalts des Dokuments
-      (<tag>origDate type="content"</tag>) ausgezeichnet werden.</p>
+      (<tag>origDate type="document"</tag>) als auch das ursprüngliche Entstehungsdatum des Inhalts
+      des Dokuments (<tag>origDate type="content"</tag>) ausgezeichnet werden.</p>
     <p>Mit <att>when-custom</att> und <att>calendar</att> wird das Datum gemäss
-      den <ref target="dating_guidelines.md">Datierungsrichtlinien</ref>
-      erfasst.</p>
-    <p>Im Textbereich, den Kommentaren und Anmerkungen wird stattdessen
-      <gi>date</gi> verwendet. Zum Umgang mit Heiligenfesten und anderen
-      kirchlichen Feiertagen vgl. <gi>date</gi>.</p>
+      den <ref target="dating_guidelines.md">Datierungsrichtlinien</ref> erfasst.</p>
+    <p>Im Textbereich, den Kommentaren und Anmerkungen wird stattdessen <gi>date</gi> verwendet.
+      Zum Umgang mit Heiligenfesten und anderen kirchlichen Feiertagen vgl. <gi>date</gi>.</p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2023-09-13">
+    <p>For copies, the date of manufacture of the document must be included
+      (<tag>origDate type="document"</tag>) as well as the original creation date of the content
+      of the document (<tag>origDate type="content"</tag>).</p>
+    <p>With <att>when-custom</att> and <att>calendar</att> the date is set according to
+      the <ref target="dating_guidelines.md">dating guidelines</ref>.</p>
+    <p>In the text area, comments and notes, <gi>date</gi> is used instead. For information on how
+      to deal with saints' feast days and other church holidays, see <gi>date</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-09-13">
-    <p>Bei Kopien muss sowohl das Herstellungsdatum des Dokuments
-      (<tag>origDate type="document"</tag>)
-      als auch das ursprüngliche Entstehungsdatum des Inhalts des Dokuments
-      (<tag>origDate type="content"</tag>) ausgezeichnet werden.</p>
-    <p>Mit <att>when-custom</att> und <att>calendar</att> wird das Datum gemäss
-      den <ref target="dating_guidelines.md">Datierungsrichtlinien</ref>
-      erfasst.</p>
-    <p>Im Textbereich, den Kommentaren und Anmerkungen wird stattdessen
-      <gi>date</gi> verwendet. Zum Umgang mit Heiligenfesten und anderen
-      kirchlichen Feiertagen vgl. <gi>date</gi>.</p>
+    <p>Pour les copies, la date de fabrication du document doit être incluse
+      (<tag>origDate type="document"</tag>) ainsi que la date de création originale du contenu
+      du document (<tag>origDate type="content"</tag>).</p>
+    <p>Avec <att>when-custom</att> et <att>calendar</att> la date est fixée en fonction
+      les <ref target="dating_guidelines.md">consignes de rencontre</ref>.</p>
+    <p>Dans la zone de texte, les commentaires et les notes, <gi>date</gi> est utilisé à la place.
+      Pour plus d'informations sur la façon de gérer les jours de fête des saints et autres fêtes
+      religieuses, voir <gi>date</gi>.</p>
   </remarks>
 </elementSpec>
