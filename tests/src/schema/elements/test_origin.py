@@ -9,47 +9,91 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "valid-origin-with-multiple-children",
-            """<origin>
-                   <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
-                   <origDate type='content' when-custom='1000-01-12' calendar='gregorian'/>
-                   <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
-                   <origPlace type='content' ref='loc123456'>Wuppertal</origPlace>
-                   <orgName role="issuer" ref="org123456">Kleiner Rat</orgName>
-                </origin>""",
+            "valid-origin-with-one-origDate",
+            """
+            <origin>
+                <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
+            </origin>
+            """,
+            True,
+        ),
+        (
+            "valid-origin-with-two-origDates",
+            """
+            <origin>
+                <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
+                <origDate type='content' when-custom='1366-06-29' calendar='gregorian'/>
+            </origin>
+            """,
+            True,
+        ),
+        (
+            "invalid-origin-with-more-than-two-dates",
+            """
+            <origin>
+               <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
+               <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
+               <origDate type='content' when-custom='1366-06-29' calendar='gregorian'/>
+            </origin>
+            """,
+            False,
+        ),
+        (
+            "invalid-origin-without-origDate",
+            """
+            <origin>
+                <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
+            </origin>
+            """,
+            False,
+        ),
+        (
+            "valid-origin-with-origPlace",
+            """
+            <origin>
+               <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
+               <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
+            </origin>
+            """,
+            True,
+        ),
+        (
+            "valid-origin-with-multiple-origPlaces",
+            """
+            <origin>
+               <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
+               <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
+               <origPlace type='document' ref='loc000651'>Genf</origPlace>
+            </origin>
+            """,
+            True,
+        ),
+        (
+            "valid-origin-with-orgName",
+            """
+            <origin>
+               <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
+               <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
+               <orgName>Foo</orgName>
+            </origin>
+            """,
             True,
         ),
         (
             "valid-origin-with-lang",
-            """<origin xml:lang='de'>
-                   <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
-                   <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
-                </origin>""",
+            """
+            <origin xml:lang='de'>
+               <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
+               <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
+            </origin>
+            """,
             True,
         ),
         (
-            "invalid-origin-with-note",
-            """<origin>
-                   <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
-                   <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
-                   <note>some text</note>
-                </origin>""",
-            False,
-        ),
-        (
-            "invalid-origin-with-wrong-order-of-child",
+            "invalid-origin-with-wrong-order-of-children",
             """<origin>
                    <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
                    <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
-                </origin>""",
-            False,
-        ),
-        (
-            "invalid-origin-with-more-than-two-dates",
-            """<origin>
-                   <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
-                   <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
-                   <origDate type='content' when-custom='1366-06-29' calendar='gregorian'/>
                 </origin>""",
             False,
         ),
@@ -68,20 +112,24 @@ def test_origin_rng(
     "name, markup, result",
     [
         (
-            "invalid-origin-with-two-dates-of-the-same-type",
-            """<origin>
-                   <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
-                   <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
-                </origin>""",
-            False,
-        ),
-        (
             "valid-origin-with-two-dates-of-different-types",
-            """<origin>
+            """
+                <origin>
                    <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
                    <origDate type='content' when-custom='1366-06-29' calendar='gregorian'/>
-                </origin>""",
+                </origin>
+                """,
             True,
+        ),
+        (
+            "invalid-origin-with-two-dates-of-the-same-type",
+            """
+            <origin>
+               <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
+               <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
+            </origin>
+            """,
+            False,
         ),
     ],
 )
