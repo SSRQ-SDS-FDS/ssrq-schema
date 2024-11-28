@@ -9,28 +9,53 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "valid-simple-p",
+            "valid-p",
             "<p>foo</p>",
             True,
         ),
         (
-            "valid-simple-p-with-attr",
-            "<p xml:lang='de' n='1'>foo</p>",
+            "valid-p-with-n",
+            "<p n='1'>foo</p>",
             True,
         ),
         (
-            "p-with-invalid-content",
-            "<p><row>bar</row></p>",
+            "valid-p-with-xml-lang",
+            "<p xml:lang='de'>foo</p>",
+            True,
+        ),
+        (
+            "valid-p-with-list-content",
+            "<p><list><item>bar</item></list></p>",
+            True,
+        ),
+        (
+            "valid-p-with-bibl-content",
+            "<p><bibl>foo</bibl></p>",
+            True,
+        ),
+        (
+            "valid-p-with-ref-content",
+            "<p><ref>foo</ref></p>",
+            True,
+        ),
+        (
+            "valid-p-with-content-default",
+            "<p><del>foo</del></p>",
+            True,
+        ),
+        (
+            "invalid-p-with-wrong-content",
+            "<p><p>foo</p></p>",
             False,
         ),
         (
-            "simple-p-with-invalid-attr",
-            "<p rend='black' xml:id='facs'>foo</p>",
-            False,
+            "valid-p-with-two-segs",
+            "<p><seg>foo</seg><seg>foo</seg></p>",
+            True,
         ),
         (
-            "invalid-p-with-corr",
-            "<p xml:lang='de'><corr>foo</corr></p>",
+            "invalid-p-with-one-seg",
+            "<p><seg>foo</seg></p>",
             False,
         ),
     ],
@@ -48,17 +73,12 @@ def test_p(
     "name, markup, result",
     [
         (
-            "valid-simple-p-with-attr",
-            "<p xml:lang='de'>foo</p>",
-            True,
-        ),
-        (
-            "valid-simple-ps-with-attr",
+            "valid-ps-with-xml-lang",
             "<div><p xml:lang='de'>foo</p><p xml:lang='de'>foo</p></div>",
             True,
         ),
         (
-            "invalid-simple-ps-with-attr",
+            "invalid-ps-with-xml-lang",
             "<div><p xml:lang='de'>foo</p><p>foo</p></div>",
             False,
         ),
