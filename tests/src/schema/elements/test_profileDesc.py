@@ -8,22 +8,25 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-profileDesc",
-            "<profileDesc><textClass><keywords><term ref='key000192'/></keywords></textClass></profileDesc>",
+            """
+            <profileDesc>
+                <textClass>
+                    <keywords>
+                        <term ref='key000192'/>
+                    </keywords>
+                </textClass>
+            </profileDesc>
+            """,
             True,
         ),
         (
-            "invalid-profileDesc-without-textClass",
-            "<profileDesc><keywords><term ref='key000192'/></keywords></profileDesc>",
-            False,
-        ),
-        (
-            "invalid-profileDesc-with-attribute",
-            "<profileDesc type='foo'><textClass><keywords><term ref='key000192'/></keywords></textClass></profileDesc>",
+            "invalid-profileDesc-with-wrong-content",
+            "<profileDesc><p>foo</p></profileDesc>",
             False,
         ),
     ],
 )
-def test_profileDesc_rng(
+def test_profile_desc_rng(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
