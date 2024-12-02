@@ -725,6 +725,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-sealDesc",
+            "<sealDesc/>",
+            False,
+        ),
+        (
             "invalid-empty-seg",
             "<seg/>",
             False,
