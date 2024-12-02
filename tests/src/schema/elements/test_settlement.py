@@ -7,18 +7,33 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid-settlement",
-            "<settlement ref='loc000001' xml:lang='de'>foo</settlement>",
+            "valid-settlement-de",
+            "<settlement ref='loc123456' xml:lang='de'>foo</settlement>",
             True,
         ),
         (
-            "invalid-settlement",
-            "<settlement ref='loc000001' xml:lang='de'><p>bar</p></settlement>",
+            "valid-settlement-fr",
+            "<settlement ref='loc123456' xml:lang='fr'>foo</settlement>",
+            True,
+        ),
+        (
+            "invalid-settlement-it",
+            "<settlement ref='loc123456' xml:lang='it'>foo</settlement>",
             False,
         ),
         (
-            "settlement-with-invalid-ref",
-            "<settlement ref='abcdef' xml:lang='de'>foo</settlement>",
+            "invalid-settlement-without-xml-lang",
+            "<settlement ref='loc000001'>foo</settlement>",
+            False,
+        ),
+        (
+            "invalid-settlement-without-ref",
+            "<settlement xml:lang='de'>foo</settlement>",
+            False,
+        ),
+        (
+            "invalid-settlement-with-element-content",
+            "<settlement ref='loc123456' xml:lang='de'><p>foo</p></settlement>",
             False,
         ),
     ],

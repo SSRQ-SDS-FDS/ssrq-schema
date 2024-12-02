@@ -27,7 +27,7 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "invaldi-repository-without-xml-lang",
+            "invalid-repository-without-xml-lang",
             "<repository>Staatsarchiv Schwyz</repository>",
             False,
         ),
