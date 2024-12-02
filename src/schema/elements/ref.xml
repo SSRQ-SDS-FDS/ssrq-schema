@@ -15,8 +15,8 @@
       <textNode/>
     </alternate>
   </content>
-  <constraintSpec scheme="schematron" ident="refAtts" mode="delete"/>
-  <constraintSpec scheme="schematron" ident="sch-el-ref" mode="add">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="refAtts" mode="delete"/>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-ref" mode="add">
     <desc xml:lang="en" versionDate="2023-06-22">Specific schematron rule for tei:ref</desc>
     <constraint>
       <sch:pattern>
@@ -28,7 +28,7 @@
       </sch:pattern>
     </constraint>
   </constraintSpec>
-  <constraintSpec scheme="schematron" ident="sch-ref-in-bibl" mode="add">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-ref-in-bibl" mode="add">
     <desc xml:lang="en" versionDate="2024-11-04">Specific schematron rule for tei:ref</desc>
     <constraint>
       <sch:pattern>

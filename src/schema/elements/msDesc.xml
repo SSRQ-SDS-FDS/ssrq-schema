@@ -25,7 +25,7 @@
       <elementRef key="additional" minOccurs="0"/>
     </sequence>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-msDesc">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-msDesc">
     <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:msDesc to ensure the usage of
       either tei:physDesc or tei:adminInfo.</desc>
     <constraint>

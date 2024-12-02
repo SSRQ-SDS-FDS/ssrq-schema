@@ -21,7 +21,7 @@
       <elementRef key="seg" minOccurs="2" maxOccurs="unbounded"/>
     </alternate>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-p">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-p">
     <desc xml:lang="en" versionDate="2023-05-22">Ensure all <gi>p</gi> elements have
         a <att>xml:lang</att> when they are siblings.</desc>
     <constraint>

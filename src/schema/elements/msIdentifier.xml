@@ -21,7 +21,7 @@
     </sequence>
   </content>
   <!-- This overrides an erroneous constraint in the TEI guidelines -->
-  <constraintSpec scheme="schematron" ident="msId_minimal" mode="delete"/>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="msId_minimal" mode="delete"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>

@@ -80,7 +80,7 @@
           </datatype>
           <!-- This removes the TEI default constraint, which requires text content for any elements
             that use @calendar. -->
-          <constraintSpec scheme="schematron" ident="calendar_attr_on_empty_element" mode="delete"/>
+          <constraintSpec xml:lang="en" scheme="schematron" ident="calendar_attr_on_empty_element" mode="delete"/>
         </attDef>
       </attList>
     </classSpec>
@@ -536,7 +536,7 @@
             <dataRef name="IDREF"/>
           </datatype>
           <!-- This removes the TEI default constraint, because we use another datatype -->
-          <constraintSpec scheme="schematron" ident="spanTo-points-to-following" mode="delete"/>
+          <constraintSpec xml:lang="en" scheme="schematron" ident="spanTo-points-to-following" mode="delete"/>
         </attDef>
       </attList>
     </classSpec>

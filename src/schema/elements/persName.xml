@@ -19,8 +19,8 @@
       <macroRef key="ssrq.content.default"/>
     </sequence>
   </content>
-  <constraintSpec scheme="schematron" ident="calendar-check-persName" mode="delete"/>
-  <constraintSpec scheme="schematron" ident="sch-persName-custom" mode="add">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-persName" mode="delete"/>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-persName-custom" mode="add">
     <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for tei:persName.</desc>
     <constraint>
       <sch:pattern>

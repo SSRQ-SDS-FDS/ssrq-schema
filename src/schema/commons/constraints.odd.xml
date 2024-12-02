@@ -4,7 +4,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
   <specGrp xml:id="constraints">
-    <constraintSpec scheme="schematron" ident="sch-att-calendar">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-calendar">
       <desc xml:lang="en" versionDate="2024-05-08">Schematron to check the usage of dating attributes.</desc>
       <constraint>
         <sch:pattern>
@@ -16,7 +16,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-att-data-custom">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-data-custom">
       <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for att.datable.custom</desc>
       <constraint>
         <sch:pattern>
@@ -40,7 +40,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-att-dimensions">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-dimensions">
       <desc xml:lang="en" versionDate="2023-05-22">
             If <att>unit</att> has the value <val>unknown</val>, <att>quantity</att> must
             be <val>unknown</val> too.
@@ -55,7 +55,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-att-dimensions-2">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-dimensions-2">
       <desc xml:lang="en" versionDate="2024-11-14"><att>unit</att> and <att>quantity</att> must be
         used together.</desc>
       <constraint>
@@ -68,7 +68,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-att-dimensions-3">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-dimensions-3">
       <desc xml:lang="en" versionDate="2024-01-24">Prevent that quantity is zero</desc>
       <constraint>
         <sch:pattern>
@@ -80,7 +80,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-att-spanTo">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-spanTo">
       <desc xml:lang="en" versionDate="2024-05-08">The @spanTo attribute must point to an element
         following the current element.</desc>
       <constraint>
@@ -92,7 +92,7 @@
         </sch:rule>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-att-facs">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-facs">
       <desc xml:lang="en" versionDate="2023-04-06">Global constraint to ensure pattern of
           facsimile names</desc>
       <constraint>
@@ -105,7 +105,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-att-wit">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-wit">
       <desc xml:lang="en" versionDate="2023-06-22">Make sure, the referenced ID belongs to a
             witness element.</desc>
       <constraint>
@@ -122,7 +122,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-att-hand">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-hand">
       <desc xml:lang="en" versionDate="2023-08-17">A constraint to check the existence of an
             ID reference.</desc>
       <constraint>
@@ -137,7 +137,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-trim-attributes">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-trim-attributes">
       <desc xml:lang="en" versionDate="2024-11-15">The value of an attribute should not start
         or end with whitespace.</desc>
       <constraint>
@@ -153,7 +153,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-duplicate-attribute-values">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-duplicate-attribute-values">
       <desc xml:lang="en" versionDate="2023-11-14">Global constraint to ensure that no attribute
         has duplicate values.</desc>
       <constraint>
@@ -166,7 +166,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="sch-non-empty-elements">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-non-empty-elements">
       <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
       <constraint>
         <sch:pattern>
@@ -178,7 +178,7 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec scheme="schematron" ident="non-breaking-whitespace">
+    <constraintSpec xml:lang="en" scheme="schematron" ident="non-breaking-whitespace">
       <desc xml:lang="en" versionDate="2024-11-15">Global constraint to ensure no nbsp is used.</desc>
       <constraint>
         <sch:pattern>

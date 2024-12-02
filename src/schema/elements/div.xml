@@ -31,7 +31,7 @@
       </alternate>
     </alternate>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-div-text" mode="add">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-div-text" mode="add">
     <desc xml:lang="en" versionDate="2024-08-06">Schematron to check the use of text content.</desc>
     <constraint>
       <sch:pattern>
@@ -43,7 +43,7 @@
       </sch:pattern>
     </constraint>
   </constraintSpec>
-  <constraintSpec scheme="schematron" ident="sch-el-div-xml-lang" mode="add">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-div-xml-lang" mode="add">
     <desc xml:lang="en" versionDate="2024-08-06">Schematron to check the use
       of<att>xml:lang</att>.</desc>
     <constraint>
