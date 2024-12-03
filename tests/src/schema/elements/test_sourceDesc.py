@@ -7,9 +7,36 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid-sourceDesc",
+            "valid-sourceDesc-with-msDesc",
             """
-                    <sourceDesc>
+            <sourceDesc>
+                <msDesc>
+                    <head>foo</head>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <material type="paper"/>
+                                </support>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate type='content' calendar="gregorian" when-custom="1600-01-01"/>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+            """,
+            True,
+        ),
+        (
+            "valid-sourceDesc-with-listWit",
+            """
+            <sourceDesc>
+                <listWit>
+                    <witness xml:id='id-ssrq-00000000-0000-4000-8000-000000000000' n='A'>
                         <msDesc>
                             <head>foo</head>
                             <physDesc>
@@ -23,22 +50,24 @@ from ..conftest import RNG_test_function
                             </physDesc>
                             <history>
                                 <origin>
-                                    <origDate type='document' calendar="gregorian" when-custom="1600-01-01"/>
+                                    <origDate type='document' calendar="unknown" when-custom="1000-01-01"/>
                                 </origin>
                             </history>
                         </msDesc>
-                    </sourceDesc>
-                """,
+                    </witness>
+                </listWit>
+            </sourceDesc>
+            """,
             True,
         ),
         (
-            "invalid-sourceDesc",
+            "invalid-sourceDesc-with-wrong-content",
             "<sourceDesc><p>foo</p></sourceDesc>",
             False,
         ),
     ],
 )
-def test_sourceDesc_rng(
+def test_source_desc_rng(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
