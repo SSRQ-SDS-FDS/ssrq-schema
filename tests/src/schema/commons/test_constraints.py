@@ -790,6 +790,11 @@ def test_constraint_sch_duplicate_attribute_values(
             False,
         ),
         (
+            "invalid-empty-teiHeader",
+            "<teiHeader/>",
+            False,
+        ),
+        (
             "invalid-empty-time",
             "<time when-custom='08:48:00'/>",
             False,
