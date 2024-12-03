@@ -3,15 +3,12 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="space" module="transcr" mode="change">
-  <desc xml:lang="de" versionDate="2023-05-11">Zeichnet eine Lücke aus, die vom Schreiber bewusst zwecks späterer
-        Ergänzung offen gelassen wurde.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-05-11">Denotes a gap that the writer deliberately left open for later
-        completion.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-05-11">Désigne une lacune que l'auteur a délibérément laissée ouverte pour une
-        réalisation ultérieure.
-    </desc>
+  <desc xml:lang="de" versionDate="2023-05-11">Zeichnet eine Lücke aus, die vom Schreiber bewusst
+    zwecks späterer Ergänzung offen gelassen wurde.</desc>
+  <desc xml:lang="en" versionDate="2023-05-11">Denotes a gap that the writer deliberately left
+    open for later completion.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-11">Désigne une lacune que l'auteur a délibérément
+    laissée ouverte pour une réalisation ultérieure.</desc>
   <classes mode="replace">
     <memberOf key="att.dimensions"/>
   </classes>
@@ -43,19 +40,18 @@
   <xi:include href="examples.xml" xpointer="ex-space-en"/>
   <xi:include href="examples.xml" xpointer="ex-space-fr"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
-    <p>Die Grösse der Lücke wird zwingend mit <att>unit</att> und <att>quantity</att> angegeben. Dabei handelt
-            es sich um einen leeren Tag. Lücken infolge unbewusster Zeilensprünge werden hingegen
-            mit <gi>supplied</gi> ausgezeichnet.
-        </p>
+    <p>Die Grösse der Lücke wird zwingend mit <att>unit</att> und <att>quantity</att> angegeben.
+      Dabei handelt es sich um einen leeren Tag. Lücken infolge unbewusster Zeilensprünge werden
+      hingegen mit <gi>supplied</gi> ausgezeichnet.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-14">
-    <p>The size of the gap must be specified with <att>unit</att> and <att>quantity</att>. This is an empty tag.
-            Gaps due to unintentional line jumps, on the other hand, are marked with <gi>supplied</gi>.
-        </p>
+    <p>The size of the gap must be specified with <att>unit</att> and <att>quantity</att>. This is
+      an empty tag. Gaps due to unintentional line jumps, on the other hand, are marked with
+      <gi>supplied</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-14">
-    <p>La taille de l'écart doit être spécifiée avec <att>unit</att> et <att>quantity</att>. C'est une tag vide.
-            Les lacunes dues à des sauts de ligne involontaires, en revanche, sont marquées par <gi>supplied</gi>.
-        </p>
+    <p>La taille de l'écart doit être spécifiée avec <att>unit</att> et <att>quantity</att>. C'est
+      un tag vide. Les lacunes dues à des sauts de ligne involontaires, en revanche, sont marquées
+      par <gi>supplied</gi>.</p>
   </remarks>
 </elementSpec>
