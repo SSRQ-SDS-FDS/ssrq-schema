@@ -20,10 +20,9 @@
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:summary/tei:p">
-          <sch:assert test="not(.[@xml:lang])"><sch:name/>
-                        as part of tei:summary should not
-                        have an attribute xml:lang.
-                    </sch:assert>
+          <sch:assert test="not(.[@xml:lang])">
+            tei:p inside tei:summary should not have an attribute xml:lang.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
