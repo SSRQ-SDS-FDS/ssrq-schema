@@ -374,22 +374,22 @@ def test_constraint_sch_att_hand(
     [
         (
             "valid-attribute-value-without-whitespace",
-            "<TEI type='bar'></TEI>",
+            "<supplied resp='MA'>foo</supplied>",
             True,
         ),
         (
             "valid_attribute-values-with-whitespace-in-between",
-            "<TEI type='bar foo'></TEI>",
+            "<supplied resp='MA CS'>foo</supplied>",
             True,
         ),
         (
             "invalid-attribute-value-starting-with-whitespace",
-            "<TEI type=' foo'></TEI>",
+            "<supplied resp=' MA'>foo</supplied>",
             False,
         ),
         (
             "invalid-attribute-value-ending-with-whitespace",
-            "<TEI type='foo '></TEI>",
+            "<supplied resp='MA '>foo</supplied>",
             False,
         ),
     ],
@@ -782,6 +782,11 @@ def test_constraint_sch_duplicate_attribute_values(
         (
             "invalid-empty-table",
             "<table/>",
+            False,
+        ),
+        (
+            "invalid-empty-TEI",
+            "<TEI xml:lang='de'/>",
             False,
         ),
         (
