@@ -1,8 +1,6 @@
 import pytest
-from pyschval.schematron.validate import apply_schematron_validation
-from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
@@ -10,18 +8,33 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-unclear-with-text",
-            "<unclear cert='high'>foo</unclear>",
+            "<unclear>foo</unclear>",
             True,
         ),
         (
-            "valid-unclear-with-text-and-child",
-            "<unclear cert='high'>foo<hi rend='sup'>bar</hi></unclear>",
+            "valid-unclear-with-content-default",
+            "<unclear><del>foo</del> bar</unclear>",
             True,
+        ),
+        (
+            "invalid-unclear-with-wrong-content",
+            "<unclear><p>foo</p></unclear>",
+            False,
         ),
         (
             "invalid-unclear-with-reason",
-            "<unclear cert='high' reason='bar'>foo</unclear>",
+            "<unclear reason='bar'>foo</unclear>",
             False,
+        ),
+        (
+            "invalid-unclear-with-agent",
+            "<unclear agent='water'>foo</unclear>",
+            False,
+        ),
+        (
+            "valid-unclear-with-cert",
+            "<unclear cert='low'>foo</unclear>",
+            True,
         ),
     ],
 )
@@ -32,23 +45,3 @@ def test_unclear(
     result: bool,
 ):
     test_element_with_rng("unclear", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "invalid-empty-unclear",
-            "<unclear/>",
-            False,
-        ),
-    ],
-)
-def test_unclear_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].report.is_valid() is result
