@@ -275,7 +275,25 @@ def test_constraint_sch_att_facs(
             "valid-wit-referencing-a-witness-element",
             """
             <div>
-                <witness xml:id="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d"/>
+                <witness xml:id="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">
+                    <msDesc>
+                        <head>foo</head>
+                        <physDesc>
+                            <objectDesc>
+                                <supportDesc>
+                                    <support>
+                                        <material type="paper"/>
+                                    </support>
+                                </supportDesc>
+                            </objectDesc>
+                        </physDesc>
+                        <history>
+                            <origin>
+                                <origDate type="document" calendar="gregorian" when-custom="1600-01-01"/>
+                            </origin>
+                        </history>
+                    </msDesc>
+                </witness>
                 <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d"/>
             </div>        
             """,
@@ -305,7 +323,6 @@ def test_constraint_sch_att_facs(
             "invalid-wit-missing-id",
             """
             <div>
-                <witness/>
                 <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d"/>
             </div>        
             """,
@@ -817,6 +834,11 @@ def test_constraint_sch_duplicate_attribute_values(
         (
             "invalid-empty-unclear",
             "<unclear/>",
+            False,
+        ),
+        (
+            "invalid-empty-witness",
+            "<witness n='A' xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'/>",
             False,
         ),
     ],
