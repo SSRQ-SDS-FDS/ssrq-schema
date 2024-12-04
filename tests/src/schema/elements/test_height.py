@@ -24,7 +24,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             False,
         ),
         (
-            "invalid-height-wihout-unit-and-quantity",
+            "invalid-height-without-unit-and-quantity",
             "<height/>",
             False,
         ),
