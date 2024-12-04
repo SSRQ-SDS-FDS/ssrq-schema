@@ -158,6 +158,102 @@ def test_time_point_rng(
 @pytest.mark.parametrize(
     "name, markup, result",
     [
+        (
+            "valid-time-duration-one-hour",
+            "<time dur-iso='PT01H'>Foo</time>",
+            True,
+        ),
+        (
+            "valid-time-duration-24-hours",
+            "<time dur-iso='PT24H'>Foo</time>",
+            True,
+        ),
+        (
+            "invalid-time-duration-25-hours",
+            "<time dur-iso='PT25H'>Foo</time>",
+            False,
+        ),
+        (
+            "invalid-time-duration-hours-without-leading-zero",
+            "<time dur-iso='PT1H'>Foo</time>",
+            False,
+        ),
+        (
+            "valid-time-duration-one-minute",
+            "<time dur-iso='PT01M'>Foo</time>",
+            True,
+        ),
+        (
+            "valid-time-duration-59-minutes",
+            "<time dur-iso='PT59M'>Foo</time>",
+            True,
+        ),
+        (
+            "invalid-time-duration-60-minutes",
+            "<time dur-iso='PT60M'>Foo</time>",
+            False,
+        ),
+        (
+            "invalid-time-duration-one-minute-without-leading-zero",
+            "<time dur-iso='PT1M'>Foo</time>",
+            False,
+        ),
+        (
+            "valid-time-duration-one-second",
+            "<time dur-iso='PT01S'>Foo</time>",
+            True,
+        ),
+        (
+            "valid-time-duration-59-seconds",
+            "<time dur-iso='PT59S'>Foo</time>",
+            True,
+        ),
+        (
+            "invalid-time-duration-60-seconds",
+            "<time dur-iso='PT60S'>Foo</time>",
+            False,
+        ),
+        (
+            "invalid-time-duration-one-second-without-leading-zero",
+            "<time dur-iso='PT1S'>Foo</time>",
+            False,
+        ),
+        (
+            "valid-time-duration-seconds-with-fraction",
+            "<time dur-iso='PT01.1234567890S'>Foo</time>",
+            True,
+        ),
+        (
+            "invalid-time-duration-seconds-with-fraction-comma",
+            "<time dur-iso='PT1,1S'>Foo</time>",
+            False,
+        ),
+        (
+            "valid-time-duration-full",
+            "<time dur-iso='PT01H01M01.1S'>Foo</time>",
+            True,
+        ),
+        (
+            "valid-time-duration-full-repeated",
+            "<time dur-iso='R/PT01H01M01.1S'>Foo</time>",
+            True,
+        ),
+    ],
+)
+def test_time_duration_rng(
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
+):
+    """Test the pattern ssrq.time.point which is used in @dur-iso for tei:time."""
+
+    test_element_with_rng("time", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
         # Tests for ssrq.foliation
         ("valid-foliation-with-recto", "<pb n='r'/>", True),
         ("valid-foliation-with-verso", "<pb n='v'/>", True),

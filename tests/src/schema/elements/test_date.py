@@ -18,7 +18,8 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             """
             <date notBefore-custom='1510-01-01' notAfter-custom='1515-12-12' calendar='julian'>
                 ca. 1510
-            </date>""",
+            </date>
+            """,
             True,
         ),
         (

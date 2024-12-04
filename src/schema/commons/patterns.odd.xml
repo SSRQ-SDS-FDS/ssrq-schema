@@ -27,6 +27,29 @@
         <dataRef name="string" restriction="(((2[0-3]|[0-1][0-9]):[0-5][0-9]:[0-5][0-9])|24:00:00)"/>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.time.duration" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2023-05-16">Erfassung Zeitspanne
+        nach <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+        Beginnt mit dem Kürzel P (Periode) gefolgt T (Time) und arabischen Ziffern. Sich
+        wiederholende Zeitspannenden werden im vollen Format ausgedrückt und beginnen mit
+        dem Kürzel R (Repeated). Ansonsten werden folgende Werte vergeben
+        <list><item>H = hour</item><item>M = minute</item><item>S = second</item></list></desc>
+      <desc xml:lang="en" versionDate="2023-05-16">Acquisition time period according
+        to <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+        Starts with the abbreviation P (period) followed by T (time) and Arabic numerals.
+        Repeating time spans are expressed in full format and begin with the abbreviation R
+        (repeated). the abbreviation R (Repeated). Otherwise, the following values are assigned
+          <list><item>H = hour</item><item>M = minute</item><item>S = second</item></list></desc>
+      <desc xml:lang="fr" versionDate="2023-05-16">Saisie Période
+        selon <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
+        Commence par l'abréviation P (période) suivie de T (temps) et de chiffres arabes.
+        Les périodes de temps répétitives sont exprimées dans un format complet et
+        commencent par l'abréviation R (Repeated). Sinon, les valeurs suivantes sont attribuées
+        <list><item>H = hour</item><item>M = minute</item><item>S = second</item></list></desc>
+      <content>
+        <dataRef name="string" restriction="(R/)?PT(([0-1][0-9]|2[0-4])H)?([0-5][0-9]M)?([0-5][0-9](\.[0-9]+)?S)?"/>
+      </content>
+    </dataSpec>
     <!-- numbering of folia, pages and (parchment) sections -->
     <dataSpec ident="ssrq.foliation" mode="add" module="ssrq.core.module">
       <desc xml:lang="de" versionDate="2023-07-15">Blattzählung</desc>
