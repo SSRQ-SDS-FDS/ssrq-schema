@@ -9,24 +9,24 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "valid-note",
+            "valid-note-with-text-content",
             "<note>foo</note>",
             True,
         ),
         (
-            "valid-note-with-type-and-place",
-            "<note type='original' place='left_margin'>foo</note>",
-            False,
+            "valid-note-with-bibl",
+            "<note><bibl>foo</bibl></note>",
+            True,
         ),
         (
-            "invalid-note-with-wrong-attribute-value",
-            "<note type='foo' place='foo'>foo</note>",
-            False,
+            "valid-note-with-ref",
+            "<note><ref>foo</ref></note>",
+            True,
         ),
         (
-            "invalid-note-with-wrong-attribute",
-            "<note att='true'>foo</note>",
-            False,
+            "valid-note-with-content-default",
+            "<note><del>foo</del> bar</note>",
+            True,
         ),
     ],
 )
@@ -43,33 +43,91 @@ def test_note(
     "name, markup, result",
     [
         (
-            "invalid-empty-note",
-            "<note/>",
+            "invalid-note-inside-app-with-content-except-ref-and-orig",
+            """
+            <app>
+                <note type='text_comparison'>
+                    <bibl>foo</bibl>
+                </note>
+            </app>
+            """,
             False,
         ),
         (
-            "valid-note-inside-app",
-            "<app><note type='text_comparison'> <ref target='http://example.com'/><orig>baz</orig> </note></app>",
-            True,
-        ),
-        (
             "valid-note-inside-app-without-orig",
-            "<app><note type='text_comparison'><ref target='http://example.com'/></note></app>",
+            """
+            <app>
+                <note type='text_comparison'>
+                    <ref target='http://example.com'/>
+                </note>
+            </app>
+            """,
             True,
         ),
         (
             "invalid-note-inside-app-with-text",
-            "<app><note type='text_comparison'><ref target='http://example.com'/><orig>baz</orig> baz</note></app>",
+            """
+            <app>
+                <note type='text_comparison'>
+                    <ref target='http://example.com'/>
+                    <orig>baz</orig> baz
+                </note>
+            </app>
+            """,
             False,
         ),
         (
-            "invalid-note-inside-app-without-required-ref",
-            "<app><note type='text_comparison'><orig>foo</orig></note></app>",
+            "invalid-note-inside-app-without-ref",
+            """
+            <app>
+                <note type='text_comparison'>
+                    <orig>foo</orig>
+                </note>
+            </app>
+            """,
             False,
         ),
         (
             "invalid-note-inside-app-with-two-refs",
-            "<app><note type='text_comparison'><ref target='http://example.com'/><ref target='http://example.org'/><orig>foo</orig></note></app>",
+            """
+            <app>
+                <note type='text_comparison'>
+                    <ref target='http://example.com'/>
+                    <ref target='http://example.org'/>
+                    <orig>foo</orig>
+                </note>
+            </app>
+            """,
+            False,
+        ),
+        (
+            "invalid-note-inside-app-with-two-origs",
+            """
+            <app>
+                <note type='text_comparison'>
+                    <ref target='http://example.com'/>
+                    <orig>bar</orig>
+                    <orig>foo</orig>
+                </note>
+            </app>
+            """,
+            False,
+        ),
+        (
+            "invalid-note-inside-app-without-type",
+            """
+            <app>
+                <note>
+                    <ref target='http://example.com'/>
+                    <orig>foo</orig>
+                </note>
+            </app>
+            """,
+            False,
+        ),
+        (
+            "invalid-note-not-inside-app-with-type",
+            "<note type='text_comparison'>foo</note>",
             False,
         ),
     ],

@@ -8,7 +8,8 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-objectDesc",
-            """<objectDesc>
+            """
+            <objectDesc>
                 <supportDesc>
                     <support>
                         <material type='paper'/>
@@ -23,12 +24,14 @@ from ..conftest import RNG_test_function
                         </dimensions>
                     </extent>
                 </supportDesc>
-            </objectDesc>""",
+            </objectDesc>
+            """,
             True,
         ),
         (
             "objectDesc-with-invalid-attribute-form",
-            """<objectDesc form='bar'>
+            """
+            <objectDesc form='bar'>
                 <supportDesc>
                     <support>
                         <material type='paper'/>
@@ -43,13 +46,18 @@ from ..conftest import RNG_test_function
                         </dimensions>
                     </extent>
                 </supportDesc>
-            </objectDesc>""",
+            </objectDesc>
+            """,
             False,
         ),
-        ("invalid-objectDesc", "<objectDesc><p>foo</p></objectDesc>", False),
+        (
+            "invalid-objectDesc-with-wrong-content",
+            "<objectDesc><p>foo</p></objectDesc>",
+            False,
+        ),
     ],
 )
-def test_objectDesc(
+def test_object_desc(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

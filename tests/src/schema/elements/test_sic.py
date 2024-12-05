@@ -1,22 +1,37 @@
 import pytest
-from pyschval.schematron.validate import apply_schematron_validation
-from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
     "name, markup, result",
     [
-        ("valid-sic-simple", "<sic>bar</sic>", True),
         (
-            "valid-sic-with-mixed-content",
-            "<sic><lb/><term ref='lem014672.11'>hexenry</term> bar</sic>",
+            "valid-sic",
+            "<sic>bar</sic>",
             True,
         ),
         (
-            "invalid-sic-simple-with-attribute",
-            "<sic n='1'>bar</sic>",
+            "valid-sic-with-mixed-content",
+            """
+            <sic>
+                <add place='above'>foo</add>
+                <del>foo</del>
+                <lb/>bar
+                <note>foo</note>
+                <pb/>
+                <subst>
+                    <add place='above'>foo</add>
+                    <del>foo</del>
+                </subst>
+                <persName>foo</persName>
+            </sic>
+            """,
+            True,
+        ),
+        (
+            "invalid-sic-with-wrong-content",
+            "<sic><p>foo</p></sic>",
             False,
         ),
     ],
@@ -28,23 +43,3 @@ def test_sic(
     result: bool,
 ):
     test_element_with_rng("sic", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "valid-sic-with-text",
-            "<sic>bar</sic>",
-            True,
-        ),
-    ],
-)
-def test_sic_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].report.is_valid() is result

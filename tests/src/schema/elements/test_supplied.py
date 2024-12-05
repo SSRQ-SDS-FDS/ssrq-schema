@@ -9,7 +9,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "valid-supplied-source",
+            "valid-supplied-with-source",
             "<supplied source='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'>foo</supplied>",
             True,
         ),
@@ -19,33 +19,33 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             False,
         ),
         (
-            "supplied-valid-with-reason",
-            "<supplied reason='omitted'>foo</supplied>",
-            True,
-        ),
-        (
-            "supplied-valid-with-resp",
+            "valid-supplied-with-resp",
             "<supplied resp='CS'>foo</supplied>",
             True,
         ),
         (
-            "supplied-valid-with-multiple-resps",
+            "valid-supplied-with-multiple-resp-values",
             "<supplied resp='CS BP'>foo</supplied>",
             True,
         ),
         (
-            "supplied-valid-with-multiple-attributes",
-            "<supplied resp='CS' reason='omitted'>foo</supplied>",
-            True,
-        ),
-        (
-            "supplied-with-invalid-attribute",
-            "<supplied cert='bar'>foo</supplied>",
+            "invalid-supplied-with-cert",
+            "<supplied cert='high'>foo</supplied>",
             False,
         ),
         (
-            "valid-supplied-with-paragraphs",
+            "valid-supplied-with-p",
+            "<supplied resp='CS'><p>foo</p></supplied>",
+            True,
+        ),
+        (
+            "valid-supplied-with-ps",
             "<supplied resp='CS'><p>foo</p><p>bar</p></supplied>",
+            True,
+        ),
+        (
+            "valid-supplied-with-content-default",
+            "<supplied resp='CS'><del>foo</del> bar</supplied>",
             True,
         ),
     ],
@@ -68,7 +68,8 @@ def test_supplied(
             <TEI>
                 <bibl xml:id='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</bibl>
                 <supplied source='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</supplied>
-            </TEI>""",
+            </TEI>
+            """,
             True,
         ),
         (
@@ -76,17 +77,9 @@ def test_supplied(
             """
             <TEI>
                 <supplied source='urn:ssrq:SSRQ-ZH-NF_II_11-74-1'>foo</supplied>
-            </TEI>""",
+            </TEI>
+            """,
             True,
-        ),
-        (
-            "invalid-empty-supplied-source-with-ref-to-bibl",
-            """
-            <TEI>
-                <bibl xml:id='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</bibl>
-                <supplied source='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'/>
-            </TEI>""",
-            False,
         ),
         (
             "invalid-supplied-without-attribute",
@@ -94,12 +87,13 @@ def test_supplied(
             False,
         ),
         (
-            "invalid-supplied-with-conflicting-attributes",
+            "invalid-supplied-with-resp-and-sources",
             """
             <TEI>
                 <bibl xml:id='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</bibl>
                 <supplied resp='foo' source='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</supplied>
-            </TEI>""",
+            </TEI>
+            """,
             False,
         ),
     ],

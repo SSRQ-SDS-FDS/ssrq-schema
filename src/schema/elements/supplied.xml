@@ -3,7 +3,8 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="supplied" module="transcr" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-14">Enthält eine Ergänzung durch den Bearbeitenden.</desc>
+  <desc xml:lang="de" versionDate="2023-07-14">Enthält eine Ergänzung durch den
+      Bearbeitenden.</desc>
   <desc xml:lang="en" versionDate="2023-07-14">Contains an addition by the editor.</desc>
   <desc xml:lang="fr" versionDate="2023-07-14">Contient un ajout de l'éditeur.</desc>
   <classes mode="replace">
@@ -11,27 +12,25 @@
     <memberOf key="att.global.source"/>
   </classes>
   <content>
-    <alternate minOccurs="0" maxOccurs="unbounded">
+    <alternate maxOccurs="unbounded">
       <elementRef key="p"/>
       <macroRef key="ssrq.content.default"/>
     </alternate>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-supplied">
-    <desc xml:lang="en" versionDate="2023-05-02">Constraint for
-            <gi>supplied</gi>
-        </desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-supplied">
+    <desc xml:lang="en" versionDate="2023-05-02">Constraint for tei:supplied</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:supplied">
           <sch:assert test=".[@resp][not(@source)] or .[@source][not(@resp)]">
-                        Must contain either a resp or a source attribute.
-                    </sch:assert>
+            tei:supplied must contain either a resp or a source attribute.
+          </sch:assert>
         </sch:rule>
         <sch:rule context="tei:supplied[@source]">
           <sch:let name="sources" value="for $source in tokenize(@source, ' ') return replace($source, '^(id-ssrq-[\w\d-]+)(#(\d+|fol\d+[rv]?|[pn]\d+))?$', '$1')"/>
           <sch:assert test="every $source in $sources satisfies exists(id($source))" xml:lang="en">
-                        Every referenced ID in @source must belong to an element with the same ID.
-                    </sch:assert>
+              Every referenced ID in @source must belong to an element with the same ID.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
@@ -71,24 +70,23 @@
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-fr"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
-    <p>Wenn ein Bearbeitender eine Passage frei ergänzt, weist er sich in <att>resp</att> mit seinem Kürzel aus.
-            Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf diese
-            mit <att>source</att> referenziert. Der Grund für eine Ergänzung kann mit <att>reason</att> angegeben
-            werden. Eine Anmerkung in <gi>note</gi> oder eine Bemerkung in <gi>back</gi> ist nötig.
-        </p>
+    <p>Wenn ein Bearbeitender eine Passage frei ergänzt, weist er sich in <att>resp</att> mit
+        seinem Kürzel aus. Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf
+        diese mit <att>source</att> referenziert. Der Grund für eine Ergänzung kann mit
+        <att>reason</att> angegeben werden. Eine Anmerkung in <gi>note</gi> oder eine Bemerkung
+        in <gi>back</gi> ist nötig.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-14">
-    <p>If an editor freely adds a passage, he identifies himself in <att>resp</att> with his abbreviation. If a
-            text is supplemented using another text template, this is referenced with <att>source</att>. The reason
-            for an addition can be specified with <att>reason</att>. A note in <gi>note</gi> or a comment
-            in <gi>back</gi> is required.
-        </p>
+    <p>If an editor freely adds a passage, he identifies himself in <att>resp</att> with his
+        abbreviation. If a text is supplemented using another text template, this is referenced
+        with <att>source</att>. The reason for an addition can be specified with <att>reason</att>.
+        A note in <gi>note</gi> or a comment in <gi>back</gi> is required.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-14">
-    <p>Si un éditeur ajoute librement un passage, il s'identifie en <att>resp</att> avec son abréviation. Si un
-            texte est complété à l'aide d'un autre modèle de texte, celui-ci est référencé par <att>source</att>. La
-            raison d'un ajout peut être spécifiée avec <att>reason</att>. Une note dans <gi>note</gi> ou un commentaire
-            dans <gi>back</gi> est requis.
-        </p>
+    <p>Si un éditeur ajoute librement un passage, il s'identifie en <att>resp</att> avec son
+        abréviation. Si un texte est complété à l'aide d'un autre modèle de texte, celui-ci est
+        référencé par <att>source</att>. La raison d'un ajout peut être spécifiée avec
+        <att>reason</att>. Une note dans <gi>note</gi> ou un commentaire dans <gi>back</gi> est
+        requis.</p>
   </remarks>
 </elementSpec>

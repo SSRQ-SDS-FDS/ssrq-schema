@@ -7,9 +7,19 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid-table-without-head",
+            "valid-table-with-row",
             "<table><row><cell>foo</cell></row></table>",
             True,
+        ),
+        (
+            "valid-table-with-multiple-rows",
+            "<table><row><cell>foo</cell></row><row><cell>foo</cell></row></table>",
+            True,
+        ),
+        (
+            "invalid-table-without-row",
+            "<table><head>foo</head></table>",
+            False,
         ),
         (
             "valid-table-with-head",
@@ -18,32 +28,40 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-table-with-multiple-heads",
-            "<table><head>bar</head><row><cell>foo</cell></row><head>bar</head><row><cell>foo</cell></row></table>",
+            """
+            <table>
+                <head>bar</head>
+                <row><cell>foo</cell></row>
+                <head>bar</head>
+                <row><cell>foo</cell></row>
+            </table>
+            """,
             True,
         ),
         (
-            "valid-table-with-head-and-breaks",
-            "<table><head>bar</head> <pb n='32' facs='fol_32v'/><cb n='a'/><row><cell>foo</cell></row><cb n='b'/></table>",
+            "valid-table-with-milestones",
+            """
+            <table>
+                <pb n='32' facs='fol_32v'/>
+                <cb n='a'/>
+                <row><cell>foo</cell></row>
+            </table>
+            """,
             True,
         ),
         (
-            "invalid-table-with-attr",
-            "<table rows='1' cols='1'><row><cell>foo</cell></row></table>",
+            "invalid-table-with-cols",
+            "<table cols='1'><row><cell>foo</cell></row></table>",
             False,
         ),
         (
-            "invalid-table-without-content",
-            "<table/>",
+            "invalid-table-with-rows",
+            "<table rows='1'><row><cell>foo</cell></row></table>",
             False,
         ),
         (
             "table-with-invalid-content",
-            "<table><p>bar</p><row><cell>foo</cell></row></table>",
-            False,
-        ),
-        (
-            "invalid-table-without-row",
-            "<table><head>foo</head></table>",
+            "<table><p>foo</p><row>bar</row></table>",
             False,
         ),
     ],

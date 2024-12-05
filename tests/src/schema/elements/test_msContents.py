@@ -7,28 +7,37 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
+            "valid-msContents",
+            "<msContents><msItem><textLang xml:lang='de'/></msItem></msContents>",
+            True,
+        ),
+        (
             "valid-msContents-with-summary",
             """
             <msContents>
-                <summary xml:lang='de'>
-                    <p>Graf Heinrich II. von Werdenberg-Heiligenberg(-Rheineck) verleiht den Brüdern
-                        Konrad, Heinz und Hans Grafer den Zoll von St. Ulrich und die Schenke in
-                        Sevelen.</p>
-                </summary>
-                <msItem>
-                    <textLang xml:lang="de"/>
-                </msItem>
+                <summary xml:lang='de'><p>Foo</p></summary>
+                <msItem><textLang xml:lang="de"/></msItem>
             </msContents>
             """,
             True,
         ),
         (
-            "valid-msContents-without-summary",
+            "invalid-msContents-with-wrong-order",
             """
             <msContents>
-                <msItem>
-                    <textLang xml:lang="de"/>
-                </msItem>
+                <msItem><textLang xml:lang="de"/></msItem>
+                <summary xml:lang='de'><p>Foo</p></summary>
+            </msContents>
+            """,
+            False,
+        ),
+        (
+            "valid-msContents-with-multiple-summaries",
+            """
+            <msContents>
+                <summary xml:lang='de'><p>Foo</p></summary>
+                <summary xml:lang='fr'><p>Foo</p></summary>
+                <msItem><textLang xml:lang="de"/></msItem>
             </msContents>
             """,
             True,
@@ -37,19 +46,7 @@ from ..conftest import RNG_test_function
             "invalid-msContents-without-msItem",
             """
             <msContents>
-                <summary xml:lang='de'>
-                    <p>Graf Heinrich II. von Werdenberg-Heiligenberg(-Rheineck) verleiht den Brüdern
-                        Konrad, Heinz und Hans Grafer den Zoll von St. Ulrich und die Schenke in
-                        Sevelen.</p>
-                </summary>
-            </msContents>
-            """,
-            False,
-        ),
-        (
-            "invalid-msContents-without-child",
-            """
-            <msContents>
+                <summary xml:lang='de'><p>Foo</p></summary>
             </msContents>
             """,
             False,

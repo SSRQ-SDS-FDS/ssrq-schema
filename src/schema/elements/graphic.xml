@@ -21,12 +21,14 @@
   <content>
     <empty/>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-graphic">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-graphic">
     <desc xml:lang="en" versionDate="2023-03-15">Constraint for tei:graphic</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:graphic">
-          <sch:assert test="not(contains(@url, '/'))">The usage of a '/' is not allowed</sch:assert>
+          <sch:assert test="not(contains(@url, '/'))">
+            The usage of a '/' is not allowed in @url
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>

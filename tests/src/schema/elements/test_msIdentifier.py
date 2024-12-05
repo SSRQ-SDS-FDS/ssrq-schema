@@ -8,32 +8,61 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-msIdentifier",
-            """<msIdentifier>
-                    <repository xml:lang='de'>foo</repository>
-                    <idno xml:lang='de' source='http://foo.bar'>bar</idno>
-                </msIdentifier>""",
+            """
+            <msIdentifier>
+                <repository xml:lang='de'>foo</repository>
+                <idno xml:lang='de' source='http://foo.bar'>bar</idno>
+            </msIdentifier>
+            """,
             True,
         ),
         (
-            "valid-msIdentifier-with-multiple-altIdentifier",
+            "valid-msIdentifier-with-settlement",
+            """
+            <msIdentifier>
+                <settlement ref="loc123456" xml:lang="de">foo</settlement>
+                <repository xml:lang='de'>foo</repository>
+                <idno xml:lang='de' source='http://foo.bar'>bar</idno>
+            </msIdentifier>
+            """,
+            True,
+        ),
+        (
+            "valid-msIdentifier-with-multiple-elements",
+            """
+            <msIdentifier>
+                <settlement ref="loc123456" xml:lang="de">foo</settlement>
+                <repository xml:lang='de'>foo</repository>
+                <idno xml:lang='de' source='http://foo.bar'>bar</idno>
+                <settlement ref="loc123456" xml:lang="de">foo</settlement>
+                <repository xml:lang='de'>foo</repository>
+                <idno xml:lang='de' source='http://foo.bar'>bar</idno>
+            </msIdentifier>
+            """,
+            True,
+        ),
+        (
+            "valid-msIdentifier-with-altIdentifier",
             """<msIdentifier>
                     <repository xml:lang='de'>foo</repository>
                     <idno xml:lang='de' source='http://foo.bar'>bar</idno>
                     <altIdentifier>
                         <idno>Nr. Bar</idno>
                     </altIdentifier>
-                    <altIdentifier>
-                        <idno>Nr. Foo</idno>
-                    </altIdentifier>
                 </msIdentifier>""",
             True,
         ),
         (
-            "valid-msIdentifie-with-settlement",
+            "valid-msIdentifier-with-multiple-altIdentifiers",
             """<msIdentifier>
-                    <settlement ref="loc123456" xml:lang="de">foo</settlement>
                     <repository xml:lang='de'>foo</repository>
                     <idno xml:lang='de' source='http://foo.bar'>bar</idno>
+                    <altIdentifier>
+                        <idno>Nr. Foo</idno>
+                    </altIdentifier>
+                    <altIdentifier>
+                        <idno>Nr. Bar</idno>
+                    </altIdentifier>
                 </msIdentifier>""",
             True,
         ),
@@ -48,7 +77,7 @@ from ..conftest import RNG_test_function
         ),
     ],
 )
-def test_msIdentifier(
+def test_ms_identifier(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

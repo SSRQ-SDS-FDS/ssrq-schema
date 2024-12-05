@@ -1,8 +1,6 @@
 import pytest
 
-from utils.commons import filehandler as io
-
-from ..conftest import TEST_EXAMPLE_DIR, RNG_test_function
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
@@ -11,31 +9,57 @@ from ..conftest import TEST_EXAMPLE_DIR, RNG_test_function
         (
             "valid-witness",
             """
-                <witness xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d' n="A">
-                    <msDesc>
-                        <head>foo</head>
-                        <physDesc>
-                            <objectDesc>
-                                <supportDesc>
-                                    <support>
-                                        <material type="paper"/>
-                                    </support>
-                                </supportDesc>
-                            </objectDesc>
-                        </physDesc>
-                        <history>
-                            <origin>
-                                <origDate type="document" calendar="gregorian" when-custom="1600-01-01"/>
-                            </origin>
-                        </history>
-                    </msDesc>
-                </witness>""",
+            <witness xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d' n="A">
+                <msDesc>
+                    <head>foo</head>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <material type="paper"/>
+                                </support>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate type="document" calendar="gregorian" when-custom="1600-01-01"/>
+                        </origin>
+                    </history>
+                </msDesc>
+            </witness>
+            """,
             True,
         ),
         (
-            "invalid-witness-xml-id",
+            "invalid-witness-without-xml-id",
             """
-                <witness xml:id='bla' n="A">
+            <witness n="A">
+                <msDesc>
+                    <head>foo</head>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <material type="paper"/>
+                                </support>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate type="document" calendar="gregorian" when-custom="1600-01-01"/>
+                        </origin>
+                    </history>
+                </msDesc>
+            </witness>
+            """,
+            False,
+        ),
+        (
+            "invalid-witness-without-n",
+            """
+                <witness xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'>
                     <msDesc>
                         <head>foo</head>
                         <physDesc>
@@ -57,27 +81,8 @@ from ..conftest import TEST_EXAMPLE_DIR, RNG_test_function
             False,
         ),
         (
-            "witness-with-invalid-attribute",
-            """
-                <witness type="foo">
-                    <msDesc>
-                        <head>foo</head>
-                        <physDesc>
-                            <objectDesc>
-                                <supportDesc>
-                                    <support>
-                                        <material type="paper"/>
-                                    </support>
-                                </supportDesc>
-                            </objectDesc>
-                        </physDesc>
-                        <history>
-                            <origin>
-                                <origDate type="document" calendar="gregorian" when-custom="1600-01-01"/>
-                            </origin>
-                        </history>
-                    </msDesc>
-                </witness>""",
+            "invalid-witness-with-wrong-content",
+            "<witness n='A' xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'>foo</witness>",
             False,
         ),
     ],
@@ -88,7 +93,4 @@ def test_witness(
     markup: str,
     result: bool,
 ):
-    markup = markup.format(
-        msDesc=io.FileHandler.read(directory=TEST_EXAMPLE_DIR, file_name="msDesc.xml")
-    )
     test_element_with_rng("witness", name, markup, result, False)

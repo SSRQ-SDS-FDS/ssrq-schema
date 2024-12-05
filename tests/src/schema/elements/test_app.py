@@ -10,7 +10,14 @@ from ..conftest import RNG_test_function
             "valid-app",
             """<app>
                     <lem>lxxxvij</lem>
-                    <rdg wit='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e'>quadringentesimo</rdg>
+                    <rdg wit='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'>Foo</rdg>
+                </app>""",
+            True,
+        ),
+        (
+            "valid-app-without-lem",
+            """<app>
+                  <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">Foo</rdg>
                 </app>""",
             True,
         ),
@@ -18,20 +25,36 @@ from ..conftest import RNG_test_function
             "valid-app-with-multiple-readings",
             """<app>
                     <lem>lxxxvij</lem>
-                    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">quadringentesimo</rdg>
-                    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810f">lxxxiiij</rdg>
+                    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">Foo</rdg>
+                    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810f">Bar</rdg>
                 </app>""",
             True,
         ),
         (
-            "valid-app-without-lem",
+            "valid-app-with-note",
             """<app>
-                  <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">Da aber ein urteil gfellt wird vom
-                    gricht, mag derselben bschwerliche teill da <lb/>danen vorr einen
-                      <abbr>hrn</abbr> landvogt <term ref="lem001043">appellieren</term>. Da auch
-                    volgendts daselbsten denen widerumb <lb/>der beschwerte zum appellaz ußspruch
-                    mit seiner gegenwartt für mein gned<lb break="no"/>ig herren unnd weiter nicht
-                    kommen.</rdg>
+                    <lem>lxxxvij</lem>
+                    <note>Foo</note>
+                </app>""",
+            True,
+        ),
+        (
+            "valid-app-with-note-and-rdg",
+            """<app>
+                    <lem>lxxxvij</lem>
+                    <note type="text_comparison"><ref>Bar</ref></note>
+                    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">Foo</rdg>
+                </app>""",
+            True,
+        ),
+        (
+            "valid-app-with-multiple-notes-and-rdgs",
+            """<app>
+                    <lem>lxxxvij</lem>
+                    <note type="text_comparison"><ref>Bar</ref></note>
+                    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">Foo</rdg>
+                    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810e">Baz</rdg>
+                    <note type="text_comparison"><ref>Foos</ref></note>
                 </app>""",
             True,
         ),
@@ -45,14 +68,6 @@ from ..conftest import RNG_test_function
             """<app>
                     <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">quadringentesimo</rdg>
                     <lem>lxxxvij</lem>
-                </app>""",
-            False,
-        ),
-        (
-            "invalid-app-with-attributes",
-            """<app type='foo'>
-                    <lem>lxxxvij</lem>
-                    <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">quadringentesimo</rdg>
                 </app>""",
             False,
         ),

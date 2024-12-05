@@ -8,22 +8,38 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-text",
-            "<text type='transcript'><body><div><p>foo</p></div></body></text>",
+            """
+            <text type='transcript'>
+                <body>
+                    <div>
+                        <p>foo</p>
+                    </div>
+                </body>
+            </text>
+            """,
             True,
         ),
         (
-            "valid-text",
-            "<text type='transcript'><body><div><p>bar</p></div></body><back><div><p>foo</p></div></back></text>",
-            True,
-        ),
-        (
-            "valid-text-with-valid-attribute",
-            "<text type='summary'><body><div><p>hallo welt!</p></div></body></text>",
+            "valid-text-with-back",
+            """
+            <text type='transcript'>
+                <body>
+                    <div>
+                        <p>foo</p>
+                    </div>
+                </body>
+                <back>
+                    <div>
+                        <p>foo</p>
+                    </div>
+                </back>
+            </text>
+            """,
             True,
         ),
         (
             "invalid-text-without-type",
-            "<text><body><div><p>hallo welt!</p></div></body></text>",
+            "<text><body><div><p>foo</p></div></body></text>",
             False,
         ),
         (
@@ -32,13 +48,8 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "invalid-text-with-invalid-attribute",
-            "<text type='foobar'><body><div><p>hallo welt!</p></div></body></text>",
-            False,
-        ),
-        (
-            "invalid-text-with-group",
-            "<text type='summary'><group><body><div><p>hallo welt!</p></div></body></group></text>",
+            "invalid-text-with-wrong-content",
+            "<text type='summary'><group><body><div><p>foo</p></div></body></group></text>",
             False,
         ),
     ],

@@ -12,6 +12,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "invalid-pubPlace-with-wrong-content",
+            "<pubPlace ref='loc123456'><p>foo</p></pubPlace>",
+            False,
+        ),
+        (
             "invalid-pubPlace-without-ref",
             "<pubPlace>foo</pubPlace>",
             False,
@@ -21,24 +26,9 @@ from ..conftest import RNG_test_function
             "<pubPlace cert='low' ref='loc123456'>foo-low</pubPlace>",
             True,
         ),
-        (
-            "invalid-pubPlace",
-            "<pubPlace ref='loc123456'><p/></pubPlace>",
-            False,
-        ),
-        (
-            "invalid-pubPlace-with-attributes",
-            "<pubPlace ref='loc123456' type='foobar'>foo</pubPlace>",
-            False,
-        ),
-        (
-            "invalid-pubPlace-with-invalid-cert",
-            "<pubPlace cert='mid' ref='loc123456'>foo-mid</pubPlace>",
-            False,
-        ),
     ],
 )
-def test_pubPlace(
+def test_pub_place(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

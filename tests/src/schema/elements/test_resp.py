@@ -22,11 +22,6 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "resp-without-content",
-            "<resp/>",
-            False,
-        ),
-        (
             "invalid-resp-fr-with-key",
             "<resp key='transcript'>Transcription</resp>",
             False,

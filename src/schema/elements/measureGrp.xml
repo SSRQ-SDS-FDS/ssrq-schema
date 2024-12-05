@@ -11,9 +11,7 @@
   </classes>
   <content>
     <alternate>
-      <sequence>
-        <elementRef key="cell" minOccurs="2" maxOccurs="unbounded"/>
-      </sequence>
+      <elementRef key="cell" minOccurs="2" maxOccurs="unbounded"/>
       <sequence preserveOrder="false">
         <elementRef key="measure" minOccurs="2" maxOccurs="unbounded"/>
         <alternate minOccurs="0" maxOccurs="unbounded">
@@ -24,14 +22,14 @@
       </sequence>
     </alternate>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-measureGrp">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-measureGrp">
     <desc xml:lang="en" versionDate="2023-05-02">Constraint for tei:measureGrp to ensure, that the
-            element contains at least two tei:measure-elements!
-        </desc>
+      element contains at least two tei:measure-elements!</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:measureGrp">
-          <sch:assert test="count(.//tei:measure) &gt;= 2" xml:lang="en"><sch:name/> should have at least two measures als descendants.
+          <sch:assert test="count(.//tei:measure) &gt; 1" xml:lang="en">
+            tei:measureGrp should have at least two tei:measures as descendants.
           </sch:assert>
         </sch:rule>
       </sch:pattern>

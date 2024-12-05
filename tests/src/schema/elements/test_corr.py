@@ -12,18 +12,23 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-corr-with-entity-content",
+            "valid-corr-with-default-content",
             "<corr><persName ref='per123456'>bar</persName></corr>",
             True,
         ),
         (
-            "valid-corr-with-resp-attribute",
+            "invalid-corr-with-wrong-content",
+            "<corr><div><p>foo</p></div></corr>",
+            False,
+        ),
+        (
+            "valid-corr-with-resp",
             "<corr resp='BAR'>foo</corr>",
             True,
         ),
         (
-            "invalid-corr-with-wrong-attribute",
-            "<corr att='foo'>bar</corr>",
+            "invalid-corr-with-cert",
+            "<corr cert='high'>foo</corr>",
             False,
         ),
     ],

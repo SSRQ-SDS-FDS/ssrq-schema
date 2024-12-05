@@ -7,14 +7,24 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid-choice-with-abbr",
+            "valid-choice-with-abbr-and-expan",
             "<choice><abbr>bar</abbr><expan>foo</expan></choice>",
             True,
         ),
         (
-            "valid-choice-with-sic",
+            "invalid-choice-with-expan-and-abbr",
+            "<choice><expan>bar</expan><abbr>foo</abbr></choice>",
+            False,
+        ),
+        (
+            "valid-choice-with-sic-and-corr",
             "<choice><sic>bar</sic><corr>foo</corr></choice>",
             True,
+        ),
+        (
+            "invalid-choice-with-corr-and-sic",
+            "<choice><corr>bar</corr><sic>foo</sic></choice>",
+            False,
         ),
         (
             "invalid-choice-with-other-content",

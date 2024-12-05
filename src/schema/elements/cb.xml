@@ -13,13 +13,17 @@
     <memberOf key="att.gobal"/>
     <memberOf key="model.milestoneLike"/>
   </classes>
+  <content>
+    <empty/>
+  </content>
   <attList>
     <attDef ident="n" mode="replace">
-      <desc xml:lang="de" versionDate="2023-05-23">Enthält Angaben zur originalen Spaltenzählung.</desc>
-      <desc xml:lang="en" versionDate="2023-05-23">Contains information about the original column count.</desc>
-      <desc xml:lang="fr" versionDate="2023-05-23">Contient des informations sur le nombre de colonnes
-                d'origine.
-            </desc>
+      <desc xml:lang="de" versionDate="2023-05-23">Enthält Angaben zur originalen
+        Spaltenzählung.</desc>
+      <desc xml:lang="en" versionDate="2023-05-23">Contains information about the original column
+        count.</desc>
+      <desc xml:lang="fr" versionDate="2023-05-23">Contient des informations sur le nombre de
+        colonnes d'origine.</desc>
       <datatype>
         <dataRef name="string" restriction="[a-z]{1}"/>
       </datatype>

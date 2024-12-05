@@ -1,8 +1,6 @@
 import pytest
-from pyschval.schematron.validate import apply_schematron_validation
-from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
@@ -34,8 +32,28 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "num-with-invalid-floating-point",
+            "invalid-num-with-decimal-fraction",
             "<num value='3.1/2'>dreieinhalb</num>",
+            False,
+        ),
+        (
+            "valid-num-with-hi-content",
+            "<num value='1'><hi rend='italic'>foo</hi></num>",
+            True,
+        ),
+        (
+            "valid-num-with-lb-content",
+            "<num value='1'><lb/>foo</num>",
+            True,
+        ),
+        (
+            "valid-num-with-pb-content",
+            "<num value='1'><pb n='1'/>foo</num>",
+            True,
+        ),
+        (
+            "invalid-num-with-wrong-content",
+            "<num value='1'><p>foo</p></num>",
             False,
         ),
     ],
@@ -47,23 +65,3 @@ def test_num(
     result: bool,
 ):
     test_element_with_rng("num", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "invalid-empty-num",
-            "<num value='1'/>",
-            False,
-        ),
-    ],
-)
-def test_num_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].report.is_valid() is result

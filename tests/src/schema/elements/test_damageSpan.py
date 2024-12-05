@@ -4,49 +4,41 @@ from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
-    "name, markup, result, message",
+    "name, markup, result",
     [
         (
             "valid-damageSpan",
-            "<damageSpan agent='clipping' spanTo='dmg1'/>",
-            False,
-            "without matching ID",
+            "<p><damageSpan agent='clipping' spanTo='damage1'/><anchor xml:id='damage1'/></p>",
+            True,
         ),
         (
-            "damageSpan-with-invalid-attribute-values",
-            "<damageSpan agent='foo' spanTo='dmg1'/>",
+            "invalid-damageSpan-without-agent",
+            "<p><damageSpan spanTo='damage1'/><anchor xml:id='damage1'/></p>",
             False,
-            "without matching ID",
         ),
         (
-            "invalid-damageSpan",
-            "<damageSpan agent='clipping' spanTo='dmg1'>foo</damageSpan>",
+            "invalid-damageSpan-without anchor",
+            "<p><damageSpan agent='clipping' spanTo='damage1'/></p>",
             False,
-            "without matching ID",
         ),
         (
-            "damageSpan-with-wrong-attribute",
-            "<damageSpan type='bar' agent='clipping' spanTo='dmg1'/>",
+            "invalid-damageSpan-with-content",
+            """
+            <p>
+                <damageSpan agent='clipping' spanTo='damage1'>Foo</damageSpan>
+                <anchor xml:id='damage1'/>
+            </p>""",
             False,
-            "without matching ID",
         ),
     ],
 )
-def test_damageSpan(
+def test_damage_span(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
     result: bool,
-    message: str | None,
 ):
-    test_element_with_rng("damageSpan", name, markup, result, True)
-    if message:
-        validation_result = test_element_with_rng(
-            "damageSpan", name, markup, result, True
-        )
-        assert validation_result is not None
-        reports = [err.message for info in validation_result for err in info.report]
-        messages = "".join(reports)
-        assert message in messages
-    else:
-        test_element_with_rng("damageSpan", name, markup, result, False)
+    test_element_with_rng("p", name, markup, result, False)
+    # In this test, the surrounding p element is the root for the test, because damageSpan always
+    # needs a corresponding element with a xml:id to be valid. If damageSpan was the root, all
+    # rng-tests would fail.

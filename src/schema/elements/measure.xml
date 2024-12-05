@@ -20,113 +20,76 @@
       <macroRef key="ssrq.content.entities"/>
     </alternate>
   </content>
-  <constraintSpec scheme="schematron" mode="change" ident="sch-measure" module="core">
+  <constraintSpec xml:lang="en" scheme="schematron" mode="change" ident="sch-measure" module="core">
     <desc xml:lang="en" versionDate="2023-03-23">Constrains for tei:measure</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:measure[@type = 'age']">
           <sch:let name="age" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.time']//tei:valItem/@ident), '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $age, '$'))"><sch:value-of select="./@unit"/>
-                        is no valid time measurement – you need to choose
-                        from the following list:
-                        <sch:value-of select="string-join(tokenize($age, '\|'), ', ')"/>
-                    </sch:assert>
+          <sch:assert test="matches(@unit, concat('^', $age, '$'))">
+              "<sch:value-of select="./@unit"/>" is not a valid time unit – you need to choose
+              from the following list:
+              <sch:value-of select="string-join(tokenize($age, '\|'), ', ')"/>
+          </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'area']">
           <sch:let name="area" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = ('ssrq.measure.area')]//tei:valItem/@ident, '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $area, '$'))"><sch:value-of select="./@unit"/>
-                        is not a valid area measurement – you need to choose
-                        from the following list:
-                        <sch:value-of select="string-join(tokenize($area, '\|'), ', ')"/>
-                    </sch:assert>
+          <sch:assert test="matches(@unit, concat('^', $area, '$'))">
+              "<sch:value-of select="./@unit"/>" is not a valid area unit – you need to choose
+              from the following list:
+              <sch:value-of select="string-join(tokenize($area, '\|'), ', ')"/>
+          </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'currency']">
           <sch:let name="currency" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.currency']//tei:valItem/@ident, '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $currency, '$'))"><sch:value-of select="./@unit"/>
-                        is not valid currency – you need to choose from the
-                        following list:
-                        <sch:value-of select="string-join(tokenize($currency, '\|'), ', ')"/>
-                    </sch:assert>
+          <sch:assert test="matches(@unit, concat('^', $currency, '$'))">
+              "<sch:value-of select="./@unit"/>" is not a valid currency unit – you need to choose
+              from the following list:
+              <sch:value-of select="string-join(tokenize($currency, '\|'), ', ')"/>
+          </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'length']">
           <sch:let name="length" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.length', 'ssrq.measure.lengths.base.cm', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $length, '$'))"><sch:value-of select="./@unit"/>
-                        is not valid length measurement– you need to choose
-                        from the following list:
-                        <sch:value-of select="string-join(tokenize($length, '\|'), ', ')"/>
-                    </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:measure[not(@type = 'text_scope')]">
-          <sch:assert test="string-length(normalize-space(.)) &gt; 0"><sch:name/>
-                            must not be empty.
-                        </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:measure[@type = 'text_scope']">
-          <sch:let name="scope" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.scope']//tei:valItem/@ident), '|'), '&quot;')}}"/>
-          <sch:assert test=".[parent::tei:extent]"><sch:name/>
-                        of type 'text_scope' must be a child of tei:extent.
-                    </sch:assert>
-          <sch:assert test="matches(@unit, concat('^', $scope, '$'))"><sch:value-of select="./@unit"/>
-                        is no valid scope measurement – you need to choose
-                        from the following list:
-                        <sch:value-of select="string-join(tokenize($scope, '\|'), ', ')"/>
-                    </sch:assert>
-          <sch:assert test="string-length(text()) = 0 and not(*)"><sch:name/>
-                        of type 'text_scope' must be empty.
-                    </sch:assert>
+          <sch:assert test="matches(@unit, concat('^', $length, '$'))">
+              "<sch:value-of select="./@unit"/>" is not a valid length unit – you need to choose
+              from the following list:
+              <sch:value-of select="string-join(tokenize($length, '\|'), ', ')"/>
+          </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'undefined']">
           <sch:let name="various" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.various']//tei:valItem/@ident), '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $various, '$'))"><sch:value-of select="./@unit"/>
-                        is not part of unspecific measurements– you need to
-                        choose from the following list:
-                        <sch:value-of select="string-join(tokenize($various, '\|'), ', ')"/>
-                    </sch:assert>
+          <sch:assert test="matches(@unit, concat('^', $various, '$'))">
+              "<sch:value-of select="./@unit"/>" is not a valid unspecific unit – you need to
+              choose from the following list:
+              <sch:value-of select="string-join(tokenize($various, '\|'), ', ')"/>
+          </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'volume']">
           <sch:let name="volume" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.capacity', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $volume, '$'))"><sch:value-of select="./@unit"/>
-                        is not valid capacity measurement– you need to choose
-                        from the following list:
-                        <sch:value-of select="string-join(tokenize($volume, '\|'), ', ')"/>
-                    </sch:assert>
+          <sch:assert test="matches(@unit, concat('^', $volume, '$'))">
+              "<sch:value-of select="./@unit"/>" is not a valid capacity unit – you need to choose
+              from the following list:
+              <sch:value-of select="string-join(tokenize($volume, '\|'), ', ')"/>
+          </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:measure[@type = 'weight']">
+          <sch:let name="weight" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.weight']//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:assert test="matches(@unit, concat('^', $weight, '$'))">
+              "<sch:value-of select="./@unit"/>" is not a valid weight unit – you need to choose
+              from the following list:
+              <sch:value-of select="string-join(tokenize($weight, '\|'), ', ')"/>
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
   </constraintSpec>
   <attList>
-    <attDef ident="commodity" mode="replace">
-      <datatype>
-        <dataRef key="ssrq.measure.att.commodity"/>
-      </datatype>
-    </attDef>
-    <attDef ident="origin" mode="add" module="ssrq.core.module">
-      <datatype>
-        <dataRef key="ssrq.measure.att.origin"/>
-      </datatype>
-    </attDef>
     <attDef ident="type" mode="replace" usage="req">
       <datatype>
         <dataRef key="ssrq.measure.att.type"/>
       </datatype>
     </attDef>
   </attList>
-  <remarks xml:lang="de" versionDate="2024-11-04">
-    <p>Kann an einer Stelle keine genaue Mengenangabe gemacht werden, wird hierfür
-        in <att>quantity</att> der Wert <val>0</val> verwendet. Stehen mehrere
-    zusammengehörige Mengenangaben nebeneinander, werden diese mit <gi>measureGrp</gi>
-    zu einer Gruppe zusammengefasst.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2024-11-04">
-    <p>If an exact quantity cannot be given at one point, then the value <val>0</val> is used
-        in <att>quantity</att>. If there are several related quantities next to each other,
-        they are combined into a group with <gi>measureGrp</gi>.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2024-11-04">
-    <p>Si une quantité exacte ne peut être donnée en un seul endroit, la valeur <val>0</val> est
-        utilisée dans <att>quantité</att>. Si plusieurs quantités liées sont côte à côte, elles
-        sont combinées en un groupe à l'aide de <gi>measureGrp</gi>.</p>
-  </remarks>
   <xi:include href="examples.xml" xpointer="ex-measure-age-de"/>
   <xi:include href="examples.xml" xpointer="ex-measure-age-en"/>
   <xi:include href="examples.xml" xpointer="ex-measure-age-fr"/>
@@ -145,4 +108,20 @@
   <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-de"/>
   <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-en"/>
   <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-fr"/>
+  <remarks xml:lang="de" versionDate="2024-11-04">
+    <p>Kann an einer Stelle keine genaue Mengenangabe gemacht werden, wird hierfür
+        in <att>quantity</att> der Wert <val>0</val> verwendet. Stehen mehrere
+    zusammengehörige Mengenangaben nebeneinander, werden diese mit <gi>measureGrp</gi>
+    zu einer Gruppe zusammengefasst.</p>
+  </remarks>
+  <remarks xml:lang="en" versionDate="2024-11-04">
+    <p>If an exact quantity cannot be given at one point, then the value <val>0</val> is used
+        in <att>quantity</att>. If there are several related quantities next to each other,
+        they are combined into a group with <gi>measureGrp</gi>.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2024-11-04">
+    <p>Si une quantité exacte ne peut être donnée en un seul endroit, la valeur <val>0</val> est
+        utilisée dans <att>quantité</att>. Si plusieurs quantités liées sont côte à côte, elles
+        sont combinées en un groupe à l'aide de <gi>measureGrp</gi>.</p>
+  </remarks>
 </elementSpec>

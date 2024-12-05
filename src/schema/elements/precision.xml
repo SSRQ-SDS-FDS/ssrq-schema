@@ -14,16 +14,17 @@
   <content>
     <empty/>
   </content>
-  <constraintSpec ident="calendar-check-precision" mode="delete"/>
-  <constraintSpec scheme="schematron" ident="sch-el-precision">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-precision" mode="delete"/>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-precision">
     <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:precision test-matches</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:precision[@match]">
           <sch:let name="parent" value="./parent::*"/>
           <sch:assert test="every $matchAttr in tokenize(./@match, ' ') satisfies exists($parent/@*[name() = substring-after($matchAttr, '@')])">
-                        Every value that is targeted via @match must have a corresponding attribute on the parent.
-                    </sch:assert>
+              Every value that is targeted via @match must have a corresponding attribute on the
+              parent element.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
@@ -38,19 +39,14 @@
   <xi:include href="examples.xml" xpointer="ex-precision-fr"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
     <p>Mit <att>match</att> wird auf ein oder mehrere Attribute von <gi>date</gi> Bezug genommen.
-            Mit <att>precision</att> wird der Grad der Unsicherheit angegeben.
-        </p>
+        Mit <att>precision</att> wird der Grad der Unsicherheit angegeben.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-14">
-    <p><att>match</att>
-            is used to refer to one or more attributes of <gi>date</gi>. <att>precision</att> specifies the degree of
-            uncertainty.
-        </p>
+    <p><att>match</att> is used to refer to one or more attributes of <gi>date</gi>.
+        <att>precision</att> specifies the degree of uncertainty.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-14">
-    <p><att>match</att>
-            est utilisé pour faire référence à un ou plusieurs attributs de <gi>date</gi>. <att>precision</att> spécifie
-            le degré d'incertitude.
-        </p>
+    <p><att>match</att> est utilisé pour faire référence à un ou plusieurs attributs de
+        <gi>date</gi>. <att>precision</att> spécifie le degré d'incertitude.</p>
   </remarks>
 </elementSpec>

@@ -12,13 +12,13 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-support-with-material-with-attribute",
-            "<support type='foo'><material type='paper'/></support>",
+            "invalid-support-with-multiple-materials",
+            "<support><material type='paper'/><material type='parchment'/></support>",
             False,
         ),
         (
-            "invalid-support-without-material",
-            "<support/>",
+            "invalid-support-with-wrong-content",
+            "<support>Papier</support>",
             False,
         ),
     ],

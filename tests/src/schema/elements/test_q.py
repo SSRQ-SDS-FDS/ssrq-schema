@@ -8,8 +8,18 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-q",
-            "<q>valid</q>",
+            "<q>foo</q>",
             True,
+        ),
+        (
+            "valid-q-with-content-default",
+            "<q><del>foo</del> bar</q>",
+            True,
+        ),
+        (
+            "invalid-q-with-wrong-content",
+            "<q><p>foo</p></q>",
+            False,
         ),
         (
             "invalid-q-with-type",

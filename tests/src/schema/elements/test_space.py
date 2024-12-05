@@ -22,13 +22,13 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "invalid-space-with-wrong-attributes",
-            "<space unit='word' quantity='2' type='foo'/>",
+            "invalid-space-with-content",
+            "<space unit='word' quantity='2'>foo</space>",
             False,
         ),
         (
-            "invalid-non-empty-space",
-            "<space unit='word' quantity='2'>foo</space>",
+            "invalid-space-with-dim",
+            "<space unit='word' quantity='2' dim='horizontal'/>",
             False,
         ),
     ],

@@ -18,7 +18,7 @@
     <attDef ident="unit" mode="change" usage="req">
       <datatype>
         <rng:choice>
-          <rng:ref name="ssrq.measure.unknown"/>
+          <rng:ref name="ssrq.dimensions.unknown"/>
           <rng:ref name="ssrq.measure.lengths.base.cm"/>
         </rng:choice>
       </datatype>

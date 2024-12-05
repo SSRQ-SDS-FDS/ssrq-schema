@@ -22,18 +22,28 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-subst-with-attributes",
-            "<subst type='bla'><add place='left_top'>bar</add><del>foo</del></subst>",
-            False,
-        ),
-        (
-            "invalid-subst-with-wrong-children",
+            "invalid-subst-with-wrong-content",
             "<subst><note>bar</note><p>foo</p></subst>",
             False,
         ),
         (
-            "invalid-empty-subst",
-            "<subst/>",
+            "invalid-subst-with-multiple-adds",
+            "<subst><add place='above'>foo</add><add place='above'>bar</add><del>baz</del></subst>",
+            False,
+        ),
+        (
+            "invalid-subst-with-multiple-dels",
+            "<subst><del>foo</del><add place='above'>bar</add><del>baz</del></subst>",
+            False,
+        ),
+        (
+            "invalid-subst-with-multiple-lbs",
+            "<subst><lb/><del>foo</del><lb/><add place='inline'>bar</add></subst>",
+            False,
+        ),
+        (
+            "invalid-subst-with-multiple-pbs",
+            "<subst><pb/><del>foo</del><pb/><add place='inline'>bar</add></subst>",
             False,
         ),
     ],

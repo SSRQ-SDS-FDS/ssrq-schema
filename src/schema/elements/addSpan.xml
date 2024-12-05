@@ -41,32 +41,27 @@
   <xi:include href="examples.xml" xpointer="ex-addSpan-fr"/>
   <remarks xml:lang="de" versionDate="2023-07-11">
     <p>Mit <att>spanTo</att> wird zwingend auf den Endpunkt der Hinzufügung verwiesen, der
-            mit <gi>anchor</gi> markiert wird.
-        </p>
-    <p>Der Ort der Hinzufügung muss zwingend in <att>place</att> und die Hand der ergänzten Stelle kann
-            mit <att>hand</att> festgehalten werden. Falls notwendig, kann innerhalb von <att>rend</att> angegeben
-            werden, wie die Hinzufügung (mit Bleistift, anderer Tinte etc.) vorgenommen wurde. Handelt es sich bei einer
-            Ergänzung um die Hand des ersten Schreibers, dann wird die Hand nicht speziell angemerkt.
-        </p>
+        mit <gi>anchor</gi> markiert wird.</p>
+    <p>Der Ort der Hinzufügung muss zwingend in <att>place</att> und die Hand der ergänzten Stelle
+        kann mit <att>hand</att> festgehalten werden. Falls notwendig, kann innerhalb
+        von <att>rend</att> angegeben werden, wie die Hinzufügung (mit Bleistift, anderer Tinte
+        etc.) vorgenommen wurde. Handelt es sich bei einer Ergänzung um die Hand des ersten
+        Schreibers, dann wird die Hand nicht speziell angemerkt.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-11">
-    <p><att>spanTo</att>
-            is used to refer to the end point of the addition which is marked with <gi>anchor</gi>.
-        </p>
+    <p>The attribute <att>spanTo</att> is used to refer to the end point of the addition which is
+        marked with <gi>anchor</gi>.</p>
     <p>The place of addition must be in <att>place</att> and the hand of the added place can be held
-            with <att>hand</att>. If necessary, inside <att>rend</att> it can be specified how the addition was made
-            (pencil, other ink, etc.). If an addition is the hand of the first scribe, then the hand is not specifically
-            noted.
-        </p>
+        with <att>hand</att>. If necessary, inside <att>rend</att> it can be specified how the
+        addition was made (pencil, other ink, etc.). If an addition is the hand of the first
+        scribe, then the hand is not specifically noted.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-11">
-    <p><att>spanTo</att>
-            est utilisé pour faire référence au point final de l'addition, qui est marquée par <gi>anchor</gi>.
-        </p>
-    <p>La place d'addition doit être dans <att>place</att> et la main de la place ajoutée peut être tenue avec <att>
-            hand</att>. Si nécessaire, à l'intérieur de <att>rend</att>, il est possible de spécifier comment l'ajout a
-            été effectué (crayon, autre encre, etc.). Si un ajout est la main du premier scribe, alors la main n'est pas
-            spécifiquement notée.
-        </p>
+    <p>L'attribut <att>spanTo</att> est utilisé pour faire référence au point final de l'addition,
+        qui est marquée par <gi>anchor</gi>.</p>
+    <p>La place d'addition doit être dans <att>place</att> et la main de la place ajoutée peut être
+        tenue avec <att>hand</att>. Si nécessaire, à l'intérieur de <att>rend</att>, il est
+        possible de spécifier comment l'ajout a été effectué (crayon, autre encre, etc.). Si un
+        ajout est la main du premier scribe, alors la main n'est pas spécifiquement notée.</p>
   </remarks>
 </elementSpec>

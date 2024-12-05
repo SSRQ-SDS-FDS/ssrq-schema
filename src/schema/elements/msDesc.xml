@@ -5,16 +5,13 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="msDesc" module="msdescription" mode="change">
   <desc xml:lang="de" versionDate="2023-05-30">Beschreibt das edierte Quellenstück mit
         Aufbewahrungsort, Material, Layout, Schreiber, Siegel und Bibliographie zu Sekundärliteratur
-        (Metadaten).
-    </desc>
+        (Metadaten).</desc>
   <desc xml:lang="en" versionDate="2023-05-30">Describes the edited source document, including
         place of preservation, material, layout, scribe, seal and bibliography on secondary
-        literature (metadata).
-    </desc>
+        literature (metadata).</desc>
   <desc xml:lang="fr" versionDate="2023-05-30">Décrit la pièce de source éditée avec le lieu de
         conservation, le matériau, la mise en page, le scribe, le sceau et la bibliographie sur la
-        littérature secondaire (métadonnées).
-    </desc>
+        littérature secondaire (métadonnées).</desc>
   <classes mode="replace">
     <memberOf key="model.biblLike"/>
   </classes>
@@ -28,15 +25,19 @@
       <elementRef key="additional" minOccurs="0"/>
     </sequence>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-msDesc">
-    <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:msDesc to ensure the usage of either tei:physDesc or tei:adminInfo.</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-msDesc">
+    <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:msDesc to ensure the usage of
+      either tei:physDesc or tei:adminInfo.</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:msDesc[ancestor::tei:TEI//tei:text[@type = 'collection']]">
-          <sch:assert test=".[not(//tei:adminInfo)][not(tei:physDesc)]">Neither tei:physDesc nor tei:adminInfo are allowed for documents with tei:text/@type = 'collection'.</sch:assert>
+          <sch:assert test=".[not(//tei:adminInfo)][not(tei:physDesc)]">
+            Neither tei:physDesc nor tei:adminInfo are allowed for documents with
+            tei:text/@type = 'collection'.</sch:assert>
         </sch:rule>
-        <sch:rule context="tei:msDesc[not(tei:physDesc)][not(ancestor::tei:TEI//tei:text[@type = 'collection'])]">
-          <sch:assert test=".[//tei:adminInfo]">If no tei:physDesc is given, tei:adminInfo is required!</sch:assert>
+        <sch:rule context="tei:msDesc[not(ancestor::tei:TEI//tei:text[@type = 'collection'])][not(tei:physDesc)]">
+          <sch:assert test=".[//tei:adminInfo]">
+            If no tei:physDesc is given, tei:adminInfo is required.</sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>

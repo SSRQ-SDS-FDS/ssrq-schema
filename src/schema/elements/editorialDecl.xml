@@ -3,25 +3,28 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="editorialDecl" module="header" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-17">Enthält einen Link zu den Transkriptionsrichtlinien.</desc>
-  <desc xml:lang="en" versionDate="2023-07-17">Includes a link to the transcription guidelines.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-17">Inclut un lien vers les directives de transcription.</desc>
+  <desc xml:lang="de" versionDate="2023-07-17">Enthält einen Link zu den
+    Transkriptionsrichtlinien.</desc>
+  <desc xml:lang="en" versionDate="2023-07-17">Includes a link to the transcription
+    guidelines.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-17">Inclut un lien vers les directives de
+    transcription.</desc>
   <classes mode="replace">
     <memberOf key="model.encodingDescPart"/>
   </classes>
   <content>
     <elementRef key="p"/>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-editorialDecl">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-editorialDecl">
     <desc xml:lang="en" versionDate="2023-08-01">Constraint for tei:editorialDecl content</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:editorialDecl">
           <sch:assert test="./tei:p/tei:ref">
-            The <sch:name/> must contain a paragraph with a link.
+            tei:editorialDecl must contain a tei:p with a tei:ref as a child.
           </sch:assert>
           <sch:assert test="./tei:p/tei:ref[@target='https://p.ssrq-sds-fds.ch/guidelines/transcription']">
-            The link inside <sch:name/> must point to the latest transcription guidelines:
+            The link inside tei:editorialDecl must point to the latest transcription guidelines:
             &lt;p&gt;&lt;ref target="https://p.ssrq-sds-fds.ch/guidelines/transcription"/&gt;&lt;/p&gt;.
           </sch:assert>
         </sch:rule>

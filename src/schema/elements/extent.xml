@@ -10,11 +10,9 @@
     <memberOf key="model.biblPart"/>
   </classes>
   <content>
-    <alternate maxOccurs="unbounded">
-      <elementRef key="dimensions"/>
-    </alternate>
+    <elementRef key="dimensions" maxOccurs="2"/>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-extent">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-extent">
     <desc xml:lang="en" versionDate="2023-04-19">Constraint for tei:extent to ensure unique
         dimensions-types</desc>
     <constraint>

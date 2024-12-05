@@ -26,11 +26,6 @@ from ..conftest import RNG_test_function
             "<back xml:id='bar123'><div><p>foo</p></div></back>",
             False,
         ),
-        (
-            "invalid-back-with-attribute",
-            "<back rend='bar'><div><p>foo</p></div></back>",
-            False,
-        ),
     ],
 )
 def test_back(

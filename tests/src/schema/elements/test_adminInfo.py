@@ -8,21 +8,25 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-adminInfo",
-            """<adminInfo>
-        <custodialHist>
-            <custEvent type="lost" notBefore-custom="1858-09-01" calendar="gregorian">Verlust nicht vor Erscheinen der Erstedition des 19. Jahrhunderts.</custEvent>
-        </custodialHist>
-    </adminInfo>""",
+            """
+            <adminInfo>
+                <custodialHist>
+                    <custEvent type="lost" notBefore-custom="1858-09-01" calendar="gregorian">
+                        Verlust nicht vor Erscheinen der Erstedition des 19. Jahrhunderts.
+                    </custEvent>
+                </custodialHist>
+            </adminInfo>
+            """,
             True,
         ),
         (
-            "invalid-adminInfo",
-            "<adminInfo/>",
+            "invalid-adminInfo-with-wrong-content",
+            "<adminInfo>Foo</adminInfo>",
             False,
         ),
     ],
 )
-def test_adminInfo(
+def test_admin_info(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

@@ -80,7 +80,7 @@
           </datatype>
           <!-- This removes the TEI default constraint, which requires text content for any elements
             that use @calendar. -->
-          <constraintSpec scheme="schematron" ident="calendar_attr_on_empty_element" mode="delete"/>
+          <constraintSpec xml:lang="en" scheme="schematron" ident="calendar_attr_on_empty_element" mode="delete"/>
         </attDef>
       </attList>
     </classSpec>
@@ -227,7 +227,7 @@
                 <rng:param name="minInclusive">0</rng:param>
               </rng:data>
               <rng:data type="positiveInteger"/>
-              <rng:ref name="ssrq.measure.unknown"/>
+              <rng:ref name="ssrq.dimensions.unknown"/>
             </rng:choice>
           </datatype>
         </attDef>
@@ -404,8 +404,17 @@
     </classSpec>
     <classSpec ident="att.measurement" type="atts" mode="replace">
       <attList>
-        <attDef ident="commodity" mode="replace"/>
-        <attDef ident="quantity" mode="replace">
+        <attDef ident="commodity" mode="replace">
+          <datatype>
+            <dataRef key="ssrq.measure.att.commodity"/>
+          </datatype>
+        </attDef>
+        <attDef ident="origin" mode="add" module="ssrq.core.module">
+          <datatype>
+            <dataRef key="ssrq.measure.att.origin"/>
+          </datatype>
+        </attDef>
+        <attDef ident="quantity" mode="replace" usage="req">
           <desc xml:lang="de" versionDate="2023-03-17">Gibt bei Abmessungen die Ausdehnung an.</desc>
           <desc xml:lang="en" versionDate="2023-06-29">In the case of dimensions, specifies the expansion.
                     </desc>
@@ -414,7 +423,7 @@
           <datatype>
             <rng:choice>
               <rng:ref name="teidata.numeric"/>
-              <rng:ref name="ssrq.measure.unknown"/>
+              <rng:ref name="ssrq.dimensions.unknown"/>
             </rng:choice>
           </datatype>
         </attDef>
@@ -427,13 +436,12 @@
               <rng:ref name="ssrq.measure.area"/>
               <rng:ref name="ssrq.measure.capacity"/>
               <rng:ref name="ssrq.measure.currency"/>
-              <rng:ref name="ssrq.measure.lengths.base.cm"/>
               <rng:ref name="ssrq.measure.length"/>
+              <rng:ref name="ssrq.measure.lengths.base.cm"/>
+              <rng:ref name="ssrq.measure.parts.vierling"/>
+              <rng:ref name="ssrq.measure.time"/>
               <rng:ref name="ssrq.measure.various"/>
               <rng:ref name="ssrq.measure.weight"/>
-              <rng:ref name="ssrq.measure.parts.vierling"/>
-              <rng:ref name="ssrq.measure.scope"/>
-              <rng:ref name="ssrq.measure.time"/>
             </rng:choice>
           </datatype>
         </attDef>
@@ -528,7 +536,7 @@
             <dataRef name="IDREF"/>
           </datatype>
           <!-- This removes the TEI default constraint, because we use another datatype -->
-          <constraintSpec scheme="schematron" ident="spanTo-points-to-following" mode="delete"/>
+          <constraintSpec xml:lang="en" scheme="schematron" ident="spanTo-points-to-following" mode="delete"/>
         </attDef>
       </attList>
     </classSpec>

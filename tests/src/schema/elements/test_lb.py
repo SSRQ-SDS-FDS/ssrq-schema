@@ -12,13 +12,18 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-lb-with-attribute",
+            "valid-lb-with-break",
             "<lb break='no'/>",
             True,
         ),
         (
-            "lb-with-invalid-break",
-            "<lb break='foo'/>",
+            "valid-lb-with-facs",
+            "<lb facs='StAZH_C_VI_7_3_Nr_1_v2'/>",
+            True,
+        ),
+        (
+            "invalid-lb-with-content",
+            "<lb>foo</lb>",
             False,
         ),
     ],

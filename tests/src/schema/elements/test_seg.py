@@ -1,46 +1,59 @@
 import pytest
-from pyschval.schematron.validate import apply_schematron_validation
-from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
     "name, markup, result",
     [
         (
-            "valid-seg-with-text",
+            "valid-seg",
             "<seg>foo</seg>",
             True,
         ),
         (
-            "valid-seg-with-text-and-n",
+            "valid-seg-with-n",
             "<seg n='1'>foo</seg>",
             True,
         ),
         (
-            "valid-seg-with-mixed-content",
-            "<seg><lb/>Und sonderlich sol soͤlich unser gebott</seg>",
+            "invalid-seg-with-resp",
+            "<seg resp='PS'>foo</seg>",
             True,
         ),
         (
-            "valid-seg-with-p-and-other-content",
-            "<seg><head>foo</head><pb/><cb/><p><lb/>Und sonderlich sol soͤlich unser gebott</p><add place='left_top'>baz</add><cb/><table><row><cell>foo</cell></row></table></seg>",
+            "valid-seg-with-content-default",
+            "<seg><lb/>foo</seg>",
             True,
         ),
         (
-            "invalid-seg-with-p-and-other-content",
-            "<seg><head>foo</head><p><lb/>Und sonderlich sol soͤlich unser gebott</p><add place='left_top'>baz</add><note>lorem ipsum</note></seg>",
+            "valid-seg-with-other-content",
+            """
+            <seg>
+                <add place='left_top'>baz</add>
+                <cb/>
+                <head>foo</head>
+                <list><item>foo</item></list>
+                <p>foo</p>
+                <pb/>
+                <table><row><cell>foo</cell></row></table>
+            </seg>
+            """,
+            True,
+        ),
+        (
+            "seg-with-wrong-content",
+            "<seg><div>foo</div></seg>",
             False,
         ),
         (
-            "seg-with-invalid-child",
-            "<seg n='1'><text>foo</text></seg>",
-            False,
+            "valid-seg-with-two-segs",
+            "<seg><seg>foo</seg><seg>bar</seg></seg>",
+            True,
         ),
         (
-            "invalid-seg-with-cert",
-            "<seg cert='PS'>foo</seg>",
+            "invalid-seg-with-one-seg",
+            "<seg><seg>foo</seg></seg>",
             False,
         ),
     ],
@@ -52,23 +65,3 @@ def test_seg(
     result: bool,
 ):
     test_element_with_rng("seg", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "invalid-empty-seg",
-            "<seg/>",
-            False,
-        ),
-    ],
-)
-def test_seg_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].report.is_valid() is result

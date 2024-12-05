@@ -15,15 +15,14 @@
   <content>
     <elementRef key="p" maxOccurs="unbounded"/>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-summary">
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-summary">
     <desc xml:lang="en" versionDate="2023-04-14">Constraint for tei:summary</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:summary/tei:p">
-          <sch:assert test="not(.[@xml:lang])"><sch:name/>
-                        as part of tei:summary should not
-                        have an attribute xml:lang.
-                    </sch:assert>
+          <sch:assert test="not(.[@xml:lang])">
+            tei:p inside tei:summary should not have an attribute xml:lang.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>

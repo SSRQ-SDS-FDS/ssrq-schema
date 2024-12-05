@@ -17,13 +17,18 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-cb-with-wrong-attribute",
+            "invalid-cb-with-wrong-attribute-value",
             "<cb n='1'/>",
             False,
         ),
         (
-            "cb-with-invalid-attribute",
+            "invalid-cb-with-wrong-attribute",
             "<cb break='foo'/>",
+            False,
+        ),
+        (
+            "invalid-cb-with-content",
+            "<cb>Foo</cb>",
             False,
         ),
     ],

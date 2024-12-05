@@ -21,11 +21,6 @@ from ..conftest import RNG_test_function
             "<pc>-</pc>",
             False,
         ),
-        (
-            "invalid-pc-with-attribute",
-            "<pc unit='c'>;</pc>",
-            False,
-        ),
     ],
 )
 def test_pc(

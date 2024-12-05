@@ -3,13 +3,12 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="width" module="msdescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-15">Beschreibt die Breite eines Blattes oder Buchs sowie die Breite der
-        Plica.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Describes the width of a sheet or book and the width of the plica.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-15">Décrit la largeur d'une feuille ou d'un livre et la largeur du plica.
-    </desc>
+  <desc xml:lang="de" versionDate="2023-07-15">Beschreibt die Breite eines Blattes oder Buchs sowie
+    die Breite der Plica.</desc>
+  <desc xml:lang="en" versionDate="2023-07-15">Describes the width of a sheet or book and the
+    width of the plica.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-15">Décrit la largeur d'une feuille ou d'un livre et la
+    largeur du plica.</desc>
   <classes mode="replace">
     <memberOf key="att.dimensions"/>
     <memberOf key="model.dimLike"/>
@@ -22,7 +21,7 @@
     <attDef ident="unit" mode="change" usage="req">
       <datatype>
         <rng:choice>
-          <rng:ref name="ssrq.measure.unknown"/>
+          <rng:ref name="ssrq.dimensions.unknown"/>
           <rng:ref name="ssrq.measure.lengths.base.cm"/>
         </rng:choice>
       </datatype>
@@ -36,15 +35,12 @@
   <xi:include href="examples.xml" xpointer="ex-width-unknown-en"/>
   <xi:include href="examples.xml" xpointer="ex-width-unknown-fr"/>
   <remarks xml:lang="de" versionDate="2023-07-14">
-    <p>Die Masseinheit für <att>unit</att> ist Zentimeter (cm).
-        </p>
+    <p>Die Masseinheit für <att>unit</att> ist Zentimeter (cm).</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-14">
-    <p>The unit of measure for <att>unit</att> is centimeters (cm).
-        </p>
+    <p>The unit of measure for <att>unit</att> is centimeters (cm).</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-14">
-    <p>L'unité de mesure pour <att>unit</att> est le centimètre (cm).
-        </p>
+    <p>L'unité de mesure pour <att>unit</att> est le centimètre (cm).</p>
   </remarks>
 </elementSpec>

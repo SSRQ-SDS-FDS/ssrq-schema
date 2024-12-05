@@ -12,6 +12,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-foliation-with-multiple-ps",
+            "<foliation><p>Foo</p><p>Bar</p></foliation>",
+            True,
+        ),
+        (
             "invalid-foliation",
             "<foliation>Foo</foliation>",
             False,
