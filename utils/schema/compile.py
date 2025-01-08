@@ -273,9 +273,15 @@ def odd_factory(
 
     odd_resolved_specs = resolve_embedded_spec_files(doc=odd_with_metadata)
 
-    compiled_odd = compile_odd_to_odd(
-        odd=odd_resolved_specs, tei_version=schema_config["tei_version"]
-    )
+    LOGGER.info("Creating full ODD from Schema ODD src..")
+
+    try:
+        compiled_odd = compile_odd_to_odd(
+            odd=odd_resolved_specs, tei_version=schema_config["tei_version"]
+        )
+    except Exception as e:
+        LOGGER.error(f"Error while creating compiled ODD: {e}")
+        raise SystemExit(1)
 
     if clean:
         with PySaxonProcessor(license=False) as proc:
@@ -295,7 +301,11 @@ def odd_factory(
 
     compiled_odd = resolve_sch_let(odd=compiled_odd)
 
+    LOGGER.info("Preprocessing done. Compiling ODD to RNG")
+
     rng = compile_odd_to_rng(odd=compiled_odd, tei_version=schema_config["tei_version"])
+
+    LOGGER.info("Compilation done.")
 
     return Schema(
         version=schema_config["version"],
