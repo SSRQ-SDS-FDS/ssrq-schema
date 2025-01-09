@@ -141,7 +141,7 @@ class BaseSpec:
 
         return examples
 
-    def find_attributes(
+    def find_attributes(  # noqa: C901
         self, components: dict[str, ODDElement]
     ) -> list[AttributeSpec] | None:
         att_list = self.odd_element.find("./tei:attList", namespaces=NS_MAP)
@@ -154,7 +154,6 @@ class BaseSpec:
         if att_list is None and self.classes is None:
             return None
 
-        assert isinstance(att_list, ET.Element)
         class_attributes: list[ET.Element] | None = None
         element_classes: list[ET.Element] | None = None
 
@@ -174,7 +173,8 @@ class BaseSpec:
 
         element_attributes = (
             el_attr
-            if len(el_attr := att_list.findall("./tei:attDef", namespaces=NS_MAP)) > 0
+            if isinstance(att_list, ET.Element)
+            and len(el_attr := att_list.findall("./tei:attDef", namespaces=NS_MAP)) > 0
             else None
         )
 
