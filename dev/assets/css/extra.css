@@ -1,0 +1,56 @@
+/**
+ * Lexia Fontes
+ */
+
+@font-face {
+    font-family: 'Lexia Fontes';
+    src: url('../fonts/LexiaFontes_Bd.woff') format('woff'),
+        url('../fonts/LexiaFontes_Bd.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Lexia Fontes';
+    src: url('../fonts/LexiaFontes_BdIt.woff') format('woff'),
+        url('../fonts/LexiaFontes_BdIt.ttf') format('truetype');
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Lexia Fontes';
+    src: url('../fonts/LexiaFontes_It.woff') format('woff'),
+        url('../fonts/LexiaFontes_It.ttf') format('truetype');
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Lexia Fontes';
+    src: url('../fonts/LexiaFontes_Rg.woff') format('woff'),
+        url('../fonts/LexiaFontes_Rg.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Libertinus Serif';
+    src: url('../fonts/LibertinusSerif-Regular.otf') format('opentype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+:root {
+    --md-primary-fg-color: #994443;
+    --md-footer-bg-color: #e1e1de;
+    --md-code-font: "Lexia Fontes", "Libertinus Serif";
+    --md-text-font: Roboto, "Lexia Fontes";
+
+    --md-accent-fg-color: #994443;
+    --md-accent-fg-color--transparent: #e1e1de;
+}
+
+.tabbed-set.tabbed-alternate {
+    box-shadow: 0 -.05rem var(--md-default-fg-color--lightest) inset;
+}
