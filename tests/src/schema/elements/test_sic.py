@@ -30,6 +30,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-sic-with-abbr",
+            "<sic><abbr>foo</abbr></sic>",
+            True,
+        ),
+        (
             "invalid-sic-with-wrong-content",
             "<sic><p>foo</p></sic>",
             False,
