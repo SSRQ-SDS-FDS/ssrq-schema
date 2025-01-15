@@ -10,30 +10,40 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-handNote-empty",
-            "<handNote xml:id='foo'/>",
+            "<handNote xml:id='otherHand'/>",
             True,
         ),
         (
             "valid-handNote-with-scribe-attribute",
-            "<handNote xml:id='foo' scribe='per000123'/>",
+            "<handNote xml:id='hand10c' scribe='per000123'/>",
             True,
         ),
         (
             "valid-handNote-with-date",
             """
-            <handNote xml:id='foo'>
+            <handNote xml:id='firstHand'>
                 <date from-custom='1001-01-01' to-custom='1100-12-31'/>
             </handNote>""",
             True,
         ),
         (
             "valid-handNote-with-p",
-            "<handNote xml:id='foo'><p>bar</p></handNote>",
+            "<handNote xml:id='secondHand'><p>bar</p></handNote>",
             True,
         ),
         (
             "invalid-handNote-without-xml-id",
             "<handNote/>",
+            False,
+        ),
+        (
+            "valid-handNote-with-uuid",
+            "<handNote xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'/>",
+            True,
+        ),
+        (
+            "invalid-handNote-with-random-id",
+            "<handNote xml:id='foo'/>",
             False,
         ),
     ],
@@ -52,12 +62,12 @@ def test_hand_note(
     [
         (
             "valid-handNote-with-reference",
-            "<TEI><handNote xml:id='foo'/><p hand='foo'>bar</p></TEI>",
+            "<TEI><handNote xml:id='otherHand'/><p hand='otherHand'>bar</p></TEI>",
             True,
         ),
         (
             "invalid-handNote-without-reference",
-            "<TEI><handNote xml:id='foo'/></TEI>",
+            "<TEI><handNote xml:id='otherHand'/></TEI>",
             False,
         ),
     ],

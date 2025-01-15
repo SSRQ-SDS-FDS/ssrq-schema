@@ -303,7 +303,9 @@ def test_constraint_sch_att_facs(
             "valid-wit-referencing-a-bibl-element",
             """
             <div>
-                <bibl xml:id="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">Foo</bibl>
+                <listBibl>
+                    <bibl xml:id="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">Foo</bibl>
+                </listBibl>
                 <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d"/>
             </div>        
             """,

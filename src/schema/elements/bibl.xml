@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="bibl" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="bibl" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2023-09-14">Bibliographische Angabe</gloss>
   <desc xml:lang="de" versionDate="2023-07-18">Enthält eine bibliographische Angabe mit
     Seitenangaben.</desc>
@@ -21,6 +21,18 @@
       <textNode/>
     </alternate>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-bibl">
+    <desc xml:lang="en" versionDate="2023-10-16">Constraints for tei:bibl</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:bibl[@xml:id]">
+          <sch:assert test="./parent::tei:listBibl">
+            The attribute @xml:id for tei:bibl is allowed only inside tei:listBibl.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <attList>
     <attDef ident="n" mode="delete"/>
     <attDef ident="xml:id" mode="change">

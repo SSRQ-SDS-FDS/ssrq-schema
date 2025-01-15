@@ -610,7 +610,7 @@
             <rng:choice>
               <rng:ref name="ssrq.hand"/>
               <rng:ref name="ssrq.hand.century"/>
-              <rng:data type="string"/>
+              <rng:ref name="ssrq.id"/>
             </rng:choice>
           </datatype>
         </attDef>

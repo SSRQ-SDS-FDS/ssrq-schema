@@ -66,7 +66,9 @@ def test_supplied(
             "valid-supplied-source-with-ref-to-bibl",
             """
             <TEI>
-                <bibl xml:id='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</bibl>
+                <listBibl>
+                    <bibl xml:id='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</bibl>
+                </listBibl>
                 <supplied source='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</supplied>
             </TEI>
             """,
@@ -90,7 +92,9 @@ def test_supplied(
             "invalid-supplied-with-resp-and-sources",
             """
             <TEI>
-                <bibl xml:id='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</bibl>
+                <listBibl>
+                    <bibl xml:id='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</bibl>
+                </listBibl>
                 <supplied resp='foo' source='id-ssrq73988c1a-40e1-4527-94b7-736d418b29d0'>foo</supplied>
             </TEI>
             """,
