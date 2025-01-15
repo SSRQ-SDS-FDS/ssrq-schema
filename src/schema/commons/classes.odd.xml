@@ -610,9 +610,7 @@
             <rng:choice>
               <rng:ref name="ssrq.hand"/>
               <rng:ref name="ssrq.hand.century"/>
-              <rng:data type="string">
-                <rng:param name="pattern">id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}</rng:param>
-              </rng:data>
+              <rng:ref name="ssrq.id"/>
             </rng:choice>
           </datatype>
         </attDef>
