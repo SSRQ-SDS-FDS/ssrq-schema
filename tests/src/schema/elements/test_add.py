@@ -18,7 +18,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-add-with-hand",
-            "<add place='left_top' hand='foo'>bar</add>",
+            "<add place='left_top' hand='otherHand'>bar</add>",
             True,
         ),
         (

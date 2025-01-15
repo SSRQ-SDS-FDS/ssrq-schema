@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="handNote" module="header" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="handNote" module="header" mode="change">
   <desc xml:lang="de" versionDate="2023-05-22">Beschreibt eine Hand und identifiziert sie
     gegebenenfalls mit einem Schreiber.</desc>
   <desc xml:lang="en" versionDate="2023-05-22">Describes a hand and, where appropriate, identifies
@@ -28,7 +28,7 @@
           <sch:assert test="root(.)//@hand[. = $note-id]">
             The tei:handNote-element with the id <sch:value-of select="$note-id"/> is not referenced
             by the @hand of any element. Please reference the handNote-element or delete it, if it
-            is not needed.
+            is not needed anymore.
           </sch:assert>
         </sch:rule>
       </sch:pattern>
@@ -36,7 +36,17 @@
   </constraintSpec>
   <attList>
     <attDef ident="n" mode="delete"/>
-    <attDef ident="xml:id" mode="change" usage="req"/>
+    <attDef ident="xml:id" mode="change" usage="req">
+      <datatype>
+        <rng:choice>
+          <rng:ref name="ssrq.hand"/>
+          <rng:ref name="ssrq.hand.century"/>
+          <rng:data type="string">
+            <rng:param name="pattern">id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}</rng:param>
+          </rng:data>
+        </rng:choice>
+      </datatype>
+    </attDef>
     <attDef ident="xml:lang" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-handDesc-de"/>
