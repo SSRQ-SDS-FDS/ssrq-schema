@@ -1940,13 +1940,13 @@ files = [
 
 [[package]]
 name = "snakemd"
-version = "2.2.0"
+version = "2.3.0"
 description = "A markdown generation library for Python."
 optional = false
-python-versions = ">=3.8,<4.0"
+python-versions = "<4.0,>=3.9"
 files = [
-    {file = "snakemd-2.2.0-py3-none-any.whl", hash = "sha256:8f2458341fb9700c1d17c2be8b43236a32568a915b1436a923edd9e4e0403d05"},
-    {file = "snakemd-2.2.0.tar.gz", hash = "sha256:da3603e1ee76952bdd6051ee5bf35f7ed5e6d523d57bbe21b26411f8ca5d34ce"},
+    {file = "snakemd-2.3.0-py3-none-any.whl", hash = "sha256:20e42054db491eefd8ceca3e85f66086df262b75000aa37400da8591f6400995"},
+    {file = "snakemd-2.3.0.tar.gz", hash = "sha256:6a74b20ad5c8b6357fba5af4a5daea01251e6a793ee69f57a9aaceb17349d124"},
 ]
 
 [[package]]
@@ -2197,4 +2197,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "32509b28f7f1f44302c981bb9b135bfdf30872cbd8976f67d9417a332967357b"
+content-hash = "a3741d524a356f55739528b10ff2c0b8bc9a1f68cbbdefeda4ac0f83ea08d179"
