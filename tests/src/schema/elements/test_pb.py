@@ -32,6 +32,11 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
+            "invalid-pb-with-xml-id",
+            "<pb xml:id='foo'/>",
+            False,
+        ),
+        (
             "invalid-pb-with-content",
             "<pb>foo</pb>",
             False,
