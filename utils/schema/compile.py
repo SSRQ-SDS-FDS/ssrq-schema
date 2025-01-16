@@ -258,7 +258,7 @@ def odd_factory(
     clean: bool = True,
     print_stats: bool = False,
 ) -> Schema:
-    LOGGER.info(f'Compiling schema {schema_config["entry"]}')
+    LOGGER.info(f"Compiling schema {schema_config['entry']}")
 
     odd_with_metadata = fill_template_with_metadata(
         authors=authors, schema=schema_config
