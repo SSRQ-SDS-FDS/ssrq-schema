@@ -66,7 +66,12 @@
   </constraintSpec>
   <attList>
     <attDef ident="calendar" mode="delete"/>
-    <attDef ident="source" mode="change">
+    <attDef ident="source" mode="replace">
+      <desc xml:lang="de" versionDate="2025-01-16">Verweis auf ein Archivinformationssytem.</desc>
+      <desc xml:lang="en" versionDate="2025-01-16">Reference to an archive information
+            system.</desc>
+      <desc xml:lang="fr" versionDate="2025-01-16">Référence à un système d’information
+            d’archives.</desc>
       <datatype>
         <dataRef key="ssrq.pointer.url"/>
       </datatype>

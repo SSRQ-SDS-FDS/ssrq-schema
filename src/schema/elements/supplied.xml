@@ -38,6 +38,12 @@
   <attList>
     <attDef ident="cert" mode="delete"/>
     <attDef ident="source" mode="replace">
+      <desc xml:lang="de" versionDate="2025-01-16">Verweise auf andere Stücke oder
+        Textzeugen.</desc>
+      <desc xml:lang="en" versionDate="2025-01-16">References to other pieces or textual
+        witnesses.</desc>
+      <desc xml:lang="fr" versionDate="2025-01-16">Références à d'autres pièces ou à témoins
+        textuels.</desc>
       <datatype>
         <rng:list>
           <rng:oneOrMore>
