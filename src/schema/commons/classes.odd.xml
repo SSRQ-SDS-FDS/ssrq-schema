@@ -355,28 +355,7 @@
     </classSpec>
     <classSpec ident="att.global.source" type="atts" mode="change">
       <attList>
-        <attDef ident="source" mode="change">
-          <desc xml:lang="de" versionDate="2023-03-07">Verweis auf ein anderes Stück
-                        (bspw. im Falle der Mehrfachüberlieferung) oder auf ein
-                        Archivinformationssystem.
-                </desc>
-          <desc xml:lang="en" versionDate="2023-03-07">Reference to another item (e.g. in
-                        the case of multiple records) or to an archival information system.
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-03-07">Renvoi à une autre pièce (par ex.
-                        en cas de livraison multiple) ou à un système d'information archivistique.
-                    </desc>
-          <datatype>
-            <rng:choice>
-              <rng:list>
-                <rng:oneOrMore>
-                  <rng:ref name="ssrq.pointer.urn"/>
-                </rng:oneOrMore>
-              </rng:list>
-              <rng:ref name="ssrq.pointer.url"/>
-            </rng:choice>
-          </datatype>
-        </attDef>
+        <attDef ident="source" mode="change"/>
       </attList>
     </classSpec>
     <classSpec ident="att.handFeatures" type="atts" mode="change">

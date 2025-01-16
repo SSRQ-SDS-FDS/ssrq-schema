@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="quote" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="quote" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Enthält ein Zitat innerhalb eines
       Originaltextes.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains a citation within an original text.</desc>
@@ -56,6 +56,24 @@
               altro documento.</desc>
         </valItem>
       </valList>
+    </attDef>
+    <attDef ident="source" mode="replace">
+      <desc xml:lang="de" versionDate="2025-01-16">Verweise auf andere Stücke oder externe
+          Quellen.</desc>
+      <desc xml:lang="en" versionDate="2025-01-16">References to other items or external
+          sources.</desc>
+      <desc xml:lang="fr" versionDate="2025-01-16">Références à d’autres pieces ou sources
+          externes.</desc>
+      <datatype>
+        <rng:choice>
+          <rng:list>
+            <rng:oneOrMore>
+              <rng:ref name="ssrq.pointer.urn"/>
+            </rng:oneOrMore>
+          </rng:list>
+          <rng:ref name="ssrq.pointer.url"/>
+        </rng:choice>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-quote-de"/>
