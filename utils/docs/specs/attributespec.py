@@ -62,6 +62,7 @@ class AttributeSpec:
                     restriction = (
                         f" – {translations['restriction']}: {translations[name] + ' ' if (name := param.get('name')) else ''}`{param.text}`"
                         if (param := content_part.find("rng:param", namespaces=NS_MAP))
+                        is not None
                         else ""
                     )
                     output.append(f"{name_translation}{restriction}")
