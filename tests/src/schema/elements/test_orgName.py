@@ -49,7 +49,7 @@ def test_org_name(
     [
         (
             "valid-orgName-de-inside-seriesStmt",
-            "<seriesStmt><orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName></seriesStmt>",
+            "<seriesStmt><orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName></seriesStmt>",
             True,
         ),
         (

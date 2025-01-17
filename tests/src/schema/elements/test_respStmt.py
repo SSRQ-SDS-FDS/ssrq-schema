@@ -31,7 +31,7 @@ from ..conftest import RNG_test_function
             "valid-respStmt-with-orgName",
             """
             <respStmt>
-                <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
                 <resp>Herausgabe</resp>
             </respStmt>
             """,
@@ -41,8 +41,8 @@ from ..conftest import RNG_test_function
             "invalid-respStmt-with-multiple-orgNames",
             """
             <respStmt>
-                <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
+                <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
                 <resp>Herausgabe</resp>
             </respStmt>
             """,
@@ -53,7 +53,7 @@ from ..conftest import RNG_test_function
             """
             <respStmt>
                 <persName>Friedrich Emil Welti</persName>
-                <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
                 <resp>Herausgabe</resp>
             </respStmt>
             """,

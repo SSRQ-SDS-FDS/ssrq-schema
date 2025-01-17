@@ -25,7 +25,7 @@
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:orgName[ancestor::tei:seriesStmt]">
-          <sch:let name="ssrq" value="('Fondation des sources du droit de la Société suisse des juristes', 'Rechtsquellenstiftung des Schweizerischen Juristenvereins')"/>
+          <sch:let name="ssrq" value="('Fondation des sources du droit de la Société suisse des juristes', 'Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft')"/>
           <sch:let name="content" value="normalize-space(.)"/>
           <sch:assert test="$content = $ssrq">
               The content of tei:orgName must match <sch:value-of select="string-join($ssrq, ' or ')"/>.
