@@ -7,15 +7,14 @@ title: Startseite
 ![SSRQ Logo](ssrq-logo.svg)
 
 Willkommen auf der Dokumentationsseite der Sammlung Schweizerischer Rechtsquellen (SSRQ)
-der Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft (vor 2025: des 
-Schweizerischen Juristenvereins).
+der Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft (vor 2025: des Schweizerischen Juristenvereins).
 Auf dieser Seite finden Sie eine ausführliche Beschreibung der philologischen Grundlagen,
-auf denen die Editionseinheiten der SSRQ basieren, sowie eine Dokumentation des verwendeten 
-TEI-XML-Schemas in Form eine «Tag-Bibliothek». Diese Seiten können daher als eine Einführung 
-in die Arbeitsweise der digitalen Editionen der Rechtsquellenstiftung gesehen werden und 
+auf denen die Editionseinheiten der SSRQ basieren, sowie eine Dokumentation des verwendeten
+TEI-XML-Schemas in Form eine «Tag-Bibliothek». Diese Seiten können daher als eine Einführung
+in die Arbeitsweise der digitalen Editionen der Rechtsquellenstiftung gesehen werden und
 fungieren zugleich als «editorischer Bericht».
 
-- Die digitale Edition der SSRQ mit allen TEI-XML-Dateien finden Sie in unserem Editionsportal 
+- Die digitale Edition der SSRQ mit allen TEI-XML-Dateien finden Sie in unserem Editionsportal
 [Editio](https://editio.ssrq-online.ch/).
 - Die [retrodigitalisierte Sammlung](https://www.ssrq-sds-fds.ch/online/cantons.html) erschliesst
 die analog erschienenen Bände als OCR-PDF.
@@ -25,7 +24,7 @@ Sammlung seit den 1890er Jahren.
 
 ## Technologie und Standardisierung
 
-Aufgrund des Medienwandels und der Möglichkeiten des digitalen Zeitalters werden die Editionen der 
+Aufgrund des Medienwandels und der Möglichkeiten des digitalen Zeitalters werden die Editionen der
 SSRQ mithilfe der Extensible Markup Language (XML) nach den Empfehlungen der Text Encoding
 Initiative (TEI) umgesetzt.
 
@@ -62,11 +61,11 @@ welche bei der Edition historischer Texte auftreten, Definitionen und
 Vorschläge zur Kodierung bieten.
 
 Dadurch wird einerseits erreicht, dass einzelne Editionsprojekte diese Phänomene
-nicht mühsam selbst modellieren müssen, und andererseits werden durch das Anwenden 
-der Empfehlungen viele Editionen miteinander vergleichbar. 
+nicht mühsam selbst modellieren müssen, und andererseits werden durch das Anwenden
+der Empfehlungen viele Editionen miteinander vergleichbar.
 
 Diese Standardisierung trägt dazu bei, dass die erstellten Daten nicht nur für die
-Öffentlichkeit, sondern auch für andere wissenschaftliche Zwecke leicht zugänglich 
+Öffentlichkeit, sondern auch für andere wissenschaftliche Zwecke leicht zugänglich
 sind.
 
 Gleichzeitig bedeutet dies jedoch, dass die Empfehlungen der TEI sehr weit
@@ -75,14 +74,14 @@ Wissenschaften eingesetzt werden können.
 
 ## Schema
 
-Aus diesem Grund wurden die Richtlinien der TEI für die Zwecke der SSRQ in Form 
-eines eigenen, fortlaufend entwickelten Schemas[^4] angepasst, welches nicht nur 
-den Besonderheiten der vielfältigen Quellentexte, sondern auch der Tradition der 
+Aus diesem Grund wurden die Richtlinien der TEI für die Zwecke der SSRQ in Form
+eines eigenen, fortlaufend entwickelten Schemas[^4] angepasst, welches nicht nur
+den Besonderheiten der vielfältigen Quellentexte, sondern auch der Tradition der
 Sammlung gleichermassen Rechnung trägt.
 
-Das [vollständige, kompilierte Schema](https://schema.ssrq-sds-fds.ch/latest/TEI_Schema.rng) 
-kann frei heruntergeladen und weitergenutzt werden. Seine Entwicklung erfolgt öffentlich 
-einsehbar auf der Plattform [GitHub](https://github.com/SSRQ-SDS-FDS/ssrq-schema), es wird nachhaltig auf 
+Das [vollständige, kompilierte Schema](https://schema.ssrq-sds-fds.ch/latest/TEI_Schema.rng)
+kann frei heruntergeladen und weitergenutzt werden. Seine Entwicklung erfolgt öffentlich
+einsehbar auf der Plattform [GitHub](https://github.com/SSRQ-SDS-FDS/ssrq-schema), es wird nachhaltig auf
 [Zenodo](https://zenodo.org/records/13379935) publiziert.
 
 [^2]:
