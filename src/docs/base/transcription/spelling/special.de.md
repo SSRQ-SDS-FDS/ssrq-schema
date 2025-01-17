@@ -202,53 +202,54 @@ als Grundbuchstabe mit kombinierendem Trema (U+0308) erfasst werden.
 In der Tabelle wird daher bei kombinierenden Zeichen beispielhaft das `a`
 verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 
-| Beschreibung                            | Sonderzeichen         | Unicode-Codepunkt(e) |
-|-----------------------------------------|-----------------------|----------------------|
-| **Ligaturen**                           |                       |                      |
-| A+E-Ligatur                             | `Æ`                   | U+00C6               |
-| a+e-Ligatur                             | `æ`                   | U+00E6               |
-| O+E-Ligatur                             | `Œ`                   | U+0152               |
-| o+e-Ligatur                             | `œ`                   | U+0153               |
-| s+z-Ligatur                             | `ß`                   | U+00DF               |
-| **Kombinierende Diakritika**            |                       |                      |
-| Buchstabe mit Gravis                    | `à`                  | Buchstabe + U+0300   |
-| Buchstabe mit Akut                      | `á`                  | Buchstabe + U+0301   |
-| Buchstabe mit Zirkumflex                | `â`                  | Buchstabe + U+0302   |
-| Buchstabe mit Tilde                     | `ã`                  | Buchstabe + U+0303   |
-| Buchstabe mit Längenzeichen             | `ā`                  | Buchstabe + U+0304   |
-| Buchstabe mit Punkt                     | `ȧ`                  | Buchstabe + U+0307   |
-| Buchstabe mit Trema                     | `ä`                  | Buchstabe + U+0308   |
-| Buchstabe mit Haken                     | `ǎ`                  | Buchstabe + U+030C   |
-| Buchstabe mit vertikalem Strich         | `a̍`                  | Buchstabe + U+030D   |
-| Buchstabe mit Cedille                   | `a̧`                  | Buchstabe + U+0327   |
-| Buchstabe mit Ogonek                    | `ą`                  | Buchstabe + U+0328   |
-| **Kombinierende Superkripte**           |                       |                      |
-| Buchstabe mit Superskript a             | `aͣ`                  | Buchstabe + U+0363   |
-| Buchstabe mit Superskript e             | `aͤ`                  | Buchstabe + U+0364   |
-| Buchstabe mit Superskript i             | `aͥ`                  | Buchstabe + U+0365   |
-| Buchstabe mit Superskript o             | `aͦ`                  | Buchstabe + U+0366   |
-| Buchstabe mit Superskript u             | `aͧ`                  | Buchstabe + U+0367   |
-| Buchstabe mit Superskript v             | `aͮ`                  | Buchstabe + U+036E   |
-| Buchstabe mit Superskript w             | `a`                  | Buchstabe + U+F03C   |
-| **Sonstige modifizierte Buchstaben**    |                       |                      |
-| i mit Strich (= eineinhalb)             | `ɨ`                   | U+0268               |
-| i mit zwei Strichen                     | ``                   | U+E8A1               |
-| j mit Strich                            | `ɉ`                   | U+0249               |
-| j mit zwei Strichen                     | ``                   | U+E8A2               |
-| q mit Strich                            | `ꝗ`                   | U+A757               |
-| t mit Strich                            | `ŧ`                   | U+0167               |
-| v mit Strich (= viereinhalb)            | ``                   | U+E8BB               |
-| v mit diagonalem Strich                 | `ꝟ`                   | U+A75F               |
-| v mit zwei Strichen                     | ``                   | U+E8BC               |
-| x mit Strich oben                       | ``                   | U+E8BD               |
-| x mit Strich unten  (= neuneinhalb)     | ``                   | U+E8BE               |
-| x mit zwei Strichen unten               | ``                   | U+E8CE               |
-| **Währungen und Einheiten**             |                       |                      |
-| Florin                                  | ``                   | U+F2E8               |
-| Gulden                                  | ``                   | U+F2E9               |
-| h mit Strich (= Haller)                 | `ħ`                   | U+0127               |
-| Helbling                                | ``                   | U+F2FB               |
-| Krone                                   | ``                   | U+F2FA               |
+| Beschreibung                         | Sonderzeichen         | Unicode-Codepunkt(e) |
+|--------------------------------------|-----------------------|----------------------|
+| **Ligaturen**                        |                       |                      |
+| A+E-Ligatur                          | `Æ`                   | U+00C6               |
+| a+e-Ligatur                          | `æ`                   | U+00E6               |
+| O+E-Ligatur                          | `Œ`                   | U+0152               |
+| o+e-Ligatur                          | `œ`                   | U+0153               |
+| s+z-Ligatur                          | `ß`                   | U+00DF               |
+| **Kombinierende Diakritika**         |                       |                      |
+| Buchstabe mit Gravis                 | `à`                  | Buchstabe + U+0300   |
+| Buchstabe mit Akut                   | `á`                  | Buchstabe + U+0301   |
+| Buchstabe mit Zirkumflex             | `â`                  | Buchstabe + U+0302   |
+| Buchstabe mit Tilde                  | `ã`                  | Buchstabe + U+0303   |
+| Buchstabe mit Längenzeichen          | `ā`                  | Buchstabe + U+0304   |
+| Buchstabe mit Punkt                  | `ȧ`                  | Buchstabe + U+0307   |
+| Buchstabe mit Trema                  | `ä`                  | Buchstabe + U+0308   |
+| Buchstabe mit Haken                  | `ǎ`                  | Buchstabe + U+030C   |
+| Buchstabe mit vertikalem Strich      | `a̍`                  | Buchstabe + U+030D   |
+| Buchstabe mit Cedille                | `a̧`                  | Buchstabe + U+0327   |
+| Buchstabe mit Ogonek                 | `ą`                  | Buchstabe + U+0328   |
+| **Kombinierende Superkripte**        |                       |                      |
+| Buchstabe mit Superskript a          | `aͣ`                  | Buchstabe + U+0363   |
+| Buchstabe mit Superskript e          | `aͤ`                  | Buchstabe + U+0364   |
+| Buchstabe mit Superskript i          | `aͥ`                  | Buchstabe + U+0365   |
+| Buchstabe mit Superskript o          | `aͦ`                  | Buchstabe + U+0366   |
+| Buchstabe mit Superskript u          | `aͧ`                  | Buchstabe + U+0367   |
+| Buchstabe mit Superskript v          | `aͮ`                  | Buchstabe + U+036E   |
+| Buchstabe mit Superskript w          | `a`                  | Buchstabe + U+F03C   |
+| **Sonstige modifizierte Buchstaben** |                       |                      |
+| i mit Strich (= eineinhalb)          | `ɨ`                   | U+0268               |
+| i mit zwei Strichen                  | ``                   | U+E8A1               |
+| j mit Strich                         | `ɉ`                   | U+0249               |
+| j mit zwei Strichen                  | ``                   | U+E8A2               |
+| q mit Strich                         | `ꝗ`                   | U+A757               |
+| t mit Strich                         | `ŧ`                   | U+0167               |
+| v mit Strich (= viereinhalb)         | ``                   | U+E8BB               |
+| v mit diagonalem Strich              | `ꝟ`                   | U+A75F               |
+| v mit zwei Strichen                  | ``                   | U+E8BC               |
+| x mit Strich oben                    | ``                   | U+E8BD               |
+| x mit Strich unten  (= neuneinhalb)  | ``                   | U+E8BE               |
+| x mit zwei Strichen unten            | ``                   | U+E8CE               |
+| **Währungen und Einheiten**          |                       |                      |
+| Florin                               | ``                   | U+F2E8               |
+| Gulden                               | ``                   | U+F2E9               |
+| h mit Strich (= Haller)              | `ħ`                   | U+0127               |
+| Helbling                             | ``                   | U+F2FB               |
+| Krone                                | ``                   | U+F2FA               |
+| Krone (alternativ)                   | ``                   | U+F2FC               |
 | Pfennig/Denar                           | `₰`                   | U+20B0               |
 | Pfund (Währung)                         | ``                   | U+F2EA               |
 | Pfund (Gewicht)                         | `℔`                   | U+2114               |
