@@ -12,7 +12,7 @@ from ..conftest import RNG_test_function
             <seriesStmt>
                 <title>Sammlung Schweizerischer Rechtsquellen</title>
                 <respStmt>
-                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                    <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
                     <resp>Herausgabe</resp>
                 </respStmt>
                 <idno>SSRQ-FR-I_2_8-1-1</idno>
@@ -26,7 +26,7 @@ from ..conftest import RNG_test_function
             """
             <seriesStmt>
                 <respStmt>
-                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                    <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
                     <resp>Herausgabe</resp>
                 </respStmt>
                 <idno>SSRQ-FR-I_2_8-1-1</idno>
@@ -52,7 +52,7 @@ from ..conftest import RNG_test_function
             <seriesStmt>
                 <title>Sammlung Schweizerischer Rechtsquellen</title>
                 <respStmt>
-                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                    <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
                     <resp>Herausgabe</resp>
                 </respStmt>
                 <idno>SSRQ-FR-I_2_8-1-1</idno>
@@ -66,7 +66,7 @@ from ..conftest import RNG_test_function
             <seriesStmt>
                 <title>Sammlung Schweizerischer Rechtsquellen</title>
                 <respStmt>
-                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
+                    <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
                     <resp>Herausgabe</resp>
                 </respStmt>
             </seriesStmt>
