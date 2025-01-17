@@ -2584,8 +2584,8 @@
   </specGrp>
   <specGrp xml:id="ssrq-orig-type">
     <dataSpec ident="ssrq.orig.type" mode="add">
-      <desc xml:lang="de" versionDate="2023-10-14">Geschlossene Liste von Werten, die ausdrücken,
-        auf was sich ein <gi>origDate</gi> bzw. ein <gi>origPlace</gi> bezieht.</desc>
+      <desc xml:lang="de" versionDate="2025-01-16">Geschlossene Liste von Werten, die ausdrücken,
+        worauf sich ein <gi>origDate</gi> bzw. ein <gi>origPlace</gi> bezieht.</desc>
       <desc xml:lang="en" versionDate="2023-10-14">Closed list of values, which express what an
           <gi>origDate</gi> or an <gi>origPlace</gi> refers to.</desc>
       <desc xml:lang="fr" versionDate="2023-10-14">Liste fermée de valeurs, qui expriment à quoi un
@@ -2593,20 +2593,20 @@
       <content>
         <valList type="closed">
           <valItem ident="content">
-            <desc xml:lang="de" versionDate="2023-09-08">Datierung des Inhalts des Dokuments</desc>
-            <desc xml:lang="en" versionDate="2023-09-08">Dating the contents of the document</desc>
-            <desc xml:lang="fr" versionDate="2023-09-08">Datation du contenu du document</desc>
-            <desc xml:lang="it" versionDate="2024-05-08">Datazione del contenuto del documento</desc>
+            <desc xml:lang="de" versionDate="2025-01-16">Datierung bzw. Lokalisierung des Inhalts
+              des Dokuments</desc>
+            <desc xml:lang="en" versionDate="2025-01-16">Dating or localization of the content
+              of the document</desc>
+            <desc xml:lang="fr" versionDate="2025-01-16">Datation ou localisation du contenu
+              du document</desc>
           </valItem>
           <valItem ident="document">
-            <desc xml:lang="de" versionDate="2023-09-08">Datierung des Dokuments als
+            <desc xml:lang="de" versionDate="2025-01-16">Datierung bzw. Lokalisierung des Dokuments als
               Textträger</desc>
-            <desc xml:lang="en" versionDate="2023-09-08">Dating the document as a text
-              carrier</desc>
-            <desc xml:lang="fr" versionDate="2023-09-08">Datation du document comme support de
-              texte</desc>
-            <desc xml:lang="it" versionDate="2024-05-08">Datazione del documento a supporto
-              testo</desc>
+            <desc xml:lang="en" versionDate="2025-01-16">Dating or localization of the document as
+              a text carrier</desc>
+            <desc xml:lang="fr" versionDate="2025-01-16">Datation ou localisation du document selon
+              support de texte</desc>
           </valItem>
         </valList>
       </content>
