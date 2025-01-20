@@ -19,6 +19,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: 'recursive'
+          persist-credentials: false
+          token: ${{ secrets.TEI_VOLUMES_PAT }}
       - name: Setup SSH and Python with Poetry
         uses: ./.github/actions/setup
         with:
@@ -52,6 +54,8 @@ jobs:
         with:
           submodules: 'recursive'
           fetch-depth: 0
+          persist-credentials: false
+          token: ${{ secrets.TEI_VOLUMES_PAT }}
       - name: Setup SSH and Python with Poetry
         uses: ./.github/actions/setup
         with:
