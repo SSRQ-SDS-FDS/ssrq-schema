@@ -183,7 +183,7 @@
     «ober keyt» > «oberkeyt» (Obrigkeit)  
     «by derw» > «byderw» (für «biderb»)  
     «ver ordnet» > «verordnet»  
-    «dem sino do» > «dem sinodo» (=dem Synod)  
+    «dem sino do» > «dem sinodo» (= dem Synod)  
     «wy derumb» > «wyderumb»  
     «ver stüren» > «verstüren»  
     «uff ruor» > «uffruor»
@@ -216,4 +216,4 @@
     <placeName>Nider-Leimbach</placeName> mit karren und`
 
     `<placeName>Ober-</placeName> und 
-    <placeName>Nider Leimbach</placeName></orgName>`
+    <placeName>Nider Leimbach</placeName>`
