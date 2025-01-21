@@ -69,6 +69,9 @@ jobs:
         run: |
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
           echo "DOCS_URL=${url}" >> "$GITHUB_ENV"
+      - name: Setup GitHub Token for Push
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
       - name: Build and publish
         uses: ./.github/actions/mike
         with:
