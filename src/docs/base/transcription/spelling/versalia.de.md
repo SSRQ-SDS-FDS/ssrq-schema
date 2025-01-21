@@ -33,7 +33,7 @@ Beispiel:
 === "Allgemeine Regeln"
 
     Gattungsnamen werden kleingeschrieben. 
-    Der Bearbeitende entscheidet, ob es sich um einen Eigennamen oder 
+    Die Bearbeitenden entscheiden, ob es sich um einen Eigennamen oder 
     um ein Appellativ handelt. 
     In Zweifelsfällen wird die Kleinschreibung vorgezogen.
     
@@ -129,7 +129,7 @@ Beispiel:
     üblicherweise grossgeschrieben.
     
     Beispiele:  
-    «sonntag»
+    «sonntag»  
     «unser frowen tag ze dem ärnde»  
     «erzengel Michael»  
     «st. Johann baptiste»  
