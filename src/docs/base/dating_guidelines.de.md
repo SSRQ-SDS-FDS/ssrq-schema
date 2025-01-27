@@ -130,7 +130,7 @@ Beispiele:
 
 ```
 <date when-custom="1466-05-25" calendar="julian">25. Mai und 25.
-    Heumonat 1466</date><date when="1466-07-25"/>
+    Heumonat 1466</date><date when-custom="1466-07-25" calendar="julian"/>
 ```
 
 #### 3.2.3 Uneindeutige Datierungen, die zugeordnet werden können
@@ -149,19 +149,20 @@ Datierungen, die nicht eindeutig sind, jedoch zugeordnet werden können,
 werden als Zeiträume mit `@from-custom` und `@to-custom` zusammen mit
 `@calendar` sowie [`<precision>`](precision.de.md) ausgezeichnet.
 
-| Beispiel          | Werte `@from-custom` und `@to-custom` | Zeitspanne: Schlüssel |
-|-------------------|---------------------------------------|-----------------------|
-| 15. Jh.           | 1401-01-01/1500-12-31                 | 100 Jahre             |
-| 1. Hälfte 15. Jh. | 1401-01-01/1450-12-31                 | 50 Jahre              |
-| Anfang 15. Jh.    | 1401-01-01/1425-12-31                 | 25 Jahre              |
-| Ende 15. Jh.      | 1475-01-01/1500-12-31                 | 25 Jahre              |
-| Ca. 1510          | 1500-01-01/1520-12-31                 | +/-10 Jahre           |
-| Mitte 15. Jh.     | 1440-01-01/1460-12-31                 | +/-10 Jahre           |
-| Mitte 1555        | 1555-06-01/1555-07-31                 | +/-1 Monat            |
-| Anfang März       | --03-01/--03-10                       | 10 Tage               |
-| Mitte Februar     | --04-09/--04-19                       | +- 5 Tage             |
-| Mitte März        | --03-10/--03-20                       | +- 5 Tage             |
-| Ende März         | --03-22/--03-31                       | 10 Tage               |
+| Beispiel          | Werte `@from-custom` und `@to-custom` | Zeitspanne  |
+|-------------------|---------------------------------------|-------------|
+| 15. Jh.           | 1401-01-01/1500-12-31                 | 100 Jahre   |
+| 1. Hälfte 15. Jh. | 1401-01-01/1450-12-31                 | 50 Jahre    |
+| 2. Hälfte 15. Jh. | 1451-01-01/1500-12-31                 | 50 Jahre    |
+| Anfang 15. Jh.    | 1401-01-01/1425-12-31                 | 25 Jahre    |
+| Ende 15. Jh.      | 1475-01-01/1500-12-31                 | 25 Jahre    |
+| Ca. 1510          | 1500-01-01/1520-12-31                 | +/-10 Jahre |
+| Mitte 15. Jh.     | 1440-01-01/1460-12-31                 | +/-10 Jahre |
+| Mitte 1555        | 1555-06-01/1555-07-31                 | +/-1 Monat  |
+| Anfang März       | --03-01/--03-10                       | 10 Tage     |
+| Mitte Februar     | --04-09/--04-19                       | +- 5 Tage   |
+| Mitte März        | --03-10/--03-20                       | +- 5 Tage   |
+| Ende März         | --03-22/--03-31                       | 10 Tage     |
 
 #### 3.2.4 Uneindeutige Datierungen, die nicht zugeordnet werden können
 
@@ -170,16 +171,16 @@ sollen mit möglichst präziser Annäherung als Zeiträume mit `@notBefore-custo
 und `@notAfter-custom` sowie [`<precision>`](precision.de.md) ausgezeichnet
 werden.
 
-| Beispiel               | Werte `@notBefore-custom` und `@notAfter-custom` | Zeitspanne: Schlüssel |
-| ---------------------- | ------------------------------------------------ | --------------------- |
-| vor 1700               | 1675-01-01/1699-12-31                            | -25 Jahre             |
-| nach 1700              | 1701-01-01/1725-12-31                            | +25 Jahre             |
-| um 1700                | 1690-01-01/1710-12-31                            | +/-10 Jahre           |
-| wohl 1700 oder 1700?   | 1700-01-01/1700-12-31                            | 1 Jahr                |
-| vor 20. November 1700  | 1700-01-01/1700-11-19                            | von Jahresanfang      |
-| nach 20. November 1700 | 1700-11-21/1700-12-31                            | bis Jahresende        |
-| vor Oktober 1700       | 1700-07-01/1700-09-30                            | -3 Monate             |
-| nach Oktober 1700      | 1700-11-01/1701-01-31                            | +3 Monate             |
+| Beispiel               | Werte `@notBefore-custom` und `@notAfter-custom` | Zeitspanne:      |
+|------------------------|--------------------------------------------------|------------------|
+| vor 1700               | 1675-01-01/1699-12-31                            | -25 Jahre        |
+| nach 1700              | 1701-01-01/1725-12-31                            | +25 Jahre        |
+| um 1700                | 1690-01-01/1710-12-31                            | +/-10 Jahre      |
+| wohl 1700 oder 1700?   | 1700-01-01/1700-12-31                            | 1 Jahr           |
+| vor 20. November 1700  | 1700-01-01/1700-11-19                            | von Jahresanfang |
+| nach 20. November 1700 | 1700-11-21/1700-12-31                            | bis Jahresende   |
+| vor Oktober 1700       | 1700-07-01/1700-09-30                            | -3 Monate        |
+| nach Oktober 1700      | 1700-11-01/1701-01-31                            | +3 Monate        |
 
 #### 3.2.5 Datierungen _post quem_ bzw. _ante quem_
 
