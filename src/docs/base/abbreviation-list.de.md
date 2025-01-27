@@ -10,8 +10,7 @@ kommen und nicht aufgelöst werden.
     a. S. = alter Stil (Julianischer Kalender)  
     Abt. = Abteilung  
     Anm. = Anmerkung  
-    Art. = Artikel  
-    art. = article  
+    Art./art. = Artikel/article  
     Bd. = Band  
     Bde. = Bände  
     ca. = circa  
@@ -37,12 +36,10 @@ kommen und nicht aufgelöst werden.
     Urk. = Urkunde  
     v = verso (Rückseite eines nummerierten Blattes)  
     vgl. = vergleiche  
+    z. B. = zum Beispiel  
 
-=== "Historische Abkürzungen"
+=== "Historische deutsche Abkürzungen"
 
-    ao = anno  
-    da = datum  
-    etc = et cetera  
     f = frau  
     fr = frau  
     g = gnädiger, gnädige  
@@ -54,27 +51,41 @@ kommen und nicht aufgelöst werden.
     hr = herr, herren  
     j = junker  
     J. H. = Johann Heinrich?  
-    Jud = Judicatum est  
-    lib = liber  
-    L S = Locus sigilli  
-    LS = Locus sigilli  
+    lobl = löblich  
     M = Meister  
     m = meister  
     m g h = mein gnädiger herr, meine gnädigen herren  
-    mmp = manu propria (eigenhändig)  
     mr = meister  
+    Ulr = Ulrich  
+    W = Wilhelm?  
+
+=== "Historische französische Abkürzungen"
+
+    LL EE = Leurs Excellences  
+    M = Monsieur
+    MM =  Messieurs
+
+=== "Historische lateinische Abkürzungen"
+
+    ao = anno  
+    da = datum  
+    etc = et cetera
+    jud = Judicatum est  
+    lib = liber
+    L S = Locus sigilli  
+    LS = Locus sigilli
+    mmp = manu propria (eigenhändig)
     N = nomen, non nominat, non nescio (Ersatzbuchstaben für einen
     unbekannten Namen)  
     NB = Nota bene (Nebenbei bemerkt)  
     N N = nomen, non nominat, non nescio (Ersatzbuchstaben für einen
     unbekannten Namen)  
+    no = numero  
     q = quart?  
     s h = salvo honore (mit Verlaub zu sagen)  
     s v = salva venia (mit Verlaub zu sagen)  
-    Ulr = Ulrich  
-    W = Wilhelm?  
-    Xpi = Christi  
-    z B = zum Beispiel  
+    tit = titulus (Titel)  
+    Xpi = Christi
 
 === "Währungen"
 
@@ -82,9 +93,12 @@ kommen und nicht aufgelöst werden.
      = Florin / Gulden (Währung)  
      = Gulden (Währung)  
     ħ = Haller (Währung)  
+     = Helbling
+    ,  = Krone (Währung)
     ℔ = Pfund (Gewicht)  
      = Pfund (Währung)  
      = Schilling (Währung)  
+     = Scudo (Währung)
 
 === "Archive"
 
