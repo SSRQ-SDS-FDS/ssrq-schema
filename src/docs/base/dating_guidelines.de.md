@@ -112,28 +112,7 @@ Beispiele:
       calendar="gregorian">1717-1718</date>
 ```
 
-#### 3.2.2 Unterbrochene Zeiträume
-
-Liegen unterbrochene Zeiträumen vor, werden diese wie mehrere Zeiträume
-behandelt.
-Beispiele:
-
-```
-<date from-custom="1610-01-01" to-custom="1610-12-31"
-      calendar="gregorian">1610, 1620–1635</date>
-```
-
-```
-<date from-custom="1620-01-01" to-custom="1635-12-31"
-      calendar="gregorian"/>
-```
-
-```
-<date when-custom="1466-05-25" calendar="julian">25. Mai und 25.
-    Heumonat 1466</date><date when-custom="1466-07-25" calendar="julian"/>
-```
-
-#### 3.2.3 Uneindeutige Datierungen, die zugeordnet werden können
+#### 3.2.2 Uneindeutige Datierungen, die zugeordnet werden können
 
 Unsichere Jahresangaben, zum Beispiel «wohl 1491», werden mit
 [`<precision>`](precision.de.md) ausgezeichnet.
@@ -164,7 +143,7 @@ werden als Zeiträume mit `@from-custom` und `@to-custom` zusammen mit
 | Mitte März        | --03-10/--03-20                       | +- 5 Tage   |
 | Ende März         | --03-22/--03-31                       | 10 Tage     |
 
-#### 3.2.4 Uneindeutige Datierungen, die nicht zugeordnet werden können
+#### 3.2.3 Uneindeutige Datierungen, die nicht zugeordnet werden können
 
 Datierungen, die nicht eindeutig sind und nicht zugeordnet werden können,
 sollen mit möglichst präziser Annäherung als Zeiträume mit `@notBefore-custom`
@@ -182,7 +161,7 @@ werden.
 | vor Oktober 1700       | 1700-07-01/1700-09-30                            | -3 Monate        |
 | nach Oktober 1700      | 1700-11-01/1701-01-31                            | +3 Monate        |
 
-#### 3.2.5 Datierungen _post quem_ bzw. _ante quem_
+#### 3.2.4 Datierungen _post quem_ bzw. _ante quem_
 
 _Post quem_-Datierungen erhalten kein [`<precision>`](precision.de.md),
 jedoch das errechnete End- bzw. Beginndatum.
