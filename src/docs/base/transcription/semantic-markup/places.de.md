@@ -52,7 +52,7 @@ Zu Ortsnamen innerhalb von Personennamen vgl. [Personen](persons.de.md).
 
 Die Ortsnamen werden anhand der heutigen administrativen und politischen
 Zugehörigkeit in die
-[Datenbank historischer Ortsnamen](https://www.ssrq-sds-fds.ch/places-db-edit/search/search-form.xq)
+[Datenbank historischer Ortsnamen](https://loci.ssrq-sds-fds.ch)
 aufgenommen: Land, Kanton, Gemeinde/Gemeindeteil.
 
 Zudem wird die Kategorie des Ortsnamens (z. B. Alp, Bach, Herrschaft usw.),
