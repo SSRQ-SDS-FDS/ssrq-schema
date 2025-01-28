@@ -19,16 +19,16 @@ Im SSRQ-Workshop vom 24. August 2017 haben wir entschieden, dass bei Äbten
 der Vorname mit [`<persName>`](persName.de.md) und der Ort als
 [`<placeName>`](placeName.de.md) ausgezeichnet wird.
 
-In der [Personendatenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/)
+In der [Personendatenbank](https://personae.ssrq-sds-fds.ch/)
 wird der Abt durch seine Funktion als Abt dem Konvent (=Organisation)
 zugeordnet und die Organisation wird mit dem Ort verknüpft, an dem sie
 sich befindet.
 
 Funktionen und Titel werden zusammen mit einer Datierung bei der Person in
-der [Personendatenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/) erfasst.
+der [Personendatenbank](https://personae.ssrq-sds-fds.ch/) erfasst.
 
 Beispiele:  
-`Abt <persName>Johann</persName> von <placeName>Pfäffers</placeName>`
+`Abt <persName>Johann</persName> von <placeName>Pfäffers</placeName>`  
 `<persName>Johans</persName>, abt von <placeName>Pfävers</placeName>`
 
 ## Orte innerhalb von Personennamen
@@ -54,7 +54,7 @@ Wilhelm V. (1434, 1439) oder Wilhelm VIII. (1462, 1483) handelt,
 dann wird eine sachkritische Fussnote [`<note>`](note.de.md) gesetzt,
 in der beide Personen namentlich genannt werden.
 Die beiden Personen können nun separat ausgezeichnet und in die
-[Personendatenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/)
+[Personendatenbank](https://personae.ssrq-sds-fds.ch/)
 aufgenommen werden.
 
 Wenn Personen gleichen Namens und/oder Vornamens vorkommen – z. B. Vater
@@ -64,11 +64,11 @@ Hauptkriterien für die Identität sind Seltenheit der Namen oder Vornamen,
 übereinstimmende Zusatznamen, zeitliche Nähe, Kongruenz von Beruf/Amt/Funktion
 und Wohn-/Herkunftsort, wobei jeweils nicht alle Kriterien zutreffen müssen.
 In Zweifelsfällen erfolgt eine entsprechende Bemerkung in der
-[Personendatenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/) oder die
+[Personendatenbank](https://personae.ssrq-sds-fds.ch/) oder die
 Personen werden einzeln aufgenommen.
 Daraus folgt, dass einzeln aufgeführte Personen mit gleichem Familien- und
 Vornamen in der
-[Personendatenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/) identisch
+[Personendatenbank](https://personae.ssrq-sds-fds.ch/) identisch
 sein können, obwohl sie separat aufgeführt sind.
 Eingehendere Forschungen würden hier möglicherweise zu Berichtigungen führen.
 

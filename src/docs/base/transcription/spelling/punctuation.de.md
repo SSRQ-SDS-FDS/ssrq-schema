@@ -10,7 +10,7 @@ davor und danach.
 Das Capitulumzeichen wird nicht transkribiert.
 
 
-## Regeln für deutsche Texte
+## Regeln für handschriftliche deutsche Texte
 
 ### Interpunktion zur Klarstellung
 

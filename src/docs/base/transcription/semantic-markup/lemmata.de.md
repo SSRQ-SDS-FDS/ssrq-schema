@@ -29,10 +29,11 @@ einmal ausgezeichnet.
  
 ## Datenbankerfassung
  
-Wenn möglich wird eine normalisierte Form eines Lemmas aufgenommen.
+Wenn möglich wird eine normalisierte Form eines Lemmas in die
+[Datenbank historischer Begriffe](https://termini.ssrq-sds-fds.ch) aufgenommen.
 Sind von einem Lemma mehrere Schreibvarianten vorhanden, so ist es
-unter derjenigen Form normalisiert eingereiht, welche dem Neuhochdeutschen
-am nächsten kommt und/oder am verständlichsten ist.
+unter derjenigen Form normalisiert eingereiht, welche der modernen Entsprechung
+im Deutschen bzw. Französischen am nächsten kommt und/oder am verständlichsten ist.
 Die übrigen Schreibweisen von einem Wort werden jeweils nach dieser
 Form in alphabetischer Reihenfolge aufgeführt.
 
