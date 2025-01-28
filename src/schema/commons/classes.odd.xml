@@ -103,15 +103,12 @@
       <classes mode="replace"/>
       <attList>
         <attDef ident="agent" mode="replace" usage="req">
-          <desc xml:lang="de" versionDate="2023-05-11">Beschreibt die Art einer Beschädigung gemäss einer
-                        fest definierten Werteliste.
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-05-11">Describes the type of damage according to a firmly
-                        defined list of values.
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-05-11">Décrit le type de dommage selon une liste de valeurs
-                        bien définie.
-                    </desc>
+          <desc xml:lang="de" versionDate="2023-05-11">Beschreibt die Art einer Beschädigung gemäss
+            einer fest definierten Werteliste.</desc>
+          <desc xml:lang="en" versionDate="2023-05-11">Describes the type of damage according to a
+            firmly defined list of values.</desc>
+          <desc xml:lang="fr" versionDate="2023-05-11">Décrit le type de dommage selon une liste
+            de valeurs bien définie.</desc>
           <datatype maxOccurs="unbounded">
             <dataRef key="ssrq.agent"/>
           </datatype>
@@ -124,17 +121,12 @@
       <classes mode="replace"/>
       <attList>
         <attDef ident="period" mode="change">
-          <desc xml:lang="de" versionDate="2023-05-11">Verweist auf eine benannte Periode wie Jahreszeiten
-                        oder Wochentage. Für Zeitspannen wie „vier Wochen“ wird hingegen das Attribut <att>dur-iso</att> verwendet.
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-05-11">Refers to a named period such as seasons or days of the
-                        week. For periods such as "four weeks", on the other hand, the attribute <att>dur-iso</att> is
-                        used.
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-05-11">Fait référence à une période nommée, comme les saisons
-                        ou les jours de la semaine. En revanche, l'attribut <att>dur-iso</att> est utilisé pour des
-                        périodes telles que "quatre semaines".
-                    </desc>
+          <desc xml:lang="de" versionDate="2025-01-28">Verweist auf eine benannte Periode von
+            Jahreszeiten oder Wochentagen.</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">Refers to a named period of seasons or days
+            of the week.</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">Fait référence à une période nommée de
+            saisons ou de jours de la semaine.</desc>
         </attDef>
       </attList>
     </classSpec>

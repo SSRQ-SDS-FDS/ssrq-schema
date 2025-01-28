@@ -11,7 +11,6 @@
     création d'un document.</desc>
   <classes mode="replace">
     <memberOf key="att.calendarSystem"/>
-    <memberOf key="att.datable"/>
     <memberOf key="att.datable.custom"/>
     <memberOf key="att.typed"/>
     <memberOf key="model.pPart.msdesc"/>
@@ -24,7 +23,6 @@
   </content>
   <attList>
     <attDef ident="calendar" mode="change" usage="req"/>
-    <attDef ident="period" mode="delete"/>
     <attDef ident="type" mode="replace" usage="req">
       <datatype>
         <dataRef key="ssrq.orig.type"/>
