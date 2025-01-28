@@ -88,9 +88,11 @@
       <attList>
         <attDef ident="key" mode="delete"/>
         <attDef ident="ref" mode="replace">
-          <desc xml:lang="de" versionDate="2023-03-28">Referenz auf die Datenbanken der SSRQ.</desc>
-          <desc xml:lang="en" versionDate="2023-03-07">Reference to the databases of the SLS.</desc>
-          <desc xml:lang="fr" versionDate="2023-05-16">Référence aux bases de données du SDS.</desc>
+          <desc xml:lang="de" versionDate="2025-01-27">Verknüpfung mit der entsprechenden Datenbank
+            der SSRQ.</desc>
+          <desc xml:lang="en" versionDate="2025-01-27">Link to the corresponding database of
+            the SLS.</desc>
+          <desc xml:lang="fr" versionDate="2025-01-27">Lien avec la base de données correspondante du SDS.</desc>
           <datatype>
             <dataRef key="ssrq.pointer.databases"/>
           </datatype>

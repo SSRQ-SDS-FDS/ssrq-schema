@@ -61,11 +61,6 @@
   </constraintSpec>
   <attList>
     <attDef ident="ref" mode="replace">
-      <desc xml:lang="de" versionDate="2023-07-20">Referenz auf Lemma- und
-        Schlagwortdatenbank.</desc>
-      <desc xml:lang="en" versionDate="2023-07-20">Reference to lemma and keyword database.</desc>
-      <desc xml:lang="fr" versionDate="2023-07-20">Référence aux bases de données de lemmes et de
-        mots-clés.</desc>
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.pointer.keywords"/>
