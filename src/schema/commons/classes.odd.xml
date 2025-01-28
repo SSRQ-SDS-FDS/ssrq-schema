@@ -138,62 +138,54 @@
         <attDef ident="datingMethod" mode="delete"/>
         <attDef ident="datingPoint" mode="delete"/>
         <attDef ident="from-custom" mode="replace">
-          <desc xml:lang="de" versionDate="2023-05-16">Gibt den Startpunkt eines Zeitraums gemäss ISO 8601
-                        an.
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-05-16">Indicates the start point of a period according to ISO
-                        8601.
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-05-16">Indique le point de départ d'une période selon ISO
-                        8601.
-                    </desc>
+          <desc xml:lang="de" versionDate="2023-05-16">Gibt den Startpunkt eines Zeitraums gemäss
+            ISO 8601 an.</desc>
+          <desc xml:lang="en" versionDate="2023-05-16">Indicates the start point of a period
+            according to ISO 8601.</desc>
+          <desc xml:lang="fr" versionDate="2023-05-16">Indique le point de départ d'une période
+            selon ISO 8601.</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
         </attDef>
         <attDef ident="notAfter-custom" mode="replace">
-          <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss ISO 8601 an.
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-05-16">Indicates the end point of a period according to ISO
-                        8601.
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-05-16">Indique le point final d'une période selon ISO 8601.
-                    </desc>
+          <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss
+            ISO 8601 an.</desc>
+          <desc xml:lang="en" versionDate="2023-05-16">Indicates the end point of a period
+            according to ISO 8601.</desc>
+          <desc xml:lang="fr" versionDate="2023-05-16">Indique le point final d'une période selon
+            ISO 8601.</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
         </attDef>
         <attDef ident="notBefore-custom" mode="replace">
-          <desc xml:lang="de" versionDate="2023-05-16">Gibt den Startpunkt eines Zeitraums gemäss ISO 8601
-                        an.
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-05-16">Indicates the start point of a period according to ISO
-                        8601.
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-05-16">Indique le point de départ d'une période selon ISO
-                        8601.
-                    </desc>
+          <desc xml:lang="de" versionDate="2023-05-16">Gibt den Startpunkt eines Zeitraums gemäss
+            ISO 8601 an.</desc>
+          <desc xml:lang="en" versionDate="2023-05-16">Indicates the start point of a period
+            according to ISO 8601.</desc>
+          <desc xml:lang="fr" versionDate="2023-05-16">Indique le point de départ d'une période
+            selon ISO 8601.</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
         </attDef>
         <attDef ident="to-custom" mode="replace">
-          <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss ISO 8601 an.
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-05-16">Indicates the end point of a period according to ISO
-                        8601.
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-05-16">Indique le point final d'une période selon ISO 8601.
-                    </desc>
+          <desc xml:lang="de" versionDate="2023-05-16">Gibt den Endpunkt eines Zeitraums gemäss
+            ISO 8601 an.</desc>
+          <desc xml:lang="en" versionDate="2023-05-16">Indicates the end point of a period
+            according to ISO 8601.</desc>
+          <desc xml:lang="fr" versionDate="2023-05-16">Indique le point final d'une période selon
+            ISO 8601.</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
         </attDef>
         <attDef ident="when-custom" mode="replace">
           <desc xml:lang="de" versionDate="2023-05-07">Gibt ein Datum gemäss ISO 8601 an.</desc>
-          <desc xml:lang="en" versionDate="2023-05-07">Specifies a date according to ISO 8601.</desc>
-          <desc xml:lang="fr" versionDate="2023-05-07">Spécifie une date conformément à la norme ISO 8601.
-                    </desc>
+          <desc xml:lang="en" versionDate="2023-05-07">Specifies a date according to ISO
+            8601.</desc>
+          <desc xml:lang="fr" versionDate="2023-05-07">Spécifie une date selon ISO 8601.</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
