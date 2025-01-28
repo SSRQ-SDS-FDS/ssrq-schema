@@ -198,15 +198,12 @@
         <attDef ident="extent" mode="delete"/>
         <attDef ident="precision" mode="delete"/>
         <attDef ident="quantity" mode="replace">
-          <desc xml:lang="de" versionDate="2023-05-17">Gibt die Grösse der mit <att>unit</att> angegebenen
-                        Einheit an
-                    </desc>
-          <desc xml:lang="en" versionDate="2023-05-17">Specifies the size of the unit specified with
-                        <att>unit</att>
-                    </desc>
-          <desc xml:lang="fr" versionDate="2023-05-17">Spécifie la taille de l'unité spécifiée avec
-                        <att>unit</att>
-                    </desc>
+          <desc xml:lang="de" versionDate="2023-05-17">Gibt die Grösse der mit <att>unit</att>
+            angegebenen Einheit an.</desc>
+          <desc xml:lang="en" versionDate="2023-05-17">Specifies the size of the unit specified
+            with <att>unit</att>.</desc>
+          <desc xml:lang="fr" versionDate="2023-05-17">Spécifie la taille de l'unité spécifiée
+            avec <att>unit</att>.</desc>
           <datatype>
             <rng:choice>
               <rng:data type="float">
