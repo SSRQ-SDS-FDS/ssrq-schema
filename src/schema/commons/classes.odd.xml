@@ -479,9 +479,9 @@
     <classSpec ident="att.witnessed" type="atts" mode="change">
       <attList>
         <attDef ident="wit" mode="replace" usage="req">
-          <desc xml:lang="de" versionDate="2025-01-28">ein oder mehrere Verweise auf die <att>xml:id</att> von <gi>witness</gi>-Elementen</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">one or more references to the <att>xml:id</att> of <gi>witness</gi> elements</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">une ou plusieurs références aux <att>xml:id</att> des éléments <gi>witness</gi></desc>
+          <desc xml:lang="de" versionDate="2025-01-28">ein oder mehrere Verweise auf die <att>xml:id</att> von <gi>witness</gi>- oder <gi>bibl</gi>-Elementen</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">one or more references to the <att>xml:id</att> of <gi>witness</gi> or <gi>bibl</gi> elements</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">une ou plusieurs références aux <att>xml:id</att> des éléments <gi>witness</gi> ou <gi>bibl</gi></desc>
           <datatype>
             <rng:list>
               <rng:oneOrMore>
