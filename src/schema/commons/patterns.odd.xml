@@ -61,8 +61,8 @@
     </dataSpec>
     <dataSpec ident="ssrq.id" mode="add" module="ssrq.core.module">
       <desc xml:lang="de" versionDate="2025-01-15">Definiert das Muster für eine SSRQ UUID.</desc>
-      <desc xml:lang="en" versionDate="2025-01-15">Defines the pattern for an SSRQ UUID.</desc>
-      <desc xml:lang="fr" versionDate="2025-01-15">Définit le modèle pour un UUID SSRQ.</desc>
+      <desc xml:lang="en" versionDate="2025-01-15">Defines the pattern for an SLS UUID.</desc>
+      <desc xml:lang="fr" versionDate="2025-01-15">Définit le modèle pour un UUID SDS.</desc>
       <content>
         <dataRef name="string" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
       </content>
@@ -102,7 +102,7 @@
         <dataRef name="string" restriction="[A-Za-z_\-\d]+(\d|[IVXLCDM]|[rv]|plica)"/>
       </content>
     </dataSpec>
-    <!-- pointer to SSRQ databases -->
+    <!-- pointer to SLS databases -->
     <dataSpec ident="ssrq.pointer.keywords" mode="add" module="ssrq.core.module">
       <desc xml:lang="de" versionDate="2022-08-19">Definiert das Muster für Schlagwort-IDs zur
           Verknüpfung mit der Schlagwort- und Lemmadatenbank</desc>
