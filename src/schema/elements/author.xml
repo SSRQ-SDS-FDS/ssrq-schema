@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="author" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="author" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-08-17">Enthält als Teil von <gi>msItem</gi> den Schreiber
     einer Quelle.</desc>
   <desc xml:lang="en" versionDate="2023-08-17">Contains the writer of a source as part
@@ -30,9 +30,9 @@
   <attList>
     <attDef ident="calendar" mode="delete"/>
     <attDef ident="role" mode="replace">
-      <desc xml:lang="de" versionDate="2023-05-05">Rolle des Schreibenden</desc>
-      <desc xml:lang="en" versionDate="2023-05-05">Role of the writer</desc>
-      <desc xml:lang="fr" versionDate="2023-05-05">Rôle du rédacteur</desc>
+      <desc xml:lang="de" versionDate="2025-01-31">die Rolle des Schreibenden</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the role of the writer</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le rôle du rédacteur</desc>
       <valList type="closed" mode="replace">
         <valItem ident="scribe">
           <desc xml:lang="de" versionDate="2022-05-12">Schreiber</desc>
