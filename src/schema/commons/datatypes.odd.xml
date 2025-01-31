@@ -5,9 +5,9 @@
 <div xmlns="http://www.tei-c.org/ns/1.0">
   <specGrp xml:id="ssrq-add-type">
     <dataSpec ident="ssrq.type.add" mode="add">
-      <desc xml:lang="de" versionDate="2024-01-05">Art der Hinzufügung</desc>
-      <desc xml:lang="en" versionDate="2024-01-05">Kind of addition</desc>
-      <desc xml:lang="fr" versionDate="2024-01-05">Type d'ajout</desc>
+      <desc xml:lang="de" versionDate="2025-01-29">die Art der Hinzufügung</desc>
+      <desc xml:lang="en" versionDate="2025-01-29">the kind of addition</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">le type d'ajout</desc>
       <content>
         <valList type="closed">
           <valItem ident="sign">
@@ -22,9 +22,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-agent">
     <dataSpec ident="ssrq.agent" mode="add">
-      <desc xml:lang="de" versionDate="2023-05-11">Beschreibt die Art einer Beschädigung.</desc>
-      <desc xml:lang="en" versionDate="2023-05-15">Describes the type of damage.</desc>
-      <desc xml:lang="fr" versionDate="2023-05-15">Décrit le type de dommage.</desc>
+      <desc xml:lang="de" versionDate="2025-01-29">die Art der Beschädigung</desc>
+      <desc xml:lang="en" versionDate="2025-01-29">the type of damage</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">le type de dommage</desc>
       <content>
         <valList type="closed">
           <valItem ident="cancelled">
@@ -124,7 +124,7 @@
             <desc xml:lang="it" versionDate="2023-05-16">muffa</desc>
           </valItem>
           <valItem ident="other">
-            <desc xml:lang="de" versionDate="2023-10-19">Sonstiger Schaden</desc>
+            <desc xml:lang="de" versionDate="2025-01-29">sonstiger Schaden</desc>
             <desc xml:lang="en" versionDate="2023-10-19">other damage</desc>
             <desc xml:lang="fr" versionDate="2023-10-19">autres dommages</desc>
             <desc xml:lang="it" versionDate="2024-08-05">altri danni</desc>
@@ -177,9 +177,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-bibl">
     <dataSpec ident="ssrq.bibl.types">
-      <desc xml:lang="de" versionDate="2023-05-26">Typen bibliographischer Angaben</desc>
-      <desc xml:lang="en" versionDate="2023-05-26">Types of bibliographic references</desc>
-      <desc xml:lang="fr" versionDate="2023-05-26">Types de données bibliographiques</desc>
+      <desc xml:lang="de" versionDate="2025-01-29">der Typ einer bibliographischen Angabe</desc>
+      <desc xml:lang="en" versionDate="2025-01-29">the type of a bibliographic references</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">le type d'un donné bibliographique</desc>
       <content>
         <valList type="closed">
           <valItem ident="edition">
@@ -222,13 +222,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-date-time">
     <dataSpec ident="ssrq.date.calendar" mode="add">
-      <desc xml:lang="de" versionDate="2023-03-17">Geschlossene Liste von Kalendertypen, die von der
-        SSRQ verwendet werden. Für weitere Informationen siehe <ref target="https://p.ssrq-sds-fds.ch/guidelines/dating_guidelines">Datierungsrichtlinien</ref>. </desc>
-      <desc xml:lang="en" versionDate="2023-03-17">Closed list of calender types used by the SLS.For
-        more information see <ref target="https://p.ssrq-sds-fds.ch/guidelines/dating_guidelines">dating guidelines</ref>. </desc>
-      <desc xml:lang="fr" versionDate="2023-03-17">Liste fermée de Types de calendriers utilisés par
-        la SDS. Pour plus d'informations, voir <ref target="https://p.ssrq-sds-fds.ch/guidelines/dating_guidelines">les directives de
-          datation</ref>. </desc>
+      <desc xml:lang="de" versionDate="2025-01-29">das Kalendersystem</desc>
+      <desc xml:lang="en" versionDate="2025-01-29">the calendar system</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">le système de calendrier</desc>
       <content>
         <valList type="closed">
           <valItem ident="gregorian">
@@ -256,7 +252,7 @@
             <desc xml:lang="it" versionDate="2023-03-17">stile della natività</desc>
           </valItem>
           <valItem ident="unknown">
-            <desc xml:lang="de" versionDate="2023-05-12">Unbekannt</desc>
+            <desc xml:lang="de" versionDate="2025-01-29">unbekannt</desc>
             <desc xml:lang="en" versionDate="2023-05-12">unknown</desc>
             <desc xml:lang="fr" versionDate="2023-05-12">inconnu</desc>
             <desc xml:lang="it" versionDate="2023-05-12">sconosciuto</desc>
@@ -267,10 +263,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-hand">
     <dataSpec ident="ssrq.hand">
-      <desc xml:lang="de" versionDate="2023-05-11">Gibt Informationen zur Hand eines Textes</desc>
-      <desc xml:lang="en" versionDate="2023-05-11">Provides information on the hand of a text</desc>
-      <desc xml:lang="fr" versionDate="2023-05-11">Fournit des informations sur la main d'un
-        texte</desc>
+      <desc xml:lang="de" versionDate="2025-01-29">die Hand eines Textes</desc>
+      <desc xml:lang="en" versionDate="2025-01-29">the hand of a text</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">la main d'un texte</desc>
       <content>
         <valList type="closed">
           <valItem ident="firstHand">
@@ -346,139 +341,139 @@
       <content>
         <valList type="closed">
           <valItem ident="hand10c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 10. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 10. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 10th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du X<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo X</desc>
           </valItem>
           <valItem ident="hand11c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 11. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 11. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 11th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XI<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XI</desc>
           </valItem>
           <valItem ident="hand12c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 12. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 12. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 12th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XII<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XII</desc>
           </valItem>
           <valItem ident="hand13c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 13. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 13. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 13th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XIII<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIII</desc>
           </valItem>
           <valItem ident="hand14c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 14. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 14. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 14th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XIV<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIV</desc>
           </valItem>
           <valItem ident="hand15c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 15. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 15. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 15th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XV<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XV</desc>
           </valItem>
           <valItem ident="hand16c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 16. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 16. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 16th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XVI<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVI</desc>
           </valItem>
           <valItem ident="hand17c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 17. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 17. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 17th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XVII<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVII</desc>
           </valItem>
           <valItem ident="hand18c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 18. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 18. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 18th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XVIII<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVIII</desc>
           </valItem>
           <valItem ident="hand19c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 19. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 19. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 19th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XIX<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIX</desc>
           </valItem>
           <valItem ident="hand20c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 20. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 20. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 20th century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XX<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XX</desc>
           </valItem>
           <valItem ident="hand21c">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 21. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 21. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 21st century</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XXI<hi rend="sup">e</hi> siècle</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XXI</desc>
           </valItem>
           <valItem ident="hand10cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 10. Jh.?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 10. Jhs.?</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 10th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du X<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo X?</desc>
           </valItem>
           <valItem ident="hand11cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 11. Jh.?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 11. Jhs.?</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 11th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XI<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XI?</desc>
           </valItem>
           <valItem ident="hand12cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 12. Jh.?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 12. Jhs.?</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 12th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XII<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XII?</desc>
           </valItem>
           <valItem ident="hand13cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 13. Jh.?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 13. Jhs.?</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 13th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XIII<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIII?</desc>
           </valItem>
           <valItem ident="hand14cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 14. Jh.?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 14. Jhs.?</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 14th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XIV<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIV?</desc>
           </valItem>
           <valItem ident="hand15cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 15. Jh.?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 15. Jhs.?</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 15th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XV<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XV?</desc>
           </valItem>
           <valItem ident="hand16cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 16. Jh.?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 16. Jhs.?</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 16th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XVI<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVI?</desc>
           </valItem>
           <valItem ident="hand17cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 17. Jh.?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 17. Jhs.?</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 17th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XVII<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVII?</desc>
           </valItem>
           <valItem ident="hand18cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 18. Jh.</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 18. Jhs.</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 18th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XVIII<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XVIII?</desc>
           </valItem>
           <valItem ident="hand19cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 19. Jh.?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 19. Jhs.?</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 19th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XIX<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XIX?</desc>
           </valItem>
           <valItem ident="hand20cf">
-            <desc xml:lang="de" versionDate="2023-08-18">Hand des 20. Jh.?</desc>
+            <desc xml:lang="de" versionDate="2023-08-18">Hand des 20. Jhs.?</desc>
             <desc xml:lang="en" versionDate="2023-08-18">hand of the 20th century?</desc>
             <desc xml:lang="fr" versionDate="2023-08-18">main du XX<hi rend="sup">e</hi> siècle?</desc>
             <desc xml:lang="it" versionDate="2023-08-18">mano del secolo XX?</desc>
@@ -569,10 +564,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-dimensions">
     <dataSpec ident="ssrq.dimensions.scope">
-      <desc xml:lang="de" versionDate="2023-05-30">Masse zur Beschreibung des Textumfangs</desc>
-      <desc xml:lang="en" versionDate="2023-05-30">Mass for the description of the text
-        volume</desc>
-      <desc xml:lang="fr" versionDate="2023-05-30">Dimensions pour décrire la taille du texte</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">Masseinheiten zur Beschreibung des Textumfangs</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">Units of measurement for the description of the text volume</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">Unités de mesure pour décrire la taille du texte</desc>
       <content>
         <valList type="closed">
           <valItem ident="double_leaf">
@@ -597,12 +591,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.dimensions.typography">
-      <desc xml:lang="de" versionDate="2023-03-17">Masseinheiten im Zusammenhang mit der
-        typographischen Gestaltung </desc>
-      <desc xml:lang="en" versionDate="2023-03-17">Units of measurement regarding the typographic
-        design</desc>
-      <desc xml:lang="fr" versionDate="2023-03-17">Unités de mesure en rapport avec la conception
-        typographique </desc>
+      <desc xml:lang="de" versionDate="2025-01-30">Masseinheiten der typographischen Gestaltung </desc>
+      <desc xml:lang="en" versionDate="2025-01-30">Units of measurement for the typographic design</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">Unités de mesure pour la conception typographique</desc>
       <content>
         <valList type="closed">
           <valItem ident="character">
@@ -653,9 +644,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-measure">
     <dataSpec ident="ssrq.measure.att.commodity">
-      <desc xml:lang="de" versionDate="2023-07-19">Enthält die gemessene Substanz.</desc>
-      <desc xml:lang="en" versionDate="2023-03-21">Contains the measured substance.</desc>
-      <desc xml:lang="fr" versionDate="2023-03-21">Contient la substance mesurée.</desc>
+      <desc xml:lang="de" versionDate="2025-01-29">die gemessene Substanz</desc>
+      <desc xml:lang="en" versionDate="2025-01-29">the measured substance</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">la substance mesurée</desc>
       <content>
         <valList type="closed">
           <valItem ident="apple">
@@ -738,6 +729,7 @@
           </valItem>
           <valItem ident="field">
             <desc xml:lang="de" versionDate="2023-03-21">Acker</desc>
+            <desc xml:lang="de" type="plural" versionDate="2023-03-21">Äcker</desc>
             <desc xml:lang="en" versionDate="2023-03-21">field</desc>
             <desc xml:lang="en" type="plural" versionDate="2023-03-21">fields</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">champ</desc>
@@ -1058,9 +1050,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.measure.att.origin">
-      <desc xml:lang="de" versionDate="2023-05-16">Herkunft eines Masses.</desc>
-      <desc xml:lang="en" versionDate="2023-03-21">Origin of a measure.</desc>
-      <desc xml:lang="fr" versionDate="2023-03-21">Origine d'une mesure.</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Herkunft einer Masseinheit</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the origin of a unit of measurement</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">l'origine d'une unité de mesure</desc>
       <content>
         <valList type="closed">
           <valItem ident="BE">
@@ -1094,7 +1086,7 @@
             <desc xml:lang="it" versionDate="2023-03-21">dell'Alsazia</desc>
           </valItem>
           <valItem ident="Etsch">
-            <desc xml:lang="de" versionDate="2023-03-21">Etsch</desc>
+            <desc xml:lang="de" versionDate="2025-01-30">Etscher</desc>
             <desc xml:lang="en" versionDate="2023-03-21">of the Adige</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">de l’Adige</desc>
             <desc xml:lang="it" versionDate="2023-03-21">del'Adige</desc>
@@ -1112,7 +1104,7 @@
             <desc xml:lang="it" versionDate="2023-03-21">di Firenze</desc>
           </valItem>
           <valItem ident="FR">
-            <desc xml:lang="de" versionDate="2023-03-21">französisch/e</desc>
+            <desc xml:lang="de" versionDate="2025-01-30">Französischer</desc>
             <desc xml:lang="en" versionDate="2023-03-21">French</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">français/e</desc>
             <desc xml:lang="it" versionDate="2023-03-21">francese</desc>
@@ -1121,6 +1113,7 @@
             <desc xml:lang="de" versionDate="2024-05-28">Freiburger</desc>
             <desc xml:lang="en" versionDate="2024-05-28">of Fribourg</desc>
             <desc xml:lang="fr" versionDate="2024-05-28">de Fribourg</desc>
+            <desc xml:lang="it" versionDate="2025-01-30">di Friburgo</desc>
           </valItem>
           <valItem ident="GE">
             <desc xml:lang="de" versionDate="2023-03-21">Genfer</desc>
@@ -1135,7 +1128,7 @@
             <desc xml:lang="it" versionDate="2023-03-21">ungherese</desc>
           </valItem>
           <valItem ident="IT">
-            <desc xml:lang="de" versionDate="2025-01-21">italienische/r</desc>
+            <desc xml:lang="de" versionDate="2025-01-30">Italienischer</desc>
             <desc xml:lang="en" versionDate="2025-01-21">of Italy</desc>
             <desc xml:lang="fr" versionDate="2025-01-21">de l’Italie</desc>
             <desc xml:lang="it" versionDate="2025-01-21">dell’Italia</desc>
@@ -1153,7 +1146,7 @@
             <desc xml:lang="it" versionDate="2023-03-21">di Losanna</desc>
           </valItem>
           <valItem ident="Lothringen">
-            <desc xml:lang="de" versionDate="2023-03-21">lothringische</desc>
+            <desc xml:lang="de" versionDate="2025-01-30">Lothringischer</desc>
             <desc xml:lang="en" versionDate="2023-03-21">of Lorraine</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">de la Lorraine</desc>
             <desc xml:lang="it" versionDate="2023-03-21">di Lorena</desc>
@@ -1177,9 +1170,10 @@
             <desc xml:lang="it" versionDate="2023-03-21">di Neuchâtel</desc>
           </valItem>
           <valItem ident="NL">
-            <desc xml:lang="de" versionDate="2024-06-19">Holländische</desc>
+            <desc xml:lang="de" versionDate="2025-01-30">Holländischer</desc>
             <desc xml:lang="en" versionDate="2024-06-19">of Holland</desc>
             <desc xml:lang="fr" versionDate="2024-06-19">de Hollande</desc>
+            <desc xml:lang="it" versionDate="2025-01-30">dell'Olanda</desc>
           </valItem>
           <valItem ident="Österreich">
             <desc xml:lang="de" versionDate="2023-03-21">Österreicher</desc>
@@ -1236,7 +1230,7 @@
             <desc xml:lang="it" versionDate="2023-03-21">di Svitto</desc>
           </valItem>
           <valItem ident="Utrecht">
-            <desc xml:lang="de" versionDate="2023-03-21">utrischer</desc>
+            <desc xml:lang="de" versionDate="2025-01-30">Utrischer</desc>
             <desc xml:lang="en" versionDate="2023-03-21">of Utrecht</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">d’Utrecht</desc>
             <desc xml:lang="it" versionDate="2023-03-21">di Utrecht</desc>
@@ -1269,9 +1263,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.measure.att.type">
-      <desc xml:lang="de" versionDate="2023-06-16">Art der Massangabe</desc>
-      <desc xml:lang="en" versionDate="2023-06-16">Type of measurement indication</desc>
-      <desc xml:lang="fr" versionDate="2023-06-16">Type d'indication de mesure</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Art der Massangabe</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the type of measurement indication</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">le type d'indication de mesure</desc>
       <content>
         <valList type="closed">
           <valItem ident="age">
@@ -1281,7 +1275,7 @@
             <desc xml:lang="it" versionDate="2023-03-21">età</desc>
           </valItem>
           <valItem ident="area">
-            <desc xml:lang="de" versionDate="2023-03-21">Flächenmass</desc>
+            <desc xml:lang="de" versionDate="2025-01-30">Fläche</desc>
             <desc xml:lang="en" versionDate="2023-03-21">area</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">mesure de superficie</desc>
             <desc xml:lang="it" versionDate="2023-03-21">misura dell'area</desc>
@@ -1293,19 +1287,19 @@
             <desc xml:lang="it" versionDate="2023-03-21">valuta</desc>
           </valItem>
           <valItem ident="length">
-            <desc xml:lang="de" versionDate="2023-03-21">Längenmass</desc>
+            <desc xml:lang="de" versionDate="2025-01-30">Länge</desc>
             <desc xml:lang="en" versionDate="2023-03-21">length</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">mesure de longueur</desc>
             <desc xml:lang="it" versionDate="2023-03-21">misura lineare</desc>
           </valItem>
           <valItem ident="undefined">
-            <desc xml:lang="de" versionDate="2023-03-21">Ungefähres Mass/Gewicht</desc>
-            <desc xml:lang="en" versionDate="2023-03-21">undefined measure/weight</desc>
-            <desc xml:lang="fr" versionDate="2023-03-21">mesure/poid approximatif</desc>
-            <desc xml:lang="it" versionDate="2023-03-21">misura/peso approssimativo</desc>
+            <desc xml:lang="de" versionDate="2025-01-30">unbekannt</desc>
+            <desc xml:lang="en" versionDate="2025-01-30">undefined</desc>
+            <desc xml:lang="fr" versionDate="2025-01-30">indéfini</desc>
+            <desc xml:lang="it" versionDate="2025-01-30">indefinito</desc>
           </valItem>
           <valItem ident="volume">
-            <desc xml:lang="de" versionDate="2023-03-21">Volumenmass</desc>
+            <desc xml:lang="de" versionDate="2025-01-30">Volumen</desc>
             <desc xml:lang="en" versionDate="2023-03-21">volume</desc>
             <desc xml:lang="fr" versionDate="2023-03-21">mesure de volume</desc>
             <desc xml:lang="it" versionDate="2023-03-21">misura del volume</desc>
@@ -1378,27 +1372,21 @@
           <desc xml:lang="de" type="singular" versionDate="2023-03-17">Kuhsömmerung</desc>
           <desc xml:lang="de" type="plural" versionDate="2023-03-17">Kuhsömmerungen</desc>
           <desc xml:lang="en" versionDate="2023-03-17">kuhsömmerung (value of a mountain
-                        pasture based on the number of cows that can graze there in summer)
-                    </desc>
+            pasture based on the number of cows that can graze there in summer)</desc>
           <desc xml:lang="fr" versionDate="2023-03-17">kuhsömmerung (valeur d’un alpage
-                        selon le nombre de vaches qui peuvent y paître en été)
-                    </desc>
+            selon le nombre de vaches qui peuvent y paître en été)</desc>
           <desc xml:lang="it" versionDate="2023-03-17">kuhsömmerung (valore di un'alpe in
-                        funzione del numero di vacche che possono pascolare lì in estate)
-                    </desc>
+            funzione del numero di vacche che possono pascolare lì in estate)</desc>
         </valItem>
         <valItem ident="Kuhwinterung">
           <desc xml:lang="de" versionDate="2023-03-17">Kuhwinterung</desc>
           <desc xml:lang="de" type="plural" versionDate="2023-03-17">Kuhwinterungen</desc>
           <desc xml:lang="en" versionDate="2023-03-17">kuhwinterung (value of a mountain
-                        pasture based on the number of cows that can graze there in winter)
-                    </desc>
+            pasture based on the number of cows that can graze there in winter)</desc>
           <desc xml:lang="fr" versionDate="2023-03-17">kuhwinterung (valeur d’un alpage
-                        selon le nombre de vaches qui peuvent y paître en hiver)
-                    </desc>
+            selon le nombre de vaches qui peuvent y paître en hiver)</desc>
           <desc xml:lang="it" versionDate="2023-03-17">kuhwinterung (valore di un'alpe in
-                        funzione del numero di vacche che possono pascolare lì in inverno)
-                    </desc>
+            funzione del numero di vacche che possono pascolare lì in inverno)</desc>
         </valItem>
         <valItem ident="Mal">
           <desc xml:lang="de" versionDate="2023-03-17">Mal</desc>
@@ -2590,29 +2578,20 @@
   </specGrp>
   <specGrp xml:id="ssrq-orig-type">
     <dataSpec ident="ssrq.orig.type" mode="add">
-      <desc xml:lang="de" versionDate="2025-01-16">Geschlossene Liste von Werten, die ausdrücken,
-        worauf sich ein <gi>origDate</gi> bzw. ein <gi>origPlace</gi> bezieht.</desc>
-      <desc xml:lang="en" versionDate="2023-10-14">Closed list of values, which express what an
-          <gi>origDate</gi> or an <gi>origPlace</gi> refers to.</desc>
-      <desc xml:lang="fr" versionDate="2023-10-14">Liste fermée de valeurs, qui expriment à quoi un
-          <gi>origDate</gi> ou un <gi>origPlace</gi> fait référence.</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">worauf sich ein <gi>origDate</gi> bzw. ein <gi>origPlace</gi> bezieht</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">what an <gi>origDate</gi> or an <gi>origPlace</gi> refers to</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">à quoi un <gi>origDate</gi> ou un <gi>origPlace</gi> fait référence</desc>
       <content>
         <valList type="closed">
           <valItem ident="content">
-            <desc xml:lang="de" versionDate="2025-01-16">Datierung bzw. Lokalisierung des Inhalts
-              des Dokuments</desc>
-            <desc xml:lang="en" versionDate="2025-01-16">Dating or localization of the content
-              of the document</desc>
-            <desc xml:lang="fr" versionDate="2025-01-16">Datation ou localisation du contenu
-              du document</desc>
+            <desc xml:lang="de" versionDate="2025-01-16">Datierung bzw. Lokalisierung des Inhalts des Dokuments</desc>
+            <desc xml:lang="en" versionDate="2025-01-16">Dating or localization of the content of the document</desc>
+            <desc xml:lang="fr" versionDate="2025-01-16">Datation ou localisation du contenu du document</desc>
           </valItem>
           <valItem ident="document">
-            <desc xml:lang="de" versionDate="2025-01-16">Datierung bzw. Lokalisierung des Dokuments als
-              Textträger</desc>
-            <desc xml:lang="en" versionDate="2025-01-16">Dating or localization of the document as
-              a text carrier</desc>
-            <desc xml:lang="fr" versionDate="2025-01-16">Datation ou localisation du document selon
-              support de texte</desc>
+            <desc xml:lang="de" versionDate="2025-01-16">Datierung bzw. Lokalisierung des Dokuments als Textträger</desc>
+            <desc xml:lang="en" versionDate="2025-01-16">Dating or localization of the document as a text carrier</desc>
+            <desc xml:lang="fr" versionDate="2025-01-16">Datation ou localisation du document selon support de texte</desc>
           </valItem>
         </valList>
       </content>
@@ -2620,12 +2599,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-period">
     <dataSpec ident="ssrq.period.days" mode="add">
-      <desc xml:lang="de" versionDate="2023-05-11">Geschlossene Liste von Werten, die von der SSRQ
-        zur Bezeichnung von Wochentagen verwendet werden</desc>
-      <desc xml:lang="en" versionDate="2023-05-11">Closed list of values for naming days of the week
-        used by the SLS</desc>
-      <desc xml:lang="fr" versionDate="2023-05-11">Liste fermée de valeurs utilisées par la SDS
-        pour désigner les jours de la semaine </desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Wochentage</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the days of the week</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les jours de la semaine</desc>
       <content>
         <valList type="closed">
           <valItem ident="P1WD">
@@ -2674,12 +2650,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.period.daytimes" mode="add">
-      <desc xml:lang="de" versionDate="2022-05-05">Geschlossene Liste von Werten, die von der SSRQ
-        zur Bezeichnung von Tageszeiten verwendet werden</desc>
-      <desc xml:lang="en" versionDate="2022-05-05">Closed list of values for times of day used by
-        the SLS</desc>
-      <desc xml:lang="fr" versionDate="2023-05-11">Liste fermée de valeurs utilisées par la SDS
-        pour désigner les heures de la journée</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Tageszeiten</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the times of day</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les heures de la journée</desc>
       <content>
         <valList type="closed">
           <valItem ident="afternoon">
@@ -2722,12 +2695,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.period.seasons" mode="add">
-      <desc xml:lang="de" versionDate="2022-05-05">Geschlossene Liste von Werten, die von der SSRQ
-        zur Bezeichnung von Jahreszeiten verwendet werden </desc>
-      <desc xml:lang="en" versionDate="2022-05-05">Closed list of values for naming seasons used by
-        the SLS</desc>
-      <desc xml:lang="fr" versionDate="2023-05-11">Liste fermée de valeurs utilisées par la SDS
-        pour désigner les saisons </desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Jahreszeiten</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the seasons</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les saisons</desc>
       <content>
         <valList type="closed">
           <valItem ident="spring">
@@ -2760,9 +2730,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-place">
     <dataSpec ident="ssrq.place" mode="add">
-      <desc xml:lang="de" versionDate="2023-05-02">Ort einer Ergänzung</desc>
-      <desc xml:lang="en" versionDate="2023-05-02">Place of a supplement</desc>
-      <desc xml:lang="fr" versionDate="2023-05-16">Lieu d'ajout</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">der Ort einer Ergänzung</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the place of a supplement</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">le lieu d'ajout</desc>
       <content>
         <valList type="closed">
           <valItem ident="above">
@@ -2835,9 +2805,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.place.ab" mode="add">
-      <desc xml:lang="de" versionDate="2023-05-02">Ort einer Ergänzung</desc>
-      <desc xml:lang="en" versionDate="2023-05-02">Place of a supplement</desc>
-      <desc xml:lang="fr" versionDate="2023-05-16">Lieu d'ajout</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">der Ort einer Ergänzung</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the Place of a supplement</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">le lieu d'ajout</desc>
       <content>
         <valList>
           <valItem ident="left_plica">
@@ -2946,9 +2916,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.place.add" mode="add">
-      <desc xml:lang="de" versionDate="2023-05-02">Ort einer Ergänzung</desc>
-      <desc xml:lang="en" versionDate="2023-05-02">Place of a supplement</desc>
-      <desc xml:lang="fr" versionDate="2023-05-16">Lieu d'ajout</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">der Ort einer Ergänzung</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the place of a supplement</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">le lieu d'ajout</desc>
       <content>
         <valList>
           <valItem ident="inline">
@@ -3005,9 +2975,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-rend">
     <dataSpec ident="ssrq.rend.add" mode="add">
-      <desc xml:lang="de" versionDate="2023-05-16">Schreibmittel der Hinzufügung</desc>
-      <desc xml:lang="en" versionDate="2023-05-16">Writing means of addition</desc>
-      <desc xml:lang="fr" versionDate="2023-05-16">Moyens d'écriture d'addition</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">das Schreibmittel der Hinzufügung</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the writing means of the addition</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les moyens d'écriture de l'ajout</desc>
       <content>
         <valList type="closed">
           <valItem ident="other_ink">
@@ -3096,12 +3066,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-role">
     <dataSpec ident="ssrq.role.institution" mode="add">
-      <desc xml:lang="de" versionDate="2023-04-28">Rolle einer Person oder Institution im
-        Text</desc>
-      <desc xml:lang="en" versionDate="2022-07-11">Role of a person or institution in the
-        text</desc>
-      <desc xml:lang="fr" versionDate="2023-06-29">Rôle d'une personne ou d'une institution dans le
-        texte</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Rolle einer Person oder Institution im Text</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the role of a person or institution in the text</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">le rôle d'une personne ou d'une institution dans le texte</desc>
       <content>
         <valList type="closed">
           <valItem ident="issuer">
@@ -3132,9 +3099,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.role.person" mode="add">
-      <desc xml:lang="de" versionDate="2022-05-12">Rolle einer Person im besagten Text</desc>
-      <desc xml:lang="en" versionDate="2022-07-11">Role of a person in the text</desc>
-      <desc xml:lang="fr" versionDate="2023-05-16">Rôle d'une personne dans le texte</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Rolle einer Person im besagten Text</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the role of a person in the text</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">le rôle d'une personne dans le texte</desc>
       <content>
         <valList type="closed">
           <valItem ident="audentiaprocurator">
@@ -3224,15 +3191,12 @@
         </valList>
       </content>
     </dataSpec>
-    <!-- ssrq.role.resp.de are macroSpecs because they are used als element content, not as
-         attribute values. -->
+    <!-- ssrq.role.resp.de and ssrq.role.resp.fr are macroSpecs because they are used als element
+      content, not as attribute values. -->
     <macroSpec ident="ssrq.role.resp.de" mode="add">
-      <desc xml:lang="de" versionDate="2023-06-27">Aufgaben / Rollen der Beteiligten des Projektes
-        (deutschsprachig) </desc>
-      <desc xml:lang="en" versionDate="2023-06-29">Tasks / Roles of those involved in the project
-        (in German) </desc>
-      <desc xml:lang="fr" versionDate="2023-06-27">Tâches / rôles des participants au projet (en
-        allemand) </desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Aufgaben der Beteiligten des Projektes</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the task of those involved in the project</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les tâches des participants au projet</desc>
       <content>
         <valList type="closed" xml:lang="de">
           <valItem ident="Anlage Register"/>
@@ -3246,12 +3210,9 @@
       </content>
     </macroSpec>
     <macroSpec ident="ssrq.role.resp.fr" mode="add">
-      <desc xml:lang="de" versionDate="2023-06-27">Aufgaben / Rollen der Beteiligten des Projektes
-        (französischsprachig) </desc>
-      <desc xml:lang="en" versionDate="2023-06-29">Tasks / Roles of the project participants (in
-        French) </desc>
-      <desc xml:lang="fr" versionDate="2023-06-27">Tâches / rôles des participants au projet (en
-        français) </desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Aufgaben der Beteiligten des Projektes</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the task of those involved in the project</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les tâches des participants au projet</desc>
       <content>
         <valList type="closed" xml:lang="fr">
           <valItem ident="Annexe Registre"/>
@@ -3267,9 +3228,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-struct">
     <dataSpec ident="ssrq.struct.head" mode="add">
-      <desc xml:lang="de" versionDate="2023-05-26">Typen von Titeln zur Textstrukturierung</desc>
-      <desc xml:lang="en" versionDate="2023-05-26">Types of headings for structuring text</desc>
-      <desc xml:lang="fr" versionDate="2023-05-26">Types de titres pour structurer le texte</desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Typen von Titeln zur Textstrukturierung</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the types of headings for structuring text</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les types de titres pour structurer le texte</desc>
       <content>
         <valList type="closed">
           <valItem ident="title">
