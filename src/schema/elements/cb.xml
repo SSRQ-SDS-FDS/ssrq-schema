@@ -18,11 +18,8 @@
   </content>
   <attList>
     <attDef ident="n" mode="replace">
-      <desc xml:lang="de" versionDate="2025-01-31">die Spaltenzählung des Originals</desc>
-      <desc xml:lang="en" versionDate="2025-01-31">the column count of the original</desc>
-      <desc xml:lang="fr" versionDate="2025-01-31">le nombre de colonnes de l'original</desc>
       <datatype>
-        <dataRef name="string" restriction="[a-z]{1}"/>
+        <dataRef key="ssrq.n.cb"/>
       </datatype>
     </attDef>
     <attDef ident="xml:id" mode="delete"/>

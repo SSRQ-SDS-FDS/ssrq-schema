@@ -2559,6 +2559,16 @@
       </content>
     </dataSpec>
   </specGrp>
+  <specGrp xml:id="ssrq-n">
+    <dataSpec ident="ssrq.n.cb" mode="add">
+      <desc xml:lang="de" versionDate="2025-01-31">die Spaltenzählung des Originals</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the column count of the original</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le nombre de colonnes de l'original</desc>
+      <content>
+        <dataRef name="string" restriction="[a-z]{1}"/>
+      </content>
+    </dataSpec>
+  </specGrp>
   <specGrp xml:id="ssrq-orig-type">
     <dataSpec ident="ssrq.orig.type" mode="add">
       <desc xml:lang="de" versionDate="2025-01-30">worauf sich ein <gi>origDate</gi> bzw. ein <gi>origPlace</gi> bezieht</desc>

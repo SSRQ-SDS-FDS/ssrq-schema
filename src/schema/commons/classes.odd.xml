@@ -209,7 +209,11 @@
     <classSpec ident="att.global" type="atts" mode="change">
       <classes mode="replace"/>
       <attList>
-        <attDef ident="n" mode="change"/>
+        <attDef ident="n" mode="change">
+          <desc xml:lang="de" versionDate="2025-01-31">die Nummerierung des Elements</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">the numbering of the element</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">la numérotation de l'élément</desc>
+        </attDef>
         <attDef ident="xml:base" mode="delete"/>
         <attDef ident="xml:id" mode="change">
           <desc xml:lang="de" versionDate="2025-01-31">die ID des Elements</desc>
