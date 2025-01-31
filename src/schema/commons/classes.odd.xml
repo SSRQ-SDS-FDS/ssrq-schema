@@ -211,7 +211,11 @@
       <attList>
         <attDef ident="n" mode="change"/>
         <attDef ident="xml:base" mode="delete"/>
-        <attDef ident="xml:id" mode="change"/>
+        <attDef ident="xml:id" mode="change">
+          <desc xml:lang="de" versionDate="2025-01-31">die ID des Elements</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">the ID of the element</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">L'ID de l'élément</desc>
+        </attDef>
         <attDef ident="xml:lang" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-28">ein Sprachkürzel gemäss ISO 639-1</desc>
           <desc xml:lang="en" versionDate="2025-01-28">a language abbreviation according to ISO 639-1</desc>
