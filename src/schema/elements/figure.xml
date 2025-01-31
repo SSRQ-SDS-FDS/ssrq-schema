@@ -39,66 +39,9 @@
   </constraintSpec>
   <attList>
     <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2023-04-11">Zwingende Zuordnung zu einem Typ</desc>
-      <desc xml:lang="en" versionDate="2023-04-11">Mandatory assignment to a type</desc>
-      <desc xml:lang="fr" versionDate="2023-04-11">Affectation obligatoire à un type</desc>
-      <desc xml:lang="en" versionDate="2023-04-11">Assegnazione obbligatoria a un tipo</desc>
-      <valList type="closed">
-        <valItem ident="copper_engraving">
-          <desc xml:lang="de" versionDate="2023-04-11">Kupferstich</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">copper engraving</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">gravure sur cuivre</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">incisione su lastra di rame</desc>
-        </valItem>
-        <valItem ident="drawing">
-          <desc xml:lang="de" versionDate="2023-04-11">Federzeichnung</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">pen and ink drawing</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">dessin à la plume</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">disegno a penna e inchiostro</desc>
-        </valItem>
-        <valItem ident="illustration">
-          <desc xml:lang="de" versionDate="2023-04-11">Abbildung</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">illustration</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">figure</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">figura</desc>
-        </valItem>
-        <valItem ident="locus_sigilli">
-          <desc xml:lang="de" versionDate="2023-04-11">Locus sigilli</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">locus sigilli</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">locus sigilli</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">locus sigilli</desc>
-        </valItem>
-        <valItem ident="monogram">
-          <desc xml:lang="de" versionDate="2023-04-11">Monogramm</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">monogram</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">monogramme</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">monogramma</desc>
-        </valItem>
-        <valItem ident="notarial_sign">
-          <desc xml:lang="de" versionDate="2023-04-11">Notarzeichen</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">notarial sign</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">seing/signe notarial</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">signum notarile</desc>
-        </valItem>
-        <valItem ident="sign">
-          <desc xml:lang="de" versionDate="2023-04-11">Verweiszeichen</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">signe-de-renvoi</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">signe de renvoi</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">segno di riferimento</desc>
-        </valItem>
-        <valItem ident="stamp">
-          <desc xml:lang="de" versionDate="2023-04-11">Stempel</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">stamp</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">tampon</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">timbro</desc>
-        </valItem>
-        <valItem ident="woodcut">
-          <desc xml:lang="de" versionDate="2023-04-11">Holzschnitt</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">woodcut</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">xylographie</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">xilografia</desc>
-        </valItem>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.type.figure"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-figure-1-de"/>
