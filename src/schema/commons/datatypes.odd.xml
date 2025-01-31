@@ -3048,6 +3048,21 @@
     </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-role">
+    <dataSpec ident="ssrq.role.author" mode="add">
+      <desc xml:lang="de" versionDate="2025-01-31">die Rolle des Schreibenden</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the role of the writer</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le rôle du rédacteur</desc>
+      <content>
+        <valList type="closed" mode="replace">
+          <valItem ident="scribe">
+            <desc xml:lang="de" versionDate="2022-05-12">Schreiber</desc>
+            <desc xml:lang="fr" versionDate="2022-05-12">scripteur</desc>
+            <desc xml:lang="en" versionDate="2022-05-12">scribe</desc>
+            <desc xml:lang="it" versionDate="2022-09-13">scriba</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
     <dataSpec ident="ssrq.role.institution" mode="add">
       <desc xml:lang="de" versionDate="2025-01-30">die Rolle einer Person oder Institution im Text</desc>
       <desc xml:lang="en" versionDate="2025-01-30">the role of a person or institution in the text</desc>

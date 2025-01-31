@@ -380,7 +380,11 @@
       <classes mode="replace"/>
       <attList>
         <attDef ident="nymRef" mode="delete"/>
-        <attDef ident="role" mode="change"/>
+        <attDef ident="role" mode="change">
+          <desc xml:lang="de" versionDate="2025-01-31">die Rolle des Elements</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">the role of the element</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">le rôle de l'élément</desc>
+        </attDef>
       </attList>
     </classSpec>
     <classSpec ident="att.placement" type="atts" mode="change">
