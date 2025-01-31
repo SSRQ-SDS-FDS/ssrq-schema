@@ -29,20 +29,9 @@
   </constraintSpec>
   <attList>
     <attDef ident="type" mode="replace" usage="req">
-      <valList type="closed">
-        <valItem ident="leaves">
-          <desc xml:lang="de" versionDate="2023-06-23">Ausmass der Blätter</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Extent of leaves</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Étendue des feuilles</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Estensione delle foglie</desc>
-        </valItem>
-        <valItem ident="plica">
-          <desc xml:lang="de" versionDate="2023-06-23">Ausmass der Plica</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Extent of the plica</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Extension de pliage</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Estensione della plica</desc>
-        </valItem>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.type.dimensions"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-extent-de"/>
