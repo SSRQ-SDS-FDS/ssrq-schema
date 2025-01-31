@@ -485,7 +485,7 @@
           <datatype>
             <rng:list>
               <rng:oneOrMore>
-                <rng:ref name="ssrq.witness.pointer"/>
+                <rng:ref name="ssrq.pointer.id"/>
               </rng:oneOrMore>
             </rng:list>
           </datatype>
@@ -502,7 +502,7 @@
             <rng:choice>
               <rng:ref name="ssrq.hand"/>
               <rng:ref name="ssrq.hand.century"/>
-              <rng:ref name="ssrq.id"/>
+              <rng:ref name="ssrq.id.string"/>
             </rng:choice>
           </datatype>
         </attDef>

@@ -157,16 +157,6 @@
       <desc xml:lang="de" versionDate="2025-01-30">das Muster für eine SSRQ UUID</desc>
       <desc xml:lang="en" versionDate="2025-01-30">the pattern for an SLS UUID</desc>
       <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour un UUID SDS</desc>
-      <!-- This is the same pattern as ssrq.witness.id, but as a string datatype,
-        not as a ID datatype -->
-      <content>
-        <dataRef name="string" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.witness.id" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für eine SSRQ UUID</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for an SLS UUID</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour un UUID SDS</desc>
       <content>
         <!--This pattern has two parts
           1) A prefix "id-ssrq-". This prefix is used to make sure, that the xml:id is a valid token
@@ -178,7 +168,17 @@
         <dataRef name="ID" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
       </content>
     </dataSpec>
-    <dataSpec ident="ssrq.witness.pointer" mode="add" module="ssrq.core.module">
+    <dataSpec ident="ssrq.id.string" mode="add" module="ssrq.core.module">
+      <desc xml:lang="de" versionDate="2025-01-30">das Muster für eine SSRQ UUID</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the pattern for an SLS UUID</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour un UUID SDS</desc>
+      <!-- This is the same pattern as ssrq.id, but as a string datatype,
+        not as a ID datatype -->
+      <content>
+        <dataRef name="string" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.pointer.id" mode="add" module="ssrq.core.module">
       <desc xml:lang="de" versionDate="2025-01-30">das Muster für einen Pointer mit Fragmentbezeichner auf SSRQ IDs</desc>
       <desc xml:lang="en" versionDate="2025-01-30">the pattern for a pointer with fragment identifier on SLS IDS</desc>
       <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour un pointeur avec un identifiant de fragment sur les ID SDS</desc>
