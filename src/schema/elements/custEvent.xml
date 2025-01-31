@@ -21,17 +21,9 @@
       <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-custEvent" mode="delete"/>
     </attDef>
     <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2023-09-19">Art des Ereignisses.</desc>
-      <desc xml:lang="en" versionDate="2023-09-19">Type of event.</desc>
-      <desc xml:lang="fr" versionDate="2023-09-19">Type d'événement.</desc>
-      <valList type="closed">
-        <valItem ident="lost">
-          <desc xml:lang="de" versionDate="2023-09-19">Verlust des Dokuments.</desc>
-          <desc xml:lang="en" versionDate="2023-09-19">Loss of the document.</desc>
-          <desc xml:lang="fr" versionDate="2023-09-19">Perte du document.</desc>
-          <desc xml:lang="it" versionDate="2023-09-19">Perdita del documento.</desc>
-        </valItem>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.type.custevent"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-adminInfo-de"/>

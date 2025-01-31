@@ -3352,6 +3352,21 @@
         </valList>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.type.custevent" mode="add">
+      <desc xml:lang="de" versionDate="2025-01-31">die Art des Ereignisses</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of event</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type d'événement</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="lost">
+            <desc xml:lang="de" versionDate="2025-01-31">Verlust des Dokuments</desc>
+            <desc xml:lang="en" versionDate="2025-01-31">loss of the document</desc>
+            <desc xml:lang="fr" versionDate="2025-01-31">perte du document</desc>
+            <desc xml:lang="it" versionDate="2025-01-31">perdita del documento</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-xmlid">
     <dataSpec ident="ssrq.xmlid.anchor" mode="add">
