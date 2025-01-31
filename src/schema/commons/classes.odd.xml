@@ -179,10 +179,7 @@
           <desc xml:lang="fr" versionDate="2025-01-28">la taille de l'unité spécifiée avec <att>unit</att></desc>
           <datatype>
             <rng:choice>
-              <rng:data type="float">
-                <rng:param name="minInclusive">0</rng:param>
-              </rng:data>
-              <rng:data type="positiveInteger"/>
+              <rng:ref name="ssrq.quantity.positive"/>
               <rng:ref name="ssrq.dimensions.unknown"/>
             </rng:choice>
           </datatype>

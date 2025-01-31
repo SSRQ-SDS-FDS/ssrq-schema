@@ -45,12 +45,7 @@
     </attDef>
     <attDef ident="quantity" mode="change">
       <datatype>
-        <rng:choice>
-          <rng:data type="float">
-            <rng:param name="minInclusive">0</rng:param>
-          </rng:data>
-          <rng:data type="positiveInteger"/>
-        </rng:choice>
+        <dataRef key="ssrq.quantity.positive"/>
       </datatype>
     </attDef>
   </attList>
