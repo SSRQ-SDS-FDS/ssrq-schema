@@ -199,11 +199,12 @@
       </attList>
     </classSpec>
     <classSpec ident="att.duration.iso" type="atts" mode="change">
-      <desc xml:lang="de" versionDate="2025-01-28">eine Zeitspanne gemäss ISO 8601</desc>
-      <desc xml:lang="en" versionDate="2025-01-28">a period of time according to ISO 8601</desc>
-      <desc xml:lang="fr" versionDate="2025-01-28">une période de temps selon ISO 8601</desc>
       <attList>
-        <attDef ident="dur-iso" mode="change"/>
+        <attDef ident="dur-iso" mode="change">
+          <desc xml:lang="de" versionDate="2025-01-28">eine Zeitspanne gemäss ISO 8601</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">a period of time according to ISO 8601</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">une période de temps selon ISO 8601</desc>
+        </attDef>
       </attList>
     </classSpec>
     <classSpec ident="att.global" type="atts" mode="change">

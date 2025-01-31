@@ -244,6 +244,13 @@
       </content>
     </dataSpec>
   </specGrp>
+  <specGrp xml:id="ssrq-dur-iso">
+    <dataSpec ident="ssrq.duriso.date" mode="add">
+      <content>
+        <dataRef name="string" restriction="(R/)?P(\d+(\.\d+)?[YMWDH])+"/>
+      </content>
+    </dataSpec>
+  </specGrp>
   <specGrp xml:id="ssrq-hand">
     <dataSpec ident="ssrq.hand">
       <desc xml:lang="de" versionDate="2025-01-29">die Hand eines Textes</desc>
@@ -3363,6 +3370,58 @@
             <desc xml:lang="en" versionDate="2025-01-31">loss of the document</desc>
             <desc xml:lang="fr" versionDate="2025-01-31">perte du document</desc>
             <desc xml:lang="it" versionDate="2025-01-31">perdita del documento</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.type.date" mode="add">
+      <desc xml:lang="de" versionDate="2025-01-31">die Art eines Datums</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of date</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type de date</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="deadline">
+            <desc xml:lang="de" versionDate="2024-05-08">Termin/Frist</desc>
+            <desc xml:lang="en" versionDate="2024-05-08">period</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">délai</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">scadenza</desc>
+          </valItem>
+          <valItem ident="deadline_floating_holiday">
+            <desc xml:lang="de" versionDate="2024-05-08">beweglicher Feiertag als Termin/Frist</desc>
+            <desc xml:lang="en" versionDate="2024-05-08">floating holiday (deadline)</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">des fêtes sans date fixe comme délai</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">festività religiose senza una data fissa
+              come scadenza</desc>
+          </valItem>
+          <valItem ident="deadline_holiday">
+            <desc xml:lang="de" versionDate="2024-05-08">Kirchenfest als Termin/Frist</desc>
+            <desc xml:lang="en" versionDate="2024-05-08">feast day (period)</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">des fêtes religieuses comme délai</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">festività religiose come scadenza</desc>
+          </valItem>
+          <valItem ident="electronic">
+            <desc xml:lang="de" versionDate="2024-05-08">elektronische Publikation</desc>
+            <desc xml:lang="en" versionDate="2024-05-08">electronic publication</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">publication numérique</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">pubblicazione digitale</desc>
+          </valItem>
+          <valItem ident="floating_holiday">
+            <desc xml:lang="de" versionDate="2024-05-08">beweglicher Feiertag</desc>
+            <desc xml:lang="en" versionDate="2024-05-08">floating holiday</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">des fêtes sans date fixe</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">festività senza una data fissa</desc>
+          </valItem>
+          <valItem ident="holiday">
+            <desc xml:lang="de" versionDate="2024-05-08">Kirchenfest</desc>
+            <desc xml:lang="en" versionDate="2024-05-08">feast day</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">des fêtes religieuses</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">festività religiose</desc>
+          </valItem>
+          <valItem ident="print">
+            <desc xml:lang="de" versionDate="2024-05-08">Druck</desc>
+            <desc xml:lang="en" versionDate="2024-05-08">print</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">imprimé</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">stampa</desc>
           </valItem>
         </valList>
       </content>
