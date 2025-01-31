@@ -140,7 +140,7 @@
             followed by exactly three characters from the above set.</item><item>A hyphen.
         </item><item>Exactly twelve characters from the above set.</item></list>
         </p>
-    <p>If <gi>idno</gi> contains a volume abbreviation of the SSRQ, then this must match the
+    <p>If <gi>idno</gi> contains a volume abbreviation of the SLS, then this must match the
         following regular expression:
         <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\ .)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$</val>.
         The volume abbreviations are structured as follows:
@@ -171,7 +171,7 @@
         </item><item>Un trait d'union.</item><item>Exactement douze caractères de l'ensemble
             ci-dessus.</item></list>
         </p>
-    <p>Contient <gi>idno</gi> a abréviation de bande du SSRQ, cela doit correspondre à l'expression
+    <p>Contient <gi>idno</gi> a abréviation de bande du SDS, cela doit correspondre à l'expression
         régulière suivante :
         <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$</val>.
         Les abréviations de bande sont structurées comme suit :

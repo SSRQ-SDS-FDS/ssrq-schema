@@ -5,7 +5,7 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
   <specGrp xml:id="constraints">
     <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-calendar">
-      <desc xml:lang="en" versionDate="2024-05-08">Schematron to check the usage of dating attributes.</desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to check the usage of dating attributes</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="tei:*[@calendar]">
@@ -17,12 +17,12 @@
       </constraint>
     </constraintSpec>
     <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-data-custom">
-      <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for att.datable.custom</desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to check the usage of custom dating attributes</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="tei:*[@when-custom]">
             <sch:report test="@notBefore-custom|@notAfter-custom|@from-custom|@to-custom">
-                The @when-custom attribute cannot be used with any other att.datable.custom attribute.
+                @when-custom cannot be used together with @notBefore-custom, @notAfter-custom, @from-custom or @to-custom.
             </sch:report>
           </sch:rule>
           <sch:rule context="tei:*[@from-custom or @to-custom]">
@@ -30,36 +30,24 @@
                 @from-custom and @to-custom must always be used together.
             </sch:assert>
             <sch:report test="@notBefore-custom|@notAfter-custom">
-                The usage of @notBefore-custom and @notAfter-custom is not allowed together with
-                @from-custom and @to-custom.
+                The usage of @notBefore-custom and @notAfter-custom is not allowed together with @from-custom and @to-custom.
             </sch:report>
             <sch:assert test="if (matches(@from-custom, '^\d{4}-\d{2}-\d{2}$') and matches(@from-custom, '^\d{4}-\d{2}-\d{2}$')) then (number(translate(@to-custom, '-', '')) - number(translate(@from-custom, '-', ''))) &gt; 0 else true()">
-                Invalid timespan – the @to-custom attribute must be a point later in time.
+                Invalid timespan: @to-custom must be a point later in time than @from-custom.
             </sch:assert>
           </sch:rule>
         </sch:pattern>
       </constraint>
     </constraintSpec>
     <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-dimensions">
-      <desc xml:lang="en" versionDate="2023-05-22">
-            If <att>unit</att> has the value <val>unknown</val>, <att>quantity</att> must
-            be <val>unknown</val> too.
-        </desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to check the usage of @quantity and @unit</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="tei:*[@unit='unknown']">
             <sch:assert test="./@quantity='unknown'" xml:lang="en">
-                  If @unit has the value 'unknown', @quantity must be 'unknown' too.
-              </sch:assert>
+              If @unit has the value 'unknown', @quantity must be 'unknown' too.
+            </sch:assert>
           </sch:rule>
-        </sch:pattern>
-      </constraint>
-    </constraintSpec>
-    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-dimensions-2">
-      <desc xml:lang="en" versionDate="2024-11-14"><att>unit</att> and <att>quantity</att> must be
-        used together.</desc>
-      <constraint>
-        <sch:pattern>
           <sch:rule context="tei:*[@unit or @quantity]">
             <sch:assert test="@quantity and @unit" xml:lang="en">
                 @unit and @quantity must be used together.
@@ -68,10 +56,11 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
-    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-dimensions-3">
-      <desc xml:lang="en" versionDate="2024-01-24">Prevent that quantity is zero</desc>
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-dimensions-2">
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to prevent that quantity is zero</desc>
       <constraint>
         <sch:pattern>
+          <!-- Test for integer (0) and float (0.0) values -->
           <sch:rule context="tei:*[number(@quantity)=0 or number(@quantity)=0.0]">
             <sch:report test="not(@type='currency')" xml:lang="en">
                 @quantity may only be zero, if it occurs in combination with @type="currency".
@@ -81,20 +70,17 @@
       </constraint>
     </constraintSpec>
     <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-spanTo">
-      <desc xml:lang="en" versionDate="2024-05-08">The @spanTo attribute must point to an element
-        following the current element.</desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to check the usage of @spanTo</desc>
       <constraint>
         <sch:rule context="tei:*[@spanTo]">
           <sch:assert test="id(@spanTo) and following::*[@xml:id=(current()/@spanTo)]">
-            The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the
-            current element <sch:name/>.
+            The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must occur after the current element <sch:name/>.
           </sch:assert>
         </sch:rule>
       </constraint>
     </constraintSpec>
     <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-facs">
-      <desc xml:lang="en" versionDate="2023-04-06">Global constraint to ensure pattern of
-          facsimile names</desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to ensure the pattern of facsimile names</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="*[@facs]">
@@ -106,8 +92,7 @@
       </constraint>
     </constraintSpec>
     <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-wit">
-      <desc xml:lang="en" versionDate="2023-06-22">Make sure, the referenced ID belongs to a
-            witness element.</desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to check the reference of @wit</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="tei:*[@wit]">
@@ -123,23 +108,20 @@
       </constraint>
     </constraintSpec>
     <constraintSpec xml:lang="en" scheme="schematron" ident="sch-att-hand">
-      <desc xml:lang="en" versionDate="2023-08-17">A constraint to check the existence of an
-            ID reference.</desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to check the reference of @hand</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="tei:*[@hand]">
             <sch:let name="handNoteRef" value="@hand"/>
             <sch:assert test="exists(id($handNoteRef)) and id($handNoteRef)/name() = 'handNote'">
-                The referenced ID (<sch:value-of select="$handNoteRef"/>) must belong to a handNote
-                  element.
+                The referenced ID in @hand must belong to a handNote element.
               </sch:assert>
           </sch:rule>
         </sch:pattern>
       </constraint>
     </constraintSpec>
     <constraintSpec xml:lang="en" scheme="schematron" ident="sch-trim-attributes">
-      <desc xml:lang="en" versionDate="2024-11-15">The value of an attribute should not start
-        or end with whitespace.</desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to trim any attribute value</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="@*">
@@ -154,8 +136,7 @@
       </constraint>
     </constraintSpec>
     <constraintSpec xml:lang="en" scheme="schematron" ident="sch-duplicate-attribute-values">
-      <desc xml:lang="en" versionDate="2023-11-14">Global constraint to ensure that no attribute
-        has duplicate values.</desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to ensure that no attribute has duplicate values</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="@*">
@@ -167,7 +148,7 @@
       </constraint>
     </constraintSpec>
     <constraintSpec xml:lang="en" scheme="schematron" ident="sch-non-empty-elements">
-      <desc xml:lang="en" versionDate="2023-05-23">Global constraint to ensure the usage of text</desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to ensure the usage of text in elements</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="tei:*[name() = ('ab', 'abbr', 'add', 'additional', 'author', 'availability', 'bibl', 'body', 'custEvent', 'custodialHist', 'del', 'dimensions', 'div', 'docImprint', 'editorialDecl', 'encodingDesc', 'expan', 'extent', 'foreign', 'fw', 'handDesc', 'head', 'hi', 'history', 'idno', 'item', 'keywords', 'label', 'lem', 'licence', 'list', 'listBibl', 'listWit', 'measure', 'measureGrp', 'msContents', 'msItem', 'note', 'num', 'objectDesc', 'orgName', 'orig', 'origPlace', 'p', 'persName', 'physDesc', 'placeName', 'publicationStmt', 'publisher', 'pubPlace', 'q', 'quote', 'repository', 'resp', 'respStmt', 'row', 'sealDesc', 'seg', 'settlement', 'sic', 'signed', 'sourceDesc', 'subst', 'summary', 'supplied', 'support', 'supportDesc', 'table', 'TEI', 'teiHeader', 'text', 'textClass', 'time', 'title', 'unclear', 'witness')][not(*)]">
@@ -179,7 +160,7 @@
       </constraint>
     </constraintSpec>
     <constraintSpec xml:lang="en" scheme="schematron" ident="non-breaking-whitespace">
-      <desc xml:lang="en" versionDate="2024-11-15">Global constraint to ensure no nbsp is used.</desc>
+      <desc xml:lang="en" versionDate="2025-01-28">Constraint to forbid non breakin space</desc>
       <constraint>
         <sch:pattern>
           <sch:rule context="text()">

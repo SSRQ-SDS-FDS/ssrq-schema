@@ -36,12 +36,6 @@
   <attList>
     <attDef ident="calendar" mode="delete"/>
     <attDef ident="ref" mode="replace">
-      <desc xml:lang="de" versionDate="2023-04-20">Verknüpfung der Person mit der ID der Personen-
-          und Organisationsdatenbank.</desc>
-      <desc xml:lang="en" versionDate="2023-04-20">Linking the person with the ID of the database
-          of persons and organisations.</desc>
-      <desc xml:lang="fr" versionDate="2023-04-20">Relier la personne à l'ID de la base de données
-          des personnes et des organisations.</desc>
       <datatype>
         <dataRef key="ssrq.pointer.persons"/>
       </datatype>
