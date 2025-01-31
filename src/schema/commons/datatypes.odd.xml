@@ -3,6 +3,65 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
+  <specGrp xml:id="ssrq-ab-type">
+    <dataSpec ident="ssrq.type.ab" mode="add">
+      <desc xml:lang="de" versionDate="2025-01-31">die Art des Textblocks</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of text block</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type de bloc de texte</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="address">
+            <desc xml:lang="de" versionDate="2024-05-08">Anschrift</desc>
+            <desc xml:lang="en" versionDate="2025-01-31">address</desc>
+            <desc xml:lang="fr" versionDate="2025-01-31">adresse</desc>
+            <desc xml:lang="it" versionDate="2025-01-31">inscriptio</desc>
+          </valItem>
+          <valItem ident="archiving_reference">
+            <desc xml:lang="de" versionDate="2024-05-08">Registraturvermerk</desc>
+            <desc xml:lang="en" versionDate="2025-01-31">registratur’s sign</desc>
+            <desc xml:lang="fr" versionDate="2025-01-31">note d’archives</desc>
+            <desc xml:lang="it" versionDate="2025-01-31">nota dell'archivio</desc>
+          </valItem>
+          <valItem ident="chancery_notation">
+            <desc xml:lang="de" versionDate="2024-05-08">Kanzleivermerk</desc>
+            <desc xml:lang="en" versionDate="2025-01-31">chancery notation</desc>
+            <desc xml:lang="fr" versionDate="2025-01-31">annotation issue d’une chancellerie</desc>
+            <desc xml:lang="it" versionDate="2025-01-31">nota di cancellaria</desc>
+          </valItem>
+          <valItem ident="computatio">
+            <desc xml:lang="de" versionDate="2024-05-08">Komputierungsvermerk</desc>
+            <desc xml:lang="en" versionDate="2025-01-31">computatio</desc>
+            <desc xml:lang="fr" versionDate="2025-01-31">annotation du computeur</desc>
+            <desc xml:lang="it" versionDate="2025-01-31">computatio</desc>
+          </valItem>
+          <valItem ident="dorsal">
+            <desc xml:lang="de" versionDate="2024-05-08">Vermerk</desc>
+            <desc xml:lang="en" versionDate="2025-01-31">note</desc>
+            <desc xml:lang="fr" versionDate="2025-01-31">note</desc>
+            <desc xml:lang="it" versionDate="2025-01-31">nota</desc>
+          </valItem>
+          <valItem ident="marginal_note">
+            <desc xml:lang="de" versionDate="2024-05-08">Marginalie</desc>
+            <desc xml:lang="en" versionDate="2025-01-31">marginal note</desc>
+            <desc xml:lang="fr" versionDate="2025-01-31">note</desc>
+            <desc xml:lang="it" versionDate="2025-01-31">marginalia</desc>
+          </valItem>
+          <valItem ident="sigillant">
+            <desc xml:lang="de" versionDate="2024-05-08">Sieglervermerk</desc>
+            <desc xml:lang="en" versionDate="2025-01-31">sigillant’s notes</desc>
+            <desc xml:lang="fr" versionDate="2025-01-31">annotation d’un sceau</desc>
+            <desc xml:lang="it" versionDate="2025-01-31">nota del sigillante</desc>
+          </valItem>
+          <valItem ident="tax">
+            <desc xml:lang="de" versionDate="2024-05-08">Taxvermerk</desc>
+            <desc xml:lang="en" versionDate="2025-01-31">tax note</desc>
+            <desc xml:lang="fr" versionDate="2025-01-31">annotation de taxation</desc>
+            <desc xml:lang="it" versionDate="2025-01-31">nota di tassazione</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+  </specGrp>
   <specGrp xml:id="ssrq-add-type">
     <dataSpec ident="ssrq.type.add" mode="add">
       <desc xml:lang="de" versionDate="2025-01-29">die Art der Hinzufügung</desc>

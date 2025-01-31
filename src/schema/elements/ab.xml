@@ -29,9 +29,6 @@
   <attList>
     <attDef ident="n" mode="delete"/>
     <attDef ident="place" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2024-11-14">Ort des anonymen Textblocks</desc>
-      <desc xml:lang="en" versionDate="2024-11-14">Location of the anonymous block</desc>
-      <desc xml:lang="fr" versionDate="2024-11-14">Localisation du bloc anonyme</desc>
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.place"/>
@@ -46,59 +43,9 @@
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2023-05-02">Klassifikation des Elements</desc>
-      <desc xml:lang="en" versionDate="2023-05-02">Classification of the element</desc>
-      <desc xml:lang="fr" versionDate="2023-05-02">Classification de l'élément</desc>
-      <valList type="closed">
-        <valItem ident="address">
-          <desc xml:lang="de" versionDate="2024-05-08">Anschrift</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Adress</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Adresse</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Inscriptio</desc>
-        </valItem>
-        <valItem ident="archiving_reference">
-          <desc xml:lang="de" versionDate="2024-05-08">Registraturvermerk</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Registratur’s sign</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Note d’archives</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Nota dell'archivio</desc>
-        </valItem>
-        <valItem ident="chancery_notation">
-          <desc xml:lang="de" versionDate="2024-05-08">Kanzleivermerk</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Chancery notation</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Annotation issue d’une chancellerie</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Nota di cancellaria</desc>
-        </valItem>
-        <valItem ident="computatio">
-          <desc xml:lang="de" versionDate="2024-05-08">Komputierungsvermerk</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Computatio</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Annotation du computeur</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Computatio</desc>
-        </valItem>
-        <valItem ident="dorsal">
-          <desc xml:lang="de" versionDate="2024-05-08">Vermerk</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Note</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Note</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Nota</desc>
-        </valItem>
-        <valItem ident="marginal_note">
-          <desc xml:lang="de" versionDate="2024-05-08">Marginalie</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Marginal note</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Note</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Marginalia</desc>
-        </valItem>
-        <valItem ident="sigillant">
-          <desc xml:lang="de" versionDate="2024-05-08">Sieglervermerk</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Sigillant’s notes</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Annotation d’un sceau</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Nota del sigillante</desc>
-        </valItem>
-        <valItem ident="tax">
-          <desc xml:lang="de" versionDate="2024-05-08">Taxvermerk</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Tax note</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Annotation de taxation</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Nota di tassazione</desc>
-        </valItem>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.type.ab"/>
+      </datatype>
     </attDef>
     <attDef ident="xml:id" mode="delete"/>
   </attList>
