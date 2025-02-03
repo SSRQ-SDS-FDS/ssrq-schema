@@ -158,51 +158,6 @@
       </content>
     </dataSpec>
   </specGrp>
-  <specGrp xml:id="ssrq-bibl">
-    <dataSpec ident="ssrq.bibl.types">
-      <desc xml:lang="de" versionDate="2025-01-29">der Typ einer bibliographischen Angabe</desc>
-      <desc xml:lang="en" versionDate="2025-01-29">the type of a bibliographic references</desc>
-      <desc xml:lang="fr" versionDate="2025-01-29">le type d'un donné bibliographique</desc>
-      <content>
-        <valList type="closed">
-          <valItem ident="edition">
-            <desc xml:lang="de" versionDate="2023-05-26">Edition</desc>
-            <desc xml:lang="en" versionDate="2023-05-26">edition</desc>
-            <desc xml:lang="fr" versionDate="2023-05-26">édition</desc>
-            <desc xml:lang="it" versionDate="2023-05-26">edizione</desc>
-          </valItem>
-          <valItem ident="literature">
-            <desc xml:lang="de" versionDate="2023-05-26">Literatur</desc>
-            <desc xml:lang="en" versionDate="2023-05-26">literature</desc>
-            <desc xml:lang="fr" versionDate="2023-05-26">littérature</desc>
-            <desc xml:lang="it" versionDate="2023-05-26">letteratura</desc>
-          </valItem>
-          <valItem ident="summary">
-            <desc xml:lang="de" versionDate="2023-05-30">Regest</desc>
-            <desc xml:lang="en" versionDate="2023-05-30">summary</desc>
-            <desc xml:lang="fr" versionDate="2023-05-30">résumé</desc>
-            <desc xml:lang="it" versionDate="2023-05-30">sintesi</desc>
-          </valItem>
-          <valItem ident="translation">
-            <desc xml:lang="de" versionDate="2023-05-26">Übersetzung</desc>
-            <desc xml:lang="en" versionDate="2023-05-26">translation</desc>
-            <desc xml:lang="fr" versionDate="2023-05-26">la traduction</desc>
-            <desc xml:lang="it" versionDate="2023-05-26">traduzione</desc>
-          </valItem>
-          <valItem ident="url">
-            <desc xml:lang="de" type="singular" versionDate="2023-05-26">URL</desc>
-            <desc xml:lang="de" type="plural" versionDate="2023-05-26">URLs</desc>
-            <desc xml:lang="en" type="singular" versionDate="2023-05-26">URL</desc>
-            <desc xml:lang="en" type="plural" versionDate="2023-05-26">URLs</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-05-26">URL</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-05-26">URLs</desc>
-            <desc xml:lang="it" type="singular" versionDate="2023-05-26">URL</desc>
-            <desc xml:lang="it" type="plural" versionDate="2023-05-26">URLs</desc>
-          </valItem>
-        </valList>
-      </content>
-    </dataSpec>
-  </specGrp>
   <specGrp xml:id="ssrq-date-time">
     <dataSpec ident="ssrq.date.calendar" mode="add">
       <desc xml:lang="de" versionDate="2025-01-29">das Kalendersystem</desc>
@@ -3762,6 +3717,49 @@
             <desc xml:lang="en" versionDate="2023-05-25">keyword</desc>
             <desc xml:lang="fr" versionDate="2023-05-25">mot-clé</desc>
             <desc xml:lang="it" versionDate="2023-05-25">parola chiave</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.type.listbibl">
+      <desc xml:lang="de" versionDate="2025-01-29">der Typ einer bibliographischen Angabe</desc>
+      <desc xml:lang="en" versionDate="2025-01-29">the type of bibliographic references</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">le type d'un donné bibliographique</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="edition">
+            <desc xml:lang="de" versionDate="2023-05-26">Edition</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">edition</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">édition</desc>
+            <desc xml:lang="it" versionDate="2023-05-26">edizione</desc>
+          </valItem>
+          <valItem ident="literature">
+            <desc xml:lang="de" versionDate="2023-05-26">Literatur</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">literature</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">littérature</desc>
+            <desc xml:lang="it" versionDate="2023-05-26">letteratura</desc>
+          </valItem>
+          <valItem ident="summary">
+            <desc xml:lang="de" versionDate="2023-05-30">Regest</desc>
+            <desc xml:lang="en" versionDate="2023-05-30">summary</desc>
+            <desc xml:lang="fr" versionDate="2023-05-30">résumé</desc>
+            <desc xml:lang="it" versionDate="2023-05-30">sintesi</desc>
+          </valItem>
+          <valItem ident="translation">
+            <desc xml:lang="de" versionDate="2023-05-26">Übersetzung</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">translation</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">la traduction</desc>
+            <desc xml:lang="it" versionDate="2023-05-26">traduzione</desc>
+          </valItem>
+          <valItem ident="url">
+            <desc xml:lang="de" type="singular" versionDate="2023-05-26">URL</desc>
+            <desc xml:lang="de" type="plural" versionDate="2023-05-26">URLs</desc>
+            <desc xml:lang="en" type="singular" versionDate="2023-05-26">URL</desc>
+            <desc xml:lang="en" type="plural" versionDate="2023-05-26">URLs</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2023-05-26">URL</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2023-05-26">URLs</desc>
+            <desc xml:lang="it" type="singular" versionDate="2023-05-26">URL</desc>
+            <desc xml:lang="it" type="plural" versionDate="2023-05-26">URLs</desc>
           </valItem>
         </valList>
       </content>
