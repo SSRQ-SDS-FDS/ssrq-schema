@@ -67,24 +67,14 @@
   <attList>
     <attDef ident="calendar" mode="delete"/>
     <attDef ident="source" mode="replace">
-      <desc xml:lang="de" versionDate="2025-01-16">Verweis auf ein Archivinformationssytem.</desc>
-      <desc xml:lang="en" versionDate="2025-01-16">Reference to an archive information
-            system.</desc>
-      <desc xml:lang="fr" versionDate="2025-01-16">Référence à un système d’information
-            d’archives.</desc>
       <datatype>
         <dataRef key="ssrq.pointer.url"/>
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace">
-      <valList type="closed">
-        <valItem ident="uuid">
-          <desc xml:lang="de" versionDate="2023-03-03">Universally Unique Identifier</desc>
-          <desc xml:lang="en" versionDate="2023-03-03">Universally Unique Identifier</desc>
-          <desc xml:lang="fr" versionDate="2023-03-03">Universally Unique Identifier</desc>
-          <desc xml:lang="it" versionDate="2023-03-03">Universally Unique Identifier</desc>
-        </valItem>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.type.idno"/>
+      </datatype>
     </attDef>
     <attDef ident="n" mode="delete"/>
     <attDef ident="xml:id" mode="delete"/>
