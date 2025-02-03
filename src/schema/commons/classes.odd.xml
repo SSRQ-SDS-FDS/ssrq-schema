@@ -126,9 +126,9 @@
       <classes mode="replace"/>
       <attList>
         <attDef ident="period" mode="change">
-          <desc xml:lang="de" versionDate="2025-01-28">eine Periode von Jahreszeiten oder Wochentagen</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">a period of seasons or days of the week</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">une période de saisons ou de jours de la semaine</desc>
+          <desc xml:lang="de" versionDate="2025-02-03">eine Periode von Jahreszeiten, Wochentagen oder Tageszeiten</desc>
+          <desc xml:lang="de" versionDate="2025-02-03">a period of seasons, days of the week or times of the day</desc>
+          <desc xml:lang="de" versionDate="2025-02-03">une période de saisons, des jours de la semaine ou des heures de la journée</desc>
         </attDef>
       </attList>
     </classSpec>
@@ -169,9 +169,9 @@
           </datatype>
         </attDef>
         <attDef ident="when-custom" mode="replace">
-          <desc xml:lang="de" versionDate="2025-01-28">ein Datum gemäss ISO 8601</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">a date according to ISO 8601</desc>
-          <desc xml:lang="fr" versionDate="2023-01-28">une date selon ISO 8601</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">ein Datum bzw. Zeitpunkt gemäss ISO 8601</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">a date or time according to ISO 8601</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">une date ou une heure selon ISO 8601</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
