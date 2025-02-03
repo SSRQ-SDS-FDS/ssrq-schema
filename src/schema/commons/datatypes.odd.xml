@@ -3830,6 +3830,24 @@
         </valList>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.type.quote" mode="add">
+      <content>
+        <valList type="closed">
+          <valItem ident="fully_inserted">
+            <desc xml:lang="de" versionDate="2025-02-03">ein vollständiges Insert einer anderen Urkunde</desc>
+            <desc xml:lang="en" versionDate="2025-02-03">a complete insert of another document</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">un insert complet d’un autre document</desc>
+            <desc xml:lang="it" versionDate="2025-02-03">un inserto completo di un altro documento</desc>
+          </valItem>
+          <valItem ident="partially_inserted">
+            <desc xml:lang="de" versionDate="2025-02-03">ein unvollständiges Insert einer anderen Urkunde</desc>
+            <desc xml:lang="en" versionDate="2025-02-03">an incomplete insert of another document</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">un insert incomplet d’un autre document</desc>
+            <desc xml:lang="it" versionDate="2025-02-03">un inserto incompleto di un altro documento</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-xmlid">
     <dataSpec ident="ssrq.xmlid.anchor" mode="add">
