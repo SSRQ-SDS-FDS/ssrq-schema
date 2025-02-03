@@ -38,34 +38,14 @@
   <attList>
     <attDef ident="calendar" mode="delete"/>
     <attDef ident="n" mode="change" usage="req">
-      <desc xml:lang="de" versionDate="2023-05-31">Fortlaufende Zählung der Siegel von links nach
-          rechts (anhand der Siegelschlitze bzw. der tatsächlich vorhandenen Siegel)</desc>
-      <desc xml:lang="en" versionDate="2023-05-31">Consecutive counting of the seals from left to
-          right (based on the seal slits or the seals actually present)</desc>
-      <desc xml:lang="fr" versionDate="2023-05-31">Comptage consécutif des sceaux de gauche à
-          droite (en fonction des fentes de sceaux ou des sceaux réellement présents)</desc>
       <datatype>
         <dataRef name="positiveInteger"/>
       </datatype>
     </attDef>
     <attDef ident="place" mode="replace">
-      <desc xml:lang="de" versionDate="2023-05-31">Beschreibt den Anbringungsort des Siegels</desc>
-      <desc xml:lang="en" versionDate="2023-05-31">Describes the location of the seal</desc>
-      <desc xml:lang="fr" versionDate="2023-05-31">Décrit l'emplacement du sceau</desc>
-      <valList type="closed">
-        <valItem ident="end">
-          <desc xml:lang="de" versionDate="2023-05-31">am Ende der Urkunde</desc>
-          <desc xml:lang="en" versionDate="2023-05-31">at the end of the act</desc>
-          <desc xml:lang="fr" versionDate="2023-05-31">en bas de l’acte</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">in fondo all'atto</desc>
-        </valItem>
-        <valItem ident="overleaf">
-          <desc xml:lang="de" versionDate="2023-05-31">auf der anderen Seite des Blattes</desc>
-          <desc xml:lang="en" versionDate="2023-05-31">on the other side of the page</desc>
-          <desc xml:lang="fr" versionDate="2023-05-31">sur l’autre page de la feuille</desc>
-          <desc xml:lang="it" versionDate="2023-05-31">sull'altra pagina del foglio</desc>
-        </valItem>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.place.seal"/>
+      </datatype>
     </attDef>
     <attDef ident="contemporary" mode="delete"/>
     <attDef ident="xml:id" mode="delete"/>

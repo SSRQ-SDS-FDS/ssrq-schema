@@ -2936,6 +2936,24 @@
         </valList>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.place.seal" mode="add">
+      <content>
+        <valList type="closed">
+          <valItem ident="end">
+            <desc xml:lang="de" versionDate="2023-05-31">am Ende der Urkunde</desc>
+            <desc xml:lang="en" versionDate="2023-05-31">at the end of the act</desc>
+            <desc xml:lang="fr" versionDate="2023-05-31">en bas de l’acte</desc>
+            <desc xml:lang="it" versionDate="2023-05-31">in fondo all'atto</desc>
+          </valItem>
+          <valItem ident="overleaf">
+            <desc xml:lang="de" versionDate="2023-05-31">auf der anderen Seite des Blattes</desc>
+            <desc xml:lang="en" versionDate="2023-05-31">on the other side of the page</desc>
+            <desc xml:lang="fr" versionDate="2023-05-31">sur l’autre page de la feuille</desc>
+            <desc xml:lang="it" versionDate="2023-05-31">sull'altra pagina del foglio</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-quantity">
     <dataSpec ident="ssrq.quantity.positive" mode="add">
