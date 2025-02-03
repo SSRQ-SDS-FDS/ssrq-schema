@@ -4,8 +4,7 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="pb" module="core" mode="change">
   <desc xml:lang="de" versionDate="2023-07-20">Beschreibt einen Seitenanfang im Original.</desc>
-  <desc xml:lang="en" versionDate="2023-07-20">Describes the beginning of a page in the
-      original.</desc>
+  <desc xml:lang="en" versionDate="2023-07-20">Describes the beginning of a page in the original.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Décrit le début d'une page dans l'original.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
@@ -19,28 +18,14 @@
   <attList>
     <attDef ident="break" mode="delete"/>
     <attDef ident="n" mode="replace">
-      <desc xml:lang="de" versionDate="2024-06-03">Angabe der originalen Paginierung, Foliierung
-          oder Zählung der Pergamentstücke.</desc>
-      <desc xml:lang="en" versionDate="2024-06-03">Specification of the original pagination,
-          foliation or counting the pieces of parchment.</desc>
-      <desc xml:lang="fr" versionDate="2024-06-03">Spécification de la pagination originale, de la
-          foliation ou de la numérotation des morceaux de parchemin.</desc>
       <datatype>
         <dataRef key="ssrq.numbering"/>
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2023-06-16">Typ des Seitenfangs</desc>
-      <desc xml:lang="en" versionDate="2023-06-16">Type of page change</desc>
-      <desc xml:lang="fr" versionDate="2023-06-16">Type d'appendice latéral</desc>
-      <valList type="closed">
-        <valItem ident="original">
-          <desc xml:lang="de" versionDate="2023-04-06">Originalseitenwechsel</desc>
-          <desc xml:lang="en" versionDate="2023-04-06">Original pagination</desc>
-          <desc xml:lang="fr" versionDate="2023-04-06">Saut de page original</desc>
-          <desc xml:lang="it" versionDate="2023-04-06">Impaginazione originale</desc>
-        </valItem>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.type.pb"/>
+      </datatype>
     </attDef>
     <attDef ident="xml:id" mode="delete"/>
     <attDef ident="xml:lang" mode="delete"/>

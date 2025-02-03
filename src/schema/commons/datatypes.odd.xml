@@ -3815,6 +3815,21 @@
         </valList>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.type.pb" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">der Typ des Seitenfangs</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of page change</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">Le type de changement de page</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="original">
+            <desc xml:lang="de" versionDate="2023-04-06">Originalseitenwechsel</desc>
+            <desc xml:lang="en" versionDate="2025-02-03">original pagination</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">saut de page original</desc>
+            <desc xml:lang="it" versionDate="2025-02-03">impaginazione originale</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-xmlid">
     <dataSpec ident="ssrq.xmlid.anchor" mode="add">
