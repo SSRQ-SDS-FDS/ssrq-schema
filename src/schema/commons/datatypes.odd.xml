@@ -3211,6 +3211,27 @@
         </valList>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.rend.list" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Liste</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the appearance of the list</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">l'apparition de la liste</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="bulleted">
+            <desc xml:lang="de" versionDate="2025-02-03">Liste mit Aufzählungszeichen</desc>
+            <desc xml:lang="en" versionDate="2025-02-03">list with bullet points</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">liste avec des puces</desc>
+            <desc xml:lang="it" versionDate="2025-02-03">elenco con punti elenco</desc>
+          </valItem>
+          <valItem ident="numbered">
+            <desc xml:lang="de" versionDate="2025-02-03">nummerierte Liste</desc>
+            <desc xml:lang="en" versionDate="2025-02-03">numbered list</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">liste numérotée</desc>
+            <desc xml:lang="it" versionDate="2025-02-03">elenco numerato</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-role">
     <dataSpec ident="ssrq.role.author" mode="add">
