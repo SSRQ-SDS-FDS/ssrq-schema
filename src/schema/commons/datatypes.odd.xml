@@ -3800,6 +3800,21 @@
         </valList>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.type.note" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art der Anmerkung</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of annotation</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type d'annotation</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="text_comparison">
+            <desc xml:lang="de" versionDate="2023-10-30">Verweis auf parallele Textstelle</desc>
+            <desc xml:lang="en" versionDate="2023-10-30">reference to parallel passage</desc>
+            <desc xml:lang="fr" versionDate="2023-10-30">référence à un passage parallèle</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">riferimento ad un passaggio parallelo</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-xmlid">
     <dataSpec ident="ssrq.xmlid.anchor" mode="add">
