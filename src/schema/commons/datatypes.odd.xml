@@ -3295,35 +3295,6 @@
       </content>
     </macroSpec>
   </specGrp>
-  <specGrp xml:id="ssrq-struct">
-    <dataSpec ident="ssrq.struct.head" mode="add">
-      <desc xml:lang="de" versionDate="2025-01-30">die Typen von Titeln zur Textstrukturierung</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the types of headings for structuring text</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">les types de titres pour structurer le texte</desc>
-      <content>
-        <valList type="closed">
-          <valItem ident="title">
-            <desc xml:lang="de" versionDate="2023-05-26">Haupttitel</desc>
-            <desc xml:lang="en" versionDate="2023-05-26">title</desc>
-            <desc xml:lang="fr" versionDate="2023-05-26">titre principal</desc>
-            <desc xml:lang="it" versionDate="2024-05-08">titolo principale</desc>
-          </valItem>
-          <valItem ident="subtitle">
-            <desc xml:lang="de" versionDate="2023-05-26">Untertitel</desc>
-            <desc xml:lang="en" versionDate="2023-05-26">subtitle</desc>
-            <desc xml:lang="fr" versionDate="2023-05-26">sous-titre</desc>
-            <desc xml:lang="it" versionDate="2024-05-08">sottotitolo</desc>
-          </valItem>
-          <valItem ident="subsubtitle">
-            <desc xml:lang="de" versionDate="2023-05-26">Unteruntertitel</desc>
-            <desc xml:lang="en" versionDate="2023-05-26">subsubtitle</desc>
-            <desc xml:lang="fr" versionDate="2023-05-26">sous-sous-titre</desc>
-            <desc xml:lang="it" versionDate="2024-05-08">sottosottotitolo</desc>
-          </valItem>
-        </valList>
-      </content>
-    </dataSpec>
-  </specGrp>
   <specGrp xml:id="ssrq-type">
     <dataSpec ident="ssrq.type.ab" mode="add">
       <desc xml:lang="de" versionDate="2025-01-31">die Art des Textblocks</desc>
@@ -3615,6 +3586,30 @@
             <desc xml:lang="en" versionDate="2023-03-15">map</desc>
             <desc xml:lang="fr" versionDate="2023-03-15">carte</desc>
             <desc xml:lang="it" versionDate="2023-03-15">mappa</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.type.head" mode="add">
+      <content>
+        <valList type="closed">
+          <valItem ident="title">
+            <desc xml:lang="de" versionDate="2023-05-26">Haupttitel</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">title</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">titre principal</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">titolo principale</desc>
+          </valItem>
+          <valItem ident="subtitle">
+            <desc xml:lang="de" versionDate="2023-05-26">Untertitel</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">subtitle</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">sous-titre</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">sottotitolo</desc>
+          </valItem>
+          <valItem ident="subsubtitle">
+            <desc xml:lang="de" versionDate="2023-05-26">Unteruntertitel</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">subsubtitle</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">sous-sous-titre</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">sottosottotitolo</desc>
           </valItem>
         </valList>
       </content>
