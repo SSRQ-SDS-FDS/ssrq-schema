@@ -2969,6 +2969,9 @@
   </specGrp>
   <specGrp xml:id="ssrq-reason">
     <dataSpec ident="ssrq.reason.gap" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">der Grund für die Lücke</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the reason for the gap</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">la raison de l'écart</desc>
       <content>
         <valList type="closed">
           <valItem ident="illegible">
@@ -2988,6 +2991,21 @@
             <desc xml:lang="en" versionDate="2023-05-26">missing</desc>
             <desc xml:lang="fr" versionDate="2023-05-26">manquant</desc>
             <desc xml:lang="it" versionDate="2023-05-26">mancante</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="sssrq.reason.supplied" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">der Grund für die Ergänzung</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the reason for addition</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">la raison de l'ajout</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="omitted">
+            <desc xml:lang="de" versionDate="2023-06-21">weggelassen</desc>
+            <desc xml:lang="en" versionDate="2023-06-21">omitted</desc>
+            <desc xml:lang="fr" versionDate="2023-06-21">omis</desc>
+            <desc xml:lang="it" versionDate="2023-06-21">omesso</desc>
           </valItem>
         </valList>
       </content>
