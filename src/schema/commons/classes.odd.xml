@@ -40,7 +40,6 @@
     <classSpec ident="att.global.linking" type="atts" mode="delete"/>
     <classSpec ident="att.identified" type="atts" mode="delete"/>
     <classSpec ident="att.indentation" type="atts" mode="delete"/>
-    <classSpec ident="att.internetMedia" type="atts" mode="delete"/>
     <classSpec ident="att.interpLike" type="atts" mode="delete"/>
     <classSpec ident="att.lexikographic" type="atts" mode="delete"/>
     <classSpec ident="att.lexikographic.normalized" type="atts" mode="delete"/>
@@ -330,6 +329,20 @@
         <attDef ident="scribeRef" mode="delete"/>
         <attDef ident="script" mode="delete"/>
         <attDef ident="scriptRef" mode="delete"/>
+      </attList>
+    </classSpec>
+    <classSpec ident="att.internetMedia" type="atts" mode="change">
+      <attList>
+        <attDef ident="mimeType" mode="replace" usage="req">
+          <desc xml:lang="de" versionDate="2025-02-03">der Dateityp der mit <att>source</att> eingebundenen Datei</desc>
+          <desc xml:lang="en" versionDate="2025-02-03">the file type of the file linked with <att>source</att></desc>
+          <desc xml:lang="fr" versionDate="2025-02-03">le type de fichier du fichier lié avec <att>source</att></desc>
+          <valList type="closed">
+            <valItem ident="image/jpg"/>
+            <valItem ident="image/png"/>
+            <valItem ident="image/svg"/>
+          </valList>
+        </attDef>
       </attList>
     </classSpec>
     <classSpec ident="att.measurement" type="atts" mode="replace">
