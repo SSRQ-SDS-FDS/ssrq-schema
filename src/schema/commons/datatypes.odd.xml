@@ -3903,6 +3903,33 @@
         </valList>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.type.text" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art des Textes</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of text</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type de texte</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="collection">
+            <desc xml:lang="de" versionDate="2023-09-12">Sammlung von Stücken</desc>
+            <desc xml:lang="en" versionDate="2025-02-03">collection of source documents</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">collection de documents sources</desc>
+            <desc xml:lang="it" versionDate="2025-02-03">raccolta dei documenti originali</desc>
+          </valItem>
+          <valItem ident="summary">
+            <desc xml:lang="de" versionDate="2023-04-05">Regest des Quellstücks</desc>
+            <desc xml:lang="en" versionDate="2025-02-03">regest of the source document</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">enregistrement du document source</desc>
+            <desc xml:lang="it" versionDate="2025-02-03">regest del documento di origine</desc>
+          </valItem>
+          <valItem ident="transcript">
+            <desc xml:lang="de" versionDate="2023-04-06">Transkript des Quellstücks</desc>
+            <desc xml:lang="en" versionDate="2025-02-03">transcript of the source document</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">transcription du document source</desc>
+            <desc xml:lang="it" versionDate="2025-02-03">trascrizione del documento di origine</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-xmlid">
     <dataSpec ident="ssrq.xmlid.anchor" mode="add">
