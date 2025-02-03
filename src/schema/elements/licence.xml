@@ -22,9 +22,9 @@
   <attList>
     <attDef ident="calendar" mode="delete"/>
     <attDef ident="target" mode="replace" usage="req">
-      <valList type="closed">
-        <valItem ident="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.target.licence"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-availability-de"/>
