@@ -11,7 +11,6 @@
     <classSpec ident="att.anchoring" type="atts" mode="delete"/>
     <classSpec ident="att.ascribed" type="atts" mode="delete"/>
     <classSpec ident="att.ascribed.directed" type="atts" mode="delete"/>
-    <classSpec ident="att.breaking" type="atts" mode="delete"/>
     <classSpec ident="att.citeStructurePart" type="atts" mode="delete"/>
     <classSpec ident="att.citing" type="atts" mode="delete"/>
     <classSpec ident="att.cmc" type="atts" mode="delete"/>
@@ -68,6 +67,18 @@
     <classSpec ident="att.transcriptional" type="atts" mode="delete"/>
     <classSpec ident="att.translatable" type="atts" mode="delete"/>
     <!-- Modified TEI attribute classes -->
+    <classSpec ident="att.breaking" type="atts" mode="change">
+      <attList>
+        <attDef ident="break" mode="replace">
+          <desc xml:lang="de" versionDate="2025-02-03">Zeilenumbruch innerhalb eines Wortes</desc>
+          <desc xml:lang="en" versionDate="2025-02-03">line break within one word</desc>
+          <desc xml:lang="fr" versionDate="2025-02-03">break de ligne dans un mot</desc>
+          <valList type="closed">
+            <valItem ident="no"/>
+          </valList>
+        </attDef>
+      </attList>
+    </classSpec>
     <classSpec ident="att.calendarSystem" type="atts" mode="change">
       <attList>
         <attDef ident="calendar" mode="change">
