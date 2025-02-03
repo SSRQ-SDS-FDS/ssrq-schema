@@ -308,7 +308,11 @@
     </classSpec>
     <classSpec ident="att.global.source" type="atts" mode="change">
       <attList>
-        <attDef ident="source" mode="change"/>
+        <attDef ident="source" mode="change">
+          <desc xml:lang="de" versionDate="2023-02-03">die externe Quelle</desc>
+          <desc xml:lang="en" versionDate="2023-02-03">the external source</desc>
+          <desc xml:lang="fr" versionDate="2023-02-03">la source externe</desc>
+        </attDef>
       </attList>
     </classSpec>
     <classSpec ident="att.handFeatures" type="atts" mode="change">

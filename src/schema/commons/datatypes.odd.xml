@@ -2985,6 +2985,32 @@
       </content>
     </dataSpec>
   </specGrp>
+  <specGrp xml:id="ssrq-reason">
+    <dataSpec ident="ssrq.reason.gap" mode="add">
+      <content>
+        <valList type="closed">
+          <valItem ident="illegible">
+            <desc xml:lang="de" versionDate="2023-05-26">unleserlich</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">illegible</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">illisible</desc>
+            <desc xml:lang="it" versionDate="2023-05-26">illeggibile</desc>
+          </valItem>
+          <valItem ident="irrelevant">
+            <desc xml:lang="de" versionDate="2023-05-26">irrelevant</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">irrelevant</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">insignifiant</desc>
+            <desc xml:lang="it" versionDate="2023-05-26">irrilevante</desc>
+          </valItem>
+          <valItem ident="missing">
+            <desc xml:lang="de" versionDate="2023-05-26">fehlt</desc>
+            <desc xml:lang="en" versionDate="2023-05-26">missing</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">manquant</desc>
+            <desc xml:lang="it" versionDate="2023-05-26">mancante</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+  </specGrp>
   <specGrp xml:id="ssrq-rend">
     <dataSpec ident="ssrq.rend.add" mode="add">
       <desc xml:lang="de" versionDate="2025-01-30">das Schreibmittel der Hinzufügung</desc>
