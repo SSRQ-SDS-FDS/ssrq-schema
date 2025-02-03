@@ -3884,6 +3884,25 @@
         </valList>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.type.term" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art des Ausdrucks</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of term</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">le type de terme</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="index">
+            <desc xml:lang="de" versionDate="2025-02-03">Stichwort für den Index</desc>
+            <desc xml:lang="en" versionDate="2025-02-03">keyword for the index</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">mot-clé pour l'index</desc>
+          </valItem>
+          <valItem ident="unknown">
+            <desc xml:lang="de" versionDate="2025-02-03">unbekannter Ausdruck oder unklare Bedeutung</desc>
+            <desc xml:lang="en" versionDate="2025-02-03">unknown expression or unclear meaning</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">expression inconnue ou signification peu claire</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
   </specGrp>
   <specGrp xml:id="ssrq-xmlid">
     <dataSpec ident="ssrq.xmlid.anchor" mode="add">

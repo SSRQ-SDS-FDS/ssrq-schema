@@ -69,28 +69,9 @@
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace">
-      <valList type="closed">
-        <valItem ident="index">
-          <desc xml:lang="de" versionDate="2023-11-07">In der unmittelbar vorangehenden Passage
-            geht um das in <att>ref</att> referenzierte Thema.</desc>
-          <desc xml:lang="en" versionDate="2023-11-07">The immediately preceding passage is about
-            the topic referenced in <att>ref</att>.</desc>
-          <desc xml:lang="fr" versionDate="2023-11-07">Le passage qui précède immédiatement
-            concerne le sujet référencé dans <att>ref</att>.</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Il passaggio immediatamente precedente
-            riguarda l'argomento a cui si fa riferimento in <att>ref</att>.</desc>
-        </valItem>
-        <valItem ident="unknown">
-          <desc xml:lang="de" versionDate="2023-11-07">Der markierte Ausdruck oder seine Bedeutung
-            sind unbekannt.</desc>
-          <desc xml:lang="en" versionDate="2023-11-07">The highlighted expression or its meaning
-            is unknown.</desc>
-          <desc xml:lang="fr" versionDate="2023-11-07">L'expression mise en évidence ou sa
-            signification est inconnue.</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">L'espressione evidenziata o il suo
-            significato non sono noti.</desc>
-        </valItem>
-      </valList>
+      <datatype>
+        <dataRef key="ssrq.type.term"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-term-de"/>
