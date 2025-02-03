@@ -3467,7 +3467,7 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.type.date" mode="add">
-      <desc xml:lang="de" versionDate="2025-01-31">die Art eines Datums</desc>
+      <desc xml:lang="de" versionDate="2025-02-03">die Art des Datums</desc>
       <desc xml:lang="en" versionDate="2025-01-31">the type of date</desc>
       <desc xml:lang="fr" versionDate="2025-01-31">le type de date</desc>
       <content>
@@ -3632,6 +3632,9 @@
       </valList>
     </dataSpec>
     <dataSpec ident="ssrq.type.fw" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art des Materials</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of material</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type de matériau</desc>
       <content>
         <valList type="closed">
           <valItem ident="catchword">
@@ -3644,6 +3647,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.type.graphic" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art der Graphik</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of graphic</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type de graphique</desc>
       <content>
         <valList type="closed">
           <valItem ident="familytree">
@@ -3674,6 +3680,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.type.head" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art der Überschrift</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of heading</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type de cap</desc>
       <content>
         <valList type="closed">
           <valItem ident="title">
@@ -3698,6 +3707,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.type.idno" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art der IDNO</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of IDNO</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type d'IDNO</desc>
       <content>
         <valList type="closed">
           <valItem ident="uuid">
@@ -3710,6 +3722,9 @@
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.type.label" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art der Randanmerkung</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of marginal note</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type de note marginale</desc>
       <content>
         <valList type="closed">
           <valItem ident="keyword">
@@ -3721,7 +3736,7 @@
         </valList>
       </content>
     </dataSpec>
-    <dataSpec ident="ssrq.type.listbibl">
+    <dataSpec ident="ssrq.type.listbibl" mode="add">
       <desc xml:lang="de" versionDate="2025-01-29">der Typ einer bibliographischen Angabe</desc>
       <desc xml:lang="en" versionDate="2025-01-29">the type of bibliographic references</desc>
       <desc xml:lang="fr" versionDate="2025-01-29">le type d'un donné bibliographique</desc>
@@ -3760,6 +3775,27 @@
             <desc xml:lang="fr" type="plural" versionDate="2023-05-26">URLs</desc>
             <desc xml:lang="it" type="singular" versionDate="2023-05-26">URL</desc>
             <desc xml:lang="it" type="plural" versionDate="2023-05-26">URLs</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.type.material" mode="add">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art des Trägermaterials</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of carrier material</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type de matériel de support</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="paper">
+            <desc xml:lang="de" versionDate="2023-04-14">Papier</desc>
+            <desc xml:lang="en" versionDate="2023-04-14">paper</desc>
+            <desc xml:lang="fr" versionDate="2023-04-14">papier</desc>
+            <desc xml:lang="it" versionDate="2023-04-14">carta</desc>
+          </valItem>
+          <valItem ident="parchment">
+            <desc xml:lang="de" versionDate="2023-04-14">Pergament</desc>
+            <desc xml:lang="en" versionDate="2023-04-14">parchment</desc>
+            <desc xml:lang="fr" versionDate="2024-06-03">parchemin</desc>
+            <desc xml:lang="it" versionDate="2023-04-14">pergamena</desc>
           </valItem>
         </valList>
       </content>
