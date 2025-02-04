@@ -10,6 +10,7 @@
   <desc xml:lang="fr" versionDate="2023-09-19">Décrit un événement dans l'historique de
     conservation d'un document.</desc>
   <classes mode="replace">
+    <memberOf key="att.calendarSystem"/>
     <memberOf key="att.datable.custom"/>
     <memberOf key="att.typed"/>
   </classes>
@@ -17,10 +18,13 @@
     <textNode/>
   </content>
   <attList>
-    <attDef ident="calendar" mode="change">
+    <attDef ident="calendar" mode="replace">
       <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-custEvent" mode="delete"/>
     </attDef>
     <attDef ident="type" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-01-31">die Art des Ereignisses</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of event</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type d'événement</desc>
       <datatype>
         <dataRef key="ssrq.type.custevent"/>
       </datatype>

@@ -29,6 +29,9 @@
   <attList>
     <attDef ident="n" mode="delete"/>
     <attDef ident="place" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-02-04">der Ort des anonymen Textblocks</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the place of the anonymous block</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">le lieu du bloc anonyme</desc>
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.place"/>
@@ -38,11 +41,17 @@
       </datatype>
     </attDef>
     <attDef ident="rend" mode="replace">
+      <desc xml:lang="de" versionDate="2025-02-04">das verwendete Schreibmittel</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the writing means used</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d'écriture utilisé</desc>
       <datatype>
         <dataRef key="ssrq.rend.add"/>
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-01-31">die Art des Textblocks</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of text block</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type de bloc de texte</desc>
       <datatype>
         <dataRef key="ssrq.type.ab"/>
       </datatype>

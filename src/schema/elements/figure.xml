@@ -38,7 +38,15 @@
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="place" mode="change">
+      <desc xml:lang="de" versionDate="2025-02-04">der Ort der Abbildung</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the place of the figure</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">le lieu de la figure</desc>
+    </attDef>
     <attDef ident="type" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-01-31">die Art der Abbildung</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of the figure</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type de la figure</desc>
       <datatype>
         <dataRef key="ssrq.type.figure"/>
       </datatype>

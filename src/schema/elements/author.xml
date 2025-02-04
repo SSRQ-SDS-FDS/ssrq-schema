@@ -30,6 +30,9 @@
   <attList>
     <attDef ident="calendar" mode="delete"/>
     <attDef ident="role" mode="replace">
+      <desc xml:lang="de" versionDate="2025-01-31">die Rolle des Schreibenden</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the role of the writer</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le rôle du rédacteur</desc>
       <datatype>
         <dataRef key="ssrq.role.author"/>
       </datatype>

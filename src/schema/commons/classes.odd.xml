@@ -70,18 +70,22 @@
     <classSpec ident="att.breaking" type="atts" mode="change">
       <attList>
         <attDef ident="break" mode="replace">
-          <desc xml:lang="de" versionDate="2025-02-03">Zeilenumbruch innerhalb eines Wortes</desc>
-          <desc xml:lang="en" versionDate="2025-02-03">line break within one word</desc>
-          <desc xml:lang="fr" versionDate="2025-02-03">break de ligne dans un mot</desc>
+          <desc xml:lang="de" versionDate="2025-02-03">Zeilenumbruch innerhalb eines Wortes?</desc>
+          <desc xml:lang="en" versionDate="2025-02-03">line break within a word?</desc>
+          <desc xml:lang="fr" versionDate="2025-02-03">break de ligne dans un mot ?</desc>
           <valList type="closed">
-            <valItem ident="no"/>
+            <valItem ident="no">
+              <desc xml:lang="de" versionDate="2025-02-04">nein</desc>
+              <desc xml:lang="en" versionDate="2025-02-04">no</desc>
+              <desc xml:lang="fr" versionDate="2025-02-04">non</desc>
+            </valItem>
           </valList>
         </attDef>
       </attList>
     </classSpec>
     <classSpec ident="att.calendarSystem" type="atts" mode="change">
       <attList>
-        <attDef ident="calendar" mode="change">
+        <attDef ident="calendar" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-28">der verwendete Kalender</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the calendar used</desc>
           <desc xml:lang="fr" versionDate="2025-01-28">le calendrier utilisé</desc>
@@ -126,9 +130,9 @@
       <classes mode="replace"/>
       <attList>
         <attDef ident="period" mode="change">
-          <desc xml:lang="de" versionDate="2025-02-03">eine Zeitperiode</desc>
-          <desc xml:lang="en" versionDate="2025-02-03">a period of time</desc>
-          <desc xml:lang="fr" versionDate="2025-02-03">une période de temps</desc>
+          <desc xml:lang="de" versionDate="2025-02-03">die Zeitperiode</desc>
+          <desc xml:lang="en" versionDate="2025-02-03">thr period of time</desc>
+          <desc xml:lang="fr" versionDate="2025-02-03">la période de temps</desc>
         </attDef>
       </attList>
     </classSpec>
@@ -137,41 +141,41 @@
         <attDef ident="datingMethod" mode="delete"/>
         <attDef ident="datingPoint" mode="delete"/>
         <attDef ident="from-custom" mode="replace">
-          <desc xml:lang="de" versionDate="2025-01-28">der Beginn eines Zeitraums gemäss ISO 8601</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">the beginning of a period according to iso 8601</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">le début d'une période selon ISO 8601</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">der Beginn des Zeitraums gemäss ISO 8601</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the beginning of the period according to iso 8601</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">le début de la période selon ISO 8601</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
         </attDef>
         <attDef ident="notAfter-custom" mode="replace">
-          <desc xml:lang="de" versionDate="2025-01-28">das Ende eines Zeitraums gemäss ISO 8601</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">the end of a period according to iso 8601</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">la fin d'une période selon ISO 8601</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">das Ende des Zeitraums gemäss ISO 8601</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the end of the period according to iso 8601</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la fin de la période selon ISO 8601</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
         </attDef>
         <attDef ident="notBefore-custom" mode="replace">
-          <desc xml:lang="de" versionDate="2025-01-28">der Beginn eines Zeitraums gemäss ISO 8601</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">the beginning of a period according to iso 8601</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">le début d'une période selon ISO 8601</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">der Beginn des Zeitraums gemäss ISO 8601</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the beginning of the period according to iso 8601</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">le début de la période selon ISO 8601</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
         </attDef>
         <attDef ident="to-custom" mode="replace">
-          <desc xml:lang="de" versionDate="2025-01-28">das Ende eines Zeitraums gemäss ISO 8601</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">the end of a period according to iso 8601</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">la fin d'une période selon ISO 8601</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">das Ende des Zeitraums gemäss ISO 8601</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the end of the period according to iso 8601</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la fin de la période selon ISO 8601</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
         </attDef>
         <attDef ident="when-custom" mode="replace">
-          <desc xml:lang="de" versionDate="2025-01-28">ein Datum bzw. Zeitpunkt gemäss ISO 8601</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">a date or time according to ISO 8601</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">une date ou une heure selon ISO 8601</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">das Datum bzw. der Zeitpunkt gemäss ISO 8601</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the date or time according to ISO 8601</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la date ou l'heure selon ISO 8601</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
@@ -208,9 +212,9 @@
     <classSpec ident="att.duration.iso" type="atts" mode="change">
       <attList>
         <attDef ident="dur-iso" mode="change">
-          <desc xml:lang="de" versionDate="2025-01-28">eine Zeitspanne gemäss ISO 8601</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">a period of time according to ISO 8601</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">une période de temps selon ISO 8601</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">die Zeitspanne gemäss ISO 8601</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the period of time according to ISO 8601</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la période de temps selon ISO 8601</desc>
         </attDef>
       </attList>
     </classSpec>
@@ -229,9 +233,9 @@
           <desc xml:lang="fr" versionDate="2025-01-31">L'ID de l'élément</desc>
         </attDef>
         <attDef ident="xml:lang" mode="replace">
-          <desc xml:lang="de" versionDate="2025-01-28">ein Sprachkürzel gemäss ISO 639-1</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">a language abbreviation according to ISO 639-1</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">une abréviation de la langue selon ISO 639-1</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">die Sprache gemäss ISO 639-1</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the language according to ISO 639-1</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la langue selon ISO 639-1</desc>
           <datatype>
             <rng:choice>
               <rng:ref name="ssrq.lang.de"/>
@@ -345,9 +349,9 @@
     <classSpec ident="att.internetMedia" type="atts" mode="change">
       <attList>
         <attDef ident="mimeType" mode="replace" usage="req">
-          <desc xml:lang="de" versionDate="2025-02-03">der Dateityp der mit <att>source</att> eingebundenen Datei</desc>
-          <desc xml:lang="en" versionDate="2025-02-03">the file type of the file linked with <att>source</att></desc>
-          <desc xml:lang="fr" versionDate="2025-02-03">le type de fichier du fichier lié avec <att>source</att></desc>
+          <desc xml:lang="de" versionDate="2025-02-03">der Dateityp der mit <att>url</att> verknüpften Datei</desc>
+          <desc xml:lang="en" versionDate="2025-02-03">the file type of the file linked with <att>url</att></desc>
+          <desc xml:lang="fr" versionDate="2025-02-03">le type de fichier du fichier lié avec <att>url</att></desc>
           <valList type="closed">
             <valItem ident="image/jpg"/>
             <valItem ident="image/png"/>
@@ -489,9 +493,9 @@
       <attList>
         <attDef ident="cols" mode="delete"/>
         <attDef ident="role" mode="replace">
-          <desc xml:lang="de" versionDate="2023-06-19">die spezielle Verwendung einer Tabellenzelle</desc>
-          <desc xml:lang="en" versionDate="2023-06-19">the special use of a table cell</desc>
-          <desc xml:lang="fr" versionDate="2023-06-19">l'utilisation particulière d'une cellule de tableau</desc>
+          <desc xml:lang="de" versionDate="2025-02-04">die spezielle Verwendung der Tabellenzelle</desc>
+          <desc xml:lang="en" versionDate="2025-02-04">the special use of the table cell</desc>
+          <desc xml:lang="fr" versionDate="2025-02-04">l'utilisation particulière de la cellule de tableau</desc>
           <valList type="closed">
             <valItem ident="label">
               <desc xml:lang="de" versionDate="2023-03-03">Spaltenüberschrift</desc>
@@ -614,9 +618,9 @@
           </valList>
         </attDef>
         <attDef ident="condition" mode="add" usage="req">
-          <desc xml:lang="de" versionDate="2025-01-28">der Erhaltungszustand eines Siegels</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">the state of preservation of a seal</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">l'état de conservation d'un sceau</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">der Erhaltungszustand des Siegels</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the state of preservation of the seal</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">l'état de conservation du sceau</desc>
           <valList type="closed">
             <valItem ident="absent">
               <desc xml:lang="de" versionDate="2025-01-28">fehlend</desc>
@@ -681,9 +685,9 @@
           </valList>
         </attDef>
         <attDef ident="material" mode="add">
-          <desc xml:lang="de" versionDate="2025-01-28">das Material eines Siegels</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">the material of a seal</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">le matériau d'un sceau</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">das Material des Siegels</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the material of the seal</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">le matériau du sceau</desc>
           <valList type="closed">
             <valItem ident="bulle">
               <desc xml:lang="de" versionDate="2023-05-31">Bulle</desc>
