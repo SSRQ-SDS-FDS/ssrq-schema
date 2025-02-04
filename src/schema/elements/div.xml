@@ -68,33 +68,18 @@
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="n" mode="change">
+      <desc xml:lang="de" versionDate="2025-01-31">die Nummerierung des Abschnitts</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the numbering of the division</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">la numérotation de la division</desc>
+    </attDef>
     <attDef ident="type" mode="replace">
-      <valList type="closed">
-        <valItem ident="part">
-          <desc xml:lang="de" versionDate="2023-11-15">Teil</desc>
-          <desc xml:lang="en" versionDate="2023-11-15">part</desc>
-          <desc xml:lang="fr" versionDate="2023-11-15">partie</desc>
-          <desc xml:lang="it" versionDate="2023-11-15">parte</desc>
-        </valItem>
-        <valItem ident="chapter">
-          <desc xml:lang="de" versionDate="2023-11-15">Kapitel</desc>
-          <desc xml:lang="en" versionDate="2023-11-15">chapter</desc>
-          <desc xml:lang="fr" versionDate="2023-11-15">chapitre</desc>
-          <desc xml:lang="it" versionDate="2023-11-15">capitolo</desc>
-        </valItem>
-        <valItem ident="section">
-          <desc xml:lang="de" versionDate="2023-11-15">Artikel</desc>
-          <desc xml:lang="en" versionDate="2023-11-15">article</desc>
-          <desc xml:lang="fr" versionDate="2023-11-15">article</desc>
-          <desc xml:lang="it" versionDate="2023-11-15">articolo</desc>
-        </valItem>
-        <valItem ident="subsection">
-          <desc xml:lang="de" versionDate="2023-11-15">Paragraph</desc>
-          <desc xml:lang="en" versionDate="2023-11-15">paragraph</desc>
-          <desc xml:lang="fr" versionDate="2023-11-15">paragraphe</desc>
-          <desc xml:lang="it" versionDate="2023-11-15">paragrafo</desc>
-        </valItem>
-      </valList>
+      <desc xml:lang="de" versionDate="2025-01-31">die Art des Abschnitts</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of the division</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type de la division</desc>
+      <datatype>
+        <dataRef key="ssrq.type.div"/>
+      </datatype>
     </attDef>
     <attDef ident="xml:id" mode="delete"/>
   </attList>

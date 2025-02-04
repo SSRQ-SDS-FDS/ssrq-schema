@@ -27,26 +27,12 @@
   </content>
   <attList>
     <attDef ident="type" mode="replace" usage="req">
-      <valList type="closed">
-        <valItem ident="collection">
-          <desc xml:lang="de" versionDate="2023-09-12">Sammlung von Stücken</desc>
-          <desc xml:lang="en" versionDate="2023-09-12">Collection of source documents</desc>
-          <desc xml:lang="fr" versionDate="2023-09-12">Collection de documents sources</desc>
-          <desc xml:lang="it" versionDate="2023-09-12">Raccolta dei documenti originali</desc>
-        </valItem>
-        <valItem ident="summary">
-          <desc xml:lang="de" versionDate="2023-04-05">Regest des Quellstücks</desc>
-          <desc xml:lang="en" versionDate="2023-04-05">Regest of the source document</desc>
-          <desc xml:lang="fr" versionDate="2023-04-05">Enregistrement du document source</desc>
-          <desc xml:lang="it" versionDate="2023-04-05">Regest del documento di origine</desc>
-        </valItem>
-        <valItem ident="transcript">
-          <desc xml:lang="de" versionDate="2023-04-06">Transkript des Quellstücks</desc>
-          <desc xml:lang="en" versionDate="2023-04-06">Transcript of the source document</desc>
-          <desc xml:lang="fr" versionDate="2023-04-06">Transcription du document source</desc>
-          <desc xml:lang="it" versionDate="2023-04-06">Trascrizione del documento di origine</desc>
-        </valItem>
-      </valList>
+      <desc xml:lang="de" versionDate="2025-02-03">die Art des Textes</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of the text</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type du texte</desc>
+      <datatype>
+        <dataRef key="ssrq.type.text"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-text-1-de"/>

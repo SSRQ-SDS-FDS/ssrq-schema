@@ -17,21 +17,17 @@
   </content>
   <attList>
     <attDef ident="dim" mode="delete"/>
+    <attDef ident="quantity" mode="change" usage="req">
+      <datatype>
+        <dataRef key="ssrq.quantity.positive"/>
+      </datatype>
+    </attDef>
+    <attDef ident="resp" mode="delete"/>
     <attDef ident="unit" mode="replace" usage="req">
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.measure.lengths.base.cm"/>
           <rng:ref name="ssrq.dimensions.typography"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-    <attDef ident="quantity" mode="change" usage="req">
-      <datatype>
-        <rng:choice>
-          <rng:data type="float">
-            <rng:param name="minInclusive">0</rng:param>
-          </rng:data>
-          <rng:data type="positiveInteger"/>
         </rng:choice>
       </datatype>
     </attDef>

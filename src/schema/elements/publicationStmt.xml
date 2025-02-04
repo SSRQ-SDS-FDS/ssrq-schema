@@ -18,7 +18,7 @@
       <elementRef key="publisher"/>
       <sequence minOccurs="0">
         <!-- minOccurs="0" maxOccurs="2" does not work due to a bug in the TEI-Stylesheets.
-                     This workaround should be removed, once the bug is fixed. -->
+        This workaround should be removed, once the bug is fixed. -->
         <elementRef key="date"/>
         <elementRef key="date" minOccurs="0"/>
       </sequence>

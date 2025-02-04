@@ -26,7 +26,15 @@
   </content>
   <attList>
     <attDef ident="cert" mode="delete"/>
+    <attDef ident="n" mode="change">
+      <desc xml:lang="de" versionDate="2025-01-31">die Nummerierung der Überschrift</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the numbering of the heading</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">la numérotation du titre</desc>
+    </attDef>
     <attDef ident="place" mode="change">
+      <desc xml:lang="de" versionDate="2025-02-04">der Ort der Überschrift</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the place of the heading</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">le lieu du titre</desc>
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.place"/>
@@ -35,8 +43,11 @@
       </datatype>
     </attDef>
     <attDef ident="type" mode="change">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art der Überschrift</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of heading</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type du titre</desc>
       <datatype>
-        <dataRef key="ssrq.struct.head"/>
+        <dataRef key="ssrq.type.head"/>
       </datatype>
     </attDef>
     <attDef ident="xml:id" mode="delete"/>

@@ -55,20 +55,12 @@
   </constraintSpec>
   <attList>
     <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2023-07-07">Art der Anmerkung; wird dieses Attribut nicht
-          vergeben, dann handelt es sich um eine Anmerkung der Editor:innen.</desc>
-      <desc xml:lang="en" versionDate="2023-07-07">Type of annotation; if this attribute is not
-          assigned, then it is an annotation by the editor.</desc>
-      <desc xml:lang="fr" versionDate="2023-07-07">Type d'annotation ; si cet attribut n'est pas
-          attribué, il s'agit d'une annotation de l'éditeur.</desc>
-      <valList type="closed">
-        <valItem ident="text_comparison">
-          <desc xml:lang="de" versionDate="2023-10-30">Verweis auf parallele Textstelle</desc>
-          <desc xml:lang="en" versionDate="2023-10-30">reference to parallel passage</desc>
-          <desc xml:lang="fr" versionDate="2023-10-30">référence à un passage parallèle</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">riferimento ad un passaggio parallelo</desc>
-        </valItem>
-      </valList>
+      <desc xml:lang="de" versionDate="2025-02-03">die Art der Anmerkung</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of note</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type de la note</desc>
+      <datatype>
+        <dataRef key="ssrq.type.note"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-note-de"/>

@@ -52,29 +52,8 @@
   </constraintSpec>
   <attList>
     <attDef ident="dur-iso" mode="change">
-      <desc xml:lang="de" versionDate="2023-05-09">Erfassung Zeitspanne
-        nach <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
-        Beginnt mit dem Kürzel P (Periode) gefolgt von arabischen Ziffern. Sich
-        wiederholende Zeitspannenden werden im vollen Format ausgedrückt und beginnen mit
-        dem Kürzel R (Repeated). Ansonsten werden folgende Werte vergeben:
-        <list><item>Y = year</item><item>M = month</item><item>W = week</item><item>D = day</item><item>H = hour</item></list>
-    </desc>
-      <desc xml:lang="en" versionDate="2023-05-09">Recording period according
-        to <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
-        Begins with the abbreviation P (Period) followed by Arabic numerals. Repeating time
-        spans are expressed in full format and begin with the abbreviation R (Repeated).
-        Otherwise, the following values are assigned:
-        <list><item>Y = year</item><item>M = month</item><item>W = week</item><item>D = day</item><item>H = hour</item></list>
-        </desc>
-      <desc xml:lang="fr" versionDate="2023-05-09">Saisie Période
-      selon <ref target="https://de.wikipedia.org/wiki/ISO_8601#Zeitspannen">ISO 8601</ref>.
-      Commence par l'abréviation P (période) suivie de chiffres arabes. Les périodes
-      répétitives sont exprimées au format complet et commencent par l'abréviation R
-      (Repeated). Sinon, les valeurs suivantes sont attribuées :
-      <list><item>Y = year</item><item>M = month</item><item>W = week</item><item>D = day</item><item>H = hour</item></list>
-        </desc>
       <datatype>
-        <dataRef name="string" restriction="(R/)?P(\d+(\.\d+)?[YMWDH])+"/>
+        <dataRef key="ssrq.duriso.date"/>
       </datatype>
     </attDef>
     <attDef ident="period" mode="change">
@@ -86,58 +65,12 @@
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2023-05-12">Nähere Charakterisierung einer Datierung –
-          wird für Termine und Fristen verwendet sowie für Art der Publikation</desc>
-      <desc xml:lang="en" versionDate="2023-05-12">More detailed characterisation of a dating
-          - used for dates and deadlines as well as for type of publication</desc>
-      <desc xml:lang="fr" versionDate="2023-05-12">Caractérisation plus détaillée d'une
-          datation — utilisée pour les dates et les délais ainsi que pour le type de
-          publication</desc>
-      <valList type="closed">
-        <valItem ident="deadline">
-          <desc xml:lang="de" versionDate="2024-05-08">Termin/Frist</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">period</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">délai</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">scadenza</desc>
-        </valItem>
-        <valItem ident="deadline_floating_holiday">
-          <desc xml:lang="de" versionDate="2024-05-08">beweglicher Feiertag als Termin/Frist</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">floating holiday (deadline)</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">des fêtes sans date fixe comme délai</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">festività religiose senza una data fissa
-              come scadenza</desc>
-        </valItem>
-        <valItem ident="deadline_holiday">
-          <desc xml:lang="de" versionDate="2024-05-08">Kirchenfest als Termin/Frist</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">feast day (period)</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">des fêtes religieuses comme délai</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">festività religiose come scadenza</desc>
-        </valItem>
-        <valItem ident="electronic">
-          <desc xml:lang="de" versionDate="2024-05-08">elektronische Publikation</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">electronic publication</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">publication numérique</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">pubblicazione digitale</desc>
-        </valItem>
-        <valItem ident="floating_holiday">
-          <desc xml:lang="de" versionDate="2024-05-08">beweglicher Feiertag</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">floating holiday</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">des fêtes sans date fixe</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">festività senza una data fissa</desc>
-        </valItem>
-        <valItem ident="holiday">
-          <desc xml:lang="de" versionDate="2024-05-08">Kirchenfest</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">feast day</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">des fêtes religieuses</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">festività religiose</desc>
-        </valItem>
-        <valItem ident="print">
-          <desc xml:lang="de" versionDate="2024-05-08">Druck</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">print</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">imprimé</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">stampa</desc>
-        </valItem>
-      </valList>
+      <desc xml:lang="de" versionDate="2025-02-03">die Art des Datums</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of date</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type de date</desc>
+      <datatype>
+        <dataRef key="ssrq.type.date"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-date-abbr-de"/>

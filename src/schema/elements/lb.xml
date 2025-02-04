@@ -14,41 +14,34 @@
   <content>
     <empty/>
   </content>
-  <attList>
-    <attDef ident="break" mode="replace">
-      <desc xml:lang="de" versionDate="2023-07-19">Zeigt an, ob ein Zeilenumbruch innerhalb eines
-          Wortes vorliegt – auch wenn der Zeilenumbruch mit dem Seitenumbruch zusammenfällt. Bei
-          gedruckten Texten werden analog zu den handschriftlichen Texten Trennstriche mit eben
-          hiermit und Bindestrichen bzw. Ergänzungsstriche mit '-' transkribiert.</desc>
-      <desc xml:lang="en" versionDate="2023-07-19">Shows whether there is a line break within a
-          word - even if the line break coincides with the page break. In printed texts, hyphens
-          are transcribed with just hereby and hyphens or additional dashes with '-', analogous
-          to handwritten texts.</desc>
-      <desc xml:lang="fr" versionDate="2023-07-19">Indique s'il y a un saut de ligne dans un mot —
-          même si le saut de ligne coïncide avec le saut de page. Dans les textes imprimés, les
-          traits d'union sont transcrits avec juste ici et les traits d'union ou tirets
-          supplémentaires avec '-', analogues aux textes manuscrits.</desc>
-      <valList type="closed">
-        <valItem ident="no"/>
-      </valList>
-    </attDef>
-  </attList>
   <xi:include href="examples.xml" xpointer="ex-lb-de"/>
   <xi:include href="examples.xml" xpointer="ex-lb-en"/>
   <xi:include href="examples.xml" xpointer="ex-lb-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-19">
+  <remarks xml:lang="de" versionDate="2025-02-03">
     <p>Wird vor jeder Zeile an den Anfang der Zeile gesetzt, auch vor der ersten Zeile des Textes
         und wenn ein neuer Abschnitt beginnt. Wird auch bei Texten mit nur einer Zeile verwendet.
         Einrückungen werden nicht berücksichtigt.</p>
+    <p>Das Attribut <att>break</att> zeigt an, ob ein Zeilenumbruch innerhalb eines
+          Wortes vorliegt – auch wenn der Zeilenumbruch mit dem Seitenumbruch zusammenfällt. Bei
+          gedruckten Texten werden analog zu den handschriftlichen Texten Trennstriche mit eben
+          hiermit und Bindestrichen bzw. Ergänzungsstriche mit '-' transkribiert.</p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-19">
+  <remarks xml:lang="en" versionDate="2025-02-03">
     <p>Placed at the beginning of the line before each line, including before the first line of
         text and when a new paragraph begins. Also used for texts with only one line. Indentations
         are ignored.</p>
+    <p>The attribute <att>break</att> shows whether there is a line break within a
+          word - even if the line break coincides with the page break. In printed texts, hyphens
+          are transcribed with just hereby and hyphens or additional dashes with '-', analogous
+          to handwritten texts.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-19">
+  <remarks xml:lang="fr" versionDate="2025-02-03">
     <p>Placé au début de la ligne avant chaque ligne, y compris avant la première ligne de texte
         et au début d'un nouveau paragraphe. Également utilisé pour les textes d'une seule ligne.
         Les indentations sont ignorées.</p>
+    <p>L'attribut <att>break</att> indique s'il y a un saut de ligne dans un mot —
+          même si le saut de ligne coïncide avec le saut de page. Dans les textes imprimés, les
+          traits d'union sont transcrits avec juste ici et les traits d'union ou tirets
+          supplémentaires avec '-', analogues aux textes manuscrits.</p>
   </remarks>
 </elementSpec>

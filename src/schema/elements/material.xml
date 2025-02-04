@@ -7,30 +7,20 @@
   <desc xml:lang="en" versionDate="2023-04-14">Describes the support material.</desc>
   <desc xml:lang="fr" versionDate="2023-04-14">Décrit le matériau de support.</desc>
   <classes mode="replace">
+    <memberOf key="att.typed"/>
     <memberOf key="model.pPart.msdesc"/>
   </classes>
   <content>
     <empty/>
   </content>
   <attList>
-    <attDef ident="type" mode="add" usage="req">
-      <desc xml:lang="de" versionDate="2023-04-14">Trägermaterial</desc>
-      <desc xml:lang="en" versionDate="2023-04-14">Carrier material</desc>
-      <desc xml:lang="fr" versionDate="2023-04-14">Matériel de support</desc>
-      <valList type="closed">
-        <valItem ident="paper">
-          <desc xml:lang="de" versionDate="2023-04-14">Papier</desc>
-          <desc xml:lang="en" versionDate="2023-04-14">paper</desc>
-          <desc xml:lang="fr" versionDate="2023-04-14">papier</desc>
-          <desc xml:lang="it" versionDate="2023-04-14">carta</desc>
-        </valItem>
-        <valItem ident="parchment">
-          <desc xml:lang="de" versionDate="2023-04-14">Pergament</desc>
-          <desc xml:lang="en" versionDate="2023-04-14">parchment</desc>
-          <desc xml:lang="fr" versionDate="2024-06-03">parchemin</desc>
-          <desc xml:lang="it" versionDate="2023-04-14">pergamena</desc>
-        </valItem>
-      </valList>
+    <attDef ident="type" mode="change" usage="req">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art des Materials</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of material</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type du matériau</desc>
+      <datatype>
+        <dataRef key="ssrq.type.material"/>
+      </datatype>
     </attDef>
     <attDef ident="function" mode="delete"/>
     <attDef ident="target" mode="delete"/>

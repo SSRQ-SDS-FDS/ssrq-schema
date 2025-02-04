@@ -17,21 +17,12 @@
   </content>
   <attList>
     <attDef ident="rend" mode="replace">
-      <desc xml:lang="de" versionDate="2023-08-02">Textausrichtung innerhalb einer Tabellenzellen
-        in der Vorlage</desc>
-      <desc xml:lang="en" versionDate="2023-08-02">Text alignment within a table cell in the
-        source document</desc>
-      <desc xml:lang="fr" versionDate="2023-08-02">Alignement du texte dans une cellule de tableau
-        du document source</desc>
-      <valList type="closed">
-        <valItem ident="align-bottom">
-          <desc xml:lang="de" versionDate="2023-08-02">Am unteren Ende der Zelle ausgerichtet</desc>
-          <desc xml:lang="en" versionDate="2023-08-02">Aligned at the bottom of the cell</desc>
-          <desc xml:lang="fr" versionDate="2023-08-02">Aligné au bas de la cellule</desc>
-          <desc xml:lang="it" versionDate="2023-08-02">Allineato alla parte inferiore della
-            cella</desc>
-        </valItem>
-      </valList>
+      <desc xml:lang="de" versionDate="2025-01-31">die Ausrichtung des Texts innerhalb der Tabellenzelle</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the text alignment within the table cell</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">l'alignement du texte dans la cellule de table</desc>
+      <datatype>
+        <dataRef key="ssrq.rend.cell"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-cell-de"/>

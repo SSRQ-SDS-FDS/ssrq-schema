@@ -38,12 +38,6 @@
   <attList>
     <attDef ident="cert" mode="delete"/>
     <attDef ident="source" mode="replace">
-      <desc xml:lang="de" versionDate="2025-01-16">Verweise auf andere Stücke oder
-        Textzeugen.</desc>
-      <desc xml:lang="en" versionDate="2025-01-16">References to other pieces or textual
-        witnesses.</desc>
-      <desc xml:lang="fr" versionDate="2025-01-16">Références à d'autres pièces ou à témoins
-        textuels.</desc>
       <datatype>
         <rng:list>
           <rng:oneOrMore>
@@ -56,17 +50,12 @@
       </datatype>
     </attDef>
     <attDef ident="reason" mode="replace">
-      <desc xml:lang="de" versionDate="2023-06-21">Grund der Ergänzung</desc>
-      <desc xml:lang="en" versionDate="2023-06-21">reason for addition</desc>
-      <desc xml:lang="fr" versionDate="2023-06-21">raison de l'ajout</desc>
-      <valList type="closed">
-        <valItem ident="omitted">
-          <desc xml:lang="de" versionDate="2023-06-21">weggelassen</desc>
-          <desc xml:lang="en" versionDate="2023-06-21">omitted</desc>
-          <desc xml:lang="fr" versionDate="2023-06-21">omis</desc>
-          <desc xml:lang="it" versionDate="2023-06-21">omesso</desc>
-        </valItem>
-      </valList>
+      <desc xml:lang="de" versionDate="2025-02-03">der Grund für die Ergänzung</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the reason for the supplement</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">la raison du supplément</desc>
+      <datatype>
+        <dataRef key="ssrq.reason.supplied"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-supplied-de"/>
