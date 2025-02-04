@@ -111,9 +111,9 @@
       <classes mode="replace"/>
       <attList>
         <attDef ident="agent" mode="replace" usage="req">
-          <desc xml:lang="de" versionDate="2025-01-28">die Art der Beschädigung gemäss einer fest definierten Werteliste</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">the type of damage according to a firmly defined list of values</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">le type de dommage selon une liste de valeurs bien définie</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">die Art der Beschädigung</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the type of damage</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">le type de dommage</desc>
           <datatype maxOccurs="unbounded">
             <dataRef key="ssrq.agent"/>
           </datatype>
@@ -126,9 +126,9 @@
       <classes mode="replace"/>
       <attList>
         <attDef ident="period" mode="change">
-          <desc xml:lang="de" versionDate="2025-02-03">eine Periode von Jahreszeiten, Wochentagen oder Tageszeiten</desc>
-          <desc xml:lang="en" versionDate="2025-02-03">a period of seasons, days of the week or times of the day</desc>
-          <desc xml:lang="fr" versionDate="2025-02-03">une période de saisons, des jours de la semaine ou des heures de la journée</desc>
+          <desc xml:lang="de" versionDate="2025-02-03">eine Zeitperiode</desc>
+          <desc xml:lang="en" versionDate="2025-02-03">a period of time</desc>
+          <desc xml:lang="fr" versionDate="2025-02-03">une période de temps</desc>
         </attDef>
       </attList>
     </classSpec>
@@ -319,9 +319,9 @@
     <classSpec ident="att.global.source" type="atts" mode="change">
       <attList>
         <attDef ident="source" mode="change">
-          <desc xml:lang="de" versionDate="2023-02-03">die externe Quelle</desc>
-          <desc xml:lang="en" versionDate="2023-02-03">the external source</desc>
-          <desc xml:lang="fr" versionDate="2023-02-03">la source externe</desc>
+          <desc xml:lang="de" versionDate="2023-02-03">eine externe Quelle</desc>
+          <desc xml:lang="en" versionDate="2023-02-03">an external source</desc>
+          <desc xml:lang="fr" versionDate="2023-02-03">une source externe</desc>
         </attDef>
       </attList>
     </classSpec>
@@ -420,9 +420,9 @@
     <classSpec ident="att.placement" type="atts" mode="change">
       <attList>
         <attDef ident="place" mode="replace">
-          <desc xml:lang="de" versionDate="2025-01-28">eine Stelle auf einem Textzeugen gemäss einer fest definierten Liste</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">a position on a text witness according to a fixed list</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">une position sur un témoin de texte selon une liste fixe</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">eine Stelle auf einem Textzeugen</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">a position on a text witness</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">une position sur un témoin de texte</desc>
           <datatype maxOccurs="unbounded">
             <dataRef key="ssrq.place"/>
           </datatype>
@@ -614,9 +614,9 @@
           </valList>
         </attDef>
         <attDef ident="condition" mode="add" usage="req">
-          <desc xml:lang="de" versionDate="2025-01-28">der Erhaltungszustand und die Schäden eines Siegels</desc>
-          <desc xml:lang="en" versionDate="2025-01-28">the state of preservation and damage to a seal</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">l'état de conservation et les dommages d'un sceau</desc>
+          <desc xml:lang="de" versionDate="2025-01-28">der Erhaltungszustand eines Siegels</desc>
+          <desc xml:lang="en" versionDate="2025-01-28">the state of preservation of a seal</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">l'état de conservation d'un sceau</desc>
           <valList type="closed">
             <valItem ident="absent">
               <desc xml:lang="de" versionDate="2025-01-28">fehlend</desc>
