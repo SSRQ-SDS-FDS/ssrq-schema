@@ -19,13 +19,13 @@
       <elementRef key="height" minOccurs="0"/>
     </sequence>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-dimensions">
-    <desc xml:lang="en" versionDate="2023-04-19">Constraint for tei:dimensions</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-dimensions">
+    <desc xml:lang="en" versionDate="2023-04-19">constraint for tei:dimensions</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:dimensions[@type = 'plica']">
           <sch:assert test="count(*) = 1 and */name() = 'width'">If the value of @type is
-            'plica' only one tei:width is allowed as child.</sch:assert>
+            'plica' only one tei:width is allowed as a child.</sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>

@@ -23,13 +23,13 @@
     </sequence>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-handNote">
-    <desc xml:lang="en" versionDate="2023-10-16">Constraints for tei:handNote</desc>
+    <desc xml:lang="en" versionDate="2023-10-16">constraint for tei:handNote</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:handNote[@xml:id]">
           <sch:let name="note-id" value="@xml:id"/>
           <sch:assert test="root(.)//@hand[. = $note-id]">
-            The tei:handNote-element with the id <sch:value-of select="$note-id"/> is not referenced
+            The tei:handNote-element with the @xml:id <sch:value-of select="$note-id"/> is not referenced
             by the @hand of any element. Please reference the handNote-element or delete it, if it
             is not needed anymore.
           </sch:assert>

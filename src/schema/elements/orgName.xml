@@ -24,7 +24,7 @@
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-orgName" mode="delete"/>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-orgName" mode="add">
-    <desc versionDate="2023-06-19" xml:lang="en">Schematron rules for tei:orgName</desc>
+    <desc versionDate="2023-06-19" xml:lang="en">constraint for tei:orgName</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:orgName[ancestor::tei:seriesStmt]">

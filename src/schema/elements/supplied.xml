@@ -21,12 +21,12 @@
     </alternate>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-supplied">
-    <desc xml:lang="en" versionDate="2023-05-02">Constraint for tei:supplied</desc>
+    <desc xml:lang="en" versionDate="2023-05-02">constraint for tei:supplied</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:supplied">
           <sch:assert test=".[@resp][not(@source)] or .[@source][not(@resp)]">
-            tei:supplied must contain either a resp or a source attribute.
+            tei:supplied must contain either a @resp or a @source attribute.
           </sch:assert>
         </sch:rule>
         <sch:rule context="tei:supplied[@source]">

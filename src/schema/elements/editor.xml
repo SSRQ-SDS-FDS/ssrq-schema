@@ -21,11 +21,11 @@
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-editor" mode="delete"/>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-editor">
-    <desc xml:lang="en" versionDate="2023-04-13">Constraint for tei:editor</desc>
+    <desc xml:lang="en" versionDate="2023-04-13">constraint for tei:editor</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:editor[parent::tei:titleStmt]">
-          <sch:assert test="tei:persName">The usage of tei:editor as part of the tei:titleStmt
+          <sch:assert test="tei:persName">The usage of tei:editor as part of tei:titleStmt
             requires a tei:persName as a child.
           </sch:assert>
         </sch:rule>

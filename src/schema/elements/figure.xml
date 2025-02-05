@@ -24,17 +24,17 @@
     </sequence>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-figure">
-    <desc xml:lang="en" versionDate="2023-07-05">Constraint for tei:figure</desc>
+    <desc xml:lang="en" versionDate="2023-07-05">constraint for tei:figure</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:figure[@type = 'illustration']">
           <sch:assert test="tei:graphic">
-            If the type of tei:figure is 'illustration' an element tei:graphic is required.
+            If the @type of tei:figure is 'illustration' an element tei:graphic is required.
           </sch:assert>
         </sch:rule>
         <sch:rule context="tei:figure[not(@type = 'illustration')]">
           <sch:assert test="not(*) and not(text())">
-            If the type of tei:figure is not 'illustration' it must be empty.
+            If the @type of tei:figure is not 'illustration' tei:figure must be empty.
           </sch:assert>
         </sch:rule>
       </sch:pattern>

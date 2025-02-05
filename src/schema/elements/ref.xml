@@ -22,7 +22,7 @@
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="refAtts" mode="delete"/>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-ref" mode="add">
-    <desc xml:lang="en" versionDate="2023-06-22">Specific schematron rule for tei:ref</desc>
+    <desc xml:lang="en" versionDate="2023-06-22">constraint for tei:ref</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:ref[not(*)]">
@@ -34,7 +34,7 @@
     </constraint>
   </constraintSpec>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-ref-in-bibl" mode="add">
-    <desc xml:lang="en" versionDate="2024-11-04">Specific schematron rule for tei:ref</desc>
+    <desc xml:lang="en" versionDate="2024-11-04">constraint for tei:ref in tei:bibl</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:ref[not(ancestor::tei:editorialDecl)][not(parent::tei:note[@type='text_comparison'])]">

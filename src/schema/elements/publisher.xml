@@ -27,7 +27,7 @@
     </alternate>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-publisher-custom" mode="add">
-    <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for <gi>publisher</gi>.</desc>
+    <desc versionDate="2023-06-23" xml:lang="en">constraint for tei:publisher</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:publisher[ancestor::tei:publicationStmt]">

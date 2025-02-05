@@ -35,7 +35,7 @@
     </alternate>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-div-text" mode="add">
-    <desc xml:lang="en" versionDate="2024-08-06">Schematron to check the use of text content.</desc>
+    <desc xml:lang="en" versionDate="2024-08-06">constraint for the usage of text inside tei:div</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:div">
@@ -47,23 +47,22 @@
     </constraint>
   </constraintSpec>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-div-xml-lang" mode="add">
-    <desc xml:lang="en" versionDate="2024-08-06">Schematron to check the use
-      of<att>xml:lang</att>.</desc>
+    <desc xml:lang="en" versionDate="2024-08-06">constraint for the usage of @xml:lang in tei:div</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:div[@xml:lang]">
           <sch:let name="divs-in-back" value="count(./parent::tei:back/tei:div)"/>
           <sch:assert test=".[parent::tei:back]">
-            The attribute xml:lang for tei:div is allowed only in tei:back.
+            The attribute @xml:lang for tei:div is allowed only in tei:back.
           </sch:assert>
           <sch:assert test="$divs-in-back gt 1">
-            If xml:lang is specified for tei:div, there must be at least two tei:divs.
+            If @xml:lang is specified for tei:div, there must be at least two tei:divs.
           </sch:assert>
           <sch:report test="./parent::tei:back/tei:div[not(@xml:lang)]">
-            If xml:lang is specified for tei:div, all sibling tei:divs must have this attribute.
+            If @xml:lang is specified for tei:div, all sibling tei:divs must have this attribute.
           </sch:report>
           <sch:assert test="count(distinct-values(./parent::tei:back/tei:div/@xml:lang)) = $divs-in-back">
-            If xml:lang is specified for tei:div, at least another tei:div with another
+            If @xml:lang is specified for tei:div, at least another tei:div with another
             language has to be specified
           </sch:assert>
         </sch:rule>

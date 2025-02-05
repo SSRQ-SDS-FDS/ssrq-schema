@@ -17,6 +17,7 @@
     <empty/>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-gap">
+    <desc xml:lang="en" versionDate="2025-02-04">constraint for tei:gap</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:gap[parent::tei:damage]">

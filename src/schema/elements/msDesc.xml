@@ -29,8 +29,7 @@
     </sequence>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-msDesc">
-    <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:msDesc to ensure the usage of
-      either tei:physDesc or tei:adminInfo.</desc>
+    <desc xml:lang="en" versionDate="2023-03-07">constraint for tei:msDesc</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:msDesc[ancestor::tei:TEI//tei:text[@type = 'collection']]">
