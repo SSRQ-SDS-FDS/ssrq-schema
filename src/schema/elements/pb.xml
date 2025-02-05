@@ -20,11 +20,17 @@
   </content>
   <attList>
     <attDef ident="n" mode="replace">
+      <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung der neuen Seite</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the numbering of the new page</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation de la nouvelle page</desc>
       <datatype>
         <dataRef key="ssrq.numbering"/>
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art des Seitenfangs</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of page beginning</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type du début de page</desc>
       <datatype>
         <dataRef key="ssrq.type.pb"/>
       </datatype>

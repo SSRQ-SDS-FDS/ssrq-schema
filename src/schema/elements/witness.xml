@@ -20,6 +20,9 @@
   </content>
   <attList>
     <attDef ident="n" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Textzeugen</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the numbering of the text witness</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation du témoin textuel</desc>
       <datatype>
         <dataRef name="string" restriction="[A-Z][0-9]?"/>
       </datatype>

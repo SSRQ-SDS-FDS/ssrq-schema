@@ -70,7 +70,15 @@
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="n" mode="change">
+      <desc xml:lang="de" versionDate="2025-01-31">die Nummerierung des Abschnitts</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the numbering of the division</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">la numérotation de la division</desc>
+    </attDef>
     <attDef ident="type" mode="replace">
+      <desc xml:lang="de" versionDate="2025-01-31">die Art des Abschnitts</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of the division</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type de la division</desc>
       <datatype>
         <dataRef key="ssrq.type.div"/>
       </datatype>

@@ -37,8 +37,8 @@
     Bei längeren Paratexten (Einleitung, Kommentar) können die Kapitel mit
     [`<div>`](div.de.md) nummeriert und ggf. näher bezeichnet werden. 
     
-    Der Text eines Kommentars kann innerhalb von [`<div>`](div.de.md) mit 
-    [`<p>`](p.de.md) in Absätze strukturiert werden.
+    Der Text eines Kommentars wird innerhalb von [`<div>`](div.de.md) mit 
+    [`<p>`](p.de.md) in Absätze strukturiert.
 
 ## Seiten, Spalten und Zeilen
 

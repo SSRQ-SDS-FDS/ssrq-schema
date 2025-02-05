@@ -37,6 +37,11 @@
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="n" mode="change">
+      <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Absatzes</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the numbering of the paragraph</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation du paragraphe</desc>
+    </attDef>
     <attDef ident="xml:id" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-p-seg-de"/>

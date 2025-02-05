@@ -45,11 +45,14 @@
   <attList>
     <attDef ident="agent" mode="delete"/>
     <attDef ident="reason" mode="replace">
+      <desc xml:lang="de" versionDate="2025-02-03">der Grund für die Auslassung</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the reason for the gap</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">la raison de l'omission</desc>
       <datatype>
         <dataRef key="ssrq.reason.gap"/>
       </datatype>
     </attDef>
-    <attDef ident="source" mode="change">
+    <attDef ident="source" mode="replace">
       <datatype>
         <dataRef key="ssrq.pointer.urn"/>
       </datatype>

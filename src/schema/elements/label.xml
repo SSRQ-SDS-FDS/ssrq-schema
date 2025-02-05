@@ -37,11 +37,17 @@
   </constraintSpec>
   <attList>
     <attDef ident="place" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-02-03">der Ort der Randanmerkung</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the place of the label</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le lieu de l'étiquette</desc>
       <datatype>
         <dataRef key="ssrq.place.label"/>
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art der Randanmerkung</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of the label</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type de l'étiquette</desc>
       <datatype>
         <dataRef key="ssrq.type.label"/>
       </datatype>

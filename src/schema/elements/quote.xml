@@ -36,11 +36,6 @@
     </constraint>
   </constraintSpec>
   <attList>
-    <attDef ident="type" mode="replace">
-      <datatype>
-        <dataRef key="ssrq.type.quote"/>
-      </datatype>
-    </attDef>
     <attDef ident="source" mode="replace">
       <datatype>
         <rng:choice>
@@ -51,6 +46,14 @@
           </rng:list>
           <rng:ref name="ssrq.pointer.url"/>
         </rng:choice>
+      </datatype>
+    </attDef>
+    <attDef ident="type" mode="replace">
+      <desc xml:lang="de" versionDate="2025-02-04">die Art des Zitats</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the type of quote</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">le type de la citation</desc>
+      <datatype>
+        <dataRef key="ssrq.type.quote"/>
       </datatype>
     </attDef>
   </attList>

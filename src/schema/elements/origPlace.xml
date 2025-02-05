@@ -31,6 +31,9 @@
     </attDef>
     <attDef ident="resp" mode="delete"/>
     <attDef ident="type" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-01-30">worauf sich der Entstehungsort bezieht</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">what the place of origin refers to</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">à quoi le lieu d'origine fait référence</desc>
       <datatype>
         <dataRef key="ssrq.orig.type"/>
       </datatype>

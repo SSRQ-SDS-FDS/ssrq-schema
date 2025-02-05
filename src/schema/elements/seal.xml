@@ -41,11 +41,17 @@
   <attList>
     <attDef ident="calendar" mode="delete"/>
     <attDef ident="n" mode="change" usage="req">
+      <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Siegels</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the numbering of the seal</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation du sceau</desc>
       <datatype>
         <dataRef name="positiveInteger"/>
       </datatype>
     </attDef>
     <attDef ident="place" mode="replace">
+      <desc xml:lang="de" versionDate="2025-02-04">der Ort des Siegels</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the place of the seal</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">le lieu du sceau</desc>
       <datatype>
         <dataRef key="ssrq.place.seal"/>
       </datatype>

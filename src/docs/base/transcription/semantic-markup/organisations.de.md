@@ -29,7 +29,7 @@ bzw. das Territorium oder um die Institution handelt.
 Wenn eine Person als Bevollmächtigte eines Kirchspiels in einem
 Rechtsverfahren auftritt, dann ist das Kirchspiel als Organisation
 Kirchgenossenschaft zu taggen und die Person ist in der
-[Personendatenbank](https://www.ssrq-sds-fds.ch/persons-db-edit/) als
+[Personendatenbank](https://personae.ssrq-sds-fds.ch/) als
 Gesandter der Organisation zuzuordnen.
 
 Sobald ein «Ort» in einem Konflikt als handelnde Partei auftritt,

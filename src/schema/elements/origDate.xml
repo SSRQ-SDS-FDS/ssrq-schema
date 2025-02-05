@@ -27,6 +27,9 @@
   <attList>
     <attDef ident="calendar" mode="change" usage="req"/>
     <attDef ident="type" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-01-30">worauf sich das Entstehungsdatum bezieht</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">what the date of origin refers to</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">à quoi la date d'origine fait référence</desc>
       <datatype>
         <dataRef key="ssrq.orig.type"/>
       </datatype>
