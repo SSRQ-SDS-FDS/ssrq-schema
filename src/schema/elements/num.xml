@@ -6,8 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Zahl</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">number</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">numéro</gloss>
-  <desc xml:lang="de" versionDate="2023-05-30">Enthält eine Zahl im transkribierten
-      Quelltext.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Zahl.</desc>
   <desc xml:lang="en" versionDate="2023-05-30">Contains a number in the transcribed source
       text.</desc>
   <desc xml:lang="fr" versionDate="2023-05-30">Contient un nombre dans le texte source
@@ -43,15 +42,14 @@
   <xi:include href="examples.xml" xpointer="ex-num-de"/>
   <xi:include href="examples.xml" xpointer="ex-num-en"/>
   <xi:include href="examples.xml" xpointer="ex-num-fr"/>
-  <remarks xml:lang="de" versionDate="2024-02-29">
+  <remarks xml:lang="de" versionDate="2025-02-06">
     <p>Der Wert der Zahl wird im Attribut <att>value</att> maschinenlesbar hinterlegt.</p>
     <p>Im Falle einer Bruchzahl werden Nenner und Zähler mit einem Schrägstrich voneinander
-        getrennt und der Wert der Zahl als Dezimalzahl im Attribut <att>val</att> hinterlegt.</p>
+        getrennt und der Wert des Bruchs als Dezimalzahl im Attribut <att>val</att> hinterlegt.</p>
     <p>Bei Angaben zu Massen, Gewichten, Währungen etc., in denen innerhalb von <gi>measure</gi>
         mit <att>quantity</att> die Anzahl ausgezeichnet wird, wird auf <gi>num</gi> verzichtet.
-        Ebenso wird bei Jahreszahlen, die mit <gi>date</gi>und <att>when-custom</att> genauer
-        beschrieben werden, auf <gi>num</gi> verzichtet. Innerhalb von einer zeitlichen Angabe
-        mit <att>dur</att> wird auf <gi>num</gi> verzichtet.</p>
+        Ebenso wird bei Daten, die mit <gi>date</gi>, und Zeiten, die mit <gi>time</gi> ausgezeichnet
+        werden, auf <gi>num</gi> verzichtet.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2024-02-29">
     <p>The value of the number is stored in machine-readable form in the <att>value</att>
