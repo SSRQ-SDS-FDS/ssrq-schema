@@ -6,8 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-04">direkte Rede</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">quote</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-04">discours direct</gloss>
-  <desc xml:lang="de" versionDate="2023-07-20">Enthält in der Transkription Text in direkter
-      Rede.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält Text in direkter Rede.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains text in direct speech in the
       transcription.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient du texte au discours direct dans la
@@ -29,12 +28,11 @@
   <xi:include href="examples.xml" xpointer="ex-q-editor-de"/>
   <xi:include href="examples.xml" xpointer="ex-q-editor-en"/>
   <xi:include href="examples.xml" xpointer="ex-q-editor-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-20">
-    <p><gi>q</gi> wird z. B. bei Zeugenaussagen verwendet. In der Darstellung wird der Tag mit
-        Anführungszeichen hervorgehoben. Zitate und Inserte innerhalb eines Quellentextes werden
-        hingegen mit <gi>quote</gi> ausgezeichnet.</p>
-    <p>Wird in einem Quellenstück der Name eines Dokuments oder eines Gebets genannt, dann wird
-        dieses nicht mit dem Tag <gi>q</gi> oder <gi>quote</gi> ausgezeichnet, aber der Titel
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p><gi>q</gi> wird z. B. bei Zeugenaussagen verwendet. Zitate und Inserte innerhalb eines
+        Quellentextes werden hingegen mit <gi>quote</gi> ausgezeichnet.</p>
+    <p>Wird im edierten Text der Name eines Dokuments oder eines Gebets genannt, dann wird
+        dieses nicht mit den Elementen <gi>q</gi> oder <gi>quote</gi> ausgezeichnet, aber der Titel
         grossgeschrieben. Das Gleiche gilt für historische Werktitel innerhalb der Paratexte.</p>
     <p>Innerhalb der Paratexte (Anmerkungen, Kommentar, Einleitung) kann der Tag <gi>q</gi> bei
         modalisierender Funktion, d. h. ironisierend, distanzierend, übertragen etc., oder für
