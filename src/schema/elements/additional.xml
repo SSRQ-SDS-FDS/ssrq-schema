@@ -6,8 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-03">zusätzliche Informationen</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">additional information</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">informations Complémentaires</gloss>
-  <desc xml:lang="de" versionDate="2023-07-14">Enthält Hinweise auf Editionen, Regesten und
-    Literatur.</desc>
+  <desc xml:lang="de" versionDate="2025-02-05">Enthält zusätzliche Informationen zum Textzeugen.</desc>
   <desc xml:lang="en" versionDate="2023-07-14">Contains references to editions, regesta and
     literature.</desc>
   <desc xml:lang="fr" versionDate="2023-07-14">Contient des références aux éditions, regesta et
@@ -22,4 +21,10 @@
   <xi:include href="examples.xml" xpointer="ex-additional-de"/>
   <xi:include href="examples.xml" xpointer="ex-additional-en"/>
   <xi:include href="examples.xml" xpointer="ex-additional-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>In <gi>additional</gi> wird die Literatur zum Textzeugen, z. B. Editionen, Regesten oder
+      Sekundärliteratur mithilfe von <gi>listBibl</gi> verzeichnet.</p>
+    <p>Ist der Textzeuge nicht mehr erhalten, werden Angaben zum Verlust des Textzeugen in
+      <gi>adminInfo</gi> hinterlegt.</p>
+  </remarks>
 </elementSpec>

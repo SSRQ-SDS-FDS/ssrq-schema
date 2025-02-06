@@ -6,8 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-03-02">Hinzufügung</gloss>
   <gloss xml:lang="en" versionDate="2025-03-02">addition</gloss>
   <gloss xml:lang="fr" versionDate="2025-03-02">ajout</gloss>
-  <desc xml:lang="de" versionDate="2023-05-24">Enthält Text, der von einem Schreiber hinzugefügt
-      wurde.</desc>
+  <desc xml:lang="de" versionDate="2025-02-05">Enthält eine Hinzufügung eines Schreibers.</desc>
   <desc xml:lang="en" versionDate="2023-05-24">Contains text added by a writer.</desc>
   <desc xml:lang="fr" versionDate="2023-05-24">Contient du texte ajouté par un rédacteur.</desc>
   <classes>
@@ -74,31 +73,30 @@
   <xi:include href="examples.xml" xpointer="ex-subst-de"/>
   <xi:include href="examples.xml" xpointer="ex-subst-en"/>
   <xi:include href="examples.xml" xpointer="ex-subst-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-18">
-    <p>Der Ort der Ergänzung muss zwingend in <att>place</att> und die Hand der ergänzten Stelle
-        kann mit <att>hand</att> festgehalten werden. Falls notwendig, kann innerhalb
-        von <att>rend</att> angegeben werden, wie die Ergänzung (mit Bleistift, anderer Tinte etc.)
-        vorgenommen wurde. Handelt es sich bei einer Ergänzung um die Hand des ersten Schreibers,
-        dann wird die Hand nicht speziell angemerkt.</p>
-    <p>Es besteht die gleiche Problemlage wie im Fall von <gi>del</gi>. Einfügungen, die
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>Der Ort der Hinzufügung muss zwingend in <att>place</att> und die Hand kann mit
+        <att>hand</att> festgehalten werden. Handelt es sich um die Hand des Hauptschreibers,
+        dann wird die Hand nicht speziell angemerkt. Falls notwendig, kann mit <att>rend</att>
+        angegeben werden, mit welchem Schreibmittel (mit Bleistift oder mit anderer Tinte) die
+        Hinzufügung vorgenommen wurde.</p>
+    <p>Es besteht die gleiche Problemlage wie im Fall von <gi>del</gi>: Hinzufügungen, die
         Hierarchiegrenzen überschreiten, müssen mit <gi>addSpan</gi> und <gi>anchor</gi>
         ausgezeichnet werden.</p>
-    <p>Ersetzt eine Hinzufügung eine Streichung, sollte <gi>subst</gi> verwendet werden. Damit
-        werden keine Nachträge bzw. Zusätze aus anderen Textzeugen ausgezeichnet. Es wird nur für
-        Hinzufügungen im selben Text verwendet. Ein Nachtrag am Schluss eines Textes von anderer
-        Hand wird mit <gi>add</gi> und <gi>handShift</gi> umgesetzt.
-        </p>
+    <p>Ersetzt eine Hinzufügung eine Streichung, sollte <gi>subst</gi> verwendet werden.</p>
+    <p>Mit <gi>add</gi> werden keine Nachträge bzw. Zusätze aus anderen Textzeugen ausgezeichnet.
+        Es wird nur für Hinzufügungen im selben Text verwendet. Ein Nachtrag am Schluss eines
+        Textes von anderer Hand wird mit <gi>add</gi> und <gi>handShift</gi> umgesetzt.</p>
     <p>Nachträglich hinzugefügte Titel auf Umschlägen (Heft, Doppelblatt) werden nicht
         in <gi>ab</gi>, sondern innerhalb eines <gi>head</gi> mit <gi>add</gi>
         mit <att>hand</att> = <val>otherHand</val> unter Angabe des Ortes in <att>place</att>
         erfasst.</p>
-    <p>Hinzufügungen, die gestrichen werden, müssen mit kombinierten Tags ausgezeichnet werden,
-        und zwar mit <gi>del</gi>, das ein <gi>add</gi> enthält (und nicht andersherum).</p>
-    <p>Klare Dorsualvermerke, die einen Verweis auf den Inhalt eines Drucks machen und/oder dessen
-        Datierung aufnehmen, sind als Dorsualvermerke mit <gi>ab</gi> zu taggen. Handelt es sich
-        hingegen um weitere Informationen z. B. zur Versendung des gedruckten Mandats, Ergänzungen
-        zu einzelnen Textteilen oder nicht mit dem Stück zusammenhängende Informationen
-        ist <gi>add</gi> mit <att>hand</att> = <val>otherHand</val> zu taggen.</p>
+    <p>Hinzufügungen, die wieder gestrichen werden, müssen wie folgt ausgezeichnet werden:
+        mit <gi>del</gi>, das ein <gi>add</gi> enthält (und nicht andersherum).</p>
+    <p>Hinzufügungen, die als Vermerke zum Inhalt des Textes betrachtet werden können, sind
+        mit <gi>ab</gi> zu taggen. Handelt es sich hingegen um weitere Informationen z. B. zur
+        Versendung des gedruckten Mandats, Ergänzungen zu einzelnen Textteilen oder nicht mit dem
+        Stück zusammenhängende Informationen ist <gi>add</gi> mit <att>hand</att> =
+        <val>otherHand</val> zu verwenden.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-18">
     <p>The place of the addition must be in <att>place</att> and the hand of the added place can

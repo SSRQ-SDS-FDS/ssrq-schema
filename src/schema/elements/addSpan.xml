@@ -6,7 +6,8 @@
   <gloss xml:lang="de" versionDate="2025-02-03">hinzugefügte Passage</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">added passage</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">passage supplémentaire</gloss>
-  <desc xml:lang="de" versionDate="2023-08-18">Bezeichnet grössere Hinzufügungen.</desc>
+  <desc xml:lang="de" versionDate="2025-02-05">Markiert eine grössere, die Hierarchiegrenzen
+    überschreitende Hinzufügung eines Schreibers.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Denotes major additions.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Désigne des ajouts majeurs.</desc>
   <classes mode="replace">
@@ -51,14 +52,10 @@
   <xi:include href="examples.xml" xpointer="ex-addSpan-de"/>
   <xi:include href="examples.xml" xpointer="ex-addSpan-en"/>
   <xi:include href="examples.xml" xpointer="ex-addSpan-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-11">
-    <p>Mit <att>spanTo</att> wird zwingend auf den Endpunkt der Hinzufügung verwiesen, der
-        mit <gi>anchor</gi> markiert wird.</p>
-    <p>Der Ort der Hinzufügung muss zwingend in <att>place</att> und die Hand der ergänzten Stelle
-        kann mit <att>hand</att> festgehalten werden. Falls notwendig, kann innerhalb
-        von <att>rend</att> angegeben werden, wie die Hinzufügung (mit Bleistift, anderer Tinte
-        etc.) vorgenommen wurde. Handelt es sich bei einer Ergänzung um die Hand des ersten
-        Schreibers, dann wird die Hand nicht speziell angemerkt.</p>
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>Für <gi>addSpan</gi> gelten die gleichen Regeln wie für <gi>add</gi> (s. dort).</p>
+    <p>Zusätzlich wird mit dem Attribut <att>spanTo</att> zwingend auf den Endpunkt der
+      Hinzufügung verwiesen, der mit <gi>anchor</gi> markiert wird.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-11">
     <p>The attribute <att>spanTo</att> is used to refer to the end point of the addition which is

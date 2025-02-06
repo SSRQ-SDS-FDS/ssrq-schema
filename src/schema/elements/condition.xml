@@ -6,9 +6,8 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Erhaltungszustand</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">condition</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">état de conservation</gloss>
-  <desc xml:lang="de" versionDate="2023-04-14">Beschreibt den Erhaltungszustand und Schäden einer
-    Quelle. Detailbeschreibungen, wie Lücken, Löcher etc., erfolgen an der entsprechenden
-    Stelle.</desc>
+  <desc xml:lang="de" versionDate="2025-02-05">Enthält <gi>p</gi>-Elemente zur Beschreibung des
+    Erhaltungszustands und der Schäden eines Textträgers.</desc>
   <desc xml:lang="en" versionDate="2023-04-14">Describes the state of preservation and damage to a
     source. Detailed descriptions, such as gaps, holes, etc., are given at the appropriate
     place.</desc>
@@ -24,4 +23,9 @@
   <xi:include href="examples.xml" xpointer="ex-condition-de"/>
   <xi:include href="examples.xml" xpointer="ex-condition-en"/>
   <xi:include href="examples.xml" xpointer="ex-condition-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>Mit dem Attribut <att>agent</att> werden alle Beschädigungen auf standardisierte Weise
+      angegeben. In den <gi>p</gi>-Elementen erfolgt eine detailliertere Beschreibung als
+      Freitext.</p>
+  </remarks>
 </elementSpec>

@@ -6,9 +6,9 @@
   <gloss xml:lang="de" versionDate="2023-07-14">Kommentarbereich</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">comment section</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">rubrique commentaire</gloss>
-  <desc xml:lang="de" versionDate="2023-04-04">Der Kommentar enthält weiterführende Informationen
-      zu einem edierten Quellenstück, ordnet das Stück historisch ein und gibt Auskunft, warum ein
-      Stück für die Edition ausgewählt wurde.</desc>
+  <desc xml:lang="de" versionDate="2025-02-05">Enthält weiterführende Informationen zu einem
+      edierten Quellenstück, ordnet das Stück historisch ein und gibt Auskunft, warum ein Stück
+      für die Edition ausgewählt wurde.</desc>
   <desc xml:lang="en" versionDate="2023-04-04">The commentary contains further information on an
       edited piece, classifies the piece historically and provides information on why a piece was
       chosen for the edition.</desc>
@@ -22,13 +22,12 @@
   <xi:include href="examples.xml" xpointer="ex-back-de"/>
   <xi:include href="examples.xml" xpointer="ex-back-en"/>
   <xi:include href="examples.xml" xpointer="ex-back-fr"/>
-  <remarks xml:lang="de" versionDate="2023-08-18">
-    <p>Mehrere Bemerkungen lassen sich mit <gi>div</gi> strukturieren. Mit <gi>ref</gi>-Elementen
-        lassen sich Literatur und Internetlinks (z. B. verzeichnete Archivstücke etc.)
-        referenzieren. Im Kommentar werden sicher Personen, Orte und Institutionen ausgezeichnet,
-        die über die Registersuche gefunden werden sollten. Weitere Auszeichnungen wie <gi>date</gi>
-        oder <gi>measure</gi> werden weglassen, zumal diese in heutiger, standardisierter Form
-        leicht nachträglich automatisch getaggt werden können.</p>
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>Die Bemerkungen lassen sich mit <gi>div</gi> und <gi>p</gi> strukturieren.
+        Mithilfe von <gi>ref</gi>-Elementen werden Literatur und Internetlinks (z. B. verzeichnete
+        Archivstücke etc.) referenziert.</p>
+    <p>Im Kommentarbereich werden Personen, Orte und Institutionen, die über die
+          Register gefunden werden sollen, sowie Daten ausgezeichnet.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-08-18">
     <p>Multiple comments can be structured with <gi>div</gi>. Literature  and Internet links (e.g.

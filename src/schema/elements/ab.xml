@@ -6,11 +6,11 @@
   <gloss xml:lang="de" versionDate="2023-06-30">anonymer Textblock</gloss>
   <gloss xml:lang="en" versionDate="2023-06-30">anonymous block</gloss>
   <gloss xml:lang="fr" versionDate="2023-06-30">bloc anonyme</gloss>
-  <desc xml:lang="de" versionDate="2023-06-30">Enthält eine beliebige Textebene ohne klar
+  <desc xml:lang="de" versionDate="2025-02-05">Enthält einen beliebigen Textblock ohne klar
       definierte Zuordnung.</desc>
-  <desc xml:lang="en" versionDate="2023-06-30">Contains any text level without a clearly defined
+  <desc xml:lang="en" versionDate="2025-02-05">Contains any text block without a clearly defined
       assignment.</desc>
-  <desc xml:lang="fr" versionDate="2023-06-30">Contient un niveau de texte quelconque sans
+  <desc xml:lang="fr" versionDate="2025-02-05">Contient un bloc de texte quelconque sans
       affectation clairement définie.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
@@ -61,20 +61,24 @@
   <xi:include href="examples.xml" xpointer="ex-ab-de"/>
   <xi:include href="examples.xml" xpointer="ex-ab-fr"/>
   <xi:include href="examples.xml" xpointer="ex-ab-en"/>
-  <remarks xml:lang="de" versionDate="2023-06-30">
-    <p>Wir verwenden den Tag immer zusammen mit <att>type</att> und <att>place</att> für Vermerke,
-        Dorsualnotizen, Kanzleivermerke und Registraturvermerke sowie für Marginalien.</p>
-    <p>Bei Papsturkunden erfolgt die Angabe der Vermerke in folgender Reihenfolge: Zuerst die
-        Vermerke unter der Plica, dann die Vermerke auf der Plica von links nach rechts und zum
-        Schluss die Vermerke auf der Rückseite der Urkunde von links nach rechts.</p>
-    <p>Die Vermerke und Dorsualnotizen werden in chronologischer Reihenfolge aufgenommen.
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>Wir verwenden das Element mit den Attributen <att>type</att> und <att>place</att>
+        für Vermerke aller Art wie Dorsualnotizen, Kanzleivermerke oder Registraturvermerke,
+        sowie für Marginalien.</p>
+    <p>Die Vermerke werden in chronologischer Reihenfolge aufgenommen.
         Zeitgleich entstandene Vermerke werden aufgrund der chronologischen Reihenfolge immer an
-        erster Stelle aufgeführt. Zeitgleiche Vermerke werden in Leserichtung von oben nach unten
-        und von links nach rechts erfasst. Wenn z. B. bei einem Missiv auf der Rückseite ein
-        Dorsualvermerk an erster Stelle steht, dann die Adresse folgt und schliesslich zwei weitere
-        Dorsualvermerke, dann steht die Adresse trotzdem an erster Stelle. Falls die Leserichtung,
-        an der man sich orientieren soll, nicht einheitlich ist, also ein Dorsualvermerk auf den
-        Kopf steht, ist ein Kommentar notwendig.</p>
+        der gleichen Stelle aufgeführt. Wenn z. B. bei einem Missiv auf der Rückseite eine
+        Dorsualnotiz an erster Stelle steht, dann die Adresse folgt und schliesslich zwei weitere
+        Dorsualnotizen, dann steht die Adresse trotzdem an erster Stelle, weil sie der
+        chronologisch gesehen erste Eintrag ist.</p>
+    <p>Bei Papsturkunden erfolgt die Angabe der Vermerke in folgender Reihenfolge: zuerst die
+        Vermerke unter der Plica, dann die auf der Plica und zum Schluss die Vermerke auf der
+        Rückseite der Urkunde.</p>
+    <p>Alle jeweils zeitgleichen Vermerke werden in Leserichtung
+        von oben nach unten und von links nach rechts erfasst. Falls die Leserichtung,
+        an der man sich orientieren soll, nicht eindeutig ist, z. B. wenn ein Vermerk auf dem
+        Kopf steht, ist ein Kommentar notwendig.
+   </p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-06-30">
     <p>We always use the tag together with <att>type</att> and <att>place</att> for notes, dorsal
