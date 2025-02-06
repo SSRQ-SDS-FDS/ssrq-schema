@@ -6,8 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Personenname</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">personal name</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">nom de personne</gloss>
-  <desc xml:lang="de" versionDate="2024-04-20">Zeichnet eine Person aus und umfasst in der Regel
-      nur den Vor- und Nachnamen.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält den Namen einer Person.</desc>
   <desc xml:lang="en" versionDate="2024-04-20">Indicates a person and usually includes only the
       first and last name.</desc>
   <desc xml:lang="fr" versionDate="2024-04-20">Distingue une personne et ne comprend généralement
@@ -61,4 +60,8 @@
   <xi:include href="examples.xml" xpointer="ex-persName-3-de"/>
   <xi:include href="examples.xml" xpointer="ex-persName-3-en"/>
   <xi:include href="examples.xml" xpointer="ex-persName-3-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Es gelten die ausführlichen Richlinien zur Auszeichnung von Personen in den
+      <ref target="persons.de.md">Transkriptionsrichtlinien</ref>.</p>
+  </remarks>
 </elementSpec>

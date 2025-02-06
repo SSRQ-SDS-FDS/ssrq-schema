@@ -6,9 +6,8 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Satzzeichen</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">punctuation character</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">signe de ponctuation</gloss>
-  <desc xml:lang="de" versionDate="2024-04-30">Beinhaltet ein Satzzeichen, welches unter
-    Berücksichtigung sprachlicher Regelungen besonders verarbeitet wird (bspw. durch Ergänzung
-    eines Leerzeichen).</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Beinhaltet ein Satzzeichen, welches unter
+    Berücksichtigung sprachlicher Regelungen besonders verarbeitet wird.</desc>
   <desc xml:lang="en" versionDate="2024-04-30">Contains a punctuation mark, which is processed
     specially considering linguistic regulations (for example, by adding a space).</desc>
   <desc xml:lang="en" versionDate="2024-04-30">Contient une ponctuation, qui est traitée
@@ -28,4 +27,9 @@
     <attDef ident="unit" mode="delete"/>
     <attDef ident="pre" mode="delete"/>
   </attList>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Damit eine sprachabhängige Darstellung der Interpunktion möglich ist, werden Satzzeichen,
+      die in den unterschiedlichen Sprachen der Edition (v. a. Deutsch und Französisch) anders
+      behandelt werden müssen, mit <gi>pc</gi> ausgezeichnet.</p>
+  </remarks>
 </elementSpec>

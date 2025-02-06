@@ -6,8 +6,8 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Entstehungsdatum</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">date of origin</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">date d'origine</gloss>
-  <desc xml:lang="de" versionDate="2023-09-13">Enthält im Kopfbereich das Entstehungsdatum eines
-    Dokuments.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält im <gi>teiHeader</gi> das Entstehungsdatum
+    eines Textträgers oder seines Inhalts.</desc>
   <desc xml:lang="en" versionDate="2023-09-13">Contains this in the head area the date of creation
     of a document.</desc>
   <desc xml:lang="fr" versionDate="2023-09-13">Contient ceci dans la zone de la tête la date de
@@ -44,14 +44,13 @@
   <xi:include href="examples.xml" xpointer="ex-origDate-multiple-de"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-multiple-en"/>
   <xi:include href="examples.xml" xpointer="ex-origDate-multiple-fr"/>
-  <remarks xml:lang="de" versionDate="2023-09-13">
+  <remarks xml:lang="de" versionDate="2025-02-06">
     <p>Bei Kopien muss sowohl das Herstellungsdatum des Dokuments
       (<tag>origDate type="document"</tag>) als auch das ursprüngliche Entstehungsdatum des Inhalts
-      des Dokuments (<tag>origDate type="content"</tag>) ausgezeichnet werden.</p>
-    <p>Mit <att>when-custom</att> und <att>calendar</att> wird das Datum gemäss
-      den <ref target="dating_guidelines.md">Datierungsrichtlinien</ref> erfasst.</p>
-    <p>Im Textbereich, den Kommentaren und Anmerkungen wird stattdessen <gi>date</gi> verwendet.
-      Zum Umgang mit Heiligenfesten und anderen kirchlichen Feiertagen vgl. <gi>date</gi>.</p>
+      des Dokuments (<tag>origDate type="content"</tag>) ausgezeichnet werden.Das Datum wird
+      gemäss den <ref target="dating_guidelines.md">Datierungsrichtlinien</ref> erfasst.</p>
+    <p>In allen anderen Textteilen wird stattdessen <gi>date</gi> verwendet, vgl. auch den
+    Unterschied von <gi>origPlace</gi> und <gi>placeName</gi>.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-09-13">
     <p>For copies, the date of manufacture of the document must be included
