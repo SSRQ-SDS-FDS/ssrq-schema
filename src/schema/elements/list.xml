@@ -6,11 +6,9 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Liste</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">list</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">liste</gloss>
-  <desc xml:lang="de" versionDate="2023-07-19">Beschreibt eine Liste oder Aufzählung jeder
-    Art.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Liste oder Aufzählung jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Describes a list or enumeration of any kind.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Décrit une liste ou une énumération de tout
-    type.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Décrit une liste ou une énumération de tout type.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="model.listLike"/>
@@ -48,4 +46,10 @@
   <xi:include href="examples.xml" xpointer="ex-list-complex-de"/>
   <xi:include href="examples.xml" xpointer="ex-list-complex-en"/>
   <xi:include href="examples.xml" xpointer="ex-list-complex-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Für die Auflistung aller Textzeugen im <gi>teiHeader</gi> verwenden wir das spezialisiertere
+      Element <gi>listWit</gi>, für die Auflistung bibliographischer Angaben kommt <gi>listBibl</gi>
+      zum Einsatz.</p>
+    <p>Eine ggfs. vorhandene Listenüberschrift wird mit <gi>head</gi> ausgezeichnet.</p>
+  </remarks>
 </elementSpec>

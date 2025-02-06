@@ -6,7 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Zeilenanfang</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">line beginning</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">début de ligne</gloss>
-  <desc xml:lang="de" versionDate="2023-08-17">Beschreibt den Beginn einer Zeile.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Markiert den Beginn einer Zeile.</desc>
   <desc xml:lang="en" versionDate="2023-04-21">Describes the beginning of a line.</desc>
   <desc xml:lang="fr" versionDate="2023-04-21">Décrit le début d'une ligne.</desc>
   <classes mode="replace">
@@ -20,14 +20,15 @@
   <xi:include href="examples.xml" xpointer="ex-lb-de"/>
   <xi:include href="examples.xml" xpointer="ex-lb-en"/>
   <xi:include href="examples.xml" xpointer="ex-lb-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-03">
+  <remarks xml:lang="de" versionDate="2025-02-06">
     <p>Wird vor jeder Zeile an den Anfang der Zeile gesetzt, auch vor der ersten Zeile des Textes
         und wenn ein neuer Abschnitt beginnt. Wird auch bei Texten mit nur einer Zeile verwendet.
         Einrückungen werden nicht berücksichtigt.</p>
-    <p>Das Attribut <att>break</att> zeigt an, ob ein Zeilenumbruch innerhalb eines
-          Wortes vorliegt – auch wenn der Zeilenumbruch mit dem Seitenumbruch zusammenfällt. Bei
-          gedruckten Texten werden analog zu den handschriftlichen Texten Trennstriche mit eben
-          hiermit und Bindestrichen bzw. Ergänzungsstriche mit '-' transkribiert.</p>
+    <p>Das Attribut <att>break</att> mit dem Wert <val>no</val> zeigt an, dass kein Zeilenumbruch
+        ausserhalb eines Wortes vorliegt, das folgende also kein neues Wort darstellt. Das gilt auch,
+        wenn der Zeilenumbruch mit einem Seitenumbruch zusammenfällt.</p>
+    <p>Bei gedruckten Texten werden analog zu den handschriftlichen Texten Trennstriche mit eben
+        hiermit und Bindestrichen bzw. Ergänzungsstriche mit <val>-</val> transkribiert.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2025-02-03">
     <p>Placed at the beginning of the line before each line, including before the first line of
