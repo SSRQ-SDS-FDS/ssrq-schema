@@ -6,7 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Zelle einer Tabelle</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">cell of a table</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">cellule dans un tableu</gloss>
-  <desc xml:lang="de" versionDate="2023-07-13">Beschreibt eine Zelle einer Tabelle.</desc>
+  <desc xml:lang="de" versionDate="2025-02-05">Enthält eine Zelle einer Tabelle.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Describes a cell of a table.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Décrit une cellule dans un tableau.</desc>
   <classes mode="replace">
@@ -31,10 +31,10 @@
   <xi:include href="examples.xml" xpointer="ex-cell-de"/>
   <xi:include href="examples.xml" xpointer="ex-cell-en"/>
   <xi:include href="examples.xml" xpointer="ex-cell-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-11">
-    <p>Wird innerhalb von <gi>table</gi> zusammen mit <gi>row</gi> (Zeile) für die Darstellung von
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>Wird zusammen mit <gi>table</gi> und <gi>row</gi> für die Darstellung von
       Tabellen benötigt. Mit <att>role</att> = <val>label</val> wird eine Spaltenüberschrift, z. B.
-      eine Währung eines Spalteneintrags, angegeben.</p>
+      die Währung einer Spalte, angegeben.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-11">
     <p>Is required within <gi>table</gi> together with <gi>row</gi> (row) for displaying tables.

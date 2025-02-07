@@ -6,7 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-04">Lücke</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">space</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-04">lacune</gloss>
-  <desc xml:lang="de" versionDate="2023-05-11">Zeichnet eine Lücke aus, die vom Schreiber bewusst
+  <desc xml:lang="de" versionDate="2025-02-07">Markiert eine Lücke, die vom Schreiber bewusst
     zwecks späterer Ergänzung offen gelassen wurde.</desc>
   <desc xml:lang="en" versionDate="2023-05-11">Denotes a gap that the writer deliberately left
     open for later completion.</desc>
@@ -38,10 +38,11 @@
   <xi:include href="examples.xml" xpointer="ex-space-de"/>
   <xi:include href="examples.xml" xpointer="ex-space-en"/>
   <xi:include href="examples.xml" xpointer="ex-space-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-14">
-    <p>Die Grösse der Lücke wird zwingend mit <att>unit</att> und <att>quantity</att> angegeben.
-      Dabei handelt es sich um einen leeren Tag. Lücken infolge unbewusster Zeilensprünge werden
-      hingegen mit <gi>supplied</gi> ausgezeichnet.</p>
+  <remarks xml:lang="de" versionDate="2025-02-07">
+    <p>Die Grösse der Lücke wird zwingend mit den Attributen <att>unit</att> und <att>quantity</att>
+      angegeben. Dabei handelt es sich um ein leeres Element.</p>
+    <p>Fehlender Text infolge unbewusster Zeilensprünge wird, wenn er von den Bearbeitenden ergänzt
+      wird, hingegen mit <gi>supplied</gi> ausgezeichnet.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-14">
     <p>The size of the gap must be specified with <att>unit</att> and <att>quantity</att>. This is

@@ -6,8 +6,8 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Handschriftenteil</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">manuscript item</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">élément du manuscrit</gloss>
-  <desc xml:lang="de" versionDate="2023-08-17">Enthält Informationen über einen einzelnen Teil
-      einer Quelle.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält Informationen über einen einzelnen Teil
+      eines Textträgers.</desc>
   <desc xml:lang="en" versionDate="2023-08-17">Contains information about a single part of a
       source.</desc>
   <desc xml:lang="fr" versionDate="2023-08-17">Contient des informations sur une seule partie
@@ -28,10 +28,10 @@
   <xi:include href="examples.xml" xpointer="ex-msItem-print-de"/>
   <xi:include href="examples.xml" xpointer="ex-msItem-print-en"/>
   <xi:include href="examples.xml" xpointer="ex-msItem-print-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-15">
-    <p>Die Textsprachen der Quelle werden mit <gi>textLang</gi> angeben. Bei Handschriften können
-        die Autoren mit <gi>author</gi> angegeben werden, bei Druckschriften können innerhalb
-        von <gi>docImprint</gi> der Druckort und die Druckerei angegeben werden.</p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Die im Text verwendeten Sprachen werden mit <gi>textLang</gi> angeben. Bei Handschriften
+        können die Autoren mit <gi>author</gi> angegeben werden, bei Druckschriften können
+        innerhalb von <gi>docImprint</gi> der Druckort und die Druckerei angegeben werden.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-15">
     <p>The text languages of the source are specified with <gi>textLang</gi>. In the case of

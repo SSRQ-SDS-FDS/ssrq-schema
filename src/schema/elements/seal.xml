@@ -63,7 +63,7 @@
   <xi:include href="examples.xml" xpointer="ex-sealDesc-de"/>
   <xi:include href="examples.xml" xpointer="ex-sealDesc-en"/>
   <xi:include href="examples.xml" xpointer="ex-sealDesc-fr"/>
-  <remarks xml:lang="de" versionDate="2023-08-23">
+  <remarks xml:lang="de" versionDate="2025-02-06">
     <p>Die Beschreibung der Siegel erfolgt von links nach rechts. Der Siegler wird, wenn es sich
         um eine Person handelt, mit <gi>persName</gi> und dem Attribut
         <att>role</att> = <val>sigillant</val> oder, wenn es sich um eine Institution handelt,
@@ -76,11 +76,10 @@
         offen gelassen.</p>
     <p>Die Siegel werden mit <att>n</att> durchnummeriert. Wünschenswert wäre, wenn der Edition
         nicht nur ein Faksimile des Textes, sondern auch Fotos der Siegel inkl. Masstab (Vor- und
-        Rückseite) beigefügt würden. Wäre dies bei allen Siegeln der Fall, könnte auf
-        <att>extent</att> verzichtet werden.</p>
-    <p>L. S. = Locus sigilli wird mit <gi>figure</gi> erfasst. Wenn eine Urkunde ohne Siegel
-        ausgestellt wurde, wird auch kein Siegel erfasst. Je nach Bedarf kann ein Kommentar zu den
-        Siegeln verfasst werden.</p>
+        Rückseite) beigefügt würden.</p>
+    <p>Im Text wird der Anbringungsort eines Siegels mit <gi>figure</gi> (<att>type</att> =
+        <val>locus_sigilli</val>) erfasst. Je nach Bedarf kann ein Kommentar zu den Siegeln
+        verfasst werden.</p>
     <p>Wichtig ist der Vergleich der Siegelankündigung im Text und die Besiegelung selber.
         <list><item>Haben alle angekündigten Siegler ihr Siegel an der Urkunde angebracht?
         </item><item>Hängt ein Siegel eines nicht angekündigten Sieglers?</item><item>Wurde evtl.

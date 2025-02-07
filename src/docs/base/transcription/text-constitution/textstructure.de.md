@@ -11,7 +11,7 @@
     nach einem Komma erfolgen.
     
     Sofern ein Original stärker gegliedert oder strukturiert ist, kann man
-    [`<div>`](div.de.md) zur Auszeichnung größerer Abschnitte verwenden.
+    [`<div>`](div.de.md) zur Auszeichnung grösserer Abschnitte verwenden.
     
     Reicht die Gliederung des Textes mit [`<p>`](p.de.md) und 
     [`<div>`](div.de.md) nicht aus, kann der Bearbeitende die Abschnitte 

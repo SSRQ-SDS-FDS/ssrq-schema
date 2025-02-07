@@ -6,9 +6,9 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Anmerkung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">note</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">note</gloss>
-  <desc xml:lang="de" versionDate="2024-05-02">Enthält entweder eine sachkritische Anmerkung zu
-      einer Einzelstelle im Editionstext oder den Verweis auf einen weiteren Textzeugen in dem der
-      jeweilige Text wiederverwendet wird.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält entweder eine sachkritische Anmerkung zu
+      einer Einzelstelle im Editionstext oder innerhalb von <gi>app</gi> den Verweis auf einen
+      weiteren Textzeugen, in dem eine Textstelle wiederverwendet wird.</desc>
   <desc xml:lang="en" versionDate="2024-05-02">Contains either a factual comment on a single
       passage of the text of the edition or a reference to another textual witness in which the
       respective text is reused.</desc>
@@ -71,9 +71,10 @@
   <xi:include href="examples.xml" xpointer="ex-app-note-de"/>
   <xi:include href="examples.xml" xpointer="ex-app-note-en"/>
   <xi:include href="examples.xml" xpointer="ex-app-note-fr"/>
-  <remarks xml:lang="de" versionDate="2024-05-02">
-    <p>Ein <gi>note</gi>-Element folgt unmittelbar auf das Bezugswort im Editionstext. Wird
-        Originaltext zitiert, wird dieser mit <gi>orig</gi> ausgezeichnet.</p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Ein <gi>note</gi>-Element folgt unmittelbar auf sein Bezugswort im Editionstext. Wird
+        innerhalb von <gi>note</gi> Originaltext zitiert, wird dieser mit <gi>orig</gi>
+        ausgezeichnet.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2024-05-02">
     <p>A <gi>note</gi> element immediately follows the reference word in the edition text. If

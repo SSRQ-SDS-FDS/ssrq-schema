@@ -6,10 +6,7 @@
   <gloss xml:lang="de" versionDate="2023-07-07">Identifikationsnummer</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">identification number</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">numéro d'identification</gloss>
-  <desc xml:lang="de" versionDate="2023-07-17">Enthält im <gi>seriesStmt</gi> eine UUID
-      (mit <att>type</att> = <val>UUID</val>), das Bandkürzel (Kanton, Teil, Stücknummer) der
-      Sammlung Schweizerischer Rechtsquellen oder enthält im <gi>msIdentifier</gi> die
-      Archivsignatur einer Quelle.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält im Identifikationsnummer.</desc>
   <desc xml:lang="en" versionDate="2023-07-17">Contains a UUID in <gi>seriesStmt</gi>
       (with <att>type</att> = <val>UUID</val>), the volume abbreviation (canton, part, item number)
       of the collection of Swiss legal sources or contains in <gi>msIdentifier</gi> the archive
@@ -88,9 +85,14 @@
   <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-de"/>
   <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-en"/>
   <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-17">
-    <p>Enthält <gi>idno</gi> die Signatur eines Archivs hat sich diese nach dem System des
-        jeweiligen Archivs zu richten.</p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Wir verwenden das Element in mehreren Zusammenhängen: In <gi>seriesStmt</gi> enthält
+          <gi>idno</gi> (mit <att>type</att> = <val>UUID</val>) eine
+          <ref target="https://de.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</ref>,
+          um das XML-Dokument eindeutig zu bezeichnen. Ebenfalls in <gi>seriesStmt</gi> wird das
+          Bandkürzel (Kanton, Teil, Stücknummer) der SSRQ angegeben. In <gi>msIdentifier</gi> gibt
+          <gi>idno</gi> die Archivsignatur eines Textträgers an, in diesem Fall richtet sich diese
+          nach dem System des jeweiligen Archivs.</p>
     <p>Enthält <gi>idno</gi> eine UUID, dann muss diese dem folgenden regulären Ausdruck
         entsprechen:
         <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.

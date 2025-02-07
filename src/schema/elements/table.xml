@@ -6,7 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-04">Tabelle</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">table</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-04">tableau</gloss>
-  <desc xml:lang="de" versionDate="2023-07-11">Beschreibt eine Tabelle.</desc>
+  <desc xml:lang="de" versionDate="2023-07-11">Enthält eine Tabelle.</desc>
   <desc xml:lang="en" versionDate="2023-07-11">Describes a table.</desc>
   <desc xml:lang="fr" versionDate="2023-07-11">Décrit un tableau.</desc>
   <classes mode="replace"/>
@@ -27,17 +27,17 @@
   <xi:include href="examples.xml" xpointer="ex-table-de"/>
   <xi:include href="examples.xml" xpointer="ex-table-en"/>
   <xi:include href="examples.xml" xpointer="ex-table-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-11">
-    <p>Wird zusammen mit <gi>row</gi> (Zeile) und <gi>cell</gi> (Zelle) für die Darstellung von
-        Tabellen benötigt. Es wird von oben nach unten und von links nach rechts gezählt. Wenn
-        immer möglich eine Tabelle als Fliesstext dargestellt werden kann, soll auf die Darstellung
+  <remarks xml:lang="de" versionDate="2025-02-07">
+    <p>Wird zusammen mit <gi>row</gi> (Zeile) und <gi>cell</gi> (Zelle) für die Wiedergabe von
+        Tabellen benötigt. Es wird von oben nach unten und von links nach rechts kodiert. Wann
+        immer eine Tabelle als Fliesstext dargestellt werden kann, soll auf die Kodierung
         in Form einer Tabelle verzichtet werden. In Tabellen und Listen werden – insbesondere bei
         den gedruckten Mandaten – Gänsefüsschen als Unterführungszeichen benutzt, um Wörter oder
-        Zahlen aus der oberen Zeile zu wiederholen (vgl. Beispiel unten). In solchen Fällen wird
-        das "Ditto-Mark" (U+0022) verwendet (zu transkribieren mit der Zeichenfolge "). Ebenso
-        kommt in Tabellen ein Querstrich als Nullwert vor (vgl. Beispiel unten). Bei der
-        Transkription wird hierfür der ziffernbreite Halbgeviertstrich – (U+2012) verwendet
-        (zu transkribieren mit der Zeichenfolge ‒).</p>
+        Zahlen aus der oberen Zeile zu wiederholen. In solchen Fällen wird
+        das "Ditto-Mark" (U+0022) verwendet. Ebenso kommt in Tabellen ein Querstrich als Nullwert
+        vor (vgl. Beispiel). Bei der Transkription wird hierfür der Halbgeviertstrich (U+2013)
+        verwendet, vgl. die Tabelle der Sonderzeichen in den
+        <ref target="special.de.md#code-tabelle-fur-sonderzeichen">Transkriptionsrichtlinien</ref>.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-11">
     <p>Is required together with <gi>row</gi> (row) and <gi>cell</gi> (cell) to display tables.

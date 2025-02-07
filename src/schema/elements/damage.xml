@@ -6,7 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Schaden</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">damage</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">dommage</gloss>
-  <desc xml:lang="de" versionDate="2023-07-13">Bezeichnet einen beschädigten Abschnitt.</desc>
+  <desc xml:lang="de" versionDate="2023-07-13">Enthält beschädigten Text.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Denotes a damaged section.</desc>
   <desc xml:lang="fr" versionDate="2023-07-13">Indique une section endommagée.</desc>
   <classes mode="replace">
@@ -64,16 +64,17 @@
   <xi:include href="examples.xml" xpointer="ex-damage-unclear-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-unclear-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-unclear-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-13">
-    <p>Die Art der Beschädigung wird mit <att>agent</att> näher beschrieben. Soweit möglich, wird
-        der fehlende Text mit <gi>supplied</gi> oder bei unsicherer Lesung mit <gi>unclear</gi>
-        ergänzt. Wenn kein Text ergänzt werden kann, wird <gi>gap</gi> verwendet. Je nach Stärke
-        der Beschädigung kann auch eine Kombination der Tags<gi>unclear</gi>, <gi>supplied</gi>
-        und <gi>gap</gi> verwendet werden. Bei längeren Textpassagen, wenn <gi>damage</gi> alleine
-        nicht mehr reicht, ist <gi>damageSpan</gi> zu verwenden.</p>
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>Die Art der Beschädigung wird mit dem Attribut <att>agent</att> standardisiert beschrieben.</p>
+    <p>Sofern möglich, wird der fehlende Text mit <gi>supplied</gi> oder bei unsicherer Lesung
+        mit <gi>unclear</gi> ergänzt. Wenn kein Text ergänzt werden kann, wird <gi>gap</gi>
+        verwendet. Je nach Stärke der Beschädigung kann auch eine Kombination der Tags<gi>unclear</gi>,
+        <gi>supplied</gi> und <gi>gap</gi> verwendet werden.</p>
     <p>In der Regel werden mit <gi>damage</gi> physikalische Zerstörungen und nicht mutwillige
         Eingriffe ausgezeichnet. Eine Rasur wird mit <gi>del</gi> ausgezeichnet. Eine Beschreibung
-        von grösseren Schäden erfolgt zusätzlich pauschal in den Metadaten.</p>
+        von grösseren Schäden erfolgt zusätzlich pauschal in <gi>condition</gi>.</p>
+    <p>Bei einer die Hierarchiegrenzen überschreitenden Beschädigung ist <gi>damageSpan</gi> zu
+          verwenden.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-13">
     <p>The type of damage is described in more detail with <att>agent</att>. As far as possible,

@@ -6,8 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Abbildung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">figure</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">figure</gloss>
-  <desc xml:lang="de" versionDate="2023-04-11">Enthält Elemente, die graphische Informationen
-    beschreiben.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Beschreibt eine Abbildung jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-04-11">Contains elements that describe graphical
     information.</desc>
   <desc xml:lang="fr" versionDate="2023-04-11">Contient des éléments qui décrivent des informations
@@ -61,11 +60,12 @@
   <xi:include href="examples.xml" xpointer="ex-figure-2-de"/>
   <xi:include href="examples.xml" xpointer="ex-figure-2-en"/>
   <xi:include href="examples.xml" xpointer="ex-figure-2-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-13">
-    <p>Enthält Notarzeichen (= Notariatszeichen, Notariatssignet, Signum), Federzeichnungen,
-      Holzschnitte, Verweiszeichen oder bei Kopien von Urkunden die Stelle, an der sich in der
-      Originalurkunde das Siegel befindet (L. S. = Locus sigilli) oder Abbildungen, die
-      mit <gi>graphic</gi> referenziert werden.</p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p><gi>figure</gi> beschreibt Notarzeichen (= Notariatszeichen, Notariatssignet, Signum),
+      Federzeichnungen, Holzschnitte, Verweiszeichen oder bei Kopien von Urkunden die Stelle, an
+      der sich in der Originalurkunde das Siegel befindet (L. S. = Locus sigilli) oder Abbildungen,
+      die mit <gi>graphic</gi> referenziert werden. Die Art der Abbbildung wird mit dem
+      Attribut <att>type</att> angegeben.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-13">
     <p>Contains notary signs (= notarial sign, notarial signet, signum), pen drawings, woodcuts,

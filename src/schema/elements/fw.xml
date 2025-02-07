@@ -6,9 +6,8 @@
   <gloss xml:lang="de" versionDate="2023-07-13">Gestaltungselement</gloss>
   <gloss xml:lang="en" versionDate="2023-07-13">forme work</gloss>
   <gloss xml:lang="fr" versionDate="2023-07-13">élément de mise en page</gloss>
-  <desc xml:lang="de" versionDate="2023-08-18">Enthält Kustoden bzw. Reklamanten. Das sich am
-    unteren Blattende befindliche Wort wird in der Regel weggelassen bzw. auf der nächsten Seite
-    transkribiert.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält Gestaltungselemente, die nicht zum eigentlichen
+    Text gehören.</desc>
   <desc xml:lang="en" versionDate="2023-08-18">Contains catchwords and reclamants. The word at the
     bottom of the page is usually omitted or transcribed on the next page.</desc>
   <desc xml:lang="fr" versionDate="2023-08-18">Contient des mots clés et des réclamations. Le mot
@@ -34,4 +33,9 @@
   <xi:include href="examples.xml" xpointer="ex-fw-de"/>
   <xi:include href="examples.xml" xpointer="ex-fw-en"/>
   <xi:include href="examples.xml" xpointer="ex-fw-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Wir benutzen das Element für Kustoden (Lagenbezeichnungen) und Reklamanten (Anfangswörter der
+      Folgeseite), sofern diese transkribiert werden. Vgl. hierzu die
+      <ref target="paratext.de.md">Transkriptionsrichtlinien</ref>.</p>
+  </remarks>
 </elementSpec>

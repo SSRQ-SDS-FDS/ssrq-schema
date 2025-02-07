@@ -6,8 +6,8 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Entstehungsort</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">place of origin</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">lieu d'origine</gloss>
-  <desc xml:lang="de" versionDate="2023-05-16">Enthält den Ausstellungs- oder Druckort einer
-    Quelle.</desc>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält im <gi>teiHeader</gi> den Entstehungsort
+    eines Textträgers oder seines Inhalts.</desc>
   <desc xml:lang="en" versionDate="2023-05-16">Contains the place of issue or printing of a
     source.</desc>
   <desc xml:lang="fr" versionDate="2023-05-16">Contient le lieu d'émission ou d'impression d'une
@@ -42,10 +42,9 @@
   <xi:include href="examples.xml" xpointer="ex-history-de"/>
   <xi:include href="examples.xml" xpointer="ex-history-en"/>
   <xi:include href="examples.xml" xpointer="ex-history-fr"/>
-  <remarks xml:lang="de" versionDate="2023-08-23">
-    <p>In <att>ref</att> wird mit einer ID (locNNNNNN) auf den Ort in der Ortsdatenbank verwiesen,
-      in der alle Angaben zu einem Ort zu finden sind. Topographische Bezeichnungen im edierten
-      Text werden mit <gi>placeName</gi> ausgezeichnet.</p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>In allen anderen Textteilen wird stattdessen <gi>placeName</gi> verwendet, vgl. auch den
+    Unterschied von <gi>origDate</gi> und <gi>date</gi>.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-08-23">
     <p>In <att>ref</att>, an ID (locNNNNNN) refers to the place in the place database, in which all

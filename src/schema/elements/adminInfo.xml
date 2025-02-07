@@ -6,8 +6,8 @@
   <gloss xml:lang="de" versionDate="2025-02-03">administrative Informationen</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">administrative information</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">informations administratives</gloss>
-  <desc xml:lang="de" versionDate="2023-09-19">Enthält Informationen zur Aufbewahrung eines
-    Dokuments. Wird bspw. im Falle verlorener Manuskripte verwendet.</desc>
+  <desc xml:lang="de" versionDate="2025-02-05">Enthält administrative Informationen zur
+    Aufbewahrung des Textzeugen.</desc>
   <desc xml:lang="en" versionDate="2023-09-19">Contains information on the storage of a document.
     Used, for example, in the case of lost manuscripts.</desc>
   <desc xml:lang="fr" versionDate="2023-09-19">Contient des informations sur le stockage d'un
@@ -19,4 +19,8 @@
   <xi:include href="examples.xml" xpointer="ex-adminInfo-de"/>
   <xi:include href="examples.xml" xpointer="ex-adminInfo-fr"/>
   <xi:include href="examples.xml" xpointer="ex-adminInfo-en"/>
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>Wir verwenden das Element nur, wenn der Textzeuge verloren ist und geben in
+      <gi>custodialHist</gi> die Informationen zum Verlust des Textzeugen an.</p>
+  </remarks>
 </elementSpec>

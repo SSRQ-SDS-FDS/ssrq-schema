@@ -67,10 +67,11 @@
   <xi:include href="examples.xml" xpointer="ex-time-point-de"/>
   <xi:include href="examples.xml" xpointer="ex-time-point-en"/>
   <xi:include href="examples.xml" xpointer="ex-time-point-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-20">
+  <remarks xml:lang="de" versionDate="2025-02-07">
     <p>Mithilfe der zugelassenen Attribute können die Angaben in einem normalisierten Format
-        maschinenlesbar ausgedrückt werden. Das Format ist die vom W3C definierte Untermenge von
-        ISO 8601. Zeitpunkte werden mit <att>when-custom</att> bzw. <att>notBefore-custom</att>
+      maschinenlesbar ausgedrückt werden. Das Format ist die vom W3C definierte Untermenge des
+      ISO-Standards 8601.</p>
+    <p>Zeitpunkte werden mit <att>when-custom</att> bzw. <att>notBefore-custom</att>
         und <att>notAfter-custom</att> angegeben, Zeiträume mit <att>from-custom</att>
         und <att>to-custom</att>. Zeitspannen ohne Angabe von Anfang und Ende können
         mit <att>dur-iso</att> näher bezeichnet werden. Unbestimmte Tageszeiten, wie z. B. nachts,

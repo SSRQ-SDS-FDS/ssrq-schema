@@ -34,9 +34,11 @@
   <xi:include href="examples.xml" xpointer="ex-choice-sic-de"/>
   <xi:include href="examples.xml" xpointer="ex-choice-sic-fr"/>
   <xi:include href="examples.xml" xpointer="ex-choice-sic-en"/>
-  <remarks xml:lang="de" versionDate="2023-07-19">
-    <p>Der Tag enthält Elemente zur Auflösung von Abkürzungen oder zur Korrektur von Verschreibern.
-      Die Auflösung der Abkürzung bzw. die Korrekturen stehen nach dem originalen Text.</p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Das Element kann entweder eine Abkürzung (<gi>abbr</gi>) mitsamt ihrer Auflösung
+      (<gi>expan</gi>) oder einen Schreibfehler (<gi>sic</gi>) mitsamt seiner Korrektur
+      (<gi>corr</gi>) enthalten.
+      Die Auflösung bzw. die Korrektur stehen nach der Abkürzung bzw. dem Schreibfehler.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-19">
     <p>The tag contains elements for breaking up abbreviations or correcting spelling mistakes.
