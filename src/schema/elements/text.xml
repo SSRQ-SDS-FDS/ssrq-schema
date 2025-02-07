@@ -6,9 +6,8 @@
   <gloss xml:lang="de" versionDate="2025-02-04">Text</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">text</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-04">texte</gloss>
-  <desc xml:lang="de" versionDate="2023-04-04">Beinhaltet alle physisch auf einem Quellenstück
-        oder in einem Buch vorhandenen Zeichen (Transkription / Edition, d. h. Primärdaten) sowie
-        die Kommentierung eines edierten Stücks.
+  <desc xml:lang="de" versionDate="2025-02-07">Enthält in <gi>body</gi> den vollständigen edierten
+    Text und in <gi>back</gi> die zugehörige Kommentierung.
     </desc>
   <desc xml:lang="en" versionDate="2023-04-04">Includes all characters physically present on a
         source item or in a book (transcription / edition, i.e. primary data) as well as the
@@ -44,4 +43,13 @@
   <xi:include href="examples.xml" xpointer="ex-text-2-de"/>
   <xi:include href="examples.xml" xpointer="ex-text-2-en"/>
   <xi:include href="examples.xml" xpointer="ex-text-2-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-07">
+    <p>Im Normalfall, wenn in einem XML-Dokument genau ein Text ediert wird, wird im Attribut
+    <att>type</att> der Wert <val>transcript</val> angegeben. Wird statt des Texts nur ein
+    Regest desselben herausgegeben, steht hierfür der Wert <val>summary</val>. Handelt es sich
+    um ein Mantelstück, d. h. eine Sammlung von Texten, die unter einer Stücknummer ediert werden,
+    dann wird das mit <val>collection</val> ausgedrückt. In diesem Fall enthält der <gi>body</gi>
+    keinen Editionstext, sondern lediglich die Verweise auf die einzelnen Texte der edierten
+    Sammlung.</p>
+  </remarks>
 </elementSpec>
