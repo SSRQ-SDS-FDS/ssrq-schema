@@ -9,7 +9,7 @@ Beispiel:
 
 ## Kleinschreibung
 
-=== "Allgemeine Regeln"
+=== "Hss. bis zum 18. Jh."
 
     Bei handschriftlichen Texten bis zum Ende des 18. Jahrhunderts gilt
     grundsätzlich Kleinschreibung.
@@ -24,12 +24,16 @@ Beispiel:
     zu Gross- und Kleinschreibung entsprechend der Vorlage und im Französischen
     gemäss heutiger Orthographie übergehen.
 
+=== "Drucke"
+
+    Bei Drucken erfolgt die Klein- und Grossschreibung originalgetreu gemäss Vorlage.
+
 ## Gattungsnamen
 
 === "Allgemeine Regeln"
 
     Gattungsnamen werden kleingeschrieben. 
-    Der Bearbeitende entscheidet, ob es sich um einen Eigennamen oder 
+    Die Bearbeitenden entscheiden, ob es sich um einen Eigennamen oder 
     um ein Appellativ handelt. 
     In Zweifelsfällen wird die Kleinschreibung vorgezogen.
     
@@ -125,7 +129,7 @@ Beispiel:
     üblicherweise grossgeschrieben.
     
     Beispiele:  
-    «sonntag»
+    «sonntag»  
     «unser frowen tag ze dem ärnde»  
     «erzengel Michael»  
     «st. Johann baptiste»  

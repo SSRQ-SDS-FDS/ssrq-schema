@@ -3,37 +3,43 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="pubPlace" module="core" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-20">Enthält den Publikationsort.</desc>
+  <gloss xml:lang="de" versionDate="2025-02-04">Publikationsort</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-04">publication place</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">lieu de publication</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält den Publikationsort.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains the place of publication.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient le lieu de publication.</desc>
   <classes mode="replace">
+    <memberOf key="att.canonical"/>
     <memberOf key="att.global.responsibility"/>
   </classes>
   <content>
     <textNode/>
   </content>
   <attList>
+    <attDef ident="ref" mode="replace" usage="req">
+      <datatype>
+        <dataRef key="ssrq.pointer.places"/>
+      </datatype>
+    </attDef>
     <attDef ident="resp" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-docImprint-1-de"/>
   <xi:include href="examples.xml" xpointer="ex-docImprint-1-en"/>
   <xi:include href="examples.xml" xpointer="ex-docImprint-1-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-20">
-    <p>Dies kann sowohl der Publikationsort der elektronischen Edition sein als auch der Publikationsort des
-            in der Literaturliste aufgeführten Artikels oder Buches. Bei Druckschriften wird innerhalb
-            von <gi>docImprint</gi> der Druckort mit <gi>pubPlace</gi> genannt.
-        </p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Bei Druckschriften wird innerhalb von <gi>docImprint</gi> der Publikationsort mit
+      <gi>pubPlace</gi> genannt.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-20">
-    <p>This can be both the place of publication of the electronic edition and the place of publication of the
-            article or book listed in the bibliography. In the case of publications, the place of printing is named
-            with <gi>pubPlace</gi> within <gi>docImprint</gi>.
-        </p>
+    <p>This can be both the place of publication of the electronic edition and the place of
+        publication of the article or book listed in the bibliography. In the case of publications,
+        the place of printing is named with <gi>pubPlace</gi> within <gi>docImprint</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-20">
-    <p>Il peut s'agir à la fois du lieu de publication de l'édition électronique et du lieu de publication de
-            l'article ou du livre répertorié dans la bibliographie. Dans le cas des publications, le lieu d'impression
-            est nommé avec <gi>pubPlace</gi> dans <gi>docImprint</gi>.
-        </p>
+    <p>Il peut s'agir à la fois du lieu de publication de l'édition électronique et du lieu de
+        publication de l'article ou du livre répertorié dans la bibliographie. Dans le cas des
+        publications, le lieu d'impression est nommé avec <gi>pubPlace</gi>
+        dans <gi>docImprint</gi>.</p>
   </remarks>
 </elementSpec>

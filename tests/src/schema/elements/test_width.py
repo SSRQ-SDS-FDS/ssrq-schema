@@ -14,18 +14,23 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "invalid-width-missing-unit",
+            "invalid-width-without-unit",
             "<width quantity='3'/>",
             False,
         ),
         (
-            "invalid-width-wrong-unit",
-            "<width quantity='3' unit='bar'/>",
+            "invalid-width-without-quantity",
+            "<width quantity='3'/>",
             False,
         ),
         (
-            "invalid-width-wrong-quantity",
-            "<width quantity='bar' unit='cm'/>",
+            "invalid-width-without-unit-and-quantity",
+            "<width/>",
+            False,
+        ),
+        (
+            "invalid-width-with-content",
+            "<width quantity='3' unit='cm'>foo</width>",
             False,
         ),
     ],

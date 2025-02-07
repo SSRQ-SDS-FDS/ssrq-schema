@@ -3,7 +3,10 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="textLang" module="core" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-20">Beschreibt eine Textsprache einer Quelle.</desc>
+  <gloss xml:lang="de" versionDate="2025-02-04">Textsprache</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-04">text language</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">langue de texte</gloss>
+  <desc xml:lang="de" versionDate="2025-02-07">Gibt die Textsprache eines Textes an.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes a text language of a source.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Décrit une langue de texte d'une source.</desc>
   <classes mode="replace">
@@ -23,16 +26,13 @@
   <xi:include href="examples.xml" xpointer="ex-textLang-de"/>
   <xi:include href="examples.xml" xpointer="ex-textLang-en"/>
   <xi:include href="examples.xml" xpointer="ex-textLang-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-20">
-    <p>Für jede Textsprache wird ein eigenes Element <gi>textLang</gi> angelegt.
-        </p>
+  <remarks xml:lang="de" versionDate="2025-02-07">
+    <p>Für jede Textsprache wird ein eigenes <gi>textLang</gi>-Element angelegt.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-20">
-    <p>A separate <gi>textLang</gi> element is created for each text language.
-        </p>
+    <p>A separate <gi>textLang</gi> element is created for each text language.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-20">
-    <p>Un élément <gi>textLang</gi> séparé est créé pour chaque langue de texte.
-        </p>
+    <p>Un élément <gi>textLang</gi> séparé est créé pour chaque langue de texte.</p>
   </remarks>
 </elementSpec>

@@ -3,14 +3,15 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="foliation" module="msdescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-05-17">Beschreibt die Blattzählung einer Quelle.</desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">Blattzählung</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">foliation</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">foliation</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Beschreibt die Blattzählung des Textträgers.</desc>
   <desc xml:lang="en" versionDate="2023-05-17">Describes the foliation of a source.</desc>
   <desc xml:lang="fr" versionDate="2023-05-17">Décrit la foliation d'une source.</desc>
   <classes mode="replace"/>
   <content>
-    <sequence>
-      <elementRef key="p" maxOccurs="unbounded"/>
-    </sequence>
+    <elementRef key="p" maxOccurs="unbounded"/>
   </content>
   <xi:include href="examples.xml" xpointer="ex-foliation-de"/>
   <xi:include href="examples.xml" xpointer="ex-foliation-en"/>

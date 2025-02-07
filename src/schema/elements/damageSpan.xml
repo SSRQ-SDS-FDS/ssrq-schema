@@ -3,9 +3,14 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="damageSpan" module="transcr" mode="change">
-  <desc xml:lang="de" versionDate="2023-05-11">Bezeichnet grössere Abschnitte, die beschädigt sind.</desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">beschädigte Passage</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">damaged passage</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">passage endommagé</gloss>
+  <desc xml:lang="de" versionDate="2023-05-11">Markiert eine grössere beschädigte, die
+    Hierarchiegrenzen überschreitende Passage.</desc>
   <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections that are damaged.</desc>
-  <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui sont endommagées.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui sont
+      endommagées.</desc>
   <classes mode="replace">
     <memberOf key="att.damaged"/>
     <memberOf key="att.spanning"/>
@@ -16,22 +21,19 @@
   <xi:include href="examples.xml" xpointer="ex-damageSpan-de"/>
   <xi:include href="examples.xml" xpointer="ex-damageSpan-en"/>
   <xi:include href="examples.xml" xpointer="ex-damageSpan-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-13">
-    <p>Mit <att>spanTo</att> wird zwingend auf den Endpunkt der Beschädigung verwiesen, der
-            mit <gi>anchor</gi> markiert wird. Die Art der Beschädigung wird analog
-            zu <gi>damage</gi> mit <att>agent</att> näher beschrieben.
-        </p>
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>Für <gi>damageSpan</gi> gelten die gleichen Regeln wie für <gi>damage</gi> (s. dort).</p>
+    <p>Zusätzlich wird mit dem Attribut <att>spanTo</att> zwingend auf den Endpunkt der
+      beschädigten Passage verwiesen, der mit <gi>anchor</gi> markiert wird.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-13">
-    <p><att>spanTo</att>
-            is used to force reference to the endpoint of corruption, which is marked with <gi>anchor</gi>. The type of
-            damage is described in more detail with <att>agent</att> analogous to <gi>damage</gi>.
-        </p>
+    <p>The attribute <att>spanTo</att> is used to force reference to the endpoint of corruption,
+        which is marked with <gi>anchor</gi>. The type of damage is described in more detail
+        with <att>agent</att> analogous to <gi>damage</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-13">
-    <p><att>spanTo</att>
-            est utilisé pour forcer la référence au point final de la corruption, qui est marqué par <gi>anchor</gi>. Le
-            type de dommage est décrit plus en détail avec <att>agent</att> analogue à <gi>damage</gi>.
-        </p>
+    <p>L'attribution <att>spanTo</att> est utilisé pour forcer la référence au point final de la
+        corruption, qui est marqué par <gi>anchor</gi>. Le type de dommage est décrit plus en
+        détail avec <att>agent</att> analogue à <gi>damage</gi>.</p>
   </remarks>
 </elementSpec>

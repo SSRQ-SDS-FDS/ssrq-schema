@@ -3,9 +3,15 @@
     type="application/xml"
     schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="custodialHist" module="msdescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-09-19">Enthält Informationen zur Aufbewahrungsgeschichte eines Dokuments.</desc>
-  <desc xml:lang="en" versionDate="2023-09-19">Contains information on the custodial history of a document.</desc>
-  <desc xml:lang="fr" versionDate="2023-09-19">Contient des informations sur l'historique de conservation d'un document.</desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">Aufbewahrungsgeschichte</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">custodial history</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">histoire de la conservation</gloss>
+  <desc xml:lang="de" versionDate="2023-09-19">Enthält Informationen zur Aufbewahrungsgeschichte
+    eines Dokuments.</desc>
+  <desc xml:lang="en" versionDate="2023-09-19">Contains information on the custodial history
+    of a document.</desc>
+  <desc xml:lang="fr" versionDate="2023-09-19">Contient des informations sur l'historique de
+    conservation d'un document.</desc>
   <classes mode="replace"/>
   <content>
     <elementRef key="custEvent"/>

@@ -7,12 +7,17 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid-condition-with-description",
+            "valid-condition-with-content",
             "<condition agent='mice'><p>Mäusefrass</p></condition>",
             True,
         ),
         (
-            "valid-condition-without-description",
+            "valid-condition-with-multiple-p-as-content",
+            "<condition agent='mice'><p>Mäusefrass</p><p>Foo</p></condition>",
+            False,
+        ),
+        (
+            "valid-condition-without-content",
             "<condition agent='mice ink_blot'/>",
             True,
         ),
@@ -22,7 +27,7 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "invalid-condition-with-div",
+            "invalid-condition-with-wrong-content",
             "<condition agent='mice'><div>Mäusefrass</div></condition>",
             False,
         ),

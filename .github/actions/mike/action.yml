@@ -27,7 +27,7 @@ runs:
           poetry run mike delete dev --push
         fi
 
-        poetry run mike deploy dev --push
+        poetry run mike --debug  deploy dev --push
 
         if poetry run mike list | grep -q "latest"; then
           latest_exists=true

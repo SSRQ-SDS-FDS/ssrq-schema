@@ -9,43 +9,57 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "valid-measure",
-            "<measure type='currency' origin='ZH' unit='lb' quantity='2'>zwai phunt nuwer Zuricher</measure>",
+            "valid-measure-with-text-content",
+            "<measure type='age' unit='year' quantity='1'>Foo</measure>",
             True,
         ),
         (
-            "valid-measure-with-commodity",
-            "<measure type='weight' unit='Zentner' quantity='1' commodity='wool'>ein zentner landtwull</measure>",
+            "valid-measure-with-content-critical",
+            "<measure type='age' unit='year' quantity='1'><del>Foo</del> bar</measure>",
             True,
         ),
         (
-            "measure-with-invalid-commodity",
-            "<measure type='weight' unit='Zentner' quantity='1' commodity='bar'>ein zentner landtwull</measure>",
-            False,
-        ),
-        (
-            "valid-measure-as-text-scope",
-            "<measure type='text_scope' unit='leaf' quantity='1'/>",
+            "valid-measure-with-content-display",
+            "<measure type='age' unit='year' quantity='1'>Foo <lb/> bar</measure>",
             True,
         ),
         (
-            "measure-with-invalid-type",
-            "<measure type='foo' unit='leaf' quantity='1'/>",
-            False,
+            "valid-measure-with-content-content",
+            "<measure type='age' unit='year' quantity='1'><num value='1'>Foo</num> bar</measure>",
+            True,
+        ),
+        (
+            "valid-measure-with-content-entities",
+            """
+            <measure type='age' unit='year' quantity='1'>
+                <placeName ref='loc123456'>Foo</placeName> bar
+            </measure>
+            """,
+            True,
         ),
         (
             "invalid-measure-without-type",
-            "<measure unit='leaf' quantity='1'/>",
+            "<measure unit='year' quantity='1'>Foo</measure>",
+            False,
+        ),
+        (
+            "invalid-measure-without-quantity",
+            "<measure type='age' unit='year'>Foo</measure>",
             False,
         ),
         (
             "invalid-measure-without-unit",
-            "<measure type='currency' origin='ZH' quantity='2'>zwai phunt nuwer Zuricher</measure>",
+            "<measure type='age' quantity='1'>Foo</measure>",
             False,
         ),
         (
-            "valid-measure-with-unknown-quantity",
-            "<measure type='currency' origin='ZH' unit='lb' quantity='unknown'>zwai phunt nuwer Zuricher</measure>",
+            "valid-measure-with-origin",
+            "<measure type='currency' origin='BE' unit='fl' quantity='1'>Foo</measure>",
+            True,
+        ),
+        (
+            "valid-measure-with-commodity",
+            "<measure type='volume' commodity='wheat' unit='Fuder' quantity='1'>Foo</measure>",
             True,
         ),
     ],
@@ -60,36 +74,81 @@ def test_measure(
 
 
 @pytest.mark.parametrize(
-    "name, markup, message, result",
+    "name, markup, result",
     [
         (
-            "valid-measure-with-text",
-            "<measure type='currency' unit='Angster' quantity='8' commodity='field'>bar</measure>",
-            None,
+            "valid-measure-with-type-age",
+            "<measure type='age' unit='year' quantity='1'>Foo</measure>",
             True,
         ),
         (
-            "valid-area-unit",
-            "<measure type='area' unit='Juchart' quantity='8' commodity='field'>acht juchart acher</measure>",
-            None,
-            True,
-        ),
-        (
-            "invalid-area-unit",
-            "<measure type='area' unit='bar' quantity='8' commodity='field'>acht juchart acher</measure>",
-            "is not a valid area measurement",
+            "invalid-measure-with-type-age",
+            "<measure type='age' unit='Fuder' quantity='1'>Foo</measure>",
             False,
         ),
         (
-            "valid-scope-unit",
-            "<extent><measure type='text_scope' unit='leaf' quantity='8'/></extent>",
-            None,
+            "valid-measure-with-type-area",
+            "<measure type='area' unit='Hube' quantity='1'>Foo</measure>",
             True,
         ),
         (
-            "invalid-scope-unit",
-            "<measure type='text_scope' unit='bar' quantity='8'/>",
-            "is no valid scope measurement",
+            "invalid-measure-with-type-area",
+            "<measure type='area' unit='year' quantity='1'>Foo</measure>",
+            False,
+        ),
+        (
+            "valid-measure-with-type-currency",
+            "<measure type='currency' unit='fl' quantity='1'>Foo</measure>",
+            True,
+        ),
+        (
+            "invalid-measure-with-type-currency",
+            "<measure type='currency' unit='year' quantity='1'>Foo</measure>",
+            False,
+        ),
+        (
+            "valid-measure-with-type-length",
+            "<measure type='length' unit='Elle' quantity='1'>Foo</measure>",
+            True,
+        ),
+        (
+            "valid-measure-with-type-length-cm",
+            "<measure type='length' unit='cm' quantity='1'>Foo</measure>",
+            True,
+        ),
+        (
+            "invalid-measure-with-type-length",
+            "<measure type='length' unit='year' quantity='1'>Foo</measure>",
+            False,
+        ),
+        (
+            "valid-measure-with-type-undefined",
+            "<measure type='undefined' unit='Dutzend' quantity='1'>Foo</measure>",
+            True,
+        ),
+        (
+            "invalid-measure-with-type-length",
+            "<measure type='undefined' unit='year' quantity='1'>Foo</measure>",
+            False,
+        ),
+        (
+            "valid-measure-with-type-volume",
+            "<measure type='volume' unit='Becher' quantity='1'>Foo</measure>",
+            True,
+        ),
+        (
+            "invalid-measure-with-type-length",
+            "<measure type='volume' unit='year' quantity='1'>Foo</measure>",
+            False,
+        ),
+        (
+            "valid-measure-with-type-weight",
+            "<measure type='weight' unit='Pfund' quantity='1'>Foo</measure>",
+            True,
+        ),
+        (
+            "invalid-measure-with-type-weight",
+            "<measure type='weight' unit='year' quantity='1'>Foo</measure>",
             False,
         ),
     ],
@@ -99,23 +158,10 @@ def test_measure_constraints(
     writer: SimpleTEIWriter,
     name: str,
     markup: str,
-    message: str,
     result: bool,
 ):
     writer.write(name, add_tei_namespace(markup))
-
     reports: list[SchematronResult] = apply_schematron_validation(
         input=writer.list(), isosch=main_constraints
     )
-
-    if result is True:
-        assert reports[0].report.is_valid() is True
-    else:
-        errors = []
-        if reports[0].report.failed_asserts:
-            for error in reports[0].report.failed_asserts:
-                errors.append(error.text)
-        if reports[0].report.successful_reports:
-            for error in reports[0].report.successful_reports:
-                errors.append(error.text)
-        assert any(message in e for e in errors) is True
+    assert reports[0].report.is_valid() is result

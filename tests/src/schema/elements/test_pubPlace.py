@@ -8,32 +8,27 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-pubPlace",
-            "<pubPlace>foo</pubPlace>",
+            "<pubPlace ref='loc123456'>locus amoenus</pubPlace>",
             True,
+        ),
+        (
+            "invalid-pubPlace-with-wrong-content",
+            "<pubPlace ref='loc123456'><p>foo</p></pubPlace>",
+            False,
+        ),
+        (
+            "invalid-pubPlace-without-ref",
+            "<pubPlace>foo</pubPlace>",
+            False,
         ),
         (
             "valid-pubPlace-with-cert",
-            "<pubPlace cert='low'>foo-low</pubPlace>",
+            "<pubPlace cert='low' ref='loc123456'>foo-low</pubPlace>",
             True,
-        ),
-        (
-            "invalid-pubPlace",
-            "<pubPlace><p/></pubPlace>",
-            False,
-        ),
-        (
-            "invalid-text-with-attributes",
-            "<pubPlace type='foobar'>foo</pubPlace>",
-            False,
-        ),
-        (
-            "valid-pubPlace-with-invalid-cert",
-            "<pubPlace cert='mid'>foo-mid</pubPlace>",
-            False,
         ),
     ],
 )
-def test_pubPlace(
+def test_pub_place(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

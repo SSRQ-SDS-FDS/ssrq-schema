@@ -10,22 +10,32 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-gap",
-            "<gap reason='illegible' unit='line' quantity='1.0'/>",
+            "<gap/>",
             True,
         ),
         (
-            "gap-with-invalid-unit",
-            "<gap reason='illegible' unit='lines' quantity='1.0'/>",
+            "invalid-gap-with-content",
+            "<gap>Foo</gap>",
             False,
         ),
         (
-            "gap-with-invalid-quantity",
-            "<gap reason='illegible' unit='line' quantity='eins'/>",
-            False,
-        ),
-        (
-            "gap-with-valid-source",
+            "valid-gap-with-source",
             "<gap source='urn:ssrq:SSRQ-ZH-NF_II_11-74-1#n17.1-17.4'/>",
+            True,
+        ),
+        (
+            "valid-gap-with-reason",
+            "<gap reason='missing'/>",
+            True,
+        ),
+        (
+            "valid-gap-with-unit-and-quantity",
+            "<gap quantity='1' unit='cm'/>",
+            True,
+        ),
+        (
+            "valid-gap",
+            "<gap reason='illegible' unit='line' quantity='1.0'/>",
             True,
         ),
     ],
@@ -48,18 +58,43 @@ def test_gap_rng(
             True,
         ),
         (
-            "invalid-gap-inside-damage",
+            "invalid-gap-inside-damage-with-reason",
             "<damage agent='hole'><gap reason='illegible' unit='cm' quantity='3.5'/></damage>",
             False,
         ),
         (
+            "invalid-gap-inside-damage-without-unit",
+            "<damage agent='hole'><gap quantity='3.5'/></damage>",
+            False,
+        ),
+        (
+            "invalid-gap-inside-damage-without-quantity",
+            "<damage agent='hole'><gap unit='cm'/></damage>",
+            False,
+        ),
+        (
+            "invalid-gap-inside-damage-without-unit-and-quantity",
+            "<damage agent='hole'><gap/></damage>",
+            False,
+        ),
+        (
             "valid-gap-with-reason-illegible",
-            "<gap reason='illegible' unit='line' quantity='1.0'/>",
+            "<gap reason='illegible' unit='cm' quantity='3.5'/>",
             True,
         ),
         (
-            "invalid-gap-with-reason-illegible",
-            "<gap reason='illegible' quantity='1.0'/>",
+            "invalid-gap-with-reason-illegible-without-unit-and-quantity",
+            "<gap reason='illegible'/>",
+            False,
+        ),
+        (
+            "invalid-gap-with-source-and-reason",
+            "<gap source='urn:ssrq:SSRQ-ZH-NF_II_11-74-1#n17.1-17.4' reason='illegible' />",
+            False,
+        ),
+        (
+            "invalid-gap-with-source-and-unit-and-quantity",
+            "<gap source='urn:ssrq:SSRQ-ZH-NF_II_11-74-1#n17.1-17.4' quantity='1' unit='cm'/>",
             False,
         ),
     ],

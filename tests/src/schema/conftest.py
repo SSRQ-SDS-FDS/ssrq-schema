@@ -5,11 +5,13 @@ from pathlib import Path
 from typing import TypeAlias
 
 import pytest
+from lxml import etree
 from pyschval.schematron.create import create_schematron_stylesheet
 from pyschval.schematron.extract import extract_schematron_from_relaxng
+from result import Err, Ok
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
-from ssrq_cli.validate import RNGJingValidator
-from ssrq_cli.xml_utils import ext_etree
+from ssrq_cli.validate.rng import validate_with_rng
+from ssrq_cli.validate.types import RNGValidationInfos
 
 from utils.commons import filehandler as io
 from utils.commons.config import SCHEMA_DIR, XSLTS
@@ -49,9 +51,9 @@ class SimpleTEIWriter:
         return [str(file.absolute()) for file in self.path.glob("*.xml")]
 
     def parse_files(self):
-        parser = ext_etree.XMLParser(recover=True)
-        parsed_files: list[tuple[str, ext_etree._ElementTree]] = [
-            (file, ext_etree.parse(file, parser=parser)) for file in self.list()
+        parser = etree.XMLParser(recover=True)
+        parsed_files: list[tuple[str, etree._ElementTree]] = [  # type: ignore
+            (file, etree.parse(file, parser=parser)) for file in self.list()
         ]
         return parsed_files
 
@@ -71,7 +73,7 @@ def change_rng_start(rng: str, name: str) -> str:
             stylesheet_file=str(XSLTS["change-start"])
         )
 
-        result: str = xsl.transform_to_string(xdm_node=document)
+        result: str | None = xsl.transform_to_string(xdm_node=document)
 
     if result is None:
         raise ValueError("Failed to resolve relative paths")
@@ -159,7 +161,8 @@ def main_constraints(main_schema: Schema) -> str:
 
 
 RNG_test_function: TypeAlias = Callable[
-    [str, str, str, bool, bool], RNGJingValidator | None
+    [str, str, str, bool, bool],
+    list[RNGValidationInfos] | None,
 ]
 
 
@@ -178,7 +181,7 @@ def test_element_with_rng(
         """A generic function, which can be used to test a single element against the defined RelaxNG rules.
 
         Args:
-            element_name (str): The name (without namespace) of the element to test.e
+            element_name (str): The name (without namespace) of the element to test.
             name (str): The name of the file to write / the name of the testcase.
             markup (str): The markup to write to the file.
             result (bool): The expected result of the validation.
@@ -188,19 +191,27 @@ def test_element_with_rng(
             None: The test passes if the validation result matches the expected result.
         """
 
-        validator = RNGJingValidator()
         writer.write(name, add_tei_namespace(markup))
 
-        validator.validate(
-            sources=writer.parse_files(),
-            schema=element_schema[element_name],
-            file_pattern=writer.construct_file_pattern(),
-        )
-
-        assert len(validator.get_invalid()) == (0 if result else 1)
-
-        if return_validator:
-            return validator
-        return None
+        match validate_with_rng(
+            writer.construct_file_pattern(), element_schema[element_name]
+        ):
+            case Ok(validation_infos):
+                assert (
+                    len(validation_infos) == 0 if result else len(validation_infos) > 0
+                )
+                return validation_infos if return_validator else None
+            case Err(error):
+                pytest.fail(
+                    f"An error occurred while validating »{element_name}«: {error}"
+                )
 
     return test_element
+
+
+@pytest.fixture
+def element_schema(
+    change_rng_start_per_odd: dict[str, dict[str, str]],
+) -> dict[str, str]:
+    """A fixture, which returns the main ssrq schema with a modified start element."""
+    return change_rng_start_per_odd["TEI_Schema"]

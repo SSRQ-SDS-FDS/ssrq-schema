@@ -4,24 +4,21 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="publicationStmt" module="header" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-18">Angaben zur Publikation</gloss>
-  <gloss xml:lang="en" versionDate="2023-07-18">Publication statement</gloss>
-  <gloss xml:lang="fr" versionDate="2023-07-18">Informations sur la publication</gloss>
-  <desc xml:lang="de" versionDate="2023-07-18">Enthält Elemente zur Beschreibung der Publikation und Verbreitung des
-        bearbeiteten Stücks.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-18">Contains elements describing the publication and distribution of the
-        edited piece.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-18">Contient des éléments décrivant la publication et la diffusion de la
-        pièce éditée.
-    </desc>
+  <gloss xml:lang="en" versionDate="2025-02-04">publication statement</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">informations sur la publication</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält Elemente zur Beschreibung der Publikation
+    und Verbreitung des bearbeiteten Textes.</desc>
+  <desc xml:lang="en" versionDate="2023-07-18">Contains elements describing the publication and
+    distribution of the edited piece.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-18">Contient des éléments décrivant la publication et
+    la diffusion de la pièce éditée.</desc>
   <classes mode="replace"/>
   <content>
     <sequence>
       <elementRef key="publisher"/>
       <sequence minOccurs="0">
         <!-- minOccurs="0" maxOccurs="2" does not work due to a bug in the TEI-Stylesheets.
-                     This workaround should be removed, once the bug is fixed. -->
+        This workaround should be removed, once the bug is fixed. -->
         <elementRef key="date"/>
         <elementRef key="date" minOccurs="0"/>
       </sequence>

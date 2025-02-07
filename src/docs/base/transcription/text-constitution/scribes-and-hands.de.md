@@ -3,7 +3,7 @@
 ## Hände
 
 Für jede Hand wird ein [`<handNote/>`](handNote.de.md)-Element angelegt,
-welches die Informationen zum jeweiligen Schreiber enthält.
+welches die Informationen zur jeweiligen Hand bzw. zum jeweiligen Schreiber enthält.
 
 Auf die `xml:id` dieses Elements wird mit dem Attribut `@hand` verwiesen,
 vgl. die Beispiele von [`<add>`](add.de.md).

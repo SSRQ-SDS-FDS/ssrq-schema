@@ -1,36 +1,61 @@
 import pytest
-from pyschval.schematron.validate import apply_schematron_validation
-from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
     "name, markup, result",
     [
         (
-            "valid-origDate",
-            "<origDate type='document' when-custom='1448-05-25' calendar='gregorian'>bar</origDate>",
+            "valid-origDate-without-content",
+            "<origDate type='content' calendar='gregorian' when-custom='1000-01-01'/>",
             True,
         ),
         (
-            "invalid-origDate-with-datingMethod",
-            "<origDate type='document' when-custom='1448-05-25' datingMethod='gregorian'>bar</origDate>",
-            False,
+            "valid-origDate-with-text-content",
+            "<origDate type='content' calendar='gregorian' when-custom='1000-01-01'>bar</origDate>",
+            True,
         ),
         (
-            "origDate-with-invalid-calendar",
-            "<origDate type='document' when-custom='1448-05-25' calendar='...'>bar</origDate>",
+            "valid-origDate-with-content-default",
+            """
+            <origDate type='content' calendar='gregorian' when-custom='1000-01-01'>
+                <del>foo</del> bar
+            </origDate>
+            """,
+            True,
+        ),
+        (
+            "valid-origDate-with-precision",
+            """
+            <origDate type='content' calendar='gregorian' when-custom='1000-01-01'>
+                <precision match='@when-custom' precision='high'/>
+            </origDate>
+            """,
+            True,
+        ),
+        (
+            "invalid-origDate-with-wrong-content",
+            """
+            <origDate type='content' calendar='gregorian' when-custom='1000-01-01'>
+                <p>foo</p>
+            </origDate>
+            """,
             False,
         ),
         (
             "invalid-origDate-without-calendar",
-            "<origDate type='document' when-custom='1448-05-25'>bar</origDate>",
+            "<origDate type='content' when-custom='1000-01-01'/>",
             False,
         ),
         (
-            "origDate-with-invalid-calendar",
-            "<origDate type='document' when-custom='1448-05-25' calendar='Modern'>bar</origDate>",
+            "invalid-origDate-with-period",
+            "<origDate type='content' calendar='gregorian' period='foo' when-custom='1000-01-01'/>",
+            False,
+        ),
+        (
+            "invalid-origDate-without-type",
+            "<origDate calendar='gregorian' when-custom='1000-01-01'/>",
             False,
         ),
     ],
@@ -42,33 +67,3 @@ def test_element(
     result: bool,
 ):
     test_element_with_rng("origDate", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "valid-origDate-with-text",
-            "<origDate type='document' when-custom='1448-05-25' calendar='gregorian'>bar</origDate>",
-            True,
-        ),
-        (
-            "valid-origDate-without-text",
-            "<origDate type='document' when-custom='1448-05-25' calendar='gregorian'/>",
-            True,
-        ),
-        (
-            "invalid-origDate-with-calendar-only",
-            "<origDate type='document' calendar='gregorian'>bar</origDate>",
-            False,
-        ),
-    ],
-)
-def test_origDate_datable_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].report.is_valid() is result

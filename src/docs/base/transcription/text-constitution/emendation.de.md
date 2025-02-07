@@ -31,12 +31,11 @@ wurden in der analogen Edition durch einen Ersatztext aus
 einer anderen originalen oder kopialen Quelle oder durch
 den Bearbeitenden selbst im Sinne einer sinngemässen
 Textwiedergabe in eckigen Klammern ergänzt.
-Eine Anmerkung war notwendig.
-
+Eine Anmerkung war notwendig. 
 In der digitalen Edition wird der ergänzte Text mit
-[`<supplied>`](supplied.de.md) getaggt.
-Falls notwendig, kann eine Anmerkung mit [`<note>`](note.de.md)
-hinzugesetzt werden.
+[`<supplied>`](supplied.de.md) getaggt. Falls notwendig, kann eine Anmerkung mit 
+[`<note>`](note.de.md) hinzugesetzt werden.
+
 Bei Ergänzungen anhand einer anderen Vorlage (2. Original, Kopie etc.)
 wird auf diesen Textzeugen referenziert.
 Vgl. dazu auch [`<app>`](app.de.md).
@@ -57,10 +56,8 @@ und [`<corr>`](corr.de.md) normalisiert werden.
 Bei Wörtern mit unsicherer Lesung wurden bei der analogen Edition in einer
 textkritischen Anmerkung denkbare Lesevarianten angeführt.
 Sie konnten zusätzlich mit `[?]` gekennzeichnet werden.
-
 In der digitalen Edition werden unsichere Lesungen mit
-[`<unclear>`](unclear.de.md) getaggt.
-Falls dies nicht genügt, kann auch eine Anmerkung mit
+[`<unclear>`](unclear.de.md) getaggt. Falls dies nicht genügt, kann auch eine Anmerkung mit
 [`<note>`](note.de.md) gemacht werden.
 
 ### Schreib-, Sprach- und Stilfehler
@@ -68,7 +65,6 @@ Falls dies nicht genügt, kann auch eine Anmerkung mit
 Schreib-, Sprach- und Stilfehler werden im Text nicht korrigiert.
 In der analogen Edition wurden sie in einer textkritischen Anmerkung
 erläutert oder mit einem `[!]` gekennzeichnet.
-
 In der digitalen Edition werden solche Fehler mit [`<sic>`](sic.de.md)
 gekennzeichnet und allenfalls mit [`<choice>`](choice.de.md) zusammen
 mit [`<sic>`](sic.de.md) und [`<corr>`](corr.de.md) korrigiert.
@@ -106,7 +102,6 @@ in [`<back>`](back.de.md) ist nötig.
 
     Streichungen wurden in der analogen Transkription mit `a–...–a`
     gekennzeichnet und in einer textkritischen Anmerkung aufgeführt.
-
     In der digitalen Edition werden Streichungen mit [`<del>`](del.de.md)
     getaggt.
 
@@ -116,7 +111,6 @@ in [`<back>`](back.de.md) ist nötig.
 
     Durch Streichungen unlesbar gewordene Textstellen wurden in der analogen
     Edition mit `[...]a` gekennzeichnet und mit einer Anmerkung versehen.
-
     In der digitalen Edition werden sie mit [`<del>`](del.de.md) und
     [`<gap/>`](gap.de.md) ausgezeichnet.
 
@@ -139,7 +133,6 @@ in [`<back>`](back.de.md) ist nötig.
     Zusätze oder Nachträge von erster oder späterer Hand müssen
     in den Text aufgenommen werden und wurden in der analogen
     Edition in einer textkritischen Anmerkung erklärt.
-
     In der digitalen Edition wird der Tag [`<add>`](add.de.md) verwendet.
     Der Ort der Ergänzung muss und die Hand der ergänzten Stelle kann
     festgehalten werden.

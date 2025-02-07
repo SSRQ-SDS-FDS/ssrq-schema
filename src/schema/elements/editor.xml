@@ -3,12 +3,14 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="editor" module="core" mode="change">
-  <desc xml:lang="de" versionDate="2023-08-17">Im <gi>titleStmt</gi> eines Stücks werden damit die Bearbeitenden der Editionseinheit erfasst.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-08-17">In the <gi>titleStmt</gi> of a piece, the editors of the edition unit are thus recorded.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-08-17">Dans le <gi>titleStmt</gi> d'une pièce, on saisit ainsi les éditeurs de l'unité d'édition.
-    </desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">Herausgeber/Herausgeberin</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">editor</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">éditeur</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Herausgeberin/einen Herausgeber der Editionseinheit.</desc>
+  <desc xml:lang="en" versionDate="2023-08-17">In the <gi>titleStmt</gi> of a piece, the editors
+    of the edition unit are thus recorded.</desc>
+  <desc xml:lang="fr" versionDate="2023-08-17">Dans le <gi>titleStmt</gi> d'une pièce, on saisit
+    ainsi les éditeurs de l'unité d'édition.</desc>
   <classes mode="replace"/>
   <content>
     <alternate>
@@ -16,18 +18,22 @@
       <textNode/>
     </alternate>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-editor">
-    <desc xml:lang="en" versionDate="2023-04-13">Constraint for tei:editor</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-editor" mode="delete"/>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-editor">
+    <desc xml:lang="en" versionDate="2023-04-13">constraint for tei:editor</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:editor[parent::tei:titleStmt]">
-          <sch:assert test="tei:persName">The usage of tei:editor as part of the titleStmt
-                        requires a tei:persName as child node.
-                    </sch:assert>
+          <sch:assert test="tei:persName">The usage of tei:editor as part of tei:titleStmt
+            requires a tei:persName as a child.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
   </constraintSpec>
+  <attList>
+    <attDef ident="calendar" mode="delete"/>
+  </attList>
   <xi:include href="examples.xml" xpointer="ex-editor-de"/>
   <xi:include href="examples.xml" xpointer="ex-editor-en"/>
   <xi:include href="examples.xml" xpointer="ex-editor-fr"/>

@@ -3,9 +3,14 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="figure" module="figures" mode="change">
-  <desc xml:lang="de" versionDate="2023-04-11">Enthält Elemente, die graphische Informationen beschreiben.</desc>
-  <desc xml:lang="en" versionDate="2023-04-11">Contains elements that describe graphical information.</desc>
-  <desc xml:lang="fr" versionDate="2023-04-11">Contient des éléments qui décrivent des informations graphiques.</desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">Abbildung</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">figure</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">figure</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Beschreibt eine Abbildung jeder Art.</desc>
+  <desc xml:lang="en" versionDate="2023-04-11">Contains elements that describe graphical
+    information.</desc>
+  <desc xml:lang="fr" versionDate="2023-04-11">Contient des éléments qui décrivent des informations
+    graphiques.</desc>
   <classes mode="replace">
     <memberOf key="att.placement"/>
     <memberOf key="att.typed"/>
@@ -17,89 +22,36 @@
       <elementRef key="head" minOccurs="0"/>
     </sequence>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-figure">
-    <desc xml:lang="en" versionDate="2023-07-05">Constraint for tei:figure</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-figure">
+    <desc xml:lang="en" versionDate="2023-07-05">constraint for tei:figure</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:figure[@type = 'illustration']">
-          <sch:assert test="tei:graphic">If the type of
-                        <sch:name/>
-                        is 'illustration' an
-                        element graphic is required.
-                    </sch:assert>
+          <sch:assert test="tei:graphic">
+            If the @type of tei:figure is 'illustration' an element tei:graphic is required.
+          </sch:assert>
         </sch:rule>
         <sch:rule context="tei:figure[not(@type = 'illustration')]">
-          <sch:assert test="not(*) and not(text())">If the type of
-                        <sch:name/>
-                        is not
-                        'illustration' it must be empty.
-                    </sch:assert>
+          <sch:assert test="not(*) and not(text())">
+            If the @type of tei:figure is not 'illustration' tei:figure must be empty.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="place" mode="change">
+      <desc xml:lang="de" versionDate="2025-02-04">der Ort der Abbildung</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the place of the figure</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">le lieu de la figure</desc>
+    </attDef>
     <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2023-04-11">Zwingende Zuordnung zu einem Typ</desc>
-      <desc xml:lang="en" versionDate="2023-04-11">Mandatory assignment to a type</desc>
-      <desc xml:lang="fr" versionDate="2023-04-11">Affectation obligatoire à un type</desc>
-      <desc xml:lang="en" versionDate="2023-04-11">Assegnazione obbligatoria a un tipo</desc>
-      <valList type="closed">
-        <valItem ident="copper_engraving">
-          <desc xml:lang="de" versionDate="2023-04-11">Kupferstich</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">copper engraving</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">gravure sur cuivre</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">incisione su lastra di rame</desc>
-        </valItem>
-        <valItem ident="drawing">
-          <desc xml:lang="de" versionDate="2023-04-11">Federzeichnung</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">pen and ink drawing</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">dessin à la plume</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">disegno a penna e inchiostro</desc>
-        </valItem>
-        <valItem ident="illustration">
-          <desc xml:lang="de" versionDate="2023-04-11">Abbildung</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">illustration</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">figure</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">figura</desc>
-        </valItem>
-        <valItem ident="locus_sigilli">
-          <desc xml:lang="de" versionDate="2023-04-11">Locus sigilli</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">locus sigilli</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">locus sigilli</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">locus sigilli</desc>
-        </valItem>
-        <valItem ident="monogram">
-          <desc xml:lang="de" versionDate="2023-04-11">Monogramm</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">monogram</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">monogramme</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">monogramma</desc>
-        </valItem>
-        <valItem ident="notarial_sign">
-          <desc xml:lang="de" versionDate="2023-04-11">Notarzeichen</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">notarial sign</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">seing/signe notarial</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">signum notarile</desc>
-        </valItem>
-        <valItem ident="sign">
-          <desc xml:lang="de" versionDate="2023-04-11">Verweiszeichen</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">signe-de-renvoi</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">signe de renvoi</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">segno di riferimento</desc>
-        </valItem>
-        <valItem ident="stamp">
-          <desc xml:lang="de" versionDate="2023-04-11">Stempel</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">stamp</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">tampon</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">timbro</desc>
-        </valItem>
-        <valItem ident="woodcut">
-          <desc xml:lang="de" versionDate="2023-04-11">Holzschnitt</desc>
-          <desc xml:lang="en" versionDate="2023-04-11">woodcut</desc>
-          <desc xml:lang="fr" versionDate="2023-04-11">xylographie</desc>
-          <desc xml:lang="it" versionDate="2023-04-11">xilografia</desc>
-        </valItem>
-      </valList>
+      <desc xml:lang="de" versionDate="2025-01-31">die Art der Abbildung</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of the figure</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type de la figure</desc>
+      <datatype>
+        <dataRef key="ssrq.type.figure"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-figure-1-de"/>
@@ -108,22 +60,23 @@
   <xi:include href="examples.xml" xpointer="ex-figure-2-de"/>
   <xi:include href="examples.xml" xpointer="ex-figure-2-en"/>
   <xi:include href="examples.xml" xpointer="ex-figure-2-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-13">
-    <p>Enthält Notarzeichen (= Notariatszeichen, Notariatssignet, Signum), Federzeichnungen, Holzschnitte,
-            Verweiszeichen oder bei Kopien von Urkunden die Stelle, an der sich in der Originalurkunde das Siegel
-            befindet (L. S. = Locus sigilli) oder Abbildungen, die mit <gi>graphic</gi> referenziert werden.
-        </p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p><gi>figure</gi> beschreibt Notarzeichen (= Notariatszeichen, Notariatssignet, Signum),
+      Federzeichnungen, Holzschnitte, Verweiszeichen oder bei Kopien von Urkunden die Stelle, an
+      der sich in der Originalurkunde das Siegel befindet (L. S. = Locus sigilli) oder Abbildungen,
+      die mit <gi>graphic</gi> referenziert werden. Die Art der Abbbildung wird mit dem
+      Attribut <att>type</att> angegeben.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-13">
-    <p>Contains notary signs (= notarial sign, notarial signet, signum), pen drawings, woodcuts, reference signs or,
-            in the case of copies of deeds, the place where the seal is located in the original deed (L. S. = Locus
-            sigilli) or illustrations starting with <gi>graphic</gi> be referenced.
-        </p>
+    <p>Contains notary signs (= notarial sign, notarial signet, signum), pen drawings, woodcuts,
+      reference signs or, in the case of copies of deeds, the place where the seal is located in
+      the original deed (L. S. = Locus sigilli) or illustrations starting with <gi>graphic</gi>
+      be referenced.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-13">
-    <p>Contient des signes notariés (= signe notarié, sceau notarié, signum), des dessins à la plume, des gravures
-            sur bois, des signes de référence ou, dans le cas de copies d'actes, l'endroit où se trouve le sceau dans
-            l'acte original (L. S. = Locus sigilli) ou des illustrations commençant par <gi>graphic</gi> être référencé.
-        </p>
+    <p>Contient des signes notariés (= signe notarié, sceau notarié, signum), des dessins à la
+      plume, des gravures sur bois, des signes de référence ou, dans le cas de copies d'actes,
+      l'endroit où se trouve le sceau dans l'acte original (L. S. = Locus sigilli) ou des
+      illustrations commençant par <gi>graphic</gi> être référencé.</p>
   </remarks>
 </elementSpec>

@@ -6,10 +6,19 @@ from ..conftest import RNG_test_function
 @pytest.mark.parametrize(
     "name, markup, result",
     [
-        ("valid-anchor-for-del", "<anchor xml:id='del1'/>", True),
         (
             "valid-anchor-for-add",
             "<anchor xml:id='add1'/>",
+            True,
+        ),
+        (
+            "valid-anchor-for-damage",
+            "<anchor xml:id='damage1'/>",
+            True,
+        ),
+        (
+            "valid-anchor-for-del",
+            "<anchor xml:id='del1'/>",
             True,
         ),
         (
@@ -18,8 +27,8 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "invalid-anchor-with-resp",
-            "<anchor xml:id='del1' resp='foo'/>",
+            "invalid-anchor-with-content",
+            "<anchor xml:id='add1'>Foo</anchor>",
             False,
         ),
     ],

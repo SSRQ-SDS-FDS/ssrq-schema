@@ -3,9 +3,11 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="anchor" module="linking" mode="change">
-  <desc xml:lang="de" versionDate="2023-08-18">Endpunkt einer umfangreichen Ergänzung (<gi>addSpan</gi>),
-        Streichung (<gi>delSpan</gi>) oder Beschädigung (<gi>damageSpan</gi>).
-    </desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">Ankerpunkt</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">anchoring point</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">point d'ancrage</gloss>
+  <desc xml:lang="de" versionDate="2025-02-05">Markiert den Endpunkt einer umfangreichen Hinzufügung
+      (<gi>addSpan</gi>), Tilgung (<gi>delSpan</gi>) oder Beschädigung (<gi>damageSpan</gi>).</desc>
   <desc xml:lang="en" versionDate="2023-08-18">Endpoint of extensive addition (<gi>addSpan</gi>), deletion
         (<gi>delSpan</gi>) or corruption (<gi>damageSpan</gi>).
     </desc>
@@ -21,7 +23,7 @@
   <attList>
     <attDef ident="xml:id" mode="change" usage="req">
       <datatype>
-        <dataRef name="ID" restriction="(del|damage|add)[1-9]+"/>
+        <dataRef key="ssrq.xmlid.anchor"/>
       </datatype>
     </attDef>
     <attDef ident="n" mode="delete"/>
@@ -37,9 +39,11 @@
   <xi:include href="examples.xml" xpointer="ex-damageSpan-en"/>
   <xi:include href="examples.xml" xpointer="ex-damageSpan-fr"/>
   <remarks xml:lang="de" versionDate="2023-08-18">
-    <p>Als Wert des Attributs <att>xml:id</att> ist der erste Teil des Namens der entsprechenden Elemente
-            (<gi>addSpan</gi>, <gi>delSpan</gi> bzw. <gi>damageSpan</gi>) sowie eine fortlaufende Nummer zu wählen:
-            z. B. add1, add2 usw. oder del1, del2 usw. oder damage1, damage2 usw.
+    <p>Als Wert des Attributs <att>xml:id</att> ist der erste Teil des Namens der entsprechenden
+        Elemente (<gi>addSpan</gi> = <val>add</val>, <gi>delSpan</gi> = <val>del</val> bzw.
+        <gi>damageSpan</gi> = <val>damage</val>) sowie eine fortlaufende Nummer zu wählen:
+        z. B. <val>add1</val>, <val>add2</val> usw. oder <val>del1</val>, <val>del2</val> usw. oder
+        <val>damage1</val>, <val>damage2</val> usw.
         </p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-08-18">

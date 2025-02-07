@@ -3,7 +3,10 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="dimensions" module="msdescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-04-19">Masse einer Quelle</desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">Dimensionen</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">dimensions</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">dimensions</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält die Masse einer Quelle.</desc>
   <desc xml:lang="en" versionDate="2023-04-19">Dimension of a source</desc>
   <desc xml:lang="fr" versionDate="2023-04-19">Dimensions d'une source</desc>
   <classes mode="replace">
@@ -16,51 +19,41 @@
       <elementRef key="height" minOccurs="0"/>
     </sequence>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-extent">
-    <desc xml:lang="en" versionDate="2023-04-19">Constraint for tei:dimensions</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-dimensions">
+    <desc xml:lang="en" versionDate="2023-04-19">constraint for tei:dimensions</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:dimensions[@type = 'plica']">
           <sch:assert test="count(*) = 1 and */name() = 'width'">If the value of @type is
-                        'plica' only one tei:width is allowed as child.
-                    </sch:assert>
+            'plica' only one tei:width is allowed as a child.</sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
   </constraintSpec>
   <attList>
     <attDef ident="type" mode="replace" usage="req">
-      <valList type="closed">
-        <valItem ident="leaves">
-          <desc xml:lang="de" versionDate="2023-06-23">Ausmass der Blätter</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Extent of leaves</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Étendue des feuilles</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Estensione delle foglie</desc>
-        </valItem>
-        <valItem ident="plica">
-          <desc xml:lang="de" versionDate="2023-06-23">Ausmass der Plica</desc>
-          <desc xml:lang="en" versionDate="2024-05-08">Extent of the plica</desc>
-          <desc xml:lang="fr" versionDate="2024-05-08">Extension de pliage</desc>
-          <desc xml:lang="it" versionDate="2024-05-08">Estensione della plica</desc>
-        </valItem>
-      </valList>
+      <desc xml:lang="de" versionDate="2025-01-31">die Art des Masses</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of dimension</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type de dimension</desc>
+      <datatype>
+        <dataRef key="ssrq.type.dimensions"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-extent-de"/>
   <xi:include href="examples.xml" xpointer="ex-extent-en"/>
   <xi:include href="examples.xml" xpointer="ex-extent-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-14">
-    <p>Wenn <att>type</att> den Wert <val>plica</val> hat, dann ist nur ein <gi>width</gi>-Element als Inhalt
-            erlaubt.
-        </p>
+  <remarks xml:lang="de" versionDate="2025-02-05">
+    <p>Wenn das Attribut <att>type</att> den Wert <val>plica</val> hat, dann ist nur ein
+      <gi>width</gi>-Element als Kindelement erlaubt, ansonsten sollten sowohl <gi>width</gi>
+      als auch <gi>height</gi> angeben werden.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-14">
-    <p>If <att>type</att> has value <val>plica</val> then only one <gi>width</gi> element is allowed as content.
-        </p>
+    <p>If <att>type</att> has value <val>plica</val> then only one <gi>width</gi> element is
+      allowed as content.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-14">
-    <p>Si <att>type</att> a la valeur <val>plica</val> alors un seul élément <gi>width</gi> est autorisé comme
-            contenu.
-        </p>
+    <p>Si <att>type</att> a la valeur <val>plica</val> alors un seul élément <gi>width</gi> est
+      autorisé comme contenu.</p>
   </remarks>
 </elementSpec>

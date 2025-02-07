@@ -11,7 +11,7 @@
     nach einem Komma erfolgen.
     
     Sofern ein Original stärker gegliedert oder strukturiert ist, kann man
-    [`<div>`](div.de.md) zur Auszeichnung größerer Abschnitte verwenden.
+    [`<div>`](div.de.md) zur Auszeichnung grösserer Abschnitte verwenden.
     
     Reicht die Gliederung des Textes mit [`<p>`](p.de.md) und 
     [`<div>`](div.de.md) nicht aus, kann der Bearbeitende die Abschnitte 
@@ -37,8 +37,8 @@
     Bei längeren Paratexten (Einleitung, Kommentar) können die Kapitel mit
     [`<div>`](div.de.md) nummeriert und ggf. näher bezeichnet werden. 
     
-    Der Text eines Kommentars kann innerhalb von [`<div>`](div.de.md) mit 
-    [`<p>`](p.de.md) in Absätze strukturiert werden.
+    Der Text eines Kommentars wird innerhalb von [`<div>`](div.de.md) mit 
+    [`<p>`](p.de.md) in Absätze strukturiert.
 
 ## Seiten, Spalten und Zeilen
 

@@ -1,8 +1,8 @@
 import re
+import tomllib
 from dataclasses import dataclass
 from pathlib import Path
 
-import tomllib
 from pydantic import BaseModel, field_validator
 from saxonche import PySaxonProcessor, PyXdmNode, PyXslt30Processor, PyXsltExecutable
 from typing_extensions import TypedDict
@@ -178,7 +178,6 @@ def check_embedded_files(doc: str, schema: SSRQSchemaType) -> None:
 
 def fill_template_with_metadata(authors: list[str], schema: SSRQSchemaType) -> str:
     with PySaxonProcessor(license=False) as proc:
-        proc.set_configuration_property(name="xi", value="on")  # type: ignore
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(
             xml_file_name=f"{str(configs.SCHEMA_DIR)}/{schema['entry']}"
@@ -259,7 +258,7 @@ def odd_factory(
     clean: bool = True,
     print_stats: bool = False,
 ) -> Schema:
-    LOGGER.info(f'Compiling schema {schema_config["entry"]}')
+    LOGGER.info(f"Compiling schema {schema_config['entry']}")
 
     odd_with_metadata = fill_template_with_metadata(
         authors=authors, schema=schema_config
@@ -274,9 +273,15 @@ def odd_factory(
 
     odd_resolved_specs = resolve_embedded_spec_files(doc=odd_with_metadata)
 
-    compiled_odd = compile_odd_to_odd(
-        odd=odd_resolved_specs, tei_version=schema_config["tei_version"]
-    )
+    LOGGER.info("Creating full ODD from Schema ODD src..")
+
+    try:
+        compiled_odd = compile_odd_to_odd(
+            odd=odd_resolved_specs, tei_version=schema_config["tei_version"]
+        )
+    except Exception as e:
+        LOGGER.error(f"Error while creating compiled ODD: {e}")
+        raise SystemExit(1)
 
     if clean:
         with PySaxonProcessor(license=False) as proc:
@@ -296,7 +301,11 @@ def odd_factory(
 
     compiled_odd = resolve_sch_let(odd=compiled_odd)
 
+    LOGGER.info("Preprocessing done. Compiling ODD to RNG")
+
     rng = compile_odd_to_rng(odd=compiled_odd, tei_version=schema_config["tei_version"])
+
+    LOGGER.info("Compilation done.")
 
     return Schema(
         version=schema_config["version"],

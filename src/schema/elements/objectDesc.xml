@@ -3,15 +3,15 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="objectDesc" module="msdescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-15">Enthält Elemente zur Beschreibung des Materials, der
-        Masse, des Erhaltungszustands sowie Aussehens der Quelle.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Contains elements describing the material, mass, state of preservation
-        and appearance of the source.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-15">Contient des éléments décrivant le matériau, la masse, l'état de
-        conservation et l'apparence de la source.
-    </desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">Textträgerbeschreibung</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">object description</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">description de l'objet</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält Elemente zur Beschreibung des Materials, der
+    Masse, des Erhaltungszustands sowie der Beschaffenheit eines Textträgers.</desc>
+  <desc xml:lang="en" versionDate="2023-07-15">Contains elements describing the material, mass,
+    state of preservation and appearance of the source.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-15">Contient des éléments décrivant le matériau, la
+    masse, l'état de conservation et l'apparence de la source.</desc>
   <classes mode="replace">
     <memberOf key="model.physDescPart"/>
   </classes>

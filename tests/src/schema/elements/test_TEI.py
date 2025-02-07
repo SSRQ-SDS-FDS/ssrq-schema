@@ -4,51 +4,59 @@ from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
-    "name, markup, result, message",
+    "name, markup, result",
     [
         (
-            "TEI-valid",
-            """<TEI xml:lang="de">
-                    <teiHeader>
-                        <fileDesc>
-                            <titleStmt>
-                                <title>foo</title>
-                                <editor>
-                                <persName>Michael Nadig</persName>
-                                </editor>
-                                <respStmt>
-                                <persName>Ariane Huber Hernández</persName>
-                                <persName>Michael Nadig</persName>
+            "valid-TEI",
+            """
+            <TEI xml:lang="de">
+                <teiHeader>
+                    <fileDesc>
+                        <titleStmt>
+                            <title>xyz</title>
+                            <editor>
+                                <persName>xyz</persName>
+                            </editor>
+                            <respStmt>
+                                <persName>xyz</persName>
                                 <resp>Transkription</resp>
-                                </respStmt>
-                            </titleStmt>
-                            <publicationStmt>
-                                <publisher>SSRQ-SDS-FDS</publisher>
-                                <availability>
-                                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                    >Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA
-                                    4.0)</licence>
-                                </availability>
-                            </publicationStmt>
-                            <seriesStmt>
-                                <title>Sammlung Schweizerischer Rechtsquellen</title>
-                                <respStmt>
-                                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                                    <resp>Herausgabe</resp>
-                                </respStmt>
-                                <idno>SSRQ-FR-I_2_8-1-1</idno>
-                                <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
-                            </seriesStmt>
-                            <sourceDesc>
-                                <msDesc>
+                                <resp>XML-Codierung der Transkription</resp>
+                            </respStmt>
+                            <respStmt>
+                                <persName>xyz</persName>
+                                <resp>Qualitätskontrolle</resp>
+                            </respStmt>
+                        </titleStmt>
+                        <publicationStmt>
+                            <publisher>SSRQ-SDS-FDS</publisher>
+                            <date type="electronic" when-custom="0000-01-01"/>
+                            <date type="print" when-custom="0000-01-01"/>
+                            <availability>
+                                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                                    Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+                                </licence>
+                            </availability>
+                        </publicationStmt>
+                        <seriesStmt>
+                            <title>Sammlung Schweizerischer Rechtsquellen</title>
+                            <respStmt>
+                                <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
+                                <resp>Herausgabe</resp>
+                            </respStmt>
+                            <idno>SSRQ-EX-I_1-1-1</idno>
+                            <idno type="uuid">b06d72bd-6e9f-48db-9573-9d19b9cbb396</idno>
+                        </seriesStmt>
+                        <sourceDesc>
+                            <msDesc>
                                 <msIdentifier>
-                                    <repository xml:lang="de">foo</repository>
-                                    <idno xml:lang="de" source="http://foo.bar">bar</idno>
+                                    <settlement xml:lang="de" ref="loc000000">xyz</settlement>
+                                    <repository xml:lang="de">xyz</repository>
+                                    <idno xml:lang="de">xyz</idno>
                                 </msIdentifier>
-                                <head>Projekt eines Eides für den Förster oder Bannwart in Sax-Forstegg</head>
+                                <head>xyz</head>
                                 <msContents>
                                     <summary xml:lang="de">
-                                        <p>foo</p>
+                                        <p>xyz</p>
                                     </summary>
                                     <msItem>
                                         <textLang xml:lang="de"/>
@@ -58,161 +66,244 @@ from ..conftest import RNG_test_function
                                     <objectDesc>
                                         <supportDesc>
                                             <support>
-                                            <material type="paper"/>
+                                                <material type="paper"/>
                                             </support>
-                                            <extent>
-                                            <dimensions type="leaves">
-                                                <height unit="cm" quantity="36.0"/>
-                                                <width unit="cm" quantity="23.5"/>
-                                            </dimensions>
-                                            </extent>
                                         </supportDesc>
                                     </objectDesc>
                                 </physDesc>
                                 <history>
                                     <origin>
-                                        <origDate type='document' from-custom="1615-04-15" to-custom="1700-12-31" calendar="unknown"/>
+                                       <origDate type="document" calendar="unknown" when-custom="0000-01-01"/>
+                                        <origPlace type="document" ref="loc000000">xyz</origPlace>
                                     </origin>
                                 </history>
-                                </msDesc>
-                            </sourceDesc>
-                        </fileDesc>
-                        <encodingDesc>
-                    <editorialDecl>
-                        <p>
-                            <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
-                        </p>
-                    </editorialDecl>
-                </encodingDesc>
-                    </teiHeader>
-                    <text type='transcript'>
-                        <body>
-                            <div><p>foo</p></div>
-                        </body>
-                    </text>
-                    </TEI>""",
+                            </msDesc>
+                        </sourceDesc>
+                    </fileDesc>
+                    <encodingDesc>
+                        <editorialDecl>
+                            <p>
+                                <ref target="https://p.ssrq-sds-fds.ch/guidelines/transcription"/>
+                            </p>
+                        </editorialDecl>
+                    </encodingDesc>
+                </teiHeader>
+                <text type="transcript">
+                    <body>
+                        <div>
+                            <p>xyz</p>
+                        </div>
+                    </body>
+                </text>
+            </TEI>
+            """,
             True,
-            None,
         ),
         (
-            "invalid-TEI-with-two-texts",
-            """<TEI xml:lang="de">
-                    <teiHeader>
-                        <fileDesc>
-                            <titleStmt>
-                                <title>foo</title>
-                                <editor>
-                                <persName>Michael Nadig</persName>
-                                </editor>
-                                <respStmt>
-                                <persName>Ariane Huber Hernández</persName>
-                                <persName>Michael Nadig</persName>
+            "invalid-TEI-without-xml-lang",
+            """
+            <TEI>
+                <teiHeader>
+                    <fileDesc>
+                        <titleStmt>
+                            <title>xyz</title>
+                            <editor>
+                                <persName>xyz</persName>
+                            </editor>
+                            <respStmt>
+                                <persName>xyz</persName>
                                 <resp>Transkription</resp>
-                                </respStmt>
-                            </titleStmt>
-                            <publicationStmt>
-                                <publisher>SSRQ-SDS-FDS</publisher>
-                                <availability>
-                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                                        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
-                                    </licence>
-                                </availability>
-                            </publicationStmt>
-                            <seriesStmt>
-                                <title>Sammlung Schweizerischer Rechtsquellen</title>
-                                <respStmt>
-                                    <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                                    <resp>Herausgabe</resp>
-                                </respStmt>
-                                <idno>SSRQ-FR-I_2_8-1-1</idno>
-                                <idno type="uuid">ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
-                            </seriesStmt>
-                            <sourceDesc>
-                                <msDesc>
+                                <resp>XML-Codierung der Transkription</resp>
+                            </respStmt>
+                            <respStmt>
+                                <persName>xyz</persName>
+                                <resp>Qualitätskontrolle</resp>
+                            </respStmt>
+                        </titleStmt>
+                        <publicationStmt>
+                            <publisher>SSRQ-SDS-FDS</publisher>
+                            <date type="electronic" when-custom="0000-01-01"/>
+                            <date type="print" when-custom="0000-01-01"/>
+                            <availability>
+                                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                                    Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+                                </licence>
+                            </availability>
+                        </publicationStmt>
+                        <seriesStmt>
+                            <title>Sammlung Schweizerischer Rechtsquellen</title>
+                            <respStmt>
+                                <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
+                                <resp>Herausgabe</resp>
+                            </respStmt>
+                            <idno>SSRQ-EX-I_1-1-1</idno>
+                            <idno type="uuid">b06d72bd-6e9f-48db-9573-9d19b9cbb396</idno>
+                        </seriesStmt>
+                        <sourceDesc>
+                            <msDesc>
                                 <msIdentifier>
-                                    <repository xml:lang="de">foo</repository>
-                                    <idno xml:lang="de" source="http://foo.bar">bar</idno>
+                                    <settlement xml:lang="de" ref="loc000000">xyz</settlement>
+                                    <repository xml:lang="de">xyz</repository>
+                                    <idno xml:lang="de">xyz</idno>
                                 </msIdentifier>
-                                <head>Projekt eines Eides für den Förster oder Bannwart in Sax-Forstegg</head>
+                                <head>xyz</head>
                                 <msContents>
                                     <summary xml:lang="de">
-                                        <p>foo</p>
+                                        <p>xyz</p>
                                     </summary>
                                     <msItem>
                                         <textLang xml:lang="de"/>
                                     </msItem>
                                 </msContents>
                                 <physDesc>
-                                    <objectDesc >
+                                    <objectDesc>
                                         <supportDesc>
                                             <support>
-                                            <material type="paper"/>
+                                                <material type="paper"/>
                                             </support>
-                                            <extent>
-                                            <dimensions type="leaves">
-                                                <height unit="cm" quantity="36.0"/>
-                                                <width unit="cm" quantity="23.5"/>
-                                            </dimensions>
-                                            </extent>
                                         </supportDesc>
                                     </objectDesc>
                                 </physDesc>
                                 <history>
                                     <origin>
-                                        <origDate type='document' from-custom="1615-04-15" to-custom="1700-12-31" calendar="unknown"/>
+                                       <origDate type="document" calendar="unknown" when-custom="0000-01-01"/>
+                                        <origPlace type="document" ref="loc000000">xyz</origPlace>
                                     </origin>
                                 </history>
-                                </msDesc>
-                            </sourceDesc>
-                        </fileDesc>
-                        <encodingDesc>
-                    <editorialDecl>
-                        <p>
-                            <ref target="https://www.ssrq-sds-fds.ch/wiki/Transkriptionsrichtlinien"/>
-                        </p>
-                    </editorialDecl>
-                </encodingDesc>
-                    </teiHeader>
-                    <text type='transcript'>
-                        <body><div><p>foo</p></div></body>
-                    </text>
-                    <text type='summary'>
-                        <body><div><p>foo</p></div></body>
-                    </text>
-                    </TEI>""",
+                            </msDesc>
+                        </sourceDesc>
+                    </fileDesc>
+                    <encodingDesc>
+                        <editorialDecl>
+                            <p>
+                                <ref target="https://p.ssrq-sds-fds.ch/guidelines/transcription"/>
+                            </p>
+                        </editorialDecl>
+                    </encodingDesc>
+                </teiHeader>
+                <text type="transcript">
+                    <body>
+                        <div>
+                            <p>xyz</p>
+                        </div>
+                    </body>
+                </text>
+            </TEI>
+            """,
             False,
-            None,
         ),
         (
-            "TEI-invalid-content",
-            "<TEI xml:lang='de'><teiHeader></teiHeader><facsimile></facsimile><text></text></TEI>",
+            "invalid-TEI-without-teiHeader",
+            """
+            <TEI xml:lang="de">
+                <text type='transcript'>
+                    <body>
+                        <div>
+                            <p>foo</p>
+                        </div>
+                    </body>
+                </text>
+            </TEI>
+            """,
             False,
-            None,
         ),
         (
-            "TEI-invalid-att",
-            " <TEI xml:lang='fr' n='1234'><teiHeader></teiHeader><text></text></TEI>",
+            "invalid-TEI-without-text",
+            """
+            <TEI xml:lang="de">
+                <teiHeader>
+                    <fileDesc>
+                        <titleStmt>
+                            <title>xyz</title>
+                            <editor>
+                                <persName>xyz</persName>
+                            </editor>
+                            <respStmt>
+                                <persName>xyz</persName>
+                                <resp>Transkription</resp>
+                                <resp>XML-Codierung der Transkription</resp>
+                            </respStmt>
+                            <respStmt>
+                                <persName>xyz</persName>
+                                <resp>Qualitätskontrolle</resp>
+                            </respStmt>
+                        </titleStmt>
+                        <publicationStmt>
+                            <publisher>SSRQ-SDS-FDS</publisher>
+                            <date type="electronic" when-custom="0000-01-01"/>
+                            <date type="print" when-custom="0000-01-01"/>
+                            <availability>
+                                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                                    Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+                                </licence>
+                            </availability>
+                        </publicationStmt>
+                        <seriesStmt>
+                            <title>Sammlung Schweizerischer Rechtsquellen</title>
+                            <respStmt>
+                                <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
+                                <resp>Herausgabe</resp>
+                            </respStmt>
+                            <idno>SSRQ-EX-I_1-1-1</idno>
+                            <idno type="uuid">b06d72bd-6e9f-48db-9573-9d19b9cbb396</idno>
+                        </seriesStmt>
+                        <sourceDesc>
+                            <msDesc>
+                                <msIdentifier>
+                                    <settlement xml:lang="de" ref="loc000000">xyz</settlement>
+                                    <repository xml:lang="de">xyz</repository>
+                                    <idno xml:lang="de">xyz</idno>
+                                </msIdentifier>
+                                <head>xyz</head>
+                                <msContents>
+                                    <summary xml:lang="de">
+                                        <p>xyz</p>
+                                    </summary>
+                                    <msItem>
+                                        <textLang xml:lang="de"/>
+                                    </msItem>
+                                </msContents>
+                                <physDesc>
+                                    <objectDesc>
+                                        <supportDesc>
+                                            <support>
+                                                <material type="paper"/>
+                                            </support>
+                                        </supportDesc>
+                                    </objectDesc>
+                                </physDesc>
+                                <history>
+                                    <origin>
+                                       <origDate type="document" calendar="unknown" when-custom="0000-01-01"/>
+                                        <origPlace type="document" ref="loc000000">xyz</origPlace>
+                                    </origin>
+                                </history>
+                            </msDesc>
+                        </sourceDesc>
+                    </fileDesc>
+                    <encodingDesc>
+                        <editorialDecl>
+                            <p>
+                                <ref target="https://p.ssrq-sds-fds.ch/guidelines/transcription"/>
+                            </p>
+                        </editorialDecl>
+                    </encodingDesc>
+                </teiHeader>
+            </TEI>
+            """,
             False,
-            "no attributes allowed here",
         ),
         (
-            "TEI-invalid-lang",
-            " <TEI xml:lang='pt'><teiHeader></teiHeader><text></text></TEI>",
+            "invalid-TEI-with-wrong-content",
+            "<TEI xml:lang='de'><p>foo</p></TEI>",
             False,
-            'must be equal to "de", "fr" or "it"',
         ),
     ],
 )
-def test_TEI_main_rng(
+def test_tei_rng(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
     result: bool,
-    message: str | None,
 ):
-    rng_test = test_element_with_rng("TEI", name, markup, result, True)
-    if message is not None and rng_test is not None:
-        file_reports = rng_test.reports[0]
-        assert isinstance(file_reports.report, list)
-        messages = "".join([error.message for error in file_reports.report])
-        assert message in messages
+    test_element_with_rng("TEI", name, markup, result, True)

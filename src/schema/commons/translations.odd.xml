@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+    type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0">
+  <specGrp xml:id="ssrq-combined-translations">
+    <dataSpec ident="ssrq.labels" xml:id="ssrq-translations-global">
+      <valList>
+        <valItem ident="abbr">
+          <desc xml:lang="de" versionDate="2024-11-13">Abkürzung</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">abbreviation</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">abréviation</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">abbreviazione</desc>
+        </valItem>
+        <valItem ident="abbr-expanded">
+          <desc xml:lang="de" versionDate="2025-01-31">aufgelöste Abkürzung</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">resolved abbreviation</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">résolution d’abréviation</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">risoluzione dell'abbreviazione</desc>
+        </valItem>
+        <valItem ident="abbr-nonexpanded">
+          <desc xml:lang="de" versionDate="2025-01-31">in der Vorlage</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">in the original</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">à l’original</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">nell'originale</desc>
+        </valItem>
+        <valItem ident="abbr-unclear">
+          <desc xml:lang="de" versionDate="2024-11-13">Abkürzung, unsichere Lesung</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">abbreviation, uncertain reading</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">abréviation, lecture incertaine</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">abbreviazione, lettura incerta</desc>
+        </valItem>
+        <valItem ident="add">
+          <desc xml:lang="de" versionDate="2024-11-13">Hinzufügung</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">addition</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">ajout</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">aggiunta</desc>
+        </valItem>
+        <valItem ident="added-in">
+          <desc xml:lang="de" versionDate="2024-11-13">Zusatz in</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">addition in</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">ajout dans</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">aggiunta in</desc>
+        </valItem>
+        <valItem ident="alt-rdg-in">
+          <desc xml:lang="de" versionDate="2024-11-13">Textvariante in</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">text variant in</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">variante dans</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">versione alternativa in</desc>
+        </valItem>
+        <valItem ident="amount">
+          <desc xml:lang="de" versionDate="2024-11-13">Menge</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">amount</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">quantité</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">quantità</desc>
+        </valItem>
+        <valItem ident="and">
+          <desc xml:lang="de" versionDate="2024-11-13">und</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">and</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">et</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">e</desc>
+        </valItem>
+        <valItem ident="add-type">
+          <desc xml:lang="de" versionDate="2024-11-13">mit Einfügungszeichen</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">by insertion mark</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">avec un signe d‘insertion</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">con un caracttere di inserimento</desc>
+        </valItem>
+        <valItem ident="by">
+          <desc xml:lang="de" versionDate="2024-11-13">von</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">by</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">de</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">da</desc>
+        </valItem>
+        <valItem ident="by-laterHand">
+          <desc xml:lang="de" versionDate="2024-11-13">von späterer Hand</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">in a later hand</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">d’une main plus récente</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">da una mano più recente</desc>
+        </valItem>
+        <valItem ident="by-otherHand">
+          <desc xml:lang="de" versionDate="2024-11-13">von anderer Hand</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">in another hand</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">par une autre main</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">da un’altra mano</desc>
+        </valItem>
+        <valItem ident="byScribe">
+          <desc xml:lang="de" versionDate="2024-11-13">von</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">by</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">par</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">da</desc>
+        </valItem>
+        <valItem ident="century-abbr">
+          <desc xml:lang="de" versionDate="2024-11-13">Jh.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">c.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">s.</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">sec.</desc>
+        </valItem>
+        <valItem ident="century-ordinal">
+          <desc xml:lang="de" versionDate="2024-11-13">.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">
+            <hi rend="sup">e</hi>
+          </desc>
+          <desc xml:lang="it" versionDate="2024-11-13">°</desc>
+        </valItem>
+        <valItem ident="comments">
+          <desc xml:lang="de" versionDate="2024-11-13">Kommentar</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">comment</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">commentaire</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">commento</desc>
+        </valItem>
+        <valItem ident="compare">
+          <desc xml:lang="de" versionDate="2024-11-13">Vgl.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">See</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">Cf.</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">Cfr.</desc>
+        </valItem>
+        <valItem ident="condition">
+          <desc xml:lang="de" versionDate="2024-11-13">Erhaltungszustand</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">condition</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">état de conservation</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">stato di conservazione</desc>
+        </valItem>
+        <valItem ident="copy">
+          <desc xml:lang="de" versionDate="2024-11-13">Kopie</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">copy</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">copie</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">copia</desc>
+        </valItem>
+        <valItem ident="corr">
+          <desc xml:lang="de" versionDate="2024-11-13">Korrektur</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">correction</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">correction</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">correzione</desc>
+        </valItem>
+        <valItem ident="corrected">
+          <desc xml:lang="de" versionDate="2025-01-31">korrigiert</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">corrected</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">à corriger en</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">da correggere in</desc>
+        </valItem>
+        <valItem ident="corrected-from">
+          <desc xml:lang="de" versionDate="2024-11-13">korrigiert aus</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">corrected from</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">corrigé de</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">corretto da</desc>
+        </valItem>
+        <valItem ident="damage">
+          <desc xml:lang="de" versionDate="2024-11-13">Beschädigung</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">damage</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">endommagé</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">danneggiato</desc>
+        </valItem>
+        <valItem ident="date">
+          <desc xml:lang="de" versionDate="2024-11-13">Datum</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">date</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">date</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">data</desc>
+        </valItem>
+        <valItem ident="day">
+          <desc xml:lang="de" versionDate="2024-11-13">Tag</desc>
+          <desc xml:lang="de" versionDate="2024-11-13" type="plural">Tage</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">day</desc>
+          <desc xml:lang="en" versionDate="2024-11-13" type="plural">days</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">jour</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13" type="plural">jours</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">giorno</desc>
+          <desc xml:lang="it" versionDate="2024-11-13" type="plural">giorni</desc>
+        </valItem>
+        <valItem ident="de">
+          <desc xml:lang="de" versionDate="2024-11-13">Deutsch</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">German</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">allemand</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">tedesco</desc>
+        </valItem>
+        <valItem ident="del">
+          <desc xml:lang="de" versionDate="2024-11-13">Streichung</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">deletion</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">suppression</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">soppressione</desc>
+        </valItem>
+        <valItem ident="del-add">
+          <desc xml:lang="de" versionDate="2024-11-13">Streichung der Hinzufügung</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">deletion of the addition</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">suppression de l’ajout</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">soppressione dell'aggiunta</desc>
+        </valItem>
+        <valItem ident="del-fw">
+          <desc xml:lang="de" versionDate="2024-11-13">Streichung der Wiederholung</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">deletion of the repetition</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">suppression de la répétition</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">soppressione della ripetizione</desc>
+        </valItem>
+        <valItem ident="del-gap">
+          <desc xml:lang="de" versionDate="2024-11-13">Streichung mit Textverlust</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">deletion with text loss</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">suppression avec perte de texte</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">soppressione con perdita di testo</desc>
+        </valItem>
+        <valItem ident="Deutsch">
+          <desc xml:lang="de" versionDate="2024-11-13">Deutsch</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">German</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">allemand</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">tedesco</desc>
+        </valItem>
+        <valItem ident="duration">
+          <desc xml:lang="de" versionDate="2024-11-13">Zeitspanne</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">duration</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">période</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">periodo</desc>
+        </valItem>
+        <valItem ident="edited-by">
+          <desc xml:lang="de" versionDate="2024-11-13">bearb. von</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">ed. by</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">éd. par</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">a cura di</desc>
+        </valItem>
+        <valItem ident="editor">
+          <desc xml:lang="de" versionDate="2025-01-31">hg.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">ed.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">éd.</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">ed.</desc>
+        </valItem>
+        <valItem ident="en">
+          <desc xml:lang="de" versionDate="2024-11-13">Englisch</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">English</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">anglais</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">inglese</desc>
+        </valItem>
+        <valItem ident="first-female">
+          <desc xml:lang="de" versionDate="2024-11-13">1.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">1.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">1<hi rend="sup">re</hi></desc>
+          <desc xml:lang="it" versionDate="2024-11-13">1.</desc>
+        </valItem>
+        <valItem ident="first-male">
+          <desc xml:lang="de" versionDate="2024-11-13">1.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">1.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">1<hi rend="sup">er</hi></desc>
+          <desc xml:lang="it" versionDate="2024-11-13">1.</desc>
+        </valItem>
+        <valItem ident="format">
+          <desc xml:lang="de" versionDate="2024-11-13">Format B × H</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">format h × w</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">dimensions l × h</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">formato l × a</desc>
+        </valItem>
+        <valItem ident="fourth-male">
+          <desc xml:lang="de" versionDate="2024-11-13">4.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">4.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">4<hi rend="sup">e</hi></desc>
+          <desc xml:lang="it" versionDate="2024-11-13">4.</desc>
+        </valItem>
+        <valItem ident="fr">
+          <desc xml:lang="de" versionDate="2024-11-13">Französisch</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">French</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">français</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">francese</desc>
+        </valItem>
+        <valItem ident="français">
+          <desc xml:lang="de" versionDate="2024-11-13">Französisch</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">French</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">français</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">francese</desc>
+        </valItem>
+        <valItem ident="from">
+          <desc xml:lang="de" versionDate="2024-11-13">von</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">from</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">de</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">da</desc>
+        </valItem>
+        <valItem ident="gap-in-orig">
+          <desc xml:lang="de" versionDate="2024-11-13">Lücke in der Vorlage</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">gap in the original</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">lacune dans le texte source</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">lacuna nell'originale</desc>
+        </valItem>
+        <valItem ident="half-cent-abbr">
+          <desc xml:lang="de" versionDate="2024-11-13">Hälfte</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">half</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">moitié du</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">metà del</desc>
+        </valItem>
+        <valItem ident="handswitch">
+          <desc xml:lang="de" versionDate="2024-11-13">Handwechsel</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">change of hand</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">changement de main</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">cambio di mano</desc>
+        </valItem>
+        <valItem ident="he">
+          <desc xml:lang="de" versionDate="2024-11-13">Hebräisch</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">Hebrew</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">hébraïque</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">ebraico</desc>
+        </valItem>
+        <valItem ident="hour">
+          <desc xml:lang="de" versionDate="2024-11-13">Stunde</desc>
+          <desc xml:lang="de" versionDate="2024-11-13" type="plural">Stunden</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">hour</desc>
+          <desc xml:lang="en" versionDate="2024-11-13" type="plural">hours</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">heure</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13" type="plural">heures</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">ora</desc>
+          <desc xml:lang="it" versionDate="2024-11-13" type="plural">ore</desc>
+        </valItem>
+        <valItem ident="in">
+          <desc xml:lang="de" versionDate="2024-11-13">in</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">in</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">dans</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">in</desc>
+        </valItem>
+        <valItem ident="irrelevant">
+          <desc xml:lang="de" versionDate="2025-01-31">editorisch irrelevant</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">editorially irrelevant</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">non-pertinence éditoriale</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">irrilevanza editoriale</desc>
+        </valItem>
+        <valItem ident="la">
+          <desc xml:lang="de" versionDate="2024-11-13">Latein</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">Latin</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">latin</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">latino</desc>
+        </valItem>
+        <valItem ident="Latein">
+          <desc xml:lang="de" versionDate="2024-11-13">Latein</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">Latin</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">latin</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">latino</desc>
+        </valItem>
+        <valItem ident="lang-switch">
+          <desc xml:lang="de" versionDate="2024-11-13">Sprachwechsel</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">language change</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">changement de langue</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">cambio di lingua</desc>
+        </valItem>
+        <valItem ident="language">
+          <desc xml:lang="de" versionDate="2024-11-13">Sprache</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">language</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">langue</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">lingua</desc>
+        </valItem>
+        <valItem ident="languages">
+          <desc xml:lang="de" versionDate="2024-11-13">Sprachen</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">languages</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">langues</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">lingue</desc>
+        </valItem>
+        <valItem ident="mainScribe">
+          <desc xml:lang="de" versionDate="2024-11-13">Anlagehand</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">main hand</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">main principale</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">mano principale</desc>
+        </valItem>
+        <valItem ident="marginal-note">
+          <desc xml:lang="de" versionDate="2024-11-13">Marginalie</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">marginal note</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">note</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">marginalia</desc>
+        </valItem>
+        <valItem ident="mid-cent-abbr">
+          <desc xml:lang="de" versionDate="2024-11-13">Mitte</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">mid</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">milieu du</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">metà del</desc>
+        </valItem>
+        <valItem ident="minute">
+          <desc xml:lang="de" versionDate="2024-11-13">Minute</desc>
+          <desc xml:lang="de" versionDate="2024-11-13" type="plural">Minuten</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">minute</desc>
+          <desc xml:lang="en" versionDate="2024-11-13" type="plural">minutes</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">minute</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13" type="plural">minutes</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">minuto</desc>
+          <desc xml:lang="it" versionDate="2024-11-13" type="plural">minuti</desc>
+        </valItem>
+        <valItem ident="missing">
+          <desc xml:lang="de" versionDate="2024-11-13">fehlt</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">missing</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">manquant</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">mancante</desc>
+        </valItem>
+        <valItem ident="month">
+          <desc xml:lang="de" versionDate="2024-11-13">Monat</desc>
+          <desc xml:lang="de" versionDate="2024-11-13" type="plural">Monate</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">month</desc>
+          <desc xml:lang="en" versionDate="2024-11-13" type="plural">months</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">mois</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">mese</desc>
+          <desc xml:lang="it" versionDate="2024-11-13" type="plural">mesi</desc>
+        </valItem>
+        <valItem ident="notAfter">
+          <desc xml:lang="de" versionDate="2024-11-13">nicht nach</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">not after</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">pas après</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">non dopo</desc>
+        </valItem>
+        <valItem ident="notBefore">
+          <desc xml:lang="de" versionDate="2024-11-13">nicht vor</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">not before</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">pas avant</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">non prima</desc>
+        </valItem>
+        <valItem ident="old-style-abbr">
+          <desc xml:lang="de" versionDate="2024-11-13">a. S.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">O.S.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">a. s.</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">v. s.</desc>
+        </valItem>
+        <valItem ident="omitted-in">
+          <desc xml:lang="de" versionDate="2024-11-13">Auslassung in</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">omission in</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">omission dans</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">omissione in</desc>
+        </valItem>
+        <valItem ident="organisation">
+          <desc xml:lang="de" versionDate="2024-11-13">Organisation</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">organisation</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">organisation</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">organizzazione</desc>
+        </valItem>
+        <valItem ident="origDate">
+          <desc xml:lang="de" versionDate="2024-11-13">Originaldatierung</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">date of origin</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">date d'origine</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">data di origine</desc>
+        </valItem>
+        <valItem ident="origPlace">
+          <desc xml:lang="de" versionDate="2024-11-13">Ausstellungsort</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">place of origin</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">lieu d’origine</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">luogo di origine</desc>
+        </valItem>
+        <valItem ident="original">
+          <desc xml:lang="de" versionDate="2024-11-13">Original</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">original</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">original</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">originale</desc>
+        </valItem>
+        <valItem ident="other-source">
+          <desc xml:lang="de" versionDate="2024-11-13">Überlieferung</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">tradition</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">tradition</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">tradizione</desc>
+        </valItem>
+        <valItem ident="page-abbr">
+          <desc xml:lang="de" versionDate="2024-11-13">S.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">p.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">p.</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">p.</desc>
+        </valItem>
+        <valItem ident="pb">
+          <desc xml:lang="de" versionDate="2024-11-13">Seitenumbruch</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">page break</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">saut de page</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">interruzione di pagina</desc>
+        </valItem>
+        <valItem ident="peau">
+          <desc xml:lang="de" versionDate="2024-11-13">Pergamentstück</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">piece of parchment</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">peau</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">pezzo di pergamena</desc>
+        </valItem>
+        <valItem ident="person">
+          <desc xml:lang="de" versionDate="2024-11-13">Person</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">person</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">personne</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">persona</desc>
+        </valItem>
+        <valItem ident="place">
+          <desc xml:lang="de" versionDate="2024-11-13">Ort</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">place</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">lieu</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">luogo</desc>
+        </valItem>
+        <valItem ident="quarter-cent-abbr">
+          <desc xml:lang="de" versionDate="2024-11-13">Viertel</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">quarter</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">quart du</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">quarto del</desc>
+        </valItem>
+        <valItem ident="repeated-duration">
+          <desc xml:lang="de" versionDate="2025-01-31">wiederholte Zeitspanne</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">repeated duration</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">durée répétée</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">durata ripetuta</desc>
+        </valItem>
+        <valItem ident="replace">
+          <desc xml:lang="de" versionDate="2024-11-13">ersetzt</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">replaces</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">remplace</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">sostituisce</desc>
+        </valItem>
+        <valItem ident="replace-del">
+          <desc xml:lang="de" versionDate="2024-11-13">ersetzt Streichung</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">replaces deletion</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">remplace une suppression</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">sostituisce una cancellazione</desc>
+        </valItem>
+        <valItem ident="rubbing">
+          <desc xml:lang="de" versionDate="2024-11-13">Streichung durch Textlöschung/Rasur</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">deletion by scraping</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">suppression par grattage</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">suppressione tramite cancellazione/rasatura del testo</desc>
+        </valItem>
+        <valItem ident="scriptor">
+          <desc xml:lang="de" versionDate="2024-11-13">Schreiber</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">scribe</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">scripteur</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">scriba</desc>
+        </valItem>
+        <valItem ident="second-female">
+          <desc xml:lang="de" versionDate="2024-11-13">2.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">2.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">2<hi rend="sup">e</hi></desc>
+          <desc xml:lang="it" versionDate="2024-11-13">2.</desc>
+        </valItem>
+        <valItem ident="second-male">
+          <desc xml:lang="de" versionDate="2024-11-13">2.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">2.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">2<hi rend="sup">e</hi></desc>
+          <desc xml:lang="it" versionDate="2024-11-13">2.</desc>
+        </valItem>
+        <valItem ident="secondaryScribe">
+          <desc xml:lang="de" versionDate="2024-11-13">Nachtragshand</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">other hand</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">main secondaire</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">mano secondaria</desc>
+        </valItem>
+        <valItem ident="sic">
+          <desc xml:lang="de" versionDate="2025-01-31">auffällige Schreibung</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">notable spelling</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">ainsi</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">sic</desc>
+        </valItem>
+        <valItem ident="sigle">
+          <desc xml:lang="de" versionDate="2024-11-13">Siegel</desc>
+          <desc xml:lang="de" versionDate="2024-11-13" type="plural">Siegel</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">seal</desc>
+          <desc xml:lang="en" versionDate="2024-11-13" type="plural">seals</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">sceau</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13" type="plural">sceaux</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">sigillo</desc>
+          <desc xml:lang="it" versionDate="2024-11-13" type="plural">sigilli</desc>
+        </valItem>
+        <valItem ident="signature">
+          <desc xml:lang="de" versionDate="2024-11-13">Signatur</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">shelfmark</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">cote</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">collocazione</desc>
+        </valItem>
+        <valItem ident="signatureAlt">
+          <desc xml:lang="de" versionDate="2025-01-31">frühere Signatur</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">former shelfmark</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">ancienne cote</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">precedente collocazione</desc>
+        </valItem>
+        <valItem ident="signed">
+          <desc xml:lang="de" versionDate="2024-11-13">Unterschrift</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">signature</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">signature</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">firma</desc>
+        </valItem>
+        <valItem ident="source-article">
+          <desc xml:lang="de" versionDate="2024-11-13">Art.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">art.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">art.</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">art.</desc>
+        </valItem>
+        <valItem ident="source-page">
+          <desc xml:lang="de" versionDate="2024-11-13">S.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">p.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">p.</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">p.</desc>
+        </valItem>
+        <valItem ident="source-parchment">
+          <desc xml:lang="de" versionDate="2024-11-13">Pergament</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">parchment</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">peau</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">pergamena</desc>
+        </valItem>
+        <valItem ident="summary">
+          <desc xml:lang="de" versionDate="2024-11-13">Regest</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">summary</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">résumé</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">regesto</desc>
+        </valItem>
+        <valItem ident="supplied">
+          <desc xml:lang="de" versionDate="2024-11-13">sinngemäss ergänzt</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">restored by analogy</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">complété par analogie</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">completato per analogia</desc>
+        </valItem>
+        <valItem ident="supplied-after">
+          <desc xml:lang="de" versionDate="2024-11-13">ergänzt nach</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">restored following</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">complété à l’aide de</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">completato con l'aiuto di</desc>
+        </valItem>
+        <valItem ident="surface">
+          <desc xml:lang="de" versionDate="2024-11-13">Beschreibstoff</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">support</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">support d’écriture</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">supporto alla scrittura</desc>
+        </valItem>
+        <valItem ident="term">
+          <desc xml:lang="de" versionDate="2024-11-13">Begriff</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">term</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">terme</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">termine</desc>
+        </valItem>
+        <valItem ident="third-male">
+          <desc xml:lang="de" versionDate="2024-11-13">3.</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">3.</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">3<hi rend="sup">e</hi></desc>
+          <desc xml:lang="it" versionDate="2024-11-13">3.</desc>
+        </valItem>
+        <valItem ident="through">
+          <desc xml:lang="de" versionDate="2024-11-13">durch</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">through</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">par</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">da</desc>
+        </valItem>
+        <valItem ident="time">
+          <desc xml:lang="de" versionDate="2024-11-13">Zeit</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">time</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">heure</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">tempo</desc>
+        </valItem>
+        <valItem ident="to">
+          <desc xml:lang="de" versionDate="2024-11-13">bis</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">to</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">à</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">a</desc>
+        </valItem>
+        <valItem ident="unclear-rdg">
+          <desc xml:lang="de" versionDate="2024-11-13">unsichere Lesung</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">uncertain reading</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">lecture incertaine</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">lettura incerta</desc>
+        </valItem>
+        <valItem ident="underlined">
+          <desc xml:lang="de" versionDate="2025-01-31">unterstrichen</desc>
+          <desc xml:lang="en" versionDate="2025-01-31">underlined</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">souligné</desc>
+          <desc xml:lang="it" versionDate="2025-01-31">sottolineato</desc>
+        </valItem>
+        <valItem ident="unreadable">
+          <desc xml:lang="de" versionDate="2024-11-13">unlesbar</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">unreadable</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">illisible</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">illeggibile</desc>
+        </valItem>
+        <valItem ident="week">
+          <desc xml:lang="de" versionDate="2024-11-13">Woche</desc>
+          <desc xml:lang="de" versionDate="2024-11-13" type="plural">Wochen</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">week</desc>
+          <desc xml:lang="en" versionDate="2024-11-13" type="plural">weeks</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">semaine</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13" type="plural">semaines</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">settimana</desc>
+          <desc xml:lang="it" versionDate="2024-11-13" type="plural">settimane</desc>
+        </valItem>
+        <valItem ident="year">
+          <desc xml:lang="de" versionDate="2024-11-13">Jahr</desc>
+          <desc xml:lang="de" versionDate="2024-11-13" type="plural">Jahre</desc>
+          <desc xml:lang="en" versionDate="2024-11-13">year</desc>
+          <desc xml:lang="en" versionDate="2024-11-13" type="plural">years</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13">année</desc>
+          <desc xml:lang="fr" versionDate="2024-11-13" type="plural">années</desc>
+          <desc xml:lang="it" versionDate="2024-11-13">anno</desc>
+          <desc xml:lang="it" versionDate="2024-11-13" type="plural">anni</desc>
+        </valItem>
+      </valList>
+    </dataSpec>
+  </specGrp>
+</div>

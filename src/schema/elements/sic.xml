@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="sic" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-04">Latein für «so»</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-04">latin for «thus»</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">du latin «ainsi»</gloss>
   <desc xml:lang="de" versionDate="2023-07-20">Enthält offensichtlich fehlerhaften Text.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains obviously incorrect text.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient un texte manifestement incorrect.</desc>
@@ -13,6 +16,7 @@
   <content>
     <alternate maxOccurs="unbounded">
       <textNode/>
+      <elementRef key="abbr"/>
       <elementRef key="add"/>
       <elementRef key="del"/>
       <elementRef key="lb"/>
@@ -28,17 +32,16 @@
   <xi:include href="examples.xml" xpointer="ex-sic-term-de"/>
   <xi:include href="examples.xml" xpointer="ex-sic-term-en"/>
   <xi:include href="examples.xml" xpointer="ex-sic-term-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-20">
-    <p>Offensichtliche Schreibfehler können mit <gi>corr</gi> korrigiert werden. Auf die Verwendung von "[!]" wird
-            verzichtet.
-        </p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Offensichtliche Schreibfehler können von den Bearbeitenden mit <gi>corr</gi> korrigiert
+      werden, beide Elemente stehen dann innerhalb von <gi>choice</gi>.</p>
+    <p>Auf die typrographische Hervorhebung des Schreibfehlers mit «[!]» wird verzichtet.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-20">
-    <p>Obvious spelling mistakes can be corrected with <gi>corr</gi>. "[!]" is not used.
-        </p>
+    <p>Obvious spelling mistakes can be corrected with <gi>corr</gi>. "[!]" is not used.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-20">
-    <p>Les fautes d'orthographe évidentes peuvent être corrigées avec <gi>corr</gi>. "[!]" N'est pas utilisé.
-        </p>
+    <p>Les fautes d'orthographe évidentes peuvent être corrigées avec <gi>corr</gi>. "[!]" N'est
+      pas utilisé.</p>
   </remarks>
 </elementSpec>

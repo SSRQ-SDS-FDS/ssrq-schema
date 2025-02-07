@@ -2,65 +2,50 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="persName" module="namesdates" mode="change">
-  <desc xml:lang="de" versionDate="2024-04-20">Zeichnet eine Person aus und umfasst in der Regel nur den Vor- und
-        Nachnamen.
-    </desc>
-  <desc xml:lang="en" versionDate="2024-04-20">Indicates a person and usually includes only the first and last name.
-    </desc>
-  <desc xml:lang="fr" versionDate="2024-04-20">Distingue une personne et ne comprend généralement que le prénom et le
-        nom.
-    </desc>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="persName" module="namesdates" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Personenname</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">personal name</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">nom de personne</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält den Namen einer Person.</desc>
+  <desc xml:lang="en" versionDate="2024-04-20">Indicates a person and usually includes only the
+      first and last name.</desc>
+  <desc xml:lang="fr" versionDate="2024-04-20">Distingue une personne et ne comprend généralement
+      que le prénom et le nom.</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="att.naming"/>
     <memberOf key="model.nameLike.agent"/>
   </classes>
   <content>
-    <rng:oneOrMore>
-      <rng:ref name="ssrq.content.default"/>
-    </rng:oneOrMore>
+    <sequence maxOccurs="unbounded">
+      <macroRef key="ssrq.content.default"/>
+    </sequence>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-persName-custom" mode="add">
-    <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for
-            <gi>persName</gi>
-        </desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-persName" mode="delete"/>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-persName" mode="add">
+    <desc versionDate="2023-06-23" xml:lang="en">constraint for tei:persName</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:persName[ancestor::tei:editor]">
-          <sch:assert test="not(@ref|@role)">If
-                        <sch:name/>
-                        is part of the editor it must not contain the attributes @ref or @role.
-                    </sch:assert>
+          <sch:assert test="not(@ref|@role)">
+              If tei:persName is part of tei:editor it must not contain the attributes
+              @ref or @role.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="calendar" mode="delete"/>
     <attDef ident="ref" mode="replace">
-      <desc xml:lang="de" versionDate="2023-04-20">Verknüpfung der Person mit der ID der
-                Personen- und Organisationsdatenbank.
-            </desc>
-      <desc xml:lang="en" versionDate="2023-04-20">Linking the person with the ID of the database
-                of persons and organisations.
-            </desc>
-      <desc xml:lang="fr" versionDate="2023-04-20">Relier la personne à l'ID de la base de données
-                des personnes et des organisations.
-            </desc>
       <datatype>
         <dataRef key="ssrq.pointer.persons"/>
       </datatype>
     </attDef>
-    <attDef ident="role" mode="change">
-      <desc xml:lang="de" versionDate="2023-04-20">Auszeichnung der Rolle einer Person im
-                Quellentext.
-            </desc>
-      <desc xml:lang="en" versionDate="2023-04-20">Distinction of the role of a person in the source
-                text.
-            </desc>
-      <desc xml:lang="fr" versionDate="2023-04-20">Distinction du rôle d'une personne dans le texte
-                source.
-            </desc>
+    <attDef ident="role" mode="replace">
+      <desc xml:lang="de" versionDate="2025-01-30">die Rolle einer Person im Text</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the role of a person in the text</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">le rôle d'une personne dans le texte</desc>
       <datatype>
         <dataRef key="ssrq.role.person"/>
       </datatype>
@@ -75,4 +60,8 @@
   <xi:include href="examples.xml" xpointer="ex-persName-3-de"/>
   <xi:include href="examples.xml" xpointer="ex-persName-3-en"/>
   <xi:include href="examples.xml" xpointer="ex-persName-3-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Es gelten die ausführlichen Richlinien zur Auszeichnung von Personen in den
+      <ref target="persons.de.md">Transkriptionsrichtlinien</ref>.</p>
+  </remarks>
 </elementSpec>

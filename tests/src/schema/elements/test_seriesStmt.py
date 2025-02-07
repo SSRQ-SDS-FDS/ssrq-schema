@@ -8,57 +8,74 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-seriesStmt",
-            """<seriesStmt>
-                    <title>Sammlung Schweizerischer Rechtsquellen</title>
-                    <respStmt>
-                        <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                        <resp>Herausgabe</resp>
-                    </respStmt>
-                    <idno>SSRQ-FR-I_2_8-1-1</idno>
-                    <idno type='uuid'>ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
-                </seriesStmt>""",
+            """
+            <seriesStmt>
+                <title>Sammlung Schweizerischer Rechtsquellen</title>
+                <respStmt>
+                    <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
+                    <resp>Herausgabe</resp>
+                </respStmt>
+                <idno>SSRQ-FR-I_2_8-1-1</idno>
+                <idno type='uuid'>ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
+            </seriesStmt>
+            """,
             True,
         ),
         (
-            "invalid-seriesStmt-with-missing-title",
-            """<seriesStmt>
-                    <respStmt>
-                        <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                        <resp>Herausgabe</resp>
-                    </respStmt>
-                    <idno>SSRQ-FR-I_2_8-1-1</idno>
-                    <idno type='uuid'>ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
-                </seriesStmt>""",
+            "invalid-seriesStmt-without-title",
+            """
+            <seriesStmt>
+                <respStmt>
+                    <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
+                    <resp>Herausgabe</resp>
+                </respStmt>
+                <idno>SSRQ-FR-I_2_8-1-1</idno>
+                <idno type='uuid'>ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
+            </seriesStmt>
+            """,
+            False,
+        ),
+        (
+            "invalid-seriesStmt-without-respStmt",
+            """
+            <seriesStmt>
+                <title>Sammlung Schweizerischer Rechtsquellen</title>
+                <idno>SSRQ-FR-I_2_8-1-1</idno>
+                <idno type='uuid'>ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
+            </seriesStmt>
+            """,
             False,
         ),
         (
             "invalid-seriesStmt-with-one-idno",
-            """<seriesStmt>
-                    <title>Sammlung Schweizerischer Rechtsquellen</title>
-                    <respStmt>
-                        <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                        <resp>Herausgabe</resp>
-                    </respStmt>
-                    <idno>SSRQ-FR-I_2_8-1-1</idno>
-                </seriesStmt>""",
+            """
+            <seriesStmt>
+                <title>Sammlung Schweizerischer Rechtsquellen</title>
+                <respStmt>
+                    <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
+                    <resp>Herausgabe</resp>
+                </respStmt>
+                <idno>SSRQ-FR-I_2_8-1-1</idno>
+            </seriesStmt>
+            """,
             False,
         ),
         (
-            "invalid-seriesStmt-with-xml-id",
-            """<seriesStmt xml:id='foo'>
-                    <title>Sammlung Schweizerischer Rechtsquellen</title>
-                    <respStmt>
-                        <orgName>Rechtsquellenstiftung des Schweizerischen Juristenvereins</orgName>
-                        <resp>Herausgabe</resp>
-                    </respStmt>
-                    <idno>SSRQ-FR-I_2_8-1-1</idno>
-                    <idno type='uuid'>ad28656b-5c8d-459c-afb4-3e6ddf70810d</idno>
-                </seriesStmt>""",
+            "invalid-seriesStmt-without-idnos",
+            """
+            <seriesStmt>
+                <title>Sammlung Schweizerischer Rechtsquellen</title>
+                <respStmt>
+                    <orgName>Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft</orgName>
+                    <resp>Herausgabe</resp>
+                </respStmt>
+            </seriesStmt>
+            """,
             False,
         ),
     ],
 )
-def test_seriesStmt_rng(
+def test_series_stmt_rng(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

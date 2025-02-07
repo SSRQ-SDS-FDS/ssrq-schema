@@ -2,43 +2,35 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="lem" module="textcrit" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-24">
-        Enthält eine Passage, von der es eine von der Editionsvorlage abweichende Textvariante gibt.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-24">
-        Contains a passage of which there is a text variant that differs from the edition template.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-24">
-        Contient un passage dont il existe une variante de texte qui diffère du modèle d'édition.
-    </desc>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="lem" module="textcrit" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Lemma</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">lemma</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">lemme</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Passage, von der es abweichende
+    Textvarianten in der Überlieferung gibt.</desc>
+  <desc xml:lang="en" versionDate="2023-07-24">Contains a passage of which there is a text variant
+    that differs from the edition template.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-24">Contient un passage dont il existe une variante de
+    texte qui diffère du modèle d'édition.</desc>
   <classes mode="replace"/>
   <content>
-    <rng:choice>
-      <rng:oneOrMore>
-        <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-      <rng:group>
-        <rng:ref name="seg"/>
-        <rng:oneOrMore>
-          <rng:ref name="seg"/>
-        </rng:oneOrMore>
-      </rng:group>
-    </rng:choice>
+    <alternate>
+      <sequence maxOccurs="unbounded">
+        <macroRef key="ssrq.content.default"/>
+      </sequence>
+      <elementRef key="seg" minOccurs="2" maxOccurs="unbounded"/>
+    </alternate>
   </content>
   <xi:include href="examples.xml" xpointer="ex-app-rdg-de"/>
   <xi:include href="examples.xml" xpointer="ex-app-rdg-en"/>
   <xi:include href="examples.xml" xpointer="ex-app-rdg-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-13">
-    <p>Die abweichende Textvariante wird in <gi>rdg</gi> wiedergegeben.
-        </p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Die abweichenden Textvarianten werden in <gi>rdg</gi> wiedergegeben.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-13">
-    <p>The deviating text variant is rendered in <gi>rdg</gi>.
-        </p>
+    <p>The deviating text variant is rendered in <gi>rdg</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-13">
-    <p>La variante de texte déviante est rendue dans <gi>rdg</gi>.
-        </p>
+    <p>La variante de texte déviante est rendue dans <gi>rdg</gi>.</p>
   </remarks>
 </elementSpec>

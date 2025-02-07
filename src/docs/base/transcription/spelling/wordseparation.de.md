@@ -2,7 +2,7 @@
 
 ## Regeln für alle Sprachen
 
-=== "Allgemeine Regeln"
+=== "Allgemeine Regeln für Hss."
 
     Ob ein Wort gemäss Vorlage zusammengeschrieben oder getrennt geschrieben
     wird, ist nicht immer einfach zu entscheiden.
@@ -81,6 +81,9 @@
     
     Beispiel: «apud Novavillam»
 
+=== "Drucke"
+
+    Bei Drucken erfolgt die Zusammen- und Getrenntschreibung originalgetreu der Vorlage.
 
 ## Sonderregeln für deutsche Texte bei stark abweichendem Sprachgebrauch
 
@@ -180,7 +183,7 @@
     «ober keyt» > «oberkeyt» (Obrigkeit)  
     «by derw» > «byderw» (für «biderb»)  
     «ver ordnet» > «verordnet»  
-    «dem sino do» > «dem sinodo» (=dem Synod)  
+    «dem sino do» > «dem sinodo» (= dem Synod)  
     «wy derumb» > «wyderumb»  
     «ver stüren» > «verstüren»  
     «uff ruor» > «uffruor»
@@ -213,4 +216,4 @@
     <placeName>Nider-Leimbach</placeName> mit karren und`
 
     `<placeName>Ober-</placeName> und 
-    <placeName>Nider Leimbach</placeName></orgName>`
+    <placeName>Nider Leimbach</placeName>`

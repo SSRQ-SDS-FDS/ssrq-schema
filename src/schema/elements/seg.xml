@@ -2,45 +2,45 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="seg" module="linking" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-11">Absätze, die vom Bearbeitenden
-        zur Strukturierung des Quellentextes eingefügt werden.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-11">Paragraphs inserted by the editor to structure the source text.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-11">Paragraphes insérés par l'éditeur pour structurer le texte source.
-    </desc>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="seg" module="linking" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-04">Segment</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-04">segment</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">segment</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält einen Abschnitt, der von den Bearbeitenden
+      zur Strukturierung des Quellentextes eingefügt wurde.</desc>
+  <desc xml:lang="en" versionDate="2023-07-11">Paragraphs inserted by the editor to structure the
+      source text.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-11">Paragraphes insérés par l'éditeur pour structurer
+      le texte source.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="att.global.responsibility"/>
     <memberOf key="model.segLike"/>
   </classes>
   <content>
-    <rng:choice>
-      <rng:oneOrMore>
-        <rng:choice>
-          <rng:ref name="add"/>
-          <rng:ref name="cb"/>
-          <rng:ref name="head"/>
-          <rng:ref name="list"/>
-          <rng:ref name="p"/>
-          <rng:ref name="pb"/>
-          <rng:ref name="table"/>
-        </rng:choice>
-      </rng:oneOrMore>
-      <rng:group>
-        <rng:ref name="seg"/>
-        <rng:oneOrMore>
-          <rng:ref name="seg"/>
-        </rng:oneOrMore>
-      </rng:group>
-      <rng:oneOrMore>
-        <rng:ref name="ssrq.content.default"/>
-      </rng:oneOrMore>
-    </rng:choice>
+    <alternate>
+      <alternate maxOccurs="unbounded">
+        <elementRef key="add"/>
+        <elementRef key="cb"/>
+        <elementRef key="head"/>
+        <elementRef key="list"/>
+        <elementRef key="p"/>
+        <elementRef key="pb"/>
+        <elementRef key="table"/>
+      </alternate>
+      <elementRef key="seg" minOccurs="2" maxOccurs="unbounded"/>
+      <sequence maxOccurs="unbounded">
+        <macroRef key="ssrq.content.default"/>
+      </sequence>
+    </alternate>
   </content>
   <attList>
     <attDef ident="cert" mode="delete"/>
+    <attDef ident="n" mode="change">
+      <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Segments</desc>
+      <desc xml:lang="en" versionDate="2025-02-04">the numbering of the segment</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation du segment</desc>
+    </attDef>
     <attDef ident="xml:id" mode="delete"/>
     <attDef ident="xml:lang" mode="delete"/>
   </attList>
@@ -50,37 +50,35 @@
   <xi:include href="examples.xml" xpointer="ex-p-seg-de"/>
   <xi:include href="examples.xml" xpointer="ex-p-seg-en"/>
   <xi:include href="examples.xml" xpointer="ex-p-seg-fr"/>
-  <remarks xml:lang="de" versionDate="2024-05-08">
-    <p>Innerhalb von <gi>p</gi>verwendet. Dagegen werden <gi>div</gi> und <gi>p</gi> nur für
-        originale Absätze verwendet.
-        </p>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p><gi>seg</gi> kann innerhalb von <gi>p</gi> zur Binnenstrukturierung eines originalen
+          Absatzes verwendet werden oder ausserhalb von <gi>p</gi>, um mehrere Bestandteile des
+          Textes zu einer Einheit zusammenzufassen. In beiden Fällen kommen auf einer Hierarchieebene
+          mindestens zwei gleichrangige <gi>seg</gi>-Elemente zum Einsatz.</p>
+    <p>Dagegen werden <gi>div</gi> und <gi>p</gi> nur
+          für originale Abschnitte und Absätze verwendet, vgl. auch die Regeln zur Strukturierung
+          von Texten in den <ref target="textstructure.de.md">Transkriptionsrichtlinien</ref>.</p>
     <p>Bei längeren Originaltexten wie Offnungen oder Urbarien kann es sinnvoll sein, Artikel,
         Absätze oder Paragraphen durch <gi>seg</gi> zusätzlich mit <att>n</att> zu nummerieren.
-        Nummerierung wird nur dort eingeführt, wo die Struktur des Textes es hergibt (vgl. Beispiele
-        in den gedruckten Bänden der SSRQ). Zur Strukturierung von Schlussformeln siehe die
-        Beispiele auf der Seite zur Textstruktur.
-        </p>
+        Eine Nummerierung wird nur dort eingeführt, wo die Struktur des Textes es hergibt (vgl.
+        Beispiele in den gedruckten Bänden der SSRQ).</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2024-05-08">
     <p>Used inside <gi>p</gi>. On the other hand, <gi>div</gi> and <gi>p</gi> are only used for
-        original paragraphs.
-        </p>
+        original paragraphs.</p>
     <p>With longer original texts such as openings or urbaria, it can make sense to number articles,
         divisions or paragraphs with <gi>seg</gi> with <att>n</att> additionally. Numbering is
         introduced only where the structure of the text allows it (cf. examples in the printed
-        volumes of the SSRQ). For the structuring of closing formulas, see the examples on the page
-        on textstructure.
-        </p>
+        volumes of the SLS). For the structuring of closing formulas, see the examples on the
+        page on textstructure.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2024-05-08">
     <p>Utilisé à l'intérieur de <gi>p</gi>. D'autre part, <gi>div</gi> et <gi>p</gi> ne sont
-        utilisés que pour les paragraphes originaux.
-        </p>
+        utilisés que pour les paragraphes originaux.</p>
     <p>Avec des textes originaux plus longs tels que des ouvertures ou des urbaria, il peut être
         judicieux de numéroter des articles, des divisions ou des paragraphes avec <gi>seg</gi>
-        avec <att>n</att>. Numéroter seulement là où la structure du texte le permet (cf.
-        exemples dans les volumes imprimés du SSRQ). Pour la structuration des formules de clôture,
-        voir les exemples sur la page de structure du texte.
-        </p>
+        avec <att>n</att>. Numéroter seulement là où la structure du texte le permet (cf. exemples
+        dans les volumes imprimés du SDS). Pour la structuration des formules de clôture, voir les
+        exemples sur la page de structure du texte.</p>
   </remarks>
 </elementSpec>

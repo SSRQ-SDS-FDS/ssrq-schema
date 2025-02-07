@@ -58,7 +58,7 @@ function test {
     fi
 
     echo "Running tests using pytest..."
-    cmd pytest -n 4 "${@}"
+    cmd pytest -n auto "${@}"
 }
 
 function test-only {

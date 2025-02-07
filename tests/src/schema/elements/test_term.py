@@ -19,14 +19,14 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "invalid-term-with-wrong-keyref",
-            "<term ref='cey003521'>foo</term>",
-            False,
+            "valid-term-with-type",
+            "<term type='unknown'>foo</term>",
+            True,
         ),
         (
-            "simple-term-with-invalid-lemref",
-            "<term ref='lem001301.300'>foo</term>",
-            False,
+            "valid-term-with-content-default",
+            "<term ref='lem123456'><del>foo</del> bar</term>",
+            True,
         ),
     ],
 )
@@ -48,7 +48,7 @@ def test_term(
             False,
         ),
         (
-            "invalid-empty-term-without-attributes",
+            "invalid-term-without-any-information",
             "<term/>",
             False,
         ),
@@ -63,27 +63,22 @@ def test_term(
             False,
         ),
         (
-            "valid-empty-term-with-keyref-elsewhere-with-indextype",
-            "<text><term ref='key123456' type='index'/></text>",
+            "valid-empty-term-with-keyref-of-type-index",
+            "<term ref='key123456' type='index'/>",
             True,
         ),
         (
-            "invalid-empty-term-with-keyref-elsewhere-without-indextype",
-            "<text><term ref='key123456'/></text>",
+            "invalid-empty-term-with-keyref-not-of-type-index",
+            "<term ref='key123456'/>",
             False,
         ),
         (
             "invalid-empty-term-with-lemref-elsewhere",
-            "<text><term ref='lem123456'/></text>",
+            "<term ref='lem123456'/>",
             False,
         ),
         (
-            "valid-term-without-ref-but-with-type",
-            "<term type='unknown'>foo</term>",
-            True,
-        ),
-        (
-            "invalid-term-with-ref-and-with-wrong-type",
+            "invalid-term-with-ref-and-wrong-type",
             "<term type='unknown' ref='key123456'>foo</term>",
             False,
         ),

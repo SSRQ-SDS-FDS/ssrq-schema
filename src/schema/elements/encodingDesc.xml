@@ -3,12 +3,15 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="encodingDesc" module="header" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-17">Enthält Elemente für den Verweis auf die Transkriptionsrichtlinien.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-17">Contains elements for referencing the transcription guidelines.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-17">Contient des éléments pour référencer les directives de transcription.
-    </desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">Beschreibung der Kodierung</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">encoding description</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">description de l'encodage</gloss>
+  <desc xml:lang="de" versionDate="2023-07-17">Enthält Elemente für den Verweis auf die
+    Transkriptionsrichtlinien.</desc>
+  <desc xml:lang="en" versionDate="2023-07-17">Contains elements for referencing the transcription
+    guidelines.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-17">Contient des éléments pour référencer les directives
+    de transcription.</desc>
   <classes mode="replace">
     <memberOf key="model.teiHeaderPart"/>
   </classes>

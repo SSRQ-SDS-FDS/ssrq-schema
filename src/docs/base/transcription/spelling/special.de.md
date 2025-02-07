@@ -249,6 +249,7 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | h mit Strich (= Haller)                 | `ħ`                   | U+0127               |
 | Helbling                                | ``                   | U+F2FB               |
 | Krone                                   | ``                   | U+F2FA               |
+| Krone (alternativ)                      | ``                   | U+F2FC               |
 | Pfennig/Denar                           | `₰`                   | U+20B0               |
 | Pfund (Währung)                         | ``                   | U+F2EA               |
 | Pfund (Gewicht)                         | `℔`                   | U+2114               |
@@ -314,7 +315,7 @@ Als Beispiele hierfür dienen das gr. Alpha und das hebr. Alef.
 | My                                                    | `Μ`, `μ`      | U+039C, U+03BC                       |
 | Ny                                                    | `Ν`, `ν`      | U+039D, U+03BD                       |
 | Xi                                                    | `Ξ`, `ξ`      | U+039E, U+03BE                       |
-| Omicron                                               | `Ο`, `ο`      | U+039F, U+03BF                       |
+| Omikron                                               | `Ο`, `ο`      | U+039F, U+03BF                       |
 | Pi                                                    | `Π`, `π`      | U+03A0, U+03C0                       |
 | Rho                                                   | `Ρ`, `ρ`      | U+03A1, U+03C1                       |
 | Sigma                                                 | `Σ`, `ς`, `σ` | U+03A3, U+03C2, U+03C3               |

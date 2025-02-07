@@ -9,19 +9,29 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     "name, markup, result",
     [
         (
-            "idno-archive-valid",
-            "<idno xml:lang='de' source='http://foo.bar'>foo 123</idno>",
+            "valid-idno",
+            "<idno>SDS-VD-D_2-1-1</idno>",
             True,
         ),
         (
-            "idno-archive-invalid",
-            "<idno xml:lang='de' source='http://foo.bar http://foo.bar'>foo 123</idno>",
+            "invalid-idno-with-element-content",
+            "<idno><p>SDS-VD-D_2-1-1</p></idno>",
             False,
         ),
         (
-            "idno-archive-invalid",
-            " <idno xml:lang='de' source='foo.bar'>foo</idno>",
-            False,
+            "valid-idno-with-xml:lang",
+            "<idno xml:lang='de'>foo</idno>",
+            True,
+        ),
+        (
+            "valid-idno-with-source",
+            "<idno source='http://foo.bar'>foo 123</idno>",
+            True,
+        ),
+        (
+            "valid-idno-with-type",
+            " <idno type='uuid'>d9bf0588-e28a-4b62-ad82-45b95722d684</idno>",
+            True,
         ),
     ],
 )
@@ -43,7 +53,7 @@ def test_idno(
             True,
         ),
         (
-            "invalid-series-idno-without-tradtion-part",
+            "invalid-series-idno-without-tradition-part",
             "<seriesStmt><idno>SSRQ-SG-III_4-77</idno></seriesStmt>",
             False,
         ),
@@ -68,13 +78,45 @@ def test_idno(
             True,
         ),
         (
-            "valid-series-idno",
+            "valid-series-idno-uuid",
             "<seriesStmt><idno type='uuid'>73988c1a-40e1-4527-94b7-736d418b29d0</idno></seriesStmt>",
             True,
         ),
         (
-            "invalid-series-idno",
+            "invalid-series-idno-uuid",
+            "<seriesStmt><idno type='uuid'>Foo</idno></seriesStmt>",
+            False,
+        ),
+        (
+            "invalid-series-idno-without-type",
             "<seriesStmt><idno>73988c1a-40e1-4527-94b7-736d418b29d0</idno></seriesStmt>",
+            False,
+        ),
+        (
+            "invalid-series-idno-with-xml-lang",
+            "<seriesStmt><idno xml:lang='de'>SSRQ-SG-III_4-77-1</idno></seriesStmt>",
+            False,
+        ),
+        (
+            "valid-ms-idno",
+            """
+            <msIdentifier><idno xml:lang='de'>bar</idno></msIdentifier>
+            """,
+            True,
+        ),
+        (
+            "invalid-ms-idno-without-xml-lang",
+            "<msIdentifier><idno>bar</idno></msIdentifier>",
+            False,
+        ),
+        (
+            "valid-idno-all-unique",
+            "<TEI><idno>foo</idno><idno>bar</idno></TEI>",
+            True,
+        ),
+        (
+            "invalid-idno-not-unique",
+            "<TEI><idno>foo</idno><idno>foo</idno></TEI>",
             False,
         ),
     ],
@@ -86,38 +128,11 @@ def test_series_idno_constraints(
     reports: list[SchematronResult] = apply_schematron_validation(
         input=writer.list(), isosch=main_constraints
     )
+
+    if (
+        reports[0].report.is_valid() is not result
+        and reports[0].report.failed_asserts is not None
+    ):
+        print("\nSchematron error message: " + reports[0].report.failed_asserts[0].text)
+
     assert reports[0].report.is_valid() is result
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "valid-ms-idno",
-            "<msIdentifier><idno xml:lang='de'>bar</idno><repository xml:lang='de'>bar</repository></msIdentifier>",
-            True,
-        ),
-        (
-            "invalid-ms-idno",
-            "<msIdentifier><idno>bar</idno></msIdentifier>",
-            False,
-        ),
-    ],
-)
-def test_msIdent_idno_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    if not result:
-        errors = []
-        if reports[0].report.failed_asserts:
-            for error in reports[0].report.failed_asserts:
-                errors.append(error.text)
-        if reports[0].report.successful_reports:
-            for error in reports[0].report.successful_reports:
-                errors.append(error.text)
-
-        assert any("idno element needs" in e for e in errors) is True

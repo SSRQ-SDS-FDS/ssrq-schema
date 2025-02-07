@@ -12,8 +12,13 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid_title-with-elements",
-            "<title>foo<pc>:</pc> X<hi rend='sup'>e</hi> partie</title>",
+            "valid_title-with-pc",
+            "<title>foo<pc>:</pc> bar</title>",
+            True,
+        ),
+        (
+            "valid_title-with-hi",
+            "<title>foo <hi rend='sup'>bar</hi></title>",
             True,
         ),
         (
@@ -22,12 +27,17 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-title-with-wrong-attribute",
-            "<title att='bar'>foo</title>",
+            "invalid-title-with-level",
+            "<title level='a'>foo</title>",
             False,
         ),
         (
-            "invalid-title",
+            "invalid-title-with-type",
+            "<title type='main'>foo</title>",
+            False,
+        ),
+        (
+            "invalid-title-with-wrong-content",
             "<title><p>foo</p></title>",
             False,
         ),

@@ -17,7 +17,7 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-list-with-multiple-elements",
+            "valid-list-with-milestone-elements",
             """<list>
                 <head>foo</head>
                 <pb n='1r'/>
@@ -31,18 +31,36 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-list",
-            "<list/>",
-            False,
+            "valid-list-with-spanning-elements",
+            """<list>
+                <head>foo</head>
+                <addSpan spanTo="add1"/>
+                <delSpan spanTo="del1"/>
+                <damageSpan agent="cancelled" spanTo="damage1"/>
+                <item>foo</item>
+                <item>foo</item>
+                <anchor xml:id="add1"/>
+                <anchor xml:id="del1"/>
+                <anchor xml:id="damage1"/>
+                <item>foo</item>
+                <item>bar</item>
+                <item>bar</item>
+            </list>""",
+            True,
         ),
         (
-            "invalid-list-with-wrong-attribute",
-            "<list att='foo'><item>foo</item></list>",
-            False,
+            "valid-list-with-rend-bulleted",
+            "<list rend='bulleted'><item>foo</item></list>",
+            True,
         ),
         (
-            "invalid-list-with-wrong-attribute-value",
-            "<list rend='bar'><item>foo</item></list>",
+            "valid-list-with-rend-numbered",
+            "<list rend='numbered'><item>foo</item></list>",
+            True,
+        ),
+        (
+            "invalid-list-with-wrong-rend",
+            "<list rend='foo'><item>foo</item></list>",
             False,
         ),
     ],

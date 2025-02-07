@@ -12,8 +12,13 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-textLang-with-type",
-            "<textLang type='de'/>",
+            "invalid-textLang-with-mainLang",
+            "<textLang mainLang='de'/>",
+            False,
+        ),
+        (
+            "invalid-textLang-with-otherLangs",
+            "<textLang otherLangs='de'/>",
             False,
         ),
         (
@@ -22,13 +27,13 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "invalid-textLang-with-content-and-without-xml-lang",
-            "<textLang>deutsch</textLang>",
+            "invalid-textLang-without-xml-lang",
+            "<textLang/>",
             False,
         ),
     ],
 )
-def test_textLang(
+def test_text_lang(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

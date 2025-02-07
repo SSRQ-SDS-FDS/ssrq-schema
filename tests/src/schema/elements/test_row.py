@@ -7,20 +7,28 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid-row",
+            "valid-row-with-cell",
             "<row><cell>foo</cell></row>",
             True,
         ),
         (
-            "invalid-row-content",
-            "<row><measureGrp><cell>foo</cell></measureGrp></row>",
-            False,
+            "valid-row-with-multiple-cells",
+            "<row><cell>foo</cell><cell>bar</cell></row>",
+            True,
         ),
         (
-            "invalid-row-with-attribute",
-            "<row type='foo'><cell>foo</cell></row>",
-            False,
+            "valid-row-with-measureGrp",
+            """
+            <row>
+                <measureGrp>
+                     <cell><measure type="currency" quantity="2" unit="fl">11</measure></cell>
+                    <cell><measure type="currency" unit="xr" quantity="15">15</measure></cell>
+                </measureGrp>
+            </row>
+            """,
+            True,
         ),
+        ("invalid-row-with-wrong-content", "<row><p>foo</p></row>", False),
     ],
 )
 def test_row(

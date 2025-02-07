@@ -6,31 +6,29 @@ title: Startseite
 
 ![SSRQ Logo](ssrq-logo.svg)
 
-## Hintergrund
+Willkommen auf der Dokumentationsseite der Sammlung Schweizerischer Rechtsquellen (SSRQ)
+der Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft (vor 2025: des Schweizerischen Juristenvereins).
+Auf dieser Seite finden Sie eine ausführliche Beschreibung der philologischen Grundlagen,
+auf denen die Editionseinheiten der SSRQ basieren, sowie eine Dokumentation des verwendeten
+TEI-XML-Schemas in Form eine «Tag-Bibliothek». Diese Seiten können daher als eine Einführung
+in die Arbeitsweise der digitalen Editionen der Rechtsquellenstiftung gesehen werden und
+fungieren zugleich als «editorischer Bericht».
 
-Aufgrund des Medienwandels und der neuen Möglichkeiten im digitalen Zeitalter
-werden die Editionen der Rechtsquellenstiftung des Schweizerischen
-Juristenvereins sowohl in methodischer Hinsicht als auch in der Darstellung
-angepasst.[^1]
-
-Dazu setzt die Rechtsquellenstiftung auf den Einsatz der Auszeichnungssprache
-Extensible Markup Language (XML) nach den Empfehlungen der Text Encoding
-Initiative (TEI).
-
-## Aufbau
-
-Die folgenden Seiten sind eine Einführung in die Arbeitsweise der digitalen
-Editionen der Rechtsquellenstiftung. Die Informationen in dieser Dokumentation
-fungieren als «editorischer Bericht» und beschreiben sowohl philologische als
-auch informationstechnologische Grundlagenentscheidungen.
-
-Dazu zählen neben den allgemeinen Richtlinien zur Transkription und Datierung
-der Texte auch ausführliche Erläuterungen zu allen im TEI-XML verwendeten
-Elementen.
+- Die digitale Edition der SSRQ mit allen TEI-XML-Dateien finden Sie in unserem Editionsportal
+[Editio](https://editio.ssrq-online.ch/).
+- Die [retrodigitalisierte Sammlung](https://www.ssrq-sds-fds.ch/online/cantons.html) erschliesst
+die analog erschienenen Bände als OCR-PDF.
+- Die [Projektwebseite](https://www.ssrq-sds-fds.ch/home/) informiert über die
+aktuell laufenden Editionsprojekte und gibt eine Übersicht über die Geschichte der
+Sammlung seit den 1890er Jahren.
 
 ## Technologie und Standardisierung
 
-### XML
+Aufgrund des Medienwandels und der Möglichkeiten des digitalen Zeitalters werden die Editionen der
+SSRQ mithilfe der Extensible Markup Language (XML) nach den Empfehlungen der Text Encoding
+Initiative (TEI) umgesetzt.
+
+## XML
 
 > Die Extensible Markup Language (engl. für «erweiterbare
 > Auszeichnungssprache»), abgekürzt XML, ist eine Auszeichnungssprache zur
@@ -38,18 +36,18 @@ Elementen.
 > wird u. a. für den Austausch von Daten zwischen Computersystemen eingesetzt,
 > speziell über das Internet.[^2]
 
-Der Fokus liegt bei XML auf einer strukturierten Erfassung der Daten und nicht
-auf ihrer graﬁschen Präsentation, wie dies etwa bei gängigen Programmen zur
+Der Fokus liegt bei XML auf einer strukturierten Erfassung von Daten und nicht
+auf ihrer graﬁschen Präsentation, wie dies etwa bei gängigen Office-Programmen zur
 Textverarbeitung der Fall ist.
 
-Aufgrund seiner Erweiterbarkeit hat es in XML unendlich viele Möglichkeiten,
+Durch seine Erweiterbarkeit bietet XML unendlich viele Möglichkeiten,
 die Daten zu erfassen und weiterzuverarbeiten.
+
+## TEI
 
 Daher folgt die Rechtsquellenstiftung den Empfehlungen der international
 anerkannten Text Encoding Initiative (TEI) zur Kodierung ihrer digitalen
 Editionen.
-
-### TEI
 
 > «The Text Encoding Initiative» (TEI) is a consortium which collectively
 > develops and maintains a standard for the representation of texts in digital
@@ -58,29 +56,34 @@ Editionen.
 > for machine-readable texts, chiefly in the humanities, social sciences and
 > linguistics.[^3]
 
-Der Vorteil der Empfehlungen der TEI ist, dass es für die meisten Phänomene,
+Der Vorteil der Empfehlungen der TEI ist, dass sie für die meisten Phänomene,
 welche bei der Edition historischer Texte auftreten, Definitionen und
-Vorschläge zur Kodierung hat.
-Dadurch wird erreicht, dass einzelne Editionsprojekte diese Phänomene nicht
-mühsam selbst modellieren müssen und dass durch das Anwenden der Empfehlungen
-viele Editionen miteinander vergleichbar und untereinander austauschbar werden.
+Vorschläge zur Kodierung bieten.
+
+Dadurch wird einerseits erreicht, dass einzelne Editionsprojekte diese Phänomene
+nicht mühsam selbst modellieren müssen, und andererseits werden durch das Anwenden
+der Empfehlungen viele Editionen miteinander vergleichbar.
+
+Diese Standardisierung trägt dazu bei, dass die erstellten Daten nicht nur für die
+Öffentlichkeit, sondern auch für andere wissenschaftliche Zwecke leicht zugänglich
+sind.
 
 Gleichzeitig bedeutet dies jedoch, dass die Empfehlungen der TEI sehr weit
 gefasst sind, damit sie in möglichst vielen Projekten aus unterschiedlichen
 Wissenschaften eingesetzt werden können.
 
-Aus diesem Grund entwickelt die Rechtsquellenstiftung ein für ihre Zwecke
-angepasstes TEI-XML-Schema,[^4] das nicht nur den Besonderheiten der
-vielfältigen Quellentexte, sondern auch der Tradition der Sammlung
-Schweizerischer Rechtsquellen gleichermassen Rechnung trägt.
+## Schema
 
-[^1]:
-    Vgl. Sahle, Patrick: Projektskizze zur elektronischen Bearbeitung und
-    digitalen Edition von Zürcher Rechtsquellen (eRQZH) im Rahmen des
-    Editionsunternehmens «Sammlung Schweizerischer Rechtsquellen (SSRQ)»,
-    namens des Schweizerischen Juristenvereins herausgegeben von dessen
-    Rechtsquellenstiftung. (Unpublizierte Projektskizze. Endfassung vom 9.
-    September 2008.)
+Aus diesem Grund wurden die Richtlinien der TEI für die Zwecke der SSRQ in Form
+eines eigenen, fortlaufend entwickelten Schemas[^4] angepasst, welches nicht nur
+den Besonderheiten der vielfältigen Quellentexte, sondern auch der Tradition der
+Sammlung gleichermassen Rechnung trägt.
+
+Das [vollständige, kompilierte Schema](https://schema.ssrq-sds-fds.ch/latest/TEI_Schema.rng)
+kann frei heruntergeladen und weitergenutzt werden. Seine Entwicklung erfolgt öffentlich
+einsehbar auf der Plattform [GitHub](https://github.com/SSRQ-SDS-FDS/ssrq-schema), es wird nachhaltig auf
+[Zenodo](https://zenodo.org/records/13379935) publiziert.
+
 [^2]:
     Zit. nach Wikipedia: [Extensible Markup Language]
     (https://de.wikipedia.org/wiki/Extensible_Markup_Language).

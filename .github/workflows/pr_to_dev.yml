@@ -16,9 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: 'recursive'
+          persist-credentials: false
+          token: ${{ secrets.TEI_VOLUMES_PAT }}
       - name: Setup SSH and Python with Poetry
         uses: ./.github/actions/setup
         with:
@@ -34,8 +36,8 @@ jobs:
       - name: Validate all schema source files
         run: ./Taskfile validate
       - name: Run all tests using pytest
-        run: poetry run pytest -n 4
-        
+        run: poetry run pytest -n auto
+
   publish:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
@@ -48,10 +50,12 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: 'recursive'
           fetch-depth: 0
+          persist-credentials: false
+          token: ${{ secrets.TEI_VOLUMES_PAT }}
       - name: Setup SSH and Python with Poetry
         uses: ./.github/actions/setup
         with:
@@ -60,6 +64,9 @@ jobs:
         run: |
           url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
           echo "DOCS_URL=${url}" >> "$GITHUB_ENV"
+      - name: Setup GitHub Token for Push
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
       - name: Build and publish
         uses: ./.github/actions/mike
         with:

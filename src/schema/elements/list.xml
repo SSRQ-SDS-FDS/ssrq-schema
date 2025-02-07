@@ -2,8 +2,11 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="list" module="core" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-19">Beschreibt eine Liste oder Aufzählung jeder Art.</desc>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="list" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Liste</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">list</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">liste</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Liste oder Aufzählung jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Describes a list or enumeration of any kind.</desc>
   <desc xml:lang="fr" versionDate="2023-07-19">Décrit une liste ou une énumération de tout type.</desc>
   <classes mode="replace">
@@ -11,41 +14,26 @@
     <memberOf key="model.listLike"/>
   </classes>
   <content>
-    <rng:optional>
-      <rng:ref name="head"/>
-    </rng:optional>
-    <rng:interleave>
-      <rng:oneOrMore>
-        <rng:ref name="item"/>
-      </rng:oneOrMore>
-      <rng:zeroOrMore>
-        <rng:choice>
-          <rng:ref name="cb"/>
-          <rng:ref name="pb"/>
-          <rng:ref name="ssrq.content.anchor.spans"/>
-        </rng:choice>
-      </rng:zeroOrMore>
-    </rng:interleave>
+    <sequence>
+      <elementRef key="head" minOccurs="0"/>
+      <sequence preserveOrder="false">
+        <elementRef key="item" maxOccurs="unbounded"/>
+        <alternate minOccurs="0" maxOccurs="unbounded">
+          <elementRef key="cb"/>
+          <elementRef key="pb"/>
+          <macroRef key="ssrq.content.anchor.spans"/>
+        </alternate>
+      </sequence>
+    </sequence>
   </content>
   <attList>
     <attDef ident="rend" mode="replace">
-      <desc xml:lang="de" versionDate="2023-07-19">Angabe zur Darstellung der Liste</desc>
-      <desc xml:lang="en" versionDate="2023-07-19">Specification for displaying the list</desc>
-      <desc xml:lang="fr" versionDate="2023-07-19">Spécification d'affichage de la liste</desc>
-      <valList type="closed">
-        <valItem ident="bulleted">
-          <desc xml:lang="de" versionDate="2023-07-19">Liste mit Bullet-Points</desc>
-          <desc xml:lang="en" versionDate="2023-07-19">List with bullet points</desc>
-          <desc xml:lang="fr" versionDate="2023-07-19">Liste avec des puces</desc>
-          <desc xml:lang="it" versionDate="2023-07-19">Elenco con punti elenco</desc>
-        </valItem>
-        <valItem ident="numbered">
-          <desc xml:lang="de" versionDate="2023-04-13">Nummerierte Liste</desc>
-          <desc xml:lang="en" versionDate="2023-04-13">Numbered list</desc>
-          <desc xml:lang="fr" versionDate="2023-04-13">Liste numérotée</desc>
-          <desc xml:lang="it" versionDate="2023-04-13">Elenco numerato</desc>
-        </valItem>
-      </valList>
+      <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Liste</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the appearance of the list</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">l'apparition de la liste</desc>
+      <datatype>
+        <dataRef key="ssrq.rend.list"/>
+      </datatype>
     </attDef>
     <attDef ident="type" mode="delete"/>
   </attList>
@@ -58,4 +46,10 @@
   <xi:include href="examples.xml" xpointer="ex-list-complex-de"/>
   <xi:include href="examples.xml" xpointer="ex-list-complex-en"/>
   <xi:include href="examples.xml" xpointer="ex-list-complex-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Für die Auflistung aller Textzeugen im <gi>teiHeader</gi> verwenden wir das spezialisiertere
+      Element <gi>listWit</gi>, für die Auflistung bibliographischer Angaben kommt <gi>listBibl</gi>
+      zum Einsatz.</p>
+    <p>Eine ggfs. vorhandene Listenüberschrift wird mit <gi>head</gi> ausgezeichnet.</p>
+  </remarks>
 </elementSpec>

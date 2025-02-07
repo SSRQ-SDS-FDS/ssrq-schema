@@ -2,127 +2,127 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="orgName" module="namesdates" mode="change">
-  <desc xml:lang="de" versionDate="2023-03-28">Zeichnet eine Organisation bzw. Institution, wie
-        Klöster, Zünfte, Räte, Nachbarschaft etc., aus.
-    </desc>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="orgName" module="namesdates" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Organisationsname</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">organization name</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">nom d'organisation</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Beinhaltet den Namen einer Organisation bzw. Institution.</desc>
   <desc xml:lang="en" versionDate="2023-03-17">Characterises an organisation or institution, such
-        as monasteries, guilds, councils, neighbourhoods, etc.
-    </desc>
+      as monasteries, guilds, councils, neighbourhoods, etc.</desc>
   <desc xml:lang="fr" versionDate="2023-03-28">Signale une organisation voire une institution
-        comme p. e. monastère, confrérie, conseil, voisinage etc.
-    </desc>
+      comme p. e. monastère, confrérie, conseil, voisinage etc.</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="att.naming"/>
     <memberOf key="model.nameLike.agent"/>
   </classes>
   <content>
-    <rng:oneOrMore>
-      <rng:ref name="ssrq.content.default"/>
-    </rng:oneOrMore>
+    <sequence maxOccurs="unbounded">
+      <macroRef key="ssrq.content.default"/>
+    </sequence>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-el-orgName" mode="add">
-    <desc versionDate="2023-06-19" xml:lang="en">Schematron rules for tei:orgName</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-orgName" mode="delete"/>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-orgName" mode="add">
+    <desc versionDate="2023-06-19" xml:lang="en">constraint for tei:orgName</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:orgName[ancestor::tei:seriesStmt]">
-          <sch:let name="ssrq" value="('Fondation des sources du droit de la Société suisse des juristes', 'Rechtsquellenstiftung des Schweizerischen Juristenvereins')"/>
+          <sch:let name="ssrq" value="('Fondation des sources du droit de la Société suisse des juristes', 'Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft')"/>
           <sch:let name="content" value="normalize-space(.)"/>
-          <sch:assert test="$content = $ssrq">The content of
-                        <sch:name/>
-                        must match <sch:value-of select="string-join($ssrq, ' or ')"/>.
-                    </sch:assert>
+          <sch:assert test="$content = $ssrq">
+              The content of tei:orgName must match <sch:value-of select="string-join($ssrq, ' or ')"/>.
+          </sch:assert>
         </sch:rule>
         <sch:rule context="tei:orgName[parent::tei:respStmt]">
-          <sch:report test=".[@ref] or .[@role]">If
-                        <sch:name/>
-                        is used as part of
-                        respStmt no attributes are allowed.
-                    </sch:report>
+          <sch:assert test=".[not(@*)]">
+              If tei:orgName is used as part of tei:respStmt no attributes are allowed.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
   </constraintSpec>
   <attList>
+    <attDef ident="calendar" mode="delete"/>
     <attDef ident="ref" mode="replace">
-      <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung der Organisation mit der ID der
-                Personen- und Organisationsdatenbank.
-            </desc>
-      <desc xml:lang="en" versionDate="2023-03-28">Linking the organisation with the ID of the
-                database of persons and organisations.
-            </desc>
-      <desc xml:lang="fr" versionDate="2023-03-28">Relier l'organisation à l'ID de la base de
-                données des personnes et des organisations.
-            </desc>
       <datatype>
         <dataRef key="ssrq.pointer.org"/>
       </datatype>
     </attDef>
     <attDef ident="role" mode="change">
-      <desc xml:lang="de" versionDate="2023-03-28">Auszeichnung der Rolle einer Institution im
-                Quellentext.
-            </desc>
-      <desc xml:lang="en" versionDate="2023-03-28">Distinction of the role of an institution
-                in the source text.
-            </desc>
-      <desc xml:lang="fr" versionDate="2023-03-28">Distinction du rôle d'une institutio dans
-                le texte source.
-            </desc>
+      <desc xml:lang="de" versionDate="2025-01-30">die Rolle der Organisation im Text</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the role of the organization in the text</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">le rôle de la organisation dans le texte</desc>
       <datatype>
-        <dataRef key="ssrq.role.institution"/>
+        <dataRef key="ssrq.role.orgname"/>
       </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-orgName-de"/>
   <xi:include href="examples.xml" xpointer="ex-orgName-en"/>
   <xi:include href="examples.xml" xpointer="ex-orgName-fr"/>
-  <remarks xml:lang="de" versionDate="2023-08-18">
-    <p>Innerhalb der Sammlung Schweizerischer Rechtsquellen werden z. B. folgende Entitäten als
-            Organisationen gekennzeichnet:
-            <list><item>Bevölkerungsgruppe (z. B. Juden)</item><item>Bruderschaft</item><item>Bürgermeister und Rat</item><item>Bürgerschaft</item><item>Eidgenossenschaft bzw. Gruppe von eidgenössischen Orten (z. B. VII Orte) (wenn
-                    es sich nicht um den Ort, sondern die Organisation handelt)
-                </item><item>Eigentümerschaft</item><item>Familie (z. B. die Grafen von Toggenburg, die Herren von Landenberg)</item><item>Heiligenverband/Heiligengruppe (z. B. Zehntausend Ritter, Elftausend
-                    Jungfrauen, Peter und Paul)
-                </item><item>Herrschaftsverband</item><item>Kirchgenossenschaft/Pfarrei (Achtung: eine Kirchhöre oder ein Kirchspiel kann
-                    auch eine Ortsbezeichnung sein)
-                </item><item>Klosterkonvent; hier: Konvent (Achtung: ein Kloster kann auch eine
-                    Ortsbezeichnung sein)
-                </item><item>Knabenschaft</item><item>Kommission (z. B. Baukommission etc.)</item><item>Handelsgesellschaft</item><item>Nachbarschaft</item><item>Nutzungsgemeinschaft</item><item>Orden</item><item>Rat</item><item>Schützengesellschaft</item><item>Stiftung</item><item>Steuergenossenschaft</item><item>Zunft</item></list>
-        </p>
-    <p>Der Herausgeber der Reihe, hier immer die Rechtsquellenstiftung, wird im <gi>respStmt</gi> mit
-            <gi>orgName</gi>
-            ausgezeichnet.
-        </p>
+  <xi:include href="examples.xml" xpointer="ex-history-de"/>
+  <xi:include href="examples.xml" xpointer="ex-history-en"/>
+  <xi:include href="examples.xml" xpointer="ex-history-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>In den Editionen der SSRQ werden z. B. folgende Entitäten als
+        Organisationen gekennzeichnet:
+        <list><item>Bevölkerungsgruppe (z. B. Juden)</item><item>Bruderschaft
+        </item><item>Bürgermeister und Rat</item><item>Bürgerschaft
+        </item><item>Eidgenossenschaft bzw. Gruppe von eidgenössischen Orten (z. B. VII Orte) (wenn
+            es sich nicht um den Ort, sondern die Organisation handelt)
+        </item><item>Eigentümerschaft</item><item>Familie (z. B. die Grafen von Toggenburg, die
+            Herren von Landenberg)</item><item>Heiligenverband/Heiligengruppe (z. B. Zehntausend
+            Ritter, Elftausend Jungfrauen, Peter und Paul)
+        </item><item>Herrschaftsverband</item><item>Kirchgenossenschaft/Pfarrei (Achtung: eine
+            Kirchhöre oder ein Kirchspiel kann auch eine Ortsbezeichnung sein)
+        </item><item>Klosterkonvent; hier: Konvent (Achtung: ein Kloster kann auch eine
+            Ortsbezeichnung sein)
+        </item><item>Knabenschaft</item><item>Kommission (z. B. Baukommission etc.)
+        </item><item>Handelsgesellschaft</item><item>Nachbarschaft
+        </item><item>Nutzungsgemeinschaft</item><item>Orden</item><item>Rat
+        </item><item>Schützengesellschaft</item><item>Stiftung</item><item>Steuergenossenschaft
+        </item><item>Zunft</item></list></p>
+    <p>Darüber hinaus wird im <gi>teiHeader</gi> die Herausgeberin der Reihe, d. h. die
+          Rechtsquellenstiftung     mit <gi>orgName</gi> ausgezeichnet.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-08-18">
-    <p>Within the collection of Swiss legal sources, for example, the following entities are designated as
-            organisations:
-            <list><item>Population group (e.g. Jews)</item><item>Brotherhood</item><item>Mayor and council</item><item>Citizenship</item><item>Federation or group of federated places
-                    (e.g. VII places) (if it is not the place but the organisation)
-                </item><item>Ownership</item><item>Family (e.g. the Counts of Toggenburg, the Lords of Landenberg)</item><item>Saints' association/saints' group (e.g. Ten Thousand Knights, Eleven Thousand Virgins, Peter and
-                    Paul)
-                </item><item>Dominion association</item><item>Kirchgenossenschaft/Pfarrei (Attention: a Kirchhöre or a Kirchspiel can also be a place name)
-                </item><item>Convent of a monastery; here: Convent (attention: a monastery can also be a place name)
-                </item><item>Boyship</item><item>Commission (e.g. building commission etc.)</item><item>Trade company</item><item>Neighbourhood</item><item>Community of use</item><item>Order</item><item>Council</item><item>Shooting Society</item><item>Foundation</item><item>Tax cooperative</item><item>Guild</item></list>
-        </p>
-    <p>Dhe publisher of the series, here always the Legal Source Foundation, is honoured in the
-            <gi>respStmt</gi>
-            distinguished with <gi>orgName</gi>.
-        </p>
+    <p>Within the collection of Swiss legal sources, for example, the following entities are
+        designated as organisations:
+        <list><item>Population group (e.g. Jews)</item><item>Brotherhood</item><item>Mayor and
+            council</item><item>Citizenship</item><item>Federation or group of federated places
+            (e.g. VII places) (if it is not the place but the organisation)
+            </item><item>Ownership</item><item>Family (e.g. the Counts of Toggenburg, the Lords of
+            Landenberg)</item><item>Saints' association/saints' group (e.g. Ten Thousand Knights,
+            Eleven Thousand Virgins, Peter and Paul)</item><item>Dominion association
+        </item><item>Kirchgenossenschaft/Pfarrei (Attention: a Kirchhöre or a Kirchspiel can also
+            be a place name)</item><item>Convent of a monastery; here: Convent (attention: a
+            monastery can also be a place name)</item><item>Boyship</item><item>Commission (e.g.
+            building commission etc.)</item><item>Trade company</item><item>Neighbourhood
+        </item><item>Community of use</item><item>Order</item><item>Council</item><item>Shooting
+            Society</item><item>Foundation</item><item>Tax cooperative
+        </item><item>Guild</item></list></p>
+    <p>The publisher of the series, here always the Legal Source Foundation, is honoured in the
+        <gi>respStmt</gi> distinguished with <gi>orgName</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-08-18">
-    <p>Au sein du recueil des sources du droit suisse, les entités suivantes sont par exemple considérées comme des organisations :
-            <list><item>un groupe de population (p.e. juifs)</item><item>une confrérie</item><item>le bourgmestre et le conseil</item><item>la citoyenneté</item><item>la Confédération suisse ou un groupe de plusieurs cantons (p.e. les VII
-                    cantons) (quand il ne s'agit pas du lieu, mais de l'organisation)
-                </item><item>une propriété</item><item>une famille (p.e. la maison de Toggenburg, von Landenberg)</item><item>une fête qui réunit plusieurs saints (Dix mille martyrs, Onze mille vierges,
-                    Pierre et Paul)
-                </item><item>une entité politique</item><item>une circonscription ecclésiastique / paroisse (attention : une paroisse peut
-                    aussi être une indication topographique ou une provenance géographique)
-                </item><item>un couvent (Attention : un couvent peut également être le nom d'un lieu)</item><item>une société de jeunesse</item><item>une commission (p.e. comité de construction etc.)</item><item>une société commerciale</item><item>un voisinage</item><item>une communauté d'utilisateurs</item><item>un ordre religieux</item><item>un conseil</item><item>une société de tir</item><item>une fondation</item><item>une coopérative de taxation</item><item>une corporation</item></list>
-        </p>
+    <p>Au sein du recueil des sources du droit suisse, les entités suivantes sont par exemple
+        considérées comme des organisations :
+            <list><item>un groupe de population (p.e. juifs)</item><item>une confrérie
+            </item><item>le bourgmestre et le conseil</item><item>la citoyenneté</item><item>la
+                Confédération suisse ou un groupe de plusieurs cantons (p.e. les VII cantons)
+                (quand il ne s'agit pas du lieu, mais de l'organisation)</item><item>une
+                propriété</item><item>une famille (p.e. la maison de Toggenburg, von Landenberg)
+            </item><item>une fête qui réunit plusieurs saints (Dix mille martyrs, Onze mille
+                vierges, Pierre et Paul)</item><item>une entité politique</item><item>une
+                circonscription ecclésiastique / paroisse (attention : une paroisse peut aussi être
+                une indication topographique ou une provenance géographique)</item><item>un couvent
+                (Attention : un couvent peut également être le nom d'un lieu)</item><item>une
+                société de jeunesse</item><item>une commission (p.e. comité de construction
+                etc.)</item><item>une société commerciale</item><item>un voisinage</item><item>une
+                communauté d'utilisateurs</item><item>un ordre religieux</item><item>un
+                conseil</item><item>une société de tir</item><item>une fondation</item><item>une
+                coopérative de taxation</item><item>une corporation</item></list></p>
     <p>L'éditeur de la série, ici toujours la Fondation des sources du droit, est désigné dans
-            le <gi>respStmt</gi> est distingué par <gi>orgName</gi>.
-        </p>
+        le <gi>respStmt</gi> est distingué par <gi>orgName</gi>.</p>
   </remarks>
 </elementSpec>

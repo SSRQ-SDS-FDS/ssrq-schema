@@ -3,11 +3,16 @@
     type="application/xml"
     schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="custEvent" module="msdescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-09-19">Beschreibt ein Ereignis in der Aufbewahrungsgeschichte eines Dokuments.</desc>
-  <desc xml:lang="en" versionDate="2023-09-19">Describes an event in the custodial history of a document.</desc>
-  <desc xml:lang="fr" versionDate="2023-09-19">Décrit un événement dans l'historique de conservation d'un document.</desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">Ereignis in der Aufbewahrungsgeschichte</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">event in the custodial history</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">événement dans la conservation</gloss>
+  <desc xml:lang="de" versionDate="2025-02-05">Beschreibt den Verlust des Textträgers.</desc>
+  <desc xml:lang="en" versionDate="2023-09-19">Describes an event in the custodial history of a
+    document.</desc>
+  <desc xml:lang="fr" versionDate="2023-09-19">Décrit un événement dans l'historique de
+    conservation d'un document.</desc>
   <classes mode="replace">
-    <memberOf key="att.datable"/>
+    <memberOf key="att.calendarSystem"/>
     <memberOf key="att.datable.custom"/>
     <memberOf key="att.typed"/>
   </classes>
@@ -15,18 +20,16 @@
     <textNode/>
   </content>
   <attList>
+    <attDef ident="calendar" mode="replace">
+      <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-custEvent" mode="delete"/>
+    </attDef>
     <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2023-09-19">Art des Ereignisses.</desc>
-      <desc xml:lang="en" versionDate="2023-09-19">Type of event.</desc>
-      <desc xml:lang="fr" versionDate="2023-09-19">Type d'événement.</desc>
-      <valList type="closed">
-        <valItem ident="lost">
-          <desc xml:lang="de" versionDate="2023-09-19">Verlust des Dokuments.</desc>
-          <desc xml:lang="en" versionDate="2023-09-19">Loss of the document.</desc>
-          <desc xml:lang="fr" versionDate="2023-09-19">Perte du document.</desc>
-          <desc xml:lang="it" versionDate="2023-09-19">Perdita del documento.</desc>
-        </valItem>
-      </valList>
+      <desc xml:lang="de" versionDate="2025-01-31">die Art des Ereignisses</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of event</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type d'événement</desc>
+      <datatype>
+        <dataRef key="ssrq.type.custevent"/>
+      </datatype>
     </attDef>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-adminInfo-de"/>

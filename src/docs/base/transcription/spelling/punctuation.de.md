@@ -2,13 +2,15 @@
 
 ## Regeln für Drucktexte 
 
+Bei Drucken wird die Interpunktion originalgetreu gemäss Vorlage transkribiert.
+
 Die Virgel (`/`) wird transkribiert, in der Regel mit Leerzeichen 
 davor und danach. 
 
 Das Capitulumzeichen wird nicht transkribiert.
 
 
-## Regeln für deutsche Texte
+## Regeln für handschriftliche deutsche Texte
 
 ### Interpunktion zur Klarstellung
 

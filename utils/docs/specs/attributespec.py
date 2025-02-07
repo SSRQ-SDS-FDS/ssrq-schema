@@ -4,6 +4,7 @@ from typing import Literal, cast
 from snakemd import Document  # type: ignore
 
 from utils.commons.logger import LOGGER
+from utils.docs.helpers.sort import sort_with_uca
 from utils.docs.helpers.utils import split_tag_and_ns, translate_datatype
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODDElement
@@ -62,6 +63,7 @@ class AttributeSpec:
                     restriction = (
                         f" – {translations['restriction']}: {translations[name] + ' ' if (name := param.get('name')) else ''}`{param.text}`"
                         if (param := content_part.find("rng:param", namespaces=NS_MAP))
+                        is not None
                         else ""
                     )
                     output.append(f"{name_translation}{restriction}")
@@ -102,7 +104,7 @@ class AttributeSpec:
                     )
 
         doc.add_paragraph(f"*{translations['values']}*")
-        doc.add_unordered_list(output)
+        doc.add_unordered_list(sort_with_uca(output))
 
     def _add_description(self) -> None:
         """Add the description of the attribute to the attribute element if it does not

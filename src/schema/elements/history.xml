@@ -3,15 +3,14 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="history" module="msdescription" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-15">Enthält Informationen zur Geschichte eines
-        Dokuments. Dazu zählen beispielsweise Datierung oder der Ausstellungsort.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Contains information about the history of a document. These include,
-        for example, dating or the place of issue.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-15">Contient des informations sur l'historique d'un document. Ceux-ci
-        incluent, par exemple, la datation ou le lieu d'émission.
-    </desc>
+  <gloss xml:lang="de" versionDate="2025-02-03">Geschichte</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">history</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">histoire</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält Informationen zur Geschichte eines Textträgers.</desc>
+  <desc xml:lang="en" versionDate="2023-07-15">Contains information about the history of a document.
+    These include, for example, dating or the place of issue.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-15">Contient des informations sur l'historique d'un
+    document. Ceux-ci incluent, par exemple, la datation ou le lieu d'émission.</desc>
   <classes mode="replace"/>
   <content>
     <elementRef key="origin"/>

@@ -14,23 +14,35 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "ref-with-invalid-urn",
+            "invalid-ref-with-wrong-urn",
             "<ref target='urn:ssrq:SSQ-ZH-NF_I_2_1-4-1'>SSRQ ZH NF I/2/1 4-1</ref>",
             False,
         ),
         (
             "valid-ref-with-external-reference",
-            "<ref target='https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'>SSRQ SG III/2, Nr. 231 </ref>",
+            """
+            <ref target='https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'>
+                SSRQ SG III/2, Nr. 231
+            </ref>
+            """,
             True,
         ),
         (
             "valid-ref-with-external-reference-and-hi",
-            "<ref target='https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'>SSRQ SG III/2, Nr. <hi rend='sup'>231</hi> </ref>",
+            """
+            <ref target='https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'>
+                SSRQ SG III/2, Nr. <hi rend='sup'>231</hi>
+            </ref>
+            """,
             True,
         ),
         (
-            "ref-with-invalid-external-reference",
-            "<ref target='htt://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'>SSRQ SG III/2, Nr. 231 </ref>",
+            "invalid-ref-with-wrong-external-reference",
+            """
+            <ref target='htt://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'>
+                SSRQ SG III/2, Nr. 231
+            </ref>
+            """,
             False,
         ),
     ],
@@ -49,17 +61,37 @@ def test_ref_rng(
     [
         (
             "valid-ref-without-target",
-            "<ref>abcde</ref>",
+            "<bibl><ref>abcde</ref></bibl>",
             True,
         ),
         (
             "invalid-ref-without-target-and-text",
-            "<ref></ref>",
+            "<bibl><ref/></bibl>",
             False,
         ),
         (
             "valid-ref-without-text",
-            "<ref target='https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'/>",
+            """
+            <bibl>
+                <ref target='https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_858'/>
+            </bibl>
+            """,
+            True,
+        ),
+        (
+            "invalid-ref-not-in-bibl",
+            "<ref target='urn:ssrq:SSRQ-ZH-NF_I_2_1-105-1'>SSRQ ZH NF I/2/1 105-1</ref>",
+            False,
+        ),
+        (
+            "valid-ref-in-bibl",
+            """
+            <bibl>
+                <ref target='urn:ssrq:SSRQ-ZH-NF_I_2_1-105-1'>
+                    SSRQ ZH NF I/2/1 105-1
+                </ref>
+            </bibl>
+            """,
             True,
         ),
     ],

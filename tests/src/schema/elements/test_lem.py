@@ -1,8 +1,6 @@
 import pytest
-from pyschval.schematron.validate import apply_schematron_validation
-from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
@@ -11,6 +9,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         (
             "valid-lem",
             "<lem>bar</lem>",
+            True,
+        ),
+        (
+            "valid-lem-with-content-default",
+            "<lem>foo <del>bar</del></lem>",
             True,
         ),
         (
@@ -28,11 +31,6 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<lem><seg>foo</seg></lem>",
             False,
         ),
-        (
-            "lem-with-invalid-attribute",
-            "<lem att='xyz'>bar</lem>",
-            False,
-        ),
     ],
 )
 def test_lem(
@@ -42,23 +40,3 @@ def test_lem(
     result: bool,
 ):
     test_element_with_rng("lem", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "invalid-empty-lem",
-            "<lem/>",
-            False,
-        ),
-    ],
-)
-def test_lem_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].report.is_valid() is result

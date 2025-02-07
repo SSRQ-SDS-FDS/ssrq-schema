@@ -4,47 +4,52 @@ from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
-    "name, markup, result, message",
+    "name, markup, result",
     [
         (
             "valid-addSpan",
-            "<addSpan spanTo='add1'/>",
-            False,
-            "without matching ID",
+            "<p><addSpan spanTo='add1'/><anchor xml:id='add1'/></p>",
+            True,
         ),
         (
-            "valid-addSpan-with-attributes",
-            "<addSpan type='sign' hand='otherHand' place='below' rend='other_ink' spanTo='add1'/>",
-            False,
-            "without matching ID",
+            "valid-addSpan-with-place",
+            "<p><addSpan spanTo='add1' place='above'/><anchor xml:id='add1'/></p>",
+            True,
         ),
         (
-            "addSpan-with-invalid-attribute-values",
-            "<addSpan hand='foo' spanTo='add1'/>",
-            False,
-            None,
+            "valid-addSpan-with-type",
+            "<p><addSpan spanTo='add1' type='sign'/><anchor xml:id='add1'/></p>",
+            True,
         ),
         (
-            "invalid-addSpan",
-            "<addSpan spanTo='add1'>foo</addSpan>",
+            "valid-addSpan-with-rend",
+            "<p><addSpan spanTo='add1' rend='pencil'/><anchor xml:id='add1'/></p>",
+            True,
+        ),
+        (
+            "valid-addSpan-with-hand",
+            "<p><addSpan spanTo='add1' hand='otherHand'/><anchor xml:id='add1'/></p>",
+            True,
+        ),
+        (
+            "invalid-addSpan-without anchor",
+            "<p><addSpan spanTo='add1'/></p>",
             False,
-            None,
+        ),
+        (
+            "invalid-addSpan-with-content",
+            "<p><addSpan spanTo='add1'>Foo</addSpan><anchor xml:id='add1'/></p>",
+            False,
         ),
     ],
 )
-def test_addSpan(
+def test_add_span(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,
     result: bool,
-    message: str | None,
 ):
-    test_element_with_rng("addSpan", name, markup, result, True)
-    if message:
-        validation_result = test_element_with_rng("addSpan", name, markup, result, True)
-        file_reports = validation_result.reports[0]
-        assert isinstance(file_reports.report, list)
-        messages = "".join([error.message for error in file_reports.report])
-        assert message in messages
-    else:
-        test_element_with_rng("addSpan", name, markup, result, False)
+    test_element_with_rng("p", name, markup, result, False)
+    # In this test, the surrounding p element is the root for the test, because addSpan always
+    # needs a corresponding element with a xml:id to be valid. If addSpan was the root, all
+    # rng-tests would fail.

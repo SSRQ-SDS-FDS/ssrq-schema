@@ -4,15 +4,14 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="TEI" module="textstructure" mode="change">
   <gloss xml:lang="de" versionDate="2023-03-09">TEI Dokument</gloss>
-  <gloss xml:lang="en" versionDate="2023-03-09">TEI Dokument</gloss>
-  <gloss xml:lang="fr" versionDate="2023-03-09">Document TEI</gloss>
-  <desc xml:lang="de" versionDate="2023-07-14">Beinhaltet ein einzelnes Dokument (Stück) als sogenanntes
-        Root-Element.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-14">Contains a single document (piece) as a so-called root element.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-14">Contient un seul document (morceau) en tant qu'élément dit root.
-    </desc>
+  <gloss xml:lang="en" versionDate="2025-02-04">TEI document</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">document TEI</gloss>
+  <desc xml:lang="de" versionDate="2025-02-07">Enthält als sogenanntes Root-Element einen einzelnen
+    edierten Text.</desc>
+  <desc xml:lang="en" versionDate="2023-07-14">Contains a single document (piece) as a so-called
+    root element.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-14">Contient un seul document (morceau) en tant
+    qu'élément dit root.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
   </classes>
@@ -39,16 +38,16 @@
   <xi:include href="examples.xml" xpointer="ex-TEI-de"/>
   <xi:include href="examples.xml" xpointer="ex-TEI-en"/>
   <xi:include href="examples.xml" xpointer="ex-TEI-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-14">
-    <p>Mit <att>xml:lang</att> wird die Sprache der Bearbeitung angegeben.
-        </p>
+  <remarks xml:lang="de" versionDate="2025-02-07">
+    <p>Die Metadaten zum edierten Text werden im <gi>teiHeader</gi> erfasst, der edierte
+    Text mit allen Kommentaren im darauffolgenden <gi>text</gi>-Element.</p>
+    <p>Mit dem Attribut <att>xml:lang</att> wird die Sprache der Bearbeitung angegeben.</p>
+    <p>Jedes Stück erhält ein eigenes TEI-XML-Dokument.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-14">
-    <p>The language of the processing is specified with <att>xml:lang</att>.
-        </p>
+    <p>The language of the processing is specified with <att>xml:lang</att>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-14">
-    <p>La langue du traitement est spécifiée avec <att>xml:lang</att>.
-        </p>
+    <p>La langue du traitement est spécifiée avec <att>xml:lang</att>.</p>
   </remarks>
 </elementSpec>

@@ -12,13 +12,13 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-pc-with-wrong-char",
-            "<pc>-</pc>",
+            "invalid-pc-with-multiple-chars",
+            "<pc>;:</pc>",
             False,
         ),
         (
-            "invalid-pc-with-attribute",
-            "<pc unit='c'>;</pc>",
+            "invalid-pc-with-wrong-char",
+            "<pc>-</pc>",
             False,
         ),
     ],

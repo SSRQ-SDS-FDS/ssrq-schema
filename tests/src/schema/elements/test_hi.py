@@ -12,13 +12,13 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-hi-without-rend",
-            "<hi>foo bar</hi>",
-            False,
+            "valid-hi-with-content-default",
+            "<hi rend='italic'><del>foo</del> bar</hi>",
+            True,
         ),
         (
-            "invalid-hi-with-wrong-rend",
-            "<hi rend='foo'>foo bar</hi>",
+            "invalid-hi-without-rend",
+            "<hi>foo bar</hi>",
             False,
         ),
     ],

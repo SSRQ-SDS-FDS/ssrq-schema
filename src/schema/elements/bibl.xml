@@ -2,15 +2,18 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="bibl" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2023-09-14">Bibliographische Angabe</gloss>
-  <desc xml:lang="de" versionDate="2023-07-18">Enthält eine bibliographische Angabe mit Seitenangaben.</desc>
-  <desc xml:lang="en" versionDate="2023-07-18">Contains a bibliographical reference with page references.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-18">Contient une référence bibliographique avec des références de pages.
-    </desc>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="bibl" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">bibliographische Angabe</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">bibliographical statement</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">déclaration bibliographique</gloss>
+  <desc xml:lang="de" versionDate="2025-02-05">Enthält eine bibliographische Angabe mit Stellenreferenz.</desc>
+  <desc xml:lang="en" versionDate="2023-07-18">Contains a bibliographical reference with page
+    references.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-18">Contient une référence bibliographique avec des
+    références de pages.</desc>
   <classes mode="replace">
-    <memberOf key="model.biblLike"/>
     <memberOf key="att.global"/>
+    <memberOf key="model.biblLike"/>
   </classes>
   <content>
     <alternate maxOccurs="unbounded">
@@ -19,13 +22,25 @@
       <textNode/>
     </alternate>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-bibl">
+    <desc xml:lang="en" versionDate="2023-10-16">constraint for tei:bibl</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:bibl[@xml:id]">
+          <sch:assert test="./parent::tei:listBibl">
+            The attribute @xml:id for tei:bibl is allowed only inside tei:listBibl.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <attList>
+    <attDef ident="n" mode="delete"/>
     <attDef ident="xml:id" mode="change">
       <datatype>
-        <dataRef key="ssrq.witness.id"/>
+        <dataRef key="ssrq.id"/>
       </datatype>
     </attDef>
-    <attDef ident="n" mode="delete"/>
     <attDef ident="xml:lang" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-bibl-zot-de"/>
@@ -37,19 +52,17 @@
   <xi:include href="examples.xml" xpointer="ex-bibl-url-de"/>
   <xi:include href="examples.xml" xpointer="ex-bibl-url-en"/>
   <xi:include href="examples.xml" xpointer="ex-bibl-url-fr"/>
-  <remarks xml:lang="de" versionDate="2023-07-18">
+  <remarks xml:lang="de" versionDate="2025-02-06">
     <p>Das Kindelement <gi>ref</gi> verweist auf externe Websites, weitere edierte Stücke oder die
-            Zotero-Literaturdatenbank.
-        </p>
+      Literaturdatenbank der SSRQ auf
+      <ref target="https://www.zotero.org/groups/5048222/ssrq/">Zotero</ref>.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-18">
-    <p>The <gi>ref</gi> child element links to external websites, other edited pieces, or the Zotero literature
-            database.
-        </p>
+    <p>The <gi>ref</gi> child element links to external websites, other edited pieces, or the
+      Zotero literature database.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-18">
-    <p>L'élément enfant <gi>ref</gi> renvoie à des sites Web externes, à d'autres articles édités ou à la base de
-            données de littérature Zotero.
-        </p>
+    <p>L'élément enfant <gi>ref</gi> renvoie à des sites Web externes, à d'autres articles édités
+      ou à la base de données de littérature Zotero.</p>
   </remarks>
 </elementSpec>

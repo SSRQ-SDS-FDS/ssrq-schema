@@ -1,8 +1,6 @@
 import pytest
-from pyschval.schematron.validate import apply_schematron_validation
-from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
@@ -23,11 +21,6 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<orig xml:lang='de'>foo</orig>",
             True,
         ),
-        (
-            "invalid-corr-with-wrong-attribute",
-            "<orig att='foo'>bar</orig>",
-            False,
-        ),
     ],
 )
 def test_orig(
@@ -37,23 +30,3 @@ def test_orig(
     result: bool,
 ):
     test_element_with_rng("orig", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "invalid-empty-orig",
-            "<orig/>",
-            False,
-        ),
-    ],
-)
-def test_orig_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].report.is_valid() is result

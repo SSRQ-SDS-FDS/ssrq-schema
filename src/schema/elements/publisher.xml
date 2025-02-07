@@ -3,37 +3,42 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="publisher" module="core" mode="change">
-  <desc xml:lang="de" versionDate="2023-07-20">Enthält bei Druckschriften als Teil von <gi>docImprint</gi> den
-        Namen der Druckerei oder des Druckers, als Teil von <gi>publicationStmt</gi> die Angabe der herausgebenden
-        Institution.
+  <gloss xml:lang="de" versionDate="2025-02-04">Verlag</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-04">publisher</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">éditeur</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält bei Druckschriften als Teil
+      von <gi>docImprint</gi> den Namen der Druckerei bzw. des Druckers, als Teil
+      von <gi>publicationStmt</gi> die Angabe der herausgebenden Institution.
     </desc>
-  <desc xml:lang="en" versionDate="2023-07-20">In the case of publications, contains the name of the printer as part
-        of <gi>docImprint</gi> and details of the issuing institution as part of <gi>publicationStmt</gi>.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-20">Dans le cas de publications, contient le nom de l'imprimeur dans le
-        cadre de <gi>docImprint</gi> et les détails de l'institution émettrice dans le cadre de <gi>publicationStmt</gi>.
-    </desc>
+  <desc xml:lang="en" versionDate="2023-07-20">In the case of publications, contains the name of
+      the printer as part of <gi>docImprint</gi> and details of the issuing institution as part
+      of <gi>publicationStmt</gi>.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-20">Dans le cas de publications, contient le nom de
+      l'imprimeur dans le cadre de <gi>docImprint</gi> et les détails de l'institution émettrice
+      dans le cadre de <gi>publicationStmt</gi>.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
   </classes>
   <content>
-    <textNode/>
+    <alternate>
+      <textNode/>
+      <elementRef key="persName"/>
+      <elementRef key="orgName"/>
+    </alternate>
   </content>
-  <constraintSpec scheme="schematron" ident="sch-publisher-custom" mode="add">
-    <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for <gi>publisher</gi>.
-        </desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-publisher-custom" mode="add">
+    <desc versionDate="2023-06-23" xml:lang="en">constraint for tei:publisher</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:publisher[ancestor::tei:publicationStmt]">
-          <sch:assert test="text() = 'SSRQ-SDS-FDS'">If
-                        <sch:name/>
-                        is part of the publicationStmt it must contain the text "SSRQ-SDS-FDS".
-                    </sch:assert>
+          <sch:assert test="text() = 'SSRQ-SDS-FDS'">
+              If tei:publisher is part of tei:publicationStmt it must contain the text
+              "SSRQ-SDS-FDS".
+          </sch:assert>
           <sch:assert test="not(@cert)">
-                        If
-                        <sch:name/>
-                        is part of the publicationStmt it may not contain the attribute @cert.
-                    </sch:assert>
+              If tei:publisher is part of tei:publicationStmt it may not have the
+              attribute @cert.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>

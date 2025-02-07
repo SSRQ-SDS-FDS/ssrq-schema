@@ -1,8 +1,6 @@
 import pytest
-from pyschval.schematron.validate import apply_schematron_validation
-from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
@@ -19,8 +17,13 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-expan-with-resp",
+            "<expan resp='CS'>bar</expan>",
+            True,
+        ),
+        (
             "invalid-expan-with-wrong-attribute",
-            "<expan att='foo'>bar</expan>",
+            "<expan cert='high'>bar</expan>",
             False,
         ),
         (
@@ -37,23 +40,3 @@ def test_expan(
     result: bool,
 ):
     test_element_with_rng("expan", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "invalid-empty-expan",
-            "<expan/>",
-            False,
-        ),
-    ],
-)
-def test_expan_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].report.is_valid() is result

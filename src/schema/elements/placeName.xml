@@ -2,33 +2,29 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="placeName" module="namesdates" mode="change">
-  <desc xml:lang="de" versionDate="2023-04-20">Zeichnet topographische Bezeichnungen (einen Ort oder einen Flurnamen)
-        aus.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-04-20">Indicates topographical designations (a place or a field name).</desc>
-  <desc xml:lang="fr" versionDate="2023-04-20">Distingue les désignations topographiques (un lieu ou un lieu-dit).
-    </desc>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="placeName" module="namesdates" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Ortsname</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">place name</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">nom de lieu</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Zeichnet eine topographische Bezeichnung (wie einen
+    Ort oder einen Flurnamen) aus.</desc>
+  <desc xml:lang="en" versionDate="2023-04-20">Indicates topographical designations (a place or a
+    field name).</desc>
+  <desc xml:lang="fr" versionDate="2023-04-20">Distingue les désignations topographiques (un lieu
+    où un lieu-dit).</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="model.placeNamePart"/>
   </classes>
   <content>
-    <rng:oneOrMore>
-      <rng:ref name="ssrq.content.default"/>
-    </rng:oneOrMore>
+    <sequence maxOccurs="unbounded">
+      <macroRef key="ssrq.content.default"/>
+    </sequence>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-placeName" mode="delete"/>
   <attList>
+    <attDef ident="calendar" mode="delete"/>
     <attDef ident="ref" mode="replace">
-      <desc xml:lang="de" versionDate="2023-03-28">Verknüpfung des Ortes mit der ID der
-                Ortsdatenbank.
-            </desc>
-      <desc xml:lang="en" versionDate="2023-03-28">Linking the place with the ID of the database
-                of places.
-            </desc>
-      <desc xml:lang="fr" versionDate="2023-03-28">Relier le lieu à l'ID de la base de données
-                des lieux.
-            </desc>
       <datatype>
         <dataRef key="ssrq.pointer.places"/>
       </datatype>
@@ -37,4 +33,8 @@
   <xi:include href="examples.xml" xpointer="ex-placeName-de"/>
   <xi:include href="examples.xml" xpointer="ex-placeName-en"/>
   <xi:include href="examples.xml" xpointer="ex-placeName-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Es gelten die ausführlichen Richlinien zur Auszeichnung von Orten und Räumen in den
+      <ref target="places.de.md">Transkriptionsrichtlinien</ref>.</p>
+  </remarks>
 </elementSpec>

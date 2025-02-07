@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="altIdentifier" module="msdescription" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">alternative Bezeichnung</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">alternative identifier</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">identifiant alternatif</gloss>
   <desc xml:lang="de" versionDate="2023-07-14">Enthält eine alte Archivsignatur.</desc>
   <desc xml:lang="en" versionDate="2023-07-14">Contains an old archive signature.</desc>
   <desc xml:lang="fr" versionDate="2023-07-14">Contient une ancienne signature d'archive.</desc>
@@ -10,6 +13,10 @@
   <content>
     <elementRef key="idno"/>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-altIdentifier" mode="delete"/>
+  <attList>
+    <attDef ident="calendar" mode="delete"/>
+  </attList>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
   <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>

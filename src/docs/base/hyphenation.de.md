@@ -4,9 +4,9 @@ title: Trennregeln
 
 # Trennregeln
 
-Die folgenden Trennregeln gelten für die gedruckten (analogen) Editionen.
+Die folgenden Trennregeln gelten für die gedruckte (analoge) Edition.
 
-In den digitalen Editionen erfolgt die Trennung dynamisch nach Fenstergrösse.
+In der digitalen Edition erfolgt die Trennung dynamisch nach Fenstergrösse.
 
 === "Deutschsprachige Texte"
  
@@ -23,12 +23,12 @@ In den digitalen Editionen erfolgt die Trennung dynamisch nach Fenstergrösse.
     3. In Abweichung von Regel K 164.2 darf ein einzelner Vokal am Wortanfang
        nicht abgetrennt werden (also nicht: «A-bend»).
        Das Abtrennen eines Diphthongs hingegen («au-bent») ist im Notfall
-       (Vermeiden von Löchern) zulässig.
+       (zur Vermeidung von Löchern im Satzbild) zulässig.
     4. Im Fall von «Constanz/Konstanz/Costanz/Kostenz», von «instruction» und
        anderen ähnlichen Fremdwörtern wird in Übereinstimmung mit Regel K 167.1
        die Vorsilbe «Con/Kon/Co/Ko» bzw. «in» abgetrennt.
        Das «st» kommt somit auf die folgende Zeile.
-    5. Bei häufig vorkommenden Schreibweisen von «z» für «tz» sollten weiterhin
+    5. Bei der häufig vorkommenden Schreibweise «tz» für «z» sollten weiterhin
        die Vorsilben beachtet werden: «an-tzeigen» und nicht: «ant-zeigen».
     6. «Th» in deutschen Wörtern und Namen werden nicht getrennt (ausser
        natürlich bei Wort- bzw. Vorsilben-Fugen wie «mit-helfen» oder

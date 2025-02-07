@@ -10,29 +10,38 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     [
         (
             "valid-quote",
-            "<quote>bar baz foo</quote>",
+            "<quote>foo</quote>",
             True,
         ),
         (
-            "valid-quote-with-attributes-fully-inserted",
-            "<quote type='fully_inserted' source='http://foo.bar'>bar baz foo</quote>",
+            "valid-quote-with-content-default",
+            "<quote><del>foo</del> bar</quote>",
             True,
         ),
         (
-            "valid-quote-with-attributes-partially-inserted",
-            "<quote type='partially_inserted' source='http://foo.bar'>bar baz foo</quote>",
+            "valid-quote-with-two-segs",
+            "<quote><seg>1</seg><seg>2</seg></quote>",
             True,
         ),
-        ("valid-quote-with-two-segs", "<quote><seg>1</seg><seg>2</seg></quote>", True),
         (
-            "invalid-quote-with-two-seg-default-mixed",
+            "invalid-quote-with-mixed-content",
             "<quote><seg>1</seg>baz</quote>",
             False,
         ),
         (
-            "quote-with-invalid-attribute",
-            "<quote xml:lang='fr'>bar baz foo</quote>",
+            "invalid-quote-with-wrong-content",
+            "<quote><p>foo</p></quote>",
             False,
+        ),
+        (
+            "valid-quote-with-type",
+            "<quote type='fully_inserted'>foo</quote>",
+            True,
+        ),
+        (
+            "valid-quote-with-source",
+            "<quote source='http://foo.bar'>foo</quote>",
+            True,
         ),
     ],
 )
@@ -50,17 +59,12 @@ def test_quote(
     [
         (
             "valid-quote-with-note",
-            "<div><quote>bar baz foo</quote><note>bar baz foo</note></div>",
+            "<div><quote>foo</quote><note>bar</note></div>",
             True,
         ),
         (
             "invalid-quote-without-note",
-            "<div><quote>bar baz foo</quote></div>",
-            False,
-        ),
-        (
-            "invalid-quote-with-later-note",
-            "<div><quote>bar baz foo</quote><p>foo</p><note>bar baz foo</note></div>",
+            "<div><quote>foo</quote></div>",
             False,
         ),
     ],

@@ -8,22 +8,27 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-availability",
-            "<availability><licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence></availability>",
+            """
+            <availability>
+                <licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+                    Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+                </licence>
+            </availability>""",
             True,
         ),
         (
-            "invalid-availability-content",
-            "<availability/>",
+            "invalid-availability-with-status-attribute",
+            """
+            <availability status='foo'>
+                <licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+                    Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+                </licence>
+            </availability>""",
             False,
         ),
         (
-            "invalid-availability-with-attribute",
-            "<availability type='foo'><licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence></availability>",
-            False,
-        ),
-        (
-            "invalid-availability-with-p",
-            "<availability><p xml:id='facs'>bar</p><licence target='https://creativecommons.org/licenses/by-nc-sa/4.0/'>Attribution-NonCommercial- ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence></availability>",
+            "invalid-availability-with-wrong-content",
+            "<availability><p xml:id='facs'>bar</p></availability>",
             False,
         ),
     ],

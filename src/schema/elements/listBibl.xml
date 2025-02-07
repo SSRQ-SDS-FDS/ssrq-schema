@@ -4,12 +4,13 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="listBibl" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2023-09-14">Liste bibliographischer Angaben</gloss>
-  <desc xml:lang="de" versionDate="2023-07-19">Enthält mit <gi>bibl</gi> kodierte bibliographische Angaben.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-19">Contains bibliographic information encoded with <gi>bibl</gi>.
-    </desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient des informations bibliographiques encodées avec <gi>bibl</gi>.
-    </desc>
+  <gloss xml:lang="en" versionDate="2025-02-03">list of bibliographical statements</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">liste des déclarations bibliographiques</gloss>
+  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Liste bibliographischer Angaben.</desc>
+  <desc xml:lang="en" versionDate="2023-07-19">Contains bibliographic information encoded with
+    <gi>bibl</gi>.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient des informations bibliographiques encodées
+    avec <gi>bibl</gi>.</desc>
   <classes mode="replace">
     <memberOf key="att.typed"/>
     <memberOf key="model.biblLike"/>
@@ -19,8 +20,11 @@
   </content>
   <attList>
     <attDef ident="type" mode="change" usage="req">
+      <desc xml:lang="de" versionDate="2025-01-29">der Typ der Liste bibliographischer Angaben</desc>
+      <desc xml:lang="en" versionDate="2025-01-29">the type of the list of bibliographic statements</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">le type de la liste des déclarations bibliographiques</desc>
       <datatype>
-        <dataRef key="ssrq.bibl.types"/>
+        <dataRef key="ssrq.type.listbibl"/>
       </datatype>
     </attDef>
   </attList>
@@ -30,4 +34,8 @@
   <xi:include href="examples.xml" xpointer="ex-listBibl-summary-de"/>
   <xi:include href="examples.xml" xpointer="ex-listBibl-summary-en"/>
   <xi:include href="examples.xml" xpointer="ex-listBibl-summary-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-06">
+    <p>Jede <gi>listBibl</gi> sollte nur einen Typ von bibliographischen Angaben enthalten, der
+      mit dem Attribut <att>type</att> angegeben wird.</p>
+  </remarks>
 </elementSpec>

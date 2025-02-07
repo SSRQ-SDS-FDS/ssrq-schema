@@ -8,17 +8,26 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-handDesc",
-            "<handDesc><handNote xml:id='foo'/></handDesc>",
+            """
+            <handDesc>
+                <handNote xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'/>
+            </handDesc>
+            """,
             True,
         ),
         (
             "valid-handDesc-with multiple-handNotes",
-            "<handDesc><handNote xml:id='foo'/><handNote xml:id='bar'/></handDesc>",
+            """
+            <handDesc>
+                <handNote xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d'/>
+                <handNote xml:id='otherHand'/>
+            </handDesc>
+            """,
             True,
         ),
         (
             "invalid-handDesc-with-hands",
-            "<handDesc hands='10'><handNote xml:id='foo'/></handDesc>",
+            "<handDesc hands='10'><handNote xml:id='otherHand'/></handDesc>",
             False,
         ),
         (
@@ -26,14 +35,9 @@ from ..conftest import RNG_test_function
             "<handDesc><p>Foo</p></handDesc>",
             False,
         ),
-        (
-            "invalid-empty-handDesc",
-            "<handDesc/>",
-            False,
-        ),
     ],
 )
-def test_handDesc(
+def test_hand_desc(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

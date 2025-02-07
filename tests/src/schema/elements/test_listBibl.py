@@ -12,18 +12,18 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-listBibl-with-multiple-bibls",
+            "<listBibl type='literature'><bibl>foo</bibl><bibl>bar</bibl></listBibl>",
+            True,
+        ),
+        (
             "invalid-listBibl-without-type",
             "<listBibl><bibl>foo</bibl></listBibl>",
             False,
         ),
-        (
-            "invalid-listBibl-without-bibl",
-            "<listBibl type='literature'/>",
-            False,
-        ),
     ],
 )
-def test_listBibl(
+def test_list_bibl(
     test_element_with_rng: RNG_test_function,
     name: str,
     markup: str,

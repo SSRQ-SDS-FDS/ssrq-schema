@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -25,6 +25,14 @@
   </teiHeader>
   <text>
     <body>
+      <!--
+        Load the file, which contains combined translations, used in web / pdf output
+
+        Note: Inclusion path is relative to the examplles directory (the base_path is
+        defined by `resolve_xincludes` in `compile.py`
+
+    -->
+      <xi:include href="../commons/translations.odd.xml" xpointer="ssrq-translations-global"/>
       <schemaSpec ident="ssrq-main-schema" docLang="de en fr">
         <!-- TEI modules used -->
         <moduleRef key="analysis" include="pc"/>
@@ -48,21 +56,27 @@
         <!-- content types -->
         <specGrpRef target="commons/content.odd.xml#ssrq-default-content-types"/>
         <!-- datatypes -->
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-add-type"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-agent"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-bibl"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-date-time"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-dur-iso"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-dimensions"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-hand"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-lang"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-measure"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-n"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-orig-type"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-period"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-place"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-quantity"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-reason"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-rend"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-role"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-struct"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-target"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-type"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-xmlid"/>
         <!-- patterns -->
         <specGrpRef target="commons/patterns.odd.xml#ssrq-patterns"/>
+        <!-- additional translations -->
         <!-- element specifications -->
         <specGrpRef target="elements/ab.xml"/>
         <specGrpRef target="elements/abbr.xml"/>
