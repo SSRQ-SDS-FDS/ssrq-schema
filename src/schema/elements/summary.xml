@@ -6,7 +6,7 @@
   <gloss xml:lang="de" versionDate="2023-07-15">Regest</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">regest</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-04">regeste</gloss>
-  <desc xml:lang="de" versionDate="2023-07-15">Beschreibt den Inhalt der Quelle ausführlich.</desc>
+  <desc xml:lang="de" versionDate="2025-02-07">Enthält ein ausführliches Regest des Textes.</desc>
   <desc xml:lang="en" versionDate="2023-07-15">Describes the content of the source in detail.</desc>
   <desc xml:lang="fr" versionDate="2023-07-15">Décrit en détail le contenu de la source.</desc>
   <classes mode="replace">
@@ -38,4 +38,8 @@
   <xi:include href="examples.xml" xpointer="ex-summary-list-de"/>
   <xi:include href="examples.xml" xpointer="ex-summary-list-en"/>
   <xi:include href="examples.xml" xpointer="ex-summary-list-fr"/>
+  <remarks xml:lang="de" versionDate="2025-02-07">
+    <p>Mit dem Attribut <att>xml:lang</att> kann die Sprache des Regests angegeben werden.
+      Einem Text können so Regeste in mehreren Sprachen beigegeben werden.</p>
+  </remarks>
 </elementSpec>

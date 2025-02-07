@@ -6,8 +6,7 @@
   <gloss xml:lang="de" versionDate="2025-02-04">Quellenbeschreibung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">source description</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-04">description de la source</gloss>
-  <desc xml:lang="de" versionDate="2023-07-18">Enthält Elemente zur Beschreibung der Quelle bzw.
-    der Quellen.</desc>
+  <desc xml:lang="de" versionDate="2025-02-07">Enthält Elemente zur Beschreibung der Textträger.</desc>
   <desc xml:lang="en" versionDate="2023-07-18">Contains elements describing the source or
     sources.</desc>
   <desc xml:lang="fr" versionDate="2023-07-18">Contient des éléments décrivant la source ou les
@@ -25,9 +24,10 @@
   <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-de"/>
   <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-en"/>
   <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-fr"/>
-  <remarks xml:lang="de" versionDate="2023-08-18">
-    <p>Beschrieben werden Inhalt (Regest), Aufbewahrungsort, Material, Layout, Schreiber, Siegel und
-      bibliographische Bezüge.</p>
+  <remarks xml:lang="de" versionDate="2025-02-07">
+    <p>Gibt es nur einen Textträger, ist der Inhalt von <gi>sourceDesc</gi> ein einzelnes
+    <gi>msDesc</gi>, gibt es mehrere, dann folgt ein <gi>listWit</gi>-Element, innerhalb dessen für
+    jeden Textträger ein eigenes <gi>witness</gi> mit einer eigenen <gi>msDesc</gi> angelegt wird.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-08-18">
     <p>Content (regest), place of storage, material, layout, scribe, seal and bibliographical
