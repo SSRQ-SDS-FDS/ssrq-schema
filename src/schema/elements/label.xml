@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="label" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Randanmerkung</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">label</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">étiquette</gloss>
   <desc xml:lang="de" versionDate="2023-07-19">Enthält Randanmerkungen, die in den Editionstext
     integriert werden.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains marginal notes that are integrated into
@@ -21,7 +24,7 @@
     </sequence>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-label">
-    <desc xml:lang="en" versionDate="2023-05-25">Constraint for tei:label</desc>
+    <desc xml:lang="en" versionDate="2023-05-25">constraint for tei:label</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:label[not(parent::list)]">

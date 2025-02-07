@@ -4,8 +4,8 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="idno" module="header" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-07">Identifikationsnummer</gloss>
-  <gloss xml:lang="en" versionDate="2023-07-07">Identification number</gloss>
-  <gloss xml:lang="fr" versionDate="2023-07-07">Numéro d'identification</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">identification number</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">numéro d'identification</gloss>
   <desc xml:lang="de" versionDate="2023-07-17">Enthält im <gi>seriesStmt</gi> eine UUID
       (mit <att>type</att> = <val>UUID</val>), das Bandkürzel (Kanton, Teil, Stücknummer) der
       Sammlung Schweizerischer Rechtsquellen oder enthält im <gi>msIdentifier</gi> die
@@ -28,19 +28,19 @@
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-idno" mode="delete"/>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-idno">
-    <desc xml:lang="en" versionDate="2023-09-26">Constraints for tei:idno</desc>
+    <desc xml:lang="en" versionDate="2023-09-26">constraint for tei:idno</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:idno[parent::tei:seriesStmt]">
           <sch:assert test="not(@xml:lang)">
-              The usage of @xml:lang is prohibited, when tei:idno is used inside the tei:seriesStmt.
+              The usage of @xml:lang is prohibited, when tei:idno is used inside tei:seriesStmt.
           </sch:assert>
         </sch:rule>
       </sch:pattern>
       <sch:pattern>
         <sch:rule context="tei:idno[parent::tei:seriesStmt][not(@type)]">
           <sch:assert test="matches(., '^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-(1))|(lit|intro|bailiffs))$')">
-              The tei:idno must match the defined schema – see the examples in the docs.
+              The tei:idno must match the defined schema – see the examples in the documentation.
           </sch:assert>
         </sch:rule>
         <sch:rule context="tei:idno[parent::tei:seriesStmt][@type]">

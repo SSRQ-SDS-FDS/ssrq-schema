@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="quote" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-04">Zitat</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-04">quote</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">citation</gloss>
   <desc xml:lang="de" versionDate="2023-07-20">Enthält ein Zitat innerhalb eines
       Originaltextes.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains a citation within an original text.</desc>
@@ -21,7 +24,7 @@
     </alternate>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-quote" mode="add">
-    <desc versionDate="2023-05-31" xml:lang="en">Schematron rules for tei:quote</desc>
+    <desc versionDate="2023-05-31" xml:lang="en">constraint for tei:quote</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:quote">

@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="publisher" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-04">Verlag</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-04">publisher</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">éditeur</gloss>
   <desc xml:lang="de" versionDate="2023-07-20">Enthält bei Druckschriften als Teil
       von <gi>docImprint</gi> den Namen der Druckerei oder des Druckers, als Teil
       von <gi>publicationStmt</gi> die Angabe der herausgebenden Institution.
@@ -24,7 +27,7 @@
     </alternate>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-publisher-custom" mode="add">
-    <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for <gi>publisher</gi>.</desc>
+    <desc versionDate="2023-06-23" xml:lang="en">constraint for tei:publisher</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:publisher[ancestor::tei:publicationStmt]">

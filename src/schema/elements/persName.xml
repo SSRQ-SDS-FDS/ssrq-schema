@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="persName" module="namesdates" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Personenname</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">personal name</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">nom de personne</gloss>
   <desc xml:lang="de" versionDate="2024-04-20">Zeichnet eine Person aus und umfasst in der Regel
       nur den Vor- und Nachnamen.</desc>
   <desc xml:lang="en" versionDate="2024-04-20">Indicates a person and usually includes only the
@@ -20,8 +23,8 @@
     </sequence>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-persName" mode="delete"/>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-persName-custom" mode="add">
-    <desc versionDate="2023-06-23" xml:lang="en">Schematron rules for tei:persName.</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-persName" mode="add">
+    <desc versionDate="2023-06-23" xml:lang="en">constraint for tei:persName</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:persName[ancestor::tei:editor]">

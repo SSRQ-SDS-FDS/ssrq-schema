@@ -4,8 +4,8 @@
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="summary" module="msdescription" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-15">Regest</gloss>
-  <gloss xml:lang="en" versionDate="2023-07-15">Regest</gloss>
-  <gloss xml:lang="fr" versionDate="2023-07-15">Regeste</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-04">regest</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">regeste</gloss>
   <desc xml:lang="de" versionDate="2023-07-15">Beschreibt den Inhalt der Quelle ausführlich.</desc>
   <desc xml:lang="en" versionDate="2023-07-15">Describes the content of the source in detail.</desc>
   <desc xml:lang="fr" versionDate="2023-07-15">Décrit en détail le contenu de la source.</desc>
@@ -16,12 +16,12 @@
     <elementRef key="p" maxOccurs="unbounded"/>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-summary">
-    <desc xml:lang="en" versionDate="2023-04-14">Constraint for tei:summary</desc>
+    <desc xml:lang="en" versionDate="2023-04-14">constraint for tei:summary</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:summary/tei:p">
           <sch:assert test="not(.[@xml:lang])">
-            tei:p inside tei:summary should not have an attribute xml:lang.
+            tei:p inside tei:summary should not have an attribute @xml:lang.
           </sch:assert>
         </sch:rule>
       </sch:pattern>

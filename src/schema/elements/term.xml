@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="term" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-04">Stichwort/Schlagwort</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-04">term</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">terme</gloss>
   <desc xml:lang="de" versionDate="2023-07-20">Enthält ein Stichwort oder Schlagwort.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains a lemma or a keyword.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Contient un lemme ou un mot-clé.</desc>
@@ -17,8 +20,7 @@
     </sequence>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-term">
-    <desc xml:lang="en" versionDate="2023-11-07">Constraints to ensure the correct usage of
-      ltei:term.</desc>
+    <desc xml:lang="en" versionDate="2023-11-07">constraint for tei:term</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:term">

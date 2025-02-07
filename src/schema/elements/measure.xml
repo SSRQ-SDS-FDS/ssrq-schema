@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="measure" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Massangabe</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">measure</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">mesure</gloss>
   <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Massangabe jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains a measurement of any type.</desc>
   <desc xml:lang="fr" versionDate="2023-07-19">Contient une mesure de chaque type.</desc>
@@ -21,7 +24,7 @@
     </alternate>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" mode="change" ident="sch-measure" module="core">
-    <desc xml:lang="en" versionDate="2023-03-23">Constrains for tei:measure</desc>
+    <desc xml:lang="en" versionDate="2023-03-23">constraint for tei:measure</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:measure[@type = 'age']">

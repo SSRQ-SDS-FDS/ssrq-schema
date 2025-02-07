@@ -3,6 +3,9 @@
     type="application/xml"
     schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="msDesc" module="msdescription" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Handschriftenbeschreibung</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">manuscript description</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">description du manuscrit</gloss>
   <desc xml:lang="de" versionDate="2023-05-30">Beschreibt das edierte Quellenstück mit
         Aufbewahrungsort, Material, Layout, Schreiber, Siegel und Bibliographie zu Sekundärliteratur
         (Metadaten).</desc>
@@ -26,8 +29,7 @@
     </sequence>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-msDesc">
-    <desc xml:lang="en" versionDate="2023-03-07">Constraint for tei:msDesc to ensure the usage of
-      either tei:physDesc or tei:adminInfo.</desc>
+    <desc xml:lang="en" versionDate="2023-03-07">constraint for tei:msDesc</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:msDesc[ancestor::tei:TEI//tei:text[@type = 'collection']]">

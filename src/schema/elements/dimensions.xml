@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="dimensions" module="msdescription" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Dimensionen</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">dimensions</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">dimensions</gloss>
   <desc xml:lang="de" versionDate="2023-04-19">Masse einer Quelle</desc>
   <desc xml:lang="en" versionDate="2023-04-19">Dimension of a source</desc>
   <desc xml:lang="fr" versionDate="2023-04-19">Dimensions d'une source</desc>
@@ -16,13 +19,13 @@
       <elementRef key="height" minOccurs="0"/>
     </sequence>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-dimensions">
-    <desc xml:lang="en" versionDate="2023-04-19">Constraint for tei:dimensions</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-dimensions">
+    <desc xml:lang="en" versionDate="2023-04-19">constraint for tei:dimensions</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:dimensions[@type = 'plica']">
           <sch:assert test="count(*) = 1 and */name() = 'width'">If the value of @type is
-            'plica' only one tei:width is allowed as child.</sch:assert>
+            'plica' only one tei:width is allowed as a child.</sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>

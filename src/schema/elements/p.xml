@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="p" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Absatz</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">paragraph</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">paragraphe</gloss>
   <desc xml:lang="de" versionDate="2023-07-20">Beschreibt einen Absatz.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes a paragraph.</desc>
   <desc xml:lang="fr" versionDate="2023-07-20">Décrit un paragraphe.</desc>
@@ -22,8 +25,7 @@
     </alternate>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-p">
-    <desc xml:lang="en" versionDate="2023-05-22">Ensure all <gi>p</gi> elements have
-        a <att>xml:lang</att> when they are siblings.</desc>
+    <desc xml:lang="en" versionDate="2023-05-22">constraint for tei:p</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:p[@xml:lang][following-sibling::tei:p|preceding-sibling::tei:p]">

@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="date" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Datum</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">date</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">date</gloss>
   <desc xml:lang="de" versionDate="2023-08-17">Enthält ein Datum.</desc>
   <desc xml:lang="en" versionDate="2023-08-17">Contains a date.</desc>
   <desc xml:lang="fr" versionDate="2023-08-17">Contient une date.</desc>
@@ -21,28 +24,28 @@
       <macroRef key="ssrq.content.default"/>
     </alternate>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-data-custom" mode="add">
-    <desc xml:lang="en" versionDate="2023-05-05">Schematron rules for tei:date</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-date" mode="add">
+    <desc xml:lang="en" versionDate="2023-05-05">constraint for tei:date</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:date[not(ancestor::tei:teiHeader)] | tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
           <sch:assert test="string-length(normalize-space(.)) &gt; 0 or child::*">
-              The element date must not be empty when outside the teiHeader.
+              The element tei:date must not be empty when outside tei:teiHeader.
           </sch:assert>
           <sch:assert test=".[@calendar]">
-            The attribute @calendar is required, when date is used outside the publicationStmt.
+            The attribute @calendar is required, when tei:date is used outside tei:publicationStmt.
         </sch:assert>
         </sch:rule>
         <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
           <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)">
-            If date is part of the publicationStmt it must be empty.
+            If tei:date is part of tei:publicationStmt it must be empty.
           </sch:assert>
           <sch:assert test=".[@type][@type/data(.) = ('electronic', 'print')]">
-            If date is part of the publicationStmt it must contain @type with a value of
+            If tei:date is part of tei:publicationStmt it must contain @type with a value of
             'electronic' or 'print'.
           </sch:assert>
           <sch:assert test=".[@when-custom or (@from-custom and @to-custom)][not(@calendar|@dur-iso|@notAfter-custom|@notBefore-custom|@period)]">
-            If date is part of the publicationStmt it must contain @when-custom or @from-custom
+            If tei:date is part of tei:publicationStmt it must contain @when-custom or @from-custom
             and to-custom, and may not contain @calendar, @dur-iso, @notAfter-custom,
             @notBefore-custom or @period.
           </sch:assert>

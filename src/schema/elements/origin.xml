@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origin" module="msdescription" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Herkunft</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">origin</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">origine</gloss>
   <desc xml:lang="de" versionDate="2023-05-16">Enthält Informationen zur Herkunft eines
     Dokuments.</desc>
   <desc xml:lang="en" versionDate="2023-05-16">Contains information on the origin of a
@@ -20,13 +23,13 @@
     </sequence>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-origin" mode="delete"/>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="origDate.type" mode="add">
-    <desc xml:lang="en" versionDate="2024-06-05">Schematron rule for tei:origDate/@type</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-origDate" mode="add">
+    <desc xml:lang="en" versionDate="2024-06-05">constraint for tei:origDate</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:origin">
           <sch:assert test="count(distinct-values(tei:origDate/@type)) = count(tei:origDate)">
-            When there are two <sch:name/>s, their type attributes must be different.
+            When there are two tei:origDates inside tei:origin, their @type attributes must be different.
           </sch:assert>
         </sch:rule>
       </sch:pattern>

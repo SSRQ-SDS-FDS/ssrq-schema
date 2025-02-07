@@ -3,6 +3,9 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="note" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Anmerkung</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">note</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">note</gloss>
   <desc xml:lang="de" versionDate="2024-05-02">Enthält entweder eine sachkritische Anmerkung zu
       einer Einzelstelle im Editionstext oder den Verweis auf einen weiteren Textzeugen in dem der
       jeweilige Text wiederverwendet wird.</desc>
@@ -23,31 +26,30 @@
     </alternate>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-note">
-    <desc xml:lang="en" versionDate="2023-10-30">Constraint for <gi>note</gi>, to ensure the
-        children inside <gi>app</gi>.</desc>
+    <desc xml:lang="en" versionDate="2023-10-30">constraint for tei:note</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:note[parent::tei:app]">
           <sch:assert test="every $child in * satisfies $child/name() = ('ref', 'orig')">
-              If a tei:note is used inside a tei:app, only tei:ref and tei:orig are allowed
+              If a tei:note is used inside tei:app, only tei:ref and tei:orig are allowed
               as children.
           </sch:assert>
           <sch:assert test="count(tei:ref) = 1">
-              A tei:note inside a tei:app must have exactly one tei:ref as a child.
+              A tei:note inside tei:app must have exactly one tei:ref as a child.
           </sch:assert>
           <sch:assert test="count(tei:orig) = 1 or count(tei:orig) = 0">
-              A tei:note inside a tei:app may have one or no tei:orig as a child.
+              A tei:note inside tei:app may have one or no tei:orig as a child.
           </sch:assert>
           <sch:assert test="every $t in text()[normalize-space()] satisfies string-length($t) = 0">
-              A tei:note inside a tei:app must not have text content.
+              A tei:note inside tei:app must not have text content.
           </sch:assert>
           <sch:assert test=".[@type]">
-              A tei:note inside a critical apparatus must have a type attribute.
+              A tei:note inside a critical apparatus must have a @type attribute.
           </sch:assert>
         </sch:rule>
         <sch:rule context="tei:note[@type='text_comparison']">
           <sch:assert test="parent::tei:app">
-              A tei:note with type "text_comparison" must be a child of tei:app.
+              A tei:note with @type "text_comparison" must be a child of tei:app.
           </sch:assert>
         </sch:rule>
       </sch:pattern>
