@@ -87,6 +87,15 @@ def test_date_rng(
             True,
         ),
         (
+            "valid-date-outside-publication-stmt-without-calendar",
+            """
+            <text>
+                <date dur-iso="R/P1W" period="P1WD">foo</date>
+            </text>    
+            """,
+            True,
+        ),
+        (
             "invalid-date-outside-publication-stmt-without-calendar",
             """
             <text>
@@ -180,6 +189,40 @@ def test_date_rng(
             </teiHeader>
             """,
             False,
+        ),
+        (
+            "valid-date-in-teiHeader-outside-publication-stmt-without-content",
+            """
+            <TEI>
+                <teiHeader>
+                    <handNote xml:id="hand18c">
+                        <date calendar="gregorian" from-custom="1701-01-01" to-custom="1800-12-31"/>
+                    </handNote>
+                </teiHeader>
+                <text>
+                    <ab type="address" place="above" hand="hand18c">Foo</ab>
+                </text>
+            </TEI>
+            """,
+            True,
+        ),
+        (
+            "valid-date-in-teiHeader-outside-publication-stmt-with-content",
+            """
+            <TEI>
+                <teiHeader>
+                    <handNote xml:id="hand18cf">
+                        <date calendar="gregorian" from-custom="1701-01-01" to-custom="1800-12-31">
+                            <precision match="@from-custom @to-custom" precision="low"/>
+                        </date>
+                    </handNote>
+                </teiHeader>
+                <text>
+                    <ab type="address" place="above" hand="hand18cf">Foo</ab>
+                </text>
+            </TEI>
+            """,
+            True,
         ),
     ],
 )
