@@ -24,18 +24,22 @@
       <macroRef key="ssrq.content.default"/>
     </alternate>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-date" mode="add">
-    <desc xml:lang="en" versionDate="2023-05-05">constraint for tei:date</desc>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-date-outside-teiHeader" mode="add">
+    <desc xml:lang="en" versionDate="2025-02-08">constraint for tei:date outside tei:teiHeader</desc>
     <constraint>
       <sch:pattern>
-        <sch:rule context="tei:date[not(ancestor::tei:teiHeader)] | tei:date[not(ancestor::tei:publicationStmt)][@when-custom|@from-custom|@to-custom|@notBefore-custom|@notAfter-custom]">
+        <sch:rule context="tei:date[not(ancestor::tei:teiHeader)]">
           <sch:assert test="string-length(normalize-space(.)) &gt; 0 or child::*">
               The element tei:date must not be empty when outside tei:teiHeader.
           </sch:assert>
-          <sch:assert test=".[@calendar]">
-            The attribute @calendar is required, when tei:date is used outside tei:publicationStmt.
-        </sch:assert>
         </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-date-publicationStmt" mode="add">
+    <desc xml:lang="en" versionDate="2025-02-08">constraint for tei:date inside tei:publicationStmt</desc>
+    <constraint>
+      <sch:pattern>
         <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
           <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)">
             If tei:date is part of tei:publicationStmt it must be empty.
