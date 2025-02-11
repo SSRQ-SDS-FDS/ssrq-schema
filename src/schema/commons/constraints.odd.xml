@@ -13,7 +13,7 @@
                 More attributes must be used together with @calendar to specify the date.
             </sch:assert>
           </sch:rule>
-          <sch:rule context="tei:*[@when-custom|@notBefore-custom|@notAfter-custom|@from-custom|@to-custom][not(ancestor::tei:publicationStmt)]">
+          <sch:rule context="tei:*[@when-custom|@notBefore-custom|@notAfter-custom|@from-custom|@to-custom][not(ancestor::tei:publicationStmt)][not(self::tei:time)]">
             <sch:assert test=".[@calendar]">
               @calendar must be used, when either @when-custom, @from-custom, @to-custom,
               @notAfter-custom or @notBefore-custom is used.
