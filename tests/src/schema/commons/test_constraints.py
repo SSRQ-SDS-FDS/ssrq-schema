@@ -23,6 +23,11 @@ from ..conftest import SimpleTEIWriter, add_tei_namespace
             "<date calendar='gregorian' from-custom='1000-01-01' to-custom='1001-01-00'>Foo</date>",
             True,
         ),
+        (
+            "valid-time-without-calendar",
+            "<time when-custom='08:48:00'><del>foo</del> bar</time>",
+            True,
+        ),
     ],
 )
 def test_constraint_sch_att_calendar(
@@ -46,36 +51,36 @@ def test_constraint_sch_att_calendar(
         ),
         (
             "invalid-datable-with-when-and-from",
-            """<date calendar='gregorian' 
-                     when-custom='2020-01-01' 
+            """<date calendar='gregorian'
+                     when-custom='2020-01-01'
                      from-custom='2020-12-31'>Foo</date>""",
             False,
         ),
         (
             "invalid-datable-with-when-and-to",
-            """<date calendar='gregorian' 
-                     when-custom='2020-01-01' 
+            """<date calendar='gregorian'
+                     when-custom='2020-01-01'
                      to-custom='2020-12-31'>Foo</date>""",
             False,
         ),
         (
             "invalid-datable-with-when-and-notBefore",
-            """<date calendar='gregorian' 
-                     when-custom='2020-01-01' 
+            """<date calendar='gregorian'
+                     when-custom='2020-01-01'
                      notBefore-custom='2020-12-31'>Foo</date>""",
             False,
         ),
         (
             "invalid-datable-with-when-and-notAfter",
-            """<date calendar='gregorian' 
-                     when-custom='2020-01-01' 
+            """<date calendar='gregorian'
+                     when-custom='2020-01-01'
                      notAfter-custom='2020-12-31'>Foo</date>""",
             False,
         ),
         (
             "valid-datable-with-from-and-to",
-            """<date calendar='gregorian' 
-                     from-custom='2020-01-01' 
+            """<date calendar='gregorian'
+                     from-custom='2020-01-01'
                      to-custom='2020-12-31'>Foo</date>""",
             True,
         ),
@@ -91,22 +96,22 @@ def test_constraint_sch_att_calendar(
         ),
         (
             "invalid-datable-with-from-and-to-and-notBefore",
-            """<date calendar='gregorian' 
-                     from-custom='2020-01-01' to-custom='2020-12-31' 
+            """<date calendar='gregorian'
+                     from-custom='2020-01-01' to-custom='2020-12-31'
                      notBefore-custom='2019'>Foo</date>""",
             False,
         ),
         (
             "invalid-datable-with-from-and-to-and-notAfter",
-            """<date calendar='gregorian' 
-                     from-custom='2020-01-01' to-custom='2020-12-31' 
+            """<date calendar='gregorian'
+                     from-custom='2020-01-01' to-custom='2020-12-31'
                      notAfter-custom='2019'>Foo</date>""",
             False,
         ),
         (
             "invalid-datable-with-to-before-from",
-            """<date calendar='gregorian' 
-                     from-custom='2000-01-01' 
+            """<date calendar='gregorian'
+                     from-custom='2000-01-01'
                      to-custom='1000-12-31'>Foo</date>""",
             False,
         ),
@@ -295,7 +300,7 @@ def test_constraint_sch_att_facs(
                     </msDesc>
                 </witness>
                 <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d"/>
-            </div>        
+            </div>
             """,
             True,
         ),
@@ -307,7 +312,7 @@ def test_constraint_sch_att_facs(
                     <bibl xml:id="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d">Foo</bibl>
                 </listBibl>
                 <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d"/>
-            </div>        
+            </div>
             """,
             True,
         ),
@@ -317,7 +322,7 @@ def test_constraint_sch_att_facs(
             <div>
                 <anchor xml:id="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d"/>
                 <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d"/>
-            </div>        
+            </div>
             """,
             False,
         ),
@@ -326,7 +331,7 @@ def test_constraint_sch_att_facs(
             """
             <div>
                 <rdg wit="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d"/>
-            </div>        
+            </div>
             """,
             False,
         ),
@@ -352,7 +357,7 @@ def test_constraint_sch_att_wit(
             <div>
                 <handNote xml:id="otherHand" />
                 <handShift hand="otherHand"/>
-            </div>        
+            </div>
             """,
             True,
         ),
@@ -362,7 +367,7 @@ def test_constraint_sch_att_wit(
             <div>
                 <anchor xml:id="otherHand" />
                 <handShift hand="otherHand"/>
-            </div>        
+            </div>
             """,
             False,
         ),
@@ -371,7 +376,7 @@ def test_constraint_sch_att_wit(
             """
             <div>
                 <handShift hand="otherHand"/>
-            </div>        
+            </div>
             """,
             False,
         ),
