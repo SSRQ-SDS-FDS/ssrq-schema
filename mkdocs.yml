@@ -1,115 +1,115 @@
 copyright: Copyright &copy; <script>document.write(new Date().getFullYear())</script> SSRQ · SDS · FDS
 docs_dir: src/docs
 extra:
-    social:
-        - icon: fontawesome/brands/github
-          link: https://github.com/SSRQ-SDS-FDS/ssrq-schema
-          name: Schema of the SSRQ on GitHub
-        - icon: fontawesome/solid/computer
-          link: https://editio.ssrq-online.ch
-          name: editio / digital scholarly edition
-        - icon: material/information
-          link: https://www.ssrq-sds-fds.ch/en/service-menu/contact/
-          name: contact / imprint
-    version:
-        provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/SSRQ-SDS-FDS/ssrq-schema
+      name: Schema of the SSRQ on GitHub
+    - icon: fontawesome/solid/computer
+      link: https://editio.ssrq-online.ch
+      name: editio / digital scholarly edition
+    - icon: material/information
+      link: https://www.ssrq-sds-fds.ch/en/service-menu/contact/
+      name: contact / imprint
+  version:
+    provider: mike
 extra_css:
-    - assets/css/extra.css
+  - assets/css/extra.css
 # This hook creates the odd and generates a markdown-file per element (de, fr)
 hooks:
-    - ./utils/docs/doc_hooks.py
+  - ./utils/docs/doc_hooks.py
 markdown_extensions:
-    - footnotes
-    - pymdownx.highlight:
-          anchor_linenums: true
-          line_spans: __span
-          pygments_lang_class: true
-    - pymdownx.inlinehilite
-    - pymdownx.snippets
-    - pymdownx.superfences
-    - pymdownx.tabbed:
-          alternate_style: true
+  - footnotes
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 nav:
-    - Home: index.md
-    - Base:
-          - Transcription:
-                - base/transcription/index.md
-                - base/transcription/common.md
-                - Spelling:
-                      - base/transcription/spelling/index.md
-                      - base/transcription/spelling/normalization.md
-                      - base/transcription/spelling/special.md
-                      - base/transcription/spelling/versalia.md
-                      - base/transcription/spelling/wordseparation.md
-                      - base/transcription/spelling/numbers.md
-                      - base/transcription/spelling/punctuation.md
-                - Constitution:
-                      - base/transcription/text-constitution/index.md
-                      - base/transcription/text-constitution/emendation.md
-                      - base/transcription/text-constitution/abbreviations.md
-                      - base/transcription/text-constitution/variants.md
-                      - base/transcription/text-constitution/paratext.md
-                      - base/transcription/text-constitution/highlighting.md
-                      - base/transcription/text-constitution/textstructure.md
-                      - base/transcription/text-constitution/notes.md
-                      - base/transcription/text-constitution/scribes-and-hands.md
-                - Semantic:
-                      - base/transcription/semantic-markup/index.md
-                      - base/transcription/semantic-markup/persons.md
-                      - base/transcription/semantic-markup/organisations.md
-                      - base/transcription/semantic-markup/places.md
-                      - base/transcription/semantic-markup/keyword_entries.md
-                      - base/transcription/semantic-markup/lemmata.md
-          - base/dating_guidelines.md
-          - Hyphenation: base/hyphenation.md
-          - base/abbreviation-list.md
-    - Elements:
-          - elements/index.md
+  - Home: index.md
+  - Base:
+      - Transcription:
+          - base/transcription/index.md
+          - base/transcription/common.md
+          - Spelling:
+              - base/transcription/spelling/index.md
+              - base/transcription/spelling/normalization.md
+              - base/transcription/spelling/special.md
+              - base/transcription/spelling/versalia.md
+              - base/transcription/spelling/wordseparation.md
+              - base/transcription/spelling/numbers.md
+              - base/transcription/spelling/punctuation.md
+          - Constitution:
+              - base/transcription/text-constitution/index.md
+              - base/transcription/text-constitution/emendation.md
+              - base/transcription/text-constitution/abbreviations.md
+              - base/transcription/text-constitution/variants.md
+              - base/transcription/text-constitution/paratext.md
+              - base/transcription/text-constitution/highlighting.md
+              - base/transcription/text-constitution/textstructure.md
+              - base/transcription/text-constitution/notes.md
+              - base/transcription/text-constitution/scribes-and-hands.md
+          - Semantic:
+              - base/transcription/semantic-markup/index.md
+              - base/transcription/semantic-markup/persons.md
+              - base/transcription/semantic-markup/organisations.md
+              - base/transcription/semantic-markup/places.md
+              - base/transcription/semantic-markup/keyword_entries.md
+              - base/transcription/semantic-markup/lemmata.md
+      - base/dating_guidelines.md
+      - Hyphenation: base/hyphenation.md
+      - base/abbreviation-list.md
+  - Elements:
+      - elements/index.md
 plugins:
-    - search
-    - i18n:
-          docs_structure: suffix
-          fallback_to_default: false
-          languages:
-              - locale: de
-                default: true
-                build: true
-                name: Default (de)
-                site_name: SSRQ Dokumentation
-                nav_translations:
-                    Base: Philologische Grundlagen
-                    Constitution: Textkonstitution
-                    Elements: Tag-Bibliothek
-                    Hyphenation: Trennregeln
-                    Home: Startseite
-                    Semantic: Inhaltliche Auszeichnung
-                    Spelling: Orthographie
-                    Transcription: Transkriptionsrichtlinien
-              - locale: fr
-                build: !ENV [BUILD_FR, false]
-                name: Français
-                site_name: SDS Documentation
-                nav_translations:
-                    Base: Bases philologiques
-                    Elements: Bibliothèque de tags
-                    Home: Page d'accueil
-                    Hyphenation: Règles de séparation
-                    Transcription: Principes de transcription
-          reconfigure_material: true
-          reconfigure_search: true
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: false
+      languages:
+        - locale: de
+          default: true
+          build: true
+          name: Default (de)
+          site_name: SSRQ Dokumentation
+          nav_translations:
+            Base: Philologische Grundlagen
+            Constitution: Textkonstitution
+            Elements: Tag-Bibliothek
+            Hyphenation: Trennregeln
+            Home: Startseite
+            Semantic: Inhaltliche Auszeichnung
+            Spelling: Orthographie
+            Transcription: Transkriptionsrichtlinien
+        - locale: fr
+          build: !ENV [BUILD_FR, true]
+          name: Français
+          site_name: SDS Documentation
+          nav_translations:
+            Base: Bases philologiques
+            Elements: Bibliothèque de tags
+            Home: Page d'accueil
+            Hyphenation: Règles de séparation
+            Transcription: Principes de transcription
+      reconfigure_material: true
+      reconfigure_search: true
 site_name: !ENV [SITE_NAME, "SSRQ Docs"]
 site_url: !ENV DOCS_URL
 theme:
-    favicon: assets/images/favicon-ssrq-32.png
-    features:
-        - navigation.indexes
-        - navigation.path
-        - navigation.top
-    logo: assets/images/ssrq-small-logo.svg
-    name: material
+  favicon: assets/images/favicon-ssrq-32.png
+  features:
+    - navigation.indexes
+    - navigation.path
+    - navigation.top
+  logo: assets/images/ssrq-small-logo.svg
+  name: material
 watch:
-    - "src/docs/assets"
-    - "src/docs/base"
-    - "src/docs/translations"
-    - "src/schema"
-    - "utils"
+  - "src/docs/assets"
+  - "src/docs/base"
+  - "src/docs/translations"
+  - "src/schema"
+  - "utils"
