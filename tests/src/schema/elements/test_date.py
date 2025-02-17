@@ -224,6 +224,16 @@ def test_date_rng(
             """,
             True,
         ),
+        (
+            "invalid-date-with-type-electronic-outside-publication-stmt",
+            "<date calendar='gregorian' when-custom='2000-01-01' type='electronic'>Foo</date>",
+            False,
+        ),
+        (
+            "invalid-date-with-type-print-outside-publication-stmt",
+            "<date calendar='gregorian' when-custom='2000-01-01' type='print'>Foo</date>",
+            False,
+        ),
     ],
 )
 def test_date_constraints(
