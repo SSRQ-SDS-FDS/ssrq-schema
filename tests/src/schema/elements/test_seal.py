@@ -145,6 +145,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<seal n='1' condition='absent' contemporary='true'/>",
             False,
         ),
+        (
+            "valid-seal-with-db-reference",
+            "<seal n='1' condition='absent' ref='https://link-to-a-database.ch/123456'/>",
+            True,
+        ),
     ],
 )
 def test_seal(
