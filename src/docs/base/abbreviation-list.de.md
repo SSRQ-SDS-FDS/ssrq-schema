@@ -93,8 +93,8 @@ kommen und nicht aufgelöst werden.
      = Florin / Gulden (Währung)  
      = Gulden (Währung)  
     ħ = Haller (Währung)  
-     = Helbling
-    ,  = Krone (Währung)
+     = Helbling  
+    ,  = Krone (Währung)  
     ℔ = Pfund (Gewicht)  
      = Pfund (Währung)  
      = Schilling (Währung)  
