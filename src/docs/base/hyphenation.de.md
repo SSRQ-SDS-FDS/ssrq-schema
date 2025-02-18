@@ -22,7 +22,7 @@ In der digitalen Edition erfolgt die Trennung dynamisch nach Fenstergrösse.
        «her-ein», «ein-ander» usw.
     3. In Abweichung von Regel K 164.2 darf ein einzelner Vokal am Wortanfang
        nicht abgetrennt werden (also nicht: «A-bend»).
-       Das Abtrennen eines Diphthongs hingegen («au-bent») ist im Notfall
+       Das Abtrennen eines Diphthongs hingegen («Au-bent») ist im Notfall
        (zur Vermeidung von Löchern im Satzbild) zulässig.
     4. Im Fall von «Constanz/Konstanz/Costanz/Kostenz», von «instruction» und
        anderen ähnlichen Fremdwörtern wird in Übereinstimmung mit Regel K 167.1
@@ -30,12 +30,12 @@ In der digitalen Edition erfolgt die Trennung dynamisch nach Fenstergrösse.
        Das «st» kommt somit auf die folgende Zeile.
     5. Bei der häufig vorkommenden Schreibweise «tz» für «z» sollten weiterhin
        die Vorsilben beachtet werden: «an-tzeigen» und nicht: «ant-zeigen».
-    6. «Th» in deutschen Wörtern und Namen werden nicht getrennt (ausser
+    6. «th» wird in deutschen Wörtern und Namen nicht getrennt (ausser
        natürlich bei Wort- bzw. Vorsilben-Fugen wie «mit-helfen» oder
        «Diet-helm»).
        Bei «th» wird so verfahren, wie der Duden «th» in den Fremdwörtern
        («Ma-the-ma-tik») behandelt.
-    7. «W» als Teil von Diphthongen «euw/auw/ouw/aw/ew/uw» usw. sollte nicht
+    7. «w» als Teil von Diphthongen «auw/euw/ouw/aw/ew/uw» usw. sollte nicht
        abgetrennt werden. Also «Thur-geuw-isch» statt «Thur-geu-wisch»,
        «Fraw-en-feld» statt «Fra-wen-feld» («w» ist in diesen Fällen kein
        Konsonant, sondern Teil eines Vokals).
