@@ -24,7 +24,7 @@ Die Sortierlogik von Datierungen bzw. Zeiträumen ist die folgende:
   Kalender zuerst, also `<date calendar="julian" when="1590-01-01/>` vor
   `<date calendar="unknown" when="1590-01-01/>`.
 
-Die Ausgabe aller Datumsangaben erfolgt ohne führende Nullen, z. B. 1.1.1810 statt 01.01.1810
+Die Ausgabe aller Datumsangaben erfolgt ohne führende Nullen, z. B. 1.1.1810 statt 01.01.1810.
 
 ## 2 Eindeutige Datierungen
 
@@ -42,7 +42,7 @@ Die Ausgabe aller Datumsangaben erfolgt ohne führende Nullen, z. B. 1.1.1810 st
   Deshalb verwenden wir statt `@when` das allgemeinere Attribut
   `@when-custom` in Kombination mit `@calendar`, um den Kalender
   zu spezifizieren. Wenn der verwendete Kalender unbekannt ist, wird
-  `calendar="unknown"` benutzt.
+  `calendar="unknown"` benutzt.  
   Beispiele:
 
     ```
@@ -58,7 +58,7 @@ Die Ausgabe aller Datumsangaben erfolgt ohne führende Nullen, z. B. 1.1.1810 st
     ```
 
 - Hierarchisch übergeordnete Leerstellen (z. B. fehlendes Jahr, fehlender
-  Monat) werden in `@when-custom` mit einem Bindestrich ("-") angegeben.
+  Monat) werden in `@when-custom` mit einem Bindestrich ("-") angegeben.  
   Beispiele:
 
     ```xml
@@ -89,8 +89,7 @@ eines Zeitraums angegeben werden.
 Beispiel:
 
 ```
-<date when-custom="1736-11-08" calendar="gregorian">8./22. November 1736</date>
-<date when-custom="1736-11-22" calendar="gregorian"/>
+<date from-custom="1736-11-08" to-custom="1736-11-22 calendar="unknown">8./22. November 1736</date>
 ```
 
 ### 3.2 Zeiträume
