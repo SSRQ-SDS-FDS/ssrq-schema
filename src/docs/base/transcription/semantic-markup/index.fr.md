@@ -20,6 +20,6 @@ De plus amples informations peuvent être trouvées dans les pages suivantes :
 
 - [Personnes](persons.fr.md)
 - [Organisations et familles](organisations.fr.md)
-- [Lieux et chambres](places.fr.md)
+- [Lieux et espaces](places.fr.md)
 - [Mots clés](keyword_entries.fr.md)
 - [Lemme (Glossaire)](lemmata.fr.md)
