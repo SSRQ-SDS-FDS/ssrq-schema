@@ -25,7 +25,7 @@ Exemple :
 
 === "Imprimer"
 
-    Lors des imprimeurs, les lettres minuscules et majuscules sont fidèles à l'original.
+    Lors des imprimes, les lettres minuscules et majuscules sont fidèles à l'original.
 
 ## Noms génériques
 

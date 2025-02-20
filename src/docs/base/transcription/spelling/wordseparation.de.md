@@ -108,10 +108,10 @@
 
     Auch bei losen Wortverbindungen, die für heutige echte Komposita stehen, 
     kann man der Zusammenschreibung in der Handschrift folgen: 
-    «gehortind den hohengerichten» (für: den Hochgerichten).
+    «gehortind den hohengerichten» (für: «den Hochgerichten»).
 
     Ebenso mag man bei stehenden Wendungen wie «von alterhar» oder
-    «vor handen sein» (für vorhanden sein) bei der von der heutigen 
+    «vor handen sein» (für: «vorhanden sein») bei der von der heutigen 
     Rechtschreibung abweichenden Schreibweise bleiben, sofern solche 
     Schreibweisen nicht in den Handschriften selbst die Ausnahmen bilden.
 
@@ -163,7 +163,7 @@
     «yedemteil» > «yedem teil»  
     «mit sinengnaden» > «mit sinen gnaden»  
     «was ir grundwere» > «was ir grund were»
-    (man denkt sonst unwillkürlich an „Grundwehr“!)  
+    (man denkt sonst unwillkürlich an «Grundwehr»!)  
     «daran sy danminen herren sunders gefallen bewysen» >
     «daran sy dan minen herren sunders gefallen bewysen»  
     «uff inlegung bey der teylen verhörrten kontschafften» >
