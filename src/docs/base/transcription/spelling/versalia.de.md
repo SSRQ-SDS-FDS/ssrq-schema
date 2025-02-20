@@ -63,7 +63,7 @@ Beispiel:
     Respektsbezeichnungen, Titel und Anreden werden in allen Sprachen 
     kleingeschrieben.
 
-=== "Dt. Beispiele"
+=== "Dt. Beispiel"
 
     «üwer gnaden»
 
@@ -96,7 +96,7 @@ Beispiel:
     der Name Gottes grossgeschrieben, auch wenn es sich um einen Begriff 
     handelt, der ihn absolut definiert.
 
-=== "Dt. Beispiele"
+=== "Dt. Beispiel"
 
     «gott»
 
