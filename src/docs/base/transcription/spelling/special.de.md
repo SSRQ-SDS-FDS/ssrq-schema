@@ -184,7 +184,7 @@ Beispiele:
 
 Die unten stehende Tabelle zeigt, wie die einzelnen Zeichen kodiert werden sollten.
 
-Für einige der angegebenen Zeichen hat es mehrere Möglichkeiten der Codierung: 
+Für einige der angegebenen Zeichen hat es mehrere Möglichkeiten der Kodierung: 
 So kann beispielsweise das e caudata sowohl als einzelnes Zeichen `ę` (U+0119) kodiert werden als 
 auch als Grundbuchstabe `e` (U+0065) mit einem kombinierenden Ogonek `ę` (U+0328).
 Z. B. lassen sich `Ą ą Ę ę Į į Ǫ ǫ Ų ų` erzeugen, indem, wie beim e caudata, zuerst
