@@ -104,7 +104,7 @@
         <attDef ident="ref" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-31">die Verknüpfung mit dem entsprechenden Datenbankeintrag der SSRQ</desc>
           <desc xml:lang="en" versionDate="2025-01-31">the link to the corresponding database entry of the SLS</desc>
-          <desc xml:lang="fr" versionDate="2025-01-31">le lien vers l'entrée de base de données correspondante de la SDS</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">le lien vers l’entrée de base de données correspondante de la SDS</desc>
           <datatype>
             <dataRef key="ssrq.pointer.databases"/>
           </datatype>
@@ -175,7 +175,7 @@
         <attDef ident="when-custom" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-28">das Datum bzw. der Zeitpunkt gemäss ISO 8601</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the date or time according to ISO 8601</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">la date ou l'heure selon ISO 8601</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la date ou l’heure selon ISO 8601</desc>
           <datatype>
             <dataRef key="ssrq.date.point"/>
           </datatype>
@@ -190,7 +190,7 @@
         <attDef ident="quantity" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-28">die Grösse der mit <att>unit</att> angegebenen Masseinheit</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the size of the unit specified with <att>unit</att></desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">la taille de l'unité spécifiée avec <att>unit</att></desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la taille de l’unité spécifiée avec <att>unit</att></desc>
           <datatype>
             <rng:choice>
               <rng:ref name="ssrq.quantity.positive"/>
@@ -202,7 +202,7 @@
         <attDef ident="unit" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-28">die Masseinheit</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the unit of measurement</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">l'unité de mesure</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">l’unité de mesure</desc>
           <datatype>
             <dataRef key="ssrq.measure.lengths.base.cm"/>
           </datatype>
@@ -224,13 +224,13 @@
         <attDef ident="n" mode="change">
           <desc xml:lang="de" versionDate="2025-01-31">die Nummerierung des Elements</desc>
           <desc xml:lang="en" versionDate="2025-01-31">the numbering of the element</desc>
-          <desc xml:lang="fr" versionDate="2025-01-31">la numérotation de l'élément</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">la numérotation de l’élément</desc>
         </attDef>
         <attDef ident="xml:base" mode="delete"/>
         <attDef ident="xml:id" mode="change">
           <desc xml:lang="de" versionDate="2025-01-31">die ID des Elements</desc>
           <desc xml:lang="en" versionDate="2025-01-31">the ID of the element</desc>
-          <desc xml:lang="fr" versionDate="2025-01-31">L'ID de l'élément</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">l’ID de l’élément</desc>
         </attDef>
         <attDef ident="xml:lang" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-28">die Sprache gemäss ISO 639-1</desc>
@@ -255,7 +255,7 @@
         <attDef ident="facs" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-28">der Name eines oder mehrerer Faksimiles</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the name of one or more facsimiles</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">le nom d'un ou plusieurs fac-similés</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">le nom d’un ou plusieurs fac-similés</desc>
           <datatype>
             <rng:list>
               <rng:oneOrMore>
@@ -271,7 +271,7 @@
         <attDef ident="rend" mode="change">
           <desc xml:lang="de" versionDate="2025-01-28">das Aussehen des Elements im Original</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the rendition of the element in the original</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">l'apparition de l'élément dans l'original</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">l’apparition de l’élément dans l’original</desc>
         </attDef>
         <attDef ident="rendition" mode="delete"/>
         <attDef ident="style" mode="delete"/>
@@ -307,7 +307,7 @@
         <attDef ident="resp" mode="change">
           <desc xml:lang="de" versionDate="2025-01-28">das Kürzel der bzw. des Bearbeitenden</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the abbreviation of the editor</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">l'abréviation de l'éditeur</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">l’abréviation de l’éditeur</desc>
           <datatype>
             <rng:list>
               <rng:oneOrMore>
@@ -336,7 +336,7 @@
         <attDef ident="scribe" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-28">die Identifikationsnummer des Schreibers</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the identification number of the scribe</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">le numéro d'identification de l'écrivain</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">le numéro d’identification de l’écrivain</desc>
           <datatype>
             <dataRef key="ssrq.pointer.persons"/>
           </datatype>
@@ -373,7 +373,7 @@
         <attDef ident="origin" mode="add" module="ssrq.core.module">
           <desc xml:lang="de" versionDate="2025-01-28">die Herkunft der Masseinheit</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the origin of the unit of measurement</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">l'origine de l'unité de mesure</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">l’origine de l’unité de mesure</desc>
           <datatype>
             <dataRef key="ssrq.measure.att.origin"/>
           </datatype>
@@ -381,7 +381,7 @@
         <attDef ident="quantity" mode="replace" usage="req">
           <desc xml:lang="de" versionDate="2025-01-28">die Grösse oder Menge der mit <att>unit</att> angegebenen Masseinheit oder Währung</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the size or amount of the unit of measurement or currency specified with <att>unit</att></desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">la taille ou la quantité de l'unité de mesure ou de devise spécifiée avec <att>unit</att></desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la taille ou la quantité de l’unité de mesure ou de devise spécifiée avec <att>unit</att></desc>
           <datatype>
             <rng:choice>
               <rng:ref name="teidata.numeric"/>
@@ -392,7 +392,7 @@
         <attDef ident="unit" mode="replace" usage="req">
           <desc xml:lang="de" versionDate="2025-01-28">die Masseinheit oder Währung</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the unit of measurement or currency</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">l'unité de mesure ou devise</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">l’unité de mesure ou devise</desc>
           <datatype>
             <rng:choice>
               <rng:ref name="ssrq.measure.area"/>
@@ -417,7 +417,7 @@
         <attDef ident="role" mode="change">
           <desc xml:lang="de" versionDate="2025-01-31">die Rolle des Elements</desc>
           <desc xml:lang="en" versionDate="2025-01-31">the role of the element</desc>
-          <desc xml:lang="fr" versionDate="2025-01-31">le rôle de l'élément</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">le rôle de l’élément</desc>
         </attDef>
       </attList>
     </classSpec>
@@ -480,7 +480,7 @@
         <attDef ident="spanTo" mode="change" usage="req">
           <desc xml:lang="de" versionDate="2025-01-28">der Verweis auf die <att>xml:id</att> eines <gi>anchor</gi>-Elements</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the reference to the <att>xml:id</att> of an <gi>anchor</gi> element</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">la référence à la <att>xml:id</att> d'un élément <gi>anchor</gi></desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la référence à la <att>xml:id</att> d’un élément <gi>anchor</gi></desc>
           <datatype>
             <dataRef name="IDREF"/>
           </datatype>
@@ -495,7 +495,7 @@
         <attDef ident="role" mode="replace">
           <desc xml:lang="de" versionDate="2025-02-04">die spezielle Verwendung der Tabellenzelle</desc>
           <desc xml:lang="en" versionDate="2025-02-04">the special use of the table cell</desc>
-          <desc xml:lang="fr" versionDate="2025-02-04">l'utilisation particulière de la cellule de tableau</desc>
+          <desc xml:lang="fr" versionDate="2025-02-04">l’utilisation particulière de la cellule de tableau</desc>
           <valList type="closed">
             <valItem ident="label">
               <desc xml:lang="de" versionDate="2023-03-03">Spaltenüberschrift</desc>
@@ -514,7 +514,7 @@
         <attDef ident="type" mode="change">
           <desc xml:lang="de" versionDate="2025-01-28">die Klassifikation des Elements</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the classification of the element</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">la classification de l'élément</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la classification de l’élément</desc>
         </attDef>
       </attList>
     </classSpec>
@@ -539,7 +539,7 @@
         <attDef ident="hand" mode="change">
           <desc xml:lang="de" versionDate="2025-01-28">ein Verweis auf die <att>xml:id</att> eines <gi>handNote</gi>-Elements</desc>
           <desc xml:lang="en" versionDate="2025-01-28">a reference to the <att>xml:id</att> of a <gi>handNote</gi> element</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">une référence à la <att>xml:id</att> d'un élément <gi>handNote</gi></desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">une référence à la <att>xml:id</att> d’un élément <gi>handNote</gi></desc>
           <datatype>
             <rng:choice>
               <rng:ref name="ssrq.hand"/>
@@ -554,7 +554,7 @@
     <classSpec ident="ssrq.att.seal" type="atts" mode="add" module="ssrq.core.module">
       <desc xml:lang="de" versionDate="2025-01-28">eine Klasse von Attributen zur Beschreibung von Siegeln</desc>
       <desc xml:lang="en" versionDate="2025-01-28">a class of attributes for describing seals</desc>
-      <desc xml:lang="fr" versionDate="2025-01-28">une classe d'attributs permettant de décrire les sceaux</desc>
+      <desc xml:lang="fr" versionDate="2025-01-28">une classe d’attributs permettant de décrire les sceaux</desc>
       <attList>
         <attDef ident="attachment" mode="add">
           <desc xml:lang="de" versionDate="2025-01-28">die Befestigungsart des Siegels</desc>
@@ -601,13 +601,13 @@
               <desc xml:lang="de" versionDate="2023-05-31">angehängt an Fäden</desc>
               <desc xml:lang="en" versionDate="2023-05-31">sealed on laces</desc>
               <desc xml:lang="fr" versionDate="2023-05-31">attaché à un fil</desc>
-              <desc xml:lang="it" versionDate="2023-05-31">c'è solo uno slot per il sigillo</desc>
+              <desc xml:lang="it" versionDate="2023-05-31">c’è solo uno slot per il sigillo</desc>
             </valItem>
             <valItem ident="slit">
               <desc xml:lang="de" versionDate="2023-05-31">nur Siegelschlitz vorhanden</desc>
               <desc xml:lang="en" versionDate="2023-05-31">slit with no seal</desc>
               <desc xml:lang="fr" versionDate="2023-05-31">il n’existe qu’une fente pour le sceau</desc>
-              <desc xml:lang="it" versionDate="2023-05-31">c'è solo uno slot per il sigillo</desc>
+              <desc xml:lang="it" versionDate="2023-05-31">c’è solo uno slot per il sigillo</desc>
             </valItem>
             <valItem ident="wrapping-tie">
               <desc xml:lang="de" versionDate="2023-05-31">zum Verschluss aufgedrückt</desc>
@@ -620,7 +620,7 @@
         <attDef ident="condition" mode="add" usage="req">
           <desc xml:lang="de" versionDate="2025-01-28">der Erhaltungszustand des Siegels</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the state of preservation of the seal</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">l'état de conservation du sceau</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">l’état de conservation du sceau</desc>
           <valList type="closed">
             <valItem ident="absent">
               <desc xml:lang="de" versionDate="2025-01-28">fehlend</desc>
