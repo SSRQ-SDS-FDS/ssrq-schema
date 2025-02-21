@@ -3,18 +3,18 @@
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="back" module="textstructure" mode="change">
-  <gloss xml:lang="de" versionDate="2023-07-14">Kommentarbereich</gloss>
+  <gloss xml:lang="de" versionDate="2025-02-03">Kommentarbereich</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">comment section</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">rubrique commentaire</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">zone de commentaires</gloss>
   <desc xml:lang="de" versionDate="2025-02-05">Enthält weiterführende Informationen zu einem
       edierten Quellenstück, ordnet das Stück historisch ein und gibt Auskunft, warum ein Stück
       für die Edition ausgewählt wurde.</desc>
   <desc xml:lang="en" versionDate="2023-04-04">The commentary contains further information on an
       edited piece, classifies the piece historically and provides information on why a piece was
       chosen for the edition.</desc>
-  <desc xml:lang="fr" versionDate="2023-04-04">Le commentaire contient des informations
-      complémentaires sur une pièce éditée, place la pièce dans son contexte historique et donne
-      des informations sur les raisons pour lesquelles une pièce a été choisie pour l'édition.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-05">Contient des informations complementaires sur
+      une pièce source éditée, classe la pièce historiquement et fournit des informations sur
+      les raisons pour lesquelles une pièce a été sélectionnée pour l'édition.</desc>
   <classes mode="replace"/>
   <content>
     <elementRef key="div" maxOccurs="unbounded"/>
