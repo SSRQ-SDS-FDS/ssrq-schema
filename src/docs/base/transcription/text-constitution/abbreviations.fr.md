@@ -6,19 +6,19 @@ Les abréviations typiques qui reviennent dans le même document ou dans plusieu
 documents sont laissées. Voir la [liste des abréviations](abbreviation-list.fr.md)
 
 Les abréviations sont étiquetées avec [`<abbr>`](abbr.fr.md) et incluses dans
-un répertoire d'abréviations, où la résolution a lieu.
-Aucun point d'abréviation n'est utilisé, car les abréviations sont déjà marquées 
+un répertoire d’abréviations, où la résolution a lieu.
+Aucun point d’abréviation n’est utilisé, car les abréviations sont déjà marquées 
 comme telles dans le balisage.
 
-Les abréviations sont systématiquement laissées sous forme d'abréviations et
+Les abréviations sont systématiquement laissées sous forme d’abréviations et
 marquées de [`<abbr>`](abbr.fr.md).
 
 ## Dissolution des abréviations
 
 === "Règles générales"
 
-    Dans l'édition analogique, les résolutions ont été mises entre crochets en cas de
-    doute ; dans l'édition numérique, elles sont étiquetées avec
+    Dans l’édition analogique, les résolutions ont été mises entre crochets en cas de
+    doute ; dans l’édition numérique, elles sont étiquetées avec
     [`<choice>`](choice.fr.md) en combinaison avec [`<abbr>`](abbr.fr.md) et
     [`<expan>`](expan.fr.md).
     
@@ -46,7 +46,7 @@ marquées de [`<abbr>`](abbr.fr.md).
 === "Textes latins"
 
     Les abréviations latines courantes sont résolues silencieusement,
-    sauf s'il existe un doute sur la résolution correcte.
+    sauf s’il existe un doute sur la résolution correcte.
 
     La résolution est conforme au dictionnaire moyen latin, à moins que
     le scribe ne pratique différemment.

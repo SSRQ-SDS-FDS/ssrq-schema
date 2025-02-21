@@ -4,8 +4,8 @@ title: Balisage du contenu
 
 # 4. Balisage du contenu
 
-Les registres des unités de l'édition servent non seulement l'objectif du courtage en forme court,
-mais doivent également répondre à une variété de groupes d'utilisateurs différents.
+Les registres des unités de l’édition servent non seulement l’objectif du courtage en forme court,
+mais doivent également répondre à une variété de groupes d’utilisateurs différents.
 
 Les sources du droit suisse ne connaissent pas un public cible ; au contraire, ce sont
 des chercheurs de différentes disciplines, mais aussi des gens laïcs intéressés qui

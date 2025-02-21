@@ -9,30 +9,30 @@ Exemple :
 
 ## Minuscules
 
-=== "Mss. jusqu'au XVIIIe siècle"
+=== "Mss. jusqu’au XVIIIe siècle"
 
-    Dans les textes manuscrits jusqu'à la fin du XVIIIe siècle, les lettres minuscules sont
+    Dans les textes manuscrits jusqu’à la fin du XVIIIe siècle, les lettres minuscules sont
     généralement utilisées.
     
     Seuls les débuts de phrases et les noms propres (noms de personne, de famille,
-    d'organisation, de lieu et de champ) sont en majuscules.
+    d’organisation, de lieu et de champ) sont en majuscules.
     Les caractéristiques spéciales suivantes doivent être observées.
 
 === "Mss. du XIXe siècle"
 
     Pour les textes manuscrits du XIXe siècle, il faut utiliser en allemand les majuscules selon
-    l'original et en français selon l'orthographe actuelle.
+    l’original et en français selon l’orthographe actuelle.
 
 === "Imprimer"
 
-    Lors des imprimes, les lettres minuscules et majuscules sont fidèles à l'original.
+    Lors des imprimes, les lettres minuscules et majuscules sont fidèles à l’original.
 
 ## Noms génériques
 
 === "Règles générales"
 
     Les noms génériques sont écrits en minuscules.
-    Les éditeurs décident s'il s'agit d'un nom propre ou d'un nom appellatif.
+    Les éditeurs décident s’il s’agit d’un nom propre ou d’un nom appellatif.
     En cas de doute, les lettres minuscules sont privilégiées.
     
     Exemples :  
@@ -42,7 +42,7 @@ Exemple :
 
 === "Textes français"
 
-    Lorsqu'un nom ou un groupe de noms désigne une institution,
+    Lorsqu’un nom ou un groupe de noms désigne une institution,
     il prend une majuscule en français.
 
     Exemples :  
@@ -68,12 +68,12 @@ Exemple :
 
     «messeigneurs»  
     «le roy»  
-    «monsieur l'ambassadeur»  
+    «monsieur l’ambassadeur»  
     «monsieur le prevost des marchans de la ville de Paris»  
     «honorable et provide homme Pierre Nonans»  
     «le cardinal Richelieu»  
     «le duc de Savoie»  
-    «l'abbé prieur de la communauté des Carmes»  
+    «l’abbé prieur de la communauté des Carmes»  
     «vostre excellence»
 
 === "Exemples latins"
@@ -89,8 +89,8 @@ Exemple :
 
     Les noms sacrés (nomina sacra) sont en majuscule.
 
-    En vieux français et en latin, contrairement à l'allemand,
-    le nom de Dieu est en majuscule, même si c'est un terme qui
+    En vieux français et en latin, contrairement à l’allemand,
+    le nom de Dieu est en majuscule, même si c’est un terme qui
     le définit de manière absolue.
 
 === "Exemple allemand"
@@ -120,7 +120,7 @@ Exemple :
 
 === "Textes allemands"
 
-    En allemand, lorsqu'il s'agit de dates et de rendez-vous,
+    En allemand, lorsqu’il s’agit de dates et de rendez-vous,
     les noms de la semaine et du mois ainsi que les noms des
     saints et des fêtes sont toujours écrits en minuscules,
     mais les noms des saints sont généralement écrits en majuscules.
@@ -153,10 +153,10 @@ Exemple :
     «Quatuor tempora»  
     «Rogationes»
 
-    Lors des fêtes des saints, il n'est pas approprié d'utiliser un trait d'union,
+    Lors des fêtes des saints, il n’est pas approprié d’utiliser un trait d’union,
     comme ce serait le cas en français moderne (la Saint-Jean).
-    L'épithète «saint» n'est pas en majuscule lorsqu'on parle de la personne du
-    saint lui-même, mais elle est en majuscule lorsqu'on parle de sa fête.
+    L’épithète «saint» n’est pas en majuscule lorsqu’on parle de la personne du
+    saint lui-même, mais elle est en majuscule lorsqu’on parle de sa fête.
     
     Exemples :  
     «sainct Jehan, prie por nous»  
@@ -174,7 +174,7 @@ Exemples :
 ## Adjectifs
 
 En latin, les adjectifs formés sur des noms de lieux ou populaires prennent
-une majuscule s'ils font référence à une institution, une fonction, une
+une majuscule s’ils font référence à une institution, une fonction, une
 personne physique ou morale, etc.
 
 Exemples :  
@@ -185,12 +185,12 @@ Exemples :
 «comes Flandrensis»  
 «ecclesia Gebennensis»
 
-En revanche, les adjectifs sont en minuscules lorsqu'ils font référence
+En revanche, les adjectifs sont en minuscules lorsqu’ils font référence
 à un objet (par exemple une monnaie ou une unité de mesure).
 
 Exemples :  
 «quinque solidos lausannenses»  
-«quinque solidos lausannensium» (dans Gen. Pl., lorsque l'expression «bonorum lausannensium»
+«quinque solidos lausannensium» (dans Gen. Pl., lorsque l’expression «bonorum lausannensium»
 est implicite)  
 «ad mensuram lausannensem»  
 «consuetudines lausannenses»  
@@ -217,24 +217,24 @@ Exceptions :
 
 ## Noms des champs
 
-Décider ce qu'est un nom de champ et où il s'agit d'un pur appellatif n'est pas toujours facile.
+Décider ce qu’est un nom de champ et où il s’agit d’un pur appellatif n’est pas toujours facile.
 
 De nombreux noms de lieux et de champs peuvent encore être identifiés
-aujourd'hui à l'aide d'une carte ancienne à l'échelle 1:25'000 ou de 
+aujourd’hui à l’aide d’une carte ancienne à l’échelle 1:25'000 ou de 
 répertoires de noms de champs ([ortsnamen.ch](https://ortsnamen.ch/)), de sorte que la
 majuscule est certainement correcte.
 
 Exemples :  
 Nom du champ «Egg» versus appellatif «egg».  
 Un champ qui se trouve «eis Pereretz» ou «im Sapeit».  
-D'un autre côté, on écrit «la domus dicta de bont».
+D’un autre côté, on écrit «la domus dicta de bont».
 
 ## Noms de famille composés
 
 Pour les noms de famille composés qui apparaissent en deux parties ou plus dans le texte,
-il est recommandé que l'attribut name soit en minuscules.
-Si l'attribut nom d'un nom de famille est en majuscule dans l'orthographe actuelle,
-cela doit également être fait dans l'édition.
+il est recommandé que l’attribut name soit en minuscules.
+Si l’attribut nom d’un nom de famille est en majuscule dans l’orthographe actuelle,
+cela doit également être fait dans l’édition.
 
 Exemples :  
 «Hartman von Werdenberg»  

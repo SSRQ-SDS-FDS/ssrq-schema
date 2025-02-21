@@ -4,9 +4,9 @@
 
 [`<term>`](term.fr.md) comprend des termes pertinents pour la loi, si possible dans le nominatif.
 
-Les mots-clés les plus importants concernant le contenu d'une source sont enregistrés dans 
+Les mots-clés les plus importants concernant le contenu d’une source sont enregistrés dans 
 [`<keywords>`](keywords.fr.md).
-Ils aident le lecteur, qui n'est pas encore si familier avec la langue source pour trouver les
+Ils aident le lecteur, qui n’est pas encore si familier avec la langue source pour trouver les
 pièces sur un sujet.
 
 ## Enregistrement de la base de données

@@ -3,7 +3,7 @@
 ## c versus t
 
 Dans les textes latins, «c» ou «t» est transcrit selon le modèle.
-S'il n'est pas possible de faire la distinction entre «c» et «t», la forme classique est
+S’il n’est pas possible de faire la distinction entre «c» et «t», la forme classique est
 généralement préférée.
 
 Exemple: «cognitio» et pas «cognicio»
@@ -21,8 +21,8 @@ Si «cz» et «tz» ne peuvent pas être clairement distingués, «tz» est util
 
 === "Textes latins"
 
-    Lorsque le texte est sur latin, les formes sont dissoutes en fonction de l'orthographe
-    moderne du mot correspondant ou de l'orthographe classique.
+    Lorsque le texte est sur latin, les formes sont dissoutes en fonction de l’orthographe
+    moderne du mot correspondant ou de l’orthographe classique.
 
     Exemple: «vz» est tacitement dissoute en «videlicet».
 
@@ -30,7 +30,7 @@ Si «cz» et «tz» ne peuvent pas être clairement distingués, «tz» est util
 
 === "Règle générale"
 
-    «I» und «J» ne sont pas différenciés en fonction de la longueur de l'arbre.  
+    «I» und «J» ne sont pas différenciés en fonction de la longueur de l’arbre.  
     Le vocal «i» et la consonne «j» sont constamment distingués graphémévés.
     Dans les cas où seule une souche «h» entre «j» et une voyelle complète est poussée,
     le «j» ne doit pas être remplacé par un «i».
@@ -43,7 +43,7 @@ Si «cz» et «tz» ne peuvent pas être clairement distingués, «tz» est util
 === "Textes latins"
 
     Dans les textes latins, «y» ou «j» sont reproduits comme «i».
-    Cela s'applique également aux numéros romains.
+    Cela s’applique également aux numéros romains.
     Une exception est des noms appropriés.
 
     Exemples :  
@@ -53,7 +53,7 @@ Si «cz» et «tz» ne peuvent pas être clairement distingués, «tz» est util
 
 === "Textes français"
 
-    Exception: Si un texte français contient l'orthographe «ieu», il vaut mieux écrire
+    Exception: Si un texte français contient l’orthographe «ieu», il vaut mieux écrire
     «jeu» pour des raisons de compréhension.
     Il est donc important de prendre en compte le sens et de prendre des décisions qui
     rendent le texte plus lisible.
@@ -63,7 +63,7 @@ Si «cz» et «tz» ne peuvent pas être clairement distingués, «tz» est util
 
 ## n versus m
 
-L'utilisation de «n» au lieu de «m» dans les textes latins est adoptée lorsque la
+L’utilisation de «n» au lieu de «m» dans les textes latins est adoptée lorsque la
 lettre est annoncée.
 
 Exemple:
@@ -83,10 +83,10 @@ Exemple:
 
     Si un «s» ajouté est reconnaissable sur le «ſ», une ligature est supposée et «ss»
     est transcrite.
-    D'un autre côté, si aucune approche d'un «s» n'est reconnaissable ou si ce n'est qu'une
+    D’un autre côté, si aucune approche d’un «s» n’est reconnaissable ou si ce n’est qu’une
     feuille de contrainte à la lettre suivante, «ß» est transcrit.
-    Puisqu'il existe de nombreuses formes de transition, la décision est à la discrétion
-    de l'édition.
+    Puisqu’il existe de nombreuses formes de transition, la décision est à la discrétion
+    de l’édition.
     Surtout lorsque les deux formes peuvent être trouvées dans le même texte, elles doivent
     être distinguées dans la transcription.
 
@@ -99,7 +99,7 @@ Exemple:
 === "Textes latins"
 
     Dans les textes latins, le s final est transcrit en tant que simple «s» et non comme «ß»,
-    car ce n'est qu'une ligature.
+    car ce n’est qu’une ligature.
 
 ## u-v-compensation
 
@@ -110,28 +110,28 @@ Exemple:
 === "Textes latins"
 
     En latin, un «u» qui agit comme consonne doit être transcrit avec «v»,
-    et l'orthographe «u» doit être conservée si elle agit comme une voyelle.
+    et l’orthographe «u» doit être conservée si elle agit comme une voyelle.
 
 === "Textes français"
 
-    En principe, cette règle s'applique également au français.
+    En principe, cette règle s’applique également au français.
     Cependant, les exceptions peuvent être justifiées.
     Dans un texte du XIIe siècle, qui a été écrit en vieux français, vous pouvez, p. ex.,
-    permettre à l'orthographe «il savroit» ;
+    permettre à l’orthographe «il savroit» ;
     dans un texte français moyen du XVe siècle, en revanche, il faut écrire «il sauroit».
 
 ## uu-w-compensation
 
 === "Textes latins"
 
-    L'orthographe «uu» doit être reproduite en latin avec «w» s'il s'agit d'un vélo labial
+    L’orthographe «uu» doit être reproduite en latin avec «w» s’il s’agit d’un vélo labial
     [Demi-consonne](https://de.wikipedia.org/wiki/Labialisierter_stimmhafter_velarer_Approximant)
-    (en particulier dans les mots d'origine germanique).
+    (en particulier dans les mots d’origine germanique).
 
     Exemple :  
     «wadium» et pas «uuadium»
 
-    Sinon, la reproduction peut varier en fonction de l'affaire («uu», «uv», «vu»).
+    Sinon, la reproduction peut varier en fonction de l’affaire («uu», «uv», «vu»).
 
     Exemples :  
     «equus», «euvangelium», «vulgaris»
@@ -140,19 +140,19 @@ Exemple:
 
     En français, la règle est fondamentalement la même :
     Cependant, on peut spécifier que dans tous les cas, «vu» est écrit lorsque «u» est une voyelle
-    ou est le premier élément d'une diphtongue.
+    ou est le premier élément d’une diphtongue.
 
     Exemples :  
     «vulgaire», «vueil», «vuider», «nouvel»
 
-    Dans certains cas, l'éditeur doit faire le choix qu'il doit tenir régulièrement, surtout
-    s'il est confronté à des prénoms :
+    Dans certains cas, l’éditeur doit faire le choix qu’il doit tenir régulièrement, surtout
+    s’il est confronté à des prénoms :
 
     Exemples :  
     «Vuillelmus» versus «Willelmus»  
     «Vuibert» versus «Wibert»
 
-    Le contexte linguistique peut bien sûr être utile dans la sélection, mais n'est pas toujours
+    Le contexte linguistique peut bien sûr être utile dans la sélection, mais n’est pas toujours
     facile, en particulier dans les régions bilingues telles que Fribourg.
 
 ## y
@@ -174,16 +174,16 @@ Exemple:
 
 === "Règles générales"
 
-    Les doubles consonantes sont reproduits fidèlement et les lignes d'abréviation (ou lignées
+    Les doubles consonantes sont reproduits fidèlement et les lignes d’abréviation (ou lignées
     nasales) sont dissoutes.
     Un coup sur «m» ou «n» - mais pas sur «mm» ou «nn» - est tacitement dissous comme «mm» ou «nn».
 
-    Exceptions: Dans l'exemple suivant, la ligne au-dessus du «m» est mieux ignorée et simplement
+    Exceptions: Dans l’exemple suivant, la ligne au-dessus du «m» est mieux ignorée et simplement
     transcrite avec «umb» au lieu de «ummb».
 
     ![Umb.gif](Umb.gif)
 
-    L'abréviation sur «m» en combinaison avec «b» ou «p» est ignorée.
+    L’abréviation sur «m» en combinaison avec «b» ou «p» est ignorée.
 
     Exemple : «nempt» au lieu de «nemmpt»
 
@@ -198,8 +198,8 @@ Exemple:
     «a sses parents» et pas «asses parents»  
     «assavoir» et pas «a ssavoir»
 
-    D'un autre côté, s'il s'agit d'une expression qui est entrée dans le langage familier,
-    l'agglutination est conservée.
+    D’un autre côté, s’il s’agit d’une expression qui est entrée dans le langage familier,
+    l’agglutination est conservée.
 
-    Si, p. ex., l'expression «illiaz» (pour «il y a») dans le texte source est agglutiné, il doit
+    Si, p. ex., l’expression «illiaz» (pour «il y a») dans le texte source est agglutiné, il doit
     être transcrit selon le modèle (et non «ill i az»).
