@@ -1,7 +1,7 @@
 # Caractères spéciaux
 
-Tous les caractères spéciaux sont codés en Unicode et sont représentés à l'aide de la police 
-SDS Lexia Fontes pour l'écriture latine et du Libertinus Serif pour les écritures grecque
+Tous les caractères spéciaux sont codés en Unicode et sont représentés à l’aide de la police 
+SDS Lexia Fontes pour l’écriture latine et du Libertinus Serif pour les écritures grecque
 et hébraïque.
 
 ## Accents et diacritica
@@ -17,23 +17,23 @@ et hébraïque.
 
 === "Textes latins"
 
-    Une distinction est faite entre l'e caudata (`ę`) et le `e` ordinaire.
+    Une distinction est faite entre l’e caudata (`ę`) et le `e` ordinaire.
 
     En raison des hyper corrections, les chercheurs des XVIIe et XVIIIe siècles avaient
     tendance à préférer la diphtongation.
 
-    Si un original médiéval est préservé, l'orthographe du texte de départ doit être conservée,
+    Si un original médiéval est préservé, l’orthographe du texte de départ doit être conservée,
     i. e. `ę`, qui a probablement été écrit en copies ultérieurs en tant que `æ`, devrait
     être reproduit.
-    Si seulement la copie ultérieure existe, il faut adhérer à l'orthographe de cette copie et
+    Si seulement la copie ultérieure existe, il faut adhérer à l’orthographe de cette copie et
     reproduire fidèlement la diphtongue.
 
 === "Textes français et italiens"
 
-    Les signes diacritiques du français et de l'italien sont utilisés en fonction de l'usage
-    moderne, à condition qu'il n'y ait aucune exception.
+    Les signes diacritiques du français et de l’italien sont utilisés en fonction de l’usage
+    moderne, à condition qu’il n’y ait aucune exception.
 
-    Lors de la définition de l'accent, un système cohérent doit être utilisé dans un corpus
+    Lors de la définition de l’accent, un système cohérent doit être utilisé dans un corpus
     de texte, qui est basé sur les coutumes graphiques et typographiques du temps respectif
     autant que possible.
 
@@ -51,13 +51,13 @@ et hébraïque.
     afr. `leve` représente fr. `lève`,  
     alors que afr. `levé` est le participe du verbe afr. `lever`
     
-    L'article afr. `des` est toujours transcrit inchangé, donc `des` et pas `dés`.
+    L’article afr. `des` est toujours transcrit inchangé, donc `des` et pas `dés`.
 
 === "Mss. XVIe siècle"
 
-    Pour les textes français du XVIe siècle (jusqu'à environ 1580), les normes qui ont été fixées
-    pour l'édition des textes français médiévaux s'appliquent.
-    Seul l'accent sur la lettre `e` est utilisé pour faire la distinction entre `e` tonique
+    Pour les textes français du XVIe siècle (jusqu’à environ 1580), les normes qui ont été fixées
+    pour l’édition des textes français médiévaux s’appliquent.
+    Seul l’accent sur la lettre `e` est utilisé pour faire la distinction entre `e` tonique
     et atonique.
     
     Exemples :  
@@ -70,34 +70,34 @@ et hébraïque.
 
 === "Mss. XVIIe siècle"
 
-    Lors du traitement des manuscrits français du XVIIe siècle (jusqu'à environ 1715), les
+    Lors du traitement des manuscrits français du XVIIe siècle (jusqu’à environ 1715), les
     accents peuvent être utilisés dans une plus grande mesure.
     En particulier, les fins sur `-ée` sont soulignées.
 
     Exemples :  
     fr. `née`, `armée`
     
-    L'accent sur les lettres `a`, `e` et `u` dans les prépositions et les adverbes monosyllabiques
+    L’accent sur les lettres `a`, `e` et `u` dans les prépositions et les adverbes monosyllabiques
     est utilisé pour les distinguer des mots homographes.
     
     Exemples :  
     fr. `à`, `là`, `dès`, `lès`, `où`
     
-    En revanche, la lettre `e` n'est pas soulignée en un seul mot.
+    En revanche, la lettre `e` n’est pas soulignée en un seul mot.
     
     Exemples :  
     fr. `maniere`, `pere`, `present`
 
 === "Mss. XVIIIe siècle"
     
-    L'utilisation de la langue d'aujourd'hui est appliquée aux manuscrits français du
+    L’utilisation de la langue d’aujourd’hui est appliquée aux manuscrits français du
     XVIIIe siècle.
 
 ### Certains diacritica dans les textes français
 
 === "Trema"
 
-    Fondamentalement, un trema devrait être supprimé dans des mots qui sont écrits aujourd'hui
+    Fondamentalement, un trema devrait être supprimé dans des mots qui sont écrits aujourd’hui
     sans trema. Il en va de même pour `ÿ` (voir [normalisation](normalization.fr.md)).
 
     Exemples :  
@@ -116,21 +116,21 @@ et hébraïque.
 
 === "Apostrophe"
 
-    Afin de clarifier le sens d'un texte et de le rendre plus compréhensible, l'ajout 
-    d'apostrophène est essentiel.
+    Afin de clarifier le sens d’un texte et de le rendre plus compréhensible, l’ajout 
+    d’apostrophène est essentiel.
 
-    P. ex., l’orthographe `se` pour `c'est` avec `s'e` doit être reproduite.
+    P. ex., l’orthographe `se` pour `c’est` avec `s’e` doit être reproduite.
 
     Puisque le pronom à la troisième personne du singulier et du pluriel est souvent réduit 
-    à `i`, il doit être précédé d'une apostrophe lorsqu'il est combiné avec un pronom relatif
-    ou une conjonction afin que `qui` ne soit pas confondu avec `qu'il`.
+    à `i`, il doit être précédé d’une apostrophe lorsqu’il est combiné avec un pronom relatif
+    ou une conjonction afin que `qui` ne soit pas confondu avec `qu’il`.
 
     Exemple :  
     ```Item ledit detenu a dit et confesé que illiaz quattre ans qu’i 
     deroba une boiste avec l’estuy.```
 
-    L'exemple mentionné ci-dessus montre également qu'une apostrophe doit être ajoutée
-    pour séparer l'article spécifique qui pourrait être connecté à un nom.
+    L’exemple mentionné ci-dessus montre également qu’une apostrophe doit être ajoutée
+    pour séparer l’article spécifique qui pourrait être connecté à un nom.
 
     Exemple :  
     `l’estuy` et pas `lestuy`
@@ -142,25 +142,25 @@ et hébraïque.
 
 ## Ligatures
 
-Dans l'impression, les ligatures sont dissoutes dans des lettres individuelles et également dans
-des textes manuscrits, l'utilisation de ligatures est généralement dispensée.
+Dans l’impression, les ligatures sont dissoutes dans des lettres individuelles et également dans
+des textes manuscrits, l’utilisation de ligatures est généralement dispensée.
 
 Exceptions : les propres signes peuvent être utilisés pour les ligatures `Æ`, `æ`,
 `Œ`, `œ` et `ß`
 
-Par exemple, au lieu d'e caudata (`ę`), l'orthographe `æ` peut survenir dans une copie ultérieure
+Par exemple, au lieu d’e caudata (`ę`), l’orthographe `æ` peut survenir dans une copie ultérieure
 par hyper correction.
 
-L'éditeur doit être conscient que les `æ` et `ae` dans le traitement de texte numérique n'ont pas
+L’éditeur doit être conscient que les `æ` et `ae` dans le traitement de texte numérique n’ont pas
 la même valeur et ne sont pas reconnus comme un graphème identique.
 
-D'autres ligatures qui ont principalement un caractère typographique ne sont pas codées avec leurs
-propres unicodmarks, mais simplement par les deux lettres de terrain consécutives, c'est-à-dire :
+D’autres ligatures qui ont principalement un caractère typographique ne sont pas codées avec leurs
+propres unicodmarks, mais simplement par les deux lettres de terrain consécutives, c’est-à-dire :
 `ff`, `fi`, `fl`, `ffi`, `ffl` et pas `ﬀ`, `ﬁ`, `ﬂ`, `ﬃ`, `ﬄ`.
 
 ## Fractures
 
-Bien qu'Unicode comporte un certain nombre de symboles de fractions spéciaux destinés aux fractions
+Bien qu’Unicode comporte un certain nombre de symboles de fractions spéciaux destinés aux fractions
 les plus courantes, ceux-ci ne doivent pas être utilisés car ils ne couvrent pas tous les cas qui
 apparaissent dans le texte.
 Au lieu de cela, les fractures doivent être codées avec [`<num>`](num.fr.md).
@@ -174,10 +174,10 @@ Exemples :
 Le tableau ci-dessous montre comment les caractères individuels doivent être codés.
 
 Pour certains des caractères spécifiés, il a plusieurs options de codage:
-P. ex., l'e caudata peut être codé sous la forme d'un seul caractère `ę` (U+0119)
-ou sous la forme d'une lettre de base `e` (U+0065) avec un Ogonek combinant `ę` (U+0328).
-P. ex., `Ą ą Ę ę Į į Ǫ ǫ Ų ų` peut être généré en entrant d'abord la lettre de base puis en
-Ogonek combinant, comme avec l'e caudata.
+P. ex., l’e caudata peut être codé sous la forme d’un seul caractère `ę` (U+0119)
+ou sous la forme d’une lettre de base `e` (U+0065) avec un Ogonek combinant `ę` (U+0328).
+P. ex., `Ą ą Ę ę Į į Ǫ ǫ Ų ų` peut être généré en entrant d’abord la lettre de base puis en
+Ogonek combinant, comme avec l’e caudata.
 
 Si nécessaire, plusieurs personnages combinés avec une lettre terrestre peuvent également
 être utilisés, p. Ex. `ā̧` (= a + Macron combinant + Cedille combinante) oder `uͦ̈` (= o + superscrit 
@@ -186,10 +186,10 @@ o + trema combinant).
 Fondamentalement, la variante de combinaison est préférée car les caractères de combinaison peuvent
 être attachés à tous les registres terrestres. Exception: 
 Par souci de simplicité, les umlauts allemands `Ä ä Ö ö Ü ü` peuvent être entrés directement sous
-forme de signes individuels et n'ont pas à être enregistrés comme une lettre terrestre avec un
+forme de signes individuels et n’ont pas à être enregistrés comme une lettre terrestre avec un
 trema combinant (U+0308).
 
-Dans le tableau, le `a` est utilisé comme exemple dans la combinaison des caractères, l'entrée est
+Dans le tableau, le `a` est utilisé comme exemple dans la combinaison des caractères, l’entrée est
 analogue aux autres lettres.
 
 | Description                            | Caractère spécial     | Unicode         |
@@ -255,7 +255,7 @@ analogue aux autres lettres.
 | Symbole de mariage                     | `⚭`                   | U+26AD          |
 | Symbole circulaire                     | `○`                   | U+25CB          |
 | Symbole pour Mars (Abbr. pour Mardi)   | `♂`                   | U+2642          |
-| Symbole de droit d'auteur              | `©`                   | U+00a9          |
+| Symbole de droit d’auteur              | `©`                   | U+00a9          |
 | **Signes de ponctuation etc.**         |                       |                 |
 | Point                                  | `.`                   | U+002E          |
 | Virgule                                | `,`                   | U+002C          |
@@ -263,8 +263,8 @@ analogue aux autres lettres.
 | Côlon                                  | `:`                   | U+003A          |
 | Point culminant                        | `·`                   | U+00B7          |
 | Apostrophe                             | `’`                   | U+2019          |
-| Point d'exclamation                    | `!`                   | U+0021          |
-| Point d'interrogation                  | `?`                   | U+003F          |
+| Point d’exclamation                    | `!`                   | U+0021          |
+| Point d’interrogation                  | `?`                   | U+003F          |
 | Ellipse                                | `…`                   | U+2026          |
 | Un point avant deux                    | `⁖`                   | U+2056          |
 | Un point sur deux                      | `∵`                   | U+2235          |
@@ -283,10 +283,10 @@ analogue aux autres lettres.
 ## Script grec et hébreu
 
 Les passages dans le script grec et hébreu sont également codés directement dans Unicode.
-Cela s'applique que les accents grecs, les *spiritus* ainsi que le *iota subscriptum* ou
+Cela s’applique que les accents grecs, les *spiritus* ainsi que le *iota subscriptum* ou
 *adscriptum* et les signes de vocalisation hébraïque avec des caractères combinés doivent
 être montrés.
-L'alpha grec et l'hébreu Alef en servent d'exemples.
+L’alpha grec et l’hébreu Alef en servent d’exemples.
 
 | Description                                               | Caractère spécial | Unicode                           |
 |-----------------------------------------------------------|-------------------|-----------------------------------|

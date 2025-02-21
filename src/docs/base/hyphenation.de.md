@@ -79,6 +79,6 @@ In der digitalen Edition erfolgt die Trennung dynamisch nach Fenstergrösse.
     10. Eigennamen werden, wenn möglich, nicht getrennt.
    
     Zu den französischen Trennregeln vgl. auch
-    [Les coupures de mots à l'écrit](http://monsu.desiderio.free.fr/atelier/coupe.html),
+    [Les coupures de mots à l’écrit](http://monsu.desiderio.free.fr/atelier/coupe.html),
     [La Coupure des mots](http://www.aidenet.eu/grammaire01s.htm) und
     [Worttrennung «Französisch»](https://de.wiktionary.org/wiki/Hilfe:Worttrennung#Franz.C3.B6sisch).

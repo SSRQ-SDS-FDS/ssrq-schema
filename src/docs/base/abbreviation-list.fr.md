@@ -2,7 +2,7 @@
 title: Liste des abréviations
 ---
 
-Les abréviations suivent, qui sont souvent utilisées dans l'édition numérique et ne sont
+Les abréviations suivent, qui sont souvent utilisées dans l’édition numérique et ne sont
 pas dissoutes.
 
 === "Abréviations modernes"
@@ -34,7 +34,7 @@ pas dissoutes.
     SSRQ = Sammlung Schweizerischer Rechtsquellen [= SDS]  
     St. = Sankt [= saint]  
     Urk. = Urkunde [= diplôme]  
-    v = verso (Rückseite eines nummerierten Blattes) [= (arrière d'une feuille numérotée)]  
+    v = verso (Rückseite eines nummerierten Blattes) [= (arrière d’une feuille numérotée)]  
     vgl. = vergleiche [= comparer]  
     z. B. = zum Beispiel [= par exemple]  
 
