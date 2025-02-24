@@ -42,6 +42,11 @@
                 Invalid timespan: @to-custom must be a point later in time than @from-custom.
             </sch:assert>
           </sch:rule>
+          <sch:rule context="tei:*[@notBefore-custom and @notAfter-custom]">
+            <sch:assert test="if (matches(@notBefore-custom, '^\d{4}-\d{2}-\d{2}$') and matches(@notAfter-custom, '^\d{4}-\d{2}-\d{2}$')) then (number(translate(@notAfter-custom, '-', '')) - number(translate(@notBefore-custom, '-', ''))) &gt; 0 else true()">
+                Invalid timespan: @notAfter-custom must be a point later in time than @notBefore-custom.
+            </sch:assert>
+          </sch:rule>
         </sch:pattern>
       </constraint>
     </constraintSpec>
