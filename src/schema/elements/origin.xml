@@ -12,9 +12,7 @@
     document.</desc>
   <desc xml:lang="fr" versionDate="2023-05-16">Contient des informations sur l'origine d'un
     document.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-  </classes>
+  <classes mode="replace"/>
   <content>
     <sequence>
       <elementRef key="origDate" minOccurs="1" maxOccurs="2"/>
@@ -37,8 +35,6 @@
   </constraintSpec>
   <attList>
     <attDef ident="calendar" mode="delete"/>
-    <attDef ident="n" mode="delete"/>
-    <attDef ident="xml:id" mode="delete"/>
   </attList>
   <xi:include href="examples.xml" xpointer="ex-history-de"/>
   <xi:include href="examples.xml" xpointer="ex-history-en"/>

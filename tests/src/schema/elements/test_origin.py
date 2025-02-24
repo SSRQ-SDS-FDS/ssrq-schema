@@ -80,14 +80,14 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "valid-origin-with-lang",
+            "invalid-origin-with-lang",
             """
             <origin xml:lang='de'>
                <origDate type='document' when-custom='1366-06-29' calendar='gregorian'/>
                <origPlace type='document' ref='loc000650'>Rheineck</origPlace>
             </origin>
             """,
-            True,
+            False,
         ),
         (
             "invalid-origin-with-wrong-order-of-children",
