@@ -10,6 +10,7 @@
   <desc xml:lang="en" versionDate="2023-07-15">Describes a seal.</desc>
   <desc xml:lang="fr" versionDate="2023-07-15">Décrit un sceau.</desc>
   <classes mode="replace">
+    <memberOf key="att.canonical"/>
     <memberOf key="att.global"/>
     <memberOf key="att.global.facs"/>
     <memberOf key="att.placement"/>
@@ -40,6 +41,7 @@
   </constraintSpec>
   <attList>
     <attDef ident="calendar" mode="delete"/>
+    <attDef ident="contemporary" mode="delete"/>
     <attDef ident="n" mode="change" usage="req">
       <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Siegels</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the numbering of the seal</desc>
@@ -56,7 +58,14 @@
         <dataRef key="ssrq.place.seal"/>
       </datatype>
     </attDef>
-    <attDef ident="contemporary" mode="delete"/>
+    <attDef ident="ref" mode="replace">
+      <desc xml:lang="de" versionDate="2025-02-14">ein Link zu einer Siegeldatenbank</desc>
+      <desc xml:lang="en" versionDate="2025-02-14">a link to a database of seals</desc>
+      <desc xml:lang="fr" versionDate="2025-02-14">un lien vers la base de données du sceaux</desc>
+      <datatype>
+        <dataRef key="ssrq.pointer.url"/>
+      </datatype>
+    </attDef>
     <attDef ident="xml:id" mode="delete"/>
     <attDef ident="xml:lang" mode="delete"/>
   </attList>

@@ -20,7 +20,7 @@
   <content>
     <sequence>
       <elementRef key="msIdentifier" minOccurs="0"/>
-      <elementRef key="head" maxOccurs="unbounded"/>
+      <elementRef key="head" minOccurs="0" maxOccurs="unbounded"/>
       <elementRef key="msContents" minOccurs="0"/>
       <elementRef key="physDesc" minOccurs="0"/>
       <elementRef key="history"/>
@@ -39,6 +39,24 @@
         <sch:rule context="tei:msDesc[not(ancestor::tei:TEI//tei:text[@type = 'collection'])][not(tei:physDesc)]">
           <sch:assert test=".[//tei:adminInfo]">
             If no tei:physDesc is given, tei:adminInfo is required.</sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-msDesc-head">
+    <desc xml:lang="en" versionDate="2025-02-24">constraint to ensure the usage of tei:head in at
+      least the first witness</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:msDesc[parent::tei:sourceDesc]">
+          <sch:assert test=".[tei:head]">
+            tei:head is necessary when there is only one text witness.
+          </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:msDesc[parent::tei:witness[@n='A']]">
+          <sch:assert test="./tei:head">
+            tei:head is necessary for the main text witness.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>

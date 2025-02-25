@@ -57,6 +57,20 @@
       </sch:pattern>
     </constraint>
   </constraintSpec>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-date-electronic-print" mode="add">
+    <desc xml:lang="en" versionDate="2025-02-17">constraint for tei:date with type 'electronic'
+      and 'print' outside tei:publicationStmt</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)]">
+          <sch:report test=".[@type='electronic' or @type='print']">
+            If tei:date is outside tei:publicationStmt it may not be of @type 'electronic'
+            or 'print'.
+          </sch:report>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <attList>
     <attDef ident="dur-iso" mode="change">
       <datatype>
