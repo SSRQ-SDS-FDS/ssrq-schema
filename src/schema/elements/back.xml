@@ -24,8 +24,8 @@
   <xi:include href="examples.xml" xpointer="ex-back-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-05">
     <p>Die Bemerkungen lassen sich mit <gi>div</gi> und <gi>p</gi> strukturieren.
-        Mithilfe von <gi>ref</gi>-Elementen werden Literatur und Internetlinks (z. B. verzeichnete
-        Archivstücke etc.) referenziert.</p>
+            Mithilfe von <gi>ref</gi>-Elementen werden Literatur und Internetlinks (z. B. verzeichnete
+            Archivstücke etc.) referenziert.</p>
     <p>Im Kommentarbereich werden Personen, Orte und Institutionen, die über die
           Register gefunden werden sollen, sowie Daten ausgezeichnet.</p>
   </remarks>
@@ -36,13 +36,11 @@
         Other tags such as <gi>date</gi> or <gi>measure</gi> are omitted, especially since these
         can easily be automatically tagged later in their current, standardized form.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-08-18">
-    <p>Plusieurs commentaires peuvent être structurés avec <gi>div</gi>. La littérature et les
-        liens Internet (par exemple, les pièces d'archives répertoriées, etc.) peuvent être
-        référencés avec des éléments <gi>ref</gi>. Dans le commentaire, les personnes, les lieux et
-        les institutions qui doivent être trouvés via la recherche d'index seront marqués. D'autres
-        balises telles que <gi>date</gi> ou <gi>measure</gi> sont omises, d'autant plus qu'elles
-        peuvent facilement être automatiquement étiquetées ultérieurement dans leur forme actuelle
-        et normalisée.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-05">
+    <p>Les commentaires peuvent être structurés avec <gi>div</gi> et <gi>p</gi>. La littérature
+        et les liens Internet (par exemple, les éléments d'archives répertoriés, etc.) sont
+        référencés à l'aide des éléments <gi>ref</gi>.</p>
+    <p>Dans la section commentaires, les personnes, lieux et institutions qui devraient être
+          trouvés via les registres, ainsi que les données, sont mis en évidence.</p>
   </remarks>
 </elementSpec>

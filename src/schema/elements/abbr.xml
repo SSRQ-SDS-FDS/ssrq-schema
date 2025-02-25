@@ -61,18 +61,19 @@
     <p>Abbreviations of dimensions and coin designations are not resolved except in continuous
         text (comments, remarks). The corresponding special characters are used.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-06-30">
-    <p>Aucun point d'abréviation n'est utilisé, car les abréviations sont déjà marquées comme
-        telles par le balisage.
-        </p>
-    <p>Les conventions orthographiques du rédacteur sont prises en compte sans identification
-        particulière. L'évidence est tacitement résolue, par ex. B. traits nasaux, affixes
-        («-er», «con-», «per-»). Xsti est implicitement résolu en Christ, tout comme Ao = anno,
+  <remarks xml:lang="fr" versionDate="2025-02-05">
+    <p>Aucun point d'abréviation n'est utilisé, car l'abréviation est déjà marquée comme telle
+        en étant marquée <gi>abbr</gi>.</p>
+    <p>Les conventions orthographiques du scribe sont prises en compte sans identification
+        particulière. L'évidence est tacitement résolue, p. ex. traits nasaux, affixes
+        («-er», «con-», «per-»). Xsti est tacitement résolu en Christi, tout comme Ao = anno,
         wz = was ou dz = das.</p>
-    <p>Les abréviations dans le modèle de texte sont développées à l'aide
-        de <gi>choice</gi> et <gi>expan</gi> si cela est possible et utile.</p>
-    <p>Les abréviations de dimensions et les désignations de pièces ne sont pas résolues sauf en
-        texte continu (commentaires, remarques). Les caractères spéciaux correspondants sont
-        utilisés.</p>
+    <p>Lorsque cela est possible et utile, les abréviations sont résolues en utilisant
+        <gi>choice</gi> et <gi>expan</gi>.</p>
+    <p>Les abréviations de mesures et de noms de pièces ne sont pas résolues, sauf dans le texte
+        continu (commentaires, remarques). Les caractères spéciaux correspondants sont utilisés,
+        voir les <ref target="abbreviations.de.md">principes de transcription</ref>, la
+        <ref target="abbreviation-list.de.md">liste des abréviations</ref> et la
+        <ref target="special.de.md">liste des caractères spéciaux</ref>.</p>
   </remarks>
 </elementSpec>

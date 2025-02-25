@@ -66,12 +66,9 @@
         addition was made (pencil, other ink, etc.). If an addition is the hand of the first
         scribe, then the hand is not specifically noted.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-11">
-    <p>L'attribut <att>spanTo</att> est utilisé pour faire référence au point final de l'addition,
-        qui est marquée par <gi>anchor</gi>.</p>
-    <p>La place d'addition doit être dans <att>place</att> et la main de la place ajoutée peut être
-        tenue avec <att>hand</att>. Si nécessaire, à l'intérieur de <att>rend</att>, il est
-        possible de spécifier comment l'ajout a été effectué (crayon, autre encre, etc.). Si un
-        ajout est la main du premier scribe, alors la main n'est pas spécifiquement notée.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-05">
+    <p>Les mêmes règles s'appliquent à <gi>addSpan</gi> qu'à <gi>add</gi> (voir ici).</p>
+    <p>De plus, l'attribut <att>spanTo</att> fait nécessairement référence au point final de
+      l'ajout, qui est marqué par <gi>anchor</gi>.</p>
   </remarks>
 </elementSpec>
