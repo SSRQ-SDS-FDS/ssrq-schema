@@ -1,11 +1,11 @@
-# Übersicht der verwendeten Tags
+# Übersicht der verwendeten Elemente
 
 ## Dokumentstruktur
 - [`<TEI>`](TEI.de.md)
 - Textbereich: [`<text>`](text.de.md)
 - Kopfbereich: [`<teiHeader>`](teiHeader.de.md)
 
-## Tags im Textbereich
+## Elemente im Textbereich
 
 ### Textkritische Auszeichnungen
 - Abkürzungen und deren Auflösung: [`<abbr>`](abbr.de.md)
@@ -63,7 +63,7 @@
     - Organisationen: [`<orgName>`](orgName.de.md)
     - Orte: [`<placeName>`](placeName.de.md)
 
-## Tags im Kopfbereich
+## Elemente im Kopfbereich
 
 ### Beschreibung der Datei
 - [`<fileDesc>`](fileDesc.de.md)
