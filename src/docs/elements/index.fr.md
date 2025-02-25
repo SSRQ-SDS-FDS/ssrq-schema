@@ -1,84 +1,112 @@
-# Aperçu des balises principales
+# Aperçu des éléments utilisés
 
-## Balises de critique textuelle
+## Structure de document
+- [`<TEI>`](TEI.fr.md)
+- Zone de texte : [`<text>`](text.fr.md)
+- Zone de tête : [`<teiHeader>`](teiHeader.fr.md)
 
-- [`<abbr/>`](../elements/abbr.fr.md) [`<expan/>`](../elements/expan.fr.md) (abréviation) indique une abréviation.
+## Éléments dans la zone de texte
 
-Pour les abréviations françaises, on consultera avec profit
-[[http://theleme.enc.sorbonne.fr/dico]](http://theleme.enc.sorbonne.fr/dico).
-Pour les abréviations latines, l'ouvrage de base demeure: Adriano Cappelli, Dizionario de Abbreviature latine ed
-italiani, Milan, 1912. Celui-ci est accessible en ligne:
-[[http://www.hist.msu.ru/Departments/Medieval/Cappelli/]](http://www.hist.msu.ru/Departments/Medieval/Cappelli/).
+### Balisage critique du texte
+- Abréviations et leur résolution : [`<abbr>`](abbr.fr.md)
+  [`<expan>`](expan.fr.md)
+- Erreur et leur correction : [`<sic>`](sic.fr.md) [`<corr>`](corr.fr.md)
+- Sélection de l'une des deux variantes : [`<choice>`](choice.fr.md)
+- Entrées d'appareil avec lemme et lectures : [`<app>`](app.fr.md)
+    [`<lem>`](lem.fr.md) [`<rdg>`](rdg.fr.md)
+- Ajouts : [`<add>`](add.fr.md)
+    [`<addSpan>`](addSpan.fr.md)
+- Suppressions : [`<del>`](del.fr.md) [`<delSpan>`](delSpan.fr.md)
+- Substitutions : [`<subst>`](subst.fr.md)
+- Dommages : [`<damage>`](damage.fr.md)
+    [`<damageSpan>`](damageSpan.fr.md)
+- Lacunes et leur supplément par les éditeurs : [`<gap>`](gap.fr.md)
+    [`<space>`](space.fr.md) [`<supplied>`](supplied.fr.md)
+- Changement de main : [`<handShift>`](handShift.fr.md)
+- Lecture incertaine : [`<unclear>`](unclear.fr.md)
+- Point d'ancrage pour les balises inter-hiérarchies : [`<anchor>`](anchor.fr.md)
 
-- [`<add/>`](../elements/add.fr.md) [`<addSpan/>`](../elements/add.fr.md) (ajout) indique des lettres, des mots ou des
-  phrases (ajouts, compléments, éléments suscrits, notes marginales) qui ont été insérés à leur place dans le texte
-  édité.
-- [`<app/>`](../elements/app.fr.md) (entrée d'apparat critique) indique une différence de lecture ou une variation
-  textuelle par rapport à d'éventuels autres états du texte (un deuxième original, une copie).
-- [`<corr/>`](../elements/corr.fr.md) (correction) indique la correction (par l'éditeur) d'un mot ou d'un passage, qui,
-  dans le texte source, comporte manifestement une erreur (accord, orthographe, sens), et qui pourrait, par ailleurs,
-  être assorti du tag [`<sic/>`](../elements/sic.fr.md).
-- [`<damage/>`](../elements/damage.fr.md) [`<damageSpan/>`](../elements/damageSpan.fr.md) (dommage) indique la présence et
-  la nature d'un dommage à cet endroit du texte source.
-- [`<del/>`](../elements/del.fr.md) [`<delSpan/>`](../elements/del.fr.md) (suppression) indique une lettre, un mot ou un
-  passage cancellé et/ou une rature.
-- [`<foreign/>`](../elements/foreign.fr.md) (étranger) indique la présence d'un mot (ou plusieurs) exprimé(s) dans une
-  autre langue que celle du texte source.
-- [`<gap/>`](../elements/gap.fr.md) (omission) indique l'omission volontaire par l'éditeur d'un mot ou d'un passage pour
-  des raisons éditoriales - qu'il convient alors d'expliquer (échantillonnage ou passage illisible par exemple).
-- [`<sic/>`](../elements/sic.fr.md) (sic) indique que l'éditeur a reproduit tel quel un mot ou un passage du texte source,
-  mais dont la graphie ou le sens peut paraître étrange ou surprendre le lecteur.
-- [`<space/>`](../elements/space.fr.md) (espace) passage volontairement laissé vide (dans le texte source) par le scribe
-  (par exemple pour un éventuel complément plus tardif, mais qui ne s'est pas fait).
-- [`<subst/>`](../elements/subst.fr.md) (substitution) indique un passage comportant de multiples et complexes ratures,
-  corrections, ajouts rendant la lecture et la compréhension difficile, mais que l'éditeur a composé ou recomposé au
-  mieux, en fonction d'un choix, qu'il convient d'expliquer.
-- [`<supplied/>`](../elements/supplied.fr.md) (texte restitué) indique une ou des explications donnée(s) par l'éditeur pour
-  une raison quelconque: par exemple, lorsque celui-ci a dû composer ou recomposer un passage (voir ci-dessus) parce que
-  le scribe du texte source a sauté une ligne ou parce que, à cet endroit du texte, le document original comporte un
-  trou ou est endommagé.
-- [`<unclear/>`](../elements/unclear.fr.md) (incertain) indique une lecture demeurée incertaine (proposition de
-  transcription).
-- [`<note/>`](../elements/note.fr.md) indique la présence d'une note renvoyant à l'apparat.
+### Balisage de la structure du texte
+- Zone de texte et zone de commentaire : [`<body>`](body.fr.md) [`<back>`](back.fr.md)
+- Sections : [`<div>`](div.fr.md) [`<seg>`](seg.fr.md)
+- Paragraphes dans l'original : [`<p>`](p.fr.md)
+- Tableaux : [`<table>`](table.fr.md) [`<row>`](row.fr.md) [`<cell>`](cell.fr.md)
+- Listes : [`<list>`](list.fr.md) [`<item>`](item.fr.md)
+- Graphiques : [`<figure>`](figure.fr.md) [`<graphic>`](graphic.fr.md)
+- Bouleversements :
+    - Début de la page : [`<pb>`](pb.fr.md)
+    - Début de la colonne : [`<cb>`](cb.fr.md)
+    - Début de la ligne : [`<lb>`](lb.fr.md)
+- Autres parties du texte :
+    - Rubriques, titres : [`<head>`](head.fr.md)
+    - Signatures: [`<signed>`](signed.fr.md)
+    - Citations et discours direct : [`<quote>`](quote.fr.md) [`<q>`](q.fr.md)
+    - Gardiens et plaignants : [`<fw>`](fw.fr.md)
+    - Étiquettes : [`<label>`](label.fr.md)
+    - Blocs anonymes : [`<ab>`](ab.fr.md)
+    - Notes : [`<note>`](note.fr.md)
+    - Références, informations bibliographiques : 
+      [`<bibl>`](bibl.fr.md) [`<ref>`](ref.fr.md) [`<listBibl>`](listBibl.fr.md)
+    - Signes de ponctuation traités en fonction de la langue : [`<pc>`](pc.fr.md)
+- Changement de langue : [`<foreign>`](foreign.fr.md) [`<orig>`](orig.fr.md)
+- Points forts : [`<hi>`](hi.fr.md)
 
-## Balises utiles à la présentation de l'édition de texte
+### Balisage du contenu
+- Dates : [`<date>`](date.fr.md) [`<precision>`](precision.fr.md)
+- Temps : [`<time>`](time.fr.md)
+- Nombres et chiffres : [`<num>`](num.fr.md)
+- Mesures, poids, monnaies : [`<measure>`](measure.fr.md)
+    [`<measureGrp>`](measureGrp.fr.md)
+- Registres :
+    - Lemmes ou mots-clé : [`<term>`](term.fr.md)
+    - Personnes : [`<persName>`](persName.fr.md)
+    - Organisations : [`<orgName>`](orgName.fr.md)
+    - Lieux : [`<placeName>`](placeName.fr.md)
 
-- [`<ab/>`](../elements/ab.fr.md) indique la présence d'une zone de texte sans affectation claire au sein du texte source,
-  s'agissant de notices dorsales, de remarques issues de la chancellerie, des Archives ou de la Registratur.
-- [`<div/>`](../elements/div.fr.md) ou [`<p/>`](../elements/p.fr.md) indique une subdivision dans le texte.
-- [`<seg/>`](../elements/seg.fr.md) indique des paragraphes fait par l'éditeur pour structurer le contenu d'un texte.
-- [`<figure/>`](../elements/figure.fr.md) indique des éléments représentant ou contenant une information graphique, comme
-  le seing manuel d'un notaire, des essais de plume, une croix, un chrismon. Il n'est donc plus nécessaire, pour une
-  édition digitale, de faire figurer ces informations dans le texte, comme cela est le cas pour une édition analogique,
-  selon ce principe: (Chrismon.) In nomine etc... (avec Chrismon en italique).
-- [`<head/>`](../elements/head.fr.md) indique un titre, un sous-titre, etc.
-- [`<hi/>`](../elements/hi.fr.md)    lettres suscrites.
-- [`<lb/>`](../elements/lb.fr.md)         indique le début d'une nouvelle ligne (saut de ligne).
-- [`<orig/>`](../elements/orig.fr.md)              indique un mot ou un passage repris tel quel (littéralement par rapport
-  à la langue du
-  texte source) dans un commentaire, un titre ou une note de bas de page par exemple.
-- [`<pb/>`](../elements/pb.fr.md)     indique le début d'une page de texte (saut de page).
-- [`<q/>`](../elements/q.fr.md)               indique un discours direct, introduit et clos par des guillemets.
-- [`<quote/>`](../elements/quote.fr.md)             indique une citation.
-- [`<signed/>`](../elements/signed.fr.md)            indique une signature.
-- [`<table/>`](../elements/table.fr.md) avec [`<row/>`](../elements/row.fr.md) et [`<cell/>`](../elements/cell.fr.md) indique la
-  présence d'un tableau (voir ci-dessous).
+## Éléments dans la zone de tête
 
-## Balises de contenu
+### Description du fichier
+- [`<fileDesc>`](fileDesc.fr.md)
+- Description de la page de titre :
+    - Titre et série : [`<titleStmt>`](titleStmt.fr.md) [`<title>`](title.fr.md)
+        [`<publicationStmt>`](publicationStmt.fr.md)
+        [`<seriesStmt>`](seriesStmt.fr.md)
+    - Responsabilité : [`<editor>`](editor.fr.md),
+      [`<publisher>`](publisher.fr.md) [`<respStmt>`](respStmt.fr.md)
+      [`<resp>`](resp.fr.md)
+    - Licence : [`<availability>`](availability.fr.md)
+      [`<licence>`](licence.fr.md)
+- Description de la source : [`<sourceDesc>`](sourceDesc.fr.md)
+  [`<msDesc>`](msDesc.fr.md)
+    - Témoins textuels : [`<listWit>`](listWit.fr.md) [`<witness>`](witness.fr.md)
+    - Description bibliographique : [`<msIdentifier>`](msIdentifier.fr.md)
+      [`<altIdentifier>`](altIdentifier.fr.md) [`<idno>`](idno.fr.md)
+      [`<repository>`](repository.fr.md) [`<settlement>`](settlement.fr.md)
+    - Description du contenu de la source : [`<msContents>`](msContents.fr.md)
+      [`<msItem>`](msItem.fr.md) [`<author>`](author.fr.md)
+      [`<textLang>`](textLang.fr.md) [`<docImprint>`](docImprint.fr.md) [`<pubPlace>`](pubPlace.fr.md) [`<publisher>`](publisher.fr.md)
+      [`<summary>`](summary.fr.md)
+    - Histoire de la source : [`<history>`](history.fr.md)
+      [`<origin>`](origin.fr.md) [`<origDate>`](origDate.fr.md)
+      [`<origPlace>`](origPlace.fr.md)
+      - Informations Complémentaires : [`<additional>`](additional.fr.md) [`<adminInfo>`](adminInfo.fr.md)
+      [`<custodialHist>`](custodialHist.fr.md) [`<custEvent>`](custEvent.fr.md)
+    - Description physique de la source : [`<physDesc>`](physDesc.fr.md)
+        - Reliure : [`<bindingDesc>`](bindingDesc.fr.md)
+        - Mains : [`<handDesc>`](handDesc.fr.md) [`<handNote>`](handNote.fr.md)
+        - Sceaux : [`<sealDesc>`](sealDesc.fr.md) [`<seal>`](seal.fr.md)
+        - Matériau : [`<objectDesc>`](objectDesc.fr.md)
+          [`<supportDesc>`](supportDesc.fr.md) [`<support>`](support.fr.md)
+          [`<material>`](material.fr.md)
+        - Étendue : [`<extent>`](extent.fr.md) [`<dimensions>`](dimensions.fr.md)
+          [`<height>`](height.fr.md) [`<width>`](width.fr.md)
+        - Foliation : [`<foliation>`](foliation.fr.md)
+        - État de conservation : [`<condition>`](condition.fr.md)
 
-- [`<date/>`](../elements/date.fr.md)        indique les éléments d'une date.
-- [`<origDate/>`](../elements/origDate.fr.md)            indique la date originale exprimée dans le texte source.
-- [`<measure/>`](../elements/measure.fr.md)            indique les unités monétaires, de poids et de mesures.
-- [`<measureGrp/>`](../elements/measureGrp.fr.md)        indique un groupe de mesures dont la conversion n'est pas
-  possible.
-- [`<num/>`](../elements/num.fr.md)        indique les chiffres romains, les nombres, etc.
-- [`<time/>`](../elements/time.fr.md)        indique un délai ou un moment de la journée par exemple (indication
-  temporelle/chronologique).
+### Description du codage
+- [`<encodingDesc>`](encodingDesc.fr.md)
+  [`<editorialDecl>`](editorialDecl.fr.md)
 
-## Indexation
-
-- [`<persName/>`](../elements/persName.fr.md) personnes
-- [`<orgName/>`](../elements/orgName.fr.md) organisations
-- [`<placeName/>`](../elements/placeName.fr.md)            lieux, lieux-dits
-- [`<origPlace/>`](../elements/origPlace.fr.md)            date de lieu ou date topographique
-- [`<term/>`](../elements/term.fr.md)            lemmes, keywords
+### Description du profil du texte
+- [`<profileDesc>`](profileDesc.fr.md) [`<textClass>`](textClass.fr.md)
+- Mots clés: [`<keywords>`](keywords.fr.md) [`<term>`](term.fr.md)
