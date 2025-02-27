@@ -52,8 +52,9 @@
     <p>If <att>type</att> has value <val>plica</val> then only one <gi>width</gi> element is
       allowed as content.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-14">
-    <p>Si <att>type</att> a la valeur <val>plica</val> alors un seul élément <gi>width</gi> est
-      autorisé comme contenu.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-05">
+    <p>Si l'attribut <att>type</att> a la valeur <val>plica</val>, alors un seul élément
+      <gi>width</gi> est autorisé comme élément enfant, sinon <gi>width</gi> et <gi>height</gi>
+      doivent être spécifiés.</p>
   </remarks>
 </elementSpec>

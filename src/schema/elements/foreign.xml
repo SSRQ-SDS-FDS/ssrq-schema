@@ -40,10 +40,10 @@
         the sentence that can be identified with a TEI element, the corresponding element must be
         provided with <att>xml:lang</att>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-19">
-    <p>"Actum", "datum" ou "etc." ne sont pas marqués avec <gi>foreign</gi>. Les passages de texte
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>«Actum», «datum» ou «etc.» ne sont pas marqués avec <gi>foreign</gi>. Les passages de texte
         plus longs en langue étrangère sont également notés dans les métadonnées
-        sous <gi>textLang</gi>. S'il s'agit d'une partie de la phrase qui peut être identifiée par
-        un élément TEI, l'élément correspondant doit être fourni avec <att>xml:lang</att>.</p>
+        sous <gi>textLang</gi>.</p>
+    <p>L'attribut <att>xml:lang</att> spécifie toujours la langue.</p>
   </remarks>
 </elementSpec>
