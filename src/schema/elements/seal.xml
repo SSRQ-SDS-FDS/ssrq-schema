@@ -25,7 +25,6 @@
       <elementRef key="p" minOccurs="0"/>
     </sequence>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-seal" mode="delete"/>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-seal" mode="add">
     <desc versionDate="2023-06-01" xml:lang="en">constraint for tei:seal</desc>
     <constraint>
@@ -40,7 +39,6 @@
     </constraint>
   </constraintSpec>
   <attList>
-    <attDef ident="calendar" mode="delete"/>
     <attDef ident="contemporary" mode="delete"/>
     <attDef ident="n" mode="change" usage="req">
       <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Siegels</desc>
