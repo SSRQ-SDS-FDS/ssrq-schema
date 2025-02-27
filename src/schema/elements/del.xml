@@ -70,16 +70,17 @@
         interventions (deletion with correction), <att>hand</att> is found at <gi>add</gi>
         within <gi>subst</gi>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-19">
+  <remarks xml:lang="fr" versionDate="2025-02-05">
     <p>Avec <gi>del</gi>, aucune suppression provenant de l'éditeur n'est marquée, seules celles
-        qui se trouvent dans la source. Si le texte est supprimé plusieurs fois ou si les
+        qu'un scribe a faites. Si le texte est supprimé plusieurs fois ou si les
         suppressions franchissent les limites hiérarchiques, <gi>delSpan</gi> et <gi>anchor</gi>
         doivent être utilisés.</p>
     <p>Les rasages sont marqués avec l'attribut <att>rend</att> = <val>rubbing</val>. Si rien
         n'est lisible après le rasage ou les coups lourds, un <gi>gap</gi> vide est utilisé
         dans <gi>del</gi>.</p>
-    <p>L'attribut <att>hand</att> est utilisé pour les traits avec une autre encre. Dans les
-        interventions textuelles ultérieures (suppression avec correction), <att>hand</att> se
-        trouve à <gi>add</gi> dans <gi>subst</gi>.</p>
+    <p>L'attribut <att>hand</att> est utilisé pour les suppressions effectuées par une autre
+        main, qui peuvent souvent être identifiées par une couleur d'encre différente. Si le
+        texte est modifié ultérieurement, par exemple s'il est supprimé puis corrigé, la main
+        est identifiée à <gi>add</gi> dans <gi>subst</gi>.</p>
   </remarks>
 </elementSpec>
