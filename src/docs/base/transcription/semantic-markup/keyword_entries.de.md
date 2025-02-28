@@ -19,5 +19,5 @@ mit einer Definition erfasst.
 Historische Ereignisse werden mit Jahreszahlen versehen und wenn möglich
 mit dem [HLS](https://hls-dhs-dss.ch/de/) verlinkt.
 
-Beispiel:  
+Beispiel:
 [Alter Zürichkrieg (1436–1450)](https://termini.ssrq-sds-fds.ch/views/view-keyword.xq?id=key000513)

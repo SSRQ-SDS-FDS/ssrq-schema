@@ -46,6 +46,11 @@ from ..conftest import RNG_test_function
             "<subst><pb/><del>foo</del><pb/><add place='inline'>bar</add></subst>",
             False,
         ),
+        (
+            "valid-subst-with-type",
+            "<subst type='cypher'><del>foo</del><add place='left_top'>bar</add></subst>",
+            True,
+        ),
     ],
 )
 def test_subst(

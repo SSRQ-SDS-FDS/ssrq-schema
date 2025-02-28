@@ -6,12 +6,12 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Ortsname</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">place name</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">nom de lieu</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Zeichnet eine topographische Bezeichnung (wie einen
-    Ort oder einen Flurnamen) aus.</desc>
+  <desc xml:lang="de" versionDate="2025-02-21">Enthält eine topographische Bezeichnung (wie einen
+    Ort oder einen Flurnamen).</desc>
   <desc xml:lang="en" versionDate="2023-04-20">Indicates topographical designations (a place or a
     field name).</desc>
-  <desc xml:lang="fr" versionDate="2023-04-20">Distingue les désignations topographiques (un lieu
-    où un lieu-dit).</desc>
+  <desc xml:lang="fr" versionDate="2025-02-21">Contient un nom topographique (tel qu’un nom de
+    lieu ou de champ).</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="model.placeNamePart"/>
@@ -21,9 +21,7 @@
       <macroRef key="ssrq.content.default"/>
     </sequence>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-placeName" mode="delete"/>
   <attList>
-    <attDef ident="calendar" mode="delete"/>
     <attDef ident="ref" mode="replace">
       <datatype>
         <dataRef key="ssrq.pointer.places"/>
@@ -34,7 +32,11 @@
   <xi:include href="examples.xml" xpointer="ex-placeName-en"/>
   <xi:include href="examples.xml" xpointer="ex-placeName-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Es gelten die ausführlichen Richlinien zur Auszeichnung von Orten und Räumen in den
+    <p>Es gelten die ausführlichen Richtlinien zur Auszeichnung von Orten und Räumen in den
       <ref target="places.de.md">Transkriptionsrichtlinien</ref>.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>Les directives détaillées pour le marquage des lieux et des salles dans les
+      <ref target="places.fr.md">principes de transcription</ref> s’appliquent.</p>
   </remarks>
 </elementSpec>

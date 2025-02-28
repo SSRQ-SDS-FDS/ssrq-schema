@@ -54,23 +54,23 @@
   <xi:include href="examples.xml" xpointer="ex-ref-urn-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-06">
     <p>Der Verweis kann auf ein anderes Dokument, die Einleitung, das Register eines
-        retrodigitalisierten Bandes, einen Eintrag im HLS, zitierte Literatur etc. zeigen.</p>
+      retrodigitalisierten Bandes, einen Eintrag im HLS, zitierte Literatur etc. zeigen.</p>
     <p>Es ist sinnvoll, Links auf weitere, nicht edierte, aber in einem Archivinformationssystem
-        einzeln verzeichnete Quellenstücke innerhalb von <gi>ref</gi> zu setzen. Nicht sinnvoll ist
-        es, wenn bei einer einzelnen Urkunde auf den ganzen Urkundenbestand verlinkt wird, weil die
-        Einzelurkunde nicht verzeichnet ist. Bei Einträgen aus einem Buch, die man nicht einzeln in
-        einem Archivinformationssystem verzeichnen will (wenn das überhaupt möglich ist), kann auf
-        das (ganze) Buch, das im Archivkatalog verzeichnet ist, verlinkt werden.</p>
+      einzeln verzeichnete Quellenstücke innerhalb von <gi>ref</gi> zu setzen. Nicht sinnvoll ist
+      es, wenn bei einer einzelnen Urkunde auf den ganzen Urkundenbestand verlinkt wird, weil die
+      Einzelurkunde nicht verzeichnet ist. Bei Einträgen aus einem Buch, die man nicht einzeln in
+      einem Archivinformationssystem verzeichnen will (wenn das überhaupt möglich ist), kann auf
+      das (ganze) Buch, das im Archivkatalog verzeichnet ist, verlinkt werden.</p>
     <p>Wird auf andere Editionen verlinkt, wird zuerst die Signatur der Quelle angegeben, wenn
-        die Archivalie konsultiert wurde (Autopsie) oder wenn sich die Signatur via Query
-        verifizieren und verlinken lässt. Hat man eine Archivalie anhand einer Edition beurteilt,
-        ist nur die Edition anzugeben.</p>
+      die Archivalie konsultiert wurde (Autopsie) oder wenn sich die Signatur via Query
+      verifizieren und verlinken lässt. Hat man eine Archivalie anhand einer Edition beurteilt,
+      ist nur die Edition anzugeben.</p>
     <p>Wenn man auf eine Quelle, die in einer Editionseinheit der SSRQ ediert wird, verweisen
-        möchte, ist es nicht notwendig, die Archivsignatur zu wiederholen, sondern es reicht, auf
-        die Stücknummer der Editionseinheit zu verlinken. Ebenso ist es möglich, innerhalb der
-        eigenen Editionseinheit von einem Stück auf ein anderes zu referenzieren. Wir verwenden
-        dafür die <gi>idno</gi>. Verweise auf andere Stücke werden in <gi>bibl</gi>
-        eingeschlossen.</p>
+      möchte, ist es nicht notwendig, die Archivsignatur zu wiederholen, sondern es reicht, auf
+      die Stücknummer der Editionseinheit zu verlinken. Ebenso ist es möglich, innerhalb der
+      eigenen Editionseinheit von einem Stück auf ein anderes zu referenzieren. Wir verwenden
+      dafür die <gi>idno</gi>. Verweise auf andere Stücke werden in <gi>bibl</gi>
+      eingeschlossen.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2024-11-04">
     <p>The reference can point to another document, the introduction, the index of a retrodigitized
@@ -90,24 +90,25 @@
         own edition unit. We use the <gi>idno</gi> for this.</p>
     <p>References to other pieces are included in <gi>bibl</gi>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-20">
-    <p>La référence peut pointer vers un autre document, l'introduction, l'index d'un volume
-        rétronumérisé, une entrée dans l'HLS, une littérature citée, etc. Il est logique de placer
-        des liens dans <gi>ref</gi> vers d'autres éléments sources qui ne sont pas édités mais qui
-        sont répertoriés individuellement dans un système d'information d'archives. Cela n'a pas
-        de sens qu'un seul certificat soit lié à l'ensemble du stock de certificats parce que le
-        certificat individuel n'est pas répertorié. Dans le cas d'entrées d'un livre que l'on ne
-        souhaite pas répertorier individuellement dans un système d'information d'archives (si cela
-        est possible), un lien peut être établi vers le livre (entier) répertorié dans le catalogue
-        d'archives. Si des liens sont établis vers d'autres éditions, la cote de la source est
-        indiquée en premier si le matériel d'archives a été consulté (autopsie) ou si la cote peut
-        être vérifiée et liée par requête. Si un document d'archives a été évalué sur la base d'une
-        édition, seule l'édition doit être spécifiée. Si vous voulez faire référence à une source
-        qui est éditée dans une unité d'édition du FDS, il n'est pas nécessaire de répéter la
-        référence archivistique, mais il suffit de faire le lien avec le numéro d'item de l'unité
-        d'édition (voir exemple ci-dessous). Il est également possible de référencer d'une pièce à
-        l'autre au sein de votre propre unité d'édition. Nous utilisons le <gi>idno</gi> pour
-        cela.</p>
-    <p>Les références à d'autres pièces sont incluses dans <gi>bibl</gi>.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>La référence peut pointer vers un autre document, l’introduction, l’index d’un volume
+      rétro-numérisé, une entrée dans le HLS, la littérature citée, etc.</p>
+    <p>Il est utile de définir des liens vers des éléments sources supplémentaires non modifiés
+      qui sont répertoriés individuellement dans un système d’information d’archive dans
+      <gi>ref</gi>. Il n’est pas logique de créer un lien vers l’inventaire complet des
+      documents pour un seul document, car le document individuel n’est pas répertorié.
+      Pour les entrées d’un livre que vous ne souhaitez pas enregistrer individuellement
+      dans un système d’information d’archives (si cela est même possible), vous pouvez
+      créer un lien vers le livre (entier) enregistré dans le catalogue d’archives.</p>
+    <p>Si des liens sont faits vers d’autres éditions, la signature de la source est donnée
+      en premier si l’archive a été consultée (autopsie) ou si la signature peut être vérifiée
+      et liée via une requête. Si un document d’archives a été évalué sur la base d’une édition,
+      seule l’édition doit être indiquée.</p>
+    <p>Si vous souhaitez faire référence à une source publiée dans une unité d’édition du SDS,
+      il n’est pas nécessaire de répéter la signature de l’archive, mais il suffit de créer un
+      lien vers le numéro d’article de l’unité d’édition. Il est également possible de faire
+      référence d’une pièce à une autre au sein de votre propre unité d’édition. Nous utilisons
+      l’<gi>idno</gi> pour cela. Les références à d’autres pièces sont incluses dans
+      <gi>bibl</gi>.</p>
   </remarks>
 </elementSpec>

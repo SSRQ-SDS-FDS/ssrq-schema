@@ -9,8 +9,7 @@
   <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Herausgeberin/einen Herausgeber der Editionseinheit.</desc>
   <desc xml:lang="en" versionDate="2023-08-17">In the <gi>titleStmt</gi> of a piece, the editors
     of the edition unit are thus recorded.</desc>
-  <desc xml:lang="fr" versionDate="2023-08-17">Dans le <gi>titleStmt</gi> d'une pièce, on saisit
-    ainsi les éditeurs de l'unité d'édition.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient un éditeur de l’unité d’édition.</desc>
   <classes mode="replace"/>
   <content>
     <alternate>
@@ -18,7 +17,6 @@
       <textNode/>
     </alternate>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-editor" mode="delete"/>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-editor">
     <desc xml:lang="en" versionDate="2023-04-13">constraint for tei:editor</desc>
     <constraint>
@@ -31,9 +29,6 @@
       </sch:pattern>
     </constraint>
   </constraintSpec>
-  <attList>
-    <attDef ident="calendar" mode="delete"/>
-  </attList>
   <xi:include href="examples.xml" xpointer="ex-editor-de"/>
   <xi:include href="examples.xml" xpointer="ex-editor-en"/>
   <xi:include href="examples.xml" xpointer="ex-editor-fr"/>

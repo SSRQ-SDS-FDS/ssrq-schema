@@ -9,7 +9,8 @@
   <desc xml:lang="de" versionDate="2025-02-05">Markiert eine grössere, die Hierarchiegrenzen
     überschreitende Hinzufügung eines Schreibers.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Denotes major additions.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-13">Désigne des ajouts majeurs.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-05">Marque un ajout majeur d’un scribe qui traverse les
+    limites de la hiérarchie.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.placement"/>
@@ -24,7 +25,7 @@
     <attDef ident="place" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-04">der Ort der Hinzufügung</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the place of the addition</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">le lieu d'ajout</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">le lieu d’ajout</desc>
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.place"/>
@@ -35,7 +36,7 @@
     <attDef ident="rend" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-04">das verwendete Schreibmittel</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the writing means used</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d'écriture utilisé</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d’écriture utilisé</desc>
       <datatype>
         <dataRef key="ssrq.rend.add"/>
       </datatype>
@@ -43,7 +44,7 @@
     <attDef ident="type" mode="replace">
       <desc xml:lang="de" versionDate="2025-01-29">die Art der Hinzufügung</desc>
       <desc xml:lang="en" versionDate="2025-01-29">the kind of addition</desc>
-      <desc xml:lang="fr" versionDate="2025-01-29">le type d'ajout</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">le type d’ajout</desc>
       <datatype>
         <dataRef key="ssrq.type.add"/>
       </datatype>
@@ -65,12 +66,9 @@
         addition was made (pencil, other ink, etc.). If an addition is the hand of the first
         scribe, then the hand is not specifically noted.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-11">
-    <p>L'attribut <att>spanTo</att> est utilisé pour faire référence au point final de l'addition,
-        qui est marquée par <gi>anchor</gi>.</p>
-    <p>La place d'addition doit être dans <att>place</att> et la main de la place ajoutée peut être
-        tenue avec <att>hand</att>. Si nécessaire, à l'intérieur de <att>rend</att>, il est
-        possible de spécifier comment l'ajout a été effectué (crayon, autre encre, etc.). Si un
-        ajout est la main du premier scribe, alors la main n'est pas spécifiquement notée.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-05">
+    <p>Les mêmes règles s’appliquent à <gi>addSpan</gi> qu’à <gi>add</gi> (voir ici).</p>
+    <p>De plus, l’attribut <att>spanTo</att> fait nécessairement référence au point final de
+      l’ajout, qui est marqué par <gi>anchor</gi>.</p>
   </remarks>
 </elementSpec>

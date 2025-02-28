@@ -38,6 +38,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<precision precision='medium'/>",
             False,
         ),
+        (
+            "valid-precision-with-duriso-and-period",
+            "<precision match='dur-iso period' precision='medium'/>",
+            True,
+        ),
+        (
+            "valid-precision-with-calendar",
+            "<precision match='calendar' precision='medium'/>",
+            True,
+        ),
     ],
 )
 def test_precision(

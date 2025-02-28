@@ -9,8 +9,8 @@
   <desc xml:lang="de" versionDate="2025-02-06">Enthält die Beschreibungen alle relevanten Hände
     eines Textträgers.</desc>
   <desc xml:lang="en" versionDate="2023-05-22">Describes the hands and all hand changes.</desc>
-  <desc xml:lang="fr" versionDate="2023-05-22">Décrit les mains et tous les changements de
-    mains.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient les descriptions de toutes les mains
+    pertinentes d’un support de texte.</desc>
   <classes mode="replace"/>
   <content>
     <elementRef key="handNote" maxOccurs="unbounded"/>
@@ -29,8 +29,8 @@
     <p>Marginals, deletions, corrections, etc. are marked directly at the point in the text.
       Only «important» writers are entered.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-08-22">
-    <p>Les marges, les suppressions, les corrections, etc. sont marquées directement au point dans
-      le texte. Seuls les auteurs « importants » sont inscrits.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>Seules les mains «importantes» sont saisies. Chaque main possède son propre
+      élément <gi>handNote</gi>.</p>
   </remarks>
 </elementSpec>

@@ -8,7 +8,8 @@
   <gloss xml:lang="fr" versionDate="2025-02-04">responsabilité</gloss>
   <desc xml:lang="de" versionDate="2025-02-07">Beschreibt die Art der Verantwortung der Beteiligten an der Edition.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes the nature of the responsibility.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-20">Décrit la nature de la responsabilité.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-07">Décrit la nature de la responsabilité des personnes
+    impliquées dans l’édition.</desc>
   <classes mode="replace"/>
   <content>
     <alternate>
@@ -16,10 +17,6 @@
       <macroRef key="ssrq.role.resp.fr"/>
     </alternate>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-resp" mode="delete"/>
-  <attList>
-    <attDef ident="calendar" mode="delete"/>
-  </attList>
   <xi:include href="examples.xml" xpointer="ex-respStmt-de"/>
   <xi:include href="examples.xml" xpointer="ex-respStmt-en"/>
   <xi:include href="examples.xml" xpointer="ex-respStmt-fr"/>

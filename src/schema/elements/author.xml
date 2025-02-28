@@ -10,7 +10,7 @@
     einer Quelle.</desc>
   <desc xml:lang="en" versionDate="2023-08-17">Contains the writer of a source as part
     of <gi>msItem</gi>.</desc>
-  <desc xml:lang="fr" versionDate="2023-08-17">Contient l'auteur d'une source dans le cadre
+  <desc xml:lang="fr" versionDate="2023-08-17">Contient l’auteur d’une source dans le cadre
     de <gi>msItem</gi>.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
@@ -29,13 +29,11 @@
       </sequence>
     </alternate>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-author" mode="delete"/>
   <attList>
-    <attDef ident="calendar" mode="delete"/>
     <attDef ident="role" mode="replace">
-      <desc xml:lang="de" versionDate="2025-01-31">die Rolle des Schreibenden</desc>
-      <desc xml:lang="en" versionDate="2025-01-31">the role of the writer</desc>
-      <desc xml:lang="fr" versionDate="2025-01-31">le rôle du rédacteur</desc>
+      <desc xml:lang="de" versionDate="2025-02-24">die Rolle des Schreibers</desc>
+      <desc xml:lang="en" versionDate="2025-02-24">the role of the writer</desc>
+      <desc xml:lang="fr" versionDate="2025-02-25">le rôle du scribe</desc>
       <datatype>
         <dataRef key="ssrq.role.author"/>
       </datatype>

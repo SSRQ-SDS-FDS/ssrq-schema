@@ -184,7 +184,7 @@ Beispiele:
 
 Die unten stehende Tabelle zeigt, wie die einzelnen Zeichen kodiert werden sollten.
 
-Für einige der angegebenen Zeichen hat es mehrere Möglichkeiten der Codierung: 
+Für einige der angegebenen Zeichen hat es mehrere Möglichkeiten der Kodierung: 
 So kann beispielsweise das e caudata sowohl als einzelnes Zeichen `ę` (U+0119) kodiert werden als 
 auch als Grundbuchstabe `e` (U+0065) mit einem kombinierenden Ogonek `ę` (U+0328).
 Z. B. lassen sich `Ą ą Ę ę Į į Ǫ ǫ Ų ų` erzeugen, indem, wie beim e caudata, zuerst
@@ -267,6 +267,7 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | Marssymbol (Abk. für Dienstag)          | `♂`                   | U+2642               |
 | Copyrightsymbol                         | `©`                   | U+00a9               |
 | **Satzzeichen und dergleichen**         |                       |                      |
+| Ditto Mark (in Tabellen)                | `"`                   | U+0022               |
 | Punkt (Kolon)                           | `.`                   | U+002E               |
 | Komma                                   | `,`                   | U+002C               |
 | Semikolon                               | `;`                   | U+003B               |

@@ -5,14 +5,14 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="anchor" module="linking" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Ankerpunkt</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">anchoring point</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">point d'ancrage</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">point d’ancrage</gloss>
   <desc xml:lang="de" versionDate="2025-02-05">Markiert den Endpunkt einer umfangreichen Hinzufügung
       (<gi>addSpan</gi>), Tilgung (<gi>delSpan</gi>) oder Beschädigung (<gi>damageSpan</gi>).</desc>
   <desc xml:lang="en" versionDate="2023-08-18">Endpoint of extensive addition (<gi>addSpan</gi>), deletion
         (<gi>delSpan</gi>) or corruption (<gi>damageSpan</gi>).
     </desc>
-  <desc xml:lang="fr" versionDate="2023-07-11">Point final d'un ajout important (<gi>addSpan</gi>), d'une suppression
-        (<gi>delSpan</gi>) ou d'une corruption (<gi>damageSpan</gi>).
+  <desc xml:lang="fr" versionDate="2025-02-05">Marque le point final d’un ajout (<gi>addSpan</gi>),
+      d’une suppression (<gi>delSpan</gi>) ou d’un dommage (<gi>damageSpan</gi>) volumineux.
     </desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
@@ -38,13 +38,12 @@
   <xi:include href="examples.xml" xpointer="ex-damageSpan-de"/>
   <xi:include href="examples.xml" xpointer="ex-damageSpan-en"/>
   <xi:include href="examples.xml" xpointer="ex-damageSpan-fr"/>
-  <remarks xml:lang="de" versionDate="2023-08-18">
-    <p>Als Wert des Attributs <att>xml:id</att> ist der erste Teil des Namens der entsprechenden
-        Elemente (<gi>addSpan</gi> = <val>add</val>, <gi>delSpan</gi> = <val>del</val> bzw.
+  <remarks xml:lang="de" versionDate="2025-02-24">
+    <p>Als Wert des Attributs <att>xml:id</att> ist der erste Teil des Namens des entsprechenden
+        Elements (<gi>addSpan</gi> = <val>add</val>, <gi>delSpan</gi> = <val>del</val> bzw.
         <gi>damageSpan</gi> = <val>damage</val>) sowie eine fortlaufende Nummer zu wählen:
         z. B. <val>add1</val>, <val>add2</val> usw. oder <val>del1</val>, <val>del2</val> usw. oder
-        <val>damage1</val>, <val>damage2</val> usw.
-        </p>
+        <val>damage1</val>, <val>damage2</val> usw.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-08-18">
     <p>The value of the <att>xml:id</att> attribute is the first part of the name of the corresponding elements
@@ -52,10 +51,11 @@
             add1, add2 etc. or del1, del2 etc. or damage1, damage2 etc.
         </p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-08-18">
-    <p>La valeur de l'attribut <att>xml:id</att> est la première partie du nom des éléments correspondants
-            (<gi>addSpan</gi>, <gi>delSpan</gi> ou <gi>damageSpan</gi>) et a pour composer un numéro consécutif :
-            ex. add1, add2 etc. ou del1, del2 etc. ou damage1, damage2 etc.
-        </p>
+  <remarks xml:lang="fr" versionDate="2025-02-24">
+    <p>La valeur de l’attribut <att>xml:id</att> doit être la première partie du nom d’élément
+        correspondant (<gi>addSpan</gi> = <val>add</val>, <gi>delSpan</gi> = <val>del</val> ou
+        <gi>damageSpan</gi> = <val>damage</val>) ainsi qu’un numéro consécutif : p. ex.
+        <val>add1</val>, <val>add2</val> etc. ou <val>del1</val>, <val>del2</val> etc. ou
+        <val>damage1</val>, <val>damage2</val> etc.</p>
   </remarks>
 </elementSpec>

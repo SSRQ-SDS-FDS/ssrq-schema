@@ -10,7 +10,7 @@
     ist.</desc>
   <desc xml:lang="en" versionDate="2023-07-18">Describes the license under which a text is
     available.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-18">Décrit la licence sous laquelle un texte est
+  <desc xml:lang="fr" versionDate="2025-02-06">Décrit la licence sous laquelle le texte est
     disponible.</desc>
   <classes mode="replace">
     <memberOf key="att.pointing"/>
@@ -21,9 +21,7 @@
       <valItem ident="Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)"/>
     </valList>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-licence" mode="delete"/>
   <attList>
-    <attDef ident="calendar" mode="delete"/>
     <attDef ident="target" mode="replace" usage="req">
       <datatype>
         <dataRef key="ssrq.target.licence"/>
@@ -38,5 +36,11 @@
       Verarbeitung der Daten muss eine Namensnennung erfolgen (BY), die Verwendung darf nicht
       kommerziellen Zwecken dienen (NC) und bei einer Weitergabe der Daten müssen dieselben
       Lizenzbedingungen angewendet werden (SA).</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>Nous utilisons une licence Creative Commons avec les conditions suivantes : lors du
+      traitement ultérieur des données, l’attribution doit être donnée (BY), l’utilisation
+      ne doit pas être à des fins commerciales (NC) et lorsque les données sont transmises,
+      les mêmes conditions de licence doivent s’appliquer (SA).</p>
   </remarks>
 </elementSpec>

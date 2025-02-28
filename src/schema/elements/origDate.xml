@@ -5,13 +5,13 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origDate" module="msDescription" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Entstehungsdatum</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">date of origin</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">date d'origine</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">date d’origine</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält im <gi>teiHeader</gi> das Entstehungsdatum
     eines Textträgers oder seines Inhalts.</desc>
   <desc xml:lang="en" versionDate="2023-09-13">Contains this in the head area the date of creation
     of a document.</desc>
-  <desc xml:lang="fr" versionDate="2023-09-13">Contient ceci dans la zone de la tête la date de
-    création d'un document.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient la date de création d’un support de texte
+    ou de son contenu dans le <gi>teiHeader</gi>.</desc>
   <classes mode="replace">
     <memberOf key="att.calendarSystem"/>
     <memberOf key="att.datable.custom"/>
@@ -29,7 +29,7 @@
     <attDef ident="type" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2025-01-30">worauf sich das Entstehungsdatum bezieht</desc>
       <desc xml:lang="en" versionDate="2025-01-30">what the date of origin refers to</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">à quoi la date d'origine fait référence</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">à quoi la date d’origine fait référence</desc>
       <datatype>
         <dataRef key="ssrq.orig.type"/>
       </datatype>
@@ -61,14 +61,12 @@
     <p>In the text area, comments and notes, <gi>date</gi> is used instead. For information on how
       to deal with saints' feast days and other church holidays, see <gi>date</gi>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-09-13">
-    <p>Pour les copies, la date de fabrication du document doit être incluse
-      (<tag>origDate type="document"</tag>) ainsi que la date de création originale du contenu
-      du document (<tag>origDate type="content"</tag>).</p>
-    <p>Avec <att>when-custom</att> et <att>calendar</att> la date est fixée en fonction
-      les <ref target="dating_guidelines.md">consignes de rencontre</ref>.</p>
-    <p>Dans la zone de texte, les commentaires et les notes, <gi>date</gi> est utilisé à la place.
-      Pour plus d'informations sur la façon de gérer les jours de fête des saints et autres fêtes
-      religieuses, voir <gi>date</gi>.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>Pour les copies, il faut indiquer à la fois la date de production du document
+      (<tag>origDate type="document"</tag>) et la date originale de création du contenu du
+      document (<tag>origDate type="content"</tag>). La date est enregistrée conformément aux
+      <ref target="dating_guidelines.md">principes de datation</ref>.</p>
+    <p>Dans toutes les autres parties du texte, <gi>date</gi> est utilisé à la place, voir
+      également la différence entre <gi>origPlace</gi> et <gi>placeName</gi>.</p>
   </remarks>
 </elementSpec>

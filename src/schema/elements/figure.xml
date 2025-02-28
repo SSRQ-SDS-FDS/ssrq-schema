@@ -9,8 +9,7 @@
   <desc xml:lang="de" versionDate="2025-02-06">Beschreibt eine Abbildung jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-04-11">Contains elements that describe graphical
     information.</desc>
-  <desc xml:lang="fr" versionDate="2023-04-11">Contient des éléments qui décrivent des informations
-    graphiques.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Décrit une illustration de chaque type.</desc>
   <classes mode="replace">
     <memberOf key="att.placement"/>
     <memberOf key="att.typed"/>
@@ -73,10 +72,11 @@
       the original deed (L. S. = Locus sigilli) or illustrations starting with <gi>graphic</gi>
       be referenced.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-13">
-    <p>Contient des signes notariés (= signe notarié, sceau notarié, signum), des dessins à la
-      plume, des gravures sur bois, des signes de référence ou, dans le cas de copies d'actes,
-      l'endroit où se trouve le sceau dans l'acte original (L. S. = Locus sigilli) ou des
-      illustrations commençant par <gi>graphic</gi> être référencé.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p><gi>figure</gi> décrit des symboles notariés (= signet notarié, sceau notarié, signum), des
+      dessins à la plume, des gravures sur bois, des signes de référence ou, dans le cas de
+      copies d’actes, l’endroit où se trouve le sceau dans l’acte original (L. S. =
+      Locus sigilli) ou des images qui sont référencées avec <gi>graphic</gi>. Le type
+      d’illustration est spécifié avec l’attribut <att>type</att>.</p>
   </remarks>
 </elementSpec>

@@ -252,6 +252,128 @@ def test_ms_desc_rng(
             """,
             False,
         ),
+        (
+            "valid-msDesc-in-sourceDesc-with-head",
+            """
+            <sourceDesc>
+                <msDesc>
+                    <head>Foo</head>
+                    <physDesc>
+                        <objectDesc>
+                           <supportDesc>
+                              <support>
+                                 <material type="paper"/>
+                              </support>
+                           </supportDesc>
+                        </objectDesc>
+                     </physDesc>
+                    <history>
+                        <origin>
+                            <origDate type='document' when-custom="2000-01-01" calendar="gregorian"/>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+            """,
+            True,
+        ),
+        (
+            "invalid-msDesc-in-sourceDesc-without-head",
+            """
+            <sourceDesc>
+                <msDesc>
+                    <physDesc>
+                        <objectDesc>
+                           <supportDesc>
+                              <support>
+                                 <material type="paper"/>
+                              </support>
+                           </supportDesc>
+                        </objectDesc>
+                     </physDesc>
+                     <history>
+                        <origin>
+                            <origDate type='document' when-custom="2000-01-01" calendar="gregorian"/>
+                        </origin>
+                     </history>
+                </msDesc>
+            </sourceDesc>
+            """,
+            False,
+        ),
+        (
+            "valid-msDesc-in-witness-with-head",
+            """
+            <witness n="A" xml:id="id-ssrq-ad1ff2df-dc1a-4e3f-8549-0dfa76b34065">
+                <msDesc>
+                    <head>Foo</head>
+                    <physDesc>
+                        <objectDesc>
+                           <supportDesc>
+                              <support>
+                                 <material type="paper"/>
+                              </support>
+                           </supportDesc>
+                        </objectDesc>
+                     </physDesc>
+                     <history>
+                        <origin>
+                            <origDate type='document' when-custom="2000-01-01" calendar="gregorian"/>
+                        </origin>
+                     </history>
+                </msDesc>
+            </witness>
+            """,
+            True,
+        ),
+        (
+            "invalid-msDesc-in-witness-without-head",
+            """
+            <witness n="A" xml:id="id-ssrq-ad1ff2df-dc1a-4e3f-8549-0dfa76b34065">
+                <msDesc>
+                    <physDesc>
+                        <objectDesc>
+                           <supportDesc>
+                              <support>
+                                 <material type="paper"/>
+                              </support>
+                           </supportDesc>
+                        </objectDesc>
+                     </physDesc>
+                     <history>
+                        <origin>
+                            <origDate type='document' when-custom="2000-01-01" calendar="gregorian"/>
+                        </origin>
+                     </history>
+                </msDesc>
+            </witness>
+            """,
+            False,
+        ),
+        (
+            "valid-msDesc-in-witness-without-head",
+            """
+            <witness n="B" xml:id="id-ssrq-ad1ff2df-dc1a-4e3f-8549-0dfa76b34065">
+                <msDesc>
+                    <physDesc>
+                        <objectDesc>
+                           <supportDesc>
+                              <support>
+                                 <material type="paper"/>
+                              </support>
+                           </supportDesc>
+                        </objectDesc>
+                     </physDesc>
+                     <history>
+                        <origin>
+                            <origDate type='document' when-custom="2000-01-01" calendar="gregorian"/>
+                        </origin>
+                     </history>
+                </msDesc>
+            </witness>
+            """,
+            True,
+        ),
     ],
 )
 def test_ms_desc_constraint(

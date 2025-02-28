@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">début de ligne</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Markiert den Anfang einer Zeile.</desc>
   <desc xml:lang="en" versionDate="2023-04-21">Describes the beginning of a line.</desc>
-  <desc xml:lang="fr" versionDate="2023-04-21">Décrit le début d'une ligne.</desc>
+  <desc xml:lang="fr" versionDate="2023-04-21">Marque le début d’une ligne.</desc>
   <classes mode="replace">
     <memberOf key="att.breaking"/>
     <memberOf key="att.global.facs"/>
@@ -25,7 +25,7 @@
         und wenn ein neuer Abschnitt beginnt. Wird auch bei Texten mit nur einer Zeile verwendet.
         Einrückungen werden nicht berücksichtigt.</p>
     <p>Das Attribut <att>break</att> mit dem Wert <val>no</val> zeigt an, dass kein Zeilenumbruch
-        ausserhalb eines Wortes vorliegt, das folgende also kein neues Wort darstellt. Das gilt auch,
+        ausserhalb eines Wortes vorliegt, das Folgende also kein neues Wort darstellt. Das gilt auch,
         wenn der Zeilenumbruch mit einem Seitenumbruch zusammenfällt.</p>
     <p>Bei gedruckten Texten werden analog zu den handschriftlichen Texten Trennstriche mit eben
         hiermit und Bindestrichen bzw. Ergänzungsstriche mit <val>-</val> transkribiert.</p>
@@ -39,13 +39,15 @@
           are transcribed with just hereby and hyphens or additional dashes with '-', analogous
           to handwritten texts.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-03">
+  <remarks xml:lang="fr" versionDate="2025-02-06">
     <p>Placé au début de la ligne avant chaque ligne, y compris avant la première ligne de texte
-        et au début d'un nouveau paragraphe. Également utilisé pour les textes d'une seule ligne.
+        et au début d’un nouveau paragraphe. Également utilisé pour les textes d’une seule ligne.
         Les indentations sont ignorées.</p>
-    <p>L'attribut <att>break</att> indique s'il y a un saut de ligne dans un mot —
-          même si le saut de ligne coïncide avec le saut de page. Dans les textes imprimés, les
-          traits d'union sont transcrits avec juste ici et les traits d'union ou tirets
-          supplémentaires avec '-', analogues aux textes manuscrits.</p>
+    <p>L’attribut <att>break</att> avec la valeur <val>no</val> indique qu’il n’y a pas de saut
+        de ligne en dehors d’un mot, donc ce qui suit ne représente pas un nouveau mot. Ceci
+        s’applique également si le saut de ligne coïncide avec un saut de page.</p>
+    <p>Dans les textes imprimés, de manière analogue aux textes manuscrits, les tirets sont
+        transcrits avec ce élement et les tirets ou tirets supplémentaires sont transcrits avec
+        <val>-</val>.</p>
   </remarks>
 </elementSpec>

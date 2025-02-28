@@ -8,7 +8,8 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">liste</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Liste oder Aufzählung jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Describes a list or enumeration of any kind.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Décrit une liste ou une énumération de tout type.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient une liste ou une énumération de toute
+    sorte.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="model.listLike"/>
@@ -30,7 +31,7 @@
     <attDef ident="rend" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Liste</desc>
       <desc xml:lang="en" versionDate="2025-02-03">the appearance of the list</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">l'apparition de la liste</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">l’apparition de la liste</desc>
       <datatype>
         <dataRef key="ssrq.rend.list"/>
       </datatype>
@@ -51,5 +52,11 @@
       Element <gi>listWit</gi>, für die Auflistung bibliographischer Angaben kommt <gi>listBibl</gi>
       zum Einsatz.</p>
     <p>Eine ggfs. vorhandene Listenüberschrift wird mit <gi>head</gi> ausgezeichnet.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>Pour lister tous les témoins de texte dans le <gi>teiHeader</gi>, nous utilisons l’élément
+      plus spécialisé <gi>listWit</gi>, pour lister les informations bibliographiques, nous
+      utilisons <gi>listBibl</gi>.</p>
+    <p>S’il y a un en-tête de liste, il est marqué avec <gi>head</gi>.</p>
   </remarks>
 </elementSpec>
