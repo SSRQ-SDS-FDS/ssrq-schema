@@ -115,6 +115,13 @@ def test_constraint_sch_att_calendar(
                      to-custom='1000-12-31'>Foo</date>""",
             False,
         ),
+        (
+            "invalid-datable-with-notAfter-before-notBefore",
+            """<date calendar='gregorian'
+                     notBefore-custom='2000-01-01'
+                     notAfter-custom='1000-12-31'>Foo</date>""",
+            False,
+        ),
     ],
 )
 def test_constraint_sch_att_data_custom(

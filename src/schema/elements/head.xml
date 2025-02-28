@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="head" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="head" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Überschrift</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">heading</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">titre</gloss>
@@ -27,6 +27,19 @@
       <elementRef key="seg" minOccurs="2" maxOccurs="unbounded"/>
     </alternate>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-head">
+    <desc xml:lang="en" versionDate="2025-02-25">constraint for tei:head</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:head[parent::tei:msDesc]">
+          <sch:report test=".[@hand or @n or @place or @resp or @type]">
+            If tei:head is inside tei:msDesc the following attributes are forbidden:
+            @hand, @n, @place, @resp and @type.
+          </sch:report>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <attList>
     <attDef ident="cert" mode="delete"/>
     <attDef ident="n" mode="change">

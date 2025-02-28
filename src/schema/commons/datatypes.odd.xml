@@ -3361,9 +3361,9 @@
       <content>
         <valList type="closed" xml:lang="fr">
           <valItem ident="Annexe Registre"/>
-          <valItem ident="Codage XML du transcript"/>
           <valItem ident="Contrôle de qualité"/>
           <valItem ident="Création d’un fac-similé"/>
+          <valItem ident="Encodage XML de la transcription"/>
           <valItem ident="Publication"/>
           <valItem ident="Saisie des métadonnées dans l’en-tête TEI"/>
           <valItem ident="Transcription"/>
@@ -3514,6 +3514,12 @@
     </dataSpec>
     <dataSpec ident="ssrq.type.dimensions" mode="add">
       <valList type="closed">
+        <valItem ident="book">
+          <desc xml:lang="de" versionDate="2025-02-14">Buch</desc>
+          <desc xml:lang="en" versionDate="2025-02-14">book</desc>
+          <desc xml:lang="fr" versionDate="2025-02-14">livre</desc>
+          <desc xml:lang="it" versionDate="2025-02-14">libro</desc>
+        </valItem>
         <valItem ident="leaves">
           <desc xml:lang="de" versionDate="2025-01-31">Blätter</desc>
           <desc xml:lang="en" versionDate="2025-01-31">leaves</desc>
@@ -3802,6 +3808,17 @@
             <desc xml:lang="en" versionDate="2025-02-03">an incomplete insert of another document</desc>
             <desc xml:lang="fr" versionDate="2025-02-03">un insert incomplet d’un autre document</desc>
             <desc xml:lang="it" versionDate="2025-02-03">un inserto incompleto di un altro documento</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.type.subst" mode="add">
+      <content>
+        <valList type="closed">
+          <valItem ident="cypher">
+            <desc xml:lang="de" versionDate="2025-02-14">die Ersetzung einer Chiffre</desc>
+            <desc xml:lang="en" versionDate="2025-02-14">the substitution of a cypher</desc>
+            <desc xml:lang="fr" versionDate="2025-02-14">la substitution d'un chiffre</desc>
           </valItem>
         </valList>
       </content>

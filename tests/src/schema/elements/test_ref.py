@@ -14,6 +14,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-ref-with-uuid-urn",
+            "<ref target='urn:ssrq:cf6da332-9f53-4fef-bf32-0a6cb01d9001'>SSRQ ZH NF I/2/1 4-1</ref>",
+            True,
+        ),
+        (
+            "valid-ref-with-uuid-urn-and-fragment",
+            "<ref target='urn:ssrq:cf6da332-9f53-4fef-bf32-0a6cb01d9001#3'>SSRQ ZH NF I/2/1 4-1, 3</ref>",
+            True,
+        ),
+        (
             "invalid-ref-with-wrong-urn",
             "<ref target='urn:ssrq:SSQ-ZH-NF_I_2_1-4-1'>SSRQ ZH NF I/2/1 4-1</ref>",
             False,

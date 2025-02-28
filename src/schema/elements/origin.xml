@@ -12,9 +12,7 @@
     document.</desc>
   <desc xml:lang="fr" versionDate="2025-02-06">Contient des informations sur l’origine d’un
     support de texte ou son contenu.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-  </classes>
+  <classes mode="replace"/>
   <content>
     <sequence>
       <elementRef key="origDate" minOccurs="1" maxOccurs="2"/>
@@ -22,7 +20,6 @@
       <elementRef key="orgName" minOccurs="0"/>
     </sequence>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-origin" mode="delete"/>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-origDate" mode="add">
     <desc xml:lang="en" versionDate="2024-06-05">constraint for tei:origDate</desc>
     <constraint>
@@ -35,11 +32,6 @@
       </sch:pattern>
     </constraint>
   </constraintSpec>
-  <attList>
-    <attDef ident="calendar" mode="delete"/>
-    <attDef ident="n" mode="delete"/>
-    <attDef ident="xml:id" mode="delete"/>
-  </attList>
   <xi:include href="examples.xml" xpointer="ex-history-de"/>
   <xi:include href="examples.xml" xpointer="ex-history-en"/>
   <xi:include href="examples.xml" xpointer="ex-history-fr"/>

@@ -267,6 +267,7 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | Marssymbol (Abk. für Dienstag)          | `♂`                   | U+2642               |
 | Copyrightsymbol                         | `©`                   | U+00a9               |
 | **Satzzeichen und dergleichen**         |                       |                      |
+| Ditto Mark (in Tabellen)                | `"`                   | U+0022               |
 | Punkt (Kolon)                           | `.`                   | U+002E               |
 | Komma                                   | `,`                   | U+002C               |
 | Semikolon                               | `;`                   | U+003B               |

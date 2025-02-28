@@ -144,7 +144,10 @@
       <desc xml:lang="en" versionDate="2025-01-30">the pattern for a URN</desc>
       <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour une URN</desc>
       <content>
-        <dataRef name="string" restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(((([A-Za-z0-9]+\.)*)([0-9]+)-(1))|(lit|intro|bailiffs))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
+        <alternate>
+          <dataRef name="string" restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(((([A-Za-z0-9]+\.)*)([0-9]+)-(1))|(lit|intro|bailiffs))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
+          <dataRef name="string" restriction="urn:ssrq:[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
+        </alternate>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.pointer.target" mode="add" module="ssrq.core.module">

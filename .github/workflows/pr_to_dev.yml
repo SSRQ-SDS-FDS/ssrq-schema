@@ -37,6 +37,14 @@ jobs:
         run: ./Taskfile validate
       - name: Run all tests using pytest
         run: poetry run pytest -n auto
+      - name: Build docs
+        run: ./Taskfile build-docs
+      - name: Check links in docs
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: src/docs/**/*.md --exclude '^file:' --timeout 60
+          fail: true
 
   publish:
     runs-on: ubuntu-latest

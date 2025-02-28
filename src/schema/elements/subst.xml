@@ -9,7 +9,9 @@
   <desc xml:lang="de" versionDate="2023-07-31">Enthält eine Ersetzung.</desc>
   <desc xml:lang="en" versionDate="2023-07-31">Contains a substitution.</desc>
   <desc xml:lang="fr" versionDate="2023-07-31">Contient un remplacement.</desc>
-  <classes mode="replace"/>
+  <classes mode="replace">
+    <memberOf key="att.typed"/>
+  </classes>
   <content>
     <sequence preserveOrder="false">
       <elementRef key="add"/>
@@ -18,6 +20,16 @@
       <elementRef key="pb" minOccurs="0"/>
     </sequence>
   </content>
+  <attList>
+    <attDef ident="type" mode="replace">
+      <desc xml:lang="de" versionDate="2025-02-14">die Art der Ersetzung</desc>
+      <desc xml:lang="en" versionDate="2025-02-14">the type of substitution</desc>
+      <desc xml:lang="fr" versionDate="2025-02-14">le type de la remplacement</desc>
+      <datatype>
+        <dataRef key="ssrq.type.subst"/>
+      </datatype>
+    </attDef>
+  </attList>
   <xi:include href="examples.xml" xpointer="ex-subst-de"/>
   <xi:include href="examples.xml" xpointer="ex-subst-en"/>
   <xi:include href="examples.xml" xpointer="ex-subst-fr"/>

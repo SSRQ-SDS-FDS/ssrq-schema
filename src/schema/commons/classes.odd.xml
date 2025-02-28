@@ -466,7 +466,7 @@
             <rng:list>
               <rng:oneOrMore>
                 <rng:data type="string">
-                  <rng:param name="pattern">@[a-zAB]{2,9}-custom</rng:param>
+                  <rng:param name="pattern">@[a-zAB]{2,9}-custom|dur-iso|period|calendar</rng:param>
                 </rng:data>
               </rng:oneOrMore>
             </rng:list>

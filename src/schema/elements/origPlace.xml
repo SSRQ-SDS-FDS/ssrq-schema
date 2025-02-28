@@ -21,9 +21,7 @@
   <content>
     <textNode/>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-origPlace" mode="delete"/>
   <attList>
-    <attDef ident="calendar" mode="delete"/>
     <attDef ident="ref" mode="replace" usage="req">
       <datatype>
         <dataRef key="ssrq.pointer.places"/>

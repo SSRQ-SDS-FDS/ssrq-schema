@@ -17,7 +17,6 @@
   <content>
     <empty/>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="calendar-check-precision" mode="delete"/>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-precision">
     <desc xml:lang="en" versionDate="2023-03-07">constraint for tei:precision</desc>
     <constraint>
@@ -33,7 +32,6 @@
     </constraint>
   </constraintSpec>
   <attList>
-    <attDef ident="calendar" mode="delete"/>
     <attDef ident="precision" mode="change" usage="req">
       <desc xml:lang="de" versionDate="2025-02-24">die Präzision der in <att>match</att> genannten Attribute</desc>
       <desc xml:lang="en" versionDate="2025-02-24">the precision of the attributes mentioned in <att>match</att></desc>
