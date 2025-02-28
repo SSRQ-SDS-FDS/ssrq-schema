@@ -47,7 +47,10 @@
   <remarks xml:lang="en" versionDate="2023-07-14">
     <p>The language of the processing is specified with <att>xml:lang</att>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-14">
-    <p>La langue du traitement est spécifiée avec <att>xml:lang</att>.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-07">
+    <p>Les métadonnées du texte édité sont enregistrées dans le <gi>teiHeader</gi>,
+      le texte édité avec tous les commentaires dans l'élément <gi>text</gi> suivant.</p>
+    <p>L'attribut <att>xml:lang</att> spécifie la langue de l'édition.</p>
+    <p>Chaque document reçoit son propre document XML TEI.</p>
   </remarks>
 </elementSpec>
