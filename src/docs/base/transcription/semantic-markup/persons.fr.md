@@ -31,7 +31,7 @@ Exemples :
 ## Lieux en noms personnels
 
 Dans le cas des noms personnels composites, qui est clair que le «von NN» est un nom de famille et
-non un nom de lieu, le nom personnel entier est composé avec [`<persName>`](persname.fr.md).
+non un nom de lieu, le nom personnel entier est composé avec [`<persName>`](persName.fr.md).
 
 Les lieux dans les noms personnels ne sont excellents que s’il n’est pas certain que ce soit un
 nom de famille ou une désignation d’origine.
