@@ -42,11 +42,20 @@
   <xi:include href="examples.xml" xpointer="ex-text-2-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-07">
     <p>Im Normalfall, wenn in einem XML-Dokument genau ein Text ediert wird, wird im Attribut
-    <att>type</att> der Wert <val>transcript</val> angegeben. Wird statt des Texts nur ein
-    Regest desselben herausgegeben, steht hierfür der Wert <val>summary</val>. Handelt es sich
-    um ein Mantelstück, d. h. eine Sammlung von Texten, die unter einer Stücknummer ediert werden,
-    dann wird das mit <val>collection</val> ausgedrückt. In diesem Fall enthält der <gi>body</gi>
-    keinen Editionstext, sondern lediglich die Verweise auf die einzelnen Texte der edierten
-    Sammlung.</p>
+      <att>type</att> der Wert <val>transcript</val> angegeben. Wird statt des Texts nur ein
+      Regest desselben herausgegeben, steht hierfür der Wert <val>summary</val>. Handelt es sich
+      um ein Mantelstück, d. h. eine Sammlung von Texten, die unter einer Stücknummer ediert werden,
+      dann wird das mit <val>collection</val> ausgedrückt. In diesem Fall enthält der <gi>body</gi>
+      keinen Editionstext, sondern lediglich die Verweise auf die einzelnen Texte der edierten
+      Sammlung.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2025-02-07">
+    <p>Normalement, lorsqu'un seul texte est édité dans un document XML, la valeur
+      <val>transcript</val> est spécifiée dans l'attribut <att>type</att>. Si seul un
+      regeste du même est publié au lieu du texte, la valeur <val>summary</val> est
+      utilisée. S'agit-il d'une pièce de veste, c'est-à-dire un ensemble de textes
+      édités sous un seul numéro, alors cela est exprimé par <val>collection</val>.
+      Dans ce cas, le <gi>body</gi> ne contient aucun texte d'édition, mais uniquement
+      les références aux textes individuels de la collection éditée.</p>
   </remarks>
 </elementSpec>

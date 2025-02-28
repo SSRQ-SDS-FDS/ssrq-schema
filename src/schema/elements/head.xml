@@ -94,10 +94,14 @@
       or subchapter, in <gi>figure</gi> the legend of an illustration, a graphic, a family tree
       etc.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-19">
-    <p>Contient le titre du document dans le cadre de <gi>teiHeader</gi> et la description du titre
-      abrégé cité dans le cadre de <gi>listBibl</gi> ; en <gi>body</gi> le titre d'un chapitre ou
-      d'un sous-chapitre, en <gi>figure</gi> la légende d'une illustration, d'un graphique, d'un
-      arbre généalogique etc.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>En tant qu'élément du <gi>teiHeader</gi>, l'élément contient le titre du document ou le
+      titre du support de texte. Dans le <gi>body</gi>, <gi>head</gi> peut spécifier le titre
+      d'un chapitre ou d'un sous-chapitre, dans <gi>figure</gi> la légende d'une figure,
+      dans <gi>list</gi> le titre d'une liste, dans <gi>table</gi> le titre d'un tableau.</p>
+    <p>Un titre ajouté par les éditeurs qui n'est pas présent dans l'original est marqué avec
+      l'attribut <att>resp</att>. L'attribut <att>n</att> peut être utilisé pour numéroter le
+      titre et <att>xml:lang</att> peut être utilisé pour spécifier une langue différente du
+      texte environnant. Dans ce cas, <gi>foreign</gi> peut être omis.</p>
   </remarks>
 </elementSpec>
