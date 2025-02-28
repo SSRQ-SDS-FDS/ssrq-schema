@@ -9,8 +9,8 @@
   <desc xml:lang="de" versionDate="2025-02-05">Enthält eine bibliographische Angabe mit Stellenreferenz.</desc>
   <desc xml:lang="en" versionDate="2023-07-18">Contains a bibliographical reference with page
     references.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-18">Contient une référence bibliographique avec des
-    références de pages.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-05">Contient une référence bibliographique avec des
+    références de lieu.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="model.biblLike"/>
@@ -61,8 +61,9 @@
     <p>The <gi>ref</gi> child element links to external websites, other edited pieces, or the
       Zotero literature database.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-18">
-    <p>L'élément enfant <gi>ref</gi> renvoie à des sites Web externes, à d'autres articles édités
-      ou à la base de données de littérature Zotero.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>L’élément enfant <gi>ref</gi> fait référence à des sites Web externes, à d’autres articles
+      édités ou à la base de données littérature SDS sur
+      <ref target="https://www.zotero.org/groups/5048222/ssrq/">Zotero</ref></p>
   </remarks>
 </elementSpec>

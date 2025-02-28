@@ -11,9 +11,8 @@
   <desc xml:lang="en" versionDate="2023-05-17">Describes the physical condition of the source
       (material, mass, state of preservation, scribal hands, extraordinary decorations,
       seals).</desc>
-  <desc xml:lang="fr" versionDate="2023-05-17">Décrit l'état physique de la source (matériel,
-      masse, état de conservation, mains des scribes, décorations extraordinaires,
-      sceaux).</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Décrit la nature physique d’un support de
+      texte.</desc>
   <classes mode="replace"/>
   <content>
     <sequence>
@@ -28,7 +27,12 @@
   <xi:include href="examples.xml" xpointer="ex-physDesc-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-06">
     <p>In den Kindelementen werden alle materiellen Aspekte des Textträgers, wie etwa Material,
-            Masse, Erhaltungszustand, Schreiberhände, aussergewöhnliche Dekorationen, Siegel etc.,
-            beschrieben.</p>
+        Masse, Erhaltungszustand, Schreiberhände, aussergewöhnliche Dekorationen, Siegel etc.,
+        beschrieben.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>Les éléments enfants décrivent tous les aspects matériels du support de texte, tels que
+        le matériau, les dimensions, l’état de conservation, les mains du scribe, les décorations
+        inhabituelles, les sceaux, etc.</p>
   </remarks>
 </elementSpec>

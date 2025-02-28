@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-04">supplément</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Ergänzung durch die Bearbeitenden.</desc>
   <desc xml:lang="en" versionDate="2023-07-14">Contains an addition by the editor.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-14">Contient un ajout de l'éditeur.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient un ajout des éditeurs.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
     <memberOf key="att.global.source"/>
@@ -68,7 +68,7 @@
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-07">
     <p>Wenn die Bearbeitenden eine Passage frei ergänzen, weisen sie sich im Attribut <att>resp</att>
-      mit ihren Kürzel aus. Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf
+      mit ihrem Kürzel aus. Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf
       diese mit dem Attribut <att>source</att> referenziert. Der Grund für eine Ergänzung kann mit
       <att>reason</att> angegeben werden. Eine Anmerkung in <gi>note</gi> oder eine Bemerkung
       in <gi>back</gi> ist nötig.</p>
@@ -79,11 +79,11 @@
         with <att>source</att>. The reason for an addition can be specified with <att>reason</att>.
         A note in <gi>note</gi> or a comment in <gi>back</gi> is required.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-14">
-    <p>Si un éditeur ajoute librement un passage, il s'identifie en <att>resp</att> avec son
-        abréviation. Si un texte est complété à l'aide d'un autre modèle de texte, celui-ci est
-        référencé par <att>source</att>. La raison d'un ajout peut être spécifiée avec
-        <att>reason</att>. Une note dans <gi>note</gi> ou un commentaire dans <gi>back</gi> est
-        requis.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-07">
+    <p>Si un éditeur ajoute librement un passage, il s’identifie en <att>resp</att> avec son
+      abréviation. Si un texte est complété à l’aide d’un autre modèle de texte, celui-ci est
+      référencé par <att>source</att>. La raison d’un ajout peut être spécifiée avec l’attribut
+      <att>reason</att>. Une note dans <gi>note</gi> ou un commentaire dans <gi>back</gi> est
+      nécessaire.</p>
   </remarks>
 </elementSpec>

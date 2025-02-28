@@ -7,10 +7,8 @@
   <gloss xml:lang="en" versionDate="2025-02-03">number</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">numéro</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Zahl.</desc>
-  <desc xml:lang="en" versionDate="2023-05-30">Contains a number in the transcribed source
-      text.</desc>
-  <desc xml:lang="fr" versionDate="2023-05-30">Contient un nombre dans le texte source
-      transcrit.</desc>
+  <desc xml:lang="en" versionDate="2025-02-06">Contains a number.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient un numéro.</desc>
   <classes mode="replace">
     <memberOf key="model.measureLike"/>
   </classes>
@@ -45,34 +43,33 @@
   <remarks xml:lang="de" versionDate="2025-02-06">
     <p>Der Wert der Zahl wird im Attribut <att>value</att> maschinenlesbar hinterlegt.</p>
     <p>Im Falle einer Bruchzahl werden Nenner und Zähler mit einem Schrägstrich voneinander
-        getrennt und der Wert des Bruchs als Dezimalzahl im Attribut <att>val</att> hinterlegt.</p>
+      getrennt und der Wert des Bruchs als Dezimalzahl im Attribut <att>val</att> hinterlegt.</p>
     <p>Bei Angaben zu Massen, Gewichten, Währungen etc., in denen innerhalb von <gi>measure</gi>
-        mit <att>quantity</att> die Anzahl ausgezeichnet wird, wird auf <gi>num</gi> verzichtet.
-        Ebenso wird bei Daten, die mit <gi>date</gi>, und Zeiten, die mit <gi>time</gi> ausgezeichnet
-        werden, auf <gi>num</gi> verzichtet.</p>
+      mit <att>quantity</att> die Anzahl ausgezeichnet wird, wird auf <gi>num</gi> verzichtet.
+      Ebenso wird bei Daten, die mit <gi>date</gi>, und Zeiten, die mit <gi>time</gi> ausgezeichnet
+      werden, auf <gi>num</gi> verzichtet.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2024-02-29">
     <p>The value of the number is stored in machine-readable form in the <att>value</att>
-        attribute.</p>
+      attribute.</p>
     <p>In the case of a fractional number, the denominator and numerator are separated by a slash
-        from each other and the value of the number as a decimal number in the <att>val</att>
-        attribute deposited.</p>
+      from each other and the value of the number as a decimal number in the <att>val</att>
+      attribute deposited.</p>
     <p>In the case of information on dimensions, weights, currencies, etc., in which
-        <gi>measure</gi> is used to mark the number with <att>quantity</att>, <gi>num</gi> is not
-        used. Likewise, <gi>num</gi> is not used for years that are described in more detail with
-        <gi>date</gi> and <att>when-custom</att>. Within a time specification with <att>dur</att>,
-        <gi>num</gi> is not used.</p>
+      <gi>measure</gi> is used to mark the number with <att>quantity</att>, <gi>num</gi> is not
+      used. Likewise, <gi>num</gi> is not used for years that are described in more detail with
+      <gi>date</gi> and <att>when-custom</att>. Within a time specification with <att>dur</att>,
+      <gi>num</gi> is not used.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2024-02-29">
-    <p>La valeur du nombre est stockée sous une forme lisible par machine dans l'attribut
-        <att>value</att>.</p>
-    <p>Dans le cas d'un nombre fractionnaire, le dénominateur et le numérateur sont séparés d'une
-        barre oblique et la valeur du nombre sous forme de nombre décimal dans l'attribut
-        <att>val</att> déposé.</p>
-    <p>Dans le cas d'informations sur les dimensions, les poids, les devises, etc., dans lesquelles
-        <gi>measure</gi> est utilisé pour marquer le nombre avec <att>quantity</att>, <gi>num</gi>
-        n'est pas utilisé. De même, <gi>num</gi> n'est pas utilisé pour les années qui sont décrites
-        plus en détail avec <gi>date</gi> et <att>when-custom</att>. Dans une spécification de temps
-        avec <att>dur</att>, <gi>num</gi> n'est pas utilisé.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>La valeur du numéro est stockée dans l’attribut <att>value</att> dans un format lisible
+      par machine.</p>
+    <p>Dans le cas d’une fraction, le dénominateur et le numérateur sont séparés par une barre
+      oblique et la valeur de la fraction est stockée sous forme de numéro décimal dans
+      l’attribut <att>value</att>.</p>
+    <p>Pour les informations sur les mesures, les poids, les devises, etc., dans lesquelles
+      le numéro est marqué avec <att>quantity</att> dans <gi>measure</gi>, <gi>num</gi> est
+      omis. De même, <gi>num</gi> n’est pas utilisé pour les dates marquées avec
+      <gi>date</gi> et les heures marquées avec <gi>time</gi>.</p>
   </remarks>
 </elementSpec>

@@ -63,7 +63,7 @@ Beispiel:
     Respektsbezeichnungen, Titel und Anreden werden in allen Sprachen 
     kleingeschrieben.
 
-=== "Dt. Beispiele"
+=== "Dt. Beispiel"
 
     «üwer gnaden»
 
@@ -71,12 +71,12 @@ Beispiel:
 
     «messeigneurs»  
     «le roy»  
-    «monsieur l'ambassadeur»  
+    «monsieur l’ambassadeur»  
     «monsieur le prevost des marchans de la ville de Paris»  
     «honorable et provide homme Pierre Nonans»  
     «le cardinal Richelieu»  
     «le duc de Savoie»  
-    «l'abbé prieur de la communauté des Carmes»  
+    «l’abbé prieur de la communauté des Carmes»  
     «vostre excellence»
 
 === "Lat. Beispiele"
@@ -96,7 +96,7 @@ Beispiel:
     der Name Gottes grossgeschrieben, auch wenn es sich um einen Begriff 
     handelt, der ihn absolut definiert.
 
-=== "Dt. Beispiele"
+=== "Dt. Beispiel"
 
     «gott»
 

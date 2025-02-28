@@ -11,7 +11,7 @@ Beispiel: «cognitio» und nicht «cognicio»
 ## cz versus sz versus tz
 
 «cz», «sz», «tz» werden gemäss Vorlage wiedergegeben.
-Lassen sich «c» und «t» nicht eindeutig unterscheiden,
+Lassen sich «cz» und «tz» nicht eindeutig unterscheiden,
 dann wird «tz» verwendet.
 
 ## dz versus dc versus wz

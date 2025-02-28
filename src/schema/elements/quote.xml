@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-04">citation</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält ein Zitat.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains a citation within an original text.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-20">Contient une citation dans un texte original.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient une citation.</desc>
   <classes mode="replace">
     <memberOf key="att.global.source"/>
     <memberOf key="att.typed"/>
@@ -83,15 +83,14 @@
         within the paratexts. Within the paratexts (notes, commentary, introduction) we use
         <gi>quote</gi> for citations from the research literature.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-08-18">
-    <p>Contient par ex. un document annoncé ou un passage de la Bible. Idéalement, la citation
-        doit être suivie d'un commentaire factuel avec <gi>note</gi> avec une référence au texte
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>Contient p. ex. un document annoncé ou un passage de la Bible. Idéalement, la citation
+        doit être suivie d’un commentaire factuel avec <gi>note</gi> avec une référence au texte
         original ou à une édition de celui-ci.</p>
-    <p>Pour la parole directe dans les textes sources, nous utilisons <gi>q</gi>. Si le nom d'un
-        document ou d'une prière est mentionné dans une pièce source, cela n'est pas marqué avec
-        la balise <gi>q</gi> ou <gi>quote</gi>, mais le titre est en majuscule. Il en va de même
-        pour les titres d'œuvres historiques dans les paratextes. Dans les paratextes (notes,
-        commentaire, introduction), nous utilisons <gi>quote</gi> pour les citations de la
-        littérature de recherche.</p>
+    <p>Pour le discours direct nous utilisons <gi>q</gi>. Si le nom d’un document ou d’une prière
+        est mentionné dans une pièce source, cela n’est pas marqué avec la balise <gi>q</gi> ou
+        <gi>quote</gi>, mais le titre est en majuscule. Il en va de même pour les titres d’œuvres
+        historiques dans les paratextes. Dans les paratextes (notes, commentaire, introduction),
+        nous utilisons <gi>quote</gi> pour les citations de la littérature de recherche.</p>
   </remarks>
 </elementSpec>

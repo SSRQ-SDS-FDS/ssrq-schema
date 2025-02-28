@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">expansion</gloss>
   <desc xml:lang="de" versionDate="2023-07-19">Enthält die Auflösung einer Abkürzung.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains the expansion of an abbreviation.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient l'expansion d'une abréviation.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient l’expansion d’une abréviation.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
     <memberOf key="model.choicePart"/>
@@ -39,9 +39,10 @@
         clear spelling clue, e.g. B.: egen = egenante (not egenannte), schulth = schultheis (not
         schultheiss). Ao is tacitly dissolved in anno.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-19">
-    <p>Lors de la résolution des abréviations, utilisez l'orthographe historique plutôt que moderne
-        lorsqu'il n'y a pas d'indice d'orthographe clair, par ex. B. : egen = egenante (non
-        egenannte), schulth = schultheis (pas schultheiss). Ao est tacitement dissous dans anno.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>Les règles des <ref target="abbreviations.fr.md">principes de transcription</ref>
+      s’appliquent à la résolution des abréviations, voir également la
+      <ref target="abbreviation-list.fr.md">liste des abréviations</ref></p>
+    <p>L’attribut <att>resp</att> spécifie la personne responsable de la résolution.</p>
   </remarks>
 </elementSpec>

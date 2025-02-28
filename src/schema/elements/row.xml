@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-04">ligne</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Zeile einer Tabelle.</desc>
   <desc xml:lang="en" versionDate="2023-07-11">Describes a row of a table.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-11">Décrit une ligne d'un tableau.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient une ligne d’un tableau.</desc>
   <classes mode="replace"/>
   <content>
     <alternate maxOccurs="unbounded">
@@ -27,8 +27,8 @@
     <p>Is required together with <gi>table</gi> (table) and <gi>cell</gi> (cell) for
       displaying tables.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-11">
-    <p>Est nécessaire avec <gi>table</gi> (table) et <gi>cell</gi> (cellule) pour afficher
-      les tableaux.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>Est nécessaire avec <gi>table</gi> (tableau) et <gi>cell</gi> (cellule) pour encoder
+      des tableaux.</p>
   </remarks>
 </elementSpec>

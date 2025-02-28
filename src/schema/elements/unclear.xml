@@ -29,17 +29,19 @@
   <xi:include href="examples.xml" xpointer="ex-damage-unclear-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-07">
     <p>Ist die Ursache eine Beschädigung, dann wird diese durch <gi>damage</gi> angegeben.
-      Mit dem Attribut <att>cert</att> kann angegeben werden, wie sicher die Lesung ist. Erweist
-      sich eine Stelle als absolut unlesbar, so wird sie stattdessen mit <gi>gap</gi> ausgezeichnet.</p>
+      Mit dem Attribut <att>cert</att> kann angegeben werden, wie sicher die Lesung ist.
+      Erweist sich eine Stelle als absolut unlesbar, so wird sie stattdessen mit <gi>gap</gi>
+      ausgezeichnet.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-20">
     <p>If the cause is damage, then this is indicated by <gi>damage</gi>. <att>cert</att> can be
         used to specify how secure the reading is. If a passage turns out to be absolutely
         illegible, it is marked with <gi>gap</gi>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-20">
-    <p>Si la cause est un dommage, cela est indiqué par <gi>damage</gi>. <att>cert</att> peut
-        être utilisé pour spécifier le degré de sécurité de la lecture. Si un passage s'avère
-        absolument illisible, il est marqué d'un <gi>gap</gi>.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-07">
+    <p>Si la cause est un dommage, cela est indiqué par <gi>damage</gi>. L’attribut
+      <att>cert</att> peut être utilisé pour spécifier le niveau de sécurité de la lecture.
+      Si un passage s’avère complètement illisible, il est marqué d’un <gi>gap</gi>
+      à la place.</p>
   </remarks>
 </elementSpec>

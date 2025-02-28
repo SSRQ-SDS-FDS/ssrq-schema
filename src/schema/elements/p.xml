@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">paragraphe</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält einen Absatz.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes a paragraph.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-20">Décrit un paragraphe.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient un paragraphe.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="model.pLike"/>
@@ -51,15 +51,15 @@
   <xi:include href="examples.xml" xpointer="ex-p-actum-en"/>
   <xi:include href="examples.xml" xpointer="ex-p-actum-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>In der Transkription werden damit originale Absätze ausgezeichnet. Eine gröbere Strukturierung
-        wird mit <gi>div</gi> vorgenommen. Eine zusätzliche inhaltliche Gliederung des Textes durch
-        die Bearbeitenden kann mit <gi>seg</gi> erfolgen. Vgl. dazu auch die Ausführungen zur
-        Strukturierung der Texte in den<ref target="textstructure.md">Transkriptionsrichtlinien</ref>.
-        </p>
+    <p>In der Transkription werden damit originale Absätze ausgezeichnet. Eine gröbere
+      Strukturierung wird mit <gi>div</gi> vorgenommen. Eine zusätzliche inhaltliche Gliederung
+      des Textes durch die Bearbeitenden kann mit <gi>seg</gi> erfolgen. Vgl. dazu auch die
+      Ausführungen zur Strukturierung der Texte in den
+      <ref target="textstructure.md">Transkriptionsrichtlinien</ref>.</p>
     <p>Wird in einer Urkunde der Text nicht durch einen Zeilenumbruch, sondern durch einen
-        horizontalen Abstand oder eine Initiale innerhalb der Zeile inhaltlich strukturiert, kann
-        dies ebenfalls mit <gi>p</gi> ausgezeichnet werden. Paragraphenzeichen werden nicht
-        speziell ausgezeichnet.</p>
+      horizontalen Abstand oder eine Initiale innerhalb der Zeile inhaltlich strukturiert, kann
+      dies ebenfalls mit <gi>p</gi> ausgezeichnet werden. Paragraphenzeichen werden nicht
+      speziell ausgezeichnet.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-20">
     <p>In the transcription, this is used to mark original paragraphs. The text is structured by
@@ -69,12 +69,14 @@
         paragraph can be marked with <gi>p</gi>. Paragraph signs, however, are not specially
         marked.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-20">
-    <p>Dans la transcription, ceci est utilisé pour marquer les paragraphes originaux. Le texte
-        est structuré par l'éditeur avec <gi>seg</gi>. Voir aussi les explications "Structuration
-        des textes" dans les consignes de <ref target="textstructure.md">transcription SDS et la
-        description</ref> de <gi>div</gi>. Si le texte d'un certificat est structuré par un espace
-        ou une initiale, le paragraphe peut être marqué d'un <gi>p</gi>. Les signes de paragraphe,
-        cependant, ne sont pas spécialement marqués.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>Dans la transcription, cela marque les paragraphes originaux. Une structuration plus
+      grossière est réalisée avec <gi>div</gi>. Une structuration supplémentaire du texte par
+      les éditeurs peut être réalisée en utilisant <gi>seg</gi>. Voir également les explications
+      sur la structuration des textes dans les
+      <ref target="textstructure.md">principes de transcription</ref>.</p>
+    <p>Si le texte d’un document n’est pas structuré par un saut de ligne, mais par un
+      espacement horizontal ou une initiale dans la ligne, cela peut également être marqué
+      avec <gi>p</gi>. Les symboles de paragraphe ne sont pas spécialement marqués.</p>
   </remarks>
 </elementSpec>

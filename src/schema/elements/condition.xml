@@ -11,9 +11,8 @@
   <desc xml:lang="en" versionDate="2023-04-14">Describes the state of preservation and damage to a
     source. Detailed descriptions, such as gaps, holes, etc., are given at the appropriate
     place.</desc>
-  <desc xml:lang="fr" versionDate="2023-04-14">Décrit l'état de conservation et les dommages d'une
-    source. Les descriptions détaillées, telles que les lacunes, les trous, etc. à l'endroit
-    indiqué.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-05">Contient des éléments <gi>p</gi> pour décrire l’état
+    de conservation et les dommages d’un support de texte.</desc>
   <classes mode="replace">
     <memberOf key="att.damaged"/>
   </classes>
@@ -27,5 +26,10 @@
     <p>Mit dem Attribut <att>agent</att> werden alle Beschädigungen auf standardisierte Weise
       angegeben. In den <gi>p</gi>-Elementen erfolgt eine detailliertere Beschreibung als
       Freitext.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2025-02-05">
+    <p>L’attribut <att>agent</att> est utilisé pour indiquer tous les dommages de manière
+      standardisée. Dans les éléments <gi>p</gi> il y a une description plus détaillée sous
+      forme de texte libre.</p>
   </remarks>
 </elementSpec>

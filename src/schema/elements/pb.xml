@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">debut de page</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Markiert den Anfang einer Seite.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes the beginning of a page in the original.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-20">Décrit le début d'une page dans l'original.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Marque le début d’une page.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="att.global.facs"/>
@@ -52,22 +52,22 @@
   <xi:include href="examples.xml" xpointer="ex-pb-with-title-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-06">
     <p><gi>pb</gi> wird am Anfang der Seite aufgeführt und
-        enthält im Attribut <att>n</att> in der Regel die Nummerierung der Seite. Es können
-        Foliierungen (z. B. <tag>pb n="109v"</tag>), Paginierungen (z. B. <tag>pb n="22"</tag>)
-        oder bei Rotuli Abschnittszählungen von Pergamentstücken (z. B: <tag>pb n="s1"</tag>)
-        verwendet werden. Eine aus dem Original stammende Nummerierung wird mit
-        <att>type</att> = <val>original</val> gekennzeichnet. Besteht keine originale Zählung,
-        wird eine Foliierung eingeführt.</p>
+      enthält im Attribut <att>n</att> in der Regel die Nummerierung der Seite. Es können
+      Foliierungen (z. B. <tag>pb n="109v"</tag>), Paginierungen (z. B. <tag>pb n="22"</tag>)
+      oder bei Rotuli Abschnittszählungen von Pergamentstücken (z. B: <tag>pb n="s1"</tag>)
+      verwendet werden. Eine aus dem Original stammende Nummerierung wird mit
+      <att>type</att> = <val>original</val> gekennzeichnet. Besteht keine originale Zählung,
+      wird eine Foliierung eingeführt.</p>
     <p>Wenn ein Quellentext lediglich eine Seite umfasst (z. B. eine Urkunde), wird <gi>pb</gi> nur
-        für das Verlinken mit den Faksimiles benötigt. Wenn ein Text über Vorderseite und Rückseite
-        eines Einzelblatts verläuft (2 Seiten), wird <gi>pb</gi> ohne Attribute auf der ersten und
-        zweiten Seite gesetzt. Erst ab drei Seiten wird mit <att>n</att> nummeriert. Bei mehreren
-        Titelblättern oder Vorsatzblätter vor Beginn des eigentlichen Inhalts und der eigentlichen
-        Paginierung empfiehlt sich eine Blattzählung im Attribut <att>n</att> mit römischen Ziffern
-        (I, II, III, IV etc.), wie bei Handschriften üblich. Bei Drucken beginnt die Blattzählung
-        (Foliierung) mit dem Titelblatt. Das Titelblatt wird nicht speziell ausgezeichnet.
-        Leere Blätter oder leere Seiten werden mitgezählt. Bogensignaturen oder Lagenbezeichnungen
-        werden nicht transkribiert.</p>
+      für das Verlinken mit den Faksimiles benötigt. Wenn ein Text über Vorderseite und Rückseite
+      eines Einzelblatts verläuft (2 Seiten), wird <gi>pb</gi> ohne Attribute auf der ersten und
+      zweiten Seite gesetzt. Erst ab drei Seiten wird mit <att>n</att> nummeriert. Bei mehreren
+      Titelblättern oder Vorsatzblätter vor Beginn des eigentlichen Inhalts und der eigentlichen
+      Paginierung empfiehlt sich eine Blattzählung im Attribut <att>n</att> mit römischen Ziffern
+      (I, II, III, IV etc.), wie bei Handschriften üblich. Bei Drucken beginnt die Blattzählung
+      (Foliierung) mit dem Titelblatt. Das Titelblatt wird nicht speziell ausgezeichnet.
+      Leere Blätter oder leere Seiten werden mitgezählt. Bogensignaturen oder Lagenbezeichnungen
+      werden nicht transkribiert.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-20">
     <p><gi>pb</gi> is listed at the top of the page and usually contains the foliation, e.g.
@@ -89,24 +89,22 @@
         are not transcribed.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-07-20">
-    <p><gi>pb</gi> est répertorié en haut de la page et contient généralement la foliation, par ex.
-        <tag>pb n="109v"</tag>, ou la pagination, par ex. <tag>pb n="22"</tag> dans <att>n</att>.
-        Une pagination originale ou une foliation originale est marquée
-        par <att>type</att> = <val>original</val>. Dans le cas d'une source avec feuille d'origine,
-        le verso est également marqué avec <att>type</att> = <val>original</val>.</p>
-    <p>Si un texte source ne fait qu'une page (par exemple, un certificat), <gi>pb</gi> n'est
-        requis que pour le lien vers les facsimilés. Si un texte s'étend sur le recto et le verso
-        d'une seule feuille (2 pages), <gi>pb</gi> est défini sans attributs sur la première et la
-        deuxième page. Les pages de trois ou plus sont numérotées avec <att>n</att>. Sur un
-        toboggan, le changement de côté est noté à l'endroit où un nouveau morceau de parchemin a
-        été cousu. S'il y a plusieurs pages de titre ou pages de garde avant le début du contenu
-        proprement dit et la pagination proprement dite, il est conseillé de numéroter les pages
-        <att>n</att> avec des chiffres romains (I, II, III, IV etc.), comme il est d'usage pour les
-        manuscrits. Lors de l'impression, le comptage des feuilles (foliation) commence par la
-        feuille de titre. La page de titre n'est pas spécialement marquée. Un numéro de page ou de
-        feuille existant est adopté et fourni avec <att>type</att> = <val>original</val>. Les
-        feuilles blanches ou les pages blanches sont comptées. S'il n'y a pas de numéro de page
-        d'origine, un numéro de page est introduit. Les signatures de feuille ne sont pas
-        transcrites.</p>
+    <p><gi>pb</gi> est répertorié au début de la page et contient généralement la numérotation
+      des pages dans l’attribut <att>n</att>. Les foliations (p. ex. <tag>pb n="109v"</tag>),
+      les paginations (p. ex. <tag>pb n="22"</tag>) ou, dans le cas de Rotuli, les numéros
+      de section des pièces de parchemin (p. ex. <tag>pb n="s1"</tag>) peuvent être utilisés.
+      Une numérotation provenant de l’original est marquée avec <att>type</att> =
+      <val>original</val>. S’il n’y a pas de décompte original, une foliation est introduit.</p>
+    <p>Si un texte source ne comprend qu’une seule page (p. ex. un document), <gi>pb</gi>
+      n’est nécessaire que pour établir un lien vers les fac-similés. Si un texte s’étend sur
+      le recto et le verso d’une seule feuille (2 pages), <gi>pb</gi> est défini sans attributs
+      sur les première et deuxième pages. Seules les pages contenant trois pages ou plus sont
+      numérotées avec <att>n</att>. S’il y a plusieurs pages de titre ou pages de garde avant
+      le début du contenu réel et la pagination réelle, il est recommandé de numéroter les pages
+      dans l’attribut <att>n</att> avec des chiffres romains (I, II, III, IV etc.), comme c’est
+      habituellement le cas pour les manuscrits. Dans les estampes, le décompte des pages
+      (foliation) commence à partir de la page de titre. La page de titre n’est pas spécialement
+      marquée. Les feuilles blanches ou les pages vides sont comptées. Les signatures d’archet
+      ou les désignations de position ne sont pas transcrites.</p>
   </remarks>
 </elementSpec>

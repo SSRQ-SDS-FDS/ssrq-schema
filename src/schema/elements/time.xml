@@ -71,10 +71,10 @@
       maschinenlesbar ausgedrückt werden. Das Format ist die vom W3C definierte Untermenge des
       ISO-Standards 8601.</p>
     <p>Zeitpunkte werden mit <att>when-custom</att> bzw. <att>notBefore-custom</att>
-        und <att>notAfter-custom</att> angegeben, Zeiträume mit <att>from-custom</att>
-        und <att>to-custom</att>. Zeitspannen ohne Angabe von Anfang und Ende können
-        mit <att>dur-iso</att> näher bezeichnet werden. Unbestimmte Tageszeiten, wie z. B. nachts,
-        werden mit <att>period</att> getaggt.</p>
+      und <att>notAfter-custom</att> angegeben, Zeiträume mit <att>from-custom</att>
+      und <att>to-custom</att>. Zeitspannen ohne Angabe von Anfang und Ende können
+      mit <att>dur-iso</att> näher bezeichnet werden. Unbestimmte Tageszeiten, wie z. B.
+      «nachts», werden mit <att>period</att> getaggt.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-20">
     <p>With the help of the permitted attributes, the information can be expressed in a normalized,
@@ -85,13 +85,14 @@
         with <att>dur-iso</att>. Undetermined times of the day, e.g. at night, are tagged
         with <att>period</att>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-20">
-    <p>A l'aide des attributs autorisés, les informations peuvent être exprimées dans un format
-        normalisé lisible par machine. Le format est le sous-ensemble de la norme ISO 8601 défini
-        par le W3C. Les moments dans le temps sont spécifiés avec <att>when-custom</att>
-        ou <att>notBefore-custom</att> et <att>notAfter-custom</att>, les périodes de temps
-        avec <att>from-custom</att> et <att>to-custom</att>. Des périodes de temps sans début
-        ni fin peuvent être spécifiées avec <att>dur-iso</att>. Moments indéterminés de la
-        journée, par ex. la nuit, sont étiquetés avec <att>period</att>.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-07">
+    <p>Les attributs autorisés permettent d’exprimer les informations dans un format
+      normalisé et lisible par machine. Le format est le sous-ensemble de la norme ISO 8601
+      défini par le W3C.</p>
+    <p>Les heures sont spécifiées avec <att>when-custom</att> ou <att>notBefore-custom</att>
+      et <att>notAfter-custom</att>, les périodes avec <att>from-custom</att> et
+      <att>to-custom</att>. Les périodes de temps sans indication de début et de fin
+      peuvent être précisées davantage avec <att>dur-iso</att>. Les moments indéfinis
+      de la journée, comme «la nuit», sont marqués d’un <att>period</att>.</p>
   </remarks>
 </elementSpec>

@@ -9,9 +9,8 @@
   <desc xml:lang="de" versionDate="2025-02-05">Markiert eine grössere, die Hierarchiegrenzen
   überschreitende Tilgung.</desc>
   <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections deleted from the text.</desc>
-  <desc xml:lang="fr" versionDate="2023-05-11">Désigne des sections plus grandes qui ont été
-    supprimées du texte.
-    </desc>
+  <desc xml:lang="fr" versionDate="2025-02-05">Marque une suppression majeure d’un scribe
+    qui traverse les limites de la hiérarchie.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.spanning"/>
@@ -24,7 +23,7 @@
     <attDef ident="rend" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Tilgung</desc>
       <desc xml:lang="en" versionDate="2025-02-03">the appearance of the deletion</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">l'apparence de la suppression</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">l’apparence de la suppression</desc>
       <datatype>
         <dataRef key="ssrq.rend.del"/>
       </datatype>
@@ -42,8 +41,9 @@
     <p>With <att>spanTo</att> a mandatory reference is made to the end point of the erasure,
       which is marked with <gi>anchor</gi>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-13">
-    <p>Avec <att>spanTo</att> une référence obligatoire est faite au point final de l'effacement,
-      qui est marqué par <gi>anchor</gi>.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-05">
+    <p>Les mêmes règles s’appliquent à <gi>delSpan</gi> et à <gi>del</gi> (voir ici).</p>
+    <p>De plus, l’attribut <att>spanTo</att> est utilisé pour faire référence au point final de
+      la suppression, qui est marqué avec <gi>anchor</gi>.</p>
   </remarks>
 </elementSpec>

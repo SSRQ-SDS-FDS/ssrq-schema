@@ -43,7 +43,7 @@
     <attDef ident="rend" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-04">das verwendete Schreibmittel</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the writing means used</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d'écriture utilisé</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d’écriture utilisé</desc>
       <datatype>
         <dataRef key="ssrq.rend.add"/>
       </datatype>
@@ -94,19 +94,20 @@
         direction to be followed is not uniform, i.e. a dorsual note is upside down, a comment is
         necessary.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-06-30">
-    <p>Nous utilisons toujours cette balise avec <att>type</att> et <att>place</att> pour les
-        mentions, les notes dorsales, les mentions de chancellerie et les mentions de registre
-        ainsi que pour les marginalia.</p>
-    <p>Pour les documents pontificaux, les mentions sont indiquées dans l'ordre suivant : d'abord
-        les mentions sous le plica, ensuite les mentions sur le plica de gauche à droite et enfin
-        les mentions au verso du document de gauche à droite.</p>
-    <p>Les annotations et les notes dorsales sont enregistrées dans l'ordre chronologique. En
-        raison de l'ordre chronologique, les mentions contemporaines sont toujours mentionnées en
-        premier lieu. Les notes simultanées sont enregistrées dans le sens de lecture de haut en
-        bas et de gauche à droite. Si, par exemple, une mention dorsale figure au verso d'un
-        missile, suivie de l'adresse et de deux autres mentions dorsales, l'adresse figure tout
-        de même en premier lieu. Si le sens de lecture auquel on doit se référer n'est pas uniforme,
-        c'est-à-dire si une mention dorsale est à l'envers, un commentaire est nécessaire.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-05">
+    <p>Nous utilisons l’élément avec les attributs <att>type</att> et <att>place</att> pour toutes
+        sortes de notes telles que les notes dorsales, les notes de bureau ou les notes de registre,
+        ainsi que pour les notes marginales.</p>
+    <p>Les notes sont incluses par ordre chronologique. Les notes créées en même temps sont
+        toujours répertoriées au même endroit en raison de l’ordre chronologique. Si p. ex.
+        une note dorsale apparaît en premier au dos d’une missive, suivie de l’adresse et enfin
+        de deux autres notes dorsales, alors l’adresse est toujours la première, car c’est la
+        première entrée chronologiquement.</p>
+    <p>Dans le cas des documents papaux, les notes sont données dans l’ordre suivant : d’abord
+        les notes sous la plica, puis celles sur la plica et enfin les notes au dos du
+        document.</p>
+    <p>Toutes les notes simultanées sont enregistrées dans le sens de lecture de haut en bas
+          et de gauche à droite. Si le sens de lecture à suivre n’est pas clair, p. ex. si
+          une note est à l’envers, un commentaire est nécessaire.</p>
   </remarks>
 </elementSpec>

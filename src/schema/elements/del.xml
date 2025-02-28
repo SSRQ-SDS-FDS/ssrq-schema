@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">suppression</gloss>
   <desc xml:lang="de" versionDate="2025-02-05">Enthält eine Tilgung durch einen Schreiber.</desc>
   <desc xml:lang="en" versionDate="2023-05-24">Contains text deleted by a writer.</desc>
-  <desc xml:lang="fr" versionDate="2023-05-24">Contient du texte effacé par un scribe.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-05">Contient une suppression par un scribe.</desc>
   <classes>
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.written"/>
@@ -28,7 +28,7 @@
     <attDef ident="rend" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Tilgung</desc>
       <desc xml:lang="en" versionDate="2025-02-03">the appearance of the deletion</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">l'apparence de la suppression</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">l’apparence de la suppression</desc>
       <datatype>
         <dataRef key="ssrq.rend.del"/>
       </datatype>
@@ -70,16 +70,17 @@
         interventions (deletion with correction), <att>hand</att> is found at <gi>add</gi>
         within <gi>subst</gi>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-19">
-    <p>Avec <gi>del</gi>, aucune suppression provenant de l'éditeur n'est marquée, seules celles
-        qui se trouvent dans la source. Si le texte est supprimé plusieurs fois ou si les
+  <remarks xml:lang="fr" versionDate="2025-02-05">
+    <p>Avec <gi>del</gi>, aucune suppression provenant de l’éditeur n’est marquée, seules celles
+        qu’un scribe a faites. Si le texte est supprimé plusieurs fois ou si les
         suppressions franchissent les limites hiérarchiques, <gi>delSpan</gi> et <gi>anchor</gi>
         doivent être utilisés.</p>
-    <p>Les rasages sont marqués avec l'attribut <att>rend</att> = <val>rubbing</val>. Si rien
-        n'est lisible après le rasage ou les coups lourds, un <gi>gap</gi> vide est utilisé
+    <p>Les rasages sont marqués avec l’attribut <att>rend</att> = <val>rubbing</val>. Si rien
+        n’est lisible après le rasage ou les coups lourds, un <gi>gap</gi> vide est utilisé
         dans <gi>del</gi>.</p>
-    <p>L'attribut <att>hand</att> est utilisé pour les traits avec une autre encre. Dans les
-        interventions textuelles ultérieures (suppression avec correction), <att>hand</att> se
-        trouve à <gi>add</gi> dans <gi>subst</gi>.</p>
+    <p>L’attribut <att>hand</att> est utilisé pour les suppressions effectuées par une autre
+        main, qui peuvent souvent être identifiées par une couleur d’encre différente. Si le
+        texte est modifié ultérieurement, par exemple s’il est supprimé puis corrigé, la main
+        est identifiée à <gi>add</gi> dans <gi>subst</gi>.</p>
   </remarks>
 </elementSpec>

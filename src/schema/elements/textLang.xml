@@ -5,10 +5,10 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="textLang" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-04">Textsprache</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">text language</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">langue de texte</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">langue du texte</gloss>
   <desc xml:lang="de" versionDate="2025-02-07">Gibt die Textsprache eines Textes an.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes a text language of a source.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-20">Décrit une langue de texte d'une source.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-07">Spécifie la langue d’un texte.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="model.msItemPart"/>
@@ -32,7 +32,7 @@
   <remarks xml:lang="en" versionDate="2023-07-20">
     <p>A separate <gi>textLang</gi> element is created for each text language.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-20">
-    <p>Un élément <gi>textLang</gi> séparé est créé pour chaque langue de texte.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-07">
+    <p>Un élément <gi>textLang</gi> distinct est créé pour chaque langue de texte.</p>
   </remarks>
 </elementSpec>

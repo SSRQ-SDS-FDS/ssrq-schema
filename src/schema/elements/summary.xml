@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-04">regeste</gloss>
   <desc xml:lang="de" versionDate="2025-02-07">Enthält ein ausführliches Regest des Textes.</desc>
   <desc xml:lang="en" versionDate="2023-07-15">Describes the content of the source in detail.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-15">Décrit en détail le contenu de la source.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-07">Contient un regeste détaillé du texte.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
   </classes>
@@ -41,5 +41,9 @@
   <remarks xml:lang="de" versionDate="2025-02-07">
     <p>Mit dem Attribut <att>xml:lang</att> kann die Sprache des Regests angegeben werden.
       Einem Text können so Regeste in mehreren Sprachen beigegeben werden.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2025-02-07">
+    <p>L’attribut <att>xml:lang</att> peut être utilisé pour spécifier la langue du regeste.
+      De cette façon, des regestes peuvent être ajoutées à un texte dans plusieurs langues.</p>
   </remarks>
 </elementSpec>

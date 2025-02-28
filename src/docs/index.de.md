@@ -7,7 +7,8 @@ title: Startseite
 ![SSRQ Logo](ssrq-logo.svg)
 
 Willkommen auf der Dokumentationsseite der Sammlung Schweizerischer Rechtsquellen (SSRQ)
-der Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft (vor 2025: des Schweizerischen Juristenvereins).
+der Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft (vor 2025: des 
+Schweizerischen Juristenvereins).
 Auf dieser Seite finden Sie eine ausführliche Beschreibung der philologischen Grundlagen,
 auf denen die Editionseinheiten der SSRQ basieren, sowie eine Dokumentation des verwendeten
 TEI-XML-Schemas in Form eine «Tag-Bibliothek». Diese Seiten können daher als eine Einführung

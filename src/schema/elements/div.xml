@@ -119,17 +119,17 @@
     <p>In the <gi>back</gi> area, the language of the comment can be specified
       with <att>xml:lang</att>, if it is a multilingual edition unit.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2024-08-06">
-    <p>Les paragraphes originaux ne sont marqués que d'un <gi>p</gi> (sans un <gi>div</gi>
-      supplémentaire). Si l'original est plus articulé ou structuré, vous pouvez utiliser les deux,
-      éventuellement avec <att>type</att>. Les sections que l'éditeur insère pour structurer le
-      contenu (texte lisible) sont marquées par <gi>seg</gi>.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-05">
+    <p><gi>div</gi> représente les niveaux supérieurs de structure dans un texte. Les paragraphes
+      originaux sont marqués avec <gi>p</gi>. Si l’original est plus structuré, vous pouvez
+      utiliser les deux, éventuellement avec l’attribut <att>type</att>.</p>
+    <p>Les sections que l’éditeur insère pour structurer le contenu (texte lisible) sont marquées
+      avec <gi>seg</gi>.</p>
     <p>De plus amples informations sur la structuration des textes sources peuvent être trouvées
-      dans le <ref target="textstructure.md">Directives de transcription</ref>. Pour la
-      structuration des formules de clôture, voir les exemples sur la page Formules de clôture.</p>
+      dans le <ref target="textstructure.md">principes de transcription</ref>.</p>
     <p>Dans le cas de paratextes plus longs (introduction, commentaire), les chapitres peuvent être
-      numérotés avec <gi>div</gi> avec <att>n</att> et, si nécessaire, avec <att>type</att>.</p>
+      numérotés avec <att>n</att> et, si nécessaire, avec <att>type</att>.</p>
     <p>Dans la zone <gi>back</gi>, la langue du commentaire peut être spécifiée
-      avec <att>xml:lang</att>, s'il s'agit d'une unité d'édition multilingue.</p>
+      avec <att>xml:lang</att>, s’il s’agit d’une unité d’édition multilingue.</p>
   </remarks>
 </elementSpec>
