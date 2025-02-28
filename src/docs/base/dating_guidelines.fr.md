@@ -117,7 +117,7 @@ Exemple :
 
 Les datations qui ne sont pas claires, mais qui peuvent être attribuées, sont utilisées 
 comme périodes avec `@from-custom` et `@to-custom` avec `@calendar` et 
-[`<precision>`](precision.fr.md ).
+[`<precision>`](precision.fr.md).
 
 | Exemple           | Valeurs `@from-custom` et `@to-custom` | Période      |
 |-------------------|----------------------------------------|--------------|
@@ -259,7 +259,7 @@ Le changement de calendrier a eu lieu à Genève le 13 décembre 1700 ([SDS GE 4
 
 Les styles du début habituel de l’année, le _style du circumcision_ (début de l’année le 1er
 janvier), le _style d’annuntiation_ (début de l’année le 25 mars) et le _style de natal_ (début de
-l’année le 25 décembre) sont expliqué in [`<date>`](date.fr.md) et [`<origDate>`](origdate.fr.md)
+l’année le 25 décembre) sont expliqué in [`<date>`](date.fr.md) et [`<origDate>`](origDate.fr.md)
 avec l’attribute `@calendar`.
 
 Le style de rendez-vous s’applique dans le diocèse de Lausanne et à Freiburg depuis le début à la 
