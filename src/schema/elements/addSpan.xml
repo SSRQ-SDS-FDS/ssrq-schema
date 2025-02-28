@@ -25,7 +25,7 @@
     <attDef ident="place" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-04">der Ort der Hinzufügung</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the place of the addition</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">le lieu d'ajout</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">le lieu d’ajout</desc>
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.place"/>
@@ -36,7 +36,7 @@
     <attDef ident="rend" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-04">das verwendete Schreibmittel</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the writing means used</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d'écriture utilisé</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d’écriture utilisé</desc>
       <datatype>
         <dataRef key="ssrq.rend.add"/>
       </datatype>
@@ -44,7 +44,7 @@
     <attDef ident="type" mode="replace">
       <desc xml:lang="de" versionDate="2025-01-29">die Art der Hinzufügung</desc>
       <desc xml:lang="en" versionDate="2025-01-29">the kind of addition</desc>
-      <desc xml:lang="fr" versionDate="2025-01-29">le type d'ajout</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">le type d’ajout</desc>
       <datatype>
         <dataRef key="ssrq.type.add"/>
       </datatype>
@@ -67,8 +67,8 @@
         scribe, then the hand is not specifically noted.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-05">
-    <p>Les mêmes règles s'appliquent à <gi>addSpan</gi> qu'à <gi>add</gi> (voir ici).</p>
-    <p>De plus, l'attribut <att>spanTo</att> fait nécessairement référence au point final de
-      l'ajout, qui est marqué par <gi>anchor</gi>.</p>
+    <p>Les mêmes règles s’appliquent à <gi>addSpan</gi> qu’à <gi>add</gi> (voir ici).</p>
+    <p>De plus, l’attribut <att>spanTo</att> fait nécessairement référence au point final de
+      l’ajout, qui est marqué par <gi>anchor</gi>.</p>
   </remarks>
 </elementSpec>

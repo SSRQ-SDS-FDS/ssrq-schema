@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">cellule dans un tableu</gloss>
   <desc xml:lang="de" versionDate="2025-02-05">Enthält eine Zelle einer Tabelle.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Describes a cell of a table.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Contient une cellule d'un tableau.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-05">Contient une cellule d’un tableau.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.tableDecoration"/>
@@ -22,7 +22,7 @@
     <attDef ident="rend" mode="replace">
       <desc xml:lang="de" versionDate="2025-01-31">die Ausrichtung des Texts innerhalb der Tabellenzelle</desc>
       <desc xml:lang="en" versionDate="2025-01-31">the text alignment within the table cell</desc>
-      <desc xml:lang="en" versionDate="2025-01-31">l'alignement du texte dans la cellule de table</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">l’alignement du texte dans la cellule de table</desc>
       <datatype>
         <dataRef key="ssrq.rend.cell"/>
       </datatype>
@@ -43,7 +43,7 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-05">
     <p>Est requis avec <gi>table</gi> et <gi>row</gi> pour afficher les tableaux.
-      Avec <att>role</att> = <val>label</val> un en-tête de colonne, p. ex. la devise d'une
+      Avec <att>role</att> = <val>label</val> un en-tête de colonne, p. ex. la devise d’une
       colonne, est spécifié.</p>
   </remarks>
 </elementSpec>

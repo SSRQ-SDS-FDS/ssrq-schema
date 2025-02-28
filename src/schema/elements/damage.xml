@@ -89,14 +89,14 @@
         in the metadata.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-27">
-    <p>Le type de dommage est décrit de manière standardisée à l'aide de l'attribut
+    <p>Le type de dommage est décrit de manière standardisée à l’aide de l’attribut
        <att>agent</att>.</p>
     <p>Si possible, le texte manquant est complété par <gi>supplied</gi> ou, si la lecture est
        incertaine, par <gi>unclear</gi>. Si aucun texte ne peut être ajouté, <gi>gap</gi> est
        utilisé. En fonction de la gravité des dommages, une combinaison des éléments
        <gi>unclear</gi>, <gi>supplied</gi> et <gi>gap</gi> peut être utilisée.</p>
     <p>En règle générale, le terme <gi>damage</gi> est utilisé pour marquer une destruction
-      physique plutôt qu'une intervention délibérée. Un rasage est récompensé par un
+      physique plutôt qu’une intervention délibérée. Un rasage est récompensé par un
       <gi>del</gi>. Une description des dommages majeurs est également fournie dans
       <gi>condition</gi>.</p>
     <p>Si les dégâts dépassent les limites de la hiérarchie, <gi>damageSpan</gi> est utilizé.</p>

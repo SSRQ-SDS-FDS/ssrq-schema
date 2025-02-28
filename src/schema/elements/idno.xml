@@ -5,10 +5,10 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="idno" module="header" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-07">Identifikationsnummer</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">identification number</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">numéro d'identification</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">numéro d’identification</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält im Identifikationsnummer.</desc>
   <desc xml:lang="en" versionDate="2025-02-06">Contains an identification number.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient un numéro d'identification.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient un numéro d’identification.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="att.global.source"/>
@@ -65,7 +65,7 @@
     <attDef ident="type" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-03">die Art der Identifikationsnummer</desc>
       <desc xml:lang="en" versionDate="2025-02-03">the type of identification number</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">le type du numéro d'identification</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type du numéro d’identification</desc>
       <datatype>
         <dataRef key="ssrq.type.idno"/>
       </datatype>
@@ -145,38 +145,38 @@
         </p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Nous utilisons l'élément dans plusieurs contextes : dans <gi>seriesStmt</gi>, <gi>idno</gi>
+    <p>Nous utilisons l’élément dans plusieurs contextes : dans <gi>seriesStmt</gi>, <gi>idno</gi>
       (avec <att>type</att> = <val>UUID</val>) contient un
       <ref target="https://de.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</ref> pour
-      identifier de manière unique le document XML. L'abréviation du volume (canton, partie,
+      identifier de manière unique le document XML. L’abréviation du volume (canton, partie,
       numéro de document) du SDS est également spécifiée dans <gi>seriesStmt</gi>. Dans
-      <gi>msIdentifier</gi>, <gi>idno</gi> spécifie la signature d'archive d'un support de texte,
-      dans ce cas, cela dépend du système de l'archive respective.</p>
-    <p>Si <gi>idno</gi> contient un UUID, alors il doit correspondre à l'expression régulière
+      <gi>msIdentifier</gi>, <gi>idno</gi> spécifie la signature d’archive d’un support de texte,
+      dans ce cas, cela dépend du système de l’archive respective.</p>
+    <p>Si <gi>idno</gi> contient un UUID, alors il doit correspondre à l’expression régulière
       suivante :
       <val>^[0-9A-Fa-f]{8}-[0-9A-Fa - f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
-      L'UUID est structuré comme suit :
-      <list><item>Exactement huit caractères parmi l'ensemble suivant : les chiffres "0-9", les
-        lettres majuscules "A-F" ou les lettres minuscules "a-f".</item><item>Un trait d'union.
-        </item><item>Exactement quatre caractères de l'ensemble ci-dessus.</item><item>Un trait
-        d'union.</item><item>Le chiffre "4" suivi de trois caractères du jeu ci-dessus.
-        </item><item>Un trait d'union.</item><item>Exactement un caractère du jeu suivant : "8",
-        "9", "A", "B", "a", "b" suivi d'exactement trois caractères de l'ensemble ci-dessus.
-        </item><item>Un trait d'union.</item><item>Exactement douze caractères de l'ensemble
+      L’UUID est structuré comme suit :
+      <list><item>Exactement huit caractères parmi l’ensemble suivant : les chiffres "0-9", les
+        lettres majuscules "A-F" ou les lettres minuscules "a-f".</item><item>Un trait d’union.
+        </item><item>Exactement quatre caractères de l’ensemble ci-dessus.</item><item>Un trait
+        d’union.</item><item>Le chiffre "4" suivi de trois caractères du jeu ci-dessus.
+        </item><item>Un trait d’union.</item><item>Exactement un caractère du jeu suivant : "8",
+        "9", "A", "B", "a", "b" suivi d’exactement trois caractères de l’ensemble ci-dessus.
+        </item><item>Un trait d’union.</item><item>Exactement douze caractères de l’ensemble
         ci-dessus.</item></list></p>
-    <p>Contient <gi>idno</gi> a abréviation de bande du SDS, cela doit correspondre à l'expression
+    <p>Contient <gi>idno</gi> a abréviation de bande du SDS, cela doit correspondre à l’expression
       régulière suivante :
       <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$</val>.
       Les abréviations de bande sont structurées comme suit :
-      <list><item>Le préfixe "SSRQ" ou "SDS" ou "FDS".</item><item>Un trait d'union.
-        </item><item>L'abréviation du canton composé de deux lettres majuscules.</item><item>Un
-        trait d'union.</item><item>Une abréviation du volume composée d'un nombre quelconque de
+      <list><item>Le préfixe "SSRQ" ou "SDS" ou "FDS".</item><item>Un trait d’union.
+        </item><item>L’abréviation du canton composé de deux lettres majuscules.</item><item>Un
+        trait d’union.</item><item>Une abréviation du volume composée d’un nombre quelconque de
         lettres majuscules, de lettres minuscules, de chiffres et de traits de soulignement.
-        </item><item>Un trait d'union.</item><item>La division du chapitre du volume
+        </item><item>Un trait d’union.</item><item>La division du chapitre du volume
         (facultatif) consistant en un nombre quelconque de lettres majuscules, minuscules,
-        chiffres et points.</item><item>Une abréviation de la pièce composée d'un nombre
-        quelconque de chiffres.</item><item>Un trait d'union.</item><item>Un identifiant final
-        composé d'un nombre quelconque de chiffres ou d'au moins trois lettres minuscules
+        chiffres et points.</item><item>Une abréviation de la pièce composée d’un nombre
+        quelconque de chiffres.</item><item>Un trait d’union.</item><item>Un identifiant final
+        composé d’un nombre quelconque de chiffres ou d’au moins trois lettres minuscules
         (par exemple B. pour nommer une pièce spéciale comme "lit", "intro" ou
         "huissier").</item></list></p>
   </remarks>

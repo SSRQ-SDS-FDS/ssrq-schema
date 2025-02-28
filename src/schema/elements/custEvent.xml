@@ -5,12 +5,12 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="custEvent" module="msdescription" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Ereignis in der Aufbewahrungsgeschichte</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">event in the custodial history</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">événement dans l'historique de conservation</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">événement dans l’historique de conservation</gloss>
   <desc xml:lang="de" versionDate="2025-02-05">Beschreibt den Verlust des Textträgers.</desc>
   <desc xml:lang="en" versionDate="2023-09-19">Describes an event in the custodial history of a
     document.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-03">Décrit un événement dans l'historique de
-    conservation d'un support de texte.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-03">Décrit un événement dans l’historique de
+    conservation d’un support de texte.</desc>
   <classes mode="replace">
     <memberOf key="att.calendarSystem"/>
     <memberOf key="att.datable.custom"/>
@@ -26,7 +26,7 @@
     <attDef ident="type" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2025-01-31">die Art des Ereignisses</desc>
       <desc xml:lang="en" versionDate="2025-01-31">the type of event</desc>
-      <desc xml:lang="fr" versionDate="2025-01-31">le type d'événement</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type d’événement</desc>
       <datatype>
         <dataRef key="ssrq.type.custevent"/>
       </datatype>

@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">omission</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Markiert eine Auslassung durch den Editor.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Describes an omission by the editor.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Marque une omission par l'éditeur.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Marque une omission par l’éditeur.</desc>
   <classes mode="replace">
     <memberOf key="att.dimensions"/>
     <memberOf key="att.global.source"/>
@@ -47,7 +47,7 @@
     <attDef ident="reason" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-03">der Grund für die Auslassung</desc>
       <desc xml:lang="en" versionDate="2025-02-03">the reason for the gap</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">la raison de l'omission</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">la raison de l’omission</desc>
       <datatype>
         <dataRef key="ssrq.reason.gap"/>
       </datatype>
@@ -128,24 +128,24 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
     <p>Cela s’applique particulièrement aux passages complètement illisibles. La raison
-      d'une omission peut être spécifiée avec l'attribut <att>reason</att>. Si la cause
-      de l'illisibilité est un dommage, <att>reason</att> est omis - à la place, l'élément
-      est inclus dans <gi>damage</gi>. Si la raison de l'illisibilité est un rasage ou une
-      suppression (grave), l'élément est imbriqué dans un <gi>del</gi>.</p>
+      d’une omission peut être spécifiée avec l’attribut <att>reason</att>. Si la cause
+      de l’illisibilité est un dommage, <att>reason</att> est omis - à la place, l’élément
+      est inclus dans <gi>damage</gi>. Si la raison de l’illisibilité est un rasage ou une
+      suppression (grave), l’élément est imbriqué dans un <gi>del</gi>.</p>
     <p>La taille de
-      l'omission est spécifiée avec les attributs <att>unit</att> et <att>quantity</att>. Les
+      l’omission est spécifiée avec les attributs <att>unit</att> et <att>quantity</att>. Les
       mesures non rondes sont arrondies vers le haut ou vers le bas à 0,5.</p>
-    <p>Si les ajouts ultérieurs ne sont pas édités avec l'original, mais en tant que pièce
+    <p>Si les ajouts ultérieurs ne sont pas édités avec l’original, mais en tant que pièce
       séparée, les parties qui ont déjà été éditées dans un original antérieur peuvent être
-      omises avec <gi>gap</gi>. Le morceau édité est référencé avec l'attribut <att>source</att>.
+      omises avec <gi>gap</gi>. Le morceau édité est référencé avec l’attribut <att>source</att>.
       Dans ce cas, une note dans <gi>note</gi> ou un commentaire dans <gi>back</gi> est
       ajouté.</p>
-    <p>Si, p. ex., une seule entrée sur une page d'un protocole de concile est transcrite,
-      c'est-à-dire que les entrées précédentes sont omises, alors cette omission est signalée
+    <p>Si, p. ex., une seule entrée sur une page d’un protocole de concile est transcrite,
+      c’est-à-dire que les entrées précédentes sont omises, alors cette omission est signalée
       par un seul <tag>gap reason="irrelevant"</tag> (même si plusieurs entrées ont été omises).
-      Il n'est pas nécessaire de fournir les entrées suivantes. Si le titre du procès-verbal du
+      Il n’est pas nécessaire de fournir les entrées suivantes. Si le titre du procès-verbal du
       conseil figure une ou plusieurs pages plus tôt, il doit également être transcrit et
-      l'omission signalée par <gi>gap</gi>.</p>
+      l’omission signalée par <gi>gap</gi>.</p>
     <p>Pour les sauts de ligne dans le modèle qui sont ajoutés par les éditeurs, seul
       <gi>supplied</gi> est utilisé, pas <gi>gap</gi>.</p>
     <p>Les espaces dans les textes rétro-numérisés sont marqués par

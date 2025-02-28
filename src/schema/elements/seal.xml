@@ -122,26 +122,26 @@
     </p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-08-23">
-    <p>La description des sceaux se fait de gauche à droite. S'il s'agit d'une personne, le
-      scelleur est marqué par <gi>persName</gi> et l'attribut <att>role</att> =
-      <val>sigillant</val> ou, s'il s'agit d'une institution, par <gi>orgName</gi> et le même
+    <p>La description des sceaux se fait de gauche à droite. S’il s’agit d’une personne, le
+      scelleur est marqué par <gi>persName</gi> et l’attribut <att>role</att> =
+      <val>sigillant</val> ou, s’il s’agit d’une institution, par <gi>orgName</gi> et le même
       attribut. Si les noms des scelleurs figurent sur le plica ou la bande de parchemin, dans
       <gi>persName</gi> un <gi>orig</gi> doit inclure le nom manuscrit.</p>
-    <p>Si l'identification du sceau est incertaine, p. ex. quand le sigillant n'est pas mentionné
-      dans le texte, on n'ajoute pas de <gi>orgName</gi> ou <gi>persName</gi>. Si on n'arrive
-      pas à clairement attribuer les sigillant à leurs sceaux, il faut laisser l'identification
+    <p>Si l’identification du sceau est incertaine, p. ex. quand le sigillant n’est pas mentionné
+      dans le texte, on n’ajoute pas de <gi>orgName</gi> ou <gi>persName</gi>. Si on n’arrive
+      pas à clairement attribuer les sigillant à leurs sceaux, il faut laisser l’identification
       des sceaux ouverte.</p>
-    <p>Les sceaux sont numérotés avec <att>n</att>. Il serait souhaitable que l'édition comprenne
+    <p>Les sceaux sont numérotés avec <att>n</att>. Il serait souhaitable que l’édition comprenne
       non seulement un fac-similé du texte, mais également des photos des sceaux, y compris
-      l'échelle (recto et verso).</p>
-    <p>Dans le texte, l'emplacement d'un sceau est enregistré avec <gi>figure</gi>
+      l’échelle (recto et verso).</p>
+    <p>Dans le texte, l’emplacement d’un sceau est enregistré avec <gi>figure</gi>
       (<att>type</att> = <val>locus_sigilli</val>). Si nécessaire, un commentaire peut être
       inscrit sur les sceaux.</p>
-    <p>Il est important de comparer l'annonce du sceau dans l'acte avec le sceau.
-      <list><item>Tous les scelleurs annoncés ont-ils apposé leurs sceaux sur l'acte ?
-      </item><item>Existe-t-il un sceau d'un scellant non annoncé ?</item><item>Un sceau a-t-il
+    <p>Il est important de comparer l’annonce du sceau dans l’acte avec le sceau.
+      <list><item>Tous les scelleurs annoncés ont-ils apposé leurs sceaux sur l’acte ?
+      </item><item>Existe-t-il un sceau d’un scellant non annoncé ?</item><item>Un sceau a-t-il
       pu être forgé ou apposé plus tard ?</item></list></p>
-    <p>On doit vérifier si tous les sceaux correspondent à l'annonce dans le texte. Les annonces
+    <p>On doit vérifier si tous les sceaux correspondent à l’annonce dans le texte. Les annonces
       de sceau, y compris les sceaux manquants et les empreintes de sceau, sont mentionnées dans
       le regeste (<gi>summary</gi>). Si un sceau annoncé manque, cela doit être noté dans
       <att>condition</att> avec <val>absent</val>. De plus, une note (<gi>note</gi>) doit décrire

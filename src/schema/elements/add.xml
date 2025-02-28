@@ -30,7 +30,7 @@
     <attDef ident="place" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2025-02-04">der Ort der Hinzufügung</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the place of the addition</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">le lieu d'ajout</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">le lieu d’ajout</desc>
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.place"/>
@@ -41,7 +41,7 @@
     <attDef ident="rend" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-04">das verwendete Schreibmittel</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the writing means used</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d'écriture utilisé</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d’écriture utilisé</desc>
       <datatype>
         <dataRef key="ssrq.rend.add"/>
       </datatype>
@@ -49,7 +49,7 @@
     <attDef ident="type" mode="replace">
       <desc xml:lang="de" versionDate="2025-01-29">die Art der Hinzufügung</desc>
       <desc xml:lang="en" versionDate="2025-01-29">the kind of addition</desc>
-      <desc xml:lang="fr" versionDate="2025-01-29">le type d'ajout</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">le type d’ajout</desc>
       <datatype>
         <dataRef key="ssrq.type.add"/>
       </datatype>
@@ -121,25 +121,25 @@
         with <att>hand</att> = <val>otherHand</val>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-05">
-    <p>L'emplacement de l'ajout doit être à <att>place</att> et la main peut être tenue avec
+    <p>L’emplacement de l’ajout doit être à <att>place</att> et la main peut être tenue avec
         <att>hand</att>. S’il s’agit de la main de le scribe principal, alors la main n’est pas
         spécifiquement notée. Si nécessaire, <att>rend</att> peut être utilisé pour indiquer sur
-        quel support d'écriture (crayon ou autre encre) l'ajout a été effectué.</p>
+        quel support d’écriture (crayon ou autre encre) l’ajout a été effectué.</p>
     <p>Le problème est le même que dans le cas de <gi>del</gi>. Les insertions qui traversent les
         limites de la hiérarchie doivent être balisées avec <gi>addSpan</gi> et <gi>anchor</gi>.</p>
     <p>Si un ajout remplace une suppression, <gi>subst</gi> doit être utilisé.</p>
-    <p><gi>add</gi> ne marque ajouts d'autres sources textuelles. Il n'est utilisé que pour des
-        ajouts dans un même texte. Un addendum à la fin d'un texte par une autre main est
+    <p><gi>add</gi> ne marque ajouts d’autres sources textuelles. Il n’est utilisé que pour des
+        ajouts dans un même texte. Un addendum à la fin d’un texte par une autre main est
         implémenté avec <gi>add</gi> et <gi>handShift</gi>.</p>
     <p>Les titres ajoutés ultérieurement sur les couvertures (livret, planche) ne sont pas
           écrits en <gi>ab</gi>, mais dans un <gi>head</gi> avec <gi>add</gi> avec
-          <att>hand</att> = <val>otherHand</val> et en spécifiant l'emplacement dans
+          <att>hand</att> = <val>otherHand</val> et en spécifiant l’emplacement dans
           <att>place</att>.</p>
     <p>Les ajouts supprimés doivent être marqués comme suit : avec <gi>del</gi>, qui contient
-          un <gi>add</gi> (et non l'inverse).</p>
+          un <gi>add</gi> (et non l’inverse).</p>
     <p>Les ajouts qui peuvent être considérés comme des notes sur le contenu du texte doivent
-          être étiquetés avec <gi>ab</gi>. Cependant, s'il s'agit d'informations supplémentaires,
-          p. ex. sur l'envoi du mandat imprimé, des ajouts à des parties individuelles du texte
+          être étiquetés avec <gi>ab</gi>. Cependant, s’il s’agit d’informations supplémentaires,
+          p. ex. sur l’envoi du mandat imprimé, des ajouts à des parties individuelles du texte
           ou des informations non liées à la pièce, <gi>add</gi> doit être utilisé avec
           <att>hand</att> = <val>otherHand</val>.</p>
   </remarks>

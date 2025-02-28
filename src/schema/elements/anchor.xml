@@ -5,14 +5,14 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="anchor" module="linking" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Ankerpunkt</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">anchoring point</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">point d'ancrage</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">point d’ancrage</gloss>
   <desc xml:lang="de" versionDate="2025-02-05">Markiert den Endpunkt einer umfangreichen Hinzufügung
       (<gi>addSpan</gi>), Tilgung (<gi>delSpan</gi>) oder Beschädigung (<gi>damageSpan</gi>).</desc>
   <desc xml:lang="en" versionDate="2023-08-18">Endpoint of extensive addition (<gi>addSpan</gi>), deletion
         (<gi>delSpan</gi>) or corruption (<gi>damageSpan</gi>).
     </desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Marque le point final d'un ajout (<gi>addSpan</gi>),
-      d'une suppression (<gi>delSpan</gi>) ou d'un dommage (<gi>damageSpan</gi>) volumineux.
+  <desc xml:lang="fr" versionDate="2025-02-05">Marque le point final d’un ajout (<gi>addSpan</gi>),
+      d’une suppression (<gi>delSpan</gi>) ou d’un dommage (<gi>damageSpan</gi>) volumineux.
     </desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
@@ -52,9 +52,9 @@
         </p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-24">
-    <p>La valeur de l'attribut <att>xml:id</att> doit être la première partie du nom d'élément
+    <p>La valeur de l’attribut <att>xml:id</att> doit être la première partie du nom d’élément
         correspondant (<gi>addSpan</gi> = <val>add</val>, <gi>delSpan</gi> = <val>del</val> ou
-        <gi>damageSpan</gi> = <val>damage</val>) ainsi qu'un numéro consécutif : p. ex.
+        <gi>damageSpan</gi> = <val>damage</val>) ainsi qu’un numéro consécutif : p. ex.
         <val>add1</val>, <val>add2</val> etc. ou <val>del1</val>, <val>del2</val> etc. ou
         <val>damage1</val>, <val>damage2</val> etc.</p>
   </remarks>

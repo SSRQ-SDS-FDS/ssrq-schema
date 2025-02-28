@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">appareil</gloss>
   <desc xml:lang="de" versionDate="2023-07-13">Enthält einen Apparateintrag.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Contains a apparatus entry.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-13">Contient une entrée d'appareil.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-13">Contient une entrée d’appareil.</desc>
   <classes mode="replace">
     <memberOf key="model.global.edit"/>
   </classes>
@@ -101,34 +101,34 @@
         </p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2023-08-18">
-    <p><gi>app</gi> donne différentes lectures d'un mot ou d'un passage de texte en référence
+    <p><gi>app</gi> donne différentes lectures d’un mot ou d’un passage de texte en référence
         à un ou plusieurs autres documents.</p>
-    <p>S'il y a plusieurs témoins de texte pour une pièce (originaux, copies), l'un des
-          autres témoins de texte peut être appelé s'il manque un passage. Toute divergence
-          dans le contenu des autres originaux ou copies par rapport au modèle d'édition doit
+    <p>S’il y a plusieurs témoins de texte pour une pièce (originaux, copies), l’un des
+          autres témoins de texte peut être appelé s’il manque un passage. Toute divergence
+          dans le contenu des autres originaux ou copies par rapport au modèle d’édition doit
           être notée. De même, avec deux originaux, les différences peuvent être marquées avec
-          <gi>app</gi> afin que les deux versions n'aient pas besoin d'être transcrites.</p>
+          <gi>app</gi> afin que les deux versions n’aient pas besoin d’être transcrites.</p>
     <p>Pour des courts ajouts, p. ex. une demi-phrase, vous pouvez utiliser un <gi>lem</gi>
           vide (voir exemple ci-dessous). Cependant, pour des ajouts plus longs ou des ajouts
-          d'autres témoins textuels, il est conseillé de créer votre propre pièce pour eux.
-          Les parties déjà éditées d'un témoin de texte antérieur peuvent alors être omises
+          d’autres témoins textuels, il est conseillé de créer votre propre pièce pour eux.
+          Les parties déjà éditées d’un témoin de texte antérieur peuvent alors être omises
           avec <gi>gap</gi>. Dans ce cas, cependant, le texte modifié qui est omis doit être
-          référencé à l'aide de <att>source</att>. Un commentaire à ce sujet en <gi>back</gi>
+          référencé à l’aide de <att>source</att>. Un commentaire à ce sujet en <gi>back</gi>
           est nécessaire. Un <gi>lem</gi> vide peut également être utilisé si un mot ou une
           phrase a été omis et qui est encore conservé dans un autre témoin textuel.</p>
     <p>Si une copie en double ou une copie comporte une omission significative, un
           <gi>rdg</gi> vide peut être défini pour elle (voir exemple ci-dessous). Cependant,
-          pour des lectures alternatives d'autres éditions ou de la littérature moderne, utilisez
+          pour des lectures alternatives d’autres éditions ou de la littérature moderne, utilisez
           <gi>note</gi> avec <att>type</att> = <val>text_comparison</val>.</p>
     <p>Si un morceau est à nouveau transcrit et que la nouvelle transcription diffère de
-          celle précédemment éditée, la différence n'est généralement pas indiquée. Toutefois,
+          celle précédemment éditée, la différence n’est généralement pas indiquée. Toutefois,
           si la nouvelle édition diffère sensiblement en termes de contenu ou de lecture, cela
           ne sera pas traité avec <gi>app</gi>, mais avec <gi>note</gi>. Les différences dans
-          l'orthographe d'un autre original ou d'une copie ne doivent également être notées
+          l’orthographe d’un autre original ou d’une copie ne doivent également être notées
           que si elles fournissent des informations supplémentaires.</p>
-    <p>Si une partie d'un original n'est plus lisible en raison de dommages, le texte perdu
-          peut être complété avec l'aide d'un autre témoin de texte. Pour cela, nous
-          n'utilisons pas <gi>app</gi> et <gi>rdg</gi>, mais <gi>damage</gi> avec
+    <p>Si une partie d’un original n’est plus lisible en raison de dommages, le texte perdu
+          peut être complété avec l’aide d’un autre témoin de texte. Pour cela, nous
+          n’utilisons pas <gi>app</gi> et <gi>rdg</gi>, mais <gi>damage</gi> avec
           <gi>supplied</gi>.</p>
   </remarks>
 </elementSpec>
