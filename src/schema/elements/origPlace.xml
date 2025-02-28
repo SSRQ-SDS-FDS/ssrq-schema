@@ -5,13 +5,13 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origPlace" module="msdescription" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Entstehungsort</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">place of origin</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">lieu d'origine</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">lieu d’origine</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält im <gi>teiHeader</gi> den Entstehungsort
     eines Textträgers oder seines Inhalts.</desc>
   <desc xml:lang="en" versionDate="2023-05-16">Contains the place of issue or printing of a
     source.</desc>
   <desc xml:lang="fr" versionDate="2025-02-06">Contient dans le <gi>teiHeader</gi> le lieu
-    d'origine d'un support de texte ou de son contenu.</desc>
+    d’origine d’un support de texte ou de son contenu.</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="att.global.responsibility"/>
@@ -31,7 +31,7 @@
     <attDef ident="type" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2025-01-30">worauf sich der Entstehungsort bezieht</desc>
       <desc xml:lang="en" versionDate="2025-01-30">what the place of origin refers to</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">à quoi le lieu d'origine fait référence</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">à quoi le lieu d’origine fait référence</desc>
       <datatype>
         <dataRef key="ssrq.orig.type"/>
       </datatype>
