@@ -23,7 +23,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "valid-time-with-dur-iso",
-            "<time dur-iso='PT01H'>foo</time>",
+            "<time dur-iso='PT1H'>foo</time>",
             True,
         ),
         (
