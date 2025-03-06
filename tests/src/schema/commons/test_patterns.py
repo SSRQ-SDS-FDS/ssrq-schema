@@ -169,12 +169,12 @@ def test_time_point_rng(
             True,
         ),
         (
-            "invalid-time-duration-25-hours",
+            "valid-time-duration-25-hours",
             "<time dur-iso='PT25H'>Foo</time>",
             True,
         ),
         (
-            "invalid-time-duration-hours-without-leading-zero",
+            "valid-time-duration-hours-without-leading-zero",
             "<time dur-iso='PT1H'>Foo</time>",
             True,
         ),
