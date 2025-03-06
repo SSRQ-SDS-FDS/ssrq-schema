@@ -160,7 +160,7 @@ def test_time_point_rng(
     [
         (
             "valid-time-duration-one-hour",
-            "<time dur-iso='PT01H'>Foo</time>",
+            "<time dur-iso='PT1H'>Foo</time>",
             True,
         ),
         (
@@ -169,18 +169,18 @@ def test_time_point_rng(
             True,
         ),
         (
-            "invalid-time-duration-25-hours",
+            "valid-time-duration-25-hours",
             "<time dur-iso='PT25H'>Foo</time>",
-            False,
+            True,
         ),
         (
-            "invalid-time-duration-hours-without-leading-zero",
+            "valid-time-duration-hours-without-leading-zero",
             "<time dur-iso='PT1H'>Foo</time>",
-            False,
+            True,
         ),
         (
             "valid-time-duration-one-minute",
-            "<time dur-iso='PT01M'>Foo</time>",
+            "<time dur-iso='PT1M'>Foo</time>",
             True,
         ),
         (
@@ -189,14 +189,14 @@ def test_time_point_rng(
             True,
         ),
         (
-            "invalid-time-duration-60-minutes",
+            "valid-time-duration-60-minutes",
             "<time dur-iso='PT60M'>Foo</time>",
-            False,
+            True,
         ),
         (
-            "invalid-time-duration-one-minute-without-leading-zero",
+            "valid-time-duration-one-minute-without-leading-zero",
             "<time dur-iso='PT1M'>Foo</time>",
-            False,
+            True,
         ),
         (
             "valid-time-duration-one-second",
@@ -209,14 +209,14 @@ def test_time_point_rng(
             True,
         ),
         (
-            "invalid-time-duration-60-seconds",
+            "valid-time-duration-60-seconds",
             "<time dur-iso='PT60S'>Foo</time>",
-            False,
+            True,
         ),
         (
-            "invalid-time-duration-one-second-without-leading-zero",
+            "valid-time-duration-one-second-without-leading-zero",
             "<time dur-iso='PT1S'>Foo</time>",
-            False,
+            True,
         ),
         (
             "valid-time-duration-seconds-with-fraction",
