@@ -36,7 +36,7 @@
           </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'area']">
-          <sch:let name="area" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = ('ssrq.measure.area')]//tei:valItem/@ident, '|'), '&quot;')}}"/>
+          <sch:let name="area" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = ('ssrq.measure.area', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident, '|'), '&quot;')}}"/>
           <sch:assert test="matches(@unit, concat('^', $area, '$'))">
               "<sch:value-of select="./@unit"/>" is not a valid area unit – you need to choose
               from the following list:
@@ -60,7 +60,7 @@
           </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'undefined']">
-          <sch:let name="various" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.various']//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:let name="various" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.various', 'ssrq.measure.parts.stuck')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
           <sch:assert test="matches(@unit, concat('^', $various, '$'))">
               "<sch:value-of select="./@unit"/>" is not a valid unspecific unit – you need to
               choose from the following list:
@@ -68,7 +68,7 @@
           </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'volume']">
-          <sch:let name="volume" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.capacity', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:let name="volume" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.capacity', 'ssrq.measure.parts.stuck', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
           <sch:assert test="matches(@unit, concat('^', $volume, '$'))">
               "<sch:value-of select="./@unit"/>" is not a valid capacity unit – you need to choose
               from the following list:
