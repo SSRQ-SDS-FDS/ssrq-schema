@@ -76,7 +76,7 @@
           </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'weight']">
-          <sch:let name="weight" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.weight']//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:let name="weight" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.parts.vierling', 'ssrq.measure.weight')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
           <sch:assert test="matches(@unit, concat('^', $weight, '$'))">
               "<sch:value-of select="./@unit"/>" is not a valid weight unit – you need to choose
               from the following list:

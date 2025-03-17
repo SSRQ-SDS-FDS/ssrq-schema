@@ -147,6 +147,11 @@ def test_measure(
             True,
         ),
         (
+            "valid-measure-with-type-weight-and-unit-vierling",
+            "<measure type='weight' unit='Vierling' quantity='1'>Foo</measure>",
+            True,
+        ),
+        (
             "invalid-measure-with-type-weight",
             "<measure type='weight' unit='year' quantity='1'>Foo</measure>",
             False,
