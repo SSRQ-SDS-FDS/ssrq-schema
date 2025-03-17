@@ -1396,15 +1396,6 @@
           <desc xml:lang="fr" versionDate="2023-03-17">tagwen</desc>
           <desc xml:lang="it" versionDate="2023-03-17">tagwen</desc>
         </valItem>
-        <valItem ident="Vierling">
-          <desc xml:lang="de" versionDate="2023-03-17">Vierling</desc>
-          <desc xml:lang="en" type="singular" versionDate="2023-03-17">quarter</desc>
-          <desc xml:lang="en" type="plural" versionDate="2023-03-17">quarters</desc>
-          <desc xml:lang="fr" type="singular" versionDate="2023-03-17">un quart</desc>
-          <desc xml:lang="fr" type="plural" versionDate="2023-03-17">quarts</desc>
-          <desc xml:lang="it" type="singular" versionDate="2023-03-17">quartino</desc>
-          <desc xml:lang="it" type="plural" versionDate="2023-03-17">quartini</desc>
-        </valItem>
         <valItem ident="Zeile">
           <desc xml:lang="de" versionDate="2024-01-16">Zeile</desc>
           <desc xml:lang="en" versionDate="2024-01-16">line</desc>
@@ -2202,6 +2193,21 @@
         </valList>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.measure.parts.stuck">
+      <content>
+        <valList type="closed">
+          <valItem ident="Stuck">
+            <desc xml:lang="de" versionDate="2023-03-17">Stuck</desc>
+            <desc xml:lang="en" type="singular" versionDate="2023-03-17">piece</desc>
+            <desc xml:lang="en" type="plural" versionDate="2023-03-17">pieces</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">pièce</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">pièces</desc>
+            <desc xml:lang="it" type="singular" versionDate="2023-03-17">pezzo</desc>
+            <desc xml:lang="it" type="plural" versionDate="2023-03-17">pezzi</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
     <dataSpec ident="ssrq.measure.parts.vierling">
       <content>
         <valList type="closed">
@@ -2402,15 +2408,6 @@
             <desc xml:lang="fr" type="plural" versionDate="2023-03-17">bâtons</desc>
             <desc xml:lang="it" type="singular" versionDate="2023-03-17">bastone</desc>
             <desc xml:lang="it" type="plural" versionDate="2023-03-17">bastoni</desc>
-          </valItem>
-          <valItem ident="Stuck">
-            <desc xml:lang="de" versionDate="2023-03-17">Stuck</desc>
-            <desc xml:lang="en" type="singular" versionDate="2023-03-17">piece</desc>
-            <desc xml:lang="en" type="plural" versionDate="2023-03-17">pieces</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">pièce</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">pièces</desc>
-            <desc xml:lang="it" type="singular" versionDate="2023-03-17">pezzo</desc>
-            <desc xml:lang="it" type="plural" versionDate="2023-03-17">pezzi</desc>
           </valItem>
           <valItem ident="Zeine">
             <desc xml:lang="de" type="singular" versionDate="2023-03-17">Zeine</desc>
