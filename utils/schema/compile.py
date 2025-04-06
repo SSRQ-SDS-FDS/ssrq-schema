@@ -14,7 +14,7 @@ from utils.schema import steps
 
 OMIT_VERSION: bool = False
 
-SPECIFIED_ELEMENTS = r'target="elements/(\w+)\.xml"'
+SPECIFIED_ELEMENTS = r'target="elements/(\w+)(?:\.intro)?\.xml"'
 
 
 class SSRQSchemaType(TypedDict):
