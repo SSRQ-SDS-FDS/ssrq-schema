@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="cell" module="figures" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Zelle einer Tabelle</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">cell of a table</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">cellule dans un tableu</gloss>
+  <classes mode="replace">
+    <memberOf key="att.global.rendition"/>
+    <memberOf key="att.tableDecoration"/>
+  </classes>
+  <content>
+    <sequence maxOccurs="unbounded">
+      <alternate>
+        <macroRef key="ssrq.content.default"/>
+        <elementRef key="bibl"/>
+      </alternate>
+    </sequence>
+  </content>
+  <attList>
+    <attDef ident="rend" mode="replace">
+      <desc xml:lang="de" versionDate="2025-01-31">die Ausrichtung des Texts innerhalb der Tabellenzelle</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the text alignment within the table cell</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">l’alignement du texte dans la cellule de table</desc>
+      <datatype>
+        <dataRef key="ssrq.rend.cell"/>
+      </datatype>
+    </attDef>
+  </attList>
+</elementSpec>
