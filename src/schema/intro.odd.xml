@@ -30,7 +30,7 @@
         <moduleRef key="analysis" include="pc"/>
         <moduleRef key="core" include="author bibl cb date editor foreign graphic head hi item label lb list note num orig p pb publisher pubPlace q quote ref resp respStmt term textLang title"/>
         <moduleRef key="figures" include="cell figure row table"/>
-        <moduleRef key="header" include="availability editorialDecl encodingDesc fileDesc idno licence publicationStmt seriesStmt teiHeader textClass titleStmt"/>
+        <moduleRef key="header" include="availability editorialDecl encodingDesc fileDesc idno licence publicationStmt seriesStmt sourceDesc teiHeader textClass titleStmt"/>
         <moduleRef key="namesdates" include="orgName persName placeName settlement"/>
         <moduleRef key="tagdocs" include="gi"/>
         <moduleRef key="tei"/>
@@ -113,6 +113,7 @@
         <specGrpRef target="elements/row.xml"/>
         <specGrpRef target="elements/settlement.xml"/>
         <specGrpRef target="elements/seriesStmt.xml"/>
+        <specGrpRef target="elements/sourceDesc.intro.xml"/>
         <specGrpRef target="elements/table.xml"/>
         <specGrpRef target="elements/teiHeader.xml"/>
         <specGrpRef target="elements/TEI.xml"/>
