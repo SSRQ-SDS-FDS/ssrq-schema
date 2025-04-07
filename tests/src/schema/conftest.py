@@ -15,8 +15,8 @@ from ssrq_cli.validate.types import RNGValidationInfos
 
 from utils.commons import filehandler as io
 from utils.commons.config import SCHEMA_DIR, XSLTS
+from utils.schema import SPECIFIED_ELEMENTS
 from utils.schema.compile import (
-    SPECIFIED_ELEMENTS,
     Schema,
     SSRQSchemaType,
     load_config,

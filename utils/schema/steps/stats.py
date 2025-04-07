@@ -2,7 +2,7 @@ import re
 from functools import reduce
 
 from utils.commons.logger import LOGGER
-from utils.schema.compile import SPECIFIED_ELEMENTS
+from utils.schema import SPECIFIED_ELEMENTS
 
 
 class Stats:
