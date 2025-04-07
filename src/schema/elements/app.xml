@@ -2,133 +2,78 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="app" module="textcrit" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Apparat</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">apparatus</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">appareil</gloss>
-  <desc xml:lang="de" versionDate="2023-07-13">Enthält einen Apparateintrag.</desc>
-  <desc xml:lang="en" versionDate="2023-07-13">Contains a apparatus entry.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-13">Contient une entrée d’appareil.</desc>
-  <classes mode="replace">
-    <memberOf key="model.global.edit"/>
-  </classes>
-  <content>
-    <sequence>
-      <elementRef key="lem" minOccurs="0"/>
-      <sequence preserveOrder="false">
-        <alternate maxOccurs="unbounded">
-          <elementRef key="note"/>
-          <elementRef key="rdg"/>
-        </alternate>
-      </sequence>
-    </sequence>
-  </content>
-  <attList>
-    <attDef ident="from" mode="delete"/>
-    <attDef ident="loc" mode="delete"/>
-    <attDef ident="to" mode="delete"/>
-    <attDef ident="type" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-app-rdg-de"/>
-  <xi:include href="examples.xml" xpointer="ex-app-rdg-en"/>
-  <xi:include href="examples.xml" xpointer="ex-app-rdg-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-app-note-de"/>
-  <xi:include href="examples.xml" xpointer="ex-app-note-en"/>
-  <xi:include href="examples.xml" xpointer="ex-app-note-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-app-without-lem-de"/>
-  <xi:include href="examples.xml" xpointer="ex-app-without-lem-en"/>
-  <xi:include href="examples.xml" xpointer="ex-app-without-lem-fr"/>
-  <remarks xml:lang="de" versionDate="2023-08-18">
-    <p><gi>app</gi> gibt verschiedene Lesarten eines Wortes oder eines Textabschnittes
-          unter Bezugnahme auf ein oder mehrere andere Dokumente an.</p>
-    <p>Existieren von einem Stück mehrere Textzeugen (Originale, Kopien) kann bei einer Fehlstelle
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="app" module="textcrit" mode="change"><gloss xml:lang="de" versionDate="2025-02-03">Apparat</gloss><gloss xml:lang="en" versionDate="2025-02-03">apparatus</gloss><gloss xml:lang="fr" versionDate="2025-02-03">appareil</gloss><desc xml:lang="de" versionDate="2023-07-13">Enthält einen Apparateintrag.</desc><desc xml:lang="en" versionDate="2023-07-13">Contains a apparatus entry.</desc><desc xml:lang="fr" versionDate="2023-07-13">Contient une entrée d’appareil.</desc><classes mode="replace"><memberOf key="model.global.edit"/></classes><content><sequence><elementRef key="lem" minOccurs="0"/><sequence preserveOrder="false"><alternate maxOccurs="unbounded"><elementRef key="note"/><elementRef key="rdg"/></alternate></sequence></sequence></content><attList><attDef ident="from" mode="delete"/><attDef ident="loc" mode="delete"/><attDef ident="to" mode="delete"/><attDef ident="type" mode="delete"/></attList><xi:include href="examples.xml" xpointer="ex-app-rdg-de"/><xi:include href="examples.xml" xpointer="ex-app-rdg-en"/><xi:include href="examples.xml" xpointer="ex-app-rdg-fr"/><xi:include href="examples.xml" xpointer="ex-app-note-de"/><xi:include href="examples.xml" xpointer="ex-app-note-en"/><xi:include href="examples.xml" xpointer="ex-app-note-fr"/><xi:include href="examples.xml" xpointer="ex-app-without-lem-de"/><xi:include href="examples.xml" xpointer="ex-app-without-lem-en"/><xi:include href="examples.xml" xpointer="ex-app-without-lem-fr"/><xi:include href="examples.xml" xpointer="ex-app-lem-space-de"/><xi:include href="examples.xml" xpointer="ex-app-lem-space-en"/><xi:include href="examples.xml" xpointer="ex-app-lem-space-fr"/>
+    ex-app-without-lem
+  <remarks xml:lang="de" versionDate="2023-08-18"><p><gi>app</gi> gibt verschiedene Lesarten eines Wortes oder eines Textabschnittes
+          unter Bezugnahme auf ein oder mehrere andere Dokumente an.</p><p>Existieren von einem Stück mehrere Textzeugen (Originale, Kopien) kann bei einer Fehlstelle
         einer der anderen Textzeugen hinzugezogen werden. Inhaltliche Abweichungen der anderen
         Originale oder Abschriften von der Editionsvorlage müssen zwingend angemerkt werden.
         Ebenso lassen sich bei zwei Originalen mit <gi>app</gi> die Abweichungen auszeichnen,
-        sodass nicht beide Versionen transkribiert werden müssen.</p>
-    <p>Bei kurzen Nachträgen, z. B. einem halben Satz, kann man sich mit einem leeren
+        sodass nicht beide Versionen transkribiert werden müssen.</p><p>Bei kurzen Nachträgen, z. B. einem halben Satz, kann man sich mit einem leeren
         <gi>lem</gi> behelfen (vgl. Beispiel unten). Bei längeren Nachträgen oder Zusätzen aus
         anderen Textzeugen empfiehlt es sich indessen, ein eigenes Stück dafür zu erstellen.
         Die bereits edierten Teile eines früheren Textzeugen können dann mit <gi>gap</gi>
         weggelassen werden. Es muss in diesem Fall jedoch mit <att>source</att> auf den edierten
         Text, der weggelassen wird, referenziert werden. Ein Kommentar hierzu in
         <gi>back</gi> ist notwendig. Ein leeres <gi>lem</gi> kann auch verwendet werden, wenn ein
-        Wort oder Satzteil weggelassen wurde, der in einem anderen Textzeugen noch erhalten ist.</p>
-    <p>Wenn eine Zweitausfertigung oder Abschrift eine signifikante Auslassung aufweist, kann dafür
+        Wort oder Satzteil weggelassen wurde, der in einem anderen Textzeugen noch erhalten ist.</p><p>Wenn eine Zweitausfertigung oder Abschrift eine signifikante Auslassung aufweist, kann dafür
         ein leeres <gi>rdg</gi> gesetzt werden (vgl. Beispiel unten).
         Für alternative Lesungen aus anderen Editionen bzw. moderner Literatur verwendet man
-        hingegen <gi>note</gi> mit <att>type</att> = <val>text_comparison</val>.</p>
-    <p>Wird ein Stück erneut transkribiert und weicht die neue Transkription von bereits edierten
+        hingegen <gi>note</gi> mit <att>type</att> = <val>text_comparison</val>.</p><p>Wird ein Stück erneut transkribiert und weicht die neue Transkription von bereits edierten
           ab, wird die Abweichung in der Regel nicht angegeben. Wenn die Neuedition sich jedoch
           in einem inhaltlichen Punkt bzw. einer Lesung wesentlich unterscheidet, wird dies nicht
           mit <gi>app</gi>, sondern mit <gi>note</gi> behandelt. Abweichungen der Schreibung eines
           weiteren Originals oder Abschriften sind ebenfalls nur anzumerken, wenn sie weitere
-          Erkenntnisse liefern.</p>
-    <p>Wenn eine Stelle eines Originals wegen einer Beschädigung nicht mehr lesbar ist, kann der
+          Erkenntnisse liefern.</p><p>Wenn eine Stelle eines Originals wegen einer Beschädigung nicht mehr lesbar ist, kann der
         Textverlust mithilfe eines anderen Textzeugen ergänzt werden. Dafür verwenden wir nicht
-        <gi>app</gi> und <gi>rdg</gi>, sondern <gi>damage</gi> zusammen mit <gi>supplied</gi>.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-13">
-    <p>Allows you to display different readings of a word or a section of text with reference to another document or
+        <gi>app</gi> und <gi>rdg</gi>, sondern <gi>damage</gi> zusammen mit <gi>supplied</gi>.</p></remarks>
+  <remarks xml:lang="en" versionDate="2023-07-13"><p>Allows you to display different readings of a word or a section of text with reference to another document or
             documents. Must immediately follow the word without spaces.
-        </p>
-    <p>If there are several text witnesses (originals, copies) of a piece, the other text witness can be consulted
+        </p><p>If there are several text witnesses (originals, copies) of a piece, the other text witness can be consulted
             in the event of a gap. Deviations in content of the other originals or copies from the edition template must
             be noted. The deviations can also be marked with two originals, so that both versions do not have to be
             transcribed.
-        </p>
-    <p>For short supplements, e.g. B. half a sentence, you can get by with an empty <gi>lem</gi> (see example
+        </p><p>For short supplements, e.g. B. half a sentence, you can get by with an empty <gi>lem</gi> (see example
             below). In the case of longer supplements or additions from other text sources, however, it is advisable to
             create a separate piece for them. The already edited texts of an earlier text witness can be omitted
             with <gi>gap</gi>. However, it must be referenced with <att>source</att> to the edited text that is omitted.
             A remark (comment in <gi>back</gi>) is required. An empty <gi>lem</gi> can also be used when an original has
             omitted a word or phrase that was included in a draft.
-        </p>
-    <p>If a duplicate or transcript has a significant omission (that is, a word or phrase has been omitted), an
+        </p><p>If a duplicate or transcript has a significant omission (that is, a word or phrase has been omitted), an
             empty <gi>rdg</gi> may be substituted (see example below). For alternative readings from other editions or
             modern literature, on the other hand, <gi>note</gi> with <gi>quote</gi> is used. As a rule, deviations in
             the transcription from source pieces that have already been edited are not indicated. If the new edition
             differs significantly in terms of content or reading, a <gi>note</gi> is required. Deviations in the
             spelling of another original or copies are also only to be noted if they provide further insights.
-        </p>
-    <p>If there are several originals, the criteria that contributed to the choice of the edition template should be
+        </p><p>If there are several originals, the criteria that contributed to the choice of the edition template should be
             explained in a comment in <gi>back</gi> if possible. The same applies in the case of copies. Caution:
             Reverses are considered independent lore.
-        </p>
-    <p>If a part of an original is no longer legible due to damage, the text loss can be supplemented with the help
+        </p><p>If a part of an original is no longer legible due to damage, the text loss can be supplemented with the help
             of another text witness. Instead of using <gi>app</gi> and <gi>rdg</gi>, we use <gi>damage</gi> together
             with <gi>supplied</gi>.
-        </p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2023-08-18">
-    <p><gi>app</gi> donne différentes lectures d’un mot ou d’un passage de texte en référence
-        à un ou plusieurs autres documents.</p>
-    <p>S’il y a plusieurs témoins de texte pour une pièce (originaux, copies), l’un des
+        </p></remarks>
+  <remarks xml:lang="fr" versionDate="2023-08-18"><p><gi>app</gi> donne différentes lectures d’un mot ou d’un passage de texte en référence
+        à un ou plusieurs autres documents.</p><p>S’il y a plusieurs témoins de texte pour une pièce (originaux, copies), l’un des
           autres témoins de texte peut être appelé s’il manque un passage. Toute divergence
           dans le contenu des autres originaux ou copies par rapport au modèle d’édition doit
           être notée. De même, avec deux originaux, les différences peuvent être marquées avec
-          <gi>app</gi> afin que les deux versions n’aient pas besoin d’être transcrites.</p>
-    <p>Pour des courts ajouts, p. ex. une demi-phrase, vous pouvez utiliser un <gi>lem</gi>
+          <gi>app</gi> afin que les deux versions n’aient pas besoin d’être transcrites.</p><p>Pour des courts ajouts, p. ex. une demi-phrase, vous pouvez utiliser un <gi>lem</gi>
           vide (voir exemple ci-dessous). Cependant, pour des ajouts plus longs ou des ajouts
           d’autres témoins textuels, il est conseillé de créer votre propre pièce pour eux.
           Les parties déjà éditées d’un témoin de texte antérieur peuvent alors être omises
           avec <gi>gap</gi>. Dans ce cas, cependant, le texte modifié qui est omis doit être
           référencé à l’aide de <att>source</att>. Un commentaire à ce sujet en <gi>back</gi>
           est nécessaire. Un <gi>lem</gi> vide peut également être utilisé si un mot ou une
-          phrase a été omis et qui est encore conservé dans un autre témoin textuel.</p>
-    <p>Si une copie en double ou une copie comporte une omission significative, un
+          phrase a été omis et qui est encore conservé dans un autre témoin textuel.</p><p>Si une copie en double ou une copie comporte une omission significative, un
           <gi>rdg</gi> vide peut être défini pour elle (voir exemple ci-dessous). Cependant,
           pour des lectures alternatives d’autres éditions ou de la littérature moderne, utilisez
-          <gi>note</gi> avec <att>type</att> = <val>text_comparison</val>.</p>
-    <p>Si un morceau est à nouveau transcrit et que la nouvelle transcription diffère de
+          <gi>note</gi> avec <att>type</att> = <val>text_comparison</val>.</p><p>Si un morceau est à nouveau transcrit et que la nouvelle transcription diffère de
           celle précédemment éditée, la différence n’est généralement pas indiquée. Toutefois,
           si la nouvelle édition diffère sensiblement en termes de contenu ou de lecture, cela
           ne sera pas traité avec <gi>app</gi>, mais avec <gi>note</gi>. Les différences dans
           l’orthographe d’un autre original ou d’une copie ne doivent également être notées
-          que si elles fournissent des informations supplémentaires.</p>
-    <p>Si une partie d’un original n’est plus lisible en raison de dommages, le texte perdu
+          que si elles fournissent des informations supplémentaires.</p><p>Si une partie d’un original n’est plus lisible en raison de dommages, le texte perdu
           peut être complété avec l’aide d’un autre témoin de texte. Pour cela, nous
           n’utilisons pas <gi>app</gi> et <gi>rdg</gi>, mais <gi>damage</gi> avec
-          <gi>supplied</gi>.</p>
-  </remarks>
+          <gi>supplied</gi>.</p></remarks>
 </elementSpec>
