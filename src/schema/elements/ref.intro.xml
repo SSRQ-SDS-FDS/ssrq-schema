@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="ref" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-04">Verweis</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-04">reference</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">référence</gloss>
+  <classes mode="replace">
+    <memberOf key="att.pointing"/>
+    <memberOf key="model.annotationPart.body"/>
+    <memberOf key="model.ptrLike"/>
+  </classes>
+  <content>
+    <alternate maxOccurs="unbounded">
+      <elementRef key="hi"/>
+      <textNode/>
+    </alternate>
+  </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="refAtts" mode="delete"/>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-ref" mode="add">
+    <desc xml:lang="en" versionDate="2023-06-22">constraint for tei:ref</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:ref[not(*)]">
+          <sch:assert test="if (not(.[@target])) then string-length(normalize-space(.)) &gt; 0 else .[@target]">
+              tei:ref should contain some text or must use the attribute @target.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-ref-in-bibl" mode="add">
+    <desc xml:lang="en" versionDate="2024-11-04">constraint for tei:ref in tei:bibl</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:ref[not(ancestor::tei:editorialDecl)][not(parent::tei:note[@type='text_comparison'])]">
+          <sch:assert test="./parent::tei:bibl">
+              If tei:ref is not part of tei:editorialDecl or tei:note with @type="text_comparison",
+              it should be enclosed in tei:bibl.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="target" mode="replace">
+      <datatype>
+        <dataRef key="ssrq.pointer.target.intro"/>
+      </datatype>
+    </attDef>
+  </attList>
+</elementSpec>
