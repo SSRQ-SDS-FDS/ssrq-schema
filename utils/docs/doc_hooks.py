@@ -57,9 +57,18 @@ def on_page_markdown(
 
 @event_priority(50)
 def on_post_build(config: MkDocsConfig):
-    schema = create_main_schema()
     store_compiled_schemas(
-        schemas=[schema], out_dir=Path(config.site_dir), omit_version=True
+        schemas=list(
+            filter(
+                None,
+                (
+                    create_main_schema(),
+                    create_schema_by_entry(entry_point="intro.odd.xml"),
+                ),
+            )
+        ),
+        out_dir=Path(config.site_dir),
+        omit_version=True,
     )
 
 

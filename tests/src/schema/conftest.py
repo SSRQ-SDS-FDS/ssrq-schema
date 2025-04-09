@@ -15,8 +15,8 @@ from ssrq_cli.validate.types import RNGValidationInfos
 
 from utils.commons import filehandler as io
 from utils.commons.config import SCHEMA_DIR, XSLTS
+from utils.schema import SPECIFIED_ELEMENTS
 from utils.schema.compile import (
-    SPECIFIED_ELEMENTS,
     Schema,
     SSRQSchemaType,
     load_config,
@@ -209,9 +209,59 @@ def test_element_with_rng(
     return test_element
 
 
+@pytest.fixture(scope="function")
+def test_intro_with_rng(
+    intro_schema: dict[str, str],
+    writer: SimpleTEIWriter,
+) -> RNG_test_function:
+    def test_element(
+        element_name: str,
+        name: str,
+        markup: str,
+        result: bool,
+        return_validator: bool = False,
+    ):
+        """A generic function, which can be used to test a single element against the defined RelaxNG rules.
+
+        Args:
+            element_name (str): The name (without namespace) of the element to test.
+            name (str): The name of the file to write / the name of the testcase.
+            markup (str): The markup to write to the file.
+            result (bool): The expected result of the validation.
+            return_validator (bool, optional): If True, the validator object is returned. Defaults to False.
+
+        Returns:
+            None: The test passes if the validation result matches the expected result.
+        """
+        writer.write(name, add_tei_namespace(markup))
+
+        match validate_with_rng(
+            writer.construct_file_pattern(), intro_schema[element_name]
+        ):
+            case Ok(validation_infos):
+                assert (
+                    len(validation_infos) == 0 if result else len(validation_infos) > 0
+                )
+                return validation_infos if return_validator else None
+            case Err(error):
+                pytest.fail(
+                    f"An error occurred while validating »{element_name}«: {error}"
+                )
+
+    return test_element
+
+
 @pytest.fixture
 def element_schema(
     change_rng_start_per_odd: dict[str, dict[str, str]],
 ) -> dict[str, str]:
     """A fixture, which returns the main ssrq schema with a modified start element."""
     return change_rng_start_per_odd["TEI_Schema"]
+
+
+@pytest.fixture
+def intro_schema(
+    change_rng_start_per_odd: dict[str, dict[str, str]],
+) -> dict[str, str]:
+    """A fixture, which returns the ssrq intro schema with a modified start element."""
+    return change_rng_start_per_odd["TEI_Intro"]

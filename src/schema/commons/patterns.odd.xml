@@ -159,6 +159,16 @@
         </alternate>
       </content>
     </dataSpec>
+    <dataSpec ident="ssrq.pointer.target.intro" mode="add" module="ssrq.core.module">
+      <content>
+        <alternate>
+          <dataRef key="ssrq.pointer.doi"/>
+          <dataRef key="ssrq.pointer.url"/>
+          <dataRef key="ssrq.pointer.urn"/>
+          <dataRef name="string" restriction="note-\d+"/>
+        </alternate>
+      </content>
+    </dataSpec>
     <dataSpec ident="ssrq.id" mode="add" module="ssrq.core.module">
       <desc xml:lang="de" versionDate="2025-01-30">das Muster für eine SSRQ UUID</desc>
       <desc xml:lang="en" versionDate="2025-01-30">the pattern for an SLS UUID</desc>
