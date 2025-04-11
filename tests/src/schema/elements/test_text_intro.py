@@ -9,7 +9,7 @@ from ..conftest import RNG_test_function
         (
             "valid-text",
             """
-            <text>
+            <text type='intro'>
                 <body>
                     <div>
                         <p>foo</p>
@@ -20,7 +20,7 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-text-with-back",
+            "invalid-text-with-back-and-without-type",
             """
             <text>
                 <body>
