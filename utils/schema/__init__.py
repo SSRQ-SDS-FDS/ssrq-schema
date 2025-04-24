@@ -1,1 +1,1 @@
-SPECIFIED_ELEMENTS = r'target="elements/(\w+)(?:\.intro)?\.xml"'
+SPECIFIED_ELEMENTS = r'target="elements/(\w+)(?:\.(lit|intro))?\.xml"'

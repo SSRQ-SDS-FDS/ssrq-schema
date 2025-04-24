@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="div" module="textstructure" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Abschnitt</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">division</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">division</gloss>
+  <classes mode="replace"/>
+  <content>
+    <alternate>
+      <sequence>
+        <elementRef key="div" minOccurs="2" maxOccurs="unbounded"/>
+      </sequence>
+      <sequence>
+        <elementRef key="head"/>
+        <elementRef key="listBibl" maxOccurs="unbounded"/>
+      </sequence>
+    </alternate>
+  </content>
+</elementSpec>

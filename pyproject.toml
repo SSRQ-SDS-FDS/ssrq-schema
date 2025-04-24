@@ -7,6 +7,7 @@ authors = [
 schemas = [
     { title = "SLS TEI-Schema", description = "The main schema used by the Swiss Law Sources to validate TEI XML transcriptions", entry = "main.odd.xml", name = "TEI_Schema", version = "1.4.2", tei_version = "4.9.0" },
     { title = "SLS TEI-Intro", description = "The schema used by the Swiss Law Sources to validate editorial paratexts like introductions", entry = "intro.odd.xml", name = "TEI_Intro", version = "1.0.0", tei_version = "4.9.0" },
+    { title = "SLS TEI-Lit", description = "The schema used by the Swiss Law Sources to validate the list of unprinted sources", entry = "lit.odd.xml", name = "TEI_Lit", version = "1.0.0", tei_version = "4.9.0" },
 ]
 
 [tool.poetry]
