@@ -10,7 +10,9 @@
   <content>
     <alternate>
       <sequence>
-        <elementRef key="div" minOccurs="2" maxOccurs="unbounded"/>
+        <!-- minOccurs="2" maxOccurs="unbounded" funktioniert nicht -->
+        <elementRef key="div"/>
+        <elementRef key="div" maxOccurs="unbounded"/>
       </sequence>
       <sequence>
         <elementRef key="head"/>
