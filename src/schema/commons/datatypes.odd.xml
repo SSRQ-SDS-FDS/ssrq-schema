@@ -3367,6 +3367,30 @@
         </valList>
       </content>
     </macroSpec>
+    <macroSpec ident="ssrq-lit.role.resp.de" mode="add">
+      <desc xml:lang="de" versionDate="2025-01-30">die Aufgaben der Beteiligten des Projektes</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the task of those involved in the project</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les tâches des participants au projet</desc>
+      <content>
+        <valList type="closed" xml:lang="de">
+          <valItem ident="Herausgabe"/>
+          <valItem ident="Qualitätskontrolle"/>
+          <valItem ident="XML-Codierung"/>
+        </valList>
+      </content>
+    </macroSpec>
+    <macroSpec ident="ssrq-lit.role.resp.fr" mode="add">
+      <desc xml:lang="de" versionDate="2025-01-30">die Aufgaben der Beteiligten des Projektes</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the task of those involved in the project</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les tâches des participants au projet</desc>
+      <content>
+        <valList type="closed" xml:lang="fr">
+          <valItem ident="Contrôle de qualité"/>
+          <valItem ident="Encodage XML"/>
+          <valItem ident="Publication"/>
+        </valList>
+      </content>
+    </macroSpec>
   </specGrp>
   <specGrp xml:id="ssrq-target">
     <dataSpec ident="ssrq.target.licence" mode="add">
@@ -3499,6 +3523,24 @@
             <desc xml:lang="en" versionDate="2024-05-08">feast day</desc>
             <desc xml:lang="fr" versionDate="2024-05-08">des fêtes religieuses</desc>
             <desc xml:lang="it" versionDate="2024-05-08">festività religiose</desc>
+          </valItem>
+          <valItem ident="print">
+            <desc xml:lang="de" versionDate="2024-05-08">Druck</desc>
+            <desc xml:lang="en" versionDate="2024-05-08">print</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">imprimé</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">stampa</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq-lit.type.date" mode="add">
+      <content>
+        <valList type="closed">
+          <valItem ident="electronic">
+            <desc xml:lang="de" versionDate="2024-05-08">elektronische Publikation</desc>
+            <desc xml:lang="en" versionDate="2024-05-08">electronic publication</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">publication numérique</desc>
+            <desc xml:lang="it" versionDate="2024-05-08">pubblicazione digitale</desc>
           </valItem>
           <valItem ident="print">
             <desc xml:lang="de" versionDate="2024-05-08">Druck</desc>
@@ -3851,6 +3893,13 @@
       <content>
         <valList type="closed">
           <valItem ident="intro"/>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq-lit.text.type" mode="add">
+      <content>
+        <valList type="closed">
+          <valItem ident="literature"/>
         </valList>
       </content>
     </dataSpec>

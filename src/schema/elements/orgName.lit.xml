@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="orgName" module="namesdates" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Organisationsname</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">organization name</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">nom d’organisation</gloss>
+  <classes mode="replace">
+    <memberOf key="model.nameLike.agent"/>
+  </classes>
+  <content>
+    <textNode/>
+  </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-orgName" mode="add">
+    <desc versionDate="2023-06-19" xml:lang="en">constraint for tei:orgName</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:orgName[ancestor::tei:seriesStmt]">
+          <sch:let name="ssrq" value="('Fondation des sources du droit de la Société suisse des juristes', 'Rechtsquellenstiftung der Schweizerischen Juristischen Gesellschaft')"/>
+          <sch:let name="content" value="normalize-space(.)"/>
+          <sch:assert test="$content = $ssrq">
+              The content of tei:orgName must match <sch:value-of select="string-join($ssrq, ' or ')"/>.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+</elementSpec>

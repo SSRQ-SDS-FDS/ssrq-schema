@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>{{ title }}</title>
+        <author>Bastian Politycki</author>
+        <author>Christian Sonder</author>
+        <author>Pascale Sutter</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>SSRQ-SDS-FDS</publisher>
+        <date when="1970-01-01"/>
+        <idno>{{ version }}</idno>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+                    </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>{{ description }}</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <schemaSpec ident="ssrq-lit-schema" docLang="de en fr">
+        <!-- TEI modules used -->
+        <moduleRef key="core" include="bibl date editor head listBibl p publisher resp respStmt title"/>
+        <moduleRef key="header" include="availability fileDesc idno licence publicationStmt seriesStmt sourceDesc teiHeader titleStmt"/>
+        <moduleRef key="namesdates" include="orgName persName"/>
+        <moduleRef key="tei"/>
+        <moduleRef key="textstructure" include="body div TEI text"/>
+        <!-- own modules -->
+        <specGrpRef target="commons/modules.odd.xml#ssrq-modules"/>
+        <!-- attribute classes -->
+        <specGrpRef target="commons/classes.odd.xml#ssrq-classes"/>
+        <!-- global constraints -->
+        <specGrpRef target="commons/constraints.odd.xml#constraints"/>
+        <!-- content types -->
+        <specGrpRef target="commons/content.odd.xml#ssrq-default-content-types"/>
+        <!-- datatypes -->
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-lang"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-role"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-target"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-type"/>
+        <!-- patterns -->
+        <specGrpRef target="commons/patterns.odd.xml#ssrq-patterns"/>
+        <!-- element specifications -->
+        <specGrpRef target="elements/availability.xml"/>
+        <specGrpRef target="elements/bibl.lit.xml"/>
+        <specGrpRef target="elements/body.lit.xml"/>
+        <specGrpRef target="elements/date.lit.xml"/>
+        <specGrpRef target="elements/div.lit.xml"/>
+        <specGrpRef target="elements/editor.lit.xml"/>
+        <specGrpRef target="elements/fileDesc.xml"/>
+        <specGrpRef target="elements/head.lit.xml"/>
+        <specGrpRef target="elements/idno.lit.xml"/>
+        <specGrpRef target="elements/licence.xml"/>
+        <specGrpRef target="elements/listBibl.lit.xml"/>
+        <specGrpRef target="elements/orgName.lit.xml"/>
+        <specGrpRef target="elements/p.lit.xml"/>
+        <specGrpRef target="elements/persName.lit.xml"/>
+        <specGrpRef target="elements/publicationStmt.xml"/>
+        <specGrpRef target="elements/publisher.lit.xml"/>
+        <specGrpRef target="elements/resp.lit.xml"/>
+        <specGrpRef target="elements/respStmt.xml"/>
+        <specGrpRef target="elements/seriesStmt.xml"/>
+        <specGrpRef target="elements/sourceDesc.intro.xml"/>
+        <specGrpRef target="elements/teiHeader.lit.xml"/>
+        <specGrpRef target="elements/TEI.xml"/>
+        <specGrpRef target="elements/text.lit.xml"/>
+        <specGrpRef target="elements/title.lit.xml"/>
+        <specGrpRef target="elements/titleStmt.xml"/>
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>
