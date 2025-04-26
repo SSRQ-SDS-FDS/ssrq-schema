@@ -30,7 +30,7 @@
         <moduleRef key="analysis" include="pc"/>
         <moduleRef key="core" include="bibl date editor foreign gap graphic head hi item label lb list note num orig p pb publisher pubPlace q quote ref resp respStmt term textLang title"/>
         <moduleRef key="figures" include="cell figure row table"/>
-        <moduleRef key="header" include="availability editorialDecl encodingDesc fileDesc idno licence publicationStmt seriesStmt sourceDesc teiHeader textClass titleStmt"/>
+        <moduleRef key="header" include="availability fileDesc idno licence publicationStmt seriesStmt sourceDesc teiHeader textClass titleStmt"/>
         <moduleRef key="namesdates" include="orgName persName placeName settlement"/>
         <moduleRef key="tagdocs" include="gi"/>
         <moduleRef key="tei"/>
@@ -75,8 +75,6 @@
         <specGrpRef target="elements/date.intro.xml"/> <!-- ok -->
         <specGrpRef target="elements/div.intro.xml"/> <!-- ok -->
         <specGrpRef target="elements/editor.intro.xml"/> <!-- ok -->
-        <specGrpRef target="elements/editorialDecl.xml"/>
-        <specGrpRef target="elements/encodingDesc.xml"/>
         <specGrpRef target="elements/figure.xml"/>
         <specGrpRef target="elements/fileDesc.xml"/>
         <specGrpRef target="elements/foreign.xml"/>
