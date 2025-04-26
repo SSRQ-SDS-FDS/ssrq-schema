@@ -34,7 +34,7 @@
         <moduleRef key="namesdates" include="orgName persName placeName settlement"/>
         <moduleRef key="tagdocs" include="gi"/>
         <moduleRef key="tei"/>
-        <moduleRef key="textstructure" include="back body div TEI text"/>
+        <moduleRef key="textstructure" include="body div TEI text"/>
         <!-- own modules -->
         <specGrpRef target="commons/modules.odd.xml#ssrq-modules"/>
         <!-- attribute classes -->
@@ -69,7 +69,6 @@
         <!-- additional translations -->
         <!-- element specifications -->
         <specGrpRef target="elements/availability.xml"/>
-        <specGrpRef target="elements/back.xml"/>
         <specGrpRef target="elements/bibl.xml"/>
         <specGrpRef target="elements/body.xml"/>
         <specGrpRef target="elements/cb.xml"/>
