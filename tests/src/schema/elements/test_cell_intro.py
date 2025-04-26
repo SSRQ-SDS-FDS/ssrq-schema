@@ -38,7 +38,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "invalid-cell-with-wrong-content",
-            '<cell><div><p>foo</p></div></cell>',
+            "<cell><div><p>foo</p></div></cell>",
             False,
         ),
     ],

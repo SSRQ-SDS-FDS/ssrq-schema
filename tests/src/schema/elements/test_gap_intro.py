@@ -21,7 +21,6 @@ from ..conftest import RNG_test_function
             "<gap source='urn:ssrq:SSRQ-ZH-NF_II_11-74-1#n17.1-17.4'/>",
             False,
         ),
-
     ],
 )
 def test_gap_rng(
