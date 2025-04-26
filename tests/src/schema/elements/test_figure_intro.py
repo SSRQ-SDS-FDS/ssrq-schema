@@ -10,7 +10,7 @@ from ..conftest import RNG_test_function
             "valid-figure",
             """
             <figure>
-                <graphic type='map' mimeType='image/svg' url='foo.svg'/>
+                <graphic url='foo.svg'/>
                 <head>Foo</head>
             </figure>
             """,
@@ -20,7 +20,7 @@ from ..conftest import RNG_test_function
             "invalid-figure-with-type",
             """
             <figure type="illustration">
-                <graphic type='map' mimeType='image/svg' url='foo.svg'/>
+                <graphic url='foo.svg'/>
                 <head>Foo</head>
             </figure>
             """,
@@ -30,7 +30,7 @@ from ..conftest import RNG_test_function
             "invalid-figure-without-head",
             """
             <figure>
-                <graphic type='map' mimeType='image/svg' url='foo.svg'/>
+                <graphic url='foo.svg'/>
             </figure>
             """,
             False,
