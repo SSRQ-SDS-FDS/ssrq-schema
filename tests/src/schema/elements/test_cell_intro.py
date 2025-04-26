@@ -17,9 +17,9 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-cell-with-rend",
+            "invalid-cell-with-rend",
             "<cell rend='align-bottom'>foo</cell>",
-            True,
+            False,
         ),
         (
             "valid-cell-with-bibl",
@@ -37,13 +37,8 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "invalid-cell-with-wrong-rend",
-            '<cell rend="bar">foo</cell>',
-            False,
-        ),
-        (
             "invalid-cell-with-wrong-content",
-            '<cell rend="bar"><div><p>foo</p></div></cell>',
+            '<cell><div><p>foo</p></div></cell>',
             False,
         ),
     ],
