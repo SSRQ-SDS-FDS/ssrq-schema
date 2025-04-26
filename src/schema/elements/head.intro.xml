@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="head" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Überschrift</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">heading</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">titre</gloss>
+  <classes mode="replace">
+    <memberOf key="model.headLike"/>
+  </classes>
+  <content>
+    <sequence preserveOrder="false" maxOccurs="unbounded">
+      <textNode/>
+      <elementRef key="pc" minOccurs="0"/>
+    </sequence>
+    <textNode/>
+  </content>
+</elementSpec>
