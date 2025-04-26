@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="date" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Datum</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">date</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">date</gloss>
+  <classes mode="replace">
+    <memberOf key="att.datable.custom"/>
+    <memberOf key="att.typed"/>
+    <memberOf key="macro.dateLike"/>
+    <memberOf key="model.publicationStmtPart.detail"/>
+  </classes>
+  <content/>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-date-publicationStmt" mode="add">
+    <desc xml:lang="en" versionDate="2025-02-08">constraint for tei:date inside tei:publicationStmt</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:date">
+          <sch:assert test=".[@when-custom or (@from-custom and @to-custom)][not(@notAfter-custom|@notBefore-custom)]">
+            tei:date must contain @when-custom or @from-custom and to-custom, and may not contain
+            @notAfter-custom or @notBefore-custom.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="type" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-02-03">die Art des Datums</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the type of date</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">le type de date</desc>
+      <datatype>
+        <dataRef key="ssrq-lit.type.date"/>
+      </datatype>
+    </attDef>
+  </attList>
+</elementSpec>
