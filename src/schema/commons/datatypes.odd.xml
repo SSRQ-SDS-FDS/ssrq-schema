@@ -3391,6 +3391,30 @@
         </valList>
       </content>
     </macroSpec>
+    <macroSpec ident="ssrq-intro.role.resp.de" mode="add">
+      <desc xml:lang="de" versionDate="2025-01-30">die Aufgaben der Beteiligten des Projektes</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the task of those involved in the project</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les tâches des participants au projet</desc>
+      <content>
+        <valList type="closed" xml:lang="de">
+          <valItem ident="Herausgabe"/>
+          <valItem ident="Qualitätskontrolle"/>
+          <valItem ident="XML-Codierung"/>
+        </valList>
+      </content>
+    </macroSpec>
+    <macroSpec ident="ssrq-intro.role.resp.fr" mode="add">
+      <desc xml:lang="de" versionDate="2025-01-30">die Aufgaben der Beteiligten des Projektes</desc>
+      <desc xml:lang="en" versionDate="2025-01-30">the task of those involved in the project</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">les tâches des participants au projet</desc>
+      <content>
+        <valList type="closed" xml:lang="fr">
+          <valItem ident="Contrôle de qualité"/>
+          <valItem ident="Encodage XML"/>
+          <valItem ident="Publication"/>
+        </valList>
+      </content>
+    </macroSpec>
   </specGrp>
   <specGrp xml:id="ssrq-target">
     <dataSpec ident="ssrq.target.licence" mode="add">
