@@ -31,7 +31,7 @@
         <moduleRef key="core" include="bibl date editor foreign gap graphic head hi note orig p publisher q quote ref resp respStmt term textLang title"/>
         <moduleRef key="figures" include="cell figure row table"/>
         <moduleRef key="header" include="availability fileDesc idno licence publicationStmt seriesStmt sourceDesc teiHeader textClass titleStmt"/>
-        <moduleRef key="namesdates" include="orgName persName settlement"/>
+        <moduleRef key="namesdates" include="orgName persName"/>
         <moduleRef key="tagdocs" include="gi"/>
         <moduleRef key="tei"/>
         <moduleRef key="textstructure" include="body div TEI text"/>
@@ -99,7 +99,6 @@
         <specGrpRef target="elements/resp.intro.xml"/> <!-- ok -->
         <specGrpRef target="elements/respStmt.xml"/> <!-- ok -->
         <specGrpRef target="elements/row.intro.xml"/> <!-- ok -->
-        <specGrpRef target="elements/settlement.xml"/>
         <specGrpRef target="elements/seriesStmt.xml"/>
         <specGrpRef target="elements/sourceDesc.intro.xml"/>
         <specGrpRef target="elements/table.xml"/>
