@@ -10,11 +10,18 @@
     <memberOf key="att.global"/>
   </classes>
   <content>
-    <alternate maxOccurs="unbounded">
-      <elementRef key="bibl"/>
-      <elementRef key="ref"/>
-      <macroRef key="ssrq.content.default"/>
-    </alternate>
+    <sequence preserveOrder="false">
+      <textNode/>
+      <alternate minOccurs="0" maxOccurs="unbounded">
+        <elementRef key="bibl"/>
+        <elementRef key="foreign"/>
+        <elementRef key="hi"/>
+        <elementRef key="orig"/>
+        <elementRef key="pc"/>
+        <elementRef key="q"/>
+        <elementRef key="quote"/>
+      </alternate>
+    </sequence>
   </content>
   <attList>
     <attDef ident="n" mode="delete"/>
