@@ -31,7 +31,7 @@
     <attDef ident="place" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2025-02-04">der Ort des anonymen Textblocks</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the place of the anonymous block</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">le lieu du bloc anonyme</desc>
+      <desc xml:lang="fr" versionDate="2025-04-28">l’emplacement du bloc anonyme</desc>
       <datatype>
         <rng:choice>
           <rng:ref name="ssrq.place"/>
@@ -94,17 +94,17 @@
         direction to be followed is not uniform, i.e. a dorsual note is upside down, a comment is
         necessary.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-05">
+  <remarks xml:lang="fr" versionDate="2025-04-28">
     <p>Nous utilisons l’élément avec les attributs <att>type</att> et <att>place</att> pour toutes
-        sortes de notes telles que les notes dorsales, les notes de bureau ou les notes de registre,
+        sortes de notes telles que les notes dorsales, les notes de chancellerie ou les notes de greffe,
         ainsi que pour les notes marginales.</p>
-    <p>Les notes sont incluses par ordre chronologique. Les notes créées en même temps sont
-        toujours répertoriées au même endroit en raison de l’ordre chronologique. Si p. ex.
+    <p>Les notes sont disposées par ordre chronologique. Les notes créées en même temps sont
+        toujours répertoriées au même endroit selon l’ordre chronologique. Si p. ex.
         une note dorsale apparaît en premier au dos d’une missive, suivie de l’adresse et enfin
-        de deux autres notes dorsales, alors l’adresse est toujours la première, car c’est la
-        première entrée chronologiquement.</p>
+        de deux autres notes dorsales, l’adresse figure tout de même en première position, car elle
+        est la première mention chronologiquement parlant.</p>
     <p>Dans le cas des documents papaux, les notes sont données dans l’ordre suivant : d’abord
-        les notes sous la plica, puis celles sur la plica et enfin les notes au dos du
+        les notes sous le repli (plica), puis celles sur le repli et enfin les notes au dos du
         document.</p>
     <p>Toutes les notes simultanées sont enregistrées dans le sens de lecture de haut en bas
           et de gauche à droite. Si le sens de lecture à suivre n’est pas clair, p. ex. si
