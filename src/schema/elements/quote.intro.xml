@@ -11,8 +11,14 @@
     <memberOf key="model.quoteLike"/>
   </classes>
   <content>
-    <sequence maxOccurs="unbounded">
-      <macroRef key="ssrq.content.default"/>
+    <sequence maxOccurs="unbounded" preserveOrder="false">
+      <textNode/>
+      <alternate minOccurs="0">
+        <elementRef key="hi"/>
+        <elementRef key="orig"/>
+        <elementRef key="pc"/>
+        <elementRef key="note"/>
+      </alternate>
     </sequence>
   </content>
   <attList>

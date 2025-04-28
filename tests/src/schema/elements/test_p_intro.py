@@ -11,6 +11,21 @@ from ..conftest import RNG_test_function
             "<p><gi>foo</gi></p>",
             True,
         ),
+        (
+            "invalid-p-with-n",
+            "<p n='1'><gi>foo</gi></p>",
+            False,
+        ),
+        (
+            "invalid-p-with-xml-lang",
+            "<p xml:lang='fr'><gi>foo</gi></p>",
+            False,
+        ),
+        (
+            "invalid-p-with-seg",
+            "<p><seg>foo</seg><seg>bar</seg></p>",
+            False,
+        ),
     ],
 )
 def test_p(

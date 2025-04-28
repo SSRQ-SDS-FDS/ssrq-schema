@@ -28,13 +28,13 @@
       <schemaSpec ident="ssrq-intro-schema" docLang="de en fr">
         <!-- TEI modules used -->
         <moduleRef key="analysis" include="pc"/>
-        <moduleRef key="core" include="author bibl cb date editor foreign gap graphic head hi item label lb list note num orig p pb publisher pubPlace q quote ref resp respStmt term textLang title"/>
+        <moduleRef key="core" include="bibl date editor foreign gap graphic head hi note orig p publisher q quote ref resp respStmt title"/>
         <moduleRef key="figures" include="cell figure row table"/>
-        <moduleRef key="header" include="availability editorialDecl encodingDesc fileDesc idno licence publicationStmt seriesStmt sourceDesc teiHeader textClass titleStmt"/>
-        <moduleRef key="namesdates" include="orgName persName placeName settlement"/>
+        <moduleRef key="header" include="availability fileDesc idno licence publicationStmt seriesStmt sourceDesc teiHeader titleStmt"/>
+        <moduleRef key="namesdates" include="orgName persName"/>
         <moduleRef key="tagdocs" include="gi"/>
         <moduleRef key="tei"/>
-        <moduleRef key="textstructure" include="back body div TEI text"/>
+        <moduleRef key="textstructure" include="body div TEI text"/>
         <!-- own modules -->
         <specGrpRef target="commons/modules.odd.xml#ssrq-modules"/>
         <!-- attribute classes -->
@@ -46,83 +46,52 @@
         <!-- datatypes
         ToDo: Remove unused datatypes, will make it necessary to create a few extra element specifications
          -->
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-agent"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-date-time"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-dur-iso"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-dimensions"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-hand"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-lang"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-measure"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-n"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-orig-type"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-period"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-place"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-quantity"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-reason"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-rend"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-role"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-target"/>
         <specGrpRef target="commons/datatypes.odd.xml#ssrq-type"/>
-        <specGrpRef target="commons/datatypes.odd.xml#ssrq-xmlid"/>
         <!-- patterns -->
         <specGrpRef target="commons/patterns.odd.xml#ssrq-patterns"/>
-        <!-- additional translations -->
         <!-- element specifications -->
-        <specGrpRef target="elements/author.xml"/>
         <specGrpRef target="elements/availability.xml"/>
-        <specGrpRef target="elements/back.xml"/>
-        <specGrpRef target="elements/bibl.xml"/>
-        <specGrpRef target="elements/body.xml"/>
-        <specGrpRef target="elements/cb.xml"/>
+        <specGrpRef target="elements/bibl.intro.xml"/>
+        <specGrpRef target="elements/body.intro.xml"/>
         <specGrpRef target="elements/cell.intro.xml"/>
-        <specGrpRef target="elements/date.xml"/>
+        <specGrpRef target="elements/date.intro.xml"/>
         <specGrpRef target="elements/div.intro.xml"/>
-        <specGrpRef target="elements/editor.xml"/>
-        <specGrpRef target="elements/editorialDecl.xml"/>
-        <specGrpRef target="elements/encodingDesc.xml"/>
-        <specGrpRef target="elements/figure.xml"/>
+        <specGrpRef target="elements/editor.intro.xml"/>
+        <specGrpRef target="elements/figure.intro.xml"/>
         <specGrpRef target="elements/fileDesc.xml"/>
-        <specGrpRef target="elements/foreign.xml"/>
-        <specGrpRef target="elements/gap.xml"/>
+        <specGrpRef target="elements/foreign.intro.xml"/>
+        <specGrpRef target="elements/gap.intro.xml"/>
         <specGrpRef target="elements/gi.intro.xml"/>
-        <specGrpRef target="elements/graphic.xml"/>
-        <specGrpRef target="elements/head.xml"/>
+        <specGrpRef target="elements/graphic.intro.xml"/>
+        <specGrpRef target="elements/head.intro.xml"/>
         <specGrpRef target="elements/hi.xml"/>
-        <specGrpRef target="elements/idno.xml"/>
-        <specGrpRef target="elements/item.xml"/>
-        <specGrpRef target="elements/label.xml"/>
-        <specGrpRef target="elements/lb.xml"/>
+        <specGrpRef target="elements/idno.intro.xml"/>
         <specGrpRef target="elements/licence.xml"/>
-        <specGrpRef target="elements/list.xml"/>
         <specGrpRef target="elements/note.intro.xml"/>
-        <specGrpRef target="elements/num.xml"/>
-        <specGrpRef target="elements/orgName.xml"/>
-        <specGrpRef target="elements/orig.xml"/>
+        <specGrpRef target="elements/orgName.intro.xml"/>
+        <specGrpRef target="elements/orig.intro.xml"/>
         <specGrpRef target="elements/p.intro.xml"/>
-        <specGrpRef target="elements/pb.xml"/>
         <specGrpRef target="elements/pc.xml"/>
-        <specGrpRef target="elements/persName.xml"/>
-        <specGrpRef target="elements/placeName.xml"/>
-        <specGrpRef target="elements/publisher.xml"/>
+        <specGrpRef target="elements/persName.intro.xml"/>
+        <specGrpRef target="elements/publisher.intro.xml"/>
         <specGrpRef target="elements/publicationStmt.xml"/>
-        <specGrpRef target="elements/pubPlace.xml"/>
-        <specGrpRef target="elements/q.xml"/>
+        <specGrpRef target="elements/q.intro.xml"/>
         <specGrpRef target="elements/quote.intro.xml"/>
         <specGrpRef target="elements/ref.intro.xml"/>
-        <specGrpRef target="elements/resp.xml"/>
+        <specGrpRef target="elements/resp.intro.xml"/>
         <specGrpRef target="elements/respStmt.xml"/>
-        <specGrpRef target="elements/row.xml"/>
-        <specGrpRef target="elements/settlement.xml"/>
+        <specGrpRef target="elements/row.intro.xml"/>
         <specGrpRef target="elements/seriesStmt.xml"/>
         <specGrpRef target="elements/sourceDesc.intro.xml"/>
-        <specGrpRef target="elements/table.xml"/>
-        <specGrpRef target="elements/teiHeader.xml"/>
+        <specGrpRef target="elements/table.intro.xml"/>
+        <specGrpRef target="elements/teiHeader.intro.xml"/>
         <specGrpRef target="elements/TEI.xml"/>
-        <specGrpRef target="elements/term.xml"/>
         <specGrpRef target="elements/text.intro.xml"/>
-        <specGrpRef target="elements/textClass.xml"/>
-        <specGrpRef target="elements/textLang.xml"/>
-        <specGrpRef target="elements/title.xml"/>
+        <specGrpRef target="elements/title.intro.xml"/>
         <specGrpRef target="elements/titleStmt.xml"/>
       </schemaSpec>
     </body>

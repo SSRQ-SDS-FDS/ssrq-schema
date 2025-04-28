@@ -36,12 +36,12 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
     ],
 )
 def test_publisher(
-    test_lit_with_rng: RNG_test_function,
+    test_intro_with_rng: RNG_test_function,
     name: str,
     markup: str,
     result: bool,
 ):
-    test_lit_with_rng("publisher", name, markup, result, False)
+    test_intro_with_rng("publisher", name, markup, result, False)
 
 
 @pytest.mark.parametrize(

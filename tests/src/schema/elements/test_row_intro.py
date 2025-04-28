@@ -17,7 +17,7 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-row-with-measureGrp",
+            "invalid-row-with-measureGrp",
             """
             <row>
                 <measureGrp>
@@ -26,7 +26,7 @@ from ..conftest import RNG_test_function
                 </measureGrp>
             </row>
             """,
-            True,
+            False,
         ),
         (
             "invalid-row-with-wrong-content",
@@ -36,9 +36,9 @@ from ..conftest import RNG_test_function
     ],
 )
 def test_row(
-    test_element_with_rng: RNG_test_function,
+    test_intro_with_rng: RNG_test_function,
     name: str,
     markup: str,
     result: bool,
 ):
-    test_element_with_rng("row", name, markup, result, False)
+    test_intro_with_rng("row", name, markup, result, False)

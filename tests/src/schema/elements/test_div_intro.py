@@ -22,18 +22,18 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-div-with-list",
+            "invalid-div-with-list",
             "<div><list><item>foo</item></list></div>",
-            True,
+            False,
         ),
         (
             "invalid-div-with-one-div",
-            "<div><div>foo</div></div>",
+            "<div><div><p>foo</p></div></div>",
             False,
         ),
         (
             "valid-div-with-two-divs",
-            "<div><div>foo</div><div>bar</div></div>",
+            "<div><div><p>foo</p></div><div><p>bar</p></div></div>",
             True,
         ),
         (
@@ -41,8 +41,8 @@ from ..conftest import RNG_test_function
             """
             <div>
                 <head>foo</head>
-                <div>foo</div>
-                <div>bar</div>
+                <div><p>foo</p></div>
+                <div><p>bar</p></div>
             </div>
             """,
             True,

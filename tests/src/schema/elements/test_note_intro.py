@@ -19,7 +19,7 @@ from ..conftest import RNG_test_function
         (
             "valid-note-with-ref",
             "<note><ref>foo</ref></note>",
-            True,
+            False,
         ),
         (
             "valid-note-with-xml:id",

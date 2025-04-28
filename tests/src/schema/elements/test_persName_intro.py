@@ -29,9 +29,9 @@ from ..conftest import RNG_test_function
     ],
 )
 def test_pers_name(
-    test_lit_with_rng: RNG_test_function,
+    test_intro_with_rng: RNG_test_function,
     name: str,
     markup: str,
     result: bool,
 ):
-    test_lit_with_rng("persName", name, markup, result, False)
+    test_intro_with_rng("persName", name, markup, result, False)
