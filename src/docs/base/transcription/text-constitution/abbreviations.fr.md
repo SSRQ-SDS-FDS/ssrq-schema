@@ -26,16 +26,16 @@ marquées de [`<abbr>`](abbr.fr.md).
 
     Les habitudes orthographiques du scribe sont prises en compte
     sans marquage particulier.
-    Certaines abréviations telles que «Ao» = «anno» et les terminaisons
+    Certaines abréviations telles que « Ao » = « anno » et les terminaisons
     sont résolues silencieusement (voir [normalisation](normalization.fr.md)).
     
     Dans certains cas ambigus, il est préférable de reproduire un
     mot abrégé tel quel.
 
     Exemples :  
-    fr. «sr» = «sieur» ou «seigneur» ?  
-    fr. «monsr» = «monsieur» ou «monseigneur» ?  
-    fr. «me» = «maître ou «messire» ?
+    fr. « sr » = « sieur » ou « seigneur » ?  
+    fr. « monsr » = « monsieur » ou « monseigneur » ?  
+    fr. « me » = « maître ou « messire » ?
 
     Bei der Auflösung von Abkürzungen sollte so weit wie möglich auf
     Schreibweisen zurückgegriffen werden, die in anderen Teilen des

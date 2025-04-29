@@ -30,7 +30,7 @@ Exemples :
 
 ## Lieux en noms personnels
 
-Dans le cas des noms personnels composites, qui est clair que le «von NN» est un nom de famille et
+Dans le cas des noms personnels composites, qui est clair que le « von NN » est un nom de famille et
 non un nom de lieu, le nom personnel entier est composé avec [`<persName>`](persName.fr.md).
 
 Les lieux dans les noms personnels ne sont excellents que s’il n’est pas certain que ce soit un
@@ -67,12 +67,12 @@ Des recherches plus détaillées conduiraient éventuellement à des corrections
 Les noms de personne et de famille sont répertoriés sous l’orthographe utilisée aujourd’hui 
 conformément à [HLS](https://hls-dhs-dss.ch/de/),
 [HBLS](https://www.digibern.ch/katalog/historisch-biographisches-lexikon-der-schweiz)
-et [«Familiennamenbuch der Schweiz»](https://hls-dhs-dss.ch/famn/?pagename=famn2).
+et [« Familiennamenbuch der Schweiz »](https://hls-dhs-dss.ch/famn/?pagename=famn2).
 Les noms qui ne peuvent pas être attribués sont standardisés par le modifié.
-L’absence d’un nom de famille ou d’un prénom est donnée comme l’abréviation «NN»
-(«Nomen nominandum»).
-Les prénoms raccourcis tels que «Jörg» ou «Trina» sont généralement normalisés pour les prénoms
-communs («Georg» ou «Katharina») ;
+L’absence d’un nom de famille ou d’un prénom est donnée comme l’abréviation « NN »
+(« Nomen nominandum »).
+Les prénoms raccourcis tels que « Jörg » ou « Trina » sont généralement normalisés pour les prénoms
+communs (« Georg » ou « Katharina ») ;
 Les exceptions sont des abréviations, dont la normalisation ne peut pas être développée à partir
 des aides linguistiques.
 

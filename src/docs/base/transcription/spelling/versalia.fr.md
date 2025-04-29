@@ -5,7 +5,7 @@
 Les majuscules ne sont appliquées que lettre par lettre.
 
 Exemple :  
-«WJR» est transcrit comme «wir».
+« WJR » est transcrit comme « wir ».
 
 ## Minuscules
 
@@ -36,9 +36,9 @@ Exemple :
     En cas de doute, les lettres minuscules sont privilégiées.
     
     Exemples :  
-    «oben am bühel»  
-    «eidgenossen» (s’il s’agit vraiment des Confédérés suisses, «Eidgenossen» est en majuscule)  
-    «walser»
+    « oben am bühel »  
+    « eidgenossen » (s’il s’agit vraiment des Confédérés suisses, « Eidgenossen » est en majuscule)  
+    « walser »
 
 === "Textes français"
 
@@ -46,12 +46,12 @@ Exemple :
     il prend une majuscule en français.
 
     Exemples :  
-    «Le Conseil de Ville»  
-    «le Greffier de la Ville»  
-    «Ecclesia» mais: «ecclesia Sancti Nicolaii»  
-    «la Curia regis»  
-    «la Cour du roi»  
-    «la Chambre apostolique des comptes»
+    « Le Conseil de Ville »  
+    « le Greffier de la Ville »  
+    « Ecclesia » mais : « ecclesia Sancti Nicolaii »  
+    « la Curia regis »  
+    « la Cour du roi »  
+    « la Chambre apostolique des comptes »
 
 ## Termes respectueux et salutations
 
@@ -62,26 +62,26 @@ Exemple :
 
 === "Exemple allemand"
 
-    «üwer gnaden»
+    « üwer gnaden »
 
 === "Exemples français"
 
-    «messeigneurs»  
-    «le roy»  
-    «monsieur l’ambassadeur»  
-    «monsieur le prevost des marchans de la ville de Paris»  
-    «honorable et provide homme Pierre Nonans»  
-    «le cardinal Richelieu»  
-    «le duc de Savoie»  
-    «l’abbé prieur de la communauté des Carmes»  
-    «vostre excellence»
+    « messeigneurs »  
+    « le roy »  
+    « monsieur l’ambassadeur »  
+    « monsieur le prevost des marchans de la ville de Paris »  
+    « honorable et provide homme Pierre Nonans »  
+    « le cardinal Richelieu »  
+    « le duc de Savoie »  
+    « l’abbé prieur de la communauté des Carmes »  
+    « vostre excellence »
 
 === "Exemples latins"
 
-    «rex Francorum»  
-    «rex Francie»  
-    «pontifex Romanus»  
-    «excellentia sua, Karolus imperator»
+    « rex Francorum »  
+    « rex Francie »  
+    « pontifex Romanus »  
+    « excellentia sua, Karolus imperator »
 
 ## Nomina Sacra
 
@@ -95,26 +95,26 @@ Exemple :
 
 === "Exemple allemand"
 
-    «gott»
+    « gott »
 
 === "Exemples français"
 
-    «Seigneur», «le Seigneur»  
-    «au nom de nostre Seigneur Jesu Crist»  
-    «la saincte Vierge»
+    « Seigneur », « le Seigneur »  
+    « au nom de nostre Seigneur Jesu Crist »  
+    « la saincte Vierge »
 
 === "Exemples latins"
 
-    «Redemptor»  
-    «Filius»  
-    «Dominus»  
-    «Deus»  
-    «Jesus Christus»  
-    «in nomine Domini et Filii et Spiritus Sancti»  
-    «in nomine Creatoris»  
-    «in nomine sancte et individue Trinitatis»  
-    «beata Maria virginis»  
-    «beata Virgo»
+    « Redemptor »  
+    « Filius »  
+    « Dominus »  
+    « Deus »  
+    « Jesus Christus »  
+    « in nomine Domini et Filii et Spiritus Sancti »  
+    « in nomine Creatoris »  
+    « in nomine sancte et individue Trinitatis »  
+    « beata Maria virginis »  
+    « beata Virgo »
 
 ## Noms de saints, noms de fêtes
 
@@ -126,14 +126,14 @@ Exemple :
     mais les noms des saints sont généralement écrits en majuscules.
     
     Exemples :  
-    «sonntag»  
-    «unser frowen tag ze dem ärnde»  
-    «erzengel Michael»  
-    «st. Johann baptiste»  
-    «ostern»  
-    «liechtmess»  
-    «uff donrstag nach sant Jacobs des meren zwölffbotten tag»  
-    «uff donstag vor unser lieben frowen»
+    « sonntag »  
+    « unser frowen tag ze dem ärnde »  
+    « erzengel Michael »  
+    « st. Johann baptiste »  
+    « ostern »  
+    « liechtmess »  
+    « uff donrstag nach sant Jacobs des meren zwölffbotten tag »  
+    « uff donstag vor unser lieben frowen »
 
 === "Textes français et latins"
 
@@ -143,33 +143,33 @@ Exemple :
     en latin et en vieux français.
     
     Exemples :  
-    «idus aprilis»  
-    «la feste de la Sant Johan»  
-    «a festo Nativitatis»  
-    «festum Sancti Michaelis»
-    «Adventus»  
-    «Carnisprivium»  
-    «Quadragesima»  
-    «Quatuor tempora»  
-    «Rogationes»
+    « idus aprilis »  
+    « la feste de la Sant Johan »  
+    « a festo Nativitatis »  
+    « festum Sancti Michaelis »
+    « Adventus »  
+    « Carnisprivium »  
+    « Quadragesima »  
+    « Quatuor tempora »  
+    « Rogationes »
 
     Lors des fêtes des saints, il n’est pas approprié d’utiliser un trait d’union,
     comme ce serait le cas en français moderne (la Saint-Jean).
-    L’épithète «saint» n’est pas en majuscule lorsqu’on parle de la personne du
+    L’épithète « saint » n’est pas en majuscule lorsqu’on parle de la personne du
     saint lui-même, mais elle est en majuscule lorsqu’on parle de sa fête.
     
     Exemples :  
-    «sainct Jehan, prie por nous»  
-    «a la Sainct Jehan»
+    « sainct Jehan, prie por nous »  
+    « a la Sainct Jehan »
 
 ## Expressions composées
 
 Dans les expressions composées, seul le premier mot est en majuscule.
 
 Exemples :  
-«a Mey quaresma, die qua cantabitur Letare, le jeudi après Jubilate»  
-«Rami palmarum»  
-«Omnes sancti»
+« a Mey quaresma, die qua cantabitur Letare, le jeudi après Jubilate »  
+« Rami palmarum »  
+« Omnes sancti »
 
 ## Adjectifs
 
@@ -178,23 +178,23 @@ une majuscule s’ils font référence à une institution, une fonction, une
 personne physique ou morale, etc.
 
 Exemples :  
-«episcopus Constantiensis»  
-«episcopus Lausannensis»  
-«maior Lustriaci»  
-«diocesis Sedunensis»  
-«comes Flandrensis»  
-«ecclesia Gebennensis»
+« episcopus Constantiensis »  
+« episcopus Lausannensis »  
+« maior Lustriaci »  
+« diocesis Sedunensis »  
+« comes Flandrensis »  
+« ecclesia Gebennensis »
 
 En revanche, les adjectifs sont en minuscules lorsqu’ils font référence
 à un objet (par exemple une monnaie ou une unité de mesure).
 
 Exemples :  
-«quinque solidos lausannenses»  
-«quinque solidos lausannensium» (dans Gen. Pl., lorsque l’expression «bonorum lausannensium»
+« quinque solidos lausannenses »  
+« quinque solidos lausannensium » (dans Gen. Pl., lorsque l’expression « bonorum lausannensium »
 est implicite)  
-«ad mensuram lausannensem»  
-«consuetudines lausannenses»  
-«lingua gallica»
+« ad mensuram lausannensem »  
+« consuetudines lausannenses »  
+« lingua gallica »
 
 ## Noms propres en plusieurs parties
 
@@ -202,18 +202,18 @@ Pour les noms propres composés (en particulier les noms de lieux)
 composés de deux parties ou plus, chaque composant est en majuscule.
 
 Exemples :  
-«zum Grossen Münster»  
-«an der Underen Straass»  
-«ein acker ze dem Bösen Möslin»  
-«St. Pelayenstift»  
-«Farvanye lo Pictet (Farvagny-le-Petit)»  
-«Dompnus Martinus (Dommartin)»  
-«Lo Landiron (Le Landeron)»
+« zum Grossen Münster »  
+« an der Underen Straass »  
+« ein acker ze dem Bösen Möslin »  
+« St. Pelayenstift »  
+« Farvanye lo Pictet (Farvagny-le-Petit) »  
+« Dompnus Martinus (Dommartin) »  
+« Lo Landiron (Le Landeron) »
 
 Exceptions :  
-«il a traversé le pont Neuf»  
-«il habite la rue des Bouchers»  
-«il a acheté un verger dans le quartier des Jardins suspendus»  
+« il a traversé le pont Neuf »  
+« il habite la rue des Bouchers »  
+« il a acheté un verger dans le quartier des Jardins suspendus »  
 
 ## Noms des champs
 
@@ -225,9 +225,9 @@ répertoires de noms de champs ([ortsnamen.ch](https://ortsnamen.ch/)), de sorte
 majuscule est certainement correcte.
 
 Exemples :  
-Nom du champ «Egg» versus appellatif «egg».  
-Un champ qui se trouve «eis Pereretz» ou «im Sapeit».  
-D’un autre côté, on écrit «la domus dicta de bont».
+Nom du champ « Egg » versus appellatif « egg ».  
+Un champ qui se trouve « eis Pereretz » ou « im Sapeit ».  
+D’un autre côté, on écrit « la domus dicta de bont ».
 
 ## Noms de famille composés
 
@@ -237,9 +237,9 @@ Si l’attribut nom d’un nom de famille est en majuscule dans l’orthographe 
 cela doit également être fait dans l’édition.
 
 Exemples :  
-«Hartman von Werdenberg»  
-«Peter a Pro»  
+« Hartman von Werdenberg »  
+« Peter a Pro »  
 
 Exceptions :  
-«Hans Zum Brunnen» (Zumbrunnen)  
-«Beat Zur Louben» (Zurlauben)
+« Hans Zum Brunnen » (Zumbrunnen)  
+« Beat Zur Louben » (Zurlauben)

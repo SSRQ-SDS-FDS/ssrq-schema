@@ -24,9 +24,9 @@
     [Diplomatik (dt.)](http://www.hist-hh.uni-bamberg.de/hilfswiss/diplomatik.html), 
     [Diplomatik (frz.)](http://theleme.enc.sorbonne.fr/cours/diplomatique).
 
-    Les formules finales des documents commençant par «actum» sont traitées
-    comme des paragraphes. Après «actum» vient «coram consilio», «coram senatu»,
-    «presentibus», etc. après une virgule. Un point est inséré à la fin des formules
+    Les formules finales des documents commençant par « actum » sont traitées
+    comme des paragraphes. Après « actum » vient « coram consilio », « coram senatu »,
+    « presentibus », etc. après une virgule. Un point est inséré à la fin des formules
     (cf. [ponctuation](punctuation.fr.md)).
 
 === "Structure des paratextes éditoriaux"
@@ -56,7 +56,7 @@ sont marqués de [`<head>`](head.fr.md).
 
 === "dans le texte édité"
 
-    Le discours direct qui était mis en évidence par `«...»` dans l’édition
+    Le discours direct qui était mis en évidence par `« ... »` dans l’édition
     analogique est marqué par [`<q>`](q.fr.md) dans l’édition numérique.
     
     Les citations dans un texte (par exemple les documents publiés) sont

@@ -12,12 +12,12 @@ de la langue et des périodes.
 La logique de tri des dates ou des périodes est la suivante :
 
 - Les dates plus anciennes sont confrontées à des dates plus récentes, p. ex. est dans les deux 
-  périodes suivantes «7.–10. saec.» avant «8.–9. saec.».
-- Tout ce qui pourrait être avant une date est également classé avant cela. P. ex. «18. saec.» 
-  (1.1.1701–31.12.1800) avant «1800».
+  périodes suivantes « 7.–10. saec. » avant « 8.–9. saec. ».
+- Tout ce qui pourrait être avant une date est également classé avant cela. P. ex. « 18. saec. » 
+  (1.1.1701–31.12.1800) avant « 1800 ».
 - Si deux dates commencent avec des périodes différentes à la même date, la datation plus détaillée
-  est confrontée à l’imposition, p. ex. «6.–7. saec.» avant «6.–8. saec.» et «1300–1350» avant
-  «1300–1375».
+  est confrontée à l’imposition, p. ex. « 6.–7. saec. » avant « 6.–8. saec. » et « 1300–1350 » avant
+  « 1300–1375 ».
 - S’il y a deux dates avec la même période, mais le calendrier sous-jacent est inconnu dans l’une
   des dates (`@calendar="unknown"`), ensuite, la datation avec un calendrier connu est d’abord,
   donc `<date calendar="julian" when="1590-01-01/>` avant
@@ -105,7 +105,7 @@ Exemples :
 
 #### 3.2.2 Datations non claires qui peuvent être attribuées
 
-Les informations annuelles dangereuses, p. ex. «probablement 1491», sont attribuées
+Les informations annuelles dangereuses, p. ex. « probablement 1491 », sont attribuées
 avec [`<precision>`](precision.fr.md).
 Exemple :
 
@@ -140,16 +140,16 @@ Les dates qui ne sont pas claires et ne peuvent pas être attribuées doivent ê
 précisément que possible en tant que périodes avec `@notBefore-custom`und` @notAfter-custom` et
 [`<precision>`](precision.fr.md).
 
-| Exemple                    | Valeurs `@notBefore-custom` et `@notAfter-custom` | Période                 |
-|----------------------------|---------------------------------------------------|-------------------------|
-| avant 1700                 | 1675-01-01/1699-12-31                             | -25 Années              |
-| après 1700                 | 1701-01-01/1725-12-31                             | +25 Années              |
-| autour 1700                | 1690-01-01/1710-12-31                             | +/-10 Années            |
-| probablement 1700 ou 1700? | 1700-01-01/1700-12-31                             | 1 Année                 |
-| avant 20. Novembre 1700    | 1700-01-01/1700-11-19                             | Dès le début de l’année |
-| après 20. Novembre 1700    | 1700-11-21/1700-12-31                             | À la fin de l’année     |
-| avant Octobre 1700         | 1700-07-01/1700-09-30                             | -3 Mois                 |
-| après Octobre 1700         | 1700-11-01/1701-01-31                             | +3 Mois                 |
+| Exemple                     | Valeurs `@notBefore-custom` et `@notAfter-custom` | Période                 |
+|-----------------------------|---------------------------------------------------|-------------------------|
+| avant 1700                  | 1675-01-01/1699-12-31                             | -25 Années              |
+| après 1700                  | 1701-01-01/1725-12-31                             | +25 Années              |
+| autour 1700                 | 1690-01-01/1710-12-31                             | +/-10 Années            |
+| probablement 1700 ou 1700 ? | 1700-01-01/1700-12-31                             | 1 Année                 |
+| avant 20. Novembre 1700     | 1700-01-01/1700-11-19                             | Dès le début de l’année |
+| après 20. Novembre 1700     | 1700-11-21/1700-12-31                             | À la fin de l’année     |
+| avant Octobre 1700          | 1700-07-01/1700-09-30                             | -3 Mois                 |
+| après Octobre 1700          | 1700-11-01/1701-01-31                             | +3 Mois                 |
 
 #### 3.2.4 Datations _post quem_ et _ante quem_
 
@@ -171,7 +171,7 @@ Exemple :
 
 La même chose s’applique, à l’inverse, pour datations _ante quem_.
 
-## 4 «Faux» / Modifications de la datation
+## 4 « Faux » / Modifications de la datation
 
 Si un faux est modifié, la date de falsification est pertinente et non la datation dans le texte
 source. Un commentaire explicatif est nécessaire.
@@ -193,7 +193,7 @@ ont été utilisés, les réglementations suivantes s’appliquent :
     ```
 2. Si une source spécifie une date dans les deux styles (double datation), la date est utilisée
    dans les attributs en fonction du nouveau style.
-   Exemple:
+   Exemple :
     ```
     <date when-custom="1590-10-25"
           calendar="gregorian">25/15. octobris anno 90</date>
@@ -204,7 +204,7 @@ ont été utilisés, les réglementations suivantes s’appliquent :
 4. Lorsqu’il n’est pas certain dans lequel le style était daté et justifié des doutes sur une
    datation selon un nouveau style, cela est enregistré dans `@calendar` avec la valeur `unknown`.
    Une note avec [`<note>`](note.fr.md) est utile dans ces cas.
-   Exemple:
+   Exemple :
     ```
     <date from-custom="1588-09-03" to-custom="1588-09-20"
           calendar="unknown">Zwischen 3. und 20. September 1588</date>
@@ -232,7 +232,7 @@ style (StALU RP 39, fol. 7r).
 
 Dans la communauté de Thurgau, l’utilisation du nouveau style en 1584 a conduit à des tensions
 entre Zurich et les cinq emplacements intérieurs. Le 6 mars 1585, le Statut de Baden Day a fait la
-célébration des festivals de l’église selon le nouveau calendrier; Cependant, les évangéliques ont
+célébration des festivals de l’église selon le nouveau calendrier ; Cependant, les évangéliques ont
 été autorisés à célébrer Noël, Stephanstag, le Nouvel An, Pâques, l’ascension et la Pentecôte à
 l’ancien.
 
@@ -265,17 +265,17 @@ avec l’attribute `@calendar`.
 Le style de rendez-vous s’applique dans le diocèse de Lausanne et à Freiburg depuis le début à la 
 seconde moitié du XVe siècle, sinon dans le diocèse de Lausanne jusqu’au 1er moitié du XVIe siècle.
 
-Dans [SDS FR I/2/6](http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5), le style d’annonce avec «n. st.» (= «style nouveau»), mais la date est
+Dans [SDS FR I/2/6](http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5), le style d’annonce avec « n. st. » (= « style nouveau »), mais la date est
 dissoute selon le calendrier moderne.
 Exemple :
 ```
  Ordonnance au sujet des voies de fait. 1364 (n. st.) février 4. –
- La datation suivante est dans la source:
- «... <date calendar="julian_annunciation" when-custom="1363-02-04">lo quar jor
+ La datation suivante est dans la source :
+ « ... <date calendar="julian_annunciation" when-custom="1363-02-04">lo quar jor
  dou moys de febrier, in l’ant de Nostre Segnour corant per
- mil CCC et sexante et troys</date> ...»
+ mil CCC et sexante et troys</date> ... »
 ```
 
 Parce que le 4 février est maintenant entre le 1er janvier (ou tout au plus le 25 décembre) et le
-25 mars (= Annuntiation Mariä), l’éditeur modifie à juste titre le «4. Février 1363» comme le
-«4. Février 1364».
+25 mars (= Annuntiation Mariä), l’éditeur modifie à juste titre le « 4. Février 1363 » comme le
+« 4. Février 1364 ».
