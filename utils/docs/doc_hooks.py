@@ -64,6 +64,7 @@ def on_post_build(config: MkDocsConfig):
                 (
                     create_main_schema(),
                     create_schema_by_entry(entry_point="intro.odd.xml"),
+                    create_schema_by_entry(entry_point="lit.odd.xml"),
                 ),
             )
         ),
