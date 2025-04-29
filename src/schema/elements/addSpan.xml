@@ -9,8 +9,8 @@
   <desc xml:lang="de" versionDate="2025-02-05">Markiert eine grössere, die Hierarchiegrenzen
     überschreitende Hinzufügung eines Schreibers.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Denotes major additions.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Marque un ajout majeur d’un scribe qui traverse les
-    limites de la hiérarchie.</desc>
+  <desc xml:lang="fr" versionDate="2025-04-29">Marque l’ajout de la part d’un scribe d’une
+    importante séquence de texte qui ne peut être signalée seulement par un <gi>add</gi>.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.placement"/>
@@ -36,7 +36,7 @@
     <attDef ident="rend" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-04">das verwendete Schreibmittel</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the writing means used</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d’écriture utilisé</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d’écriture utilisés</desc>
       <datatype>
         <dataRef key="ssrq.rend.add"/>
       </datatype>
@@ -66,9 +66,9 @@
         addition was made (pencil, other ink, etc.). If an addition is the hand of the first
         scribe, then the hand is not specifically noted.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-05">
+  <remarks xml:lang="fr" versionDate="2025-04-29">
     <p>Les mêmes règles s’appliquent à <gi>addSpan</gi> qu’à <gi>add</gi> (voir ici).</p>
-    <p>De plus, l’attribut <att>spanTo</att> fait nécessairement référence au point final de
-      l’ajout, qui est marqué par <gi>anchor</gi>.</p>
+    <p>De plus, l’attribut <att>spanTo</att> est utilisé pour faire référence au point final du
+      passage ajouté, qui est marqué par <gi>anchor</gi>.</p>
   </remarks>
 </elementSpec>
