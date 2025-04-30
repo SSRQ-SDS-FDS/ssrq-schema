@@ -60,10 +60,14 @@ def test_graphic(
     ],
 )
 def test_graphic_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+    intro_constraints: str,
+    writer: SimpleTEIWriter,
+    name: str,
+    markup: str,
+    result: bool,
 ):
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
+        input=writer.list(), isosch=intro_constraints
     )
     assert reports[0].report.is_valid() is result

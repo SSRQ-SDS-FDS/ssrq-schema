@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="listBibl" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="listBibl" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2023-09-14">Liste bibliographischer Angaben</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">list of bibliographical statements</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">liste des déclarations bibliographiques</gloss>
@@ -14,8 +14,21 @@
       <elementRef key="head"/>
       <alternate>
         <elementRef key="bibl" maxOccurs="unbounded"/>
-        <elementRef key="listBibl" maxOccurs="unbounded"/>
+        <elementRef key="listBibl" minOccurs="2" maxOccurs="unbounded"/>
       </alternate>
     </sequence>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-listBibl-lit" mode="add">
+    <desc xml:lang="en" versionDate="2025-04-30">constraint for nesting of tei:listBibl</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:listBibl">
+          <sch:assert test="count(ancestor::tei:listBibl) &lt;= 1">
+              The element tei:listBibl may only be nested once inside another tei:listBibl.
+              Here are too many nesting levels.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
 </elementSpec>
