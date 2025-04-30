@@ -60,11 +60,11 @@ def test_publisher(
     ],
 )
 def test_publisher_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+    lit_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
+        input=writer.list(), isosch=lit_constraints
     )
 
     if (

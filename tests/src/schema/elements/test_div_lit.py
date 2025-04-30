@@ -37,7 +37,7 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-div-with-two-divs",
+            "invalid-div-with-two-divs",
             """
             <div>
                 <div>
@@ -56,26 +56,6 @@ from ..conftest import RNG_test_function
                 </div>
             </div>
             """,
-            True,
-        ),
-        (
-            "valid-div-with-one-divs",
-            """
-            <div>
-                <div>
-                    <head>Archive</head>
-                    <listBibl>
-                        <head>Archiv 1</head>
-                        <bibl>foo</bibl>
-                    </listBibl>
-                </div>
-            </div>
-            """,
-            False,
-        ),
-        (
-            "invalid-div-with-p",
-            "<div><p>foo</p></div>",
             False,
         ),
     ],

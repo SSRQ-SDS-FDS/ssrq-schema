@@ -144,18 +144,42 @@ def writer(tmp_path: Path) -> SimpleTEIWriter:
 
 
 @pytest.fixture(scope="session")
-def main_schema(odds: list[tuple[Schema, list[ElName]]]) -> Schema:
+def find_schema_by_name(
+    odds: list[tuple[Schema, list[ElName]]],
+) -> Callable[[str], Schema]:
     """A fixture, which returns the main ssrq schema."""
     try:
-        return [odd for odd, _ in odds if odd.name == "TEI_Schema"][0]
+        return lambda name: [odd for odd, _ in odds if odd.name == name][0]
     except IndexError:
-        raise ValueError("No main schema found")
+        raise ValueError("No schema with this name found")
 
 
 @pytest.fixture(scope="session")
-def main_constraints(main_schema: Schema) -> str:
+def main_constraints(find_schema_by_name: Callable[[str], Schema]) -> str:
     """A fixture, which returns the schematron rules from the main schema."""
-    extracted_rules = extract_schematron_from_relaxng(main_schema.rng)
+    extracted_rules = extract_schematron_from_relaxng(
+        find_schema_by_name("TEI_Schema").rng
+    )
+
+    return create_schematron_stylesheet(extracted_rules)
+
+
+@pytest.fixture(scope="session")
+def lit_constraints(find_schema_by_name: Callable[[str], Schema]) -> str:
+    """A fixture, which returns the schematron rules from the Lit schema."""
+    extracted_rules = extract_schematron_from_relaxng(
+        find_schema_by_name("TEI_Lit").rng
+    )
+
+    return create_schematron_stylesheet(extracted_rules)
+
+
+@pytest.fixture(scope="session")
+def intro_constraints(find_schema_by_name: Callable[[str], Schema]) -> str:
+    """A fixture, which returns the schematron rules from the Intro schema."""
+    extracted_rules = extract_schematron_from_relaxng(
+        find_schema_by_name("TEI_Intro").rng
+    )
 
     return create_schematron_stylesheet(extracted_rules)
 
