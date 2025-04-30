@@ -14,11 +14,11 @@ Schöffen, Siebner, Stuhlsässen, Pfleger etc. ne sont pas attribués avec [`<or
 
 ## Différenciation entre l’organisation et le lieu
 
-Ce doit être avec des termes tels que «Eidgenossenschaft» se distingue que ce soit une organisation
+Ce doit être avec des termes tels que « Eidgenossenschaft » se distingue que ce soit une organisation
 ou un nom géographique.
-Pour la «Eidgenossenschaft» [`<placeName>`](placeName.fr.md) est utilisé, mais pour les
-«Eidgenossen» [`<orgName>`](orgName.fr.md).
-La «Eidgenossenschaft» est capitalisé dans l’édition tandis que le «Eidgenossen» comme organisation
+Pour la « Eidgenossenschaft » [`<placeName>`](placeName.fr.md) est utilisé, mais pour les
+« Eidgenossen » [`<orgName>`](orgName.fr.md).
+La « Eidgenossenschaft » est capitalisé dans l’édition tandis que le « Eidgenossen » comme organisation
 ne sont pas capitalisé.
 
 Lors de la dénomination de l’empire, il faut décider s’il s’agit de l’espace ou du territoire ou
@@ -30,7 +30,7 @@ paroisse en tant qu’organisation de Kirchenossenschaft peut être étiquetée 
 [base de données personnelle](https://personae.ssrq-sds-fds.ch/).
 
 
-Dès qu’un «lieu» se produit dans un conflit en tant que partie intérimaire, le parti doit être
+Dès qu’un « lieu » se produit dans un conflit en tant que partie intérimaire, le parti doit être
 reconnu comme une organisation et non comme un lieu.
 
 Exemple :  
