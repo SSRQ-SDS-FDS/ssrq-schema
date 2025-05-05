@@ -14,7 +14,6 @@
       structurer le texte source.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
-    <memberOf key="att.global.responsibility"/>
     <memberOf key="model.segLike"/>
   </classes>
   <content>
@@ -35,7 +34,6 @@
     </alternate>
   </content>
   <attList>
-    <attDef ident="cert" mode="delete"/>
     <attDef ident="n" mode="change">
       <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Segments</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the numbering of the segment</desc>

@@ -19,7 +19,7 @@ from ..conftest import RNG_test_function
         (
             "invalid-seg-with-resp",
             "<seg resp='PS'>foo</seg>",
-            True,
+            False,
         ),
         (
             "valid-seg-with-content-default",
