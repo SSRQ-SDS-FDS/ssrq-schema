@@ -1,6 +1,8 @@
 import pytest
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -50,3 +52,28 @@ def test_ab_rng(
     result: bool,
 ):
     test_element_with_rng("ab", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-ab-with-hi-and-text",
+            "<ab type='dorsal' place='left_margin'><hi rend='italic'>Foo</hi> bar</ab>",
+            True,
+        ),
+        (
+            "invalid-ab-with-hi-only",
+            "<ab type='dorsal' place='left_margin'><hi rend='rotated_180'>Foo</hi> </ab>",
+            False,
+        ),
+    ],
+)
+def test_ab_constraints(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].report.is_valid() is result
