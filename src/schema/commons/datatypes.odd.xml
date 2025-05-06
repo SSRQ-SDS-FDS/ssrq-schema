@@ -3097,15 +3097,9 @@
         </valList>
       </content>
     </dataSpec>
-    <dataSpec ident="ssrq.rend.hi" mode="add">
+    <dataSpec ident="ssrq.rend.font" mode="add">
       <content>
         <valList type="closed">
-          <valItem ident="center">
-            <desc xml:lang="de" versionDate="2023-05-23">zentriert</desc>
-            <desc xml:lang="en" versionDate="2023-05-23">centered</desc>
-            <desc xml:lang="fr" versionDate="2023-05-23">centré</desc>
-            <desc xml:lang="it" versionDate="2023-05-23">centrato</desc>
-          </valItem>
           <valItem ident="font_change">
             <desc xml:lang="de" versionDate="2023-05-23">Schriftwechsel</desc>
             <desc xml:lang="en" versionDate="2023-05-23">font change</desc>
@@ -3124,42 +3118,6 @@
             <desc xml:lang="fr" versionDate="2023-05-23">cursif</desc>
             <desc xml:lang="it" versionDate="2023-05-23">corsivo</desc>
           </valItem>
-          <valItem ident="left">
-            <desc xml:lang="de" versionDate="2023-05-23">linksbündig</desc>
-            <desc xml:lang="en" versionDate="2023-05-23">left</desc>
-            <desc xml:lang="fr" versionDate="2023-05-23">aligné à gauche</desc>
-            <desc xml:lang="it" versionDate="2023-05-23">allineato a sinistra</desc>
-          </valItem>
-          <valItem ident="outdent">
-            <desc xml:lang="de" versionDate="2023-05-23">hängender Einzug</desc>
-            <desc xml:lang="en" versionDate="2023-05-23">outdent</desc>
-            <desc xml:lang="fr" versionDate="2023-05-23">dans la marge</desc>
-            <desc xml:lang="it" versionDate="2023-05-23">a margine</desc>
-          </valItem>
-          <valItem ident="right">
-            <desc xml:lang="de" versionDate="2023-08-16">rechtsbündig</desc>
-            <desc xml:lang="en" versionDate="2023-05-23">right</desc>
-            <desc xml:lang="fr" versionDate="2023-05-23">aligné à droite</desc>
-            <desc xml:lang="it" versionDate="2023-05-23">allineato a destra</desc>
-          </valItem>
-          <valItem ident="rotated_90">
-            <desc xml:lang="de" versionDate="2024-03-08">um 90 Grad im Uhrzeigersinn gedreht</desc>
-            <desc xml:lang="en" versionDate="2024-03-08">rotated 90 degrees clockwise</desc>
-            <desc xml:lang="fr" versionDate="2024-03-08">tourné de 90 degrés dans le sens des aiguilles d’une montre</desc>
-            <desc xml:lang="it" versionDate="2024-03-08">ruotato di 90 gradi in senso orario</desc>
-          </valItem>
-          <valItem ident="rotated_180">
-            <desc xml:lang="de" versionDate="2024-03-08">um 180 Grad im Uhrzeigersinn gedreht</desc>
-            <desc xml:lang="en" versionDate="2024-03-08">rotated 180 degrees clockwise</desc>
-            <desc xml:lang="fr" versionDate="2024-03-08">tourné de 180 degrés dans le sens des aiguilles d’une montre</desc>
-            <desc xml:lang="it" versionDate="2024-03-08">ruotato di 180 gradi in senso orario</desc>
-          </valItem>
-          <valItem ident="rotated_270">
-            <desc xml:lang="de" versionDate="2024-03-08">um 270 Grad im Uhrzeigersinn gedreht</desc>
-            <desc xml:lang="en" versionDate="2024-03-08">rotated 270 degrees clockwise</desc>
-            <desc xml:lang="fr" versionDate="2024-03-08">tourné de 270 degrés dans le sens des aiguilles d’une montre</desc>
-            <desc xml:lang="it" versionDate="2024-03-08">ruotato di 270 gradi in senso orario</desc>
-          </valItem>
           <valItem ident="rubricated">
             <desc xml:lang="de" versionDate="2023-05-23">rubriziert</desc>
             <desc xml:lang="en" versionDate="2023-05-23">rubricated</desc>
@@ -3177,6 +3135,60 @@
             <desc xml:lang="en" versionDate="2023-05-23">underlined</desc>
             <desc xml:lang="fr" versionDate="2023-05-23">souligné</desc>
             <desc xml:lang="it" versionDate="2023-05-23">sottolineato</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.rend.placement" mode="add">
+      <content>
+        <valList type="closed">
+          <valItem ident="center">
+            <desc xml:lang="de" versionDate="2023-05-23">zentriert</desc>
+            <desc xml:lang="en" versionDate="2023-05-23">centered</desc>
+            <desc xml:lang="fr" versionDate="2023-05-23">centré</desc>
+            <desc xml:lang="it" versionDate="2023-05-23">centrato</desc>
+          </valItem>
+          <valItem ident="left">
+            <desc xml:lang="de" versionDate="2023-05-23">linksbündig</desc>
+            <desc xml:lang="en" versionDate="2023-05-23">left</desc>
+            <desc xml:lang="fr" versionDate="2023-05-23">aligné à gauche</desc>
+            <desc xml:lang="it" versionDate="2023-05-23">allineato a sinistra</desc>
+          </valItem>
+          <valItem ident="right">
+            <desc xml:lang="de" versionDate="2023-08-16">rechtsbündig</desc>
+            <desc xml:lang="en" versionDate="2023-05-23">right</desc>
+            <desc xml:lang="fr" versionDate="2023-05-23">aligné à droite</desc>
+            <desc xml:lang="it" versionDate="2023-05-23">allineato a destra</desc>
+          </valItem>
+          <valItem ident="outdent">
+            <desc xml:lang="de" versionDate="2023-05-23">hängender Einzug</desc>
+            <desc xml:lang="en" versionDate="2023-05-23">outdent</desc>
+            <desc xml:lang="fr" versionDate="2023-05-23">dans la marge</desc>
+            <desc xml:lang="it" versionDate="2023-05-23">a margine</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+    <dataSpec ident="ssrq.rend.rotation" mode="add">
+      <content>
+        <valList type="closed">
+          <valItem ident="rotated_90">
+            <desc xml:lang="de" versionDate="2024-03-08">um 90 Grad im Uhrzeigersinn gedreht</desc>
+            <desc xml:lang="en" versionDate="2024-03-08">rotated 90 degrees clockwise</desc>
+            <desc xml:lang="fr" versionDate="2024-03-08">tourné de 90 degrés dans le sens des aiguilles d’une montre</desc>
+            <desc xml:lang="it" versionDate="2024-03-08">ruotato di 90 gradi in senso orario</desc>
+          </valItem>
+          <valItem ident="rotated_180">
+            <desc xml:lang="de" versionDate="2024-03-08">um 180 Grad im Uhrzeigersinn gedreht</desc>
+            <desc xml:lang="en" versionDate="2024-03-08">rotated 180 degrees clockwise</desc>
+            <desc xml:lang="fr" versionDate="2024-03-08">tourné de 180 degrés dans le sens des aiguilles d’une montre</desc>
+            <desc xml:lang="it" versionDate="2024-03-08">ruotato di 180 gradi in senso orario</desc>
+          </valItem>
+          <valItem ident="rotated_270">
+            <desc xml:lang="de" versionDate="2024-03-08">um 270 Grad im Uhrzeigersinn gedreht</desc>
+            <desc xml:lang="en" versionDate="2024-03-08">rotated 270 degrees clockwise</desc>
+            <desc xml:lang="fr" versionDate="2024-03-08">tourné de 270 degrés dans le sens des aiguilles d’une montre</desc>
+            <desc xml:lang="it" versionDate="2024-03-08">ruotato di 270 gradi in senso orario</desc>
           </valItem>
         </valList>
       </content>

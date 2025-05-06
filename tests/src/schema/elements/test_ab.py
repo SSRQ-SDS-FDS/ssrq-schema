@@ -39,6 +39,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-ab-with-rend-rotated",
+            "<ab type='dorsal' place='left_margin' rend='rotated_180'>Foo</ab>",
+            True,
+        ),
+        (
             "valid-ab-with-xml-lang",
             "<ab type='dorsal' place='left_margin' xml:lang='de'>Foo</ab>",
             True,

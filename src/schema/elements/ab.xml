@@ -53,11 +53,12 @@
       </datatype>
     </attDef>
     <attDef ident="rend" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-04">das verwendete Schreibmittel</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the writing means used</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d’écriture utilisé</desc>
       <datatype>
-        <dataRef key="ssrq.rend.add"/>
+        <rng:choice>
+          <rng:ref name="ssrq.rend.add"/>
+          <rng:ref name="ssrq.rend.placement"/>
+          <rng:ref name="ssrq.rend.rotation"/>
+        </rng:choice>
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace" usage="req">
