@@ -34,8 +34,6 @@
           </sch:assert>
         </sch:rule>
       </sch:pattern>
-    </constraint>
-    <constraint>
       <sch:pattern>
         <sch:rule context="tei:p[tei:ab]">
           <sch:assert test="./tei:ab[@type = 'marginal_note']">
