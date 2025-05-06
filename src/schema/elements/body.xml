@@ -30,12 +30,14 @@
       <sch:pattern>
         <sch:rule context="tei:body[parent::tei:text[@type = 'collection']]">
           <sch:assert test="every $child in ./* satisfies $child/name() = 'bibl'">
-                It's only allowed to use bibl-elements in a body, which is part of a text with type 'collection'.
+              It's only allowed to use tei:bibl-elements directly inside tei:body, when tei:body
+              is part of tei:text with type="collection".
           </sch:assert>
         </sch:rule>
         <sch:rule context="tei:body[parent::tei:text[not(@type = 'collection')]]">
           <sch:report test=".[tei:bibl]">
-                It's only allowed to use bibl-elements in a body, which is part of a text with type 'collection'.
+            It's only allowed to use tei:bibl-elements directly inside tei:body, when tei:body
+            is part of tei:text with type="collection".
           </sch:report>
         </sch:rule>
       </sch:pattern>
