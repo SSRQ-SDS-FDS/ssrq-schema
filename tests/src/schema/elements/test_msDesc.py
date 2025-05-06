@@ -209,7 +209,7 @@ def test_ms_desc_rng(
         ),
         (
             "valid-msDesc-without-physDesc-and-adminInfo-and-text-type-collection",
-            "<TEI><msDesc/><text type='collection'><body><div><p>foo</p></div></body></text></TEI>",
+            "<TEI><msDesc/><text type='collection'><body><bibl><ref>foo</ref></bibl><bibl><ref>bar</ref></bibl></body></text></TEI>",
             True,
         ),
         (
