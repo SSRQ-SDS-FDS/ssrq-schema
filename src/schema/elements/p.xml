@@ -35,6 +35,15 @@
         </sch:rule>
       </sch:pattern>
     </constraint>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:p[tei:ab]">
+          <sch:assert test="./tei:ab[@type = 'marginal_note']">
+                    If tei:ab is used inside <sch:name/> the type must always have the value 'marginal_note'.
+                </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
   </constraintSpec>
   <attList>
     <attDef ident="n" mode="change">
