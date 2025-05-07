@@ -26,8 +26,8 @@
       <sch:pattern>
         <sch:rule context="tei:subst">
           <sch:report test="tei:add[following-sibling::tei:del]">
-                        When used in <sch:name/> add must always follow del.
-                    </sch:report>
+            tei:del must come before tei:add when used inside tei:subst.
+          </sch:report>
         </sch:rule>
       </sch:pattern>
     </constraint>
