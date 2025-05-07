@@ -31,6 +31,11 @@ from ..conftest import RNG_test_function
             "<abbr><unclear>foobar</unclear></abbr>",
             True,
         ),
+        (
+            "valid-abbr-with-subst",
+            "<abbr><subst><del>bar></del><add place='above'>baz</add></subst></abbr>",
+            True,
+        ),
     ],
 )
 def test_abbr(
