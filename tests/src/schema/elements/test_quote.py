@@ -24,6 +24,21 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-quote-with-paragraphs",
+            "<quote><p>1</p><p>2</p></quote>",
+            True,
+        ),
+        (
+            "ivalid-quote-with-paragraph",
+            "<quote><p>1</p></quote>",
+            False,
+        ),
+        (
+            "invalid-quote-with-paragraph-and-seg",
+            "<quote><p>1</p><p>2</p><seg>3</seg><seg>4</seg></quote>",
+            False,
+        ),
+        (
             "invalid-quote-with-mixed-content",
             "<quote><seg>1</seg>baz</quote>",
             False,
