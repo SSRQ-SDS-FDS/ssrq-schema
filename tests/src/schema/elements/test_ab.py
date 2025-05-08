@@ -64,12 +64,32 @@ def test_ab_rng(
     [
         (
             "valid-ab-with-hi-and-text",
-            "<ab type='dorsal' place='left_margin'><hi rend='italic'>Foo</hi> bar</ab>",
+            "<ab type='marginal_note' place='left_margin'><hi rend='italic'>Foo</hi> bar</ab>",
             True,
         ),
         (
             "invalid-ab-with-hi-only",
-            "<ab type='dorsal' place='left_margin'><hi rend='rotated_180'>Foo</hi> </ab>",
+            "<ab type='marginal_note' place='left_margin'><hi rend='rotated_180'>Foo</hi> </ab>",
+            False,
+        ),
+        (
+            "valid-marginal-note",
+            "<ab type='marginal_note' place='left_margin'>foo</ab>",
+            True,
+        ),
+        (
+            "invalid-marginal-note-with-wrong-place",
+            "<ab type='marginal_note' place='interlinear'>foo</ab>",
+            False,
+        ),
+        (
+            "valid-dorsal",
+            "<ab type='dorsal' place='verso_above'>foo</ab>",
+            True,
+        ),
+        (
+            "invalid-dorsal-with-wrong-place",
+            "<ab type='dorsal' place='left_margin'>foo</ab>",
             False,
         ),
     ],

@@ -84,7 +84,7 @@ def test_p(
         ),
         (
             "valid-p-with-ab",
-            "<p>foo<ab type='marginal_note'>bar</ab></p>",
+            "<p>foo<ab type='marginal_note' place='left_margin'>bar</ab></p>",
             True,
         ),
         (

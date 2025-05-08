@@ -27,13 +27,27 @@
     </sequence>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-ab">
-    <desc xml:lang="en" versionDate="2025-05-06">constraint for tei:ab</desc>
+    <desc xml:lang="en" versionDate="2025-05-08">constraints for tei:ab</desc>
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:ab[tei:hi]">
           <sch:report test=".[count(*) = 1][string-length(normalize-space(string-join(text(), ''))) = 0]" xml:lang="en" role="warning">
-                        If no further text is used inside <sch:name/> and tei:hi is the only child, consider to use the rend-attribute of <sch:name/>.
-                    </sch:report>
+            If no further text is used inside <sch:name/> and tei:hi is the only child, consider
+            using the rend-attribute of <sch:name/>.
+          </sch:report>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern>
+        <sch:rule context="tei:ab[@type='marginal_note']">
+          <sch:assert test=".[@place[contains(., 'margin')]]" xml:lang="en">
+            If tei:ab is of type marginal_note, its place must be either 'left_margin' or
+            'right_margin'.
+          </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:ab[@type='dorsal']">
+          <sch:assert test=".[@place[contains(., 'verso')]]" xml:lang="en">
+            If tei:ab is of type dorsal, its place must be on the verso page.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
