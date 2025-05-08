@@ -49,6 +49,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-div-with-two-divs-and-a-head",
+            "<div><head>baz</head><div>foo</div><div>bar</div></div>",
+            True,
+        ),
+        (
             "valid-div-with-two-divs-and-milestones",
             """
             <div>
@@ -79,6 +84,16 @@ def test_div(
             "valid-div-without-text",
             "<div><p>foo</p></div>",
             True,
+        ),
+        (
+            "valid-div-with-a-head-following-div",
+            "<div><head>foo</head><div><p>foo</p></div><div><p>foo</p></div></div>",
+            True,
+        ),
+        (
+            "invalid-div-with-a-head-following-div",
+            "<div><div><p>foo</p></div><head>foo</head><div><p>foo</p></div></div>",
+            False,
         ),
         (
             "invalid-div-with-text",
@@ -119,4 +134,5 @@ def test_div_text_constraint(
     reports: list[SchematronResult] = apply_schematron_validation(
         input=writer.list(), isosch=main_constraints
     )
+
     assert reports[0].report.is_valid() is result
