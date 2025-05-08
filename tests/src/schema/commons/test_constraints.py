@@ -477,7 +477,7 @@ def test_constraint_sch_duplicate_attribute_values(
     [
         (
             "invalid-empty-ab",
-            "<ab type='dorsal' place='cover'/>",
+            "<ab type='address' place='cover'/>",
             False,
         ),
         (

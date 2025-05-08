@@ -82,6 +82,16 @@ def test_p(
             "<div><p xml:lang='de'>foo</p><p>foo</p></div>",
             False,
         ),
+        (
+            "valid-p-with-ab",
+            "<p>foo<ab type='marginal_note' place='left_margin'>bar</ab></p>",
+            True,
+        ),
+        (
+            "invalid-p-with-ab",
+            "<p>foo<ab type='tax'>bar</ab></p>",
+            False,
+        ),
     ],
 )
 def test_p_constraints(

@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="ab" module="linking" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="ab" module="linking" mode="change">
   <gloss xml:lang="de" versionDate="2023-06-30">anonymer Textblock</gloss>
   <gloss xml:lang="en" versionDate="2023-06-30">anonymous block</gloss>
   <gloss xml:lang="fr" versionDate="2023-06-30">bloc anonyme</gloss>
@@ -26,6 +26,32 @@
       <macroRef key="ssrq.content.default"/>
     </sequence>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-ab">
+    <desc xml:lang="en" versionDate="2025-05-08">constraints for tei:ab</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:ab[tei:hi]">
+          <sch:report test=".[count(*) = 1][string-length(normalize-space(string-join(text(), ''))) = 0]" xml:lang="en" role="warning">
+            If no further text is used inside <sch:name/> and tei:hi is the only child, consider
+            using the rend-attribute of <sch:name/>.
+          </sch:report>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern>
+        <sch:rule context="tei:ab[@type='marginal_note']">
+          <sch:assert test=".[@place[contains(., 'margin')]]" xml:lang="en">
+            If tei:ab is of type marginal_note, its place must be either 'left_margin' or
+            'right_margin'.
+          </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:ab[@type='dorsal']">
+          <sch:assert test=".[@place[contains(., 'verso')]]" xml:lang="en">
+            If tei:ab is of type dorsal, its place must be on the verso page.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <attList>
     <attDef ident="n" mode="delete"/>
     <attDef ident="place" mode="replace" usage="req">
@@ -41,11 +67,12 @@
       </datatype>
     </attDef>
     <attDef ident="rend" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-04">das verwendete Schreibmittel</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the writing means used</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d’écriture utilisé</desc>
       <datatype>
-        <dataRef key="ssrq.rend.add"/>
+        <rng:choice>
+          <rng:ref name="ssrq.rend.add"/>
+          <rng:ref name="ssrq.rend.placement"/>
+          <rng:ref name="ssrq.rend.rotation"/>
+        </rng:choice>
       </datatype>
     </attDef>
     <attDef ident="type" mode="replace" usage="req">
