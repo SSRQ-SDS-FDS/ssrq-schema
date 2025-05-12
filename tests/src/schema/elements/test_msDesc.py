@@ -203,6 +203,9 @@ def test_ms_desc_rng(
                             </support>
                         </supportDesc>
                     </objectDesc>
+                    <bindingDesc>
+                        <p>Foo</p>
+                    </bindingDesc>
                 </physDesc>
             </msDesc>""",
             True,
@@ -266,6 +269,9 @@ def test_ms_desc_rng(
                               </support>
                            </supportDesc>
                         </objectDesc>
+                        <bindingDesc>
+                            <p>Foo</p>
+                        </bindingDesc>
                      </physDesc>
                     <history>
                         <origin>
@@ -290,6 +296,9 @@ def test_ms_desc_rng(
                               </support>
                            </supportDesc>
                         </objectDesc>
+                        <bindingDesc>
+                            <p>Foo</p>
+                        </bindingDesc>
                      </physDesc>
                      <history>
                         <origin>
@@ -315,6 +324,9 @@ def test_ms_desc_rng(
                               </support>
                            </supportDesc>
                         </objectDesc>
+                        <bindingDesc>
+                            <p>Foo</p>
+                        </bindingDesc>
                      </physDesc>
                      <history>
                         <origin>
@@ -339,6 +351,9 @@ def test_ms_desc_rng(
                               </support>
                            </supportDesc>
                         </objectDesc>
+                        <bindingDesc>
+                            <p>Foo</p>
+                        </bindingDesc>
                      </physDesc>
                      <history>
                         <origin>
@@ -363,6 +378,9 @@ def test_ms_desc_rng(
                               </support>
                            </supportDesc>
                         </objectDesc>
+                        <bindingDesc>
+                            <p>Foo</p>
+                        </bindingDesc>
                      </physDesc>
                      <history>
                         <origin>

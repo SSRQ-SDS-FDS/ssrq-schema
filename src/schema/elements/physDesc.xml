@@ -28,8 +28,8 @@
       <sch:pattern>
         <sch:rule context="tei:physDesc">
           <sch:assert test=".[tei:bindingDesc]" role="warning">
-                        Missing tei:bindingDesc als child of <sch:name/>.
-                    </sch:assert>
+            Missing tei:bindingDesc als child of <sch:name/>.
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </constraint>
