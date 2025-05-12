@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="physDesc" module="msdescription" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="physDesc" module="msdescription" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">physische Beschreibung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">physical description</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">description physique</gloss>
@@ -22,6 +22,18 @@
       <elementRef key="sealDesc" minOccurs="0"/>
     </sequence>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-physDesc">
+    <desc xml:lang="en" versionDate="2025-05-08">constraint for tei:physDesc</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:physDesc">
+          <sch:assert test=".[tei:bindingDesc]" role="warning">
+            Missing tei:bindingDesc als child of <sch:name/>.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <xi:include href="examples.xml" xpointer="ex-physDesc-de"/>
   <xi:include href="examples.xml" xpointer="ex-physDesc-en"/>
   <xi:include href="examples.xml" xpointer="ex-physDesc-fr"/>

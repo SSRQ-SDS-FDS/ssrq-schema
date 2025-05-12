@@ -298,6 +298,9 @@ def test_constraint_sch_att_facs(
                                     </support>
                                 </supportDesc>
                             </objectDesc>
+                            <bindingDesc>
+                                <p>Foo</p>
+                            </bindingDesc>
                         </physDesc>
                         <history>
                             <origin>
