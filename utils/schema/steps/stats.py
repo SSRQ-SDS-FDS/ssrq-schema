@@ -2,8 +2,7 @@ import re
 from functools import reduce
 
 from utils.commons.logger import LOGGER
-
-SPECIFIED_ELEMENTS = r'target="elements/(\w+)\.xml"'
+from utils.schema import SPECIFIED_ELEMENTS
 
 
 class Stats:

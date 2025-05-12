@@ -203,13 +203,16 @@ def test_ms_desc_rng(
                             </support>
                         </supportDesc>
                     </objectDesc>
+                    <bindingDesc>
+                        <p>Foo</p>
+                    </bindingDesc>
                 </physDesc>
             </msDesc>""",
             True,
         ),
         (
             "valid-msDesc-without-physDesc-and-adminInfo-and-text-type-collection",
-            "<TEI><msDesc/><text type='collection'><body><div><p>foo</p></div></body></text></TEI>",
+            "<TEI><msDesc/><text type='collection'><body><bibl><ref>foo</ref></bibl><bibl><ref>bar</ref></bibl></body></text></TEI>",
             True,
         ),
         (
@@ -266,6 +269,9 @@ def test_ms_desc_rng(
                               </support>
                            </supportDesc>
                         </objectDesc>
+                        <bindingDesc>
+                            <p>Foo</p>
+                        </bindingDesc>
                      </physDesc>
                     <history>
                         <origin>
@@ -290,6 +296,9 @@ def test_ms_desc_rng(
                               </support>
                            </supportDesc>
                         </objectDesc>
+                        <bindingDesc>
+                            <p>Foo</p>
+                        </bindingDesc>
                      </physDesc>
                      <history>
                         <origin>
@@ -315,6 +324,9 @@ def test_ms_desc_rng(
                               </support>
                            </supportDesc>
                         </objectDesc>
+                        <bindingDesc>
+                            <p>Foo</p>
+                        </bindingDesc>
                      </physDesc>
                      <history>
                         <origin>
@@ -339,6 +351,9 @@ def test_ms_desc_rng(
                               </support>
                            </supportDesc>
                         </objectDesc>
+                        <bindingDesc>
+                            <p>Foo</p>
+                        </bindingDesc>
                      </physDesc>
                      <history>
                         <origin>
@@ -363,6 +378,9 @@ def test_ms_desc_rng(
                               </support>
                            </supportDesc>
                         </objectDesc>
+                        <bindingDesc>
+                            <p>Foo</p>
+                        </bindingDesc>
                      </physDesc>
                      <history>
                         <origin>

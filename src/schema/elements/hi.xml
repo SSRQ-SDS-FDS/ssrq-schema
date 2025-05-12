@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="hi" module="core" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="hi" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Hervorhebung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">highlighting</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">points forts</gloss>
@@ -27,7 +27,11 @@
       <desc xml:lang="en" versionDate="2025-02-03">the appearance of the highlighting</desc>
       <desc xml:lang="fr" versionDate="2025-02-03">l’apparition des points forts</desc>
       <datatype>
-        <dataRef key="ssrq.rend.hi"/>
+        <rng:choice>
+          <rng:ref name="ssrq.rend.font"/>
+          <rng:ref name="ssrq.rend.placement"/>
+          <rng:ref name="ssrq.rend.rotation"/>
+        </rng:choice>
       </datatype>
     </attDef>
   </attList>

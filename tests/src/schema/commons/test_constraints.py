@@ -298,6 +298,9 @@ def test_constraint_sch_att_facs(
                                     </support>
                                 </supportDesc>
                             </objectDesc>
+                            <bindingDesc>
+                                <p>Foo</p>
+                            </bindingDesc>
                         </physDesc>
                         <history>
                             <origin>
@@ -477,7 +480,7 @@ def test_constraint_sch_duplicate_attribute_values(
     [
         (
             "invalid-empty-ab",
-            "<ab type='dorsal' place='cover'/>",
+            "<ab type='address' place='cover'/>",
             False,
         ),
         (

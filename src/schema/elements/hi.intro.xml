@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="hi" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Hervorhebung</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">highlighting</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">points forts</gloss>
+  <classes mode="replace">
+    <memberOf key="att.global.rendition"/>
+    <memberOf key="model.hiLike"/>
+  </classes>
+  <content>
+    <textNode/>
+  </content>
+  <attList>
+    <attDef ident="rend" mode="replace" usage="req">
+      <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Hervorhebung</desc>
+      <desc xml:lang="en" versionDate="2025-02-03">the appearance of the highlighting</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">l’apparition des points forts</desc>
+      <datatype>
+        <dataRef key="ssrq.rend.font"/>
+      </datatype>
+    </attDef>
+  </attList>
+</elementSpec>

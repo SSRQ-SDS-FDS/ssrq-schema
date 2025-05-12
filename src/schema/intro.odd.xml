@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>{{ title }}</title>
+        <author>Bastian Politycki</author>
+        <author>Christian Sonder</author>
+        <author>Pascale Sutter</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>SSRQ-SDS-FDS</publisher>
+        <date when="1970-01-01"/>
+        <idno>{{ version }}</idno>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+                    </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>{{ description }}</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <schemaSpec ident="ssrq-intro-schema" docLang="de en fr">
+        <!-- TEI modules used -->
+        <moduleRef key="analysis" include="pc"/>
+        <moduleRef key="core" include="bibl date editor foreign gap graphic head hi note orig p publisher q quote ref resp respStmt title"/>
+        <moduleRef key="figures" include="cell figure row table"/>
+        <moduleRef key="header" include="availability fileDesc idno licence publicationStmt seriesStmt sourceDesc teiHeader titleStmt"/>
+        <moduleRef key="namesdates" include="orgName persName"/>
+        <moduleRef key="tagdocs" include="gi"/>
+        <moduleRef key="tei"/>
+        <moduleRef key="textstructure" include="body div TEI text"/>
+        <!-- own modules -->
+        <specGrpRef target="commons/modules.odd.xml#ssrq-modules"/>
+        <!-- attribute classes -->
+        <specGrpRef target="commons/classes.odd.xml#ssrq-classes"/>
+        <!-- global constraints -->
+        <specGrpRef target="commons/constraints.odd.xml#constraints"/>
+        <!-- content types -->
+        <specGrpRef target="commons/content.odd.xml#ssrq-default-content-types"/>
+        <!-- datatypes
+        ToDo: Remove unused datatypes, will make it necessary to create a few extra element specifications
+         -->
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-lang"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-rend"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-role"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-target"/>
+        <specGrpRef target="commons/datatypes.odd.xml#ssrq-type"/>
+        <!-- patterns -->
+        <specGrpRef target="commons/patterns.odd.xml#ssrq-patterns"/>
+        <!-- element specifications -->
+        <specGrpRef target="elements/availability.xml"/>
+        <specGrpRef target="elements/bibl.intro.xml"/>
+        <specGrpRef target="elements/body.intro.xml"/>
+        <specGrpRef target="elements/cell.intro.xml"/>
+        <specGrpRef target="elements/date.intro.xml"/>
+        <specGrpRef target="elements/div.intro.xml"/>
+        <specGrpRef target="elements/editor.intro.xml"/>
+        <specGrpRef target="elements/figure.intro.xml"/>
+        <specGrpRef target="elements/fileDesc.xml"/>
+        <specGrpRef target="elements/foreign.intro.xml"/>
+        <specGrpRef target="elements/gap.intro.xml"/>
+        <specGrpRef target="elements/gi.intro.xml"/>
+        <specGrpRef target="elements/graphic.intro.xml"/>
+        <specGrpRef target="elements/head.intro.xml"/>
+        <specGrpRef target="elements/hi.intro.xml"/>
+        <specGrpRef target="elements/idno.intro.xml"/>
+        <specGrpRef target="elements/licence.xml"/>
+        <specGrpRef target="elements/note.intro.xml"/>
+        <specGrpRef target="elements/orgName.intro.xml"/>
+        <specGrpRef target="elements/orig.intro.xml"/>
+        <specGrpRef target="elements/p.intro.xml"/>
+        <specGrpRef target="elements/pc.xml"/>
+        <specGrpRef target="elements/persName.intro.xml"/>
+        <specGrpRef target="elements/publisher.intro.xml"/>
+        <specGrpRef target="elements/publicationStmt.xml"/>
+        <specGrpRef target="elements/q.intro.xml"/>
+        <specGrpRef target="elements/quote.intro.xml"/>
+        <specGrpRef target="elements/ref.intro.xml"/>
+        <specGrpRef target="elements/resp.intro.xml"/>
+        <specGrpRef target="elements/respStmt.xml"/>
+        <specGrpRef target="elements/row.intro.xml"/>
+        <specGrpRef target="elements/seriesStmt.xml"/>
+        <specGrpRef target="elements/sourceDesc.intro.xml"/>
+        <specGrpRef target="elements/table.intro.xml"/>
+        <specGrpRef target="elements/teiHeader.intro.xml"/>
+        <specGrpRef target="elements/TEI.xml"/>
+        <specGrpRef target="elements/text.intro.xml"/>
+        <specGrpRef target="elements/title.intro.xml"/>
+        <specGrpRef target="elements/titleStmt.xml"/>
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>

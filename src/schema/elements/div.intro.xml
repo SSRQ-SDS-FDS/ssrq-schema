@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+        type="application/xml"
+        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="div" module="textstructure" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Abschnitt</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">division</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">division</gloss>
+  <classes mode="replace">
+    <memberOf key="att.global"/>
+    <memberOf key="att.typed"/>
+  </classes>
+  <content>
+    <alternate>
+      <sequence>
+        <elementRef key="head" minOccurs="0"/>
+        <elementRef key="div" minOccurs="2" maxOccurs="unbounded"/>
+      </sequence>
+      <sequence>
+        <elementRef key="head" minOccurs="0"/>
+        <alternate maxOccurs="unbounded">
+          <elementRef key="figure"/>
+          <elementRef key="p"/>
+          <elementRef key="quote"/>
+          <elementRef key="table"/>
+        </alternate>
+      </sequence>
+    </alternate>
+  </content>
+  <attList>
+    <attDef ident="n" mode="change">
+      <desc xml:lang="de" versionDate="2025-01-31">die Nummerierung des Abschnitts</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the numbering of the division</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">la numérotation de la division</desc>
+    </attDef>
+    <attDef ident="type" mode="replace">
+      <desc xml:lang="de" versionDate="2025-01-31">die Art des Abschnitts</desc>
+      <desc xml:lang="en" versionDate="2025-01-31">the type of the division</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type de la division</desc>
+      <datatype>
+        <dataRef key="ssrq.type.div"/>
+      </datatype>
+    </attDef>
+    <attDef ident="xml:id" mode="delete"/>
+  </attList>
+</elementSpec>

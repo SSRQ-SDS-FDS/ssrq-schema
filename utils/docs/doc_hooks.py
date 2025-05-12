@@ -36,12 +36,24 @@ def on_config(config: MkDocsConfig):
 
     nav_config: list[dict[str, list[str | dict[str, str]]]] = config.nav  # type: ignore
 
-    for nav_entry in nav_config:
-        if nav_entry.get("Elements") is not None:
-            for md_spec in created_md_specs:
-                nav_entry["Elements"].append(
-                    {md_spec.nav_title: f"elements/{md_spec.filename}"}
-                )
+    element_navigation = next(
+        (
+            nav_entry["Elements"]
+            for nav_entry in nav_config
+            if nav_entry.get("Elements") is not None
+        ),
+        None,
+    )
+
+    if element_navigation is not None:
+        element_navigation.extend(
+            [
+                new_entry
+                for md_spec in created_md_specs
+                if (new_entry := {md_spec.nav_title: f"elements/{md_spec.filename}"})
+                not in element_navigation
+            ]
+        )
 
 
 @event_priority(50)
@@ -57,9 +69,19 @@ def on_page_markdown(
 
 @event_priority(50)
 def on_post_build(config: MkDocsConfig):
-    schema = create_main_schema()
     store_compiled_schemas(
-        schemas=[schema], out_dir=Path(config.site_dir), omit_version=True
+        schemas=list(
+            filter(
+                None,
+                (
+                    create_main_schema(),
+                    create_schema_by_entry(entry_point="intro.odd.xml"),
+                    create_schema_by_entry(entry_point="lit.odd.xml"),
+                ),
+            )
+        ),
+        out_dir=Path(config.site_dir),
+        omit_version=True,
     )
 
 

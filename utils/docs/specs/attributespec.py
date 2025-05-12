@@ -50,7 +50,6 @@ class AttributeSpec:
             return
 
         output: list[str] = []
-
         for content_part in self.content:
             _, tag_name = split_tag_and_ns(content_part.tag)
             match tag_name:
@@ -83,7 +82,7 @@ class AttributeSpec:
 
                 case "ref":
                     LOGGER.warning(
-                        f"Ignored unnresolved ref {content_part.get('name')} in attribute {self.ident}"
+                        f"Ignored unresolved ref {content_part.get('name')} in attribute {self.ident}"
                     )
 
                 case "valItem":
@@ -93,8 +92,8 @@ class AttributeSpec:
                         f"tei:desc[@xml:lang = '{lang}']", namespaces=NS_MAP
                     )
 
-                    if desc is not None and desc.text is not None:
-                        val_item_rendered += f" – *{desc.text.strip()}*"
+                    if desc is not None:
+                        val_item_rendered += f"  - *{self._render_description(desc)}*"
 
                     output.append(val_item_rendered)
 
@@ -192,6 +191,20 @@ class AttributeSpec:
                     return
 
         self.usage_status = "opt"
+
+    def _render_description(self, context: ET.Element) -> str:
+        return f"{context.text or ''}{
+            ''.join(self._render_description_child(child) for child in context)
+        }"
+
+    def _render_description_child(self, context: ET.Element) -> str:
+        _, tag = split_tag_and_ns(context.tag)
+        match tag:
+            case "hi":
+                return f"<sup>{context.text}</sup>{context.tail or ''}"
+            case _:
+                LOGGER.warning(f"Unsupported child tag in description »{tag}»")
+                return ""
 
     def _resolve_content(
         self, element: ET.Element, components: dict[str, ODDElement]

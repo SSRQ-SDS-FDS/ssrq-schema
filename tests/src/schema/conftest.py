@@ -15,8 +15,8 @@ from ssrq_cli.validate.types import RNGValidationInfos
 
 from utils.commons import filehandler as io
 from utils.commons.config import SCHEMA_DIR, XSLTS
+from utils.schema import SPECIFIED_ELEMENTS
 from utils.schema.compile import (
-    SPECIFIED_ELEMENTS,
     Schema,
     SSRQSchemaType,
     load_config,
@@ -144,18 +144,42 @@ def writer(tmp_path: Path) -> SimpleTEIWriter:
 
 
 @pytest.fixture(scope="session")
-def main_schema(odds: list[tuple[Schema, list[ElName]]]) -> Schema:
+def find_schema_by_name(
+    odds: list[tuple[Schema, list[ElName]]],
+) -> Callable[[str], Schema]:
     """A fixture, which returns the main ssrq schema."""
     try:
-        return [odd for odd, _ in odds if odd.name == "TEI_Schema"][0]
+        return lambda name: [odd for odd, _ in odds if odd.name == name][0]
     except IndexError:
-        raise ValueError("No main schema found")
+        raise ValueError("No schema with this name found")
 
 
 @pytest.fixture(scope="session")
-def main_constraints(main_schema: Schema) -> str:
+def main_constraints(find_schema_by_name: Callable[[str], Schema]) -> str:
     """A fixture, which returns the schematron rules from the main schema."""
-    extracted_rules = extract_schematron_from_relaxng(main_schema.rng)
+    extracted_rules = extract_schematron_from_relaxng(
+        find_schema_by_name("TEI_Schema").rng
+    )
+
+    return create_schematron_stylesheet(extracted_rules)
+
+
+@pytest.fixture(scope="session")
+def lit_constraints(find_schema_by_name: Callable[[str], Schema]) -> str:
+    """A fixture, which returns the schematron rules from the Lit schema."""
+    extracted_rules = extract_schematron_from_relaxng(
+        find_schema_by_name("TEI_Lit").rng
+    )
+
+    return create_schematron_stylesheet(extracted_rules)
+
+
+@pytest.fixture(scope="session")
+def intro_constraints(find_schema_by_name: Callable[[str], Schema]) -> str:
+    """A fixture, which returns the schematron rules from the Intro schema."""
+    extracted_rules = extract_schematron_from_relaxng(
+        find_schema_by_name("TEI_Intro").rng
+    )
 
     return create_schematron_stylesheet(extracted_rules)
 
@@ -209,9 +233,109 @@ def test_element_with_rng(
     return test_element
 
 
+@pytest.fixture(scope="function")
+def test_intro_with_rng(
+    intro_schema: dict[str, str],
+    writer: SimpleTEIWriter,
+) -> RNG_test_function:
+    def test_element(
+        element_name: str,
+        name: str,
+        markup: str,
+        result: bool,
+        return_validator: bool = False,
+    ):
+        """A generic function, which can be used to test a single element against the defined RelaxNG rules.
+
+        Args:
+            element_name (str): The name (without namespace) of the element to test.
+            name (str): The name of the file to write / the name of the testcase.
+            markup (str): The markup to write to the file.
+            result (bool): The expected result of the validation.
+            return_validator (bool, optional): If True, the validator object is returned. Defaults to False.
+
+        Returns:
+            None: The test passes if the validation result matches the expected result.
+        """
+        writer.write(name, add_tei_namespace(markup))
+
+        match validate_with_rng(
+            writer.construct_file_pattern(), intro_schema[element_name]
+        ):
+            case Ok(validation_infos):
+                assert (
+                    len(validation_infos) == 0 if result else len(validation_infos) > 0
+                )
+                return validation_infos if return_validator else None
+            case Err(error):
+                pytest.fail(
+                    f"An error occurred while validating »{element_name}«: {error}"
+                )
+
+    return test_element
+
+
+@pytest.fixture(scope="function")
+def test_lit_with_rng(
+    lit_schema: dict[str, str],
+    writer: SimpleTEIWriter,
+) -> RNG_test_function:
+    def test_element(
+        element_name: str,
+        name: str,
+        markup: str,
+        result: bool,
+        return_validator: bool = False,
+    ):
+        """A generic function, which can be used to test a single element against the defined RelaxNG rules.
+
+        Args:
+            element_name (str): The name (without namespace) of the element to test.
+            name (str): The name of the file to write / the name of the testcase.
+            markup (str): The markup to write to the file.
+            result (bool): The expected result of the validation.
+            return_validator (bool, optional): If True, the validator object is returned. Defaults to False.
+
+        Returns:
+            None: The test passes if the validation result matches the expected result.
+        """
+        writer.write(name, add_tei_namespace(markup))
+
+        match validate_with_rng(
+            writer.construct_file_pattern(), lit_schema[element_name]
+        ):
+            case Ok(validation_infos):
+                assert (
+                    len(validation_infos) == 0 if result else len(validation_infos) > 0
+                )
+                return validation_infos if return_validator else None
+            case Err(error):
+                pytest.fail(
+                    f"An error occurred while validating »{element_name}«: {error}"
+                )
+
+    return test_element
+
+
 @pytest.fixture
 def element_schema(
     change_rng_start_per_odd: dict[str, dict[str, str]],
 ) -> dict[str, str]:
     """A fixture, which returns the main ssrq schema with a modified start element."""
     return change_rng_start_per_odd["TEI_Schema"]
+
+
+@pytest.fixture
+def intro_schema(
+    change_rng_start_per_odd: dict[str, dict[str, str]],
+) -> dict[str, str]:
+    """A fixture, which returns the ssrq intro schema with a modified start element."""
+    return change_rng_start_per_odd["TEI_Intro"]
+
+
+@pytest.fixture
+def lit_schema(
+    change_rng_start_per_odd: dict[str, dict[str, str]],
+) -> dict[str, str]:
+    """A fixture, which returns the ssrq intro schema with a modified start element."""
+    return change_rng_start_per_odd["TEI_Lit"]

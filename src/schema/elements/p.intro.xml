@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+    type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="p" module="core" mode="change">
+  <gloss xml:lang="de" versionDate="2025-02-03">Absatz</gloss>
+  <gloss xml:lang="en" versionDate="2025-02-03">paragraph</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">paragraphe</gloss>
+  <classes mode="replace">
+    <memberOf key="model.pLike"/>
+  </classes>
+  <content>
+    <sequence maxOccurs="unbounded" preserveOrder="false">
+      <textNode/>
+      <alternate minOccurs="0">
+        <elementRef key="bibl"/>
+        <elementRef key="foreign"/>
+        <elementRef key="gi"/>
+        <elementRef key="hi"/>
+        <elementRef key="note"/>
+        <elementRef key="orig"/>
+        <elementRef key="pc"/>
+        <elementRef key="q"/>
+        <elementRef key="quote"/>
+      </alternate>
+    </sequence>
+  </content>
+</elementSpec>

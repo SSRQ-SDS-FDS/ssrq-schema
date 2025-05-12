@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="body" module="textstructure" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="body" module="textstructure" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-14">Textbereich</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">text section</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">zone de texte</gloss>
@@ -14,13 +14,35 @@
     autres blocs de texte.</desc>
   <classes mode="replace"/>
   <content>
-    <sequence preserveOrder="false">
-      <elementRef key="ab" minOccurs="0" maxOccurs="unbounded"/>
-      <elementRef key="div" maxOccurs="unbounded"/>
-      <elementRef key="gap" minOccurs="0" maxOccurs="unbounded"/>
-      <elementRef key="pb" minOccurs="0" maxOccurs="unbounded"/>
-    </sequence>
+    <alternate>
+      <sequence preserveOrder="false">
+        <elementRef key="ab" minOccurs="0" maxOccurs="unbounded"/>
+        <elementRef key="div" maxOccurs="unbounded"/>
+        <elementRef key="gap" minOccurs="0" maxOccurs="unbounded"/>
+        <elementRef key="pb" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+      <elementRef key="bibl" minOccurs="2" maxOccurs="unbounded"/>
+    </alternate>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-body">
+    <desc xml:lang="en" versionDate="2025-05-05">constraint for tei:body</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:body[parent::tei:text[@type = 'collection']]">
+          <sch:assert test="every $child in ./* satisfies $child/name() = 'bibl'">
+              It's only allowed to use tei:bibl-elements directly inside tei:body, when tei:body
+              is part of tei:text with type="collection".
+          </sch:assert>
+        </sch:rule>
+        <sch:rule context="tei:body[parent::tei:text[not(@type = 'collection')]]">
+          <sch:report test=".[tei:bibl]">
+            It's only allowed to use tei:bibl-elements directly inside tei:body, when tei:body
+            is part of tei:text with type="collection".
+          </sch:report>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <xi:include href="examples.xml" xpointer="ex-body-de"/>
   <xi:include href="examples.xml" xpointer="ex-body-en"/>
   <xi:include href="examples.xml" xpointer="ex-body-fr"/>
