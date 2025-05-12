@@ -14,6 +14,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "figure-with-invalid-type",
+            "<figure type='baz'/>",
+            False,
+        ),
+        (
             "valid-figure-with-graphic",
             """
             <figure type='illustration'>
