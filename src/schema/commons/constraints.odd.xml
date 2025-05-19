@@ -182,5 +182,18 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
+    <constraintSpec xml:lang="en" scheme="schematron" ident="no-quotation-marks">
+      <desc xml:lang="en" versionDate="2025-05-19">constraint to forbid quotation marks</desc>
+      <constraint>
+        <sch:pattern>
+          <sch:rule context="text()">
+            <sch:report role="warning" test="matches(., '&quot;')">
+              It is not allowed to use quotation marks in the text. Use tei:quote, tei:q,
+              tei:orig or tei:foreign instead.
+            </sch:report>
+          </sch:rule>
+        </sch:pattern>
+      </constraint>
+    </constraintSpec>
   </specGrp>
 </div>
