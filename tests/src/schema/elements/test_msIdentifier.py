@@ -7,17 +7,17 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         (
-            "valid-msIdentifier",
+            "invalid-msIdentifier-without-settlement",
             """
             <msIdentifier>
                 <repository xml:lang='de'>foo</repository>
                 <idno xml:lang='de' source='http://foo.bar'>bar</idno>
             </msIdentifier>
             """,
-            True,
+            False,
         ),
         (
-            "valid-msIdentifier-with-settlement",
+            "valid-msIdentifier",
             """
             <msIdentifier>
                 <settlement ref="loc123456" xml:lang="de">foo</settlement>
@@ -44,6 +44,7 @@ from ..conftest import RNG_test_function
         (
             "valid-msIdentifier-with-altIdentifier",
             """<msIdentifier>
+                    <settlement ref="loc123456" xml:lang="de">foo</settlement>
                     <repository xml:lang='de'>foo</repository>
                     <idno xml:lang='de' source='http://foo.bar'>bar</idno>
                     <altIdentifier>
@@ -55,6 +56,7 @@ from ..conftest import RNG_test_function
         (
             "valid-msIdentifier-with-multiple-altIdentifiers",
             """<msIdentifier>
+                    <settlement ref="loc123456" xml:lang="de">foo</settlement>
                     <repository xml:lang='de'>foo</repository>
                     <idno xml:lang='de' source='http://foo.bar'>bar</idno>
                     <altIdentifier>
@@ -69,6 +71,7 @@ from ..conftest import RNG_test_function
         (
             "invalid-msIdentifier-missing-content",
             """<msIdentifier>
+                    <settlement ref="loc123456" xml:lang="de">foo</settlement>
                     <repository xml:lang='de'>foo</repository>
                     <idno xml:lang='de' source='http://foo.bar'>bar</idno>
                     <idno xml:lang='fr' source='http://foo.bar'>bar</idno>
