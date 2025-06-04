@@ -17,7 +17,7 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "valid-msIdentifier",
+            "valid-msIdentifier-with-settlement",
             """
             <msIdentifier>
                 <settlement ref="loc123456" xml:lang="de">foo</settlement>
