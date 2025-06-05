@@ -93,7 +93,7 @@
       <desc xml:lang="en" versionDate="2025-01-30">the pattern for organisation IDs</desc>
       <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour les ID de organisations</desc>
       <content>
-        <dataRef name="string" restriction="org\d{6}(\.\d{2})?"/>
+        <dataRef name="string" restriction="org\d{6}(\.1?\d{2})?"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.pointer.persons" mode="add" module="ssrq.core.module">
@@ -101,7 +101,7 @@
       <desc xml:lang="en" versionDate="2025-01-30">the pattern for person IDs</desc>
       <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour les ID de personne</desc>
       <content>
-        <dataRef name="string" restriction="per\d{6}[abc]?(\.\d{2})?"/>
+        <dataRef name="string" restriction="per\d{6}[abc]?(\.1?\d{2})?"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.pointer.places" mode="add" module="ssrq.core.module">
@@ -109,7 +109,7 @@
       <desc xml:lang="en" versionDate="2025-01-30">the pattern for place IDs</desc>
       <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour les ID de lieux</desc>
       <content>
-        <dataRef name="string" restriction="loc\d{6}(\.\d{2})?"/>
+        <dataRef name="string" restriction="loc\d{6}(\.1?\d{2})?"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.pointer.databases" mode="add" module="ssrq.core.module">
