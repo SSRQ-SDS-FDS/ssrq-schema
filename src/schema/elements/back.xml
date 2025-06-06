@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="back" module="textstructure" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="back" module="textstructure" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Kommentarbereich</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">comment section</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">zone de commentaires</gloss>
@@ -19,6 +19,18 @@
   <content>
     <elementRef key="div" maxOccurs="unbounded"/>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-back" mode="add">
+    <desc xml:lang="en" versionDate="2025-06-06">constraint for tei:note in tei:back</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:back">
+          <sch:report test=".//tei:note">
+              The element tei:note is not allowed in tei:back.
+          </sch:report>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <xi:include href="examples.xml" xpointer="ex-back-de"/>
   <xi:include href="examples.xml" xpointer="ex-back-en"/>
   <xi:include href="examples.xml" xpointer="ex-back-fr"/>
