@@ -387,13 +387,18 @@ def test_facs_name_rng(
             False,
         ),
         (
-            "invalid-persons-pointer-with-to-few-digits-after-dot",
+            "invalid-persons-pointer-with-too-few-digits-after-dot",
             "<persName ref='per123456.1'>Foo</persName>",
             False,
         ),
         (
-            "invalid-persons-pointer-with-to-much-digits-after-dot",
+            "valid-persons-pointer-with-three-digits-after-dot",
             "<persName ref='per123456.100'>Foo</persName>",
+            True,
+        ),
+        (
+            "invalid-persons-pointer-with-too-much-digits-after-dot",
+            "<persName ref='per123456.1000'>Foo</persName>",
             False,
         ),
     ],
@@ -438,13 +443,18 @@ def test_pointer_person_rng(
             False,
         ),
         (
-            "invalid-org-pointer-with-to-few-digits-after-dot",
+            "invalid-org-pointer-with-too-few-digits-after-dot",
             "<orgName ref='org123456.1'>Foo</orgName>",
             False,
         ),
         (
-            "invalid-org-pointer-with-to-much-digits-after-dot",
-            "<orgName ref='org123456.1'>Foo</orgName>",
+            "valid-org-pointer-with-three-digits-after-dot",
+            "<orgName ref='org123456.100'>Foo</orgName>",
+            True,
+        ),
+        (
+            "invalid-org-pointer-with-too-much-digits-after-dot",
+            "<orgName ref='org123456.1000'>Foo</orgName>",
             False,
         ),
     ],
@@ -489,13 +499,18 @@ def test_pointer_org_rng(
             False,
         ),
         (
-            "invalid-places-pointer-with-to-few-digits-after-dot",
+            "invalid-places-pointer-with-too-few-digits-after-dot",
             "<placeName ref='loc123456.1'>Foo</placeName>",
             False,
         ),
         (
-            "invalid-places-pointer-with-to-much-digits-after-dot",
+            "valid-places-pointer-with-three-digits-after-dot",
             "<placeName ref='loc123456.100'>Foo</placeName>",
+            True,
+        ),
+        (
+            "invalid-places-pointer-with-too-much-digits-after-dot",
+            "<placeName ref='loc123456.1000'>Foo</placeName>",
             False,
         ),
     ],
@@ -567,14 +582,19 @@ def test_pointer_places_rng(
             False,
         ),
         (
-            "invalid-lemma-pointer-with-to-few-digits-after-dot",
+            "invalid-lemma-pointer-with-too-few-digits-after-dot",
             "<term ref='lem123456.1'>Foo</term>",
             False,
         ),
         (
-            "invalid-lemma-pointer-with-three-digits-after-dot",
+            "valid-lemma-pointer-with-three-digits-after-dot",
             "<term ref='lem123456.100'>Foo</term>",
             True,
+        ),
+        (
+            "invalid-lemma-pointer-with-too-much-digits-after-dot",
+            "<term ref='lem123456.1000'>Foo</term>",
+            False,
         ),
     ],
 )
