@@ -29,7 +29,7 @@
     <desc versionDate="2023-05-31" xml:lang="en">constraint for tei:quote</desc>
     <constraint>
       <sch:pattern>
-        <sch:rule context="tei:quote">
+        <sch:rule context="tei:quote[not(ancestor::tei:back)]">
           <sch:assert role="warning" test=".[following-sibling::*[1][self::tei:note]]">
               tei:quote should be followed by a tei:note element.
           </sch:assert>
