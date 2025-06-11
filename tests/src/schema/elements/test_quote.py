@@ -82,6 +82,11 @@ def test_quote(
             "<div><quote>foo</quote></div>",
             False,
         ),
+        (
+            "valid-quote-without-note-inside-back",
+            "<back><quote>foo</quote></back>",
+            True,
+        ),
     ],
 )
 def test_quote_constraints(
