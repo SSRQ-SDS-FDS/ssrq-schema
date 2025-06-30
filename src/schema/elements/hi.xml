@@ -26,7 +26,7 @@
       <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Hervorhebung</desc>
       <desc xml:lang="en" versionDate="2025-02-03">the appearance of the highlighting</desc>
       <desc xml:lang="fr" versionDate="2025-02-03">l’apparition des points forts</desc>
-      <datatype>
+      <datatype maxOccurs="unbounded">
         <rng:choice>
           <rng:ref name="ssrq.rend.font"/>
           <rng:ref name="ssrq.rend.placement"/>

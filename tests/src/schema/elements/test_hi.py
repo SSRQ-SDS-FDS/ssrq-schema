@@ -17,6 +17,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-hi-with-multiple-attribute-values",
+            "<hi rend='italic center rubricated'><del>foo</del> bar</hi>",
+            True,
+        ),
+        (
             "invalid-hi-without-rend",
             "<hi>foo bar</hi>",
             False,
