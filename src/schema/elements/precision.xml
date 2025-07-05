@@ -6,9 +6,11 @@
   <gloss xml:lang="de" versionDate="2025-02-04">Genauigkeit</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">precision</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-04">précision</gloss>
-  <desc xml:lang="de" versionDate="2023-07-14">Gibt Unsicherheit bei Datierungen an.</desc>
+  <desc xml:lang="de" versionDate="2025-07-05">Gibt den Grad der Unsicherheit einer Datierung
+    an.</desc>
   <desc xml:lang="en" versionDate="2023-07-14">Indicates uncertainty in dating.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-14">Indique une incertitude dans la datation.</desc>
+  <desc xml:lang="fr" versionDate="2025-07-05">Indique le degré de certitude dans la
+    datation.</desc>
   <classes mode="replace">
     <memberOf key="att.scoping"/>
     <memberOf key="model.certLike"/>
@@ -52,7 +54,7 @@
         <att>precision</att> specifies the degree of uncertainty.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>L’attribut <att>match</att> fait référence à un ou plusieurs attributs de <gi>date</gi>.
-      L’attribut <att>precision</att> spécifie le degré d’incertitude.</p>
+    <p>L’attribut <att>match</att> permet de faire référence à un ou plusieurs attributs de
+      <gi>date</gi>. L’attribut <att>precision</att> indique le degré de certitude.</p>
   </remarks>
 </elementSpec>
