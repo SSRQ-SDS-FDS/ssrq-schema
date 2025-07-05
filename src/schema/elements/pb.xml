@@ -5,10 +5,10 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="pb" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Seitenanfang</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">page beginning</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">debut de page</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">début de page</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Markiert den Anfang einer Seite.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Describes the beginning of a page in the original.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Marque le début d’une page.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Signale le début d’une page.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="att.global.facs"/>
@@ -88,23 +88,23 @@
         counted. If there is no original page number, a page number is introduced. Sheet signatures
         are not transcribed.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-07-20">
-    <p><gi>pb</gi> est répertorié au début de la page et contient généralement la numérotation
-      des pages dans l’attribut <att>n</att>. Les foliations (p. ex. <tag>pb n="109v"</tag>),
-      les paginations (p. ex. <tag>pb n="22"</tag>) ou, dans le cas de Rotuli, les numéros
-      de section des pièces de parchemin (p. ex. <tag>pb n="s1"</tag>) peuvent être utilisés.
-      Une numérotation provenant de l’original est marquée avec <att>type</att> =
-      <val>original</val>. S’il n’y a pas de décompte original, une foliation est introduit.</p>
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p><gi>pb</gi> est mentionné au début de la page et contient généralement la numérotation
+      des pages dans l’attribut <att>n</att>. Il est possible d’indiquer des folios
+      (p. ex. <tag>pb n="109v"</tag>), des paginations (p. ex. <tag>pb n="22"</tag>) ou, dans le
+      cas de rotuli, des comptages de sections de parchemin (p. ex. <tag>pb n="s1"</tag>).
+      Une numérotation provenant de l’original est signalée avec <att>type</att> =
+      <val>original</val>. S’il n’y a pas de numérotation originale, un foliotage est introduit.</p>
     <p>Si un texte source ne comprend qu’une seule page (p. ex. un document), <gi>pb</gi>
       n’est nécessaire que pour établir un lien vers les fac-similés. Si un texte s’étend sur
-      le recto et le verso d’une seule feuille (2 pages), <gi>pb</gi> est défini sans attributs
-      sur les première et deuxième pages. Seules les pages contenant trois pages ou plus sont
-      numérotées avec <att>n</att>. S’il y a plusieurs pages de titre ou pages de garde avant
-      le début du contenu réel et la pagination réelle, il est recommandé de numéroter les pages
-      dans l’attribut <att>n</att> avec des chiffres romains (I, II, III, IV etc.), comme c’est
-      habituellement le cas pour les manuscrits. Dans les estampes, le décompte des pages
-      (foliation) commence à partir de la page de titre. La page de titre n’est pas spécialement
-      marquée. Les feuilles blanches ou les pages vides sont comptées. Les signatures d’archet
+      le recto et le verso d’une seule feuille (2 pages), <gi>pb</gi> est placé sans attributs
+      sur la première et la deuxième page. Ce n’est qu’à partir de trois pages que la numérotation
+      se fait avec <att>n</att>. Dans le cas de plusieurs pages de titre ou de garde avant
+      le début du contenu et de la pagination proprement dits, il est recommandé de compter les
+      feuilles dans l’attribut <att>n</att> avec des chiffres romains (I, II, III, IV etc.), comme
+      c’est habituellement le cas pour les manuscrits. Pour les imprimés, la numérotation des pages
+      (foliotage) commence avec la page de titre. La page de titre n’est pas spécialement
+      marquée. Les feuilles ou pages blanches sont comptées. Les signatures des feuilles
       ou les désignations de position ne sont pas transcrites.</p>
   </remarks>
 </elementSpec>
