@@ -5,7 +5,7 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="keywords" module="header" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Schlagworte</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">keywords</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">mots clés</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">mots-clés</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält die wichtigsten Schlagworte zum Inhalt eines
       Stücks.</desc>
   <desc xml:lang="en" versionDate="2023-07-18">Contains the most important keywords for the content
@@ -37,8 +37,9 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
     <p>La liste des mots-clés remplace l’index thématique classique des volumes analogiques.
-        Les mots-clés font généralement référence à l’ensemble du document. Les mots-clés sont
-        attribués correspondante en fonction de la
-        <ref target="https://termini.ssrq-sds-fds.ch">base de données</ref> du SDS.</p>
+      En règle générale, les mots-clés se rapportent à la pièce entière.
+      Les mots-clés sont attribués conformément à
+      <ref target="https://termini.ssrq-sds-fds.ch">la base de données</ref> correspondante des
+      SDS.</p>
   </remarks>
 </elementSpec>
