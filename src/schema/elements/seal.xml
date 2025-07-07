@@ -51,7 +51,7 @@
     <attDef ident="place" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-04">der Ort des Siegels</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the place of the seal</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">le lieu du sceau</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">l’emplacement du sceau</desc>
       <datatype>
         <dataRef key="ssrq.place.seal"/>
       </datatype>
@@ -59,7 +59,7 @@
     <attDef ident="ref" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-14">ein Link zu einer Siegeldatenbank</desc>
       <desc xml:lang="en" versionDate="2025-02-14">a link to a database of seals</desc>
-      <desc xml:lang="fr" versionDate="2025-02-14">un lien vers la base de données du sceaux</desc>
+      <desc xml:lang="fr" versionDate="2025-02-14">un lien vers la base de données des sceaux</desc>
       <datatype>
         <dataRef key="ssrq.pointer.url"/>
       </datatype>
@@ -128,32 +128,37 @@
         und 1871–1913, 5 Bde., Dresden 1909–1913] (http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).
     </p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2023-08-23">
-    <p>La description des sceaux se fait de gauche à droite. S’il s’agit d’une personne, le
-      scelleur est marqué par <gi>persName</gi> et l’attribut <att>role</att> =
-      <val>sigillant</val> ou, s’il s’agit d’une institution, par <gi>orgName</gi> et le même
-      attribut. Si les noms des scelleurs figurent sur le plica ou la bande de parchemin, dans
-      <gi>persName</gi> un <gi>orig</gi> doit inclure le nom manuscrit.</p>
-    <p>Si l’identification du sceau est incertaine, p. ex. quand le sigillant n’est pas mentionné
-      dans le texte, on n’ajoute pas de <gi>orgName</gi> ou <gi>persName</gi>. Si on n’arrive
-      pas à clairement attribuer les sigillant à leurs sceaux, il faut laisser l’identification
-      des sceaux ouverte.</p>
-    <p>Les sceaux sont numérotés avec <att>n</att>. Il serait souhaitable que l’édition comprenne
-      non seulement un fac-similé du texte, mais également des photos des sceaux, y compris
-      l’échelle (recto et verso).</p>
-    <p>Dans le texte, l’emplacement d’un sceau est enregistré avec <gi>figure</gi>
-      (<att>type</att> = <val>locus_sigilli</val>). Si nécessaire, un commentaire peut être
-      inscrit sur les sceaux.</p>
-    <p>Il est important de comparer l’annonce du sceau dans l’acte avec le sceau.
+  <remarks xml:lang="fr" versionDate="2025-02-06">
+    <p>La description des sceaux se fait de gauche à droite.
+      Le sigillant (personne physique ou morale au nom de qui un sceau est gravé), s’il s’agit
+      d’une personne, est signalé par <gi>persName</gi> avec l’attribut
+      <att>role</att> = <val>sigillant</val> ; s’il s’agit d’une institution, il est signalé par
+      <gi>orgName</gi> avec l’attribut <att>role</att> = <val>sigillant</val>.
+      Si les noms des sigillants figurent sur le repli ou sur la retaille du parchemin,
+      un <gi>orig</gi> dans <gi>persName</gi> devrait inclure le nom manuscrit.</p>
+    <p>Si l’identification du sceau est incertaine, p. ex. quand le sigillant n’est pas
+      mentionné dans le texte, on n’ajoute pas de <gi>orgName</gi> ni <gi>persName</gi>.
+      Si, dans le cas de plusieurs sceaux, les sigillants ne peuvent pas être attribués
+      avec certitude, l’identification du sceau est laissée ouverte.</p>
+    <p>Les sceaux sont numérotés avec <att>n</att>. Il serait souhaitable que l’édition soit
+      accompagnée non seulement d’un fac-similé du texte, mais aussi de photos des sceaux,
+      accompagnées d’une échelle (recto et verso).</p>
+    <p>Dans le texte, le lieu d’apposition d’un sceau est saisi avec <gi>figure</gi>
+      (<att>type</att> = <val>locus_sigilli</val>). Selon les besoins, un commentaire sur les
+      sceaux peut être rédigé.</p>
+    <p>Il est important de comparer l’annonce des sceaux dans le texte et le sceau lui-même.
       <list><item>Tous les scelleurs annoncés ont-ils apposé leurs sceaux sur l’acte ?
-      </item><item>Existe-t-il un sceau d’un scellant non annoncé ?</item><item>Un sceau a-t-il
-      pu être forgé ou apposé plus tard ?</item></list></p>
-    <p>On doit vérifier si tous les sceaux correspondent à l’annonce dans le texte. Les annonces
-      de sceau, y compris les sceaux manquants et les empreintes de sceau, sont mentionnées dans
-      le regeste (<gi>summary</gi>). Si un sceau annoncé manque, cela doit être noté dans
-      <att>condition</att> avec <val>absent</val>. De plus, une note (<gi>note</gi>) doit décrire
-      pourquoi le sceau est manquant ou pourquoi le document est resté descellé.</p>
-    <p>Sur les sceaux impériaux : [Posse Otto: Die Siegel der deutschen Kaiser und Könige von
-      751–1806 und 1871–1913, 5 Bde., Dresden 1909–1913] (http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).</p>
+      </item><item>Y a-t-il le sceau d’un scelleur qui n’est pas annoncé ?
+      </item><item>Un sceau a-t-il éventuellement été falsifié ou apposé plus tard ?
+      </item></list>
+      </p>
+    <p>Il convient de vérifier si le sceau correspond au sigillant annoncé. Les annonces de
+       sceaux, y compris les sceaux manquants et les empreintes de sceaux, sont mentionnées
+       dans le résumé (<gi>summary</gi>). Si un sceau annoncé manque, il faut le mentionner
+       dans <att>condition</att> avec <val>absent</val>. De plus, il convient de préciser
+       dans une note (<gi>note</gi>) pour laquelle le sceau manque ou pourquoi le document
+       n’a pas été scellé.</p>
+    <p>Concernant les sceaux impériaux : [Posse Otto: Die Siegel der deutschen Kaiser und
+      Könige von 751–1806 und 1871–1913, 5 Bde., Dresden 1909–1913](http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).</p>
   </remarks>
 </elementSpec>
