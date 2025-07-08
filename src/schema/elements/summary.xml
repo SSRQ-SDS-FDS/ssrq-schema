@@ -5,10 +5,10 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="summary" module="msdescription" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-15">Regest</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">regest</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">regeste</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">résumé</gloss>
   <desc xml:lang="de" versionDate="2025-02-07">Enthält ein ausführliches Regest des Textes.</desc>
   <desc xml:lang="en" versionDate="2023-07-15">Describes the content of the source in detail.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-07">Contient un regeste détaillé du texte.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-07">Contient un résumé détaillé du texte.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
   </classes>
@@ -43,7 +43,7 @@
       Einem Text können so Regeste in mehreren Sprachen beigegeben werden.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>L’attribut <att>xml:lang</att> peut être utilisé pour spécifier la langue du regeste.
-      De cette façon, des regestes peuvent être ajoutées à un texte dans plusieurs langues.</p>
+    <p>L’attribut <att>xml:lang</att> permet d’indiquer la langue du résumé. Un texte peut être
+      accompagné de résumés dans plusieurs langues.</p>
   </remarks>
 </elementSpec>
