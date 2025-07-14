@@ -10,8 +10,8 @@
     eines Textträgers oder seines Inhalts.</desc>
   <desc xml:lang="en" versionDate="2023-05-16">Contains the place of issue or printing of a
     source.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient dans le <gi>teiHeader</gi> le lieu
-    d’origine d’un support de texte ou de son contenu.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient le lieu d’origine d’un support de texte
+    ou de son contenu dans le <gi>teiHeader</gi>.</desc>
   <classes mode="replace">
     <memberOf key="att.canonical"/>
     <memberOf key="att.global.responsibility"/>
@@ -50,7 +50,7 @@
       marked with <gi>placeName</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Dans toutes les autres parties du texte, <gi>placeName</gi> est utilisé à la place,
-      voir également la différence entre <gi>origDate</gi> et <gi>date</gi>.</p>
+    <p>Dans toutes les autres parties du texte, on utilise <gi>placeName</gi>, voir également
+      la différence entre <gi>origDate</gi> et <gi>date</gi>.</p>
   </remarks>
 </elementSpec>
