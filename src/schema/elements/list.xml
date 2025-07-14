@@ -31,7 +31,7 @@
     <attDef ident="rend" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Liste</desc>
       <desc xml:lang="en" versionDate="2025-02-03">the appearance of the list</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">l’apparition de la liste</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">l’apparence de la liste</desc>
       <datatype>
         <dataRef key="ssrq.rend.list"/>
       </datatype>
@@ -54,9 +54,9 @@
     <p>Eine ggfs. vorhandene Listenüberschrift wird mit <gi>head</gi> ausgezeichnet.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Pour lister tous les témoins de texte dans le <gi>teiHeader</gi>, nous utilisons l’élément
-      plus spécialisé <gi>listWit</gi>, pour lister les informations bibliographiques, nous
-      utilisons <gi>listBibl</gi>.</p>
+    <p>Pour lister toutes les témoins d’un texte dans le <gi>teiHeader</gi>, nous utilisons
+      l’élément plus spécialisé <gi>listWit</gi>; pour lister les informations bibliographiques,
+      nous utilisons <gi>listBibl</gi>.</p>
     <p>S’il y a un en-tête de liste, il est marqué avec <gi>head</gi>.</p>
   </remarks>
 </elementSpec>
