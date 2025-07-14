@@ -5,10 +5,10 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="supplied" module="transcr" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-04">Ergänzung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">supplement</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">supplément</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">ajout</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Ergänzung durch die Bearbeitenden.</desc>
   <desc xml:lang="en" versionDate="2023-07-14">Contains an addition by the editor.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient un ajout des éditeurs.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient un ajout de la part des éditeurs.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
     <memberOf key="att.global.source"/>
@@ -54,7 +54,7 @@
     <attDef ident="reason" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-03">der Grund für die Ergänzung</desc>
       <desc xml:lang="en" versionDate="2025-02-03">the reason for the supplement</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">la raison du supplément</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">la raison de l’ajout</desc>
       <datatype>
         <dataRef key="ssrq.reason.supplied"/>
       </datatype>
@@ -66,11 +66,11 @@
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-de"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-en"/>
   <xi:include href="examples.xml" xpointer="ex-damage-supplied-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-07">
+  <remarks xml:lang="de" versionDate="2025-07-14">
     <p>Wenn die Bearbeitenden eine Passage frei ergänzen, weisen sie sich im Attribut <att>resp</att>
       mit ihrem Kürzel aus. Erfolgt eine Textergänzung anhand einer weiteren Textvorlage, wird auf
       diese mit dem Attribut <att>source</att> referenziert. Der Grund für eine Ergänzung kann mit
-      <att>reason</att> angegeben werden. Eine Anmerkung in <gi>note</gi> oder eine Bemerkung
+      <att>reason</att> angegeben werden. Eine Anmerkung in <gi>note</gi> oder ein Kommentar
       in <gi>back</gi> ist nötig.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-14">
@@ -79,11 +79,10 @@
         with <att>source</att>. The reason for an addition can be specified with <att>reason</att>.
         A note in <gi>note</gi> or a comment in <gi>back</gi> is required.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>Si un éditeur ajoute librement un passage, il s’identifie en <att>resp</att> avec son
-      abréviation. Si un texte est complété à l’aide d’un autre modèle de texte, celui-ci est
-      référencé par <att>source</att>. La raison d’un ajout peut être spécifiée avec l’attribut
-      <att>reason</att>. Une note dans <gi>note</gi> ou un commentaire dans <gi>back</gi> est
-      nécessaire.</p>
+  <remarks xml:lang="fr" versionDate="2025-07-14">
+    <p>Si un éditeur ajoute librement un passage, il s’identifie avec <att>resp</att> en indiquant
+      son abréviation. Si un texte est complété à l’aide d’une autre variante de texte, celle-ci
+      est référencée par <att>source</att>. La raison d’un ajout peut être signalée avec l’attribut
+      <att>reason</att>. Une <gi>note</gi> ou un commentaire dans <gi>back</gi> est nécessaire.</p>
   </remarks>
 </elementSpec>
