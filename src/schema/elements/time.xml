@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-04">temps</gloss>
   <desc xml:lang="de" versionDate="2023-07-20">Enthält eine Zeitangabe.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains a time specification.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-20">Contient une spécification de temps.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-20">Contient une indication temporelle.</desc>
   <classes mode="replace">
     <memberOf key="att.datable"/>
     <memberOf key="att.datable.custom"/>
@@ -89,10 +89,10 @@
     <p>Les attributs autorisés permettent d’exprimer les informations dans un format
       normalisé et lisible par machine. Le format est le sous-ensemble de la norme ISO 8601
       défini par le W3C.</p>
-    <p>Les heures sont spécifiées avec <att>when-custom</att> ou <att>notBefore-custom</att>
+    <p>Les points temporels sont indiqués avec <att>when-custom</att> ou <att>notBefore-custom</att>
       et <att>notAfter-custom</att>, les périodes avec <att>from-custom</att> et
-      <att>to-custom</att>. Les périodes de temps sans indication de début et de fin
-      peuvent être précisées davantage avec <att>dur-iso</att>. Les moments indéfinis
-      de la journée, comme «la nuit», sont marqués d’un <att>period</att>.</p>
+      <att>to-custom</att>. Les périodes temporelles sans indication de début et de fin peuvent
+      être précisées davantage avec <att>dur-iso</att>. Les moments indéfinis de la journée,
+      comme « la nuit », sont indiqués avec <att>period</att>.</p>
   </remarks>
 </elementSpec>
