@@ -5,12 +5,13 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="hi" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Hervorhebung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">highlighting</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">points forts</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">mise en évidence</gloss>
   <desc xml:lang="de" versionDate="2023-07-19">Beschreibt die graphische Hervorhebung von
     Text.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Describes the graphical highlighting of
     text.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Décrit les points forts graphiques du texte.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Décrit de portions de texte mises en évidence
+    graphiquement.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.written"/>
@@ -25,7 +26,7 @@
     <attDef ident="rend" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Hervorhebung</desc>
       <desc xml:lang="en" versionDate="2025-02-03">the appearance of the highlighting</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">l’apparition des points forts</desc>
+      <desc xml:lang="fr" versionDate="2025-02-03">l’apparition de la mise en évidence</desc>
       <datatype>
         <dataRef key="ssrq.rend.hi"/>
       </datatype>
@@ -55,10 +56,10 @@
       enumerations, dates, abbreviations, etc. are not taken into account.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Les éditions SDS ne sont pas des transcriptions en fac-similé, c’est pourquoi
-      de nombreuses caractéristiques d’emphase telles que les majuscules ne sont pas
-      représentées. Les points précédant les lettres en exposant dans les listes, les
-      dates, les abréviations, etc. ne sont pas non plus pris en compte. Seuls les
-      passages «importants» pour le texte sont transcrits.</p>
+    <p>Les éditions des SDS ne sont pas des transcriptions « photocopiant » le fac-similé, c’est
+      pourquoi de nombreuses mises en évidence, comme les majuscules superflues, ne sont pas
+      signalées. Les points précédant les caractères en exposant dans les énumérations, les
+      datations, les abréviations, etc. ne sont pas non plus pris en compte. Seules les mises en
+      évidence « significatives » pour le texte sont transcrites.</p>
   </remarks>
 </elementSpec>
