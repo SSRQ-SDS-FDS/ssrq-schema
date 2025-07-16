@@ -5,11 +5,11 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="figure" module="figures" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Abbildung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">figure</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">figure</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">illustration</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Beschreibt eine Abbildung jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-04-11">Contains elements that describe graphical
     information.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Décrit une illustration de chaque type.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Décrit une illustration de n’importe quel type.</desc>
   <classes mode="replace">
     <memberOf key="att.placement"/>
     <memberOf key="att.typed"/>
@@ -42,12 +42,12 @@
     <attDef ident="place" mode="change">
       <desc xml:lang="de" versionDate="2025-02-04">der Ort der Abbildung</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the place of the figure</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">le lieu de la figure</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">l’emplacement d’illustration</desc>
     </attDef>
     <attDef ident="type" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2025-01-31">die Art der Abbildung</desc>
       <desc xml:lang="en" versionDate="2025-01-31">the type of the figure</desc>
-      <desc xml:lang="fr" versionDate="2025-01-31">le type de la figure</desc>
+      <desc xml:lang="fr" versionDate="2025-01-31">le type d’illustration</desc>
       <datatype>
         <dataRef key="ssrq.type.figure"/>
       </datatype>
@@ -73,10 +73,10 @@
       be referenced.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p><gi>figure</gi> décrit des symboles notariés (= signet notarié, sceau notarié, signum), des
-      dessins à la plume, des gravures sur bois, des signes de référence ou, dans le cas de
-      copies d’actes, l’endroit où se trouve le sceau dans l’acte original (L. S. =
-      Locus sigilli) ou des images qui sont référencées avec <gi>graphic</gi>. Le type
-      d’illustration est spécifié avec l’attribut <att>type</att>.</p>
+    <p><gi>figure</gi> décrit des symboles de notaires (= sigle, sceau, signum), des dessins à
+      la plume, des gravures sur bois, des signes de renvoi ou, dans le cas de copies d’actes,
+      l’endroit où se trouve le sceau dans l’acte original (L. S. = Locus sigilli) ou des
+      illustrations qui sont référencées avec <gi>graphic</gi>. Le type d’illustration est
+      indiqué avec l’attribut <att>type</att>.</p>
   </remarks>
 </elementSpec>
