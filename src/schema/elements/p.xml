@@ -70,13 +70,13 @@
         marked.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Dans la transcription, cela marque les paragraphes originaux. Une structuration plus
-      grossière est réalisée avec <gi>div</gi>. Une structuration supplémentaire du texte par
-      les éditeurs peut être réalisée en utilisant <gi>seg</gi>. Voir également les explications
-      sur la structuration des textes dans les
+    <p>Dans la transcription, <gi>p</gi> signale les paragraphes originaux. Une structuration de
+      niveau plus important est réalisée avec <gi>div</gi>. Si nécessaire, les éditeurs peuvent
+      introduire une structuration supplémentaire du texte, non originale, en utilisant
+      <gi>seg</gi>. Voir également les explications sur la structuration des textes dans les
       <ref target="textstructure.md">principes de transcription</ref>.</p>
-    <p>Si le texte d’un document n’est pas structuré par un saut de ligne, mais par un
-      espacement horizontal ou une initiale dans la ligne, cela peut également être marqué
-      avec <gi>p</gi>. Les symboles de paragraphe ne sont pas spécialement marqués.</p>
+    <p>Si, dans un document, le texte n’est pas structuré par un retour à la ligne, mais par un
+      espace horizontal ou une initiale à l’intérieur la ligne, cela peut également être signalé
+      par <gi>p</gi>. Les signes de paragraphe ne sont pas spécialement marqués.</p>
   </remarks>
 </elementSpec>
