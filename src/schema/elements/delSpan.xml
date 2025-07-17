@@ -6,11 +6,13 @@
   <gloss xml:lang="de" versionDate="2025-02-03">getilgte Passage</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">deleted passage</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">passage supprimé</gloss>
-  <desc xml:lang="de" versionDate="2025-02-05">Markiert eine grössere, die Hierarchiegrenzen
-  überschreitende Tilgung.</desc>
+  <desc xml:lang="de" versionDate="2025-07-17">Markiert eine grössere, die Hierarchiegrenzen
+    überschreitende Tilgung eines Schreibers, die nicht durch ein einfaches <gi>del</gi> kodiert
+    werden kann.</desc>
   <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections deleted from the text.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Marque une suppression majeure d’un scribe
-    qui traverse les limites de la hiérarchie.</desc>
+  <desc xml:lang="fr" versionDate="2025-07-17">Marque la suppression de la part d’un scribe
+    d’une importante séquence de texte qui ne peut être signalée seulement par un
+    <gi>del</gi>.</desc>
   <classes mode="replace">
     <memberOf key="att.global.rendition"/>
     <memberOf key="att.spanning"/>
@@ -43,7 +45,7 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-05">
     <p>Les mêmes règles s’appliquent à <gi>delSpan</gi> et à <gi>del</gi> (voir ici).</p>
-    <p>De plus, l’attribut <att>spanTo</att> est utilisé pour faire référence au point final de
-      la suppression, qui est marqué avec <gi>anchor</gi>.</p>
+    <p>De plus, l’attribut <att>spanTo</att> est utilisé pour faire référence au point final du
+      passage supprimé, qui est marqué avec <gi>anchor</gi>.</p>
   </remarks>
 </elementSpec>
