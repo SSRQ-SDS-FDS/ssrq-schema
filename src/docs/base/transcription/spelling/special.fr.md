@@ -173,7 +173,7 @@ Exemples :
 
 Le tableau ci-dessous montre comment les caractères individuels doivent être codés.
 
-Pour certains des caractères spécifiés, il a plusieurs options de codage:
+Pour certains des caractères spécifiés, il a plusieurs options de codage :
 P. ex., l’e caudata peut être codé sous la forme d’un seul caractère `ę` (U+0119)
 ou sous la forme d’une lettre de base `e` (U+0065) avec un Ogonek combinant `ę` (U+0328).
 P. ex., `Ą ą Ę ę Į į Ǫ ǫ Ų ų` peut être généré en entrant d’abord la lettre de base puis en
@@ -184,7 +184,7 @@ Si nécessaire, plusieurs personnages combinés avec une lettre terrestre peuven
 o + trema combinant).
 
 Fondamentalement, la variante de combinaison est préférée car les caractères de combinaison peuvent
-être attachés à tous les registres terrestres. Exception: 
+être attachés à tous les registres terrestres. Exception : 
 Par souci de simplicité, les umlauts allemands `Ä ä Ö ö Ü ü` peuvent être entrés directement sous
 forme de signes individuels et n’ont pas à être enregistrés comme une lettre terrestre avec un
 trema combinant (U+0308).

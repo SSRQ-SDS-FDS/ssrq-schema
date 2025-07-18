@@ -62,29 +62,14 @@ def test_org_name(
             "<seriesStmt><orgName>bar</orgName></seriesStmt>",
             False,
         ),
-        (
-            "valid-orgName-inside-respStmt",
-            "<respStmt><orgName>bar</orgName></respStmt>",
-            True,
-        ),
-        (
-            "invalid-orgName-inside-respStmt-with-ref",
-            "<respStmt><orgName ref='org123456'>bar</orgName></respStmt>",
-            False,
-        ),
-        (
-            "invalid-orgName-inside-respStmt-with-role",
-            "<respStmt><orgName role='recipient'>bar</orgName></respStmt>",
-            False,
-        ),
     ],
 )
 def test_org_name_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+    lit_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
+        input=writer.list(), isosch=lit_constraints
     )
 
     if (

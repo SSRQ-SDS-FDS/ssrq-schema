@@ -8,16 +8,9 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">division</gloss>
   <classes mode="replace"/>
   <content>
-    <alternate>
-      <sequence>
-        <!-- minOccurs="2" maxOccurs="unbounded" funktioniert nicht -->
-        <elementRef key="div"/>
-        <elementRef key="div" maxOccurs="unbounded"/>
-      </sequence>
-      <sequence>
-        <elementRef key="head"/>
-        <elementRef key="listBibl" maxOccurs="unbounded"/>
-      </sequence>
-    </alternate>
+    <sequence>
+      <elementRef key="head"/>
+      <elementRef key="listBibl" maxOccurs="unbounded"/>
+    </sequence>
   </content>
 </elementSpec>

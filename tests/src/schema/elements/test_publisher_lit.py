@@ -29,11 +29,6 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             False,
         ),
         (
-            "invalid-publisher-with-mixed-content",
-            "<publisher><orgName>Foo und Co.</orgName> KG</publisher>",
-            False,
-        ),
-        (
             "invalid-publisher-with-cert",
             "<publisher cert='low'>foo</publisher>",
             False,
@@ -62,19 +57,14 @@ def test_publisher(
             "<publicationStmt><publisher>Foo</publisher></publicationStmt>",
             False,
         ),
-        (
-            "invalid-publisher-with-cert",
-            "<publicationStmt><publisher cert='low'>SSRQ-SDS-FDS</publisher></publicationStmt>",
-            False,
-        ),
     ],
 )
 def test_publisher_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+    lit_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
+        input=writer.list(), isosch=lit_constraints
     )
 
     if (

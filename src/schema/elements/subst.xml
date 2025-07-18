@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="subst" module="transcr" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="subst" module="transcr" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-04">Ersetzung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">substitution</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-04">substitution</gloss>
@@ -15,12 +15,24 @@
   </classes>
   <content>
     <sequence preserveOrder="false">
-      <elementRef key="add"/>
       <elementRef key="del"/>
+      <elementRef key="add"/>
       <elementRef key="lb" minOccurs="0"/>
       <elementRef key="pb" minOccurs="0"/>
     </sequence>
   </content>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-subst">
+    <desc xml:lang="en" versionDate="2025-05-05">constraint for tei:subst</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:subst">
+          <sch:report test="tei:add[following-sibling::tei:del]">
+            tei:del must come before tei:add when used inside tei:subst.
+          </sch:report>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <attList>
     <attDef ident="type" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-14">die Art der Ersetzung</desc>

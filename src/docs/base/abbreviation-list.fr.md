@@ -50,14 +50,14 @@ pas dissoutes.
     h = herr, herren  
     hr = herr, herren  
     j = junker  
-    J. H. = Johann Heinrich?  
+    J. H. = Johann Heinrich ?  
     lobl = löblich  
     M = Meister  
     m = meister  
     m g h = mein gnädiger herr, meine gnädigen herren  
     mr = meister  
     Ulr = Ulrich  
-    W = Wilhelm?  
+    W = Wilhelm ?  
 
 === "Abréviations françaises historiques"
 
@@ -81,7 +81,7 @@ pas dissoutes.
     N N = nomen, non nominat, non nescio (Ersatzbuchstaben für einen
     unbekannten Namen)  
     no = numero  
-    q = quart?  
+    q = quart ?  
     s h = salvo honore (mit Verlaub zu sagen)  
     s v = salva venia (mit Verlaub zu sagen)  
     tit = titulus (Titel)  

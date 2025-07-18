@@ -28,7 +28,11 @@ from ..conftest import RNG_test_function
             """,
             True,
         ),
-        ("invalid-row-with-wrong-content", "<row><p>foo</p></row>", False),
+        (
+            "invalid-row-with-wrong-content",
+            "<row><p>foo</p></row>",
+            False,
+        ),
     ],
 )
 def test_row(

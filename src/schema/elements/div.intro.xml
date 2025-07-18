@@ -2,7 +2,7 @@
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
         type="application/xml"
         schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="div" module="textstructure" mode="change">
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="div" module="textstructure" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Abschnitt</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">division</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">division</gloss>
@@ -16,49 +16,17 @@
         <elementRef key="head" minOccurs="0"/>
         <elementRef key="div" minOccurs="2" maxOccurs="unbounded"/>
       </sequence>
-      <alternate maxOccurs="unbounded">
-        <elementRef key="list"/>
-        <elementRef key="seg"/>
-        <elementRef key="p"/>
-        <macroRef key="ssrq.content.default"/>
-      </alternate>
+      <sequence>
+        <elementRef key="head" minOccurs="0"/>
+        <alternate maxOccurs="unbounded">
+          <elementRef key="figure"/>
+          <elementRef key="p"/>
+          <elementRef key="quote"/>
+          <elementRef key="table"/>
+        </alternate>
+      </sequence>
     </alternate>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-div-text" mode="add">
-    <desc xml:lang="en" versionDate="2024-08-06">constraint for the usage of text inside tei:div</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:div">
-          <sch:assert test="string-length(normalize-space(string-join(text(), ''))) = 0">
-            Text is not allowed in tei:div.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-div-xml-lang" mode="add">
-    <desc xml:lang="en" versionDate="2024-08-06">constraint for the usage of @xml:lang in tei:div</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:div[@xml:lang]">
-          <sch:let name="divs-in-back" value="count(./parent::tei:back/tei:div)"/>
-          <sch:assert test=".[parent::tei:back]">
-            The attribute @xml:lang for tei:div is allowed only in tei:back.
-          </sch:assert>
-          <sch:assert test="$divs-in-back gt 1">
-            If @xml:lang is specified for tei:div, there must be at least two tei:divs.
-          </sch:assert>
-          <sch:report test="./parent::tei:back/tei:div[not(@xml:lang)]">
-            If @xml:lang is specified for tei:div, all sibling tei:divs must have this attribute.
-          </sch:report>
-          <sch:assert test="count(distinct-values(./parent::tei:back/tei:div/@xml:lang)) = $divs-in-back">
-            If @xml:lang is specified for tei:div, at least another tei:div with another
-            language has to be specified
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
   <attList>
     <attDef ident="n" mode="change">
       <desc xml:lang="de" versionDate="2025-01-31">die Nummerierung des Abschnitts</desc>

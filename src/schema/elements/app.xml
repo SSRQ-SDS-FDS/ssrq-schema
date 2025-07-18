@@ -35,6 +35,9 @@
   <xi:include href="examples.xml" xpointer="ex-app-note-de"/>
   <xi:include href="examples.xml" xpointer="ex-app-note-en"/>
   <xi:include href="examples.xml" xpointer="ex-app-note-fr"/>
+  <xi:include href="examples.xml" xpointer="ex-app-lem-space-de"/>
+  <xi:include href="examples.xml" xpointer="ex-app-lem-space-en"/>
+  <xi:include href="examples.xml" xpointer="ex-app-lem-space-fr"/>
   <xi:include href="examples.xml" xpointer="ex-app-without-lem-de"/>
   <xi:include href="examples.xml" xpointer="ex-app-without-lem-en"/>
   <xi:include href="examples.xml" xpointer="ex-app-without-lem-fr"/>
@@ -52,8 +55,7 @@
         Die bereits edierten Teile eines früheren Textzeugen können dann mit <gi>gap</gi>
         weggelassen werden. Es muss in diesem Fall jedoch mit <att>source</att> auf den edierten
         Text, der weggelassen wird, referenziert werden. Ein Kommentar hierzu in
-        <gi>back</gi> ist notwendig. Ein leeres <gi>lem</gi> kann auch verwendet werden, wenn ein
-        Wort oder Satzteil weggelassen wurde, der in einem anderen Textzeugen noch erhalten ist.</p>
+        <gi>back</gi> ist notwendig.</p>
     <p>Wenn eine Zweitausfertigung oder Abschrift eine signifikante Auslassung aufweist, kann dafür
         ein leeres <gi>rdg</gi> gesetzt werden (vgl. Beispiel unten).
         Für alternative Lesungen aus anderen Editionen bzw. moderner Literatur verwendet man
@@ -81,8 +83,7 @@
             below). In the case of longer supplements or additions from other text sources, however, it is advisable to
             create a separate piece for them. The already edited texts of an earlier text witness can be omitted
             with <gi>gap</gi>. However, it must be referenced with <att>source</att> to the edited text that is omitted.
-            A remark (comment in <gi>back</gi>) is required. An empty <gi>lem</gi> can also be used when an original has
-            omitted a word or phrase that was included in a draft.
+            A remark (comment in <gi>back</gi>) is required.
         </p>
     <p>If a duplicate or transcript has a significant omission (that is, a word or phrase has been omitted), an
             empty <gi>rdg</gi> may be substituted (see example below). For alternative readings from other editions or

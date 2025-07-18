@@ -20,6 +20,7 @@
   <content>
     <alternate>
       <sequence preserveOrder="false">
+        <elementRef key="head" minOccurs="0" maxOccurs="1"/>
         <elementRef key="div" minOccurs="2" maxOccurs="unbounded"/>
         <alternate minOccurs="0" maxOccurs="unbounded">
           <elementRef key="cb"/>
@@ -43,6 +44,18 @@
           <sch:assert test="string-length(normalize-space(string-join(text(), ''))) = 0">
             Text is not allowed in tei:div.
           </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-div-head" mode="add">
+    <desc xml:lang="en" versionDate="2025-05-05">constraint for the combined usage of tei:head and tei:div</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:div[tei:head][tei:div]">
+          <sch:report test="tei:head[preceding-sibling::tei:div]">
+            If a tei:head is used inside <sch:name/> it must always precede all tei:div-elements.
+          </sch:report>
         </sch:rule>
       </sch:pattern>
     </constraint>

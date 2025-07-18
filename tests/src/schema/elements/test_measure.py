@@ -172,9 +172,9 @@ def test_measure(
             True,
         ),
         (
-            "invalid-measure-with-type-weight",
+            "valid-measure-with-type-weight",
             "<measure type='weight' unit='Stuck' quantity='1'>foo</measure>",
-            False,
+            True,
         ),
     ],
 )

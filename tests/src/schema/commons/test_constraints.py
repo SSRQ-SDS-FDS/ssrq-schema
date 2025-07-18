@@ -298,6 +298,9 @@ def test_constraint_sch_att_facs(
                                     </support>
                                 </supportDesc>
                             </objectDesc>
+                            <bindingDesc>
+                                <p>Foo</p>
+                            </bindingDesc>
                         </physDesc>
                         <history>
                             <origin>
@@ -477,7 +480,7 @@ def test_constraint_sch_duplicate_attribute_values(
     [
         (
             "invalid-empty-ab",
-            "<ab type='dorsal' place='cover'/>",
+            "<ab type='address' place='cover'/>",
             False,
         ),
         (
@@ -894,6 +897,27 @@ def test_constraint_sch_non_empty_elements(
     ],
 )
 def test_uses_nbsp_in_text_node(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """Tests the global constraint, which ensures that no non-breaking-space is used."""
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].report.is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "invalid-text with quotation marks",
+            """<p>foo "bar"</p>""",
+            False,
+        ),
+    ],
+)
+def test_quotation_marks_in_text_node(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Tests the global constraint, which ensures that no non-breaking-space is used."""

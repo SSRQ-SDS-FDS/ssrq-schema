@@ -22,7 +22,7 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "invalid-body-with-multiple-divs",
+            "valid-body-with-multiple-divs",
             """
              <body>
                  <div>
@@ -41,7 +41,7 @@ from ..conftest import RNG_test_function
                  </div>
              </body>
              """,
-            False,
+            True,
         ),
         (
             "invalid-body-with-other-content",

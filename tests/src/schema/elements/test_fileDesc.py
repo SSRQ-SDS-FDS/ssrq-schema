@@ -41,6 +41,7 @@ from ..conftest import RNG_test_function
                 <sourceDesc>
                     <msDesc>
                         <msIdentifier>
+                            <settlement ref="loc123456" xml:lang="de">foo</settlement>
                             <repository xml:lang="de">foo</repository>
                             <idno xml:lang="de" source="http://foo.bar">bar</idno>
                         </msIdentifier>
@@ -105,6 +106,7 @@ from ..conftest import RNG_test_function
                 <sourceDesc>
                     <msDesc>
                         <msIdentifier>
+                            <settlement ref="loc123456" xml:lang="de">foo</settlement>
                             <repository xml:lang="de">foo</repository>
                             <idno xml:lang="de" source="http://foo.bar">bar</idno>
                         </msIdentifier>
@@ -172,6 +174,7 @@ from ..conftest import RNG_test_function
                 <sourceDesc>
                     <msDesc>
                         <msIdentifier>
+                            <settlement ref="loc123456" xml:lang="de">foo</settlement>
                             <repository xml:lang="de">foo</repository>
                             <idno xml:lang="de" source="http://foo.bar">bar</idno>
                         </msIdentifier>
@@ -238,6 +241,7 @@ from ..conftest import RNG_test_function
                 <sourceDesc>
                     <msDesc>
                         <msIdentifier>
+                            <settlement ref="loc123456" xml:lang="de">foo</settlement>
                             <repository xml:lang="de">foo</repository>
                             <idno xml:lang="de" source="http://foo.bar">bar</idno>
                         </msIdentifier>

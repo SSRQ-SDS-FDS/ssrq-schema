@@ -5,7 +5,7 @@
 Les numéros arabes et romains sont reproduits conformément au modèle.
 Les numéros romains sont écrits petits.
 
-Exemple : «am .x. tag des monats Mey Anno m.d.xxv.»
+Exemple : « am .x. tag des monats Mey Anno m.d.xxv. »
 
 Les chiffres fractionnaires sont codés avec [`<num>`](num.fr.md), voir là-bas et la page aux 
 [caractères spéciaux](special.fr.md).
