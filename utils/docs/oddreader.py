@@ -22,7 +22,7 @@ class ODDReader:
         self.components = {
             component.ident: component
             for component in self._get_component_specs()
-            if isinstance(component, ODDElement)
+            if isinstance(component, ODDElement)  # type: ignore
         }
         self.translations = translations
 

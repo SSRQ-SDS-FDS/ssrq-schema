@@ -1,16 +1,22 @@
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import Self
+from typing import Self, TypeAlias, cast
 
 from snakemd import Document  # type: ignore
 
 from utils.docs.helpers.sort import sort_with_uca
+from utils.docs.helpers.utils import split_tag_and_ns
 from utils.docs.specs.basespec import BaseSpec
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODDElement
 
+ContentModel: TypeAlias = list[str | ET.Element] | None
+
 
 class ElementSpec(BaseSpec):
+    content: ContentModel
+    parents: ContentModel
+
     def __init__(self, element: ET.Element):
         super().__init__(element=element)
         self.odd_type = "elementSpec"
@@ -41,6 +47,17 @@ class ElementSpec(BaseSpec):
             doc=doc,
         )
 
+        if not hasattr(self, "parents"):
+            self.parents = self.find_parent_elements(
+                elements=elements, components=components
+            )
+
+        self._list_contained_by(
+            elements=elements,
+            translations=lang_translations,
+            doc=doc,
+            lang=lang,
+        )
         if not hasattr(self, "content"):
             self.content = self.find_content_elements(
                 element=self.odd_element, components=components
@@ -71,6 +88,120 @@ class ElementSpec(BaseSpec):
         if path is not None:
             return doc.dump(name=f"{self.ident}.{lang}", directory=path)
         return doc.__str__()
+
+    def find_content_elements(
+        self,
+        element: ET.Element,
+        components: dict[str, ODDElement],
+    ) -> ContentModel:
+        """
+        Find all possibile content elements, which could occur in the current ODDElement.
+        Works recursively, so all macros or datatypes will be expanded.
+
+        Args:
+            element (ET.Element): The element to search for content elements.
+            components (dict[str, ODDElement]): A dictionary of all components.
+
+        Returns:
+            list[str] | None: A list of all possibile content elements."""
+        elements_found: ContentModel = None
+
+        content = element.find("tei:content", namespaces=NS_MAP)
+
+        if content is None or len(content) == 0:
+            # Return early if no content is found
+            return elements_found
+
+        if content.find("tei:empty", namespaces=NS_MAP) is not None:
+            # Also return early if the content is empty
+            return elements_found
+
+        elements_found = []
+
+        for content_part in content.iter():
+            key_or_name = (
+                key
+                if (key := content_part.attrib.get("key"))
+                else content_part.attrib.get("name")
+            )
+            if key_or_name is not None:
+                content_spec = components.get(key_or_name)
+
+                if content_spec is not None:
+                    nested_content = self.find_content_elements(
+                        element=content_spec.odd_element, components=components
+                    )
+                    if nested_content is not None:
+                        elements_found.extend(nested_content)
+                else:
+                    elements_found.append(key_or_name)
+
+            if split_tag_and_ns(content_part.tag)[1] == "valList":
+                elements_found.append(content_part)
+
+            if split_tag_and_ns(content_part.tag)[1] == "textNode":
+                elements_found.append("textNode")
+
+        return elements_found
+
+    def find_parent_elements(
+        self, elements: dict[str, Self], components: dict[str, ODDElement]
+    ) -> ContentModel:
+        """
+        Find all parent elements of the current element.
+
+        Iterates over all elements and checks
+        if the current element is part of the
+        content model of the element.
+
+        Args:
+            elements (dict[str, Self]): A dictionary of all elements.
+            components (dict[str, ODDElement]): A dictionary of all components.
+
+        Returns:
+            ContentModel: A list of all parent elements that contain the current element in their content model
+        """
+        elements_found = []
+
+        for name, element in elements.items():
+            if name == self.ident:
+                continue
+            if self.is_part_of_content_model(
+                element.find_content_elements(element.odd_element, components)
+            ):
+                elements_found.append(name)
+
+        if len(elements_found) == 0:
+            return None
+
+        return cast(ContentModel, elements_found)
+
+    def is_part_of_content_model(
+        self,
+        model: ContentModel,
+    ) -> bool:
+        """
+        Check if this element is part of the given content model.
+
+        Args:
+            model: The content model to check against
+
+        Returns:
+            True if this element is in the content model, False otherwise
+        """
+        if model is None:
+            return False
+
+        for entry in model:
+            match entry:
+                case str() if entry == self.ident:
+                    return True
+                case ET.Element() if split_tag_and_ns(entry.tag)[1] == self.ident:
+                    return True
+                case _:
+                    continue
+
+        return False
 
     def _add_title(self, lang: str, doc: Document) -> None:
         gloss = self.odd_element.find(
@@ -121,6 +252,24 @@ class ElementSpec(BaseSpec):
                 doc=doc, lang=lang, translations=translations
             )
 
+    def _list_contained_by(
+        self,
+        elements: dict[str, Self],
+        translations: dict[str, str],
+        doc: Document,
+        lang: str,
+    ) -> None:
+        if self.parents is None:
+            return
+        self._list_model(
+            self.parents,
+            elements=elements,
+            translations=translations,
+            doc=doc,
+            lang=lang,
+            heading="contained_by",
+        )
+
     def _list_content_model(
         self,
         elements: dict[str, Self],
@@ -128,17 +277,35 @@ class ElementSpec(BaseSpec):
         doc: Document,
         lang: str,
     ) -> None:
+        self._list_model(
+            self.content,
+            elements=elements,
+            translations=translations,
+            doc=doc,
+            lang=lang,
+            heading="content",
+        )
+
+    def _list_model(
+        self,
+        model: ContentModel,
+        elements: dict[str, Self],
+        translations: dict[str, str],
+        doc: Document,
+        lang: str,
+        heading: str,
+    ) -> None:
         from itertools import chain
 
-        doc.add_heading(translations["content"], level=2)
+        doc.add_heading(translations[heading], level=2)
 
-        if self.content is None:
+        if model is None:
             doc.add_paragraph(translations["isEmpty"])
             return
 
         content_keys, vallists = (
-            [i for i in self.content if isinstance(i, str)],
-            [i for i in self.content if isinstance(i, ET.Element)],
+            [i for i in model if isinstance(i, str)],
+            [i for i in model if isinstance(i, ET.Element)],
         )
 
         group_content_by_model = self._group_content_by_model(
