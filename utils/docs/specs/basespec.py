@@ -335,4 +335,7 @@ class BaseSpec:
         return desc[0].upper() + desc[1:]
 
     def _desc_node_to_string(self, desc: ET.Element) -> str:
-        return " ".join(transform_node_to_text(desc))
+        """Creates a joined output string from the text of
+        a description like node. We need to replace '( ' to
+        produce a correct output."""
+        return " ".join(transform_node_to_text(desc)).replace("( ", "(")
