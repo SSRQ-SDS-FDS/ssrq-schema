@@ -117,7 +117,7 @@
         <attDef ident="agent" mode="replace" usage="req">
           <desc xml:lang="de" versionDate="2025-01-28">die Art der Beschädigung</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the type of damage</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">le type de dommage</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">le type d’altération</desc>
           <datatype maxOccurs="unbounded">
             <dataRef key="ssrq.agent"/>
           </datatype>
@@ -644,7 +644,7 @@
             <valItem ident="damaged">
               <desc xml:lang="de" versionDate="2023-05-31">beschädigt</desc>
               <desc xml:lang="en" versionDate="2023-05-31">damaged</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">endommagé</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">altéré</desc>
               <desc xml:lang="it" versionDate="2023-05-31">danneggiato</desc>
             </valItem>
             <valItem ident="ex_and_enclosed">

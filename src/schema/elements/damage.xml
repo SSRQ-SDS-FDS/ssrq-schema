@@ -5,10 +5,10 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="damage" module="transcr" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Schaden</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">damage</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">dommage</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">altération</gloss>
   <desc xml:lang="de" versionDate="2023-07-13">Enthält beschädigten Text.</desc>
   <desc xml:lang="en" versionDate="2023-07-13">Denotes a damaged section.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-13">Contient une zone du texte endommagé.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-13">Contient une zone du texte altéré.</desc>
   <classes mode="replace">
     <memberOf key="att.damaged"/>
     <memberOf key="att.dimensions"/>
@@ -89,18 +89,18 @@
         in the metadata.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-27">
-    <p>Le type de dommage est décrit de manière standardisée à l’aide de l’attribut
+    <p>Le type d’altération est décrit de manière standardisée à l’aide de l’attribut
        <att>agent</att>.</p>
     <p>Dans la mesure du possible, le texte manquant est complété par <gi>supplied</gi> ou, si la
       lecture est incertaine, par <gi>unclear</gi>. Si aucun texte ne peut être complété, on
       utilise <gi>gap</gi>. Selon l’importance de la détérioration, il est également possible
       d’utiliser une combinaison des éléments <gi>unclear</gi>, <gi>supplied</gi> et
       <gi>gap</gi>.</p>
-    <p>En règle générale, <gi>damage</gi> est utilisé pour marquer un dommage physique,
+    <p>En règle générale, <gi>damage</gi> est utilisé pour marquer une altération physique,
       généralement involontaire, plutôt qu’une intervention délibérée. Dans ce dernier cas,
-      on utilise <gi>del</gi>. Une description des dommages plus importante se fait en outre de
+      on utilise <gi>del</gi>. Une description des altérations plus importante se fait en outre de
       manière globale <gi>condition</gi>.</p>
-    <p>Si le dommage concerne une longue séquence de texte qui dépasse les limites hiérarchiques,
+    <p>Si l’altération concerne une longue séquence de texte qui dépasse les limites hiérarchiques,
       il faut utiliser <gi>damageSpan</gi>. La limite hiérarchique est dépassée si l’utilisation
       de <gi>damage</gi> ne suffit plus en raison de l’imbrication de nombreux éléments. Ce même
       principe s’applique pour <gi>add</gi> et <gi>del</gi>.</p>
