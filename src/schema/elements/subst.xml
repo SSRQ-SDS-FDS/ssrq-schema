@@ -5,10 +5,11 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="subst" module="transcr" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-04">Ersetzung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">substitution</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">remplacement</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">substitution</gloss>
   <desc xml:lang="de" versionDate="2023-07-31">Enthält eine Ersetzung.</desc>
   <desc xml:lang="en" versionDate="2023-07-31">Contains a substitution.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-31">Contient un remplacement.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-31">Contient une séquence de texte remplacée par une
+    autre.</desc>
   <classes mode="replace">
     <memberOf key="att.typed"/>
   </classes>
@@ -36,7 +37,7 @@
     <attDef ident="type" mode="replace">
       <desc xml:lang="de" versionDate="2025-02-14">die Art der Ersetzung</desc>
       <desc xml:lang="en" versionDate="2025-02-14">the type of substitution</desc>
-      <desc xml:lang="fr" versionDate="2025-02-14">le type de la remplacement</desc>
+      <desc xml:lang="fr" versionDate="2025-02-14">le type de substitution</desc>
       <datatype>
         <dataRef key="ssrq.type.subst"/>
       </datatype>
@@ -58,8 +59,8 @@
         should be considered as a single intervention in the text.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>Regroupe une suppression (ou un excès de texte) avec un ajout dans n’importe quel ordre,
-      si la combinaison des deux opérations doit être considérée comme une intervention unique
-      dans le texte.</p>
+    <p>Regroupe une suppression (ou un texte en trop) avec un ajout, dans n’importe quel ordre,
+      si la combinaison des deux opérations doit être considérée comme une seule intervention sur
+      le texte.</p>
   </remarks>
 </elementSpec>

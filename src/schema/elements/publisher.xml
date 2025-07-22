@@ -5,7 +5,7 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="publisher" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-04">Verlag</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">publisher</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">éditeur</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-04">imprimeur/éditeur</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält bei Druckschriften als Teil
       von <gi>docImprint</gi> den Namen der Druckerei bzw. des Druckers, als Teil
       von <gi>publicationStmt</gi> die Angabe der herausgebenden Institution.
@@ -13,9 +13,9 @@
   <desc xml:lang="en" versionDate="2023-07-20">In the case of publications, contains the name of
       the printer as part of <gi>docImprint</gi> and details of the issuing institution as part
       of <gi>publicationStmt</gi>.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient dans le cas des imprimers, dans le cadre
-      de <gi>docImprint</gi>, le nom de l’imprimerie ou de l’imprimeur, et dans le cadre de
-      <gi>publicationStmt</gi>, le nom de l’institution émettrice.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient, pour les documents imprimés, le nom de
+    l’imprimerie ou de l’imprimeur comme partie de <gi>docImprint</gi>, et l’indication de
+    l’institution éditrice comme partie de <gi>publicationStmt</gi>.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
   </classes>

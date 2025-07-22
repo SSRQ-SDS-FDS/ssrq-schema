@@ -50,12 +50,12 @@
       Sammlung.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>Normalement, lorsqu’un seul texte est édité dans un document XML, la valeur
-      <val>transcript</val> est spécifiée dans l’attribut <att>type</att>. Si seul un
-      regeste du même est publié au lieu du texte, la valeur <val>summary</val> est
-      utilisée. S’agit-il d’une pièce de veste, c’est-à-dire un ensemble de textes
-      édités sous un seul numéro, alors cela est exprimé par <val>collection</val>.
-      Dans ce cas, le <gi>body</gi> ne contient aucun texte d’édition, mais uniquement
-      les références aux textes individuels de la collection éditée.</p>
+    <p>Dans le cas normal où un seul texte est édité dans un document XML, la valeur
+      <val>transcript</val> est indiquée dans l’attribut <att>type</att>. Si, au lieu du texte,
+      seul un résumé de celui-ci est édité, la valeur <val>summary</val> lui est attribuée.
+      S’il s’agit d’une pièce maîtresse, c’est-à-dire d’une collection de textes
+      édités sous un numéro de pièce, cela est exprimé par <val>collection</val>.
+      Dans ce cas, le <gi>body</gi> ne contient pas l’édition du texte, mais uniquement
+      les renvois aux différents textes de la collection éditée.</p>
   </remarks>
 </elementSpec>

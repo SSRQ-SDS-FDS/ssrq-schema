@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">mesure</gloss>
   <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Massangabe jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains a measurement of any type.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient une mesure de chaque type.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient une indication de mesure de n’importe quel type.</desc>
   <classes mode="replace">
     <memberOf key="att.measurement"/>
     <memberOf key="att.typed"/>
@@ -126,8 +126,8 @@
         they are combined into a group with <gi>measureGrp</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Si une quantité exacte ne peut pas être spécifiée à un moment donné, la
-      valeur <val>0</val> est utilisée dans l'attribut <att>quantity</att>. Si plusieurs
-      mesures liées sont côte à côte, elles sont regroupées à l'aide de <gi>measureGrp</gi>.</p>
+    <p>Si la quantité exacte ne peut pas être renseignée, la valeur <val>0</val> est utilisée
+      avec l’attribut <att>quantity</att>. Si plusieurs indications de mesure se suivent côte à
+      côte, elles sont réunies en un groupe avec <gi>measureGrp</gi>.</p>
   </remarks>
 </elementSpec>

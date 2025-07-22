@@ -9,7 +9,8 @@
   <desc xml:lang="de" versionDate="2025-02-06">Enthält Text in direkter Rede.</desc>
   <desc xml:lang="en" versionDate="2023-07-20">Contains text in direct speech in the
       transcription.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient du texte au discours direct.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient une séquence de texte au discours
+    direct.</desc>
   <classes mode="replace">
     <memberOf key="model.hiLike"/>
   </classes>
@@ -48,13 +49,13 @@
         modalizing function, i.e. ironic, distancing, transferred etc., or used for emphasis.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p><gi>q</gi> est utilisé, p. ex., dans les déclarations de témoins. Les citations et les
-      insertions dans un texte source sont marquées avec <gi>quote</gi>.</p>
+    <p><gi>q</gi> est utilisé p. ex. dans les déclarations de témoins. Les citations et les
+      insertions à l’intérieur d’une source sont par contre signalées par <gi>quote</gi>.</p>
     <p>Si le nom d’un document ou d’une prière est mentionné dans le texte édité, il n’est pas
       marqué par les éléments <gi>q</gi> ou <gi>quote</gi>, mais le titre est en majuscule.
       Il en va de même pour les titres d’œuvres historiques au sein des paratextes.</p>
-    <p>Dans les paratextes (notes, commentaire, introduction) la balise <gi>q</gi> peut être
-      utilisée pour une fonction modalisatrice, c’est-à-dire ironique, distanciante,
-      transférante, etc., ou pour mettre l’accent.</p>
+    <p>A l’intérieur des paratextes (notes, commentaires, introduction), la balise <gi>q</gi>
+      peut être utilisée pour moduler le discours, par l’ironie, la distanciation, la
+      transposition, etc. ou pour des mises en évidence.</p>
   </remarks>
 </elementSpec>

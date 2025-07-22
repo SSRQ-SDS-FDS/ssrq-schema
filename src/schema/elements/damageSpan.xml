@@ -5,12 +5,13 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="damageSpan" module="transcr" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">beschädigte Passage</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">damaged passage</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">passage endommagé</gloss>
-  <desc xml:lang="de" versionDate="2023-05-11">Markiert eine grössere beschädigte, die
-    Hierarchiegrenzen überschreitende Passage.</desc>
+  <gloss xml:lang="fr" versionDate="2025-02-03">passage altéré</gloss>
+  <desc xml:lang="de" versionDate="2025-07-17">Markiert eine grössere beschädigte, die
+    Hierarchiegrenzen überschreitende Passage, die nicht durch einfaches <gi>damage</gi>
+    kodiert werden kann.</desc>
   <desc xml:lang="en" versionDate="2023-05-11">Denotes larger sections that are damaged.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-03">Marque un passage endommagé majeur d’un scribe
-    qui traverse les limites de la hiérarchie.</desc>
+  <desc xml:lang="fr" versionDate="2025-07-17">Marque une importante séquence de texte altérée
+    qui ne peut être signalée seulement par un <gi>damage</gi>.</desc>
   <classes mode="replace">
     <memberOf key="att.damaged"/>
     <memberOf key="att.spanning"/>
@@ -34,6 +35,6 @@
   <remarks xml:lang="fr" versionDate="2025-02-05">
     <p>Les mêmes règles s’appliquent à <gi>damageSpan</gi> et à <gi>damage</gi> (voir ici).</p>
     <p>De plus, l’attribut <att>spanTo</att> est utilisé pour faire référence au point final du
-      passage endommagé, qui est marqué avec <gi>anchor</gi>.</p>
+      passage altéré, qui est marqué avec <gi>anchor</gi>.</p>
   </remarks>
 </elementSpec>

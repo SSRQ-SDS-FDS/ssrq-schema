@@ -10,8 +10,9 @@
     transkribierten Text und innerhalb von <gi>back</gi> die Kommentare in Abschnitte.</desc>
   <desc xml:lang="en" versionDate="2023-05-23">Sections source text within <gi>body</gi> or comments
     within <gi>back</gi> together with <gi>p</gi>.</desc>
-  <desc xml:lang="fr" versionDate="2023-05-23">Sections le texte source dans <gi>body</gi> ou les
-    commentaires dans <gi>back</gi> avec <gi>p</gi>.</desc>
+  <desc xml:lang="fr" versionDate="2023-05-23">Cet élément peut structurer en sections aussi bien
+    le texte transcrit à l’intérieur de <gi>body</gi> que les commentaires dans
+    <gi>back</gi>.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="att.typed"/>
@@ -133,16 +134,17 @@
       with <att>xml:lang</att>, if it is a multilingual edition unit.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-05">
-    <p><gi>div</gi> représente les niveaux supérieurs de structure dans un texte. Les paragraphes
-      originaux sont marqués avec <gi>p</gi>. Si l’original est plus structuré, vous pouvez
-      utiliser les deux, éventuellement avec l’attribut <att>type</att>.</p>
-    <p>Les sections que l’éditeur insère pour structurer le contenu (texte lisible) sont marquées
-      avec <gi>seg</gi>.</p>
-    <p>De plus amples informations sur la structuration des textes sources peuvent être trouvées
-      dans le <ref target="textstructure.md">principes de transcription</ref>.</p>
-    <p>Dans le cas de paratextes plus longs (introduction, commentaire), les chapitres peuvent être
-      numérotés avec <att>n</att> et, si nécessaire, avec <att>type</att>.</p>
-    <p>Dans la zone <gi>back</gi>, la langue du commentaire peut être spécifiée
-      avec <att>xml:lang</att>, s’il s’agit d’une unité d’édition multilingue.</p>
+    <p><gi>div</gi> représente les niveaux de structure supérieurs d’un texte. Les paragraphes
+      originaux sont signalés avec <gi>p</gi>. Dans la mesure où l’original est plus articulé ou
+      plus structuré, on peut utiliser les deux, éventuellement avec l’attribut <att>type</att>.</p>
+    <p>Les paragraphes que l’éditeur distingue pour structurer le contenu (et rendre le texte plus
+      lisible) sont en revanche signalés par <gi>seg</gi>.</p>
+    <p>Vous trouverez d’autres indications sur la structuration des textes sources dans les
+      <ref target="textstructure.md">principes de transcription</ref>.</p>
+    <p>Pour les paratextes plus longs (introduction, commentaire), les sections peuvent être
+      numérotées avec <att>n</att> et, si nécessaire, désignées plus précisément avec l’attribut
+      <att>type</att>.</p>
+    <p>Dans la zone <gi>back</gi>, l’attribut <att>xml:lang</att> permet de spécifier la langue
+      du commentaire s’il s’agit d’une unité d’édition multilingue.</p>
   </remarks>
 </elementSpec>

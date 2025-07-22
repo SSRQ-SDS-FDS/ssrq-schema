@@ -6,11 +6,12 @@
   <gloss xml:lang="de" versionDate="2025-02-04">Quellenbeschreibung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">source description</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-04">description de la source</gloss>
-  <desc xml:lang="de" versionDate="2025-02-07">Enthält Elemente zur Beschreibung der Textträger.</desc>
+  <desc xml:lang="de" versionDate="2025-07-05">Enthält Elemente zur Beschreibung des
+    Textträgers.</desc>
   <desc xml:lang="en" versionDate="2023-07-18">Contains elements describing the source or
     sources.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-07">Contient des éléments pour décrire les supports de
-    texte.</desc>
+  <desc xml:lang="fr" versionDate="2025-07-05">Contient des éléments pour décrire le support
+    de texte.</desc>
   <classes mode="replace"/>
   <content>
     <alternate>
@@ -26,17 +27,18 @@
   <xi:include href="examples.xml" xpointer="ex-sourceDesc-listWit-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-07">
     <p>Gibt es nur einen Textträger, ist der Inhalt von <gi>sourceDesc</gi> ein einzelnes
-    <gi>msDesc</gi>; gibt es mehrere, dann folgt ein <gi>listWit</gi>-Element, innerhalb dessen für
-    jeden Textträger ein eigenes <gi>witness</gi> mit einer eigenen <gi>msDesc</gi> angelegt wird.</p>
+      <gi>msDesc</gi>; gibt es mehrere, dann folgt ein <gi>listWit</gi>-Element, innerhalb dessen
+      für jeden Textträger ein eigenes <gi>witness</gi> mit einer eigenen <gi>msDesc</gi>
+      angelegt wird.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-08-18">
     <p>Content (regest), place of storage, material, layout, scribe, seal and bibliographical
       references are described.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>S’il n’y a qu’un seul support de texte, le contenu de <gi>sourceDesc</gi> est un seul
-      <gi>msDesc</gi> ; s’il y en a plusieurs, alors un élément <gi>listWit</gi> suit,
-      dans lequel un <gi>witness</gi> distinct avec son propre <gi>msDesc</gi> est créé
-      pour chaque support de texte.</p>
+    <p>S’il n’y a qu’un seul support de texte, le contenu de <gi>sourceDesc</gi> est un
+      <gi>msDesc</gi> unique ; s’il y en a plusieurs, il est suivi d’un élément <gi>listWit</gi>,
+      à l’intérieur duquel un <gi>witness</gi> distinct est créé pour chaque support de témoin,
+      avec son propre <gi>msDesc</gi>.</p>
   </remarks>
 </elementSpec>

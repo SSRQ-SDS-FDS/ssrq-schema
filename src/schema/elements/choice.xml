@@ -5,13 +5,13 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="choice" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Alternative</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">choice</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">choix</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">option</gloss>
   <desc xml:lang="de" versionDate="2023-07-19">Enthält zwei Elemente zur alternativen Auszeichnung
     einer Textpassage.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains two elements for alternative markup of a
     text passage.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient deux éléments pour le marquage alternatif
-    d’un passage de texte.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient deux éléments permettant de présenter de
+    manière alternative une même séquence du texte.</desc>
   <classes mode="replace">
     <memberOf key="model.linePart"/>
     <memberOf key="model.pPart.editorial"/>
@@ -45,9 +45,9 @@
       The resolution of the abbreviation and the corrections are given after the original text.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>L’élément peut contenir soit une abréviation (<gi>abbr</gi>) avec sa résolution
-      (<gi>expan</gi>) soit une erreur typographique (<gi>sic</gi>) avec sa correction
-      (<gi>corr</gi>). La résolution ou la correction apparaît après l’abréviation ou
+    <p>L’élément peut contenir soit une abréviation (<gi>abbr</gi>) avec son développement
+      (<gi>expan</gi>), soit une erreur typographique (<gi>sic</gi>) avec sa correction
+      (<gi>corr</gi>). Le développement ou la correction apparaît après l’abréviation ou
       l’erreur typographique.</p>
   </remarks>
 </elementSpec>

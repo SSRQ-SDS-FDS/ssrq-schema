@@ -5,13 +5,11 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="witness" module="textcrit" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-04">Textzeuge</gloss>
   <gloss xml:lang="en" versionDate="2025-02-04">text witness</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">témoin textuel</gloss>
-  <desc xml:lang="de" versionDate="2025-02-07">Enthält die Beschreibung eines von mehreren
-    Textträgern.</desc>
+  <gloss xml:lang="fr" versionDate="2025-02-04">témoin</gloss>
+  <desc xml:lang="de" versionDate="2025-07-14">Enthält die Beschreibung eines Textzeugen.</desc>
   <desc xml:lang="en" versionDate="2023-08-23">Contains the piece description of a source
     (originals, copies, etc.).</desc>
-  <desc xml:lang="fr" versionDate="2025-02-07">Contient la description de l’un des nombreux
-    supports de texte.</desc>
+  <desc xml:lang="fr" versionDate="2025-07-14">Contient la description d’un témoin.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
   </classes>
@@ -22,7 +20,7 @@
     <attDef ident="n" mode="replace" usage="req">
       <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Textzeugen</desc>
       <desc xml:lang="en" versionDate="2025-02-04">the numbering of the text witness</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation du témoin textuel</desc>
+      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation du témoin</desc>
       <datatype>
         <dataRef name="string" restriction="[A-Z][0-9]?"/>
       </datatype>
@@ -37,4 +35,14 @@
   <xi:include href="examples.xml" xpointer="ex-witness-de"/>
   <xi:include href="examples.xml" xpointer="ex-witness-en"/>
   <xi:include href="examples.xml" xpointer="ex-witness-fr"/>
+  <remarks xml:lang="de" versionDate="2025-07-14">
+    <p>Ein Textzeuge ist ein Dokument, das einen Text teilweise oder in seiner Gesamtheit
+      überliefert und das als einer der Meilensteine bei der Überlieferung oder Transformation
+      eines Textes angesehen wird.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2025-07-14">
+    <p>Le témoin est un document qui transmet un texte, partiellement ou dans son intégralité,
+      et qui est considéré comme l’un des jalons dans la transmission ou la transformation
+      d’un texte.</p>
+  </remarks>
 </elementSpec>

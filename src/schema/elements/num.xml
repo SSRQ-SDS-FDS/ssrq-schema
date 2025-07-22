@@ -5,10 +5,10 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="num" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">Zahl</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">number</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">numéro</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">nombre</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Zahl.</desc>
   <desc xml:lang="en" versionDate="2025-02-06">Contains a number.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient un numéro.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient un nombre.</desc>
   <classes mode="replace">
     <memberOf key="model.measureLike"/>
   </classes>
@@ -62,14 +62,14 @@
       <gi>num</gi> is not used.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>La valeur du numéro est stockée dans l’attribut <att>value</att> dans un format lisible
-      par machine.</p>
+    <p>La valeur du nombre est enregistrée avec l’attribut <att>value</att> de manière à être
+      lisible par machine.</p>
     <p>Dans le cas d’une fraction, le dénominateur et le numérateur sont séparés par une barre
-      oblique et la valeur de la fraction est stockée sous forme de numéro décimal dans
+      oblique et la valeur de la fraction est indiquée sous forme de numéro décimal dans
       l’attribut <att>value</att>.</p>
-    <p>Pour les informations sur les mesures, les poids, les devises, etc., dans lesquelles
-      le numéro est marqué avec <att>quantity</att> dans <gi>measure</gi>, <gi>num</gi> est
-      omis. De même, <gi>num</gi> n’est pas utilisé pour les dates marquées avec
-      <gi>date</gi> et les heures marquées avec <gi>time</gi>.</p>
+    <p>Pour les données concernant les masses, les poids, les devises, etc., dans lesquelles
+      le nombre est marqué avec <att>quantity</att> dans <gi>measure</gi>, on renonce
+      à <gi>num</gi>. De même, <gi>num</gi> n’est pas utilisé pour les dates indiquées avec
+      <gi>date</gi> ni pour les heures indiquées avec <gi>time</gi>.</p>
   </remarks>
 </elementSpec>

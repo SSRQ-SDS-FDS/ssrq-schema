@@ -5,13 +5,13 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="foreign" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2025-02-03">fremdsprachliche Form</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">foreign form</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">forme étrangère</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">expression étrangère</gloss>
   <desc xml:lang="de" versionDate="2025-02-06">Enthält Text, der in einer anderen Sprache als der
       umgebende Text verfasst wurde.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains text that is in a different language than
       the main text.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient du texte écrit dans une langue différente
-      du texte environnant.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-06">Contient des mots ou des expressions qui ne sont
+    pas écrits dans la langue principale du texte.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
   </classes>
@@ -41,9 +41,9 @@
         provided with <att>xml:lang</att>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>«Actum», «datum» ou «etc.» ne sont pas marqués avec <gi>foreign</gi>. Les passages de texte
-        plus longs en langue étrangère sont également notés dans les métadonnées
-        sous <gi>textLang</gi>.</p>
-    <p>L’attribut <att>xml:lang</att> spécifie toujours la langue.</p>
+    <p>« Actum », « datum » ou « etc » ne sont pas signalés avec <gi>foreign</gi>. Les longs
+      passages de texte en langue étrangère sont également indiqués dans les métadonnées
+      sous <gi>textLang</gi>.</p>
+    <p>La langue est toujours spécifiée avec l’attribut <att>xml:lang</att>.</p>
   </remarks>
 </elementSpec>
