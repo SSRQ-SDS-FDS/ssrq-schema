@@ -609,7 +609,42 @@ def test_pointer_keywords_and_lemmata_rng(
     test_element_with_rng("term", name, markup, result, False)
 
 
-# ToDo: Add tests for ssrq.pointer.doi
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-4-digit-doi",
+            """<ref target="doi:10.1515/9783111006147"></ref>""",
+            True,
+        ),
+        (
+            "valid-5-digit-doi",
+            """<ref target="doi:10.48611/isbn.978-2-406-16730-3.p.0069"></ref>""",
+            True,
+        ),
+        (
+            "valid-6-digit-doi",
+            """<ref target="doi:10.123456/test"></ref>""",
+            True,
+        ),
+        (
+            "invalid-doi-without-prefix",
+            """<ref target="10.48611/isbn.978-2-406-16730-3.p.0069"></ref>""",
+            False,
+        ),
+    ],
+)
+def test_pointer_doi_rng(
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
+):
+    """Test the pattern ssrq.pointer.doi which is used for @target."""
+
+    test_element_with_rng("ref", name, markup, result, False)
+
+
 # ToDo: Add tests for ssrq.pointer.url
 # ToDo: Add tests for ssrq.pointer.urn
 # ToDo: Add tests for ssrq.pointer.target

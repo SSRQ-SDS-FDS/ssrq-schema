@@ -128,7 +128,7 @@
       <desc xml:lang="en" versionDate="2025-01-30">the pattern for a DOI.</desc>
       <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour une DOI.</desc>
       <content>
-        <dataRef name="string" restriction="doi:10\.\d{4}/.*"/>
+        <dataRef name="string" restriction="doi:10\.\d{4,6}/.*"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.pointer.url" mode="add" module="ssrq.core.module">
