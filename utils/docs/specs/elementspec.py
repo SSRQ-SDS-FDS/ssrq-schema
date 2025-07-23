@@ -164,8 +164,6 @@ class ElementSpec(BaseSpec):
         elements_found = []
 
         for name, element in elements.items():
-            if name == self.ident:
-                continue
             if self.is_part_of_content_model(
                 element.find_content_elements(element.odd_element, components)
             ):
