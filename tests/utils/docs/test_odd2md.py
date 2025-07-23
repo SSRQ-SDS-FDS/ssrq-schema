@@ -129,6 +129,64 @@ def test_find_el_content(
 
 
 @pytest.mark.parametrize(
+    "element_name, has_parents, expected_elements",
+    [
+        (
+            "hi",
+            True,
+            ["q", "hi", "add"],
+        ),
+        (
+            "height",
+            True,
+            ["dimensions"],
+        ),
+    ],
+)
+def test_find_el_parents(
+    example_elementSpec: EL_FINDER,
+    example_odd: str,
+    element_name: str,
+    has_parents: bool,
+    expected_elements: list[str] | None,
+):
+    """
+    Test if the content of an element is found correctly.
+
+    Args:
+        example_elementSpec (EL_FINDER): Fixture to find an elementSpec in the example ODD.
+        example_odd (str): Fixture to find the example ODD.
+        element_name (str): Name of the element to find.
+        has_parents (bool): Whether the element has parents or not.
+        expected_elements (list[str] | None): List of expected parent elements.
+
+    Returns:
+        None"""
+
+    odd_reader = ODDReader(odd=example_odd)
+    example_el_spec = example_elementSpec(element_name)
+
+    assert example_el_spec is not None
+
+    el_spec = ElementSpec(element=example_el_spec)
+
+    assert el_spec.odd_type == "elementSpec"
+
+    el_spec.parents = el_spec.find_parent_elements(
+        elements=odd_reader.elements,
+        components=odd_reader.components,  # type: ignore
+    )
+
+    if has_parents:
+        assert el_spec.parents is not None
+        assert isinstance(el_spec.parents, list)
+        assert expected_elements is not None
+        assert all(el in el_spec.parents for el in expected_elements)
+    else:
+        assert el_spec.parents is None
+
+
+@pytest.mark.parametrize(
     "element_name, has_attributes, attributes",
     [
         (
