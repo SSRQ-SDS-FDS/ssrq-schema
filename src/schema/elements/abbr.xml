@@ -28,7 +28,7 @@
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:abbr">
-          <sch:report test="contains(./text(), '.')">
+          <sch:report test="contains(./string(), '.')">
               No points are allowed inside tei:abbr, cf. the guidelines for transcription.
           </sch:report>
         </sch:rule>

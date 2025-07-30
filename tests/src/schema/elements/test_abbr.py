@@ -58,8 +58,23 @@ def test_abbr(
             True,
         ),
         (
+            "valid-abbr-without-points-and-multiple-text-nodes",
+            "<abbr>etc<lb break='no'/>baz</abbr>",
+            True,
+        ),
+        (
             "invalid-abbr-with-points",
             "<abbr>etc.</abbr>",
+            False,
+        ),
+        (
+            "invalid-abbr-with-points-and-multiple-text-nodes",
+            "<abbr>etc.<lb break='no'/>baz</abbr>",
+            False,
+        ),
+        (
+            "invalid-abbr-with-points-in-unclear",
+            "<abbr><unclear>etc.</unclear>baz</abbr>",
             False,
         ),
     ],
