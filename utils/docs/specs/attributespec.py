@@ -93,7 +93,7 @@ class AttributeSpec:
                     )
 
                     if desc is not None:
-                        val_item_rendered += f"  - *{self._render_description(desc)}*"
+                        val_item_rendered += f" – *{self._render_description(desc)}*"
 
                     output.append(val_item_rendered)
 

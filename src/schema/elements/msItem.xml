@@ -6,12 +6,12 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Handschriftenteil</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">manuscript item</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">élément du manuscrit</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält Informationen über einen einzelnen Teil
-      eines Textträgers.</desc>
+  <desc xml:lang="de" versionDate="2025-07-10">Enthält Informationen über die Sprache und
+    gegebenenfalls den Autor eines Textes.</desc>
   <desc xml:lang="en" versionDate="2023-08-17">Contains information about a single part of a
       source.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient des informations sur une seule partie d’un
-      support de texte.</desc>
+  <desc xml:lang="fr" versionDate="2025-07-10">Contient des informations sur la langue et
+    éventuellement l’auteur du texte.</desc>
   <classes mode="replace">
     <memberOf key="model.msItemPart"/>
   </classes>
@@ -39,9 +39,9 @@
         books the place of printing and the printer can be indicated within <gi>docImprint</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Les langues utilisées dans le texte sont indiquées avec <gi>textLang</gi>.
-        Pour les manuscrits, les auteurs peuvent être spécifiés avec <gi>author</gi> ;
-        pour les publications imprimées, le lieu d’impression et l’imprimerie peuvent
-        être spécifiés dans <gi>docImprint</gi>.</p>
+    <p>Les langues utilisées dans le texte sont indiquées avec <gi>textLang</gi>. Pour les
+      manuscrits, les auteurs ou les scribes peuvent être indiqués avec <gi>author</gi> ; pour
+      les publications imprimées, le lieu d’impression et l’imprimeur peuvent être indiqués dans
+      <gi>docImprint</gi>.</p>
   </remarks>
 </elementSpec>

@@ -50,7 +50,7 @@ kommen und nicht aufgelöst werden.
     h = herr, herren  
     hr = herr, herren  
     j = junker  
-    J. H. = Johann Heinrich?  
+    J H = Johann Heinrich?  
     lobl = löblich  
     M = Meister  
     m = meister  
@@ -62,19 +62,19 @@ kommen und nicht aufgelöst werden.
 === "Historische französische Abkürzungen"
 
     LL EE = Leurs Excellences  
-    M = Monsieur
+    M = Monsieur  
     MM =  Messieurs
 
 === "Historische lateinische Abkürzungen"
 
     ao = anno  
     da = datum  
-    etc = et cetera
-    jud = Judicatum est  
-    lib = liber
+    etc = et cetera  
+    jud = judicatum est  
+    lib = liber  
     L S = Locus sigilli  
-    LS = Locus sigilli
-    mmp = manu propria (eigenhändig)
+    LS = Locus sigilli  
+    mmp = manu propria (eigenhändig)  
     N = nomen, non nominat, non nescio (Ersatzbuchstaben für einen
     unbekannten Namen)  
     NB = Nota bene (Nebenbei bemerkt)  

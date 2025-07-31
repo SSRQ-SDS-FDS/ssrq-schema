@@ -387,13 +387,18 @@ def test_facs_name_rng(
             False,
         ),
         (
-            "invalid-persons-pointer-with-to-few-digits-after-dot",
+            "invalid-persons-pointer-with-too-few-digits-after-dot",
             "<persName ref='per123456.1'>Foo</persName>",
             False,
         ),
         (
-            "invalid-persons-pointer-with-to-much-digits-after-dot",
+            "valid-persons-pointer-with-three-digits-after-dot",
             "<persName ref='per123456.100'>Foo</persName>",
+            True,
+        ),
+        (
+            "invalid-persons-pointer-with-too-much-digits-after-dot",
+            "<persName ref='per123456.1000'>Foo</persName>",
             False,
         ),
     ],
@@ -438,13 +443,18 @@ def test_pointer_person_rng(
             False,
         ),
         (
-            "invalid-org-pointer-with-to-few-digits-after-dot",
+            "invalid-org-pointer-with-too-few-digits-after-dot",
             "<orgName ref='org123456.1'>Foo</orgName>",
             False,
         ),
         (
-            "invalid-org-pointer-with-to-much-digits-after-dot",
-            "<orgName ref='org123456.1'>Foo</orgName>",
+            "valid-org-pointer-with-three-digits-after-dot",
+            "<orgName ref='org123456.100'>Foo</orgName>",
+            True,
+        ),
+        (
+            "invalid-org-pointer-with-too-much-digits-after-dot",
+            "<orgName ref='org123456.1000'>Foo</orgName>",
             False,
         ),
     ],
@@ -489,13 +499,18 @@ def test_pointer_org_rng(
             False,
         ),
         (
-            "invalid-places-pointer-with-to-few-digits-after-dot",
+            "invalid-places-pointer-with-too-few-digits-after-dot",
             "<placeName ref='loc123456.1'>Foo</placeName>",
             False,
         ),
         (
-            "invalid-places-pointer-with-to-much-digits-after-dot",
+            "valid-places-pointer-with-three-digits-after-dot",
             "<placeName ref='loc123456.100'>Foo</placeName>",
+            True,
+        ),
+        (
+            "invalid-places-pointer-with-too-much-digits-after-dot",
+            "<placeName ref='loc123456.1000'>Foo</placeName>",
             False,
         ),
     ],
@@ -567,14 +582,19 @@ def test_pointer_places_rng(
             False,
         ),
         (
-            "invalid-lemma-pointer-with-to-few-digits-after-dot",
+            "invalid-lemma-pointer-with-too-few-digits-after-dot",
             "<term ref='lem123456.1'>Foo</term>",
             False,
         ),
         (
-            "invalid-lemma-pointer-with-three-digits-after-dot",
+            "valid-lemma-pointer-with-three-digits-after-dot",
             "<term ref='lem123456.100'>Foo</term>",
             True,
+        ),
+        (
+            "invalid-lemma-pointer-with-too-much-digits-after-dot",
+            "<term ref='lem123456.1000'>Foo</term>",
+            False,
         ),
     ],
 )
@@ -589,7 +609,42 @@ def test_pointer_keywords_and_lemmata_rng(
     test_element_with_rng("term", name, markup, result, False)
 
 
-# ToDo: Add tests for ssrq.pointer.doi
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-4-digit-doi",
+            """<ref target="doi:10.1515/9783111006147"></ref>""",
+            True,
+        ),
+        (
+            "valid-5-digit-doi",
+            """<ref target="doi:10.48611/isbn.978-2-406-16730-3.p.0069"></ref>""",
+            True,
+        ),
+        (
+            "valid-6-digit-doi",
+            """<ref target="doi:10.123456/test"></ref>""",
+            True,
+        ),
+        (
+            "invalid-doi-without-prefix",
+            """<ref target="10.48611/isbn.978-2-406-16730-3.p.0069"></ref>""",
+            False,
+        ),
+    ],
+)
+def test_pointer_doi_rng(
+    test_element_with_rng: RNG_test_function,
+    name: str,
+    markup: str,
+    result: bool,
+):
+    """Test the pattern ssrq.pointer.doi which is used for @target."""
+
+    test_element_with_rng("ref", name, markup, result, False)
+
+
 # ToDo: Add tests for ssrq.pointer.url
 # ToDo: Add tests for ssrq.pointer.urn
 # ToDo: Add tests for ssrq.pointer.target

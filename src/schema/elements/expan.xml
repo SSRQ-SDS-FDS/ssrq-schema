@@ -5,10 +5,10 @@
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="expan" module="core" mode="change">
   <gloss xml:lang="de" versionDate="2023-07-19">Auflösung</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">expansion</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">expansion</gloss>
+  <gloss xml:lang="fr" versionDate="2025-02-03">développement</gloss>
   <desc xml:lang="de" versionDate="2023-07-19">Enthält die Auflösung einer Abkürzung.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains the expansion of an abbreviation.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient l’expansion d’une abréviation.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient le développement d’une abréviation.</desc>
   <classes mode="replace">
     <memberOf key="att.global.responsibility"/>
     <memberOf key="model.choicePart"/>
@@ -41,8 +41,8 @@
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
     <p>Les règles des <ref target="abbreviations.fr.md">principes de transcription</ref>
-      s’appliquent à la résolution des abréviations, voir également la
+      s’appliquent au développement des abréviations. Voir également la
       <ref target="abbreviation-list.fr.md">liste des abréviations</ref></p>
-    <p>L’attribut <att>resp</att> spécifie la personne responsable de la résolution.</p>
+    <p>L’attribut <att>resp</att> spécifie la personne responsable du développement.</p>
   </remarks>
 </elementSpec>

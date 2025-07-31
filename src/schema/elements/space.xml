@@ -10,8 +10,8 @@
     zwecks späterer Ergänzung offen gelassen wurde.</desc>
   <desc xml:lang="en" versionDate="2023-05-11">Denotes a gap that the writer deliberately left
     open for later completion.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-07">Marque une lacune qui le scribe a délibérément
-    laissé ouverte pour une réalisation ultérieure.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-07">Marque une lacune que le scribe a délibérément
+    laissée ouverte en vue d’un complément ultérieur.</desc>
   <classes mode="replace">
     <memberOf key="att.dimensions"/>
   </classes>
@@ -50,9 +50,9 @@
       <gi>supplied</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>La taille de la lacune doit être spécifiée avec les attributs <att>unit</att> et
+    <p>La taille de la lacune est impérativement indiquée avec les attributs <att>unit</att> et
       <att>quantity</att>. Il s’agit d’un élément vide.</p>
-    <p>Le texte manquant en raison de sauts de ligne involontaires, s’il est ajouté par
-      les éditeurs, est marqué avec <gi>supplied</gi>.</p>
+    <p>Le texte manquant en raison de sauts de ligne involontaires est en revanche signalé par
+      éditeurs avec <gi>supplied</gi>.</p>
   </remarks>
 </elementSpec>

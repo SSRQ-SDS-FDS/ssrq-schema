@@ -1,7 +1,6 @@
 import xml.etree.ElementTree as ET
 
 from utils.docs.helpers.node_to_text import transform_node_to_text
-from utils.docs.helpers.utils import split_tag_and_ns
 from utils.docs.specs.attributespec import AttributeSpec
 from utils.docs.specs.namespaces import NS_MAP
 from utils.docs.specs.oddelement import ODD_COMP_TYPES, ODDElement
@@ -9,7 +8,6 @@ from utils.docs.specs.oddelement import ODD_COMP_TYPES, ODDElement
 
 class BaseSpec:
     attributes: list[AttributeSpec] | None
-    content: list[str | ET.Element] | None
     odd_element: ET.Element
     odd_type: ODD_COMP_TYPES
     ident: str
@@ -202,61 +200,6 @@ class BaseSpec:
             else None
         )
 
-    def find_content_elements(
-        self,
-        element: ET.Element,
-        components: dict[str, ODDElement],
-    ) -> list[str | ET.Element] | None:
-        """
-        Find all possibile content elements, which could occur in the current ODDElement.
-        Works recursively, so all macros or datatypes will be expanded.
-
-        Args:
-            element (ET.Element): The element to search for content elements.
-            components (dict[str, ODDElement]): A dictionary of all components.
-
-        Returns:
-            list[str] | None: A list of all possibile content elements."""
-        elements_found: list[str | ET.Element] | None = None
-
-        content = element.find("tei:content", namespaces=NS_MAP)
-
-        if content is None or len(content) == 0:
-            # Return early if no content is found
-            return elements_found
-
-        if content.find("tei:empty", namespaces=NS_MAP) is not None:
-            # Also return early if the content is empty
-            return elements_found
-
-        elements_found = []
-
-        for content_part in content.iter():
-            key_or_name = (
-                key
-                if (key := content_part.attrib.get("key"))
-                else content_part.attrib.get("name")
-            )
-            if key_or_name is not None:
-                content_spec = components.get(key_or_name)
-
-                if content_spec is not None:
-                    nested_content = self.find_content_elements(
-                        element=content_spec.odd_element, components=components
-                    )
-                    if nested_content is not None:
-                        elements_found.extend(nested_content)
-                else:
-                    elements_found.append(key_or_name)
-
-            if split_tag_and_ns(content_part.tag)[1] == "valList":
-                elements_found.append(content_part)
-
-            if split_tag_and_ns(content_part.tag)[1] == "textNode":
-                elements_found.append("textNode")
-
-        return elements_found
-
     def example_to_string(
         self, example: ET.Element, lang: str
     ) -> tuple[str | None, str]:
@@ -335,4 +278,7 @@ class BaseSpec:
         return desc[0].upper() + desc[1:]
 
     def _desc_node_to_string(self, desc: ET.Element) -> str:
-        return " ".join(transform_node_to_text(desc))
+        """Creates a joined output string from the text of
+        a description like node. We need to replace '( ' to
+        produce a correct output."""
+        return " ".join(transform_node_to_text(desc)).replace("( ", "(")

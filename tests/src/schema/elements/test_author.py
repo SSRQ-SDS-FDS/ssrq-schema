@@ -41,25 +41,21 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-author-with-orgName",
-            "<author><orgName ref='org123456'>Staatskanzlei Zürich</orgName></author>",
+            "valid-author-with-text",
+            "<author>Schreiber der Staatskanzlei Zürich</author>",
             True,
         ),
         (
-            "valid-author-with-multiple-orgNames",
-            """
-            <author>
-                <orgName ref='org123456'>Staatskanzlei Zürich</orgName>
-                <orgName ref='org123457'>Staatskanzlei Adlikon</orgName>
-            </author>""",
-            True,
+            "invalid-author-with-orgName",
+            "<author><orgName ref='org123456'>Staatskanzlei Zürich</orgName></author>",
+            False,
         ),
         (
             "invalid-author-with-persName-and-orgName",
             """
             <author role='scribe'>
                 <persName ref='per002336'>Adam Böniger</persName>
-                <orgName>Staatskanzlei</orgName>
+                <orgName ref='org123456'>Staatskanzlei Zürich</orgName>
             </author>""",
             False,
         ),

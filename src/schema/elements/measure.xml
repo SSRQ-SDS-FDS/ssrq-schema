@@ -8,7 +8,7 @@
   <gloss xml:lang="fr" versionDate="2025-02-03">mesure</gloss>
   <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Massangabe jeder Art.</desc>
   <desc xml:lang="en" versionDate="2023-07-19">Contains a measurement of any type.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient une mesure de chaque type.</desc>
+  <desc xml:lang="fr" versionDate="2023-07-19">Contient une indication de mesure de n’importe quel type.</desc>
   <classes mode="replace">
     <memberOf key="att.measurement"/>
     <memberOf key="att.typed"/>
@@ -76,7 +76,7 @@
           </sch:assert>
         </sch:rule>
         <sch:rule context="tei:measure[@type = 'weight']">
-          <sch:let name="weight" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.parts.vierling', 'ssrq.measure.weight')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
+          <sch:let name="weight" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.parts.vierling', 'ssrq.measure.weight', 'ssrq.measure.parts.stuck')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
           <sch:assert test="matches(@unit, concat('^', $weight, '$'))">
               "<sch:value-of select="./@unit"/>" is not a valid weight unit – you need to choose
               from the following list:
@@ -114,20 +114,20 @@
   <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-de"/>
   <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-en"/>
   <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
+  <remarks xml:lang="de" versionDate="2025-07-23">
     <p>Kann an einer Stelle keine genaue Mengenangabe gemacht werden, wird hierfür
-      im Attribut <att>quantity</att> der Wert <val>0</val> verwendet. Stehen mehrere
+      im Attribut <att>quantity</att> der Wert <val>unknown</val> verwendet. Stehen mehrere
       zusammengehörige Massangaben nebeneinander, werden diese mit <gi>measureGrp</gi>
       zu einer Gruppe zusammengefasst.</p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2024-11-04">
-    <p>If an exact quantity cannot be given at one point, then the value <val>0</val> is used
+  <remarks xml:lang="en" versionDate="2025-07-23">
+    <p>If an exact quantity cannot be given at one point, then the value <val>unknown</val> is used
         in <att>quantity</att>. If there are several related quantities next to each other,
         they are combined into a group with <gi>measureGrp</gi>.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Si une quantité exacte ne peut pas être spécifiée à un moment donné, la
-      valeur <val>0</val> est utilisée dans l'attribut <att>quantity</att>. Si plusieurs
-      mesures liées sont côte à côte, elles sont regroupées à l'aide de <gi>measureGrp</gi>.</p>
+  <remarks xml:lang="fr" versionDate="2025-07-23">
+    <p>Si la quantité exacte ne peut pas être renseignée, la valeur <val>unknown</val> est utilisée
+      avec l’attribut <att>quantity</att>. Si plusieurs indications de mesure se suivent côte à
+      côte, elles sont réunies en un groupe avec <gi>measureGrp</gi>.</p>
   </remarks>
 </elementSpec>

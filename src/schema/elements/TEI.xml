@@ -11,7 +11,7 @@
   <desc xml:lang="en" versionDate="2023-07-14">Contains a single document (piece) as a so-called
     root element.</desc>
   <desc xml:lang="fr" versionDate="2025-02-07">Contient un seul texte édité en tant qu’élément
-    root.</desc>
+    dit « racine ».</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
   </classes>
@@ -48,9 +48,10 @@
     <p>The language of the processing is specified with <att>xml:lang</att>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>Les métadonnées du texte édité sont enregistrées dans le <gi>teiHeader</gi>,
-      le texte édité avec tous les commentaires dans l’élément <gi>text</gi> suivant.</p>
-    <p>L’attribut <att>xml:lang</att> spécifie la langue de l’édition.</p>
-    <p>Chaque document reçoit son propre document XML TEI.</p>
+    <p>Les métadonnées relatives au texte sont saisies dans le <gi>teiHeader</gi>,
+      alors que le texte édité avec tous les commentaires dans l’élément <gi>text</gi>
+      qui suit.</p>
+    <p>L’attribut <att>xml:lang</att> permet d’indiquer la langue de l’édition.</p>
+    <p>Chaque pièce dispose de son propre document XML TEI.</p>
   </remarks>
 </elementSpec>

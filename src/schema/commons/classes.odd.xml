@@ -72,7 +72,7 @@
         <attDef ident="break" mode="replace">
           <desc xml:lang="de" versionDate="2025-02-06">Zeilenumbruch ausserhalb eines Wortes?</desc>
           <desc xml:lang="en" versionDate="2025-02-06">line break after a word?</desc>
-          <desc xml:lang="fr" versionDate="2025-02-06">break de ligne après un mot ?</desc>
+          <desc xml:lang="fr" versionDate="2025-02-06">saut de ligne après un mot ?</desc>
           <valList type="closed">
             <valItem ident="no">
               <desc xml:lang="de" versionDate="2025-02-04">nein</desc>
@@ -104,7 +104,7 @@
         <attDef ident="ref" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-31">die Verknüpfung mit dem entsprechenden Datenbankeintrag der SSRQ</desc>
           <desc xml:lang="en" versionDate="2025-01-31">the link to the corresponding database entry of the SLS</desc>
-          <desc xml:lang="fr" versionDate="2025-01-31">le lien vers l’entrée de base de données correspondante de la SDS</desc>
+          <desc xml:lang="fr" versionDate="2025-01-31">le lien vers l’entrée de la base de données correspondante des SDS</desc>
           <datatype>
             <dataRef key="ssrq.pointer.databases"/>
           </datatype>
@@ -117,7 +117,7 @@
         <attDef ident="agent" mode="replace" usage="req">
           <desc xml:lang="de" versionDate="2025-01-28">die Art der Beschädigung</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the type of damage</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">le type de dommage</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">le type d’altération</desc>
           <datatype maxOccurs="unbounded">
             <dataRef key="ssrq.agent"/>
           </datatype>
@@ -131,8 +131,8 @@
       <attList>
         <attDef ident="period" mode="change">
           <desc xml:lang="de" versionDate="2025-02-03">die Zeitperiode</desc>
-          <desc xml:lang="en" versionDate="2025-02-03">thr period of time</desc>
-          <desc xml:lang="fr" versionDate="2025-02-03">la période de temps</desc>
+          <desc xml:lang="en" versionDate="2025-02-03">the period of time</desc>
+          <desc xml:lang="fr" versionDate="2025-02-03">la période</desc>
         </attDef>
       </attList>
     </classSpec>
@@ -190,7 +190,7 @@
         <attDef ident="quantity" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-28">die Grösse der mit <att>unit</att> angegebenen Masseinheit</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the size of the unit specified with <att>unit</att></desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">la taille de l’unité spécifiée avec <att>unit</att></desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la taille de l’unité est indiquée dans <att>unit</att></desc>
           <datatype>
             <rng:choice>
               <rng:ref name="ssrq.quantity.positive"/>
@@ -214,7 +214,7 @@
         <attDef ident="dur-iso" mode="change">
           <desc xml:lang="de" versionDate="2025-01-28">die Zeitspanne gemäss ISO 8601</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the period of time according to ISO 8601</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">la période de temps selon ISO 8601</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la période temporelle selon ISO 8601</desc>
         </attDef>
       </attList>
     </classSpec>
@@ -381,7 +381,7 @@
         <attDef ident="quantity" mode="replace" usage="req">
           <desc xml:lang="de" versionDate="2025-01-28">die Grösse oder Menge der mit <att>unit</att> angegebenen Masseinheit oder Währung</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the size or amount of the unit of measurement or currency specified with <att>unit</att></desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">la taille ou la quantité de l’unité de mesure ou de devise spécifiée avec <att>unit</att></desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">la taille ou la quantité de l’unité de mesure ou de devise indiquée avec <att>unit</att></desc>
           <datatype>
             <rng:choice>
               <rng:ref name="teidata.numeric"/>
@@ -496,7 +496,7 @@
         <attDef ident="role" mode="replace">
           <desc xml:lang="de" versionDate="2025-02-04">die spezielle Verwendung der Tabellenzelle</desc>
           <desc xml:lang="en" versionDate="2025-02-04">the special use of the table cell</desc>
-          <desc xml:lang="fr" versionDate="2025-02-04">l’utilisation particulière de la cellule de tableau</desc>
+          <desc xml:lang="fr" versionDate="2025-02-04">l’utilisation spécifique de la cellule du tableau</desc>
           <valList type="closed">
             <valItem ident="label">
               <desc xml:lang="de" versionDate="2023-03-03">Spaltenüberschrift</desc>
@@ -560,36 +560,36 @@
         <attDef ident="attachment" mode="add">
           <desc xml:lang="de" versionDate="2025-01-28">die Befestigungsart des Siegels</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the method of attachment of the seal</desc>
-          <desc xml:lang="fr" versionDate="2025-01-28">le mode de fixation du sceau</desc>
+          <desc xml:lang="fr" versionDate="2025-01-28">le type d’apposition du sceau</desc>
           <valList type="closed">
             <valItem ident="applied">
               <desc xml:lang="de" versionDate="2023-05-31">aufgedrückt</desc>
               <desc xml:lang="en" versionDate="2023-05-31">applied</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">pressé</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">plaqué</desc>
               <desc xml:lang="it" versionDate="2023-05-31">aderente</desc>
             </valItem>
             <valItem ident="sealed_on_a_cord">
               <desc xml:lang="de" versionDate="2023-05-31">angehängt an einer Kordel</desc>
               <desc xml:lang="en" versionDate="2023-05-31">sealed on a cord</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">attaché à un cordo</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">attaché à une cordelette</desc>
               <desc xml:lang="it" versionDate="2023-05-31">pendente da una cordicella</desc>
             </valItem>
             <valItem ident="sealed_on_a_lace">
               <desc xml:lang="de" versionDate="2023-05-31">angehängt an Schnur</desc>
               <desc xml:lang="en" versionDate="2023-05-31">sealed on a lace</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">attaché à un cordon</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">attaché à un floc</desc>
               <desc xml:lang="it" versionDate="2023-05-31">pendente da un cordone</desc>
             </valItem>
             <valItem ident="sealed_on_a_leather_tag">
               <desc xml:lang="de" versionDate="2023-05-31">angehängt an Lederstreifen</desc>
               <desc xml:lang="en" versionDate="2023-05-31">sealed on a leather tag</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">attaché à une lanière en cuir</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">attaché à une lanière</desc>
               <desc xml:lang="it" versionDate="2023-05-31">pendente da un laccio di cuoio</desc>
             </valItem>
             <valItem ident="sealed_on_a_parchment_tag">
               <desc xml:lang="de" versionDate="2023-05-31">angehängt an Pergamentstreifen</desc>
               <desc xml:lang="en" versionDate="2023-05-31">sealed on a parchment tag</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">attaché à une lanière en parchemin</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">attaché à une languette</desc>
               <desc xml:lang="it" versionDate="2023-05-31">pendente da una stricia di pergamena</desc>
             </valItem>
             <valItem ident="sealed_on_a_ribbon">
@@ -601,13 +601,13 @@
             <valItem ident="sealed_on_laces">
               <desc xml:lang="de" versionDate="2023-05-31">angehängt an Fäden</desc>
               <desc xml:lang="en" versionDate="2023-05-31">sealed on laces</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">attaché à un fil</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">attaché à un lac</desc>
               <desc xml:lang="it" versionDate="2023-05-31">c’è solo uno slot per il sigillo</desc>
             </valItem>
             <valItem ident="slit">
               <desc xml:lang="de" versionDate="2023-05-31">nur Siegelschlitz vorhanden</desc>
               <desc xml:lang="en" versionDate="2023-05-31">slit with no seal</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">il n’existe qu’une fente pour le sceau</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">fente pour le sceau</desc>
               <desc xml:lang="it" versionDate="2023-05-31">c’è solo uno slot per il sigillo</desc>
             </valItem>
             <valItem ident="wrapping-tie">
@@ -644,7 +644,7 @@
             <valItem ident="damaged">
               <desc xml:lang="de" versionDate="2023-05-31">beschädigt</desc>
               <desc xml:lang="en" versionDate="2023-05-31">damaged</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">endommagé</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">altéré</desc>
               <desc xml:lang="it" versionDate="2023-05-31">danneggiato</desc>
             </valItem>
             <valItem ident="ex_and_enclosed">
@@ -668,7 +668,7 @@
             <valItem ident="in_a_capsule">
               <desc xml:lang="de" versionDate="2023-05-31">in verschlossener Metallkapsel</desc>
               <desc xml:lang="en" versionDate="2023-05-31">in a metal capsule</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">dans une boîte en métal</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">dans une capsule</desc>
               <desc xml:lang="it" versionDate="2023-05-31">in una scatola di metallo</desc>
             </valItem>
             <valItem ident="polished">
@@ -754,7 +754,7 @@
             <valItem ident="octangular">
               <desc xml:lang="de" versionDate="2023-05-31">achteckig</desc>
               <desc xml:lang="en" versionDate="2023-05-31">octagonal</desc>
-              <desc xml:lang="fr" versionDate="2023-05-31">octongonal</desc>
+              <desc xml:lang="fr" versionDate="2023-05-31">octogonal</desc>
               <desc xml:lang="it" versionDate="2023-05-31">ottagonale</desc>
             </valItem>
             <valItem ident="oval">

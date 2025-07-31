@@ -11,7 +11,7 @@
   <desc xml:lang="en" versionDate="2023-07-11">Paragraphs inserted by the editor to structure the
       source text.</desc>
   <desc xml:lang="fr" versionDate="2025-02-06">Contient un segment inséré par les éditeurs pour
-      structurer le texte source.</desc>
+      structurer le texte de la source.</desc>
   <classes mode="replace">
     <memberOf key="att.global"/>
     <memberOf key="model.segLike"/>
@@ -71,16 +71,16 @@
         page on textstructure.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p><gi>seg</gi> peut être utilisé dans <gi>p</gi> pour structurer un paragraphe original
-      en interne ou en dehors de <gi>p</gi> pour combiner plusieurs parties du texte en une
-      seule unité. Dans les deux cas, au moins deux éléments <gi>seg</gi> de rang égal sont
-      utilisés à un niveau hiérarchique.</p>
+    <p>L’élément <gi>seg</gi> peut être utilisé à l’intérieur de <gi>p</gi> pour structurer un
+      paragraphe original, ou en dehors de <gi>p</gi> pour combiner plusieurs parties du texte en
+      une seule unité. Dans les deux cas, il faut utiliser au moins deux éléments <gi>seg</gi> de
+      même rang, à l’intérieur d’un même niveau hiérarchique.</p>
     <p>En revanche, <gi>div</gi> et <gi>p</gi> ne sont utilisés que pour les sections et
-      paragraphes originaux, voir également les règles de structuration des textes dans les
+      les paragraphes originaux, voir également les règles de structuration des textes dans les
       <ref target="textstructure.fr.md">principes de transcription</ref>.</p>
     <p>Pour les textes originaux plus longs tels que les ouvertures ou les registres fonciers,
       il peut être utile de numéroter les articles, les paragraphes ou les sections en utilisant
-      <gi>seg</gi> et en plus avec <att>n</att>. La numérotation n’est introduite que là où la
+      <gi>seg</gi>, en plus avec <att>n</att>. La numérotation n’est introduite que là où la
       structure du texte le permet (voir des exemples dans les volumes imprimés de la SDS).</p>
   </remarks>
 </elementSpec>

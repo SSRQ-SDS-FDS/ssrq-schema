@@ -94,6 +94,7 @@ from ..conftest import (
             """
             <msDesc>
                 <msIdentifier>
+                    <settlement ref="loc123456" xml:lang="de">foo</settlement>
                     <repository xml:lang="de">Foo</repository>
                     <idno xml:lang="de">Foo</idno>
                 </msIdentifier>

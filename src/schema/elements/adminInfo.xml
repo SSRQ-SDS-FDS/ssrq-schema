@@ -10,8 +10,8 @@
     Aufbewahrung des Textzeugen.</desc>
   <desc xml:lang="en" versionDate="2023-09-19">Contains information on the storage of a document.
     Used, for example, in the case of lost manuscripts.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Contient des informations administratives concernant
-    la conservation du témoin textuel.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-05">Contient des informations administratives sur la
+    conservation du document.</desc>
   <classes mode="replace"/>
   <content>
     <elementRef key="custodialHist"/>
@@ -24,7 +24,7 @@
       <gi>custodialHist</gi> die Informationen zum Verlust des Textzeugen an.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-05">
-    <p>Nous n’utilisons l’élément que si le témoin est perdu et fournissons les informations
-      sur la perte du témoin dans <gi>custodialHist</gi>.</p>
+    <p>Nous n’utilisons cet élément que si le texte est perdu et indiquons dans
+      <gi>custodialHist</gi> les informations relatives à sa perte.</p>
   </remarks>
 </elementSpec>

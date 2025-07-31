@@ -6,9 +6,11 @@
   <gloss xml:lang="de" versionDate="2025-02-03">Verfügbarkeit</gloss>
   <gloss xml:lang="en" versionDate="2025-02-03">availability</gloss>
   <gloss xml:lang="fr" versionDate="2025-02-03">disponibilité</gloss>
-  <desc xml:lang="de" versionDate="2025-02-05">Enthält Elemente, die die Verfügbarkeit eines Textes beschreiben.</desc>
+  <desc xml:lang="de" versionDate="2025-02-05">Enthält Elemente, die die Verfügbarkeit eines
+    Textes beschreiben.</desc>
   <desc xml:lang="en" versionDate="2023-07-17">Describes the availability of a text.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Contient des éléments qui décrivent la disponibilité d’un texte.</desc>
+  <desc xml:lang="fr" versionDate="2025-02-05">Contient des éléments déclaratifs sur la mise à
+    disposition d’un texte.</desc>
   <classes mode="replace">
     <memberOf key="model.publicationStmtPart.detail"/>
   </classes>
@@ -21,8 +23,8 @@
   <xi:include href="examples.xml" xpointer="ex-availability-de"/>
   <xi:include href="examples.xml" xpointer="ex-availability-en"/>
   <xi:include href="examples.xml" xpointer="ex-availability-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-05">
-    <p>Wir benutzen das Element, um die Informationen zur Lizenzierung anzugeben.</p>
+  <remarks xml:lang="de" versionDate="2025-07-08">
+    <p>Das Element gibt die Informationen zur Lizenzierung an.</p>
   </remarks>
   <remarks xml:lang="en" versionDate="2023-07-17">
     <p>Indicates restrictions on use or disclosure, licensing, etc. We use the tag to mention the
@@ -30,7 +32,7 @@
         (rather than the institution where the source is archived). A source may be in the AVN, #
         but the facsimile was made available or created by the BPUN.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-05">
-    <p>Nous utilisons l’élément pour spécifier les informations de licence.</p>
+  <remarks xml:lang="fr" versionDate="2025-07-08">
+    <p>Cet élément permet d’indiquer les informations de licence.</p>
   </remarks>
 </elementSpec>

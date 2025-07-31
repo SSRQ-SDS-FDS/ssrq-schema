@@ -50,7 +50,7 @@
     <attDef ident="role" mode="change">
       <desc xml:lang="de" versionDate="2025-01-30">die Rolle der Organisation im Text</desc>
       <desc xml:lang="en" versionDate="2025-01-30">the role of the organization in the text</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le rôle de la organisation dans le texte</desc>
+      <desc xml:lang="fr" versionDate="2025-01-30">le rôle de l’organisation dans le texte</desc>
       <datatype>
         <dataRef key="ssrq.role.orgname"/>
       </datatype>
@@ -63,12 +63,12 @@
   <xi:include href="examples.xml" xpointer="ex-history-en"/>
   <xi:include href="examples.xml" xpointer="ex-history-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>In den Editionen der SSRQ werden z. B. folgende Entitäten als
+    <p>In den Editionen der SSRQ werden folgende Entitäten als
       Organisationen gekennzeichnet:
-      <list><item>Bevölkerungsgruppe (z. B. Juden)</item><item>Bruderschaft
-        </item><item>Bürgermeister und Rat</item><item>Bürgerschaft
-        </item><item>Eidgenossenschaft bzw. Gruppe von eidgenössischen Orten (z. B. VII Orte) (wenn
-        es sich nicht um den Ort, sondern die Organisation handelt)
+      <list><item>Bevölkerungsgruppe (z. B. Juden, die Engländer)</item><item>Bruderschaft
+        </item><item>Bürgermeister und Rat</item><item>Eidgenossenschaft bzw. Gruppe von
+        eidgenössischen Orten (z. B. VII Orte) (wenn es sich nicht um den Ort, sondern die
+        Organisation handelt)
         </item><item>Eigentümerschaft</item><item>Familie (z. B. die Grafen von Toggenburg, die
         Herren von Landenberg)</item><item>Heiligenverband/Heiligengruppe (z. B. Zehntausend
         Ritter, Elftausend Jungfrauen, Peter und Paul)
@@ -91,7 +91,7 @@
             council</item><item>Citizenship</item><item>Federation or group of federated places
             (e.g. VII places) (if it is not the place but the organisation)
             </item><item>Ownership</item><item>Family (e.g. the Counts of Toggenburg, the Lords of
-            Landenberg)</item><item>Saints' association/saints' group (e.g. Ten Thousand Knights,
+            Landenberg)</item><item>Saints’ association/saints’ group (e.g. Ten Thousand Knights,
             Eleven Thousand Virgins, Peter and Paul)</item><item>Dominion association
         </item><item>Kirchgenossenschaft/Pfarrei (Attention: a Kirchhöre or a Kirchspiel can also
             be a place name)</item><item>Convent of a monastery; here: Convent (attention: a
@@ -104,23 +104,23 @@
         <gi>respStmt</gi> distinguished with <gi>orgName</gi>.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Dans les éditions du SDS, p. ex., les entités suivantes sont marquées comme organisations :
-      <list><item>un groupe de population (p.e. juifs)</item><item>une confrérie
-        </item><item>le bourgmestre et le conseil</item><item>la citoyenneté</item><item>la
-        Confédération suisse ou un groupe de plusieurs cantons (p.e. les VII cantons)
+    <p>Dans les éditions des SDS, les entités suivantes sont signalées comme organisations :
+      <list><item>un groupe de population (p. ex. juifs, les Anglais)</item><item>une confrérie
+        </item><item>le bourgmestre et le conseil</item><item>la
+        Confédération suisse ou un groupe de plusieurs cantons (p. ex. les VII cantons)
         (quand il ne s’agit pas du lieu, mais de l’organisation)</item><item>une
-        propriété</item><item>une famille (p.e. la maison de Toggenburg, von Landenberg)
+        propriété</item><item>une famille (p. ex. la maison de Toggenburg, von Landenberg)
         </item><item>une fête qui réunit plusieurs saints (Dix mille martyrs, Onze mille
         vierges, Pierre et Paul)</item><item>une entité politique</item><item>une
         circonscription ecclésiastique / paroisse (attention : une paroisse peut aussi être
         une indication topographique ou une provenance géographique)</item><item>un couvent
-        (Attention : un couvent peut également être le nom d’un lieu)</item><item>une
-        société de jeunesse</item><item>une commission (p.e. comité de construction
+        (attention : un couvent peut également être le nom d’un lieu)</item><item>une
+        société de jeunesse</item><item>une commission (p. ex. comité de construction
         etc.)</item><item>une société commerciale</item><item>un voisinage</item><item>une
         communauté d’utilisateurs</item><item>un ordre religieux</item><item>un
         conseil</item><item>une société de tir</item><item>une fondation</item><item>une
         coopérative de taxation</item><item>une corporation</item></list></p>
-    <p>L’éditeur de la série, ici toujours la Fondation des sources du droit, est désigné dans
-        le <gi>respStmt</gi> est distingué par <gi>orgName</gi>.</p>
+    <p>De plus, dans le <gi>teiHeader</gi>, l’éditeur de la série, c’est-à-dire la Fondation des
+      sources du droit, est désigné par <gi>orgName</gi>.</p>
   </remarks>
 </elementSpec>

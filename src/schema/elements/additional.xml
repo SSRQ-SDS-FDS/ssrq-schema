@@ -9,8 +9,8 @@
   <desc xml:lang="de" versionDate="2025-02-05">Enthält zusätzliche Informationen zum Textzeugen.</desc>
   <desc xml:lang="en" versionDate="2023-07-14">Contains references to editions, regesta and
     literature.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Contient des informations complémentaires sur le
-    témoin textuel.</desc>
+  <desc xml:lang="fr" versionDate="2025-04-29">Contient des informations complémentaires sur le
+    texte.</desc>
   <classes mode="replace"/>
   <content>
     <sequence>
@@ -27,10 +27,10 @@
     <p>Ist der Textzeuge nicht mehr erhalten, werden Angaben zum Verlust des Textzeugen in
       <gi>adminInfo</gi> hinterlegt.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-05">
-    <p>Dans la littérature <gi>additional</gi> devient un témoin textuel, p. ex. les éditions,
-      regestes ou littérature secondaire sont répertoriés à l’aide de <gi>listBibl</gi>.</p>
-    <p>Si le témoin texte n’est plus disponible, les informations sur la perte du témoin texte
-      sont stockées dans <gi>adminInfo</gi>.</p>
+  <remarks xml:lang="fr" versionDate="2025-04-29">
+    <p>Dans <gi>additional</gi>, la littérature relative au texte, p. ex. les éditions,
+      les résumés ou la littérature secondaire, est répertoriée à l’aide de <gi>listBibl</gi>.</p>
+    <p>Si le texte n’est plus conservé, des informations sur sa perte sont indiquées dans
+      <gi>adminInfo</gi>.</p>
   </remarks>
 </elementSpec>

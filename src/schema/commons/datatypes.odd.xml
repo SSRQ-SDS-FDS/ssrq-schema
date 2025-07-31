@@ -7,7 +7,7 @@
     <dataSpec ident="ssrq.agent" mode="add">
       <desc xml:lang="de" versionDate="2025-01-29">die Art der Beschädigung</desc>
       <desc xml:lang="en" versionDate="2025-01-29">the type of damage</desc>
-      <desc xml:lang="fr" versionDate="2025-01-29">le type de dommage</desc>
+      <desc xml:lang="fr" versionDate="2025-01-29">le type d’altération</desc>
       <content>
         <valList type="closed">
           <valItem ident="cancelled">
@@ -25,7 +25,7 @@
           <valItem ident="covered_by_seal">
             <desc xml:lang="de" versionDate="2023-05-16">verdeckendes Siegel</desc>
             <desc xml:lang="en" versionDate="2023-05-16">covering seal</desc>
-            <desc xml:lang="fr" versionDate="2023-05-16">un sceau couvrant</desc>
+            <desc xml:lang="fr" versionDate="2023-05-16">recouvert par un sceau</desc>
             <desc xml:lang="it" versionDate="2023-05-16">sigillo oscurante</desc>
           </valItem>
           <valItem ident="crack">
@@ -43,7 +43,7 @@
           <valItem ident="fire">
             <desc xml:lang="de" versionDate="2023-05-02">Rauch/Brandschaden</desc>
             <desc xml:lang="en" versionDate="2023-05-16">smoke/fire</desc>
-            <desc xml:lang="fr" versionDate="2023-05-16">la fumée/le feu</desc>
+            <desc xml:lang="fr" versionDate="2023-05-16">combustion</desc>
             <desc xml:lang="it" versionDate="2023-05-16">fumo/fuoco</desc>
           </valItem>
           <valItem ident="fold">
@@ -55,7 +55,7 @@
           <valItem ident="folio_lost">
             <desc xml:lang="de" versionDate="2023-05-16">fehlende Seite/fehlendes Blatt</desc>
             <desc xml:lang="en" versionDate="2023-05-16">lost folio</desc>
-            <desc xml:lang="fr" versionDate="2023-05-16">la perte de la page/feuille</desc>
+            <desc xml:lang="fr" versionDate="2023-05-16">perte de la page/feuille</desc>
             <desc xml:lang="it" versionDate="2023-05-16">perdita di un foglio/una carta</desc>
           </valItem>
           <valItem ident="glue">
@@ -91,37 +91,37 @@
           <valItem ident="insects">
             <desc xml:lang="de" versionDate="2023-05-02">Insektenfrass</desc>
             <desc xml:lang="en" versionDate="2023-05-16">insects</desc>
-            <desc xml:lang="fr" versionDate="2023-05-16">des insectes</desc>
+            <desc xml:lang="fr" versionDate="2023-05-16">insectes</desc>
             <desc xml:lang="it" versionDate="2023-05-16">divorato dagli insetti</desc>
           </valItem>
           <valItem ident="mice">
             <desc xml:lang="de" versionDate="2023-05-02">Mäusefrass</desc>
             <desc xml:lang="en" versionDate="2023-05-16">mice</desc>
-            <desc xml:lang="fr" versionDate="2023-11-06">des rongeurs</desc>
+            <desc xml:lang="fr" versionDate="2023-11-06">rongeurs</desc>
             <desc xml:lang="it" versionDate="2023-05-16">divorato da un roditore</desc>
           </valItem>
           <valItem ident="mildew">
             <desc xml:lang="de" versionDate="2023-05-02">Pilzbefall/Schimmel</desc>
             <desc xml:lang="en" versionDate="2023-05-16">mold</desc>
-            <desc xml:lang="fr" versionDate="2023-05-16">la moisissure</desc>
+            <desc xml:lang="fr" versionDate="2023-05-16">moisissure</desc>
             <desc xml:lang="it" versionDate="2023-05-16">muffa</desc>
           </valItem>
           <valItem ident="other">
             <desc xml:lang="de" versionDate="2025-01-29">sonstiger Schaden</desc>
             <desc xml:lang="en" versionDate="2023-10-19">other damage</desc>
-            <desc xml:lang="fr" versionDate="2023-10-19">autres dommages</desc>
+            <desc xml:lang="fr" versionDate="2023-10-19">autres altérations</desc>
             <desc xml:lang="it" versionDate="2024-08-05">altri danni</desc>
           </valItem>
           <valItem ident="overbinding">
             <desc xml:lang="de" versionDate="2023-05-16">verdeckender Einband</desc>
             <desc xml:lang="en" versionDate="2023-05-16">covering binding</desc>
-            <desc xml:lang="fr" versionDate="2023-05-16">la couverture de la reliure</desc>
+            <desc xml:lang="fr" versionDate="2023-05-16">débordement de la reliure</desc>
             <desc xml:lang="it" versionDate="2023-05-16">copertina della rilegatura</desc>
           </valItem>
           <valItem ident="part_of_the_folio_lost">
             <desc xml:lang="de" versionDate="2023-05-16">fehlender Teil der Seite oder des Blatts</desc>
             <desc xml:lang="en" versionDate="2023-05-16">lost part of the page/folio</desc>
-            <desc xml:lang="fr" versionDate="2023-05-16">la perte d’une partie de la page/feuille</desc>
+            <desc xml:lang="fr" versionDate="2023-05-16">perte d’une partie de la page/feuille</desc>
             <desc xml:lang="it" versionDate="2023-05-16">perdita di una parte di un foglio/una carta</desc>
           </valItem>
           <valItem ident="restoration">
@@ -151,7 +151,7 @@
           <valItem ident="water">
             <desc xml:lang="de" versionDate="2023-05-02">Wasserfleck</desc>
             <desc xml:lang="en" versionDate="2023-05-15">water spot</desc>
-            <desc xml:lang="fr" versionDate="2023-05-15">des traces d’eau ou d’humidité</desc>
+            <desc xml:lang="fr" versionDate="2023-05-15">traces d’eau ou d’humidité</desc>
             <desc xml:lang="it" versionDate="2023-05-15">tracce d’umidità</desc>
           </valItem>
         </valList>
@@ -546,8 +546,8 @@
             <desc xml:lang="de" type="plural" versionDate="2023-03-17">Buchstaben</desc>
             <desc xml:lang="en" type="singular" versionDate="2023-03-17">character</desc>
             <desc xml:lang="en" type="plural" versionDate="2023-03-17">characters</desc>
-            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">lettre</desc>
-            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">lettres</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2023-03-17">caractère</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2023-03-17">caractères</desc>
             <desc xml:lang="it" type="singular" versionDate="2023-03-17">lettera</desc>
             <desc xml:lang="it" type="plural" versionDate="2023-03-17">lettere</desc>
           </valItem>
@@ -988,7 +988,7 @@
           <valItem ident="ziger">
             <desc xml:lang="de" versionDate="2023-03-21">Ziger</desc>
             <desc xml:lang="en" versionDate="2023-03-21">ziger (whey cheese)</desc>
-            <desc xml:lang="fr" versionDate="2023-03-21">ziger</desc>
+            <desc xml:lang="fr" versionDate="2023-03-21">sérac</desc>
             <desc xml:lang="it" versionDate="2023-03-21">ziger</desc>
           </valItem>
         </valList>
@@ -1249,7 +1249,7 @@
           <valItem ident="weight">
             <desc xml:lang="de" versionDate="2023-03-21">Gewicht</desc>
             <desc xml:lang="en" versionDate="2023-03-21">weight</desc>
-            <desc xml:lang="fr" versionDate="2023-03-21">poid</desc>
+            <desc xml:lang="fr" versionDate="2023-03-21">poids</desc>
             <desc xml:lang="it" versionDate="2023-03-21">peso</desc>
           </valItem>
         </valList>
@@ -1441,6 +1441,17 @@
             <desc xml:lang="fr" type="plural" versionDate="2024-10-21">bosses</desc>
             <desc xml:lang="it" type="singular" versionDate="2024-10-21">bosse </desc>
             <desc xml:lang="it" type="plural" versionDate="2024-10-21">bosses</desc>
+          </valItem>
+          <valItem ident="carica">
+            <!-- auch tringetta genannt -->
+            <desc xml:lang="de" type="singular" versionDate="2025-05-26">Carica</desc>
+            <desc xml:lang="de" type="plural" versionDate="2025-05-26">Carice</desc>
+            <desc xml:lang="en" type="singular" versionDate="2025-05-26">carica</desc>
+            <desc xml:lang="en" type="plural" versionDate="2025-05-26">carice</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2025-05-26">carica </desc>
+            <desc xml:lang="fr" type="plural" versionDate="2025-05-26">carice</desc>
+            <desc xml:lang="it" type="singular" versionDate="2025-05-26">carica</desc>
+            <desc xml:lang="it" type="plural" versionDate="2025-05-26">carice</desc>
           </valItem>
           <valItem ident="Eimer">
             <desc xml:lang="de" versionDate="2023-03-17">Eimer</desc>
@@ -1678,6 +1689,12 @@
             <desc xml:lang="it" type="singular" versionDate="2023-03-17">quarto</desc>
             <desc xml:lang="it" type="plural" versionDate="2023-03-17">quarti</desc>
           </valItem>
+          <valItem ident="water">
+            <desc xml:lang="de" versionDate="2025-05-26">Mineralwasser</desc>
+            <desc xml:lang="en" versionDate="2025-05-26">mineral water</desc>
+            <desc xml:lang="fr" versionDate="2025-05-26">eau minéral</desc>
+            <desc xml:lang="it" versionDate="2025-05-26">acqua minerale</desc>
+          </valItem>
           <valItem ident="Zuber">
             <desc xml:lang="de" versionDate="2023-03-17">Zuber</desc>
             <desc xml:lang="en" versionDate="2023-03-17">tub</desc>
@@ -1698,6 +1715,12 @@
             <desc xml:lang="en" versionDate="2023-03-17">angster</desc>
             <desc xml:lang="fr" versionDate="2023-03-17">angster</desc>
             <desc xml:lang="it" versionDate="2023-03-17">angster</desc>
+          </valItem>
+          <valItem ident="bluzger">
+            <desc xml:lang="de" versionDate="2025-05-26">Bluzger</desc>
+            <desc xml:lang="en" versionDate="2025-05-26">bluzger</desc>
+            <desc xml:lang="fr" versionDate="2025-05-26">bluzger</desc>
+            <desc xml:lang="it" versionDate="2025-05-26">bluzger</desc>
           </valItem>
           <valItem ident="Böhmischer_Groschen">
             <desc xml:lang="de" type="singular" versionDate="2023-03-17">Böhmischer Groschen</desc>
@@ -1807,6 +1830,16 @@
             <desc xml:lang="fr" type="plural" versionDate="2024-01-18">engrognes</desc>
             <desc xml:lang="it" type="singular" versionDate="2024-01-18">engrogne</desc>
             <desc xml:lang="it" type="plural" versionDate="2024-01-18">engrognes</desc>
+          </valItem>
+          <valItem ident="filippo">
+            <desc xml:lang="de" type="singular" versionDate="2025-05-15">Filippo</desc>
+            <desc xml:lang="de" type="plural" versionDate="2025-05-15">Filippi</desc>
+            <desc xml:lang="en" type="singular" versionDate="2025-05-15">filippo</desc>
+            <desc xml:lang="en" type="plural" versionDate="2025-05-15">filippi</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2025-05-15">filippo</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2025-05-15">filippi</desc>
+            <desc xml:lang="it" type="singular" versionDate="2025-05-15">filippo</desc>
+            <desc xml:lang="it" type="plural" versionDate="2025-05-15">filippi</desc>
           </valItem>
           <valItem ident="fl">
             <desc xml:lang="de" versionDate="2023-03-17">Gulden</desc>
@@ -1965,6 +1998,16 @@
             <desc xml:lang="it" type="singular" versionDate="2023-03-17">un quarto di fiorino</desc>
             <desc xml:lang="it" type="plural" versionDate="2023-03-17">quarti di fiorino</desc>
           </valItem>
+          <valItem ident="parpajola">
+            <desc xml:lang="de" type="singular" versionDate="2025-05-26">Parpajola</desc>
+            <desc xml:lang="de" type="plural" versionDate="2025-05-26">Parpajole</desc>
+            <desc xml:lang="en" type="singular" versionDate="2025-05-26">parpajola</desc>
+            <desc xml:lang="en" type="plural" versionDate="2025-05-26">parpajole</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2025-05-26">parpajola</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2025-05-26">parpajole</desc>
+            <desc xml:lang="it" type="singular" versionDate="2025-05-26">parpajola</desc>
+            <desc xml:lang="it" type="plural" versionDate="2025-05-26">parpajole</desc>
+          </valItem>
           <valItem ident="Pistole">
             <desc xml:lang="de" type="singular" versionDate="2023-03-17">Pistole</desc>
             <desc xml:lang="de" type="plural" versionDate="2023-03-17">Pistolen</desc>
@@ -1999,6 +2042,16 @@
             <desc xml:lang="fr" type="singular" versionDate="2023-03-17">sol</desc>
             <desc xml:lang="fr" type="plural" versionDate="2023-03-17">sols</desc>
             <desc xml:lang="it" versionDate="2023-03-17">sol</desc>
+          </valItem>
+          <valItem ident="scudo">
+            <desc xml:lang="de" type="singular" versionDate="2025-05-15">Scudo</desc>
+            <desc xml:lang="de" type="plural" versionDate="2025-05-15">Scudi</desc>
+            <desc xml:lang="en" type="singular" versionDate="2025-05-15">scudo</desc>
+            <desc xml:lang="en" type="plural" versionDate="2025-05-15">scudi</desc>
+            <desc xml:lang="fr" type="singular" versionDate="2025-05-15">scudo</desc>
+            <desc xml:lang="fr" type="plural" versionDate="2025-05-15">scudi</desc>
+            <desc xml:lang="it" type="singular" versionDate="2025-05-15">scudo</desc>
+            <desc xml:lang="it" type="plural" versionDate="2025-05-15">scudi</desc>
           </valItem>
           <valItem ident="sol_faible">
             <desc xml:lang="de" versionDate="2023-03-17">sol faible</desc>
@@ -2280,7 +2333,7 @@
           <valItem ident="billio">
             <desc xml:lang="de" versionDate="2024-08-09">Billio</desc>
             <desc xml:lang="en" versionDate="2024-08-09">billio</desc>
-            <desc xml:lang="fr" versionDate="2024-08-09">billio</desc>
+            <desc xml:lang="fr" versionDate="2024-08-09">billon</desc>
             <desc xml:lang="it" versionDate="2024-08-09">billio</desc>
           </valItem>
           <valItem ident="Bürde">
@@ -2398,7 +2451,7 @@
           <valItem ident="Sester">
             <desc xml:lang="de" versionDate="2023-03-17">Sester</desc>
             <desc xml:lang="en" versionDate="2023-03-17">sester</desc>
-            <desc xml:lang="fr" versionDate="2023-03-17">sester</desc>
+            <desc xml:lang="fr" versionDate="2023-03-17">setier</desc>
             <desc xml:lang="it" versionDate="2023-03-17">sester</desc>
           </valItem>
           <valItem ident="Stock">
@@ -2761,7 +2814,7 @@
           <valItem ident="left_plica">
             <desc xml:lang="de" versionDate="2022-05-10">auf der linken Seite der Plica</desc>
             <desc xml:lang="en" versionDate="2022-05-10">on the left side of the plica</desc>
-            <desc xml:lang="fr" versionDate="2022-05-10">du côté gauche de la plica</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">du côté gauche du repli</desc>
             <desc xml:lang="it" versionDate="2022-09-05">a sinistra della plica</desc>
           </valItem>
           <valItem ident="parchment_tag">
@@ -2773,25 +2826,25 @@
           <valItem ident="plica">
             <desc xml:lang="de" versionDate="2022-05-10">auf der Plica</desc>
             <desc xml:lang="en" versionDate="2022-05-10">on the plica</desc>
-            <desc xml:lang="fr" versionDate="2022-05-10">sur la plica</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">sur le repli</desc>
             <desc xml:lang="it" versionDate="2022-09-05">sulla plica</desc>
           </valItem>
           <valItem ident="plica_verso">
             <desc xml:lang="de" versionDate="2022-05-10">auf der Rückseite der Plica</desc>
             <desc xml:lang="en" versionDate="2022-05-10">on the verso of the plica</desc>
-            <desc xml:lang="fr" versionDate="2022-05-10">au verso de la plica</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">au verso du repli</desc>
             <desc xml:lang="it" versionDate="2022-09-05">sul verso della plica</desc>
           </valItem>
           <valItem ident="right_plica">
             <desc xml:lang="de" versionDate="2022-05-10">auf der rechten Seite der Plica</desc>
             <desc xml:lang="en" versionDate="2022-05-10">on the right side of the plica</desc>
-            <desc xml:lang="fr" versionDate="2022-05-10">du côté droit de la plica</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">du côté droit du repli</desc>
             <desc xml:lang="it" versionDate="2022-09-05">a destro della plica</desc>
           </valItem>
           <valItem ident="sub_plica">
             <desc xml:lang="de" versionDate="2022-05-10">unter der Plica</desc>
             <desc xml:lang="en" versionDate="2022-05-10">sub plica</desc>
-            <desc xml:lang="fr" versionDate="2022-05-10">au-dessous de la plica</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">au-dessous du repli</desc>
             <desc xml:lang="it" versionDate="2022-09-05">sotto la plica</desc>
           </valItem>
           <valItem ident="verso_above">
@@ -2979,7 +3032,7 @@
           <valItem ident="irrelevant">
             <desc xml:lang="de" versionDate="2023-05-26">irrelevant</desc>
             <desc xml:lang="en" versionDate="2023-05-26">irrelevant</desc>
-            <desc xml:lang="fr" versionDate="2023-05-26">insignifiant</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">non pertinent</desc>
             <desc xml:lang="it" versionDate="2023-05-26">irrilevante</desc>
           </valItem>
           <valItem ident="missing">
@@ -3011,7 +3064,7 @@
           <valItem ident="other_ink">
             <desc xml:lang="de" versionDate="2023-05-02">mit anderer Tinte</desc>
             <desc xml:lang="en" versionDate="2023-05-02">with different ink</desc>
-            <desc xml:lang="fr" versionDate="2023-05-02">avec une autre encre</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">autre encre</desc>
             <desc xml:lang="it" versionDate="2022-09-05">altro inchiostro</desc>
           </valItem>
           <valItem ident="pencil">
@@ -3042,7 +3095,7 @@
           <valItem ident="blackened">
             <desc xml:lang="de" versionDate="2023-05-02">Streichung durch Schwärzen</desc>
             <desc xml:lang="en" versionDate="2023-05-02">deletion by blackening text</desc>
-            <desc xml:lang="fr" versionDate="2023-05-02">caviardage</desc>
+            <desc xml:lang="fr" versionDate="2023-05-02">suppression par caviardage</desc>
             <desc xml:lang="it" versionDate="2022-09-05">depennamento</desc>
           </valItem>
           <valItem ident="bracketed">
@@ -3054,13 +3107,13 @@
           <valItem ident="crossout">
             <desc xml:lang="de" versionDate="2023-05-02">Streichung durch gekreuzte Linien</desc>
             <desc xml:lang="en" versionDate="2023-05-02">deletion by crossed lines</desc>
-            <desc xml:lang="fr" versionDate="2023-05-02">suppression en croisant la ligne</desc>
+            <desc xml:lang="fr" versionDate="2023-05-02">suppression par cancellation</desc>
             <desc xml:lang="it" versionDate="2022-09-05">cancellazione sbarrata</desc>
           </valItem>
           <valItem ident="overwritten">
             <desc xml:lang="de" versionDate="2023-05-02">Streichung durch direkte Überschreibung</desc>
             <desc xml:lang="en" versionDate="2023-05-02">deleted text directly overwritten</desc>
-            <desc xml:lang="fr" versionDate="2023-05-02">suppression par écrasement direct</desc>
+            <desc xml:lang="fr" versionDate="2023-05-02">suppression par surcharge</desc>
             <desc xml:lang="it" versionDate="2022-09-05">cancellazione con sovrascrittura diretta</desc>
           </valItem>
           <valItem ident="rubbing">
@@ -3129,7 +3182,7 @@
           <valItem ident="sup">
             <desc xml:lang="de" versionDate="2023-05-23">hochgestellt</desc>
             <desc xml:lang="en" versionDate="2023-05-23">superscript</desc>
-            <desc xml:lang="fr" versionDate="2023-05-23">suscrit</desc>
+            <desc xml:lang="fr" versionDate="2023-05-23">exposant</desc>
             <desc xml:lang="it" versionDate="2023-05-23">sottoscritto</desc>
           </valItem>
           <valItem ident="underline">
@@ -3220,7 +3273,7 @@
         <valList type="closed" mode="replace">
           <valItem ident="scribe">
             <desc xml:lang="de" versionDate="2022-05-12">Schreiber</desc>
-            <desc xml:lang="fr" versionDate="2022-05-12">scripteur</desc>
+            <desc xml:lang="fr" versionDate="2022-05-12">scribe</desc>
             <desc xml:lang="en" versionDate="2022-05-12">scribe</desc>
             <desc xml:lang="it" versionDate="2022-09-13">scriba</desc>
           </valItem>
@@ -3275,7 +3328,7 @@
           <valItem ident="computator">
             <desc xml:lang="de" versionDate="2022-05-12">Komputator</desc>
             <desc xml:lang="en" versionDate="2022-05-12">computator</desc>
-            <desc xml:lang="fr" versionDate="2022-05-12">computateur</desc>
+            <desc xml:lang="fr" versionDate="2022-05-12">calculateur</desc>
             <desc xml:lang="it" versionDate="2022-09-13">computatore</desc>
           </valItem>
           <valItem ident="corrector">
@@ -3287,7 +3340,7 @@
           <valItem ident="issuer">
             <desc xml:lang="de" versionDate="2022-05-12">Aussteller</desc>
             <desc xml:lang="en" versionDate="2022-05-12">issuer</desc>
-            <desc xml:lang="fr" versionDate="2022-05-12">personne qui a fait un acte</desc>
+            <desc xml:lang="fr" versionDate="2022-05-12">émetteur</desc>
             <desc xml:lang="it" versionDate="2022-09-13">autore dell’atto</desc>
           </valItem>
           <valItem ident="mythological">
@@ -3299,7 +3352,7 @@
           <valItem ident="procurator">
             <desc xml:lang="de" versionDate="2022-05-12">Prokurator</desc>
             <desc xml:lang="en" versionDate="2022-05-12">procurator</desc>
-            <desc xml:lang="fr" versionDate="2022-05-12">procurateur</desc>
+            <desc xml:lang="fr" versionDate="2022-05-12">administrateur/intendant</desc>
             <desc xml:lang="it" versionDate="2022-05-12">procuratore</desc>
           </valItem>
           <valItem ident="protonotary">
@@ -3311,13 +3364,13 @@
           <valItem ident="recipient">
             <desc xml:lang="de" versionDate="2022-05-12">Empfänger</desc>
             <desc xml:lang="en" versionDate="2022-05-12">recipient</desc>
-            <desc xml:lang="fr" versionDate="2022-05-12">personne qui a reçu l’acte</desc>
+            <desc xml:lang="fr" versionDate="2022-05-12">récipiendaire</desc>
             <desc xml:lang="it" versionDate="2022-09-13">destinatario</desc>
           </valItem>
           <valItem ident="rescribendary">
             <desc xml:lang="de" versionDate="2022-05-12">Reskribendar</desc>
             <desc xml:lang="en" versionDate="2023-04-20">rescribendary</desc>
-            <desc xml:lang="fr" versionDate="2022-05-12">reskribendar</desc>
+            <desc xml:lang="fr" versionDate="2022-05-12">rescribendaire</desc>
             <desc xml:lang="it" versionDate="2022-09-13">rescribendario</desc>
           </valItem>
           <valItem ident="saint">
@@ -3329,19 +3382,19 @@
           <valItem ident="scribe">
             <desc xml:lang="de" versionDate="2022-05-12">Schreiber</desc>
             <desc xml:lang="en" versionDate="2022-05-12">scribe</desc>
-            <desc xml:lang="fr" versionDate="2022-05-12">scripteur</desc>
+            <desc xml:lang="fr" versionDate="2022-05-12">scribe</desc>
             <desc xml:lang="it" versionDate="2022-09-13">scriba</desc>
           </valItem>
           <valItem ident="sigillant">
             <desc xml:lang="de" versionDate="2022-05-12">Siegler</desc>
             <desc xml:lang="en" versionDate="2022-05-12">sigillant</desc>
-            <desc xml:lang="fr" versionDate="2022-05-12">personne qui a posé un sceau</desc>
+            <desc xml:lang="fr" versionDate="2022-05-12">sigillant</desc>
             <desc xml:lang="it" versionDate="2022-09-13">persona che ha impostato un sigillo</desc>
           </valItem>
           <valItem ident="witness">
             <desc xml:lang="de" versionDate="2022-05-12">Zeuge</desc>
             <desc xml:lang="en" versionDate="2022-05-12">witness</desc>
-            <desc xml:lang="fr" versionDate="2022-05-12">témoin d’une liste de témoins</desc>
+            <desc xml:lang="fr" versionDate="2022-05-12">témoin</desc>
             <desc xml:lang="it" versionDate="2022-09-13">testimone</desc>
           </valItem>
         </valList>
@@ -3373,7 +3426,7 @@
         <valList type="closed" xml:lang="fr">
           <valItem ident="Annexe Registre"/>
           <valItem ident="Contrôle de qualité"/>
-          <valItem ident="Création d’un fac-similé"/>
+          <valItem ident="Création de fac-similé"/>
           <valItem ident="Encodage XML de la transcription"/>
           <valItem ident="Publication"/>
           <valItem ident="Saisie des métadonnées dans l’en-tête TEI"/>
@@ -3462,19 +3515,19 @@
           <valItem ident="chancery_notation">
             <desc xml:lang="de" versionDate="2024-05-08">Kanzleivermerk</desc>
             <desc xml:lang="en" versionDate="2025-01-31">chancery notation</desc>
-            <desc xml:lang="fr" versionDate="2025-01-31">annotation issue d’une chancellerie</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">note de chancellerie</desc>
             <desc xml:lang="it" versionDate="2025-01-31">nota di cancellaria</desc>
           </valItem>
           <valItem ident="computatio">
             <desc xml:lang="de" versionDate="2024-05-08">Komputierungsvermerk</desc>
             <desc xml:lang="en" versionDate="2025-01-31">computatio</desc>
-            <desc xml:lang="fr" versionDate="2025-01-31">annotation du computeur</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">note du calculateur</desc>
             <desc xml:lang="it" versionDate="2025-01-31">computatio</desc>
           </valItem>
           <valItem ident="dorsal">
             <desc xml:lang="de" versionDate="2024-05-08">Vermerk</desc>
             <desc xml:lang="en" versionDate="2025-01-31">note</desc>
-            <desc xml:lang="fr" versionDate="2025-01-31">note</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">note</desc>
             <desc xml:lang="it" versionDate="2025-01-31">nota</desc>
           </valItem>
           <valItem ident="marginal_note">
@@ -3486,13 +3539,13 @@
           <valItem ident="sigillant">
             <desc xml:lang="de" versionDate="2024-05-08">Sieglervermerk</desc>
             <desc xml:lang="en" versionDate="2025-01-31">sigillant’s notes</desc>
-            <desc xml:lang="fr" versionDate="2025-01-31">annotation d’un sceau</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">note du sigillant</desc>
             <desc xml:lang="it" versionDate="2025-01-31">nota del sigillante</desc>
           </valItem>
           <valItem ident="tax">
             <desc xml:lang="de" versionDate="2024-05-08">Taxvermerk</desc>
             <desc xml:lang="en" versionDate="2025-01-31">tax note</desc>
-            <desc xml:lang="fr" versionDate="2025-01-31">annotation de taxation</desc>
+            <desc xml:lang="fr" versionDate="2025-04-28">note fiscale</desc>
             <desc xml:lang="it" versionDate="2025-01-31">nota di tassazione</desc>
           </valItem>
         </valList>
@@ -3502,10 +3555,10 @@
       <content>
         <valList type="closed">
           <valItem ident="sign">
-            <desc xml:lang="de" versionDate="2024-07-01">durch spezielles Zeichen markiert</desc>
-            <desc xml:lang="en" versionDate="2024-07-01">marked by special sign</desc>
-            <desc xml:lang="fr" versionDate="2024-07-01">signalé par un signe spécial</desc>
-            <desc xml:lang="it" versionDate="2024-07-01">contrassegnata da apposito segno</desc>
+            <desc xml:lang="de" versionDate="2025-07-21">durch ein Verweiszeichen markiert</desc>
+            <desc xml:lang="en" versionDate="2025-07-21">marked by reference sign</desc>
+            <desc xml:lang="fr" versionDate="2025-07-21">signalé par un signe de renvoi</desc>
+            <desc xml:lang="it" versionDate="2025-07-21">contrassegnata da un segno di riferimento</desc>
           </valItem>
         </valList>
       </content>
@@ -3528,20 +3581,20 @@
           <valItem ident="deadline">
             <desc xml:lang="de" versionDate="2024-05-08">Termin/Frist</desc>
             <desc xml:lang="en" versionDate="2024-05-08">period</desc>
-            <desc xml:lang="fr" versionDate="2024-05-08">délai</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">échéance</desc>
             <desc xml:lang="it" versionDate="2024-05-08">scadenza</desc>
           </valItem>
           <valItem ident="deadline_floating_holiday">
             <desc xml:lang="de" versionDate="2024-05-08">beweglicher Feiertag als Termin/Frist</desc>
             <desc xml:lang="en" versionDate="2024-05-08">floating holiday (deadline)</desc>
-            <desc xml:lang="fr" versionDate="2024-05-08">des fêtes sans date fixe comme délai</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">échéance d’une fête religieuse à date mobile</desc>
             <desc xml:lang="it" versionDate="2024-05-08">festività religiose senza una data fissa
               come scadenza</desc>
           </valItem>
           <valItem ident="deadline_holiday">
             <desc xml:lang="de" versionDate="2024-05-08">Kirchenfest als Termin/Frist</desc>
             <desc xml:lang="en" versionDate="2024-05-08">feast day (period)</desc>
-            <desc xml:lang="fr" versionDate="2024-05-08">des fêtes religieuses comme délai</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">échéance d’une fête religieuse</desc>
             <desc xml:lang="it" versionDate="2024-05-08">festività religiose come scadenza</desc>
           </valItem>
           <valItem ident="electronic">
@@ -3553,13 +3606,13 @@
           <valItem ident="floating_holiday">
             <desc xml:lang="de" versionDate="2024-05-08">beweglicher Feiertag</desc>
             <desc xml:lang="en" versionDate="2024-05-08">floating holiday</desc>
-            <desc xml:lang="fr" versionDate="2024-05-08">des fêtes sans date fixe</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">fête religieuse à date mobile</desc>
             <desc xml:lang="it" versionDate="2024-05-08">festività senza una data fissa</desc>
           </valItem>
           <valItem ident="holiday">
             <desc xml:lang="de" versionDate="2024-05-08">Kirchenfest</desc>
             <desc xml:lang="en" versionDate="2024-05-08">feast day</desc>
-            <desc xml:lang="fr" versionDate="2024-05-08">des fêtes religieuses</desc>
+            <desc xml:lang="fr" versionDate="2024-05-08">fête religieuse</desc>
             <desc xml:lang="it" versionDate="2024-05-08">festività religiose</desc>
           </valItem>
           <valItem ident="print">
@@ -3658,6 +3711,12 @@
             <desc xml:lang="fr" versionDate="2023-04-11">dessin à la plume</desc>
             <desc xml:lang="it" versionDate="2023-04-11">disegno a penna e inchiostro</desc>
           </valItem>
+          <valItem ident="exlibris">
+            <desc xml:lang="de" versionDate="2025-04-06">Exlibris</desc>
+            <desc xml:lang="en" versionDate="2025-04-06">ex libris</desc>
+            <desc xml:lang="fr" versionDate="2025-04-06">ex-libris</desc>
+            <desc xml:lang="it" versionDate="2025-04-06">ex libris</desc>
+          </valItem>
           <valItem ident="illustration">
             <desc xml:lang="de" versionDate="2023-04-11">Abbildung</desc>
             <desc xml:lang="en" versionDate="2023-04-11">illustration</desc>
@@ -3708,7 +3767,7 @@
         <valList type="closed">
           <valItem ident="catchword">
             <desc xml:lang="de" versionDate="2023-05-22">Kustode</desc>
-            <desc xml:lang="fr" versionDate="2023-05-22">dépositaire</desc>
+            <desc xml:lang="fr" versionDate="2023-05-22">réclame</desc>
             <desc xml:lang="en" versionDate="2023-05-22">catchword</desc>
             <desc xml:lang="it" versionDate="2023-05-22">custode</desc>
           </valItem>
@@ -3721,13 +3780,13 @@
           <valItem ident="familytree">
             <desc xml:lang="de" versionDate="2023-03-15">Stammbaum</desc>
             <desc xml:lang="en" versionDate="2023-03-15">familytree</desc>
-            <desc xml:lang="fr" versionDate="2023-03-15">pédigrée</desc>
+            <desc xml:lang="fr" versionDate="2023-03-15">arbre généalogique</desc>
             <desc xml:lang="it" versionDate="2023-03-15">albero genealogico</desc>
           </valItem>
           <valItem ident="figure">
             <desc xml:lang="de" versionDate="2023-03-15">Visualisierung</desc>
             <desc xml:lang="en" versionDate="2023-03-15">visualisation</desc>
-            <desc xml:lang="fr" versionDate="2023-03-15">visualisation</desc>
+            <desc xml:lang="fr" versionDate="2023-03-15">image</desc>
             <desc xml:lang="it" versionDate="2023-03-15">visualizzazione</desc>
           </valItem>
           <valItem ident="graphic">
@@ -3817,7 +3876,7 @@
           <valItem ident="translation">
             <desc xml:lang="de" versionDate="2023-05-26">Übersetzung</desc>
             <desc xml:lang="en" versionDate="2023-05-26">translation</desc>
-            <desc xml:lang="fr" versionDate="2023-05-26">la traduction</desc>
+            <desc xml:lang="fr" versionDate="2023-05-26">traduction</desc>
             <desc xml:lang="it" versionDate="2023-05-26">traduzione</desc>
           </valItem>
           <valItem ident="url">
@@ -3881,13 +3940,13 @@
           <valItem ident="fully_inserted">
             <desc xml:lang="de" versionDate="2025-02-03">ein vollständiges Insert einer anderen Urkunde</desc>
             <desc xml:lang="en" versionDate="2025-02-03">a complete insert of another document</desc>
-            <desc xml:lang="fr" versionDate="2025-02-03">un insert complet d’un autre document</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">insertion complète d’un autre document</desc>
             <desc xml:lang="it" versionDate="2025-02-03">un inserto completo di un altro documento</desc>
           </valItem>
           <valItem ident="partially_inserted">
             <desc xml:lang="de" versionDate="2025-02-03">ein unvollständiges Insert einer anderen Urkunde</desc>
             <desc xml:lang="en" versionDate="2025-02-03">an incomplete insert of another document</desc>
-            <desc xml:lang="fr" versionDate="2025-02-03">un insert incomplet d’un autre document</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">insertion partielle d’un autre document</desc>
             <desc xml:lang="it" versionDate="2025-02-03">un inserto incompleto di un altro documento</desc>
           </valItem>
         </valList>
@@ -3910,7 +3969,7 @@
           <valItem ident="cypher">
             <desc xml:lang="de" versionDate="2025-02-14">die Ersetzung einer Chiffre</desc>
             <desc xml:lang="en" versionDate="2025-02-14">the substitution of a cypher</desc>
-            <desc xml:lang="fr" versionDate="2025-02-14">la substitution d'un chiffre</desc>
+            <desc xml:lang="fr" versionDate="2025-02-14">substitution d’un chiffre</desc>
           </valItem>
         </valList>
       </content>
@@ -3957,7 +4016,7 @@
           <valItem ident="summary">
             <desc xml:lang="de" versionDate="2023-04-05">Regest des Quellstücks</desc>
             <desc xml:lang="en" versionDate="2025-02-03">regest of the source document</desc>
-            <desc xml:lang="fr" versionDate="2025-02-03">enregistrement du document source</desc>
+            <desc xml:lang="fr" versionDate="2025-02-03">résumé du document source</desc>
             <desc xml:lang="it" versionDate="2025-02-03">regest del documento di origine</desc>
           </valItem>
           <valItem ident="transcript">

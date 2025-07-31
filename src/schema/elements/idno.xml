@@ -143,14 +143,14 @@
         </p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Nous utilisons l’élément dans plusieurs contextes : dans <gi>seriesStmt</gi>, <gi>idno</gi>
+    <p>Nous utilisons cet élément dans plusieurs contextes : dans <gi>seriesStmt</gi>, <gi>idno</gi>
       (avec <att>type</att> = <val>UUID</val>) contient un
-      <ref target="https://de.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</ref> pour
-      identifier de manière unique le document XML. L’abréviation du volume (canton, partie,
-      numéro de document) du SDS est également spécifiée dans <gi>seriesStmt</gi>. Dans
-      <gi>msIdentifier</gi>, <gi>idno</gi> spécifie la signature d’archive d’un support de texte,
-      dans ce cas, cela dépend du système de l’archive respective.</p>
-    <p>Si <gi>idno</gi> contient un UUID, alors il doit correspondre à l’expression régulière
+      <ref target="https://de.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</ref>
+      pour désigner de manière claire le document XML. Toujours dans <gi>seriesStmt</gi>, on
+      trouve l’abréviation du volume (canton, partie, numéro de document) des SDS.
+      Dans <gi>msIdentifier</gi>, <gi>idno</gi> indique la cote d’archive du support de texte
+      selon le système de classement de l’archive concernée.</p>
+    <p>Si <gi>idno</gi> contient un UUID, celui-ci doit correspondre à l’expression régulière
       suivante :
       <val>^[0-9A-Fa-f]{8}-[0-9A-Fa - f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
       L’UUID est structuré comme suit :
@@ -162,20 +162,20 @@
         "9", "A", "B", "a", "b" suivi d’exactement trois caractères de l’ensemble ci-dessus.
         </item><item>Un trait d’union.</item><item>Exactement douze caractères de l’ensemble
         ci-dessus.</item></list></p>
-    <p>Contient <gi>idno</gi> a abréviation de bande du SDS, cela doit correspondre à l’expression
-      régulière suivante :
-      <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$</val>.
-      Les abréviations de bande sont structurées comme suit :
+    <p>Si <gi>idno</gi> désigne le volume des SDS, cela doit correspondre à l’expression régulière
+      suivante :
+      <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$.</val>
+      Les abréviations de volume sont structurées comme suit :
       <list><item>Le préfixe "SSRQ" ou "SDS" ou "FDS".</item><item>Un trait d’union.
         </item><item>L’abréviation du canton composé de deux lettres majuscules.</item><item>Un
         trait d’union.</item><item>Une abréviation du volume composée d’un nombre quelconque de
         lettres majuscules, de lettres minuscules, de chiffres et de traits de soulignement.
         </item><item>Un trait d’union.</item><item>La division du chapitre du volume
         (facultatif) consistant en un nombre quelconque de lettres majuscules, minuscules,
-        chiffres et points.</item><item>Une abréviation de la pièce composée d’un nombre
-        quelconque de chiffres.</item><item>Un trait d’union.</item><item>Un identifiant final
-        composé d’un nombre quelconque de chiffres ou d’au moins trois lettres minuscules
-        (par exemple B. pour nommer une pièce spéciale comme "lit", "intro" ou
-        "huissier").</item></list></p>
+        chiffres et points.</item><item>Une désignation de la pièce composée d’un nombre quelconque.
+        </item><item>Un trait d’union.</item><item>Un identifiant final
+        composé soit d’un nombre quelconque, soit d’au moins trois lettres minuscules (par exemple
+        pour désigner un morceau particulier comme « lit », « intro » ou « bailiff »).</item></list>
+    </p>
   </remarks>
 </elementSpec>
