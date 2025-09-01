@@ -74,7 +74,7 @@ def test_subst(
         ),
         (
             "valid-subst-with-lb-and-pb",
-            "<subst><del>foo</del><pb/><lb/><add place='inline'>bar</add></subst>",
+            "<body><subst><del>foo</del><pb/><lb/><add place='inline'>bar</add></subst></body>",
             True,
         ),
         (
