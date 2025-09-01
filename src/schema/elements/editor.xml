@@ -13,23 +13,8 @@
   <desc xml:lang="fr" versionDate="2025-02-06">Contient un éditeur de l’unité d’édition.</desc>
   <classes mode="replace"/>
   <content>
-    <alternate>
-      <elementRef key="persName"/>
-      <textNode/>
-    </alternate>
+    <elementRef key="persName"/>
   </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-editor">
-    <desc xml:lang="en" versionDate="2023-04-13">constraint for tei:editor</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:editor[parent::tei:titleStmt]">
-          <sch:assert test="tei:persName">The usage of tei:editor as part of tei:titleStmt
-            requires a tei:persName as a child.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
   <xi:include href="examples.xml" xpointer="ex-editor-de"/>
   <xi:include href="examples.xml" xpointer="ex-editor-en"/>
   <xi:include href="examples.xml" xpointer="ex-editor-fr"/>
