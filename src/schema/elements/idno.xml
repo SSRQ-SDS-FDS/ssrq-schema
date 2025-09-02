@@ -85,6 +85,7 @@
       Bandkürzel (Kanton, Teil, Stücknummer) der SSRQ angegeben. In <gi>msIdentifier</gi> gibt
       <gi>idno</gi> die Archivsignatur eines Textträgers an, in diesem Fall richtet sich diese
       nach dem System des jeweiligen Archivs.</p>
+    <p>Enthält <gi>idno</gi> eine Archivsignatur, dann folgt auf das Kürzel des Archivs kein Komma.</p>
     <p>Enthält <gi>idno</gi> eine UUID, dann muss diese dem folgenden regulären Ausdruck
       entsprechen:
       <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
@@ -114,6 +115,8 @@
   <remarks xml:lang="en" versionDate="2025-09-02">
     <p>If <gi>idno</gi> contains the signature of an archive, it has to match the system of the
       respective archive.</p>
+    <p>If <gi>idno</gi> contains the signature of an archive, the abbreviation of the archive is
+      not followed by a comma</p>
     <p>If <gi>idno</gi> contains a UUID, then it must match the following regular expression:
       <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0- 9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
       The UUID is structured as follows:
@@ -146,6 +149,8 @@
       trouve l’abréviation du volume (canton, partie, numéro de document) des SDS.
       Dans <gi>msIdentifier</gi>, <gi>idno</gi> indique la cote d’archive du support de texte
       selon le système de classement de l’archive concernée.</p>
+    <p>Si <gi>idno</gi> contient une cote d’archive, l’abréviation de l’archive n’est pas suivie
+      d’une virgule.</p>
     <p>Si <gi>idno</gi> contient un UUID, celui-ci doit correspondre à l’expression régulière
       suivante :
       <val>^[0-9A-Fa-f]{8}-[0-9A-Fa - f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
