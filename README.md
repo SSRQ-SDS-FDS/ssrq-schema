@@ -1,6 +1,6 @@
 # SSRQ-Schema [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10040701.svg)](https://doi.org/10.5281/zenodo.10040701)
 
-Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit dem XML-Schema 
+Dieses Repository beinhaltet Quellcode und sonstige Dateien im Zusammenhang mit dem XML-Schema
 der Sammlung der Schweizerischen Rechtsquellen.
 
 - [SSRQ-Schema ](#ssrq-schema-)
@@ -10,6 +10,7 @@ der Sammlung der Schweizerischen Rechtsquellen.
     - [Was ist wo?](#was-ist-wo)
       - [`src/docs`](#srcdocs)
       - [`src/schema`](#srcschema)
+      - [`src/utils/schema/lib/tei_stylesheets`](#srcutilsschemalibtei_stylesheets)
     - [Technisches Setup](#technisches-setup)
       - [Verwendete Software / Technologien](#verwendete-software--technologien)
       - [Einrichtung / Anforderungen an die Umgebung](#einrichtung--anforderungen-an-die-umgebung)
@@ -49,7 +50,7 @@ MAJOR.MINOR.PATCH
 ```
 
 Die Versionsnummer wird als Tag in der Git-History hinterlegt und ist zudem in der Datei
-`pyproject.toml` in der Tabelle `ssrq.schema.meta` hinterlegt. Die kompilierten Versionen des
+`ssrq_schema.toml` in der Tabelle `ssrq.schema.meta` hinterlegt. Die kompilierten Versionen des
 Schemas folgen dem Muster `tei-ssrq-schema-version.(rng|odd)` und verwenden die in dieser
 Projektkonfiguration hinterlegte Versionsnummer.
 
@@ -76,8 +77,9 @@ ssrq-schema/
 ├─ CITATION.cff
 ├─ LICENSE
 ├─ mkdocs.yml
-├─ poetry.lock
+├─ uv.lock
 ├─ pyproject.toml
+├─ ssrq_schema.toml
 ├─ README.md
 ├─ Taskfile
 ```
@@ -112,7 +114,7 @@ Siehe [Erzeugung der Dokumentation](#erzeugung-der-dokumentation).
 
 #### `src/utils/schema/lib/tei_stylesheets`
 
-Die Stylesheets der TEI werden als git submodule eingebunden. Um die Version der Stylesheets und 
+Die Stylesheets der TEI werden als git submodule eingebunden. Um die Version der Stylesheets und
 damit auch die zugrunde liegende Version der TEI-Richtlinien zu aktualisieren kann man wie folgt
 vorgehen:
 git submodule set-branch -b <name-des-releases> utils/schema/lib/tei_stylesheets
@@ -125,7 +127,7 @@ git submodule update --init --remote utils/schema/lib/tei_stylesheets
 
 - [jing](https://github.com/relaxng/jing-trang)
 - [mkdocs](https://www.mkdocs.org)
-- [poetry](https://python-poetry.org)
+- [uv](https://docs.astral.sh/uv/)
 - [pre-commit](https://pre-commit.com)
 - [pydantic](https://pydantic.dev)
 - [pytest](https://docs.pytest.org/en/7.1.x/how-to/writing_plugins.html)
@@ -143,8 +145,8 @@ git submodule update --init --recursive
 ```
 
 Für die Kompilierung des Schemas sowie die Ausführung der Tests ist es erforderlich, dass eine
-`JAVA`-Laufzeitumgebung sowie `Python` in Version 3.11 auf dem System installiert ist. Ferner ist
-es erforderlich, dass der Python-Paketmanager `poetry` installiert ist.
+`JAVA`-Laufzeitumgebung sowie `Python` in Version 3.11 oder 3.12 auf dem System installiert ist. Ferner ist
+es erforderlich, dass der Python-Paketmanager `uv` sowie (`GIT LFS`)[https://git-lfs.com/] installiert ist.
 
 Alle weiteren Abhängigkeiten können dann über folgenden Befehl install werden
 
@@ -315,7 +317,7 @@ müssen **nicht** händisch nachgeführt werden.
 
 #### Erzeugung einer neuen Version und Upload
 
-Die Version eines Schemas ist je Inhaltstyp in der Datei `pyproject.toml` festgelegt. Sieh
+Die Version eines Schemas ist je Inhaltstyp in der Datei `ssrq_schema.toml` festgelegt. Sieh
 hierzu den Abschnitt [Versionierung](#versionierung). Der Befehl
 
 ```sh
@@ -334,7 +336,7 @@ der einzelnen Tags als auch erläuternde Texte zu philologischen Grundlagenentsc
 
 ##### Befehle
 
-- `run serve-docs`: Erzeugt die Dokumentation und startet zugleich einen Webserver (gedacht 
+- `run serve-docs`: Erzeugt die Dokumentation und startet zugleich einen Webserver (gedacht
   für die lokale Entwicklung)
 - `run build-docs`: Generiert die statische Dokumentationsseite. Das Ergebnis wird im Ordner
   `/site` abgelegt.
@@ -345,9 +347,9 @@ Die Quelldateien für die Dokumentation sind einerseits die einzelnen Elementdef
 befinden sich `/src/elements` und andererseits spezifische Dateien für die Dokuseite:
 
 - `mkdocs.yml`: Konfigurationsdatei für `mkdocs`; enthält ebenso Übersetzungen für die Navigation
-- `utils/docs/odd2md.py`: Python-Skript zur Umwandlung der ODD-Datei in einzelne Markdown-Dateien 
+- `utils/docs/odd2md.py`: Python-Skript zur Umwandlung der ODD-Datei in einzelne Markdown-Dateien
    je Element (Quelle ist ein kompiliertes ODD)
-- `utils/docs/doc_hooks.py`: Hook (‚Event-Skript‘), welches von `mkdocs` beim Start aufgerufen 
+- `utils/docs/doc_hooks.py`: Hook (‚Event-Skript‘), welches von `mkdocs` beim Start aufgerufen
    wird – der Hook bindet wiederum `odd2md.py` ein
 - `src/docs`: grundlegende Quelldateien für die Dokuseite
   - `index.md`: Startseite (das Kürzel `.de` oder `.fr` verweist auf die jeweilige Sprachversion)

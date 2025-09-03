@@ -1,16 +1,31 @@
 repos:
-- repo: https://github.com/astral-sh/ruff-pre-commit
-  # Ruff version.
-  rev: v0.3.1
+- repo: local
   hooks:
-    - id: ruff
-- repo: https://github.com/astral-sh/ruff-pre-commit
-  # Ruff version.
-  rev: v0.3.1
-  hooks:
+    - id: ruff-check
+      name: Run ruff check before commit
+      entry: uv run ruff check
+      args: [--fix]
+      language: system
+      pass_filenames: false
     - id: ruff-format
-      args: [--check]
-- repo: https://github.com/lsst-ts/pre-commit-xmllint
-  rev: v1.0.0
-  hooks:
-    - id: format-xmllint
+      name: Run ruff format before commit
+      entry: uv run ruff format
+      language: system
+      pass_filenames: false
+    - id: mypy
+      name: Run mypy before commit
+      entry: uv run mypy
+      language: system
+      types: [ python ]
+      pass_filenames: false
+    #- id: pytest
+    #  name: Run pytest before commit
+    #  entry: uv run pytest
+    #  language: system
+    #  types: [ python ]
+    #  pass_filenames: false
+    - id: mkdocs
+      name: Run mkdocs before commit
+      entry: uv run mkdocs build
+      language: system
+      pass_filenames: false

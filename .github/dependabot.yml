@@ -1,6 +1,6 @@
 version: 2
 updates:
-  - package-ecosystem: "pip"
+  - package-ecosystem: "uv"
     directory: "/"
     schedule:
       interval: "daily"
@@ -9,4 +9,4 @@ updates:
     target-branch: "dev"
     open-pull-requests-limit: 25
     labels:
-      - "pip dependencies"
+      - "python dependencies"

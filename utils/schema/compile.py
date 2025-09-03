@@ -69,9 +69,12 @@ def store_compiled_schemas(
         io.write(directory=out_dir, file_name=rng_name, content=schema.rng)
 
 
-def load_config(io: io.AbstractFileHandler = io.FileHandler) -> SSRQConfig:
+def load_config(
+    io: io.AbstractFileHandler = io.FileHandler,
+    schema_config: str = configs.SCHEMA_CONFIG_FILE,
+) -> SSRQConfig:
     pyproject_toml = tomllib.loads(
-        io.read(directory=configs.PROJECT_DIR, file_name="pyproject.toml")
+        io.read(directory=configs.PROJECT_DIR, file_name=schema_config)
     )
 
     return SSRQConfig(**pyproject_toml["ssrq"]["schema"]["meta"])
