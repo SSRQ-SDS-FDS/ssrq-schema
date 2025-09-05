@@ -27,12 +27,8 @@ jobs:
           ssh-key: ${{ secrets.CLI_SECRET_KEY }}
       - name: Setup xmllint
         uses: Bpolitycki/setup-xmllint-action@1.0.1
-      - name: Check the formatting of .py-files
-        run: ./Taskfile fmt-check
-      - name: Check the formatting of .xml-files
-        run: ./Taskfile fmt-xml
-      - name: Lint all .py-files
-        run: ./Taskfile lint-only
+      - name: Check the formatting and validate .py-fies
+        run: ./Taskfile check
       - name: Validate all schema source files
         run: ./Taskfile validate
       - name: Run all tests using pytest
