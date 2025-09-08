@@ -73,9 +73,14 @@ def test_idno(
             True,
         ),
         (
-            "valid-series-idno-for-paratext",
+            "invalid-series-idno-for-paratext",
             "<seriesStmt><idno>SDS-NE-4-lit</idno></seriesStmt>",
-            True,
+            False,
+        ),
+        (
+            "invalid-series-idno-for-paratext2",
+            "<seriesStmt><idno>SDS-NE-4-intro</idno></seriesStmt>",
+            False,
         ),
         (
             "valid-series-idno-uuid",

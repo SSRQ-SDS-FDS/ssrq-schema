@@ -29,7 +29,7 @@
       </sch:pattern>
       <sch:pattern>
         <sch:rule context="tei:idno[parent::tei:seriesStmt][not(@type)]">
-          <sch:assert test="matches(., '^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-(1))|(lit|intro|bailiffs))$')" role="warning">
+          <sch:assert test="matches(., '^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$')" role="warning">
             The tei:idno must match the defined schema – see the examples in the documentation.
           </sch:assert>
         </sch:rule>
@@ -77,7 +77,7 @@
   <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-de"/>
   <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-en"/>
   <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
+  <remarks xml:lang="de" versionDate="2025-09-02">
     <p>Wir verwenden das Element in mehreren Zusammenhängen: In <gi>seriesStmt</gi> enthält
       <gi>idno</gi> (mit <att>type</att> = <val>UUID</val>) eine
       <ref target="https://de.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</ref>,
@@ -85,6 +85,7 @@
       Bandkürzel (Kanton, Teil, Stücknummer) der SSRQ angegeben. In <gi>msIdentifier</gi> gibt
       <gi>idno</gi> die Archivsignatur eines Textträgers an, in diesem Fall richtet sich diese
       nach dem System des jeweiligen Archivs.</p>
+    <p>Enthält <gi>idno</gi> eine Archivsignatur, dann folgt auf das Kürzel des Archivs kein Komma.</p>
     <p>Enthält <gi>idno</gi> eine UUID, dann muss diese dem folgenden regulären Ausdruck
       entsprechen:
       <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
@@ -99,7 +100,7 @@
       </item><item>Genau zwölf Zeichen aus dem oben genannten Set.</item></list></p>
     <p>Enthält <gi>idno</gi> ein Bandkürzel der SSRQ, dann muss dies dem folgenden regulären
       Ausdruck entsprechen:
-      <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$"</val>.
+      <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$</val>.
       Die Bandkürzel sind wie folgt aufgebaut:
       <list><item>Das Präfix "SSRQ" oder "SDS" oder "FDS".</item><item>Ein Bindestrich.
       </item><item>Das Kürzel des Kantons bestehend aus zwei Grossbuchstaben.
@@ -108,14 +109,14 @@
       </item><item>Ein Bindestrich.</item><item>Die Kapiteleinteilung des Bandes (optional)
         bestehend aus beliebig vielen Grossbuchstaben, Kleinbuchstaben, Ziffern und Punkten.
       </item><item>Ein Kürzel des Stücks bestehend aus beliebig vielen Ziffern.
-      </item><item>Ein Bindestrich.</item><item>Eine abschliessende Kennung bestehend entweder aus
-        beliebig vielen Ziffern oder mindestens drei Kleinbuchstaben (z. B. zur Benennung eines
-        speziellen Stücks wie "lit", "intro" oder "bailiff").</item></list>
+      </item><item>Ein Bindestrich und die Ziffer 1</item></list>
     </p>
   </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-17">
+  <remarks xml:lang="en" versionDate="2025-09-02">
     <p>If <gi>idno</gi> contains the signature of an archive, it has to match the system of the
       respective archive.</p>
+    <p>If <gi>idno</gi> contains the signature of an archive, the abbreviation of the archive is
+      not followed by a comma</p>
     <p>If <gi>idno</gi> contains a UUID, then it must match the following regular expression:
       <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0- 9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
       The UUID is structured as follows:
@@ -129,7 +130,7 @@
     </p>
     <p>If <gi>idno</gi> contains a volume abbreviation of the SLS, then this must match the
         following regular expression:
-        <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\ .)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$</val>.
+        <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$</val>.
         The volume abbreviations are structured as follows:
         <list><item>The prefix "SSRQ" or "SDS" or "FDS".</item><item>A hyphen.</item><item>The
           abbreviation of the canton consisting of two capital letters.</item><item>A hyphen.
@@ -137,12 +138,10 @@
           lowercase letters, digits and underline.</item><item>A hyphen.</item><item>The chapter
           division of the volume (optional) consisting of any number of capital letters,
           Lowercase letters, digits and periods.</item><item>An abbreviation of the piece
-          consisting of any number of digits.</item><item>A hyphen.</item><item>A final identifier
-          consisting of either any number of digits or at least three lower case letters (e.g.
-          to name a special piece like "lit", "intro" or "bailiff").</item></list>
+          consisting of any number of digits.</item><item>A hyphen and the letter one.</item></list>
         </p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
+  <remarks xml:lang="fr" versionDate="2025-09-02">
     <p>Nous utilisons cet élément dans plusieurs contextes : dans <gi>seriesStmt</gi>, <gi>idno</gi>
       (avec <att>type</att> = <val>UUID</val>) contient un
       <ref target="https://de.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</ref>
@@ -150,6 +149,8 @@
       trouve l’abréviation du volume (canton, partie, numéro de document) des SDS.
       Dans <gi>msIdentifier</gi>, <gi>idno</gi> indique la cote d’archive du support de texte
       selon le système de classement de l’archive concernée.</p>
+    <p>Si <gi>idno</gi> contient une cote d’archive, l’abréviation de l’archive n’est pas suivie
+      d’une virgule.</p>
     <p>Si <gi>idno</gi> contient un UUID, celui-ci doit correspondre à l’expression régulière
       suivante :
       <val>^[0-9A-Fa-f]{8}-[0-9A-Fa - f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
@@ -164,7 +165,7 @@
         ci-dessus.</item></list></p>
     <p>Si <gi>idno</gi> désigne le volume des SDS, cela doit correspondre à l’expression régulière
       suivante :
-      <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:((?:[A-Za-z0-9]+\.)*)([0-9]+)-([0-9]+)|([a-z]{3,}))$.</val>
+      <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$</val>
       Les abréviations de volume sont structurées comme suit :
       <list><item>Le préfixe "SSRQ" ou "SDS" ou "FDS".</item><item>Un trait d’union.
         </item><item>L’abréviation du canton composé de deux lettres majuscules.</item><item>Un
@@ -173,9 +174,7 @@
         </item><item>Un trait d’union.</item><item>La division du chapitre du volume
         (facultatif) consistant en un nombre quelconque de lettres majuscules, minuscules,
         chiffres et points.</item><item>Une désignation de la pièce composée d’un nombre quelconque.
-        </item><item>Un trait d’union.</item><item>Un identifiant final
-        composé soit d’un nombre quelconque, soit d’au moins trois lettres minuscules (par exemple
-        pour désigner un morceau particulier comme « lit », « intro » ou « bailiff »).</item></list>
+        </item><item>Un trait d’union et la chiffre "1".</item></list>
     </p>
   </remarks>
 </elementSpec>
