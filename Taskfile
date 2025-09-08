@@ -16,7 +16,12 @@ function check {
 
 function install {
     echo "Installing dependencies..."
-    UV_GIT_LFS=1 uv sync
+    # Remove .venv directory if it exists
+    if [ -d ".venv" ]; then
+        echo "Removing existing .venv directory..."
+        rm -rf .venv
+    fi
+    UV_GIT_LFS=1 uv sync --dev --all-extras --no-cache
     echo "Installing pre-commit hooks..."
     cmd pre-commit install
 }
