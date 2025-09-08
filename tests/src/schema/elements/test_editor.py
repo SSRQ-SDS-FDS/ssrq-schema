@@ -1,8 +1,6 @@
 import pytest
-from pyschval.schematron.validate import apply_schematron_validation
-from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
+from ..conftest import RNG_test_function
 
 
 @pytest.mark.parametrize(
@@ -14,9 +12,9 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "valid-editor-with-text",
+            "invalid-editor-with-text",
             "<editor>Friedrich Emil Welti</editor>",
-            True,
+            False,
         ),
         (
             "invalid-editor-with-p",
@@ -32,28 +30,3 @@ def test_editor_rng(
     result: bool,
 ):
     test_element_with_rng("editor", name, markup, result, False)
-
-
-@pytest.mark.parametrize(
-    "name, markup, result",
-    [
-        (
-            "valid-editor-with-persName-in-titleStmt",
-            "<titleStmt><editor><persName>Friedrich Emil Welti</persName></editor></titleStmt>",
-            True,
-        ),
-        (
-            "invalid-editor-with-persName-in-titleStmt",
-            "<titleStmt><editor>Friedrich Emil Welti</editor></titleStmt>",
-            False,
-        ),
-    ],
-)
-def test_editor_constraints(
-    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
-):
-    writer.write(name, add_tei_namespace(markup))
-    reports: list[SchematronResult] = apply_schematron_validation(
-        input=writer.list(), isosch=main_constraints
-    )
-    assert reports[0].report.is_valid() is result
