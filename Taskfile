@@ -4,65 +4,30 @@ src='.'
 
 function cmd {
   # Run any command you want
-  poetry run "${@}"
+  uv run "${@}"
 }
 
 
-function fmt {
+function check {
   cmd ruff format . "${@}"
   cmd ruff check --fix . "${@}"
-  fmt-xml
-}
-
-function fmt-check {
-    echo "Checking the format with ruff..."
-    cmd ruff format --check ${src}
-}
-
-function fmt-xml {
-    echo "Formatting xml files using xmllint..."
-    cmd pre-commit run format-xmllint --files $(git ls-files -- '*.xml')
-}
-
-function lint-only {
-    echo "Linting using ruff..."
-    cmd ruff check ${src}
+  cmd mypy
 }
 
 function install {
     echo "Installing dependencies..."
-    poetry install
+    # Remove .venv directory if it exists
+    if [ -d ".venv" ]; then
+        echo "Removing existing .venv directory..."
+        rm -rf .venv
+    fi
+    UV_GIT_LFS=1 uv sync --dev --all-extras --no-cache
     echo "Installing pre-commit hooks..."
     cmd pre-commit install
 }
 
-function type-check {
-    echo "Type checking using mypy..."
-    cmd mypy
-}
-
-function lint {
-    fmt-check
-    lint-only
-    type-check
-}
-
 function test {
-    lint
-
-    output=$(validate 2>&1) # Execute the command and capture the output – stderr will go to stdout.
-
-    if echo "$output" | grep -q "Some files are not"; then
-        echo "$output"
-        exit 1
-    fi
-
-    echo "Running tests using pytest..."
     cmd pytest -n auto "${@}"
-}
-
-function test-only {
-    cmd pytest -n 4 "${@}"
 }
 
 function compile {

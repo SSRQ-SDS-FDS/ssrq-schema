@@ -1,4 +1,4 @@
-name: Setup SSH, Python and Poetry
+name: Setup SSH, UV and Python
 description: A simple action to setup everything, including dependencies.
 
 inputs:
@@ -18,14 +18,11 @@ runs:
       with:
         ssh-private-key: |
           ${{ inputs.ssh-key }}
-    - name: Install poetry
+    - name: Install uv
+      uses: astral-sh/setup-uv@v6
+    - name: Install Python ${{ inputs.python-version }}
       shell: bash
-      run: pipx install poetry==1.8.5
-    - name: Set up Python ${{ inputs.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        cache: "poetry"
-        python-version: ${{ inputs.python-version }}
+      run: uv python install ${{ inputs.python-version }}
     - name: Install dependencies
       shell: bash
-      run: poetry install
+      run: UV_GIT_LFS=1 uv sync --all-extras --dev
