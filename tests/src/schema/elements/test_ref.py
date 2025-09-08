@@ -24,6 +24,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-ref-with-witness-id",
+            "<ref target='id-ssrq-18335436-5953-4c7b-97a9-9b3ed7709f41'>StASH, Abschriften, 1, fol. 12r</ref>",
+            True,
+        ),
+        (
             "invalid-ref-with-wrong-urn",
             "<ref target='urn:ssrq:SSQ-ZH-NF_I_2_1-4-1'>SSRQ ZH NF I/2/1 4-1</ref>",
             False,
