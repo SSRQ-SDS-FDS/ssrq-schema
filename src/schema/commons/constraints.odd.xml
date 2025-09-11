@@ -200,7 +200,7 @@
       <constraint>
         <sch:pattern>
           <sch:rule context="tei:pb | tei:cb | tei:lb">
-            <sch:assert test="ancestor::tei:body"><sch:value-of select="name()"/> may only be used inside tei:body.
+            <sch:assert test="ancestor::tei:body">tei:<sch:name/> may only be used inside tei:body.
           </sch:assert>
           </sch:rule>
         </sch:pattern>
