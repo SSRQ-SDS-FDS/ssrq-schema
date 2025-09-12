@@ -195,5 +195,16 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
+    <constraintSpec xml:lang="en" scheme="schematron" ident="sch-milestones">
+      <desc xml:lang="en" versionDate="2025-09-01">constraint for milestones</desc>
+      <constraint>
+        <sch:pattern>
+          <sch:rule context="tei:pb | tei:cb | tei:lb">
+            <sch:assert test="ancestor::tei:body">tei:<sch:name/> may only be used inside tei:body.
+          </sch:assert>
+          </sch:rule>
+        </sch:pattern>
+      </constraint>
+    </constraintSpec>
   </specGrp>
 </div>
