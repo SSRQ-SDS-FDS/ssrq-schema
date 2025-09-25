@@ -43,7 +43,7 @@
   <remarks xml:lang="de" versionDate="2025-02-06">
     <p>Der Wert der Zahl wird im Attribut <att>value</att> maschinenlesbar hinterlegt.</p>
     <p>Im Falle einer Bruchzahl werden Nenner und Zähler mit einem Schrägstrich voneinander
-      getrennt und der Wert des Bruchs als Dezimalzahl im Attribut <att>val</att> hinterlegt.</p>
+      getrennt und der Wert des Bruchs als Dezimalzahl im Attribut <att>value</att> hinterlegt.</p>
     <p>Bei Angaben zu Massen, Gewichten, Währungen etc., in denen innerhalb von <gi>measure</gi>
       mit <att>quantity</att> die Anzahl ausgezeichnet wird, wird auf <gi>num</gi> verzichtet.
       Ebenso wird bei Daten, die mit <gi>date</gi>, und Zeiten, die mit <gi>time</gi> ausgezeichnet
@@ -53,7 +53,7 @@
     <p>The value of the number is stored in machine-readable form in the <att>value</att>
       attribute.</p>
     <p>In the case of a fractional number, the denominator and numerator are separated by a slash
-      from each other and the value of the number as a decimal number in the <att>val</att>
+      from each other and the value of the number as a decimal number in the <att>value</att>
       attribute deposited.</p>
     <p>In the case of information on dimensions, weights, currencies, etc., in which
       <gi>measure</gi> is used to mark the number with <att>quantity</att>, <gi>num</gi> is not
