@@ -946,12 +946,24 @@ def test_quotation_marks_in_text_node(
             """<teiHeader><summary><p><pb/><cb/><lb/>foo</p></summary></teiHeader>""",
             False,
         ),
+        (
+            "valid-milestones-in-back",
+            """<back><div><p><orig><pb/><cb/><lb/>foo</orig></p></div></back>""",
+            True,
+        ),
+        (
+            "valid-milestones-inside-header",
+            """<teiHeader><summary><p><orig><pb/><cb/><lb/>foo</orig></p></summary></teiHeader>""",
+            True,
+        ),
     ],
 )
 def test_milestones(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
-    """Tests the global constraint, which ensures that no pb, cb or lb are used outside body."""
+    """
+    Tests the global constraint, which ensures that pb, cb and lb are not used outside body or orig.
+    """
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
         input=writer.list(), isosch=main_constraints
