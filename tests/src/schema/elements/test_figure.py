@@ -28,14 +28,14 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "valid-figure-with-graphic-and-head",
+            "invalid-figure-with-graphic-and-head",
             """
             <figure type='illustration'>
                 <graphic type='familytree' mimeType='image/jpg' url='foo.jpg'/>
                 <head>Foo</head>
             </figure>
             """,
-            True,
+            False,
         ),
         (
             "valid-figure-with-hand",

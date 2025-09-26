@@ -74,13 +74,10 @@
   <xi:include href="examples.xml" xpointer="ex-head-table-de"/>
   <xi:include href="examples.xml" xpointer="ex-head-table-en"/>
   <xi:include href="examples.xml" xpointer="ex-head-table-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-head-figure-de"/>
-  <xi:include href="examples.xml" xpointer="ex-head-figure-en"/>
-  <xi:include href="examples.xml" xpointer="ex-head-figure-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
+  <remarks xml:lang="de" versionDate="2025-09-26">
     <p>Als Teil des <gi>teiHeader</gi> enthält das Element den Titel des Dokuments oder den Titel
       des Textträgers. Innerhalb des <gi>body</gi> kann <gi>head</gi> die Überschrift eines
-      Kapitels oder Unterkapitels angeben, in <gi>figure</gi> die Legende einer Abbildung, in
+      Kapitels oder Unterkapitels angeben, in
     <gi>list</gi> die Überschrift einer Liste, in <gi>table</gi> die Überschrift einer Tabelle.</p>
     <p>Eine durch die Bearbeitenden hinzugefügte Überschrift, die nicht im Original vorhanden ist,
       wird mit dem Attribut <att>resp</att> gekennzeichnet. Mit dem Attribut <att>n</att>
@@ -91,14 +88,13 @@
   <remarks xml:lang="en" versionDate="2023-07-19">
     <p>Contains the title of the document as part of the <gi>teiHeader</gi> and the description of
       the cited short title as part of <gi>listBibl</gi>; in <gi>body</gi> the heading of a chapter
-      or subchapter, in <gi>figure</gi> the legend of an illustration, a graphic, a family tree
-      etc.</p>
+      or subchapter etc.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
+  <remarks xml:lang="fr" versionDate="2025-09-26">
     <p>S’il fait partie du <gi>teiHeader</gi>, l’élément contient le titre du document ou le titre
       du support de texte. A l’intérieur de <gi>body</gi>, <gi>head</gi> peut signaler le titre
-      d’un chapitre ou d’un sous-chapitre, dans <gi>figure</gi> la légende d’une illustration,
-      dans <gi>list</gi> le titre d’une liste, dans <gi>table</gi> le titre d’un tableau.</p>
+      d’un chapitre ou d’un sous-chapitre, dans <gi>list</gi> le titre d’une liste, dans
+      <gi>table</gi> le titre d’un tableau.</p>
     <p>Un titre ajouté par les éditeurs qui n’est pas présent dans l’original est marqué avec
       l’attribut <att>resp</att>. L’attribut <att>n</att> peut être utilisé pour numéroter le titre et
       <att>xml:lang</att> peut être utilisé pour signaler une langue différente du texte
