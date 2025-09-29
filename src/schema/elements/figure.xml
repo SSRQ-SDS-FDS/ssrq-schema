@@ -16,10 +16,7 @@
     <memberOf key="att.written"/>
   </classes>
   <content>
-    <sequence minOccurs="0">
-      <elementRef key="graphic"/>
-      <elementRef key="head" minOccurs="0"/>
-    </sequence>
+      <elementRef key="graphic" minOccurs="0"/>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-figure">
     <desc xml:lang="en" versionDate="2023-07-05">constraint for tei:figure</desc>
@@ -56,9 +53,6 @@
   <xi:include href="examples.xml" xpointer="ex-figure-1-de"/>
   <xi:include href="examples.xml" xpointer="ex-figure-1-en"/>
   <xi:include href="examples.xml" xpointer="ex-figure-1-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-2-de"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-2-en"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-2-fr"/>
   <remarks xml:lang="de" versionDate="2025-02-06">
     <p><gi>figure</gi> beschreibt Notarzeichen (= Notariatszeichen, Notariatssignet, Signum),
       Federzeichnungen, Holzschnitte, Verweiszeichen oder bei Kopien von Urkunden die Stelle, an
