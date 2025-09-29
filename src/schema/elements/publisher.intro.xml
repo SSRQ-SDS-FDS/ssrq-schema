@@ -15,7 +15,7 @@
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:publisher[ancestor::tei:publicationStmt]">
-          <sch:assert test="text() = 'SSRQ-SDS-FDS'">
+          <sch:assert test="normalize-space(.) = 'SSRQ-SDS-FDS'">
               If tei:publisher is part of tei:publicationStmt it must contain the text
               "SSRQ-SDS-FDS".
           </sch:assert>

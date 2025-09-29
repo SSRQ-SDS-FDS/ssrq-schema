@@ -87,6 +87,11 @@ def test_term(
             "<term type='index'>foo</term>",
             False,
         ),
+        (
+            "invalid-term-without-content",
+            "<term ref='key123456'>    </term>",
+            False,
+        ),
     ],
 )
 def test_term_constraints(
