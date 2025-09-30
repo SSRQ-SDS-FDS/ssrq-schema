@@ -63,6 +63,15 @@ def test_idno(
             True,
         ),
         (
+            "valid-series-idno-with-whitespace",
+            "<seriesStmt>\n"
+            "    <idno>\n"
+            "        SSRQ-FR-I_2_8-1-1\n"
+            "    </idno>"
+            "</seriesStmt>",
+            True,
+        ),
+        (
             "valid-series-idno-with-case",
             "<seriesStmt><idno>SDS-NE-4-1.0-1</idno></seriesStmt>",
             True,
@@ -85,6 +94,15 @@ def test_idno(
         (
             "valid-series-idno-uuid",
             "<seriesStmt><idno type='uuid'>73988c1a-40e1-4527-94b7-736d418b29d0</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "valid-series-idno-uuid-with-whitespace",
+            "<seriesStmt>"
+            "    <idno type='uuid'>"
+            "        73988c1a-40e1-4527-94b7-736d418b29d0"
+            "    </idno>"
+            "</seriesStmt>",
             True,
         ),
         (
@@ -122,6 +140,11 @@ def test_idno(
         (
             "invalid-idno-not-unique",
             "<TEI><idno>foo</idno><idno>foo</idno></TEI>",
+            False,
+        ),
+        (
+            "invalid-idno-not-unique-with whitespace",
+            "<TEI><idno>foo</idno><idno>\n    foo\n</idno></TEI>",
             False,
         ),
     ],

@@ -54,7 +54,7 @@
       <sch:pattern>
         <sch:rule context="tei:div[tei:head][tei:div]">
           <sch:report test="tei:head[preceding-sibling::tei:div]">
-            If a tei:head is used inside <sch:name/> it must always precede all tei:div-elements.
+            If a tei:head is used inside tei:div it must always precede all tei:div-elements.
           </sch:report>
         </sch:rule>
       </sch:pattern>

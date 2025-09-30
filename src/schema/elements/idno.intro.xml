@@ -29,7 +29,7 @@
       </sch:pattern>
       <sch:pattern>
         <sch:rule context="tei:TEI">
-          <sch:let name="idnos" value="//tei:idno[not(parent::tei:altIdentifier)]"/>
+          <sch:let name="idnos" value="//tei:idno[not(parent::tei:altIdentifier)] ! normalize-space(.)"/>
           <sch:assert test="count(distinct-values($idnos)) = count($idnos)">
             The value of every tei:idno should be unique.
           </sch:assert>

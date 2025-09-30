@@ -24,20 +24,20 @@
     <constraint>
       <sch:pattern>
         <sch:rule context="tei:term">
-          <sch:report test=".[not(@*)][not(text())][not(./node())]">
+          <sch:report test=".[not(@*)][not(normalize-space(.))][not(*)]">
             tei:term should have at least an attribute, text content or element content.
           </sch:report>
           <sch:assert test=".[@ref or @type]">
             tei:term should have a @ref, a @type or both.
           </sch:assert>
-          <sch:report test=".[not(text())][not(./node())][contains(@ref, 'lem')]">
+          <sch:report test=".[not(normalize-space(.))][not(*)][contains(@ref, 'lem')]">
             If tei:term has no text content or child nodes, the @ref-attribute must reference
             a keyword, not a lemma.
           </sch:report>
         </sch:rule>
       </sch:pattern>
       <sch:pattern>
-        <sch:rule context="tei:term[not(ancestor::tei:keywords)][not(text())][not(./node())]">
+        <sch:rule context="tei:term[not(ancestor::tei:keywords)][not(normalize-space(.))][not(*)]">
           <sch:assert test=".[@type eq 'index']">
             If tei:term is used outside tei:keywords and has no text content or child nodes,
             then it must have a @type-attribute with the value 'index'.
@@ -45,9 +45,9 @@
         </sch:rule>
       </sch:pattern>
       <sch:pattern>
-        <sch:rule context="tei:term[not(ancestor::tei:keywords)][text() or ./node()]">
+        <sch:rule context="tei:term[not(ancestor::tei:keywords)][normalize-space(.) or *]">
           <sch:assert test=".[not(@type eq 'index')]">
-            If tei:term is used outside tei:keywords and has text content or child nodes,
+            If tei:term is used outside tei:keywords and has text content or child elements,
             then it must not have a @type-attribute with the value 'index'.
           </sch:assert>
         </sch:rule>

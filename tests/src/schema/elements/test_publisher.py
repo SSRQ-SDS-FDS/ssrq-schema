@@ -58,6 +58,11 @@ def test_publisher(
             True,
         ),
         (
+            "valid-publisher-with-correct-text-content-and-whitespace",
+            "<publicationStmt><publisher>\n    SSRQ-SDS-FDS\n    </publisher></publicationStmt>",
+            True,
+        ),
+        (
             "invalid-publisher-with-wrong-text-content",
             "<publicationStmt><publisher>Foo</publisher></publicationStmt>",
             False,

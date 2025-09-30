@@ -32,8 +32,8 @@
       <sch:pattern>
         <sch:rule context="tei:ab[tei:hi]">
           <sch:report test=".[count(*) = 1][string-length(normalize-space(string-join(text(), ''))) = 0]" xml:lang="en" role="warning">
-            If no further text is used inside <sch:name/> and tei:hi is the only child, consider
-            using the rend-attribute of <sch:name/>.
+            If no further text is used inside tei:ab and tei:hi is the only child, consider
+            using the rend-attribute of tei:ab.
           </sch:report>
         </sch:rule>
       </sch:pattern>
