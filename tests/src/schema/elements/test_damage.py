@@ -72,14 +72,14 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
-            "valid-damage-with-supplied-unclear",
+            "invalid-damage-with-supplied-unclear",
             """
             <damage agent='water'>
                 <supplied resp="MA">foo</supplied>
                 <unclear>bar</unclear>
             </damage>
             """,
-            True,
+            False,
         ),
         (
             "invalid-damage-without-agent",
