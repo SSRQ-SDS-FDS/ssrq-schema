@@ -19,10 +19,13 @@
   <content>
     <alternate>
       <elementRef key="seg" minOccurs="2" maxOccurs="unbounded"/>
-      <alternate maxOccurs="unbounded">
-        <elementRef key="p"/>
+      <sequence>
+        <elementRef key="head" minOccurs="0"/>
+        <elementRef key="p" maxOccurs="unbounded"/>
+      </sequence>
+      <sequence maxOccurs="unbounded">
         <macroRef key="ssrq.content.default"/>
-      </alternate>
+      </sequence>
     </alternate>
   </content>
   <attList>
