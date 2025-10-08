@@ -94,7 +94,7 @@ et qui n’y sont pas développées.
      = Helbling (demi-denier)  
     ,  = Krone (écu)  
     ℔ = Pfund (livre) [poids]  
-     = Pfund (livre)  [devise]  
+     = Pfund (livre) [monnaie]  
      = Schilling (sou)  
      = Scudo (scudo)
 
