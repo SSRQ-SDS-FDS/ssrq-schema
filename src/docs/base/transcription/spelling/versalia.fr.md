@@ -2,42 +2,43 @@
 
 ## Majuscules
 
-Les majuscules ne sont appliquées que lettre par lettre.
+Les majuscules sont uniquement reproduites lettre par lettre.
 
 Exemple :  
 « WJR » est transcrit comme « wir ».
 
 ## Minuscules
 
-=== "Mss. jusqu’au XVIIIe siècle"
+=== "Mss. jusqu’au XVIII<sup>e</sup> siècle"
 
-    Dans les textes manuscrits jusqu’à la fin du XVIIIe siècle, les lettres minuscules sont
-    généralement utilisées.
+    Dans les textes manuscrits jusqu’à la fin du XVIII<sup>e</sup> siècle, 
+    l’usage général est la minuscule.
     
-    Seuls les débuts de phrases et les noms propres (noms de personne, de famille,
-    d’organisation, de lieu et de champ) sont en majuscules.
-    Les caractéristiques spéciales suivantes doivent être observées.
+    Seuls les débuts de phrases et les noms propres (noms de personnes, de familles,
+    d’organisations, de lieux et toponymes) prennent une majuscule.
+    Les particularités suivantes doivent être prises en compte.
 
-=== "Mss. du XIXe siècle"
+=== "Mss. du XIX<sup>e</sup> siècle"
 
-    Pour les textes manuscrits du XIXe siècle, il faut utiliser en allemand les majuscules selon
-    l’original et en français selon l’orthographe actuelle.
+    Pour les textes manuscrits du XIX<sup>e</sup> siècle, il faut retranscrire
+    les majuscules selon l’original pour l’allemand, et selon l’orthographe
+    actuelle pour le français.
 
-=== "Imprimer"
+=== "Imprimés"
 
-    Lors des imprimes, les lettres minuscules et majuscules sont fidèles à l’original.
+    Pour les imprimés, les lettres minuscules et majuscules sont fidèles à l’original.
 
-## Noms génériques
+## Noms communs
 
 === "Règles générales"
 
-    Les noms génériques sont écrits en minuscules.
-    Les éditeurs décident s’il s’agit d’un nom propre ou d’un nom appellatif.
-    En cas de doute, les lettres minuscules sont privilégiées.
+    Les noms communs prennent une minuscule. 
+    L’éditeur ou l’éditrice décide s’il s’agit d’un nom propre ou d’un nom commun. 
+    En cas de doute, la minuscule est privilégiée.
     
     Exemples :  
     « oben am bühel »  
-    « eidgenossen » (s’il s’agit vraiment des Confédérés suisses, « Eidgenossen » est en majuscule)  
+    « eidgenossen » (s’il s’agit bien des Confédérés suisses, « Eidgenossen » prend une majuscule)  
     « walser »
 
 === "Textes français"
@@ -53,12 +54,12 @@ Exemple :
     « la Cour du roi »  
     « la Chambre apostolique des comptes »
 
-## Termes respectueux et salutations
+## Titres et formules de salutations
 
 === "Règle générale"
 
-    Les termes respectueux, titres et salutations sont écrits en minuscules
-    dans toutes les langues.
+    Les titres honorifiques, titres et formules de salutations sont écrits
+    en minuscules dans toutes les langues.
 
 === "Exemple allemand"
 
@@ -83,15 +84,15 @@ Exemple :
     « pontifex Romanus »  
     « excellentia sua, Karolus imperator »
 
-## Nomina Sacra
+## Noms sacrés
 
 === "Règles générales"
 
-    Les noms sacrés (nomina sacra) sont en majuscule.
+    Les noms sacrés (nomina sacra) prennent une majuscule.
 
     En vieux français et en latin, contrairement à l’allemand,
-    le nom de Dieu est en majuscule, même si c’est un terme qui
-    le définit de manière absolue.
+    le nom de Dieu prend une majuscule, même lorsqu’il s’agit
+    d’un mot le désignant de manière absolue.
 
 === "Exemple allemand"
 
@@ -116,14 +117,13 @@ Exemple :
     « beata Maria virginis »  
     « beata Virgo »
 
-## Noms de saints, noms de fêtes
+## Noms de saints et de fêtes
 
 === "Textes allemands"
 
-    En allemand, lorsqu’il s’agit de dates et de rendez-vous,
-    les noms de la semaine et du mois ainsi que les noms des
-    saints et des fêtes sont toujours écrits en minuscules,
-    mais les noms des saints sont généralement écrits en majuscules.
+    En allemand, les jours de la semaine, les mois, les épithètes des noms 
+    de saints ou de fêtes sont toujours écrits en minuscules. En revanche 
+    les noms des saints prennent généralement une majuscule.
     
     Exemples :  
     « sonntag »  
@@ -137,10 +137,10 @@ Exemple :
 
 === "Textes français et latins"
 
-    Même en français, les jours de la semaine et les mois sont
-    toujours écrits en minuscules pour les dates et les délais.
-    Les fêtes religieuses, en revanche, portent une majuscule
-    en latin et en vieux français.
+    En français, les jours de la semaine et les mois sont toujours écrits
+    en minuscules lorsqu’ils apparaissent dans des dates ou des délais.
+    Les fêtes religieuses, en revanche, prennent une majuscule, tant
+    en latin qu’en ancien français.
     
     Exemples :  
     « idus aprilis »  
@@ -153,10 +153,10 @@ Exemple :
     « Quatuor tempora »  
     « Rogationes »
 
-    Lors des fêtes des saints, il n’est pas approprié d’utiliser un trait d’union,
-    comme ce serait le cas en français moderne (la Saint-Jean).
-    L’épithète « saint » n’est pas en majuscule lorsqu’on parle de la personne du
-    saint lui-même, mais elle est en majuscule lorsqu’on parle de sa fête.
+    Dans le cas des fêtes de saints, il n’est pas approprié d’utiliser un trait d’union, 
+    comme c’est l’usage en français moderne (la Saint-Jean). L’épithète « saint » ne 
+    prend pas de majuscule lorsqu’on parle de la personne du saint, mais en prend
+    lorsqu’il s’agit de sa fête.
     
     Exemples :  
     « sainct Jehan, prie por nous »  
@@ -164,7 +164,7 @@ Exemple :
 
 ## Expressions composées
 
-Dans les expressions composées, seul le premier mot est en majuscule.
+Dans les expressions composées, seul le premier mot prend une majuscule.
 
 Exemples :  
 « a Mey quaresma, die qua cantabitur Letare, le jeudi après Jubilate »  
@@ -173,7 +173,7 @@ Exemples :
 
 ## Adjectifs
 
-En latin, les adjectifs formés sur des noms de lieux ou populaires prennent
+En latin, les adjectifs formés sur des noms de lieu ou de peuple prennent
 une majuscule s’ils font référence à une institution, une fonction, une
 personne physique ou morale, etc.
 
@@ -190,8 +190,7 @@ En revanche, les adjectifs sont en minuscules lorsqu’ils font référence
 
 Exemples :  
 « quinque solidos lausannenses »  
-« quinque solidos lausannensium » (dans Gen. Pl., lorsque l’expression « bonorum lausannensium »
-est implicite)  
+« quinque solidos lausannensium » (au gén. pl., sous-entendu « bonorum lausannensium »)  
 « ad mensuram lausannensem »  
 « consuetudines lausannenses »  
 « lingua gallica »
@@ -199,7 +198,7 @@ est implicite)
 ## Noms propres en plusieurs parties
 
 Pour les noms propres composés (en particulier les noms de lieux)
-composés de deux parties ou plus, chaque composant est en majuscule.
+formés de deux parties ou plus, chaque élément prend une majuscule.
 
 Exemples :  
 « zum Grossen Münster »  
@@ -215,14 +214,14 @@ Exceptions :
 « il habite la rue des Bouchers »  
 « il a acheté un verger dans le quartier des Jardins suspendus »  
 
-## Noms des champs
+## Toponymes
 
-Décider ce qu’est un nom de champ et où il s’agit d’un pur appellatif n’est pas toujours facile.
+La distinction entre toponyme et nom commun n’est pas toujours facile.
 
-De nombreux noms de lieux et de champs peuvent encore être identifiés
-aujourd’hui à l’aide d’une carte ancienne à l’échelle 1:25'000 ou de 
-répertoires de noms de champs ([ortsnamen.ch](https://ortsnamen.ch/)), de sorte que la
-majuscule est certainement correcte.
+De nombreux noms de lieu ou toponymes sont encore identifiables
+aujourd’hui à l’aide de cartes anciennes à l’échelle 1:25'000 ou
+de répertoires de toponymes ([ortsnamen.ch](https://ortsnamen.ch/)), ce qui justifie
+l’usage de la majuscule.
 
 Exemples :  
 Nom du champ « Egg » versus appellatif « egg ».  
@@ -231,10 +230,10 @@ D’un autre côté, on écrit « la domus dicta de bont ».
 
 ## Noms de famille composés
 
-Pour les noms de famille composés qui apparaissent en deux parties ou plus dans le texte,
-il est recommandé que l’attribut name soit en minuscules.
-Si l’attribut nom d’un nom de famille est en majuscule dans l’orthographe actuelle,
-cela doit également être fait dans l’édition.
+Pour les noms de famille composés qui apparaissent en deux parties
+ou plus dans le texte, il est recommandé de mettre le déterminant en minuscules. 
+Si, dans l’usage actuel, le déterminant d’un nom de famille est
+écrit en majuscule, on le reproduit tel quel dans l’édition.
 
 Exemples :  
 « Hartman von Werdenberg »  
