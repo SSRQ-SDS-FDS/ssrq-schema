@@ -43,14 +43,14 @@ chapitres :
 === "Énumérations"
 
     Dans le cas des énumérations avec « zum ersten », « zum zweiten », 
-    « zum dritten » etc., on met une virgule après l’énumération
-    lorsqu’une nouvelle phrase commence et que ce « zum ersten » etc. 
+    « zum dritten », etc., on met une virgule après l’énumération
+    lorsqu’une nouvelle phrase commence et que ce « zum ersten », etc. 
     n’est pas intégré syntaxiquement. 
     Il en va de même pour « item ».
     
     Exemples :  
     « Zum ersten hat man sich verglichen »  
-    « Lasst man es beim ersten bey ... bewenden »  
+    « Lasst man es beim ersten bey … bewenden »  
     « Item, so hat er »  
     « Item confirmamus »
   
@@ -75,8 +75,8 @@ chapitres :
     Si seule la date suit, on ne met pas de virgule.
     
     Exemples :  
-    « Actum Konstanz, den ... »  
-    « Actum den 4. september ... »
+    « Actum Konstanz, den … »  
+    « Actum den 4. september … »
   
     Au sujet de la structure des formules de clôture, voir
     [structure de texte](textstructure.fr.md).
@@ -85,12 +85,12 @@ chapitres :
 
     Une virgule est placée entre les éléments des conjonctions suivants :
   
-    « einerseits » ..., « andererseits »  
-    « je » ..., « desto/umso »  
-    « nicht nur » ..., « sondern (auch) »  
-    « teil » ..., « teils »  
-    « zum einen » ..., « zum anderen »  
-    « zwar » ..., « aber »
+    « einerseits » …, « andererseits »  
+    « je » …, « desto/umso »  
+    « nicht nur » …, « sondern (auch) »  
+    « teil » …, « teils »  
+    « zum einen » …, « zum anderen »  
+    « zwar » …, « aber »
 
     Exemples :  
     ```
@@ -107,9 +107,9 @@ chapitres :
 
     Pas de virgule pour :
   
-    « entweder » ... « oder »  
-    « sowohl » ... « als auch »  
-    « weder » ... « noch »
+    « entweder » … « oder »  
+    « sowohl » … « als auch »  
+    « weder » … « noch »
   
     On met une virgule avant «und» si une proposition subordonnée est
     insérée avant ou si l’élément suivant est une proposition principale
@@ -154,11 +154,11 @@ Dans les trois cas mentionnés, la transcription d’un deux-points serait un an
         <lb/>schulthes und rat der statt Lucërn,  
         <lb/>unsren insunders guͤnstigen, lieben herren und obren  
         <pb n="2"/>  
-        <lb/>Unser willig ...  
+        <lb/>Unser willig …  
       </p>
     ```  
-    Den fromen, weisen, dem burgermeister ...  
-    Als unser lieben, getrüwen schultheis und rat zu W. ...
+    Den fromen, weisen, dem burgermeister …  
+    Als unser lieben, getrüwen schultheis und rat zu W. …
 
 === "après une phrase complète"
 

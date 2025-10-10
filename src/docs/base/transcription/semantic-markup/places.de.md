@@ -42,8 +42,8 @@ Beispiele:
  `des Klosters <placeName ref="loc007756">Selnau</placeName>` – Ort mit ID des
  Klosters Selnau in Zürich  
 `<orgName ref="org000001">gotzhus ze Pfaͤvers</orgName>`  
-`der Zürcher Bürger <persName>Hensli Müller</persName> ...`  
-`der <orgName>Winterthurer Rat</orgName> beschloss... `
+`der Zürcher Bürger <persName>Hensli Müller</persName> …`  
+`der <orgName>Winterthurer Rat</orgName> beschloss… `
 
 ## Orte innerhalb von Personennamen
 Zu Ortsnamen innerhalb von Personennamen vgl. [Personen](persons.de.md).

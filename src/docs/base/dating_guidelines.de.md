@@ -295,9 +295,9 @@ Beispiel:
 ```
  Ordonnance au sujet des voies de fait. 1364 (n. st.) février 4. –
  In der Quelle steht folgende Datierung:
- «... <date calendar="julian_annunciation" when-custom="1364-02-04">lo quar jor
+ «… <date calendar="julian_annunciation" when-custom="1364-02-04">lo quar jor
  dou moys de febrier, in l’ant de Nostre Segnour corant per
- mil CCC et sexante et troys</date> ...»
+ mil CCC et sexante et troys</date> …»
 ```
 
 Weil nun der 4. Februar in der Zeit zwischen dem 1. Januar (oder allenfalls 25.

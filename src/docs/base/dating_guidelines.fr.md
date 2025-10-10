@@ -213,7 +213,7 @@ les réglementations suivantes s’appliquent :
           calendar="unknown">Zwischen 3. und 20. September 1588</date>
     <note>Es finden sich keine Informationen zum Kalenderwechsel.</note>
     ```
-5. Dans les paratextes éditoriaux (p. ex., introductions, commentaires etc.),
+5. Dans les paratextes éditoriaux (p. ex., introductions, commentaires, etc.),
    les éditeurs doivent utiliser le nouveau style, sauf s’ils souhaitent souligner
    explicitement l’utilisation de l’ancien style.  
    Exemple : 
@@ -281,9 +281,9 @@ Exemple :
 ```
  Ordonnance au sujet des voies de fait. 1364 (n. st.) février 4. –
  La datation suivante est dans la source :
- « ... <date calendar="julian_annunciation" when-custom="1364-02-04">lo quar jor
+ « … <date calendar="julian_annunciation" when-custom="1364-02-04">lo quar jor
  dou moys de febrier, in l’ant de Nostre Segnour corant per
- mil CCC et sexante et troys</date> ... »
+ mil CCC et sexante et troys</date> … »
 ```
 
 Le 4 février se situant entre le 1er janvier (ou éventuellement le 25 décembre)

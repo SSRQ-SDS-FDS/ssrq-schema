@@ -18,7 +18,7 @@ de la taille de la fenêtre.
        les mots allemands. 
     2. Contrairement à la règle K 167.3, les particules courtes sont traitées comme des mots
        composés : elles sont toujours séparées étymologiquement :   
-       « dar-in », « dar-auf », « dar-um », « her-auf », « her-ein », « ein-ander » etc. 
+       « dar-in », « dar-auf », « dar-um », « her-auf », « her-ein », « ein-ander », etc. 
     3. Contrairement à la règle K 164.2, une voyelle seule en début de mot ne peut pas être
        séparée (on n’écrit donc pas : « A-bend »). En revanche, la séparation d’une diphtongue
        (comme « Au-bent »), est autorisée en dernier recours (pour éviter les trous trop
@@ -32,7 +32,7 @@ de la taille de la fenêtre.
     6. On ne sépare pas « th » dans les mots et les noms allemands (sauf, bien sûr, dans
        le cas de mots composés et de préfixes tels que « mit-helfen » ou « Diet-helm »). 
        On suit pour « th », la même règle que le Duden pour les mots étrangers (« Ma-the-ma-tik »). 
-    7. Le « w » qui fait partie de diphtongues « auw/euw/ouw/aw/ew/uw » etc. ne doit pas
+    7. Le « w » qui fait partie de diphtongues « auw/euw/ouw/aw/ew/uw », etc. ne doit pas
        être séparé. On écrira donc « Thur-geuw-isch » au lieu de « Thur-geu-wisch », 
        « Fraw-en-feld » au lieu de « Fra-wen-feld » (« w » n’est pas considéré comme une
        consonne dans ces cas, mais comme faisant partie d’une diphtongue). 

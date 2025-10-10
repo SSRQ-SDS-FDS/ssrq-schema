@@ -17,7 +17,7 @@ Si « cz » et « tz » ne peuvent pas être clairement distingués, « tz » es
 
 === "Règle générale"
 
-    Les combinaisons « dz », « dc », « wz » etc. sont transcrites selon la graphie de l’original.
+    Les combinaisons « dz », « dc », « wz », etc. sont transcrites selon la graphie de l’original.
 
 === "Textes latins"
 

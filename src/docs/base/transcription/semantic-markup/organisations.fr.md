@@ -2,8 +2,8 @@
 
 ## Balisage d’organisations et de familles
 
-[`<orgName>`](orgName.fr.md) englobe les organisations (communautés, couvents, conseils, guildes, etc.) 
-et les noms de famille, si possible au nominatif.
+[`<orgName>`](orgName.fr.md) englobe les organisations (communautés, couvents, 
+conseils, guildes, etc.) et les noms de famille, si possible au nominatif.
 
 Les organisations, les corporations ou les institutions ainsi que les familles
 sont toujours balisées dans les textes édités. Lorsqu’une organisation ou un
@@ -35,8 +35,8 @@ il doit être balisé comme une organisation et non comme un lieu.
 
 Exemple :  
 ```
-...spann und irrung wegen, so sich dann gehalten hand entzwischen baider
-kilchspel <orgName>Bux</orgName> und <orgName>Sevellen</orgName>, ...
+… spann und irrung wegen, so sich dann gehalten hand entzwischen baider
+kilchspel <orgName>Bux</orgName> und <orgName>Sevellen</orgName>, …
 ```
 
 Pour des lieux à l’intérieur d’organisations, voir [lieux et espaces](places.fr.md).

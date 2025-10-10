@@ -145,7 +145,7 @@
 === "Contractions arbitraires"
 
     Les contractions arbitraires dans un manuscrit (p. ex. entre un attribut
-    et son déterminant, entre un article ou pronom et l’adjectif suivant etc.)
+    et son déterminant, entre un article ou pronom et l’adjectif suivant, etc.)
     doivent être résolues.
 
     Exemples :  
@@ -166,7 +166,7 @@
 
 === "Préfixes et suffixes"
 
-    Les préfixes ou suffixes (« un- », « ver- », « -heit » etc.) ne doivent pas
+    Les préfixes ou suffixes (« un- », « ver- », « -heit », etc.) ne doivent pas
     être séparés du mot auquel ils appartiennent, même si un espace apparait dans
     le manuscrit. Il en va de même pour les syllabes d’un même mot séparées par
     des espaces. 

@@ -189,93 +189,93 @@ entrés directement comme caractères uniques, sans utiliser le tréma combiné 
 Dans le tableau, les combinaisons de caractères sont illustrées avec la lettre a ;
 l’application aux autres lettres suit la même logique.
 
-| Description                             | Caractère spécial     | Unicode         |
-|-----------------------------------------|-----------------------|-----------------|
-| **Ligatures**                           |                       |                 |
-| A+E-ligature                            | `Æ`                   | U+00C6          |
-| a+e-ligature                            | `æ`                   | U+00E6          |
-| O+E-ligature                            | `Œ`                   | U+0152          |
-| o+e-ligature                            | `œ`                   | U+0153          |
-| s+z-ligature                            | `ß`                   | U+00DF          |
-| **Signes diacritiques de combinaison**  |                       |                 |
-| Lettre avec accent grave                | `à`                  | Lettre + U+0300 |
-| Lettre avec accent aigu                 | `á`                  | Lettre + U+0301 |
-| Lettre avec circonflexe                 | `â`                  | Lettre + U+0302 |
-| Lettre avec tilde                       | `ã`                  | Lettre + U+0303 |
-| Lettre avec macron                      | `ā`                  | Lettre + U+0304 |
-| Lettre avec point                       | `ȧ`                  | Lettre + U+0307 |
-| Lettre avec tréma                       | `ä`                  | Lettre + U+0308 |
-| Lettre avec caron                       | `ǎ`                  | Lettre + U+030C |
-| Lettre avec ligne verticale             | `a̍`                  | Lettre + U+030D |
-| Lettre avec cédille                     | `a̧`                  | Lettre + U+0327 |
-| Lettre avec ogonek                      | `ą`                  | Lettre + U+0328 |
-| ** Lettres suscrites**                  |                       |                 |
-| Lettre avec a suscrit                   | `aͣ`                  | Lettre + U+0363 |
-| Lettre avec e suscrit                   | `aͤ`                  | Lettre + U+0364 |
-| Lettre avec i suscrit                   | `aͥ`                  | Lettre + U+0365 |
-| Lettre avec o suscrit                   | `aͦ`                  | Lettre + U+0366 |
-| Lettre avec u suscrit                   | `aͧ`                  | Lettre + U+0367 |
-| Lettre avec v suscrit                   | `aͮ`                  | Lettre + U+036E |
-| Lettre avec w suscrit                   | `a`                  | Lettre + U+F03C |
-| **Autres lettres modifiées**            |                       |                 |
-| i avec ligne (= un et demi)             | `ɨ`                   | U+0268          |
-| i avec deux lignes                      | ``                   | U+E8A1          |
-| j avec ligne                            | `ɉ`                   | U+0249          |
-| j avec deux lignes                      | ``                   | U+E8A2          |
-| q avec ligne                            | `ꝗ`                   | U+A757          |
-| t avec ligne                            | `ŧ`                   | U+0167          |
-| v avec ligne (= quatre et demi)         | ``                   | U+E8BB          |
-| v avec ligne diagonale                  | `ꝟ`                   | U+A75F          |
-| v avec deux ligne                       | ``                   | U+E8BC          |
-| x avec ligne dessus                     | ``                   | U+E8BD          |
-| x avec ligne dessous  (= neuf et demi)  | ``                   | U+E8BE          |
-| x avec deux lignes dessous              | ``                   | U+E8CE          |
-| **Devises et unités**                   |                       |                 |
-| Florin                                  | ``                   | U+F2E8          |
-| Gulden (Florin)                         | ``                   | U+F2E9          |
-| h avec trait (= maille/obole)           | `ħ`                   | U+0127          |
-| Demi-denier                             | ``                   | U+F2FB          |
-| Écu                                     | ``                   | U+F2FA          |
-| Écu (alternative)                       | ``                   | U+F2FC          |
-| Denier                                  | `₰`                   | U+20B0          |
-| Livre (monnaie)                         | ``                   | U+F2EA          |
-| Livre (poids)                           | `℔`                   | U+2114          |
-| Sou                                     | ``                   | U+F2F7          |
-| Scudo                                   | ``                   | U+F2F9          |
-| **Autres symboles**                     |                       |                 |
-| Symbole de main pointée                 | `☞`                   | U+261E          |
-| Symbole de paragraphe                   | `§`                   | U+00A7          |
-| Symbole de paragraphe                   | `¶`                   | U+00B6          |
-| Croix                                   | `†`                   | U+2020          |
-| Double croix                            | `‡`                   | U+2021          |
-| Triple croix                            | ``                   | U+F1D2          |
-| Symbole de mariage                      | `⚭`                   | U+26AD          |
-| Symbole circulaire                      | `○`                   | U+25CB          |
-| Symbole de Mars (abr. pour mardi)       | `♂`                   | U+2642          |
-| Symbole de droit d’auteur               | `©`                   | U+00a9          |
-| **Signes de ponctuation etc.**          |                       |                 |
-| Point                                   | `.`                   | U+002E          |
-| Virgule                                 | `,`                   | U+002C          |
-| Point-virgule                           | `;`                   | U+003B          |
-| Côlon                                   | `:`                   | U+003A          |
-| Point culminant                         | `·`                   | U+00B7          |
-| Apostrophe                              | `’`                   | U+2019          |
-| Point d’exclamation                     | `!`                   | U+0021          |
-| Point d’interrogation                   | `?`                   | U+003F          |
-| Ellipse                                 | `…`                   | U+2026          |
-| Un point avant deux                     | `⁖`                   | U+2056          |
-| Un point sur deux                       | `∵`                   | U+2235          |
-| Quatre points                           | `⁘`                   | U+2058          |
-| Ligne en demi-tiret                     | `–`                   | U+2013          |
-| Ligne verticale simple                  | <code>&#x007c;</code> | U+007C          |
-| Double ligne verticale                  | `‖`                   | U+2016          |
-| Double solidus                          | `⫽`                   | U+2AFD          |
-| Guillemet à gauche                      | `‹`                   | U+2039          |
-| Guillemet à droite                      | `›`                   | U+203A          |
-| Guillemets à gauche                     | `«`                   | U+00AB          |
-| Guillemets à droite                     | `»`                   | U+00BB          |
-| Croix de multiplication                 | `×`                   | U+00D7          |
-| Caractère ordinal (1º, 2º, etc.)        | `º`                   | U+00BA          |
+| Description                            | Caractère spécial     | Unicode         |
+|----------------------------------------|-----------------------|-----------------|
+| **Ligatures**                          |                       |                 |
+| A+E-ligature                           | `Æ`                   | U+00C6          |
+| a+e-ligature                           | `æ`                   | U+00E6          |
+| O+E-ligature                           | `Œ`                   | U+0152          |
+| o+e-ligature                           | `œ`                   | U+0153          |
+| s+z-ligature                           | `ß`                   | U+00DF          |
+| **Signes diacritiques de combinaison** |                       |                 |
+| Lettre avec accent grave               | `à`                  | Lettre + U+0300 |
+| Lettre avec accent aigu                | `á`                  | Lettre + U+0301 |
+| Lettre avec circonflexe                | `â`                  | Lettre + U+0302 |
+| Lettre avec tilde                      | `ã`                  | Lettre + U+0303 |
+| Lettre avec macron                     | `ā`                  | Lettre + U+0304 |
+| Lettre avec point                      | `ȧ`                  | Lettre + U+0307 |
+| Lettre avec tréma                      | `ä`                  | Lettre + U+0308 |
+| Lettre avec caron                      | `ǎ`                  | Lettre + U+030C |
+| Lettre avec ligne verticale            | `a̍`                  | Lettre + U+030D |
+| Lettre avec cédille                    | `a̧`                  | Lettre + U+0327 |
+| Lettre avec ogonek                     | `ą`                  | Lettre + U+0328 |
+| ** Lettres suscrites**                 |                       |                 |
+| Lettre avec a suscrit                  | `aͣ`                  | Lettre + U+0363 |
+| Lettre avec e suscrit                  | `aͤ`                  | Lettre + U+0364 |
+| Lettre avec i suscrit                  | `aͥ`                  | Lettre + U+0365 |
+| Lettre avec o suscrit                  | `aͦ`                  | Lettre + U+0366 |
+| Lettre avec u suscrit                  | `aͧ`                  | Lettre + U+0367 |
+| Lettre avec v suscrit                  | `aͮ`                  | Lettre + U+036E |
+| Lettre avec w suscrit                  | `a`                  | Lettre + U+F03C |
+| **Autres lettres modifiées**           |                       |                 |
+| i avec ligne (= un et demi)            | `ɨ`                   | U+0268          |
+| i avec deux lignes                     | ``                   | U+E8A1          |
+| j avec ligne                           | `ɉ`                   | U+0249          |
+| j avec deux lignes                     | ``                   | U+E8A2          |
+| q avec ligne                           | `ꝗ`                   | U+A757          |
+| t avec ligne                           | `ŧ`                   | U+0167          |
+| v avec ligne (= quatre et demi)        | ``                   | U+E8BB          |
+| v avec ligne diagonale                 | `ꝟ`                   | U+A75F          |
+| v avec deux ligne                      | ``                   | U+E8BC          |
+| x avec ligne dessus                    | ``                   | U+E8BD          |
+| x avec ligne dessous  (= neuf et demi) | ``                   | U+E8BE          |
+| x avec deux lignes dessous             | ``                   | U+E8CE          |
+| **Devises et unités**                  |                       |                 |
+| Florin                                 | ``                   | U+F2E8          |
+| Gulden (Florin)                        | ``                   | U+F2E9          |
+| h avec trait (= maille/obole)          | `ħ`                   | U+0127          |
+| Demi-denier                            | ``                   | U+F2FB          |
+| Écu                                    | ``                   | U+F2FA          |
+| Écu (alternative)                      | ``                   | U+F2FC          |
+| Denier                                 | `₰`                   | U+20B0          |
+| Livre (monnaie)                        | ``                   | U+F2EA          |
+| Livre (poids)                          | `℔`                   | U+2114          |
+| Sou                                    | ``                   | U+F2F7          |
+| Scudo                                  | ``                   | U+F2F9          |
+| **Autres symboles**                    |                       |                 |
+| Symbole de main pointée                | `☞`                   | U+261E          |
+| Symbole de paragraphe                  | `§`                   | U+00A7          |
+| Symbole de paragraphe                  | `¶`                   | U+00B6          |
+| Croix                                  | `†`                   | U+2020          |
+| Double croix                           | `‡`                   | U+2021          |
+| Triple croix                           | ``                   | U+F1D2          |
+| Symbole de mariage                     | `⚭`                   | U+26AD          |
+| Symbole circulaire                     | `○`                   | U+25CB          |
+| Symbole de Mars (abr. pour mardi)      | `♂`                   | U+2642          |
+| Symbole de droit d’auteur              | `©`                   | U+00a9          |
+| **Signes de ponctuation, etc.**        |                       |                 |
+| Point                                  | `.`                   | U+002E          |
+| Virgule                                | `,`                   | U+002C          |
+| Point-virgule                          | `;`                   | U+003B          |
+| Côlon                                  | `:`                   | U+003A          |
+| Point culminant                        | `·`                   | U+00B7          |
+| Apostrophe                             | `’`                   | U+2019          |
+| Point d’exclamation                    | `!`                   | U+0021          |
+| Point d’interrogation                  | `?`                   | U+003F          |
+| Ellipse                                | `…`                   | U+2026          |
+| Un point avant deux                    | `⁖`                   | U+2056          |
+| Un point sur deux                      | `∵`                   | U+2235          |
+| Quatre points                          | `⁘`                   | U+2058          |
+| Ligne en demi-tiret                    | `–`                   | U+2013          |
+| Ligne verticale simple                 | <code>&#x007c;</code> | U+007C          |
+| Double ligne verticale                 | `‖`                   | U+2016          |
+| Double solidus                         | `⫽`                   | U+2AFD          |
+| Guillemet à gauche                     | `‹`                   | U+2039          |
+| Guillemet à droite                     | `›`                   | U+203A          |
+| Guillemets à gauche                    | `«`                   | U+00AB          |
+| Guillemets à droite                    | `»`                   | U+00BB          |
+| Croix de multiplication                | `×`                   | U+00D7          |
+| Caractère ordinal (1º, 2º, etc.)       | `º`                   | U+00BA          |
 
 ## Écriture grecque et hébraïque
 

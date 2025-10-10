@@ -36,8 +36,8 @@ Exemples :
  `des Klosters <placeName ref="loc007756">Selnau</placeName>` – lieu avec ID du monastère de Selnau
 à Zurich  
 `<orgName ref="org000001">gotzhus ze Pfaͤvers</orgName>`  
-`der Zürcher Bürger <persName>Hensli Müller</persName> ...`  
-`der <orgName>Winterthurer Rat</orgName> beschloss... `
+`der Zürcher Bürger <persName>Hensli Müller</persName> …`  
+`der <orgName>Winterthurer Rat</orgName> beschloss… `
 
 ## Lieux dans des noms de personnes
 Pour les lieux présents dans des noms de personnes ou de famille, voir [personnes](persons.fr.md).
