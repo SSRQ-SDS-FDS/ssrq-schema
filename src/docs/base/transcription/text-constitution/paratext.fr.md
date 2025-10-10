@@ -1,20 +1,19 @@
 # Paratextes
 
-## Custodes, plaignants, en-têtes
-Les custodes (noms de lieux) et les plaignants (débuts de la page suivante)
-ne sont généralement pas pris en compte dans la transcription.
+## Custodes, réclames, en-têtes
+Les custodes (repères de cahiers) et les réclames (premier mot de la page suivante)
+ne sont généralement pas prises en compte dans la transcription.
 
-Il est à la discrétion de l’éditeur d’inclure les dépositaires ou les 
-plaignants dans la transcription, si nécessaire, ceux-ci seront alors
-marqués de la balise [`<fw>`](fw.fr.md).
+L’éditeur peut toutefois décider de les inclure. Dans ce cas, ceux-ci sont signalés
+avec la balise [`<fw>`](fw.fr.md).
 
-Les en-têtes ne sont pas retranscrits mais sont mentionnés dans le commentaire introductif.
+Les en-têtes ne sont pas retranscrits, mais sont mentionnés dans le commentaire introductif.
 
-## Notes marginales
+## Notes marginales (marginalia)
 
-Dans le cas des marginalia, l’éditeur de l’édition analogique décidait
-s’il s’agissait d’un commentaire sur la marge, qui était relégué dans
-les notes, ou d’un ajout qui pouvait éventuellement être ajouté au texte.
+Dans l’édition imprimée, l’éditeur devait décider si les notes dans les marges 
+étaient des commentaires qui étaient alors reléguées dans les notes, ou des 
+ajouts pouvant être ajoutés au texte.
 
-Dans l’édition numérique, les marginalia sont étiquetées avec 
-[`<add place="margin">`](add.fr.md).
+Dans l’édition numérique, les marginalia sont balisées avec
+[`<add place="left_margin">`](add.fr.md) ou [`<add place="right_margin">`](add.fr.md).

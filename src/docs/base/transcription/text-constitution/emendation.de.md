@@ -72,7 +72,7 @@ mit [`<sic>`](sic.de.md) und [`<corr>`](corr.de.md) korrigiert.
 ### Bewusste Auslassungen von Text durch den Bearbeitenden
 
 Bewusste Auslassungen von Text durch den Bearbeitenden (Teilabdruck) werden
-in der analogen Edition mit `[...]` und in der digitalen mit
+in der analogen Edition mit `[…]` und in der digitalen mit
 [`<gap reason="irrelevant"/>`](gap.de.md) wiedergegeben.
 Dies sollte, wenn möglich, vermieden werden.
 
@@ -100,7 +100,7 @@ in [`<back>`](back.de.md) ist nötig.
     Auf einfache Korrekturen, die beim Schreibvorgang entstanden sind,
     wird nur in Ausnahmefällen hingewiesen.
 
-    Streichungen wurden in der analogen Transkription mit `a–...–a`
+    Streichungen wurden in der analogen Transkription mit `a–…–a`
     gekennzeichnet und in einer textkritischen Anmerkung aufgeführt.
     In der digitalen Edition werden Streichungen mit [`<del>`](del.de.md)
     getaggt.
@@ -110,7 +110,7 @@ in [`<back>`](back.de.md) ist nötig.
     eingesetzt werden.
 
     Durch Streichungen unlesbar gewordene Textstellen wurden in der analogen
-    Edition mit `[...]a` gekennzeichnet und mit einer Anmerkung versehen.
+    Edition mit `[…]a` gekennzeichnet und mit einer Anmerkung versehen.
     In der digitalen Edition werden sie mit [`<del>`](del.de.md) und
     [`<gap/>`](gap.de.md) ausgezeichnet.
 

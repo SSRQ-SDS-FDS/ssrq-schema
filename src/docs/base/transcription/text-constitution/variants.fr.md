@@ -1,30 +1,27 @@
 # Variantes de texte
 
-## Double ou multiples copies
+## Doubles ou copies multiples
 
-En cas de double ou de copies multiples, l’éditeur décide d’un seul texte.  
-Les variantes et leurs particularités peuvent être notées à l’aide
-de [`<app>`](app.fr.md).  
-Les différences de contenu entre les autres originaux et le modèle
-d’édition doivent être notées.
+En cas de double ou de copies multiples, l’éditeur choisi un seul texte.
+Les variantes et leurs particularités peuvent être signalées à l’aide de
+[`<app>`](app.fr.md).  
 
-S’il existe plusieurs originaux existants, les critères ayant contribué
-au choix du modèle d’édition doivent, si possible, être précisés dans un
-commentaire. Il en va de même dans le cas des relevés de copies.
+Les différences de contenu entre le texte choisi et les autres originaux 
+doivent être signalées.
+
+S’il existe plusieurs originaux, les critères ayant contribué au choix 
+de la version éditée doivent, si possible, être expliqués dans un commentaire. 
+Il en va de même dans le cas de copies multiples.
 
 ## Copies
 
-Si seules des copies d’un texte sont disponibles, celle qui convient
-le mieux, c’est-à-dire ceux les plus proches de l’original seront modifiés.
-Les critères sont : l’âge, l’intégralité, les soins, la certification,
-le vidimus ou le transsomption, etc.
-Des variantes peuvent être notées.
-Les différences de contenu entre les autres exemplaires et
-le modèle d’édition doivent être notées.
+Si seules des copies d’un texte existent, il convient d’éditer celle qui
+semble la plus proche de l’original. 
+Les critères sont : ancienneté, intégralité, soin apporté à la copie, 
+certification, vidimus ou transsumptum, etc. Les variantes peuvent 
+être signalées et les différences de contenu entre les autres versions 
+et celle éditée doivent être indiquées.
 
-S’il manque un original, la meilleure copie doit être utilisée
-comme modèle d’édition. Il ne faut pas nécessairement que ce
-soit le plus ancien. 
-La décision quant à la copie qui doit se rapprocher le plus
-de l’original doit être prise par l’éditeur et doit être décrite
-dans un commentaire.
+Si l’original manque, la meilleure copie doit être prise comme base d’édition. 
+Il ne s’agit pas nécessairement de la plus ancienne. 
+La décision revient à l’éditeur et doit être expliquée dans un commentaire.
