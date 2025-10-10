@@ -17,6 +17,21 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-del-with-multiples-ps",
+            "<del><p>foo</p><p>bar</p></del>",
+            True,
+        ),
+        (
+            "valid-del-with-head-and-ps",
+            "<del><head>Foo</head><p>foo</p><p>bar</p></del>",
+            True,
+        ),
+        (
+            "invalid-del-with-p-and-other-content",
+            "<del><p>foo</p> foo <unclear>bar</unclear></del>",
+            False,
+        ),
+        (
             "valid-del-with-seg-content",
             "<del><seg>foo</seg><seg>bar</seg></del>",
             True,
