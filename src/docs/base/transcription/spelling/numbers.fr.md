@@ -2,21 +2,20 @@
 
 ## Règles générales
 
-Les numéros arabes et romains sont reproduits conformément au modèle.
-Les numéros romains sont écrits petits.
+Les chiffres arabes et romains sont reproduits fidèlement à leur graphie dans l’original.
+Les chiffres romains sont transcrits en minuscules.
 
-Exemple : « am .x. tag des monats Mey Anno m.d.xxv. »
+Exemple : «am .x. tag des monats Mey Anno m.d.xxv.»
 
-Les chiffres fractionnaires sont codés avec [`<num>`](num.fr.md), voir là-bas et la page aux 
-[caractères spéciaux](special.fr.md).
+Les fractions sont codées avec la balise [`<num>`](num.fr.md).
+À ce sujet, voir la page [caractères spéciaux](special.fr.md).
 
-## Devises
+## Monnaies
 
-[Les caractères spéciaux](special.fr.md) sont utilisés pour désigner des devises. 
-
+[Les caractères spéciaux](special.fr.md) sont utilisés pour représenter les devises monétaires.
 
 ## Dates
 
-Les dates avec les numéros arabes et romaines sont attribuées [`<date>`](date.fr.md).
+Les dates comportant des chiffres arabes ou romains sont balisés avec [`<date>`](date.fr.md).
 
-Les noms mensuels avec des chiffres romains doivent être annoncés.
+Les noms de mois écrits avec des chiffres romains doivent être transcrits en toutes lettres.

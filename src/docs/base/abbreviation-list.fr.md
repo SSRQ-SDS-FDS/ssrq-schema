@@ -2,8 +2,8 @@
 title: Liste des abréviations
 ---
 
-Les abréviations suivent, qui sont souvent utilisées dans l’édition numérique et ne sont
-pas dissoutes.
+Voici les abréviations qui apparaissent souvent dans les éditions numériques
+et qui n’y sont pas développées.
 
 === "Abréviations modernes"
 
@@ -20,22 +20,22 @@ pas dissoutes.
     ebd. = ebenda [= ibid.]  
     f. = folgende Seite [= la page suivante]  
     ff. = folgende Seiten [= les pages suivantes]  
-    fol. = Folio (Blatt) [= feuille]  
+    fol. = Folio (Blatt) [= folio (feuillet)]  
     hl. = heilig [= saint]  
     Jh. = Jahrhundert [= siècle]  
     Ms. = Manuskript [= manuscrit]  
     n. S. = neuer Stil (Gregorianischer Kalender) [= nouveau style (calendrier grégorien)]  
     Nr. = Nummer [= nombre]  
-    r = recto (Vorderseite eines nummerierten Blattes) [= (devant une feuille numérotée)]  
+    r = recto (Vorderseite eines nummerierten Blattes) [= recto]  
     S. = Seite [= page]  
     s. = siehe [= voir]  
     SDS = Sources du droit suisse  
     Sp. = Spalte [= colonne]  
     SSRQ = Sammlung Schweizerischer Rechtsquellen [= SDS]  
     St. = Sankt [= saint]  
-    Urk. = Urkunde [= diplôme]  
-    v = verso (Rückseite eines nummerierten Blattes) [= (arrière d’une feuille numérotée)]  
-    vgl. = vergleiche [= comparer]  
+    Urk. = Urkunde [= document, charte]  
+    v = verso (Rückseite eines nummerierten Blattes) [= verso]  
+    vgl. = vergleiche [= voir]  
     z. B. = zum Beispiel [= par exemple]  
 
 === "Abréviations allemandes historiques"
@@ -74,36 +74,34 @@ pas dissoutes.
     lib = liber  
     L S = Locus sigilli  
     LS = Locus sigilli  
-    mmp = manu propria (eigenhändig)  
-    N = nomen, non nominat, non nescio (Ersatzbuchstaben für einen
-    unbekannten Namen)  
-    NB = Nota bene (Nebenbei bemerkt)  
-    N N = nomen, non nominat, non nescio (Ersatzbuchstaben für einen
-    unbekannten Namen)  
+    mmp = manu propria (de sa propre main)  
+    N = nomen, non nominat, non nescio (lettre de remplacement lorsque le nom n’est pas connu)  
+    NB = Nota bene (à noter)  
+    N N = nomen, non nominat, non nescio (lettres de remplacement lorsque le nom n’est pas connu)  
     no = numero  
     q = quart ?  
-    s h = salvo honore (mit Verlaub zu sagen)  
-    s v = salva venia (mit Verlaub zu sagen)  
-    tit = titulus (Titel)  
+    s h = salvo honore (sauf honneur)  
+    s v = salva venia (sauf permission)  
+    tit = titulus (titre)  
     Xpi = Christi
 
 === "Devises"
 
-    ₰ = Denar / Pfennig (Währung)  
-     = Florin / Gulden (Währung)  
-     = Gulden (Währung)  
-    ħ = Haller (Währung)  
-     = Helbling
-    ,  = Krone (Währung)
-    ℔ = Pfund (Gewicht)  
-     = Pfund (Währung)  
-     = Schilling (Währung)  
-     = Scudo (Währung)
+    ₰ = Denar / Pfennig (denier)  
+     = Florin / Gulden (florin)  
+     = Gulden (florin)  
+    ħ = Haller (maille/obole)  
+     = Helbling (demi-denier)  
+    ,  = Krone (écu)  
+    ℔ = Pfund (livre) [poids]  
+     = Pfund (livre) [monnaie]  
+     = Schilling (sou)  
+     = Scudo (scudo)
 
 === "Archives"
 
     ACV = Archives cantonales vaudoises  
-    ADBR = Archives départementales du Bas-Rhi  
+    ADBR = Archives départementales du Bas-Rhin  
     AEF = Archives de l’État de Fribourg  
     AEN = Archives de l’État de Neuchâtel  
     AT-OeStA/HHStA = Österreichisches Staatsarchiv/Haus-,

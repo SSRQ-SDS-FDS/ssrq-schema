@@ -1,6 +1,6 @@
 # Interventions dans le texte
 
-## Imprimes
+## Imprimés
 
 Les fautes d’impression claires sont corrigées avec
 [`<choice>`](choice.fr.md),[`<sic>`](sic.fr.md) et [`<corr>`](corr.fr.md).
@@ -9,125 +9,121 @@ Les fautes d’impression claires sont corrigées avec
 
 ### Parenthèses
 
-Les parties de texte placées entre parenthèses par le scribe sont reproduites
-à l’identique sans aucune intervention.
+Les passages placés entre parenthèses par le scribe sont reproduits 
+à l’identique, sans intervention.
 
 ### Lacunes
 
-Les espaces (espaces) délibérément laissés par le scribe pour des ajouts ultérieurs
-étaient marqués dans les volumes analogiques par trois ellipses sans crochets et
-expliqués dans une note critique du texte, indiquant la taille de l’espace dans le texte.
-Dans l’édition numérique, ils sont étiquetés avec [`<space/>`](space.fr.md).
+Les lacunes (espaces vides) laissés délibérément libres par le scribe pour
+des ajouts ultérieurs étaient marqués dans les volumes imprimés par trois
+points de suspension sans parenthèses et expliqués dans une note critique,
+indiquant la taille de la lacune. 
+Dans l’édition numérique, elles sont balisées avec [`<space/>`](space.fr.md).
 
-Les points de référence avant les noms ou titres officiels sont
-représentés par deux points sans parenthèses.
+Les points de révérence (Reverenzpunkte) avant les noms ou titres officiels 
+sont représentés par deux points sans parenthèses.
 
 ### Parties du texte omises
 
-Parties de texte omises par erreur par l’auteur, p. ex. les lignes oubliées 
-lors de la copie du texte ont été complétées dans l’édition analogique par
-un texte de remplacement provenant d’une autre source originale ou de copie
-ou par l’éditeur lui-même dans le sens d’une reproduction appropriée du texte
-entre crochets.
-Un commentaire était nécessaire.
-Dans l’édition numérique, le texte complété est étiqueté avec
-[`<suppplied>`](supplied.fr.md). 
+Les passages oubliés par erreur par l’auteur, p. ex. les lignes sautées 
+lors de la copie d’un texte, ont été complétées dans l’édition imprimée 
+à l’aide d’un texte de remplacement provenant d’une autre source originale, 
+d’une copie ou par l’éditeur lui-même sous forme d’une restitution appropriée 
+du texte, entre crochets. Une note était alors nécessaire. Dans l’édition 
+numérique, le texte complété est balisé avec [`<supplied>`](supplied.fr.md). 
 Si nécessaire, une note peut être ajoutée avec [`<note>`](note.fr.md).
 
-Si des ajouts sont effectués à partir d’un autre modèle (deuxieme original,
-copie, etc.), référence est faite à ce témoin de texte.
-Voir aussi [`<app>`](app.fr.md).
+Si des ajouts sont effectués à partir d’une autre source (deuxième original, 
+copie, etc.), cette source est indiquée. Voir aussi [`<app>`](app.fr.md).
 
-La perte de texte due à des dommages tels que des dommages causés par la souris,
-de l’encre fanée, un incendie, des champignons, des déchirures, des trous, une
-cassation, etc. est enregistrée avec [`<damage>`](damage.fr.md) en combinaison
-avec [`<gap/>`](gap.fr.md), [`<supplied>`](supplied.fr.md) ou [`<unclear>`](unclear.fr.md).
+La perte de texte due à des détériorations tels que des morsures de souris, 
+de l’encre effacée, un incendie, des moisissures, des déchirures, des trous, 
+des destructions volontaires, etc., est balisée avec [`<damage>`](damage.fr.md) 
+en combinaison  avec [`<gap/>`](gap.fr.md), [`<supplied>`](supplied.fr.md) ou [`<unclear>`](unclear.fr.md).
 
 ### Répétitions
 
-Les répétitions erronées de syllabes, de mots et de parties de phrases (Dittographies)
+Les répétitions erronées de syllabes, de mots et de parties de phrases (dittographies)
 doivent être normalisées avec [`<choice>`](choice.fr.md) en combinaison avec
 [`<sic>`](sic.fr.md) et [`<corr>`](corr.fr.md).
 
 ### Lecture incertaine
 
-Pour les mots dont la lecture est incertaine, des variantes de lecture imaginables
-ont été répertoriées dans une note critique du texte dans l’édition analogique.
-Ils pourraient également être marqués de `[?]`.
-Dans l’édition numérique, les lectures incertaines sont étiquetées avec
-[`<unclear>`](unclear.fr.md). Si cela ne suffit pas, vous pouvez aussi prendre
-une note avec [`<note>`](note.fr.md).
+Pour les mots dont la lecture est incertaine, l’édition imprimée présentait dans 
+une note critique différentes variantes de lecture possibles. 
+Ces mots pouvaient également être accompagnés de `[?]`. 
+Dans l’édition numérique, les lectures incertaines sont balisées avec
+[`<unclear>`](unclear.fr.md). Si cela ne suffit pas, une note peut être ajoutée
+avec [`<note>`](note.fr.md).
 
 ### Erreurs d’écriture, de langage et de style
 
-Les erreurs d’écriture, de langue et de style ne seront pas corrigées dans le texte.
-Dans l’édition analogique, ils étaient expliqués dans une note critique du texte ou
-marqués d’un `[!]`.
-Dans l’édition numérique, ces erreurs sont marquées par [`<sic>`](sic.fr.md) et,
+Les erreurs d’écriture, de langue et de style ne sont pas corrigées dans le texte. 
+Dans l’édition imprimée, elles étaient expliquées dans une note critique ou 
+signalées par un `[!]`. 
+Dans l’édition numérique, ces erreurs sont balisées avec [`<sic>`](sic.fr.md) et,
 si nécessaire, corrigées par [`<choice>`](choice.fr.md) avec [`<sic>`](sic.fr.md) et
 [`<corr>`](corr.fr.md).
 
 ### Omissions volontaires de texte par l’éditeur
 
-Les omissions volontaires de texte de la part de l’éditeur (copie partielle) sont
-signalées par `[...]` dans l’édition analogique et par
-[`<gap Reason="irrelevant"/>`](gap.fr.md) est joué.
-Cela devrait être évité si possible.
+Les omissions volontaires de texte de la part de l’éditeur (reproduction partielle)
+sont signalées par `[…]` dans l’édition imprimée et par 
+[`<gap reason="irrelevant"/>`](gap.fr.md) dans l’édition numérique. 
+Cela devrait être évité dans la mesure du possible.
 
-Si les ajouts ultérieurs ne sont pas modifiés par rapport à l’original, mais en tant
-que pièce indépendante, les parties déjà modifiées dans un original antérieur peuvent
-être omises avec [`<gap/>`](gap.fr.md).
-Il est fait référence au document déjà édité.
-Une note dans [`<note>`](note.fr.md) ou une note plus large dans [`<back>`](back.fr.md)
+Si les ajouts ultérieurs ne sont pas édités avec l’original,
+mais en tant que pièce indépendante, les parties déjà éditées dans un original
+antérieur peuvent être omises avec [`<gap/>`](gap.fr.md).
+Une référence au document déjà édité doit être faite.
+Une [`<note>`](note.fr.md) ou une remarque avec [`<back>`](back.fr.md)
 est nécessaire pour que le document soit référencé.
 
 ### Traitement des interventions éditoriales du scribe
 
 === "Règles générales"
 
-    En principe, un texte transcrit doit être facile à lire et à comprendre,
-    même s’il repose sur un modèle qui a été révisé plusieurs fois par
-    différentes mains.
-    L’éditeur doit choisir une variante de texte et marquer les variantes
-    restantes avec des balises.
-    Une attention particulière doit être portée aux suppressions ou aux
-    rasages ainsi qu’aux ajouts.
+    En principe, un texte transcrit doit être facile à lire et à comprendre, 
+    même s’il repose sur un modèle ayant subi plusieurs révisions de différentes mains. 
+    L’éditeur doit choisir une des variantes du texte et indiquer les autres
+    avec des balises. Une attention particulière doit être portée aux suppressions
+    ou éléments effacés ainsi qu’aux ajouts ou mentions postérieures.
 
 === "Suppressions"
 
-    De simples corrections intervenues au cours du processus de rédaction
+    Les corrections simples effectuées au cours du processus de rédaction 
     ne sont mentionnées que dans des cas exceptionnels.
 
-    Les suppressions étaient marquées par `a–...–a` dans la transcription
-    analogique et répertoriées dans une note critique du texte.
-    Dans l’édition numérique, les suppressions sont étiquetées avec [`<del>`](del.fr.md).
+    Dans la version imprimée, les suppressions étaient marquées par `a–…–a` 
+    et expliquées dans une note critique du texte. Dans l’édition numérique, 
+    les suppressions sont balisées avec [`<del>`](del.fr.md).
 
-    Pour les suppressions complexes et inter-hiérarchies,
+    Pour les suppressions complexes et impliquant plusieurs niveaux de hiérarchie,
     [`<delSpan/>`](delSpan.fr.md) et [`<anchor/>`](anchor.fr.md) doivent être utilisés.
 
-    Les passages de texte devenus illisibles en raison de suppressions étaient marqués d’un
-    `[...]a` dans l’édition analogique et accompagnés d’une note.
-    Dans l’édition numérique, ils sont marqués de [`<del>`](del.fr.md)
+    Les passages de texte devenus illisibles en raison de suppressions étaient, 
+    dans l’édition imprimée, marqués d’un `[…]a`et accompagnés d’une note. 
+    Dans l’édition numérique, ils sont balisés avec [`<del>`](del.fr.md)
     et [`<gap/>`](gap.fr.md).
 
-    Pour les passages de texte contenant des suppressions et des ajouts en combinaison,
+    Pour les passages de texte contenant à la fois des suppressions et des ajouts,
     [`<subst>`](subst.fr.md) doit être utilisé.
 
-=== "Copeaux"
+=== "Rasures"
 
-    Dans l’édition analogique, les copeaux étaient traités de la même manière que
+    Dans l’édition imprimée, les rasures étaient traitées de la même manière que
     les suppressions et une note critique du texte était requise.
 
-    Dans l’édition numérique, un copeau est marqué de [`<del rend="rubbing">`](del.fr.md).
-    Si rien n’est lisible après le copeau ou même après des caresses intenses,
-    [`<gap/>`](gap.fr.md) est utilisé dans [`<del>`](del.fr.md).
+    Dans l’édition numérique, une rasure est balisée avec [`<del rend="rubbing">`](del.fr.md).
+    Si des rasures ou des ratures importantes rendent la lecture impossible,
+    [`<gap/>`](gap.fr.md) est utilisé à l’intérieur de [`<del>`](del.fr.md).
 
 === "Ajouts"
 
-    Les ajouts de première main ou ultérieurs doivent être inclus dans le texte
-    et ont été expliqués dans une note critique du texte dans l’édition analogique.
+    Les ajouts de première main ou mentions postérieures doivent être inclus dans le texte. 
+    Dans l’édition imprimée, ils étaient expliqués dans une note critique. 
     Dans l’édition numérique, la balise [`<add>`](add.fr.md) est utilisée.
-    Le lieu de l’ajout doit et la main de la zone ajoutée peuvent être enregistrés.
+    Les informations sur l’auteur de l’ajout et l’endroit de ce dernier doivent être indiquées.
 
-    Pour les ajouts complexes entre hiérarchies, [`<addSpan/>`](addSpan.fr.md) et
-    [`<anchor/>`](anchor.fr.md) doivent être utilisés.
+    Pour les ajouts complexes touchant plusieurs niveaux hiérarchiques, on utilise 
+    [`<addSpan/>`](addSpan.fr.md) et [`<anchor/>`](anchor.fr.md).

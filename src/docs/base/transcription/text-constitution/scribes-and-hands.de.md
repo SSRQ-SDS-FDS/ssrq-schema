@@ -20,7 +20,7 @@ entsprechenden Eintrag in der Personendatenbank verknüpft (vgl.
 Eine Hand kann danach klassifiziert werden, ob sie zu den Haupthänden gehört
 oder nicht.
 
-Haupthände sind `firstHand`, `secondHand` ... `ninthHand`,
+Haupthände sind `firstHand`, `secondHand` … `ninthHand`,
 eine andere Hand hat die Kennung `otherHand`,
 eine spätere Hand die Kennung `laterHand`.
 
@@ -29,7 +29,7 @@ späteren Hand in den Anmerkungen wiedergegeben werden, während solche einer
 Haupthand oder einer anderen Hand im edierten Text erscheinen.
 
 Alternativ kann mit `@hand` auch das Jahrhundert der Hand angegeben werden:
-`hand10c`, `hand11c`, ... `hand21c`.
+`hand10c`, `hand11c`, … `hand21c`.
 
 Ist das Jahrhundert unsicher, wird dies folgendermassen ausgedrückt:
-`hand10cf`, `hand11cf`, ... `hand21cf`.
+`hand10cf`, `hand11cf`, … `hand21cf`.

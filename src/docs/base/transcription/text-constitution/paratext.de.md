@@ -18,4 +18,4 @@ Anmerkungen verbannt wurde, oder um einen Zusatz, der unter Umständen
 in den Text gesetzt werden konnte.
 
 In der digitalen Edition werden Marginalien mit
-[`<add place="margin">`](add.de.md) getaggt.
+[`<add place="left_margin">`](add.de.md) bzw. [`<add place="right_margin">`](add.de.md) getaggt.

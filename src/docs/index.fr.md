@@ -2,50 +2,51 @@
 title: Page d’accueil
 ---
 
-# Lignes directrices de transcription et documentation
+# Directives de transcription et documentation
 
 ![SSRQ Logo](ssrq-logo.svg)
 
 Bienvenue sur la page de documentation des sources du droit suisse (SDS)
 de la Fondation des sources du droit de la Société suisse des juristes.
 
-Sur cette page, vous trouverez une description détaillée des fondations philologiques,
-sur lequel les unités d’édition du SDS sont basées, ainsi qu’une documentation de l’usage
-schémas TEI-XML sous la forme d’une « bibliothèque de balises ». Ces pages peuvent donc être une 
-introduction sont vus dans la manière de travailler dans les éditions numériques de la Fondation.
-En même temps, agissez comme un « rapport éditorial ».
+Sur cette page, vous trouverez une description détaillée des bases philologiques,
+sur lesquelles les unités d’édition des SDS sont basées, ainsi qu’une documentation
+relative à l’usage des schémas TEI-XML sous la forme d’une « bibliothèque de balises ».
+Ces pages peuvent ainsi servir d’introduction à la méthode de travail des éditions
+numériques de la Fondation et font également office de « rapport éditorial ».
 
-- L’édition numérique du SDS avec tous les fichiers TEI-XML peut être trouvée dans notre portail 
-d’édition [Editio](https://editio.ssrq-online.ch/).
-- La [collection rétroditisée](https://www.ssrq-sds-fds.ch/online/cantons.html)
-contenu les volumes analogues comme OCR-PDF.
-- Le [site Web du projet](https://www.ssrq-sds-fds.ch/home/) informe de l’édition actuelle projette 
-et donne un aperçu de l’histoire de SDS depuis les années 1890.
+- Les éditions numériques des SDS, avec toutes les données au format TEI-XML,
+  sont accessibles sur notre portail d’édition [Editio](https://editio.ssrq-online.ch/).
+- La [collection rétroditisée](https://www.ssrq-sds-fds.ch/online/cantons.html) donne accès aux volumes parus sous forme imprimée,
+  disponibles en PDF-OCR.
+- Le [site Web du projet](https://ssrq-sds-fds.ch/) réunit des informations sur les éditions en cours et
+  donne un aperçu de l’histoire de la collection depuis les années 1890.
 
 ## Technologie et standardisation
 
-En raison du changement des médias et des possibilités de l’ère numérique, les éditions de la
-SDS en utilisant le langage de balisage extensible (XML) selon les recommandations de l’encodage 
-de texte Initiative (TEI) implémentée.
+En raison des changements de médias et des possibilités de l’ère numérique,
+les éditions des SDS utilisent le langage XML (*Extensible Markup Language*),
+conformément aux recommandations de la TEI (*Text Encoding Initiative*).
 
 ## XML
 
-> L’Extensible Markup Language, généralement appelé XML, « langage de balisage extensible » en 
-> français, est un métalangage informatique de balisage générique qui est un sous-ensemble du 
-> Standard Generalized Markup Language (SGML)[^2]
+> L’Extensible Markup Language, généralement appelé XML, « langage de balisage extensible »
+> en français, est un métalangage informatique de balisage conçu pour représenter les
+> données de manière hiérarchique sous forme de texte.
+> XML est notamment utilisé pour l’échange de données entre systèmes informatiques,
+> en particulier via Internet.[^2]
 
-L’accent est mis sur un enregistrement structuré des données à XML et non
-sur leur grande présentation, comme avec les programmes de bureau communs pour
-Le traitement de texte est le cas.
+L’objectif de XML est la structuration des données, et non leur présentation graphique,
+à la différence des logiciels de traitement de texte classiques.
 
-En raison de son extensibilité, XML offre un nombre infini d’opportunités
-Pour enregistrer et traiter les données.
+Grâce à sa souplesse, XML offre un nombre infini d’opportunités pour saisir et
+exploiter les données.
 
 ## TEI
 
-Par conséquent, la Fondation Legal Source suit les recommandations de l’international
-Initiative de codage de texte reconnu (TEI) pour coder votre numérique
-Éditions.
+C’est pourquoi la Fondation des sources du droit suit les recommandations de la
+Text Encoding Initiative (TEI), une organisation internationale reconnue, pour
+l’encodage de ses éditions numériques.
 
 > « The Text Encoding Initiative » (TEI) is a consortium which collectively
 > develops and maintains a standard for the representation of texts in digital
@@ -54,33 +55,29 @@ Initiative de codage de texte reconnu (TEI) pour coder votre numérique
 > for machine-readable texts, chiefly in the humanities, social sciences and
 > linguistics.[^3]
 
-L’avantage des recommandations du TEI est que pour la plupart des phénomènes,
-qui se produisent dans l’édition des textes historiques, des définitions et
-offrez des suggestions de codage.
+L’avantage des recommandations de la TEI est qu’elle propose des définitions et des solutions
+d’encodage pour la plupart des phénomènes que l’on peut rencontrer dans l’édition de textes
+historiques.
 
-D’une part, cela garantit que l’édition individuelle projette
-n’ont pas à les modéliser eux-mêmes et en revanche en l’utilisant
-des recommandations comparables à de nombreuses éditions.
+Cela permet d’éviter d’avoir à modéliser individuellement ces phénomènes à chaque nouveau projet,
+tout en assurant de pouvoir comparer entre de nombreuses éditions.
 
-Cette normalisation permet de garantir que les données créées non seulement pour le
-Public, mais aussi facilement accessible à d’autres fins scientifiques
-sont.
+Cette standardisation rend les données produites facilement accessibles, tant pour le grand
+public que pour la recherche scientifique.
 
-En même temps, cependant, cela signifie que les recommandations du TEI
-sont capturés de sorte qu’ils dans autant de projets possibles à partir de différents
-Les sciences peuvent être utilisées.
+Mais cela implique également que les recommandations de la TEI soient larges,
+afin de pouvoir être appliquées au plus grand nombre de projets possible dans
+différentes disciplines.
 
-## Schema
+## Schéma
 
-Pour cette raison, les directives du TEI ont été formées aux fins du SSRQ
-adapté à vos propres schémas[^4], qui n’est pas seulement
-les caractéristiques spéciales des divers textes source, mais aussi la tradition du
-La collection prend un compte égal.
+Pour cette raison, les directives du TEI ont été adaptées aux besoins spécifiques
+de la SDS dans un schéma propre[^4], en constante évolution, qui prend en compte la
+diversité des textes sources et la tradition éditoriale propre à la collection.
 
-Le [schéma complet et compilé](https://schema.ssrq-sds-fds.ch/latest/TEI_Schema.rng) 
-peut être téléchargé librement et continué. Son développement est rendu public
-peut être visualisé sur la plate-forme [GitHub](https://github.com/SSRQ-SDS-FDS/ssrq-schema), 
-il est publié de manière durable sur [Zenodo](https://zenodo.org/records/13379935).
+Le [schéma complet et compilé](https://schema.ssrq-sds-fds.ch/latest/TEI_Schema.rng) peut être téléchargé librement et réutilisé.
+Son développement est consultable sur la plate-forme [GitHub](https://github.com/SSRQ-SDS-FDS/ssrq-schema) et est publié
+de manière durable sur [Zenodo](https://zenodo.org/records/13379935).
 
 [^2]:
     [Extensible Markup Language]
@@ -90,9 +87,7 @@ il est publié de manière durable sur [Zenodo](https://zenodo.org/records/13379
 [^3]:
     [TEI](http://www.tei-c.org/index.xml).
 [^4]:
-    Un schéma XML est la description formelle d’une quantité
-    Des documents XML à l’aide d’un langage de schéma. Une telle description
-    permet la validation d’un document XML (c’est-à-dire une revue de la question de savoir si
-    Un document XML est structuré comme les règles du schéma fournissent)
-    et place ainsi l’uniformité des documents XML dans une édition
-    sécurisé.
+    Un schéma XML est la description formelle d’un ensemble de documents XML
+    à l’aide d’un langage de schéma. Une telle description permet la validation
+    d’un document XML (c’est-à-dire vérifier s’il est conforme aux règles du schéma)
+    garantissant l’homogénéité des données au sein de l’édition.

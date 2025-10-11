@@ -1,59 +1,60 @@
 # Ponctuation
 
-## Règles pour les textes d’impression
+## Règles pour les imprimés
 
-Dans l’impression, la ponctuation est transcrite fidèle à l’original selon le modèle.
+Pour les imprimés, la ponctuation est transcrite fidèlement, selon l’original.
 
-Le virel (`/`) est transcrit, généralement avec des espaces devant lui et après. 
+La barre oblique ou virgule oblique (`/`) est transcrite,
+généralement avec des espaces avant et après. 
 
-Le signe du capitum n’est pas transcrit.
+Le capitulum, ou signe de paragraphe ou de chapitre (`¶`) n’est pas transcrit.
 
-## Règles pour les textes allemands manuscrits
+## Règles pour les textes manuscrits allemands
 
-### Ponctuation pour la clarification
+### Ponctuation utilisée pour clarifier
 
 La ponctuation d’un texte aide le lecteur à comprendre le texte.
 
-Dans un morceau de linguistique clairement, il peut arriver que différentes lectures
-soient possibles en fonction de la ponctuation :
+Dans un texte rédigé de manière claire, il peut arriver que différentes 
+lectures soient possibles en fonction de la ponctuation :
 
 Exemple :  
 « recht, sprüch und verträg » versus « recht sprüch und verträg »  
 Donc « Recht, Sprüche und Verträge » ou « Rechtssprüche und Verträge » ? 
 
-Afin de clarifier ces incertitudes, l’original doit être utilisé dans les endroits en question.  
-L’original a-t-il un tournant à l’endroit incertain ?
-Si c’est le cas, une virgule doit être définie.
-Voir aussi les directives de transcription jusqu’au point 
+Afin de clarifier ces incertitudes, il convient de consulter l’original.
+Si le manuscrit contient une césure à cet endroit, alors l’ajout d’une
+virgule est nécessaire. Voir aussi les directives de transcription de
+chapitres :
 [Ensemble et séparé](wordseparation.fr.md).
 
 ### Virgules
 
 === "Appositions"
 
-    Selon la règle du dessin d’aujourd’hui, les appositions officiellement réagies
-    sont encadrées de virgules.
-    Si une apposition devient plus longue, une virgule est non seulement utile, mais presque
-    essentielle.
+    Selon les règles actuelles, les appositions placées après
+    le nom sont encadrées de virgules.
+    Si une apposition est plus longue, une virgule est non seulement utile,
+    mais presque essentielle.
     
     Exemple :  
     « haben meine herren, die eidgenossen, disen abscheid »
 
 === "Énumérations"
 
-    Dans le cas des énumérations avec « zum ersten », « zum zweiten », « zum dritten » etc.,
-    une virgule est ensuite définie après le numéro de commande,
-    lorsqu’une nouvelle phrase commence et ce « zum ersten » etc. n’est pas
-    installé dans la phrase. 
+    Dans le cas des énumérations avec « zum ersten », « zum zweiten », 
+    « zum dritten », etc., on met une virgule après l’énumération
+    lorsqu’une nouvelle phrase commence et que ce « zum ersten », etc. 
+    n’est pas intégré syntaxiquement. 
     Il en va de même pour « item ».
     
     Exemples :  
     « Zum ersten hat man sich verglichen »  
-    « Lasst man es beim ersten bey ... bewenden »  
+    « Lasst man es beim ersten bey … bewenden »  
     « Item, so hat er »  
     « Item confirmamus »
   
-    Une virgule est placée entre plusieurs adjectifs avec un caractère énuméré et égal.
+    Une virgule est placée entre plusieurs adjectifs de même niveau et énumératifs.
   
     Exemples :  
     « wir nachbenempten Ulrich Nix, des rats der statt Freyburg, und Conrad Graf,
@@ -65,30 +66,31 @@ Voir aussi les directives de transcription jusqu’au point
 
 === "Dates"
 
-    Une virgule est définie lorsqu’une date suit.
+    Une virgule est insérée avant une date.
     
     Exemple :  
     « hab ich mein sigel trucken lassen, den 8. jenner 1740 »
   
-    La virgule de « Actum » est définie lorsqu’un emplacement d’exposition est donné.  
-    Cependant, si une seule date suit, la virgule est omise.
+    Après le « Actum », on met une virgule si le lieu est indiqué.
+    Si seule la date suit, on ne met pas de virgule.
     
     Exemples :  
-    « Actum Konstanz, den ... »  
-    « Actum den 4. september ... »
+    « Actum Konstanz, den … »  
+    « Actum den 4. september … »
   
-    Pour structurer les formules finales, voir [structure de texte](textstructure.fr.md).
+    Au sujet de la structure des formules de clôture, voir
+    [structure de texte](textstructure.fr.md).
 
 === "Conjonctions"
 
-    La virgule est définie pour les conjonctions multiples suivantes :
+    Une virgule est placée entre les éléments des conjonctions suivants :
   
-    « einerseits » ..., « andererseits »  
-    « je » ..., « desto/umso »  
-    « nicht nur » ..., « sondern (auch) »  
-    « teil » ..., « teils »  
-    « zum einen » ..., « zum anderen »  
-    « zwar » ..., « aber »
+    « einerseits » …, « andererseits »  
+    « je » …, « desto/umso »  
+    « nicht nur » …, « sondern (auch) »  
+    « teil » …, « teils »  
+    « zum einen » …, « zum anderen »  
+    « zwar » …, « aber »
 
     Exemples :  
     ```
@@ -103,45 +105,46 @@ Voir aussi les directives de transcription jusqu’au point
     <lb/>gerichten in den marchen und kraissen des Rintals,
     ```
 
-    Aucune virgule n’est définie pour les conjonctions multiples suivantes :
+    Pas de virgule pour :
   
-    « entweder » ... « oder »  
-    « sowohl » ... « als auch »  
-    « weder » ... « noch »
+    « entweder » … « oder »  
+    « sowohl » … « als auch »  
+    « weder » … « noch »
   
-    La virgule avant « und » est définie s’il existe une clause subordonnée insérée
-    à l’avance ou suit une clause principale après la virgule, sur lesquelles les
-    clauses subordonnées sont dépendantes.
+    On met une virgule avant «und» si une proposition subordonnée est
+    insérée avant ou si l’élément suivant est une proposition principale
+    ayant ses propres subordonnées. 
 
-### Côlon
+### Deux-points
 
-Remarque de base sur le côlon dans les manuscrits du XVIIe siècle. par Hannes Steiner :
+Remarque générale pour les manuscrits du XVII<sup>e</sup> siècle par Hannes Steiner :
 
-Ce symbole « : » n’a pas encore la même signification que dans la seconde moitié du XIXe siècle, 
-lorsqu’il était utilisé exclusivement pour établir le lien entre une annonce et ce qui était
-annoncé, ou entre une introduction et les explications suivantes, ou entre un titre et la
-liste suivante.
+Ce symbole « : » n’a pas encore à cette époque, la même signification que dans
+la seconde moitié du XIX<sup>e</sup> siècle, où il est exclusivement utilisé
+pour établir le lien entre une annonce et ce qui est annoncé,
+entre une introduction et les explications qui suivent, ou entre un titre
+et l’énumération qui suit. 
 
-1. Tout d’abord, le côlon peut représenter une ligne de refus.
-2. Deuxièmement, en tant que tournant fort, il peut séparer deux clauses principales,
-   en effet des sections.
-3. Et troisièmement, il peut se tenir entre plusieurs clauses subordonnées brisées et
-   la clause principale (à son tour par des clauses subordonnées).
+Au XVII<sup>e</sup> siècle, le deux-points est utilisé pour :
 
-Dans les trois cas mentionnés, la lecture par un côlon serait un anachronisme.
+    1. Remplacer un tiret d’élision (Auslassungsstrich).
+    2. Marquer une pause forte entre deux clauses principales, voire deux paragraphes. 
+    3. Séparer plusieurs clauses subordonnées du verbe principal, lui-même suivi de subordonnées. 
+
+Dans les trois cas mentionnés, la transcription d’un deux-points serait un anachronisme.
 
 ### Point
 
 === "après l’expéditeur et l’adresse"
 
-    À la fin d’une lettre, il est inutile que la pratique d’aujourd’hui.
+    Pas de point final après la mention de l’expéditeur en fin de lettre,
+    conformément à l’usage moderne.
     
     Exemples :  
     « Schultheiss und Rat zu Bern »  
     « Weibel und Land Entlebuch »
   
-    Avec l’adresse de la lettre à l’extérieur, qui est généralement placée au début d’une lettre, 
-    il n’y a aucun point également défini.
+    Pas de point non plus après l’adresse de la lettre, généralement placée en entête. 
   
     Exemples :  
     ```
@@ -151,15 +154,15 @@ Dans les trois cas mentionnés, la lecture par un côlon serait un anachronisme.
         <lb/>schulthes und rat der statt Lucërn,  
         <lb/>unsren insunders guͤnstigen, lieben herren und obren  
         <pb n="2"/>  
-        <lb/>Unser willig ...  
+        <lb/>Unser willig …  
       </p>
     ```  
-    Den fromen, weisen, dem burgermeister ...  
-    Als unser lieben, getrüwen schultheis und rat zu W. ...
+    Den fromen, weisen, dem burgermeister …  
+    Als unser lieben, getrüwen schultheis und rat zu W. …
 
 === "après une phrase complète"
 
-    Après le « Stadtschreiber scripsit », il y a un dernier point car c’est une phrase. 
+    Après le « Stadtschreiber scripsit », on met un point final, car c’est une phrase. 
     
-    Le dernier point, en revanche, tombe si seulement le « Stadtschreiber » est écrit. 
-    Voir les informations sur [Formules finales](textstructure.fr.md).
+    Mais s’il n’y a que la mention de « Stadtschreiber », pas de point.
+    Voir aussi les informations sur les [Formules finales](textstructure.fr.md).

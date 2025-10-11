@@ -25,7 +25,7 @@
     Urkunden sollten gemäss ihrem formalen Aufbau strukturiert werden (vgl.
     [Diplomatik
     (dt.)](http://www.hist-hh.uni-bamberg.de/hilfswiss/diplomatik.html), 
-    [Diplomatik (frz.)](http://theleme.enc.sorbonne.fr/cours/diplomatique).
+    [Notions de diplomatique (fr.)](http://theleme.enc.sorbonne.fr/cours/diplomatique)).
 
     Mit «actum» eingeleitete Schlussformeln von Urkunden, werden wie Absätze
     behandelt. Nach «actum» folgt nach einem Komma «coram consilio», 
@@ -58,7 +58,7 @@ werden mit [`<head>`](head.de.md) ausgezeichnet.
 
 === "im edierten Text"
 
-    Direkte Rede, die in der analogen Edition mit `«...»` hervorgehoben wurde,
+    Direkte Rede, die in der analogen Edition mit `«…»` hervorgehoben wurde,
     wird in der digitalen Edition mit [`<q>`](q.de.md) ausgezeichnet.
     
     Zitate innerhalb eines Textes (z. B. inserierte Urkunden) werden mit
