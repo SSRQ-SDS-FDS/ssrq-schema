@@ -15,7 +15,10 @@
     <memberOf key="att.typed"/>
   </classes>
   <content>
-    <textNode/>
+    <alternate maxOccurs="unbounded">
+      <elementRef key="hi"/>
+      <textNode/>
+    </alternate>
   </content>
   <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-idno">
     <desc xml:lang="en" versionDate="2023-09-26">constraint for tei:idno</desc>
@@ -49,6 +52,16 @@
           <sch:let name="idnos" value="//tei:idno[not(parent::tei:altIdentifier)] ! normalize-space(.)"/>
           <sch:assert test="count(distinct-values($idnos)) = count($idnos)">
             The value of every tei:idno should be unique.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern>
+        <sch:rule context="tei:idno[tei:hi]">
+          <sch:assert test="./ancestor::tei:msIdentifier">
+            tei:hi inside tei:idno is only allowed in tei:msIdentifier.
+          </sch:assert>
+          <sch:assert test="tei:hi/@rend = 'sup'">
+            If tei:hi is used inside tei:idno the attribute rend must have the value "sup".
           </sch:assert>
         </sch:rule>
       </sch:pattern>

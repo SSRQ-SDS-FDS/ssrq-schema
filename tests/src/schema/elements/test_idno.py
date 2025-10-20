@@ -30,7 +30,12 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         ),
         (
             "valid-idno-with-type",
-            " <idno type='uuid'>d9bf0588-e28a-4b62-ad82-45b95722d684</idno>",
+            "<idno type='uuid'>d9bf0588-e28a-4b62-ad82-45b95722d684</idno>",
+            True,
+        ),
+        (
+            "valid-idno-with-hi",
+            "<idno xml:lang='fr'>CHAEG, Jur. Pen. I<hi rend='sup'>2</hi> 5, p. 10</idno>",
             True,
         ),
     ],
@@ -147,9 +152,24 @@ def test_idno(
             "<TEI><idno>foo</idno><idno>\n    foo\n</idno></TEI>",
             False,
         ),
+        (
+            "valid-idno-with-hi-inside-msIdentifier",
+            "<msIdentifier><idno xml:lang='fr'>Foo<hi rend='sup'>bar</hi></idno></msIdentifier>",
+            True,
+        ),
+        (
+            "invalid-idno-with-hi-outside-msIdentifier",
+            "<idno xml:lang='fr'>Foo<hi rend='sup'>bar</hi></idno>",
+            False,
+        ),
+        (
+            "invalid-idno-with-hi-inside-msIdentifier-wrong-rend",
+            "<msIdentifier><idno xml:lang='fr'>Foo<hi rend='italic'>bar</hi></idno></msIdentifier>",
+            False,
+        ),
     ],
 )
-def test_series_idno_constraints(
+def test_idno_constraints(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     writer.write(name, add_tei_namespace(markup))
