@@ -969,3 +969,31 @@ def test_milestones(
         input=writer.list(), isosch=main_constraints
     )
     assert reports[0].report.is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "invalid-duplicate-xml-ids",
+            """<TEI><listBibl><bibl xml:id="foo">bar</bibl><bibl xml:id="foo">bar</bibl></listBibl></TEI>""",
+            False,
+        ),
+        (
+            "valid-xml-ids",
+            """<TEI><listBibl><bibl xml:id="foo">bar</bibl><bibl xml:id="baz">bar</bibl></listBibl></TEI>""",
+            True,
+        ),
+    ],
+)
+def test_unique_xml_ids(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """
+    Tests the global constraint, which ensures the uniqueness of xml_id attributes.
+    """
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].report.is_valid() is result
