@@ -2,8 +2,8 @@
 <?xml-model
 href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<div xml:id="ssrq-translations" xmlns="http://www.tei-c.org/ns/1.0">
-    <specGrp xml:id="ssrq-translations-global">
+<div xmlns="http://www.tei-c.org/ns/1.0">
+    <specGrp xml:id="ssrq-translations">
         <dataSpec ident="ssrq.translations.global">
             <content>
                 <valList>
@@ -88,8 +88,6 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-    </specGrp>
-    <specGrp xml:id="ssrq-translations-datetime">
         <dataSpec ident="ssrq.translations.datetime">
             <content>
                 <valList>
@@ -245,8 +243,6 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-    </specGrp>
-    <specGrp xml:id="ssrq-translation-entities">
         <dataSpec ident="ssrq.translations.entities">
             <content>
                 <valList>
@@ -283,8 +279,6 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-    </specGrp>
-    <specGrp xml:id="ssrq-translations-hands-scribes">
         <dataSpec ident="ssrq.translations.hands.sribes">
             <content>
                 <valList>
@@ -340,8 +334,6 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-    </specGrp>
-    <specGrp xml:id="ssrq-translations-languages">
         <dataSpec ident="ssrq.translations.languages">
             <content>
                 <valList>
@@ -394,8 +386,6 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-    </specGrp>
-    <specGrp xml:id="ssrq-translations-ordinal">
         <dataSpec ident="ssrq.translations.ordinal">
             <content>
                 <valList>
@@ -438,8 +428,6 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-    </specGrp>
-    <specGrp xml:id="ssrq-translations-msDesc">
         <dataSpec ident="ssrq.translations.msDesc">
             <content>
                 <valList>
@@ -536,8 +524,6 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-    </specGrp>
-    <specGrp xml:id="ssrq-translations-textcritical">
         <dataSpec ident="ssrq.translations.textcritical">
             <content>
                 <valList>
