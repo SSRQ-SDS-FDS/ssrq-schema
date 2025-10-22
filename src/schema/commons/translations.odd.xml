@@ -282,17 +282,23 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
         <dataSpec ident="ssrq.translations.hands.sribes">
             <content>
                 <valList>
+                    <valItem ident="by-hand">
+                        <desc versionDate="2024-11-13" xml:lang="de">von</desc>
+                        <desc versionDate="2024-11-13" xml:lang="en">by</desc>
+                        <desc versionDate="2024-11-13" xml:lang="fr">par</desc>
+                        <desc versionDate="2024-11-13" xml:lang="it">da</desc>
+                    </valItem>
                     <valItem ident="by-a-hand">
                         <desc versionDate="2025-10-22" xml:lang="de">von einer</desc>
                         <desc versionDate="2025-10-22" xml:lang="en">by a</desc>
                         <desc versionDate="2025-10-22" xml:lang="fr">par une</desc>
                         <desc versionDate="2025-10-22" xml:lang="it">da una</desc>
                     </valItem>
-                    <valItem ident="by-hand">
-                        <desc versionDate="2024-11-13" xml:lang="de">von</desc>
-                        <desc versionDate="2024-11-13" xml:lang="en">by</desc>
-                        <desc versionDate="2024-11-13" xml:lang="fr">par</desc>
-                        <desc versionDate="2024-11-13" xml:lang="it">da</desc>
+                    <valItem ident="by-the-hand">
+                        <desc versionDate="2025-10-22" xml:lang="de">von der</desc>
+                        <desc versionDate="2025-10-22" xml:lang="en">by the</desc>
+                        <desc versionDate="2025-10-22" xml:lang="fr">par la</desc>
+                        <desc versionDate="2025-10-22" xml:lang="it">da la</desc>
                     </valItem>
                     <valItem ident="by-laterHand">
                         <desc versionDate="2024-11-13" xml:lang="de">von späterer Hand</desc>
