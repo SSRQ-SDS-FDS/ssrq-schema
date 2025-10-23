@@ -4,7 +4,7 @@ href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/rel
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
     <specGrp xml:id="ssrq-translations">
-        <dataSpec ident="ssrq.translations.global">
+        <dataSpec ident="ssrq.translations.global" xml:id="ssrq-translations-global">
             <content>
                 <valList>
                     <valItem ident="amount">
@@ -88,7 +88,7 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-        <dataSpec ident="ssrq.translations.datetime">
+        <dataSpec ident="ssrq.translations.datetime" xml:id="ssrq-translations-datetime">
             <content>
                 <valList>
                     <valItem ident="century-abbr">
@@ -243,7 +243,7 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-        <dataSpec ident="ssrq.translations.entities">
+        <dataSpec ident="ssrq.translations.entities" xml:id="ssrq-translations-entities">
             <content>
                 <valList>
                     <valItem ident="organisation">
@@ -279,7 +279,7 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-        <dataSpec ident="ssrq.translations.hands.sribes">
+        <dataSpec ident="ssrq.translations.hands.scribes" xml:id="ssrq-translations-hands-scribes">
             <content>
                 <valList>
                     <valItem ident="by-hand">
@@ -328,7 +328,7 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-        <dataSpec ident="ssrq.translations.languages">
+        <dataSpec ident="ssrq.translations.languages" xml:id="ssrq-translations-languages">
             <content>
                 <valList>
                     <valItem ident="de">
@@ -380,7 +380,7 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-        <dataSpec ident="ssrq.translations.ordinal">
+        <dataSpec ident="ssrq.translations.ordinal" xml:id="ssrq-translations-ordinal">
             <content>
                 <valList>
                     <valItem ident="first-female">
@@ -422,7 +422,7 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-        <dataSpec ident="ssrq.translations.msDesc">
+        <dataSpec ident="ssrq.translations.msDesc" xml:id="ssrq-translations-msDesc">
             <content>
                 <valList>
                     <valItem ident="archive-name">
@@ -518,7 +518,7 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </valList>
             </content>
         </dataSpec>
-        <dataSpec ident="ssrq.translations.textcritical">
+        <dataSpec ident="ssrq.translations.textcritical" xml:id="ssrq-translations-textcritical">
             <content>
                 <valList>
                     <valItem ident="abbr">

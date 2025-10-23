@@ -39,9 +39,20 @@
     </teiHeader>
     <text>
         <body>
-            <!--additional translations, note: inclusion path is relative to the examples directory
-            (the base_path is defined by `resolve_xincludes` in `compile.py`-->
-            <xi:include href="../commons/translations.odd.xml" xpointer="ssrq-translations"/>
+            <!--
+            additional translations,
+                 - note: inclusion path is relative to the examples directory
+                 (the base_path is defined by `resolve_xincludes` in `compile.py`
+                 - note: the xpointer values correspond to the xml:id attributes of the tei:dataSpec in the included file
+            -->
+            <xi:include href="../commons/translations.odd.xml" xpointer="ssrq-translations-global"/>
+            <xi:include href="../commons/translations.odd.xml" xpointer="ssrq-translations-datetime"/>
+            <xi:include href="../commons/translations.odd.xml" xpointer="ssrq-translations-entities"/>
+            <xi:include href="../commons/translations.odd.xml" xpointer="ssrq-translations-hands-scribes"/>
+            <xi:include href="../commons/translations.odd.xml" xpointer="ssrq-translations-languages"/>
+            <xi:include href="../commons/translations.odd.xml" xpointer="ssrq-translations-ordinal"/>
+            <xi:include href="../commons/translations.odd.xml" xpointer="ssrq-translations-msDesc"/>
+            <xi:include href="../commons/translations.odd.xml" xpointer="ssrq-translations-textcritical"/>
             <schemaSpec docLang="de en fr" ident="ssrq-main-schema">
                 <!--TEI modules used-->
                 <moduleRef include="pc" key="analysis"/>
