@@ -3,8 +3,8 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
   <specGrp xml:id="ssrq-classes">
     <!--
-        There are currently (2024-11-13) 84 attribute classes specified in
-        TEI P5 Version 4.8.1, all of which are either explicitly deleted or
+        There are currently (2025-01-24) 85 attribute classes specified in
+        TEI P5 Version 4.9.0, all of which are either explicitly deleted or
         changed in this document.
     -->
     <!-- TEI attribute classes deleted from schema -->
@@ -59,6 +59,7 @@
     <classSpec ident="att.ranging" type="atts" mode="delete"/>
     <classSpec ident="att.rdgPart" type="atts" mode="delete"/>
     <classSpec ident="att.repeatable" type="atts" mode="delete"/>
+    <classSpec ident="att.scope" type="atts" mode="delete"/>
     <classSpec ident="att.segLike" type="atts" mode="delete"/>
     <classSpec ident="att.sortable" type="atts" mode="delete"/>
     <classSpec ident="att.styleDef" type="atts" mode="delete"/>
@@ -332,7 +333,6 @@
     <classSpec ident="att.handFeatures" type="atts" mode="change">
       <attList>
         <attDef ident="medium" mode="delete"/>
-        <attDef ident="scope" mode="delete"/>
         <attDef ident="scribe" mode="replace">
           <desc xml:lang="de" versionDate="2025-01-28">die Identifikationsnummer des Schreibers</desc>
           <desc xml:lang="en" versionDate="2025-01-28">the identification number of the scribe</desc>
