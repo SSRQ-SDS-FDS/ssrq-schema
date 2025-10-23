@@ -207,5 +207,17 @@
         </sch:pattern>
       </constraint>
     </constraintSpec>
+    <constraintSpec xml:lang="en" scheme="schematron" ident="unique-xml-ids">
+      <desc xml:lang="en" versionDate="2025-10-20">constraint to ensure the uniqueness of
+        xml:id attributes.
+      </desc>
+      <constraint>
+        <sch:rule context="tei:TEI">
+          <sch:assert test="count(//@xml:id) = count(distinct-values(//@xml:id))">
+            All values of @xml:id attributes in this document must be unique.
+          </sch:assert>
+        </sch:rule>
+      </constraint>
+    </constraintSpec>
   </specGrp>
 </div>
