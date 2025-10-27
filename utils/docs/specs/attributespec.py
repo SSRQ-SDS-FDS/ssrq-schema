@@ -202,6 +202,8 @@ class AttributeSpec:
         match tag:
             case "hi":
                 return f"<sup>{context.text}</sup>{context.tail or ''}"
+            case "pc":
+                return f"{context.text}"
             case _:
                 LOGGER.warning(f"Unsupported child tag in description »{tag}»")
                 return ""

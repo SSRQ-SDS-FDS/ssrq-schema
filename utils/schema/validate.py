@@ -18,6 +18,7 @@ FILTER_MSGS = [
     'element "exemplum" missing required attribute "xml:lang"',
     'value of attribute "module" is invalid',
     'element "xi:include" not allowed here',
+    'element "pc" not allowed anywhere',
 ]
 
 
