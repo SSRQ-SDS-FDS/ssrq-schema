@@ -28,14 +28,6 @@
         <dataRef name="string" restriction="(R/)?PT(\d+(\.\d+)?[HMS])+"/>
       </content>
     </dataSpec>
-    <dataSpec ident="ssrq.cover" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-10-23">das Muster für die Zählung von Coverseiten</desc>
-      <desc xml:lang="en" versionDate="2025-10-23">the pattern for counting cover pages</desc>
-      <desc xml:lang="fr" versionDate="2025-10-23">le modèle pour les pages de couverture</desc>
-      <content>
-        <dataRef name="string" restriction="cover|outside_front_cover|inside_front_cover|inside_back_cover|outside_back_cover"/>
-      </content>
-    </dataSpec>
     <dataSpec ident="ssrq.foliation" mode="add" module="ssrq.core.module">
       <desc xml:lang="de" versionDate="2025-01-30">das Muster für die Blattzählung</desc>
       <desc xml:lang="en" versionDate="2025-01-30">the pattern for the foliation</desc>
