@@ -93,7 +93,9 @@ class AttributeSpec:
                     )
 
                     if desc is not None:
-                        val_item_rendered += f" – *{self._render_description(desc)}*"
+                        val_item_rendered += (
+                            f" – *{self._render_description(desc, lang)}*"
+                        )
 
                     output.append(val_item_rendered)
 
@@ -192,16 +194,18 @@ class AttributeSpec:
 
         self.usage_status = "opt"
 
-    def _render_description(self, context: ET.Element) -> str:
+    def _render_description(self, context: ET.Element, lang: str) -> str:
         return f"{context.text or ''}{
-            ''.join(self._render_description_child(child) for child in context)
+            ''.join(self._render_description_child(child, lang) for child in context)
         }"
 
-    def _render_description_child(self, context: ET.Element) -> str:
+    def _render_description_child(self, context: ET.Element, lang: str) -> str:
         _, tag = split_tag_and_ns(context.tag)
         match tag:
             case "hi":
                 return f"<sup>{context.text}</sup>{context.tail or ''}"
+            case "pc" if lang == "fr":
+                return f" {context.text}"
             case "pc":
                 return f"{context.text}"
             case _:
