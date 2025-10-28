@@ -41,7 +41,7 @@
       <desc xml:lang="en" versionDate="2025-01-30">the pattern for the pagination</desc>
       <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour le pagination</desc>
       <content>
-        <dataRef name="string" restriction="(([1-9]\d*(\.[1-9]\d*)?|([IVXLCDM]+))([ab]|bis)?)|cover"/>
+        <dataRef name="string" restriction="(([1-9]\d*(\.[1-9]\d*)?|([IVXLCDM]+))([ab]|bis)?)"/>
       </content>
     </dataSpec>
     <dataSpec ident="ssrq.section" mode="add" module="ssrq.core.module">

@@ -158,6 +158,47 @@
       </content>
     </dataSpec>
   </specGrp>
+  <specGrp xml:id="ssrq-cover">
+    <dataSpec ident="ssrq.cover" mode="add">
+      <desc xml:lang="de" versionDate="2025-10-27">die Bezeichnung der Einbandseite</desc>
+      <desc xml:lang="en" versionDate="2025-10-27">the name of the cover page</desc>
+      <desc xml:lang="fr" versionDate="2025-10-27">le nom de la page de couverture</desc>
+      <content>
+        <valList type="closed">
+          <valItem ident="cover">
+            <desc xml:lang="de" versionDate="2025-10-27">Einband</desc>
+            <desc xml:lang="en" versionDate="2025-10-27">cover</desc>
+            <desc xml:lang="fr" versionDate="2025-10-27">couverture</desc>
+            <desc xml:lang="it" versionDate="2025-10-27">copertina</desc>
+          </valItem>
+          <valItem ident="outside_front_cover">
+            <desc xml:lang="de" versionDate="2025-10-27">äussere vordere Einbandseite</desc>
+            <desc xml:lang="en" versionDate="2025-10-27">outside front cover</desc>
+            <desc xml:lang="fr" versionDate="2025-10-27">plat supérieur (première de couverture)</desc>
+            <desc xml:lang="it" versionDate="2025-10-27">prima di copertina</desc>
+          </valItem>
+          <valItem ident="inside_front_cover">
+            <desc xml:lang="de" versionDate="2025-10-27">innere vordere Einbandseite</desc>
+            <desc xml:lang="en" versionDate="2025-10-27">inside front cover</desc>
+            <desc xml:lang="fr" versionDate="2025-10-27">contreplat supérieur (deuxième de couverture)</desc>
+            <desc xml:lang="it" versionDate="2025-10-27">seconda di copertina</desc>
+          </valItem>
+          <valItem ident="inside_back_cover">
+            <desc xml:lang="de" versionDate="2025-10-27">innere hintere Einbandseite</desc>
+            <desc xml:lang="en" versionDate="2025-10-27">inside back cover</desc>
+            <desc xml:lang="fr" versionDate="2025-10-27">contreplat inférieur (troisième de couverture)</desc>
+            <desc xml:lang="it" versionDate="2025-10-27">terza di copertina</desc>
+          </valItem>
+          <valItem ident="outside_back_cover">
+            <desc xml:lang="de" versionDate="2025-10-27">äussere hintere Einbandseite</desc>
+            <desc xml:lang="en" versionDate="2025-10-27">outside back cover</desc>
+            <desc xml:lang="fr" versionDate="2025-10-27">plat inférieur (quatrième de couverture)</desc>
+            <desc xml:lang="it" versionDate="2025-10-27">quarta di copertina</desc>
+          </valItem>
+        </valList>
+      </content>
+    </dataSpec>
+  </specGrp>
   <specGrp xml:id="ssrq-date-time">
     <dataSpec ident="ssrq.date.calendar" mode="add">
       <desc xml:lang="de" versionDate="2025-01-29">das Kalendersystem</desc>
