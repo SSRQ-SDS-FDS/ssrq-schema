@@ -60,6 +60,29 @@
       </sch:pattern>
     </constraint>
   </constraintSpec>
+  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-msDesc-head-2">
+    <desc xml:lang="en" versionDate="2025-10-23">constraint to ensure that one tei:head is
+      used per language</desc>
+    <constraint>
+      <sch:pattern>
+        <sch:rule context="tei:msDesc[count(tei:head)=1]">
+          <sch:report test="tei:head[@xml:lang]">
+            If just one tei:head is used in a text witness, @xml:lang may not be specified there.
+          </sch:report>
+        </sch:rule>
+        <sch:rule context="tei:msDesc[count(tei:head)>1]">
+          <sch:assert test="tei:head[@xml:lang]">
+            If multiple tei:head elements are used in a text witness,
+            @xml:lang must be specified for them.
+          </sch:assert>
+          <sch:assert test="count(distinct-values(tei:head/@xml:lang)) = count(tei:head)">
+            If multiple tei:head elements are used in a text witness,
+            @xml:lang must be unique for all of these.
+          </sch:assert>
+        </sch:rule>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec>
   <xi:include href="examples.xml" xpointer="ex-msDesc-de"/>
   <xi:include href="examples.xml" xpointer="ex-msDesc-fr"/>
   <xi:include href="examples.xml" xpointer="ex-msDesc-en"/>

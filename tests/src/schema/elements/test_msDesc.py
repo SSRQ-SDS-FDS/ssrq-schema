@@ -66,30 +66,6 @@ from ..conftest import (
             True,
         ),
         (
-            "valid-msDesc-with-multiple-heads",
-            """
-            <msDesc>
-                <head>Foo</head>
-                <head>Bar</head>
-                  <physDesc>
-                    <objectDesc>
-                        <supportDesc>
-                            <support>
-                                <material type="paper"/>
-                            </support>
-                        </supportDesc>
-                    </objectDesc>
-                </physDesc>
-                <history>
-                    <origin>
-                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
-                    </origin>
-                </history>
-            </msDesc>
-            """,
-            True,
-        ),
-        (
             "valid-msDesc-with-msIdentifier",
             """
             <msDesc>
@@ -392,6 +368,113 @@ def test_ms_desc_rng(
             </witness>
             """,
             True,
+        ),
+        (
+            "invalid-msDesc-with-one-head-having-xml-lang",
+            """
+            <msDesc>
+                <head xml:lang="de">Foo</head>
+                  <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                    <bindingDesc>
+                        <p>Foo</p>
+                    </bindingDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
+                    </origin>
+                </history>
+            </msDesc>
+            """,
+            False,
+        ),
+        (
+            "valid-msDesc-with-multiple-heads-having-xml-lang",
+            """
+            <msDesc>
+                <head xml:lang="de">Foo</head>
+                <head xml:lang="fr">Bar</head>
+                  <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                    <bindingDesc>
+                        <p>Foo</p>
+                    </bindingDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
+                    </origin>
+                </history>
+            </msDesc>
+            """,
+            True,
+        ),
+        (
+            "invalid-msDesc-with-multiple-heads-having-the-same-xml-lang",
+            """
+            <msDesc>
+                <head xml:lang="de">Foo</head>
+                <head xml:lang="de">Bar</head>
+                  <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                    <bindingDesc>
+                        <p>Foo</p>
+                    </bindingDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
+                    </origin>
+                </history>
+            </msDesc>
+            """,
+            False,
+        ),
+        (
+            "invalid-msDesc-with-multiple-heads-not-having-xml-lang",
+            """
+            <msDesc>
+                <head>Foo</head>
+                <head>Bar</head>
+                  <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <material type="paper"/>
+                            </support>
+                        </supportDesc>
+                    </objectDesc>
+                    <bindingDesc>
+                        <p>Foo</p>
+                    </bindingDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <origDate calendar="gregorian" type="document" when-custom="1000-01-01"/>
+                    </origin>
+                </history>
+            </msDesc>
+            """,
+            False,
         ),
     ],
 )
