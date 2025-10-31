@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="extent" module="header" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Ausmass</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">extent</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">étendue</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält Elemente, die die Masse des Textträgers angeben.</desc>
-  <desc xml:lang="en" versionDate="2023-07-17">Describes the dimensions of a source.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient des éléments qui spécifient les dimensions du support de texte.</desc>
-  <classes mode="replace">
-    <memberOf key="model.biblPart"/>
-  </classes>
-  <content>
-    <elementRef key="dimensions" maxOccurs="2"/>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-extent">
-    <desc xml:lang="en" versionDate="2023-04-19">constraint for tei:extent</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:extent[count(tei:dimensions) &gt; 1]">
-          <sch:assert test="count(distinct-values(tei:dimensions/@type)) = count(tei:dimensions)">
-              The @type of each tei:dimensions inside tei:extent needs to be unique.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <xi:include href="examples.xml" xpointer="ex-extent-de"/>
-  <xi:include href="examples.xml" xpointer="ex-extent-en"/>
-  <xi:include href="examples.xml" xpointer="ex-extent-fr"/>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="extent" mode="change" module="header" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Ausmass</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">extent</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">étendue</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält Elemente, die die Masse des Textträgers
+    angeben.</desc>
+    <desc versionDate="2023-07-17" xml:lang="en">Describes the dimensions of a source.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient des éléments qui spécifient les
+    dimensions du support de texte.</desc>
+    <classes mode="replace">
+        <memberOf key="model.biblPart"/>
+    </classes>
+    <content>
+        <elementRef key="dimensions" maxOccurs="2"/>
+    </content>
+    <constraintSpec ident="sch-el-extent" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-04-19" xml:lang="en">constraint for tei:extent</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:extent[count(tei:dimensions) &gt; 1]">
+                    <sch:assert test="count(distinct-values(tei:dimensions/@type)) =
+                    count(tei:dimensions)"> The @type of each tei:dimensions inside tei:extent
+                    needs to be unique. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <xi:include href="examples.xml" xpointer="ex-extent-de"/>
+    <xi:include href="examples.xml" xpointer="ex-extent-en"/>
+    <xi:include href="examples.xml" xpointer="ex-extent-fr"/>
 </elementSpec>

@@ -1,36 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="handDesc" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Beschreibung der Hände</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">hand description</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">description des mains</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält die Beschreibungen alle relevanten Hände
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="handDesc" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Beschreibung der Hände</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">hand description</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">description des mains</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält die Beschreibungen alle relevanten Hände
     eines Textträgers.</desc>
-  <desc xml:lang="en" versionDate="2023-05-22">Describes the hands and all hand changes.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient les descriptions de toutes les mains
+    <desc versionDate="2023-05-22" xml:lang="en">Describes the hands and all hand changes.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient les descriptions de toutes les mains
     intervenues sur le support de texte.</desc>
-  <classes mode="replace"/>
-  <content>
-    <elementRef key="handNote" maxOccurs="unbounded"/>
-  </content>
-  <attList>
-    <attDef ident="hands" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-handDesc-de"/>
-  <xi:include href="examples.xml" xpointer="ex-handDesc-en"/>
-  <xi:include href="examples.xml" xpointer="ex-handDesc-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Es werden nur «wichtige» Hände eingetragen. Jede Hand erhält ihr eigenes
-      <gi>handNote</gi>-Element.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-08-22">
-    <p>Marginals, deletions, corrections, etc. are marked directly at the point in the text.
-      Only «important» writers are entered.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Seules les mains «importantes» sont saisies. Chaque main possède son propre
-      élément <gi>handNote</gi>.</p>
-  </remarks>
+    <classes mode="replace"/>
+    <content>
+        <elementRef key="handNote" maxOccurs="unbounded"/>
+    </content>
+    <attList>
+        <attDef ident="hands" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-handDesc-de"/>
+    <xi:include href="examples.xml" xpointer="ex-handDesc-en"/>
+    <xi:include href="examples.xml" xpointer="ex-handDesc-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Es werden nur «wichtige» Hände eingetragen. Jede Hand erhält ihr eigenes
+            <gi>handNote</gi>-Element.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-08-22" xml:lang="en">
+        <p>
+            Marginals, deletions, corrections, etc. are marked directly at the point in the text.
+            Only «important» writers are entered.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Seules les mains «importantes» sont saisies. Chaque main possède son propre élément
+            <gi>handNote</gi>.
+        </p>
+    </remarks>
 </elementSpec>

@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="msContents" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Handschrifteninhalte</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">manuscript contents</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">contenu du manuscrit</gloss>
-  <desc xml:lang="de" versionDate="2025-07-10">Enthält das Regest und Informationen zur Sprache
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="msContents" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Handschrifteninhalte</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">manuscript contents</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">contenu du manuscrit</gloss>
+    <desc versionDate="2025-07-10" xml:lang="de">Enthält das Regest und Informationen zur Sprache
     und gegebenenfalls zum Autor des Textes.</desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Contains the regest and text language of the
+    <desc versionDate="2023-07-15" xml:lang="en">Contains the regest and text language of the
     source.</desc>
-  <desc xml:lang="fr" versionDate="2025-07-10">Contient le résumé et des informations sur la
+    <desc versionDate="2025-07-10" xml:lang="fr">Contient le résumé et des informations sur la
     langue et éventuellement l’auteur du texte.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence>
-      <elementRef key="summary" minOccurs="0" maxOccurs="unbounded"/>
-      <elementRef key="msItem"/>
-    </sequence>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-msContents-summary">
-    <desc xml:lang="en" versionDate="2025-07-23">constraint for tei:summary inside
-      tei:msContents</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:msContents[count(tei:summary) &gt; 1]">
-          <sch:assert test="count(distinct-values(tei:summary/@xml:lang)) = count(tei:summary)" xml:lang="en">
-            When there are more than one tei:summary-elements inside tei:msContents,
-            their @xml:lang attributes must be different.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <xi:include href="examples.xml" xpointer="ex-msContents-de"/>
-  <xi:include href="examples.xml" xpointer="ex-msContents-en"/>
-  <xi:include href="examples.xml" xpointer="ex-msContents-fr"/>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="summary" maxOccurs="unbounded" minOccurs="0"/>
+            <elementRef key="msItem"/>
+        </sequence>
+    </content>
+    <constraintSpec ident="sch-msContents-summary" scheme="schematron" xml:lang="en">
+        <desc versionDate="2025-07-23" xml:lang="en">constraint for tei:summary inside
+        tei:msContents</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:msContents[count(tei:summary) &gt; 1]">
+                    <sch:assert test="count(distinct-values(tei:summary/@xml:lang)) =
+                    count(tei:summary)" xml:lang="en"> When there are more than one
+                    tei:summary-elements inside tei:msContents, their @xml:lang attributes must be
+                    different. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <xi:include href="examples.xml" xpointer="ex-msContents-de"/>
+    <xi:include href="examples.xml" xpointer="ex-msContents-en"/>
+    <xi:include href="examples.xml" xpointer="ex-msContents-fr"/>
 </elementSpec>

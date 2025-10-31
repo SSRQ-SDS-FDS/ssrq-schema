@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="author" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Autor</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">author</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">auteur</gloss>
-  <desc xml:lang="de" versionDate="2025-07-14">Enthält den Autor eines Stücks oder als Teil
-    von <gi>msItem</gi> den Schreiber.</desc>
-  <desc xml:lang="en" versionDate="2023-08-17">Contains the writer of a source as part
-    of <gi>msItem</gi>.</desc>
-  <desc xml:lang="fr" versionDate="2025-07-14">Permet d’indiquer l’auteur d’une source, ou le
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="author" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Autor</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">author</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">auteur</gloss>
+    <desc versionDate="2025-07-14" xml:lang="de">Enthält den Autor eines Stücks oder als Teil von
+    <gi>msItem</gi> den Schreiber.</desc>
+    <desc versionDate="2023-08-17" xml:lang="en">Contains the writer of a source as part of
+    <gi>msItem</gi>.</desc>
+    <desc versionDate="2025-07-14" xml:lang="fr">Permet d’indiquer l’auteur d’une source, ou le
     scribe, à l’intérieur de <gi>msItem</gi>.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global.responsibility"/>
-    <memberOf key="att.naming"/>
-    <memberOf key="model.respLike"/>
-  </classes>
-  <content>
-    <sequence preserveOrder="false" maxOccurs="unbounded">
-      <elementRef minOccurs="0" key="persName"/>
-      <textNode/>
-    </sequence>
-  </content>
-  <attList>
-    <attDef ident="role" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-24">die Rolle des Schreibers</desc>
-      <desc xml:lang="en" versionDate="2025-02-24">the role of the writer</desc>
-      <desc xml:lang="fr" versionDate="2025-02-25">le rôle du scribe</desc>
-      <datatype>
-        <dataRef key="ssrq.role.author"/>
-      </datatype>
-    </attDef>
-    <attDef ident="resp" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-author-de"/>
-  <xi:include href="examples.xml" xpointer="ex-author-en"/>
-  <xi:include href="examples.xml" xpointer="ex-author-fr"/>
+    <classes mode="replace">
+        <memberOf key="att.global.responsibility"/>
+        <memberOf key="att.naming"/>
+        <memberOf key="model.respLike"/>
+    </classes>
+    <content>
+        <sequence maxOccurs="unbounded" preserveOrder="false">
+            <elementRef key="persName" minOccurs="0"/>
+            <textNode/>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="role" mode="replace">
+            <desc versionDate="2025-02-24" xml:lang="de">die Rolle des Schreibers</desc>
+            <desc versionDate="2025-02-24" xml:lang="en">the role of the writer</desc>
+            <desc versionDate="2025-02-25" xml:lang="fr">le rôle du scribe</desc>
+            <datatype>
+                <dataRef key="ssrq.role.author"/>
+            </datatype>
+        </attDef>
+        <attDef ident="resp" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-author-de"/>
+    <xi:include href="examples.xml" xpointer="ex-author-en"/>
+    <xi:include href="examples.xml" xpointer="ex-author-fr"/>
 </elementSpec>

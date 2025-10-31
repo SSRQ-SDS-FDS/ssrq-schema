@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="condition" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Erhaltungszustand</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">condition</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">état de conservation</gloss>
-  <desc xml:lang="de" versionDate="2025-02-05">Enthält <gi>p</gi>-Elemente zur Beschreibung des
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="condition" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Erhaltungszustand</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">condition</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">état de conservation</gloss>
+    <desc versionDate="2025-02-05" xml:lang="de">Enthält <gi>p</gi>-Elemente zur Beschreibung des
     Erhaltungszustands und der Schäden eines Textträgers.</desc>
-  <desc xml:lang="en" versionDate="2023-04-14">Describes the state of preservation and damage to a
-    source. Detailed descriptions, such as gaps, holes, etc., are given at the appropriate
+    <desc versionDate="2023-04-14" xml:lang="en">Describes the state of preservation and damage to
+    a source. Detailed descriptions, such as gaps, holes, etc., are given at the appropriate
     place.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Contient des éléments <gi>p</gi> pour décrire l’état
-    de conservation et les altérations d’un support de texte.</desc>
-  <classes mode="replace">
-    <memberOf key="att.damaged"/>
-  </classes>
-  <content>
-    <elementRef key="p" minOccurs="0"/>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-condition-de"/>
-  <xi:include href="examples.xml" xpointer="ex-condition-en"/>
-  <xi:include href="examples.xml" xpointer="ex-condition-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-05">
-    <p>Mit dem Attribut <att>agent</att> werden alle Beschädigungen auf standardisierte Weise
-      angegeben. In den <gi>p</gi>-Elementen erfolgt eine detailliertere Beschreibung als
-      Freitext.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-05">
-    <p>L’attribut <att>agent</att> permet d’indiquer tous les altérations de manière
-      standardisée. Dans les éléments <gi>p</gi> il y a une description plus détaillée sous
-      forme de texte libre.</p>
-  </remarks>
+    <desc versionDate="2025-02-05" xml:lang="fr">Contient des éléments <gi>p</gi> pour décrire
+    l’état de conservation et les altérations d’un support de texte.</desc>
+    <classes mode="replace">
+        <memberOf key="att.damaged"/>
+    </classes>
+    <content>
+        <elementRef key="p" minOccurs="0"/>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-condition-de"/>
+    <xi:include href="examples.xml" xpointer="ex-condition-en"/>
+    <xi:include href="examples.xml" xpointer="ex-condition-fr"/>
+    <remarks versionDate="2025-02-05" xml:lang="de">
+        <p>
+            Mit dem Attribut <att>agent</att> werden alle Beschädigungen auf standardisierte Weise
+            angegeben. In den <gi>p</gi>-Elementen erfolgt eine detailliertere Beschreibung als
+            Freitext.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-05" xml:lang="fr">
+        <p>
+            L’attribut <att>agent</att> permet d’indiquer tous les altérations de manière
+            standardisée. Dans les éléments <gi>p</gi> il y a une description plus détaillée sous
+            forme de texte libre.
+        </p>
+    </remarks>
 </elementSpec>

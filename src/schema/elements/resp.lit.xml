@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="resp" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Verantwortung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">responsibility</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">responsabilité</gloss>
-  <classes mode="replace"/>
-  <content>
-    <alternate>
-      <macroRef key="ssrq-lit.role.resp.de"/>
-      <macroRef key="ssrq-lit.role.resp.fr"/>
-    </alternate>
-  </content>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="resp" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0">
+    <gloss versionDate="2025-02-04" xml:lang="de">Verantwortung</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">responsibility</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">responsabilité</gloss>
+    <classes mode="replace"/>
+    <content>
+        <alternate>
+            <macroRef key="ssrq-lit.role.resp.de"/>
+            <macroRef key="ssrq-lit.role.resp.fr"/>
+        </alternate>
+    </content>
 </elementSpec>

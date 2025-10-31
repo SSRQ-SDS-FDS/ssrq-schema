@@ -1,193 +1,245 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="idno" module="header" mode="change">
-  <gloss xml:lang="de" versionDate="2023-07-07">Identifikationsnummer</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">identification number</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">numéro d’identification</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält im Identifikationsnummer.</desc>
-  <desc xml:lang="en" versionDate="2025-02-06">Contains an identification number.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient un numéro d’identification.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-    <memberOf key="att.global.source"/>
-    <memberOf key="att.typed"/>
-  </classes>
-  <content>
-    <alternate maxOccurs="unbounded">
-      <elementRef key="hi"/>
-      <textNode/>
-    </alternate>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-idno">
-    <desc xml:lang="en" versionDate="2023-09-26">constraint for tei:idno</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:idno[parent::tei:seriesStmt]">
-          <sch:assert test="not(@xml:lang)">
-            The usage of @xml:lang is prohibited, when tei:idno is used inside tei:seriesStmt.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-      <sch:pattern>
-        <sch:rule context="tei:idno[parent::tei:seriesStmt][not(@type)]">
-          <sch:assert test="matches(normalize-space(.), '^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$')" role="warning">
-            The tei:idno must match the defined schema – see the examples in the documentation.
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:idno[parent::tei:seriesStmt][@type]">
-          <sch:assert test="matches(normalize-space(.), '^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$')">
-            The tei:idno needs to be a UUID.
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:idno[parent::tei:msIdentifier]">
-          <sch:assert test="@xml:lang">
-            The tei:idno needs an attribute @xml:lang if it's inside tei:msIdentifier.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-      <sch:pattern>
-        <sch:rule context="tei:TEI">
-          <sch:let name="idnos" value="//tei:idno[not(parent::tei:altIdentifier)] ! normalize-space(.)"/>
-          <sch:assert test="count(distinct-values($idnos)) = count($idnos)">
-            The value of every tei:idno should be unique.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-      <sch:pattern>
-        <sch:rule context="tei:idno[tei:hi]">
-          <sch:assert test="./ancestor::tei:msIdentifier">
-            tei:hi inside tei:idno is only allowed in tei:msIdentifier.
-          </sch:assert>
-          <sch:assert test="tei:hi/@rend = 'sup'">
-            If tei:hi is used inside tei:idno the attribute rend must have the value "sup".
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="source" mode="replace">
-      <datatype>
-        <dataRef key="ssrq.pointer.url"/>
-      </datatype>
-    </attDef>
-    <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-03">die Art der Identifikationsnummer</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the type of identification number</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">le type du numéro d’identification</desc>
-      <datatype>
-        <dataRef key="ssrq.type.idno"/>
-      </datatype>
-    </attDef>
-    <attDef ident="n" mode="delete"/>
-    <attDef ident="xml:id" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-de"/>
-  <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-en"/>
-  <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-de"/>
-  <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-en"/>
-  <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-fr"/>
-  <remarks xml:lang="de" versionDate="2025-09-02">
-    <p>Wir verwenden das Element in mehreren Zusammenhängen: In <gi>seriesStmt</gi> enthält
-      <gi>idno</gi> (mit <att>type</att> = <val>UUID</val>) eine
-      <ref target="https://de.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</ref>,
-      um das XML-Dokument eindeutig zu bezeichnen. Ebenfalls in <gi>seriesStmt</gi> wird das
-      Bandkürzel (Kanton, Teil, Stücknummer) der SSRQ angegeben. In <gi>msIdentifier</gi> gibt
-      <gi>idno</gi> die Archivsignatur eines Textträgers an, in diesem Fall richtet sich diese
-      nach dem System des jeweiligen Archivs.</p>
-    <p>Enthält <gi>idno</gi> eine Archivsignatur, dann folgt auf das Kürzel des Archivs kein Komma.</p>
-    <p>Enthält <gi>idno</gi> eine UUID, dann muss diese dem folgenden regulären Ausdruck
-      entsprechen:
-      <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
-      Die UUID ist wie folgt aufgebaut:
-      <list><item>Genau acht Zeichen aus folgendem Set: die Ziffern "0-9", die Grossbuchstaben "A-F"
-        oder die Kleinbuchstaben "a-f".</item><item>Ein Bindestrich.
-        </item><item>Genau vier Zeichen aus dem oben genannten Set.</item><item>Ein Bindestrich.
-        </item><item>Die Ziffer "4", gefolgt von drei Zeichen aus dem oben genannten Set.
-        </item><item>Ein Bindestrich.</item><item>Genau einmal ein Zeichen aus folgendem Set:
-        "8", "9", "A", "B", "a", "b" gefolgt von genau drei Zeichen aus dem oben genannten Set.
-      </item><item>Ein Bindestrich.
-      </item><item>Genau zwölf Zeichen aus dem oben genannten Set.</item></list></p>
-    <p>Enthält <gi>idno</gi> ein Bandkürzel der SSRQ, dann muss dies dem folgenden regulären
-      Ausdruck entsprechen:
-      <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$</val>.
-      Die Bandkürzel sind wie folgt aufgebaut:
-      <list><item>Das Präfix "SSRQ" oder "SDS" oder "FDS".</item><item>Ein Bindestrich.
-      </item><item>Das Kürzel des Kantons bestehend aus zwei Grossbuchstaben.
-      </item><item>Ein Bindestrich.</item><item>Ein Kürzel des Bandes bestehend aus beliebig
-        vielen Grossbuchstaben, Kleinbuchstaben, Ziffern und Unterstrichen.
-      </item><item>Ein Bindestrich.</item><item>Die Kapiteleinteilung des Bandes (optional)
-        bestehend aus beliebig vielen Grossbuchstaben, Kleinbuchstaben, Ziffern und Punkten.
-      </item><item>Ein Kürzel des Stücks bestehend aus beliebig vielen Ziffern.
-      </item><item>Ein Bindestrich und die Ziffer 1</item></list>
-    </p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2025-09-02">
-    <p>If <gi>idno</gi> contains the signature of an archive, it has to match the system of the
-      respective archive.</p>
-    <p>If <gi>idno</gi> contains the signature of an archive, the abbreviation of the archive is
-      not followed by a comma</p>
-    <p>If <gi>idno</gi> contains a UUID, then it must match the following regular expression:
-      <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0- 9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
-      The UUID is structured as follows:
-      <list><item>Exactly eight characters from the following set: the digits "0-9", the capital
-        letters "A-F" or the lowercase letters "a-f".</item><item>A hyphen.</item><item>Exactly
-        four characters from the above set.</item><item>A hyphen.</item><item>The digit "4"
-        followed by three characters from the above set.</item><item>A hyphen.
-        </item><item>Exactly one character from the following set: "8", "9", "A", "B", "a", "b"
-        followed by exactly three characters from the above set.</item><item>A hyphen.
-      </item><item>Exactly twelve characters from the above set.</item></list>
-    </p>
-    <p>If <gi>idno</gi> contains a volume abbreviation of the SLS, then this must match the
-        following regular expression:
-        <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$</val>.
-        The volume abbreviations are structured as follows:
-        <list><item>The prefix "SSRQ" or "SDS" or "FDS".</item><item>A hyphen.</item><item>The
-          abbreviation of the canton consisting of two capital letters.</item><item>A hyphen.
-        </item><item>An abbreviation of the volume consisting of any number of uppercase letters,
-          lowercase letters, digits and underline.</item><item>A hyphen.</item><item>The chapter
-          division of the volume (optional) consisting of any number of capital letters,
-          Lowercase letters, digits and periods.</item><item>An abbreviation of the piece
-          consisting of any number of digits.</item><item>A hyphen and the letter one.</item></list>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="idno" mode="change" module="header" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2023-07-07" xml:lang="de">Identifikationsnummer</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">identification number</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">numéro d’identification</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält im Identifikationsnummer.</desc>
+    <desc versionDate="2025-02-06" xml:lang="en">Contains an identification number.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient un numéro d’identification.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="att.global.source"/>
+        <memberOf key="att.typed"/>
+    </classes>
+    <content>
+        <alternate maxOccurs="unbounded">
+            <elementRef key="hi"/>
+            <textNode/>
+        </alternate>
+    </content>
+    <constraintSpec ident="sch-el-idno" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-09-26" xml:lang="en">constraint for tei:idno</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:idno[parent::tei:seriesStmt]">
+                    <sch:assert test="not(@xml:lang)"> The usage of @xml:lang is prohibited, when
+                    tei:idno is used inside tei:seriesStmt. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+            <sch:pattern>
+                <sch:rule context="tei:idno[parent::tei:seriesStmt][not(@type)]">
+                    <sch:assert role="warning" test="matches(normalize-space(.),
+                    &apos;^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$&apos;)"> The tei:idno must match the defined schema – see the examples in the documentation. </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:idno[parent::tei:seriesStmt][@type]">
+                    <sch:assert test="matches(normalize-space(.),
+                    &apos;^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$&apos;)"> The tei:idno needs to be a UUID. </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:idno[parent::tei:msIdentifier]">
+                    <sch:assert test="@xml:lang"> The tei:idno needs an attribute @xml:lang if
+                    it&apos;s inside tei:msIdentifier. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+            <sch:pattern>
+                <sch:rule context="tei:TEI">
+                    <sch:let name="idnos" value="//tei:idno[not(parent::tei:altIdentifier)] !
+                    normalize-space(.)"/>
+                    <sch:assert test="count(distinct-values($idnos)) = count($idnos)"> The value of
+                    every tei:idno should be unique. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+            <sch:pattern>
+                <sch:rule context="tei:idno[tei:hi]">
+                    <sch:assert test="./ancestor::tei:msIdentifier"> tei:hi inside tei:idno is only
+                    allowed in tei:msIdentifier. </sch:assert>
+                    <sch:assert test="tei:hi/@rend = &apos;sup&apos;"> If tei:hi is used inside
+                    tei:idno the attribute rend must have the value &quot;sup&quot;. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="source" mode="replace">
+            <datatype>
+                <dataRef key="ssrq.pointer.url"/>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="replace">
+            <desc versionDate="2025-02-03" xml:lang="de">die Art der Identifikationsnummer</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the type of identification number</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">le type du numéro d’identification</desc>
+            <datatype>
+                <dataRef key="ssrq.type.idno"/>
+            </datatype>
+        </attDef>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-de"/>
+    <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-en"/>
+    <xi:include href="examples.xml" xpointer="ex-idno-msIdentifier-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-de"/>
+    <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-en"/>
+    <xi:include href="examples.xml" xpointer="ex-idno-seriesStmt-fr"/>
+    <remarks versionDate="2025-09-02" xml:lang="de">
+        <p>
+            Wir verwenden das Element in mehreren Zusammenhängen: In <gi>seriesStmt</gi> enthält
+            <gi>idno</gi> (mit <att>type</att> = <val>UUID</val>) eine <ref
+            target="https://de.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</ref>, um das
+            XML-Dokument eindeutig zu bezeichnen. Ebenfalls in <gi>seriesStmt</gi> wird das
+            Bandkürzel (Kanton, Teil, Stücknummer) der SSRQ angegeben. In <gi>msIdentifier</gi>
+            gibt <gi>idno</gi> die Archivsignatur eines Textträgers an, in diesem Fall richtet sich
+            diese nach dem System des jeweiligen Archivs.
         </p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-09-02">
-    <p>Nous utilisons cet élément dans plusieurs contextes : dans <gi>seriesStmt</gi>, <gi>idno</gi>
-      (avec <att>type</att> = <val>UUID</val>) contient un
-      <ref target="https://de.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</ref>
-      pour désigner de manière claire le document XML. Toujours dans <gi>seriesStmt</gi>, on
-      trouve l’abréviation du volume (canton, partie, numéro de document) des SDS.
-      Dans <gi>msIdentifier</gi>, <gi>idno</gi> indique la cote d’archive du support de texte
-      selon le système de classement de l’archive concernée.</p>
-    <p>Si <gi>idno</gi> contient une cote d’archive, l’abréviation de l’archive n’est pas suivie
-      d’une virgule.</p>
-    <p>Si <gi>idno</gi> contient un UUID, celui-ci doit correspondre à l’expression régulière
-      suivante :
-      <val>^[0-9A-Fa-f]{8}-[0-9A-Fa - f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>.
-      L’UUID est structuré comme suit :
-      <list><item>Exactement huit caractères parmi l’ensemble suivant : les chiffres "0-9", les
-        lettres majuscules "A-F" ou les lettres minuscules "a-f".</item><item>Un trait d’union.
-        </item><item>Exactement quatre caractères de l’ensemble ci-dessus.</item><item>Un trait
-        d’union.</item><item>Le chiffre "4" suivi de trois caractères du jeu ci-dessus.
-        </item><item>Un trait d’union.</item><item>Exactement un caractère du jeu suivant : "8",
-        "9", "A", "B", "a", "b" suivi d’exactement trois caractères de l’ensemble ci-dessus.
-        </item><item>Un trait d’union.</item><item>Exactement douze caractères de l’ensemble
-        ci-dessus.</item></list></p>
-    <p>Si <gi>idno</gi> désigne le volume des SDS, cela doit correspondre à l’expression régulière
-      suivante :
-      <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$</val>
-      Les abréviations de volume sont structurées comme suit :
-      <list><item>Le préfixe "SSRQ" ou "SDS" ou "FDS".</item><item>Un trait d’union.
-        </item><item>L’abréviation du canton composé de deux lettres majuscules.</item><item>Un
-        trait d’union.</item><item>Une abréviation du volume composée d’un nombre quelconque de
-        lettres majuscules, de lettres minuscules, de chiffres et de traits de soulignement.
-        </item><item>Un trait d’union.</item><item>La division du chapitre du volume
-        (facultatif) consistant en un nombre quelconque de lettres majuscules, minuscules,
-        chiffres et points.</item><item>Une désignation de la pièce composée d’un nombre quelconque.
-        </item><item>Un trait d’union et la chiffre "1".</item></list>
-    </p>
-  </remarks>
+        <p>
+            Enthält <gi>idno</gi> eine Archivsignatur, dann folgt auf das Kürzel des Archivs kein
+            Komma.
+        </p>
+        <p>
+            Enthält <gi>idno</gi> eine UUID, dann muss diese dem folgenden regulären Ausdruck
+            entsprechen:
+            <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>. Die UUID ist wie folgt aufgebaut:
+            <list>
+                <item>Genau acht Zeichen aus folgendem Set: die Ziffern &quot;0-9&quot;, die
+                Grossbuchstaben &quot;A-F&quot; oder die Kleinbuchstaben &quot;a-f&quot;.</item>
+                <item>Ein Bindestrich. </item>
+                <item>Genau vier Zeichen aus dem oben genannten Set.</item>
+                <item>Ein Bindestrich. </item>
+                <item>Die Ziffer &quot;4&quot;, gefolgt von drei Zeichen aus dem oben genannten
+                Set. </item>
+                <item>Ein Bindestrich.</item>
+                <item>Genau einmal ein Zeichen aus folgendem Set: &quot;8&quot;, &quot;9&quot;,
+                &quot;A&quot;, &quot;B&quot;, &quot;a&quot;, &quot;b&quot; gefolgt von genau drei
+                Zeichen aus dem oben genannten Set. </item>
+                <item>Ein Bindestrich. </item>
+                <item>Genau zwölf Zeichen aus dem oben genannten Set.</item>
+            </list>
+        </p>
+        <p>
+            Enthält <gi>idno</gi> ein Bandkürzel der SSRQ, dann muss dies dem folgenden regulären
+            Ausdruck entsprechen:
+            <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$</val>. Die Bandkürzel sind wie folgt aufgebaut:
+            <list>
+                <item>Das Präfix &quot;SSRQ&quot; oder &quot;SDS&quot; oder &quot;FDS&quot;.</item>
+                <item>Ein Bindestrich. </item>
+                <item>Das Kürzel des Kantons bestehend aus zwei Grossbuchstaben. </item>
+                <item>Ein Bindestrich.</item>
+                <item>Ein Kürzel des Bandes bestehend aus beliebig vielen Grossbuchstaben,
+                Kleinbuchstaben, Ziffern und Unterstrichen. </item>
+                <item>Ein Bindestrich.</item>
+                <item>Die Kapiteleinteilung des Bandes (optional) bestehend aus beliebig vielen
+                Grossbuchstaben, Kleinbuchstaben, Ziffern und Punkten. </item>
+                <item>Ein Kürzel des Stücks bestehend aus beliebig vielen Ziffern. </item>
+                <item>Ein Bindestrich und die Ziffer 1</item>
+            </list>
+        </p>
+    </remarks>
+    <remarks versionDate="2025-09-02" xml:lang="en">
+        <p>
+            If <gi>idno</gi> contains the signature of an archive, it has to match the system of
+            the respective archive.
+        </p>
+        <p>
+            If <gi>idno</gi> contains the signature of an archive, the abbreviation of the archive
+            is not followed by a comma
+        </p>
+        <p>
+            If <gi>idno</gi> contains a UUID, then it must match the following regular expression:
+            <val>^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-
+            9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>. The UUID is structured as follows:
+            <list>
+                <item>Exactly eight characters from the following set: the digits &quot;0-9&quot;,
+                the capital letters &quot;A-F&quot; or the lowercase letters
+                &quot;a-f&quot;.</item>
+                <item>A hyphen.</item>
+                <item>Exactly four characters from the above set.</item>
+                <item>A hyphen.</item>
+                <item>The digit &quot;4&quot; followed by three characters from the above
+                set.</item>
+                <item>A hyphen. </item>
+                <item>Exactly one character from the following set: &quot;8&quot;, &quot;9&quot;,
+                &quot;A&quot;, &quot;B&quot;, &quot;a&quot;, &quot;b&quot; followed by exactly
+                three characters from the above set.</item>
+                <item>A hyphen. </item>
+                <item>Exactly twelve characters from the above set.</item>
+            </list>
+        </p>
+        <p>
+            If <gi>idno</gi> contains a volume abbreviation of the SLS, then this must match the
+            following regular expression:
+            <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$</val>. The volume abbreviations are structured as follows:
+            <list>
+                <item>The prefix &quot;SSRQ&quot; or &quot;SDS&quot; or &quot;FDS&quot;.</item>
+                <item>A hyphen.</item>
+                <item>The abbreviation of the canton consisting of two capital letters.</item>
+                <item>A hyphen. </item>
+                <item>An abbreviation of the volume consisting of any number of uppercase letters,
+                lowercase letters, digits and underline.</item>
+                <item>A hyphen.</item>
+                <item>The chapter division of the volume (optional) consisting of any number of
+                capital letters, Lowercase letters, digits and periods.</item>
+                <item>An abbreviation of the piece consisting of any number of digits.</item>
+                <item>A hyphen and the letter one.</item>
+            </list>
+        </p>
+    </remarks>
+    <remarks versionDate="2025-09-02" xml:lang="fr">
+        <p>
+            Nous utilisons cet élément dans plusieurs contextes : dans <gi>seriesStmt</gi>,
+            <gi>idno</gi> (avec <att>type</att> = <val>UUID</val>) contient un <ref
+            target="https://de.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</ref> pour
+            désigner de manière claire le document XML. Toujours dans <gi>seriesStmt</gi>, on
+            trouve l’abréviation du volume (canton, partie, numéro de document) des SDS. Dans
+            <gi>msIdentifier</gi>, <gi>idno</gi> indique la cote d’archive du support de texte
+            selon le système de classement de l’archive concernée.
+        </p>
+        <p>
+            Si <gi>idno</gi> contient une cote d’archive, l’abréviation de l’archive n’est pas
+            suivie d’une virgule.
+        </p>
+        <p>
+            Si <gi>idno</gi> contient un UUID, celui-ci doit correspondre à l’expression régulière
+            suivante : <val>^[0-9A-Fa-f]{8}-[0-9A-Fa -
+            f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$</val>. L’UUID est
+            structuré comme suit :
+            <list>
+                <item>Exactement huit caractères parmi l’ensemble suivant : les chiffres
+                &quot;0-9&quot;, les lettres majuscules &quot;A-F&quot; ou les lettres minuscules
+                &quot;a-f&quot;.</item>
+                <item>Un trait d’union. </item>
+                <item>Exactement quatre caractères de l’ensemble ci-dessus.</item>
+                <item>Un trait d’union.</item>
+                <item>Le chiffre &quot;4&quot; suivi de trois caractères du jeu ci-dessus. </item>
+                <item>Un trait d’union.</item>
+                <item>Exactement un caractère du jeu suivant : &quot;8&quot;, &quot;9&quot;,
+                &quot;A&quot;, &quot;B&quot;, &quot;a&quot;, &quot;b&quot; suivi d’exactement trois
+                caractères de l’ensemble ci-dessus. </item>
+                <item>Un trait d’union.</item>
+                <item>Exactement douze caractères de l’ensemble ci-dessus.</item>
+            </list>
+        </p>
+        <p>
+            Si <gi>idno</gi> désigne le volume des SDS, cela doit correspondre à l’expression
+            régulière suivante :
+            <val>^(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(?:(?:[A-Za-z0-9]+\.)*)([0-9]+)-1$</val> Les abréviations de volume sont structurées comme suit :
+            <list>
+                <item>Le préfixe &quot;SSRQ&quot; ou &quot;SDS&quot; ou &quot;FDS&quot;.</item>
+                <item>Un trait d’union. </item>
+                <item>L’abréviation du canton composé de deux lettres majuscules.</item>
+                <item>Un trait d’union.</item>
+                <item>Une abréviation du volume composée d’un nombre quelconque de lettres
+                majuscules, de lettres minuscules, de chiffres et de traits de soulignement.
+                </item>
+                <item>Un trait d’union.</item>
+                <item>La division du chapitre du volume (facultatif) consistant en un nombre
+                quelconque de lettres majuscules, minuscules, chiffres et points.</item>
+                <item>Une désignation de la pièce composée d’un nombre quelconque. </item>
+                <item>Un trait d’union et la chiffre &quot;1&quot;.</item>
+            </list>
+        </p>
+    </remarks>
 </elementSpec>

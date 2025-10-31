@@ -1,49 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="summary" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2023-07-15">Regest</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">regest</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">résumé</gloss>
-  <desc xml:lang="de" versionDate="2025-02-07">Enthält ein ausführliches Regest des Textes.</desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Describes the content of the source in detail.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-07">Contient un résumé détaillé du texte.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-  </classes>
-  <content>
-    <elementRef key="p" maxOccurs="unbounded"/>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-summary">
-    <desc xml:lang="en" versionDate="2023-04-14">constraint for tei:summary</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:summary/tei:p">
-          <sch:assert test="not(.[@xml:lang])">
-            tei:p inside tei:summary should not have an attribute @xml:lang.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="n" mode="delete"/>
-    <attDef ident="xml:id" mode="delete"/>
-    <attDef ident="xml:lang" mode="change" usage="req"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-summary-de"/>
-  <xi:include href="examples.xml" xpointer="ex-summary-en"/>
-  <xi:include href="examples.xml" xpointer="ex-summary-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-summary-list-de"/>
-  <xi:include href="examples.xml" xpointer="ex-summary-list-en"/>
-  <xi:include href="examples.xml" xpointer="ex-summary-list-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-07">
-    <p>Mit dem Attribut <att>xml:lang</att> kann die Sprache des Regests angegeben werden.
-      Einem Text können so Regeste in mehreren Sprachen beigegeben werden.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>L’attribut <att>xml:lang</att> permet d’indiquer la langue du résumé. Un texte peut être
-      accompagné de résumés dans plusieurs langues.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="summary" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2023-07-15" xml:lang="de">Regest</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">regest</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">résumé</gloss>
+    <desc versionDate="2025-02-07" xml:lang="de">Enthält ein ausführliches Regest des
+    Textes.</desc>
+    <desc versionDate="2023-07-15" xml:lang="en">Describes the content of the source in
+    detail.</desc>
+    <desc versionDate="2025-02-07" xml:lang="fr">Contient un résumé détaillé du texte.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <elementRef key="p" maxOccurs="unbounded"/>
+    </content>
+    <constraintSpec ident="sch-el-summary" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-04-14" xml:lang="en">constraint for tei:summary</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:summary/tei:p">
+                    <sch:assert test="not(.[@xml:lang])"> tei:p inside tei:summary should not have
+                    an attribute @xml:lang. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="xml:lang" mode="change" usage="req"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-summary-de"/>
+    <xi:include href="examples.xml" xpointer="ex-summary-en"/>
+    <xi:include href="examples.xml" xpointer="ex-summary-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-summary-list-de"/>
+    <xi:include href="examples.xml" xpointer="ex-summary-list-en"/>
+    <xi:include href="examples.xml" xpointer="ex-summary-list-fr"/>
+    <remarks versionDate="2025-02-07" xml:lang="de">
+        <p>
+            Mit dem Attribut <att>xml:lang</att> kann die Sprache des Regests angegeben werden.
+            Einem Text können so Regeste in mehreren Sprachen beigegeben werden.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-07" xml:lang="fr">
+        <p>
+            L’attribut <att>xml:lang</att> permet d’indiquer la langue du résumé. Un texte peut
+            être accompagné de résumés dans plusieurs langues.
+        </p>
+    </remarks>
 </elementSpec>

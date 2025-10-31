@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="msIdentifier" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Handschriftenbezeichner</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">manuscript identifier</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">identification du manuscrit</gloss>
-  <desc xml:lang="de" versionDate="2025-07-10">Beschreibt den aktuellen und früheren
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="msIdentifier" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Handschriftenbezeichner</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">manuscript identifier</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">identification du manuscrit</gloss>
+    <desc versionDate="2025-07-10" xml:lang="de">Beschreibt den aktuellen und früheren
     Aufbewahrungsort sowie die aufbewahrende Institution des Textträgers, ebenso wie dessen
-    Signatur oder eine andere Kennung, die zur Lokalisierung innerhalb dieser Institution
-    verwendet wird.</desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Describes the current and historical locations of
+    Signatur oder eine andere Kennung, die zur Lokalisierung innerhalb dieser Institution verwendet
+    wird.</desc>
+    <desc versionDate="2023-07-15" xml:lang="en">Describes the current and historical locations of
     the source.</desc>
-  <desc xml:lang="fr" versionDate="2025-07-10">Décrit le lieu de conservation actuel et ancien,
+    <desc versionDate="2025-07-10" xml:lang="fr">Décrit le lieu de conservation actuel et ancien,
     l’institution de conservation du support de texte, ainsi que sa cote ou tout autre identifiant
     utilisé pour indiquer sa localisation au sein de cette institution.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence>
-      <sequence maxOccurs="unbounded">
-        <elementRef key="settlement"/>
-        <elementRef key="repository"/>
-        <elementRef key="idno"/>
-      </sequence>
-      <elementRef key="altIdentifier" minOccurs="0" maxOccurs="unbounded"/>
-    </sequence>
-  </content>
-  <!-- This overrides an erroneous constraint in the TEI guidelines -->
-  <constraintSpec xml:lang="en" scheme="schematron" ident="msId_minimal" mode="delete"/>
-  <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
-  <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
-  <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <sequence maxOccurs="unbounded">
+                <elementRef key="settlement"/>
+                <elementRef key="repository"/>
+                <elementRef key="idno"/>
+            </sequence>
+            <elementRef key="altIdentifier" maxOccurs="unbounded" minOccurs="0"/>
+        </sequence>
+    </content>
+    <!--This overrides an erroneous constraint in the TEI guidelines-->
+    <constraintSpec ident="msId_minimal" mode="delete" scheme="schematron" xml:lang="en"/>
+    <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
+    <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
+    <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>
 </elementSpec>

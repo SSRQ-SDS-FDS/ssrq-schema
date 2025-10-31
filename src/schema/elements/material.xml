@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="material" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Material</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">material</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">matériau</gloss>
-  <desc xml:lang="de" versionDate="2025-02-27">Beschreibt das Material des Textträgers.</desc>
-  <desc xml:lang="en" versionDate="2023-04-14">Describes the support material.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-27">Décrit le matériau du support de texte.</desc>
-  <classes mode="replace">
-    <memberOf key="att.typed"/>
-    <memberOf key="model.pPart.msdesc"/>
-  </classes>
-  <content>
-    <empty/>
-  </content>
-  <attList>
-    <attDef ident="type" mode="change" usage="req">
-      <desc xml:lang="de" versionDate="2025-02-03">die Art des Materials</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the type of material</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">le type de matériau</desc>
-      <datatype>
-        <dataRef key="ssrq.type.material"/>
-      </datatype>
-    </attDef>
-    <attDef ident="function" mode="delete"/>
-    <attDef ident="target" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-support-de"/>
-  <xi:include href="examples.xml" xpointer="ex-support-en"/>
-  <xi:include href="examples.xml" xpointer="ex-support-fr"/>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="material" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Material</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">material</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">matériau</gloss>
+    <desc versionDate="2025-02-27" xml:lang="de">Beschreibt das Material des Textträgers.</desc>
+    <desc versionDate="2023-04-14" xml:lang="en">Describes the support material.</desc>
+    <desc versionDate="2025-02-27" xml:lang="fr">Décrit le matériau du support de texte.</desc>
+    <classes mode="replace">
+        <memberOf key="att.typed"/>
+        <memberOf key="model.pPart.msdesc"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="type" mode="change" usage="req">
+            <desc versionDate="2025-02-03" xml:lang="de">die Art des Materials</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the type of material</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">le type de matériau</desc>
+            <datatype>
+                <dataRef key="ssrq.type.material"/>
+            </datatype>
+        </attDef>
+        <attDef ident="function" mode="delete"/>
+        <attDef ident="target" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-support-de"/>
+    <xi:include href="examples.xml" xpointer="ex-support-en"/>
+    <xi:include href="examples.xml" xpointer="ex-support-fr"/>
 </elementSpec>

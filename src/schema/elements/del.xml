@@ -1,94 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="del" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Tilgung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">deletion</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">suppression</gloss>
-  <desc xml:lang="de" versionDate="2025-02-05">Enthält eine Tilgung durch einen Schreiber.</desc>
-  <desc xml:lang="en" versionDate="2023-05-24">Contains text deleted by a writer.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Contient une suppression effectuée par un
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="del" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Tilgung</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">deletion</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">suppression</gloss>
+    <desc versionDate="2025-02-05" xml:lang="de">Enthält eine Tilgung durch einen Schreiber.</desc>
+    <desc versionDate="2023-05-24" xml:lang="en">Contains text deleted by a writer.</desc>
+    <desc versionDate="2025-02-05" xml:lang="fr">Contient une suppression effectuée par un
     scribe.</desc>
-  <classes>
-    <memberOf key="att.global.rendition"/>
-    <memberOf key="att.written"/>
-    <memberOf key="model.linePart"/>
-    <memberOf key="model.pPart.transcriptional"/>
-  </classes>
-  <content>
-    <alternate>
-      <elementRef key="seg" minOccurs="2" maxOccurs="unbounded"/>
-      <sequence>
-        <elementRef key="head" minOccurs="0"/>
-        <elementRef key="p" maxOccurs="unbounded"/>
-      </sequence>
-      <sequence maxOccurs="unbounded">
-        <macroRef key="ssrq.content.default"/>
-      </sequence>
-    </alternate>
-  </content>
-  <attList>
-    <attDef ident="rend" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Tilgung</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the appearance of the deletion</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">l’apparence de la suppression</desc>
-      <datatype>
-        <dataRef key="ssrq.rend.del"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-del-de"/>
-  <xi:include href="examples.xml" xpointer="ex-del-en"/>
-  <xi:include href="examples.xml" xpointer="ex-del-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-del-gap-de"/>
-  <xi:include href="examples.xml" xpointer="ex-del-gap-en"/>
-  <xi:include href="examples.xml" xpointer="ex-del-gap-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-subst-de"/>
-  <xi:include href="examples.xml" xpointer="ex-subst-en"/>
-  <xi:include href="examples.xml" xpointer="ex-subst-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-del-unclear-de"/>
-  <xi:include href="examples.xml" xpointer="ex-del-unclear-en"/>
-  <xi:include href="examples.xml" xpointer="ex-del-unclear-fr"/>
-  <remarks xml:lang="de" versionDate="2025-07-17">
-    <p>Mit <gi>del</gi> werden keine Streichungen, die von der Editorin oder dem Editor stammen,
-      ausgezeichnet, sondern nur solche, die ein Schreiber vorgenommen hat. Bei mehrfach
-      gestrichenen Texten, oder wenn Streichungen Hierarchiegrenzen überschreiten, müssen
-      <gi>delSpan</gi> und <gi>anchor</gi> benutzt werden. Die Hierarchiegrenze wird
-      überschritten, wenn die Verwendung von <gi>del</gi> aufgrund der Verschachtelung vieler
-      Elemente nicht mehr ausreicht. Dasselbe Prinzip gilt für <gi>add</gi> und <gi>damage</gi>.</p>
-    <p>Rasuren werden mit dem Attribut <att>rend</att> = <val>rubbing</val> ausgezeichnet. Wenn bei
-      Rasuren oder auch bei heftigen Streichungen gar nichts mehr lesbar ist, wird ein
-      leeres <gi>gap</gi> innerhalb von <gi>del</gi> verwendet.</p>
-    <p>Das Attribut <att>hand</att> wird für Streichungen von anderer Hand verwendet, die oft an
-      einer anderen Tintenfarbe zu erkennen sind. Handelt es sich um spätere Texteingriffe,
-      z. B. Streichung mit anschliessender Korrektur, wird die Hand bei <gi>add</gi>
-      innerhalb von <gi>subst</gi> nachgewiesen.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-19">
-    <p>With <gi>del</gi> no deletions that come from the editor are marked, only those that are in
-        the source. If text is deleted several times or if deletions cross hierarchical
-        boundaries, <gi>delSpan</gi> and <gi>anchor</gi> must be used.</p>
-    <p>Shaves are marked with the attribute <att>rend</att> = <val>rubbing</val>. If nothing is
-        legible after shaving or heavy stroking, an empty <gi>gap</gi> is used within <gi>del</gi>.
-    </p>
-    <p>The <att>hand</att> attribute is used for strokes with other ink. In later text
-        interventions (deletion with correction), <att>hand</att> is found at <gi>add</gi>
-        within <gi>subst</gi>.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-07-17">
-    <p>Avec <gi>del</gi>, on ne marque pas les suppressions qui proviennent de l’éditeur, mais
-      seulement celles qui ont été effectuées par un scribe. Pour les textes biffés plusieurs
-      fois ou lorsque les suppressions dépassent les limites hiérarchiques, il faut utiliser
-      <gi>delSpan</gi> et <gi>anchor</gi>. La limite hiérarchique est dépassée si l’utilisation
-      de <gi>del</gi> ne suffit plus en raison de l’imbrication de nombreux éléments. Ce même
-      principe s’applique pour <gi>add</gi> et <gi>damage</gi>.</p>
-    <p>Le texte érasé est signalés par l’attribut <att>rend</att> = <val>rubbing</val>. Si, en
-      cas de gommage ou de ratures intense, plus rien n’est lisible, on utilise <gi>gap</gi>
-      vide à l’intérieur de <gi>del</gi>.</p>
-    <p>L’attribut <att>hand</att> est utilisé pour les ratures d’une autre main, qui sont
-      souvent reconnaissables à une autre couleur d’encre. S’il s’agit d’une intervention
-      ultérieure sur le texte, par exemple une rature suivie d’une correction, la main est
-      indiquée par <gi>add</gi> à l’intérieur de <gi>subst</gi>.</p>
-  </remarks>
+    <classes>
+        <memberOf key="att.global.rendition"/>
+        <memberOf key="att.written"/>
+        <memberOf key="model.linePart"/>
+        <memberOf key="model.pPart.transcriptional"/>
+    </classes>
+    <content>
+        <alternate>
+            <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
+            <sequence>
+                <elementRef key="head" minOccurs="0"/>
+                <elementRef key="p" maxOccurs="unbounded"/>
+            </sequence>
+            <sequence maxOccurs="unbounded">
+                <macroRef key="ssrq.content.default"/>
+            </sequence>
+        </alternate>
+    </content>
+    <attList>
+        <attDef ident="rend" mode="replace">
+            <desc versionDate="2025-02-03" xml:lang="de">das Aussehen der Tilgung</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the appearance of the deletion</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">l’apparence de la suppression</desc>
+            <datatype>
+                <dataRef key="ssrq.rend.del"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-del-de"/>
+    <xi:include href="examples.xml" xpointer="ex-del-en"/>
+    <xi:include href="examples.xml" xpointer="ex-del-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-del-gap-de"/>
+    <xi:include href="examples.xml" xpointer="ex-del-gap-en"/>
+    <xi:include href="examples.xml" xpointer="ex-del-gap-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-subst-de"/>
+    <xi:include href="examples.xml" xpointer="ex-subst-en"/>
+    <xi:include href="examples.xml" xpointer="ex-subst-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-del-unclear-de"/>
+    <xi:include href="examples.xml" xpointer="ex-del-unclear-en"/>
+    <xi:include href="examples.xml" xpointer="ex-del-unclear-fr"/>
+    <remarks versionDate="2025-07-17" xml:lang="de">
+        <p>
+            Mit <gi>del</gi> werden keine Streichungen, die von der Editorin oder dem Editor
+            stammen, ausgezeichnet, sondern nur solche, die ein Schreiber vorgenommen hat. Bei
+            mehrfach gestrichenen Texten, oder wenn Streichungen Hierarchiegrenzen überschreiten,
+            müssen <gi>delSpan</gi> und <gi>anchor</gi> benutzt werden. Die Hierarchiegrenze wird
+            überschritten, wenn die Verwendung von <gi>del</gi> aufgrund der Verschachtelung vieler
+            Elemente nicht mehr ausreicht. Dasselbe Prinzip gilt für <gi>add</gi> und
+            <gi>damage</gi>.
+        </p>
+        <p>
+            Rasuren werden mit dem Attribut <att>rend</att> = <val>rubbing</val> ausgezeichnet.
+            Wenn bei Rasuren oder auch bei heftigen Streichungen gar nichts mehr lesbar ist, wird
+            ein leeres <gi>gap</gi> innerhalb von <gi>del</gi> verwendet.
+        </p>
+        <p>
+            Das Attribut <att>hand</att> wird für Streichungen von anderer Hand verwendet, die oft
+            an einer anderen Tintenfarbe zu erkennen sind. Handelt es sich um spätere
+            Texteingriffe, z. B. Streichung mit anschliessender Korrektur, wird die Hand bei
+            <gi>add</gi> innerhalb von <gi>subst</gi> nachgewiesen.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-19" xml:lang="en">
+        <p>
+            With <gi>del</gi> no deletions that come from the editor are marked, only those that
+            are in the source. If text is deleted several times or if deletions cross hierarchical
+            boundaries, <gi>delSpan</gi> and <gi>anchor</gi> must be used.
+        </p>
+        <p>
+            Shaves are marked with the attribute <att>rend</att> = <val>rubbing</val>. If nothing
+            is legible after shaving or heavy stroking, an empty <gi>gap</gi> is used within
+            <gi>del</gi>.
+        </p>
+        <p>
+            The <att>hand</att> attribute is used for strokes with other ink. In later text
+            interventions (deletion with correction), <att>hand</att> is found at <gi>add</gi>
+            within <gi>subst</gi>.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-07-17" xml:lang="fr">
+        <p>
+            Avec <gi>del</gi>, on ne marque pas les suppressions qui proviennent de l’éditeur, mais
+            seulement celles qui ont été effectuées par un scribe. Pour les textes biffés plusieurs
+            fois ou lorsque les suppressions dépassent les limites hiérarchiques, il faut utiliser
+            <gi>delSpan</gi> et <gi>anchor</gi>. La limite hiérarchique est dépassée si
+            l’utilisation de <gi>del</gi> ne suffit plus en raison de l’imbrication de nombreux
+            éléments. Ce même principe s’applique pour <gi>add</gi> et <gi>damage</gi>.
+        </p>
+        <p>
+            Le texte érasé est signalés par l’attribut <att>rend</att> = <val>rubbing</val>. Si, en
+            cas de gommage ou de ratures intense, plus rien n’est lisible, on utilise <gi>gap</gi>
+            vide à l’intérieur de <gi>del</gi>.
+        </p>
+        <p>
+            L’attribut <att>hand</att> est utilisé pour les ratures d’une autre main, qui sont
+            souvent reconnaissables à une autre couleur d’encre. S’il s’agit d’une intervention
+            ultérieure sur le texte, par exemple une rature suivie d’une correction, la main est
+            indiquée par <gi>add</gi> à l’intérieur de <gi>subst</gi>.
+        </p>
+    </remarks>
 </elementSpec>

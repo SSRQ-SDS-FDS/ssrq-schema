@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-del">
-        das best hoͧbt aͧn ein hoͧbt oder <del rend="strikethrough">das</del><lb/>das best gewant oder
+    <egXML xml:id="ex-del" xmlns="http://www.tei-c.org/ns/Examples">
+        das best hoͧbt aͧn ein hoͧbt oder <del rend="strikethrough">das</del>
+        <lb/>das best gewant oder
     </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-del-gap">
-    <del rend="rubbing">
-      <gap unit="cm" quantity="1"/>
-    </del>
-  </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-del-unclear">
+    <egXML xml:id="ex-del-gap" xmlns="http://www.tei-c.org/ns/Examples">
+        <del rend="rubbing"> <gap quantity="1" unit="cm"/> </del>
+    </egXML>
+    <egXML xml:id="ex-del-unclear" xmlns="http://www.tei-c.org/ns/Examples">
         , wird pfand geben oder genommen umm <del><unclear>in</unclear></del>
     </egXML>
 </div>

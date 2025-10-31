@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-measure-age"><lb/>wan das jeman unser lannttluͤtten, er sye jung oder alltt,
-    <lb/><measure type="age" unit="year" quantity="14">ob vierzechen jarenn</measure>
-    <lb/>von ainem paner endrunne ...
-</egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-measure-price">
-    Item
-    <measure type="weight" unit="Zentner" quantity="1" commodity="wool">ein zentner landtwull</measure>
-    git
-    <measure type="currency" unit="ß" quantity="2">ij ß</measure>.
-</egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-measure-unclear">
-    <measure type="currency" unit="lb" quantity="unknown">etlich hundert pfund</measure>
-  </egXML>
+    <egXML xml:id="ex-measure-age" xmlns="http://www.tei-c.org/ns/Examples">
+        <lb/>wan das jeman unser lannttluͤtten, er sye jung oder alltt,
+        <lb/><measure quantity="14" type="age" unit="year">ob vierzechen jarenn</measure>
+        <lb/>von ainem paner endrunne ...
+    </egXML>
+    <egXML xml:id="ex-measure-price" xmlns="http://www.tei-c.org/ns/Examples">
+        Item <measure commodity="wool" quantity="1" type="weight" unit="Zentner">ein zentner landtwull</measure> git <measure quantity="2" type="currency"
+        unit="ß">ij ß</measure>.
+    </egXML>
+    <egXML xml:id="ex-measure-unclear" xmlns="http://www.tei-c.org/ns/Examples">
+        <measure quantity="unknown" type="currency" unit="lb">etlich hundert pfund</measure>
+    </egXML>
 </div>

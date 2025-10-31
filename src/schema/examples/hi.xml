@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-hi-sup">
+    <egXML xml:id="ex-hi-sup" xmlns="http://www.tei-c.org/ns/Examples">
         deß 1729<hi rend="sup">ten</hi> jahrs
     </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-hi-underline">
-    <hi rend="underline" hand="laterHand">unterstrichener Text mit anderer Tinte</hi>
-  </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-hi-num"><num value="110">i<hi rend="sup">c</hi> und x</num> eyer.
-  </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-hi-rotated"><hi rend="rotated_90">Text, der von oben nach unten läuft</hi>.
-  </egXML>
+    <egXML xml:id="ex-hi-underline" xmlns="http://www.tei-c.org/ns/Examples">
+        <hi hand="laterHand" rend="underline">unterstrichener Text mit anderer Tinte</hi>
+    </egXML>
+    <egXML xml:id="ex-hi-num" xmlns="http://www.tei-c.org/ns/Examples">
+        <num value="110">i<hi rend="sup">c</hi> und x</num> eyer.
+    </egXML>
+    <egXML xml:id="ex-hi-rotated" xmlns="http://www.tei-c.org/ns/Examples">
+        <hi rend="rotated_90">Text, der von oben nach unten läuft</hi>.
+    </egXML>
 </div>

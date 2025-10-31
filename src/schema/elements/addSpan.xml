@@ -1,74 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="addSpan" module="transcr" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">hinzugefügte Passage</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">added passage</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">passage supplémentaire</gloss>
-  <desc xml:lang="de" versionDate="2025-02-05">Markiert eine grössere, die Hierarchiegrenzen
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="addSpan" mode="change" module="transcr" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">hinzugefügte Passage</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">added passage</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">passage supplémentaire</gloss>
+    <desc versionDate="2025-02-05" xml:lang="de">Markiert eine grössere, die Hierarchiegrenzen
     überschreitende Hinzufügung eines Schreibers.</desc>
-  <desc xml:lang="en" versionDate="2023-07-13">Denotes major additions.</desc>
-  <desc xml:lang="fr" versionDate="2025-04-29">Marque l’ajout de la part d’un scribe d’une
+    <desc versionDate="2023-07-13" xml:lang="en">Denotes major additions.</desc>
+    <desc versionDate="2025-04-29" xml:lang="fr">Marque l’ajout de la part d’un scribe d’une
     importante séquence de texte qui ne peut être signalée seulement par un <gi>add</gi>.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global.rendition"/>
-    <memberOf key="att.placement"/>
-    <memberOf key="att.spanning"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="att.written"/>
-  </classes>
-  <content>
-    <empty/>
-  </content>
-  <attList>
-    <attDef ident="place" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-04">der Ort der Hinzufügung</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the place of the addition</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">le lieu d’ajout</desc>
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.place"/>
-          <rng:ref name="ssrq.place.add"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-    <attDef ident="rend" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-04">das verwendete Schreibmittel</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the writing means used</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d’écriture utilisés</desc>
-      <datatype>
-        <dataRef key="ssrq.rend.add"/>
-      </datatype>
-    </attDef>
-    <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2025-01-29">die Art der Hinzufügung</desc>
-      <desc xml:lang="en" versionDate="2025-01-29">the kind of addition</desc>
-      <desc xml:lang="fr" versionDate="2025-01-29">le type d’ajout</desc>
-      <datatype>
-        <dataRef key="ssrq.type.add"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-addSpan-de"/>
-  <xi:include href="examples.xml" xpointer="ex-addSpan-en"/>
-  <xi:include href="examples.xml" xpointer="ex-addSpan-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-05">
-    <p>Für <gi>addSpan</gi> gelten die gleichen Regeln wie für <gi>add</gi> (s. dort).</p>
-    <p>Zusätzlich wird mit dem Attribut <att>spanTo</att> zwingend auf den Endpunkt der
-      Hinzufügung verwiesen, der mit <gi>anchor</gi> markiert wird.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-11">
-    <p>The attribute <att>spanTo</att> is used to refer to the end point of the addition which is
-        marked with <gi>anchor</gi>.</p>
-    <p>The place of addition must be in <att>place</att> and the hand of the added place can be held
-        with <att>hand</att>. If necessary, inside <att>rend</att> it can be specified how the
-        addition was made (pencil, other ink, etc.). If an addition is the hand of the first
-        scribe, then the hand is not specifically noted.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-04-29">
-    <p>Les mêmes règles s’appliquent à <gi>addSpan</gi> qu’à <gi>add</gi> (voir ici).</p>
-    <p>De plus, l’attribut <att>spanTo</att> est utilisé pour faire référence au point final du
-      passage ajouté, qui est marqué par <gi>anchor</gi>.</p>
-  </remarks>
+    <classes mode="replace">
+        <memberOf key="att.global.rendition"/>
+        <memberOf key="att.placement"/>
+        <memberOf key="att.spanning"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="att.written"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="place" mode="replace">
+            <desc versionDate="2025-02-04" xml:lang="de">der Ort der Hinzufügung</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the place of the addition</desc>
+            <desc versionDate="2025-02-04" xml:lang="fr">le lieu d’ajout</desc>
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.place"/>
+                    <rng:ref name="ssrq.place.add"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="rend" mode="replace">
+            <desc versionDate="2025-02-04" xml:lang="de">das verwendete Schreibmittel</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the writing means used</desc>
+            <desc versionDate="2025-02-04" xml:lang="fr">les moyens d’écriture utilisés</desc>
+            <datatype>
+                <dataRef key="ssrq.rend.add"/>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="replace">
+            <desc versionDate="2025-01-29" xml:lang="de">die Art der Hinzufügung</desc>
+            <desc versionDate="2025-01-29" xml:lang="en">the kind of addition</desc>
+            <desc versionDate="2025-01-29" xml:lang="fr">le type d’ajout</desc>
+            <datatype>
+                <dataRef key="ssrq.type.add"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-addSpan-de"/>
+    <xi:include href="examples.xml" xpointer="ex-addSpan-en"/>
+    <xi:include href="examples.xml" xpointer="ex-addSpan-fr"/>
+    <remarks versionDate="2025-02-05" xml:lang="de">
+        <p>
+            Für <gi>addSpan</gi> gelten die gleichen Regeln wie für <gi>add</gi> (s. dort).
+        </p>
+        <p>
+            Zusätzlich wird mit dem Attribut <att>spanTo</att> zwingend auf den Endpunkt der
+            Hinzufügung verwiesen, der mit <gi>anchor</gi> markiert wird.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-11" xml:lang="en">
+        <p>
+            The attribute <att>spanTo</att> is used to refer to the end point of the addition which
+            is marked with <gi>anchor</gi>.
+        </p>
+        <p>
+            The place of addition must be in <att>place</att> and the hand of the added place can
+            be held with <att>hand</att>. If necessary, inside <att>rend</att> it can be specified
+            how the addition was made (pencil, other ink, etc.). If an addition is the hand of the
+            first scribe, then the hand is not specifically noted.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-04-29" xml:lang="fr">
+        <p>
+            Les mêmes règles s’appliquent à <gi>addSpan</gi> qu’à <gi>add</gi> (voir ici).
+        </p>
+        <p>
+            De plus, l’attribut <att>spanTo</att> est utilisé pour faire référence au point final
+            du passage ajouté, qui est marqué par <gi>anchor</gi>.
+        </p>
+    </remarks>
 </elementSpec>

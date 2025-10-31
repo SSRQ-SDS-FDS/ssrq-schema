@@ -1,61 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="text" module="textstructure" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Text</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">text</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">texte</gloss>
-  <desc xml:lang="de" versionDate="2025-02-07">Enthält in <gi>body</gi> den vollständigen edierten
-    Text und in <gi>back</gi> die zugehörige Kommentierung.</desc>
-  <desc xml:lang="en" versionDate="2023-04-04">Includes all characters physically present on a
-        source item or in a book (transcription / edition, i.e. primary data) as well as the
-        commentary on the edited piece.
-    </desc>
-  <desc xml:lang="fr" versionDate="2025-02-07">Contient le texte édité complet dans <gi>body</gi>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="text" mode="change" module="textstructure" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Text</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">text</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">texte</gloss>
+    <desc versionDate="2025-02-07" xml:lang="de">Enthält in <gi>body</gi> den vollständigen
+    edierten Text und in <gi>back</gi> die zugehörige Kommentierung.</desc>
+    <desc versionDate="2023-04-04" xml:lang="en">Includes all characters physically present on a
+    source item or in a book (transcription / edition, i.e. primary data) as well as the commentary
+    on the edited piece. </desc>
+    <desc versionDate="2025-02-07" xml:lang="fr">Contient le texte édité complet dans <gi>body</gi>
     et le commentaire associé dans <gi>back</gi>.</desc>
-  <classes mode="replace">
-    <memberOf key="att.typed"/>
-    <memberOf key="model.resource"/>
-  </classes>
-  <content>
-    <sequence>
-      <elementRef key="body"/>
-      <elementRef key="back" minOccurs="0"/>
-    </sequence>
-  </content>
-  <attList>
-    <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2025-02-03">die Art des Textes</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the type of the text</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">le type du texte</desc>
-      <datatype>
-        <dataRef key="ssrq.type.text"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-text-1-de"/>
-  <xi:include href="examples.xml" xpointer="ex-text-1-en"/>
-  <xi:include href="examples.xml" xpointer="ex-text-1-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-text-2-de"/>
-  <xi:include href="examples.xml" xpointer="ex-text-2-en"/>
-  <xi:include href="examples.xml" xpointer="ex-text-2-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-07">
-    <p>Im Normalfall, wenn in einem XML-Dokument genau ein Text ediert wird, wird im Attribut
-      <att>type</att> der Wert <val>transcript</val> angegeben. Wird statt des Texts nur ein
-      Regest desselben herausgegeben, steht hierfür der Wert <val>summary</val>. Handelt es sich
-      um ein Mantelstück, d. h. eine Sammlung von Texten, die unter einer Stücknummer ediert werden,
-      dann wird das mit <val>collection</val> ausgedrückt. In diesem Fall enthält der <gi>body</gi>
-      keinen Editionstext, sondern lediglich die Verweise auf die einzelnen Texte der edierten
-      Sammlung.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>Dans le cas normal où un seul texte est édité dans un document XML, la valeur
-      <val>transcript</val> est indiquée dans l’attribut <att>type</att>. Si, au lieu du texte,
-      seul un résumé de celui-ci est édité, la valeur <val>summary</val> lui est attribuée.
-      S’il s’agit d’une pièce maîtresse, c’est-à-dire d’une collection de textes
-      édités sous un numéro de pièce, cela est exprimé par <val>collection</val>.
-      Dans ce cas, le <gi>body</gi> ne contient pas l’édition du texte, mais uniquement
-      les renvois aux différents textes de la collection éditée.</p>
-  </remarks>
+    <classes mode="replace">
+        <memberOf key="att.typed"/>
+        <memberOf key="model.resource"/>
+    </classes>
+    <content>
+        <sequence>
+            <elementRef key="body"/>
+            <elementRef key="back" minOccurs="0"/>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="type" mode="replace" usage="req">
+            <desc versionDate="2025-02-03" xml:lang="de">die Art des Textes</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the type of the text</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">le type du texte</desc>
+            <datatype>
+                <dataRef key="ssrq.type.text"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-text-1-de"/>
+    <xi:include href="examples.xml" xpointer="ex-text-1-en"/>
+    <xi:include href="examples.xml" xpointer="ex-text-1-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-text-2-de"/>
+    <xi:include href="examples.xml" xpointer="ex-text-2-en"/>
+    <xi:include href="examples.xml" xpointer="ex-text-2-fr"/>
+    <remarks versionDate="2025-02-07" xml:lang="de">
+        <p>
+            Im Normalfall, wenn in einem XML-Dokument genau ein Text ediert wird, wird im Attribut
+            <att>type</att> der Wert <val>transcript</val> angegeben. Wird statt des Texts nur ein
+            Regest desselben herausgegeben, steht hierfür der Wert <val>summary</val>. Handelt es
+            sich um ein Mantelstück, d. h. eine Sammlung von Texten, die unter einer Stücknummer
+            ediert werden, dann wird das mit <val>collection</val> ausgedrückt. In diesem Fall
+            enthält der <gi>body</gi> keinen Editionstext, sondern lediglich die Verweise auf die
+            einzelnen Texte der edierten Sammlung.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-07" xml:lang="fr">
+        <p>
+            Dans le cas normal où un seul texte est édité dans un document XML, la valeur
+            <val>transcript</val> est indiquée dans l’attribut <att>type</att>. Si, au lieu du
+            texte, seul un résumé de celui-ci est édité, la valeur <val>summary</val> lui est
+            attribuée. S’il s’agit d’une pièce maîtresse, c’est-à-dire d’une collection de textes
+            édités sous un numéro de pièce, cela est exprimé par <val>collection</val>. Dans ce
+            cas, le <gi>body</gi> ne contient pas l’édition du texte, mais uniquement les renvois
+            aux différents textes de la collection éditée.
+        </p>
+    </remarks>
 </elementSpec>

@@ -1,48 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="witness" module="textcrit" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Textzeuge</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">text witness</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">témoin</gloss>
-  <desc xml:lang="de" versionDate="2025-07-14">Enthält die Beschreibung eines Textzeugen.</desc>
-  <desc xml:lang="en" versionDate="2023-08-23">Contains the piece description of a source
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="witness" mode="change" module="textcrit" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Textzeuge</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">text witness</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">témoin</gloss>
+    <desc versionDate="2025-07-14" xml:lang="de">Enthält die Beschreibung eines Textzeugen.</desc>
+    <desc versionDate="2023-08-23" xml:lang="en">Contains the piece description of a source
     (originals, copies, etc.).</desc>
-  <desc xml:lang="fr" versionDate="2025-07-14">Contient la description d’un témoin.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-  </classes>
-  <content>
-    <elementRef key="msDesc"/>
-  </content>
-  <attList>
-    <attDef ident="n" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Textzeugen</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the numbering of the text witness</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation du témoin</desc>
-      <datatype>
-        <dataRef name="string" restriction="[A-Z][0-9]?"/>
-      </datatype>
-    </attDef>
-    <attDef ident="xml:id" mode="change" usage="req">
-      <datatype>
-        <dataRef key="ssrq.id"/>
-      </datatype>
-    </attDef>
-    <attDef ident="xml:lang" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-witness-de"/>
-  <xi:include href="examples.xml" xpointer="ex-witness-en"/>
-  <xi:include href="examples.xml" xpointer="ex-witness-fr"/>
-  <remarks xml:lang="de" versionDate="2025-07-14">
-    <p>Ein Textzeuge ist ein Dokument, das einen Text teilweise oder in seiner Gesamtheit
-      überliefert und das als einer der Meilensteine bei der Überlieferung oder Transformation
-      eines Textes angesehen wird.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-07-14">
-    <p>Le témoin est un document qui transmet un texte, partiellement ou dans son intégralité,
-      et qui est considéré comme l’un des jalons dans la transmission ou la transformation
-      d’un texte.</p>
-  </remarks>
+    <desc versionDate="2025-07-14" xml:lang="fr">Contient la description d’un témoin.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <elementRef key="msDesc"/>
+    </content>
+    <attList>
+        <attDef ident="n" mode="replace" usage="req">
+            <desc versionDate="2025-02-04" xml:lang="de">die Nummerierung des Textzeugen</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the numbering of the text witness</desc>
+            <desc versionDate="2025-02-04" xml:lang="fr">la numérotation du témoin</desc>
+            <datatype>
+                <dataRef name="string" restriction="[A-Z][0-9]?"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:id" mode="change" usage="req">
+            <datatype>
+                <dataRef key="ssrq.id"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:lang" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-witness-de"/>
+    <xi:include href="examples.xml" xpointer="ex-witness-en"/>
+    <xi:include href="examples.xml" xpointer="ex-witness-fr"/>
+    <remarks versionDate="2025-07-14" xml:lang="de">
+        <p>
+            Ein Textzeuge ist ein Dokument, das einen Text teilweise oder in seiner Gesamtheit
+            überliefert und das als einer der Meilensteine bei der Überlieferung oder
+            Transformation eines Textes angesehen wird.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-07-14" xml:lang="fr">
+        <p>
+            Le témoin est un document qui transmet un texte, partiellement ou dans son intégralité,
+            et qui est considéré comme l’un des jalons dans la transmission ou la transformation
+            d’un texte.
+        </p>
+    </remarks>
 </elementSpec>

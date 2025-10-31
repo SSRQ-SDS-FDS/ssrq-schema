@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-persName-1">
-    <persName ref="per008949a">Hans Gullisen</persName>
-  </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-persName-2">
-        sant
-        <persName ref="per000351">Pauls</persName>
+    <egXML xml:id="ex-persName-1" xmlns="http://www.tei-c.org/ns/Examples">
+        <persName ref="per008949a">Hans Gullisen</persName>
     </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-persName-3">
-    <persName role="sigillant" ref="per002744a">Johann Jakob Escher</persName>
-  </egXML>
+    <egXML xml:id="ex-persName-2" xmlns="http://www.tei-c.org/ns/Examples">
+        sant <persName ref="per000351">Pauls</persName>
+    </egXML>
+    <egXML xml:id="ex-persName-3" xmlns="http://www.tei-c.org/ns/Examples">
+        <persName ref="per002744a" role="sigillant">Johann Jakob Escher</persName>
+    </egXML>
 </div>

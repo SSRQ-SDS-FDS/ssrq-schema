@@ -1,46 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="unclear" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">unklar</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">unclear</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">incertain</gloss>
-  <desc xml:lang="de" versionDate="2023-07-20">Enthält eine unsichere Lesung.</desc>
-  <desc xml:lang="en" versionDate="2023-07-20">Contains an uncertain reading.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-20">Contient une lecture incertaine.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global.responsibility"/>
-  </classes>
-  <content>
-    <sequence minOccurs="0" maxOccurs="unbounded">
-      <macroRef key="ssrq.content.default"/>
-    </sequence>
-  </content>
-  <attList>
-    <attDef ident="agent" mode="delete"/>
-    <attDef ident="reason" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-unclear-de"/>
-  <xi:include href="examples.xml" xpointer="ex-unclear-en"/>
-  <xi:include href="examples.xml" xpointer="ex-unclear-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-unclear-de"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-unclear-en"/>
-  <xi:include href="examples.xml" xpointer="ex-damage-unclear-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-07">
-    <p>Ist die Ursache eine Beschädigung, dann wird diese durch <gi>damage</gi> angegeben.
-      Mit dem Attribut <att>cert</att> kann angegeben werden, wie sicher die Lesung ist.
-      Erweist sich eine Stelle als absolut unlesbar, so wird sie stattdessen mit <gi>gap</gi>
-      ausgezeichnet.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-20">
-    <p>If the cause is damage, then this is indicated by <gi>damage</gi>. <att>cert</att> can be
-        used to specify how secure the reading is. If a passage turns out to be absolutely
-        illegible, it is marked with <gi>gap</gi>.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>Si la cause est une altération, celle-ci est indiquée avec <gi>damage</gi>. L’attribut
-      <att>cert</att> permet d’indiquer le niveau de certitude de la lecture. Si un passage
-      s’avère complètement illisible, il est signalé à la place par un <gi>gap</gi>.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="unclear" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">unklar</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">unclear</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">incertain</gloss>
+    <desc versionDate="2023-07-20" xml:lang="de">Enthält eine unsichere Lesung.</desc>
+    <desc versionDate="2023-07-20" xml:lang="en">Contains an uncertain reading.</desc>
+    <desc versionDate="2023-07-20" xml:lang="fr">Contient une lecture incertaine.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global.responsibility"/>
+    </classes>
+    <content>
+        <sequence maxOccurs="unbounded" minOccurs="0">
+            <macroRef key="ssrq.content.default"/>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="agent" mode="delete"/>
+        <attDef ident="reason" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-unclear-de"/>
+    <xi:include href="examples.xml" xpointer="ex-unclear-en"/>
+    <xi:include href="examples.xml" xpointer="ex-unclear-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-damage-unclear-de"/>
+    <xi:include href="examples.xml" xpointer="ex-damage-unclear-en"/>
+    <xi:include href="examples.xml" xpointer="ex-damage-unclear-fr"/>
+    <remarks versionDate="2025-02-07" xml:lang="de">
+        <p>
+            Ist die Ursache eine Beschädigung, dann wird diese durch <gi>damage</gi> angegeben. Mit
+            dem Attribut <att>cert</att> kann angegeben werden, wie sicher die Lesung ist. Erweist
+            sich eine Stelle als absolut unlesbar, so wird sie stattdessen mit <gi>gap</gi>
+            ausgezeichnet.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-20" xml:lang="en">
+        <p>
+            If the cause is damage, then this is indicated by <gi>damage</gi>. <att>cert</att> can
+            be used to specify how secure the reading is. If a passage turns out to be absolutely
+            illegible, it is marked with <gi>gap</gi>.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-07" xml:lang="fr">
+        <p>
+            Si la cause est une altération, celle-ci est indiquée avec <gi>damage</gi>. L’attribut
+            <att>cert</att> permet d’indiquer le niveau de certitude de la lecture. Si un passage
+            s’avère complètement illisible, il est signalé à la place par un <gi>gap</gi>.
+        </p>
+    </remarks>
 </elementSpec>

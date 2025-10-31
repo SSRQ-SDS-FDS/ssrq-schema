@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="textLang" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Textsprache</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">text language</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">langue du texte</gloss>
-  <desc xml:lang="de" versionDate="2025-02-07">Gibt die Textsprache eines Textes an.</desc>
-  <desc xml:lang="en" versionDate="2023-07-20">Describes a text language of a source.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-07">Permet d’indiquer la langue d’un texte.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-    <memberOf key="model.msItemPart"/>
-  </classes>
-  <content>
-    <empty/>
-  </content>
-  <attList>
-    <attDef ident="mainLang" mode="delete"/>
-    <attDef ident="n" mode="delete"/>
-    <attDef ident="otherLangs" mode="delete"/>
-    <attDef ident="xml:id" mode="delete"/>
-    <attDef ident="xml:lang" mode="change" usage="req"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-textLang-de"/>
-  <xi:include href="examples.xml" xpointer="ex-textLang-en"/>
-  <xi:include href="examples.xml" xpointer="ex-textLang-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-07">
-    <p>Für jede Textsprache wird ein eigenes <gi>textLang</gi>-Element angelegt.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-20">
-    <p>A separate <gi>textLang</gi> element is created for each text language.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>Un élément <gi>textLang</gi> distinct est créé pour chaque langue de texte.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="textLang" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Textsprache</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">text language</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">langue du texte</gloss>
+    <desc versionDate="2025-02-07" xml:lang="de">Gibt die Textsprache eines Textes an.</desc>
+    <desc versionDate="2023-07-20" xml:lang="en">Describes a text language of a source.</desc>
+    <desc versionDate="2025-02-07" xml:lang="fr">Permet d’indiquer la langue d’un texte.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="model.msItemPart"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="mainLang" mode="delete"/>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="otherLangs" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="xml:lang" mode="change" usage="req"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-textLang-de"/>
+    <xi:include href="examples.xml" xpointer="ex-textLang-en"/>
+    <xi:include href="examples.xml" xpointer="ex-textLang-fr"/>
+    <remarks versionDate="2025-02-07" xml:lang="de">
+        <p>
+            Für jede Textsprache wird ein eigenes <gi>textLang</gi>-Element angelegt.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-20" xml:lang="en">
+        <p>
+            A separate <gi>textLang</gi> element is created for each text language.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-07" xml:lang="fr">
+        <p>
+            Un élément <gi>textLang</gi> distinct est créé pour chaque langue de texte.
+        </p>
+    </remarks>
 </elementSpec>

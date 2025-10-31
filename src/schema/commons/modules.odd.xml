@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-  <specGrp xml:id="ssrq-modules">
-    <moduleSpec ident="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Modul für SSRQ-spezifische Hinzufügungen</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the module for SLS specific additions</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le module pour les ajouts spécifiques SDS</desc>
-    </moduleSpec>
-  </specGrp>
+    <specGrp xml:id="ssrq-modules">
+        <moduleSpec ident="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Modul für SSRQ-spezifische
+            Hinzufügungen</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the module for SLS specific
+            additions</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le module pour les ajouts spécifiques
+            SDS</desc>
+        </moduleSpec>
+    </specGrp>
 </div>

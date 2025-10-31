@@ -1,62 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="anchor" module="linking" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Ankerpunkt</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">anchoring point</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">point d’ancrage</gloss>
-  <desc xml:lang="de" versionDate="2025-02-05">Markiert den Endpunkt einer umfangreichen Hinzufügung
-      (<gi>addSpan</gi>), Tilgung (<gi>delSpan</gi>) oder Beschädigung (<gi>damageSpan</gi>).</desc>
-  <desc xml:lang="en" versionDate="2023-08-18">Endpoint of extensive addition (<gi>addSpan</gi>), deletion
-        (<gi>delSpan</gi>) or corruption (<gi>damageSpan</gi>).
-    </desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Marque le point final d’un ajout volumineux
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="anchor" mode="change" module="linking" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Ankerpunkt</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">anchoring point</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">point d’ancrage</gloss>
+    <desc versionDate="2025-02-05" xml:lang="de">Markiert den Endpunkt einer umfangreichen
+    Hinzufügung (<gi>addSpan</gi>), Tilgung (<gi>delSpan</gi>) oder Beschädigung
+    (<gi>damageSpan</gi>).</desc>
+    <desc versionDate="2023-08-18" xml:lang="en">Endpoint of extensive addition (<gi>addSpan</gi>),
+    deletion (<gi>delSpan</gi>) or corruption (<gi>damageSpan</gi>). </desc>
+    <desc versionDate="2025-02-05" xml:lang="fr">Marque le point final d’un ajout volumineux
     (<gi>addSpan</gi>), d’une suppression volumineuse (<gi>delSpan</gi>) ou d’une séquence
-    volumineuse altérée (<gi>damageSpan</gi>).
-    </desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-  </classes>
-  <content>
-    <empty/>
-  </content>
-  <attList>
-    <attDef ident="xml:id" mode="change" usage="req">
-      <datatype>
-        <dataRef key="ssrq.xmlid.anchor"/>
-      </datatype>
-    </attDef>
-    <attDef ident="n" mode="delete"/>
-    <attDef ident="xml:lang" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-addSpan-de"/>
-  <xi:include href="examples.xml" xpointer="ex-addSpan-en"/>
-  <xi:include href="examples.xml" xpointer="ex-addSpan-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-delSpan-de"/>
-  <xi:include href="examples.xml" xpointer="ex-delSpan-en"/>
-  <xi:include href="examples.xml" xpointer="ex-delSpan-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-damageSpan-de"/>
-  <xi:include href="examples.xml" xpointer="ex-damageSpan-en"/>
-  <xi:include href="examples.xml" xpointer="ex-damageSpan-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-24">
-    <p>Als Wert des Attributs <att>xml:id</att> ist der erste Teil des Namens des entsprechenden
-        Elements (<gi>addSpan</gi> = <val>add</val>, <gi>delSpan</gi> = <val>del</val> bzw.
-        <gi>damageSpan</gi> = <val>damage</val>) sowie eine fortlaufende Nummer zu wählen:
-        z. B. <val>add1</val>, <val>add2</val> usw. oder <val>del1</val>, <val>del2</val> usw. oder
-        <val>damage1</val>, <val>damage2</val> usw.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-08-18">
-    <p>The value of the <att>xml:id</att> attribute is the first part of the name of the corresponding elements
-            (<gi>addSpan</gi>, <gi>delSpan</gi> or <gi>damageSpan</gi>) and a to dial a consecutive number: e.g.
-            add1, add2 etc. or del1, del2 etc. or damage1, damage2 etc.
+    volumineuse altérée (<gi>damageSpan</gi>). </desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="xml:id" mode="change" usage="req">
+            <datatype>
+                <dataRef key="ssrq.xmlid.anchor"/>
+            </datatype>
+        </attDef>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="xml:lang" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-addSpan-de"/>
+    <xi:include href="examples.xml" xpointer="ex-addSpan-en"/>
+    <xi:include href="examples.xml" xpointer="ex-addSpan-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-delSpan-de"/>
+    <xi:include href="examples.xml" xpointer="ex-delSpan-en"/>
+    <xi:include href="examples.xml" xpointer="ex-delSpan-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-damageSpan-de"/>
+    <xi:include href="examples.xml" xpointer="ex-damageSpan-en"/>
+    <xi:include href="examples.xml" xpointer="ex-damageSpan-fr"/>
+    <remarks versionDate="2025-02-24" xml:lang="de">
+        <p>
+            Als Wert des Attributs <att>xml:id</att> ist der erste Teil des Namens des
+            entsprechenden Elements (<gi>addSpan</gi> = <val>add</val>, <gi>delSpan</gi> =
+            <val>del</val> bzw. <gi>damageSpan</gi> = <val>damage</val>) sowie eine fortlaufende
+            Nummer zu wählen: z. B. <val>add1</val>, <val>add2</val> usw. oder <val>del1</val>,
+            <val>del2</val> usw. oder <val>damage1</val>, <val>damage2</val> usw.
         </p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-24">
-    <p>La valeur de l’attribut <att>xml:id</att> doit être la première partie du nom d’élément
-        correspondant (<gi>addSpan</gi> = <val>add</val>, <gi>delSpan</gi> = <val>del</val> ou
-        <gi>damageSpan</gi> = <val>damage</val>) ainsi qu’un numéro consécutif : p. ex.
-        <val>add1</val>, <val>add2</val> etc. ou <val>del1</val>, <val>del2</val> etc. ou
-        <val>damage1</val>, <val>damage2</val> etc.</p>
-  </remarks>
+    </remarks>
+    <remarks versionDate="2023-08-18" xml:lang="en">
+        <p>
+            The value of the <att>xml:id</att> attribute is the first part of the name of the
+            corresponding elements (<gi>addSpan</gi>, <gi>delSpan</gi> or <gi>damageSpan</gi>) and
+            a to dial a consecutive number: e.g. add1, add2 etc. or del1, del2 etc. or damage1,
+            damage2 etc.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-24" xml:lang="fr">
+        <p>
+            La valeur de l’attribut <att>xml:id</att> doit être la première partie du nom d’élément
+            correspondant (<gi>addSpan</gi> = <val>add</val>, <gi>delSpan</gi> = <val>del</val> ou
+            <gi>damageSpan</gi> = <val>damage</val>) ainsi qu’un numéro consécutif : p. ex.
+            <val>add1</val>, <val>add2</val> etc. ou <val>del1</val>, <val>del2</val> etc. ou
+            <val>damage1</val>, <val>damage2</val> etc.
+        </p>
+    </remarks>
 </elementSpec>

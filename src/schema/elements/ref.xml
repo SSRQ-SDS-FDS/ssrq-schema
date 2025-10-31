@@ -1,113 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="ref" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Verweis</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">reference</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">référence</gloss>
-  <desc xml:lang="de" versionDate="2023-04-28">Enthält einen Verweis.</desc>
-  <desc xml:lang="en" versionDate="2023-04-28">Contains a reference.</desc>
-  <desc xml:lang="fr" versionDate="2023-04-28">Contient une référence.</desc>
-  <classes mode="replace">
-    <memberOf key="att.pointing"/>
-    <memberOf key="model.annotationPart.body"/>
-    <memberOf key="model.ptrLike"/>
-  </classes>
-  <content>
-    <alternate maxOccurs="unbounded">
-      <elementRef key="hi"/>
-      <textNode/>
-    </alternate>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="refAtts" mode="delete"/>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-ref" mode="add">
-    <desc xml:lang="en" versionDate="2023-06-22">constraint for tei:ref</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:ref[not(*)]">
-          <sch:assert test="if (not(.[@target])) then string-length(normalize-space(.)) &gt; 0 else .[@target]">
-              tei:ref should contain some text or must use the attribute @target.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-ref-in-bibl" mode="add">
-    <desc xml:lang="en" versionDate="2024-11-04">constraint for tei:ref in tei:bibl</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:ref[not(ancestor::tei:editorialDecl)][not(parent::tei:note[@type='text_comparison'])]">
-          <sch:assert test="./parent::tei:bibl">
-              If tei:ref is not part of tei:editorialDecl or tei:note with @type="text_comparison",
-              it should be enclosed in tei:bibl.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <xi:include href="examples.xml" xpointer="ex-ref-print-de"/>
-  <xi:include href="examples.xml" xpointer="ex-ref-print-en"/>
-  <xi:include href="examples.xml" xpointer="ex-ref-print-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-ref-urn-de"/>
-  <xi:include href="examples.xml" xpointer="ex-ref-urn-en"/>
-  <xi:include href="examples.xml" xpointer="ex-ref-urn-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Der Verweis kann auf ein anderes Dokument, die Einleitung, das Register eines
-      retrodigitalisierten Bandes, einen Eintrag im HLS, zitierte Literatur etc. zeigen.</p>
-    <p>Es ist sinnvoll, Links auf weitere, nicht edierte, aber in einem Archivinformationssystem
-      einzeln verzeichnete Quellenstücke innerhalb von <gi>ref</gi> zu setzen. Nicht sinnvoll ist
-      es, wenn bei einer einzelnen Urkunde auf den ganzen Urkundenbestand verlinkt wird, weil die
-      Einzelurkunde nicht verzeichnet ist. Bei Einträgen aus einem Buch, die man nicht einzeln in
-      einem Archivinformationssystem verzeichnen will (wenn das überhaupt möglich ist), kann auf
-      das (ganze) Buch, das im Archivkatalog verzeichnet ist, verlinkt werden.</p>
-    <p>Wird auf andere Editionen verlinkt, wird zuerst die Signatur der Quelle angegeben, wenn
-      die Archivalie konsultiert wurde (Autopsie) oder wenn sich die Signatur via Query
-      verifizieren und verlinken lässt. Hat man eine Archivalie anhand einer Edition beurteilt,
-      ist nur die Edition anzugeben.</p>
-    <p>Wenn man auf eine Quelle, die in einer Editionseinheit der SSRQ ediert wird, verweisen
-      möchte, ist es nicht notwendig, die Archivsignatur zu wiederholen, sondern es reicht, auf
-      die Stücknummer der Editionseinheit zu verlinken. Ebenso ist es möglich, innerhalb der
-      eigenen Editionseinheit von einem Stück auf ein anderes zu referenzieren. Wir verwenden
-      dafür die <gi>idno</gi>. Verweise auf andere Stücke werden in <gi>bibl</gi>
-      eingeschlossen.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2024-11-04">
-    <p>The reference can point to another document, the introduction, the index of a retrodigitized
-        volume, an entry in the HLS, cited literature, etc. It makes sense to place links within
-        <gi>ref</gi> to other source pieces that are not edited but are individually listed in an
-        archive information system. It does not make sense if a single certificate is linked to the
-        entire stock of certificates because the individual certificate is not listed. In the case
-        of entries from a book that one does not want to list individually in an archive
-        information system (if that is at all possible), a link can be made to the (entire) book
-        that is listed in the archive catalogue. If links are made to other editions, the call
-        number of the source is given first if the archival material was consulted (autopsy) or if
-        the call number can be verified and linked via query. If an archival item has been assessed
-        based on an edition, only the edition needs to be specified. If you want to refer to a
-        source that is edited in an edition unit of the SLS, it is not necessary to repeat the
-        archival reference, but it is sufficient to link to the item number of the edition unit
-        (see example below). It is also possible to reference from one piece to another within your
-        own edition unit. We use the <gi>idno</gi> for this.</p>
-    <p>References to other pieces are included in <gi>bibl</gi>.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Le renvoi peut pointer vers un autre document, l’introduction, le registre d’un volume
-      rétro-numérisé, une entrée du DHS, une littérature citée, etc.</p>
-    <p>Les référence à des sources non éditées, mais répertoriées dans un système d’information
-      archivistique, devraient être signalées par un lien à l’intérieur de <gi>ref</gi>.
-      Il n’est toutefois pas judicieux de créer un lien vers l’ensemble du fonds documentaire pour
-      un acte isolé. Pour les parties d’un livre (chapitre, contribution) que l’on ne souhaite pas
-      répertorier individuellement dans un système d’information archivistique, il est possible
-      de créer un lien vers le livre (entier) répertorié dans le catalogue des archives.</p>
-    <p>Si l’on établit un lien vers d’autres documents, on indique la cote de la source si le
-      document d’archives a été consulté directement ou si la cote peut être vérifiée et reliée
-      via un système d’information archivistique. En revanche, si l’on a pris connaissance d’une
-      archive sur la seule base d’une édition, seule l’édition doit être indiquée.</p>
-    <p>Si l’on souhaite faire référence à une source éditée dans une unité d’édition des SDS,
-      il n’est pas nécessaire de répéter la cote de l’archive, mais il suffit de faire un lien
-      vers le numéro de la pièce au sein de l’unité d’édition en question. De même, il est
-      possible de référencer une pièce qui se situe à l’intérieur de sa propre unité d’édition.
-      Nous utilisons pour cela le <gi>idno</gi> de la pièce. Les renvois aux autres pièces sont
-      signalés dans <gi>bibl</gi>.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="ref" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Verweis</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">reference</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">référence</gloss>
+    <desc versionDate="2023-04-28" xml:lang="de">Enthält einen Verweis.</desc>
+    <desc versionDate="2023-04-28" xml:lang="en">Contains a reference.</desc>
+    <desc versionDate="2023-04-28" xml:lang="fr">Contient une référence.</desc>
+    <classes mode="replace">
+        <memberOf key="att.pointing"/>
+        <memberOf key="model.annotationPart.body"/>
+        <memberOf key="model.ptrLike"/>
+    </classes>
+    <content>
+        <alternate maxOccurs="unbounded">
+            <elementRef key="hi"/>
+            <textNode/>
+        </alternate>
+    </content>
+    <constraintSpec ident="refAtts" mode="delete" scheme="schematron" xml:lang="en"/>
+    <constraintSpec ident="sch-el-ref" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-06-22" xml:lang="en">constraint for tei:ref</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:ref[not(*)]">
+                    <sch:assert test="if (not(.[@target])) then string-length(normalize-space(.))
+                    &gt; 0 else .[@target]"> tei:ref should contain some text or must use the
+                    attribute @target. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <constraintSpec ident="sch-ref-in-bibl" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2024-11-04" xml:lang="en">constraint for tei:ref in tei:bibl</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule
+                context="tei:ref[not(ancestor::tei:editorialDecl)][not(parent::tei:note[@type=&apos;text_comparison&apos;])]">
+                    <sch:assert test="./parent::tei:bibl"> If tei:ref is not part of
+                    tei:editorialDecl or tei:note with @type=&quot;text_comparison&quot;, it should
+                    be enclosed in tei:bibl. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <xi:include href="examples.xml" xpointer="ex-ref-print-de"/>
+    <xi:include href="examples.xml" xpointer="ex-ref-print-en"/>
+    <xi:include href="examples.xml" xpointer="ex-ref-print-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-ref-urn-de"/>
+    <xi:include href="examples.xml" xpointer="ex-ref-urn-en"/>
+    <xi:include href="examples.xml" xpointer="ex-ref-urn-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Der Verweis kann auf ein anderes Dokument, die Einleitung, das Register eines
+            retrodigitalisierten Bandes, einen Eintrag im HLS, zitierte Literatur etc. zeigen.
+        </p>
+        <p>
+            Es ist sinnvoll, Links auf weitere, nicht edierte, aber in einem
+            Archivinformationssystem einzeln verzeichnete Quellenstücke innerhalb von <gi>ref</gi>
+            zu setzen. Nicht sinnvoll ist es, wenn bei einer einzelnen Urkunde auf den ganzen
+            Urkundenbestand verlinkt wird, weil die Einzelurkunde nicht verzeichnet ist. Bei
+            Einträgen aus einem Buch, die man nicht einzeln in einem Archivinformationssystem
+            verzeichnen will (wenn das überhaupt möglich ist), kann auf das (ganze) Buch, das im
+            Archivkatalog verzeichnet ist, verlinkt werden.
+        </p>
+        <p>
+            Wird auf andere Editionen verlinkt, wird zuerst die Signatur der Quelle angegeben, wenn
+            die Archivalie konsultiert wurde (Autopsie) oder wenn sich die Signatur via Query
+            verifizieren und verlinken lässt. Hat man eine Archivalie anhand einer Edition
+            beurteilt, ist nur die Edition anzugeben.
+        </p>
+        <p>
+            Wenn man auf eine Quelle, die in einer Editionseinheit der SSRQ ediert wird, verweisen
+            möchte, ist es nicht notwendig, die Archivsignatur zu wiederholen, sondern es reicht,
+            auf die Stücknummer der Editionseinheit zu verlinken. Ebenso ist es möglich, innerhalb
+            der eigenen Editionseinheit von einem Stück auf ein anderes zu referenzieren. Wir
+            verwenden dafür die <gi>idno</gi>. Verweise auf andere Stücke werden in <gi>bibl</gi>
+            eingeschlossen.
+        </p>
+    </remarks>
+    <remarks versionDate="2024-11-04" xml:lang="en">
+        <p>
+            The reference can point to another document, the introduction, the index of a
+            retrodigitized volume, an entry in the HLS, cited literature, etc. It makes sense to
+            place links within <gi>ref</gi> to other source pieces that are not edited but are
+            individually listed in an archive information system. It does not make sense if a
+            single certificate is linked to the entire stock of certificates because the individual
+            certificate is not listed. In the case of entries from a book that one does not want to
+            list individually in an archive information system (if that is at all possible), a link
+            can be made to the (entire) book that is listed in the archive catalogue. If links are
+            made to other editions, the call number of the source is given first if the archival
+            material was consulted (autopsy) or if the call number can be verified and linked via
+            query. If an archival item has been assessed based on an edition, only the edition
+            needs to be specified. If you want to refer to a source that is edited in an edition
+            unit of the SLS, it is not necessary to repeat the archival reference, but it is
+            sufficient to link to the item number of the edition unit (see example below). It is
+            also possible to reference from one piece to another within your own edition unit. We
+            use the <gi>idno</gi> for this.
+        </p>
+        <p>
+            References to other pieces are included in <gi>bibl</gi>.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Le renvoi peut pointer vers un autre document, l’introduction, le registre d’un volume
+            rétro-numérisé, une entrée du DHS, une littérature citée, etc.
+        </p>
+        <p>
+            Les référence à des sources non éditées, mais répertoriées dans un système
+            d’information archivistique, devraient être signalées par un lien à l’intérieur de
+            <gi>ref</gi>. Il n’est toutefois pas judicieux de créer un lien vers l’ensemble du
+            fonds documentaire pour un acte isolé. Pour les parties d’un livre (chapitre,
+            contribution) que l’on ne souhaite pas répertorier individuellement dans un système
+            d’information archivistique, il est possible de créer un lien vers le livre (entier)
+            répertorié dans le catalogue des archives.
+        </p>
+        <p>
+            Si l’on établit un lien vers d’autres documents, on indique la cote de la source si le
+            document d’archives a été consulté directement ou si la cote peut être vérifiée et
+            reliée via un système d’information archivistique. En revanche, si l’on a pris
+            connaissance d’une archive sur la seule base d’une édition, seule l’édition doit être
+            indiquée.
+        </p>
+        <p>
+            Si l’on souhaite faire référence à une source éditée dans une unité d’édition des SDS,
+            il n’est pas nécessaire de répéter la cote de l’archive, mais il suffit de faire un
+            lien vers le numéro de la pièce au sein de l’unité d’édition en question. De même, il
+            est possible de référencer une pièce qui se situe à l’intérieur de sa propre unité
+            d’édition. Nous utilisons pour cela le <gi>idno</gi> de la pièce. Les renvois aux
+            autres pièces sont signalés dans <gi>bibl</gi>.
+        </p>
+    </remarks>
 </elementSpec>

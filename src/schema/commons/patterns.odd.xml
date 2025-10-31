@@ -1,207 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-  <specGrp xml:id="ssrq-patterns">
-    <dataSpec ident="ssrq.date.point" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für Datumsangaben</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for dates</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour les dates</desc>
-      <content>
-        <dataRef name="string" restriction="(((\d{4}|-)-(0[1-9]|1[0-2]))|--)-(0[1-9]|[1-2][0-9]|3[0-1])"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.time.point" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für Zeitangaben</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for times</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour les temps</desc>
-      <content>
-        <dataRef name="string" restriction="(((2[0-3]|[0-1][0-9]):[0-5][0-9]:[0-5][0-9])|24:00:00)"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.time.duration" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-03-05">das Muster für Zeitspannen nach ISO 8601</desc>
-      <desc xml:lang="en" versionDate="2025-03-05">the pattern for time spans according to ISO 8601</desc>
-      <desc xml:lang="fr" versionDate="2025-03-05">le modèle pour le temps s’étend selon ISO 8601</desc>
-      <content>
-        <dataRef name="string" restriction="(R/)?PT(\d+(\.\d+)?[HMS])+"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.foliation" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für die Blattzählung</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for the foliation</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour le foliation</desc>
-      <content>
-        <dataRef name="string" restriction="((([1-9]\d*)|([IVXLCDM]+))([ab]|bis)?[rv])|[rv]"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pagination" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für die Seitenzählung</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for the pagination</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour le pagination</desc>
-      <content>
-        <dataRef name="string" restriction="(([1-9]\d*(\.[1-9]\d*)?|([IVXLCDM]+))([ab]|bis)?)"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.section" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für die Abschnittszählung</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for the section numbering</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour la numérotation des sections</desc>
-      <content>
-        <dataRef name="string" restriction="s([1-9]\d*)"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.numbering" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-02-03">die originale Paginierung, Foliierung oder Zählung der Pergamentstücke</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the original pagination, foliation or counting the pieces of parchment</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">la pagination originale, la foliation ou la numérotation des morceaux de parchemin</desc>
-      <content>
-        <alternate>
-          <dataRef key="ssrq.foliation"/>
-          <dataRef key="ssrq.pagination"/>
-          <dataRef key="ssrq.section"/>
-        </alternate>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.facs.name" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für Faksimilenamen</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for facsimile names</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle poul les noms de télécopie</desc>
-      <content>
-        <dataRef name="string" restriction="[A-Za-z_\-\d]+(\d|[IVXLCDM]|[rv]|plica)"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.keywords" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für Schlagwort-IDs</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for keyword IDs</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour les ID de mots-clés</desc>
-      <content>
-        <dataRef name="string" restriction="key\d{6}"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.lemma" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für Lemma-IDs</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for lemma IDs</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour les ID de lemmes</desc>
-      <content>
-        <dataRef name="string" restriction="lem\d{6}(\.1?\d{2})?"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.org" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für Organisations-IDs</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for organisation IDs</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour les ID de organisations</desc>
-      <content>
-        <dataRef name="string" restriction="org\d{6}(\.1?\d{2})?"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.persons" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für Personen-IDs</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for person IDs</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour les ID de personne</desc>
-      <content>
-        <dataRef name="string" restriction="per\d{6}[abc]?(\.1?\d{2})?"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.places" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für Ort-IDs</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for place IDs</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour les ID de lieux</desc>
-      <content>
-        <dataRef name="string" restriction="loc\d{6}(\.1?\d{2})?"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.databases" mode="add" module="ssrq.core.module">
-      <content>
-        <alternate>
-          <dataRef key="ssrq.pointer.keywords"/>
-          <dataRef key="ssrq.pointer.lemma"/>
-          <dataRef key="ssrq.pointer.org"/>
-          <dataRef key="ssrq.pointer.persons"/>
-          <dataRef key="ssrq.pointer.places"/>
-        </alternate>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.doi" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für eine DOI</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for a DOI.</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour une DOI.</desc>
-      <content>
-        <dataRef name="string" restriction="doi:10\.\d{4,6}/.*"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.url" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für eine URL</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for a URL</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour une URL</desc>
-      <content>
-        <dataRef name="anyURI" restriction="(https?|ftp)://[^\s/$.?#].[^\s]*"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.urn" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für eine URN</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for a URN</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour une URN</desc>
-      <content>
-        <alternate>
-          <dataRef name="string" restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(((([A-Za-z0-9]+\.)*)([0-9]+)-1))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
-          <dataRef name="string" restriction="urn:ssrq:[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
-        </alternate>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.target" mode="add" module="ssrq.core.module">
-      <content>
-        <alternate>
-          <dataRef key="ssrq.pointer.doi"/>
-          <dataRef key="ssrq.pointer.url"/>
-          <dataRef key="ssrq.pointer.urn"/>
-          <dataRef key="ssrq.pointer.id"/>
-        </alternate>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.target.intro" mode="add" module="ssrq.core.module">
-      <content>
-        <alternate>
-          <dataRef key="ssrq.pointer.doi"/>
-          <dataRef key="ssrq.pointer.url"/>
-          <dataRef key="ssrq.pointer.urn"/>
-          <dataRef name="string" restriction="note-\d+"/>
-        </alternate>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.id" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für eine SSRQ UUID</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for an SLS UUID</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour un UUID SDS</desc>
-      <content>
-        <!--This pattern has two parts
-          1) A prefix "id-ssrq-". This prefix is used to make sure, that the xml:id is a valid token
-             of the XS:ID datatype (id est a NCName without colons). This is necessary, because the
-             following UUID may start with a letter, which is forbidden as first char in NCNames.
-          2) A UUID Version 4. This is used, because UUIDs are (potentially) persistant and globally
-             unique. This allows publishing the XML-files while still work in progress.
-        -->
-        <dataRef name="ID" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.id.string" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für eine SSRQ UUID</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for an SLS UUID</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour un UUID SDS</desc>
-      <!-- This is the same pattern as ssrq.id, but as a string datatype,
-        not as a ID datatype -->
-      <content>
-        <dataRef name="string" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
-      </content>
-    </dataSpec>
-    <dataSpec ident="ssrq.pointer.id" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2025-01-30">das Muster für einen Pointer mit Fragmentbezeichner auf SSRQ IDs</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the pattern for a pointer with fragment identifier on SLS IDS</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le modèle pour un pointeur avec un identifiant de fragment sur les ID SDS</desc>
-      <content>
-        <dataRef name="string" restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
-      </content>
-    </dataSpec>
-  </specGrp>
+    <specGrp xml:id="ssrq-patterns">
+        <dataSpec ident="ssrq.date.point" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für Datumsangaben</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for dates</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour les dates</desc>
+            <content>
+                <dataRef name="string"
+                restriction="(((\d{4}|-)-(0[1-9]|1[0-2]))|--)-(0[1-9]|[1-2][0-9]|3[0-1])"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.time.point" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für Zeitangaben</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for times</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour les temps</desc>
+            <content>
+                <dataRef name="string"
+                restriction="(((2[0-3]|[0-1][0-9]):[0-5][0-9]:[0-5][0-9])|24:00:00)"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.time.duration" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-03-05" xml:lang="de">das Muster für Zeitspannen nach ISO
+            8601</desc>
+            <desc versionDate="2025-03-05" xml:lang="en">the pattern for time spans according to
+            ISO 8601</desc>
+            <desc versionDate="2025-03-05" xml:lang="fr">le modèle pour le temps s’étend selon ISO
+            8601</desc>
+            <content>
+                <dataRef name="string" restriction="(R/)?PT(\d+(\.\d+)?[HMS])+"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.foliation" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für die Blattzählung</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for the foliation</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour le foliation</desc>
+            <content>
+                <dataRef name="string"
+                restriction="((([1-9]\d*)|([IVXLCDM]+))([ab]|bis)?[rv])|[rv]"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pagination" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für die Seitenzählung</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for the pagination</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour le pagination</desc>
+            <content>
+                <dataRef name="string"
+                restriction="(([1-9]\d*(\.[1-9]\d*)?|([IVXLCDM]+))([ab]|bis)?)"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.section" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für die
+            Abschnittszählung</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for the section
+            numbering</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour la numérotation des
+            sections</desc>
+            <content>
+                <dataRef name="string" restriction="s([1-9]\d*)"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.numbering" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-02-03" xml:lang="de">die originale Paginierung, Foliierung oder
+            Zählung der Pergamentstücke</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the original pagination, foliation or
+            counting the pieces of parchment</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">la pagination originale, la foliation ou
+            la numérotation des morceaux de parchemin</desc>
+            <content>
+                <alternate>
+                    <dataRef key="ssrq.foliation"/>
+                    <dataRef key="ssrq.pagination"/>
+                    <dataRef key="ssrq.section"/>
+                </alternate>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.facs.name" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für Faksimilenamen</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for facsimile names</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle poul les noms de
+            télécopie</desc>
+            <content>
+                <dataRef name="string" restriction="[A-Za-z_\-\d]+(\d|[IVXLCDM]|[rv]|plica)"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.keywords" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für Schlagwort-IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for keyword IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour les ID de mots-clés</desc>
+            <content>
+                <dataRef name="string" restriction="key\d{6}"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.lemma" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für Lemma-IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for lemma IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour les ID de lemmes</desc>
+            <content>
+                <dataRef name="string" restriction="lem\d{6}(\.1?\d{2})?"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.org" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für Organisations-IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for organisation IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour les ID de
+            organisations</desc>
+            <content>
+                <dataRef name="string" restriction="org\d{6}(\.1?\d{2})?"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.persons" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für Personen-IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for person IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour les ID de personne</desc>
+            <content>
+                <dataRef name="string" restriction="per\d{6}[abc]?(\.1?\d{2})?"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.places" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für Ort-IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for place IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour les ID de lieux</desc>
+            <content>
+                <dataRef name="string" restriction="loc\d{6}(\.1?\d{2})?"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.databases" mode="add" module="ssrq.core.module">
+            <content>
+                <alternate>
+                    <dataRef key="ssrq.pointer.keywords"/>
+                    <dataRef key="ssrq.pointer.lemma"/>
+                    <dataRef key="ssrq.pointer.org"/>
+                    <dataRef key="ssrq.pointer.persons"/>
+                    <dataRef key="ssrq.pointer.places"/>
+                </alternate>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.doi" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für eine DOI</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for a DOI.</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour une DOI.</desc>
+            <content>
+                <dataRef name="string" restriction="doi:10\.\d{4,6}/.*"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.url" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für eine URL</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for a URL</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour une URL</desc>
+            <content>
+                <dataRef name="anyURI" restriction="(https?|ftp)://[^\s/$.?#].[^\s]*"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.urn" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für eine URN</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for a URN</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour une URN</desc>
+            <content>
+                <alternate>
+                    <dataRef name="string"
+                    restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(((([A-Za-z0-9]+\.)*)([0-9]+)-1))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
+                    <dataRef name="string"
+                    restriction="urn:ssrq:[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
+                </alternate>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.target" mode="add" module="ssrq.core.module">
+            <content>
+                <alternate>
+                    <dataRef key="ssrq.pointer.doi"/>
+                    <dataRef key="ssrq.pointer.url"/>
+                    <dataRef key="ssrq.pointer.urn"/>
+                    <dataRef key="ssrq.pointer.id"/>
+                </alternate>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.target.intro" mode="add" module="ssrq.core.module">
+            <content>
+                <alternate>
+                    <dataRef key="ssrq.pointer.doi"/>
+                    <dataRef key="ssrq.pointer.url"/>
+                    <dataRef key="ssrq.pointer.urn"/>
+                    <dataRef name="string" restriction="note-\d+"/>
+                </alternate>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.id" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für eine SSRQ UUID</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for an SLS UUID</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour un UUID SDS</desc>
+            <content>
+                <!--This pattern has two parts 1) A prefix "id-ssrq-". This prefix is used to make
+                sure, that the xml:id is a valid token of the XS:ID datatype (id est a NCName
+                without colons). This is necessary, because the following UUID may start with a
+                letter, which is forbidden as first char in NCNames. 2) A UUID Version 4. This is
+                used, because UUIDs are (potentially) persistant and globally unique. This allows
+                publishing the XML-files while still work in progress.-->
+                <dataRef name="ID"
+                restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.id.string" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für eine SSRQ UUID</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for an SLS UUID</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour un UUID SDS</desc>
+            <!--This is the same pattern as ssrq.id, but as a string datatype, not as a ID
+            datatype-->
+            <content>
+                <dataRef name="string"
+                restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}"/>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq.pointer.id" mode="add" module="ssrq.core.module">
+            <desc versionDate="2025-01-30" xml:lang="de">das Muster für einen Pointer mit
+            Fragmentbezeichner auf SSRQ IDs</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the pattern for a pointer with fragment
+            identifier on SLS IDS</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le modèle pour un pointeur avec un
+            identifiant de fragment sur les ID SDS</desc>
+            <content>
+                <dataRef name="string"
+                restriction="id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
+            </content>
+        </dataSpec>
+    </specGrp>
 </div>

@@ -1,45 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="keywords" module="header" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Schlagworte</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">keywords</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">mots-clés</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält die wichtigsten Schlagworte zum Inhalt eines
-      Stücks.</desc>
-  <desc xml:lang="en" versionDate="2023-07-18">Contains the most important keywords for the content
-      of a source.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient les mots-clés les plus importants sur
-      le contenu d’un document.
-    </desc>
-  <classes mode="replace"/>
-  <content>
-    <elementRef key="term" maxOccurs="unbounded"/>
-  </content>
-  <attList>
-    <attDef ident="scheme" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-keywords-de"/>
-  <xi:include href="examples.xml" xpointer="ex-keywords-en"/>
-  <xi:include href="examples.xml" xpointer="ex-keywords-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Die Liste mit den Schlagworten ersetzt das klassische Sachregister der analogen Bände. Die
-        Schlagworte beziehen sich in der Regel auf das gesamte Stück. Die Schlagworte werden gemäss
-        der entsprechenden <ref target="https://termini.ssrq-sds-fds.ch">Datenbank</ref> der SSRQ
-        vergeben.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-18">
-    <p>The list of keywords replaces the classic subject index of the analogue volumes. The
-        catchphrases usually refer to the entire piece. With longer numbers or with the edition of
-        a book, the keywords are assigned according to the structure in articles or paragraphs.
-        The keywords should be assigned according to a controlled word list.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>La liste des mots-clés remplace l’index thématique classique des volumes analogiques.
-      En règle générale, les mots-clés se rapportent à la pièce entière.
-      Les mots-clés sont attribués conformément à
-      <ref target="https://termini.ssrq-sds-fds.ch">la base de données</ref> correspondante des
-      SDS.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="keywords" mode="change" module="header" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Schlagworte</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">keywords</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">mots-clés</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält die wichtigsten Schlagworte zum Inhalt
+    eines Stücks.</desc>
+    <desc versionDate="2023-07-18" xml:lang="en">Contains the most important keywords for the
+    content of a source.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient les mots-clés les plus importants sur le
+    contenu d’un document. </desc>
+    <classes mode="replace"/>
+    <content>
+        <elementRef key="term" maxOccurs="unbounded"/>
+    </content>
+    <attList>
+        <attDef ident="scheme" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-keywords-de"/>
+    <xi:include href="examples.xml" xpointer="ex-keywords-en"/>
+    <xi:include href="examples.xml" xpointer="ex-keywords-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Die Liste mit den Schlagworten ersetzt das klassische Sachregister der analogen Bände.
+            Die Schlagworte beziehen sich in der Regel auf das gesamte Stück. Die Schlagworte
+            werden gemäss der entsprechenden <ref
+            target="https://termini.ssrq-sds-fds.ch">Datenbank</ref> der SSRQ vergeben.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-18" xml:lang="en">
+        <p>
+            The list of keywords replaces the classic subject index of the analogue volumes. The
+            catchphrases usually refer to the entire piece. With longer numbers or with the edition
+            of a book, the keywords are assigned according to the structure in articles or
+            paragraphs. The keywords should be assigned according to a controlled word list.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            La liste des mots-clés remplace l’index thématique classique des volumes analogiques.
+            En règle générale, les mots-clés se rapportent à la pièce entière. Les mots-clés sont
+            attribués conformément à <ref target="https://termini.ssrq-sds-fds.ch">la base de
+            données</ref> correspondante des SDS.
+        </p>
+    </remarks>
 </elementSpec>

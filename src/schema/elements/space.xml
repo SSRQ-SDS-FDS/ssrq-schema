@@ -1,58 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="space" module="transcr" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Lücke</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">space</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">lacune</gloss>
-  <desc xml:lang="de" versionDate="2025-02-07">Markiert eine Lücke, die vom Schreiber bewusst
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="space" mode="change" module="transcr" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Lücke</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">space</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">lacune</gloss>
+    <desc versionDate="2025-02-07" xml:lang="de">Markiert eine Lücke, die vom Schreiber bewusst
     zwecks späterer Ergänzung offen gelassen wurde.</desc>
-  <desc xml:lang="en" versionDate="2023-05-11">Denotes a gap that the writer deliberately left
+    <desc versionDate="2023-05-11" xml:lang="en">Denotes a gap that the writer deliberately left
     open for later completion.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-07">Marque une lacune que le scribe a délibérément
+    <desc versionDate="2025-02-07" xml:lang="fr">Marque une lacune que le scribe a délibérément
     laissée ouverte en vue d’un complément ultérieur.</desc>
-  <classes mode="replace">
-    <memberOf key="att.dimensions"/>
-  </classes>
-  <content>
-    <empty/>
-  </content>
-  <attList>
-    <attDef ident="dim" mode="delete"/>
-    <attDef ident="quantity" mode="change" usage="req">
-      <datatype>
-        <dataRef key="ssrq.quantity.positive"/>
-      </datatype>
-    </attDef>
-    <attDef ident="resp" mode="delete"/>
-    <attDef ident="unit" mode="replace" usage="req">
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.measure.lengths.base.cm"/>
-          <rng:ref name="ssrq.dimensions.typography"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-space-de"/>
-  <xi:include href="examples.xml" xpointer="ex-space-en"/>
-  <xi:include href="examples.xml" xpointer="ex-space-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-07">
-    <p>Die Grösse der Lücke wird zwingend mit den Attributen <att>unit</att> und <att>quantity</att>
-      angegeben. Dabei handelt es sich um ein leeres Element.</p>
-    <p>Fehlender Text infolge unbewusster Zeilensprünge wird, wenn er von den Bearbeitenden ergänzt
-      wird, hingegen mit <gi>supplied</gi> ausgezeichnet.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-14">
-    <p>The size of the gap must be specified with <att>unit</att> and <att>quantity</att>. This is
-      an empty tag. Gaps due to unintentional line jumps, on the other hand, are marked with
-      <gi>supplied</gi>.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>La taille de la lacune est impérativement indiquée avec les attributs <att>unit</att> et
-      <att>quantity</att>. Il s’agit d’un élément vide.</p>
-    <p>Le texte manquant en raison de sauts de ligne involontaires est en revanche signalé par
-      éditeurs avec <gi>supplied</gi>.</p>
-  </remarks>
+    <classes mode="replace">
+        <memberOf key="att.dimensions"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="dim" mode="delete"/>
+        <attDef ident="quantity" mode="change" usage="req">
+            <datatype>
+                <dataRef key="ssrq.quantity.positive"/>
+            </datatype>
+        </attDef>
+        <attDef ident="resp" mode="delete"/>
+        <attDef ident="unit" mode="replace" usage="req">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.measure.lengths.base.cm"/>
+                    <rng:ref name="ssrq.dimensions.typography"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-space-de"/>
+    <xi:include href="examples.xml" xpointer="ex-space-en"/>
+    <xi:include href="examples.xml" xpointer="ex-space-fr"/>
+    <remarks versionDate="2025-02-07" xml:lang="de">
+        <p>
+            Die Grösse der Lücke wird zwingend mit den Attributen <att>unit</att> und
+            <att>quantity</att> angegeben. Dabei handelt es sich um ein leeres Element.
+        </p>
+        <p>
+            Fehlender Text infolge unbewusster Zeilensprünge wird, wenn er von den Bearbeitenden
+            ergänzt wird, hingegen mit <gi>supplied</gi> ausgezeichnet.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-14" xml:lang="en">
+        <p>
+            The size of the gap must be specified with <att>unit</att> and <att>quantity</att>.
+            This is an empty tag. Gaps due to unintentional line jumps, on the other hand, are
+            marked with <gi>supplied</gi>.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-07" xml:lang="fr">
+        <p>
+            La taille de la lacune est impérativement indiquée avec les attributs <att>unit</att>
+            et <att>quantity</att>. Il s’agit d’un élément vide.
+        </p>
+        <p>
+            Le texte manquant en raison de sauts de ligne involontaires est en revanche signalé par
+            éditeurs avec <gi>supplied</gi>.
+        </p>
+    </remarks>
 </elementSpec>

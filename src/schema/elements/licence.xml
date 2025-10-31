@@ -1,46 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="licence" module="header" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Lizenz</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">licence</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">licence</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Beschreibt die Lizenz, unter der der Text verfügbar
-    ist.</desc>
-  <desc xml:lang="en" versionDate="2023-07-18">Describes the license under which a text is
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="licence" mode="change" module="header" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Lizenz</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">licence</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">licence</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Beschreibt die Lizenz, unter der der Text
+    verfügbar ist.</desc>
+    <desc versionDate="2023-07-18" xml:lang="en">Describes the license under which a text is
     available.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Décrit la licence sous laquelle le texte est
+    <desc versionDate="2025-02-06" xml:lang="fr">Décrit la licence sous laquelle le texte est
     disponible.</desc>
-  <classes mode="replace">
-    <memberOf key="att.pointing"/>
-    <memberOf key="model.availabilityPart"/>
-  </classes>
-  <content>
-    <valList type="closed">
-      <valItem ident="Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)"/>
-    </valList>
-  </content>
-  <attList>
-    <attDef ident="target" mode="replace" usage="req">
-      <datatype>
-        <dataRef key="ssrq.target.licence"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-availability-de"/>
-  <xi:include href="examples.xml" xpointer="ex-availability-en"/>
-  <xi:include href="examples.xml" xpointer="ex-availability-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Wir verwenden eine Creative-Commons-Lizenz mit folgenden Bedingungen: Bei der weiteren
-      Verarbeitung der Daten muss eine Namensnennung erfolgen (BY), die Verwendung darf nicht
-      kommerziellen Zwecken dienen (NC) und bei einer Weitergabe der Daten müssen dieselben
-      Lizenzbedingungen angewendet werden (SA).</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Nous utilisons une licence Creative Commons avec les conditions suivantes : en cas de
-      traitement ultérieur des données, le nom doit être mentionné (BY), l’utilisation ne doit
-      pas servir à des fins commerciales (NC) et en cas de diffusion des données, les mêmes
-      conditions de licence doivent être appliquées (SA).</p>
-  </remarks>
+    <classes mode="replace">
+        <memberOf key="att.pointing"/>
+        <memberOf key="model.availabilityPart"/>
+    </classes>
+    <content>
+        <valList type="closed">
+            <valItem ident="Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA
+            4.0)"/>
+        </valList>
+    </content>
+    <attList>
+        <attDef ident="target" mode="replace" usage="req">
+            <datatype>
+                <dataRef key="ssrq.target.licence"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-availability-de"/>
+    <xi:include href="examples.xml" xpointer="ex-availability-en"/>
+    <xi:include href="examples.xml" xpointer="ex-availability-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Wir verwenden eine Creative-Commons-Lizenz mit folgenden Bedingungen: Bei der weiteren
+            Verarbeitung der Daten muss eine Namensnennung erfolgen (BY), die Verwendung darf nicht
+            kommerziellen Zwecken dienen (NC) und bei einer Weitergabe der Daten müssen dieselben
+            Lizenzbedingungen angewendet werden (SA).
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Nous utilisons une licence Creative Commons avec les conditions suivantes : en cas de
+            traitement ultérieur des données, le nom doit être mentionné (BY), l’utilisation ne
+            doit pas servir à des fins commerciales (NC) et en cas de diffusion des données, les
+            mêmes conditions de licence doivent être appliquées (SA).
+        </p>
+    </remarks>
 </elementSpec>
