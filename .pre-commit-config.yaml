@@ -12,6 +12,16 @@ repos:
       entry: uv run ruff format
       language: system
       pass_filenames: false
+    - id: xml-format
+      name: Run ssrq fmt on schema files before commit
+      entry: uv run ssrq fmt --option schema
+      language: system
+      files: ^src/schema/.*.xml|src/schema/commons/.*\.xml|src/schema/elements/.*\.xml|src/schema/examples/examples\.xml$
+    - id: xml-example-format
+      name: Run ssrq fmt on example files before commit
+      entry: uv run ssrq fmt
+      language: system
+      files: ^src/schema/examples/(?!examples\.xml$).*\.xml$
     - id: mypy
       name: Run mypy before commit
       entry: uv run mypy
