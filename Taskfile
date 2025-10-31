@@ -11,6 +11,10 @@ function cmd {
 function check {
   cmd ruff format . "${@}"
   cmd ruff check --fix . "${@}"
+  cmd ssrq fmt "src/schema/*.xml" --option schema
+  cmd ssrq fmt "src/schema/commons/*.xml" --option schema
+  cmd ssrq fmt "src/schema/elements/*.xml" --option schema
+  cmd ssrq fmt "src/schema/examples/*.xml"
   cmd mypy
 }
 

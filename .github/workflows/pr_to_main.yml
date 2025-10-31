@@ -24,9 +24,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           ssh-key: ${{ secrets.CLI_SECRET_KEY }}
-      - name: Setup xmllint
-        uses: Bpolitycki/setup-xmllint-action@1.0.1
-      - name: Check the formatting and validate .py-fies
+      - name: Format all files and validate .py-files
         run: ./Taskfile check
       - name: Validate all schema source files
         run: ./Taskfile validate
