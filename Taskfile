@@ -11,10 +11,10 @@ function cmd {
 function check {
   cmd ruff format . "${@}"
   cmd ruff check --fix . "${@}"
-  cmd ssrq fmt "src/schema/*.xml" --option schema
-  cmd ssrq fmt "src/schema/commons/*.xml" --option schema
-  cmd ssrq fmt "src/schema/elements/*.xml" --option schema
-  cmd ssrq fmt "src/schema/examples/*.xml"
+  cmd pre-commit run xml-main-format --files $(git ls-files -- '*.xml')
+  cmd pre-commit run xml-common-format --files $(git ls-files -- '*.xml')
+  cmd pre-commit run xml-element-format --files $(git ls-files -- '*.xml')
+  cmd pre-commit run xml-example-format --files $(git ls-files -- '*.xml')
   cmd mypy
 }
 
