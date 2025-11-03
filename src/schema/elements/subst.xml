@@ -1,66 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="subst" module="transcr" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Ersetzung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">substitution</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">substitution</gloss>
-  <desc xml:lang="de" versionDate="2023-07-31">Enthält eine Ersetzung.</desc>
-  <desc xml:lang="en" versionDate="2023-07-31">Contains a substitution.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-31">Contient une séquence de texte remplacée par une
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="subst" mode="change" module="transcr" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Ersetzung</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">substitution</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">substitution</gloss>
+    <desc versionDate="2023-07-31" xml:lang="de">Enthält eine Ersetzung.</desc>
+    <desc versionDate="2023-07-31" xml:lang="en">Contains a substitution.</desc>
+    <desc versionDate="2023-07-31" xml:lang="fr">Contient une séquence de texte remplacée par une
     autre.</desc>
-  <classes mode="replace">
-    <memberOf key="att.typed"/>
-  </classes>
-  <content>
-    <sequence preserveOrder="false">
-      <elementRef key="del"/>
-      <elementRef key="add"/>
-      <elementRef key="lb" minOccurs="0"/>
-      <elementRef key="pb" minOccurs="0"/>
-    </sequence>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-subst">
-    <desc xml:lang="en" versionDate="2025-05-05">constraint for tei:subst</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:subst">
-          <sch:report test="tei:add[following-sibling::tei:del]">
-            tei:del must come before tei:add when used inside tei:subst.
-          </sch:report>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-14">die Art der Ersetzung</desc>
-      <desc xml:lang="en" versionDate="2025-02-14">the type of substitution</desc>
-      <desc xml:lang="fr" versionDate="2025-02-14">le type de substitution</desc>
-      <datatype>
-        <dataRef key="ssrq.type.subst"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-subst-de"/>
-  <xi:include href="examples.xml" xpointer="ex-subst-en"/>
-  <xi:include href="examples.xml" xpointer="ex-subst-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-subst-lb-de"/>
-  <xi:include href="examples.xml" xpointer="ex-subst-lb-en"/>
-  <xi:include href="examples.xml" xpointer="ex-subst-lb-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-07">
-    <p>Gruppiert eine Tilgung (oder überschüssigen Text) mit einer Hinzufügung in beliebiger
-      Reihenfolge, wenn die Kombination beider Vorgänge als einzelner Eingriff in den Text zu
-      betrachten ist.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-11-16">
-    <p>Groups one deletion (or excess text) with one addition in any order if the combination
-        should be considered as a single intervention in the text.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>Regroupe une suppression (ou un texte en trop) avec un ajout, dans n’importe quel ordre,
-      si la combinaison des deux opérations doit être considérée comme une seule intervention sur
-      le texte.</p>
-  </remarks>
+    <classes mode="replace">
+        <memberOf key="att.typed"/>
+    </classes>
+    <content>
+        <sequence preserveOrder="false">
+            <elementRef key="del"/>
+            <elementRef key="add"/>
+            <elementRef key="lb" minOccurs="0"/>
+            <elementRef key="pb" minOccurs="0"/>
+        </sequence>
+    </content>
+    <constraintSpec ident="sch-el-subst" scheme="schematron" xml:lang="en">
+        <desc versionDate="2025-05-05" xml:lang="en">constraint for tei:subst</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:subst">
+                    <sch:report test="tei:add[following-sibling::tei:del]"> tei:del must come
+                    before tei:add when used inside tei:subst. </sch:report>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="type" mode="replace">
+            <desc versionDate="2025-02-14" xml:lang="de">die Art der Ersetzung</desc>
+            <desc versionDate="2025-02-14" xml:lang="en">the type of substitution</desc>
+            <desc versionDate="2025-02-14" xml:lang="fr">le type de substitution</desc>
+            <datatype>
+                <dataRef key="ssrq.type.subst"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-subst-de"/>
+    <xi:include href="examples.xml" xpointer="ex-subst-en"/>
+    <xi:include href="examples.xml" xpointer="ex-subst-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-subst-lb-de"/>
+    <xi:include href="examples.xml" xpointer="ex-subst-lb-en"/>
+    <xi:include href="examples.xml" xpointer="ex-subst-lb-fr"/>
+    <remarks versionDate="2025-02-07" xml:lang="de">
+        <p>
+            Gruppiert eine Tilgung (oder überschüssigen Text) mit einer Hinzufügung in beliebiger
+            Reihenfolge, wenn die Kombination beider Vorgänge als einzelner Eingriff in den Text zu
+            betrachten ist.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-11-16" xml:lang="en">
+        <p>
+            Groups one deletion (or excess text) with one addition in any order if the combination
+            should be considered as a single intervention in the text.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-07" xml:lang="fr">
+        <p>
+            Regroupe une suppression (ou un texte en trop) avec un ajout, dans n’importe quel
+            ordre, si la combinaison des deux opérations doit être considérée comme une seule
+            intervention sur le texte.
+        </p>
+    </remarks>
 </elementSpec>

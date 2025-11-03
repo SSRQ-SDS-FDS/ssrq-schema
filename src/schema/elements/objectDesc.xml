@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="objectDesc" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Textträgerbeschreibung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">object description</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">description de l’objet</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält Elemente zur Beschreibung des Materials, der
-    Masse, des Erhaltungszustands sowie der Beschaffenheit eines Textträgers.</desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Contains elements describing the material, mass,
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="objectDesc" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Textträgerbeschreibung</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">object description</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">description de l’objet</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält Elemente zur Beschreibung des Materials,
+    der Masse, des Erhaltungszustands sowie der Beschaffenheit eines Textträgers.</desc>
+    <desc versionDate="2023-07-15" xml:lang="en">Contains elements describing the material, mass,
     state of preservation and appearance of the source.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient des éléments décrivant le matériau,
-    les dimensions, l’état de conservation et l’état d’un support de texte.</desc>
-  <classes mode="replace">
-    <memberOf key="model.physDescPart"/>
-  </classes>
-  <content>
-    <elementRef key="supportDesc"/>
-  </content>
-  <attList>
-    <attDef ident="form" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-objectDesc-de"/>
-  <xi:include href="examples.xml" xpointer="ex-objectDesc-en"/>
-  <xi:include href="examples.xml" xpointer="ex-objectDesc-fr"/>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient des éléments décrivant le matériau, les
+    dimensions, l’état de conservation et l’état d’un support de texte.</desc>
+    <classes mode="replace">
+        <memberOf key="model.physDescPart"/>
+    </classes>
+    <content>
+        <elementRef key="supportDesc"/>
+    </content>
+    <attList>
+        <attDef ident="form" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-objectDesc-de"/>
+    <xi:include href="examples.xml" xpointer="ex-objectDesc-en"/>
+    <xi:include href="examples.xml" xpointer="ex-objectDesc-fr"/>
 </elementSpec>

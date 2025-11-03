@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="publicationStmt" module="header" mode="change">
-  <gloss xml:lang="de" versionDate="2023-07-18">Angaben zur Publikation</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">publication statement</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">statut de la publication</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält Elemente zur Beschreibung der Publikation
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="publicationStmt" mode="change" module="header"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2023-07-18" xml:lang="de">Angaben zur Publikation</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">publication statement</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">statut de la publication</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält Elemente zur Beschreibung der Publikation
     und Verbreitung des bearbeiteten Textes.</desc>
-  <desc xml:lang="en" versionDate="2023-07-18">Contains elements describing the publication and
+    <desc versionDate="2023-07-18" xml:lang="en">Contains elements describing the publication and
     distribution of the edited piece.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient des éléments descriptifs et déclaratifs
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient des éléments descriptifs et déclaratifs
     sur la publication et la mise à disposition du texte édité.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence>
-      <elementRef key="publisher"/>
-      <sequence minOccurs="0">
-        <!-- minOccurs="0" maxOccurs="2" does not work due to a bug in the TEI-Stylesheets.
-        This workaround should be removed, once the bug is fixed. -->
-        <elementRef key="date"/>
-        <elementRef key="date" minOccurs="0"/>
-      </sequence>
-      <elementRef key="availability"/>
-    </sequence>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-publicationStmt-de"/>
-  <xi:include href="examples.xml" xpointer="ex-publicationStmt-en"/>
-  <xi:include href="examples.xml" xpointer="ex-publicationStmt-fr"/>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="publisher"/>
+            <sequence minOccurs="0">
+                <!--minOccurs="0" maxOccurs="2" does not work due to a bug in the TEI-Stylesheets.
+                This workaround should be removed, once the bug is fixed.-->
+                <elementRef key="date"/>
+                <elementRef key="date" minOccurs="0"/>
+            </sequence>
+            <elementRef key="availability"/>
+        </sequence>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-publicationStmt-de"/>
+    <xi:include href="examples.xml" xpointer="ex-publicationStmt-en"/>
+    <xi:include href="examples.xml" xpointer="ex-publicationStmt-fr"/>
 </elementSpec>

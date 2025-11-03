@@ -122,6 +122,9 @@ def att_to_md(node: ET.Element) -> Iterator[str]:
 
     attr_name, tail = node.text, node.tail
 
+    if attr_name is not None:
+        attr_name = attr_name.strip()
+
     yield RE_WHITESPACE_START_OR_MULTIPLE.sub(
         "", f"[`@{attr_name}`](#{attr_name}){tail or ''}"
     )
@@ -144,6 +147,9 @@ def gi_to_md(node: ET.Element, lang: str | None) -> Iterator[str]:
         raise NodeTransformationError("Can't transform <gi/>-tag without content.")
 
     element_name, tail = node.text, node.tail
+
+    if element_name is not None:
+        element_name = element_name.strip()
 
     yield RE_WHITESPACE_START_OR_MULTIPLE.sub(
         "",
@@ -249,6 +255,9 @@ def tag_to_md(node: ET.Element) -> Iterator[str]:
 
     tag_name, tail = node.text, node.tail
 
+    if tag_name is not None:
+        tag_name = tag_name.strip()
+
     yield RE_WHITESPACE_START_OR_MULTIPLE.sub(
         "",
         f"`<{tag_name}/>`{tail or ''}",
@@ -271,9 +280,14 @@ def val_to_md(node: ET.Element) -> Iterator[str]:
     if not node_has_text_or_tail(node):
         raise NodeTransformationError("Can't transform <val/>-tag without content.")
 
+    text, tail = node.text, node.tail
+
+    if text is not None:
+        text = text.strip()
+
     yield RE_WHITESPACE_START_OR_MULTIPLE.sub(
         "",
-        f"`{node.text}`{node.tail or ''}",
+        f"`{text}`{tail or ''}",
     )
 
 

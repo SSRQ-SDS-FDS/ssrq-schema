@@ -1,88 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="note" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Anmerkung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">note</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">note</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält entweder eine sachkritische Anmerkung zu
-      einer Einzelstelle im Editionstext oder innerhalb von <gi>app</gi> den Verweis auf einen
-      weiteren Textzeugen, in dem eine Textstelle wiederverwendet wird.</desc>
-  <desc xml:lang="en" versionDate="2024-05-02">Contains either a factual comment on a single
-      passage of the text of the edition or a reference to another textual witness in which the
-      respective text is reused.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient soit une remarque critique sur un passage
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="note" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Anmerkung</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">note</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">note</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält entweder eine sachkritische Anmerkung zu
+    einer Einzelstelle im Editionstext oder innerhalb von <gi>app</gi> den Verweis auf einen
+    weiteren Textzeugen, in dem eine Textstelle wiederverwendet wird.</desc>
+    <desc versionDate="2024-05-02" xml:lang="en">Contains either a factual comment on a single
+    passage of the text of the edition or a reference to another textual witness in which the
+    respective text is reused.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient soit une remarque critique sur un passage
     isolé dans le texte de l’édition, soit, à l’intérieur de <gi>app</gi>, le renvoi à un autre
     texte témoin dans lequel un passage est réutilisé.</desc>
-  <classes mode="replace">
-    <memberOf key="att.typed"/>
-  </classes>
-  <content>
-    <alternate maxOccurs="unbounded">
-      <elementRef key="bibl"/>
-      <elementRef key="ref"/>
-      <macroRef key="ssrq.content.default"/>
-    </alternate>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-note">
-    <desc xml:lang="en" versionDate="2023-10-30">constraint for tei:note</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:note[parent::tei:app]">
-          <sch:assert test="every $child in * satisfies $child/name() = ('ref', 'orig')">
-              If a tei:note is used inside tei:app, only tei:ref and tei:orig are allowed
-              as children.
-          </sch:assert>
-          <sch:assert test="count(tei:ref) = 1">
-              A tei:note inside tei:app must have exactly one tei:ref as a child.
-          </sch:assert>
-          <sch:assert test="count(tei:orig) = 1 or count(tei:orig) = 0">
-              A tei:note inside tei:app may have one or no tei:orig as a child.
-          </sch:assert>
-          <sch:assert test="every $t in text()[normalize-space()] satisfies string-length($t) = 0">
-              A tei:note inside tei:app must not have text content.
-          </sch:assert>
-          <sch:assert test=".[@type]">
-              A tei:note inside a critical apparatus must have a @type attribute.
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:note[@type='text_comparison']">
-          <sch:assert test="parent::tei:app">
-              A tei:note with @type "text_comparison" must be a child of tei:app.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-03">die Art der Anmerkung</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the type of note</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">le type de la note</desc>
-      <datatype>
-        <dataRef key="ssrq.type.note"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-note-de"/>
-  <xi:include href="examples.xml" xpointer="ex-note-en"/>
-  <xi:include href="examples.xml" xpointer="ex-note-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-app-note-de"/>
-  <xi:include href="examples.xml" xpointer="ex-app-note-en"/>
-  <xi:include href="examples.xml" xpointer="ex-app-note-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Ein <gi>note</gi>-Element folgt unmittelbar auf sein Bezugswort im Editionstext. Wird
-      innerhalb von <gi>note</gi> Originaltext zitiert, wird dieser mit <gi>orig</gi>
-      ausgezeichnet.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2024-05-02">
-    <p>A <gi>note</gi> element immediately follows the reference word in the edition text. If
-      original text is quoted, it is marked with <gi>orig</gi>.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Un élément <gi>note</gi> suit immédiatement sa référence dans le texte de l’édition.
-      Si le texte original est cité à l’intérieur de <gi>note</gi>, il est signalé avec
-      <gi>orig</gi>.</p>
-  </remarks>
+    <classes mode="replace">
+        <memberOf key="att.typed"/>
+    </classes>
+    <content>
+        <alternate maxOccurs="unbounded">
+            <elementRef key="bibl"/>
+            <elementRef key="ref"/>
+            <macroRef key="ssrq.content.default"/>
+        </alternate>
+    </content>
+    <constraintSpec ident="sch-el-note" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-10-30" xml:lang="en">constraint for tei:note</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:note[parent::tei:app]">
+                    <sch:assert test="every $child in * satisfies $child/name() = (&apos;ref&apos;,
+                    &apos;orig&apos;)"> If a tei:note is used inside tei:app, only tei:ref and
+                    tei:orig are allowed as children. </sch:assert>
+                    <sch:assert test="count(tei:ref) = 1"> A tei:note inside tei:app must have
+                    exactly one tei:ref as a child. </sch:assert>
+                    <sch:assert test="count(tei:orig) = 1 or count(tei:orig) = 0"> A tei:note
+                    inside tei:app may have one or no tei:orig as a child. </sch:assert>
+                    <sch:assert test="every $t in text()[normalize-space()] satisfies
+                    string-length($t) = 0"> A tei:note inside tei:app must not have text content.
+                    </sch:assert>
+                    <sch:assert test=".[@type]"> A tei:note inside a critical apparatus must have a
+                    @type attribute. </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:note[@type=&apos;text_comparison&apos;]">
+                    <sch:assert test="parent::tei:app"> A tei:note with @type
+                    &quot;text_comparison&quot; must be a child of tei:app. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="type" mode="replace">
+            <desc versionDate="2025-02-03" xml:lang="de">die Art der Anmerkung</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the type of note</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">le type de la note</desc>
+            <datatype>
+                <dataRef key="ssrq.type.note"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-note-de"/>
+    <xi:include href="examples.xml" xpointer="ex-note-en"/>
+    <xi:include href="examples.xml" xpointer="ex-note-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-app-note-de"/>
+    <xi:include href="examples.xml" xpointer="ex-app-note-en"/>
+    <xi:include href="examples.xml" xpointer="ex-app-note-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Ein <gi>note</gi>-Element folgt unmittelbar auf sein Bezugswort im Editionstext. Wird
+            innerhalb von <gi>note</gi> Originaltext zitiert, wird dieser mit <gi>orig</gi>
+            ausgezeichnet.
+        </p>
+    </remarks>
+    <remarks versionDate="2024-05-02" xml:lang="en">
+        <p>
+            A <gi>note</gi> element immediately follows the reference word in the edition text. If
+            original text is quoted, it is marked with <gi>orig</gi>.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Un élément <gi>note</gi> suit immédiatement sa référence dans le texte de l’édition. Si
+            le texte original est cité à l’intérieur de <gi>note</gi>, il est signalé avec
+            <gi>orig</gi>.
+        </p>
+    </remarks>
 </elementSpec>

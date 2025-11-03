@@ -1,99 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="term" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Stichwort/Schlagwort</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">term</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">terme</gloss>
-  <desc xml:lang="de" versionDate="2023-07-20">Enthält ein Stichwort oder Schlagwort.</desc>
-  <desc xml:lang="en" versionDate="2023-07-20">Contains a lemma or a keyword.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-20">Contient un lemme ou un mot-clé.</desc>
-  <classes mode="replace">
-    <memberOf key="att.canonical"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="model.emphLike"/>
-  </classes>
-  <content>
-    <sequence maxOccurs="unbounded">
-      <macroRef key="ssrq.content.default"/>
-    </sequence>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-term">
-    <desc xml:lang="en" versionDate="2023-11-07">constraint for tei:term</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:term">
-          <sch:report test=".[not(@*)][not(normalize-space(.))][not(*)]">
-            tei:term should have at least an attribute, text content or element content.
-          </sch:report>
-          <sch:assert test=".[@ref or @type]">
-            tei:term should have a @ref, a @type or both.
-          </sch:assert>
-          <sch:report test=".[not(normalize-space(.))][not(*)][contains(@ref, 'lem')]">
-            If tei:term has no text content or child nodes, the @ref-attribute must reference
-            a keyword, not a lemma.
-          </sch:report>
-        </sch:rule>
-      </sch:pattern>
-      <sch:pattern>
-        <sch:rule context="tei:term[not(ancestor::tei:keywords)][not(normalize-space(.))][not(*)]">
-          <sch:assert test=".[@type eq 'index']">
-            If tei:term is used outside tei:keywords and has no text content or child nodes,
-            then it must have a @type-attribute with the value 'index'.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-      <sch:pattern>
-        <sch:rule context="tei:term[not(ancestor::tei:keywords)][normalize-space(.) or *]">
-          <sch:assert test=".[not(@type eq 'index')]">
-            If tei:term is used outside tei:keywords and has text content or child elements,
-            then it must not have a @type-attribute with the value 'index'.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-      <sch:pattern>
-        <sch:rule context="tei:term[@ref]">
-          <sch:assert test=".[not(@type eq 'unknown')]">
-            If tei:term has a @ref-attribute, it cannot be of @type 'unknown'.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="ref" mode="replace">
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.pointer.keywords"/>
-          <rng:ref name="ssrq.pointer.lemma"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-    <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-03">die Art des Stichworts/Schlagworts</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the type of the term</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">le type du terme</desc>
-      <datatype>
-        <dataRef key="ssrq.type.term"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-term-de"/>
-  <xi:include href="examples.xml" xpointer="ex-term-en"/>
-  <xi:include href="examples.xml" xpointer="ex-term-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-sic-term-de"/>
-  <xi:include href="examples.xml" xpointer="ex-sic-term-en"/>
-  <xi:include href="examples.xml" xpointer="ex-sic-term-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-07">
-    <p>Über das Attribut <att>ref</att> werden die Einträge mit der entsprechenden
-      <ref target="https://termini.ssrq-sds-fds.ch">Datenbank</ref> der SSRQ verknüpft.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-20">
-    <p>The entries are linked to the registry databases via the <att>ref</att> attribute.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>L’attribut <att>ref</att> relie les entrées à la
-      <ref target="https://termini.ssrq-sds-fds.ch">base de données</ref> SDS correspondante.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="term" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Stichwort/Schlagwort</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">term</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">terme</gloss>
+    <desc versionDate="2023-07-20" xml:lang="de">Enthält ein Stichwort oder Schlagwort.</desc>
+    <desc versionDate="2023-07-20" xml:lang="en">Contains a lemma or a keyword.</desc>
+    <desc versionDate="2023-07-20" xml:lang="fr">Contient un lemme ou un mot-clé.</desc>
+    <classes mode="replace">
+        <memberOf key="att.canonical"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="model.emphLike"/>
+    </classes>
+    <content>
+        <sequence maxOccurs="unbounded">
+            <macroRef key="ssrq.content.default"/>
+        </sequence>
+    </content>
+    <constraintSpec ident="sch-el-term" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-11-07" xml:lang="en">constraint for tei:term</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:term">
+                    <sch:report test=".[not(@*)][not(normalize-space(.))][not(*)]"> tei:term should
+                    have at least an attribute, text content or element content. </sch:report>
+                    <sch:assert test=".[@ref or @type]"> tei:term should have a @ref, a @type or
+                    both. </sch:assert>
+                    <sch:report test=".[not(normalize-space(.))][not(*)][contains(@ref,
+                    &apos;lem&apos;)]"> If tei:term has no text content or child nodes, the
+                    @ref-attribute must reference a keyword, not a lemma. </sch:report>
+                </sch:rule>
+            </sch:pattern>
+            <sch:pattern>
+                <sch:rule
+                context="tei:term[not(ancestor::tei:keywords)][not(normalize-space(.))][not(*)]">
+                    <sch:assert test=".[@type eq &apos;index&apos;]"> If tei:term is used outside
+                    tei:keywords and has no text content or child nodes, then it must have a
+                    @type-attribute with the value &apos;index&apos;. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+            <sch:pattern>
+                <sch:rule context="tei:term[not(ancestor::tei:keywords)][normalize-space(.) or *]">
+                    <sch:assert test=".[not(@type eq &apos;index&apos;)]"> If tei:term is used
+                    outside tei:keywords and has text content or child elements, then it must not
+                    have a @type-attribute with the value &apos;index&apos;. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+            <sch:pattern>
+                <sch:rule context="tei:term[@ref]">
+                    <sch:assert test=".[not(@type eq &apos;unknown&apos;)]"> If tei:term has a
+                    @ref-attribute, it cannot be of @type &apos;unknown&apos;. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="ref" mode="replace">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.pointer.keywords"/>
+                    <rng:ref name="ssrq.pointer.lemma"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="replace">
+            <desc versionDate="2025-02-03" xml:lang="de">die Art des Stichworts/Schlagworts</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the type of the term</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">le type du terme</desc>
+            <datatype>
+                <dataRef key="ssrq.type.term"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-term-de"/>
+    <xi:include href="examples.xml" xpointer="ex-term-en"/>
+    <xi:include href="examples.xml" xpointer="ex-term-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-sic-term-de"/>
+    <xi:include href="examples.xml" xpointer="ex-sic-term-en"/>
+    <xi:include href="examples.xml" xpointer="ex-sic-term-fr"/>
+    <remarks versionDate="2025-02-07" xml:lang="de">
+        <p>
+            Über das Attribut <att>ref</att> werden die Einträge mit der entsprechenden <ref
+            target="https://termini.ssrq-sds-fds.ch">Datenbank</ref> der SSRQ verknüpft.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-20" xml:lang="en">
+        <p>
+            The entries are linked to the registry databases via the <att>ref</att> attribute.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-07" xml:lang="fr">
+        <p>
+            L’attribut <att>ref</att> relie les entrées à la <ref
+            target="https://termini.ssrq-sds-fds.ch">base de données</ref> SDS correspondante.
+        </p>
+    </remarks>
 </elementSpec>

@@ -1,103 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="head" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Überschrift</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">heading</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">titre</gloss>
-  <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Überschrift oder einen Titel.</desc>
-  <desc xml:lang="en" versionDate="2023-07-19">Contains a heading or title.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient un en-tête ou un titre.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-    <memberOf key="att.global.responsibility"/>
-    <memberOf key="att.placement"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="att.written"/>
-    <memberOf key="model.headLike"/>
-  </classes>
-  <content>
-    <alternate>
-      <alternate maxOccurs="unbounded">
-        <elementRef key="bibl"/>
-        <elementRef key="p"/>
-        <macroRef key="ssrq.content.default"/>
-      </alternate>
-      <elementRef key="seg" minOccurs="2" maxOccurs="unbounded"/>
-    </alternate>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-head">
-    <desc xml:lang="en" versionDate="2025-02-25">constraint for tei:head</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:head[parent::tei:msDesc]">
-          <sch:report test=".[@hand or @n or @place or @resp or @type]">
-            If tei:head is inside tei:msDesc the following attributes are forbidden:
-            @hand, @n, @place, @resp and @type.
-          </sch:report>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="cert" mode="delete"/>
-    <attDef ident="n" mode="change">
-      <desc xml:lang="de" versionDate="2025-01-31">die Nummerierung der Überschrift</desc>
-      <desc xml:lang="en" versionDate="2025-01-31">the numbering of the heading</desc>
-      <desc xml:lang="fr" versionDate="2025-01-31">la numérotation du titre</desc>
-    </attDef>
-    <attDef ident="place" mode="change">
-      <desc xml:lang="de" versionDate="2025-02-04">der Ort der Überschrift</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the place of the heading</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">le lieu du titre</desc>
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.place"/>
-          <rng:ref name="ssrq.place.add"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-    <attDef ident="type" mode="change">
-      <desc xml:lang="de" versionDate="2025-02-03">die Art der Überschrift</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the type of heading</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">le type du titre</desc>
-      <datatype>
-        <dataRef key="ssrq.type.head"/>
-      </datatype>
-    </attDef>
-    <attDef ident="xml:id" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-head-de"/>
-  <xi:include href="examples.xml" xpointer="ex-head-en"/>
-  <xi:include href="examples.xml" xpointer="ex-head-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-head-table-de"/>
-  <xi:include href="examples.xml" xpointer="ex-head-table-en"/>
-  <xi:include href="examples.xml" xpointer="ex-head-table-fr"/>
-  <remarks xml:lang="de" versionDate="2025-09-26">
-    <p>Als Teil des <gi>teiHeader</gi> enthält das Element den Titel des Dokuments oder den Titel
-      des Textträgers. Innerhalb des <gi>body</gi> kann <gi>head</gi> die Überschrift eines
-      Kapitels oder Unterkapitels angeben, in
-    <gi>list</gi> die Überschrift einer Liste, in <gi>table</gi> die Überschrift einer Tabelle.</p>
-    <p>Eine durch die Bearbeitenden hinzugefügte Überschrift, die nicht im Original vorhanden ist,
-      wird mit dem Attribut <att>resp</att> gekennzeichnet. Mit dem Attribut <att>n</att>
-      kann die Überschrift nummeriert, mit <att>xml:lang</att> eine vom umgebenden Text
-      abweichende Sprache angegeben werden, auf <gi>foreign</gi> kann in diesem Fall verzichtet
-      werden.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-19">
-    <p>Contains the title of the document as part of the <gi>teiHeader</gi> and the description of
-      the cited short title as part of <gi>listBibl</gi>; in <gi>body</gi> the heading of a chapter
-      or subchapter etc.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-09-26">
-    <p>S’il fait partie du <gi>teiHeader</gi>, l’élément contient le titre du document ou le titre
-      du support de texte. A l’intérieur de <gi>body</gi>, <gi>head</gi> peut signaler le titre
-      d’un chapitre ou d’un sous-chapitre, dans <gi>list</gi> le titre d’une liste, dans
-      <gi>table</gi> le titre d’un tableau.</p>
-    <p>Un titre ajouté par les éditeurs qui n’est pas présent dans l’original est marqué avec
-      l’attribut <att>resp</att>. L’attribut <att>n</att> peut être utilisé pour numéroter le titre et
-      <att>xml:lang</att> peut être utilisé pour signaler une langue différente du texte
-      principal. Dans ce cas, on peut renoncer à <gi>foreign</gi>.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="head" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Überschrift</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">heading</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">titre</gloss>
+    <desc versionDate="2023-07-19" xml:lang="de">Enthält eine Überschrift oder einen Titel.</desc>
+    <desc versionDate="2023-07-19" xml:lang="en">Contains a heading or title.</desc>
+    <desc versionDate="2023-07-19" xml:lang="fr">Contient un en-tête ou un titre.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="att.global.responsibility"/>
+        <memberOf key="att.placement"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="att.written"/>
+        <memberOf key="model.headLike"/>
+    </classes>
+    <content>
+        <alternate>
+            <alternate maxOccurs="unbounded">
+                <elementRef key="bibl"/>
+                <elementRef key="p"/>
+                <macroRef key="ssrq.content.default"/>
+            </alternate>
+            <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
+        </alternate>
+    </content>
+    <constraintSpec ident="sch-el-head" scheme="schematron" xml:lang="en">
+        <desc versionDate="2025-02-25" xml:lang="en">constraint for tei:head</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:head[parent::tei:msDesc]">
+                    <sch:report test=".[@hand or @n or @place or @resp or @type]"> If tei:head is
+                    inside tei:msDesc the following attributes are forbidden: @hand, @n, @place,
+                    @resp and @type. </sch:report>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="cert" mode="delete"/>
+        <attDef ident="n" mode="change">
+            <desc versionDate="2025-01-31" xml:lang="de">die Nummerierung der Überschrift</desc>
+            <desc versionDate="2025-01-31" xml:lang="en">the numbering of the heading</desc>
+            <desc versionDate="2025-01-31" xml:lang="fr">la numérotation du titre</desc>
+        </attDef>
+        <attDef ident="place" mode="change">
+            <desc versionDate="2025-02-04" xml:lang="de">der Ort der Überschrift</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the place of the heading</desc>
+            <desc versionDate="2025-02-04" xml:lang="fr">le lieu du titre</desc>
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.place"/>
+                    <rng:ref name="ssrq.place.add"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="change">
+            <desc versionDate="2025-02-03" xml:lang="de">die Art der Überschrift</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the type of heading</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">le type du titre</desc>
+            <datatype>
+                <dataRef key="ssrq.type.head"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:id" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-head-de"/>
+    <xi:include href="examples.xml" xpointer="ex-head-en"/>
+    <xi:include href="examples.xml" xpointer="ex-head-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-head-table-de"/>
+    <xi:include href="examples.xml" xpointer="ex-head-table-en"/>
+    <xi:include href="examples.xml" xpointer="ex-head-table-fr"/>
+    <remarks versionDate="2025-09-26" xml:lang="de">
+        <p>
+            Als Teil des <gi>teiHeader</gi> enthält das Element den Titel des Dokuments oder den
+            Titel des Textträgers. Innerhalb des <gi>body</gi> kann <gi>head</gi> die Überschrift
+            eines Kapitels oder Unterkapitels angeben, in <gi>list</gi> die Überschrift einer
+            Liste, in <gi>table</gi> die Überschrift einer Tabelle.
+        </p>
+        <p>
+            Eine durch die Bearbeitenden hinzugefügte Überschrift, die nicht im Original vorhanden
+            ist, wird mit dem Attribut <att>resp</att> gekennzeichnet. Mit dem Attribut
+            <att>n</att> kann die Überschrift nummeriert, mit <att>xml:lang</att> eine vom
+            umgebenden Text abweichende Sprache angegeben werden, auf <gi>foreign</gi> kann in
+            diesem Fall verzichtet werden.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-19" xml:lang="en">
+        <p>
+            Contains the title of the document as part of the <gi>teiHeader</gi> and the
+            description of the cited short title as part of <gi>listBibl</gi>; in <gi>body</gi> the
+            heading of a chapter or subchapter etc.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-09-26" xml:lang="fr">
+        <p>
+            S’il fait partie du <gi>teiHeader</gi>, l’élément contient le titre du document ou le
+            titre du support de texte. A l’intérieur de <gi>body</gi>, <gi>head</gi> peut signaler
+            le titre d’un chapitre ou d’un sous-chapitre, dans <gi>list</gi> le titre d’une liste,
+            dans <gi>table</gi> le titre d’un tableau.
+        </p>
+        <p>
+            Un titre ajouté par les éditeurs qui n’est pas présent dans l’original est marqué avec
+            l’attribut <att>resp</att>. L’attribut <att>n</att> peut être utilisé pour numéroter le
+            titre et <att>xml:lang</att> peut être utilisé pour signaler une langue différente du
+            texte principal. Dans ce cas, on peut renoncer à <gi>foreign</gi>.
+        </p>
+    </remarks>
 </elementSpec>

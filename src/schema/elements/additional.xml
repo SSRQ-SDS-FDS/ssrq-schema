@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="additional" module="msDescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">zusätzliche Informationen</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">additional information</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">informations complémentaires</gloss>
-  <desc xml:lang="de" versionDate="2025-02-05">Enthält zusätzliche Informationen zum Textzeugen.</desc>
-  <desc xml:lang="en" versionDate="2023-07-14">Contains references to editions, regesta and
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="additional" mode="change" module="msDescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">zusätzliche Informationen</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">additional information</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">informations complémentaires</gloss>
+    <desc versionDate="2025-02-05" xml:lang="de">Enthält zusätzliche Informationen zum
+    Textzeugen.</desc>
+    <desc versionDate="2023-07-14" xml:lang="en">Contains references to editions, regesta and
     literature.</desc>
-  <desc xml:lang="fr" versionDate="2025-04-29">Contient des informations complémentaires sur le
+    <desc versionDate="2025-04-29" xml:lang="fr">Contient des informations complémentaires sur le
     texte.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence>
-      <elementRef key="adminInfo" minOccurs="0"/>
-      <elementRef key="listBibl" minOccurs="0" maxOccurs="unbounded"/>
-    </sequence>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-additional-de"/>
-  <xi:include href="examples.xml" xpointer="ex-additional-en"/>
-  <xi:include href="examples.xml" xpointer="ex-additional-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-05">
-    <p>In <gi>additional</gi> wird die Literatur zum Textzeugen, z. B. Editionen, Regesten oder
-      Sekundärliteratur mithilfe von <gi>listBibl</gi> verzeichnet.</p>
-    <p>Ist der Textzeuge nicht mehr erhalten, werden Angaben zum Verlust des Textzeugen in
-      <gi>adminInfo</gi> hinterlegt.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-04-29">
-    <p>Dans <gi>additional</gi>, la littérature relative au texte, p. ex. les éditions,
-      les résumés ou la littérature secondaire, est répertoriée à l’aide de <gi>listBibl</gi>.</p>
-    <p>Si le texte n’est plus conservé, des informations sur sa perte sont indiquées dans
-      <gi>adminInfo</gi>.</p>
-  </remarks>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="adminInfo" minOccurs="0"/>
+            <elementRef key="listBibl" maxOccurs="unbounded" minOccurs="0"/>
+        </sequence>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-additional-de"/>
+    <xi:include href="examples.xml" xpointer="ex-additional-en"/>
+    <xi:include href="examples.xml" xpointer="ex-additional-fr"/>
+    <remarks versionDate="2025-02-05" xml:lang="de">
+        <p>
+            In <gi>additional</gi> wird die Literatur zum Textzeugen, z. B. Editionen, Regesten
+            oder Sekundärliteratur mithilfe von <gi>listBibl</gi> verzeichnet.
+        </p>
+        <p>
+            Ist der Textzeuge nicht mehr erhalten, werden Angaben zum Verlust des Textzeugen in
+            <gi>adminInfo</gi> hinterlegt.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-04-29" xml:lang="fr">
+        <p>
+            Dans <gi>additional</gi>, la littérature relative au texte, p. ex. les éditions, les
+            résumés ou la littérature secondaire, est répertoriée à l’aide de <gi>listBibl</gi>.
+        </p>
+        <p>
+            Si le texte n’est plus conservé, des informations sur sa perte sont indiquées dans
+            <gi>adminInfo</gi>.
+        </p>
+    </remarks>
 </elementSpec>

@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="item" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Eintrag</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">item</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">entrée</gloss>
-  <desc xml:lang="de" versionDate="2023-05-25">Enthält einen Listeneintrag.</desc>
-  <desc xml:lang="en" versionDate="2023-05-25">Contains a list entry.</desc>
-  <desc xml:lang="fr" versionDate="2023-05-25">Contient une entrée au sein d’une liste.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence maxOccurs="unbounded">
-      <macroRef key="ssrq.content.default"/>
-    </sequence>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-list-de"/>
-  <xi:include href="examples.xml" xpointer="ex-list-en"/>
-  <xi:include href="examples.xml" xpointer="ex-list-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-list-head-de"/>
-  <xi:include href="examples.xml" xpointer="ex-list-head-en"/>
-  <xi:include href="examples.xml" xpointer="ex-list-head-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-list-complex-de"/>
-  <xi:include href="examples.xml" xpointer="ex-list-complex-en"/>
-  <xi:include href="examples.xml" xpointer="ex-list-complex-fr"/>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="item" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Eintrag</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">item</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">entrée</gloss>
+    <desc versionDate="2023-05-25" xml:lang="de">Enthält einen Listeneintrag.</desc>
+    <desc versionDate="2023-05-25" xml:lang="en">Contains a list entry.</desc>
+    <desc versionDate="2023-05-25" xml:lang="fr">Contient une entrée au sein d’une liste.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence maxOccurs="unbounded">
+            <macroRef key="ssrq.content.default"/>
+        </sequence>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-list-de"/>
+    <xi:include href="examples.xml" xpointer="ex-list-en"/>
+    <xi:include href="examples.xml" xpointer="ex-list-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-list-head-de"/>
+    <xi:include href="examples.xml" xpointer="ex-list-head-en"/>
+    <xi:include href="examples.xml" xpointer="ex-list-head-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-list-complex-de"/>
+    <xi:include href="examples.xml" xpointer="ex-list-complex-en"/>
+    <xi:include href="examples.xml" xpointer="ex-list-complex-fr"/>
 </elementSpec>

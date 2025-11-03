@@ -1,76 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="figure" module="figures" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Abbildung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">figure</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">illustration</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Beschreibt eine Abbildung jeder Art.</desc>
-  <desc xml:lang="en" versionDate="2023-04-11">Contains elements that describe graphical
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="figure" mode="change" module="figures" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Abbildung</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">figure</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">illustration</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Beschreibt eine Abbildung jeder Art.</desc>
+    <desc versionDate="2023-04-11" xml:lang="en">Contains elements that describe graphical
     information.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Décrit une illustration de n’importe quel type.</desc>
-  <classes mode="replace">
-    <memberOf key="att.placement"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="att.written"/>
-  </classes>
-  <content>
-      <elementRef key="graphic" minOccurs="0"/>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-figure">
-    <desc xml:lang="en" versionDate="2023-07-05">constraint for tei:figure</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:figure[@type = 'illustration']">
-          <sch:assert test="tei:graphic">
-            If the @type of tei:figure is 'illustration' an element tei:graphic is required.
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:figure[not(@type = 'illustration')]">
-          <sch:assert test="not(*) and not(text())">
-            If the @type of tei:figure is not 'illustration' tei:figure must be empty.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="place" mode="change">
-      <desc xml:lang="de" versionDate="2025-02-04">der Ort der Abbildung</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the place of the figure</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">l’emplacement d’illustration</desc>
-    </attDef>
-    <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2025-01-31">die Art der Abbildung</desc>
-      <desc xml:lang="en" versionDate="2025-01-31">the type of the figure</desc>
-      <desc xml:lang="fr" versionDate="2025-01-31">le type d’illustration</desc>
-      <datatype>
-        <dataRef key="ssrq.type.figure"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-figure-1-de"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-1-en"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-1-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p><gi>figure</gi> beschreibt Notarzeichen (= Notariatszeichen, Notariatssignet, Signum),
-      Federzeichnungen, Holzschnitte, Verweiszeichen oder bei Kopien von Urkunden die Stelle, an
-      der sich in der Originalurkunde das Siegel befindet (L. S. = Locus sigilli) oder Abbildungen,
-      die mit <gi>graphic</gi> referenziert werden. Die Art der Abbbildung wird mit dem
-      Attribut <att>type</att> angegeben.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-13">
-    <p>Contains notary signs (= notarial sign, notarial signet, signum), pen drawings, woodcuts,
-      reference signs or, in the case of copies of deeds, the place where the seal is located in
-      the original deed (L. S. = Locus sigilli) or illustrations starting with <gi>graphic</gi>
-      be referenced.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p><gi>figure</gi> décrit des symboles de notaires (= sigle, sceau, signum), des dessins à
-      la plume, des gravures sur bois, des signes de renvoi ou, dans le cas de copies d’actes,
-      l’endroit où se trouve le sceau dans l’acte original (L. S. = Locus sigilli) ou des
-      illustrations qui sont référencées avec <gi>graphic</gi>. Le type d’illustration est
-      indiqué avec l’attribut <att>type</att>.</p>
-  </remarks>
+    <desc versionDate="2025-02-06" xml:lang="fr">Décrit une illustration de n’importe quel
+    type.</desc>
+    <classes mode="replace">
+        <memberOf key="att.placement"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="att.written"/>
+    </classes>
+    <content>
+        <elementRef key="graphic" minOccurs="0"/>
+    </content>
+    <constraintSpec ident="sch-el-figure" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-07-05" xml:lang="en">constraint for tei:figure</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:figure[@type = &apos;illustration&apos;]">
+                    <sch:assert test="tei:graphic"> If the @type of tei:figure is
+                    &apos;illustration&apos; an element tei:graphic is required. </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:figure[not(@type = &apos;illustration&apos;)]">
+                    <sch:assert test="not(*) and not(text())"> If the @type of tei:figure is not
+                    &apos;illustration&apos; tei:figure must be empty. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="place" mode="change">
+            <desc versionDate="2025-02-04" xml:lang="de">der Ort der Abbildung</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the place of the figure</desc>
+            <desc versionDate="2025-02-04" xml:lang="fr">l’emplacement d’illustration</desc>
+        </attDef>
+        <attDef ident="type" mode="replace" usage="req">
+            <desc versionDate="2025-01-31" xml:lang="de">die Art der Abbildung</desc>
+            <desc versionDate="2025-01-31" xml:lang="en">the type of the figure</desc>
+            <desc versionDate="2025-01-31" xml:lang="fr">le type d’illustration</desc>
+            <datatype>
+                <dataRef key="ssrq.type.figure"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-figure-1-de"/>
+    <xi:include href="examples.xml" xpointer="ex-figure-1-en"/>
+    <xi:include href="examples.xml" xpointer="ex-figure-1-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            <gi>figure</gi> beschreibt Notarzeichen (= Notariatszeichen, Notariatssignet, Signum),
+            Federzeichnungen, Holzschnitte, Verweiszeichen oder bei Kopien von Urkunden die Stelle,
+            an der sich in der Originalurkunde das Siegel befindet (L. S. = Locus sigilli) oder
+            Abbildungen, die mit <gi>graphic</gi> referenziert werden. Die Art der Abbbildung wird
+            mit dem Attribut <att>type</att> angegeben.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-13" xml:lang="en">
+        <p>
+            Contains notary signs (= notarial sign, notarial signet, signum), pen drawings,
+            woodcuts, reference signs or, in the case of copies of deeds, the place where the seal
+            is located in the original deed (L. S. = Locus sigilli) or illustrations starting with
+            <gi>graphic</gi> be referenced.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            <gi>figure</gi> décrit des symboles de notaires (= sigle, sceau, signum), des dessins à
+            la plume, des gravures sur bois, des signes de renvoi ou, dans le cas de copies
+            d’actes, l’endroit où se trouve le sceau dans l’acte original (L. S. = Locus sigilli)
+            ou des illustrations qui sont référencées avec <gi>graphic</gi>. Le type d’illustration
+            est indiqué avec l’attribut <att>type</att>.
+        </p>
+    </remarks>
 </elementSpec>

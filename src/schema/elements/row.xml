@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="row" module="figures" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Zeile</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">row</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">ligne</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Zeile einer Tabelle.</desc>
-  <desc xml:lang="en" versionDate="2023-07-11">Describes a row of a table.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient une ligne d’un tableau.</desc>
-  <classes mode="replace"/>
-  <content>
-    <alternate maxOccurs="unbounded">
-      <elementRef key="cell"/>
-      <elementRef key="measureGrp"/>
-    </alternate>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-row-de"/>
-  <xi:include href="examples.xml" xpointer="ex-row-en"/>
-  <xi:include href="examples.xml" xpointer="ex-row-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Wird zusammen mit <gi>table</gi> (Tabelle) und <gi>cell</gi> (Zelle) für die Kodierung
-      von Tabellen benötigt.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-11">
-    <p>Is required together with <gi>table</gi> (table) and <gi>cell</gi> (cell) for
-      displaying tables.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Cet élément est nécessaire avec <gi>table</gi> (tableau) et <gi>cell</gi> (cellule)
-      pour encoder des tableaux.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="row" mode="change" module="figures" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Zeile</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">row</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">ligne</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält eine Zeile einer Tabelle.</desc>
+    <desc versionDate="2023-07-11" xml:lang="en">Describes a row of a table.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient une ligne d’un tableau.</desc>
+    <classes mode="replace"/>
+    <content>
+        <alternate maxOccurs="unbounded">
+            <elementRef key="cell"/>
+            <elementRef key="measureGrp"/>
+        </alternate>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-row-de"/>
+    <xi:include href="examples.xml" xpointer="ex-row-en"/>
+    <xi:include href="examples.xml" xpointer="ex-row-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Wird zusammen mit <gi>table</gi> (Tabelle) und <gi>cell</gi> (Zelle) für die Kodierung
+            von Tabellen benötigt.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-11" xml:lang="en">
+        <p>
+            Is required together with <gi>table</gi> (table) and <gi>cell</gi> (cell) for
+            displaying tables.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Cet élément est nécessaire avec <gi>table</gi> (tableau) et <gi>cell</gi> (cellule)
+            pour encoder des tableaux.
+        </p>
+    </remarks>
 </elementSpec>

@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="teiHeader" module="header" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">TEI Kopfbereich</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">TEI header</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">en-tête TEI</gloss>
-  <desc xml:lang="de" versionDate="2025-02-07">Enthält alle Metadaten zum edierten Text.</desc>
-  <desc xml:lang="en" versionDate="2023-05-04">Contains all metadata about the edited
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="teiHeader" mode="change" module="header" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">TEI Kopfbereich</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">TEI header</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">en-tête TEI</gloss>
+    <desc versionDate="2025-02-07" xml:lang="de">Enthält alle Metadaten zum edierten Text.</desc>
+    <desc versionDate="2023-05-04" xml:lang="en">Contains all metadata about the edited
     document.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-07">Contient toutes les métadonnées sur le texte
+    <desc versionDate="2025-02-07" xml:lang="fr">Contient toutes les métadonnées sur le texte
     édité.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence>
-      <elementRef key="fileDesc"/>
-      <elementRef key="encodingDesc"/>
-      <elementRef key="profileDesc" minOccurs="0"/>
-    </sequence>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-teiHeader-de"/>
-  <xi:include href="examples.xml" xpointer="ex-teiHeader-en"/>
-  <xi:include href="examples.xml" xpointer="ex-teiHeader-fr"/>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="fileDesc"/>
+            <elementRef key="encodingDesc"/>
+            <elementRef key="profileDesc" minOccurs="0"/>
+        </sequence>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-teiHeader-de"/>
+    <xi:include href="examples.xml" xpointer="ex-teiHeader-en"/>
+    <xi:include href="examples.xml" xpointer="ex-teiHeader-fr"/>
 </elementSpec>

@@ -1,143 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="ab" module="linking" mode="change">
-  <gloss xml:lang="de" versionDate="2023-06-30">anonymer Textblock</gloss>
-  <gloss xml:lang="en" versionDate="2023-06-30">anonymous block</gloss>
-  <gloss xml:lang="fr" versionDate="2023-06-30">bloc anonyme</gloss>
-  <desc xml:lang="de" versionDate="2025-02-05">Enthält einen beliebigen Textblock ohne klar
-      definierte Zuordnung.</desc>
-  <desc xml:lang="en" versionDate="2025-02-05">Contains any text block without a clearly defined
-      assignment.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-05">Contient un bloc de texte quelconque sans
-      affectation clairement définie.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-    <memberOf key="att.global.rendition"/>
-    <memberOf key="att.placement"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="att.written"/>
-    <memberOf key="macro.abContent"/>
-    <memberOf key="model.pLike"/>
-  </classes>
-  <content>
-    <sequence maxOccurs="unbounded">
-      <macroRef key="ssrq.content.default"/>
-    </sequence>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-ab">
-    <desc xml:lang="en" versionDate="2025-05-08">constraints for tei:ab</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:ab[tei:hi]">
-          <sch:report test=".[count(*) = 1][string-length(normalize-space(string-join(text(), ''))) = 0]" xml:lang="en" role="warning">
-            If no further text is used inside tei:ab and tei:hi is the only child, consider
-            using the rend-attribute of tei:ab.
-          </sch:report>
-        </sch:rule>
-      </sch:pattern>
-      <sch:pattern>
-        <sch:rule context="tei:ab[@type='marginal_note']">
-          <sch:assert test=".[@place[contains(., 'margin')]]" xml:lang="en">
-            If tei:ab is of type marginal_note, its place must be either 'left_margin' or
-            'right_margin'.
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:ab[@type='dorsal']">
-          <sch:assert test=".[@place[contains(., 'verso')]]" xml:lang="en">
-            If tei:ab is of type dorsal, its place must be on the verso page.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="n" mode="delete"/>
-    <attDef ident="place" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2025-02-04">der Ort des anonymen Textblocks</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the place of the anonymous block</desc>
-      <desc xml:lang="fr" versionDate="2025-04-28">l’emplacement du bloc anonyme</desc>
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.place"/>
-          <rng:ref name="ssrq.place.ab"/>
-          <rng:ref name="ssrq.place.add"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-    <attDef ident="rend" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-04">das verwendete Schreibmittel</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the writing means used</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">les moyens d’écriture utilisés</desc>
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.rend.add"/>
-          <rng:ref name="ssrq.rend.placement"/>
-          <rng:ref name="ssrq.rend.rotation"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-    <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2025-01-31">die Art des Textblocks</desc>
-      <desc xml:lang="en" versionDate="2025-01-31">the type of text block</desc>
-      <desc xml:lang="fr" versionDate="2025-01-31">le type de bloc de texte</desc>
-      <datatype>
-        <dataRef key="ssrq.type.ab"/>
-      </datatype>
-    </attDef>
-    <attDef ident="xml:id" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-ab-de"/>
-  <xi:include href="examples.xml" xpointer="ex-ab-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-ab-en"/>
-  <remarks xml:lang="de" versionDate="2025-02-05">
-    <p>Wir verwenden das Element mit den Attributen <att>type</att> und <att>place</att>
-        für Vermerke aller Art wie Dorsualnotizen, Kanzleivermerke oder Registraturvermerke,
-        sowie für Marginalien.</p>
-    <p>Die Vermerke werden in chronologischer Reihenfolge aufgenommen.
-        Zeitgleich entstandene Vermerke werden aufgrund der chronologischen Reihenfolge immer an
-        der gleichen Stelle aufgeführt. Wenn z. B. bei einem Missiv auf der Rückseite eine
-        Dorsualnotiz an erster Stelle steht, dann die Adresse folgt und schliesslich zwei weitere
-        Dorsualnotizen, dann steht die Adresse trotzdem an erster Stelle, weil sie der
-        chronologisch gesehen erste Eintrag ist.</p>
-    <p>Bei Papsturkunden erfolgt die Angabe der Vermerke in folgender Reihenfolge: zuerst die
-        Vermerke unter der Plica, dann die auf der Plica und zum Schluss die Vermerke auf der
-        Rückseite der Urkunde.</p>
-    <p>Alle jeweils zeitgleichen Vermerke werden in Leserichtung
-        von oben nach unten und von links nach rechts erfasst. Falls die Leserichtung,
-        an der man sich orientieren soll, nicht eindeutig ist, z. B. wenn ein Vermerk auf dem
-        Kopf steht, ist ein Kommentar notwendig.
-   </p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-06-30">
-    <p>We always use the tag together with <att>type</att> and <att>place</att> for notes, dorsal
-        notes, chancery notes and registry notes as well as for marginalia.</p>
-    <p>In the case of papal documents, the notes are given in the following order: first the notes
-        under the plica, then the notes on the plica from left to right, and finally the notes on
-        the back of the document from left to right.</p>
-    <p>The endorsements and dorsual notes are recorded in chronological order. Contemporaneous
-        notes are always listed first because of the chronological order. Contemporaneous notes
-        are recorded in reading direction from top to bottom and from left to right. For example,
-        if a missive has a dorsal notation on the back in first place, followed by the address and
-        finally two more dorsal notations, the address will still be in first place. If the reading
-        direction to be followed is not uniform, i.e. a dorsual note is upside down, a comment is
-        necessary.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-04-28">
-    <p>Nous utilisons l’élément avec les attributs <att>type</att> et <att>place</att> pour toutes
-        sortes de notes telles que les notes dorsales, les notes de chancellerie ou les notes de greffe,
-        ainsi que pour les notes marginales.</p>
-    <p>Les notes sont disposées par ordre chronologique. Les notes créées en même temps sont
-        toujours répertoriées au même endroit selon l’ordre chronologique. Si p. ex.
-        une note dorsale apparaît en premier au dos d’une missive, suivie de l’adresse et enfin
-        de deux autres notes dorsales, l’adresse figure tout de même en première position, car elle
-        est la première mention chronologiquement parlant.</p>
-    <p>Dans le cas des documents papaux, les notes sont données dans l’ordre suivant : d’abord
-        les notes sous le repli (plica), puis celles sur le repli et enfin les notes au dos du
-        document.</p>
-    <p>Toutes les notes simultanées sont enregistrées dans le sens de lecture de haut en bas
-          et de gauche à droite. Si le sens de lecture à suivre n’est pas clair, p. ex. si
-          une note est à l’envers, un commentaire est nécessaire.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="ab" mode="change" module="linking" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2023-06-30" xml:lang="de">anonymer Textblock</gloss>
+    <gloss versionDate="2023-06-30" xml:lang="en">anonymous block</gloss>
+    <gloss versionDate="2023-06-30" xml:lang="fr">bloc anonyme</gloss>
+    <desc versionDate="2025-02-05" xml:lang="de">Enthält einen beliebigen Textblock ohne klar
+    definierte Zuordnung.</desc>
+    <desc versionDate="2025-02-05" xml:lang="en">Contains any text block without a clearly defined
+    assignment.</desc>
+    <desc versionDate="2025-02-05" xml:lang="fr">Contient un bloc de texte quelconque sans
+    affectation clairement définie.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="att.global.rendition"/>
+        <memberOf key="att.placement"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="att.written"/>
+        <memberOf key="macro.abContent"/>
+        <memberOf key="model.pLike"/>
+    </classes>
+    <content>
+        <sequence maxOccurs="unbounded">
+            <macroRef key="ssrq.content.default"/>
+        </sequence>
+    </content>
+    <constraintSpec ident="sch-el-ab" scheme="schematron" xml:lang="en">
+        <desc versionDate="2025-05-08" xml:lang="en">constraints for tei:ab</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:ab[tei:hi]">
+                    <sch:report role="warning" test=".[count(*) =
+                    1][string-length(normalize-space(string-join(text(), &apos;&apos;))) = 0]"
+                    xml:lang="en"> If no further text is used inside tei:ab and tei:hi is the only
+                    child, consider using the rend-attribute of tei:ab. </sch:report>
+                </sch:rule>
+            </sch:pattern>
+            <sch:pattern>
+                <sch:rule context="tei:ab[@type=&apos;marginal_note&apos;]">
+                    <sch:assert test=".[@place[contains(., &apos;margin&apos;)]]" xml:lang="en"> If
+                    tei:ab is of type marginal_note, its place must be either
+                    &apos;left_margin&apos; or &apos;right_margin&apos;. </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:ab[@type=&apos;dorsal&apos;]">
+                    <sch:assert test=".[@place[contains(., &apos;verso&apos;)]]" xml:lang="en"> If
+                    tei:ab is of type dorsal, its place must be on the verso page. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="place" mode="replace" usage="req">
+            <desc versionDate="2025-02-04" xml:lang="de">der Ort des anonymen Textblocks</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the place of the anonymous block</desc>
+            <desc versionDate="2025-04-28" xml:lang="fr">l’emplacement du bloc anonyme</desc>
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.place"/>
+                    <rng:ref name="ssrq.place.ab"/>
+                    <rng:ref name="ssrq.place.add"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="rend" mode="replace">
+            <desc versionDate="2025-02-04" xml:lang="de">das verwendete Schreibmittel</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the writing means used</desc>
+            <desc versionDate="2025-02-04" xml:lang="fr">les moyens d’écriture utilisés</desc>
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.rend.add"/>
+                    <rng:ref name="ssrq.rend.placement"/>
+                    <rng:ref name="ssrq.rend.rotation"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="replace" usage="req">
+            <desc versionDate="2025-01-31" xml:lang="de">die Art des Textblocks</desc>
+            <desc versionDate="2025-01-31" xml:lang="en">the type of text block</desc>
+            <desc versionDate="2025-01-31" xml:lang="fr">le type de bloc de texte</desc>
+            <datatype>
+                <dataRef key="ssrq.type.ab"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:id" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-ab-de"/>
+    <xi:include href="examples.xml" xpointer="ex-ab-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-ab-en"/>
+    <remarks versionDate="2025-02-05" xml:lang="de">
+        <p>
+            Wir verwenden das Element mit den Attributen <att>type</att> und <att>place</att> für
+            Vermerke aller Art wie Dorsualnotizen, Kanzleivermerke oder Registraturvermerke, sowie
+            für Marginalien.
+        </p>
+        <p>
+            Die Vermerke werden in chronologischer Reihenfolge aufgenommen. Zeitgleich entstandene
+            Vermerke werden aufgrund der chronologischen Reihenfolge immer an der gleichen Stelle
+            aufgeführt. Wenn z. B. bei einem Missiv auf der Rückseite eine Dorsualnotiz an erster
+            Stelle steht, dann die Adresse folgt und schliesslich zwei weitere Dorsualnotizen, dann
+            steht die Adresse trotzdem an erster Stelle, weil sie der chronologisch gesehen erste
+            Eintrag ist.
+        </p>
+        <p>
+            Bei Papsturkunden erfolgt die Angabe der Vermerke in folgender Reihenfolge: zuerst die
+            Vermerke unter der Plica, dann die auf der Plica und zum Schluss die Vermerke auf der
+            Rückseite der Urkunde.
+        </p>
+        <p>
+            Alle jeweils zeitgleichen Vermerke werden in Leserichtung von oben nach unten und von
+            links nach rechts erfasst. Falls die Leserichtung, an der man sich orientieren soll,
+            nicht eindeutig ist, z. B. wenn ein Vermerk auf dem Kopf steht, ist ein Kommentar
+            notwendig.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-06-30" xml:lang="en">
+        <p>
+            We always use the tag together with <att>type</att> and <att>place</att> for notes,
+            dorsal notes, chancery notes and registry notes as well as for marginalia.
+        </p>
+        <p>
+            In the case of papal documents, the notes are given in the following order: first the
+            notes under the plica, then the notes on the plica from left to right, and finally the
+            notes on the back of the document from left to right.
+        </p>
+        <p>
+            The endorsements and dorsual notes are recorded in chronological order. Contemporaneous
+            notes are always listed first because of the chronological order. Contemporaneous notes
+            are recorded in reading direction from top to bottom and from left to right. For
+            example, if a missive has a dorsal notation on the back in first place, followed by the
+            address and finally two more dorsal notations, the address will still be in first
+            place. If the reading direction to be followed is not uniform, i.e. a dorsual note is
+            upside down, a comment is necessary.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-04-28" xml:lang="fr">
+        <p>
+            Nous utilisons l’élément avec les attributs <att>type</att> et <att>place</att> pour
+            toutes sortes de notes telles que les notes dorsales, les notes de chancellerie ou les
+            notes de greffe, ainsi que pour les notes marginales.
+        </p>
+        <p>
+            Les notes sont disposées par ordre chronologique. Les notes créées en même temps sont
+            toujours répertoriées au même endroit selon l’ordre chronologique. Si p. ex. une note
+            dorsale apparaît en premier au dos d’une missive, suivie de l’adresse et enfin de deux
+            autres notes dorsales, l’adresse figure tout de même en première position, car elle est
+            la première mention chronologiquement parlant.
+        </p>
+        <p>
+            Dans le cas des documents papaux, les notes sont données dans l’ordre suivant : d’abord
+            les notes sous le repli (plica), puis celles sur le repli et enfin les notes au dos du
+            document.
+        </p>
+        <p>
+            Toutes les notes simultanées sont enregistrées dans le sens de lecture de haut en bas
+            et de gauche à droite. Si le sens de lecture à suivre n’est pas clair, p. ex. si une
+            note est à l’envers, un commentaire est nécessaire.
+        </p>
+    </remarks>
 </elementSpec>

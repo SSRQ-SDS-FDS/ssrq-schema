@@ -11,6 +11,10 @@ function cmd {
 function check {
   cmd ruff format . "${@}"
   cmd ruff check --fix . "${@}"
+  cmd pre-commit run xml-main-format --files $(git ls-files -- '*.xml')
+  cmd pre-commit run xml-common-format --files $(git ls-files -- '*.xml')
+  cmd pre-commit run xml-element-format --files $(git ls-files -- '*.xml')
+  cmd pre-commit run xml-example-format --files $(git ls-files -- '*.xml')
   cmd mypy
 }
 

@@ -1,48 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="expan" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2023-07-19">Auflösung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">expansion</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">développement</gloss>
-  <desc xml:lang="de" versionDate="2023-07-19">Enthält die Auflösung einer Abkürzung.</desc>
-  <desc xml:lang="en" versionDate="2023-07-19">Contains the expansion of an abbreviation.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient le développement d’une abréviation.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global.responsibility"/>
-    <memberOf key="model.choicePart"/>
-    <memberOf key="model.pPart.editorial"/>
-  </classes>
-  <content>
-    <alternate maxOccurs="unbounded">
-      <textNode/>
-      <macroRef key="ssrq.content.entities"/>
-    </alternate>
-  </content>
-  <attList>
-    <attDef ident="cert" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-choice-abbr-de"/>
-  <xi:include href="examples.xml" xpointer="ex-choice-abbr-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-choice-abbr-en"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Für die Auflösung von Abkürzungen gelten die Regeln der
-      <ref target="abbreviations.de.md">Transkriptionsrichtlinien</ref>, vgl. auch die
-      <ref target="abbreviation-list.de.md">Liste der Abkürzungen</ref>.
-    </p>
-    <p>Mit dem Attribut <att>resp</att> wird die für die Auflösung verantwortliche Person
-      angegeben.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-19">
-    <p>When resolving abbreviations, use historical rather than modern spelling when there is no
-        clear spelling clue, e.g. B.: egen = egenante (not egenannte), schulth = schultheis (not
-        schultheiss). Ao is tacitly dissolved in anno.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Les règles des <ref target="abbreviations.fr.md">principes de transcription</ref>
-      s’appliquent au développement des abréviations. Voir également la
-      <ref target="abbreviation-list.fr.md">liste des abréviations</ref></p>
-    <p>L’attribut <att>resp</att> spécifie la personne responsable du développement.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="expan" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2023-07-19" xml:lang="de">Auflösung</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">expansion</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">développement</gloss>
+    <desc versionDate="2023-07-19" xml:lang="de">Enthält die Auflösung einer Abkürzung.</desc>
+    <desc versionDate="2023-07-19" xml:lang="en">Contains the expansion of an abbreviation.</desc>
+    <desc versionDate="2023-07-19" xml:lang="fr">Contient le développement d’une
+    abréviation.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global.responsibility"/>
+        <memberOf key="model.choicePart"/>
+        <memberOf key="model.pPart.editorial"/>
+    </classes>
+    <content>
+        <alternate maxOccurs="unbounded">
+            <textNode/>
+            <macroRef key="ssrq.content.entities"/>
+        </alternate>
+    </content>
+    <attList>
+        <attDef ident="cert" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-choice-abbr-de"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-abbr-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-choice-abbr-en"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Für die Auflösung von Abkürzungen gelten die Regeln der <ref
+            target="abbreviations.de.md">Transkriptionsrichtlinien</ref>, vgl. auch die <ref
+            target="abbreviation-list.de.md">Liste der Abkürzungen</ref>.
+        </p>
+        <p>
+            Mit dem Attribut <att>resp</att> wird die für die Auflösung verantwortliche Person
+            angegeben.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-19" xml:lang="en">
+        <p>
+            When resolving abbreviations, use historical rather than modern spelling when there is
+            no clear spelling clue, e.g. B.: egen = egenante (not egenannte), schulth = schultheis
+            (not schultheiss). Ao is tacitly dissolved in anno.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Les règles des <ref target="abbreviations.fr.md">principes de transcription</ref>
+            s’appliquent au développement des abréviations. Voir également la <ref
+            target="abbreviation-list.fr.md">liste des abréviations</ref>
+        </p>
+        <p>
+            L’attribut <att>resp</att> spécifie la personne responsable du développement.
+        </p>
+    </remarks>
 </elementSpec>

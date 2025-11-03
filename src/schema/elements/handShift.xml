@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="handShift" module="transcr" mode="change">
-  <gloss xml:lang="de" versionDate="2023-03-15">Handwechsel</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">change of hands</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">changement de main</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Markiert den Wechsel einer Hand im Text.</desc>
-  <desc xml:lang="en" versionDate="2023-05-11">Indicates the change of a hand.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Signale un changement de main dans le texte.</desc>
-  <classes mode="replace">
-    <memberOf key="att.written"/>
-  </classes>
-  <content>
-    <empty/>
-  </content>
-  <attList>
-    <attDef ident="hand" mode="change" usage="req"/>
-    <attDef ident="new" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-handShift-de"/>
-  <xi:include href="examples.xml" xpointer="ex-handShift-en"/>
-  <xi:include href="examples.xml" xpointer="ex-handShift-fr"/>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="handShift" mode="change" module="transcr" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2023-03-15" xml:lang="de">Handwechsel</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">change of hands</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">changement de main</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Markiert den Wechsel einer Hand im Text.</desc>
+    <desc versionDate="2023-05-11" xml:lang="en">Indicates the change of a hand.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Signale un changement de main dans le
+    texte.</desc>
+    <classes mode="replace">
+        <memberOf key="att.written"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="hand" mode="change" usage="req"/>
+        <attDef ident="new" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-handShift-de"/>
+    <xi:include href="examples.xml" xpointer="ex-handShift-en"/>
+    <xi:include href="examples.xml" xpointer="ex-handShift-fr"/>
 </elementSpec>

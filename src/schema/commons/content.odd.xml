@@ -1,121 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-  <specGrp xml:id="ssrq-default-content-types">
-    <macroSpec ident="ssrq.content.anchor.spans" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2023-08-17">Anker- und umspannende Elemente</desc>
-      <desc xml:lang="en" versionDate="2023-08-17">anchor and spanning elements</desc>
-      <desc xml:lang="fr" versionDate="2023-08-17">éléments d’ancrage et de serrage</desc>
-      <content>
-        <alternate>
-          <elementRef key="addSpan"/>
-          <elementRef key="anchor"/>
-          <elementRef key="damageSpan"/>
-          <elementRef key="delSpan"/>
-        </alternate>
-      </content>
-    </macroSpec>
-    <macroSpec ident="ssrq.content.content" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2023-03-23">inhaltliche Auszeichnung</desc>
-      <desc xml:lang="en" versionDate="2023-06-29">distinction of content</desc>
-      <desc xml:lang="fr" versionDate="2023-03-23">distinction du contenu</desc>
-      <content>
-        <alternate>
-          <elementRef key="date"/>
-          <elementRef key="num"/>
-          <elementRef key="time"/>
-        </alternate>
-      </content>
-    </macroSpec>
-    <macroSpec ident="ssrq.content.critical" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2023-03-23">textkritische Auszeichnungen</desc>
-      <desc xml:lang="en" versionDate="2023-06-29">critical markup</desc>
-      <desc xml:lang="fr" versionDate="2023-03-23">distinctions de la critique textuelle</desc>
-      <content>
-        <alternate>
-          <elementRef key="abbr"/>
-          <elementRef key="add"/>
-          <elementRef key="app"/>
-          <elementRef key="choice"/>
-          <elementRef key="damage"/>
-          <elementRef key="del"/>
-          <elementRef key="foreign"/>
-          <elementRef key="gap"/>
-          <elementRef key="handShift"/>
-          <elementRef key="note"/>
-          <elementRef key="sic"/>
-          <elementRef key="space"/>
-          <elementRef key="subst"/>
-          <elementRef key="supplied"/>
-          <elementRef key="unclear"/>
-        </alternate>
-      </content>
-    </macroSpec>
-    <macroSpec ident="ssrq.content.default" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2023-06-29">standardmässiger Inhalt</desc>
-      <desc xml:lang="en" versionDate="2023-06-29">default content</desc>
-      <desc xml:lang="fr" versionDate="2023-06-29">contenu par défaut</desc>
-      <content>
-        <alternate>
-          <textNode/>
-          <macroRef key="ssrq.content.anchor.spans"/>
-          <macroRef key="ssrq.content.content"/>
-          <macroRef key="ssrq.content.critical"/>
-          <macroRef key="ssrq.content.display"/>
-          <macroRef key="ssrq.content.entities"/>
-          <macroRef key="ssrq.content.measure"/>
-        </alternate>
-      </content>
-    </macroSpec>
-    <macroSpec ident="ssrq.content.display" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2023-06-29">Markup, das die Darstellung beschreibt</desc>
-      <desc xml:lang="en" versionDate="2023-06-29">markup that describes the presentation</desc>
-      <desc xml:lang="fr" versionDate="2023-06-29">balisage qui décrit la présentation</desc>
-      <content>
-        <alternate>
-          <elementRef key="ab"/>
-          <elementRef key="cb"/>
-          <elementRef key="figure"/>
-          <elementRef key="fw"/>
-          <elementRef key="head"/>
-          <elementRef key="hi"/>
-          <elementRef key="label"/>
-          <elementRef key="lb"/>
-          <elementRef key="orig"/>
-          <elementRef key="pb"/>
-          <elementRef key="pc"/>
-          <elementRef key="q"/>
-          <elementRef key="quote"/>
-          <elementRef key="signed"/>
-          <elementRef key="table"/>
-        </alternate>
-      </content>
-    </macroSpec>
-    <macroSpec ident="ssrq.content.entities" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2023-06-29">Auszeichnung von mit Namen versehenen Entitäten</desc>
-      <desc xml:lang="en" versionDate="2023-06-29">markup of named entities</desc>
-      <desc xml:lang="fr" versionDate="2023-06-29">balisage des entités nommées</desc>
-      <content>
-        <alternate>
-          <elementRef key="orgName"/>
-          <elementRef key="persName"/>
-          <elementRef key="placeName"/>
-          <elementRef key="term"/>
-        </alternate>
-      </content>
-    </macroSpec>
-    <macroSpec ident="ssrq.content.measure" mode="add" module="ssrq.core.module">
-      <desc xml:lang="de" versionDate="2023-06-29">Auszeichnung von Massen und ähnlichen Dingen</desc>
-      <desc xml:lang="en" versionDate="2023-06-29">marking of measures and similar things</desc>
-      <desc xml:lang="fr" versionDate="2023-03-23">distinction des mesures et choses similaires</desc>
-      <content>
-        <alternate>
-          <elementRef key="measure"/>
-          <elementRef key="measureGrp"/>
-        </alternate>
-      </content>
-    </macroSpec>
-  </specGrp>
+    <specGrp xml:id="ssrq-default-content-types">
+        <macroSpec ident="ssrq.content.anchor.spans" mode="add" module="ssrq.core.module">
+            <desc versionDate="2023-08-17" xml:lang="de">Anker- und umspannende Elemente</desc>
+            <desc versionDate="2023-08-17" xml:lang="en">anchor and spanning elements</desc>
+            <desc versionDate="2023-08-17" xml:lang="fr">éléments d’ancrage et de serrage</desc>
+            <content>
+                <alternate>
+                    <elementRef key="addSpan"/>
+                    <elementRef key="anchor"/>
+                    <elementRef key="damageSpan"/>
+                    <elementRef key="delSpan"/>
+                </alternate>
+            </content>
+        </macroSpec>
+        <macroSpec ident="ssrq.content.content" mode="add" module="ssrq.core.module">
+            <desc versionDate="2023-03-23" xml:lang="de">inhaltliche Auszeichnung</desc>
+            <desc versionDate="2023-06-29" xml:lang="en">distinction of content</desc>
+            <desc versionDate="2023-03-23" xml:lang="fr">distinction du contenu</desc>
+            <content>
+                <alternate>
+                    <elementRef key="date"/>
+                    <elementRef key="num"/>
+                    <elementRef key="time"/>
+                </alternate>
+            </content>
+        </macroSpec>
+        <macroSpec ident="ssrq.content.critical" mode="add" module="ssrq.core.module">
+            <desc versionDate="2023-03-23" xml:lang="de">textkritische Auszeichnungen</desc>
+            <desc versionDate="2023-06-29" xml:lang="en">critical markup</desc>
+            <desc versionDate="2023-03-23" xml:lang="fr">distinctions de la critique
+            textuelle</desc>
+            <content>
+                <alternate>
+                    <elementRef key="abbr"/>
+                    <elementRef key="add"/>
+                    <elementRef key="app"/>
+                    <elementRef key="choice"/>
+                    <elementRef key="damage"/>
+                    <elementRef key="del"/>
+                    <elementRef key="foreign"/>
+                    <elementRef key="gap"/>
+                    <elementRef key="handShift"/>
+                    <elementRef key="note"/>
+                    <elementRef key="sic"/>
+                    <elementRef key="space"/>
+                    <elementRef key="subst"/>
+                    <elementRef key="supplied"/>
+                    <elementRef key="unclear"/>
+                </alternate>
+            </content>
+        </macroSpec>
+        <macroSpec ident="ssrq.content.default" mode="add" module="ssrq.core.module">
+            <desc versionDate="2023-06-29" xml:lang="de">standardmässiger Inhalt</desc>
+            <desc versionDate="2023-06-29" xml:lang="en">default content</desc>
+            <desc versionDate="2023-06-29" xml:lang="fr">contenu par défaut</desc>
+            <content>
+                <alternate>
+                    <textNode/>
+                    <macroRef key="ssrq.content.anchor.spans"/>
+                    <macroRef key="ssrq.content.content"/>
+                    <macroRef key="ssrq.content.critical"/>
+                    <macroRef key="ssrq.content.display"/>
+                    <macroRef key="ssrq.content.entities"/>
+                    <macroRef key="ssrq.content.measure"/>
+                </alternate>
+            </content>
+        </macroSpec>
+        <macroSpec ident="ssrq.content.display" mode="add" module="ssrq.core.module">
+            <desc versionDate="2023-06-29" xml:lang="de">Markup, das die Darstellung
+            beschreibt</desc>
+            <desc versionDate="2023-06-29" xml:lang="en">markup that describes the
+            presentation</desc>
+            <desc versionDate="2023-06-29" xml:lang="fr">balisage qui décrit la présentation</desc>
+            <content>
+                <alternate>
+                    <elementRef key="ab"/>
+                    <elementRef key="cb"/>
+                    <elementRef key="figure"/>
+                    <elementRef key="fw"/>
+                    <elementRef key="head"/>
+                    <elementRef key="hi"/>
+                    <elementRef key="label"/>
+                    <elementRef key="lb"/>
+                    <elementRef key="orig"/>
+                    <elementRef key="pb"/>
+                    <elementRef key="pc"/>
+                    <elementRef key="q"/>
+                    <elementRef key="quote"/>
+                    <elementRef key="signed"/>
+                    <elementRef key="table"/>
+                </alternate>
+            </content>
+        </macroSpec>
+        <macroSpec ident="ssrq.content.entities" mode="add" module="ssrq.core.module">
+            <desc versionDate="2023-06-29" xml:lang="de">Auszeichnung von mit Namen versehenen
+            Entitäten</desc>
+            <desc versionDate="2023-06-29" xml:lang="en">markup of named entities</desc>
+            <desc versionDate="2023-06-29" xml:lang="fr">balisage des entités nommées</desc>
+            <content>
+                <alternate>
+                    <elementRef key="orgName"/>
+                    <elementRef key="persName"/>
+                    <elementRef key="placeName"/>
+                    <elementRef key="term"/>
+                </alternate>
+            </content>
+        </macroSpec>
+        <macroSpec ident="ssrq.content.measure" mode="add" module="ssrq.core.module">
+            <desc versionDate="2023-06-29" xml:lang="de">Auszeichnung von Massen und ähnlichen
+            Dingen</desc>
+            <desc versionDate="2023-06-29" xml:lang="en">marking of measures and similar
+            things</desc>
+            <desc versionDate="2023-03-23" xml:lang="fr">distinction des mesures et choses
+            similaires</desc>
+            <content>
+                <alternate>
+                    <elementRef key="measure"/>
+                    <elementRef key="measureGrp"/>
+                </alternate>
+            </content>
+        </macroSpec>
+    </specGrp>
 </div>

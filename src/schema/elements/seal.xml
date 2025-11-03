@@ -1,164 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="seal" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Siegel</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">seal</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">sceau</gloss>
-  <desc xml:lang="de" versionDate="2023-07-15">Beschreibt ein Siegel.</desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Describes a seal.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-15">Décrit un sceau.</desc>
-  <classes mode="replace">
-    <memberOf key="att.canonical"/>
-    <memberOf key="att.global"/>
-    <memberOf key="att.global.facs"/>
-    <memberOf key="att.placement"/>
-    <memberOf key="ssrq.att.seal"/>
-  </classes>
-  <content>
-    <sequence>
-      <alternate minOccurs="0">
-        <elementRef key="orgName"/>
-        <elementRef key="persName"/>
-      </alternate>
-      <elementRef key="p" minOccurs="0"/>
-    </sequence>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-seal" mode="add">
-    <desc versionDate="2023-06-01" xml:lang="en">constraint for tei:seal</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:seal">
-          <sch:let name="expectedNumber" value="count(./preceding-sibling::tei:seal) + 1"/>
-          <sch:assert test="./@n = $expectedNumber">
-              The value of @n must be equal to <sch:value-of select="$expectedNumber"/>.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="contemporary" mode="delete"/>
-    <attDef ident="n" mode="change" usage="req">
-      <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Siegels</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the numbering of the seal</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation du sceau</desc>
-      <datatype>
-        <dataRef name="positiveInteger"/>
-      </datatype>
-    </attDef>
-    <attDef ident="place" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-04">der Ort des Siegels</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the place of the seal</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">l’emplacement du sceau</desc>
-      <datatype>
-        <dataRef key="ssrq.place.seal"/>
-      </datatype>
-    </attDef>
-    <attDef ident="ref" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-14">ein Link zu einer Siegeldatenbank</desc>
-      <desc xml:lang="en" versionDate="2025-02-14">a link to a database of seals</desc>
-      <desc xml:lang="fr" versionDate="2025-02-14">un lien vers la base de données des sceaux</desc>
-      <datatype>
-        <dataRef key="ssrq.pointer.url"/>
-      </datatype>
-    </attDef>
-    <attDef ident="xml:id" mode="delete"/>
-    <attDef ident="xml:lang" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-sealDesc-de"/>
-  <xi:include href="examples.xml" xpointer="ex-sealDesc-en"/>
-  <xi:include href="examples.xml" xpointer="ex-sealDesc-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Die Beschreibung der Siegel erfolgt von links nach rechts. Der Siegler wird, wenn es sich
-      um eine Person handelt, mit <gi>persName</gi> und dem Attribut
-      <att>role</att> = <val>sigillant</val> oder, wenn es sich um eine Institution handelt,
-      mit <gi>orgName</gi> und dem gleichen Attribut erfasst. Wenn die Namen der Siegler auf der
-      Plica oder dem Pergamentstreifen stehen, sollte innerhalb von <gi>persName</gi>
-      ein <gi>orig</gi> den handschriftlichen Namen umfassen.</p>
-    <p>Bei unsicheren Siegelidentifikationen, wenn z. B. der Siegler in der Urkunde nicht genannt
-      ist, werden kein <gi>orgName</gi> oder <gi>persName</gi> angegeben. Wenn bei mehreren
-      Siegeln die Siegler nicht sicher zugeordnet werden können, wird die Siegelidentifikation
-      offen gelassen.</p>
-    <p>Die Siegel werden mit <att>n</att> durchnummeriert. Wünschenswert wäre, wenn der Edition
-      nicht nur ein Faksimile des Textes, sondern auch Fotos der Siegel inkl. Masstab (Vor- und
-      Rückseite) beigefügt würden.</p>
-    <p>Im Text wird der Anbringungsort eines Siegels mit <gi>figure</gi> (<att>type</att> =
-      <val>locus_sigilli</val>) erfasst. Je nach Bedarf kann ein Kommentar zu den Siegeln
-      verfasst werden.</p>
-    <p>Wichtig ist der Vergleich der Siegelankündigung im Text und die Besiegelung selber.
-      <list><item>Haben alle angekündigten Siegler ihr Siegel an der Urkunde angebracht?
-      </item><item>Hängt ein Siegel eines nicht angekündigten Sieglers?</item><item>Wurde evtl.
-      ein Siegel gefälscht oder später angebracht?</item></list></p>
-    <p>Es ist zu prüfen, ob das Siegel mit dem angekündigten Siegler übereinstimmt.
-      Siegelankündigungen, auch von fehlenden Siegeln und Siegelabdrücken, werden im Regest
-      (<gi>summary</gi>) erwähnt. Fehlt ein angekündigtes Siegel, ist dies
-      in <att>condition</att> mit <val>absent</val> anzumerken. Zudem ist in einer Anmerkung
-      (<gi>note</gi>) zu beschreiben, weshalb wohl das Siegel fehlt bzw. weshalb die Urkunde
-      unbesiegelt blieb.</p>
-    <p>Zu den Kaisersiegeln: [Posse Otto: Die Siegel der deutschen Kaiser und Könige von 751–1806
-      und 1871–1913, 5 Bde., Dresden 1909–1913](http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-08-23">
-    <p>The seals are described from left to right. If it is a person, the sealer is marked with
-        <gi>persName</gi> and the attribute <att>role</att> = <val>sigillant</val> or, if it is an
-        institution, with <gi>orgName</gi> and the same attribute. If the sealers’ names are on the
-        plica or parchment strip, within <gi>persName</gi> a <gi>orig</gi> should enclose the
-        handwritten name.</p>
-    <p>In the case of uncertain seal identifications, if e.g. For example, if the sealer is not
-        named in the certificate, no <gi>orgName</gi> or <gi>persName</gi> are given. If the seals
-        cannot be assigned with certainty in the case of several seals, the seal identification is
-        left open.</p>
-    <p>The seals are numbered with <att>n</att>. It would be desirable if the edition not only
-        included a facsimile of the text, but also photos of the seals, including the scale (front
-        and back). If this were the case for all seals, <att>extent</att> could be omitted.</p>
-    <p>L. S. = Locus sigilli is recorded with <gi>figure</gi>. If a document was issued without a
-        seal, no seal is recorded. A comment on the seals can be written as required.</p>
-    <p>It is important to compare the announcement of the seal in the text and the seal itself.
-        <list><item>Have all announced sealers affixed their seals to the deed?</item><item>Is
-            there a seal of an unannounced sealer?</item><item>Was a seal possibly forged or
-            affixed later?</item></list></p>
-    <p>It is to be checked whether the seal corresponds to the announced seal. Seal announcements,
-        including missing seals and seal impressions, are mentioned in the regest
-        (<gi>summary</gi>). If an announced seal is missing, this is to be noted in
-        <att>condition</att> with <val>absent</val>. In addition, a note (<gi>note</gi>) must
-        describe why the seal is missing or why the document remained unsealed.</p>
-    <p>On the imperial seals: [Posse Otto: Die Siegel der deutschen Kaiser und Könige von 751–1806
-        und 1871–1913, 5 Bde., Dresden 1909–1913] (http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).
-    </p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>La description des sceaux se fait de gauche à droite.
-      Le sigillant (personne physique ou morale au nom de qui un sceau est gravé), s’il s’agit
-      d’une personne, est signalé par <gi>persName</gi> avec l’attribut
-      <att>role</att> = <val>sigillant</val> ; s’il s’agit d’une institution, il est signalé par
-      <gi>orgName</gi> avec l’attribut <att>role</att> = <val>sigillant</val>.
-      Si les noms des sigillants figurent sur le repli ou sur la retaille du parchemin,
-      un <gi>orig</gi> dans <gi>persName</gi> devrait inclure le nom manuscrit.</p>
-    <p>Si l’identification du sceau est incertaine, p. ex. quand le sigillant n’est pas
-      mentionné dans le texte, on n’ajoute pas de <gi>orgName</gi> ni <gi>persName</gi>.
-      Si, dans le cas de plusieurs sceaux, les sigillants ne peuvent pas être attribués
-      avec certitude, l’identification du sceau est laissée ouverte.</p>
-    <p>Les sceaux sont numérotés avec <att>n</att>. Il serait souhaitable que l’édition soit
-      accompagnée non seulement d’un fac-similé du texte, mais aussi de photos des sceaux,
-      accompagnées d’une échelle (recto et verso).</p>
-    <p>Dans le texte, le lieu d’apposition d’un sceau est saisi avec <gi>figure</gi>
-      (<att>type</att> = <val>locus_sigilli</val>). Selon les besoins, un commentaire sur les
-      sceaux peut être rédigé.</p>
-    <p>Il est important de comparer l’annonce des sceaux dans le texte et le sceau lui-même.
-      <list><item>Tous les scelleurs annoncés ont-ils apposé leurs sceaux sur l’acte ?
-      </item><item>Y a-t-il le sceau d’un scelleur qui n’est pas annoncé ?
-      </item><item>Un sceau a-t-il éventuellement été falsifié ou apposé plus tard ?
-      </item></list>
-      </p>
-    <p>Il convient de vérifier si le sceau correspond au sigillant annoncé. Les annonces de
-       sceaux, y compris les sceaux manquants et les empreintes de sceaux, sont mentionnées
-       dans le résumé (<gi>summary</gi>). Si un sceau annoncé manque, il faut le mentionner
-       dans <att>condition</att> avec <val>absent</val>. De plus, il convient de préciser
-       dans une note (<gi>note</gi>) pour laquelle le sceau manque ou pourquoi le document
-       n’a pas été scellé.</p>
-    <p>Concernant les sceaux impériaux : [Posse Otto: Die Siegel der deutschen Kaiser und
-      Könige von 751–1806 und 1871–1913, 5 Bde., Dresden 1909–1913](http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="seal" mode="change" module="msdescription" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Siegel</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">seal</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">sceau</gloss>
+    <desc versionDate="2023-07-15" xml:lang="de">Beschreibt ein Siegel.</desc>
+    <desc versionDate="2023-07-15" xml:lang="en">Describes a seal.</desc>
+    <desc versionDate="2023-07-15" xml:lang="fr">Décrit un sceau.</desc>
+    <classes mode="replace">
+        <memberOf key="att.canonical"/>
+        <memberOf key="att.global"/>
+        <memberOf key="att.global.facs"/>
+        <memberOf key="att.placement"/>
+        <memberOf key="ssrq.att.seal"/>
+    </classes>
+    <content>
+        <sequence>
+            <alternate minOccurs="0">
+                <elementRef key="orgName"/>
+                <elementRef key="persName"/>
+            </alternate>
+            <elementRef key="p" minOccurs="0"/>
+        </sequence>
+    </content>
+    <constraintSpec ident="sch-el-seal" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-06-01" xml:lang="en">constraint for tei:seal</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:seal">
+                    <sch:let name="expectedNumber" value="count(./preceding-sibling::tei:seal) +
+                    1"/>
+                    <sch:assert test="./@n = $expectedNumber"> The value of @n must be equal to
+                        <sch:value-of select="$expectedNumber"/>
+                        . </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="contemporary" mode="delete"/>
+        <attDef ident="n" mode="change" usage="req">
+            <desc versionDate="2025-02-04" xml:lang="de">die Nummerierung des Siegels</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the numbering of the seal</desc>
+            <desc versionDate="2025-02-04" xml:lang="fr">la numérotation du sceau</desc>
+            <datatype>
+                <dataRef name="positiveInteger"/>
+            </datatype>
+        </attDef>
+        <attDef ident="place" mode="replace">
+            <desc versionDate="2025-02-04" xml:lang="de">der Ort des Siegels</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the place of the seal</desc>
+            <desc versionDate="2025-02-04" xml:lang="fr">l’emplacement du sceau</desc>
+            <datatype>
+                <dataRef key="ssrq.place.seal"/>
+            </datatype>
+        </attDef>
+        <attDef ident="ref" mode="replace">
+            <desc versionDate="2025-02-14" xml:lang="de">ein Link zu einer Siegeldatenbank</desc>
+            <desc versionDate="2025-02-14" xml:lang="en">a link to a database of seals</desc>
+            <desc versionDate="2025-02-14" xml:lang="fr">un lien vers la base de données des
+            sceaux</desc>
+            <datatype>
+                <dataRef key="ssrq.pointer.url"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="xml:lang" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-sealDesc-de"/>
+    <xi:include href="examples.xml" xpointer="ex-sealDesc-en"/>
+    <xi:include href="examples.xml" xpointer="ex-sealDesc-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Die Beschreibung der Siegel erfolgt von links nach rechts. Der Siegler wird, wenn es
+            sich um eine Person handelt, mit <gi>persName</gi> und dem Attribut <att>role</att> =
+            <val>sigillant</val> oder, wenn es sich um eine Institution handelt, mit
+            <gi>orgName</gi> und dem gleichen Attribut erfasst. Wenn die Namen der Siegler auf der
+            Plica oder dem Pergamentstreifen stehen, sollte innerhalb von <gi>persName</gi> ein
+            <gi>orig</gi> den handschriftlichen Namen umfassen.
+        </p>
+        <p>
+            Bei unsicheren Siegelidentifikationen, wenn z. B. der Siegler in der Urkunde nicht
+            genannt ist, werden kein <gi>orgName</gi> oder <gi>persName</gi> angegeben. Wenn bei
+            mehreren Siegeln die Siegler nicht sicher zugeordnet werden können, wird die
+            Siegelidentifikation offen gelassen.
+        </p>
+        <p>
+            Die Siegel werden mit <att>n</att> durchnummeriert. Wünschenswert wäre, wenn der
+            Edition nicht nur ein Faksimile des Textes, sondern auch Fotos der Siegel inkl. Masstab
+            (Vor- und Rückseite) beigefügt würden.
+        </p>
+        <p>
+            Im Text wird der Anbringungsort eines Siegels mit <gi>figure</gi> (<att>type</att> =
+            <val>locus_sigilli</val>) erfasst. Je nach Bedarf kann ein Kommentar zu den Siegeln
+            verfasst werden.
+        </p>
+        <p>
+            Wichtig ist der Vergleich der Siegelankündigung im Text und die Besiegelung selber.
+            <list>
+                <item>Haben alle angekündigten Siegler ihr Siegel an der Urkunde angebracht?
+                </item>
+                <item>Hängt ein Siegel eines nicht angekündigten Sieglers?</item>
+                <item>Wurde evtl. ein Siegel gefälscht oder später angebracht?</item>
+            </list>
+        </p>
+        <p>
+            Es ist zu prüfen, ob das Siegel mit dem angekündigten Siegler übereinstimmt.
+            Siegelankündigungen, auch von fehlenden Siegeln und Siegelabdrücken, werden im Regest
+            (<gi>summary</gi>) erwähnt. Fehlt ein angekündigtes Siegel, ist dies in
+            <att>condition</att> mit <val>absent</val> anzumerken. Zudem ist in einer Anmerkung
+            (<gi>note</gi>) zu beschreiben, weshalb wohl das Siegel fehlt bzw. weshalb die Urkunde
+            unbesiegelt blieb.
+        </p>
+        <p>
+            Zu den Kaisersiegeln: [Posse Otto: Die Siegel der deutschen Kaiser und Könige von
+            751–1806 und 1871–1913, 5 Bde., Dresden
+            1909–1913](http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).
+        </p>
+    </remarks>
+    <remarks versionDate="2023-08-23" xml:lang="en">
+        <p>
+            The seals are described from left to right. If it is a person, the sealer is marked
+            with <gi>persName</gi> and the attribute <att>role</att> = <val>sigillant</val> or, if
+            it is an institution, with <gi>orgName</gi> and the same attribute. If the sealers’
+            names are on the plica or parchment strip, within <gi>persName</gi> a <gi>orig</gi>
+            should enclose the handwritten name.
+        </p>
+        <p>
+            In the case of uncertain seal identifications, if e.g. For example, if the sealer is
+            not named in the certificate, no <gi>orgName</gi> or <gi>persName</gi> are given. If
+            the seals cannot be assigned with certainty in the case of several seals, the seal
+            identification is left open.
+        </p>
+        <p>
+            The seals are numbered with <att>n</att>. It would be desirable if the edition not only
+            included a facsimile of the text, but also photos of the seals, including the scale
+            (front and back). If this were the case for all seals, <att>extent</att> could be
+            omitted.
+        </p>
+        <p>
+            L. S. = Locus sigilli is recorded with <gi>figure</gi>. If a document was issued
+            without a seal, no seal is recorded. A comment on the seals can be written as required.
+        </p>
+        <p>
+            It is important to compare the announcement of the seal in the text and the seal
+            itself.
+            <list>
+                <item>Have all announced sealers affixed their seals to the deed?</item>
+                <item>Is there a seal of an unannounced sealer?</item>
+                <item>Was a seal possibly forged or affixed later?</item>
+            </list>
+        </p>
+        <p>
+            It is to be checked whether the seal corresponds to the announced seal. Seal
+            announcements, including missing seals and seal impressions, are mentioned in the
+            regest (<gi>summary</gi>). If an announced seal is missing, this is to be noted in
+            <att>condition</att> with <val>absent</val>. In addition, a note (<gi>note</gi>) must
+            describe why the seal is missing or why the document remained unsealed.
+        </p>
+        <p>
+            On the imperial seals: [Posse Otto: Die Siegel der deutschen Kaiser und Könige von
+            751–1806 und 1871–1913, 5 Bde., Dresden 1909–1913]
+            (http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            La description des sceaux se fait de gauche à droite. Le sigillant (personne physique
+            ou morale au nom de qui un sceau est gravé), s’il s’agit d’une personne, est signalé
+            par <gi>persName</gi> avec l’attribut <att>role</att> = <val>sigillant</val> ; s’il
+            s’agit d’une institution, il est signalé par <gi>orgName</gi> avec l’attribut
+            <att>role</att> = <val>sigillant</val>. Si les noms des sigillants figurent sur le
+            repli ou sur la retaille du parchemin, un <gi>orig</gi> dans <gi>persName</gi> devrait
+            inclure le nom manuscrit.
+        </p>
+        <p>
+            Si l’identification du sceau est incertaine, p. ex. quand le sigillant n’est pas
+            mentionné dans le texte, on n’ajoute pas de <gi>orgName</gi> ni <gi>persName</gi>. Si,
+            dans le cas de plusieurs sceaux, les sigillants ne peuvent pas être attribués avec
+            certitude, l’identification du sceau est laissée ouverte.
+        </p>
+        <p>
+            Les sceaux sont numérotés avec <att>n</att>. Il serait souhaitable que l’édition soit
+            accompagnée non seulement d’un fac-similé du texte, mais aussi de photos des sceaux,
+            accompagnées d’une échelle (recto et verso).
+        </p>
+        <p>
+            Dans le texte, le lieu d’apposition d’un sceau est saisi avec <gi>figure</gi>
+            (<att>type</att> = <val>locus_sigilli</val>). Selon les besoins, un commentaire sur les
+            sceaux peut être rédigé.
+        </p>
+        <p>
+            Il est important de comparer l’annonce des sceaux dans le texte et le sceau lui-même.
+            <list>
+                <item>Tous les scelleurs annoncés ont-ils apposé leurs sceaux sur l’acte ? </item>
+                <item>Y a-t-il le sceau d’un scelleur qui n’est pas annoncé ? </item>
+                <item>Un sceau a-t-il éventuellement été falsifié ou apposé plus tard ? </item>
+            </list>
+        </p>
+        <p>
+            Il convient de vérifier si le sceau correspond au sigillant annoncé. Les annonces de
+            sceaux, y compris les sceaux manquants et les empreintes de sceaux, sont mentionnées
+            dans le résumé (<gi>summary</gi>). Si un sceau annoncé manque, il faut le mentionner
+            dans <att>condition</att> avec <val>absent</val>. De plus, il convient de préciser dans
+            une note (<gi>note</gi>) pour laquelle le sceau manque ou pourquoi le document n’a pas
+            été scellé.
+        </p>
+        <p>
+            Concernant les sceaux impériaux : [Posse Otto: Die Siegel der deutschen Kaiser und
+            Könige von 751–1806 und 1871–1913, 5 Bde., Dresden
+            1909–1913](http://de.wikisource.org/wiki/Die_Siegel_der_Deutschen_Kaiser_und_K%C3%B6nige).
+        </p>
+    </remarks>
 </elementSpec>

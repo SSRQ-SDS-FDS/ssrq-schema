@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-  <date calendar="julian" notBefore-custom="1341-01-01" notAfter-custom="1355-12-31">
-        Um 1346 und um 1350
-        <precision precision="low" match="@notBefore-custom @notAfter-custom"/>
-    </date>
+    <date calendar="julian" notAfter-custom="1355-12-31" notBefore-custom="1341-01-01"> Um 1346 und um 1350 <precision match="@notBefore-custom
+    @notAfter-custom" precision="low"/> </date>
 </egXML>

@@ -1,98 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-    type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="msDesc" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Handschriftenbeschreibung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">manuscript description</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">description du manuscrit</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Beschreibt einen Textträger wie eine Handschrift oder
-    einen frühneuzeitlichen Druck.</desc>
-  <desc xml:lang="en" versionDate="2023-05-30">Describes the edited source document, including
-    place of preservation, material, layout, scribe, seal and bibliography on secondary
-    literature (metadata).</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Décrit un support de texte tel qu’un manuscrit ou
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="msDesc" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Handschriftenbeschreibung</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">manuscript description</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">description du manuscrit</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Beschreibt einen Textträger wie eine Handschrift
+    oder einen frühneuzeitlichen Druck.</desc>
+    <desc versionDate="2023-05-30" xml:lang="en">Describes the edited source document, including
+    place of preservation, material, layout, scribe, seal and bibliography on secondary literature
+    (metadata).</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Décrit un support de texte tel qu’un manuscrit ou
     un imprimer moderne.</desc>
-  <classes mode="replace">
-    <memberOf key="model.biblLike"/>
-  </classes>
-  <content>
-    <sequence>
-      <elementRef key="msIdentifier" minOccurs="0"/>
-      <elementRef key="head" minOccurs="0" maxOccurs="unbounded"/>
-      <elementRef key="msContents" minOccurs="0"/>
-      <elementRef key="physDesc" minOccurs="0"/>
-      <elementRef key="history"/>
-      <elementRef key="additional" minOccurs="0"/>
-    </sequence>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-msDesc">
-    <desc xml:lang="en" versionDate="2023-03-07">constraint for tei:msDesc</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:msDesc[ancestor::tei:TEI//tei:text[@type = 'collection']]">
-          <sch:assert test=".[not(//tei:adminInfo)][not(tei:physDesc)]">
-            Neither tei:physDesc nor tei:adminInfo are allowed for documents with
-            tei:text/@type = 'collection'.</sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:msDesc[not(ancestor::tei:TEI//tei:text[@type = 'collection'])][not(tei:physDesc)]">
-          <sch:assert test=".[//tei:adminInfo]">
-            If no tei:physDesc is given, tei:adminInfo is required.</sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-msDesc-head">
-    <desc xml:lang="en" versionDate="2025-02-24">constraint to ensure the usage of tei:head in at
-      least the first witness</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:msDesc[parent::tei:sourceDesc]">
-          <sch:assert test=".[tei:head]">
-            tei:head is necessary when there is only one text witness.
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:msDesc[parent::tei:witness[@n='A']]">
-          <sch:assert test="./tei:head">
-            tei:head is necessary for the main text witness.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-msDesc-head-2">
-    <desc xml:lang="en" versionDate="2025-10-23">constraint to ensure that one tei:head is
-      used per language</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:msDesc[count(tei:head)=1]">
-          <sch:report test="tei:head[@xml:lang]">
-            If just one tei:head is used in a text witness, @xml:lang may not be specified there.
-          </sch:report>
-        </sch:rule>
-        <sch:rule context="tei:msDesc[count(tei:head)>1]">
-          <sch:assert test="tei:head[@xml:lang]">
-            If multiple tei:head elements are used in a text witness,
-            @xml:lang must be specified for them.
-          </sch:assert>
-          <sch:assert test="count(distinct-values(tei:head/@xml:lang)) = count(tei:head)">
-            If multiple tei:head elements are used in a text witness,
-            @xml:lang must be unique for all of these.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <xi:include href="examples.xml" xpointer="ex-msDesc-de"/>
-  <xi:include href="examples.xml" xpointer="ex-msDesc-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-msDesc-en"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>In den Kindelementen werden alle Metadaten zu einem Textträger, wie Aufbewahrungsort,
-      Material, Layout, Schreiber, Siegel und Bibliographie erfasst.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Toutes les métadonnées relatives à un support textuel, telles que le lieu de conservation,
-      le matériau, la mise en page, le scribe, le sceau et la bibliographie sont saisies dans les
-      éléments enfants de cet élément.</p>
-  </remarks>
+    <classes mode="replace">
+        <memberOf key="model.biblLike"/>
+    </classes>
+    <content>
+        <sequence>
+            <elementRef key="msIdentifier" minOccurs="0"/>
+            <elementRef key="head" maxOccurs="unbounded" minOccurs="0"/>
+            <elementRef key="msContents" minOccurs="0"/>
+            <elementRef key="physDesc" minOccurs="0"/>
+            <elementRef key="history"/>
+            <elementRef key="additional" minOccurs="0"/>
+        </sequence>
+    </content>
+    <constraintSpec ident="sch-el-msDesc" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-03-07" xml:lang="en">constraint for tei:msDesc</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:msDesc[ancestor::tei:TEI//tei:text[@type =
+                &apos;collection&apos;]]">
+                    <sch:assert test=".[not(//tei:adminInfo)][not(tei:physDesc)]"> Neither
+                    tei:physDesc nor tei:adminInfo are allowed for documents with tei:text/@type =
+                    &apos;collection&apos;.</sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:msDesc[not(ancestor::tei:TEI//tei:text[@type =
+                &apos;collection&apos;])][not(tei:physDesc)]">
+                    <sch:assert test=".[//tei:adminInfo]"> If no tei:physDesc is given,
+                    tei:adminInfo is required.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <constraintSpec ident="sch-msDesc-head" scheme="schematron" xml:lang="en">
+        <desc versionDate="2025-02-24" xml:lang="en">constraint to ensure the usage of tei:head in
+        at least the first witness</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:msDesc[parent::tei:sourceDesc]">
+                    <sch:assert test=".[tei:head]"> tei:head is necessary when there is only one
+                    text witness. </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:msDesc[parent::tei:witness[@n=&apos;A&apos;]]">
+                    <sch:assert test="./tei:head"> tei:head is necessary for the main text witness.
+                    </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <constraintSpec ident="sch-msDesc-head-2" scheme="schematron" xml:lang="en">
+        <desc versionDate="2025-10-23" xml:lang="en">constraint to ensure that one tei:head is used
+        per language</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:msDesc[count(tei:head)=1]">
+                    <sch:report test="tei:head[@xml:lang]"> If just one tei:head is used in a text
+                    witness, @xml:lang may not be specified there. </sch:report>
+                </sch:rule>
+                <sch:rule context="tei:msDesc[count(tei:head)&gt;1]">
+                    <sch:assert test="tei:head[@xml:lang]"> If multiple tei:head elements are used
+                    in a text witness, @xml:lang must be specified for them. </sch:assert>
+                    <sch:assert test="count(distinct-values(tei:head/@xml:lang)) =
+                    count(tei:head)"> If multiple tei:head elements are used in a text witness,
+                    @xml:lang must be unique for all of these. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <xi:include href="examples.xml" xpointer="ex-msDesc-de"/>
+    <xi:include href="examples.xml" xpointer="ex-msDesc-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-msDesc-en"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            In den Kindelementen werden alle Metadaten zu einem Textträger, wie Aufbewahrungsort,
+            Material, Layout, Schreiber, Siegel und Bibliographie erfasst.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Toutes les métadonnées relatives à un support textuel, telles que le lieu de
+            conservation, le matériau, la mise en page, le scribe, le sceau et la bibliographie
+            sont saisies dans les éléments enfants de cet élément.
+        </p>
+    </remarks>
 </elementSpec>

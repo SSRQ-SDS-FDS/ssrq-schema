@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-  <body>
-    <div>
-      <p><lb/>...
+    <body>
+        <div>
+            <p>
+                <lb/>...
                 <lb/>...
             </p>
-    </div>
-    <gap/>
-    <pb/>
-    <ab type="sigillant" place="plica">...</ab>
-    <ab type="dorsal" place="verso">...</ab>
-  </body>
+        </div>
+        <gap/>
+        <pb/>
+        <ab place="plica" type="sigillant">
+            ...
+        </ab>
+        <ab place="verso" type="dorsal">
+            ...
+        </ab>
+    </body>
 </egXML>

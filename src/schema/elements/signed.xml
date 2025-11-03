@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="signed" module="textstructure" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Unterschrift</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">signature</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">signature</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Unterschrift mit oder ohne
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="signed" mode="change" module="textstructure"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Unterschrift</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">signature</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">signature</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält eine Unterschrift mit oder ohne
     Notarzeichen.</desc>
-  <desc xml:lang="en" versionDate="2023-05-23">Includes signatures and signatures with notary marks
-    and is usually found at the end of a text.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient une signature avec ou sans marque
+    <desc versionDate="2023-05-23" xml:lang="en">Includes signatures and signatures with notary
+    marks and is usually found at the end of a text.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient une signature avec ou sans marque
     notariée.</desc>
-  <classes mode="replace">
-    <memberOf key="model.divBottomPart"/>
-    <memberOf key="model.divTopPart"/>
-  </classes>
-  <content>
-    <sequence maxOccurs="unbounded">
-      <macroRef key="ssrq.content.default"/>
-    </sequence>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-signed-de"/>
-  <xi:include href="examples.xml" xpointer="ex-signed-en"/>
-  <xi:include href="examples.xml" xpointer="ex-signed-fr"/>
+    <classes mode="replace">
+        <memberOf key="model.divBottomPart"/>
+        <memberOf key="model.divTopPart"/>
+    </classes>
+    <content>
+        <sequence maxOccurs="unbounded">
+            <macroRef key="ssrq.content.default"/>
+        </sequence>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-signed-de"/>
+    <xi:include href="examples.xml" xpointer="ex-signed-en"/>
+    <xi:include href="examples.xml" xpointer="ex-signed-fr"/>
 </elementSpec>

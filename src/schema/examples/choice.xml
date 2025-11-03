@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-choice-abbr">
-    <choice>
-      <abbr>sabbo</abbr>
-      <expan>sabbato</expan>
-    </choice>
-  </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-choice-sic">
-    <choice>
-      <sic>offensiche</sic>
-      <corr resp="anh">offenliche</corr>
-    </choice>
-  </egXML>
+    <egXML xml:id="ex-choice-abbr" xmlns="http://www.tei-c.org/ns/Examples">
+        <choice> <abbr>sabbo</abbr> <expan>sabbato</expan> </choice>
+    </egXML>
+    <egXML xml:id="ex-choice-sic" xmlns="http://www.tei-c.org/ns/Examples">
+        <choice> <sic>offensiche</sic> <corr resp="anh">offenliche</corr> </choice>
+    </egXML>
 </div>

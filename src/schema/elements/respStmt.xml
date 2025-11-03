@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="respStmt" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-06">Angaben zur Verantwortung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">responsibility statement</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">statut de la responsabilité</gloss>
-  <desc xml:lang="de" versionDate="2025-02-21">Enthält Elemente zur Beschreibung der
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="respStmt" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-06" xml:lang="de">Angaben zur Verantwortung</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">responsibility statement</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">statut de la responsabilité</gloss>
+    <desc versionDate="2025-02-21" xml:lang="de">Enthält Elemente zur Beschreibung der
     Verantwortung der Beteiligten an der Edition.</desc>
-  <desc xml:lang="en" versionDate="2023-07-20">Contains elements for describing the responsibility
-    for the edition.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-21">Contient des éléments déclaratifs sur la
+    <desc versionDate="2023-07-20" xml:lang="en">Contains elements for describing the
+    responsibility for the edition.</desc>
+    <desc versionDate="2025-02-21" xml:lang="fr">Contient des éléments déclaratifs sur la
     responsabilité des personnes impliquées dans l’édition.</desc>
-  <classes mode="replace">
-    <memberOf key="model.recordingPart"/>
-    <memberOf key="model.respLike"/>
-  </classes>
-  <content>
-    <sequence>
-      <alternate>
-        <elementRef key="persName" maxOccurs="unbounded"/>
-        <elementRef key="orgName"/>
-      </alternate>
-      <elementRef key="resp" maxOccurs="unbounded"/>
-    </sequence>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-respStmt-de"/>
-  <xi:include href="examples.xml" xpointer="ex-respStmt-en"/>
-  <xi:include href="examples.xml" xpointer="ex-respStmt-fr"/>
+    <classes mode="replace">
+        <memberOf key="model.recordingPart"/>
+        <memberOf key="model.respLike"/>
+    </classes>
+    <content>
+        <sequence>
+            <alternate>
+                <elementRef key="persName" maxOccurs="unbounded"/>
+                <elementRef key="orgName"/>
+            </alternate>
+            <elementRef key="resp" maxOccurs="unbounded"/>
+        </sequence>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-respStmt-de"/>
+    <xi:include href="examples.xml" xpointer="ex-respStmt-en"/>
+    <xi:include href="examples.xml" xpointer="ex-respStmt-fr"/>
 </elementSpec>

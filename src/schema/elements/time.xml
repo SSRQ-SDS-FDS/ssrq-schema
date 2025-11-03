@@ -1,98 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="time" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Zeit</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">time</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">temps</gloss>
-  <desc xml:lang="de" versionDate="2023-07-20">Enthält eine Zeitangabe.</desc>
-  <desc xml:lang="en" versionDate="2023-07-20">Contains a time specification.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-20">Contient une indication temporelle.</desc>
-  <classes mode="replace">
-    <memberOf key="att.datable"/>
-    <memberOf key="att.datable.custom"/>
-    <memberOf key="att.duration.iso"/>
-    <memberOf key="macro.dateLike"/>
-  </classes>
-  <content>
-    <sequence maxOccurs="unbounded">
-      <macroRef key="ssrq.content.default"/>
-    </sequence>
-  </content>
-  <attList>
-    <attDef ident="dur-iso" mode="change">
-      <datatype>
-        <dataRef key="ssrq.time.duration"/>
-      </datatype>
-    </attDef>
-    <attDef ident="from-custom" mode="change">
-      <datatype>
-        <dataRef key="ssrq.time.point"/>
-      </datatype>
-    </attDef>
-    <attDef ident="notAfter-custom" mode="change">
-      <datatype>
-        <dataRef key="ssrq.time.point"/>
-      </datatype>
-    </attDef>
-    <attDef ident="notBefore-custom" mode="change">
-      <datatype>
-        <dataRef key="ssrq.time.point"/>
-      </datatype>
-    </attDef>
-    <attDef ident="to-custom" mode="change">
-      <datatype>
-        <dataRef key="ssrq.time.point"/>
-      </datatype>
-    </attDef>
-    <attDef ident="period" mode="change">
-      <datatype>
-        <dataRef key="ssrq.period.daytimes"/>
-      </datatype>
-    </attDef>
-    <attDef ident="when-custom" mode="change">
-      <datatype>
-        <dataRef key="ssrq.time.point"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-time-duriso-de"/>
-  <xi:include href="examples.xml" xpointer="ex-time-duriso-en"/>
-  <xi:include href="examples.xml" xpointer="ex-time-duriso-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-time-period-de"/>
-  <xi:include href="examples.xml" xpointer="ex-time-period-en"/>
-  <xi:include href="examples.xml" xpointer="ex-time-period-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-time-point-de"/>
-  <xi:include href="examples.xml" xpointer="ex-time-point-en"/>
-  <xi:include href="examples.xml" xpointer="ex-time-point-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-07">
-    <p>Mithilfe der zugelassenen Attribute können die Angaben in einem normalisierten Format
-      maschinenlesbar ausgedrückt werden. Das Format ist die vom W3C definierte Untermenge des
-      ISO-Standards 8601.</p>
-    <p>Zeitpunkte werden mit <att>when-custom</att> bzw. <att>notBefore-custom</att>
-      und <att>notAfter-custom</att> angegeben, Zeiträume mit <att>from-custom</att>
-      und <att>to-custom</att>. Zeitspannen ohne Angabe von Anfang und Ende können
-      mit <att>dur-iso</att> näher bezeichnet werden. Unbestimmte Tageszeiten, wie z. B.
-      «nachts», werden mit <att>period</att> getaggt.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-20">
-    <p>With the help of the permitted attributes, the information can be expressed in a normalized,
-        machine-readable format. The format is the subset of ISO 8601 defined by the W3C. Points
-        in time are specified with <att>when-custom</att>, <att>notBefore-custom</att>
-        and <att>notAfter-custom</att>, time periods with <att>from-custom</att>
-        and <att>to-custom</att>. Periods of time without beginning and end can be specified
-        with <att>dur-iso</att>. Undetermined times of the day, e.g. at night, are tagged
-        with <att>period</att>.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>Les attributs autorisés permettent d’exprimer les informations dans un format
-      normalisé et lisible par machine. Le format est le sous-ensemble de la norme ISO 8601
-      défini par le W3C.</p>
-    <p>Les points temporels sont indiqués avec <att>when-custom</att> ou <att>notBefore-custom</att>
-      et <att>notAfter-custom</att>, les périodes avec <att>from-custom</att> et
-      <att>to-custom</att>. Les périodes temporelles sans indication de début et de fin peuvent
-      être précisées davantage avec <att>dur-iso</att>. Les moments indéfinis de la journée,
-      comme « la nuit », sont indiqués avec <att>period</att>.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="time" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Zeit</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">time</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">temps</gloss>
+    <desc versionDate="2023-07-20" xml:lang="de">Enthält eine Zeitangabe.</desc>
+    <desc versionDate="2023-07-20" xml:lang="en">Contains a time specification.</desc>
+    <desc versionDate="2023-07-20" xml:lang="fr">Contient une indication temporelle.</desc>
+    <classes mode="replace">
+        <memberOf key="att.datable"/>
+        <memberOf key="att.datable.custom"/>
+        <memberOf key="att.duration.iso"/>
+        <memberOf key="macro.dateLike"/>
+    </classes>
+    <content>
+        <sequence maxOccurs="unbounded">
+            <macroRef key="ssrq.content.default"/>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="dur-iso" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.duration"/>
+            </datatype>
+        </attDef>
+        <attDef ident="from-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.point"/>
+            </datatype>
+        </attDef>
+        <attDef ident="notAfter-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.point"/>
+            </datatype>
+        </attDef>
+        <attDef ident="notBefore-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.point"/>
+            </datatype>
+        </attDef>
+        <attDef ident="to-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.point"/>
+            </datatype>
+        </attDef>
+        <attDef ident="period" mode="change">
+            <datatype>
+                <dataRef key="ssrq.period.daytimes"/>
+            </datatype>
+        </attDef>
+        <attDef ident="when-custom" mode="change">
+            <datatype>
+                <dataRef key="ssrq.time.point"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-time-duriso-de"/>
+    <xi:include href="examples.xml" xpointer="ex-time-duriso-en"/>
+    <xi:include href="examples.xml" xpointer="ex-time-duriso-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-time-period-de"/>
+    <xi:include href="examples.xml" xpointer="ex-time-period-en"/>
+    <xi:include href="examples.xml" xpointer="ex-time-period-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-time-point-de"/>
+    <xi:include href="examples.xml" xpointer="ex-time-point-en"/>
+    <xi:include href="examples.xml" xpointer="ex-time-point-fr"/>
+    <remarks versionDate="2025-02-07" xml:lang="de">
+        <p>
+            Mithilfe der zugelassenen Attribute können die Angaben in einem normalisierten Format
+            maschinenlesbar ausgedrückt werden. Das Format ist die vom W3C definierte Untermenge
+            des ISO-Standards 8601.
+        </p>
+        <p>
+            Zeitpunkte werden mit <att>when-custom</att> bzw. <att>notBefore-custom</att> und
+            <att>notAfter-custom</att> angegeben, Zeiträume mit <att>from-custom</att> und
+            <att>to-custom</att>. Zeitspannen ohne Angabe von Anfang und Ende können mit
+            <att>dur-iso</att> näher bezeichnet werden. Unbestimmte Tageszeiten, wie z. B.
+            «nachts», werden mit <att>period</att> getaggt.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-20" xml:lang="en">
+        <p>
+            With the help of the permitted attributes, the information can be expressed in a
+            normalized, machine-readable format. The format is the subset of ISO 8601 defined by
+            the W3C. Points in time are specified with <att>when-custom</att>,
+            <att>notBefore-custom</att> and <att>notAfter-custom</att>, time periods with
+            <att>from-custom</att> and <att>to-custom</att>. Periods of time without beginning and
+            end can be specified with <att>dur-iso</att>. Undetermined times of the day, e.g. at
+            night, are tagged with <att>period</att>.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-07" xml:lang="fr">
+        <p>
+            Les attributs autorisés permettent d’exprimer les informations dans un format normalisé
+            et lisible par machine. Le format est le sous-ensemble de la norme ISO 8601 défini par
+            le W3C.
+        </p>
+        <p>
+            Les points temporels sont indiqués avec <att>when-custom</att> ou
+            <att>notBefore-custom</att> et <att>notAfter-custom</att>, les périodes avec
+            <att>from-custom</att> et <att>to-custom</att>. Les périodes temporelles sans
+            indication de début et de fin peuvent être précisées davantage avec <att>dur-iso</att>.
+            Les moments indéfinis de la journée, comme « la nuit », sont indiqués avec
+            <att>period</att>.
+        </p>
+    </remarks>
 </elementSpec>

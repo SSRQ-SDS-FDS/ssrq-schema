@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="settlement" module="namesdates" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Siedlungsname</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">settlement</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">lieu d’archivage</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält innerhalb von <gi>msIdentifier</gi> den
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="settlement" mode="change" module="namesdates"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Siedlungsname</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">settlement</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">lieu d’archivage</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält innerhalb von <gi>msIdentifier</gi> den
     Standort des Archivs, in dem der Textträger aufbewahrt wird.</desc>
-  <desc xml:lang="en" versionDate="2023-07-11">Recording of a settlement name (location of the
+    <desc versionDate="2023-07-11" xml:lang="en">Recording of a settlement name (location of the
     archive) within <gi>msIdentifier</gi>.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient dans <gi>msIdentifier</gi> la localisation de
-    l’archive dans laquelle le support de texte est conservé.</desc>
-  <classes mode="replace">
-    <memberOf key="att.canonical"/>
-    <memberOf key="att.global"/>
-    <memberOf key="model.placeNamePart"/>
-  </classes>
-  <content>
-    <textNode/>
-  </content>
-  <attList>
-    <attDef ident="n" mode="delete"/>
-    <attDef ident="ref" mode="replace" usage="req">
-      <datatype>
-        <dataRef key="ssrq.pointer.places"/>
-      </datatype>
-    </attDef>
-    <attDef ident="xml:id" mode="delete"/>
-    <attDef ident="xml:lang" mode="change" usage="req">
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.lang.de"/>
-          <rng:ref name="ssrq.lang.fr"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
-  <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
-  <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient dans <gi>msIdentifier</gi> la
+    localisation de l’archive dans laquelle le support de texte est conservé.</desc>
+    <classes mode="replace">
+        <memberOf key="att.canonical"/>
+        <memberOf key="att.global"/>
+        <memberOf key="model.placeNamePart"/>
+    </classes>
+    <content>
+        <textNode/>
+    </content>
+    <attList>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="ref" mode="replace" usage="req">
+            <datatype>
+                <dataRef key="ssrq.pointer.places"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="xml:lang" mode="change" usage="req">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.lang.de"/>
+                    <rng:ref name="ssrq.lang.fr"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
+    <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
+    <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>
 </elementSpec>

@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origin" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Herkunft</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">origin</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">origine</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält Informationen zur Herkunft eines
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="origin" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Herkunft</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">origin</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">origine</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält Informationen zur Herkunft eines
     Textträgers oder seines Inhalts.</desc>
-  <desc xml:lang="en" versionDate="2023-05-16">Contains information on the origin of a
+    <desc versionDate="2023-05-16" xml:lang="en">Contains information on the origin of a
     document.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient des informations sur l’origine d’un
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient des informations sur l’origine d’un
     support de texte ou de son contenu.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence>
-      <elementRef key="origDate" minOccurs="1" maxOccurs="2"/>
-      <elementRef key="origPlace" minOccurs="0" maxOccurs="unbounded"/>
-      <elementRef key="orgName" minOccurs="0"/>
-    </sequence>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-origDate" mode="add">
-    <desc xml:lang="en" versionDate="2024-06-05">constraint for tei:origDate</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:origin">
-          <sch:assert test="count(distinct-values(tei:origDate/@type)) = count(tei:origDate)">
-            When there are two tei:origDates inside tei:origin, their @type attributes must be different.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <xi:include href="examples.xml" xpointer="ex-history-de"/>
-  <xi:include href="examples.xml" xpointer="ex-history-en"/>
-  <xi:include href="examples.xml" xpointer="ex-history-fr"/>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="origDate" maxOccurs="2" minOccurs="1"/>
+            <elementRef key="origPlace" maxOccurs="unbounded" minOccurs="0"/>
+            <elementRef key="orgName" minOccurs="0"/>
+        </sequence>
+    </content>
+    <constraintSpec ident="sch-origDate" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2024-06-05" xml:lang="en">constraint for tei:origDate</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:origin">
+                    <sch:assert test="count(distinct-values(tei:origDate/@type)) =
+                    count(tei:origDate)"> When there are two tei:origDates inside tei:origin, their
+                    @type attributes must be different. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <xi:include href="examples.xml" xpointer="ex-history-de"/>
+    <xi:include href="examples.xml" xpointer="ex-history-en"/>
+    <xi:include href="examples.xml" xpointer="ex-history-fr"/>
 </elementSpec>

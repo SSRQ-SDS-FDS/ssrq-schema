@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="fileDesc" module="header" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Beschreibung der Datei</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">file description</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">description du fichier</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält Elemente zur Beschreibung der Editionseinheit,
-    zur Publikation des Dokuments, zur Reihe SSRQ und zur Überlieferung des Dokuments.</desc>
-  <desc xml:lang="en" versionDate="2023-07-17">Contains elements describing the edited template and
-    the digital capture.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient des éléments descriptifs et déclaratifs
-    sur l’unité d’édition, la publication du document, la série SDS et la mise à disposition
-    du document.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence>
-      <elementRef key="titleStmt"/>
-      <elementRef key="publicationStmt"/>
-      <elementRef key="seriesStmt"/>
-      <elementRef key="sourceDesc"/>
-    </sequence>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-fileDesc-de"/>
-  <xi:include href="examples.xml" xpointer="ex-fileDesc-en"/>
-  <xi:include href="examples.xml" xpointer="ex-fileDesc-fr"/>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="fileDesc" mode="change" module="header" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Beschreibung der Datei</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">file description</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">description du fichier</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält Elemente zur Beschreibung der
+    Editionseinheit, zur Publikation des Dokuments, zur Reihe SSRQ und zur Überlieferung des
+    Dokuments.</desc>
+    <desc versionDate="2023-07-17" xml:lang="en">Contains elements describing the edited template
+    and the digital capture.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient des éléments descriptifs et déclaratifs
+    sur l’unité d’édition, la publication du document, la série SDS et la mise à disposition du
+    document.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="titleStmt"/>
+            <elementRef key="publicationStmt"/>
+            <elementRef key="seriesStmt"/>
+            <elementRef key="sourceDesc"/>
+        </sequence>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-fileDesc-de"/>
+    <xi:include href="examples.xml" xpointer="ex-fileDesc-en"/>
+    <xi:include href="examples.xml" xpointer="ex-fileDesc-fr"/>
 </elementSpec>
