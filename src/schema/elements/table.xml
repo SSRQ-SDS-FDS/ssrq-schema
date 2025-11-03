@@ -1,64 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="table" module="figures" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Tabelle</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">table</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">tableau</gloss>
-  <desc xml:lang="de" versionDate="2023-07-11">Enthält eine Tabelle.</desc>
-  <desc xml:lang="en" versionDate="2023-07-11">Describes a table.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-11">Contient un tableau.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence preserveOrder="false">
-      <alternate minOccurs="0" maxOccurs="unbounded">
-        <elementRef key="cb"/>
-        <elementRef key="head"/>
-        <elementRef key="pb"/>
-      </alternate>
-      <elementRef key="row" maxOccurs="unbounded"/>
-    </sequence>
-  </content>
-  <attList>
-    <attDef ident="cols" mode="delete"/>
-    <attDef ident="rows" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-table-de"/>
-  <xi:include href="examples.xml" xpointer="ex-table-en"/>
-  <xi:include href="examples.xml" xpointer="ex-table-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-07">
-    <p>Wird zusammen mit <gi>row</gi> (Zeile) und <gi>cell</gi> (Zelle) für die Wiedergabe von
-      Tabellen benötigt. Es wird von oben nach unten und von links nach rechts kodiert. Wann
-      immer eine Tabelle als Fliesstext dargestellt werden kann, soll auf die Kodierung
-      in Form einer Tabelle verzichtet werden. In Tabellen und Listen werden – insbesondere bei
-      den gedruckten Mandaten – Gänsefüsschen als Unterführungszeichen benutzt, um Wörter oder
-      Zahlen aus der oberen Zeile zu wiederholen. In solchen Fällen wird
-      das «Ditto-Mark» (U+0022) verwendet. Ebenso kommt in Tabellen ein Querstrich als Nullwert
-      vor (vgl. Beispiel). Bei der Transkription wird hierfür der Halbgeviertstrich (U+2013)
-      verwendet, vgl. die Tabelle der Sonderzeichen in den
-      <ref target="special.de.md#code-tabelle-fur-sonderzeichen">Transkriptionsrichtlinien</ref>.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-11">
-    <p>Is required together with <gi>row</gi> (row) and <gi>cell</gi> (cell) to display tables.
-        It is counted from top to bottom and from left to right. Whenever possible, a table can be
-        presented as continuous text, it should not be presented in the form of a table. In tables
-        and lists - especially in the printed mandates - quotation marks are used as underscores to
-        repeat words or numbers from the top line (see example below). In such cases, the
-        "Ditto-Mark" (U+0022) is used (to be transcribed with the character string "). A slash also
-        occurs in tables as a zero value (see example below). In the transcription, the digit-wide
-        en dash - (U+2012) used (to be transliterated with the character string ‒).</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-07">
-    <p>Cet élément doit être utilisé avec <gi>row</gi> (ligne) et <gi>cell</gi> (cellule) pour
-      afficher les tableaux. Il est encodé de haut en bas et de gauche à droite. Chaque fois
-      qu’un tableau peut être représenté sous forme de texte continu, il faut renoncer à
-      l’encodage sous forme de tableau. Dans les tableaux et les listes, on utilise – en
-      particulier dans les mandats imprimés – des guillemets comme signes de subordination pour
-      répéter des mots ou des chiffres de la ligne supérieure. Dans de tels cas, on utilise le
-      guillemet anglais, sous forme de guillemet double (U+0022). De même, on trouve dans les
-      tableaux un trait transversal comme valeur zéro (voir exemple). Dans la transcription, on
-      utilise à cet effet le tiret demi-cadratin (U+2013), cf. le tableau des caractères spéciaux
-      dans <ref target="special.fr.md">principes de transcription</ref>.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="table" mode="change" module="figures" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Tabelle</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">table</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">tableau</gloss>
+    <desc versionDate="2023-07-11" xml:lang="de">Enthält eine Tabelle.</desc>
+    <desc versionDate="2023-07-11" xml:lang="en">Describes a table.</desc>
+    <desc versionDate="2023-07-11" xml:lang="fr">Contient un tableau.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence preserveOrder="false">
+            <alternate maxOccurs="unbounded" minOccurs="0">
+                <elementRef key="cb"/>
+                <elementRef key="head"/>
+                <elementRef key="pb"/>
+            </alternate>
+            <elementRef key="row" maxOccurs="unbounded"/>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="cols" mode="delete"/>
+        <attDef ident="rows" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-table-de"/>
+    <xi:include href="examples.xml" xpointer="ex-table-en"/>
+    <xi:include href="examples.xml" xpointer="ex-table-fr"/>
+    <remarks versionDate="2025-02-07" xml:lang="de">
+        <p>
+            Wird zusammen mit <gi>row</gi> (Zeile) und <gi>cell</gi> (Zelle) für die Wiedergabe von
+            Tabellen benötigt. Es wird von oben nach unten und von links nach rechts kodiert. Wann
+            immer eine Tabelle als Fliesstext dargestellt werden kann, soll auf die Kodierung in
+            Form einer Tabelle verzichtet werden. In Tabellen und Listen werden – insbesondere bei
+            den gedruckten Mandaten – Gänsefüsschen als Unterführungszeichen benutzt, um Wörter
+            oder Zahlen aus der oberen Zeile zu wiederholen. In solchen Fällen wird das
+            «Ditto-Mark» (U+0022) verwendet. Ebenso kommt in Tabellen ein Querstrich als Nullwert
+            vor (vgl. Beispiel). Bei der Transkription wird hierfür der Halbgeviertstrich (U+2013)
+            verwendet, vgl. die Tabelle der Sonderzeichen in den <ref
+            target="special.de.md#code-tabelle-fur-sonderzeichen">Transkriptionsrichtlinien</ref>.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-11" xml:lang="en">
+        <p>
+            Is required together with <gi>row</gi> (row) and <gi>cell</gi> (cell) to display
+            tables. It is counted from top to bottom and from left to right. Whenever possible, a
+            table can be presented as continuous text, it should not be presented in the form of a
+            table. In tables and lists - especially in the printed mandates - quotation marks are
+            used as underscores to repeat words or numbers from the top line (see example below).
+            In such cases, the &quot;Ditto-Mark&quot; (U+0022) is used (to be transcribed with the
+            character string &quot;). A slash also occurs in tables as a zero value (see example
+            below). In the transcription, the digit-wide en dash - (U+2012) used (to be
+            transliterated with the character string ‒).
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-07" xml:lang="fr">
+        <p>
+            Cet élément doit être utilisé avec <gi>row</gi> (ligne) et <gi>cell</gi> (cellule) pour
+            afficher les tableaux. Il est encodé de haut en bas et de gauche à droite. Chaque fois
+            qu’un tableau peut être représenté sous forme de texte continu, il faut renoncer à
+            l’encodage sous forme de tableau. Dans les tableaux et les listes, on utilise – en
+            particulier dans les mandats imprimés – des guillemets comme signes de subordination
+            pour répéter des mots ou des chiffres de la ligne supérieure. Dans de tels cas, on
+            utilise le guillemet anglais, sous forme de guillemet double (U+0022). De même, on
+            trouve dans les tableaux un trait transversal comme valeur zéro (voir exemple). Dans la
+            transcription, on utilise à cet effet le tiret demi-cadratin (U+2013), cf. le tableau
+            des caractères spéciaux dans <ref target="special.fr.md">principes de
+            transcription</ref>.
+        </p>
+    </remarks>
 </elementSpec>

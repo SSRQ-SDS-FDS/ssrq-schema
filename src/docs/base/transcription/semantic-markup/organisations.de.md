@@ -37,8 +37,8 @@ sollte die Partei als Organisation und nicht als Ort ausgezeichnet werden.
 
 Beispiel:  
 ```
-...spann und irrung wegen, so sich dann gehalten hand entzwischen baider
-kilchspel <orgName>Bux</orgName> und <orgName>Sevellen</orgName>, ...
+… spann und irrung wegen, so sich dann gehalten hand entzwischen baider
+kilchspel <orgName>Bux</orgName> und <orgName>Sevellen</orgName>, …
 ```
 
 Zu Orten innerhalb von Organisationen vgl. [Orte und Räume](places.de.md).

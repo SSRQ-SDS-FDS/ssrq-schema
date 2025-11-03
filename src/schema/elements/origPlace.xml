@@ -1,56 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="origPlace" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Entstehungsort</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">place of origin</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">lieu d’origine</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält im <gi>teiHeader</gi> den Entstehungsort
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="origPlace" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Entstehungsort</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">place of origin</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">lieu d’origine</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält im <gi>teiHeader</gi> den Entstehungsort
     eines Textträgers oder seines Inhalts.</desc>
-  <desc xml:lang="en" versionDate="2023-05-16">Contains the place of issue or printing of a
+    <desc versionDate="2023-05-16" xml:lang="en">Contains the place of issue or printing of a
     source.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient le lieu d’origine d’un support de texte
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient le lieu d’origine d’un support de texte
     ou de son contenu dans le <gi>teiHeader</gi>.</desc>
-  <classes mode="replace">
-    <memberOf key="att.canonical"/>
-    <memberOf key="att.global.responsibility"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="model.pPart.msdesc"/>
-  </classes>
-  <content>
-    <textNode/>
-  </content>
-  <attList>
-    <attDef ident="ref" mode="replace" usage="req">
-      <datatype>
-        <dataRef key="ssrq.pointer.places"/>
-      </datatype>
-    </attDef>
-    <attDef ident="resp" mode="delete"/>
-    <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2025-01-30">worauf sich der Entstehungsort bezieht</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">what the place of origin refers to</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">à quoi le lieu d’origine fait référence</desc>
-      <datatype>
-        <dataRef key="ssrq.orig.type"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-history-de"/>
-  <xi:include href="examples.xml" xpointer="ex-history-en"/>
-  <xi:include href="examples.xml" xpointer="ex-history-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>In allen anderen Textteilen wird stattdessen <gi>placeName</gi> verwendet, vgl. auch den
-    Unterschied von <gi>origDate</gi> und <gi>date</gi>.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-08-23">
-    <p>In <att>ref</att>, an ID (locNNNNNN) refers to the place in the place database, in which all
-      information about a place can be found. Topographical designations in the edited text are
-      marked with <gi>placeName</gi>.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Dans toutes les autres parties du texte, on utilise <gi>placeName</gi>, voir également
-      la différence entre <gi>origDate</gi> et <gi>date</gi>.</p>
-  </remarks>
+    <classes mode="replace">
+        <memberOf key="att.canonical"/>
+        <memberOf key="att.global.responsibility"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="model.pPart.msdesc"/>
+    </classes>
+    <content>
+        <textNode/>
+    </content>
+    <attList>
+        <attDef ident="ref" mode="replace" usage="req">
+            <datatype>
+                <dataRef key="ssrq.pointer.places"/>
+            </datatype>
+        </attDef>
+        <attDef ident="resp" mode="delete"/>
+        <attDef ident="type" mode="replace" usage="req">
+            <desc versionDate="2025-01-30" xml:lang="de">worauf sich der Entstehungsort
+            bezieht</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">what the place of origin refers to</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">à quoi le lieu d’origine fait
+            référence</desc>
+            <datatype>
+                <dataRef key="ssrq.orig.type"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-history-de"/>
+    <xi:include href="examples.xml" xpointer="ex-history-en"/>
+    <xi:include href="examples.xml" xpointer="ex-history-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            In allen anderen Textteilen wird stattdessen <gi>placeName</gi> verwendet, vgl. auch
+            den Unterschied von <gi>origDate</gi> und <gi>date</gi>.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-08-23" xml:lang="en">
+        <p>
+            In <att>ref</att>, an ID (locNNNNNN) refers to the place in the place database, in
+            which all information about a place can be found. Topographical designations in the
+            edited text are marked with <gi>placeName</gi>.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Dans toutes les autres parties du texte, on utilise <gi>placeName</gi>, voir également
+            la différence entre <gi>origDate</gi> et <gi>date</gi>.
+        </p>
+    </remarks>
 </elementSpec>

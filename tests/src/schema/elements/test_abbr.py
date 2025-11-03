@@ -59,7 +59,7 @@ def test_abbr(
         ),
         (
             "valid-abbr-without-points-and-multiple-text-nodes",
-            "<abbr>etc<lb break='no'/>baz</abbr>",
+            "<abbr>foo<sic>bar</sic>baz</abbr>",
             True,
         ),
         (

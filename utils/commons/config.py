@@ -32,3 +32,5 @@ XSLTS = {
 # Other Configuration Options
 DOCS_LANG = ["de", "fr"]
 SUPPORTED_FILE_TYPES = ("md", "gif", "jpg", "jpeg", "png", "svg")
+
+SCHEMA_CONFIG_FILE = "ssrq_schema.toml"

@@ -1,53 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="lb" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Zeilenanfang</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">line beginning</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">début de ligne</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Markiert den Anfang einer Zeile.</desc>
-  <desc xml:lang="en" versionDate="2023-04-21">Describes the beginning of a line.</desc>
-  <desc xml:lang="fr" versionDate="2023-04-21">Signale le début d’une ligne.</desc>
-  <classes mode="replace">
-    <memberOf key="att.breaking"/>
-    <memberOf key="att.global.facs"/>
-    <memberOf key="model.milestoneLike"/>
-  </classes>
-  <content>
-    <empty/>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-lb-de"/>
-  <xi:include href="examples.xml" xpointer="ex-lb-en"/>
-  <xi:include href="examples.xml" xpointer="ex-lb-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Wird vor jeder Zeile an den Anfang der Zeile gesetzt, auch vor der ersten Zeile des Textes
-        und wenn ein neuer Abschnitt beginnt. Wird auch bei Texten mit nur einer Zeile verwendet.
-        Einrückungen werden nicht berücksichtigt.</p>
-    <p>Das Attribut <att>break</att> mit dem Wert <val>no</val> zeigt an, dass kein Zeilenumbruch
-        ausserhalb eines Wortes vorliegt, das Folgende also kein neues Wort darstellt. Das gilt auch,
-        wenn der Zeilenumbruch mit einem Seitenumbruch zusammenfällt.</p>
-    <p>Bei gedruckten Texten werden analog zu den handschriftlichen Texten Trennstriche mit eben
-        hiermit und Bindestrichen bzw. Ergänzungsstriche mit <val>-</val> transkribiert.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2025-02-03">
-    <p>Placed at the beginning of the line before each line, including before the first line of
-        text and when a new paragraph begins. Also used for texts with only one line. Indentations
-        are ignored.</p>
-    <p>The attribute <att>break</att> shows whether there is a line break within a
-          word – even if the line break coincides with the page break. In printed texts, hyphens
-          are transcribed with just hereby and hyphens or additional dashes with '-', analogous
-          to handwritten texts.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Se place au début de chaque ligne, même avant la première ligne du texte et lorsqu’un
-      nouveau paragraphe commence. Est également utilisé pour les textes ne comportant qu’une
-      seule ligne. Les indentations ne sont pas prises en compte.</p>
-    <p>L’attribut <att>break</att> avec la valeur <val>no</val> indique qu’il n’y a pas de saut
-      de ligne en dehors d’un mot, et que ce qui suit ne constitue donc pas un nouveau mot.
-      Cela vaut également lorsque le saut de ligne coïncide avec un saut de page.</p>
-    <p>Dans les textes imprimés, les traits d’union sont transcrits de la même manière que pour
-      les textes manuscrits, les tirets étant signalés avec cet élément, alors que les tirets
-      supplémentaires sont transcrits avec <val>-</val>.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="lb" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Zeilenanfang</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">line beginning</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">début de ligne</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Markiert den Anfang einer Zeile.</desc>
+    <desc versionDate="2023-04-21" xml:lang="en">Describes the beginning of a line.</desc>
+    <desc versionDate="2023-04-21" xml:lang="fr">Signale le début d’une ligne.</desc>
+    <classes mode="replace">
+        <memberOf key="att.breaking"/>
+        <memberOf key="att.global.facs"/>
+        <memberOf key="model.milestoneLike"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-lb-de"/>
+    <xi:include href="examples.xml" xpointer="ex-lb-en"/>
+    <xi:include href="examples.xml" xpointer="ex-lb-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Wird vor jeder Zeile an den Anfang der Zeile gesetzt, auch vor der ersten Zeile des
+            Textes und wenn ein neuer Abschnitt beginnt. Wird auch bei Texten mit nur einer Zeile
+            verwendet. Einrückungen werden nicht berücksichtigt.
+        </p>
+        <p>
+            Das Attribut <att>break</att> mit dem Wert <val>no</val> zeigt an, dass kein
+            Zeilenumbruch ausserhalb eines Wortes vorliegt, das Folgende also kein neues Wort
+            darstellt. Das gilt auch, wenn der Zeilenumbruch mit einem Seitenumbruch zusammenfällt.
+        </p>
+        <p>
+            Bei gedruckten Texten werden analog zu den handschriftlichen Texten Trennstriche mit
+            eben hiermit und Bindestrichen bzw. Ergänzungsstriche mit <val>-</val> transkribiert.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-03" xml:lang="en">
+        <p>
+            Placed at the beginning of the line before each line, including before the first line
+            of text and when a new paragraph begins. Also used for texts with only one line.
+            Indentations are ignored.
+        </p>
+        <p>
+            The attribute <att>break</att> shows whether there is a line break within a word – even
+            if the line break coincides with the page break. In printed texts, hyphens are
+            transcribed with just hereby and hyphens or additional dashes with &apos;-&apos;,
+            analogous to handwritten texts.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Se place au début de chaque ligne, même avant la première ligne du texte et lorsqu’un
+            nouveau paragraphe commence. Est également utilisé pour les textes ne comportant qu’une
+            seule ligne. Les indentations ne sont pas prises en compte.
+        </p>
+        <p>
+            L’attribut <att>break</att> avec la valeur <val>no</val> indique qu’il n’y a pas de
+            saut de ligne en dehors d’un mot, et que ce qui suit ne constitue donc pas un nouveau
+            mot. Cela vaut également lorsque le saut de ligne coïncide avec un saut de page.
+        </p>
+        <p>
+            Dans les textes imprimés, les traits d’union sont transcrits de la même manière que
+            pour les textes manuscrits, les tirets étant signalés avec cet élément, alors que les
+            tirets supplémentaires sont transcrits avec <val>-</val>.
+        </p>
+    </remarks>
 </elementSpec>

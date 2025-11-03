@@ -1,53 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="height" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Höhe</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">height</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">hauteur</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Beschreibt innerhalb von <gi>dimensions</gi> die
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="height" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Höhe</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">height</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">hauteur</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Beschreibt innerhalb von <gi>dimensions</gi> die
     Höhe eines Textträgers.</desc>
-  <desc xml:lang="en" versionDate="2023-03-21">Describes the height of a sheet or book.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Décrit la hauteur d’un support de texte dans
+    <desc versionDate="2023-03-21" xml:lang="en">Describes the height of a sheet or book.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Décrit la hauteur d’un support de texte dans
     <gi>dimensions</gi>.</desc>
-  <classes mode="replace">
-    <memberOf key="att.dimensions"/>
-    <memberOf key="model.dimLike"/>
-    <memberOf key="model.measureLike"/>
-  </classes>
-  <content>
-    <empty/>
-  </content>
-  <attList>
-    <attDef ident="unit" mode="change" usage="req">
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.dimensions.unknown"/>
-          <rng:ref name="ssrq.measure.lengths.base.cm"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-    <attDef ident="quantity" mode="change" usage="req"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-height-cm-de"/>
-  <xi:include href="examples.xml" xpointer="ex-height-cm-en"/>
-  <xi:include href="examples.xml" xpointer="ex-height-cm-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-height-unknown-de"/>
-  <xi:include href="examples.xml" xpointer="ex-height-unknown-en"/>
-  <xi:include href="examples.xml" xpointer="ex-height-unknown-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-27">
-    <p>Die Masseinheit für das Attribut <att>unit</att> ist Zentimeter (cm).
-      Ist die Höhe des Textträgers unbekannt, wird das wie in Beispiel 2
-      ausgedrückt.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-14">
-    <p>The unit of measure for <att>unit</att> is centimeters (cm).
+    <classes mode="replace">
+        <memberOf key="att.dimensions"/>
+        <memberOf key="model.dimLike"/>
+        <memberOf key="model.measureLike"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="unit" mode="change" usage="req">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.dimensions.unknown"/>
+                    <rng:ref name="ssrq.measure.lengths.base.cm"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="quantity" mode="change" usage="req"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-height-cm-de"/>
+    <xi:include href="examples.xml" xpointer="ex-height-cm-en"/>
+    <xi:include href="examples.xml" xpointer="ex-height-cm-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-height-unknown-de"/>
+    <xi:include href="examples.xml" xpointer="ex-height-unknown-en"/>
+    <xi:include href="examples.xml" xpointer="ex-height-unknown-fr"/>
+    <remarks versionDate="2025-02-27" xml:lang="de">
+        <p>
+            Die Masseinheit für das Attribut <att>unit</att> ist Zentimeter (cm). Ist die Höhe des
+            Textträgers unbekannt, wird das wie in Beispiel 2 ausgedrückt.
         </p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-27">
-    <p>L’unité de mesure de l’attribut <att>unit</att> est le centimètre (cm).
-      Si la hauteur du support de texte est inconnue, elle est exprimée
-      comme dans l’exemple 2.</p>
-  </remarks>
+    </remarks>
+    <remarks versionDate="2023-07-14" xml:lang="en">
+        <p>
+            The unit of measure for <att>unit</att> is centimeters (cm).
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-27" xml:lang="fr">
+        <p>
+            L’unité de mesure de l’attribut <att>unit</att> est le centimètre (cm). Si la hauteur
+            du support de texte est inconnue, elle est exprimée comme dans l’exemple 2.
+        </p>
+    </remarks>
 </elementSpec>

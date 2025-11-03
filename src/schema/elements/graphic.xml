@@ -1,49 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="graphic" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Graphik</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">graphic</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">graphique</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält in seinen Attributen einen Link zu
-  einer Bilddatei.</desc>
-  <desc xml:lang="en" versionDate="2023-03-15">Contains information about an image or graphic
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="graphic" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Graphik</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">graphic</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">graphique</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält in seinen Attributen einen Link zu einer
+    Bilddatei.</desc>
+    <desc versionDate="2023-03-15" xml:lang="en">Contains information about an image or graphic
     illustration as part of the text or external reference.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient dans ses attributs un lien vers un
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient dans ses attributs un lien vers un
     fichier image.</desc>
-  <classes mode="replace">
-    <memberOf key="att.internetMedia"/>
-    <memberOf key="att.resourced"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="model.graphicLike"/>
-  </classes>
-  <content>
-    <empty/>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-graphic">
-    <desc xml:lang="en" versionDate="2023-03-15">constraint for tei:graphic</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:graphic">
-          <sch:assert test="not(contains(@url, '/'))">
-            The usage of a '/' is not allowed in @url
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2025-02-03">die Art der Graphik</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the type of graphic</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">le type de graphique</desc>
-      <datatype>
-        <dataRef key="ssrq.type.graphic"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-figure-2-de"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-2-en"/>
-  <xi:include href="examples.xml" xpointer="ex-figure-2-fr"/>
+    <classes mode="replace">
+        <memberOf key="att.internetMedia"/>
+        <memberOf key="att.resourced"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="model.graphicLike"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <constraintSpec ident="sch-el-graphic" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-03-15" xml:lang="en">constraint for tei:graphic</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:graphic">
+                    <sch:assert test="not(contains(@url, &apos;/&apos;))"> The usage of a
+                    &apos;/&apos; is not allowed in @url </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="type" mode="replace" usage="req">
+            <desc versionDate="2025-02-03" xml:lang="de">die Art der Graphik</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the type of graphic</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">le type de graphique</desc>
+            <datatype>
+                <dataRef key="ssrq.type.graphic"/>
+            </datatype>
+        </attDef>
+    </attList>
 </elementSpec>

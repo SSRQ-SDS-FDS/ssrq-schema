@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-pb-original">
-    <pb n="1r" type="original"/>
-    <lb/>
-  </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-pb-break">
-            geschri
-            <pb/>
-            <lb break="no"/>ben
-        </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-pb-with-section">
-    <pb n="s29"/>
-    <p><lb/>Allocantur sibi quos dominus dicto vicecastellano in presenti computo intrari
+    <egXML xml:id="ex-pb-original" xmlns="http://www.tei-c.org/ns/Examples">
+        <pb n="1r" type="original"/>
+        <lb/>
+    </egXML>
+    <egXML xml:id="ex-pb-break" xmlns="http://www.tei-c.org/ns/Examples">
+        geschri
+        <pb/>
+        <lb break="no"/>ben
+    </egXML>
+    <egXML xml:id="ex-pb-with-section" xmlns="http://www.tei-c.org/ns/Examples">
+        <pb n="s29"/>
+        <p>
+            <lb/>Allocantur sibi quos dominus dicto vicecastellano in presenti computo intrari
             <lb/>et allocari mandavit, in plenam satisfactionem expensarum de quibus
             <lb/>...
         </p>
-    <pb n="s30"/>
-  </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-pb-with-title">
-    <pb n="Ir" facs="Burgerarchiv_Grabs_U_1640-1_Ir"/>
-    <head>Urbar oder libell der
-                <orgName>burgern zue
-                    <placeName>Werdenberg</placeName>
-                </orgName>
-                er, vidimiert und
-                renoviert anno salutis
-                <date from-custom="1640-01-01" to-custom="1640-12-31" calendar="unknown">1640</date>
-            </head>
-    <pb n="1" facs="Burgerarchiv_Grabs_U_1640-1_1"/>
-    <p><lb/>Ich, <persName>Jacob Felldtmann</persName>, der junger, der zeith der hochgeachten
-                woledlen gestrengen frommen ehren
-                ...
-            </p>
-  </egXML>
+        <pb n="s30"/>
+    </egXML>
+    <egXML xml:id="ex-pb-with-title" xmlns="http://www.tei-c.org/ns/Examples">
+        <pb facs="Burgerarchiv_Grabs_U_1640-1_Ir" n="Ir"/>
+        <head>Urbar oder libell der <orgName>burgern zue <placeName>Werdenberg</placeName> </orgName> er, vidimiert und renoviert anno salutis <date
+        calendar="unknown" from-custom="1640-01-01" to-custom="1640-12-31">1640</date> </head>
+        <pb facs="Burgerarchiv_Grabs_U_1640-1_1" n="1"/>
+        <p>
+            <lb/>Ich, <persName>Jacob Felldtmann</persName>, der junger, der zeith der hochgeachten woledlen gestrengen frommen ehren ...
+        </p>
+    </egXML>
 </div>

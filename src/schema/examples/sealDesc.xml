@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-  <sealDesc>
-    <seal n="1" material="wax" shape="round" attachment="sealed_on_a_parchment_tag" condition="damaged">
-      <persName role="sigillant" ref="per000271">Johannes von Belmont</persName>
-    </seal>
-    <seal n="2" material="wax_in_a_box" shape="triangular" attachment="sealed_on_a_leather_tag" condition="in_a_box" place="end">
-      <orgName role="sigillant" ref="org123456">Schultheiss und Rat von Schilda</orgName>
-    </seal>
-  </sealDesc>
+    <sealDesc>
+        <seal attachment="sealed_on_a_parchment_tag" condition="damaged" material="wax" n="1" shape="round">
+            <persName ref="per000271" role="sigillant">Johannes von Belmont</persName>
+        </seal>
+        <seal attachment="sealed_on_a_leather_tag" condition="in_a_box" material="wax_in_a_box" n="2" place="end" shape="triangular">
+            <orgName ref="org123456" role="sigillant">Schultheiss und Rat von Schilda</orgName>
+        </seal>
+    </sealDesc>
 </egXML>

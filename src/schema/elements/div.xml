@@ -1,150 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="div" module="textstructure" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Abschnitt</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">division</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">division</gloss>
-  <desc xml:lang="de" versionDate="2023-05-23">Gliedert innerhalb von <gi>body</gi> den
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="div" mode="change" module="textstructure" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Abschnitt</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">division</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">division</gloss>
+    <desc versionDate="2023-05-23" xml:lang="de">Gliedert innerhalb von <gi>body</gi> den
     transkribierten Text und innerhalb von <gi>back</gi> die Kommentare in Abschnitte.</desc>
-  <desc xml:lang="en" versionDate="2023-05-23">Sections source text within <gi>body</gi> or comments
-    within <gi>back</gi> together with <gi>p</gi>.</desc>
-  <desc xml:lang="fr" versionDate="2023-05-23">Cet élément peut structurer en sections aussi bien
+    <desc versionDate="2023-05-23" xml:lang="en">Sections source text within <gi>body</gi> or
+    comments within <gi>back</gi> together with <gi>p</gi>.</desc>
+    <desc versionDate="2023-05-23" xml:lang="fr">Cet élément peut structurer en sections aussi bien
     le texte transcrit à l’intérieur de <gi>body</gi> que les commentaires dans
     <gi>back</gi>.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-    <memberOf key="att.typed"/>
-  </classes>
-  <content>
-    <alternate>
-      <sequence preserveOrder="false">
-        <elementRef key="head" minOccurs="0" maxOccurs="1"/>
-        <elementRef key="div" minOccurs="2" maxOccurs="unbounded"/>
-        <alternate minOccurs="0" maxOccurs="unbounded">
-          <elementRef key="cb"/>
-          <elementRef key="pb"/>
-          <elementRef key="ssrq.content.anchor.spans"/>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="att.typed"/>
+    </classes>
+    <content>
+        <alternate>
+            <sequence preserveOrder="false">
+                <elementRef key="head" maxOccurs="1" minOccurs="0"/>
+                <elementRef key="div" maxOccurs="unbounded" minOccurs="2"/>
+                <alternate maxOccurs="unbounded" minOccurs="0">
+                    <elementRef key="cb"/>
+                    <elementRef key="pb"/>
+                    <elementRef key="ssrq.content.anchor.spans"/>
+                </alternate>
+            </sequence>
+            <alternate maxOccurs="unbounded">
+                <elementRef key="list"/>
+                <elementRef key="seg"/>
+                <elementRef key="p"/>
+                <macroRef key="ssrq.content.default"/>
+            </alternate>
         </alternate>
-      </sequence>
-      <alternate maxOccurs="unbounded">
-        <elementRef key="list"/>
-        <elementRef key="seg"/>
-        <elementRef key="p"/>
-        <macroRef key="ssrq.content.default"/>
-      </alternate>
-    </alternate>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-div-text" mode="add">
-    <desc xml:lang="en" versionDate="2024-08-06">constraint for the usage of text inside tei:div</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:div">
-          <sch:assert test="string-length(normalize-space(string-join(text(), ''))) = 0">
-            Text is not allowed in tei:div.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-div-head" mode="add">
-    <desc xml:lang="en" versionDate="2025-05-05">constraint for the combined usage of tei:head and tei:div</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:div[tei:head][tei:div]">
-          <sch:report test="tei:head[preceding-sibling::tei:div]">
-            If a tei:head is used inside <sch:name/> it must always precede all tei:div-elements.
-          </sch:report>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-div-xml-lang" mode="add">
-    <desc xml:lang="en" versionDate="2024-08-06">constraint for the usage of @xml:lang in tei:div</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:div[@xml:lang]">
-          <sch:let name="divs-in-back" value="count(./parent::tei:back/tei:div)"/>
-          <sch:assert test=".[parent::tei:back]">
-            The attribute @xml:lang for tei:div is allowed only in tei:back.
-          </sch:assert>
-          <sch:assert test="$divs-in-back gt 1">
-            If @xml:lang is specified for tei:div, there must be at least two tei:divs.
-          </sch:assert>
-          <sch:report test="./parent::tei:back/tei:div[not(@xml:lang)]">
-            If @xml:lang is specified for tei:div, all sibling tei:divs must have this attribute.
-          </sch:report>
-          <sch:assert test="count(distinct-values(./parent::tei:back/tei:div/@xml:lang)) = $divs-in-back">
-            If @xml:lang is specified for tei:div, at least another tei:div with another
-            language has to be specified
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="n" mode="change">
-      <desc xml:lang="de" versionDate="2025-01-31">die Nummerierung des Abschnitts</desc>
-      <desc xml:lang="en" versionDate="2025-01-31">the numbering of the division</desc>
-      <desc xml:lang="fr" versionDate="2025-01-31">la numérotation de la division</desc>
-    </attDef>
-    <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2025-01-31">die Art des Abschnitts</desc>
-      <desc xml:lang="en" versionDate="2025-01-31">the type of the division</desc>
-      <desc xml:lang="fr" versionDate="2025-01-31">le type de la division</desc>
-      <datatype>
-        <dataRef key="ssrq.type.div"/>
-      </datatype>
-    </attDef>
-    <attDef ident="xml:id" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-div-back-de"/>
-  <xi:include href="examples.xml" xpointer="ex-div-back-en"/>
-  <xi:include href="examples.xml" xpointer="ex-div-back-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-div-body-de"/>
-  <xi:include href="examples.xml" xpointer="ex-div-body-en"/>
-  <xi:include href="examples.xml" xpointer="ex-div-body-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-05">
-    <p><gi>div</gi> gibt die höheren Gliederungsebenen eines Textes wieder.
-      Originale Absätze werden mit <gi>p</gi> gekennzeichnet.
-      Sofern das Original stärker gegliedert oder strukturiert ist, kann man beides verwenden,
-      gegebenenfalls zusammen mit dem Attribut <att>type</att>.</p>
-    <p>Abschnitte, welche die Editorin bzw. der Editor zur inhaltlichen Strukturierung
-      (lesbarer Text) einfügt, werden hingegen mit <gi>seg</gi> ausgezeichnet.</p>
-    <p>Weitere Hinweise zur Strukturierung von Quellentexten finden sich in den
-        <ref target="textstructure.md">Transkriptionsrichtlinien</ref>.</p>
-    <p>Bei längeren Paratexten (Einleitung, Kommentar) können Abschnitte
-      mit dem Attribut <att>n</att> nummeriert und gegebenenfalls mit dem Attribut <att>type</att>
-      näher bezeichnet werden.</p>
-    <p>Im <gi>back</gi>-Bereich kann mit dem Attribut <att>xml:lang</att> die Sprache des
-      Kommentars spezifiziert werden, wenn es sich um eine mehrsprachige Editionseinheit handelt.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2024-08-06">
-    <p>Original paragraphs are only marked with <gi>p</gi> (without an additional <gi>div</gi>).
-      If the original is more articulated or structured, you can use both, possibly together
-      with <att>type</att>. Sections that the editor inserts to structure the content (readable
-      text) are marked with <gi>seg</gi>.</p>
-    <p>Further information on structuring source texts can be found in the
-        <ref target="textstructure.md">Transcription Guidelines</ref>. For the structuring of
-      closing formulas, see the examples on the Closing Formulas page.</p>
-    <p>For longer paratexts (introduction, comment), chapters can be numbered with <gi>div</gi>
-      with <att>n</att> and, if necessary, with <att>type</att>.</p>
-    <p>In the <gi>back</gi> area, the language of the comment can be specified
-      with <att>xml:lang</att>, if it is a multilingual edition unit.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-05">
-    <p><gi>div</gi> représente les niveaux de structure supérieurs d’un texte. Les paragraphes
-      originaux sont signalés avec <gi>p</gi>. Dans la mesure où l’original est plus articulé ou
-      plus structuré, on peut utiliser les deux, éventuellement avec l’attribut <att>type</att>.</p>
-    <p>Les paragraphes que l’éditeur distingue pour structurer le contenu (et rendre le texte plus
-      lisible) sont en revanche signalés par <gi>seg</gi>.</p>
-    <p>Vous trouverez d’autres indications sur la structuration des textes sources dans les
-      <ref target="textstructure.md">principes de transcription</ref>.</p>
-    <p>Pour les paratextes plus longs (introduction, commentaire), les sections peuvent être
-      numérotées avec <att>n</att> et, si nécessaire, désignées plus précisément avec l’attribut
-      <att>type</att>.</p>
-    <p>Dans la zone <gi>back</gi>, l’attribut <att>xml:lang</att> permet de spécifier la langue
-      du commentaire s’il s’agit d’une unité d’édition multilingue.</p>
-  </remarks>
+    </content>
+    <constraintSpec ident="sch-el-div-text" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2024-08-06" xml:lang="en">constraint for the usage of text inside
+        tei:div</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:div">
+                    <sch:assert test="string-length(normalize-space(string-join(text(),
+                    &apos;&apos;))) = 0"> Text is not allowed in tei:div. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <constraintSpec ident="sch-el-div-head" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2025-05-05" xml:lang="en">constraint for the combined usage of tei:head
+        and tei:div</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:div[tei:head][tei:div]">
+                    <sch:report test="tei:head[preceding-sibling::tei:div]"> If a tei:head is used
+                    inside tei:div it must always precede all tei:div-elements. </sch:report>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <constraintSpec ident="sch-el-div-xml-lang" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2024-08-06" xml:lang="en">constraint for the usage of @xml:lang in
+        tei:div</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:div[@xml:lang]">
+                    <sch:let name="divs-in-back" value="count(./parent::tei:back/tei:div)"/>
+                    <sch:assert test=".[parent::tei:back]"> The attribute @xml:lang for tei:div is
+                    allowed only in tei:back. </sch:assert>
+                    <sch:assert test="$divs-in-back gt 1"> If @xml:lang is specified for tei:div,
+                    there must be at least two tei:divs. </sch:assert>
+                    <sch:report test="./parent::tei:back/tei:div[not(@xml:lang)]"> If @xml:lang is
+                    specified for tei:div, all sibling tei:divs must have this attribute.
+                    </sch:report>
+                    <sch:assert test="count(distinct-values(./parent::tei:back/tei:div/@xml:lang))
+                    = $divs-in-back"> If @xml:lang is specified for tei:div, at least another
+                    tei:div with another language has to be specified </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="n" mode="change">
+            <desc versionDate="2025-01-31" xml:lang="de">die Nummerierung des Abschnitts</desc>
+            <desc versionDate="2025-01-31" xml:lang="en">the numbering of the division</desc>
+            <desc versionDate="2025-01-31" xml:lang="fr">la numérotation de la division</desc>
+        </attDef>
+        <attDef ident="type" mode="replace">
+            <desc versionDate="2025-01-31" xml:lang="de">die Art des Abschnitts</desc>
+            <desc versionDate="2025-01-31" xml:lang="en">the type of the division</desc>
+            <desc versionDate="2025-01-31" xml:lang="fr">le type de la division</desc>
+            <datatype>
+                <dataRef key="ssrq.type.div"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:id" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-div-back-de"/>
+    <xi:include href="examples.xml" xpointer="ex-div-back-en"/>
+    <xi:include href="examples.xml" xpointer="ex-div-back-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-div-body-de"/>
+    <xi:include href="examples.xml" xpointer="ex-div-body-en"/>
+    <xi:include href="examples.xml" xpointer="ex-div-body-fr"/>
+    <remarks versionDate="2025-02-05" xml:lang="de">
+        <p>
+            <gi>div</gi> gibt die höheren Gliederungsebenen eines Textes wieder. Originale Absätze
+            werden mit <gi>p</gi> gekennzeichnet. Sofern das Original stärker gegliedert oder
+            strukturiert ist, kann man beides verwenden, gegebenenfalls zusammen mit dem Attribut
+            <att>type</att>.
+        </p>
+        <p>
+            Abschnitte, welche die Editorin bzw. der Editor zur inhaltlichen Strukturierung
+            (lesbarer Text) einfügt, werden hingegen mit <gi>seg</gi> ausgezeichnet.
+        </p>
+        <p>
+            Weitere Hinweise zur Strukturierung von Quellentexten finden sich in den <ref
+            target="textstructure.md">Transkriptionsrichtlinien</ref>.
+        </p>
+        <p>
+            Bei längeren Paratexten (Einleitung, Kommentar) können Abschnitte mit dem Attribut
+            <att>n</att> nummeriert und gegebenenfalls mit dem Attribut <att>type</att> näher
+            bezeichnet werden.
+        </p>
+        <p>
+            Im <gi>back</gi>-Bereich kann mit dem Attribut <att>xml:lang</att> die Sprache des
+            Kommentars spezifiziert werden, wenn es sich um eine mehrsprachige Editionseinheit
+            handelt.
+        </p>
+    </remarks>
+    <remarks versionDate="2024-08-06" xml:lang="en">
+        <p>
+            Original paragraphs are only marked with <gi>p</gi> (without an additional
+            <gi>div</gi>). If the original is more articulated or structured, you can use both,
+            possibly together with <att>type</att>. Sections that the editor inserts to structure
+            the content (readable text) are marked with <gi>seg</gi>.
+        </p>
+        <p>
+            Further information on structuring source texts can be found in the <ref
+            target="textstructure.md">Transcription Guidelines</ref>. For the structuring of
+            closing formulas, see the examples on the Closing Formulas page.
+        </p>
+        <p>
+            For longer paratexts (introduction, comment), chapters can be numbered with
+            <gi>div</gi> with <att>n</att> and, if necessary, with <att>type</att>.
+        </p>
+        <p>
+            In the <gi>back</gi> area, the language of the comment can be specified with
+            <att>xml:lang</att>, if it is a multilingual edition unit.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-05" xml:lang="fr">
+        <p>
+            <gi>div</gi> représente les niveaux de structure supérieurs d’un texte. Les paragraphes
+            originaux sont signalés avec <gi>p</gi>. Dans la mesure où l’original est plus articulé
+            ou plus structuré, on peut utiliser les deux, éventuellement avec l’attribut
+            <att>type</att>.
+        </p>
+        <p>
+            Les paragraphes que l’éditeur distingue pour structurer le contenu (et rendre le texte
+            plus lisible) sont en revanche signalés par <gi>seg</gi>.
+        </p>
+        <p>
+            Vous trouverez d’autres indications sur la structuration des textes sources dans les
+            <ref target="textstructure.md">principes de transcription</ref>.
+        </p>
+        <p>
+            Pour les paratextes plus longs (introduction, commentaire), les sections peuvent être
+            numérotées avec <att>n</att> et, si nécessaire, désignées plus précisément avec
+            l’attribut <att>type</att>.
+        </p>
+        <p>
+            Dans la zone <gi>back</gi>, l’attribut <att>xml:lang</att> permet de spécifier la
+            langue du commentaire s’il s’agit d’une unité d’édition multilingue.
+        </p>
+    </remarks>
 </elementSpec>

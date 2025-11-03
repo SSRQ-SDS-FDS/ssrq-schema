@@ -254,6 +254,10 @@ def test_time_duration_rng(
 @pytest.mark.parametrize(
     "name, markup, result",
     [
+        # Tests for ssrq.cover
+        ("valid-simple-cover", "<pb n='cover'/>", True),
+        ("valid-outside-front-cover", "<pb n='outside_front_cover'/>", True),
+        ("invalid-cover", "<pb n='foo_cover'/>", False),
         # Tests for ssrq.foliation
         ("valid-foliation-with-recto", "<pb n='r'/>", True),
         ("valid-foliation-with-verso", "<pb n='v'/>", True),
@@ -273,7 +277,6 @@ def test_time_duration_rng(
         ("valid-pagination-with-bis", "<pb n='1bis'/>", True),
         ("valid-pagination-with-a", "<pb n='1a'/>", True),
         ("valid-pagination-with-dot", "<pb n='1.32'/>", True),
-        ("valid-pagination-cover", "<pb n='cover'/>", True),
         # Tests for ssrq.section
         ("valid-section", "<pb n='s1'/>", True),
         ("invalid-section-with-leading-zero", "<pb n='s01'/>", False),

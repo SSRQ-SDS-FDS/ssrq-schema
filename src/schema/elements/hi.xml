@@ -1,69 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="hi" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Hervorhebung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">highlighting</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">mise en évidence</gloss>
-  <desc xml:lang="de" versionDate="2023-07-19">Beschreibt die graphische Hervorhebung von
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="hi" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Hervorhebung</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">highlighting</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">mise en évidence</gloss>
+    <desc versionDate="2023-07-19" xml:lang="de">Beschreibt die graphische Hervorhebung von
     Text.</desc>
-  <desc xml:lang="en" versionDate="2023-07-19">Describes the graphical highlighting of
+    <desc versionDate="2023-07-19" xml:lang="en">Describes the graphical highlighting of
     text.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Décrit de portions de texte mises en évidence
+    <desc versionDate="2023-07-19" xml:lang="fr">Décrit de portions de texte mises en évidence
     graphiquement.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global.rendition"/>
-    <memberOf key="att.written"/>
-    <memberOf key="model.hiLike"/>
-  </classes>
-  <content>
-    <sequence maxOccurs="unbounded">
-      <macroRef key="ssrq.content.default"/>
-    </sequence>
-  </content>
-  <attList>
-    <attDef ident="rend" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2025-02-03">das Aussehen der Hervorhebung</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the appearance of the highlighting</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">l’apparition de la mise en évidence</desc>
-      <datatype maxOccurs="unbounded">
-        <rng:choice>
-          <rng:ref name="ssrq.rend.font"/>
-          <rng:ref name="ssrq.rend.placement"/>
-          <rng:ref name="ssrq.rend.rotation"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-hi-sup-de"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-sup-en"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-sup-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-underline-de"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-underline-en"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-underline-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-num-de"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-num-en"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-num-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-rotated-de"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-rotated-en"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-rotated-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Die Editionen der SSRQ sind keine faksimilierenden Transkriptionen, weshalb viele
-      Hervorhebungen wie etwa Versalien nicht dargestellt werden. Punkte vor hochgestellten
-      Buchstaben bei Aufzählungen, Datierungen, Abkürzungen usw. werden ebenfalls nicht
-      berücksichtigt. Es werden nur für den Text «wichtige» Hervorhebungen transkribiert.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-19">
-    <p>The Legal Sources Foundation does not make facsimile transcriptions, which is why capital
-      letters, indentations, etc. are not shown. Dots in front of superscript letters in
-      enumerations, dates, abbreviations, etc. are not taken into account.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Les éditions des SDS ne sont pas des transcriptions « photocopiant » le fac-similé, c’est
-      pourquoi de nombreuses mises en évidence, comme les majuscules superflues, ne sont pas
-      signalées. Les points précédant les caractères en exposant dans les énumérations, les
-      datations, les abréviations, etc. ne sont pas non plus pris en compte. Seules les mises en
-      évidence « significatives » pour le texte sont transcrites.</p>
-  </remarks>
+    <classes mode="replace">
+        <memberOf key="att.global.rendition"/>
+        <memberOf key="att.written"/>
+        <memberOf key="model.hiLike"/>
+    </classes>
+    <content>
+        <sequence maxOccurs="unbounded">
+            <macroRef key="ssrq.content.default"/>
+        </sequence>
+    </content>
+    <attList>
+        <attDef ident="rend" mode="replace" usage="req">
+            <desc versionDate="2025-02-03" xml:lang="de">das Aussehen der Hervorhebung</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the appearance of the highlighting</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">l’apparition de la mise en évidence</desc>
+            <datatype maxOccurs="unbounded">
+                <rng:choice>
+                    <rng:ref name="ssrq.rend.font"/>
+                    <rng:ref name="ssrq.rend.placement"/>
+                    <rng:ref name="ssrq.rend.rotation"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-hi-sup-de"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-sup-en"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-sup-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-underline-de"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-underline-en"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-underline-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-num-de"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-num-en"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-num-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-rotated-de"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-rotated-en"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-rotated-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Die Editionen der SSRQ sind keine faksimilierenden Transkriptionen, weshalb viele
+            Hervorhebungen wie etwa Versalien nicht dargestellt werden. Punkte vor hochgestellten
+            Buchstaben bei Aufzählungen, Datierungen, Abkürzungen usw. werden ebenfalls nicht
+            berücksichtigt. Es werden nur für den Text «wichtige» Hervorhebungen transkribiert.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-19" xml:lang="en">
+        <p>
+            The Legal Sources Foundation does not make facsimile transcriptions, which is why
+            capital letters, indentations, etc. are not shown. Dots in front of superscript letters
+            in enumerations, dates, abbreviations, etc. are not taken into account.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Les éditions des SDS ne sont pas des transcriptions « photocopiant » le fac-similé,
+            c’est pourquoi de nombreuses mises en évidence, comme les majuscules superflues, ne
+            sont pas signalées. Les points précédant les caractères en exposant dans les
+            énumérations, les datations, les abréviations, etc. ne sont pas non plus pris en
+            compte. Seules les mises en évidence « significatives » pour le texte sont transcrites.
+        </p>
+    </remarks>
 </elementSpec>

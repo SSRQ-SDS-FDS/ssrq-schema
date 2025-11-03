@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-  <history>
-    <origin>
-      <origDate type="document" when-custom="1600-01-01" calendar="gregorian">1. Januar 1600</origDate>
-      <origDate type="content" when-custom="1532-05-20" calendar="julian">20. Mai 1532</origDate>
-      <origPlace type="document" ref="loc000701">Schaffhausen</origPlace>
-      <origPlace type="content" ref="loc000701">Schaffhausen</origPlace>
-      <orgName role="issuer" ref="org010289">Grosser Rat Schaffhausen</orgName>
-    </origin>
-  </history>
+    <history>
+        <origin>
+            <origDate calendar="gregorian" type="document" when-custom="1600-01-01">1. Januar 1600</origDate>
+            <origDate calendar="julian" type="content" when-custom="1532-05-20">20. Mai 1532</origDate>
+            <origPlace ref="loc000701" type="document">
+                Schaffhausen
+            </origPlace>
+            <origPlace ref="loc000701" type="content">
+                Schaffhausen
+            </origPlace>
+            <orgName ref="org010289" role="issuer">Grosser Rat Schaffhausen</orgName>
+        </origin>
+    </history>
 </egXML>

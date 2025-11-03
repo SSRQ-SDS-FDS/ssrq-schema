@@ -1,110 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="pb" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Seitenanfang</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">page beginning</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">début de page</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Markiert den Anfang einer Seite.</desc>
-  <desc xml:lang="en" versionDate="2023-07-20">Describes the beginning of a page in the original.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Signale le début d’une page.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-    <memberOf key="att.global.facs"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="model.milestoneLike"/>
-  </classes>
-  <content>
-    <empty/>
-  </content>
-  <attList>
-    <attDef ident="n" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung der neuen Seite</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the numbering of the new page</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation de la nouvelle page</desc>
-      <datatype>
-        <dataRef key="ssrq.numbering"/>
-      </datatype>
-    </attDef>
-    <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-03">die Art des Seitenfangs</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the type of page beginning</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">le type du début de page</desc>
-      <datatype>
-        <dataRef key="ssrq.type.pb"/>
-      </datatype>
-    </attDef>
-    <attDef ident="xml:id" mode="delete"/>
-    <attDef ident="xml:lang" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-pb-break-de"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-break-en"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-break-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-original-de"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-original-en"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-original-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-with-section-de"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-with-section-en"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-with-section-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-with-title-de"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-with-title-en"/>
-  <xi:include href="examples.xml" xpointer="ex-pb-with-title-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p><gi>pb</gi> wird am Anfang der Seite aufgeführt und
-      enthält im Attribut <att>n</att> in der Regel die Nummerierung der Seite. Es können
-      Foliierungen (z. B. <tag>pb n="109v"</tag>), Paginierungen (z. B. <tag>pb n="22"</tag>)
-      oder bei Rotuli Abschnittszählungen von Pergamentstücken (z. B: <tag>pb n="s1"</tag>)
-      verwendet werden. Eine aus dem Original stammende Nummerierung wird mit
-      <att>type</att> = <val>original</val> gekennzeichnet. Besteht keine originale Zählung,
-      wird eine Foliierung eingeführt.</p>
-    <p>Wenn ein Quellentext lediglich eine Seite umfasst (z. B. eine Urkunde), wird <gi>pb</gi> nur
-      für das Verlinken mit den Faksimiles benötigt. Wenn ein Text über Vorderseite und Rückseite
-      eines Einzelblatts verläuft (2 Seiten), wird <gi>pb</gi> ohne Attribute auf der ersten und
-      zweiten Seite gesetzt. Erst ab drei Seiten wird mit <att>n</att> nummeriert. Bei mehreren
-      Titelblättern oder Vorsatzblätter vor Beginn des eigentlichen Inhalts und der eigentlichen
-      Paginierung empfiehlt sich eine Blattzählung im Attribut <att>n</att> mit römischen Ziffern
-      (I, II, III, IV etc.), wie bei Handschriften üblich. Bei Drucken beginnt die Blattzählung
-      (Foliierung) mit dem Titelblatt. Das Titelblatt wird nicht speziell ausgezeichnet.
-      Leere Blätter oder leere Seiten werden mitgezählt. Bogensignaturen oder Lagenbezeichnungen
-      werden nicht transkribiert.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-07-20">
-    <p><gi>pb</gi> is listed at the top of the page and usually contains the foliation, e.g.
-        <tag>pb n="109v"</tag>, or pagination, e.g. <tag>pb n="22"</tag>, in <att>n</att>. An
-        original pagination or original foliation is marked
-        with <att>type</att> = <val>original</val>. In the case of a source with original foiling,
-        the verso is also marked with <att>type</att> = <val>original</val>.</p>
-    <p>If a source text is only one page long (e.g. a certificate), <gi>pb</gi> is only required
-        for linking to the facsimiles. If a text runs over the front and back of a single sheet
-        (2 pages), <gi>pb</gi> is set without attributes on the first and second page. Pages of
-        three or more are numbered with <att>n</att>. On a toboggan, the change of sides is noted
-        at the point where a new piece of parchment was sewn on. If there are several title pages
-        or flyleaves before the beginning of the actual content and the actual pagination, it is
-        advisable to number the pages <att>n</att> with Roman numerals (I, II, III, IV etc.), as
-        is usual with manuscripts. When printing, sheet counting (foliation) begins with the title
-        sheet. The title page is not specially marked. An existing page or sheet number is adopted
-        and provided with <att>type</att> = <val>original</val>. Blank sheets or blank pages are
-        counted. If there is no original page number, a page number is introduced. Sheet signatures
-        are not transcribed.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p><gi>pb</gi> est mentionné au début de la page et contient généralement la numérotation
-      des pages dans l’attribut <att>n</att>. Il est possible d’indiquer des folios
-      (p. ex. <tag>pb n="109v"</tag>), des paginations (p. ex. <tag>pb n="22"</tag>) ou, dans le
-      cas de rotuli, des comptages de sections de parchemin (p. ex. <tag>pb n="s1"</tag>).
-      Une numérotation provenant de l’original est signalée avec <att>type</att> =
-      <val>original</val>. S’il n’y a pas de numérotation originale, une foliation est introduit.</p>
-    <p>Si un texte source ne comprend qu’une seule page (p. ex. un document), <gi>pb</gi>
-      n’est nécessaire que pour établir un lien vers les fac-similés. Si un texte s’étend sur
-      le recto et le verso d’une seule feuille (2 pages), <gi>pb</gi> est placé sans attributs
-      sur la première et la deuxième page. Ce n’est qu’à partir de trois pages que la numérotation
-      se fait avec <att>n</att>. Dans le cas de plusieurs pages de titre ou de garde avant
-      le début du contenu et de la pagination proprement dits, il est recommandé de compter les
-      feuilles dans l’attribut <att>n</att> avec des chiffres romains (I, II, III, IV etc.), comme
-      c’est habituellement le cas pour les manuscrits. Pour les imprimés, la numérotation des pages
-      (foliation) commence avec la page de titre. La page de titre n’est pas spécialement
-      marquée. Les feuilles ou pages blanches sont comptées. Les signatures des feuilles
-      ou les désignations de position ne sont pas transcrites.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="pb" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Seitenanfang</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">page beginning</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">début de page</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Markiert den Anfang einer Seite.</desc>
+    <desc versionDate="2023-07-20" xml:lang="en">Describes the beginning of a page in the
+    original.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Signale le début d’une page.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="att.global.facs"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="model.milestoneLike"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="n" mode="replace">
+            <desc versionDate="2025-02-04" xml:lang="de">die Nummerierung der neuen Seite</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the numbering of the new page</desc>
+            <desc versionDate="2025-02-04" xml:lang="fr">la numérotation de la nouvelle page</desc>
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.cover"/>
+                    <rng:ref name="ssrq.numbering"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="replace">
+            <desc versionDate="2025-02-03" xml:lang="de">die Art des Seitenfangs</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the type of page beginning</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">le type du début de page</desc>
+            <datatype>
+                <dataRef key="ssrq.type.pb"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="xml:lang" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-pb-break-de"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-break-en"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-break-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-original-de"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-original-en"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-original-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-with-section-de"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-with-section-en"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-with-section-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-with-title-de"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-with-title-en"/>
+    <xi:include href="examples.xml" xpointer="ex-pb-with-title-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            <gi>pb</gi> wird am Anfang der Seite aufgeführt und enthält im Attribut <att>n</att> in
+            der Regel die Nummerierung der Seite. Es können Foliierungen (z. B. <tag>pb
+            n=&quot;109v&quot;</tag>), Paginierungen (z. B. <tag>pb n=&quot;22&quot;</tag>) oder
+            bei Rotuli Abschnittszählungen von Pergamentstücken (z. B: <tag>pb
+            n=&quot;s1&quot;</tag>) verwendet werden. Eine aus dem Original stammende Nummerierung
+            wird mit <att>type</att> = <val>original</val> gekennzeichnet. Besteht keine originale
+            Zählung, wird eine Foliierung eingeführt.
+        </p>
+        <p>
+            Wenn ein Quellentext lediglich eine Seite umfasst (z. B. eine Urkunde), wird
+            <gi>pb</gi> nur für das Verlinken mit den Faksimiles benötigt. Wenn ein Text über
+            Vorderseite und Rückseite eines Einzelblatts verläuft (2 Seiten), wird <gi>pb</gi> ohne
+            Attribute auf der ersten und zweiten Seite gesetzt. Erst ab drei Seiten wird mit
+            <att>n</att> nummeriert. Bei mehreren Titelblättern oder Vorsatzblätter vor Beginn des
+            eigentlichen Inhalts und der eigentlichen Paginierung empfiehlt sich eine Blattzählung
+            im Attribut <att>n</att> mit römischen Ziffern (I, II, III, IV etc.), wie bei
+            Handschriften üblich. Bei Drucken beginnt die Blattzählung (Foliierung) mit dem
+            Titelblatt. Das Titelblatt wird nicht speziell ausgezeichnet. Leere Blätter oder leere
+            Seiten werden mitgezählt. Bogensignaturen oder Lagenbezeichnungen werden nicht
+            transkribiert.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-07-20" xml:lang="en">
+        <p>
+            <gi>pb</gi> is listed at the top of the page and usually contains the foliation, e.g.
+            <tag>pb n=&quot;109v&quot;</tag>, or pagination, e.g. <tag>pb n=&quot;22&quot;</tag>,
+            in <att>n</att>. An original pagination or original foliation is marked with
+            <att>type</att> = <val>original</val>. In the case of a source with original foiling,
+            the verso is also marked with <att>type</att> = <val>original</val>.
+        </p>
+        <p>
+            If a source text is only one page long (e.g. a certificate), <gi>pb</gi> is only
+            required for linking to the facsimiles. If a text runs over the front and back of a
+            single sheet (2 pages), <gi>pb</gi> is set without attributes on the first and second
+            page. Pages of three or more are numbered with <att>n</att>. On a toboggan, the change
+            of sides is noted at the point where a new piece of parchment was sewn on. If there are
+            several title pages or flyleaves before the beginning of the actual content and the
+            actual pagination, it is advisable to number the pages <att>n</att> with Roman numerals
+            (I, II, III, IV etc.), as is usual with manuscripts. When printing, sheet counting
+            (foliation) begins with the title sheet. The title page is not specially marked. An
+            existing page or sheet number is adopted and provided with <att>type</att> =
+            <val>original</val>. Blank sheets or blank pages are counted. If there is no original
+            page number, a page number is introduced. Sheet signatures are not transcribed.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            <gi>pb</gi> est mentionné au début de la page et contient généralement la numérotation
+            des pages dans l’attribut <att>n</att>. Il est possible d’indiquer des folios (p. ex.
+            <tag>pb n=&quot;109v&quot;</tag>), des paginations (p. ex. <tag>pb
+            n=&quot;22&quot;</tag>) ou, dans le cas de rotuli, des comptages de sections de
+            parchemin (p. ex. <tag>pb n=&quot;s1&quot;</tag>). Une numérotation provenant de
+            l’original est signalée avec <att>type</att> = <val>original</val>. S’il n’y a pas de
+            numérotation originale, une foliation est introduit.
+        </p>
+        <p>
+            Si un texte source ne comprend qu’une seule page (p. ex. un document), <gi>pb</gi>
+            n’est nécessaire que pour établir un lien vers les fac-similés. Si un texte s’étend sur
+            le recto et le verso d’une seule feuille (2 pages), <gi>pb</gi> est placé sans
+            attributs sur la première et la deuxième page. Ce n’est qu’à partir de trois pages que
+            la numérotation se fait avec <att>n</att>. Dans le cas de plusieurs pages de titre ou
+            de garde avant le début du contenu et de la pagination proprement dits, il est
+            recommandé de compter les feuilles dans l’attribut <att>n</att> avec des chiffres
+            romains (I, II, III, IV etc.), comme c’est habituellement le cas pour les manuscrits.
+            Pour les imprimés, la numérotation des pages (foliation) commence avec la page de
+            titre. La page de titre n’est pas spécialement marquée. Les feuilles ou pages blanches
+            sont comptées. Les signatures des feuilles ou les désignations de position ne sont pas
+            transcrites.
+        </p>
+    </remarks>
 </elementSpec>

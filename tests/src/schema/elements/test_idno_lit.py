@@ -1,6 +1,8 @@
 import pytest
+from pyschval import SchematronResult
+from pyschval.schematron.validate import apply_schematron_validation
 
-from ..conftest import RNG_test_function
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -8,12 +10,12 @@ from ..conftest import RNG_test_function
     [
         (
             "valid-idno",
-            "<idno>SDS-VD-D_2-1-1</idno>",
+            "<idno>SDS-VD-D_2-lit</idno>",
             True,
         ),
         (
             "invalid-idno-with-element-content",
-            "<idno><p>SDS-VD-D_2-1-1</p></idno>",
+            "<idno><p>SDS-VD-D_2-lit</p></idno>",
             False,
         ),
         (
@@ -23,7 +25,7 @@ from ..conftest import RNG_test_function
         ),
         (
             "invalid-idno-with-source",
-            "<idno source='http://foo.bar'>foo 123</idno>",
+            "<idno source='http://foo.bar'>foo</idno>",
             False,
         ),
         (
@@ -40,3 +42,35 @@ def test_idno(
     result: bool,
 ):
     test_lit_with_rng("idno", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-idno",
+            "<seriesStmt><idno>SDS-VD-D_2-lit</idno></seriesStmt>",
+            True,
+        ),
+        (
+            "invalid-idno",
+            "<seriesStmt><idno>SDS-VD-D_2-1-1</idno></seriesStmt>",
+            False,
+        ),
+    ],
+)
+def test_series_idno_constraints(
+    lit_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=lit_constraints
+    )
+
+    if (
+        reports[0].report.is_valid() is not result
+        and reports[0].report.failed_asserts is not None
+    ):
+        print("\nSchematron error message: " + reports[0].report.failed_asserts[0].text)
+
+    assert reports[0].report.is_valid() is result

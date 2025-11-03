@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="seriesStmt" module="header" mode="change">
-  <gloss xml:lang="de" versionDate="2023-07-18">Angaben zur Reihe</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">series statement</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">informations sur la série</gloss>
-  <desc xml:lang="de" versionDate="2025-07-05">Enthält Informationen zur Reihe,
-    zur dazugehörigen Sammlung und die Identifikationsnummer des Stücks.</desc>
-  <desc xml:lang="en" versionDate="2023-04-21">Contains elements for describing the collection of
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="seriesStmt" mode="change" module="header" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2023-07-18" xml:lang="de">Angaben zur Reihe</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">series statement</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">informations sur la série</gloss>
+    <desc versionDate="2025-07-05" xml:lang="de">Enthält Informationen zur Reihe, zur dazugehörigen
+    Sammlung und die Identifikationsnummer des Stücks.</desc>
+    <desc versionDate="2023-04-21" xml:lang="en">Contains elements for describing the collection of
     Swiss legal sources series.</desc>
-  <desc xml:lang="fr" versionDate="2025-07-05">Contient des informations relatives à la série,
-    à la collection à laquelle elle appartient et le numéro d’identification de la pièce.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence>
-      <elementRef key="title"/>
-      <elementRef key="respStmt"/>
-      <elementRef key="idno" minOccurs="2" maxOccurs="2"/>
-    </sequence>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-seriesStmt-de"/>
-  <xi:include href="examples.xml" xpointer="ex-seriesStmt-en"/>
-  <xi:include href="examples.xml" xpointer="ex-seriesStmt-fr"/>
+    <desc versionDate="2025-07-05" xml:lang="fr">Contient des informations relatives à la série, à
+    la collection à laquelle elle appartient et le numéro d’identification de la pièce.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="title"/>
+            <elementRef key="respStmt"/>
+            <elementRef key="idno" maxOccurs="2" minOccurs="2"/>
+        </sequence>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-seriesStmt-de"/>
+    <xi:include href="examples.xml" xpointer="ex-seriesStmt-en"/>
+    <xi:include href="examples.xml" xpointer="ex-seriesStmt-fr"/>
 </elementSpec>

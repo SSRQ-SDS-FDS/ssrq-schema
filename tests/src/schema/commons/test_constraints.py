@@ -259,12 +259,12 @@ def test_constraint_sch_att_span_to(
     [
         (
             "valid-facs",
-            "<pb facs='foo_1r'/>",
+            "<body><pb facs='foo_1r'/></body>",
             True,
         ),
         (
             "invalid-facs-with-two-underscores",
-            "<pb facs='foo__1r'/>",
+            "<body><pb facs='foo__1r'/></body>",
             False,
         ),
     ],
@@ -921,6 +921,77 @@ def test_quotation_marks_in_text_node(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
     """Tests the global constraint, which ensures that no non-breaking-space is used."""
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].report.is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-milestones-inside-body",
+            """<body><div><p><pb/><cb/><lb/>foo</p></div></body>""",
+            True,
+        ),
+        (
+            "invalid-milestones-inside-back",
+            """<back><div><p><pb/><cb/><lb/>foo</p></div></back>""",
+            False,
+        ),
+        (
+            "invalid-milestones-inside-header",
+            """<teiHeader><summary><p><pb/><cb/><lb/>foo</p></summary></teiHeader>""",
+            False,
+        ),
+        (
+            "valid-milestones-in-back",
+            """<back><div><p><orig><pb/><cb/><lb/>foo</orig></p></div></back>""",
+            True,
+        ),
+        (
+            "valid-milestones-inside-header",
+            """<teiHeader><summary><p><orig><pb/><cb/><lb/>foo</orig></p></summary></teiHeader>""",
+            True,
+        ),
+    ],
+)
+def test_milestones(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """
+    Tests the global constraint, which ensures that pb, cb and lb are not used outside body or orig.
+    """
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].report.is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "invalid-duplicate-xml-ids",
+            """<TEI><listBibl><bibl xml:id="foo">bar</bibl><bibl xml:id="foo">bar</bibl></listBibl></TEI>""",
+            False,
+        ),
+        (
+            "valid-xml-ids",
+            """<TEI><listBibl><bibl xml:id="foo">bar</bibl><bibl xml:id="baz">bar</bibl></listBibl></TEI>""",
+            True,
+        ),
+    ],
+)
+def test_unique_xml_ids(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """
+    Tests the global constraint, which ensures the uniqueness of xml_id attributes.
+    """
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
         input=writer.list(), isosch=main_constraints

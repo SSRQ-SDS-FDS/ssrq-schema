@@ -32,6 +32,21 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-add-with-multiple-ps",
+            "<add place='left_top'><p>foo</p><p>bar</p></add>",
+            True,
+        ),
+        (
+            "valid-add-with-head-and-ps",
+            "<add place='left_top'><head>Foo</head><p>foo</p><p>bar</p></add>",
+            True,
+        ),
+        (
+            "invalid-add-with-p-and-content-default",
+            "<add place='left_top'><p>foo</p> foo <unclear>bar</unclear></add>",
+            False,
+        ),
+        (
             "valid-add-with-seg-content",
             "<add place='left_top'><seg>foo</seg><seg>bar</seg></add>",
             True,

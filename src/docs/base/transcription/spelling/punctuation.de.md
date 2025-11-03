@@ -52,7 +52,7 @@ Vgl. dazu auch die Transkriptionsrichtlinien zum Punkt
     
     Beispiele:  
     «Zum ersten hat man sich verglichen»  
-    «Lasst man es beim ersten bey ... bewenden»  
+    «Lasst man es beim ersten bey … bewenden»  
     «Item, so hat er»  
     «Item confirmamus»
   
@@ -78,8 +78,8 @@ Vgl. dazu auch die Transkriptionsrichtlinien zum Punkt
     Folgt jedoch nur ein Datum, wird das Komma weggelassen.
     
     Beispiele:  
-    «Actum Konstanz, den ...»  
-    «Actum den 4. september ...»
+    «Actum Konstanz, den …»  
+    «Actum den 4. september …»
   
     Zur Strukturierung der Schlussformeln vgl. 
     [Textstruktur](textstructure.de.md).
@@ -88,12 +88,12 @@ Vgl. dazu auch die Transkriptionsrichtlinien zum Punkt
 
     Das Komma wird gesetzt bei folgenden mehrteiligen Konjunktionen:
   
-    «einerseits» ..., «andererseits»  
-    «je» ..., «desto/umso»  
-    «nicht nur» ..., «sondern (auch)»  
-    «teil» ..., «teils»  
-    «zum einen» ..., «zum anderen»  
-    «zwar» ..., «aber»
+    «einerseits» …, «andererseits»  
+    «je» …, «desto/umso»  
+    «nicht nur» …, «sondern (auch)»  
+    «teil» …, «teils»  
+    «zum einen» …, «zum anderen»  
+    «zwar» …, «aber»
 
     Beispiel:  
     ```
@@ -110,9 +110,9 @@ Vgl. dazu auch die Transkriptionsrichtlinien zum Punkt
 
     Kein Komma wird gesetzt bei folgenden mehrteiligen Konjunktionen:
   
-    «entweder» ... «oder»  
-    «sowohl» ... «als auch»  
-    «weder» ... «noch»
+    «entweder» … «oder»  
+    «sowohl» … «als auch»  
+    «weder» … «noch»
   
     Komma vor «und» wird gesetzt, falls zuvor ein eingeschobener Nebensatz 
     steht oder nach dem Komma ein Hauptsatz folgt, von dem seinerseits 
@@ -162,11 +162,11 @@ ein Anachronismus.
         <lb/>schulthes und rat der statt Lucërn,  
         <lb/>unsren insunders guͤnstigen, lieben herren und obren  
         <pb n="2"/>  
-        <lb/>Unser willig ...  
+        <lb/>Unser willig … 
       </p>
     ```  
-    Den fromen, weisen, dem burgermeister ...  
-    Als unser lieben, getrüwen schultheis und rat zu W. ...
+    Den fromen, weisen, dem burgermeister …  
+    Als unser lieben, getrüwen schultheis und rat zu W. …
 
 === "nach vollständigem Satz"
 

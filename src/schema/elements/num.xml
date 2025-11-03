@@ -1,75 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="num" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Zahl</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">number</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">nombre</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Zahl.</desc>
-  <desc xml:lang="en" versionDate="2025-02-06">Contains a number.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient un nombre.</desc>
-  <classes mode="replace">
-    <memberOf key="model.measureLike"/>
-  </classes>
-  <content>
-    <alternate maxOccurs="unbounded">
-      <textNode/>
-      <elementRef key="hi"/>
-      <elementRef key="lb"/>
-      <elementRef key="pb"/>
-    </alternate>
-  </content>
-  <attList>
-    <attDef ident="value" mode="change" usage="req">
-      <desc xml:lang="de" versionDate="2025-02-03">der Zahlwert in arabischen Ziffern</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the numerical value in Arabic numerals</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">la valeur numérique en chiffres arabes</desc>
-      <datatype>
-        <rng:choice>
-          <rng:data type="float"/>
-          <rng:data type="int"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-    <attDef ident="type" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-hi-num-de"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-num-en"/>
-  <xi:include href="examples.xml" xpointer="ex-hi-num-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-num-de"/>
-  <xi:include href="examples.xml" xpointer="ex-num-en"/>
-  <xi:include href="examples.xml" xpointer="ex-num-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Der Wert der Zahl wird im Attribut <att>value</att> maschinenlesbar hinterlegt.</p>
-    <p>Im Falle einer Bruchzahl werden Nenner und Zähler mit einem Schrägstrich voneinander
-      getrennt und der Wert des Bruchs als Dezimalzahl im Attribut <att>val</att> hinterlegt.</p>
-    <p>Bei Angaben zu Massen, Gewichten, Währungen etc., in denen innerhalb von <gi>measure</gi>
-      mit <att>quantity</att> die Anzahl ausgezeichnet wird, wird auf <gi>num</gi> verzichtet.
-      Ebenso wird bei Daten, die mit <gi>date</gi>, und Zeiten, die mit <gi>time</gi> ausgezeichnet
-      werden, auf <gi>num</gi> verzichtet.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2024-02-29">
-    <p>The value of the number is stored in machine-readable form in the <att>value</att>
-      attribute.</p>
-    <p>In the case of a fractional number, the denominator and numerator are separated by a slash
-      from each other and the value of the number as a decimal number in the <att>val</att>
-      attribute deposited.</p>
-    <p>In the case of information on dimensions, weights, currencies, etc., in which
-      <gi>measure</gi> is used to mark the number with <att>quantity</att>, <gi>num</gi> is not
-      used. Likewise, <gi>num</gi> is not used for years that are described in more detail with
-      <gi>date</gi> and <att>when-custom</att>. Within a time specification with <att>dur</att>,
-      <gi>num</gi> is not used.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>La valeur du nombre est enregistrée avec l’attribut <att>value</att> de manière à être
-      lisible par machine.</p>
-    <p>Dans le cas d’une fraction, le dénominateur et le numérateur sont séparés par une barre
-      oblique et la valeur de la fraction est indiquée sous forme de numéro décimal dans
-      l’attribut <att>value</att>.</p>
-    <p>Pour les données concernant les masses, les poids, les devises, etc., dans lesquelles
-      le nombre est marqué avec <att>quantity</att> dans <gi>measure</gi>, on renonce
-      à <gi>num</gi>. De même, <gi>num</gi> n’est pas utilisé pour les dates indiquées avec
-      <gi>date</gi> ni pour les heures indiquées avec <gi>time</gi>.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="num" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Zahl</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">number</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">nombre</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält eine Zahl.</desc>
+    <desc versionDate="2025-02-06" xml:lang="en">Contains a number.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient un nombre.</desc>
+    <classes mode="replace">
+        <memberOf key="model.measureLike"/>
+    </classes>
+    <content>
+        <alternate maxOccurs="unbounded">
+            <textNode/>
+            <elementRef key="hi"/>
+            <elementRef key="lb"/>
+            <elementRef key="pb"/>
+        </alternate>
+    </content>
+    <attList>
+        <attDef ident="value" mode="change" usage="req">
+            <desc versionDate="2025-02-03" xml:lang="de">der Zahlwert in arabischen Ziffern</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the numerical value in Arabic
+            numerals</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">la valeur numérique en chiffres
+            arabes</desc>
+            <datatype>
+                <rng:choice>
+                    <rng:data type="float"/>
+                    <rng:data type="int"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-hi-num-de"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-num-en"/>
+    <xi:include href="examples.xml" xpointer="ex-hi-num-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-num-de"/>
+    <xi:include href="examples.xml" xpointer="ex-num-en"/>
+    <xi:include href="examples.xml" xpointer="ex-num-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Der Wert der Zahl wird im Attribut <att>value</att> maschinenlesbar hinterlegt.
+        </p>
+        <p>
+            Im Falle einer Bruchzahl werden Nenner und Zähler mit einem Schrägstrich voneinander
+            getrennt und der Wert des Bruchs als Dezimalzahl im Attribut <att>value</att>
+            hinterlegt.
+        </p>
+        <p>
+            Bei Angaben zu Massen, Gewichten, Währungen etc., in denen innerhalb von
+            <gi>measure</gi> mit <att>quantity</att> die Anzahl ausgezeichnet wird, wird auf
+            <gi>num</gi> verzichtet. Ebenso wird bei Daten, die mit <gi>date</gi>, und Zeiten, die
+            mit <gi>time</gi> ausgezeichnet werden, auf <gi>num</gi> verzichtet.
+        </p>
+    </remarks>
+    <remarks versionDate="2024-02-29" xml:lang="en">
+        <p>
+            The value of the number is stored in machine-readable form in the <att>value</att>
+            attribute.
+        </p>
+        <p>
+            In the case of a fractional number, the denominator and numerator are separated by a
+            slash from each other and the value of the number as a decimal number in the
+            <att>value</att> attribute deposited.
+        </p>
+        <p>
+            In the case of information on dimensions, weights, currencies, etc., in which
+            <gi>measure</gi> is used to mark the number with <att>quantity</att>, <gi>num</gi> is
+            not used. Likewise, <gi>num</gi> is not used for years that are described in more
+            detail with <gi>date</gi> and <att>when-custom</att>. Within a time specification with
+            <att>dur</att>, <gi>num</gi> is not used.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            La valeur du nombre est enregistrée avec l’attribut <att>value</att> de manière à être
+            lisible par machine.
+        </p>
+        <p>
+            Dans le cas d’une fraction, le dénominateur et le numérateur sont séparés par une barre
+            oblique et la valeur de la fraction est indiquée sous forme de numéro décimal dans
+            l’attribut <att>value</att>.
+        </p>
+        <p>
+            Pour les données concernant les masses, les poids, les devises, etc., dans lesquelles
+            le nombre est marqué avec <att>quantity</att> dans <gi>measure</gi>, on renonce à
+            <gi>num</gi>. De même, <gi>num</gi> n’est pas utilisé pour les dates indiquées avec
+            <gi>date</gi> ni pour les heures indiquées avec <gi>time</gi>.
+        </p>
+    </remarks>
 </elementSpec>

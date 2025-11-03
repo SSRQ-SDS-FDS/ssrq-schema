@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="foliation" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Blattzählung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">foliation</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">foliation</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Beschreibt die Blattzählung des Textträgers.</desc>
-  <desc xml:lang="en" versionDate="2023-05-17">Describes the foliation of a source.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Décrit la foliation d’un support de texte.</desc>
-  <classes mode="replace"/>
-  <content>
-    <elementRef key="p" maxOccurs="unbounded"/>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-foliation-de"/>
-  <xi:include href="examples.xml" xpointer="ex-foliation-en"/>
-  <xi:include href="examples.xml" xpointer="ex-foliation-fr"/>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="foliation" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Blattzählung</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">foliation</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">foliation</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Beschreibt die Blattzählung des
+    Textträgers.</desc>
+    <desc versionDate="2023-05-17" xml:lang="en">Describes the foliation of a source.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Décrit la foliation d’un support de texte.</desc>
+    <classes mode="replace"/>
+    <content>
+        <elementRef key="p" maxOccurs="unbounded"/>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-foliation-de"/>
+    <xi:include href="examples.xml" xpointer="ex-foliation-en"/>
+    <xi:include href="examples.xml" xpointer="ex-foliation-fr"/>
 </elementSpec>

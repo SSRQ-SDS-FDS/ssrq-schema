@@ -1,86 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="seg" module="linking" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Segment</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">segment</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">segment</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält einen Abschnitt, der von den Bearbeitenden
-      zur Strukturierung des Quellentextes eingefügt wurde.</desc>
-  <desc xml:lang="en" versionDate="2023-07-11">Paragraphs inserted by the editor to structure the
-      source text.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient un segment inséré par les éditeurs pour
-      structurer le texte de la source.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-    <memberOf key="model.segLike"/>
-  </classes>
-  <content>
-    <alternate>
-      <alternate maxOccurs="unbounded">
-        <elementRef key="add"/>
-        <elementRef key="cb"/>
-        <elementRef key="head"/>
-        <elementRef key="list"/>
-        <elementRef key="p"/>
-        <elementRef key="pb"/>
-        <elementRef key="table"/>
-      </alternate>
-      <elementRef key="seg" minOccurs="2" maxOccurs="unbounded"/>
-      <sequence maxOccurs="unbounded">
-        <macroRef key="ssrq.content.default"/>
-      </sequence>
-    </alternate>
-  </content>
-  <attList>
-    <attDef ident="n" mode="change">
-      <desc xml:lang="de" versionDate="2025-02-04">die Nummerierung des Segments</desc>
-      <desc xml:lang="en" versionDate="2025-02-04">the numbering of the segment</desc>
-      <desc xml:lang="fr" versionDate="2025-02-04">la numérotation du segment</desc>
-    </attDef>
-    <attDef ident="xml:id" mode="delete"/>
-    <attDef ident="xml:lang" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-seg-de"/>
-  <xi:include href="examples.xml" xpointer="ex-seg-en"/>
-  <xi:include href="examples.xml" xpointer="ex-seg-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-p-seg-de"/>
-  <xi:include href="examples.xml" xpointer="ex-p-seg-en"/>
-  <xi:include href="examples.xml" xpointer="ex-p-seg-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p><gi>seg</gi> kann innerhalb von <gi>p</gi> zur Binnenstrukturierung eines originalen
-      Absatzes verwendet werden oder ausserhalb von <gi>p</gi>, um mehrere Bestandteile des
-      Textes zu einer Einheit zusammenzufassen. In beiden Fällen kommen auf einer Hierarchieebene
-      mindestens zwei gleichrangige <gi>seg</gi>-Elemente zum Einsatz.</p>
-    <p>Dagegen werden <gi>div</gi> und <gi>p</gi> nur für originale Abschnitte und Absätze
-      verwendet, vgl. auch die Regeln zur Strukturierung von Texten in den
-      <ref target="textstructure.de.md">Transkriptionsrichtlinien</ref>.</p>
-    <p>Bei längeren Originaltexten wie Offnungen oder Urbarien kann es sinnvoll sein, Artikel,
-      Absätze oder Paragraphen durch <gi>seg</gi> zusätzlich mit <att>n</att> zu nummerieren.
-      Eine Nummerierung wird nur dort eingeführt, wo die Struktur des Textes es hergibt (vgl.
-      Beispiele in den gedruckten Bänden der SSRQ).</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2024-05-08">
-    <p>Used inside <gi>p</gi>. On the other hand, <gi>div</gi> and <gi>p</gi> are only used for
-        original paragraphs.</p>
-    <p>With longer original texts such as openings or urbaria, it can make sense to number articles,
-        divisions or paragraphs with <gi>seg</gi> with <att>n</att> additionally. Numbering is
-        introduced only where the structure of the text allows it (cf. examples in the printed
-        volumes of the SLS). For the structuring of closing formulas, see the examples on the
-        page on textstructure.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>L’élément <gi>seg</gi> peut être utilisé à l’intérieur de <gi>p</gi> pour structurer un
-      paragraphe original, ou en dehors de <gi>p</gi> pour combiner plusieurs parties du texte en
-      une seule unité. Dans les deux cas, il faut utiliser au moins deux éléments <gi>seg</gi> de
-      même rang, à l’intérieur d’un même niveau hiérarchique.</p>
-    <p>En revanche, <gi>div</gi> et <gi>p</gi> ne sont utilisés que pour les sections et
-      les paragraphes originaux, voir également les règles de structuration des textes dans les
-      <ref target="textstructure.fr.md">principes de transcription</ref>.</p>
-    <p>Pour les textes originaux plus longs tels que les ouvertures ou les registres fonciers,
-      il peut être utile de numéroter les articles, les paragraphes ou les sections en utilisant
-      <gi>seg</gi>, en plus avec <att>n</att>. La numérotation n’est introduite que là où la
-      structure du texte le permet (voir des exemples dans les volumes imprimés de la SDS).</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="seg" mode="change" module="linking" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Segment</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">segment</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">segment</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält einen Abschnitt, der von den Bearbeitenden
+    zur Strukturierung des Quellentextes eingefügt wurde.</desc>
+    <desc versionDate="2023-07-11" xml:lang="en">Paragraphs inserted by the editor to structure the
+    source text.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient un segment inséré par les éditeurs pour
+    structurer le texte de la source.</desc>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="model.segLike"/>
+    </classes>
+    <content>
+        <alternate>
+            <alternate maxOccurs="unbounded">
+                <elementRef key="add"/>
+                <elementRef key="cb"/>
+                <elementRef key="head"/>
+                <elementRef key="list"/>
+                <elementRef key="p"/>
+                <elementRef key="pb"/>
+                <elementRef key="table"/>
+            </alternate>
+            <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
+            <sequence maxOccurs="unbounded">
+                <macroRef key="ssrq.content.default"/>
+            </sequence>
+        </alternate>
+    </content>
+    <attList>
+        <attDef ident="n" mode="change">
+            <desc versionDate="2025-02-04" xml:lang="de">die Nummerierung des Segments</desc>
+            <desc versionDate="2025-02-04" xml:lang="en">the numbering of the segment</desc>
+            <desc versionDate="2025-02-04" xml:lang="fr">la numérotation du segment</desc>
+        </attDef>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="xml:lang" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-seg-de"/>
+    <xi:include href="examples.xml" xpointer="ex-seg-en"/>
+    <xi:include href="examples.xml" xpointer="ex-seg-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-p-seg-de"/>
+    <xi:include href="examples.xml" xpointer="ex-p-seg-en"/>
+    <xi:include href="examples.xml" xpointer="ex-p-seg-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            <gi>seg</gi> kann innerhalb von <gi>p</gi> zur Binnenstrukturierung eines originalen
+            Absatzes verwendet werden oder ausserhalb von <gi>p</gi>, um mehrere Bestandteile des
+            Textes zu einer Einheit zusammenzufassen. In beiden Fällen kommen auf einer
+            Hierarchieebene mindestens zwei gleichrangige <gi>seg</gi>-Elemente zum Einsatz.
+        </p>
+        <p>
+            Dagegen werden <gi>div</gi> und <gi>p</gi> nur für originale Abschnitte und Absätze
+            verwendet, vgl. auch die Regeln zur Strukturierung von Texten in den <ref
+            target="textstructure.de.md">Transkriptionsrichtlinien</ref>.
+        </p>
+        <p>
+            Bei längeren Originaltexten wie Offnungen oder Urbarien kann es sinnvoll sein, Artikel,
+            Absätze oder Paragraphen durch <gi>seg</gi> zusätzlich mit <att>n</att> zu nummerieren.
+            Eine Nummerierung wird nur dort eingeführt, wo die Struktur des Textes es hergibt (vgl.
+            Beispiele in den gedruckten Bänden der SSRQ).
+        </p>
+    </remarks>
+    <remarks versionDate="2024-05-08" xml:lang="en">
+        <p>
+            Used inside <gi>p</gi>. On the other hand, <gi>div</gi> and <gi>p</gi> are only used
+            for original paragraphs.
+        </p>
+        <p>
+            With longer original texts such as openings or urbaria, it can make sense to number
+            articles, divisions or paragraphs with <gi>seg</gi> with <att>n</att> additionally.
+            Numbering is introduced only where the structure of the text allows it (cf. examples in
+            the printed volumes of the SLS). For the structuring of closing formulas, see the
+            examples on the page on textstructure.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            L’élément <gi>seg</gi> peut être utilisé à l’intérieur de <gi>p</gi> pour structurer un
+            paragraphe original, ou en dehors de <gi>p</gi> pour combiner plusieurs parties du
+            texte en une seule unité. Dans les deux cas, il faut utiliser au moins deux éléments
+            <gi>seg</gi> de même rang, à l’intérieur d’un même niveau hiérarchique.
+        </p>
+        <p>
+            En revanche, <gi>div</gi> et <gi>p</gi> ne sont utilisés que pour les sections et les
+            paragraphes originaux, voir également les règles de structuration des textes dans les
+            <ref target="textstructure.fr.md">principes de transcription</ref>.
+        </p>
+        <p>
+            Pour les textes originaux plus longs tels que les ouvertures ou les registres fonciers,
+            il peut être utile de numéroter les articles, les paragraphes ou les sections en
+            utilisant <gi>seg</gi>, en plus avec <att>n</att>. La numérotation n’est introduite que
+            là où la structure du texte le permet (voir des exemples dans les volumes imprimés de
+            la SDS).
+        </p>
+    </remarks>
 </elementSpec>

@@ -30,7 +30,7 @@ Die Ausgabe aller Datumsangaben erfolgt ohne führende Nullen, z. B. 1.1.1810 st
 
 - Eindeutige Datierungen werden gemäss
   [ISO 8601](https://de.wikipedia.org/wiki/ISO_8601) innerhalb von
-  [`<date>`](date.de.md) oder [`<origDate>`](origDate.de.md) mit
+  [`<date>`](date.de.md), [`<origDate>`](origDate.de.md) oder [`<custEvent>`](custEvent.de.md) mit
   dem Attribut `@when-custom` auf folgendes Datumsformat hin normalisiert:
   `YYYY-MM-DD`, d. h. vierstellige
   Jahresangabe, zweistellige Monatsangabe, zweistellige Tagesangabe, die ggf.
@@ -97,8 +97,8 @@ Beispiel:
 #### 3.2.1 Durchgehende Zeiträume
 
 Zeiträume werden mit den Attributen `@from-custom` und `@to-custom` zusammen mit
-`@calendar` innerhalb von [`<date>`](date.de.md) oder
-[`<origDate>`](origDate.de.md) ausgezeichnet.
+`@calendar` innerhalb von [`<date>`](date.de.md), [`<origDate>`](origDate.de.md) und
+[`<custEvent>`](custEvent.de.md) ausgezeichnet.
 Beispiele:
 
 ```
@@ -280,14 +280,14 @@ Die vom üblichen Jahresanfangsstil, dem
 _Circumcisionsstil_ (Jahresanfang am 1. Januar), abweichenden Stile:
 _Annuntiationsstil_ (Jahresanfang am 25. März) und
 _Natalstil_ (Jahresanfang am 25. Dezember)
-müssen in [`<date>`](date.de.md) und
-[`<origDate>`](origDate.de.md) mithilfe von `@calendar` vermerkt werden.
+müssen in [`<date>`](date.de.md), [`<origDate>`](origDate.de.md) 
+und [`<custEvent>`](custEvent.de.md) mithilfe von `@calendar` vermerkt werden.
 
 Der Annuntiationsstil gilt in der Diözese Lausanne und in Freiburg vom
 Anfang bis in die 2. Hälfte des 15. Jahrhunderts, sonst in der Diözese
 Lausanne bis in die 1. Hälfte des 16. Jahrhunderts.
 
-In [SDS FR I/2/6](http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5)
+In [SDS FR I 2 6](http://www.ssrq-sds-fds.ch/online/FR_I_2_6/index.html#p_5)
 wird der Annuntiationsstil mit «n. st.» (= «nouveau style»)
 angezeigt, das Datum wird aber gemäss modernem Kalender aufgelöst.
 Beispiel:
@@ -295,9 +295,9 @@ Beispiel:
 ```
  Ordonnance au sujet des voies de fait. 1364 (n. st.) février 4. –
  In der Quelle steht folgende Datierung:
- «... <date calendar="julian_annunciation" when-custom="1363-02-04">lo quar jor
+ «… <date calendar="julian_annunciation" when-custom="1364-02-04">lo quar jor
  dou moys de febrier, in l’ant de Nostre Segnour corant per
- mil CCC et sexante et troys</date> ...»
+ mil CCC et sexante et troys</date> …»
 ```
 
 Weil nun der 4. Februar in der Zeit zwischen dem 1. Januar (oder allenfalls 25.

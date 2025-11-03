@@ -39,12 +39,12 @@ def test_element(
     [
         (
             "valid-label-after-lb",
-            "<p><lb/><label type='keyword' place='left_margin'>bar baz foo</label></p>",
+            "<body><p><lb/><label type='keyword' place='left_margin'>bar baz foo</label></p></body>",
             True,
         ),
         (
             "invalid-label-without-lb",
-            "<p><label type='keyword' place='left_margin'>bar baz foo</label></p>",
+            "<body><p><label type='keyword' place='left_margin'>bar baz foo</label></p></body>",
             False,
         ),
     ],

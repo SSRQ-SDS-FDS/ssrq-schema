@@ -2,62 +2,62 @@
 
 ## Règles générales
 
-Les abréviations typiques qui reviennent dans le même document ou dans plusieurs
-documents sont laissées. Voir la [liste des abréviations](abbreviation-list.fr.md)
+Les abréviations fréquentes et qui reviennent dans un ou dans plusieurs documents 
+sont laissées telles quelles. Voir la [liste des abréviations](abbreviation-list.fr.md)
 
-Les abréviations sont étiquetées avec [`<abbr>`](abbr.fr.md) et incluses dans
-un répertoire d’abréviations, où la résolution a lieu.
-Aucun point d’abréviation n’est utilisé, car les abréviations sont déjà marquées 
-comme telles dans le balisage.
+Les abréviations sont balisées avec [`<abbr>`](abbr.fr.md) et intégrées dans 
+un répertoire d’abréviations, dans lequel elles sont développées. 
+Aucun point d’abréviation n’est utilisé, car les abréviations sont déjà 
+signalées comme telles avec la balise.
 
-Les abréviations sont systématiquement laissées sous forme d’abréviations et
-marquées de [`<abbr>`](abbr.fr.md).
+Les sigles (Kürzel) sont systématiquement laissés 
+tels quels et balisés avec [`<abbr>`](abbr.fr.md).
 
-## Dissolution des abréviations
+## Développement des abréviations
 
 === "Règles générales"
 
-    Dans l’édition analogique, les résolutions ont été mises entre crochets en cas de
-    doute ; dans l’édition numérique, elles sont étiquetées avec
+    Dans l’édition imprimée, les développements d’abréviations pour lesquels 
+    subsiste un doute ont été mises entre crochets ; dans l’édition numérique, 
+    ils sont balisés avec 
     [`<choice>`](choice.fr.md) en combinaison avec [`<abbr>`](abbr.fr.md) et
     [`<expan>`](expan.fr.md).
     
-    Les abréviations dans le modèle de texte sont résolues si possible et raisonnable.
+    Les abréviations présentes dans l’original sont développées, 
+    si c’est possible et pertinent. 
 
-    Les habitudes orthographiques du scribe sont prises en compte
-    sans marquage particulier.
-    Certaines abréviations telles que « Ao » = « anno » et les terminaisons
-    sont résolues silencieusement (voir [normalisation](normalization.fr.md)).
+    Les habitudes orthographiques du scribe sont respectées sans balisage particulier. 
+    Certaines abréviations (par ex. « Ao » = « anno »), ainsi que les terminaisons, 
+    sont résolues sans mention explicite (voir [normalisation](normalization.fr.md)).
     
-    Dans certains cas ambigus, il est préférable de reproduire un
-    mot abrégé tel quel.
+    Dans certains cas ambigus, il est préférable de reproduire l’abréviation 
+    telle quelle, sans la développer.
 
     Exemples :  
     fr. « sr » = « sieur » ou « seigneur » ?  
     fr. « monsr » = « monsieur » ou « monseigneur » ?  
     fr. « me » = « maître ou « messire » ?
 
-    Bei der Auflösung von Abkürzungen sollte so weit wie möglich auf
-    Schreibweisen zurückgegriffen werden, die in anderen Teilen des
-    bearbeiteten Textes eindeutig belegt sind, ansonsten ist die
-    klassische Form zu bevorzugen (insbesondere für Latein).
-    In jedem Fall sollte man konsequent bleiben.
+    Pour développer les abréviations, il convient de privilégier autant que possible 
+    les formes attestées sans ambiguïté dans d'autres parties du texte édité. 
+    À défaut, on utilisera la forme classique (notamment en latin). 
+    Dans tous les cas, il faut rester cohérent.
 
 === "Textes latins"
 
-    Les abréviations latines courantes sont résolues silencieusement,
+    Les abréviations latines courantes sont résolues sans mention particulière, 
     sauf s’il existe un doute sur la résolution correcte.
 
-    La résolution est conforme au dictionnaire moyen latin, à moins que
-    le scribe ne pratique différemment.
+    La résolution se fait sur la base d’un dictionnaire de latin médiéval, 
+    sauf en cas de pratique différente du scribe.
 
-## Abréviations des noms de mesures et de pièces de monnaie
+## Abréviations des mesures et monnaies
 
-Les abréviations de mesures et de noms de pièces ne sont résolues que dans
-les paratextes éditoriaux (commentaires, notes) et apparaissent dans la
-liste des abréviations.
+Les abréviations de mesures et de monnaies ne sont pas résolues 
+(sauf dans les paratextes éditoriaux tels que les commentaires ou notes) 
+et apparaissent dans la liste des abréviations.
 
-Il y aura les appropriés [caractères spéciaux](special.fr.md) utilisés.
+Les [caractères spéciaux](special.fr.md) correspondants sont utilisés.
 
-Les devises, mesures et poids sont étiquetés avec [`<measure>`](measure.fr.md)
+Les unités monétaires de mesure et de poids sont balisées avec [`<measure>`](measure.fr.md)
 et, le cas échéant, avec [`<measureGrp>`](measureGrp.fr.md).

@@ -1,45 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="listBibl" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2023-09-14">Liste bibliographischer Angaben</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">list of bibliographical statements</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">liste des références bibliographiques</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Liste bibliographischer Angaben.</desc>
-  <desc xml:lang="en" versionDate="2023-07-19">Contains bibliographic information encoded with
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="listBibl" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2023-09-14" xml:lang="de">Liste bibliographischer Angaben</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">list of bibliographical statements</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">liste des références bibliographiques</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält eine Liste bibliographischer
+    Angaben.</desc>
+    <desc versionDate="2023-07-19" xml:lang="en">Contains bibliographic information encoded with
     <gi>bibl</gi>.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient une liste de références
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient une liste de références
     bibliographiques.</desc>
-  <classes mode="replace">
-    <memberOf key="att.typed"/>
-    <memberOf key="model.biblLike"/>
-  </classes>
-  <content>
-    <elementRef key="bibl" maxOccurs="unbounded"/>
-  </content>
-  <attList>
-    <attDef ident="type" mode="change" usage="req">
-      <desc xml:lang="de" versionDate="2025-01-29">der Typ der Liste bibliographischer Angaben</desc>
-      <desc xml:lang="en" versionDate="2025-01-29">the type of the list of bibliographic statements</desc>
-      <desc xml:lang="fr" versionDate="2025-01-29">le type de référence(s) bibliographiques(s)</desc>
-      <datatype>
-        <dataRef key="ssrq.type.listbibl"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-listBibl-edition-de"/>
-  <xi:include href="examples.xml" xpointer="ex-listBibl-edition-en"/>
-  <xi:include href="examples.xml" xpointer="ex-listBibl-edition-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-listBibl-summary-de"/>
-  <xi:include href="examples.xml" xpointer="ex-listBibl-summary-en"/>
-  <xi:include href="examples.xml" xpointer="ex-listBibl-summary-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>Jede <gi>listBibl</gi> sollte nur einen Typ von bibliographischen Angaben enthalten, der
-      mit dem Attribut <att>type</att> angegeben wird.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Chaque <gi>listBibl</gi> ne doit contenir qu’un seul type de référence bibliographique,
-      spécifié avec l’attribut <att>type</att>.</p>
-  </remarks>
+    <classes mode="replace">
+        <memberOf key="att.typed"/>
+        <memberOf key="model.biblLike"/>
+    </classes>
+    <content>
+        <elementRef key="bibl" maxOccurs="unbounded"/>
+    </content>
+    <attList>
+        <attDef ident="type" mode="change" usage="req">
+            <desc versionDate="2025-01-29" xml:lang="de">der Typ der Liste bibliographischer
+            Angaben</desc>
+            <desc versionDate="2025-01-29" xml:lang="en">the type of the list of bibliographic
+            statements</desc>
+            <desc versionDate="2025-01-29" xml:lang="fr">le type de référence(s)
+            bibliographiques(s)</desc>
+            <datatype>
+                <dataRef key="ssrq.type.listbibl"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-listBibl-edition-de"/>
+    <xi:include href="examples.xml" xpointer="ex-listBibl-edition-en"/>
+    <xi:include href="examples.xml" xpointer="ex-listBibl-edition-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-listBibl-summary-de"/>
+    <xi:include href="examples.xml" xpointer="ex-listBibl-summary-en"/>
+    <xi:include href="examples.xml" xpointer="ex-listBibl-summary-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Jede <gi>listBibl</gi> sollte nur einen Typ von bibliographischen Angaben enthalten,
+            der mit dem Attribut <att>type</att> angegeben wird.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Chaque <gi>listBibl</gi> ne doit contenir qu’un seul type de référence bibliographique,
+            spécifié avec l’attribut <att>type</att>.
+        </p>
+    </remarks>
 </elementSpec>

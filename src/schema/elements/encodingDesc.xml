@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="encodingDesc" module="header" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Beschreibung der Kodierung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">encoding description</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">description de l’encodage</gloss>
-  <desc xml:lang="de" versionDate="2023-07-17">Enthält Elemente für den Verweis auf die
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="encodingDesc" mode="change" module="header" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Beschreibung der Kodierung</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">encoding description</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">description de l’encodage</gloss>
+    <desc versionDate="2023-07-17" xml:lang="de">Enthält Elemente für den Verweis auf die
     Transkriptionsrichtlinien.</desc>
-  <desc xml:lang="en" versionDate="2023-07-17">Contains elements for referencing the transcription
-    guidelines.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-17">Contient des éléments pour référencer les principes
-    de transcription.</desc>
-  <classes mode="replace">
-    <memberOf key="model.teiHeaderPart"/>
-  </classes>
-  <content>
-    <elementRef key="editorialDecl"/>
-  </content>
-  <xi:include href="examples.xml" xpointer="ex-encodingDesc-de"/>
-  <xi:include href="examples.xml" xpointer="ex-encodingDesc-en"/>
-  <xi:include href="examples.xml" xpointer="ex-encodingDesc-fr"/>
+    <desc versionDate="2023-07-17" xml:lang="en">Contains elements for referencing the
+    transcription guidelines.</desc>
+    <desc versionDate="2023-07-17" xml:lang="fr">Contient des éléments pour référencer les
+    principes de transcription.</desc>
+    <classes mode="replace">
+        <memberOf key="model.teiHeaderPart"/>
+    </classes>
+    <content>
+        <elementRef key="editorialDecl"/>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-encodingDesc-de"/>
+    <xi:include href="examples.xml" xpointer="ex-encodingDesc-en"/>
+    <xi:include href="examples.xml" xpointer="ex-encodingDesc-fr"/>
 </elementSpec>

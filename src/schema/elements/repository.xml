@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" ident="repository" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2023-02-04">Archiv</gloss>
-  <gloss xml:lang="en" versionDate="2023-02-04">repository</gloss>
-  <gloss xml:lang="fr" versionDate="2023-02-04">lieu de conservation</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält den vollständigen Namen des Archivs, in
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="repository" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2023-02-04" xml:lang="de">Archiv</gloss>
+    <gloss versionDate="2023-02-04" xml:lang="en">repository</gloss>
+    <gloss versionDate="2023-02-04" xml:lang="fr">lieu de conservation</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält den vollständigen Namen des Archivs, in
     welchem der Textträger aufbewahrt wird.</desc>
-  <desc xml:lang="en" versionDate="2023-07-15">Contains the name of the archive in which the source
-    is located without abbreviation.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient le nom complet du dépôt d’archives dans
+    <desc versionDate="2023-07-15" xml:lang="en">Contains the name of the archive in which the
+    source is located without abbreviation.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient le nom complet du dépôt d’archives dans
     lequel se trouve le support de texte.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global"/>
-  </classes>
-  <content>
-    <textNode/>
-  </content>
-  <attList>
-    <attDef ident="n" mode="delete"/>
-    <attDef ident="xml:id" mode="delete"/>
-    <attDef ident="xml:lang" mode="change" usage="req">
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.lang.de"/>
-          <rng:ref name="ssrq.lang.fr"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
-  <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
-  <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+    </classes>
+    <content>
+        <textNode/>
+    </content>
+    <attList>
+        <attDef ident="n" mode="delete"/>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="xml:lang" mode="change" usage="req">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.lang.de"/>
+                    <rng:ref name="ssrq.lang.fr"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-msIdentifier-de"/>
+    <xi:include href="examples.xml" xpointer="ex-msIdentifier-en"/>
+    <xi:include href="examples.xml" xpointer="ex-msIdentifier-fr"/>
 </elementSpec>

@@ -1,133 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="measure" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Massangabe</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">measure</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">mesure</gloss>
-  <desc xml:lang="de" versionDate="2023-07-19">Enthält eine Massangabe jeder Art.</desc>
-  <desc xml:lang="en" versionDate="2023-07-19">Contains a measurement of any type.</desc>
-  <desc xml:lang="fr" versionDate="2023-07-19">Contient une indication de mesure de n’importe quel type.</desc>
-  <classes mode="replace">
-    <memberOf key="att.measurement"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="model.measureLike"/>
-  </classes>
-  <content>
-    <alternate maxOccurs="unbounded">
-      <textNode/>
-      <macroRef key="ssrq.content.critical"/>
-      <macroRef key="ssrq.content.display"/>
-      <macroRef key="ssrq.content.content"/>
-      <macroRef key="ssrq.content.entities"/>
-    </alternate>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" mode="change" ident="sch-measure" module="core">
-    <desc xml:lang="en" versionDate="2023-03-23">constraint for tei:measure</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:measure[@type = 'age']">
-          <sch:let name="age" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = 'ssrq.measure.time']//tei:valItem/@ident), '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $age, '$'))">
-              "<sch:value-of select="./@unit"/>" is not a valid time unit – you need to choose
-              from the following list:
-              <sch:value-of select="string-join(tokenize($age, '\|'), ', ')"/>
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:measure[@type = 'area']">
-          <sch:let name="area" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = ('ssrq.measure.area', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident, '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $area, '$'))">
-              "<sch:value-of select="./@unit"/>" is not a valid area unit – you need to choose
-              from the following list:
-              <sch:value-of select="string-join(tokenize($area, '\|'), ', ')"/>
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:measure[@type = 'currency']">
-          <sch:let name="currency" value="{{concat('&quot;', string-join(//tei:dataSpec[@ident = 'ssrq.measure.currency']//tei:valItem/@ident, '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $currency, '$'))">
-              "<sch:value-of select="./@unit"/>" is not a valid currency unit – you need to choose
-              from the following list:
-              <sch:value-of select="string-join(tokenize($currency, '\|'), ', ')"/>
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:measure[@type = 'length']">
-          <sch:let name="length" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.length', 'ssrq.measure.lengths.base.cm', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $length, '$'))">
-              "<sch:value-of select="./@unit"/>" is not a valid length unit – you need to choose
-              from the following list:
-              <sch:value-of select="string-join(tokenize($length, '\|'), ', ')"/>
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:measure[@type = 'undefined']">
-          <sch:let name="various" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.various', 'ssrq.measure.parts.stuck')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $various, '$'))">
-              "<sch:value-of select="./@unit"/>" is not a valid unspecific unit – you need to
-              choose from the following list:
-              <sch:value-of select="string-join(tokenize($various, '\|'), ', ')"/>
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:measure[@type = 'volume']">
-          <sch:let name="volume" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.capacity', 'ssrq.measure.parts.stuck', 'ssrq.measure.parts.vierling')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $volume, '$'))">
-              "<sch:value-of select="./@unit"/>" is not a valid capacity unit – you need to choose
-              from the following list:
-              <sch:value-of select="string-join(tokenize($volume, '\|'), ', ')"/>
-          </sch:assert>
-        </sch:rule>
-        <sch:rule context="tei:measure[@type = 'weight']">
-          <sch:let name="weight" value="{{concat('&quot;', string-join(sort(//tei:dataSpec[@ident = ('ssrq.measure.parts.vierling', 'ssrq.measure.weight', 'ssrq.measure.parts.stuck')]//tei:valItem/@ident), '|'), '&quot;')}}"/>
-          <sch:assert test="matches(@unit, concat('^', $weight, '$'))">
-              "<sch:value-of select="./@unit"/>" is not a valid weight unit – you need to choose
-              from the following list:
-              <sch:value-of select="string-join(tokenize($weight, '\|'), ', ')"/>
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="type" mode="replace" usage="req">
-      <desc xml:lang="de" versionDate="2025-01-30">die Art der Massangabe</desc>
-      <desc xml:lang="en" versionDate="2025-01-30">the type of measure</desc>
-      <desc xml:lang="fr" versionDate="2025-01-30">le type de la mesure</desc>
-      <datatype>
-        <dataRef key="ssrq.measure.att.type"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-measure-age-de"/>
-  <xi:include href="examples.xml" xpointer="ex-measure-age-en"/>
-  <xi:include href="examples.xml" xpointer="ex-measure-age-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-measure-price-de"/>
-  <xi:include href="examples.xml" xpointer="ex-measure-price-en"/>
-  <xi:include href="examples.xml" xpointer="ex-measure-price-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-measureGrp-area-de"/>
-  <xi:include href="examples.xml" xpointer="ex-measureGrp-area-en"/>
-  <xi:include href="examples.xml" xpointer="ex-measureGrp-area-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-de"/>
-  <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-en"/>
-  <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-measure-unclear-de"/>
-  <xi:include href="examples.xml" xpointer="ex-measure-unclear-en"/>
-  <xi:include href="examples.xml" xpointer="ex-measure-unclear-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-de"/>
-  <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-en"/>
-  <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-fr"/>
-  <remarks xml:lang="de" versionDate="2025-07-23">
-    <p>Kann an einer Stelle keine genaue Mengenangabe gemacht werden, wird hierfür
-      im Attribut <att>quantity</att> der Wert <val>unknown</val> verwendet. Stehen mehrere
-      zusammengehörige Massangaben nebeneinander, werden diese mit <gi>measureGrp</gi>
-      zu einer Gruppe zusammengefasst.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2025-07-23">
-    <p>If an exact quantity cannot be given at one point, then the value <val>unknown</val> is used
-        in <att>quantity</att>. If there are several related quantities next to each other,
-        they are combined into a group with <gi>measureGrp</gi>.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-07-23">
-    <p>Si la quantité exacte ne peut pas être renseignée, la valeur <val>unknown</val> est utilisée
-      avec l’attribut <att>quantity</att>. Si plusieurs indications de mesure se suivent côte à
-      côte, elles sont réunies en un groupe avec <gi>measureGrp</gi>.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="measure" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Massangabe</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">measure</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">mesure</gloss>
+    <desc versionDate="2023-07-19" xml:lang="de">Enthält eine Massangabe jeder Art.</desc>
+    <desc versionDate="2023-07-19" xml:lang="en">Contains a measurement of any type.</desc>
+    <desc versionDate="2023-07-19" xml:lang="fr">Contient une indication de mesure de n’importe
+    quel type.</desc>
+    <classes mode="replace">
+        <memberOf key="att.measurement"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="model.measureLike"/>
+    </classes>
+    <content>
+        <alternate maxOccurs="unbounded">
+            <textNode/>
+            <macroRef key="ssrq.content.critical"/>
+            <macroRef key="ssrq.content.display"/>
+            <macroRef key="ssrq.content.content"/>
+            <macroRef key="ssrq.content.entities"/>
+        </alternate>
+    </content>
+    <constraintSpec ident="sch-measure" mode="change" module="core" scheme="schematron"
+    xml:lang="en">
+        <desc versionDate="2023-03-23" xml:lang="en">constraint for tei:measure</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:measure[@type = &apos;age&apos;]">
+                    <sch:let name="age" value="{{concat(&apos;&quot;&apos;,
+                    string-join(sort(//tei:dataSpec[@ident =
+                    &apos;ssrq.measure.time&apos;]//tei:valItem/@ident), &apos;|&apos;),
+                    &apos;&quot;&apos;)}}"/>
+                    <sch:assert test="matches(@unit, concat(&apos;^&apos;, $age, &apos;$&apos;))">
+                    &quot;
+                        <sch:value-of select="./@unit"/>
+                        &quot; is not a valid time unit – you need to choose from the following
+                        list:
+                        <sch:value-of select="string-join(tokenize($age, &apos;\|&apos;), &apos;,
+                        &apos;)"/>
+                        </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:measure[@type = &apos;area&apos;]">
+                    <sch:let name="area" value="{{concat(&apos;&quot;&apos;,
+                    string-join(//tei:dataSpec[@ident = (&apos;ssrq.measure.area&apos;,
+                    &apos;ssrq.measure.parts.vierling&apos;)]//tei:valItem/@ident, &apos;|&apos;),
+                    &apos;&quot;&apos;)}}"/>
+                    <sch:assert test="matches(@unit, concat(&apos;^&apos;, $area, &apos;$&apos;))">
+                    &quot;
+                        <sch:value-of select="./@unit"/>
+                        &quot; is not a valid area unit – you need to choose from the following
+                        list:
+                        <sch:value-of select="string-join(tokenize($area, &apos;\|&apos;), &apos;,
+                        &apos;)"/>
+                        </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:measure[@type = &apos;currency&apos;]">
+                    <sch:let name="currency" value="{{concat(&apos;&quot;&apos;,
+                    string-join(//tei:dataSpec[@ident =
+                    &apos;ssrq.measure.currency&apos;]//tei:valItem/@ident, &apos;|&apos;),
+                    &apos;&quot;&apos;)}}"/>
+                    <sch:assert test="matches(@unit, concat(&apos;^&apos;, $currency,
+                    &apos;$&apos;))"> &quot;
+                        <sch:value-of select="./@unit"/>
+                        &quot; is not a valid currency unit – you need to choose from the following
+                        list:
+                        <sch:value-of select="string-join(tokenize($currency, &apos;\|&apos;),
+                        &apos;, &apos;)"/>
+                        </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:measure[@type = &apos;length&apos;]">
+                    <sch:let name="length" value="{{concat(&apos;&quot;&apos;,
+                    string-join(sort(//tei:dataSpec[@ident = (&apos;ssrq.measure.length&apos;,
+                    &apos;ssrq.measure.lengths.base.cm&apos;,
+                    &apos;ssrq.measure.parts.vierling&apos;)]//tei:valItem/@ident), &apos;|&apos;),
+                    &apos;&quot;&apos;)}}"/>
+                    <sch:assert test="matches(@unit, concat(&apos;^&apos;, $length,
+                    &apos;$&apos;))"> &quot;
+                        <sch:value-of select="./@unit"/>
+                        &quot; is not a valid length unit – you need to choose from the following
+                        list:
+                        <sch:value-of select="string-join(tokenize($length, &apos;\|&apos;),
+                        &apos;, &apos;)"/>
+                        </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:measure[@type = &apos;undefined&apos;]">
+                    <sch:let name="various" value="{{concat(&apos;&quot;&apos;,
+                    string-join(sort(//tei:dataSpec[@ident = (&apos;ssrq.measure.various&apos;,
+                    &apos;ssrq.measure.parts.stuck&apos;)]//tei:valItem/@ident), &apos;|&apos;),
+                    &apos;&quot;&apos;)}}"/>
+                    <sch:assert test="matches(@unit, concat(&apos;^&apos;, $various,
+                    &apos;$&apos;))"> &quot;
+                        <sch:value-of select="./@unit"/>
+                        &quot; is not a valid unspecific unit – you need to choose from the
+                        following list:
+                        <sch:value-of select="string-join(tokenize($various, &apos;\|&apos;),
+                        &apos;, &apos;)"/>
+                        </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:measure[@type = &apos;volume&apos;]">
+                    <sch:let name="volume" value="{{concat(&apos;&quot;&apos;,
+                    string-join(sort(//tei:dataSpec[@ident = (&apos;ssrq.measure.capacity&apos;,
+                    &apos;ssrq.measure.parts.stuck&apos;,
+                    &apos;ssrq.measure.parts.vierling&apos;)]//tei:valItem/@ident), &apos;|&apos;),
+                    &apos;&quot;&apos;)}}"/>
+                    <sch:assert test="matches(@unit, concat(&apos;^&apos;, $volume,
+                    &apos;$&apos;))"> &quot;
+                        <sch:value-of select="./@unit"/>
+                        &quot; is not a valid capacity unit – you need to choose from the following
+                        list:
+                        <sch:value-of select="string-join(tokenize($volume, &apos;\|&apos;),
+                        &apos;, &apos;)"/>
+                        </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:measure[@type = &apos;weight&apos;]">
+                    <sch:let name="weight" value="{{concat(&apos;&quot;&apos;,
+                    string-join(sort(//tei:dataSpec[@ident =
+                    (&apos;ssrq.measure.parts.vierling&apos;, &apos;ssrq.measure.weight&apos;,
+                    &apos;ssrq.measure.parts.stuck&apos;)]//tei:valItem/@ident), &apos;|&apos;),
+                    &apos;&quot;&apos;)}}"/>
+                    <sch:assert test="matches(@unit, concat(&apos;^&apos;, $weight,
+                    &apos;$&apos;))"> &quot;
+                        <sch:value-of select="./@unit"/>
+                        &quot; is not a valid weight unit – you need to choose from the following
+                        list:
+                        <sch:value-of select="string-join(tokenize($weight, &apos;\|&apos;),
+                        &apos;, &apos;)"/>
+                        </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="type" mode="replace" usage="req">
+            <desc versionDate="2025-01-30" xml:lang="de">die Art der Massangabe</desc>
+            <desc versionDate="2025-01-30" xml:lang="en">the type of measure</desc>
+            <desc versionDate="2025-01-30" xml:lang="fr">le type de la mesure</desc>
+            <datatype>
+                <dataRef key="ssrq.measure.att.type"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-measure-age-de"/>
+    <xi:include href="examples.xml" xpointer="ex-measure-age-en"/>
+    <xi:include href="examples.xml" xpointer="ex-measure-age-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-measure-price-de"/>
+    <xi:include href="examples.xml" xpointer="ex-measure-price-en"/>
+    <xi:include href="examples.xml" xpointer="ex-measure-price-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-measureGrp-area-de"/>
+    <xi:include href="examples.xml" xpointer="ex-measureGrp-area-en"/>
+    <xi:include href="examples.xml" xpointer="ex-measureGrp-area-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-de"/>
+    <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-en"/>
+    <xi:include href="examples.xml" xpointer="ex-measureGrp-currencies-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-measure-unclear-de"/>
+    <xi:include href="examples.xml" xpointer="ex-measure-unclear-en"/>
+    <xi:include href="examples.xml" xpointer="ex-measure-unclear-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-de"/>
+    <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-en"/>
+    <xi:include href="examples.xml" xpointer="ex-measureGrp-wheat-fr"/>
+    <remarks versionDate="2025-07-23" xml:lang="de">
+        <p>
+            Kann an einer Stelle keine genaue Mengenangabe gemacht werden, wird hierfür im Attribut
+            <att>quantity</att> der Wert <val>unknown</val> verwendet. Stehen mehrere
+            zusammengehörige Massangaben nebeneinander, werden diese mit <gi>measureGrp</gi> zu
+            einer Gruppe zusammengefasst.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-07-23" xml:lang="en">
+        <p>
+            If an exact quantity cannot be given at one point, then the value <val>unknown</val> is
+            used in <att>quantity</att>. If there are several related quantities next to each
+            other, they are combined into a group with <gi>measureGrp</gi>.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-07-23" xml:lang="fr">
+        <p>
+            Si la quantité exacte ne peut pas être renseignée, la valeur <val>unknown</val> est
+            utilisée avec l’attribut <att>quantity</att>. Si plusieurs indications de mesure se
+            suivent côte à côte, elles sont réunies en un groupe avec <gi>measureGrp</gi>.
+        </p>
+    </remarks>
 </elementSpec>

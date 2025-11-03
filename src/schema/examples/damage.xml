@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.tei-c.org/ns/1.0">
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-damage-add">
-    <damage agent="water">
-      <add hand="otherHand" place="overwritten">zuͦ trincken</add>
-    </damage>
-  </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-damage-gap">
-    <damage agent="water">
-      <gap quantity="9" unit="cm"/>
-    </damage>
-  </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-damage-supplied">
-    <damage agent="water">
-      <supplied source="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810f">verthruwen</supplied>
-    </damage>
-  </egXML>
-  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ex-damage-unclear">
-    <damage agent="ink_blot">
-      <unclear>die</unclear>
-    </damage>
-  </egXML>
+    <egXML xml:id="ex-damage-add" xmlns="http://www.tei-c.org/ns/Examples">
+        <damage agent="water"> <add hand="otherHand" place="overwritten">zuͦ trincken</add> </damage>
+    </egXML>
+    <egXML xml:id="ex-damage-gap" xmlns="http://www.tei-c.org/ns/Examples">
+        <damage agent="water"> <gap quantity="9" unit="cm"/> </damage>
+    </egXML>
+    <egXML xml:id="ex-damage-supplied" xmlns="http://www.tei-c.org/ns/Examples">
+        <damage agent="water"> <supplied source="id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810f">verthruwen</supplied> </damage>
+    </egXML>
+    <egXML xml:id="ex-damage-unclear" xmlns="http://www.tei-c.org/ns/Examples">
+        <damage agent="ink_blot"> <unclear>die</unclear> </damage>
+    </egXML>
 </div>

@@ -1,55 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="publisher" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-04">Verlag</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-04">publisher</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-04">imprimeur/éditeur</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält bei Druckschriften als Teil
-      von <gi>docImprint</gi> den Namen der Druckerei bzw. des Druckers, als Teil
-      von <gi>publicationStmt</gi> die Angabe der herausgebenden Institution.
-    </desc>
-  <desc xml:lang="en" versionDate="2023-07-20">In the case of publications, contains the name of
-      the printer as part of <gi>docImprint</gi> and details of the issuing institution as part
-      of <gi>publicationStmt</gi>.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient, pour les documents imprimés, le nom de
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="publisher" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-04" xml:lang="de">Verlag</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="en">publisher</gloss>
+    <gloss versionDate="2025-02-04" xml:lang="fr">imprimeur/éditeur</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält bei Druckschriften als Teil von
+    <gi>docImprint</gi> den Namen der Druckerei bzw. des Druckers, als Teil von
+    <gi>publicationStmt</gi> die Angabe der herausgebenden Institution. </desc>
+    <desc versionDate="2023-07-20" xml:lang="en">In the case of publications, contains the name of
+    the printer as part of <gi>docImprint</gi> and details of the issuing institution as part of
+    <gi>publicationStmt</gi>.</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient, pour les documents imprimés, le nom de
     l’imprimerie ou de l’imprimeur comme partie de <gi>docImprint</gi>, et l’indication de
     l’institution éditrice comme partie de <gi>publicationStmt</gi>.</desc>
-  <classes mode="replace">
-    <memberOf key="att.global.responsibility"/>
-  </classes>
-  <content>
-    <alternate>
-      <textNode/>
-      <elementRef key="persName"/>
-      <elementRef key="orgName"/>
-    </alternate>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-publisher-custom" mode="add">
-    <desc versionDate="2023-06-23" xml:lang="en">constraint for tei:publisher</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:publisher[ancestor::tei:publicationStmt]">
-          <sch:assert test="text() = 'SSRQ-SDS-FDS'">
-              If tei:publisher is part of tei:publicationStmt it must contain the text
-              "SSRQ-SDS-FDS".
-          </sch:assert>
-          <sch:assert test="not(@cert)">
-              If tei:publisher is part of tei:publicationStmt it may not have the
-              attribute @cert.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="resp" mode="delete"/>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-docImprint-1-de"/>
-  <xi:include href="examples.xml" xpointer="ex-docImprint-1-en"/>
-  <xi:include href="examples.xml" xpointer="ex-docImprint-1-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-publisher-cert-de"/>
-  <xi:include href="examples.xml" xpointer="ex-publisher-cert-en"/>
-  <xi:include href="examples.xml" xpointer="ex-publisher-cert-fr"/>
+    <classes mode="replace">
+        <memberOf key="att.global.responsibility"/>
+    </classes>
+    <content>
+        <alternate>
+            <textNode/>
+            <elementRef key="persName"/>
+            <elementRef key="orgName"/>
+        </alternate>
+    </content>
+    <constraintSpec ident="sch-publisher-custom" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2023-06-23" xml:lang="en">constraint for tei:publisher</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:publisher[ancestor::tei:publicationStmt]">
+                    <sch:assert test="normalize-space(.) = &apos;SSRQ-SDS-FDS&apos;"> If
+                    tei:publisher is part of tei:publicationStmt it must contain the text
+                    &quot;SSRQ-SDS-FDS&quot;. </sch:assert>
+                    <sch:assert test="not(@cert)"> If tei:publisher is part of tei:publicationStmt
+                    it may not have the attribute @cert. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="resp" mode="delete"/>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-docImprint-1-de"/>
+    <xi:include href="examples.xml" xpointer="ex-docImprint-1-en"/>
+    <xi:include href="examples.xml" xpointer="ex-docImprint-1-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-publisher-cert-de"/>
+    <xi:include href="examples.xml" xpointer="ex-publisher-cert-en"/>
+    <xi:include href="examples.xml" xpointer="ex-publisher-cert-fr"/>
 </elementSpec>

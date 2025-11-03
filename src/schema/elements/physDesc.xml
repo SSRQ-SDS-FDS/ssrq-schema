@@ -1,50 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="physDesc" module="msdescription" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">physische Beschreibung</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">physical description</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">description physique</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Beschreibt die physische Beschaffenheit eines
-      Textträgers.</desc>
-  <desc xml:lang="en" versionDate="2023-05-17">Describes the physical condition of the source
-      (material, mass, state of preservation, scribal hands, extraordinary decorations,
-      seals).</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Décrit la nature physique d’un support de
-      texte.</desc>
-  <classes mode="replace"/>
-  <content>
-    <sequence>
-      <elementRef key="objectDesc"/>
-      <elementRef key="bindingDesc" minOccurs="0"/>
-      <elementRef key="handDesc" minOccurs="0"/>
-      <elementRef key="sealDesc" minOccurs="0"/>
-    </sequence>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-physDesc">
-    <desc xml:lang="en" versionDate="2025-05-08">constraint for tei:physDesc</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:physDesc">
-          <sch:assert test=".[tei:bindingDesc]" role="warning">
-            Missing tei:bindingDesc als child of <sch:name/>.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <xi:include href="examples.xml" xpointer="ex-physDesc-de"/>
-  <xi:include href="examples.xml" xpointer="ex-physDesc-en"/>
-  <xi:include href="examples.xml" xpointer="ex-physDesc-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-06">
-    <p>In den Kindelementen werden alle materiellen Aspekte des Textträgers, wie etwa Material,
-        Masse, Erhaltungszustand, Schreiberhände, aussergewöhnliche Dekorationen, Siegel etc.,
-        beschrieben.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-06">
-    <p>Les éléments enfants décrivent tous les aspects matériels du support de texte, tels que
-        le matériau, les dimensions, l’état de conservation, les mains du scribe, les décorations
-        inhabituelles, les sceaux, etc.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="physDesc" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">physische Beschreibung</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">physical description</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">description physique</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Beschreibt die physische Beschaffenheit eines
+    Textträgers.</desc>
+    <desc versionDate="2023-05-17" xml:lang="en">Describes the physical condition of the source
+    (material, mass, state of preservation, scribal hands, extraordinary decorations,
+    seals).</desc>
+    <desc versionDate="2025-02-06" xml:lang="fr">Décrit la nature physique d’un support de
+    texte.</desc>
+    <classes mode="replace"/>
+    <content>
+        <sequence>
+            <elementRef key="objectDesc"/>
+            <elementRef key="bindingDesc" minOccurs="0"/>
+            <elementRef key="handDesc" minOccurs="0"/>
+            <elementRef key="sealDesc" minOccurs="0"/>
+        </sequence>
+    </content>
+    <constraintSpec ident="sch-el-physDesc" scheme="schematron" xml:lang="en">
+        <desc versionDate="2025-05-08" xml:lang="en">constraint for tei:physDesc</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:physDesc">
+                    <sch:assert role="warning" test=".[tei:bindingDesc]"> Missing tei:bindingDesc
+                    als child of tei:physDesc. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <xi:include href="examples.xml" xpointer="ex-physDesc-de"/>
+    <xi:include href="examples.xml" xpointer="ex-physDesc-en"/>
+    <xi:include href="examples.xml" xpointer="ex-physDesc-fr"/>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            In den Kindelementen werden alle materiellen Aspekte des Textträgers, wie etwa
+            Material, Masse, Erhaltungszustand, Schreiberhände, aussergewöhnliche Dekorationen,
+            Siegel etc., beschrieben.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="fr">
+        <p>
+            Les éléments enfants décrivent tous les aspects matériels du support de texte, tels que
+            le matériau, les dimensions, l’état de conservation, les mains du scribe, les
+            décorations inhabituelles, les sceaux, etc.
+        </p>
+    </remarks>
 </elementSpec>

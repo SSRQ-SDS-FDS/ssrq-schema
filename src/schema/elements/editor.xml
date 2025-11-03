@@ -1,36 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="editor" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Herausgeber/Herausgeberin</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">editor</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">éditeur</gloss>
-  <desc xml:lang="de" versionDate="2025-02-06">Enthält eine Herausgeberin/einen Herausgeber der
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="editor" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Herausgeber/Herausgeberin</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">editor</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">éditeur</gloss>
+    <desc versionDate="2025-02-06" xml:lang="de">Enthält eine Herausgeberin/einen Herausgeber der
     Editionseinheit.</desc>
-  <desc xml:lang="en" versionDate="2023-08-17">In the <gi>titleStmt</gi> of a piece, the editors
+    <desc versionDate="2023-08-17" xml:lang="en">In the <gi>titleStmt</gi> of a piece, the editors
     of the edition unit are thus recorded.</desc>
-  <desc xml:lang="fr" versionDate="2025-02-06">Contient un éditeur de l’unité d’édition.</desc>
-  <classes mode="replace"/>
-  <content>
-    <alternate>
-      <elementRef key="persName"/>
-      <textNode/>
-    </alternate>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-editor">
-    <desc xml:lang="en" versionDate="2023-04-13">constraint for tei:editor</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:editor[parent::tei:titleStmt]">
-          <sch:assert test="tei:persName">The usage of tei:editor as part of tei:titleStmt
-            requires a tei:persName as a child.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <xi:include href="examples.xml" xpointer="ex-editor-de"/>
-  <xi:include href="examples.xml" xpointer="ex-editor-en"/>
-  <xi:include href="examples.xml" xpointer="ex-editor-fr"/>
+    <desc versionDate="2025-02-06" xml:lang="fr">Contient un éditeur de l’unité d’édition.</desc>
+    <classes mode="replace"/>
+    <content>
+        <elementRef key="persName"/>
+    </content>
+    <xi:include href="examples.xml" xpointer="ex-editor-de"/>
+    <xi:include href="examples.xml" xpointer="ex-editor-en"/>
+    <xi:include href="examples.xml" xpointer="ex-editor-fr"/>
 </elementSpec>

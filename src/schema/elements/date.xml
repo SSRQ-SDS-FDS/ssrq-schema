@@ -1,163 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
-        type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="date" module="core" mode="change">
-  <gloss xml:lang="de" versionDate="2025-02-03">Datum</gloss>
-  <gloss xml:lang="en" versionDate="2025-02-03">date</gloss>
-  <gloss xml:lang="fr" versionDate="2025-02-03">date</gloss>
-  <desc xml:lang="de" versionDate="2023-08-17">Enthält ein Datum.</desc>
-  <desc xml:lang="en" versionDate="2023-08-17">Contains a date.</desc>
-  <desc xml:lang="fr" versionDate="2023-08-17">Contient une date.</desc>
-  <classes mode="replace">
-    <memberOf key="att.calendarSystem"/>
-    <memberOf key="att.datable"/>
-    <memberOf key="att.datable.custom"/>
-    <memberOf key="att.duration.iso"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="macro.dateLike"/>
-    <memberOf key="model.publicationStmtPart.detail"/>
-  </classes>
-  <content>
-    <alternate minOccurs="0" maxOccurs="unbounded">
-      <elementRef key="precision"/>
-      <macroRef key="ssrq.content.default"/>
-    </alternate>
-  </content>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-date-outside-teiHeader" mode="add">
-    <desc xml:lang="en" versionDate="2025-02-08">constraint for tei:date outside tei:teiHeader</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:date[not(ancestor::tei:teiHeader)]">
-          <sch:assert test="string-length(normalize-space(.)) &gt; 0 or child::*">
-              The element tei:date must not be empty when outside tei:teiHeader.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-date-publicationStmt" mode="add">
-    <desc xml:lang="en" versionDate="2025-02-08">constraint for tei:date inside tei:publicationStmt</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
-          <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)">
-            If tei:date is part of tei:publicationStmt it must be empty.
-          </sch:assert>
-          <sch:assert test=".[@type][@type/data(.) = ('electronic', 'print')]">
-            If tei:date is part of tei:publicationStmt it must contain @type with a value of
-            'electronic' or 'print'.
-          </sch:assert>
-          <sch:assert test=".[@when-custom or (@from-custom and @to-custom)][not(@calendar|@dur-iso|@notAfter-custom|@notBefore-custom|@period)]">
-            If tei:date is part of tei:publicationStmt it must contain @when-custom or @from-custom
-            and to-custom, and may not contain @calendar, @dur-iso, @notAfter-custom,
-            @notBefore-custom or @period.
-          </sch:assert>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <constraintSpec xml:lang="en" scheme="schematron" ident="sch-el-date-electronic-print" mode="add">
-    <desc xml:lang="en" versionDate="2025-02-17">constraint for tei:date with type 'electronic'
-      and 'print' outside tei:publicationStmt</desc>
-    <constraint>
-      <sch:pattern>
-        <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)]">
-          <sch:report test=".[@type='electronic' or @type='print']">
-            If tei:date is outside tei:publicationStmt it may not be of @type 'electronic'
-            or 'print'.
-          </sch:report>
-        </sch:rule>
-      </sch:pattern>
-    </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="dur-iso" mode="change">
-      <datatype>
-        <dataRef key="ssrq.duriso.date"/>
-      </datatype>
-    </attDef>
-    <attDef ident="period" mode="change">
-      <datatype>
-        <rng:choice>
-          <rng:ref name="ssrq.period.days"/>
-          <rng:ref name="ssrq.period.seasons"/>
-        </rng:choice>
-      </datatype>
-    </attDef>
-    <attDef ident="type" mode="replace">
-      <desc xml:lang="de" versionDate="2025-02-03">die Art des Datums</desc>
-      <desc xml:lang="en" versionDate="2025-02-03">the type of date</desc>
-      <desc xml:lang="fr" versionDate="2025-02-03">le type de date</desc>
-      <datatype>
-        <dataRef key="ssrq.type.date"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <xi:include href="examples.xml" xpointer="ex-date-abbr-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-abbr-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-abbr-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-day-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-day-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-day-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-ca-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-ca-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-ca-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-deadline-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-deadline-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-deadline-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-deadline-2-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-deadline-2-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-deadline-2-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-duriso-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-duriso-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-duriso-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-duriso-repeated-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-duriso-repeated-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-duriso-repeated-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-duriso-period-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-duriso-period-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-duriso-period-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-holiday-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-holiday-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-holiday-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-from-to-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-from-to-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-from-to-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-gregjul-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-gregjul-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-gregjul-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-annunciation-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-annunciation-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-annunciation-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-period-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-period-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-period-fr"/>
-  <xi:include href="examples.xml" xpointer="ex-date-roman-de"/>
-  <xi:include href="examples.xml" xpointer="ex-date-roman-en"/>
-  <xi:include href="examples.xml" xpointer="ex-date-roman-fr"/>
-  <remarks xml:lang="de" versionDate="2025-02-05">
-    <p>Daten in Quelltexten (Originaldaten) und den editorischen Paratexten (Einleitung, Kommentare,
-      Fussnoten) werden mit <gi>date</gi> ausgezeichnet. Die ausführlichen
-      <ref target="dating_guidelines.md">Datierungsrichtlinien</ref> sind zu beachten.</p>
-    <p>Termine (Weidetermine, Jagdzeitbeschränkungen etc.) werden auch als Daten behandelt.
-      Zur Kennzeichnung, dass es sich um einen Termin handelt, wird das Attribut <att>type</att>
-      mit dem Wert <val>deadline</val> eingefügt.</p>
-  </remarks>
-  <remarks xml:lang="en" versionDate="2023-09-05">
-    <p>Dating in source texts (original data) and the paratexts (introduction, comments, footnotes)
-      are marked with <gi>date</gi>. The
-      <ref target="dating_guidelines.md">dating guidelines</ref> must be observed.</p>
-    <p>Dates (grazing dates, hunting time restrictions, etc.) are also treated as dates.
-      <att>type</att> with the content <val>deadline</val> is inserted to indicate that it is
-      an appointment.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2025-02-05">
-    <p>Les dates présentent dans les textes sources (données originales) et les paratextes (introduction,
-      commentaires, notes) sont marquées par <gi>date</gi>. Les
-      <ref target="dating_guidelines.md">principes de datation</ref> doivent être respectés.</p>
-    <p>Les échéances ou les calendriers (dates de pâturage, restrictions de temps de chasse, etc.)
-      sont également traités comme des dates. Un attribut <att>type</att> avec le contenu
-      <val>deadline</val> est inséré pour indiquer qu’il s’agit d’une échéance.</p>
-  </remarks>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="date" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+    <gloss versionDate="2025-02-03" xml:lang="de">Datum</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="en">date</gloss>
+    <gloss versionDate="2025-02-03" xml:lang="fr">date</gloss>
+    <desc versionDate="2023-08-17" xml:lang="de">Enthält ein Datum.</desc>
+    <desc versionDate="2023-08-17" xml:lang="en">Contains a date.</desc>
+    <desc versionDate="2023-08-17" xml:lang="fr">Contient une date.</desc>
+    <classes mode="replace">
+        <memberOf key="att.calendarSystem"/>
+        <memberOf key="att.datable"/>
+        <memberOf key="att.datable.custom"/>
+        <memberOf key="att.duration.iso"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="macro.dateLike"/>
+        <memberOf key="model.publicationStmtPart.detail"/>
+    </classes>
+    <content>
+        <alternate maxOccurs="unbounded" minOccurs="0">
+            <elementRef key="precision"/>
+            <macroRef key="ssrq.content.default"/>
+        </alternate>
+    </content>
+    <constraintSpec ident="sch-el-date-outside-teiHeader" mode="add" scheme="schematron"
+    xml:lang="en">
+        <desc versionDate="2025-02-08" xml:lang="en">constraint for tei:date outside
+        tei:teiHeader</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:date[not(ancestor::tei:teiHeader)]">
+                    <sch:assert test="string-length(normalize-space(.)) &gt; 0 or child::*"> The
+                    element tei:date must not be empty when outside tei:teiHeader. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <constraintSpec ident="sch-el-date-publicationStmt" mode="add" scheme="schematron"
+    xml:lang="en">
+        <desc versionDate="2025-02-08" xml:lang="en">constraint for tei:date inside
+        tei:publicationStmt</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:date[ancestor::tei:publicationStmt]">
+                    <sch:assert test="string-length(normalize-space(.)) = 0 and not(child::*)"> If
+                    tei:date is part of tei:publicationStmt it must be empty. </sch:assert>
+                    <sch:assert test=".[@type][@type/data(.) = (&apos;electronic&apos;,
+                    &apos;print&apos;)]"> If tei:date is part of tei:publicationStmt it must
+                    contain @type with a value of &apos;electronic&apos; or &apos;print&apos;.
+                    </sch:assert>
+                    <sch:assert test=".[@when-custom or (@from-custom and
+                    @to-custom)][not(@calendar|@dur-iso|@notAfter-custom|@notBefore-custom|@period)]"> If tei:date is part of tei:publicationStmt it must contain @when-custom or @from-custom and to-custom, and may not contain @calendar, @dur-iso, @notAfter-custom, @notBefore-custom or @period. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <constraintSpec ident="sch-el-date-electronic-print" mode="add" scheme="schematron"
+    xml:lang="en">
+        <desc versionDate="2025-02-17" xml:lang="en">constraint for tei:date with type
+        &apos;electronic&apos; and &apos;print&apos; outside tei:publicationStmt</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:date[not(ancestor::tei:publicationStmt)]">
+                    <sch:report test=".[@type=&apos;electronic&apos; or @type=&apos;print&apos;]">
+                    If tei:date is outside tei:publicationStmt it may not be of @type
+                    &apos;electronic&apos; or &apos;print&apos;. </sch:report>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
+    <attList>
+        <attDef ident="dur-iso" mode="change">
+            <datatype>
+                <dataRef key="ssrq.duriso.date"/>
+            </datatype>
+        </attDef>
+        <attDef ident="period" mode="change">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.period.days"/>
+                    <rng:ref name="ssrq.period.seasons"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="replace">
+            <desc versionDate="2025-02-03" xml:lang="de">die Art des Datums</desc>
+            <desc versionDate="2025-02-03" xml:lang="en">the type of date</desc>
+            <desc versionDate="2025-02-03" xml:lang="fr">le type de date</desc>
+            <datatype>
+                <dataRef key="ssrq.type.date"/>
+            </datatype>
+        </attDef>
+    </attList>
+    <xi:include href="examples.xml" xpointer="ex-date-abbr-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-abbr-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-abbr-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-day-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-day-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-day-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-ca-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-ca-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-ca-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-deadline-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-deadline-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-deadline-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-deadline-2-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-deadline-2-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-deadline-2-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-duriso-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-duriso-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-duriso-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-duriso-repeated-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-duriso-repeated-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-duriso-repeated-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-duriso-period-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-duriso-period-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-duriso-period-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-holiday-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-holiday-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-holiday-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-from-to-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-from-to-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-from-to-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-gregjul-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-gregjul-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-gregjul-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-annunciation-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-annunciation-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-annunciation-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-period-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-period-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-period-fr"/>
+    <xi:include href="examples.xml" xpointer="ex-date-roman-de"/>
+    <xi:include href="examples.xml" xpointer="ex-date-roman-en"/>
+    <xi:include href="examples.xml" xpointer="ex-date-roman-fr"/>
+    <remarks versionDate="2025-02-05" xml:lang="de">
+        <p>
+            Daten in Quelltexten (Originaldaten) und den editorischen Paratexten (Einleitung,
+            Kommentare, Fussnoten) werden mit <gi>date</gi> ausgezeichnet. Die ausführlichen <ref
+            target="dating_guidelines.md">Datierungsrichtlinien</ref> sind zu beachten.
+        </p>
+        <p>
+            Termine (Weidetermine, Jagdzeitbeschränkungen etc.) werden auch als Daten behandelt.
+            Zur Kennzeichnung, dass es sich um einen Termin handelt, wird das Attribut
+            <att>type</att> mit dem Wert <val>deadline</val> eingefügt.
+        </p>
+    </remarks>
+    <remarks versionDate="2023-09-05" xml:lang="en">
+        <p>
+            Dating in source texts (original data) and the paratexts (introduction, comments,
+            footnotes) are marked with <gi>date</gi>. The <ref target="dating_guidelines.md">dating
+            guidelines</ref> must be observed.
+        </p>
+        <p>
+            Dates (grazing dates, hunting time restrictions, etc.) are also treated as dates.
+            <att>type</att> with the content <val>deadline</val> is inserted to indicate that it is
+            an appointment.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-05" xml:lang="fr">
+        <p>
+            Les dates présentent dans les textes sources (données originales) et les paratextes
+            (introduction, commentaires, notes) sont marquées par <gi>date</gi>. Les <ref
+            target="dating_guidelines.md">principes de datation</ref> doivent être respectés.
+        </p>
+        <p>
+            Les échéances ou les calendriers (dates de pâturage, restrictions de temps de chasse,
+            etc.) sont également traités comme des dates. Un attribut <att>type</att> avec le
+            contenu <val>deadline</val> est inséré pour indiquer qu’il s’agit d’une échéance.
+        </p>
+    </remarks>
 </elementSpec>
