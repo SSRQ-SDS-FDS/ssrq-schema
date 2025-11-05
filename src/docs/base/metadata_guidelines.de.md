@@ -14,12 +14,23 @@ Im Fall von Mehrfachüberlieferung wird in [`<sourceDesc>`](sourceDesc.de.md) ei
 Die Textzeugenbeschreibung [`<msDesc>`](msDesc.de.md) ist in sechs
 grössere Bereiche untergliedert:
 
-- Identifizierung des Textzeugen in [`<msIdentifier>`](msIdentifier.de.md)
-- Titel bzw. Name des Textzeugen in [`<head>`](head.de.md)
-- Inhalt des Textzeugen in [`<msContents>`](msContents.de.md)
-- Physische Beschreibung des Textzeugen in [`<physDesc>`](physDesc.de.md)
-- Geschichte des Textzeugen in [`<history>`](history.de.md)
-- Zusätzliche Angaben zum Textzeugen in [`<additional>`](additional.de.md)
+- [Identifizierung des Textzeugen](#1-identifizierung-des-textzeugen-in-msidentifier) 
+  in [`<msIdentifier>`](msIdentifier.de.md)
+- [Titel bzw. Name des Textzeugen](#2-titel-bzw-name-des-textzeugen-in-head)
+  in [`<head>`](head.de.md)
+- [Inhalt des Textzeugen](#3-inhalt-des-textzeugen-in-mscontents)
+  in [`<msContents>`](msContents.de.md)
+- [Physische Beschreibung des Textzeugen](#4-physische-beschreibung-des-textzeugen-in-physdesc)
+  in [`<physDesc>`](physDesc.de.md)
+- [Geschichte des Textzeugen](#5-geschichte-des-textzeugen-in-history) 
+  in [`<history>`](history.de.md)
+- [Zusätzliche Angaben zum Textzeugen](#6-zusätzliche-angaben-zum-textzeugen-in-additional) 
+  in [`<additional>`](additional.de.md)
+
+Darüber hinaus muss bei [Mehrfachüberlieferung](#7-mehrfachüberlieferung)
+entschieden werden, welche Textzeugen überhaupt erfasst werden,
+welcher Textzeuge die Textgrundlage bildet und wie mit Varianten
+umgegangen wird.
 
 ## 1. Identifizierung des Textzeugen in [`<msIdentifier>`](msIdentifier.de.md)
 
@@ -321,6 +332,21 @@ Gesichtspunkten in Absätzen ([`<p>`](p.de.md)).
 Vorhandene Siegler werden am Schluss des Regests, durch Absätze abgetrennt, aufgeführt.
 Siegelankündigungen, auch von fehlenden Siegeln und Siegelabdrücken, werden ebenfalls erwähnt.
 
+Beispiele:
+```xml
+<summary xml:lang="de">
+    <p>...</p>
+    <p>Johann Ulrich Escher, Landvogt von Sax-Forstegg, siegelt.</p>
+</summary>
+
+<summary xml:lang="de">
+    <p>...</p>
+    <p>Der Aussteller siegelt.</p>
+    <p>Für Wartau-Gretschins siegeln Wilhelm vom Fröwis, Oswald von Prad und Rudolf Kalberer.</p>
+    <p>Für Sevelen, Hans Vittler und Hans Spangolf siegelt Klaus Vittler.</p>
+</summary>
+```
+
 Wenn in einer Urkunde erwähnt wird, dass mehrere Exemplare der Urkunde ausgefertigt
 und zerschnitten wurden, muss dies am Schluss des Regests zusammen 
 mit den Sieglern beschrieben werden.
@@ -378,7 +404,21 @@ angegeben.
 
 Bei Handschriften kann ein Schreiber, sofern er bekannt ist, mit [`<author>`](author.de.md) und darin mit
 [`<persName>`](persName.de.md) angegeben werden. Ist der Schreiber nicht bekannt, sondern nur eine Kanzlei,
-dann wird diese innerhalb von [`<author>`](author.de.md) mit [`<orgName>`](orgName.de.md) erfasst.
+dann wird diese innerhalb von [`<author>`](author.de.md) mit Freitext erfasst.
+
+Beispiele:
+```xml
+<author role="scribe">
+    <persName ref="per027325">Georg Bappus</persName>
+</author>
+
+<author role="scribe">
+  <persName ref="per028066">Hans Jakob Beyel</persName>, Rechenschreiber von Zürich
+</author>
+
+<author role="scribe">Schreiber der Kanzlei Liechtenstein</author>
+```
+
 Sind in einer Handschrift mehrere Hände erkennbar, wird eine Handbeschreibung in
 [`<handDesc>`](handDesc.de.md) angelegt, vgl. weiter unten. Diese ist nicht mehr Teil von 
 [`<msContents>`](msContents.de.md), sondern Teil der physischen Beschreibung des Textzeugen.
@@ -389,6 +429,14 @@ Bei Druckschriften werden die Namen der Druckerei bzw. des Druckers
 ([`<publisher>`](publisher.de.md)) sowie
 der Druckort ([`<pubPlace>`](pubPlace.de.md)) 
 in [`<docImprint>`](docImprint.de.md) erfasst.
+
+Beispiel:
+```xml
+<docImprint>
+    <pubPlace ref="loc000065" cert="high">Zürich</pubPlace>
+    <publisher cert="high">Christoph Froschauer der Ältere</publisher>
+</docImprint>
+```
 
 ## 4. Physische Beschreibung des Textzeugen in [`<physDesc>`](physDesc.de.md)
 
@@ -416,6 +464,32 @@ Erfasst werden:
 - (optional) die Blattzählung des Originals und ggf. davon abweichende, eigene Zählungen:
   [`<foliation>`](foliation.de.md)
 - der Erhaltungszustand des Textträgers und seine Beschädigungen: [`<condition>`](condition.de.md)
+
+Beispiel:
+```xml
+<objectDesc>
+    <supportDesc>
+        <support>
+            <material type="parchment"/>
+        </support>
+        <extent>
+            <dimensions type="leaves">
+                <height unit="cm" quantity="25.0"/>
+                <width unit="cm" quantity="38.0"/>
+            </dimensions>
+            <dimensions type="plica">
+                <width unit="cm" quantity="6.0"/>
+            </dimensions>
+        </extent>
+        <condition agent="water">
+            <p>Feuchtigkeitsschäden (mit Textverlust)</p>
+        </condition>
+        <foliation>
+            <p>Paginierung des 20. Jahrhunderts</p>
+        </foliation>
+    </supportDesc>
+</objectDesc>
+```
 
 ### 4.3 Beschreibung der Bindung (und Überlieferung) in [`<bindingDesc>`](bindingDesc.de.md)
 
@@ -499,9 +573,19 @@ Erfasst werden:
   mutmasslichen Originals: [`<origPlace>`](origPlace.de.md)
 - (optional) die ausstellende Institution: [`<orgName>`](orgName.de.md)
 
+Beispiel:
+```xml
+<origin>
+    <origDate type="document" from-custom="1460-01-01" to-custom="1460-12-31" calendar="julian"/>
+    <origDate type="content" when-custom="1440-12-22" calendar="julian"/>
+    <origPlace type="document" ref="loc000161.05">Bâle</origPlace>
+    <origPlace type="content" ref="loc000161.05">Bâle</origPlace>
+</origin>
+```
+
 <!-- Der folgende Absatz müsste überarbeitet werden. Ich denke, wir können das jetzt
 wie bei Original und Abschrift behandeln type="content" für das Ereignis type="document"
-für den Bericht.-->
+für den Bericht. -->
 Bei Berichten wird hier das Datum des Ereignisses, über das berichtet wird, und nicht der
 Zeitpunkt, zu welchem der Bericht verfasst wurde, erfasst (Z. B.: Renward Cysat schreibt um
 1600 einen Bericht über den Amstaldenhandel 1478. Der Bericht wird daher unter der Zeitspanne 
