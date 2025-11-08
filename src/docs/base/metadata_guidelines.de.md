@@ -106,7 +106,7 @@ und nicht:
 
 Wenn in einer Institution mehrere Textzeugen unter einer Signatur
 geführt und nummeriert werden, erhält die Signatur nach einem Komma
-eine Unterscheidungsnummer: 
+eine Unterscheidungsnummer.
 
 Beispiele:
 ```xml
