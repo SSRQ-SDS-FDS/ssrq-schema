@@ -11,7 +11,7 @@ Im Fall von Mehrfachüberlieferung wird in [`<sourceDesc>`](sourceDesc.de.md) ei
 [`<listWit>`](listWit.de.md) angelegt, innerhalb dessen jeder Textzeuge ein 
 [`<witness>`](witness.de.md) mit einem eigenen [`<msDesc>`](msDesc.de.md) erhält.
 
-Die Textzeugenbeschreibung [`<msDesc>`](msDesc.de.md) ist in sechs
+Die Textzeugenbeschreibung ([`<msDesc>`](msDesc.de.md)) ist in sechs
 grössere Bereiche untergliedert:
 
 - [Identifizierung des Textzeugen](#1-identifizierung-des-textzeugen-in-msidentifier) 
@@ -82,7 +82,7 @@ Beispiel:
     <idno xml:lang="de">StAFR Thurnrodel 2, fol. 15r–16v</idno>
     <settlement xml:lang="fr" ref="loc001060">Fribourg</settlement>
     <repository xml:lang="fr">Archives de l’État de Fribourg</repository>
-    <idno xml:lang="fr">AEF Thurnrodel 2, fol. 15r–16v</idno>
+    <idno xml:lang="fr">AEF Thurnrodel 2, fol. 15r-16v</idno>
 </msIdentifier>
 ```
 
@@ -120,6 +120,8 @@ Wenn nur ein Abschnitt eines paginierten Textzeugen ediert wird,
 wird der Signatur die entsprechende Stellenangabe hinzugefügt.
 Dabei werden die genauen Seitenzahlen angegeben,
 auf `f.` bzw. `ff.` (= folgende) wird verzichtet.
+Die Paginierung wird mit `S.` (deutsch) bzw. `p.` (französisch)
+angezeigt.
 
 Beispiele:
 ```xml
@@ -133,6 +135,8 @@ Wenn nur ein Abschnitt eines foliierten Textzeugen ediert wird,
 wird der Signatur die entsprechende Blattzahl hinzugefügt. 
 Die Vorderseite des Blattes wird mit `r` (= recto) und die
 Rückseite mit `v` (= verso) bezeichnet.
+Die Foliierung wird mit `fol.` (deutsch und französisch)
+angezeigt.
 
 Beispiele:
 ```xml
@@ -150,7 +154,7 @@ vorangestellt.
 Beispiele:
 ```xml
 <idno xml:lang="de">StAZH B II 4, Teil I, fol. 15v</idno>
-<idno xml:lang="de">StAZH F II a 290,Teil III, fol. 3r–v</idno>
+<idno xml:lang="de">StAZH F II a 290, Teil III, fol. 3r–v</idno>
 ```
 
 #### 1.2.6 Einträge
@@ -158,7 +162,7 @@ Beispiele:
 In Rats- und Gerichtsprotokollen, Stadtbüchern, Urkunden- und
 Notariatsregistern, Jahrzeitbüchern etc. kann sich mehr als ein Eintrag
 pro Seite bzw. Blatt befinden. Der Signatur wird nach der Angabe der Seite 
-bzw. Foliierung die Nummer des Eintrags hinzugefügt. Dabei wird von oben
+bzw. des Blattes die Nummer des Eintrags hinzugefügt. Dabei wird von oben
 nach unten durchgezählt. Befindet sich am Anfang einer Seite ein Eintrag, 
 der bereits auf der vorhergehenden Seite beginnt, wird dieser nicht mitgezählt.
 
@@ -172,21 +176,23 @@ Beispiele:
 
 Wird nicht der unter einer Signatur verzeichnete Textzeuge selbst ediert,
 sondern eine Beilage oder ein Abschnitt einer Beilage, dann wird die Signatur
-mit der Angabe `Beilage` ergänzt. Gibt es mehrere Beilagen, werden diese nummeriert.
+um die Angabe `Beilage` ergänzt. Gibt es mehrere Beilagen, werden diese nummeriert.
+Wird nur ein Teil einer Beilage ediert, dann wird dies mit einer entsprechenden
+Seitenzählung angegeben.
 
 Beispiel:
 ```xml
 <idno xml:lang="de">StAZH C I, Nr. 249, Beilage</idno>
-<idno xml:lang="de">StAZH C I, Nr. 3165, Beilage 2, S. 3-4</idno>
 <idno xml:lang="de">StAZH C I, Nr. 3165, Beilage 17</idno>
+<idno xml:lang="de">StAZH C I, Nr. 3165, Beilage 2, S. 3-4</idno>
 ```
 
-### 1.3 alternative oder ältere Signaturen
+### 1.3 Alternative oder ältere Signaturen
 
-Wurde ein Textzeuge früher unter einer anderen Signatur geführt, 
+Wurde ein Textzeuge früher unter einer anderen Signatur geführt
 oder ist er in der Forschungsliteratur unter einem anderen Namen bekannt,
 dann kann diese alternative Bezeichnung mit [`<altIdentifier>`](altIdentifier.de.md)
-angegeben werden. Das kommt z. B. im StAZH häufiger vor. Dort werden
+angegeben werden. Das kommt z. B. im StASH häufiger vor. Dort werden
 die früheren Signaturen zum Nachweis der älteren Archivordnung
 und zur Herstellung einer Konkordanz von viel zitierten Quellen erfasst.
 
@@ -244,7 +250,7 @@ Erfasst werden:
 - (optional bei Handschriften) der Schreiber des Textes: [`<author>`](author.de.md)
 - (bei Druckschriften) das Impressum: [`<docImprint>`](docImprint.de.md)
 
-Die Angaben zu Sprache, Schreiber und Impressum werden in [`<msItem>`] zusammengefasst.
+Die Angaben zu Sprache, Schreiber und Impressum werden in [`<msItem>`](msItem.de.md) zusammengefasst.
 
 Beispiele:
 
@@ -299,10 +305,10 @@ Beispiel:
     </summary>
     <summary xml:lang="fr">
         <p>
-          Christine Bovigny-Corby, de Gruyères, est suspectée de sorcellerie. 
-          Elle est interrogée et torturée à plusieurs reprises, mais n’avoue rien.
-          Elle est condamnée au bannissement dans sa région, c’est-à-dire à Sorens
-          ou à Avry-devant-Pont.
+            Christine Bovigny-Corby, de Gruyères, est suspectée de sorcellerie. 
+            Elle est interrogée et torturée à plusieurs reprises, mais n’avoue rien.
+            Elle est condamnée au bannissement dans sa région, c’est-à-dire à Sorens
+            ou à Avry-devant-Pont.
         </p>
     </summary>
 </msContents>
@@ -335,12 +341,12 @@ Siegelankündigungen, auch von fehlenden Siegeln und Siegelabdrücken, werden eb
 Beispiele:
 ```xml
 <summary xml:lang="de">
-    <p>...</p>
+    <p><!--Hier das eigentliche Regest-->…</p>
     <p>Johann Ulrich Escher, Landvogt von Sax-Forstegg, siegelt.</p>
 </summary>
 
 <summary xml:lang="de">
-    <p>...</p>
+    <p><!--Hier das eigentliche Regest-->…</p>
     <p>Der Aussteller siegelt.</p>
     <p>Für Wartau-Gretschins siegeln Wilhelm vom Fröwis, Oswald von Prad und Rudolf Kalberer.</p>
     <p>Für Sevelen, Hans Vittler und Hans Spangolf siegelt Klaus Vittler.</p>
@@ -461,9 +467,10 @@ Erfasst werden:
 - das Material, d. h. der Beschreibstoff: [`<support>`](support.de.md) mit [`<material>`](material.de.md)
 - die Höhe und Breite der Blätter (bzw. des Buches oder der Plica): [`<extent>`](extent.de.md) mit
   [`<dimensions>`](dimensions.de.md) und [`<height>`](height.de.md) bzw. [`<width>`](width.de.md)
+- (optional) der Erhaltungszustand des Textträgers und seine Beschädigungen: [`<condition>`](condition.de.md)
 - (optional) die Blattzählung des Originals und ggf. davon abweichende, eigene Zählungen:
   [`<foliation>`](foliation.de.md)
-- der Erhaltungszustand des Textträgers und seine Beschädigungen: [`<condition>`](condition.de.md)
+
 
 Beispiel:
 ```xml
@@ -503,11 +510,11 @@ Beispiele für Art und Form wären:
 
  - Abschrift
  - Abschrift mit Ergänzungen
- - Aufzeichnung (Als Aufzeichnung wird auch ein Stück bezeichnet, das zwar in grossen Teilen
-   eine Abschrift einer älteren Vorlage ist, aber zugleich essentielle Änderungen enthält.
+ - Aufzeichnung (als Aufzeichnung wird auch ein Stück bezeichnet, das zwar in grossen Teilen
+   eine Abschrift einer älteren Vorlage ist, aber zugleich essenzielle Änderungen enthält.
  - Aufzeichnung, Rodel (aus X Stücken zusammengenäht)
  - Aufzeichnung, Rodel (Einzelblatt)
- - Ausfertigung (für «Urkundenoriginale» Projekt SSRQ LU)
+ - Ausfertigung (für «Urkundenoriginale»)
  - Auszug
  - Buch
  - Druck (= Einblattdruck)
@@ -515,7 +522,7 @@ Beispiele für Art und Form wären:
  - Eintrag
  - Entwurf (Obwohl ein Entwurf genau genommen vor dem Ausstellungsdatum der Ausfertigung
    entstanden ist, ignorieren wir das, wenn wir nichts anderes wissen und geben dasselbe Datum
-   wie die Urkunde ein.)
+   wie das der Urkunde ein.)
  - Fragment
  - Fotokopie
  - Heft
@@ -537,7 +544,9 @@ Erfasst werden:
 
 Sind mehrere Schreiberhände in einer Handschrift erkennbar, muss eine
 [`<handDesc>`](handDesc.de.md) angelegt werden, in der jede Hand mit einer [`<handNote>`](handNote.de.md)
-näher beschrieben wird (s. dort).
+näher beschrieben wird (vgl. dort und den Abschnitt 
+[Schreiber und Hände](scribes-and-hands.de.md))
+in den Transkriptionsrichtlinien).
 
 ### 4.5 Beschreibung der Siegel in [`<sealDesc>`](sealDesc.de.md)
 
@@ -565,15 +574,15 @@ Datierung und Lokalisierung eines Textzeugen.
 
 Erfasst werden:
 
-- das Entstehungsdatum des Textzeugen: [`<origDate>`](origDate.de.md)
+- das Entstehungsdatum des Textzeugen: [`<origDate>`](origDate.de.md) mit `type="document"`
 - (optional) wenn es sich um eine Abschrift handelt, zusätzlich das Entstehungsdatum des
-  mutmasslichen Originals: [`<origDate>`](origDate.de.md)
-- der Entstehungsort des Textträgers [`<origPlace>`](origPlace.de.md)
+  mutmasslichen Originals: [`<origDate>`](origDate.de.md) mit `type="content"`
+- der Entstehungsort des Textträgers [`<origPlace>`](origPlace.de.md) mit `type="document"`
 - (optional) wenn es sich um eine Abschrift handelt, zusätzlich der Entstehungsort des
-  mutmasslichen Originals: [`<origPlace>`](origPlace.de.md)
+  mutmasslichen Originals: [`<origPlace>`](origPlace.de.md) mit `type="content"`
 - (optional) die ausstellende Institution: [`<orgName>`](orgName.de.md)
 
-Beispiel:
+Beispiele:
 ```xml
 <origin>
     <origDate type="document" from-custom="1460-01-01" to-custom="1460-12-31" calendar="julian"/>
@@ -581,25 +590,45 @@ Beispiel:
     <origPlace type="document" ref="loc000161.05">Bâle</origPlace>
     <origPlace type="content" ref="loc000161.05">Bâle</origPlace>
 </origin>
+
+<origin>
+    <origDate type="document" when-custom="1702-05-17" calendar="gregorian"/>
+    <origPlace type="document" ref="loc007646">Genève</origPlace>
+    <orgName role="issuer" ref="org010746">Petit Conseil</orgName>
+</origin>
 ```
 
-<!-- Der folgende Absatz müsste überarbeitet werden. Ich denke, wir können das jetzt
-wie bei Original und Abschrift behandeln type="content" für das Ereignis type="document"
-für den Bericht. -->
-Bei Berichten wird hier das Datum des Ereignisses, über das berichtet wird, und nicht der
-Zeitpunkt, zu welchem der Bericht verfasst wurde, erfasst (Z. B.: Renward Cysat schreibt um
-1600 einen Bericht über den Amstaldenhandel 1478. Der Bericht wird daher unter der Zeitspanne 
-des Amstaldenhandels eingeordnet, und nicht um 1600.
-Im Kommentar muss die Datierung des Berichts selbstverständlich angegeben werden.
+Bei Berichten über ein Ereignis, wird das Datum des Ereignisses, über das berichtet wird,
+mit ```<origDate type="content"``` und der Zeitpunkt, zu welchem der Bericht verfasst wurde,
+mit ```<origDate type="document"``` erfasst. Z. B.: Renward Cysat schreibt um
+1600 einen Bericht über den Amstaldenhandel 1478, dann wird das wie folgt kodiert.
+Zu den Datierungen selbst vgl. die [Datierungsrichtlinien](dating_guidelines.de.md).
 
-Ausführliche Bemerkungen zur Datierung eines undatierten Stücks werden in einem sachkritischen
+Beispiel:
+```xml
+<origin>
+    <origDate type="content" from-custom="1478-01-01" to-custom="1478-12-31" calendar="julian"/>
+    <origDate type="document" from-custom="1590-01-01" to-custom="1610-12-31" calendar="gregorian"/>
+</origin>
+```
+
+Ausführliche Bemerkungen zur Datierung eines undatierten Stücks werden in einem
 Kommentar ([`<back>`](back.de.md)) erfasst.
 
 Der Entstehungsort eines Textzeugen ([`<origPlace>`](origPlace.de.md)) wird nur dann erfasst, wenn er im
 Dokument steht bzw. wenn er, z. B. bei Ratsprotokollen, sicher erschlossen werden kann. 
 
 Ausstellungsorte, Absendeorte sowie Erlassorte werden normalisiert wiedergegeben. Bei mehreren
-Ausstellungsorten erhält jeder einen eigenen ([`<origPlace>`](origPlace.de.md))
+Ausstellungsorten erhält jeder einen eigenen ([`<origPlace>`](origPlace.de.md)).
+
+Beispiel:
+```xml
+<origin>
+    <origDate type="document" from-custom="1448-03-17" to-custom="1448-03-23" calendar="julian"/>
+    <origPlace type="document" ref="loc008831.01">Hôpital Marie-Madeleine du Mont-Joux</origPlace>
+    <origPlace type="document" ref="loc008768.01">Château de La Tour-de-Peilz</origPlace>
+</origin>
+```
 
 ## 6. Zusätzliche Angaben zum Textzeugen in [`<additional>`](additional.de.md)
 
@@ -609,6 +638,25 @@ werden mit dem Kurztitel in [`<listBibl>`](listBibl.de.md) sowie vollständig in
 Die Publikationen werden mit Labels in `@type` und Kurztitel chronologisch
 absteigend aufgelistet.
 
+Beispiel:
+```xml
+<additional>
+    <listBibl type="edition">
+        <bibl><ref target="https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_106">SSRQ SG III/2, Nr. 46</ref></bibl>
+        <bibl><ref>Graber, Urkundensammlung,</ref> Nr. 1</bibl>
+    </listBibl>
+    <listBibl type="summary">
+        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000067077">Reich-Langhans, Chronik</ref>, S. 100</bibl>
+    </listBibl>
+    <listBibl type="literature">
+        <bibl><ref target="http://permalink.snl.ch/bib/chbsg000124577">Gabathuler 2011</ref>, S. 249</bibl>
+    </listBibl>
+    <listBibl type="url">
+        <bibl><ref target="https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_106">https://www.ssrq-sds-fds.ch/online/SG_III_2/index.html#p_106</ref></bibl>
+    </listBibl>
+</additional>
+```
+
 Wenn ein Textträger verloren ist, erhält er keine [`<physDesc>`](physDesc.de.md). 
 Stattdessen erfassen wir die Informationen zum Verlust des Textzeugen in
 [`<adminInfo>`](adminInfo.de.md), für nähere Angaben, s. dort.
@@ -617,7 +665,7 @@ Stattdessen erfassen wir die Informationen zum Verlust des Textzeugen in
 
 ### 7.1 Darstellung der Überlieferungssituation
 
-Gibt es mehrere Textzeugen für ein Dokument, d. h. liegt Mehrfachüberlieferung vor,
+Sind mehrere Textzeugen für ein Dokument erhalten, d. h. liegt Mehrfachüberlieferung vor,
 dann erhält jeder Textzeuge, wie oben beschrieben, innerhalb von
 [`<listWit>`](listWit.de.md) ein [`<witness>`](witness.de.md)-Element,
 innerhalb dessen jeweils eine vollständige Textzeugenbeschreibung vorgenommen wird.
@@ -628,8 +676,9 @@ Hierzu gelten folgende Regeln:
 - ein Original wird mit `n="A"` bezeichnet. Existieren mehrere Originale, werden diese
   zusätzlich nummeriert `n="A1"`, `n="A2"` usw.
 - eine Abschrift wird mit `n="B"` bezeichnet. Existieren mehrere Abschriften, werden diese
-  zusätzlich nummeriert mit `n="B1"`, `n="B2"` usw.
-- Abschrift von Abschriften werden analog mit `C` und entsprechender Zählung dargestellt usw.
+  zusätzlich chronologisch nummeriert mit `n="B1"`, `n="B2"` usw.
+- Abschrift von Abschriften werden analog mit `C` und entsprechender chronologisch
+  Zählung dargestellt usw.
 
 ### 7.2 Wahl der Editionsgrundlage
 
@@ -658,8 +707,8 @@ eingetragen und mit dieser immer wieder kopiert wurden. Das Verzeichnen solcher
 
 In der Regel sollen, wenn ein Original vorhanden ist, vor allem zeitgenössische Abschriften
 verzeichnet werden. Es ist unmöglich und auch nicht sinnvoll, alle Abschriften einer wichtigen
-Urkunde ausfindig zu machen und zu verzeichnen. Die Faustregel, Abschriften bis ca. 100 Jahre
-nach dem Original, kann befolgt werden.
+Urkunde ausfindig zu machen und zu verzeichnen. Die Faustregel, `Abschriften bis ca. 100 Jahre
+nach dem Original`, kann befolgt werden.
 
 Je nach Wichtigkeit eines Stücks muss die Wirkungsgeschichte in einem Kommentar beschrieben werden.
 
@@ -675,7 +724,7 @@ einfach als «Abschrift» erfasst. Es ist zu aufwendig, diese mit «fehlerhaft»
 Enthält ein Original Textstellen, die unverständlich oder nicht mehr lesbar sind, ist es sinnvoll,
 spätere Abschriften herbeizuziehen und diese in Form von Apparateinträgen 
 (vgl. [`<app>`](app.de.md)) in der Transkription zu erfassen. 
-Evtl. helfen sie, die Stelle zu verstehen.
+Eventuell helfen sie, die Stelle zu verstehen.
 
 Beispiele:
 
