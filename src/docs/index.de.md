@@ -22,6 +22,8 @@ die analog erschienenen Bände als OCR-PDF.
 - Die [Projektwebseite](https://ssrq-sds-fds.ch/) informiert über die
 aktuell laufenden Editionsprojekte und gibt eine Übersicht über die Geschichte der
 Sammlung seit den 1890er Jahren.
+- Die [interne Dokumentation](https://docs.ssrq-online.ch) bietet den Projektmitarbeitenden
+zusätzliche Informationen für ihre Arbeit und ist passwortgeschützt.
 
 ## Technologie und Standardisierung
 
