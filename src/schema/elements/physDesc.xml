@@ -30,7 +30,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             <sch:pattern>
                 <sch:rule context="tei:physDesc">
                     <sch:assert role="warning" test=".[tei:bindingDesc]"> Missing tei:bindingDesc
-                    als child of tei:physDesc. </sch:assert>
+                    as child of tei:physDesc. </sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
