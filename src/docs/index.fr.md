@@ -21,6 +21,8 @@ numériques de la Fondation et font également office de « rapport éditorial �
   disponibles en PDF-OCR.
 - Le [site Web du projet](https://ssrq-sds-fds.ch/) réunit des informations sur les éditions en cours et
   donne un aperçu de l’histoire de la collection depuis les années 1890.
+- La [documentation interne](https://docs.ssrq-online.ch) fournit aux membres de l’équipe du projet des informations
+supplémentaires pour leur travail et est protégée par un mot de passe.
 
 ## Technologie et standardisation
 
