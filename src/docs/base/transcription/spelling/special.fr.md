@@ -270,6 +270,10 @@ l’application aux autres lettres suit la même logique.
 | Ligne verticale simple                 | <code>&#x007c;</code> | U+007C          |
 | Double ligne verticale                 | `‖`                   | U+2016          |
 | Double solidus                         | `⫽`                   | U+2AFD          |
+| Guillemet à gauche                     | `‹`                   | U+2039          |
+| Guillemet à droite                     | `›`                   | U+203A          |
+| Guillemets à gauche                    | `«`                   | U+00AB          |
+| Guillemets à droite                    | `»`                   | U+00BB          |
 | Croix de multiplication                | `×`                   | U+00D7          |
 | Caractère ordinal (1º, 2º, etc.)       | `º`                   | U+00BA          |
 

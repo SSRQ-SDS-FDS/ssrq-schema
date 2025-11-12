@@ -911,18 +911,8 @@ def test_uses_nbsp_in_text_node(
     "name, markup, result",
     [
         (
-            "invalid-text-with-quotation-marks",
+            "invalid-text with quotation marks",
             """<p>foo "bar"</p>""",
-            False,
-        ),
-        (
-            "invalid-text-with-guillemets",
-            """<p>foo «bar»</p>""",
-            False,
-        ),
-        (
-            "invalid-text-with-chevrons",
-            """<p>foo ‹bar›</p>""",
             False,
         ),
     ],
@@ -930,7 +920,7 @@ def test_uses_nbsp_in_text_node(
 def test_quotation_marks_in_text_node(
     main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
 ):
-    """Tests the global constraint, which ensures that no quotation marks are used."""
+    """Tests the global constraint, which ensures that no non-breaking-space is used."""
     writer.write(name, add_tei_namespace(markup))
     reports: list[SchematronResult] = apply_schematron_validation(
         input=writer.list(), isosch=main_constraints

@@ -284,6 +284,10 @@ verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
 | Einfache vertikale Linie                | <code>&#x007c;</code> | U+007C               |
 | Doppelte vertikale Linie                | `‖`                   | U+2016               |
 | Doppelter Solidus                       | `⫽`                   | U+2AFD               |
+| Einfaches frz. Anführungszeichen links  | `‹`                   | U+2039               |
+| Einfaches frz. Anführungszeichen rechts | `›`                   | U+203A               |
+| Doppelte frz. Anführungszeichen links   | `«`                   | U+00AB               |
+| Doppelte frz. Anführungszeichen rechts  | `»`                   | U+00BB               |
 | Malkreuz                                | `×`                   | U+00D7               |
 | Ordinalzeichen (in 1º, 2º, etc.)        | `º`                   | U+00BA               |
 
