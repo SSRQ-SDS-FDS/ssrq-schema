@@ -1,51 +1,49 @@
 ---
-title: Directives de catalogage
+title: Directives pour la description des sources
 ---
 
-Dans le cadre de l’exploitation des sources archivistiques pour les SDS,
+Dans le cadre du traitement de sources d’archives pour les SDS,
 les métadonnées décrites ci-dessous sont enregistrées dans la section
-[`<sourceDesc>`](sourceDesc.fr.md) et, à l’intérieur, dans [`<msDesc>`](msDesc.fr.md).
+[`<sourceDesc>`](sourceDesc.fr.md) et, à l’intérieur de celle-ci, dans [`<msDesc>`](msDesc.fr.md).
 
-En cas de tradition multiple, un
-[`<listWit>`](listWit.fr.md) est créé dans [`<sourceDesc>`](sourceDesc.fr.md),
-chaque témoin textuel y recevant un
+En cas de tradition multiple, une balise
+[`<listWit>`](listWit.fr.md) est insérée dans [`<sourceDesc>`](sourceDesc.fr.md),
+où chaque témoin textuel doit contenir un élément
 [`<witness>`](witness.fr.md) avec sa propre [`<msDesc>`](msDesc.fr.md).
 
-
-La description des témoins textuels ([`<msDesc>`](msDesc.fr.md)) est subdivisée
+La description des sources ([`<msDesc>`](msDesc.fr.md)) est subdivisée
 en six grandes sections :
 
-- [Identification du témoin textuel](#1-identification-du-temoin-textuel-dans-msidentifier)
+- [Identification du document](#1-identification-du-document-dans-msidentifier)
   dans [`<msIdentifier>`](msIdentifier.fr.md)
-- [Titre ou nom du témoin textuel](#2-titre-ou-nom-du-temoin-textuel-dans-head)
+- [Titre ou nom du document](#2-titre-ou-nom-du-document-dans-head)
   dans [`<head>`](head.fr.md)
-- [Contenu du témoin textuel](#3-contenu-du-temoin-textuel-dans-mscontents)
+- [Contenu du document](#3-contenu-du-document-dans-mscontents)
   dans [`<msContents>`](msContents.fr.md)
-- [Description physique du témoin textuel](#4-description-physique-du-temoin-textuel-dans-physdesc)
+- [Description physique du document](#4-description-physique-du-document-dans-physdesc)
   dans [`<physDesc>`](physDesc.fr.md)
-- [Histoire du témoin textuel](#5-histoire-du-temoin-textuel-dans-history)
+- [Histoire du document](#5-histoire-du-document-dans-history)
   dans [`<history>`](history.fr.md)
-- [Informations supplémentaires sur le témoin textuel](#6-informations-supplementaires-sur-le-temoin-textuel-dans-additional)
+- [Informations supplémentaires sur le document](#6-informations-supplémentaires-sur-le-document-dans-additional)
   dans [`<additional>`](additional.fr.md)
 
-De plus, en cas de [tradition multiple](#7-tradition-multiple), il faut décider 
-quels témoins textuels doivent être enregistrés, quel témoin constitue la base
-textuelle et comment traiter les variantes.
+De plus, en cas de [tradition textuelle multiple](#7-tradition-multiple), il faut décider 
+quels témoins textuels sont pris en compte, 
+lequel est retenu pour établir le texte de base et comment traiter les variantes.
 
-
-## 1. Identification du témoin textuel dans [`<msIdentifier>`](msIdentifier.fr.md)
+## 1. Identification du document dans [`<msIdentifier>`](msIdentifier.fr.md)
 
 ### 1.1 Règles générales
 La section [`<msIdentifier>`](msIdentifier.fr.md) contient les métadonnées concernant l’institution,
-p. ex. un archive ou une bibliothèque, où se trouve le témoin textuel,
-ainsi que les informations permettant d’identifier ce témoin.
+p. ex. des Archives ou une bibliothèque, où se trouve le document, ainsi que les
+informations permettant de l’identifier.
 
 Sont enregistrés :
 
 - le lieu où se trouve l’institution de conservation : [`<settlement>`](settlement.fr.md)
-- le nom complet de l’institution : [`<repository>`](repository.fr.md)
+- le nom complet de l’institution de conservation : [`<repository>`](repository.fr.md)
 - la cote attribuée par l’institution de conservation : [`<idno>`](idno.fr.md)
-- (optionnel) anciennes ou autres cotes : [`<altIdentifier>`](altIdentifier.fr.md)
+- (optionnel) les anciennes ou autres cotes : [`<altIdentifier>`](altIdentifier.fr.md)
 
 
 Exemples :
@@ -57,7 +55,7 @@ Exemples :
 </msIdentifier>
 
 <msIdentifier>
-    <settlement xml:lang="fr" ref="loc007885">Lausanne</settlement>
+    <settlement xml:lang="fr" ref="loc007885">Chavannes-près-Renens</settlement>
     <repository xml:lang="fr">Archives cantonales vaudoises</repository>
     <idno source="http://www.davel.vd.ch/detail.aspx?id=244271" xml:lang="fr">ACV Ac 29, p. 1-3</idno>
 </msIdentifier>
@@ -72,9 +70,10 @@ Exemples :
 </msIdentifier>
 ```
 
-Dans une unité d’édition bilingue, p. ex. provenant de Fribourg, 
-le lieu et le nom de l’institution de conservation ainsi que la cote du témoin textuel 
-peuvent être indiqués en allemand et en français, en utilisant à chaque fois l’attribut `@xml:lang`.
+Dans le cas d’un projet éditorial bilingue, p. ex. provenant de Fribourg, 
+le lieu et le nom de l’institution de conservation, ainsi que la cote du document, 
+peuvent être saisis en allemand et en français. 
+Dans ce cas, l’attribut `@xml:lang` doit être utilisé pour indiquer la langue.
 
 Exemple :
 ```xml
@@ -92,8 +91,8 @@ Exemple :
 
 #### 1.2.1 Structure de l’idno
 
-La cote se compose au minimum d’un sigle de l’institution de conservation
-et de la cote attribuée par cette institution.
+La cote se compose au minimum du sigle de l’institution de conservation et 
+de la cote attribuée par cette dernière. 
 Aucune virgule ne sépare le sigle de la cote.
 
 Exemple :
@@ -106,10 +105,10 @@ et pas :
 <idno xml:lang="fr">ACV, Ac 29</idno>
 ```
 
-#### 1.2.2 Numéros de distinction
+#### 1.2.2 Numéros d’identification
 
-Lorsque plusieurs témoins textuels sont enregistrés et numérotés sous 
-une même cote dans une institution, la cote reçoit, après une virgule, un numéro de distinction.
+Lorsque plusieurs documents sont enregistrés et classés sous une même cote dans une institution, 
+la cote reçoit, après une virgule, un numéro d’identification.
 
 Exemples :
 ```xml
@@ -117,12 +116,11 @@ Exemples :
 <idno xml:lang="de">StAZH A 6.1, Nr. 3</idno>
 ```
 
-#### 1.2.3 Section d’un témoin textuel paginé
+#### 1.2.3 Section d’un document paginé
 
-Lorsque seule une section d’un témoin textuel paginé est éditée,
-la cote reçoit l’indication de localisation correspondante.
-Les numéros de page exacts sont indiqués,
-sans utiliser `f.` ou `ff.` (pages suivantes).
+Lorsque seule une section d’un document paginé est éditée, 
+la cote reçoit le(s) numéro(s) de page(s) correspondant. 
+Les numéros de page exacts sont indiqués, sans utiliser `s`. ou `ss`. (pages suivantes).
 La pagination est indiquée par `S.` (allemand) ou `p.` (français).
 
 Exemples :
@@ -131,11 +129,11 @@ Exemples :
 <idno xml:lang="fr">AVN B 101.01.01.004, p. 333</idno>
 ```
 
-#### 1.2.4 Section d’un témoin textuel folié
+#### 1.2.4 Section d’un document folioté
 
-Lorsque seule une section d’un témoin textuel folié est éditée,
-la cote reçoit le numéro de la feuille correspondant.
-Le recto de la feuille est indiqué par `r` et le verso par `v`.
+Lorsque seule une section d’un document folioté est éditée, 
+la cote reçoit le(s) numéro(s) du/des folio(s) correspondant. 
+Le recto du feuillet est indiqué par `r` et le verso par `v`.
 La foliation est indiquée par `fol.` (allemand et français).
 
 Exemples :
@@ -144,11 +142,11 @@ Exemples :
 <idno xml:lang="fr">AVN B 101.14.001, fol. 531r-v</idno>
 ```
 
-#### 1.2.5 Section d’un témoin textuel à plusieurs parties
+#### 1.2.5 Section d’un document composé de plusieurs parties
 
-Si un témoin textuel comprend plusieurs numérotations de feuilles ou de pages,
-parce que, p. ex., des cahiers initialement séparés ont été reliés en un volume,
-le numéro de la feuille est précédé de l’indication du cahier ou de la partie correspondante.
+Si un document comprend plusieurs numérotations de folios ou de pages, 
+parce que, p. ex., des cahiers initialement séparés ont été reliés en un volume, 
+le numéro du folio est précédé de l’indication du cahier ou de la partie correspondante.
 
 Exemples :
 ```xml
@@ -158,11 +156,11 @@ Exemples :
 
 #### 1.2.6 Entrées
 
-Dans les procès-verbaux des conseils et tribunaux, les livres de ville, les registres 
-d’actes et de notariat, les livres de messes anniversaires, etc., il peut y avoir plusieurs
-entrées par page ou par feuille.
-Après l’indication de la page ou de la feuille, le numéro de l’entrée est ajouté à la cote.
-Le comptage se fait de haut en bas.
+Dans les procès-verbaux des conseils et tribunaux, les livres municipaux, 
+les répertoires des chartes, les registres de notaires, 
+les livres de messes anniversaires, etc., il peut y avoir plusieurs 
+entrées par page ou par folio. Après l’indication de la page ou du folio, 
+le numéro de l’entrée est ajouté à la cote. Le comptage se fait de haut en bas. 
 Si une entrée commence au début d’une page, mais a déjà commencé sur la page précédente, 
 elle n’est pas comptée.
 
@@ -174,8 +172,9 @@ Exemples :
 
 #### 1.2.7 Suppléments
 
-Si ce n’est pas le témoin textuel enregistré sous une cote qui est édité,
-mais un supplément ou une section d’un supplément, la cote est complétée par la mention `Supplément`.
+Si le document répertorié sous une cote n’est pas édité, 
+mais un supplément ou l’extrait d’un supplément, 
+la cote est complétée par la mention `Supplément`.
 S’il y a plusieurs suppléments, ceux-ci sont numérotés.
 Si seule une partie d’un supplément est éditée, cela est indiqué par la pagination correspondante.
 
@@ -188,7 +187,7 @@ Exemple :
 
 ### 1.3 Cotes alternatives ou anciennes
 
-Si un témoin textuel a été enregistré auparavant sous une autre cote
+Si un document a été répertorié auparavant sous une autre cote
 ou est connu dans la littérature scientifique sous un autre nom,
 cette désignation alternative peut être indiquée avec [`<altIdentifier>`](altIdentifier.fr.md).
 C’est p. ex. fréquent dans le StASH.
@@ -208,12 +207,12 @@ Exemples :
 </altIdentifier>
 ```
 
-## 2. Titre ou nom du témoin textuel dans [`<head>`](head.fr.md)
+## 2. Titre ou nom du document dans [`<head>`](head.fr.md)
 
-Un résumé court et précis du contenu du témoin textuel édité est enregistré dans 
+Un résumé court (regeste) et précis du contenu du texte édité est saisi dans
 [`<head>`](head.fr.md).
-Si un document possède plusieurs témoins textuels, un titre ne doit être enregistré 
-que pour le témoin servant de base au texte édité.
+S’il existe plusieurs témoins textuels pour un même document,
+il convient d’inscrire un titre uniquement pour le texte qui sert de modèle au texte édité.
 
 Exemples :
 ```xml
@@ -223,8 +222,8 @@ Exemples :
 <head>Loi des Trois-États sur les dommages causés aux bois et leur réparation</head>
 ```
 
-Dans les unités d’édition bilingues, p. ex. à Fribourg,
-un titre en allemand ainsi qu’un titre en français peuvent être enregistrés.
+Dans le cas d’un projet éditorial bilingue, p. ex. à Fribourg, un titre en allemand,
+ainsi qu’un titre en français, peuvent être saisis.
 Dans ce cas, l’attribut `@xml:lang` doit être utilisé pour indiquer la langue.
 
 Exemples :
@@ -236,22 +235,22 @@ Exemples :
 <head xml:lang="fr">Serment des tailleur de pierre, maître charpentier, couvreur et charron de la ville</head>
 ```
 
-## 3. Contenu du témoin textuel dans [`<msContents>`](msContents.fr.md)
+## 3. Contenu du document dans [`<msContents>`](msContents.fr.md)
 
 ### 3.1 Règles générales
 
 La section [`<msContents>`](msContents.fr.md) contient des informations 
-sur le contenu du témoin textuel.
+sur le contenu du texte.
 
 Sont enregistrés :
 
-- un résumé : [`<summary>`](summary.fr.md)
+- un résumé (regeste) : [`<summary>`](summary.fr.md)
 - la langue du texte : [`<textLang>`](textLang.fr.md)
 - (optionnel pour les manuscrits) le scribe du texte : [`<author>`](author.fr.md)
-- (pour les imprimés) l’indication d’édition : [`<docImprint>`](docImprint.fr.md)
+- (pour les imprimés) l’impressum: [`<docImprint>`](docImprint.fr.md)
 
-Les informations sur la langue, le scribe et l’indication d’édition 
-sont regroupées dans [`<msItem>`](msItem.fr.md).
+Les informations sur la langue, le scribe et l’impressum sont regroupées dans
+[`<msItem>`](msItem.fr.md).
 
 Exemples :
 ```xml
@@ -289,9 +288,11 @@ Exemples :
 </msContents>
 ```
 
-Dans les unités d’édition bilingues, p. ex. à Fribourg,
-il peut exister un résumé analytique distinct pour chaque langue de l’unité d’édition.
-Dans ce cas, les résumés sont différenciés à l’aide de l’attribut `@xml:lang`.
+Dans le cas d’un projet éditorial bilingue, p. ex. à Fribourg, 
+un résumé analytique en allemand, ainsi qu’en français, 
+peuvent être saisis. 
+Dans ce cas, l’attribut `@xml:lang` doit être utilisé pour indiquer la langue.
+
 
 Exemple :
 ```xml
@@ -314,11 +315,11 @@ Exemple :
 </msContents>
 ```
 
-### 3.2 Résumé
+### 3.2 Résumé (regeste)
 
 #### 3.2.1 Définition et but
 
-En principe, un résumé doit être établi pour chaque document, même pour les courts.
+En principe, un résumé (regeste) doit être établi pour chaque document, même s’il est court.
 
 Un résumé est une synthèse du contenu du texte édité, en omettant les formules.
 Pour les textes en latin, un résumé plus détaillé est recommandé.
@@ -328,10 +329,10 @@ Si de nombreux points sont réglementés, ceux-ci peuvent être regroupés sous 
 #### 3.2.2 Langue et structure
 
 Le résumé est rédigé dans une langue moderne avec des formulations aussi uniformes que possible,
-sans utiliser de termes provenant des sources.
+sans utiliser de termes (trop spécifiques) provenant des sources.
 
-La structuration d’un long résumé se fait selon les aspects de contenu, 
-en paragraphes ([`<p>`](p.fr.md)).
+La structuration d’un long résumé se fait en fonction du contenu,
+sous forme de paragraphes ([`<p>`](p.fr.md)).
 
 #### 3.2.3 Sceaux et copies multiples
 
@@ -353,8 +354,9 @@ Exemples :
 </summary>
 ```
 
-Si un acte mentionne que plusieurs exemplaires de l’acte ont été rédigés et découpés,
-cela doit être indiqué à la fin du résumé, conjointement avec les sceaux.
+Si un acte mentionne que plusieurs exemplaires de l’acte ont été rédigés et découpés
+(dans le cas d’un chirographe p. ex.), cela doit être indiqué à la fin du résumé,
+avec les sceaux.
 
 #### 3.2.4 Noms de personnes
 
@@ -374,18 +376,18 @@ Les titres ainsi que les désignations professionnelles ou officielles doivent �
 de manière cohérente dans le résumé et dans les commentaires.
 
 Pour les mesures, poids et monnaies, on utilise les chiffres arabes.
-Dans tous les autres cas, les nombres de un à douze sont écrits en toutes lettres selon le Duden,
+Dans tous les autres cas, les nombres de un à douze sont écrits en toutes lettres;
 et pour les instances, le nombre est systématiquement écrit en toutes lettres.
 
-Pour `Notariatssignet`, `Notariatszeichen` ou `Notariatsinstrument`, on utilise le terme 
-[Signe](https://termini.ssrq-sds-fds.ch/views/view-keyword.xq?id=key004763).
-Cette forme d’authentification est mentionnée dans le résumé pour les instruments notariaux 
-(de manière analogue aux actes scellés).
+Pour le signum, le sigle du notaire ou l’instrument notarial, on utilise le terme 
+« [seing](https://termini.ssrq-sds-fds.ch/views/view-keyword.xq?id=key004763) ». 
+Cette forme d’authentification est mentionnée dans le résumé pour les instruments 
+notariaux (de manière analogue aux actes scellés).
 
 Exemples :
 ```xml
-<p>Le notaire authentifie l’instrument avec son signe.</p>
-<p>Le notaire authentifie l’instrument avec son signe en présence de témoins.</p>
+<p>Le notaire authentifie l’instrument avec son seign.</p>
+<p>Le notaire authentifie l’instrument avec son seign en présence de témoins.</p>
 ```
 
 #### 3.2.6 Ce qui n’est pas inclus dans le résumé
@@ -396,20 +398,21 @@ Si l’acte est un chirographe, cela n’est pas indiqué dans le résumé, mais
 Les contenus importants peuvent être approfondis dans le commentaire ([`<back>`](back.fr.md)),
 le résumé se limitant à une synthèse concise.
 
-Les scribes des mentions ([`<ab>`](ab.fr.md)), p. ex. dans un acte pontifical,
+Les auteurs de notes ([`<ab>`](ab.fr.md)), p. ex. dans un acte pontifical,
 sont signalés dans le texte avec [`<persName>`](persName.fr.md) et ne sont pas mentionnés 
 spécifiquement dans le résumé.
 
 ### 3.3 La langue du texte
 
 La langue utilisée dans le texte source est indiquée avec [`<textLang>`](textLang.fr.md).
-En cas de plusieurs langues, l’élément est répété dans l’ordre de fréquence d’apparition.
+S’il y a plusieurs langues, l’élément est répété dans l’ordre de fréquence d’apparition.
 
 ### 3.4 Le scribe du texte
 
-Pour les manuscrits, un scribe peut, s’il est connu, être indiqué avec [`<author>`](author.fr.md) 
-et, à l’intérieur, avec [`<persName>`](persName.fr.md). Si le scribe n’est pas connu, 
-mais seulement l’atelier, celui-ci est enregistré en texte libre à l’intérieur de 
+Pour les manuscrits, un scribe peut, s’il est connu, être identifié avec la balise
+[`<author>`](author.fr.md) et, à l’intérieur de celle-ci, avec [`<persName>`](persName.fr.md). 
+Si l’identité du scribe n’est pas connue, mais seulement celle de sa chancellerie, 
+il convient de saisir cette dernière sous forme de texte libre dans
 [`<author>`](author.fr.md).
 
 Exemples :
@@ -425,15 +428,15 @@ Exemples :
 <author role="scribe">Schreiber der Kanzlei Liechtenstein</author>
 ```
 
-Si plusieurs mains sont reconnaissables dans un manuscrit, une description des mains est créée 
+Si plusieurs mains sont identifiables dans un manuscrit, une description des mains est créée 
 dans [`<handDesc>`](handDesc.fr.md) (voir ci-dessous). Celle-ci ne fait plus partie de 
-[`<msContents>`](msContents.fr.md), mais de la description physique du témoin textuel.
+[`<msContents>`](msContents.fr.md), mais de la description physique de la source.
 
-### 3.5 L’indication d’édition
+### 3.5 L’impressum
 
-Pour les imprimés, les noms de l’imprimerie ou de l’imprimeur ([`<publisher>`](publisher.fr.md))
-ainsi que le lieu d’impression ([`<pubPlace>`](pubPlace.fr.md))
-sont enregistrés dans [`<docImprint>`](docImprint.fr.md).
+Pour les imprimés, les noms de l’imprimerie ou de l’imprimeur ([`<publisher>`](publisher.fr.md)),
+ainsi que le lieu d’impression ([`<pubPlace>`](pubPlace.fr.md)),
+sont indiqués dans [`<docImprint>`](docImprint.fr.md).
 
 Exemple :
 ```xml
@@ -443,33 +446,36 @@ Exemple :
 </docImprint>
 ```
 
-## 4. Description physique du témoin textuel dans [`<physDesc>`](physDesc.fr.md)
+## 4. Description physique du document dans [`<physDesc>`](physDesc.fr.md)
 
 ### 4.1 Règles générales
 
-La section [`<physDesc>`](physDesc.fr.md) décrit le témoin textuel en termes 
-de caractéristiques physiques.
+La section [`<physDesc>`](physDesc.fr.md) décrit la source en termes de caractéristiques matérielles.
 Elle est subdivisée en quatre sous-sections :
 
-- description du témoin textuel en tant qu’objet physique dans [`<objectDesc>`](objectDesc.fr.md)
-- description de la reliure (et de la tradition) dans [`<bindingDesc>`](bindingDesc.fr.md)
-- description des mains dans [`<handDesc>`](handDesc.fr.md)
-- description des sceaux dans [`<sealDesc>`](sealDesc.fr.md)
+- [description de la source en tant qu’objet physique](#42-description-de-la-source-en-tant-quobjet-physique-dans-objectdesc) 
+  dans [`<objectDesc>`](objectDesc.fr.md)
+- [description de la reliure (et de la tradition)](#43-description-de-la-reliure-et-de-la-tradition-dans-bindingdesc)
+  dans [`<bindingDesc>`](bindingDesc.fr.md)
+- [description des mains](#44-description-des-mains-dans-handdesc)
+  dans [`<handDesc>`](handDesc.fr.md)
+- [description des sceaux](#45-description-des-sceaux-dans-sealdesc)
+  dans [`<sealDesc>`](sealDesc.fr.md)
 
-### 4.2 Description du témoin textuel en tant qu’objet physique dans [`<objectDesc>`](objectDesc.fr.md)
+### 4.2 Description de la source en tant qu’objet physique dans [`<objectDesc>`](objectDesc.fr.md)
 
 La section [`<objectDesc>`](objectDesc.fr.md) contient, à l’intérieur de 
 [`<supportDesc>`](supportDesc.fr.md), des informations sur le matériau, les dimensions, 
-la pagination et l’état de conservation du témoin textuel.
+la pagination et l’état de conservation de la source.
 
 Sont enregistrés :
 
 - le matériau, c’est-à-dire le support : [`<support>`](support.fr.md) avec [`<material>`](material.fr.md)
-- la hauteur et la largeur des feuilles (ou du livre ou de la plica) : [`<extent>`](extent.fr.md) avec
-  [`<dimensions>`](dimensions.fr.md) et [`<height>`](height.fr.md) ou [`<width>`](width.fr.md)
+- la hauteur et la largeur des feuillets (ou du livre ou de la plica) : [`<extent>`](extent.fr.md) avec
+  [`<dimensions>`](dimensions.fr.md) et [`<height>`](height.fr.md), respectivement [`<width>`](width.fr.md)
 - (optionnel) l’état de conservation du support et ses détériorations : [`<condition>`](condition.fr.md)
-- (optionnel) le décompte des feuilles de l’original et, le cas échéant, 
-  des décomptes propres différents : [`<foliation>`](foliation.fr.md)
+- (optionnel) le décompte des feuillets de l’original et, le cas échéant, 
+  les décomptes spécifiques qui pourraient différer : [`<foliation>`](foliation.fr.md)
 
 Exemple :
 ```xml
@@ -501,86 +507,89 @@ Exemple :
 
 La section [`<bindingDesc>`](bindingDesc.fr.md) contient d’abord des informations sur la reliure.
 
-De plus, la forme de tradition est actuellement indiquée en texte libre.
-Le type de tradition (p. ex., original), la forme (p. ex., cahier) et l’étendue 
-(p. ex., 10 feuilles) sont décrits dans l’ordre mentionné.
+Par ailleurs, le mode de transmission du texte est aussi indiqué 
+ici sous forme de texte libre. 
+Le type de tradition (p. ex. original), la forme (p. ex. cahier) 
+et l’étendue (p. ex. 10 feuillets) sont décrits dans cet ordre.
 
 Exemples de type et de forme :
 
- - Abschrift
- - Abschrift mit Ergänzungen
- - Aufzeichnung (als Aufzeichnung wird auch ein Stück bezeichnet, das zwar in grossen Teilen
-   eine Abschrift einer älteren Vorlage ist, aber zugleich essenzielle Änderungen enthält.
- - Aufzeichnung, Rodel (aus X Stücken zusammengenäht)
- - Aufzeichnung, Rodel (Einzelblatt)
- - Ausfertigung (für «Urkundenoriginale»)
- - Auszug
- - Buch
- - Druck (= Einblattdruck)
- - Druckschrift
- - Eintrag
- - Entwurf (Obwohl ein Entwurf genau genommen vor dem Ausstellungsdatum der Ausfertigung
-   entstanden ist, ignorieren wir das, wenn wir nichts anderes wissen und geben dasselbe Datum
-   wie das der Urkunde ein.)
- - Fragment
- - Fotokopie
- - Heft
- - Insert
- - Original (In seltenen Fällen kann es auch eine «spätere Ausfertigung» geben.)
- - Regest 
- - Teilabschrift
- - Teilabschrift mit Ergänzungen
- - Vidimus
- - Übersetzung
- - Zeitgenössische Abschrift
+ - Cahier, fascicule (Heft)
+ - Copie (Abschrift)
+ - Copie avec des ajouts (Abschrift mit Ergänzungen)
+ - Copie contemporaine (Zeitgenössische Abschrift)
+ - Copie partielle (Teilabschrift)
+ - Copie partielle avec ajouts (Teilabschrift mit Ergänzungen)
+ - Entrée, inscription (Eintrag)
+ - Expédition (Ausfertigung), pour un acte original, dans sa version finale
+   (für «Urkundenoriginale»)
+ - Extrait (Auszug)
+ - Feuille imprimée (Druck), imprimé sur un seul feuillet (Einblattdruck)
+ - Fragment (Fragment)
+ - Insertion (Insert)
+ - Livre (Buch)
+ - Original (Original), il peut parfois exister une expédition plus tardive 
+ - Photocopie (Fotokopie)
+ - Projet, brouillon (Entwurf), même si un brouillon a été fait avant la délivrance
+   de l’acte original, et à défaut d’informations plus précises, il convient de lui 
+   attribuer la même date que la version finale
+ - Registre, rôle (Aufzeichnung, Rodel) (assemblés à partir de x pièces)
+ - Registre, rôle (Aufzeichnung, Rodel), feuillet unique (Einzelblatt)
+ - Résumé(Regest)
+ - Texte imprimé (Druckschrift)
+ - Texte remanié (Aufzeichnung), désigne aussi un document qui est en grande partie
+   une copie d’un modèle plus ancien, mais qui contient des modifications substantielles
+ - Traduction (Übersetzung)
+ - Vidimus (Vidimus)
 
 ### 4.4 Description des mains dans [`<handDesc>`](handDesc.fr.md)
 
 Sont enregistrées :
 
-- les mains des scribes, lorsqu’il y a plus d’un scribe principal du texte
-- les autres mains importantes, c’est-à-dire celles pertinentes pour la critique textuelle
+ - les mains des scribes, s’il y a plus d’un scribe principal du texte
+ - les autres mains importantes, c’est-à-dire importantes pour la critique du texte
 
-Si plusieurs mains de scribes sont reconnaissables dans un manuscrit, 
+Si plusieurs mains de scribes sont identifiables dans un manuscrit, 
 une [`<handDesc>`](handDesc.fr.md) doit être créée,
 dans laquelle chaque main est décrite plus en détail à l’aide d’une [`<handNote>`](handNote.fr.md)
-(voir cette section et la section [Scribes et mains](scribes-and-hands.fr.md))
-dans les directives de transcription.
+(voir cette section et la section [Scribes et mains](scribes-and-hands.fr.md)
+dans les directives de transcription).
 
 ### 4.5 Description des sceaux dans [`<sealDesc>`](sealDesc.fr.md)
 
 La description des sceaux se fait de gauche à droite dans [`<sealDesc>`](sealDesc.fr.md),
 chaque sceau recevant son propre élément ([`<seal>`](seal.fr.md)).
 
-Les signataires ou les annonces de sceaux sont également enregistrés dans le résumé.
-Dans le commentaire, les divergences entre l’annonce du sceau et la scellure doivent être décrites.
-Cela vaut également pour les copies.
+Les sigillants ou les annonces de sceaux sont également enregistrés dans le résumé.
+Dans le commentaire, les divergences entre l’annonce du scellement et le scellement
+effectif doivent être décrites. Cela s’applique aussi aux copies.
 
-Le point de référence est l’annonce du sceau dans l’acte ou, pour une formulation 
-à la première personne, la mention de l’émetteur.
+La référence déterminante est la mention de scellement figurant dans l’acte ou,
+en cas de formulation à la première personne («je» ou «nous»),
+l’indication du nom de l’émetteur (le sigillant).
 
-Si les signataires sont nommément indiqués sur la plica ou les bandes de parchemin,
-les noms sont transcrits dans [`<ab>`](ab.fr.md), sinon des informations importantes
-(p. ex., l’orthographe originale des signataires) seraient perdues.
+Si les sigillants sont nommément indiqués sur la plica ou sur des lanières de parchemin, 
+leurs noms sont transcrits dans [`<ab>`](ab.fr.md), afin d’éviter la perte d’informations 
+importantes, comme p. ex. l’orthographe originale de leurs noms.
 
-Si la fente du sceau est présente, cela est mentionné en conséquence.
-Le signataire n’est enregistré que si l’on est certain du sceau manquant.
+Si la fente du sceau est présente, il convient de noter cette information.
+Le signataire n’est enregistré que si l’on est certain de l’identité de
+l’émetteur du sceau manquant.
 
-## 5. Histoire du témoin textuel dans [`<history>`](history.fr.md)
+## 5. Histoire du document dans [`<history>`](history.fr.md)
 
 La section [`<history>`](history.fr.md) contient, dans [`<origin>`](origin.fr.md),
-les informations sur la datation et la localisation d’un témoin textuel.
+les informations sur la datation et la localisation d’une source d’archives.
 
 Sont enregistrés :
 
-- la date de création du témoin textuel : [`<origDate>`](origDate.fr.md) avec `type="document"`
-- (optionnel) s’il s’agit d’une copie, en plus, la date de création de l’original présumé : 
+- la date de rédaction du texte original : [`<origDate>`](origDate.fr.md) avec `type="document"`
+- (optionnel) s’il s’agit d’une copie, en plus, la date de création présumée de l’original : 
   [`<origDate>`](origDate.fr.md) avec `type="content"`
-- le lieu de création du support : [`<origPlace>`](origPlace.fr.md) avec `type="document"`
-- (optionnel) s’il s’agit d’une copie, en plus, le lieu de création de l’original présumé : 
+- le lieu de rédaction du texte original : [`<origPlace>`](origPlace.fr.md) avec `type="document"`
+- (optionnel) s’il s’agit d’une copie, en plus, le lieu de création présumée de l’original : 
   [`<origPlace>`](origPlace.fr.md) avec `type="content"`
 - (optionnel) l’institution émettrice : [`<orgName>`](orgName.fr.md)
-
 
 Exemples :
 ```xml
@@ -598,12 +607,12 @@ Exemples :
 </origin>
 ```
 
-Pour les rapports sur un événement, la date de l’événement rapporté est enregistrée avec
-```<origDate type="content"``` et le moment où le rapport a été rédigé avec
+Pour les mentions d’un événement passé, la date de l’événement est saisie avec
+```<origDate type="content"```, et le moment où la mention a été rédigée avec 
 ```<origDate type="document"```.
-p. ex. : Renward Cysat rédige vers 1600 un rapport sur le commerce d’Amstalden de 1478,
-cela est codé comme suit.
-Pour les règles de datation elles-mêmes, voir les [directives de datation](dating_guidelines.fr.md).
+P. ex. : Renward Cysat rédige vers 1600 un rapport sur le commerce d’Amstalden de 1478, 
+et cela est encodé comme suit. Pour les règles de datation elles-mêmes, 
+voir les [directives de datation](dating_guidelines.fr.md).
 
 Exemple :
 ```xml
@@ -616,12 +625,12 @@ Exemple :
 Les remarques détaillées sur la datation d’un document non daté sont enregistrées 
 dans un commentaire ([`<back>`](back.fr.md)).
 
-Le lieu de création d’un témoin textuel ([`<origPlace>`](origPlace.fr.md)) 
+Le lieu de rédaction d’un texte ([`<origPlace>`](origPlace.fr.md)) 
 n’est enregistré que s’il figure dans le document
 ou s’il peut être établi de manière certaine, p. ex. pour les procès-verbaux du conseil.
 
-Les lieux d’émission, d’expédition ainsi que les lieux de promulgation sont normalisés.
-En cas de plusieurs lieux d’émission, chacun reçoit son propre élément 
+Les lieux d’émission, d’expédition, ainsi que les lieux de promulgation, sont normalisés.
+S’il y a plusieurs lieux d’émission, chacun est enregistré avec son propre élément
 ([`<origPlace>`](origPlace.fr.md)).
 
 Exemple :
@@ -633,14 +642,14 @@ Exemple :
 </origin>
 ```
 
-## 6. Informations supplémentaires sur le témoin textuel dans [`<additional>`](additional.fr.md)
+## 6. Informations supplémentaires sur le document dans [`<additional>`](additional.fr.md)
 
-Les publications, telles que les éditions de sources, les ouvrages de résumés, les inventaires, 
-la littérature secondaire, etc.,
-sont enregistrées avec le titre abrégé dans [`<listBibl>`](listBibl.fr.md) et intégralement dans
+Les publications, telles que les éditions de sources, les recueils de regestes,
+les inventaires, la littérature secondaire, etc., sont saisis avec le titre abrégé dans
+[`<listBibl>`](listBibl.fr.md), alors que leurs références complètes sont enregistrées dans
 [Zotero](https://www.zotero.org/groups/5048222/ssrq/library).
-Les publications sont listées avec des étiquettes dans `@type` et le titre abrégé, 
-par ordre chronologique décroissant.
+Les publications sont inscrites par ordre chronologique décroissant avec mention 
+de leur typologie dans `@type` et leur titre abrégé.
 
 Exemple :
 ```xml
@@ -661,20 +670,22 @@ Exemple :
 </additional>
 ```
 
-Si un support textuel est perdu, il ne reçoit pas de [`<physDesc>`](physDesc.fr.md).
-À la place, les informations relatives à la perte du témoin textuel sont enregistrées dans
+Si un document est perdu, il n’y a pas lieu d’utiliser une [`<physDesc>`](physDesc.fr.md).
+À la place, les informations relatives à sa perte sont enregistrées dans
 [`<adminInfo>`](adminInfo.fr.md) ; pour plus de détails, voir cette section.
 
-## 7. Tradition multiple
+## 7. Tradition textuelle multiple
 
-### 7.1 Présentation de la situation de tradition
+### 7.1 Présentation de la tradition textuelle
 
-Si plusieurs témoins textuels sont conservés pour un document, c’est-à-dire 
-en cas de tradition multiple, chaque témoin reçoit, comme décrit ci-dessus, au sein de 
-[`<listWit>`](listWit.fr.md) un élément [`<witness>`](witness.fr.md),
-dans lequel une description complète du témoin textuel est effectuée.
+Si plusieurs témoins textuels (ou leçons) sont conservés pour un document, 
+c’est-à-dire en cas de tradition textuelle multiple, chaque témoin reçoit,
+comme décrit ci-dessus, à l’intérieur de la balise
+[`<listWit>`](listWit.fr.md), un élément [`<witness>`](witness.fr.md), dans lequel une description
+complète dudit témoin est effectuée.
 
 Tous les témoins textuels sont classés à l’aide de l’attribut `@n`.
+
 Les règles suivantes s’appliquent :
 
 - un original est désigné par `n="A"`. S’il existe plusieurs originaux, ceux-ci 
@@ -684,7 +695,7 @@ Les règles suivantes s’appliquent :
 - les copies de copies sont indiquées de manière analogue avec `C` 
   et un décompte chronologique correspondant, etc.
 
-### 7.2 Choix du texte de base pour l’édition
+### 7.2 Choix du texte de base pour l’édition textuelle
 
 Le choix du texte de base pour l’édition doit être justifié dans un commentaire.
 
@@ -702,41 +713,45 @@ Les différentes copies doivent être comparées entre elles.
 
 ### 7.3 Évaluation de la tradition
 
-Jusqu’où doit-on aller dans l’évaluation des copies et des copies de copies ?
-p. ex., les copies beaucoup plus tardives ou modernes sont-elles tacitement omises ?
+Jusqu’où doit-on aller dans l’évaluation des copies et des copies de copies ? 
+Les copies beaucoup plus tardives ou récentes doivent-elles, p. ex., 
+être rejetées de façon implicite ?
 
-Certaines pièces ont été copiées des dizaines de fois, p. ex. les actes enregistrés dans 
-la guilde de pêche et régulièrement recopiés avec celle-ci. L’enregistrement de ces 
-« traditions tertiaires » est extrêmement chronophage.
+Certaines pièces ont été copiées des dizaines de fois, comme p. ex. 
+les actes enregistrés dans le règlement sur la pêche, et qui ont été régulièrement recopiés.
+Répertorier cette tradition textuelle de « troisième main » est extrêmement chronophage.
 
-En règle générale, si un original est disponible, seules les copies contemporaines doivent 
-surtout être enregistrées. Il est impossible et non pertinent de retrouver et d’enregistrer 
-toutes les copies d’un acte important. La règle pratique « copies jusqu’à environ 100 ans après 
-l’original » peut être suivie.
+En règle générale, si un original est disponible, seules les copies contemporaines doivent
+être prises en considération. 
+Il est impossible et inutile de chercher et de répertorier toutes les copies d’un acte.
 
-Selon l’importance d’une pièce, l’histoire de sa réception doit être décrite dans un commentaire.
+La règle empirique, qui consiste à répertorier et tenir compte des copies datant
+d’environ 100 ans après l’original, peut être suivie.
 
-### 7.4 Déviations des copies par rapport à l’original
+Selon l’importance d’une pièce, son impact historique doit être décrit dans un commentaire.
 
-Quand les déviations des copies par rapport à l’original doivent-elles être signalées, 
-et quand sont-elles tacitement ignorées ?
+### 7.4 Différences entre les copies et l’original
 
-Dans le système d’information archivistique, les copies sont simplement enregistrées comme « copie »,
-indépendamment de l’existence de variantes textuelles.
-Il serait trop fastidieux de les qualifier de « fautives » ou « avec variante de texte ».
+Quand faut-il signaler les différences entre les copies et l’original, 
+et quand peut-on les ignorer ?
 
-Si un original contient des passages incompréhensibles ou illisibles, il est utile de consulter 
-les copies ultérieures et de les enregistrer sous forme d’entrées d’apparat 
-(voir [`<app>`](app.fr.md)) dans la transcription. Elles peuvent éventuellement 
-aider à comprendre le passage.
+Dans le système d’information archivistique, les copies sont simplement enregistrées
+comme « copie », indépendamment de l’existence de variantes textuelles. 
+Il serait trop fastidieux de les qualifier de « fautives » ou de spécifier ici
+« avec des différences dans le texte ».
+
+Si un original contient des passages incompréhensibles ou illisibles, 
+il peut être utile de consulter les copies ultérieures et de les intégrer 
+sous forme d’entrées d’apparat (voir [`<app>`](app.fr.md)) dans la transcription.
+Elles peuvent éventuellement aider à comprendre le passage qui pose problème.
 
 Exemples :
 
-    Le renouvellement d’une guilde de pêche de 1574 a repris quelques paragraphes 
-    de l’ancienne guilde de 1428/1519, mais dans un ordre différent et mêlés à de 
+    Le renouvellement d’une ordonnance sur la pêche de 1574 a repris quelques paragraphes
+    de l’ancienne ordonnance de 1428/1519, mais dans un ordre différent, et mêlés à de
     nombreuses autres dispositions.
-    Dans de tels cas, le renouvellement est mieux transcrit comme une pièce distincte.
+    Dans un tel cas, il convient de traiter le renouvellement comme une pièce distincte.
 
     Une copie contient des ratures, ajouts ou autres écarts par rapport à l’original.
-    L’original constitue la base du texte édité, et les déviations intéressantes sur 
+    L’original constitue la base du texte édité, et les variations intéressantes sur
     le plan du contenu sont enregistrées dans les entrées d’apparat.

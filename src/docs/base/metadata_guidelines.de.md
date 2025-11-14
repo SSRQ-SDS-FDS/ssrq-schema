@@ -42,7 +42,7 @@ und die Angaben, mit deren Hilfe der Textzeuge identifiziert werden kann.
 Erfasst werden:
 
 - der Ort, wo sich die aufbewahrende Institution befindet:  [`<settlement>`](settlement.de.md)
-- der vollständige Name der Institution: [`<repository>`](repository.de.md)
+- der vollständige Name der aufbewahrenden Institution: [`<repository>`](repository.de.md)
 - die von der aufbewahrenden Institution vergebene Signatur: [`<idno>`](idno.de.md)
 - (optional) ältere oder alternative Signaturen: [`<altIdentifier>`](altIdentifier.de.md)
 
@@ -451,10 +451,14 @@ Beispiel:
 Der Bereich [`<physDesc>`](physDesc.de.md) beschreibt den Textzeugen hinsichtlich 
 seiner physischen Beschaffenheit. Er ist in vier Teilbereiche gegliedert.
 
-- die Beschreibung des Textzeugen als physisches Objekt in [`<objectDesc>`](objectDesc.de.md)
-- die Beschreibung der Bindung (und Überlieferung) in [`<bindingDesc>`](bindingDesc.de.md)
-- die Beschreibung der Hände in [`<handDesc>`](handDesc.de.md)
-- die Beschreibung der Siegel in [`<sealDesc>`](sealDesc.de.md)
+- die [Beschreibung des Textzeugen als physisches Objekt](#42-beschreibung-des-textzeugen-als-physisches-objekt-in-objectdesc)
+  in [`<objectDesc>`](objectDesc.de.md)
+- die [Beschreibung der Bindung (und Überlieferung)](#43-beschreibung-der-bindung-und-überlieferung-in-bindingdesc)
+  in [`<bindingDesc>`](bindingDesc.de.md)
+- die [Beschreibung der Hände](#44-beschreibung-der-hände-in-handdesc)
+  in [`<handDesc>`](handDesc.de.md)
+- die [Beschreibung der Siegel](#45-beschreibung-der-siegel-in-sealdesc)
+  in [`<sealDesc>`](sealDesc.de.md)
 
 ### 4.2 Beschreibung des Textzeugen als physisches Objekt in [`<objectDesc>`](objectDesc.de.md)
 
@@ -523,16 +527,16 @@ Beispiele für Art und Form wären:
  - Entwurf (Obwohl ein Entwurf genau genommen vor dem Ausstellungsdatum der Ausfertigung
    entstanden ist, ignorieren wir das, wenn wir nichts anderes wissen und geben dasselbe Datum
    wie das der Urkunde ein.)
- - Fragment
  - Fotokopie
+ - Fragment
  - Heft
  - Insert
  - Original (In seltenen Fällen kann es auch eine «spätere Ausfertigung» geben.)
  - Regest 
  - Teilabschrift
  - Teilabschrift mit Ergänzungen
- - Vidimus
  - Übersetzung
+ - Vidimus
  - Zeitgenössische Abschrift
 
 ### 4.4 Beschreibung der Hände in [`<handDesc>`](handDesc.de.md)
@@ -545,7 +549,7 @@ Erfasst werden:
 Sind mehrere Schreiberhände in einer Handschrift erkennbar, muss eine
 [`<handDesc>`](handDesc.de.md) angelegt werden, in der jede Hand mit einer [`<handNote>`](handNote.de.md)
 näher beschrieben wird (vgl. dort und den Abschnitt 
-[Schreiber und Hände](scribes-and-hands.de.md))
+[Schreiber und Hände](scribes-and-hands.de.md)
 in den Transkriptionsrichtlinien).
 
 ### 4.5 Beschreibung der Siegel in [`<sealDesc>`](sealDesc.de.md)
