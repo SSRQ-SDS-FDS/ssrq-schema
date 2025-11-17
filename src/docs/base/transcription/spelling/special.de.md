@@ -196,8 +196,9 @@ o + kombinierendes Trema).
 
 Grundsätzlich gilt, dass die kombinierende Variante bevorzugt wird, weil die kombinierenden
 Zeichen an alle Grundbuchstaben angehängt werden können. Ausnahme: Der Einfachheit halber können 
-die deutschen Umlaute `Ä ä Ö ö Ü ü` direkt als Einzelzeichen eingegeben werden und müssen nicht 
-als Grundbuchstabe mit kombinierendem Trema (U+0308) erfasst werden.
+die deutschen Umlaute `Ä ä Ö ö Ü ü` sowie die französischen Buchstaben 
+`À à Â â Æ æ Ç ç È è É é Ê ê Ë ë Î î Ï ï Ô ô Œ œ Ù ù Û û Ü ü Ÿ ÿ`
+direkt als Einzelzeichen eingegeben werden.
 
 In der Tabelle wird daher bei kombinierenden Zeichen beispielhaft das `a`
 verwendet, für die anderen Grundbuchstaben erfolgt die Eingabe analog.
