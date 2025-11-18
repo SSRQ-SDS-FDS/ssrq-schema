@@ -228,9 +228,16 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
             <constraint>
                 <sch:pattern>
                     <sch:rule context="text()">
-                        <sch:report role="warning" test="matches(., &apos;[&quot;«»‹›]&apos;)">It
-                        is not allowed to use quotation marks in the text. Use tei:quote, tei:q,
-                        tei:orig or tei:foreign instead.</sch:report>
+                        <sch:report role="warning" test="matches(., &apos;[«»‹›]&apos;)">It is not
+                        allowed to use quotation marks in the text. Use tei:quote, tei:q, tei:orig
+                        or tei:foreign instead.</sch:report>
+                    </sch:rule>
+                </sch:pattern>
+                <sch:pattern>
+                    <sch:rule context="text()[not(./ancestor::tei:cell)]">
+                        <sch:report role="warning" test="matches(., &apos;&quot;&apos;)">It is not
+                        allowed to use quotation marks in the text. Use tei:quote, tei:q, tei:orig
+                        or tei:foreign instead.</sch:report>
                     </sch:rule>
                 </sch:pattern>
             </constraint>
