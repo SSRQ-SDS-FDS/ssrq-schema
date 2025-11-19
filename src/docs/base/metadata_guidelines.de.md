@@ -55,7 +55,7 @@ Beispiele:
 </msIdentifier>
 
 <msIdentifier>
-    <settlement xml:lang="fr" ref="loc007885">Lausanne</settlement>
+    <settlement xml:lang="fr" ref="loc007885">Chavannes-près-Renens</settlement>
     <repository xml:lang="fr">Archives cantonales vaudoises</repository>
     <idno source="http://www.davel.vd.ch/detail.aspx?id=244271" xml:lang="fr">ACV Ac 29, p. 1-3</idno>
 </msIdentifier>
