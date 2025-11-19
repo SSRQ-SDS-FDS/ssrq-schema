@@ -386,8 +386,8 @@ notariaux (de manière analogue aux actes scellés).
 
 Exemples :
 ```xml
-<p>Le notaire authentifie l’instrument avec son seign.</p>
-<p>Le notaire authentifie l’instrument avec son seign en présence de témoins.</p>
+<p>Le notaire authentifie l’instrument avec son seing.</p>
+<p>Le notaire authentifie l’instrument avec son seing en présence de témoins.</p>
 ```
 
 #### 3.2.6 Ce qui n’est pas inclus dans le résumé
