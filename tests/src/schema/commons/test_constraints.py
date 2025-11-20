@@ -925,6 +925,11 @@ def test_uses_nbsp_in_text_node(
             """<p>foo ‹bar›</p>""",
             False,
         ),
+        (
+            "valid-text-quotation-marks-inside-cell",
+            """<cell>foo "</cell>""",
+            True,
+        ),
     ],
 )
 def test_quotation_marks_in_text_node(
