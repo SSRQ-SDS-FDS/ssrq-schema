@@ -183,8 +183,9 @@ p. ex. : ā̧ (= a + Macron combiné + Cédille combinée) ou `uͦ̈` (= o + o s
 En règle générale, la variante de combinaison est à privilégier, car les caractères
 de combinaison peuvent être ajoutés à toutes les lettres de base.
 
-Exception: Par souci de simplicité, les umlauts allemands `Ä ä Ö ö Ü ü` peuvent être 
-entrés directement comme caractères uniques, sans utiliser le tréma combiné (U+0308).
+Exception : Par souci de simplicité, les umlauts allemands `Ä ä Ö ö Ü ü` et les lettres
+françaises `À à Â â Æ æ Ç ç È è É é Ê ê Ë ë Î î Ï ï Ô ô Œ œ Ù ù Û û Ü ü Ÿ ÿ`
+peuvent être entrés directement comme caractères uniques.
 
 Dans le tableau, les combinaisons de caractères sont illustrées avec la lettre a ;
 l’application aux autres lettres suit la même logique.
@@ -209,7 +210,7 @@ l’application aux autres lettres suit la même logique.
 | Lettre avec ligne verticale            | `a̍`                  | Lettre + U+030D |
 | Lettre avec cédille                    | `a̧`                  | Lettre + U+0327 |
 | Lettre avec ogonek                     | `ą`                  | Lettre + U+0328 |
-| ** Lettres suscrites**                 |                       |                 |
+| **Lettres suscrites**                  |                       |                 |
 | Lettre avec a suscrit                  | `aͣ`                  | Lettre + U+0363 |
 | Lettre avec e suscrit                  | `aͤ`                  | Lettre + U+0364 |
 | Lettre avec i suscrit                  | `aͥ`                  | Lettre + U+0365 |
