@@ -176,6 +176,11 @@ def test_measure(
             "<measure type='weight' unit='Stuck' quantity='1'>foo</measure>",
             True,
         ),
+        (
+            "valid-measure-with-type-volume",
+            "<measure type='volume' unit='Metzen' commodity='salt' quantity='1'>foo</measure>",
+            True,
+        ),
     ],
 )
 def test_measure_constraints(
