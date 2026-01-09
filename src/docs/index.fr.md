@@ -21,8 +21,6 @@ numériques de la Fondation et font également office de « rapport éditorial �
   disponibles en PDF-OCR.
 - Le [site Web du projet](https://ssrq-sds-fds.ch/) réunit des informations sur les éditions en cours et
   donne un aperçu de l’histoire de la collection depuis les années 1890.
-- La [documentation interne](https://docs.ssrq-online.ch) fournit aux membres de l’équipe du projet des informations
-supplémentaires pour leur travail et est protégée par un mot de passe.
 
 ## Technologie et standardisation
 
@@ -87,7 +85,7 @@ de manière durable sur [Zenodo](https://zenodo.org/records/13379935).
     Voir aussi le site Web du World Wide Web Consortium (W3C) :
     [XML](https://www.w3.org/TR/xml/).
 [^3]:
-    [TEI](http://www.tei-c.org/index.xml).
+    [TEI](https://tei-c.org/).
 [^4]:
     Un schéma XML est la description formelle d’un ensemble de documents XML
     à l’aide d’un langage de schéma. Une telle description permet la validation

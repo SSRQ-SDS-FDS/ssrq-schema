@@ -22,8 +22,6 @@ die analog erschienenen Bände als OCR-PDF.
 - Die [Projektwebseite](https://ssrq-sds-fds.ch/) informiert über die
 aktuell laufenden Editionsprojekte und gibt eine Übersicht über die Geschichte der
 Sammlung seit den 1890er Jahren.
-- Die [interne Dokumentation](https://docs.ssrq-online.ch) bietet den Projektmitarbeitenden
-zusätzliche Informationen für ihre Arbeit und ist passwortgeschützt.
 
 ## Technologie und Standardisierung
 
@@ -93,7 +91,7 @@ einsehbar auf der Plattform [GitHub](https://github.com/SSRQ-SDS-FDS/ssrq-schema
     Vgl. auch die Internetseite des World Wide Web Consortium (W3C) zu
     [XML](https://www.w3.org/TR/xml/).
 [^3]:
-    Zit. nach [TEI](http://www.tei-c.org/index.xml).
+    Zit. nach [TEI](https://tei-c.org/).
 [^4]:
     Unter einem XML-Schema versteht man die formale Beschreibung einer Menge
     von XML-Dokumenten mithilfe einer Schemasprache. Eine solche Beschreibung
