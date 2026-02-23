@@ -12,9 +12,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <desc versionDate="2023-05-25" xml:lang="fr">Contient une entrée au sein d’une liste.</desc>
     <classes mode="replace"/>
     <content>
-        <sequence maxOccurs="unbounded">
+        <alternate maxOccurs="unbounded">
+            <elementRef key="bibl"/>
             <macroRef key="ssrq.content.default"/>
-        </sequence>
+        </alternate>
     </content>
     <xi:include href="examples.xml" xpointer="ex-list-de"/>
     <xi:include href="examples.xml" xpointer="ex-list-en"/>
