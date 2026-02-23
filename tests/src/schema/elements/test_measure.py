@@ -58,6 +58,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-measure-with-origin-Wasserburger",
+            "<measure type='currency' origin='Wasserburger' unit='fl' quantity='1'>Foo</measure>",
+            True,
+        ),
+        (
             "valid-measure-with-commodity",
             "<measure type='volume' commodity='wheat' unit='Fuder' quantity='1'>Foo</measure>",
             True,
