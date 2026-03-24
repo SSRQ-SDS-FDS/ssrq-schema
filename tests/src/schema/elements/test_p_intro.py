@@ -12,6 +12,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-p-with-list",
+            "<p><list><item>foo</item></list></p>",
+            True,
+        ),
+        (
             "invalid-p-with-n",
             "<p n='1'><gi>foo</gi></p>",
             False,
