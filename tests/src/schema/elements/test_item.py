@@ -17,6 +17,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-item-with-content-default-and-bibl",
+            "<item><del>foo</del> bar <bibl>foo</bibl></item>",
+            True,
+        ),
+        (
             "invalid-item-with-wrong-content",
             "<item><p>foo</p> bar</item>",
             False,

@@ -125,6 +125,26 @@ def test_div(
             "<body><div xml:lang='de'><p>foo</p></div></body>",
             False,
         ),
+        (
+            "valid-numbered-divs-in-back",
+            "<back><div n='1'><p>foo</p></div><div n='2'><p>bar</p></div></back>",
+            True,
+        ),
+        (
+            "invalid-numbered-divs-in-back-not-all-numbered",
+            "<back><div n='1'><p>foo</p></div><div><p>bar</p></div></back>",
+            False,
+        ),
+        (
+            "invalid-numbered-divs-in-back-just-one-div",
+            "<back><div n='1'><p>foo</p></div></back>",
+            False,
+        ),
+        (
+            "invalid-numbered-divs-in-back-not-uniquely-numbered",
+            "<back><div n='1'><p>foo</p></div><div n='1'><p>bar</p></div></back>",
+            False,
+        ),
     ],
 )
 def test_div_text_constraint(

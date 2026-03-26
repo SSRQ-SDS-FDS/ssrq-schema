@@ -44,6 +44,17 @@ xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/200
             </sch:pattern>
         </constraint>
     </constraintSpec>
+    <constraintSpec ident="sch-el-orgName-role" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2025-12-17" xml:lang="en">constraint for tei:orgName/@role</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:orgName[parent::tei:origin]">
+                    <sch:assert test="@role">@role is mandatory, when tei:orgName is inside
+                    tei:origin</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <attList>
         <attDef ident="ref" mode="replace">
             <datatype>

@@ -85,7 +85,7 @@ de manière durable sur [Zenodo](https://zenodo.org/records/13379935).
     Voir aussi le site Web du World Wide Web Consortium (W3C) :
     [XML](https://www.w3.org/TR/xml/).
 [^3]:
-    [TEI](http://www.tei-c.org/index.xml).
+    [TEI](https://tei-c.org/).
 [^4]:
     Un schéma XML est la description formelle d’un ensemble de documents XML
     à l’aide d’un langage de schéma. Une telle description permet la validation

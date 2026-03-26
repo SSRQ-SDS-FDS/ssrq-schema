@@ -82,6 +82,24 @@ xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/200
             </sch:pattern>
         </constraint>
     </constraintSpec>
+    <constraintSpec ident="sch-el-div-n" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2025-12-17" xml:lang="en">constraint for the usage of @n in
+        tei:div</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:div[@n][parent::tei:back]">
+                    <sch:let name="divs-in-back" value="count(./parent::tei:back/tei:div)"/>
+                    <sch:assert test="$divs-in-back gt 1">If @n is specified for tei:div, there
+                    must be at least two tei:divs.</sch:assert>
+                    <sch:report test="./parent::tei:back/tei:div[not(@n)]">If @n is specified for
+                    tei:div, all sibling tei:divs must have this attribute. </sch:report>
+                    <sch:assert test="count(distinct-values(./parent::tei:back/tei:div/@n))
+                    = $divs-in-back"> If @n is specified for tei:div, each must have a unique
+                    value.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <attList>
         <attDef ident="n" mode="change">
             <desc versionDate="2025-01-31" xml:lang="de">die Nummerierung des Abschnitts</desc>

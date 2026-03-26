@@ -57,6 +57,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-del-with-rend-multiple-strikethrough",
+            "<del rend='multiple_strikethrough'>bar</del>",
+            True,
+        ),
+        (
             "valid-del-with-hand",
             "<del hand='otherHand'>bar</del>",
             True,

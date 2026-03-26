@@ -42,8 +42,8 @@
             <schemaSpec docLang="de en fr" ident="ssrq-intro-schema">
                 <!--TEI modules used-->
                 <moduleRef include="pc" key="analysis"/>
-                <moduleRef include="bibl date editor foreign gap graphic head hi note orig p
-                publisher q quote ref resp respStmt title" key="core"/>
+                <moduleRef include="bibl date editor foreign gap graphic head hi item list note
+                orig p                 publisher q quote ref resp respStmt title" key="core"/>
                 <moduleRef include="cell figure row table" key="figures"/>
                 <moduleRef include="availability fileDesc idno licence publicationStmt seriesStmt
                 sourceDesc teiHeader titleStmt" key="header"/>
@@ -85,6 +85,7 @@
                 <specGrpRef target="elements/head.intro.xml"/>
                 <specGrpRef target="elements/hi.intro.xml"/>
                 <specGrpRef target="elements/idno.intro.xml"/>
+                <specGrpRef target="elements/item.xml"/>
                 <specGrpRef target="elements/licence.xml"/>
                 <specGrpRef target="elements/note.intro.xml"/>
                 <specGrpRef target="elements/orgName.intro.xml"/>

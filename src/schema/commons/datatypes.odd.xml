@@ -1021,6 +1021,12 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                         <desc versionDate="2023-03-21" xml:lang="fr">poires</desc>
                         <desc versionDate="2023-03-21" xml:lang="it">pere</desc>
                     </valItem>
+                    <valItem ident="pepper">
+                        <desc versionDate="2025-12-17" xml:lang="de">Pfeffer</desc>
+                        <desc versionDate="2025-12-17" xml:lang="en">pepper</desc>
+                        <desc versionDate="2025-12-17" xml:lang="fr">poivre</desc>
+                        <desc versionDate="2025-12-17" xml:lang="it">pepe</desc>
+                    </valItem>
                     <valItem ident="picket">
                         <desc versionDate="2023-03-21" xml:lang="de">Stickel</desc>
                         <desc versionDate="2023-03-21" xml:lang="en">stake</desc>
@@ -1347,6 +1353,12 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                         <desc versionDate="2025-10-29" xml:lang="en">of Valtellina</desc>
                         <desc versionDate="2025-10-29" xml:lang="fr">de la Valteline</desc>
                         <desc versionDate="2025-10-29" xml:lang="it">della Valtellina</desc>
+                    </valItem>
+                    <valItem ident="Wasserburger">
+                        <desc versionDate="2026-02-23" xml:lang="de">Wasserburger</desc>
+                        <desc versionDate="2026-02-23" xml:lang="en">of Wasserburg</desc>
+                        <desc versionDate="2026-02-23" xml:lang="fr">de Wasserburg</desc>
+                        <desc versionDate="2026-02-23" xml:lang="it">di Wasserburg</desc>
                     </valItem>
                     <valItem ident="Werdenberg">
                         <desc versionDate="2023-03-21" xml:lang="de">Werdenberger</desc>
@@ -1754,6 +1766,12 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                         <desc versionDate="2023-03-17" xml:lang="en">malter</desc>
                         <desc versionDate="2023-03-17" xml:lang="fr">malter</desc>
                         <desc versionDate="2023-03-17" xml:lang="it">malter</desc>
+                    </valItem>
+                    <valItem ident="Metzen">
+                        <desc versionDate="2026-01-05" xml:lang="de">Metzen</desc>
+                        <desc versionDate="2026-01-05" xml:lang="en">Metzen</desc>
+                        <desc versionDate="2026-01-05" xml:lang="fr">Metzen</desc>
+                        <desc versionDate="2026-01-05" xml:lang="it">Metzen</desc>
                     </valItem>
                     <valItem ident="Mütt">
                         <desc versionDate="2023-03-17" xml:lang="de">Mütt</desc>
@@ -2314,6 +2332,16 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                         <desc type="singular" versionDate="2024-01-09" xml:lang="it">quart
                         (cart)</desc>
                         <desc type="plural" versionDate="2024-01-09" xml:lang="it">quarts</desc>
+                    </valItem>
+                    <valItem ident="Reale">
+                        <desc type="singular" versionDate="2026-02-23" xml:lang="de">Reale</desc>
+                        <desc type="plural" versionDate="2026-02-23" xml:lang="de">Reali</desc>
+                        <desc type="singular" versionDate="2026-02-23" xml:lang="en">reale</desc>
+                        <desc type="plural" versionDate="2026-02-23" xml:lang="en">reali</desc>
+                        <desc type="singular" versionDate="2026-02-23" xml:lang="fr">reale</desc>
+                        <desc type="plural" versionDate="2026-02-23" xml:lang="fr">reali</desc>
+                        <desc type="singular" versionDate="2026-02-23" xml:lang="it">reale</desc>
+                        <desc type="plural" versionDate="2026-02-23" xml:lang="it">reali</desc>
                     </valItem>
                     <valItem ident="S">
                         <desc versionDate="2023-03-17" xml:lang="de">Sol</desc>
@@ -3328,6 +3356,12 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                         <desc versionDate="2023-05-02" xml:lang="fr">en haut à gauche</desc>
                         <desc versionDate="2022-09-05" xml:lang="it">in alto a sinistra</desc>
                     </valItem>
+                    <valItem ident="loose_leaf">
+                        <desc versionDate="2025-11-11" xml:lang="de">auf einem Einlageblatt</desc>
+                        <desc versionDate="2025-11-11" xml:lang="en">on a loose leaf</desc>
+                        <desc versionDate="2025-11-11" xml:lang="fr">sur une page volante</desc>
+                        <desc versionDate="2025-11-11" xml:lang="it">su una foglia sciolta</desc>
+                    </valItem>
                     <valItem ident="opposite">
                         <desc versionDate="2023-05-02" xml:lang="de">auf der gegenüberliegenden
                         Seite</desc>
@@ -3461,14 +3495,14 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                     <valItem ident="other_ink">
                         <desc versionDate="2023-05-02" xml:lang="de">mit anderer Tinte</desc>
                         <desc versionDate="2023-05-02" xml:lang="en">with different ink</desc>
-                        <desc versionDate="2025-04-28" xml:lang="fr">autre encre</desc>
-                        <desc versionDate="2022-09-05" xml:lang="it">altro inchiostro</desc>
+                        <desc versionDate="2025-11-13" xml:lang="fr">avec autre encre</desc>
+                        <desc versionDate="2025-11-13" xml:lang="it">con altro inchiostro</desc>
                     </valItem>
                     <valItem ident="pencil">
                         <desc versionDate="2023-05-02" xml:lang="de">mit Bleistift</desc>
                         <desc versionDate="2023-05-02" xml:lang="en">with pencil</desc>
                         <desc versionDate="2023-05-02" xml:lang="fr">au crayon</desc>
-                        <desc versionDate="2022-09-05" xml:lang="it">matita</desc>
+                        <desc versionDate="2025-11-13" xml:lang="it">con matita</desc>
                     </valItem>
                 </valList>
             </content>
@@ -3537,6 +3571,16 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                         <desc versionDate="2023-05-02" xml:lang="fr">suppression par
                         grattage</desc>
                         <desc versionDate="2022-09-05" xml:lang="it">cancellazione raschiata</desc>
+                    </valItem>
+                    <valItem ident="multiple_strikethrough">
+                        <desc versionDate="2026-02-23" xml:lang="de">Streichung durch mehrfache
+                        Durchstreichung</desc>
+                        <desc versionDate="2026-02-23" xml:lang="en">deletion by multiple
+                        strikethrough</desc>
+                        <desc versionDate="2026-02-23" xml:lang="fr">suppression par biffage
+                        multiple</desc>
+                        <desc versionDate="2022-09-05" xml:lang="it">cancellazione mediante
+                        strisciatura multipla</desc>
                     </valItem>
                     <valItem ident="strikethrough">
                         <desc versionDate="2023-05-02" xml:lang="de">Streichung durch einfache
@@ -4365,7 +4409,7 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                         <desc versionDate="2023-05-30" xml:lang="de">Regest</desc>
                         <desc versionDate="2023-05-30" xml:lang="en">summary</desc>
                         <desc versionDate="2023-05-30" xml:lang="fr">résumé</desc>
-                        <desc versionDate="2023-05-30" xml:lang="it">sintesi</desc>
+                        <desc versionDate="2026-02-21" xml:lang="it">regesto</desc>
                     </valItem>
                     <valItem ident="translation">
                         <desc versionDate="2023-05-26" xml:lang="de">Übersetzung</desc>

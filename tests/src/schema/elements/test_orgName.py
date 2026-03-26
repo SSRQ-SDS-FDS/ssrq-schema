@@ -77,6 +77,16 @@ def test_org_name(
             "<respStmt><orgName role='recipient'>bar</orgName></respStmt>",
             False,
         ),
+        (
+            "valid-orgName-inside-origin-with-role",
+            "<origin><orgName role='issuer'>foo</orgName></origin>",
+            True,
+        ),
+        (
+            "invalid-orgName-inside-origin-without-role",
+            "<origin><orgName>foo</orgName></origin>",
+            False,
+        ),
     ],
 )
 def test_org_name_constraints(
