@@ -13,6 +13,7 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
         <sequence maxOccurs="unbounded" preserveOrder="false">
             <textNode/>
             <elementRef key="pc" minOccurs="0"/>
+            <elementRef key="quote" minOccurs="0"/>
         </sequence>
         <textNode/>
     </content>
