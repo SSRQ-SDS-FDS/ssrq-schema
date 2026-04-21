@@ -32,6 +32,31 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-witness-with-complex-number",
+            """
+            <witness xml:id='id-ssrq-ad28656b-5c8d-459c-afb4-3e6ddf70810d' n="A12">
+                <msDesc>
+                    <head>foo</head>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <material type="paper"/>
+                                </support>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate type="document" calendar="gregorian" when-custom="1600-01-01"/>
+                        </origin>
+                    </history>
+                </msDesc>
+            </witness>
+            """,
+            True,
+        ),
+        (
             "invalid-witness-without-xml-id",
             """
             <witness n="A">
