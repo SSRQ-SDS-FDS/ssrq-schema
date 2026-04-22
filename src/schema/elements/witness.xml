@@ -23,7 +23,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             <desc versionDate="2025-02-04" xml:lang="en">the numbering of the text witness</desc>
             <desc versionDate="2025-02-04" xml:lang="fr">la numérotation du témoin</desc>
             <datatype>
-                <dataRef name="string" restriction="[A-Z]([0-9])*"/>
+                <dataRef name="string" restriction="[A-Z][0-9]*"/>
             </datatype>
         </attDef>
         <attDef ident="xml:id" mode="change" usage="req">
