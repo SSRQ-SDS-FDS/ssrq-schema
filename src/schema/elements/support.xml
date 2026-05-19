@@ -14,7 +14,7 @@ xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     support de texte.</desc>
     <classes mode="replace"/>
     <content>
-        <elementRef key="material"/>
+        <elementRef key="material" maxOccurs="2"/>
     </content>
     <xi:include href="examples.xml" xpointer="ex-support-de"/>
     <xi:include href="examples.xml" xpointer="ex-support-en"/>

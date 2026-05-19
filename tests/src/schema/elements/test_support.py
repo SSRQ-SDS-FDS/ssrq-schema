@@ -14,7 +14,7 @@ from ..conftest import RNG_test_function
         (
             "invalid-support-with-multiple-materials",
             "<support><material type='paper'/><material type='parchment'/></support>",
-            False,
+            True,
         ),
         (
             "invalid-support-with-wrong-content",
