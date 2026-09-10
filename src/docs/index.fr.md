@@ -17,7 +17,7 @@ numériques de la Fondation et font également office de « rapport éditorial �
 
 - Les éditions numériques des SDS, avec toutes les données au format TEI-XML,
   sont accessibles sur notre portail d’édition [Editio](https://editio.ssrq-online.ch/).
-- La [collection rétroditisée](https://www.ssrq-sds-fds.ch/online/cantons.html) donne accès aux volumes parus sous forme imprimée,
+- La [collection rétronumérisée](https://www.ssrq-sds-fds.ch/online/cantons.html) donne accès aux volumes parus sous forme imprimée,
   disponibles en PDF-OCR.
 - Le [site Web du projet](https://ssrq-sds-fds.ch/) réunit des informations sur les éditions en cours et
   donne un aperçu de l’histoire de la collection depuis les années 1890.
