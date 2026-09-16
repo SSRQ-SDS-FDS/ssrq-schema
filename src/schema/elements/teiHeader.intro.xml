@@ -8,8 +8,6 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
     <gloss versionDate="2025-02-04" xml:lang="fr">en-tête TEI</gloss>
     <classes mode="replace"/>
     <content>
-        <sequence>
-            <elementRef key="fileDesc"/>
-        </sequence>
+        <elementRef key="fileDesc"/>
     </content>
 </elementSpec>

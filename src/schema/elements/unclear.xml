@@ -3,7 +3,7 @@
 href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec ident="unclear" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
-xmlns:xi="http://www.w3.org/2001/XInclude">
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <gloss versionDate="2025-02-04" xml:lang="de">unklar</gloss>
     <gloss versionDate="2025-02-04" xml:lang="en">unclear</gloss>
     <gloss versionDate="2025-02-04" xml:lang="fr">incertain</gloss>
@@ -14,9 +14,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <memberOf key="att.global.responsibility"/>
     </classes>
     <content>
-        <sequence maxOccurs="unbounded" minOccurs="0">
-            <macroRef key="ssrq.content.default"/>
-        </sequence>
+        <rng:zeroOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:zeroOrMore>
     </content>
     <attList>
         <attDef ident="agent" mode="delete"/>

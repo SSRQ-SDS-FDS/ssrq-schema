@@ -19,16 +19,26 @@ xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001
         <memberOf key="model.pPart.transcriptional"/>
     </classes>
     <content>
-        <alternate>
-            <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
-            <sequence>
-                <elementRef key="head" minOccurs="0"/>
-                <elementRef key="p" maxOccurs="unbounded"/>
-            </sequence>
-            <sequence maxOccurs="unbounded">
-                <macroRef key="ssrq.content.default"/>
-            </sequence>
-        </alternate>
+        <rng:choice>
+            <rng:group>
+                <rng:ref name="seg"/>
+                <rng:ref name="seg"/>
+                <rng:zeroOrMore>
+                    <rng:ref name="seg"/>
+                </rng:zeroOrMore>
+            </rng:group>
+            <rng:group>
+                <rng:optional>
+                    <rng:ref name="head"/>
+                </rng:optional>
+                <rng:oneOrMore>
+                    <rng:ref name="p"/>
+                </rng:oneOrMore>
+            </rng:group>
+            <rng:oneOrMore>
+                <rng:ref name="ssrq.content.default"/>
+            </rng:oneOrMore>
+        </rng:choice>
     </content>
     <attList>
         <attDef ident="place" mode="replace" usage="req">
