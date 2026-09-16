@@ -16,12 +16,10 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <content>
         <sequence>
             <elementRef key="lem" minOccurs="0"/>
-            <sequence preserveOrder="false">
-                <alternate maxOccurs="unbounded">
-                    <elementRef key="note"/>
-                    <elementRef key="rdg"/>
-                </alternate>
-            </sequence>
+            <alternate maxOccurs="unbounded">
+                <elementRef key="note"/>
+                <elementRef key="rdg"/>
+            </alternate>
         </sequence>
     </content>
     <attList>

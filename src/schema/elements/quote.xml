@@ -18,15 +18,25 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <memberOf key="model.quoteLike"/>
     </classes>
     <content>
-        <alternate>
-            <alternate>
-                <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
-                <elementRef key="p" maxOccurs="unbounded" minOccurs="2"/>
-            </alternate>
-            <sequence maxOccurs="unbounded">
-                <macroRef key="ssrq.content.default"/>
-            </sequence>
-        </alternate>
+        <rng:choice>
+            <rng:group>
+                <rng:ref name="seg"/>
+                <rng:ref name="seg"/>
+                <rng:zeroOrMore>
+                    <rng:ref name="seg"/>
+                </rng:zeroOrMore>
+            </rng:group>
+            <rng:group>
+                <rng:ref name="p"/>
+                <rng:ref name="p"/>
+                <rng:zeroOrMore>
+                    <rng:ref name="p"/>
+                </rng:zeroOrMore>
+            </rng:group>
+            <rng:oneOrMore>
+                <rng:ref name="ssrq.content.default"/>
+            </rng:oneOrMore>
+        </rng:choice>
     </content>
     <constraintSpec ident="sch-el-quote" mode="add" scheme="schematron" xml:lang="en">
         <desc versionDate="2023-05-31" xml:lang="en">constraint for tei:quote</desc>

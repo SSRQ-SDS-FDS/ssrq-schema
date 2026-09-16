@@ -3,7 +3,7 @@
 href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec ident="time" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
-xmlns:xi="http://www.w3.org/2001/XInclude">
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <gloss versionDate="2025-02-04" xml:lang="de">Zeit</gloss>
     <gloss versionDate="2025-02-04" xml:lang="en">time</gloss>
     <gloss versionDate="2025-02-04" xml:lang="fr">temps</gloss>
@@ -17,9 +17,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <memberOf key="macro.dateLike"/>
     </classes>
     <content>
-        <sequence maxOccurs="unbounded">
-            <macroRef key="ssrq.content.default"/>
-        </sequence>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
     </content>
     <attList>
         <attDef ident="dur-iso" mode="change">

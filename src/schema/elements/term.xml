@@ -17,9 +17,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <memberOf key="model.emphLike"/>
     </classes>
     <content>
-        <sequence maxOccurs="unbounded">
-            <macroRef key="ssrq.content.default"/>
-        </sequence>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
     </content>
     <constraintSpec ident="sch-el-term" scheme="schematron" xml:lang="en">
         <desc versionDate="2023-11-07" xml:lang="en">constraint for tei:term</desc>
