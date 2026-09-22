@@ -206,6 +206,14 @@ def compile_odd_to_odd(odd: str, tei_version: str) -> str:
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(xml_text=odd)
         xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))  # type: ignore
+        xsltproc.set_parameter(  # type: ignore
+            "defaultSource",
+            proc.make_string_value(
+                (configs.TEI_STYLESHEETS.parent / "source" / "p5subset.xml")
+                .absolute()
+                .as_uri()
+            ),
+        )
 
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(configs.XSLTS["odd2odd"])
@@ -241,6 +249,14 @@ def compile_odd_to_rng(odd: str, tei_version: str) -> str:
         xsltproc: PyXslt30Processor = proc.new_xslt30_processor()
         document: PyXdmNode = proc.parse_xml(xml_text=odd)
         xsltproc.set_parameter("defaultTEIVersion", proc.make_string_value(tei_version))  # type: ignore
+        xsltproc.set_parameter(  # type: ignore
+            "defaultSource",
+            proc.make_string_value(
+                (configs.TEI_STYLESHEETS.parent / "source" / "p5subset.xml")
+                .absolute()
+                .as_uri()
+            ),
+        )
 
         xsl: PyXsltExecutable = xsltproc.compile_stylesheet(  # type: ignore
             stylesheet_file=str(configs.XSLTS["odd2rng"])
