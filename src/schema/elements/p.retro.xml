@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elementSpec ident="p" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0">
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="model.pLike"/>
+    </classes>
+    <content>
+        <textNode/>
+    </content>
+    <attList>
+        <attDef ident="xml:id" mode="delete"/>
+    </attList>
+</elementSpec>
