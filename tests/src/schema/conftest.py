@@ -339,3 +339,41 @@ def lit_schema(
 ) -> dict[str, str]:
     """A fixture, which returns the ssrq intro schema with a modified start element."""
     return change_rng_start_per_odd["TEI_Lit"]
+
+
+@pytest.fixture
+def retro_schema(
+    change_rng_start_per_odd: dict[str, dict[str, str]],
+) -> dict[str, str]:
+    """Return the Retro schema with a modified start element."""
+    return change_rng_start_per_odd["TEI_Retro"]
+
+
+@pytest.fixture(scope="function")
+def test_retro_with_rng(
+    retro_schema: dict[str, str],
+    writer: SimpleTEIWriter,
+) -> RNG_test_function:
+    def test_element(
+        element_name: str,
+        name: str,
+        markup: str,
+        result: bool,
+        return_validator: bool = False,
+    ):
+        writer.write(name, add_tei_namespace(markup))
+
+        match validate_with_rng(
+            writer.construct_file_pattern(), retro_schema[element_name]
+        ):
+            case Ok(validation_infos):
+                assert (
+                    len(validation_infos) == 0 if result else len(validation_infos) > 0
+                )
+                return validation_infos if return_validator else None
+            case Err(error):
+                pytest.fail(
+                    f"An error occurred while validating »{element_name}«: {error}"
+                )
+
+    return test_element
