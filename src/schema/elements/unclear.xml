@@ -14,9 +14,9 @@ xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001
         <memberOf key="att.global.responsibility"/>
     </classes>
     <content>
-        <rng:zeroOrMore>
+        <rng:oneOrMore>
             <rng:ref name="ssrq.content.default"/>
-        </rng:zeroOrMore>
+        </rng:oneOrMore>
     </content>
     <attList>
         <attDef ident="agent" mode="delete"/>
