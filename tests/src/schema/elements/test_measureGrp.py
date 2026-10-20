@@ -106,6 +106,16 @@ def test_measure_grp(
             """,
             False,
         ),
+        (
+            "invalid-measureGrp-with-different-types",
+            """
+            <measureGrp>
+                <measure quantity='5' unit='Juchart' type='area'>fuͤnf juchart</measure> 
+                <measure quantity='5' unit='ß' type='currency'>fuͤnf schilling pfenig</measure>
+            </measureGrp>
+            """,
+            False,
+        ),
     ],
 )
 def test_measure_grp_constraints(
