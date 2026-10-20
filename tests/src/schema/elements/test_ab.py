@@ -48,6 +48,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             "<ab type='dorsal' place='left_margin' xml:lang='de'>Foo</ab>",
             True,
         ),
+        (
+            "valid-ab-with-paragraphs",
+            "<ab type='dorsal' place='left_margin' xml:lang='de'><p>Foo</p><p>Bar</p></ab>",
+            True,
+        ),
+        (
+            "invalid-ab-with-just-one-paragraph",
+            "<ab type='dorsal' place='left_margin' xml:lang='de'><p>Foo</p></ab>",
+            False,
+        ),
     ],
 )
 def test_ab_rng(

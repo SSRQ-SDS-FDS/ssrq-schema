@@ -24,9 +24,17 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <memberOf key="model.pLike"/>
     </classes>
     <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
+        <rng:choice>
+            <rng:oneOrMore>
+                <rng:ref name="ssrq.content.default"/>
+            </rng:oneOrMore>
+            <rng:group>
+                <rng:ref name="p"/>
+                <rng:oneOrMore>
+                    <rng:ref name="p"/>
+                </rng:oneOrMore>
+            </rng:group>
+        </rng:choice>
     </content>
     <constraintSpec ident="sch-el-ab" scheme="schematron" xml:lang="en">
         <desc versionDate="2025-05-08" xml:lang="en">constraints for tei:ab</desc>
