@@ -3,7 +3,7 @@
 href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec ident="lem" mode="change" module="textcrit" xmlns="http://www.tei-c.org/ns/1.0"
-xmlns:xi="http://www.w3.org/2001/XInclude">
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <gloss versionDate="2025-02-03" xml:lang="de">Lemma</gloss>
     <gloss versionDate="2025-02-03" xml:lang="en">lemma</gloss>
     <gloss versionDate="2025-02-03" xml:lang="fr">lemme</gloss>
@@ -15,12 +15,17 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     différentes variantes de texte.</desc>
     <classes mode="replace"/>
     <content>
-        <alternate>
-            <sequence maxOccurs="unbounded">
-                <macroRef key="ssrq.content.default"/>
-            </sequence>
-            <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
-        </alternate>
+        <rng:choice>
+            <rng:oneOrMore>
+                <rng:ref name="ssrq.content.default"/>
+            </rng:oneOrMore>
+            <rng:group>
+                <rng:ref name="seg"/>
+                <rng:oneOrMore>
+                    <rng:ref name="seg"/>
+                </rng:oneOrMore>
+            </rng:group>
+        </rng:choice>
     </content>
     <xi:include href="examples.xml" xpointer="ex-app-rdg-de"/>
     <xi:include href="examples.xml" xpointer="ex-app-rdg-en"/>

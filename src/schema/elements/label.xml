@@ -3,7 +3,8 @@
 href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec ident="label" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
-xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
     <gloss versionDate="2025-02-03" xml:lang="de">Randanmerkung</gloss>
     <gloss versionDate="2025-02-03" xml:lang="en">label</gloss>
     <gloss versionDate="2025-02-03" xml:lang="fr">étiquette</gloss>
@@ -20,9 +21,9 @@ xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/200
         <memberOf key="model.labelLike"/>
     </classes>
     <content>
-        <sequence maxOccurs="unbounded">
-            <macroRef key="ssrq.content.default"/>
-        </sequence>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
     </content>
     <constraintSpec ident="sch-el-label" scheme="schematron" xml:lang="en">
         <desc versionDate="2023-05-25" xml:lang="en">constraint for tei:label</desc>

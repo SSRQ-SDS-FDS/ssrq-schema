@@ -19,9 +19,9 @@ xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001
         <memberOf key="model.hiLike"/>
     </classes>
     <content>
-        <sequence maxOccurs="unbounded">
-            <macroRef key="ssrq.content.default"/>
-        </sequence>
+        <rng:oneOrMore>
+            <rng:ref name="ssrq.content.default"/>
+        </rng:oneOrMore>
     </content>
     <attList>
         <attDef ident="rend" mode="replace" usage="req">

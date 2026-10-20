@@ -10,13 +10,11 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
         <memberOf key="att.tableDecoration"/>
     </classes>
     <content>
-        <sequence maxOccurs="unbounded">
-            <alternate>
-                <elementRef key="bibl"/>
-                <elementRef key="foreign"/>
-                <elementRef key="pc"/>
-                <textNode/>
-            </alternate>
-        </sequence>
+        <alternate maxOccurs="unbounded">
+            <elementRef key="bibl"/>
+            <elementRef key="foreign"/>
+            <elementRef key="pc"/>
+            <textNode/>
+        </alternate>
     </content>
 </elementSpec>
