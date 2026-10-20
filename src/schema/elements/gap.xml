@@ -26,6 +26,8 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
                 <sch:rule context="tei:gap[parent::tei:damage]">
                     <sch:report test="@reason" xml:lang="en"> If tei:gap is a child of tei:damage,
                     @reason cannot be specified. </sch:report>
+                    <sch:report test="@source" xml:lang="en"> If tei:gap is a child of tei:damage,
+                    @source cannot be specified. </sch:report>
                     <sch:assert test="@unit and @quantity" xml:lang="en"> If tei:gap is a child of
                     tei:damage, @unit and @quantity need to specified. </sch:assert>
                 </sch:rule>
