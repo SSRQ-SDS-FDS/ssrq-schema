@@ -17,6 +17,11 @@ from ..conftest import RNG_test_function
             True,
         ),
         (
+            "valid-head-with-multiple-elements",
+            "<head>foo <q>bar</q> <quote>baz</quote> <orig xml:lang='fr'>feaux</orig></head>",
+            True,
+        ),
+        (
             "invalid-head-with-content-default",
             "<head><del>foo</del>bar</head>",
             False,
