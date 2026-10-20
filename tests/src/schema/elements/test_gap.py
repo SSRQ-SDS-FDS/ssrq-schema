@@ -63,6 +63,11 @@ def test_gap_rng(
             False,
         ),
         (
+            "invalid-gap-inside-damage-with-source",
+            "<damage agent='hole'><gap source='foo' unit='cm' quantity='3.5'/></damage>",
+            False,
+        ),
+        (
             "invalid-gap-inside-damage-without-unit",
             "<damage agent='hole'><gap quantity='3.5'/></damage>",
             False,
