@@ -34,6 +34,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
                     <rng:ref name="p"/>
                 </rng:oneOrMore>
             </rng:group>
+            <rng:group>
+                <rng:ref name="seg"/>
+                <rng:oneOrMore>
+                    <rng:ref name="seg"/>
+                </rng:oneOrMore>
+            </rng:group>
         </rng:choice>
     </content>
     <constraintSpec ident="sch-el-ab" scheme="schematron" xml:lang="en">
