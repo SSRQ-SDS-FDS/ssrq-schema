@@ -21,17 +21,15 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <rng:choice>
             <rng:group>
                 <rng:ref name="seg"/>
-                <rng:ref name="seg"/>
-                <rng:zeroOrMore>
+                <rng:oneOrMore>
                     <rng:ref name="seg"/>
-                </rng:zeroOrMore>
+                </rng:oneOrMore>
             </rng:group>
             <rng:group>
                 <rng:ref name="p"/>
-                <rng:ref name="p"/>
-                <rng:zeroOrMore>
+                <rng:oneOrMore>
                     <rng:ref name="p"/>
-                </rng:zeroOrMore>
+                </rng:oneOrMore>
             </rng:group>
             <rng:oneOrMore>
                 <rng:ref name="ssrq.content.default"/>
