@@ -33,6 +33,9 @@ xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/200
                 <sch:rule context="tei:measureGrp">
                     <sch:assert test="count(.//tei:measure) &gt; 1" xml:lang="en"> tei:measureGrp
                     should have at least two tei:measures as descendants. </sch:assert>
+                    <sch:assert test="count(distinct-values(.//tei:measure/@type)) = 1"
+                    xml:lang="en">All tei:measure elements within a tei:measureGrp should have the
+                    same @type value.</sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
