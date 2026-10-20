@@ -21,10 +21,9 @@ xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001
             </rng:oneOrMore>
             <rng:group>
                 <rng:ref name="seg"/>
-                <rng:ref name="seg"/>
-                <rng:zeroOrMore>
+                <rng:oneOrMore>
                     <rng:ref name="seg"/>
-                </rng:zeroOrMore>
+                </rng:oneOrMore>
             </rng:group>
         </rng:choice>
     </content>
