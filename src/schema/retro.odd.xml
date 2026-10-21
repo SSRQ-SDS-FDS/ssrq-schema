@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>
+                    {{ title }}
+                </title>
+                <author>
+                    Bastian Politycki
+                </author>
+                <author>
+                    Christian Sonder
+                </author>
+                <author>
+                    Pascale Sutter
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>
+                    SSRQ-SDS-FDS
+                </publisher>
+                <date when="1970-01-01"/>
+                <idno>
+                    {{ version }}
+                </idno>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>
+                    {{ description }}
+                </p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <schemaSpec docLang="de en fr" ident="ssrq-retro-schema">
+                <moduleRef include="date editor head p pb publisher resp respStmt title"
+                key="core"/>
+                <moduleRef include="precision" key="certainty"/>
+                <moduleRef include="availability encodingDesc fileDesc idno licence publicationStmt
+                seriesStmt sourceDesc teiHeader titleStmt" key="header"/>
+                <moduleRef include="history msDesc origDate origin" key="msdescription"/>
+                <moduleRef include="orgName persName" key="namesdates"/>
+                <moduleRef key="tei"/>
+                <moduleRef include="body TEI text" key="textstructure"/>
+                <specGrpRef target="commons/modules.odd.xml#ssrq-modules"/>
+                <specGrpRef target="commons/classes.odd.xml#ssrq-classes"/>
+                <specGrpRef target="commons/constraints.odd.xml#constraints"/>
+                <specGrpRef target="commons/content.odd.xml#ssrq-default-content-types"/>
+                <specGrpRef target="commons/datatypes.odd.xml#ssrq-lang"/>
+                <specGrpRef target="commons/datatypes.odd.xml#ssrq-role"/>
+                <specGrpRef target="commons/datatypes.odd.xml#ssrq-target"/>
+                <specGrpRef target="commons/datatypes.odd.xml#ssrq-type"/>
+                <specGrpRef target="commons/patterns.odd.xml#ssrq-patterns"/>
+                <dataSpec ident="ssrq-retro.type.pb" mode="add">
+                    <content>
+                        <valList type="closed">
+                            <valItem ident="pdf"/>
+                        </valList>
+                    </content>
+                </dataSpec>
+                <dataSpec ident="ssrq-retro.type.text" mode="add">
+                    <content>
+                        <valList type="closed">
+                            <valItem ident="retro"/>
+                        </valList>
+                    </content>
+                </dataSpec>
+                <specGrpRef target="elements/availability.xml"/>
+                <specGrpRef target="elements/body.retro.xml"/>
+                <specGrpRef target="elements/date.xml"/>
+                <specGrpRef target="elements/editor.xml"/>
+                <specGrpRef target="elements/encodingDesc.retro.xml"/>
+                <specGrpRef target="elements/fileDesc.xml"/>
+                <specGrpRef target="elements/head.xml"/>
+                <specGrpRef target="elements/history.xml"/>
+                <specGrpRef target="elements/idno.xml"/>
+                <specGrpRef target="elements/licence.xml"/>
+                <specGrpRef target="elements/msDesc.retro.xml"/>
+                <specGrpRef target="elements/origDate.xml"/>
+                <specGrpRef target="elements/origin.retro.xml"/>
+                <specGrpRef target="elements/p.retro.xml"/>
+                <specGrpRef target="elements/pb.retro.xml"/>
+                <specGrpRef target="elements/persName.xml"/>
+                <specGrpRef target="elements/precision.xml"/>
+                <specGrpRef target="elements/publicationStmt.xml"/>
+                <specGrpRef target="elements/publisher.xml"/>
+                <specGrpRef target="elements/resp.xml"/>
+                <specGrpRef target="elements/respStmt.xml"/>
+                <specGrpRef target="elements/seriesStmt.retro.xml"/>
+                <specGrpRef target="elements/sourceDesc.xml"/>
+                <specGrpRef target="elements/teiHeader.xml"/>
+                <specGrpRef target="elements/TEI.xml"/>
+                <specGrpRef target="elements/text.retro.xml"/>
+                <specGrpRef target="elements/title.xml"/>
+                <specGrpRef target="elements/titleStmt.xml"/>
+            </schemaSpec>
+        </body>
+    </text>
+</TEI>
