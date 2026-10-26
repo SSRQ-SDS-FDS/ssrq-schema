@@ -60,6 +60,13 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             """,
             False,
         ),
+        (
+            "valid-ref-with-two-targets",
+            """
+            <ref target="http://example.com http://example.org">foo</ref>
+            """,
+            True,
+        ),
     ],
 )
 def test_ref_rng(

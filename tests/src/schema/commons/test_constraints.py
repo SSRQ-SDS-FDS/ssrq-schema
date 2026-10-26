@@ -1012,3 +1012,43 @@ def test_unique_xml_ids(
         input=writer.list(), isosch=main_constraints
     )
     assert reports[0].report.is_valid() is result
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-ref-inside-app-with-two-targets",
+            """
+            <app>
+                <note type='text_comparison'>
+                    <ref target='http://example.com http://example.org'/>
+                    <orig>foo</orig>
+                </note>
+            </app>
+            """,
+            True,
+        ),
+        (
+            "invalid-ref-outside-app-with-two-targets",
+            """
+            <bibl>
+                <ref target='http://example.com http://example.org'/>
+            </bibl>
+            """,
+            False,
+        ),
+    ],
+)
+def test_target_with_two_values(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    """
+    Tests the global constraint, which ensures that multiple values in @target are permitted
+    only when the parent element is tei:note with @type="text_comparison".
+    """
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].report.is_valid() is result
