@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elementSpec ident="text" mode="change" module="textstructure" xmlns="http://www.tei-c.org/ns/1.0">
+    <classes mode="replace">
+        <memberOf key="att.typed"/>
+        <memberOf key="model.resource"/>
+    </classes>
+    <content>
+        <elementRef key="body"/>
+    </content>
+    <attList>
+        <attDef ident="type" mode="replace" usage="req">
+            <datatype>
+                <dataRef key="ssrq-retro.type.text"/>
+            </datatype>
+        </attDef>
+    </attList>
+</elementSpec>

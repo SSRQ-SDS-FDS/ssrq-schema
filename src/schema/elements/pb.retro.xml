@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elementSpec ident="pb" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
+xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    <classes mode="replace">
+        <memberOf key="att.global"/>
+        <memberOf key="att.global.facs"/>
+        <memberOf key="att.typed"/>
+        <memberOf key="model.milestoneLike"/>
+    </classes>
+    <content>
+        <empty/>
+    </content>
+    <attList>
+        <attDef ident="facs" mode="replace" usage="req">
+            <datatype>
+                <dataRef name="positiveInteger"/>
+            </datatype>
+        </attDef>
+        <attDef ident="n" mode="replace" usage="req">
+            <datatype>
+                <rng:choice>
+                    <rng:ref name="ssrq.cover"/>
+                    <rng:ref name="ssrq.numbering"/>
+                </rng:choice>
+            </datatype>
+        </attDef>
+        <attDef ident="type" mode="replace" usage="req">
+            <datatype>
+                <dataRef key="ssrq-retro.type.pb"/>
+            </datatype>
+        </attDef>
+        <attDef ident="xml:id" mode="delete"/>
+        <attDef ident="xml:lang" mode="delete"/>
+    </attList>
+</elementSpec>

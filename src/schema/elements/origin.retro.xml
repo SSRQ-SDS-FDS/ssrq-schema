@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elementSpec ident="origin" mode="change" module="msdescription"
+xmlns="http://www.tei-c.org/ns/1.0">
+    <classes mode="replace"/>
+    <content>
+        <elementRef key="origDate" maxOccurs="unbounded"/>
+    </content>
+    <remarks versionDate="2026-10-27" xml:lang="de">
+        <p>
+            Ein Eintrag im retrodigitalisierten Stückverzeichnis kann mehrere Datierungen
+            enthalten. Diese werden als separate origDate-Elemente in ihrer ursprünglichen
+            Reihenfolge übernommen. Deshalb ist ihre Anzahl im Retro-Profil nicht begrenzt.
+        </p>
+    </remarks>
+</elementSpec>
