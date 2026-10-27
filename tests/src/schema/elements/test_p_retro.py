@@ -7,7 +7,9 @@ from ..conftest import RNG_test_function
     "name, markup, result",
     [
         ("valid-p", "<p>Automatisch erzeugt.</p>", True),
-        ("valid-empty-p", "<p/>", True),
+        ("valid-multiline-p", "<p>Metadaten automatisch\nübernommen.</p>", True),
+        ("invalid-empty-p", "<p/>", False),
+        ("invalid-whitespace-p", "<p> \n\t </p>", False),
         ("invalid-p-with-child", "<p><hi>Automatisch erzeugt.</hi></p>", False),
     ],
 )

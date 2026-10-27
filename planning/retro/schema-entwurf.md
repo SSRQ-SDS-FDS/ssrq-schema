@@ -20,7 +20,7 @@ sind aus dem Verzeichnis übernommen, nicht neu historisch geprüft.
 
 Die Ausgabe besteht aus `online/<idno>.xml` und `book/<Band-PDF>.pdf` im beim
 Konverteraufruf übergebenen Ordner. Ein PDF liegt einmal pro Band vor.
-Gemäss Vorgabe vom 21. September steht im Body ein `pb` mit `facs`, das nur die
+Im Body steht ein `pb` mit `facs`, das nur die
 physische PDF-Anfangsseite enthält. Dateiname, Pfad und URL entfallen dort; editio
 ermittelt das PDF über die Bandzuordnung und die Bandkonfiguration.
 
@@ -88,6 +88,15 @@ vor. Die Umbenennung ist mechanisch, keine Kalenderkonvertierung:
 | `date`-Text | Lesbare Datierung unverändert in `origDate` übernehmen |
 | Mehrere `date` | Mehrere `origDate`, ursprüngliche Reihenfolge beibehalten |
 | Kalender | Bei Option `fix_julian`: sicher vor 12.01.1582 `julian`, sonst `unknown` |
+
+Ein Verzeichniseintrag kann mehrere historische Datierungen enthalten. Das
+Retro-Profil begrenzt deshalb die Anzahl der `origDate`-Elemente nicht und
+übernimmt auch mehrere Datierungen mit `@type="content"` in der Reihenfolge der
+Quelle. Anders als im Hauptprofil geht es hier um die Übernahme der Quelldaten,
+bevor sie historisch geprüft werden.
+
+Der Hinweis in `encodingDesc/p` muss Text enthalten; leere oder ausschliesslich
+aus Leerraum bestehende Absätze sind ungültig.
 
 Die Kalenderregel nimmt keine Umrechnung des Datumswerts vor. Für einen Zeitraum,
 der den 12. Januar 1582 berührt oder überschreitet, sowie für ein blosses Jahr 1582
