@@ -39,23 +39,56 @@ def test_pers_name(
     "name, markup, result",
     [
         (
-            "valid-persName-inside-editor",
+            "invalid-persName-inside-editor",
             """
             <editor><persName>foo</persName></editor>
+            """,
+            False,
+        ),
+        (
+            "valid-persName-inside-editor",
+            """
+            <editor><persName><forename>foo</forename><surname>bar</surname></persName></editor>
+            """,
+            True,
+        ),
+        (
+            "valid-persName-inside-editor",
+            """
+            <respStmt>
+                <persName>
+                    <forename>foo</forename>
+                    <surname>bar</surname>
+                </persName>
+                <resp>Transkription</resp>
+            </respStmt>
+            """,
+            True,
+        ),
+        (
+            "valid-persName-inside-editor-with-multiple-forenames",
+            """
+            <editor>
+                <persName>
+                    <forename>foo</forename>
+                    <forename>gee</forename>
+                    <surname>bar</surname>
+                </persName>
+            </editor>
             """,
             True,
         ),
         (
             "invalid-persName-inside-editor-ref",
             """
-            <editor><persName ref="per123456">foo</persName></editor>
+            <editor><persName ref="per123456"><forename>foo</forename><surname>bar</surname></persName></editor>
             """,
             False,
         ),
         (
             "invalid-persName-inside-editor-role",
             """
-            <editor><persName role="witness">foo</persName></editor>
+            <editor><persName role="witness"><forename>foo</forename><surname>bar</surname></persName></editor>
             """,
             False,
         ),
