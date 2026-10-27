@@ -57,21 +57,8 @@
                 <specGrpRef target="commons/datatypes.odd.xml#ssrq-role"/>
                 <specGrpRef target="commons/datatypes.odd.xml#ssrq-target"/>
                 <specGrpRef target="commons/datatypes.odd.xml#ssrq-type"/>
+                <specGrpRef target="commons/datatypes.odd.xml#ssrq-retro-type"/>
                 <specGrpRef target="commons/patterns.odd.xml#ssrq-patterns"/>
-                <dataSpec ident="ssrq-retro.type.pb" mode="add">
-                    <content>
-                        <valList type="closed">
-                            <valItem ident="pdf"/>
-                        </valList>
-                    </content>
-                </dataSpec>
-                <dataSpec ident="ssrq-retro.type.text" mode="add">
-                    <content>
-                        <valList type="closed">
-                            <valItem ident="retro"/>
-                        </valList>
-                    </content>
-                </dataSpec>
                 <specGrpRef target="elements/availability.xml"/>
                 <specGrpRef target="elements/body.retro.xml"/>
                 <specGrpRef target="elements/date.xml"/>

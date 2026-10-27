@@ -5,7 +5,7 @@
         <memberOf key="model.pLike"/>
     </classes>
     <content>
-        <textNode/>
+        <dataRef name="string" restriction="[\s\S]*\S[\s\S]*"/>
     </content>
     <attList>
         <attDef ident="xml:id" mode="delete"/>

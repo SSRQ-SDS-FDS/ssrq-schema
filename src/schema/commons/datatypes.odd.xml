@@ -4014,6 +4014,22 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
             </content>
         </dataSpec>
     </specGrp>
+    <specGrp xml:id="ssrq-retro-type">
+        <dataSpec ident="ssrq-retro.type.pb" mode="add">
+            <content>
+                <valList type="closed">
+                    <valItem ident="pdf"/>
+                </valList>
+            </content>
+        </dataSpec>
+        <dataSpec ident="ssrq-retro.type.text" mode="add">
+            <content>
+                <valList type="closed">
+                    <valItem ident="retro"/>
+                </valList>
+            </content>
+        </dataSpec>
+    </specGrp>
     <specGrp xml:id="ssrq-type">
         <dataSpec ident="ssrq.type.ab" mode="add">
             <content>
