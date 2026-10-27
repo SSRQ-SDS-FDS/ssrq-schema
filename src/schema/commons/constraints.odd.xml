@@ -186,9 +186,10 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                     &apos;custEvent&apos;, &apos;custodialHist&apos;, &apos;del&apos;,
                     &apos;dimensions&apos;, &apos;div&apos;, &apos;docImprint&apos;,
                     &apos;editorialDecl&apos;, &apos;encodingDesc&apos;, &apos;expan&apos;,
-                    &apos;extent&apos;, &apos;foreign&apos;, &apos;fw&apos;, &apos;handDesc&apos;,
-                    &apos;head&apos;, &apos;hi&apos;, &apos;history&apos;, &apos;idno&apos;,
-                    &apos;item&apos;, &apos;keywords&apos;, &apos;label&apos;, &apos;lem&apos;,
+                    &apos;extent&apos;, &apos;foreign&apos;, &apos;forename&apos;, &apos;fw&apos;,
+                    &apos;handDesc&apos;,                     &apos;head&apos;, &apos;hi&apos;,
+                    &apos;history&apos;, &apos;idno&apos;,                     &apos;item&apos;,
+                    &apos;keywords&apos;, &apos;label&apos;, &apos;lem&apos;,
                     &apos;licence&apos;, &apos;list&apos;, &apos;listBibl&apos;,
                     &apos;listWit&apos;, &apos;measure&apos;, &apos;measureGrp&apos;,
                     &apos;msContents&apos;, &apos;msItem&apos;, &apos;note&apos;, &apos;num&apos;,
@@ -200,10 +201,10 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                     &apos;row&apos;, &apos;sealDesc&apos;, &apos;seg&apos;, &apos;settlement&apos;,
                     &apos;sic&apos;, &apos;signed&apos;, &apos;sourceDesc&apos;, &apos;subst&apos;,
                     &apos;summary&apos;, &apos;supplied&apos;, &apos;support&apos;,
-                    &apos;supportDesc&apos;, &apos;table&apos;, &apos;TEI&apos;,
-                    &apos;teiHeader&apos;, &apos;text&apos;, &apos;textClass&apos;,
-                    &apos;time&apos;, &apos;title&apos;, &apos;unclear&apos;,
-                    &apos;witness&apos;)][not(*)]">
+                    &apos;surname&apos;, &apos;supportDesc&apos;, &apos;table&apos;,
+                    &apos;TEI&apos;,                     &apos;teiHeader&apos;, &apos;text&apos;,
+                    &apos;textClass&apos;,                     &apos;time&apos;, &apos;title&apos;,
+                    &apos;unclear&apos;,                     &apos;witness&apos;)][not(*)]">
                         <sch:assert test="string-length(normalize-space(.)) &gt; 0"> The element
                         <sch:name/> must not be empty. </sch:assert>
                     </sch:rule>

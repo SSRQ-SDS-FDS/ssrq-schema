@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="surname" mode="change" module="namesdates" xmlns="http://www.tei-c.org/ns/1.0">
+    <gloss versionDate="2026-10-27" xml:lang="de">Nachname</gloss>
+    <gloss versionDate="2026-10-27" xml:lang="en">surname</gloss>
+    <gloss versionDate="2026-10-27" xml:lang="fr">nom de famille</gloss>
+    <desc versionDate="2026-10-27" xml:lang="de">Enthält den Nachnamen einer Person.</desc>
+    <desc versionDate="2026-10-27" xml:lang="en">Indicates a persons surname.</desc>
+    <desc versionDate="2026-10-27" xml:lang="fr">Contient le nom de famille d’une personne.</desc>
+    <classes mode="replace"/>
+    <content>
+        <textNode/>
+    </content>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Es gelten die ausführlichen Richtlinien zur Auszeichnung von Personen in den <ref
+            target="persons.de.md">Transkriptionsrichtlinien</ref>.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Les directives détaillées relatives à la dénomination des personnes dans les <ref
+            target="persons.de.md">principes de transcription</ref> s’appliquent.
+        </p>
+    </remarks>
+</elementSpec>
