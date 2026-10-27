@@ -10,6 +10,12 @@ im Nominativ.
 Es wird nur der Name ohne zusätzliche Informationen, wie Berufsbezeichnung,
 Titel etc., ausgezeichnet. 
 
+## Auszeichnung von an der Edition beteiligten Personen im Dateiheader
+
+Im Dateiheader werden die Namen von Herausgeberinnen, Herausgebern, Mitarbeiterinnen
+und Mitarbeitern, im Gegensatz zu den Namen im edierten Text, getrennt nach Vorname 
+([`<forename>`](forename.de.md)) und Nachname ([`<surname>`](surname.de.md)) erfasst.
+
 ## Zusammengesetzte Personennamen
 
 Bei zusammengesetzten Personennamen ist zu entscheiden, welcher Teil mit

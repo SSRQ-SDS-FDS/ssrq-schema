@@ -18,9 +18,17 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         <memberOf key="model.nameLike.agent"/>
     </classes>
     <content>
-        <rng:oneOrMore>
-            <rng:ref name="ssrq.content.default"/>
-        </rng:oneOrMore>
+        <rng:choice>
+            <rng:oneOrMore>
+                <rng:ref name="ssrq.content.default"/>
+            </rng:oneOrMore>
+            <rng:group>
+                <rng:oneOrMore>
+                    <rng:ref name="forename"/>
+                </rng:oneOrMore>
+                <rng:ref name="surname"/>
+            </rng:group>
+        </rng:choice>
     </content>
     <constraintSpec ident="sch-el-persName" mode="add" scheme="schematron" xml:lang="en">
         <desc versionDate="2023-06-23" xml:lang="en">constraint for tei:persName</desc>
@@ -29,6 +37,19 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
                 <sch:rule context="tei:persName[ancestor::tei:editor]">
                     <sch:assert test="not(@ref|@role)"> If tei:persName is part of tei:editor it
                     must not contain the attributes @ref or @role. </sch:assert>
+                    <sch:assert test="tei:forename and tei:surname"> A tei:persName element
+                    occurring within tei:editor must contain both tei:forename and tei:surname.
+                    </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:persName[ancestor::tei:respStmt]">
+                    <sch:assert test="tei:forename and tei:surname"> A tei:persName element
+                    occurring within tei:respStmt must contain both tei:forename and tei:surname.
+                    </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:persName">
+                    <sch:report test="tei:forename or tei:surname"> A tei:persName element not
+                    occurring within tei:editor or tei:respStmt must not contain tei:forename or
+                    tei:surname. </sch:report>
                 </sch:rule>
             </sch:pattern>
         </constraint>
