@@ -502,11 +502,16 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                     <desc versionDate="2025-01-28" xml:lang="fr">un lien hypertexte, DOI ou une
                     référence interne</desc>
                     <datatype>
-                        <rng:list>
-                            <rng:oneOrMore>
-                                <rng:ref name="ssrq.pointer.target"/>
-                            </rng:oneOrMore>
-                        </rng:list>
+                        <rng:choice>
+                            <rng:ref name="ssrq.pointer.doi"/>
+                            <rng:ref name="ssrq.pointer.url"/>
+                            <rng:ref name="ssrq.pointer.id"/>
+                            <rng:list>
+                                <rng:oneOrMore>
+                                    <rng:ref name="ssrq.pointer.urn"/>
+                                </rng:oneOrMore>
+                            </rng:list>
+                        </rng:choice>
                     </datatype>
                 </attDef>
                 <attDef ident="targetLang" mode="delete"/>

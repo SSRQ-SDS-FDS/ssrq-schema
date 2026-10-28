@@ -63,9 +63,16 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         (
             "valid-ref-with-two-targets",
             """
-            <ref target="http://example.com http://example.org">foo</ref>
+            <ref target="urn:ssrq:SSRQ-FR-I_2_9-3.61-1 urn:ssrq:SSRQ-FR-I_2_9-3.62-1">foo</ref>
             """,
             True,
+        ),
+        (
+            "invalid-ref-with-two-targets",
+            """
+            <ref target="http://example.com http://example.org">foo</ref>
+            """,
+            False,
         ),
     ],
 )
