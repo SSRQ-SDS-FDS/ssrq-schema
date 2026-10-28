@@ -4,8 +4,8 @@ href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/rel
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <specGrp xml:id="ssrq-classes">
-        <!--There are currently (2025-01-24) 85 attribute classes specified in TEI P5 Version
-        4.9.0, all of which are either explicitly deleted or changed in this document.-->
+        <!--There are currently (2026-10-28) 86 attribute classes specified in TEI P5 Version
+        4.12.0, all of which are either explicitly deleted or changed in this document.-->
         <!--TEI attribute classes deleted from schema-->
         <classSpec ident="att.anchoring" mode="delete" type="atts"/>
         <classSpec ident="att.ascribed" mode="delete" type="atts"/>
@@ -52,6 +52,7 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
         <classSpec ident="att.notated" mode="delete" type="atts"/>
         <classSpec ident="att.partials" mode="delete" type="atts"/>
         <classSpec ident="att.patternReplacement" mode="delete" type="atts"/>
+        <classSpec ident="att.performed" mode="delete" type="atts"/>
         <classSpec ident="att.personal" mode="delete" type="atts"/>
         <classSpec ident="att.pointing.group" mode="delete" type="atts"/>
         <classSpec ident="att.predicate" mode="delete" type="atts"/>
