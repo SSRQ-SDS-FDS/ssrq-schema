@@ -3,7 +3,8 @@
 href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec ident="add" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
-xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+xmlns:xi="http://www.w3.org/2001/XInclude">
     <gloss versionDate="2025-03-02" xml:lang="de">Hinzufügung</gloss>
     <gloss versionDate="2025-03-02" xml:lang="en">addition</gloss>
     <gloss versionDate="2025-03-02" xml:lang="fr">ajout</gloss>
@@ -39,6 +40,19 @@ xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001
             </rng:oneOrMore>
         </rng:choice>
     </content>
+    <constraintSpec ident="sch-add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2026-10-28" xml:lang="en">constraints for tei:add</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:add[tei:del]">
+                    <sch:assert test="*[not(self::tei:del)] or text()[normalize-space(.) !=
+                    &apos;&apos;]" xml:lang="en"> A tei:add element containing tei:del must also
+                    contain non-whitespace text or at least one child element other than tei:del.
+                    </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <attList>
         <attDef ident="place" mode="replace" usage="req">
             <desc versionDate="2025-02-04" xml:lang="de">der Ort der Hinzufügung</desc>
