@@ -1,6 +1,8 @@
 import pytest
+from pyschval.schematron.validate import apply_schematron_validation
+from pyschval.types.result import SchematronResult
 
-from ..conftest import RNG_test_function
+from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
 
 
 @pytest.mark.parametrize(
@@ -80,3 +82,28 @@ def test_add(
     result: bool,
 ):
     test_element_with_rng("add", name, markup, result, False)
+
+
+@pytest.mark.parametrize(
+    "name, markup, result",
+    [
+        (
+            "valid-add-with-del-and-siblings",
+            "<add place='left_top'><del>foo</del> bar</add>",
+            True,
+        ),
+        (
+            "invalid-add-with-del-without-siblings",
+            "<add place='left_top'><del>foo</del></add>",
+            False,
+        ),
+    ],
+)
+def test_add_constraints(
+    main_constraints: str, writer: SimpleTEIWriter, name: str, markup: str, result: bool
+):
+    writer.write(name, add_tei_namespace(markup))
+    reports: list[SchematronResult] = apply_schematron_validation(
+        input=writer.list(), isosch=main_constraints
+    )
+    assert reports[0].report.is_valid() is result
