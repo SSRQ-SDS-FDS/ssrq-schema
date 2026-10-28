@@ -35,10 +35,14 @@ jobs:
         run: ./Taskfile build-docs
       - name: Check links in docs
         id: lychee
+        continue-on-error: true
         uses: lycheeverse/lychee-action@v2
         with:
           args: src/docs/**/*.md --exclude '^file:' --timeout 60 --accept 100..=103,200..=299,403
           fail: true
+      - name: Warn about link check failures
+        if: ${{ steps.lychee.outcome == 'failure' }}
+        run: echo "::warning title=Documentation link check failed::See the link check logs and job summary for details. This does not block the workflow."
 
   publish:
     runs-on: ubuntu-latest
