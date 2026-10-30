@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://schema.ssrq-sds-fds.ch/1.8.0/fr/elements/gap/">
+        <link rel="canonical" href="https://schema.ssrq-sds-fds.ch/1.9.0/fr/elements/gap/">
       
       
         <link rel="prev" href="../fw/">
@@ -1395,6 +1395,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2322,6 +2326,29 @@
   
   <span class="md-ellipsis">
     foreign
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forename/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    forename
     
   </span>
   
@@ -4092,6 +4119,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../surname/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    surname
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../table/" class="md-nav__link">
         
   
@@ -4589,7 +4639,7 @@
 <p>Si des ajouts ultérieurs ne sont pas édités avec l’original, mais comme pièce indépendante, les parties qui ont déjà été éditées dans un original antérieur peuvent être omises avec <a href="./"><code>&lt;gap&gt;</code></a>. Il est fait référence à la pièce éditée avec l’attribut <a href="#source"><code>@source</code></a>. Dans ce cas, une note est insérée dans <a href="../note/"><code>&lt;note&gt;</code></a> ou un commentaire est formulé dans <a href="../back/"><code>&lt;back&gt;</code></a>. </p>
 <p>Si, p. ex., une seule entrée est transcrite sur une page d’un procès-verbal du Conseil, c’est-à-dire que les entrées qui la précèdent sont omises, cette omission est signalée par un seul <code>&lt;gap reason="irrelevant"/&gt;</code> (même si plusieurs entrées ont été omises). Il n’est pas nécessaire de fournir les entrées suivantes. Si le titre de l’entrée du procès-verbal du Conseil se trouve une ou plusieurs pages plus haut, celui-ci doit également être transcrit et l’omission doit être signalée par <a href="./"><code>&lt;gap&gt;</code></a>. </p>
 <p>Pour les sauts de ligne dans le document introduits par les éditeurs, on n’utilise pas <a href="./"><code>&lt;gap&gt;</code></a>, mais seulement <a href="../supplied/"><code>&lt;supplied&gt;</code></a>. </p>
-<p>Les lacunes dans les textes rétro-numérisés sont signalés par <code>&lt;gap reason="missing"/&gt;</code> (p. ex. dans SDS NE 1).</p>
+<p>Les lacunes dans les textes rétronumérisés sont signalés par <code>&lt;gap reason="missing"/&gt;</code> (p. ex. dans SDS NE 1).</p>
 <h2 id="autorise-dans">Autorisé dans</h2>
 <ul>
 <li><strong>core</strong>: <a href="../add/"><code>&lt;add&gt;</code></a> <a href="../corr/"><code>&lt;corr&gt;</code></a> <a href="../date/"><code>&lt;date&gt;</code></a> <a href="../del/"><code>&lt;del&gt;</code></a> <a href="../foreign/"><code>&lt;foreign&gt;</code></a> <a href="../head/"><code>&lt;head&gt;</code></a> <a href="../hi/"><code>&lt;hi&gt;</code></a> <a href="../item/"><code>&lt;item&gt;</code></a> <a href="../label/"><code>&lt;label&gt;</code></a> <a href="../measure/"><code>&lt;measure&gt;</code></a> <a href="../note/"><code>&lt;note&gt;</code></a> <a href="../orig/"><code>&lt;orig&gt;</code></a> <a href="../p/"><code>&lt;p&gt;</code></a> <a href="../q/"><code>&lt;q&gt;</code></a> <a href="../quote/"><code>&lt;quote&gt;</code></a> <a href="../term/"><code>&lt;term&gt;</code></a> <a href="../time/"><code>&lt;time&gt;</code></a> <a href="../unclear/"><code>&lt;unclear&gt;</code></a></li>
@@ -4651,7 +4701,7 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">&lt;/egXML&gt;</span>
 </span></code></pre></div>
 <h3 id="exemple-2">Exemple 2</h3>
-<p>Exemple d’un texte manquant qui n’est pas présent dans le document rétro-numérisé</p>
+<p>Exemple d’un texte manquant qui n’est pas présent dans le document rétronumérisé</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;egXML</span><span class="w"> </span><span class="na">xmlns:ns0=</span><span class="s">&quot;http://www.tei-c.org/ns/Examples&quot;</span><span class="nt">&gt;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;gap</span><span class="w"> </span><span class="na">reason=</span><span class="s">&quot;missing&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;note&gt;</span>Pas<span class="w"> </span>de<span class="w"> </span>transcription<span class="w"> </span>par<span class="w"> </span>Favarger<span class="w"> </span>1982.<span class="w"> </span>Note<span class="w"> </span>Favarger<span class="w"> </span>1982<span class="w"> </span>:<span class="w"> </span>Cf.<span class="w"> </span><span class="nt">&lt;ref&gt;</span>SDS_NE_1_47<span class="nt">&lt;/ref&gt;</span><span class="w"> </span>du<span class="w"> </span>17<span class="w"> </span>août<span class="w"> </span>1508<span class="w"> </span>qui<span class="w"> </span>accorde<span class="w"> </span>la

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="" xml:lang="en"><?TEIVERSION P5 Version 4.9.0. Last updated on
-        24th January 2025, revision f73186978?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:base="" xml:lang="en"><?TEIVERSION P5 Version 4.12.0a. Last updated on
+        27th July 2026, revision 497393620?>
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -19,7 +19,7 @@
             <publisher>
                     SSRQ-SDS-FDS
                 </publisher>
-            <date when="2026-03-26Z"/>
+            <date when="2026-10-30Z"/>
             <idno>1.1.0</idno>
             <availability>
                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
@@ -66,7 +66,7 @@
                      docLang="de en fr"
                      ident="ssrq-lit-schema"
                      defaultExceptions="http://www.tei-c.org/ns/1.0 teix:egXML"
-                     source="https://www.tei-c.org/Vault/P5/4.9.0/xml/tei/odd/p5subset.xml">
+                     source="file:///home/runner/work/ssrq-schema/ssrq-schema/utils/schema/lib/tei_stylesheets/source/p5subset.xml">
             <classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -78,12 +78,12 @@
                <desc versionDate="2016-01-15" xml:lang="en">provides a set of attributes used by all elements which point
   to other elements by means of one or more URI references.</desc>
                <desc versionDate="2016-02-15" xml:lang="fr">fournit un ensemble d'attributs utilisés par tous les éléments qui pointent vers d'autres éléments au moyen d'une ou de plusieurs références URI.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">definisce un insieme di attributi usati da tutti gli elementi che puntano ad altri elementi tramite uno o più URI</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">definisce un insieme di attributi usati da tutti gli elementi che puntano ad altri elementi tramite uno o più URI.</desc>
                <classes/>
                <constraintSpec ident="targetLang" scheme="schematron" xml:lang="en">
                   <constraint>
                      <sch:rule context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
-                        <sch:assert test="@target">@targetLang should only be used on <sch:name/> if @target is specified.</sch:assert>
+                        <sch:assert test="@target">@targetLang should only be used on &lt;<sch:name/>&gt; if @target is specified.</sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -96,7 +96,16 @@
                      <desc versionDate="2025-01-28" xml:lang="fr">un lien hypertexte, DOI ou une
                     référence interne</desc>
                      <datatype>
-                        <dataRef key="ssrq.pointer.target"/>
+                        <rng:choice>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.pointer.doi"/>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.pointer.url"/>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.pointer.id"/>
+                           <rng:list>
+                              <rng:oneOrMore>
+                                 <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.pointer.urn"/>
+                              </rng:oneOrMore>
+                           </rng:list>
+                        </rng:choice>
                      </datatype>
                   </attDef>
                </attList>
@@ -115,14 +124,15 @@
                        ident="att.typed"
                        predeclare="true">
                <desc versionDate="2007-10-02" xml:lang="en">provides attributes that can be used to classify or subclassify elements in any way.</desc>
-               <desc versionDate="2009-05-29" xml:lang="fr">fournit des attributs qui peuvent être
-      utilisés pour classer ou interclasser des éléments de n'importe quelle façon.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi generici utilizzabili per qualsiasi classificazione e sottoclassificazione di elementi</desc>
+               <desc versionDate="2009-05-29" xml:lang="fr">fournit des attributs qui peuvent être utilisés pour classer ou interclasser des éléments de n'importe quelle façon.</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi generici utilizzabili per qualsiasi classificazione e sottoclassificazione di elementi.</desc>
                <classes/>
                <constraintSpec scheme="schematron" ident="subtypeTyped" xml:lang="en">
                   <constraint>
                      <sch:rule context="tei:*[@subtype]">
-                        <sch:assert test="@type">The <sch:name/> element should not be categorized in detail with @subtype unless also categorized in general with @type</sch:assert>
+                        <sch:assert test="@type">
+          The &lt;<sch:name/>&gt; element should not be categorized in detail with @subtype unless also categorized in general with @type.
+        </sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -146,7 +156,7 @@
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COXR">3.7. Simple Links and Cross-References</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONAAB">3.6.5. Abbreviations and Their Expansions</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COVE">3.13.1. Core Tags for Verse</ref>
-                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.5. Speech Contents</ref>
+                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.6. Speech Contents</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDIV1">4.1.1. Un-numbered Divisions</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDIV2">4.1.2. Numbered Divisions</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSHD">4.2.1. Headings and Trailers</ref>
@@ -174,6 +184,7 @@
     dans le système de codage TEI.</desc>
                <desc versionDate="2007-01-21" xml:lang="it">stabilisce un insieme di attributi comuni a tutti gli
     elementi dello schema di codifica TEI</desc>
+               <desc versionDate="2025-02-06" xml:lang="de">stellt gemeinsame Attribute für alle Elemente im TEI-Kodierungsschema bereit.</desc>
                <classes/>
                <attList>
                   <attDef ident="xml:lang" mode="replace">
@@ -197,6 +208,7 @@
                      <gloss versionDate="2007-07-02" xml:lang="en">identifier</gloss>
                      <gloss versionDate="2008-03-30" xml:lang="fr">identifiant</gloss>
                      <gloss versionDate="2007-11-06" xml:lang="it">identificatore</gloss>
+                     <gloss versionDate="2025-02-06" xml:lang="de">Identifikator</gloss>
                      <desc rend="replace" versionDate="2025-01-31" xml:lang="de">die ID des Elements</desc>
                      <desc rend="replace" versionDate="2025-01-31" xml:lang="en">the ID of the element</desc>
                      <desc rend="replace" versionDate="2025-01-31" xml:lang="fr">l’ID de l’élément</desc>
@@ -208,6 +220,7 @@
                      <gloss versionDate="2007-07-02" xml:lang="en">number</gloss>
                      <gloss versionDate="2008-03-30" xml:lang="fr">nombre</gloss>
                      <gloss versionDate="2007-11-06" xml:lang="it">numero</gloss>
+                     <gloss versionDate="2025-02-06" xml:lang="de">Nummer</gloss>
                      <desc rend="replace" versionDate="2025-01-31" xml:lang="de">die Nummerierung des
                     Elements</desc>
                      <desc rend="replace" versionDate="2025-01-31" xml:lang="en">the numbering of the
@@ -234,7 +247,7 @@
 or corporate bodies.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments qui contiennent des noms
       d'individus ou de personnes morales.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono nomi di individui o enti societari</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono nomi di individui o enti societari.</desc>
                <classes>
                   <memberOf key="model.nameLike"/>
                </classes>
@@ -290,7 +303,7 @@ or corporate bodies.</desc>
                <desc versionDate="2007-10-03" xml:lang="en">groups phrase-level elements which are typographically
   distinct and to which a specific function can be attributed.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments qui sont distingués visuellement, et auxquels on peut attribuer une signification  sémantique.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi a livello di sintagma tipograficamente distinti e ai quali è attribuibile una funzione specifica</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi a livello di sintagma tipograficamente distinti e ai quali è attribuibile una funzione specifica.</desc>
                <classes>
                   <memberOf key="model.highlighted"/>
                   <memberOf key="model.limitedPhrase"/>
@@ -366,7 +379,7 @@ Measures</ref>
                <desc versionDate="2007-10-03" xml:lang="en">groups elements containing examples or illustrations.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments contenant des exemples ou des
     illustrations.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi che contengono esempi o illustrazioni</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi che contengono esempi o illustrazioni.</desc>
                <classes>
                   <memberOf key="model.inter"/>
                </classes>
@@ -384,7 +397,7 @@ Measures</ref>
   similar objects.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments contenant des images, des
       formules et d'autres objets semblables.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono immagini, formule, esempi, e oggetti simili</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono immagini, formule, esempi, e oggetti simili.</desc>
                <classes>
                   <memberOf key="model.phrase"/>
                </classes>
@@ -438,7 +451,7 @@ Measures</ref>
 in transcribing and in authoring.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments de niveau expression, utilisés pour de
       simples interventions éditoriales utiles dans la transcription comme dans la rédaction.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi a livello di sintagma per semplici interventi editoriali, utili sia per il trascrittore che per l'autore</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi a livello di sintagma per semplici interventi editoriali, utili sia per il trascrittore che per l'autore.</desc>
                <classes>
                   <memberOf key="model.limitedPhrase"/>
                   <memberOf key="model.pPart.edit"/>
@@ -555,7 +568,7 @@ in transcribing and in authoring.</desc>
 elements used to represent reference systems.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments de type borne utilisés pour
       représenter des systèmes de référence.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi del tipo milestone utilizzati per rappresentare sistemi di riferimento</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi del tipo milestone utilizzati per rappresentare sistemi di riferimento.</desc>
                <classes>
                   <memberOf key="model.global"/>
                </classes>
@@ -574,7 +587,7 @@ Elements</ref>
                <desc versionDate="2007-10-03" xml:lang="en">groups elements used to represent individual non-Unicode characters or glyphs.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments utilisés pour représenter
     différents caractères non-Unicode ou différents glyphes.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi di cui è inframmezzato il testo che rapresentano oggetti non Unicode</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi di cui è inframmezzato il testo che rapresentano oggetti non Unicode.</desc>
                <classes>
                   <memberOf key="model.paraPart"/>
                </classes>
@@ -624,7 +637,7 @@ Elements</ref>
                        ident="model.specDescLike">
                <desc versionDate="2007-10-22" xml:lang="en">groups elements for referring to specification elements.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe les éléments pour se référer aux éléments de spécification.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi indicanti i componenti di una data specifica</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi indicanti i componenti di una data specifica.</desc>
                <classes>
                   <memberOf key="model.phrase"/>
                </classes>
@@ -642,7 +655,7 @@ Elements</ref>
                <desc versionDate="2005-10-10" xml:lang="en">groups elements containing a bibliographic description.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments contenant une description
       bibliographique.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono una descrizione bibliografica</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono una descrizione bibliografica.</desc>
                <classes>
                   <memberOf key="model.inter"/>
                </classes>
@@ -659,7 +672,7 @@ Elements</ref>
                <desc versionDate="2007-06-13" xml:lang="en">groups elements used to gloss or explain other parts of a document.</desc>
                <desc versionDate="2008-03-30" xml:lang="fr">regroupe des éléments employés pour gloser ou
 expliquer d'autres parties d'un document.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi utilizzati per spiegare o illustrare altre parti di un documento</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi utilizzati per spiegare o illustrare altre parti di un documento.</desc>
                <classes>
                   <memberOf key="model.inter"/>
                </classes>
@@ -673,7 +686,7 @@ expliquer d'autres parties d'un document.</desc>
                        ident="model.listLike">
                <desc versionDate="2007-10-03" xml:lang="en">groups list-like elements.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe les éléments de type liste.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi del tipo lista</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi del tipo lista.</desc>
                <classes>
                   <memberOf key="model.inter"/>
                </classes>
@@ -690,7 +703,7 @@ expliquer d'autres parties d'un document.</desc>
                        ident="model.noteLike">
                <desc versionDate="2007-10-03" xml:lang="en">groups globally-available note-like elements.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe tous les éléments globaux de type note.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi del tipo nota</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi del tipo nota.</desc>
                <classes>
                   <memberOf key="model.global"/>
                </classes>
@@ -708,7 +721,7 @@ expliquer d'autres parties d'un document.</desc>
                <desc versionDate="2005-11-08" xml:lang="en">groups elements representing metrical components such as verse lines.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments représentant des composants
    de la métrique comme des vers.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che rappresentano componenti metriche come i versi</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che rappresentano componenti metriche come i versi.</desc>
                <classes>
                   <memberOf key="model.divPart"/>
                   <memberOf key="model.paraPart"/>
@@ -1009,7 +1022,7 @@ expliquer d'autres parties d'un document.</desc>
                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                      xmlns:xi="http://www.w3.org/2001/XInclude"
                      versionDate="2007-01-21"
-                     xml:lang="it">definisce la gamma di valori di attributi che esprimono un grado di certezza</desc>
+                     xml:lang="it">definisce la gamma di valori di attributi che esprimono un grado di certezza.</desc>
                <content xmlns:rng="http://relaxng.org/ns/structure/1.0"
                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                         xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -1095,7 +1108,7 @@ resource, either within the current document or elsewhere.</desc>
                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                      xmlns:xi="http://www.w3.org/2001/XInclude"
                      versionDate="2007-01-21"
-                     xml:lang="it">definisce la gamma di valori di attributi usati per indicare un unico puntatore rispetto a qualsiasi altra risorsa all'interno del documento corrente o altrove</desc>
+                     xml:lang="it">definisce la gamma di valori di attributi usati per indicare un unico puntatore rispetto a qualsiasi altra risorsa all'interno del documento corrente o altrove.</desc>
                <content xmlns:rng="http://relaxng.org/ns/structure/1.0"
                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                         xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -1119,7 +1132,7 @@ resource, either within the current document or elsewhere.</desc>
                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                      xmlns:xi="http://www.w3.org/2001/XInclude"
                      versionDate="2007-01-21"
-                     xml:lang="it">definisce la gamma di valori di attributi espressi come singola parola o singolo token</desc>
+                     xml:lang="it">definisce la gamma di valori di attributi espressi come singola parola o singolo token.</desc>
                <content xmlns:rng="http://relaxng.org/ns/structure/1.0"
                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                         xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -1204,7 +1217,7 @@ resource, either within the current document or elsewhere.</desc>
                <gloss rend="replace" versionDate="2025-02-03" xml:lang="fr">paragraphe</gloss>
                <desc versionDate="2005-01-14" xml:lang="en">marks paragraphs in prose.</desc>
                <desc versionDate="2009-01-06" xml:lang="fr">marque les paragraphes dans un texte en prose.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">indica i paragrafi in prosa</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">indica i paragrafi in prosa.</desc>
                <desc versionDate="2016-11-24" xml:lang="de">markiert einen Absatz in einem Prosatext.</desc>
                <classes>
                   <memberOf key="model.pLike"/>
@@ -1218,7 +1231,7 @@ resource, either within the current document or elsewhere.</desc>
                   <constraint>
                      <sch:rule context="tei:p">
                         <sch:report test="(ancestor::tei:ab or ancestor::tei:p) and                        not( ancestor::tei:floatingText                           | parent::tei:exemplum                           | parent::tei:item                           | parent::tei:note                           | parent::tei:q                           | parent::tei:quote                           | parent::tei:remarks                           | parent::tei:said                           | parent::tei:sp                           | parent::tei:stage                           | parent::tei:cell                           | parent::tei:figure )">
-          Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.
+          Abstract model violation: Paragraphs may not occur inside other paragraphs or &lt;ab&gt; elements.
         </sch:report>
                      </sch:rule>
                   </constraint>
@@ -1229,14 +1242,14 @@ resource, either within the current document or elsewhere.</desc>
                   <constraint>
                      <sch:rule context="tei:l//tei:p">
                         <sch:assert test="ancestor::tei:floatingText | parent::tei:figure | parent::tei:note">
-          Abstract model violation: Metrical lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.
+          Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain higher-level structural elements such as &lt;div&gt;, &lt;p&gt;, or &lt;ab&gt;, unless &lt;p&gt; is a child of &lt;figure&gt; or &lt;note&gt;, or is a descendant of &lt;floatingText&gt;.
         </sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
                <listRef>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COPA">3.1. Paragraphs</ref>
-                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.5. Speech Contents</ref>
+                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.6. Speech Contents</ref>
                </listRef>
             </elementSpec>
             <elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -1250,7 +1263,7 @@ resource, either within the current document or elsewhere.</desc>
                <gloss rend="replace" versionDate="2025-02-03" xml:lang="fr">date</gloss>
                <desc versionDate="2005-01-14" xml:lang="en">contains a date in any format.</desc>
                <desc versionDate="2009-01-06" xml:lang="fr">contient une date exprimée dans n'importe quel format.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">contiene una data in qualsiasi foemato</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">contiene una data in qualsiasi foemato.</desc>
                <desc versionDate="2016-11-25" xml:lang="de">enthält ein Datum in beliebigem Format.</desc>
                <classes>
                   <memberOf key="att.datable.custom"/>
@@ -1493,7 +1506,7 @@ resource, either within the current document or elsewhere.</desc>
                         <valItem ident="main">
                            <desc versionDate="2007-06-27" xml:lang="en">main title</desc>
                            <desc versionDate="2008-03-30" xml:lang="fr">titre principal</desc>
-                           <desc versionDate="2007-01-21" xml:lang="it">titolo</desc>
+                           <desc versionDate="2007-01-21" xml:lang="it">titolo.</desc>
                            <desc versionDate="2017-06-04" xml:lang="de">Haupttitel</desc>
                         </valItem>
                         <valItem ident="sub">
@@ -1503,7 +1516,7 @@ resource, either within the current document or elsewhere.</desc>
                            <gloss versionDate="2017-06-04" xml:lang="de">untergeordnet</gloss>
                            <desc versionDate="2007-06-27" xml:lang="en">subtitle, title of part</desc>
                            <desc versionDate="2008-03-30" xml:lang="fr">sous-titre, titre de partie.</desc>
-                           <desc versionDate="2007-01-21" xml:lang="it">sottotitolo, titolo di una parte</desc>
+                           <desc versionDate="2007-01-21" xml:lang="it">sottotitolo, titolo di una parte.</desc>
                            <desc versionDate="2017-06-04" xml:lang="de">Untertitel oder Titel eines Teilbereichs</desc>
                         </valItem>
                         <valItem ident="alt">
@@ -1513,13 +1526,13 @@ resource, either within the current document or elsewhere.</desc>
                            <gloss versionDate="2017-06-04" xml:lang="de">alternativ</gloss>
                            <desc versionDate="2007-06-27" xml:lang="en">alternate title, often in another language, by which the work is also known</desc>
                            <desc versionDate="2008-03-30" xml:lang="fr">autre titre, souvent exprimé dans une autre langue, par lequel l'ouvrage est aussi connu</desc>
-                           <desc versionDate="2007-01-21" xml:lang="it">titolo alternativo, spesso in altra lingua, con il quale è anche conosciuta l'opera</desc>
+                           <desc versionDate="2007-01-21" xml:lang="it">titolo alternativo, spesso in altra lingua, con il quale è anche conosciuta l'opera.</desc>
                            <desc versionDate="2017-06-04" xml:lang="de">alternativer Titel, oft in einer anderen Sprache, unter dem das Werk auch bekannt ist.</desc>
                         </valItem>
                         <valItem ident="short">
                            <desc versionDate="2007-06-27" xml:lang="en">abbreviated form of title</desc>
                            <desc versionDate="2008-03-30" xml:lang="fr">forme abrégée du titre</desc>
-                           <desc versionDate="2007-01-21" xml:lang="it">abbreviazione del titolo</desc>
+                           <desc versionDate="2007-01-21" xml:lang="it">abbreviazione del titolo.</desc>
                            <desc versionDate="2017-06-04" xml:lang="de">Kurztitel</desc>
                         </valItem>
                         <valItem ident="desc">
@@ -1529,7 +1542,7 @@ resource, either within the current document or elsewhere.</desc>
                            <gloss versionDate="2017-06-04" xml:lang="de">beschreibend</gloss>
                            <desc versionDate="2007-06-27" xml:lang="en">descriptive paraphrase of the work functioning as a title</desc>
                            <desc versionDate="2008-03-30" xml:lang="fr">paraphrase descriptive de l'oeuvre fonctionnant comme un titre</desc>
-                           <desc versionDate="2007-01-21" xml:lang="it">parafrasi descrittiva dell'opera che funge da titolo</desc>
+                           <desc versionDate="2007-01-21" xml:lang="it">parafrasi descrittiva dell'opera che funge da titolo.</desc>
                            <desc versionDate="2017-06-04" xml:lang="de">Umschreibung des Werks, die als Titel fungiert.</desc>
                         </valItem>
                      </valList>
@@ -1554,7 +1567,7 @@ resource, either within the current document or elsewhere.</desc>
         bibliographic item.</desc>
                <desc versionDate="2009-01-06" xml:lang="fr">donne le nom de l'organisme responsable de la
         publication ou de la distribution d'un élément de la bibliographie.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">fornisce il nome</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">fornisce il nome.</desc>
                <desc versionDate="2017-06-13" xml:lang="de">gibt den Namen der Organisation an, die für die Veröffentlichung und Verbreitung eines
     bibliografischen Objekts verantwortlich ist.</desc>
                <classes/>
@@ -1604,6 +1617,13 @@ resource, either within the current document or elsewhere.</desc>
                <content>
                   <textNode/>
                </content>
+               <constraintSpec ident="bibl-is-declarable" scheme="schematron" xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:bibl"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <listRef>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBITY">3.12.1. Methods of Encoding Bibliographic References and Lists of References</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3">2.2.7. The Source Description</ref>
@@ -1650,6 +1670,13 @@ resource, either within the current document or elsewhere.</desc>
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
+               <constraintSpec ident="listBibl-is-declarable" scheme="schematron" xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:listBibl"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <listRef>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBITY">3.12.1. Methods of Encoding Bibliographic References and Lists of References</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3">2.2.7. The Source Description</ref>
@@ -1676,9 +1703,7 @@ resource, either within the current document or elsewhere.</desc>
     costituiscono un frontespizio elettronico che precede qualsiasi testo TEI-conforme.</desc>
                <classes/>
                <content>
-                  <sequence minOccurs="1" maxOccurs="1">
-                     <elementRef key="fileDesc"/>
-                  </sequence>
+                  <elementRef key="fileDesc"/>
                </content>
                <listRef>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD11">2.1.1. The TEI Header and Its Components</ref>
@@ -2061,6 +2086,15 @@ resource, either within the current document or elsewhere.</desc>
                <content>
                   <elementRef key="licence"/>
                </content>
+               <constraintSpec ident="availability-is-declarable"
+                               scheme="schematron"
+                               xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:availability"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <attList>
                   <attDef ident="status" mode="delete"/>
                </attList>
@@ -2233,6 +2267,13 @@ resource, either within the current document or elsewhere.</desc>
                      <elementRef key="idno" maxOccurs="2" minOccurs="2"/>
                   </sequence>
                </content>
+               <constraintSpec ident="seriesStmt-is-declarable" scheme="schematron" xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:seriesStmt"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <exemplum xml:id="ex-seriesStmt-de" xml:lang="de">
                   <p>
                 Beispiel für eine Reihenangabe
@@ -2311,6 +2352,13 @@ resource, either within the current document or elsewhere.</desc>
                <content>
                   <elementRef key="p"/>
                </content>
+               <constraintSpec ident="sourceDesc-is-declarable" scheme="schematron" xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:sourceDesc"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <listRef>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3">2.2.7. The Source Description</ref>
                </listRef>
@@ -2419,7 +2467,7 @@ resource, either within the current document or elsewhere.</desc>
                <gloss rend="replace" versionDate="2025-02-03" xml:lang="fr">nom d’organisation</gloss>
                <desc versionDate="2005-01-14" xml:lang="en">contains an organizational name.</desc>
                <desc versionDate="2009-03-19" xml:lang="fr">contient le nom d'une organisation.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">contiene il nome proprio di un'organizzazione</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">contiene il nome proprio di un'organizzazione.</desc>
                <classes>
                   <memberOf key="model.nameLike.agent"/>
                </classes>
@@ -2460,7 +2508,7 @@ resource, either within the current document or elsewhere.</desc>
                <gloss rend="replace" versionDate="2025-02-03" xml:lang="fr">nom de personne</gloss>
                <desc versionDate="2012-03-13" xml:lang="en">contains a proper noun or proper-noun phrase referring to a person, possibly including one or more of the person's forenames, surnames, honorifics, added names, etc.</desc>
                <desc versionDate="2008-12-09" xml:lang="fr">contient un nom propre ou une expression nominale se référant à une personne, pouvant inclure tout ou partie de ses prénoms, noms de famille, titres honorifiques, noms ajoutés, etc.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">contiene un nome proprio o un sintagma identificabile come nome proprio, che si riferisce a una persona e può includere qualsiasi o tutti i prenomi, cognomi, titoli onorifici, o nomi aggiunti della persona in questione</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">contiene un nome proprio o un sintagma identificabile come nome proprio, che si riferisce a una persona e può includere qualsiasi o tutti i prenomi, cognomi, titoli onorifici, o nomi aggiunti della persona in questione.</desc>
                <classes>
                   <memberOf key="model.nameLike.agent"/>
                </classes>
@@ -2689,7 +2737,7 @@ resource, either within the current document or elsewhere.</desc>
                <desc versionDate="2005-01-14" xml:lang="en">contains a subdivision of the front, body, or back of a text.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">contient une subdivision dans le texte préliminaire, dans le corps d’un texte ou dans le texte postliminaire.</desc>
                <desc versionDate="2017-06-13" xml:lang="de">enthält einen Unterabschnitt in Vorspann (front), Textkörper oder Nachspann (back) eines Textes.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">contiene una suddivisione del peritesto iniziale, del corpo del testo, o del peritesto finale</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">contiene una suddivisione del peritesto iniziale, del corpo del testo, o del peritesto finale.</desc>
                <classes/>
                <content>
                   <sequence minOccurs="1" maxOccurs="1">
@@ -2703,7 +2751,7 @@ resource, either within the current document or elsewhere.</desc>
                   <constraint>
                      <sch:rule context="tei:l//tei:div">
                         <sch:assert test="ancestor::tei:floatingText">
-          Abstract model violation: Metrical lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
+          Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain higher-level structural elements such as &lt;div&gt;, unless &lt;div&gt; is a descendant of &lt;floatingText&gt;.
         </sch:assert>
                      </sch:rule>
                   </constraint>
@@ -2714,7 +2762,7 @@ resource, either within the current document or elsewhere.</desc>
                   <constraint>
                      <sch:rule context="tei:div">
                         <sch:report test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
-          Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
+          Abstract model violation: &lt;p&gt; and &lt;ab&gt; may not contain higher-level structural elements such as &lt;div&gt;, unless &lt;div&gt; is a descendant of &lt;floatingText&gt;.
         </sch:report>
                      </sch:rule>
                   </constraint>
@@ -2921,7 +2969,7 @@ resource, either within the current document or elsewhere.</desc>
             elements</desc>
                <constraint>
                   <sch:pattern>
-                     <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'fw', 'handDesc',                     'head', 'hi', 'history', 'idno',                     'item', 'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'supportDesc', 'table', 'TEI',                     'teiHeader', 'text', 'textClass',                     'time', 'title', 'unclear',                     'witness')][not(*)]">
+                     <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc',                     'head', 'hi',                     'history', 'idno',                     'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI',                     'teiHeader', 'text',                     'textClass',                     'time', 'title',                     'unclear',                     'witness')][not(*)]">
                         <sch:assert test="string-length(normalize-space(.)) &gt; 0"> The element
                         <sch:name/> must not be empty. </sch:assert>
                      </sch:rule>
@@ -2990,6 +3038,21 @@ resource, either within the current document or elsewhere.</desc>
                   <sch:rule context="tei:TEI">
                      <sch:assert test="count(//@xml:id) = count(distinct-values(//@xml:id))"> All
                     values of @xml:id attributes in this document must be unique. </sch:assert>
+                  </sch:rule>
+               </constraint>
+            </constraintSpec>
+            <constraintSpec xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                            ident="ref-with-two-targets"
+                            scheme="schematron"
+                            xml:lang="en">
+               <desc versionDate="2026-10-26" xml:lang="en"> Constraint to ensure that multiple values
+            in @target are permitted only when the parent element is tei:note with
+            @type="text_comparison". </desc>
+               <constraint>
+                  <sch:rule context="tei:*[@target]">
+                     <sch:assert test="parent::tei:note[@type = 'text_comparison'] or                     count(tokenize(normalize-space(@target), '\s+')) = 1"> The @target
+                    attribute must contain exactly one value unless the parent element is tei:note
+                    with @type="text_comparison". </sch:assert>
                   </sch:rule>
                </constraint>
             </constraintSpec>
@@ -3470,19 +3533,6 @@ resource, either within the current document or elsewhere.</desc>
                               restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(((([A-Za-z0-9]+\.)*)([0-9]+)-1))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
                      <dataRef name="string"
                               restriction="urn:ssrq:[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
-                  </alternate>
-               </content>
-            </dataSpec>
-            <dataSpec rend="add"
-                      ident="ssrq.pointer.target"
-                      mode="add"
-                      module="ssrq.core.module">
-               <content>
-                  <alternate minOccurs="1" maxOccurs="1">
-                     <dataRef key="ssrq.pointer.doi"/>
-                     <dataRef key="ssrq.pointer.url"/>
-                     <dataRef key="ssrq.pointer.urn"/>
-                     <dataRef key="ssrq.pointer.id"/>
                   </alternate>
                </content>
             </dataSpec>

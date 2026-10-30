@@ -5,9 +5,9 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2026-03-26T20:23:05Z. . 
-TEI Edition: P5 Version 4.9.0. Last updated on 24th January 2025, revision f73186978 
-TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/ 
+Schema generated from ODD source 2026-10-30T13:03:01Z. . 
+TEI Edition: P5 Version 4.12.0a. Last updated on 27th July 2026, revision 497393620 
+TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/ 
   
 --><!--[https://creativecommons.org/licenses/by-nc-sa/4.0/] Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) -->
    <define name="ssrq.lang.de">
@@ -66,6 +66,31 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
       </choice>
    </define>
+   <define name="ssrq.pointer.doi">
+      <data type="string">
+         <param name="pattern">doi:10\.\d{4,6}/.*</param>
+      </data>
+   </define>
+   <define name="ssrq.pointer.url">
+      <data type="anyURI">
+         <param name="pattern">(https?|ftp)://[^\s/$.?#].[^\s]*</param>
+      </data>
+   </define>
+   <define name="ssrq.pointer.urn">
+      <choice>
+         <data type="string">
+            <param name="pattern">urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(((([A-Za-z0-9]+\.)*)([0-9]+)-1))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?</param>
+         </data>
+         <data type="string">
+            <param name="pattern">urn:ssrq:[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?</param>
+         </data>
+      </choice>
+   </define>
+   <define name="ssrq.pointer.id">
+      <data type="string">
+         <param name="pattern">id-ssrq-[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?</param>
+      </data>
+   </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="ssrq-lit-schema-att.pointing-targetLang-constraint-rule-1">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
@@ -73,7 +98,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
-         <sch:assert test="@target">@targetLang should only be used on <sch:name/> if @target is specified.</sch:assert>
+         <sch:assert test="@target">@targetLang should only be used on &lt;<sch:name/>&gt; if @target is specified.</sch:assert>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -83,7 +108,9 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@subtype]">
-         <sch:assert test="@type">The <sch:name/> element should not be categorized in detail with @subtype unless also categorized in general with @type</sch:assert>
+         <sch:assert test="@type">
+          The &lt;<sch:name/>&gt; element should not be categorized in detail with @subtype unless also categorized in general with @type.
+        </sch:assert>
       </sch:rule>
    </pattern>
    <define name="model.nameLike.agent">
@@ -910,7 +937,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/
    </define>
    <define name="p">
       <element name="p">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1. Paragraphs 7.2.5. Speech Contents]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1. Paragraphs 7.2.6. Speech Contents]</a:documentation>
          <text/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -919,7 +946,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:p">
                <sch:report test="(ancestor::tei:ab or ancestor::tei:p) and                        not( ancestor::tei:floatingText                           | parent::tei:exemplum                           | parent::tei:item                           | parent::tei:note                           | parent::tei:q                           | parent::tei:quote                           | parent::tei:remarks                           | parent::tei:said                           | parent::tei:sp                           | parent::tei:stage                           | parent::tei:cell                           | parent::tei:figure )">
-          Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.
+          Abstract model violation: Paragraphs may not occur inside other paragraphs or &lt;ab&gt; elements.
         </sch:report>
             </sch:rule>
          </pattern>
@@ -930,7 +957,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:l//tei:p">
                <sch:assert test="ancestor::tei:floatingText | parent::tei:figure | parent::tei:note">
-          Abstract model violation: Metrical lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.
+          Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain higher-level structural elements such as &lt;div&gt;, &lt;p&gt;, or &lt;ab&gt;, unless &lt;p&gt; is a child of &lt;figure&gt; or &lt;note&gt;, or is a descendant of &lt;floatingText&gt;.
         </sch:assert>
             </sch:rule>
          </pattern>
@@ -1341,7 +1368,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:l//tei:div">
                <sch:assert test="ancestor::tei:floatingText">
-          Abstract model violation: Metrical lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
+          Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain higher-level structural elements such as &lt;div&gt;, unless &lt;div&gt; is a descendant of &lt;floatingText&gt;.
         </sch:assert>
             </sch:rule>
          </pattern>
@@ -1352,7 +1379,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:div">
                <sch:report test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
-          Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
+          Abstract model violation: &lt;p&gt; and &lt;ab&gt; may not contain higher-level structural elements such as &lt;div&gt;, unless &lt;div&gt; is a descendant of &lt;floatingText&gt;.
         </sch:report>
             </sch:rule>
          </pattern>
@@ -1499,7 +1526,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/
    </sch:pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-      <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'fw', 'handDesc',                     'head', 'hi', 'history', 'idno',                     'item', 'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'supportDesc', 'table', 'TEI',                     'teiHeader', 'text', 'textClass',                     'time', 'title', 'unclear',                     'witness')][not(*)]">
+      <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc',                     'head', 'hi',                     'history', 'idno',                     'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI',                     'teiHeader', 'text',                     'textClass',                     'time', 'title',                     'unclear',                     'witness')][not(*)]">
          <sch:assert test="string-length(normalize-space(.)) &gt; 0"> The element
                         <sch:name/> must not be empty. </sch:assert>
       </sch:rule>
@@ -1541,6 +1568,16 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/
                 context="tei:TEI">
          <sch:assert test="count(//@xml:id) = count(distinct-values(//@xml:id))"> All
                     values of @xml:id attributes in this document must be unique. </sch:assert>
+      </sch:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="ssrq-lit-schema-ref-with-two-targets-constraint-rule-34">
+      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                context="tei:*[@target]">
+         <sch:assert test="parent::tei:note[@type = 'text_comparison'] or                     count(tokenize(normalize-space(@target), '\s+')) = 1"> The @target
+                    attribute must contain exactly one value unless the parent element is tei:note
+                    with @type="text_comparison". </sch:assert>
       </sch:rule>
    </pattern>
 </grammar>

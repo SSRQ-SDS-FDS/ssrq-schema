@@ -2,8 +2,8 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
      xmlns:xi="http://www.w3.org/2001/XInclude"
      xml:base=""
-     xml:lang="en"><?TEIVERSION P5 Version 4.9.0. Last updated on
-        24th January 2025, revision f73186978?>
+     xml:lang="en"><?TEIVERSION P5 Version 4.12.0a. Last updated on
+        27th July 2026, revision 497393620?>
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,8 +22,8 @@
             <publisher>
                     SSRQ-SDS-FDS
                 </publisher>
-            <date when="2026-03-26Z"/>
-            <idno>1.8.0</idno>
+            <date when="2026-10-30Z"/>
+            <idno>1.9.0</idno>
             <availability>
                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                         Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
@@ -89,6 +89,12 @@
                      <desc versionDate="2024-11-13" xml:lang="en">by</desc>
                      <desc versionDate="2024-11-13" xml:lang="fr">de</desc>
                      <desc versionDate="2024-11-13" xml:lang="it">da</desc>
+                  </valItem>
+                  <valItem ident="column">
+                     <desc versionDate="2026-04-30" xml:lang="de">Spalte</desc>
+                     <desc versionDate="2026-04-30" xml:lang="en">column</desc>
+                     <desc versionDate="2026-04-30" xml:lang="fr">colonne</desc>
+                     <desc versionDate="2026-04-30" xml:lang="it">colonna</desc>
                   </valItem>
                   <valItem ident="comments">
                      <desc versionDate="2024-11-13" xml:lang="de">Kommentar</desc>
@@ -691,6 +697,15 @@
                      <desc versionDate="2025-01-31" xml:lang="fr">altéré</desc>
                      <desc versionDate="2025-01-31" xml:lang="it">danneggiato</desc>
                   </valItem>
+                  <valItem ident="damage-overbinding">
+                     <desc versionDate="2026-05-05" xml:lang="de">Beschädigung durch
+                        verdeckenden Einband</desc>
+                     <desc versionDate="2026-05-05" xml:lang="en">damage by overbinding</desc>
+                     <desc versionDate="2026-05-05" xml:lang="fr">altéré par une reliure
+                        couvrante</desc>
+                     <desc versionDate="2026-05-05" xml:lang="it">danneggiato da una legatura
+                        coprente</desc>
+                  </valItem>
                   <valItem ident="date-content">
                      <desc versionDate="2025-02-21" xml:lang="de">Datierung Inhalt</desc>
                      <desc versionDate="2025-02-21" xml:lang="en">date of content</desc>
@@ -849,7 +864,7 @@
                      docLang="de en fr"
                      ident="ssrq-main-schema"
                      defaultExceptions="http://www.tei-c.org/ns/1.0 teix:egXML"
-                     source="https://www.tei-c.org/Vault/P5/4.9.0/xml/tei/odd/p5subset.xml">
+                     source="file:///home/runner/work/ssrq-schema/ssrq-schema/utils/schema/lib/tei_stylesheets/source/p5subset.xml">
             <classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                        rend="change"
@@ -1025,6 +1040,7 @@ Elements</ref>
                        type="atts"
                        ident="att.global.source">
                <desc versionDate="2021-08-22" xml:lang="en">provides attributes used by elements to point to an external source.</desc>
+               <desc versionDate="2025-02-06" xml:lang="de">stellt Attribute bereit, anhand derer die Elemente auf eine externe Quelle verweisen.</desc>
                <classes/>
                <constraintSpec scheme="schematron" ident="only_1_ODD_source" xml:lang="en">
                   <constraint>
@@ -1032,7 +1048,7 @@ Elements</ref>
                         <sch:let name="srcs" value="tokenize( normalize-space(@source),' ')"/>
                         <sch:report test="(   self::tei:classRef                                 | self::tei:dataRef                                 | self::tei:elementRef                                 | self::tei:macroRef                                 | self::tei:moduleRef                                 | self::tei:schemaSpec )                                   and                                   $srcs[2]">
               When used on a schema description element (like
-              <sch:value-of select="name(.)"/>), the @source attribute
+              &lt;<sch:value-of select="name(.)"/>&gt;), the @source attribute
               should have only 1 value. (This one has <sch:value-of select="count($srcs)"/>.)
             </sch:report>
                      </sch:rule>
@@ -1052,7 +1068,7 @@ Elements</ref>
                               <sch:let name="srcs" value="tokenize( normalize-space(@source),' ')"/>
                               <sch:report test="(   self::tei:classRef                                 | self::tei:dataRef                                 | self::tei:elementRef                                 | self::tei:macroRef                                 | self::tei:moduleRef                                 | self::tei:schemaSpec )                                   and                                   $srcs[2]">
               When used on a schema description element (like
-              <sch:value-of select="name(.)"/>), the @source attribute
+              &lt;<sch:value-of select="name(.)"/>&gt;), the @source attribute
               should have only 1 value. (This one has <sch:value-of select="count($srcs)"/>.)
             </sch:report>
                            </sch:rule>
@@ -1077,7 +1093,7 @@ Elements</ref>
   resource using a standard taxonomy.</desc>
                <desc versionDate="2009-05-27" xml:lang="fr">fournit des attributs pour spécifier le type de
 ressource informatique selon une taxinomie normalisée.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">indica degli attributi che specificano il tipo di risorsa informatica utilizzando una tassonomia standard</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">indica degli attributi che specificano il tipo di risorsa informatica utilizzando una tassonomia standard.</desc>
                <classes/>
                <attList>
                   <attDef ident="mimeType" mode="replace" usage="req">
@@ -1203,12 +1219,12 @@ ressource informatique selon une taxinomie normalisée.</desc>
                <desc versionDate="2016-01-15" xml:lang="en">provides a set of attributes used by all elements which point
   to other elements by means of one or more URI references.</desc>
                <desc versionDate="2016-02-15" xml:lang="fr">fournit un ensemble d'attributs utilisés par tous les éléments qui pointent vers d'autres éléments au moyen d'une ou de plusieurs références URI.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">definisce un insieme di attributi usati da tutti gli elementi che puntano ad altri elementi tramite uno o più URI</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">definisce un insieme di attributi usati da tutti gli elementi che puntano ad altri elementi tramite uno o più URI.</desc>
                <classes/>
                <constraintSpec ident="targetLang" scheme="schematron" xml:lang="en">
                   <constraint>
                      <sch:rule context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
-                        <sch:assert test="@target">@targetLang should only be used on <sch:name/> if @target is specified.</sch:assert>
+                        <sch:assert test="@target">@targetLang should only be used on &lt;<sch:name/>&gt; if @target is specified.</sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -1221,7 +1237,16 @@ ressource informatique selon une taxinomie normalisée.</desc>
                      <desc versionDate="2025-01-28" xml:lang="fr">un lien hypertexte, DOI ou une
                     référence interne</desc>
                      <datatype>
-                        <dataRef key="ssrq.pointer.target"/>
+                        <rng:choice>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.pointer.doi"/>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.pointer.url"/>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.pointer.id"/>
+                           <rng:list>
+                              <rng:oneOrMore>
+                                 <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.pointer.urn"/>
+                              </rng:oneOrMore>
+                           </rng:list>
+                        </rng:choice>
                      </datatype>
                   </attDef>
                </attList>
@@ -1293,7 +1318,7 @@ ressource informatique selon une taxinomie normalisée.</desc>
                        ident="att.spanning">
                <desc versionDate="2006-01-05" xml:lang="en">provides attributes for elements which delimit a span of text by pointing mechanisms rather than by enclosing it.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">fournit des attributs pour les éléments qui délimitent un passage de texte par des mécanismes de pointage plutôt qu'en entourant le passage.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi agli elementi che delimitano una porzione di testo utilizzando dei puntatori invece di racchiudere il testo stesso</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi agli elementi che delimitano una porzione di testo utilizzando dei puntatori invece di racchiudere il testo stesso.</desc>
                <classes/>
                <attList>
                   <attDef ident="spanTo" usage="req">
@@ -1315,7 +1340,6 @@ ressource informatique selon une taxinomie normalisée.</desc>
                </attList>
                <listRef>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHAD">12.3.1.4. Additions and Deletions</ref>
-                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STECAT">1.3.1. Attribute Classes</ref>
                </listRef>
             </classSpec>
             <classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -1327,14 +1351,15 @@ ressource informatique selon une taxinomie normalisée.</desc>
                        ident="att.typed"
                        predeclare="true">
                <desc versionDate="2007-10-02" xml:lang="en">provides attributes that can be used to classify or subclassify elements in any way.</desc>
-               <desc versionDate="2009-05-29" xml:lang="fr">fournit des attributs qui peuvent être
-      utilisés pour classer ou interclasser des éléments de n'importe quelle façon.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi generici utilizzabili per qualsiasi classificazione e sottoclassificazione di elementi</desc>
+               <desc versionDate="2009-05-29" xml:lang="fr">fournit des attributs qui peuvent être utilisés pour classer ou interclasser des éléments de n'importe quelle façon.</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi generici utilizzabili per qualsiasi classificazione e sottoclassificazione di elementi.</desc>
                <classes/>
                <constraintSpec scheme="schematron" ident="subtypeTyped" xml:lang="en">
                   <constraint>
                      <sch:rule context="tei:*[@subtype]">
-                        <sch:assert test="@type">The <sch:name/> element should not be categorized in detail with @subtype unless also categorized in general with @type</sch:assert>
+                        <sch:assert test="@type">
+          The &lt;<sch:name/>&gt; element should not be categorized in detail with @subtype unless also categorized in general with @type.
+        </sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -1358,7 +1383,7 @@ ressource informatique selon une taxinomie normalisée.</desc>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COXR">3.7. Simple Links and Cross-References</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONAAB">3.6.5. Abbreviations and Their Expansions</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COVE">3.13.1. Core Tags for Verse</ref>
-                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.5. Speech Contents</ref>
+                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.6. Speech Contents</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDIV1">4.1.1. Un-numbered Divisions</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDIV2">4.1.2. Numbered Divisions</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSHD">4.2.1. Headings and Trailers</ref>
@@ -1444,8 +1469,8 @@ ressource informatique selon une taxinomie normalisée.</desc>
                        ident="att.dimensions">
                <desc versionDate="2007-08-05" xml:lang="en">provides attributes for describing the size of physical objects.</desc>
                <desc versionDate="2009-05-25" xml:lang="fr">fournit des attributs pour décrire la taille des objets physiques.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">assegna degli attributi che descrivono la grandezza di
-    oggetti fisici</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">assegna degli attributi che descrivono la grandezza di oggetti fisici</desc>
+               <desc versionDate="2026-04-15" xml:lang="de">stellt Attribute zur Beschreibung der Größe von physischen Objekten bereit.</desc>
                <classes/>
                <attList>
                   <attDef ident="quantity" mode="replace">
@@ -1486,6 +1511,7 @@ ressource informatique selon une taxinomie normalisée.</desc>
     dans le système de codage TEI.</desc>
                <desc versionDate="2007-01-21" xml:lang="it">stabilisce un insieme di attributi comuni a tutti gli
     elementi dello schema di codifica TEI</desc>
+               <desc versionDate="2025-02-06" xml:lang="de">stellt gemeinsame Attribute für alle Elemente im TEI-Kodierungsschema bereit.</desc>
                <classes/>
                <attList>
                   <attDef ident="xml:lang" mode="replace">
@@ -1509,6 +1535,7 @@ ressource informatique selon une taxinomie normalisée.</desc>
                      <gloss versionDate="2007-07-02" xml:lang="en">identifier</gloss>
                      <gloss versionDate="2008-03-30" xml:lang="fr">identifiant</gloss>
                      <gloss versionDate="2007-11-06" xml:lang="it">identificatore</gloss>
+                     <gloss versionDate="2025-02-06" xml:lang="de">Identifikator</gloss>
                      <desc rend="replace" versionDate="2025-01-31" xml:lang="de">die ID des Elements</desc>
                      <desc rend="replace" versionDate="2025-01-31" xml:lang="en">the ID of the element</desc>
                      <desc rend="replace" versionDate="2025-01-31" xml:lang="fr">l’ID de l’élément</desc>
@@ -1520,6 +1547,7 @@ ressource informatique selon une taxinomie normalisée.</desc>
                      <gloss versionDate="2007-07-02" xml:lang="en">number</gloss>
                      <gloss versionDate="2008-03-30" xml:lang="fr">nombre</gloss>
                      <gloss versionDate="2007-11-06" xml:lang="it">numero</gloss>
+                     <gloss versionDate="2025-02-06" xml:lang="de">Nummer</gloss>
                      <desc rend="replace" versionDate="2025-01-31" xml:lang="de">die Nummerierung des
                     Elements</desc>
                      <desc rend="replace" versionDate="2025-01-31" xml:lang="en">the numbering of the
@@ -1543,7 +1571,7 @@ ressource informatique selon une taxinomie normalisée.</desc>
                        ident="att.handFeatures">
                <desc versionDate="2007-09-27" xml:lang="en">provides attributes describing aspects of the hand in which a manuscript is written.</desc>
                <desc versionDate="2008-03-30" xml:lang="fr">fournit des attributs décrivant les caractéristiques de la main par laquelle un manuscrit est écrit.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">indica degli attributi che descrivono aspetti delle mano utilizzata per la scrittura del manoscritto</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">indica degli attributi che descrivono aspetti delle mano utilizzata per la scrittura del manoscritto.</desc>
                <classes/>
                <attList>
                   <attDef ident="scribe" mode="replace">
@@ -1571,7 +1599,7 @@ ressource informatique selon une taxinomie normalisée.</desc>
                        ident="att.naming">
                <desc versionDate="2006-01-05" xml:lang="en">provides attributes common to elements which refer to named persons, places, organizations etc.</desc>
                <desc versionDate="2009-05-28" xml:lang="fr">fournit des attributs communs aux éléments qui font référence à des personnes, lieux, organismes, etc., nommés.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">identifica degli attributi comuni a elementi che si riferiscono a persone, luoghi, organizzazioni, ecc. indicati per nome</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">identifica degli attributi comuni a elementi che si riferiscono a persone, luoghi, organizzazioni, ecc. indicati per nome.</desc>
                <classes/>
                <attList>
                   <attDef ident="role" usage="opt">
@@ -1625,7 +1653,7 @@ ressource informatique selon une taxinomie normalisée.</desc>
 or corporate bodies.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments qui contiennent des noms
       d'individus ou de personnes morales.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono nomi di individui o enti societari</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono nomi di individui o enti societari.</desc>
                <classes>
                   <memberOf key="model.nameLike"/>
                </classes>
@@ -1678,7 +1706,7 @@ or corporate bodies.</desc>
                <desc versionDate="2007-10-03" xml:lang="en">groups phrase-level elements which are typographically
   distinct and to which a specific function can be attributed.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments qui sont distingués visuellement, et auxquels on peut attribuer une signification  sémantique.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi a livello di sintagma tipograficamente distinti e ai quali è attribuibile una funzione specifica</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi a livello di sintagma tipograficamente distinti e ai quali è attribuibile una funzione specifica.</desc>
                <classes>
                   <memberOf key="model.highlighted"/>
                   <memberOf key="model.limitedPhrase"/>
@@ -1750,7 +1778,7 @@ Measures</ref>
                <desc versionDate="2007-10-03" xml:lang="en">groups elements containing examples or illustrations.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments contenant des exemples ou des
     illustrations.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi che contengono esempi o illustrazioni</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi che contengono esempi o illustrazioni.</desc>
                <classes>
                   <memberOf key="model.inter"/>
                </classes>
@@ -1767,7 +1795,7 @@ Measures</ref>
   similar objects.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments contenant des images, des
       formules et d'autres objets semblables.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono immagini, formule, esempi, e oggetti simili</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono immagini, formule, esempi, e oggetti simili.</desc>
                <classes>
                   <memberOf key="model.phrase"/>
                </classes>
@@ -1818,7 +1846,7 @@ Measures</ref>
 in transcribing and in authoring.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments de niveau expression, utilisés pour de
       simples interventions éditoriales utiles dans la transcription comme dans la rédaction.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi a livello di sintagma per semplici interventi editoriali, utili sia per il trascrittore che per l'autore</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi a livello di sintagma per semplici interventi editoriali, utili sia per il trascrittore che per l'autore.</desc>
                <classes>
                   <memberOf key="model.limitedPhrase"/>
                   <memberOf key="model.pPart.edit"/>
@@ -1929,7 +1957,7 @@ in transcribing and in authoring.</desc>
 elements used to represent reference systems.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments de type borne utilisés pour
       représenter des systèmes de référence.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi del tipo milestone utilizzati per rappresentare sistemi di riferimento</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi del tipo milestone utilizzati per rappresentare sistemi di riferimento.</desc>
                <classes>
                   <memberOf key="model.global"/>
                </classes>
@@ -1947,7 +1975,7 @@ Elements</ref>
                <desc versionDate="2007-10-03" xml:lang="en">groups elements used to represent individual non-Unicode characters or glyphs.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments utilisés pour représenter
     différents caractères non-Unicode ou différents glyphes.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi di cui è inframmezzato il testo che rapresentano oggetti non Unicode</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi di cui è inframmezzato il testo che rapresentano oggetti non Unicode.</desc>
                <classes>
                   <memberOf key="model.paraPart"/>
                </classes>
@@ -1994,7 +2022,7 @@ Elements</ref>
                        ident="model.specDescLike">
                <desc versionDate="2007-10-22" xml:lang="en">groups elements for referring to specification elements.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe les éléments pour se référer aux éléments de spécification.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi indicanti i componenti di una data specifica</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi indicanti i componenti di una data specifica.</desc>
                <classes>
                   <memberOf key="model.phrase"/>
                </classes>
@@ -2011,7 +2039,7 @@ Elements</ref>
                <desc versionDate="2005-10-10" xml:lang="en">groups elements containing a bibliographic description.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments contenant une description
       bibliographique.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono una descrizione bibliografica</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che contengono una descrizione bibliografica.</desc>
                <classes>
                   <memberOf key="model.inter"/>
                </classes>
@@ -2027,7 +2055,7 @@ Elements</ref>
                <desc versionDate="2007-06-13" xml:lang="en">groups elements used to gloss or explain other parts of a document.</desc>
                <desc versionDate="2008-03-30" xml:lang="fr">regroupe des éléments employés pour gloser ou
 expliquer d'autres parties d'un document.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi utilizzati per spiegare o illustrare altre parti di un documento</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi utilizzati per spiegare o illustrare altre parti di un documento.</desc>
                <classes>
                   <memberOf key="model.inter"/>
                </classes>
@@ -2040,7 +2068,7 @@ expliquer d'autres parties d'un document.</desc>
                        ident="model.listLike">
                <desc versionDate="2007-10-03" xml:lang="en">groups list-like elements.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe les éléments de type liste.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi del tipo lista</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi del tipo lista.</desc>
                <classes>
                   <memberOf key="model.inter"/>
                </classes>
@@ -2056,7 +2084,7 @@ expliquer d'autres parties d'un document.</desc>
                        ident="model.noteLike">
                <desc versionDate="2007-10-03" xml:lang="en">groups globally-available note-like elements.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe tous les éléments globaux de type note.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi del tipo nota</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi del tipo nota.</desc>
                <classes>
                   <memberOf key="model.global"/>
                </classes>
@@ -2073,7 +2101,7 @@ expliquer d'autres parties d'un document.</desc>
                <desc versionDate="2005-11-08" xml:lang="en">groups elements representing metrical components such as verse lines.</desc>
                <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments représentant des composants
    de la métrique comme des vers.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che rappresentano componenti metriche come i versi</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che rappresentano componenti metriche come i versi.</desc>
                <classes>
                   <memberOf key="model.divPart"/>
                   <memberOf key="model.paraPart"/>
@@ -2355,7 +2383,7 @@ expliquer d'autres parties d'un document.</desc>
                <desc xmlns:rng="http://relaxng.org/ns/structure/1.0"
                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                      versionDate="2007-01-21"
-                     xml:lang="it">definisce la gamma di valori di attributi che esprimono un grado di certezza</desc>
+                     xml:lang="it">definisce la gamma di valori di attributi che esprimono un grado di certezza.</desc>
                <content xmlns:rng="http://relaxng.org/ns/structure/1.0"
                         xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                   <valList type="closed">
@@ -2429,7 +2457,7 @@ resource, either within the current document or elsewhere.</desc>
                <desc xmlns:rng="http://relaxng.org/ns/structure/1.0"
                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                      versionDate="2007-01-21"
-                     xml:lang="it">definisce la gamma di valori di attributi usati per indicare un unico puntatore rispetto a qualsiasi altra risorsa all'interno del documento corrente o altrove</desc>
+                     xml:lang="it">definisce la gamma di valori di attributi usati per indicare un unico puntatore rispetto a qualsiasi altra risorsa all'interno del documento corrente o altrove.</desc>
                <content xmlns:rng="http://relaxng.org/ns/structure/1.0"
                         xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                   <dataRef restriction="\S+" name="anyURI"/>
@@ -2449,7 +2477,7 @@ resource, either within the current document or elsewhere.</desc>
                <desc xmlns:rng="http://relaxng.org/ns/structure/1.0"
                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                      versionDate="2007-01-21"
-                     xml:lang="it">definisce la gamma di valori di attributi espressi come singola parola o singolo token</desc>
+                     xml:lang="it">definisce la gamma di valori di attributi espressi come singola parola o singolo token.</desc>
                <content xmlns:rng="http://relaxng.org/ns/structure/1.0"
                         xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                   <dataRef name="token" restriction="[^\p{C}\p{Z}]+"/>
@@ -2533,7 +2561,7 @@ resource, either within the current document or elsewhere.</desc>
                        ident="att.duration.iso">
                <desc versionDate="2012-12-26" xml:lang="en">provides attributes for recording normalized temporal durations.</desc>
                <desc versionDate="2008-12-09" xml:lang="fr">attributs pour l'enregistrement de durées temporelles normalisées.</desc>
-               <desc versionDate="2007-11-06" xml:lang="it">attributi per registrare durate temporali normalizzate</desc>
+               <desc versionDate="2007-11-06" xml:lang="it">attributi per registrare durate temporali normalizzate.</desc>
                <classes/>
                <attList>
                   <attDef ident="dur-iso" usage="opt">
@@ -2625,7 +2653,7 @@ resource, either within the current document or elsewhere.</desc>
                   <constraint>
                      <sch:rule context="tei:p">
                         <sch:report test="(ancestor::tei:ab or ancestor::tei:p) and                        not( ancestor::tei:floatingText                           | parent::tei:exemplum                           | parent::tei:item                           | parent::tei:note                           | parent::tei:q                           | parent::tei:quote                           | parent::tei:remarks                           | parent::tei:said                           | parent::tei:sp                           | parent::tei:stage                           | parent::tei:cell                           | parent::tei:figure )">
-          Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.
+          Abstract model violation: Paragraphs may not occur inside other paragraphs or &lt;ab&gt; elements.
         </sch:report>
                      </sch:rule>
                   </constraint>
@@ -2636,7 +2664,7 @@ resource, either within the current document or elsewhere.</desc>
                   <constraint>
                      <sch:rule context="tei:l//tei:p">
                         <sch:assert test="ancestor::tei:floatingText | parent::tei:figure | parent::tei:note">
-          Abstract model violation: Metrical lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.
+          Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain higher-level structural elements such as &lt;div&gt;, &lt;p&gt;, or &lt;ab&gt;, unless &lt;p&gt; is a child of &lt;figure&gt; or &lt;note&gt;, or is a descendant of &lt;floatingText&gt;.
         </sch:assert>
                      </sch:rule>
                   </constraint>
@@ -2800,7 +2828,7 @@ resource, either within the current document or elsewhere.</desc>
                </remarks>
                <listRef>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COPA">3.1. Paragraphs</ref>
-                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.5. Speech Contents</ref>
+                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.6. Speech Contents</ref>
                </listRef>
             </elementSpec>
             <elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -2822,9 +2850,9 @@ resource, either within the current document or elsewhere.</desc>
                   <memberOf key="att.global"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <attList>
                   <attDef ident="n" mode="delete"/>
@@ -2917,9 +2945,9 @@ resource, either within the current document or elsewhere.</desc>
                   <memberOf key="model.hiLike"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <attList>
                   <attDef ident="rend" mode="replace" usage="req">
@@ -3100,15 +3128,23 @@ resource, either within the current document or elsewhere.</desc>
                   <memberOf key="model.quoteLike"/>
                </classes>
                <content>
-                  <alternate minOccurs="1" maxOccurs="1">
-                     <alternate minOccurs="1" maxOccurs="1">
-                        <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
-                        <elementRef key="p" maxOccurs="unbounded" minOccurs="2"/>
-                     </alternate>
-                     <sequence minOccurs="1" maxOccurs="unbounded">
-                        <macroRef key="ssrq.content.default"/>
-                     </sequence>
-                  </alternate>
+                  <choice xmlns="http://relaxng.org/ns/structure/1.0">
+                     <group>
+                        <ref name="seg"/>
+                        <oneOrMore>
+                           <ref name="seg"/>
+                        </oneOrMore>
+                     </group>
+                     <group>
+                        <ref name="p"/>
+                        <oneOrMore>
+                           <ref name="p"/>
+                        </oneOrMore>
+                     </group>
+                     <oneOrMore>
+                        <ref name="ssrq.content.default"/>
+                     </oneOrMore>
+                  </choice>
                </content>
                <constraintSpec ident="sch-el-quote"
                                mode="add"
@@ -3279,9 +3315,9 @@ resource, either within the current document or elsewhere.</desc>
                   <memberOf key="model.hiLike"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <attList>
                   <attDef ident="type" mode="delete"/>
@@ -3406,9 +3442,9 @@ resource, either within the current document or elsewhere.</desc>
                   <memberOf key="model.emphLike"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <constraintSpec ident="sch-el-term" scheme="schematron" xml:lang="en">
                   <desc versionDate="2023-11-07" xml:lang="en">constraint for tei:term</desc>
@@ -3710,9 +3746,9 @@ resource, either within the current document or elsewhere.</desc>
                   <memberOf key="model.pPart.transcriptional"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <attList>
                   <attDef ident="cert" mode="delete"/>
@@ -3935,9 +3971,9 @@ resource, either within the current document or elsewhere.</desc>
                   <memberOf key="model.pPart.transcriptional"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <attList>
                   <attDef ident="n" mode="delete"/>
@@ -4000,6 +4036,8 @@ Normalization</ref>
                         <sch:rule context="tei:gap[parent::tei:damage]">
                            <sch:report test="@reason" xml:lang="en"> If tei:gap is a child of tei:damage,
                     @reason cannot be specified. </sch:report>
+                           <sch:report test="@source" xml:lang="en"> If tei:gap is a child of tei:damage,
+                    @source cannot be specified. </sch:report>
                            <sch:assert test="@unit and @quantity" xml:lang="en"> If tei:gap is a child of
                     tei:damage, @unit and @quantity need to specified. </sch:assert>
                         </sch:rule>
@@ -4087,7 +4125,7 @@ Normalization</ref>
                </exemplum>
                <exemplum xml:id="ex-gap-missing-fr" xml:lang="fr">
                   <p>
-                Exemple d’un texte manquant qui n’est pas présent dans le document rétro-numérisé
+                Exemple d’un texte manquant qui n’est pas présent dans le document rétronumérisé
             </p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <gap reason="missing"/>
@@ -4259,7 +4297,7 @@ Normalization</ref>
             <gi>gap</gi>, mais seulement <gi>supplied</gi>.
         </p>
                   <p>
-            Les lacunes dans les textes rétro-numérisés sont signalés par <tag>gap
+            Les lacunes dans les textes rétronumérisés sont signalés par <tag>gap
             reason="missing"</tag> (p. ex. dans SDS NE 1).
         </p>
                </remarks>
@@ -4287,17 +4325,39 @@ Normalization</ref>
                   <memberOf key="model.pPart.transcriptional"/>
                </classes>
                <content>
-                  <alternate minOccurs="1" maxOccurs="1">
-                     <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
-                     <sequence minOccurs="1" maxOccurs="1">
-                        <elementRef key="head" minOccurs="0"/>
-                        <elementRef key="p" maxOccurs="unbounded"/>
-                     </sequence>
-                     <sequence minOccurs="1" maxOccurs="unbounded">
-                        <macroRef key="ssrq.content.default"/>
-                     </sequence>
-                  </alternate>
+                  <choice xmlns="http://relaxng.org/ns/structure/1.0">
+                     <group>
+                        <ref name="seg"/>
+                        <oneOrMore>
+                           <ref name="seg"/>
+                        </oneOrMore>
+                     </group>
+                     <group>
+                        <optional>
+                           <ref name="head"/>
+                        </optional>
+                        <oneOrMore>
+                           <ref name="p"/>
+                        </oneOrMore>
+                     </group>
+                     <oneOrMore>
+                        <ref name="ssrq.content.default"/>
+                     </oneOrMore>
+                  </choice>
                </content>
+               <constraintSpec ident="sch-add" scheme="schematron" xml:lang="en">
+                  <desc versionDate="2026-10-28" xml:lang="en">constraints for tei:add</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:add[tei:del]">
+                           <sch:assert test="*[not(self::tei:del)] or text()[normalize-space(.) !=                     '']"
+                                       xml:lang="en"> A tei:add element containing tei:del must also
+                    contain non-whitespace text or at least one child element other than tei:del.
+                    </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <attList>
                   <attDef ident="place" mode="replace" usage="req">
                      <desc versionDate="2025-02-04" xml:lang="de">der Ort der Hinzufügung</desc>
@@ -4661,16 +4721,25 @@ Normalization</ref>
                   <memberOf key="model.pPart.transcriptional"/>
                </classes>
                <content>
-                  <alternate minOccurs="1" maxOccurs="1">
-                     <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
-                     <sequence minOccurs="1" maxOccurs="1">
-                        <elementRef key="head" minOccurs="0"/>
-                        <elementRef key="p" maxOccurs="unbounded"/>
-                     </sequence>
-                     <sequence minOccurs="1" maxOccurs="unbounded">
-                        <macroRef key="ssrq.content.default"/>
-                     </sequence>
-                  </alternate>
+                  <choice xmlns="http://relaxng.org/ns/structure/1.0">
+                     <group>
+                        <ref name="seg"/>
+                        <oneOrMore>
+                           <ref name="seg"/>
+                        </oneOrMore>
+                     </group>
+                     <group>
+                        <optional>
+                           <ref name="head"/>
+                        </optional>
+                        <oneOrMore>
+                           <ref name="p"/>
+                        </oneOrMore>
+                     </group>
+                     <oneOrMore>
+                        <ref name="ssrq.content.default"/>
+                     </oneOrMore>
+                  </choice>
                </content>
                <attList>
                   <attDef ident="rend" mode="replace">
@@ -4882,9 +4951,9 @@ Normalization</ref>
                   <memberOf key="att.global.responsibility"/>
                </classes>
                <content>
-                  <sequence minOccurs="0" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <attList>
                   <attDef ident="reason" mode="delete"/>
@@ -5164,7 +5233,7 @@ Measures</ref>
                         </sch:rule>
                         <sch:rule context="tei:measure[@type = 'area']">
                            <sch:let name="area"
-                                    value="&#34;fauchée|Gertel|Hube|Juchart|Kammer|Klafter|Kuhsömmerung|Kuhwinterung|Mal|Mannmad|Mannwerk|Mitmal|Mütt|Rute|Schuh|Schuppose|Staffel|Tagwen|Zeile|Vierling&#34;"/>
+                                    value="&#34;fauchée|Gertel|Haufen|Hube|Juchart|Kammer|Klafter|Kuhsömmerung|Kuhwinterung|Mal|Manngrab|Mannmad|Mannwerk|Mitmal|Mütt|Rute|Schuh|Schuppose|Staffel|Tagwen|Zeile|Vierling&#34;"/>
                            <sch:assert test="matches(@unit, concat('^', $area, '$'))">
                     "
                         <sch:value-of select="./@unit"/>
@@ -5205,7 +5274,7 @@ Measures</ref>
                         </sch:rule>
                         <sch:rule context="tei:measure[@type = 'volume']">
                            <sch:let name="volume"
-                                    value="&#34;Becher|Bosse|Brenten|Eimer|Fass|Fuder|Garbe|Immi|Kanne|Klafter|Kopf|Kratten|Kröttli|Ledi|Legel|Malter|Mass|Metzen|Mäss|Mässli|Mütt|Quart|Quartane|Röhrchen|Sack|Saum|Schaffen|Scheffel|Scheibe|Sechzehner|Sester|Ster|Stuck|Tonne|Trinken|Vierdung|Vierling|Viertel|Zuber|carica|water&#34;"/>
+                                    value="&#34;Becher|Bosse|Brenten|Eimer|Fass|Fuder|Garbe|Immi|Kanne|Klafter|Kopf|Kratten|Kröttli|Ledi|Legel|Malter|Mass|Metzen|Mäss|Mässli|Mütt|Quart|Quartane|Röhrchen|Sack|Saum|Schaffen|Scheffel|Scheibe|Sechzehner|Sester|Staffel|Stauf|Ster|Stuck|Tonne|Trinken|Vierdung|Vierling|Viertel|Zuber|carica&#34;"/>
                            <sch:assert test="matches(@unit, concat('^', $volume,                     '$'))"> "
                         <sch:value-of select="./@unit"/>
                         " is not a valid capacity unit – you need to choose from the following
@@ -5481,6 +5550,8 @@ Measures</ref>
                         <sch:rule context="tei:measureGrp">
                            <sch:assert test="count(.//tei:measure) &gt; 1" xml:lang="en"> tei:measureGrp
                     should have at least two tei:measures as descendants. </sch:assert>
+                           <sch:assert test="count(distinct-values(.//tei:measure/@type)) = 1" xml:lang="en">All tei:measure elements within a tei:measureGrp should have the
+                    same @type value.</sch:assert>
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
@@ -6145,9 +6216,9 @@ Measures</ref>
                   <memberOf key="att.duration.iso"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <attList>
                   <attDef ident="dur-iso" mode="change">
@@ -6741,7 +6812,7 @@ Measures</ref>
                <remarks versionDate="2025-02-06" xml:lang="fr">
                   <p>
             Le renvoi peut pointer vers un autre document, l’introduction, le registre d’un volume
-            rétro-numérisé, une entrée du DHS, une littérature citée, etc.
+            rétronumérisé, une entrée du DHS, une littérature citée, etc.
         </p>
                   <p>
             Les référence à des sources non éditées, mais répertoriées dans un système
@@ -6810,7 +6881,11 @@ Measures</ref>
                                xml:lang="en">
                   <constraint>
                      <sch:rule context="tei:list[@type='gloss']">
-                        <sch:assert test="tei:label">The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element</sch:assert>
+                        <sch:assert test="tei:label">
+          The content of a "gloss" list should include a sequence of
+          one or more pairs of a &lt;label&gt; element followed by an
+          &lt;item&gt; element.
+        </sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -7183,9 +7258,9 @@ Measures</ref>
                   <memberOf key="model.labelLike"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <constraintSpec ident="sch-el-label" scheme="schematron" xml:lang="en">
                   <desc versionDate="2023-05-25" xml:lang="en">constraint for tei:label</desc>
@@ -8066,7 +8141,7 @@ Elements</ref>
                <listRef>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CORS5">3.11.3. Milestone
 Elements</ref>
-                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.5. Speech Contents</ref>
+                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.6. Speech Contents</ref>
                </listRef>
             </elementSpec>
             <elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -8763,6 +8838,13 @@ Elements</ref>
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
+               <constraintSpec ident="bibl-is-declarable" scheme="schematron" xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:bibl"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <attList>
                   <attDef ident="n" mode="delete"/>
                   <attDef ident="xml:id" mode="change">
@@ -8902,6 +8984,13 @@ Elements</ref>
                <content>
                   <elementRef key="bibl" maxOccurs="unbounded"/>
                </content>
+               <constraintSpec ident="listBibl-is-declarable" scheme="schematron" xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:listBibl"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <attList>
                   <attDef ident="type" mode="change" usage="req">
                      <desc versionDate="2025-01-29" xml:lang="de">der Typ der Liste bibliographischer
@@ -9270,7 +9359,7 @@ Elements</ref>
                        ident="att.tableDecoration">
                <desc versionDate="2006-04-17" xml:lang="en">provides attributes used to decorate rows or cells of a table.</desc>
                <desc versionDate="2009-05-28" xml:lang="fr">fournit des attributs pour mettre en forme les lignes ou les cellules d'un tableau.</desc>
-               <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi utilizzati per decorare righe e celle di una tabella</desc>
+               <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi utilizzati per decorare righe e celle di una tabella.</desc>
                <classes/>
                <attList>
                   <attDef ident="role" mode="replace">
@@ -9607,9 +9696,9 @@ Elements</ref>
                   <memberOf key="att.tableDecoration"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <attList>
                   <attDef ident="rend" mode="replace">
@@ -10675,6 +10764,15 @@ Elements</ref>
                <content>
                   <elementRef key="licence"/>
                </content>
+               <constraintSpec ident="availability-is-declarable"
+                               scheme="schematron"
+                               xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:availability"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <attList>
                   <attDef ident="status" mode="delete"/>
                </attList>
@@ -10845,6 +10943,13 @@ Elements</ref>
                      <elementRef key="idno" maxOccurs="2" minOccurs="2"/>
                   </sequence>
                </content>
+               <constraintSpec ident="seriesStmt-is-declarable" scheme="schematron" xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:seriesStmt"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <exemplum xml:id="ex-seriesStmt-de" xml:lang="de">
                   <p>
                 Beispiel für eine Reihenangabe
@@ -10920,6 +11025,13 @@ Elements</ref>
                      <elementRef key="listWit"/>
                   </alternate>
                </content>
+               <constraintSpec ident="sourceDesc-is-declarable" scheme="schematron" xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:sourceDesc"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <exemplum xml:id="ex-sourceDesc-msDesc-de" xml:lang="de">
                   <p>
                 Beispiel für eine Quellenbeschreibung mit einem Textzeugen
@@ -11106,6 +11218,15 @@ Elements</ref>
                     a tei:ref as a child. </sch:assert>
                            <sch:assert test="./tei:p/tei:ref[@target='https://p.ssrq-sds-fds.ch/guidelines/transcription']"> The link inside tei:editorialDecl must point to the latest transcription guidelines: &lt;p&gt;&lt;ref target="https://p.ssrq-sds-fds.ch/guidelines/transcription"/&gt;&lt;/p&gt;. </sch:assert>
                         </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec ident="editorialDecl-is-declarable"
+                               scheme="schematron"
+                               xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:editorialDecl"/>
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
@@ -11392,6 +11513,13 @@ Elements</ref>
                <content>
                   <elementRef key="keywords"/>
                </content>
+               <constraintSpec ident="textClass-is-declarable" scheme="schematron" xml:lang="en">
+                  <constraint>
+                     <sch:pattern is-a="declarable">
+                        <sch:param name="tde" value="tei:textClass"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <exemplum xml:id="ex-textClass-de" xml:lang="de">
                   <p>
                 Beispiel für den Aufbau der Textklassifikation
@@ -11544,9 +11672,23 @@ Elements</ref>
                   <memberOf key="model.pLike"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <choice xmlns="http://relaxng.org/ns/structure/1.0">
+                     <oneOrMore>
+                        <ref name="ssrq.content.default"/>
+                     </oneOrMore>
+                     <group>
+                        <ref name="p"/>
+                        <oneOrMore>
+                           <ref name="p"/>
+                        </oneOrMore>
+                     </group>
+                     <group>
+                        <ref name="seg"/>
+                        <oneOrMore>
+                           <ref name="seg"/>
+                        </oneOrMore>
+                     </group>
+                  </choice>
                </content>
                <constraintSpec ident="sch-el-ab" scheme="schematron" xml:lang="en">
                   <desc versionDate="2025-05-08" xml:lang="en">constraints for tei:ab</desc>
@@ -11578,7 +11720,7 @@ Elements</ref>
                   <constraint>
                      <sch:rule context="tei:l//tei:ab">
                         <sch:assert test="ancestor::tei:floatingText | parent::tei:figure | parent::tei:note">
-          Abstract model violation: Metrical lines may not contain higher-level divisions such as p or ab, unless ab is a child of figure or note, or is a descendant of floatingText.
+          Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain higher-level divisions such as &lt;p&gt; or &lt;ab&gt;, unless &lt;ab&gt; is a child of &lt;figure&gt; or &lt;note&gt;, or is a descendant of &lt;floatingText&gt;.
         </sch:assert>
                      </sch:rule>
                   </constraint>
@@ -11926,21 +12068,28 @@ Elements</ref>
                   <memberOf key="model.segLike"/>
                </classes>
                <content>
-                  <alternate minOccurs="1" maxOccurs="1">
-                     <alternate minOccurs="1" maxOccurs="unbounded">
-                        <elementRef key="add"/>
-                        <elementRef key="cb"/>
-                        <elementRef key="head"/>
-                        <elementRef key="list"/>
-                        <elementRef key="p"/>
-                        <elementRef key="pb"/>
-                        <elementRef key="table"/>
-                     </alternate>
-                     <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
-                     <sequence minOccurs="1" maxOccurs="unbounded">
-                        <macroRef key="ssrq.content.default"/>
-                     </sequence>
-                  </alternate>
+                  <choice xmlns="http://relaxng.org/ns/structure/1.0">
+                     <oneOrMore>
+                        <choice>
+                           <ref name="add"/>
+                           <ref name="cb"/>
+                           <ref name="head"/>
+                           <ref name="list"/>
+                           <ref name="p"/>
+                           <ref name="pb"/>
+                           <ref name="table"/>
+                        </choice>
+                     </oneOrMore>
+                     <group>
+                        <ref name="seg"/>
+                        <oneOrMore>
+                           <ref name="seg"/>
+                        </oneOrMore>
+                     </group>
+                     <oneOrMore>
+                        <ref name="ssrq.content.default"/>
+                     </oneOrMore>
+                  </choice>
                </content>
                <attList>
                   <attDef ident="n" mode="change">
@@ -12137,7 +12286,7 @@ Elements</ref>
                <listRef>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SASE">17.3. Blocks, Segments, and Anchors</ref>
                   <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html#VESE">6.2. Components of the Verse Line</ref>
-                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.5. Speech Contents</ref>
+                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.6. Speech Contents</ref>
                </listRef>
             </elementSpec>
             <elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -12225,7 +12374,7 @@ Elements</ref>
         <!-- Note: This rule applies to <msContents>, <physDesc>,
              <history>, and <additional> wherever they occur. Luckily
              they are only allowed in places where they are
-             constrained to 0 or 1 occurence. If that changes someday,
+             constrained to 0 or 1 occurrence. If that changes someday,
              this constraint may will likely need to be updated,
              too. -->
         <!-- Also worth noting that
@@ -12234,10 +12383,10 @@ Elements</ref>
              concrete rules in the individual <elementSpec>s; and
              b) I did not test for the existence of "../*[name(.) eq
              $gi][2]" because then an error would be generated for
-             each of the multiple occurences of $gi. -->
+             each of the multiple occurrences of $gi. -->
                         <sch:let name="gi" value="name(.)"/>
                         <sch:report test="preceding-sibling::*[ name(.) eq $gi ]                           and                           not( following-sibling::*[ name(.) eq $gi ] )">
-          Only one <sch:name/> is allowed as a child of <sch:value-of select="name(..)"/>.
+          Only one &lt;<sch:name/>&gt; is allowed as a child of &lt;<sch:value-of select="name(..)"/>&gt;.
         </sch:report>
                      </sch:rule>
                   </constraint>
@@ -12372,17 +12521,17 @@ Elements</ref>
     <!-- It would be simpler to use just
          "( count(tei:width), count(tei:height), count(tei:depth) ) > 1",
          but then we would not be able to tell the user which element
-         had too many occurences. -->
+         had too many occurrences. -->
                   <constraint>
                      <sch:rule context="tei:dimensions">
                         <sch:report test="count(tei:width) gt 1">
-          The element <sch:name/> may appear once only
+          The element &lt;<sch:name/>&gt; may appear once only.
         </sch:report>
                         <sch:report test="count(tei:height) gt 1">
-          The element <sch:name/> may appear once only
+          The element &lt;<sch:name/>&gt; may appear once only.
         </sch:report>
                         <sch:report test="count(tei:depth) gt 1">
-          The element <sch:name/> may appear once only
+          The element &lt;<sch:name/>&gt; may appear once only.
         </sch:report>
                      </sch:rule>
                   </constraint>
@@ -14083,7 +14232,7 @@ Elements</ref>
     support de texte.</desc>
                <classes/>
                <content>
-                  <elementRef key="material"/>
+                  <elementRef key="material" maxOccurs="2"/>
                </content>
                <exemplum xml:id="ex-support-de" xml:lang="de">
                   <p>
@@ -15497,9 +15646,9 @@ Elements</ref>
                   <memberOf key="model.nameLike.agent"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <constraintSpec ident="sch-el-orgName"
                                mode="add"
@@ -15780,9 +15929,17 @@ Elements</ref>
                   <memberOf key="model.nameLike.agent"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <choice xmlns="http://relaxng.org/ns/structure/1.0">
+                     <oneOrMore>
+                        <ref name="ssrq.content.default"/>
+                     </oneOrMore>
+                     <group>
+                        <oneOrMore>
+                           <ref name="forename"/>
+                        </oneOrMore>
+                        <ref name="surname"/>
+                     </group>
+                  </choice>
                </content>
                <constraintSpec ident="sch-el-persName"
                                mode="add"
@@ -15794,6 +15951,19 @@ Elements</ref>
                         <sch:rule context="tei:persName[ancestor::tei:editor]">
                            <sch:assert test="not(@ref|@role)"> If tei:persName is part of tei:editor it
                     must not contain the attributes @ref or @role. </sch:assert>
+                           <sch:assert test="tei:forename and tei:surname"> A tei:persName element
+                    occurring within tei:editor must contain both tei:forename and tei:surname.
+                    </sch:assert>
+                        </sch:rule>
+                        <sch:rule context="tei:persName[ancestor::tei:respStmt]">
+                           <sch:assert test="tei:forename and tei:surname"> A tei:persName element
+                    occurring within tei:respStmt must contain both tei:forename and tei:surname.
+                    </sch:assert>
+                        </sch:rule>
+                        <sch:rule context="tei:persName">
+                           <sch:report test="tei:forename or tei:surname"> A tei:persName element not
+                    occurring within tei:editor or tei:respStmt must not contain tei:forename or
+                    tei:surname. </sch:report>
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
@@ -15913,6 +16083,66 @@ Elements</ref>
                          xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                          rend="change"
                          module="namesdates"
+                         xml:id="gi-surname"
+                         ident="surname">
+               <gloss rend="replace" versionDate="2026-10-27" xml:lang="de">Nachname</gloss>
+               <gloss rend="replace" versionDate="2026-10-27" xml:lang="en">surname</gloss>
+               <gloss rend="replace" versionDate="2026-10-27" xml:lang="fr">nom de famille</gloss>
+               <desc rend="replace" versionDate="2026-10-27" xml:lang="de">Enthält den Nachnamen einer Person.</desc>
+               <desc rend="replace" versionDate="2026-10-27" xml:lang="en">Indicates a persons surname.</desc>
+               <desc rend="replace" versionDate="2026-10-27" xml:lang="fr">Contient le nom de famille d’une personne.</desc>
+               <classes/>
+               <content>
+                  <textNode/>
+               </content>
+               <remarks versionDate="2025-02-06" xml:lang="de">
+                  <p>
+            Es gelten die ausführlichen Richtlinien zur Auszeichnung von Personen in den <ref target="persons.de.md">Transkriptionsrichtlinien</ref>.
+        </p>
+               </remarks>
+               <remarks versionDate="2025-02-06" xml:lang="de">
+                  <p>
+            Les directives détaillées relatives à la dénomination des personnes dans les <ref target="persons.de.md">principes de transcription</ref> s’appliquent.
+        </p>
+               </remarks>
+               <listRef>
+                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPER">14.2.1. Personal Names</ref>
+               </listRef>
+            </elementSpec>
+            <elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                         rend="change"
+                         module="namesdates"
+                         xml:id="gi-forename"
+                         ident="forename">
+               <gloss rend="replace" versionDate="2026-10-27" xml:lang="de">Vorname</gloss>
+               <gloss rend="replace" versionDate="2026-10-27" xml:lang="en">forename</gloss>
+               <gloss rend="replace" versionDate="2026-10-27" xml:lang="fr">prénom</gloss>
+               <desc rend="replace" versionDate="2026-10-27" xml:lang="de">Enthält den Vornamen einer Person.</desc>
+               <desc rend="replace" versionDate="2026-10-27" xml:lang="en">Indicates a persons forename.</desc>
+               <desc rend="replace" versionDate="2026-10-27" xml:lang="fr">Contient le prénom d’une personne.</desc>
+               <classes/>
+               <content>
+                  <textNode/>
+               </content>
+               <remarks versionDate="2025-02-06" xml:lang="de">
+                  <p>
+            Es gelten die ausführlichen Richtlinien zur Auszeichnung von Personen in den <ref target="persons.de.md">Transkriptionsrichtlinien</ref>.
+        </p>
+               </remarks>
+               <remarks versionDate="2025-02-06" xml:lang="de">
+                  <p>
+            Les directives détaillées relatives à la dénomination des personnes dans les <ref target="persons.de.md">principes de transcription</ref> s’appliquent.
+        </p>
+               </remarks>
+               <listRef>
+                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPER">14.2.1. Personal Names</ref>
+               </listRef>
+            </elementSpec>
+            <elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                         rend="change"
+                         module="namesdates"
                          xml:id="gi-placeName"
                          ident="placeName">
                <gloss rend="replace" versionDate="2025-02-03" xml:lang="de">Ortsname</gloss>
@@ -15929,9 +16159,9 @@ Elements</ref>
                   <memberOf key="model.placeNamePart"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <attList>
                   <attDef ident="ref" mode="replace">
@@ -16127,12 +16357,10 @@ Elements</ref>
                <content>
                   <sequence minOccurs="1" maxOccurs="1">
                      <elementRef key="lem" minOccurs="0"/>
-                     <sequence minOccurs="1" maxOccurs="1" preserveOrder="false">
-                        <alternate minOccurs="1" maxOccurs="unbounded">
-                           <elementRef key="note"/>
-                           <elementRef key="rdg"/>
-                        </alternate>
-                     </sequence>
+                     <alternate minOccurs="1" maxOccurs="unbounded">
+                        <elementRef key="note"/>
+                        <elementRef key="rdg"/>
+                     </alternate>
                   </sequence>
                </content>
                <attList>
@@ -16481,12 +16709,17 @@ Elements</ref>
     différentes variantes de texte.</desc>
                <classes/>
                <content>
-                  <alternate minOccurs="1" maxOccurs="1">
-                     <sequence minOccurs="1" maxOccurs="unbounded">
-                        <macroRef key="ssrq.content.default"/>
-                     </sequence>
-                     <elementRef key="seg" maxOccurs="unbounded" minOccurs="2"/>
-                  </alternate>
+                  <choice xmlns="http://relaxng.org/ns/structure/1.0">
+                     <oneOrMore>
+                        <ref name="ssrq.content.default"/>
+                     </oneOrMore>
+                     <group>
+                        <ref name="seg"/>
+                        <oneOrMore>
+                           <ref name="seg"/>
+                        </oneOrMore>
+                     </group>
+                  </choice>
                </content>
                <exemplum xml:id="ex-app-rdg-de" xml:lang="de">
                   <p>
@@ -16562,9 +16795,9 @@ Elements</ref>
                   <memberOf key="att.witnessed"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <exemplum xml:id="ex-app-rdg-de" xml:lang="de">
                   <p>
@@ -16765,7 +16998,7 @@ Elements</ref>
                      <desc versionDate="2025-02-04" xml:lang="en">the numbering of the text witness</desc>
                      <desc versionDate="2025-02-04" xml:lang="fr">la numérotation du témoin</desc>
                      <datatype>
-                        <dataRef name="string" restriction="[A-Z][0-9]?"/>
+                        <dataRef name="string" restriction="[A-Z]([1-9][0-9]*)?"/>
                      </datatype>
                   </attDef>
                   <attDef ident="xml:id" mode="change" usage="req">
@@ -17359,7 +17592,7 @@ Elements</ref>
                   <constraint>
                      <sch:rule context="tei:l//tei:div">
                         <sch:assert test="ancestor::tei:floatingText">
-          Abstract model violation: Metrical lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
+          Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain higher-level structural elements such as &lt;div&gt;, unless &lt;div&gt; is a descendant of &lt;floatingText&gt;.
         </sch:assert>
                      </sch:rule>
                   </constraint>
@@ -17370,7 +17603,7 @@ Elements</ref>
                   <constraint>
                      <sch:rule context="tei:div">
                         <sch:report test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
-          Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
+          Abstract model violation: &lt;p&gt; and &lt;ab&gt; may not contain higher-level structural elements such as &lt;div&gt;, unless &lt;div&gt; is a descendant of &lt;floatingText&gt;.
         </sch:report>
                      </sch:rule>
                   </constraint>
@@ -17668,9 +17901,9 @@ Elements</ref>
     notariée.</desc>
                <classes/>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <exemplum xml:id="ex-signed-de" xml:lang="de">
                   <p>
@@ -18051,7 +18284,7 @@ Elements</ref>
                <constraintSpec ident="addSpan-requires-spanTo" scheme="schematron" xml:lang="en">
                   <constraint>
                      <sch:rule context="tei:addSpan">
-                        <sch:assert test="@spanTo">The @spanTo attribute of <sch:name/> is required.</sch:assert>
+                        <sch:assert test="@spanTo">The @spanTo attribute of &lt;<sch:name/>&gt; is required.</sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -18431,7 +18664,7 @@ Elements</ref>
                                xml:lang="en">
                   <constraint>
                      <sch:rule context="tei:damageSpan">
-                        <sch:assert test="@spanTo">The @spanTo attribute of <sch:name/> is required.</sch:assert>
+                        <sch:assert test="@spanTo">The @spanTo attribute of &lt;<sch:name/>&gt; is required.</sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -18533,7 +18766,7 @@ Elements</ref>
                <constraintSpec ident="delSpan-requires-spanTo" scheme="schematron" xml:lang="en">
                   <constraint>
                      <sch:rule context="tei:delSpan">
-                        <sch:assert test="@spanTo">The @spanTo attribute of <sch:name/> is required.</sch:assert>
+                        <sch:assert test="@spanTo">The @spanTo attribute of &lt;<sch:name/>&gt; is required.</sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -18645,9 +18878,9 @@ Elements</ref>
                   <memberOf key="att.typed"/>
                </classes>
                <content>
-                  <sequence minOccurs="1" maxOccurs="unbounded">
-                     <macroRef key="ssrq.content.default"/>
-                  </sequence>
+                  <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                     <ref name="ssrq.content.default"/>
+                  </oneOrMore>
                </content>
                <attList>
                   <attDef ident="type" mode="replace" usage="req">
@@ -18907,7 +19140,7 @@ Elements</ref>
                   <constraint>
                      <sch:rule context="tei:subst">
                         <sch:assert test="child::tei:add and (child::tei:del or child::tei:surplus)">
-                           <sch:name/> must have at least one child add and at least one child del or surplus</sch:assert>
+        &lt;<sch:name/>&gt; must have at least one child &lt;add&gt; and at least one child &lt;del&gt; or &lt;surplus&gt;.</sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -19655,7 +19888,7 @@ Elements</ref>
             elements</desc>
                <constraint>
                   <sch:pattern>
-                     <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'fw', 'handDesc',                     'head', 'hi', 'history', 'idno',                     'item', 'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'supportDesc', 'table', 'TEI',                     'teiHeader', 'text', 'textClass',                     'time', 'title', 'unclear',                     'witness')][not(*)]">
+                     <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc',                     'head', 'hi',                     'history', 'idno',                     'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI',                     'teiHeader', 'text',                     'textClass',                     'time', 'title',                     'unclear',                     'witness')][not(*)]">
                         <sch:assert test="string-length(normalize-space(.)) &gt; 0"> The element
                         <sch:name/> must not be empty. </sch:assert>
                      </sch:rule>
@@ -19724,6 +19957,21 @@ Elements</ref>
                   <sch:rule context="tei:TEI">
                      <sch:assert test="count(//@xml:id) = count(distinct-values(//@xml:id))"> All
                     values of @xml:id attributes in this document must be unique. </sch:assert>
+                  </sch:rule>
+               </constraint>
+            </constraintSpec>
+            <constraintSpec xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                            ident="ref-with-two-targets"
+                            scheme="schematron"
+                            xml:lang="en">
+               <desc versionDate="2026-10-26" xml:lang="en"> Constraint to ensure that multiple values
+            in @target are permitted only when the parent element is tei:note with
+            @type="text_comparison". </desc>
+               <constraint>
+                  <sch:rule context="tei:*[@target]">
+                     <sch:assert test="parent::tei:note[@type = 'text_comparison'] or                     count(tokenize(normalize-space(@target), '\s+')) = 1"> The @target
+                    attribute must contain exactly one value unless the parent element is tei:note
+                    with @type="text_comparison". </sch:assert>
                   </sch:rule>
                </constraint>
             </constraintSpec>
@@ -21064,6 +21312,12 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="fr">vigne</desc>
                         <desc versionDate="2023-03-21" xml:lang="it">vigneto</desc>
                      </valItem>
+                     <valItem ident="water">
+                        <desc versionDate="2025-05-26" xml:lang="de">Mineralwasser</desc>
+                        <desc versionDate="2025-05-26" xml:lang="en">mineral water</desc>
+                        <desc versionDate="2025-05-26" xml:lang="fr">eau minéral</desc>
+                        <desc versionDate="2025-05-26" xml:lang="it">acqua minerale</desc>
+                     </valItem>
                      <valItem ident="wax">
                         <desc versionDate="2023-03-21" xml:lang="de">Wachs</desc>
                         <desc versionDate="2023-03-21" xml:lang="en">wax</desc>
@@ -21255,6 +21509,12 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="fr">de Rheintal</desc>
                         <desc versionDate="2023-03-21" xml:lang="it">di Rheintal</desc>
                      </valItem>
+                     <valItem ident="Rorschach">
+                        <desc versionDate="2026-10-20" xml:lang="de">Rorschach</desc>
+                        <desc versionDate="2026-10-20" xml:lang="en">of Rorschach</desc>
+                        <desc versionDate="2026-10-20" xml:lang="fr">de Rorschach</desc>
+                        <desc versionDate="2026-10-20" xml:lang="it">di Rorschach</desc>
+                     </valItem>
                      <valItem ident="Sargans">
                         <desc versionDate="2023-03-21" xml:lang="de">Sarganser</desc>
                         <desc versionDate="2023-03-21" xml:lang="en">of Sargans</desc>
@@ -21278,6 +21538,12 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="en">of Schaffhausen</desc>
                         <desc versionDate="2023-03-21" xml:lang="fr">de Schaffhouse</desc>
                         <desc versionDate="2023-03-21" xml:lang="it">di Sciaffusa</desc>
+                     </valItem>
+                     <valItem ident="Stammheim">
+                        <desc versionDate="2026-10-20" xml:lang="de">Stammheim</desc>
+                        <desc versionDate="2026-10-20" xml:lang="en">of Stammheim</desc>
+                        <desc versionDate="2026-10-20" xml:lang="fr">de Stammheim</desc>
+                        <desc versionDate="2026-10-20" xml:lang="it">di Stammheim</desc>
                      </valItem>
                      <valItem ident="Stein">
                         <desc versionDate="2023-03-21" xml:lang="de">Steiner</desc>
@@ -21424,6 +21690,12 @@ Elements</ref>
                         <desc versionDate="2023-03-17" xml:lang="fr">gertel</desc>
                         <desc versionDate="2023-03-17" xml:lang="it">gertel</desc>
                      </valItem>
+                     <valItem ident="Haufen">
+                        <desc versionDate="2026-10-20" xml:lang="de">Haufen</desc>
+                        <desc versionDate="2026-10-20" xml:lang="en">haufen</desc>
+                        <desc versionDate="2026-10-20" xml:lang="fr">haufen</desc>
+                        <desc versionDate="2026-10-20" xml:lang="it">haufen</desc>
+                     </valItem>
                      <valItem ident="Hube">
                         <desc type="singular" versionDate="2023-03-17" xml:lang="de">Hube</desc>
                         <desc type="plural" versionDate="2023-03-17" xml:lang="de">Huben</desc>
@@ -21487,6 +21759,12 @@ Elements</ref>
                         <desc versionDate="2023-03-17" xml:lang="en">mal</desc>
                         <desc versionDate="2023-03-17" xml:lang="fr">mal</desc>
                         <desc versionDate="2023-03-17" xml:lang="it">mal</desc>
+                     </valItem>
+                     <valItem ident="Manngrab">
+                        <desc versionDate="2026-10-20" xml:lang="de">Manngrab</desc>
+                        <desc versionDate="2026-10-20" xml:lang="en">manngrab</desc>
+                        <desc versionDate="2026-10-20" xml:lang="fr">manngrab</desc>
+                        <desc versionDate="2026-10-20" xml:lang="it">manngrab</desc>
                      </valItem>
                      <valItem ident="Mannmad">
                         <desc versionDate="2023-03-17" xml:lang="de">Mannmad</desc>
@@ -21815,6 +22093,18 @@ Elements</ref>
                         <desc versionDate="2023-03-17" xml:lang="fr">setier</desc>
                         <desc versionDate="2023-03-17" xml:lang="it">sester</desc>
                      </valItem>
+                     <valItem ident="Staffel">
+                        <desc versionDate="2023-03-17" xml:lang="de">Staffel</desc>
+                        <desc versionDate="2023-03-17" xml:lang="en">staffel</desc>
+                        <desc versionDate="2023-03-17" xml:lang="fr">staffel</desc>
+                        <desc versionDate="2023-03-17" xml:lang="it">staffel</desc>
+                     </valItem>
+                     <valItem ident="Stauf">
+                        <desc versionDate="2026-10-20" xml:lang="de">Stauf</desc>
+                        <desc versionDate="2026-10-20" xml:lang="en">stauf</desc>
+                        <desc versionDate="2026-10-20" xml:lang="fr">stauf</desc>
+                        <desc versionDate="2026-10-20" xml:lang="it">stauf</desc>
+                     </valItem>
                      <valItem ident="Ster">
                         <desc versionDate="2023-03-17" xml:lang="de">Ster</desc>
                         <desc versionDate="2023-03-17" xml:lang="en">stere</desc>
@@ -21852,12 +22142,6 @@ Elements</ref>
                         <desc type="plural" versionDate="2023-03-17" xml:lang="fr">quarts</desc>
                         <desc type="singular" versionDate="2023-03-17" xml:lang="it">quarto</desc>
                         <desc type="plural" versionDate="2023-03-17" xml:lang="it">quarti</desc>
-                     </valItem>
-                     <valItem ident="water">
-                        <desc versionDate="2025-05-26" xml:lang="de">Mineralwasser</desc>
-                        <desc versionDate="2025-05-26" xml:lang="en">mineral water</desc>
-                        <desc versionDate="2025-05-26" xml:lang="fr">eau minéral</desc>
-                        <desc versionDate="2025-05-26" xml:lang="it">acqua minerale</desc>
                      </valItem>
                      <valItem ident="Zuber">
                         <desc versionDate="2023-03-17" xml:lang="de">Zuber</desc>
@@ -23650,6 +23934,12 @@ Elements</ref>
                         <desc versionDate="2023-05-23" xml:lang="fr">cursif</desc>
                         <desc versionDate="2023-05-23" xml:lang="it">corsivo</desc>
                      </valItem>
+                     <valItem ident="overline">
+                        <desc versionDate="2026-10-20" xml:lang="de">überstrichen</desc>
+                        <desc versionDate="2026-10-20" xml:lang="en">overlined</desc>
+                        <desc versionDate="2026-10-20" xml:lang="fr">surligné</desc>
+                        <desc versionDate="2026-10-20" xml:lang="it">sopralineato</desc>
+                     </valItem>
                      <valItem ident="rubricated">
                         <desc versionDate="2023-05-23" xml:lang="de">rubriziert</desc>
                         <desc versionDate="2023-05-23" xml:lang="en">rubricated</desc>
@@ -23938,6 +24228,8 @@ Elements</ref>
                      <valItem ident="Erstellung Faksimile"/>
                      <valItem ident="Herausgabe"/>
                      <valItem ident="Qualitätskontrolle"/>
+                     <valItem ident="Reedition"/>
+                     <valItem ident="Retrodigitalisierung"/>
                      <valItem ident="Transkription"/>
                      <valItem ident="XML-Codierung der Transkription"/>
                   </valList>
@@ -23966,6 +24258,8 @@ Elements</ref>
                      <valItem ident="Création de fac-similé"/>
                      <valItem ident="Encodage XML de la transcription"/>
                      <valItem ident="Publication"/>
+                     <valItem ident="Réédition"/>
+                     <valItem ident="Rétronumérisation"/>
                      <valItem ident="Saisie des métadonnées dans l’en-tête TEI"/>
                      <valItem ident="Transcription"/>
                   </valList>
@@ -24802,19 +25096,6 @@ Elements</ref>
                               restriction="urn:ssrq:(SSRQ|SDS|FDS)-([A-Z]{2})-([A-Za-z0-9_]+)-(((([A-Za-z0-9]+\.)*)([0-9]+)-1))(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
                      <dataRef name="string"
                               restriction="urn:ssrq:[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}(#(\d+|fol\d+[rv](\-\d+[rv])?|[pn]\d+(\.\d+)?(\-\d+(\.\d+)?)?))?"/>
-                  </alternate>
-               </content>
-            </dataSpec>
-            <dataSpec rend="add"
-                      ident="ssrq.pointer.target"
-                      mode="add"
-                      module="ssrq.core.module">
-               <content>
-                  <alternate minOccurs="1" maxOccurs="1">
-                     <dataRef key="ssrq.pointer.doi"/>
-                     <dataRef key="ssrq.pointer.url"/>
-                     <dataRef key="ssrq.pointer.urn"/>
-                     <dataRef key="ssrq.pointer.id"/>
                   </alternate>
                </content>
             </dataSpec>
