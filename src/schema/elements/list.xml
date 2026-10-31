@@ -3,7 +3,7 @@
 href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec ident="list" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
-xmlns:xi="http://www.w3.org/2001/XInclude">
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
     <gloss versionDate="2025-02-03" xml:lang="de">Liste</gloss>
     <gloss versionDate="2025-02-03" xml:lang="en">list</gloss>
     <gloss versionDate="2025-02-03" xml:lang="fr">liste</gloss>
@@ -30,6 +30,17 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             </sequence>
         </sequence>
     </content>
+    <constraintSpec ident="sch-list" scheme="schematron" xml:lang="en">
+        <desc versionDate="2026-10-28" xml:lang="en">constraints for tei:list</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:list">
+                    <sch:assert test="count(ancestor::tei:list) le 1" xml:lang="en"> A tei:list
+                    must not be nested more than one level deep.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <attList>
         <attDef ident="rend" mode="replace">
             <desc versionDate="2025-02-03" xml:lang="de">das Aussehen der Liste</desc>

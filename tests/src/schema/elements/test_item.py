@@ -26,6 +26,18 @@ from ..conftest import RNG_test_function
             "<item><p>foo</p> bar</item>",
             False,
         ),
+        (
+            "valid-item-with-list-content",
+            """
+            <item>
+                <list>
+                    <item>foo</item>
+                    <item>bar</item>
+                </list>
+            </item>
+            """,
+            True,
+        ),
     ],
 )
 def test_item(
