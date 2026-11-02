@@ -124,3 +124,10 @@ def test_list_constraints(
         input=writer.list(), isosch=main_constraints
     )
     assert reports[0].report.is_valid() is result
+    if not result:
+        failed_asserts = reports[0].report.failed_asserts
+        assert failed_asserts is not None
+        assert len(failed_asserts) == 1
+        assert " ".join(failed_asserts[0].text.split()) == (
+            "A tei:list must not be nested more than 1 level deep."
+        )
