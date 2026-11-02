@@ -146,6 +146,22 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                 </sch:pattern>
             </constraint>
         </constraintSpec>
+        <constraintSpec ident="sch-el-complex-nesting" scheme="schematron" xml:lang="en">
+            <desc versionDate="2026-11-02" xml:lang="en">abstract pattern to check element
+            nesting</desc>
+            <constraint>
+                <sch:pattern abstract="true" id="nested-el">
+                    <sch:rule context="tei:$el-name">
+                        <sch:assert test="count(ancestor::tei:$el-name) le $nested-level"
+                        xml:lang="en"> A
+                            <sch:value-of select="concat(&apos;tei:&apos;, &apos;$el-name&apos;)"/>
+                            must not be nested more than
+                            <sch:value-of select="$nested-level"/>
+                            level deep.</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+            </constraint>
+        </constraintSpec>
         <constraintSpec ident="sch-trim-attributes" scheme="schematron" xml:lang="en">
             <desc versionDate="2025-01-28" xml:lang="en">constraint to trim any attribute
             value</desc>

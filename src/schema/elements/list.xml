@@ -33,11 +33,9 @@ xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/200
     <constraintSpec ident="sch-list" scheme="schematron" xml:lang="en">
         <desc versionDate="2026-10-28" xml:lang="en">constraints for tei:list</desc>
         <constraint>
-            <sch:pattern>
-                <sch:rule context="tei:list">
-                    <sch:assert test="count(ancestor::tei:list) le 1" xml:lang="en"> A tei:list
-                    must not be nested more than one level deep.</sch:assert>
-                </sch:rule>
+            <sch:pattern id="nested-list" is-a="nested-el">
+                <sch:param name="el-name" value="list"/>
+                <sch:param name="nested-level" value="1"/>
             </sch:pattern>
         </constraint>
     </constraintSpec>
