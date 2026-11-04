@@ -31,7 +31,8 @@ from ..conftest import RNG_test_function
             """
             <seg>
                 <add place='left_top'>baz</add>
-                <cb/>
+                <cb n="a"/>
+                <cb n="b"/>
                 <head>foo</head>
                 <list><item>foo</item></list>
                 <p>foo</p>
