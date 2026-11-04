@@ -948,22 +948,22 @@ def test_quotation_marks_in_text_node(
     [
         (
             "valid-milestones-inside-body",
-            """<body><div><p><pb/><cb/><lb/>foo</p></div></body>""",
+            """<body><div><p><pb/><cb n="a"/><cb n="b"/><lb/>foo</p></div></body>""",
             True,
         ),
         (
             "invalid-milestones-inside-back",
-            """<back><div><p><pb/><cb/><lb/>foo</p></div></back>""",
+            """<back><div><p><pb/><cb n="a"/><cb n="b"/><lb/>foo</p></div></back>""",
             False,
         ),
         (
             "invalid-milestones-inside-header",
-            """<teiHeader><summary><p><pb/><cb/><lb/>foo</p></summary></teiHeader>""",
+            """<teiHeader><summary><p><pb/><cb n="a"/><lb/>foo<cb n="b"/></p></summary></teiHeader>""",
             False,
         ),
         (
             "valid-milestones-in-back",
-            """<back><div><p><orig><pb/><cb/><lb/>foo</orig></p></div></back>""",
+            """<back><div><p><orig><pb/><cb n="a"/><cb n="b"/><lb/>foo</orig></p></div></back>""",
             True,
         ),
         (

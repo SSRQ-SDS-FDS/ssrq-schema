@@ -3,7 +3,7 @@
 href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec ident="cb" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
-xmlns:xi="http://www.w3.org/2001/XInclude">
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
     <gloss versionDate="2023-08-23" xml:lang="de">Spaltenanfang</gloss>
     <gloss versionDate="2025-02-03" xml:lang="en">column beginning</gloss>
     <gloss versionDate="2025-02-03" xml:lang="fr">début de colonne</gloss>
@@ -19,8 +19,27 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <content>
         <empty/>
     </content>
+    <constraintSpec ident="sch-cb" scheme="schematron" xml:lang="en">
+        <desc versionDate="2026-11-04" xml:lang="en">constraints for tei:cb</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:body[.//tei:cb]">
+                    <sch:assert test="count(.//tei:cb) gt 1" xml:lang="en"> If tei:cb is used
+                    within the text, there must always be at least two tei:cb elements.
+                    </sch:assert>
+                    <sch:assert test="every $i in 2 to count(.//tei:cb) satisfies
+                    (.//tei:cb)[$i]/@n != (.//tei:cb)[$i - 1]/@n" xml:lang="en"> Two consecutive
+                    tei:cb elements within the text must not have the same value for
+                    @n.</sch:assert>
+                    <sch:assert test="(.//tei:cb)[1]/@n = &apos;a&apos;" xml:lang="en"> The first
+                    tei:cb element within the text must have the value &apos;a&apos; for its @n
+                    attribute.</sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <attList>
-        <attDef ident="n" mode="replace">
+        <attDef ident="n" mode="replace" usage="req">
             <desc versionDate="2025-01-31" xml:lang="de">die Spaltenzählung des Originals</desc>
             <desc versionDate="2025-01-31" xml:lang="en">the column count of the original</desc>
             <desc versionDate="2025-01-31" xml:lang="fr">le nombre de colonnes de l’original</desc>
