@@ -199,24 +199,25 @@ l’application aux autres lettres suit la même logique.
 | o+e-ligature                           | `œ`                   | U+0153          |
 | s+z-ligature                           | `ß`                   | U+00DF          |
 | **Signes diacritiques de combinaison** |                       |                 |
-| Lettre avec accent grave               | `à`                  | Lettre + U+0300 |
-| Lettre avec accent aigu                | `á`                  | Lettre + U+0301 |
-| Lettre avec circonflexe                | `â`                  | Lettre + U+0302 |
-| Lettre avec tilde                      | `ã`                  | Lettre + U+0303 |
-| Lettre avec macron                     | `ā`                  | Lettre + U+0304 |
-| Lettre avec point                      | `ȧ`                  | Lettre + U+0307 |
-| Lettre avec tréma                      | `ä`                  | Lettre + U+0308 |
-| Lettre avec caron                      | `ǎ`                  | Lettre + U+030C |
-| Lettre avec ligne verticale            | `a̍`                  | Lettre + U+030D |
-| Lettre avec cédille                    | `a̧`                  | Lettre + U+0327 |
-| Lettre avec ogonek                     | `ą`                  | Lettre + U+0328 |
+| Lettre avec accent grave               | `à`                   | Lettre + U+0300 |
+| Lettre avec accent aigu                | `á`                   | Lettre + U+0301 |
+| Lettre avec circonflexe                | `â`                   | Lettre + U+0302 |
+| Lettre avec tilde                      | `ã`                   | Lettre + U+0303 |
+| Lettre avec macron                     | `ā`                   | Lettre + U+0304 |
+| Lettre avec brève                      | `ă`                   | Lettre + U+0306 |
+| Lettre avec point                      | `ȧ`                   | Lettre + U+0307 |
+| Lettre avec tréma                      | `ä`                   | Lettre + U+0308 |
+| Lettre avec caron                      | `ǎ`                   | Lettre + U+030C |
+| Lettre avec ligne verticale            | `a̍`                   | Lettre + U+030D |
+| Lettre avec cédille                    | `a̧`                   | Lettre + U+0327 |
+| Lettre avec ogonek                     | `ą`                   | Lettre + U+0328 |
 | **Lettres suscrites**                  |                       |                 |
-| Lettre avec a suscrit                  | `aͣ`                  | Lettre + U+0363 |
-| Lettre avec e suscrit                  | `aͤ`                  | Lettre + U+0364 |
-| Lettre avec i suscrit                  | `aͥ`                  | Lettre + U+0365 |
-| Lettre avec o suscrit                  | `aͦ`                  | Lettre + U+0366 |
-| Lettre avec u suscrit                  | `aͧ`                  | Lettre + U+0367 |
-| Lettre avec v suscrit                  | `aͮ`                  | Lettre + U+036E |
+| Lettre avec a suscrit                  | `aͣ`                   | Lettre + U+0363 |
+| Lettre avec e suscrit                  | `aͤ`                   | Lettre + U+0364 |
+| Lettre avec i suscrit                  | `aͥ`                   | Lettre + U+0365 |
+| Lettre avec o suscrit                  | `aͦ`                   | Lettre + U+0366 |
+| Lettre avec u suscrit                  | `aͧ`                   | Lettre + U+0367 |
+| Lettre avec v suscrit                  | `aͮ`                   | Lettre + U+036E |
 | Lettre avec w suscrit                  | `a`                  | Lettre + U+F03C |
 | **Autres lettres modifiées**           |                       |                 |
 | i avec ligne (= un et demi)            | `ɨ`                   | U+0268          |
@@ -244,15 +245,15 @@ l’application aux autres lettres suit la même logique.
 | Sou                                    | ``                   | U+F2F7          |
 | Scudo                                  | ``                   | U+F2F9          |
 | **Autres symboles**                    |                       |                 |
-| Symbole de main pointée                | `☞`                   | U+261E          |
+| Symbole de main pointée                | `☞`                  | U+261E          |
 | Symbole de paragraphe                  | `§`                   | U+00A7          |
 | Symbole de paragraphe                  | `¶`                   | U+00B6          |
 | Croix                                  | `†`                   | U+2020          |
 | Double croix                           | `‡`                   | U+2021          |
 | Triple croix                           | ``                   | U+F1D2          |
-| Symbole de mariage                     | `⚭`                   | U+26AD          |
+| Symbole de mariage                     | `⚭`                  | U+26AD          |
 | Symbole circulaire                     | `○`                   | U+25CB          |
-| Symbole de Mars (abr. pour mardi)      | `♂`                   | U+2642          |
+| Symbole de Mars (abr. pour mardi)      | `♂`                  | U+2642          |
 | Symbole de droit d’auteur              | `©`                   | U+00a9          |
 | **Signes de ponctuation, etc.**        |                       |                 |
 | Point                                  | `.`                   | U+002E          |
