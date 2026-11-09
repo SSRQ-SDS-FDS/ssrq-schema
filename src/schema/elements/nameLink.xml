@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model
+href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
+type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="nameLink" mode="change" module="namesdates"
+xmlns="http://www.tei-c.org/ns/1.0">
+    <gloss versionDate="2026-11-06" xml:lang="de">Namenspartikel</gloss>
+    <gloss versionDate="2026-11-06" xml:lang="en">name link</gloss>
+    <gloss versionDate="2026-11-06" xml:lang="fr">lien entre les composants d’un nom</gloss>
+    <desc versionDate="2026-11-06" xml:lang="de">Enthält eine Namenspartikel.</desc>
+    <desc versionDate="2026-11-06" xml:lang="en">Indicates name link.</desc>
+    <desc versionDate="2026-11-06" xml:lang="fr">Contient le lien entre les composants d’un
+    nom.</desc>
+    <classes mode="replace"/>
+    <content>
+        <textNode/>
+    </content>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Es gelten die ausführlichen Richtlinien zur Auszeichnung von Personen in den <ref
+            target="persons.de.md">Transkriptionsrichtlinien</ref>.
+        </p>
+    </remarks>
+    <remarks versionDate="2025-02-06" xml:lang="de">
+        <p>
+            Les directives détaillées relatives à la dénomination des personnes dans les <ref
+            target="persons.de.md">principes de transcription</ref> s’appliquent.
+        </p>
+    </remarks>
+</elementSpec>
