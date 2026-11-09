@@ -21,6 +21,7 @@ xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/200
                 <elementRef key="div" maxOccurs="unbounded"/>
                 <elementRef key="gap" maxOccurs="unbounded" minOccurs="0"/>
                 <elementRef key="pb" maxOccurs="unbounded" minOccurs="0"/>
+                <elementRef key="signed" maxOccurs="unbounded" minOccurs="0"/>
             </sequence>
             <elementRef key="bibl" maxOccurs="unbounded" minOccurs="2"/>
         </alternate>

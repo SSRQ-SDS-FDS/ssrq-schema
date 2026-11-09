@@ -19,6 +19,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-body-with-signed",
+            "<body><div><p>bar</p></div><signed>foo</signed></body>",
+            True,
+        ),
+        (
             "valid-body-with-pb",
             "<body><pb n='1' facs='abcde_1'/><div><p>bar</p></div></body>",
             True,
@@ -26,6 +31,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
         (
             "valid-body-with-gap",
             "<body><gap/><div><p>bar</p></div></body>",
+            True,
+        ),
+        (
+            "valid-body-with-signed",
+            "<body><signed>foo</signed><div><p>bar</p></div></body>",
             True,
         ),
         (
@@ -37,6 +47,7 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
                 <gap/>
                 <div><p>bar</p></div>
                 <ab type='dorsal' place='verso'>foo</ab>
+                <signed>bar</signed>
             </body>
             """,
             True,
