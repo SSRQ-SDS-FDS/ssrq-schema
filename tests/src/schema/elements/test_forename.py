@@ -17,7 +17,7 @@ from ..conftest import RNG_test_function
             False,
         ),
         (
-            "invalid-forname-with-ref",
+            "invalid-forename-with-ref",
             "<forename ref='per123456'>bar</forename>",
             False,
         ),
