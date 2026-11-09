@@ -53,6 +53,13 @@ def test_pers_name(
             True,
         ),
         (
+            "valid-persName-nameLink-inside-editor",
+            """
+            <editor><persName><forename>foo</forename><nameLink>de</nameLink><surname>bar</surname></persName></editor>
+            """,
+            True,
+        ),
+        (
             "valid-persName-inside-editor",
             """
             <respStmt>
@@ -81,7 +88,7 @@ def test_pers_name(
         (
             "invalid-persName-inside-editor-ref",
             """
-            <editor><persName ref="per123456"><forename>foo</forename><surname>bar</surname></persName></editor>
+            <editor><persName ref="per123456"><forename>foo</forename><nameLink>de</nameLink><surname>bar</surname></persName></editor>
             """,
             False,
         ),

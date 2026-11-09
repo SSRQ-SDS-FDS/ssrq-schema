@@ -14,7 +14,8 @@ Titel etc., ausgezeichnet.
 
 Im Dateiheader werden die Namen von Herausgeberinnen, Herausgebern, Mitarbeiterinnen
 und Mitarbeitern, im Gegensatz zu den Namen im edierten Text, getrennt nach Vorname 
-([`<forename>`](forename.de.md)) und Nachname ([`<surname>`](surname.de.md)) erfasst.
+([`<forename>`](forename.de.md)), Namenspartikel ([`<nameLink>`](nameLink.de.md)) 
+und Nachname ([`<surname>`](surname.de.md)) erfasst.
 
 ## Zusammengesetzte Personennamen
 

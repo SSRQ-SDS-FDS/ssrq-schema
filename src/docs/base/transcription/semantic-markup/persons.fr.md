@@ -2,19 +2,20 @@
 
 ## Balisage des noms de personnes
 
-Dans un texte édité, les noms de personnes sont toujours balisés. 
-Si une personne apparait plusieurs fois dans un même paragraphe, 
-elle n’est taguée qu’une seule fois avec [`<persName>`](persName.fr.md). 
-[`<persName>`](persName.fr.md) comprend, si possible un nom de personne 
+Dans un texte édité, les noms de personnes sont toujours balisés.
+Si une personne apparait plusieurs fois dans un même paragraphe,
+elle n’est taguée qu’une seule fois avec [`<persName>`](persName.fr.md).
+[`<persName>`](persName.fr.md) comprend, si possible un nom de personne
 au nominatif. Seul le nom est balisé, sans informations
 supplémentaires telles que profession, titre, etc.
 
 ## Balisage des personnes ayant participé à l’édition dans l’en-tête du fichier
 
-Dans l’en-tête du fichier, les noms des éditrices et éditeurs, ainsi que 
-des collaboratrices et collaborateurs, sont saisis séparément, contrairement 
-aux noms figurant dans le texte édité : prénom ([`<forename>`](forename.fr.md)) 
-et nom de famille ([`<surname>`](surname.fr.md)).
+Dans l’en-tête du fichier, les noms des éditrices et éditeurs, ainsi que
+des collaboratrices et collaborateurs, sont saisis séparément, contrairement
+aux noms figurant dans le texte édité : prénom ([`<forename>`](forename.fr.md)), lien entre
+les composants d’un nom ([`<nameLink>`](nameLink.fr.md)) et nom de
+famille ([`<surname>`](surname.fr.md)).
 
 ## Noms composés
 

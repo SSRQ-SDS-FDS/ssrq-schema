@@ -26,6 +26,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
                 <rng:oneOrMore>
                     <rng:ref name="forename"/>
                 </rng:oneOrMore>
+                <rng:optional>
+                    <rng:ref name="nameLink"/>
+                </rng:optional>
                 <rng:ref name="surname"/>
             </rng:group>
         </rng:choice>
@@ -47,9 +50,9 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
                     </sch:assert>
                 </sch:rule>
                 <sch:rule context="tei:persName">
-                    <sch:report test="tei:forename or tei:surname"> A tei:persName element not
-                    occurring within tei:editor or tei:respStmt must not contain tei:forename or
-                    tei:surname. </sch:report>
+                    <sch:report test="tei:forename or tei:surname or tei:nameLink"> A tei:persName
+                    element not occurring within tei:editor or tei:respStmt must not contain
+                    tei:forename, tei:surname or tei:nameLink.</sch:report>
                 </sch:rule>
             </sch:pattern>
         </constraint>

@@ -76,8 +76,8 @@
                 custEvent custodialHist dimensions foliation handDesc height history material
                 msContents msDesc msIdentifier msItem objectDesc origDate origin origPlace physDesc
                 repository seal sealDesc summary support supportDesc width" key="msdescription"/>
-                <moduleRef include="forename orgName persName placeName settlement surname"
-                key="namesdates"/>
+                <moduleRef include="forename nameLink orgName persName placeName settlement
+                surname" key="namesdates"/>
                 <moduleRef key="tei"/>
                 <moduleRef include="app lem listWit rdg witness" key="textcrit"/>
                 <moduleRef include="back body div docImprint signed TEI text" key="textstructure"/>
@@ -181,6 +181,7 @@
                 <specGrpRef target="elements/msDesc.xml"/>
                 <specGrpRef target="elements/msIdentifier.xml"/>
                 <specGrpRef target="elements/msItem.xml"/>
+                <specGrpRef target="elements/nameLink.xml"/>
                 <specGrpRef target="elements/note.xml"/>
                 <specGrpRef target="elements/num.xml"/>
                 <specGrpRef target="elements/objectDesc.xml"/>
