@@ -1,30 +1,41 @@
 import re
-from functools import reduce
 
 from utils.commons.logger import LOGGER
 from utils.schema import SPECIFIED_ELEMENTS
 
 
+def get_included_elements(schema: str) -> list[str]:
+    return [
+        element
+        for includes in re.findall(r'include="([A-Za-z\s]+)"', schema)
+        for element in includes.split()
+    ]
+
+
+def get_specified_elements(schema: str) -> list[str]:
+    return re.findall(SPECIFIED_ELEMENTS, schema)
+
+
 class Stats:
     def __call__(self, value: str) -> str:
-        elements_included = self.calculate_number_of_included_elements(value)
-        elements_specified = self.calculate_number_of_specified_elements(value)
+        included_elements = get_included_elements(value)
+        specified_elements = get_specified_elements(value)
 
-        LOGGER.info(f"Number of elements included: {elements_included}")
-        LOGGER.info(f"Number of elements specified: {elements_specified}")
-        LOGGER.info(
-            f"Number of elements not specified: {elements_included - elements_specified}"
-        )
+        not_specified_elements = [
+            element
+            for element in included_elements
+            if element not in specified_elements
+        ]
+
+        LOGGER.info(f"Number of elements included: {len(included_elements)}")
+        LOGGER.info(f"Number of elements specified: {len(specified_elements)}")
+
+        if not_specified_elements:
+            LOGGER.error(
+                f"Number of elements not specified: {len(not_specified_elements)}"
+            )
+            LOGGER.error(f"Elements not specified: {', '.join(not_specified_elements)}")
+        else:
+            LOGGER.info("Number of elements not specified: 0")
 
         return value
-
-    def calculate_number_of_included_elements(self, schema: str) -> int:
-        included_elements = map(
-            lambda includes: re.sub(r"([\s\n\t])+", " ", includes).split(),
-            re.findall(r'include="([A-Za-z\s]+)"', schema),
-        )
-
-        return reduce(lambda x, y: x + len(y), included_elements, 0)
-
-    def calculate_number_of_specified_elements(self, schema: str) -> int:
-        return len(re.findall(SPECIFIED_ELEMENTS, schema))
