@@ -37,12 +37,12 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
         </rng:choice>
     </content>
     <constraintSpec ident="sch-el-quote" mode="add" scheme="schematron" xml:lang="en">
-        <desc versionDate="2023-05-31" xml:lang="en">constraint for tei:quote</desc>
+        <desc versionDate="2026-11-13" xml:lang="en">constraint for tei:quote</desc>
         <constraint>
             <sch:pattern>
-                <sch:rule context="tei:quote[not(ancestor::tei:back)]">
+                <sch:rule context="tei:quote[not(ancestor::tei:back)][not(ancestor::tei:note)]">
                     <sch:assert role="warning" test=".[following-sibling::*[1][self::tei:note]]">
-                    tei:quote should be followed by a tei:note element. </sch:assert>
+                    tei:quote should be followed by a tei:note element.</sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
