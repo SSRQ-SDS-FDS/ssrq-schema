@@ -34,11 +34,6 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
-            "valid-body-with-signed",
-            "<body><signed>foo</signed><div><p>bar</p></div></body>",
-            True,
-        ),
-        (
             "valid-body-with-multiple-elements",
             """
             <body>

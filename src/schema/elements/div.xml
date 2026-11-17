@@ -49,6 +49,21 @@ xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/200
             </sch:pattern>
         </constraint>
     </constraintSpec>
+    <constraintSpec ident="sch-el-div-descendants" mode="add" scheme="schematron" xml:lang="en">
+        <desc versionDate="2026-11-17" xml:lang="en">constraint for the descendants of
+        tei:div</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:div[ancestor::tei:body]">
+                    <sch:assert test=".//tei:*[name() = (&apos;p&apos;, &apos;table&apos;,
+                    &apos;list&apos;, &apos;figure&apos;, &apos;head&apos;)]" xml:lang="en"> Every
+                    tei:div within tei:body must contain at least one tei:p descendant or, if no
+                    tei:p is present, at least one tei:table, tei:list, tei:figure or tei:head
+                    descendant. </sch:assert>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <constraintSpec ident="sch-el-div-head" mode="add" scheme="schematron" xml:lang="en">
         <desc versionDate="2025-05-05" xml:lang="en">constraint for the combined usage of tei:head
         and tei:div</desc>
