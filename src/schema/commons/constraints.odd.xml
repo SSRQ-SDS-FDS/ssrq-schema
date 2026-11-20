@@ -203,8 +203,8 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                     &apos;dimensions&apos;, &apos;div&apos;, &apos;docImprint&apos;,
                     &apos;editorialDecl&apos;, &apos;encodingDesc&apos;, &apos;expan&apos;,
                     &apos;extent&apos;, &apos;foreign&apos;, &apos;forename&apos;, &apos;fw&apos;,
-                    &apos;handDesc&apos;,                     &apos;head&apos;, &apos;hi&apos;,
-                    &apos;history&apos;, &apos;idno&apos;,                     &apos;item&apos;,
+                    &apos;handDesc&apos;, &apos;head&apos;, &apos;hi&apos;,
+                    &apos;history&apos;, &apos;idno&apos;, &apos;item&apos;,
                     &apos;keywords&apos;, &apos;label&apos;, &apos;lem&apos;,
                     &apos;licence&apos;, &apos;list&apos;, &apos;listBibl&apos;,
                     &apos;listWit&apos;, &apos;measure&apos;, &apos;measureGrp&apos;,
@@ -218,9 +218,9 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                     &apos;sic&apos;, &apos;signed&apos;, &apos;sourceDesc&apos;, &apos;subst&apos;,
                     &apos;summary&apos;, &apos;supplied&apos;, &apos;support&apos;,
                     &apos;surname&apos;, &apos;supportDesc&apos;, &apos;table&apos;,
-                    &apos;TEI&apos;,                     &apos;teiHeader&apos;, &apos;text&apos;,
-                    &apos;textClass&apos;,                     &apos;time&apos;, &apos;title&apos;,
-                    &apos;unclear&apos;,                     &apos;witness&apos;)][not(*)]">
+                    &apos;TEI&apos;, &apos;teiHeader&apos;, &apos;text&apos;,
+                    &apos;textClass&apos;, &apos;time&apos;, &apos;title&apos;,
+                    &apos;unclear&apos;, &apos;witness&apos;)][not(*)]">
                         <sch:assert test="string-length(normalize-space(.)) &gt; 0"> The element
                         <sch:name/> must not be empty. </sch:assert>
                     </sch:rule>

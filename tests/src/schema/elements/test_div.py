@@ -145,6 +145,11 @@ def test_div(
             "<back><div n='1'><p>foo</p></div><div n='1'><p>bar</p></div></back>",
             False,
         ),
+        (
+            "invalid-div-without-necessary-elements",
+            "<body><div><seg>foo</seg><seg>bar</seg></div></body>",
+            False,
+        ),
     ],
 )
 def test_div_text_constraint(
