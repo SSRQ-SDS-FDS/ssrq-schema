@@ -72,6 +72,8 @@ def test_lb_before_pb(
         ("Wort <pb/> <lb/> Wort", True),
         ("<pb/>\n<lb/>Text", True),
         ('Wortanfang<lb break="no"/>Wortende', True),
+        ('Wortanfang <lb break="no"/>Wortende', False),
+        ('Wortanfang\n <lb break="no"/>Wortende', False),
         ("Wort<lb/>weiterer Text<pb/><lb/>Text", True),
         ("<hi>Text<lb/></hi><pb/><lb/>Text", True),
     ],
