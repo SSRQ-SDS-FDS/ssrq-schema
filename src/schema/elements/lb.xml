@@ -33,15 +33,20 @@ xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/200
                 <sch:rule context="tei:lb[@break = &apos;no&apos;]">
                     <sch:let name="pb" value="preceding-sibling::node()[self::* or
                     self::text()[matches(., &apos;[^\s ]&apos;)]][1][self::tei:pb]"/>
-                    <sch:report test="$pb and matches(string($pb/preceding-sibling::node()[
-                    self::* or self::text()][1]), &apos;[\s ]$&apos;)"> Whitespace is not allowed
-                    immediately before tei:pb within a word. </sch:report>
-                    <sch:report test="$pb and preceding-sibling::text()[. &gt;&gt; $pb][
-                    matches(., &apos;[\s ]&apos;)]"> Whitespace is not allowed between tei:pb and
-                    tei:lb within a word. </sch:report>
-                    <sch:report test="$pb and matches(string(following-sibling::node()[
-                    self::* or self::text()][1]), &apos;^[\s ]&apos;)"> Whitespace is not allowed
-                    immediately after tei:lb within a word. </sch:report>
+                    <sch:report role="warning" test="not($pb) and
+                    matches(string(preceding-sibling::node()[self::* or self::text()][1]),
+                    &apos;[\s ]$&apos;)"> Whitespace is not allowed immediately before tei:lb
+                    within a word. </sch:report>
+                    <sch:report role="warning" test="$pb and
+                    matches(string($pb/preceding-sibling::node()[ self::* or
+                    self::text()][1]), &apos;[\s ]$&apos;)"> Whitespace is not allowed immediately
+                    before tei:pb within a word. </sch:report>
+                    <sch:report role="warning" test="$pb and preceding-sibling::text()[. &gt;&gt;
+                    $pb][ matches(., &apos;[\s ]&apos;)]"> Whitespace is not allowed between tei:pb
+                    and tei:lb within a word. </sch:report>
+                    <sch:report role="warning" test="matches(string(following-sibling::node()[
+                    self::* or                     self::text()][1]), &apos;^[\s ]&apos;)">
+                    Whitespace is not allowed immediately after tei:lb within a word. </sch:report>
                 </sch:rule>
             </sch:pattern>
         </constraint>
