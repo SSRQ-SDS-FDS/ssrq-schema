@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://schema.ssrq-sds-fds.ch/1.9.0/fr/elements/lb/">
+        <link rel="canonical" href="https://schema.ssrq-sds-fds.ch/1.10.0/fr/elements/lb/">
       
       
         <link rel="prev" href="../label/">
@@ -1153,6 +1153,8 @@
       
         
           
+        
+      
         
       
         
@@ -3131,6 +3133,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../nameLink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    nameLink
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../note/" class="md-nav__link">
         
   
@@ -4546,7 +4571,8 @@
 <h2 id="explication">Explication</h2>
 <p>Se place au début de chaque ligne, même avant la première ligne du texte et lorsqu’un nouveau paragraphe commence. Est également utilisé pour les textes ne comportant qu’une seule ligne. Les indentations ne sont pas prises en compte. </p>
 <p>L’attribut <a href="#break"><code>@break</code></a> avec la valeur <code>no</code> indique qu’il n’y a pas de saut de ligne en dehors d’un mot, et que ce qui suit ne constitue donc pas un nouveau mot. Cela vaut également lorsque le saut de ligne coïncide avec un saut de page. </p>
-<p>Dans les textes imprimés, les traits d’union sont transcrits de la même manière que pour les textes manuscrits, les tirets étant signalés avec cet élément, alors que les tirets supplémentaires sont transcrits avec <code>-</code>.</p>
+<p>Dans les textes imprimés, les traits d’union sont transcrits de la même manière que pour les textes manuscrits, les tirets étant signalés avec cet élément, alors que les tirets supplémentaires sont transcrits avec <code>-</code>. </p>
+<p>Lorsque les débuts de page et de ligne coïncident, <a href="../pb/"><code>&lt;pb&gt;</code></a> précède <a href="./"><code>&lt;lb&gt;</code></a>, indépendamment de <a href="#break"><code>@break</code></a>. Avec <a href="#break"><code>@break</code></a> = <code>no</code>, aucun espace ne doit figurer avant <a href="../pb/"><code>&lt;pb&gt;</code></a>, entre les deux éléments ou après <a href="./"><code>&lt;lb&gt;</code></a>.</p>
 <h2 id="autorise-dans">Autorisé dans</h2>
 <ul>
 <li><strong>core</strong>: <a href="../abbr/"><code>&lt;abbr&gt;</code></a> <a href="../add/"><code>&lt;add&gt;</code></a> <a href="../corr/"><code>&lt;corr&gt;</code></a> <a href="../date/"><code>&lt;date&gt;</code></a> <a href="../del/"><code>&lt;del&gt;</code></a> <a href="../foreign/"><code>&lt;foreign&gt;</code></a> <a href="../head/"><code>&lt;head&gt;</code></a> <a href="../hi/"><code>&lt;hi&gt;</code></a> <a href="../item/"><code>&lt;item&gt;</code></a> <a href="../label/"><code>&lt;label&gt;</code></a> <a href="../measure/"><code>&lt;measure&gt;</code></a> <a href="../measureGrp/"><code>&lt;measureGrp&gt;</code></a> <a href="../note/"><code>&lt;note&gt;</code></a> <a href="../num/"><code>&lt;num&gt;</code></a> <a href="../orig/"><code>&lt;orig&gt;</code></a> <a href="../p/"><code>&lt;p&gt;</code></a> <a href="../q/"><code>&lt;q&gt;</code></a> <a href="../quote/"><code>&lt;quote&gt;</code></a> <a href="../sic/"><code>&lt;sic&gt;</code></a> <a href="../term/"><code>&lt;term&gt;</code></a> <a href="../time/"><code>&lt;time&gt;</code></a> <a href="../unclear/"><code>&lt;unclear&gt;</code></a></li>

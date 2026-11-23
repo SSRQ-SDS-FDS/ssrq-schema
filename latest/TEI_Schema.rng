@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2026-10-30T13:02:57Z. . 
+Schema generated from ODD source 2026-11-23T15:12:46Z. . 
 TEI Edition: P5 Version 4.12.0a. Last updated on 27th July 2026, revision 497393620 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/ 
   
@@ -359,6 +359,8 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bushelbushels</a:documentation>
          <value>Scheibe</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">sliceslices</a:documentation>
+         <value>Schoppen</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">schoppen</a:documentation>
          <value>Sechzehner</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">sechzehner</a:documentation>
          <value>Sester</value>
@@ -1125,6 +1127,8 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">wood</a:documentation>
                <value>wool</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">wool</a:documentation>
+               <value>yarn</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">yarn</a:documentation>
                <value>ziger</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ziger (whey cheese)</a:documentation>
             </choice>
@@ -1402,6 +1406,8 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">tear</a:documentation>
                   <value>faded_ink</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">faded ink</a:documentation>
+                  <value>faded_pencil</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">faded pencil</a:documentation>
                   <value>fire</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">smoke/fire</a:documentation>
                   <value>fold</value>
@@ -2750,6 +2756,17 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/
                <data type="string"/>
             </attribute>
          </optional>
+         <optional>
+            <attribute name="rend">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the appearance of the paragraph</a:documentation>
+               <choice>
+                  <ref name="ssrq.rend.add"/>
+                  <ref name="ssrq.rend.font"/>
+                  <ref name="ssrq.rend.placement"/>
+                  <ref name="ssrq.rend.rotation"/>
+               </choice>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -2819,9 +2836,9 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude">
-            <sch:rule context="tei:quote[not(ancestor::tei:back)]">
+            <sch:rule context="tei:quote[not(ancestor::tei:back)][not(ancestor::tei:note)]">
                <sch:assert role="warning" test=".[following-sibling::*[1][self::tei:note]]">
-                    tei:quote should be followed by a tei:note element. </sch:assert>
+                    tei:quote should be followed by a tei:note element.</sch:assert>
             </sch:rule>
          </sch:pattern>
          <optional>
@@ -3268,7 +3285,7 @@ Measures]</a:documentation>
             </sch:rule>
             <sch:rule context="tei:measure[@type = 'volume']">
                <sch:let name="volume"
-                        value="&#34;Becher|Bosse|Brenten|Eimer|Fass|Fuder|Garbe|Immi|Kanne|Klafter|Kopf|Kratten|Kröttli|Ledi|Legel|Malter|Mass|Metzen|Mäss|Mässli|Mütt|Quart|Quartane|Röhrchen|Sack|Saum|Schaffen|Scheffel|Scheibe|Sechzehner|Sester|Staffel|Stauf|Ster|Stuck|Tonne|Trinken|Vierdung|Vierling|Viertel|Zuber|carica&#34;"/>
+                        value="&#34;Becher|Bosse|Brenten|Eimer|Fass|Fuder|Garbe|Immi|Kanne|Klafter|Kopf|Kratten|Kröttli|Ledi|Legel|Malter|Mass|Metzen|Mäss|Mässli|Mütt|Quart|Quartane|Röhrchen|Sack|Saum|Schaffen|Scheffel|Scheibe|Schoppen|Sechzehner|Sester|Staffel|Stauf|Ster|Stuck|Tonne|Trinken|Vierdung|Vierling|Viertel|Zuber|carica&#34;"/>
                <sch:assert test="matches(@unit, concat('^', $volume,                     '$'))"> "
                         <sch:value-of select="./@unit"/>
                         " is not a valid capacity unit – you need to choose from the following
@@ -3600,6 +3617,15 @@ Measures]</a:documentation>
                </zeroOrMore>
             </interleave>
          </group>
+         <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:xi="http://www.w3.org/2001/XInclude"
+                      id="nested-list"
+                      is-a="nested-el">
+            <sch:param name="el-name" value="list"/>
+            <sch:param name="nested-level" value="1"/>
+         </sch:pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
                   id="ssrq-main-schema-list-gloss-list-must-have-labels-constraint-rule-32">
@@ -3634,6 +3660,7 @@ Measures]</a:documentation>
          <oneOrMore>
             <choice>
                <ref name="bibl"/>
+               <ref name="list"/>
                <ref name="ssrq.content.default"/>
             </choice>
          </oneOrMore>
@@ -3843,6 +3870,36 @@ Elements]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line beginning) Describes the beginning of a line. [3.11.3. Milestone
 Elements 7.2.6. Speech Contents]</a:documentation>
          <empty/>
+         <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:xi="http://www.w3.org/2001/XInclude">
+            <sch:rule context="tei:lb">
+               <sch:report test="following-sibling::node()[self::* or                     self::text()[matches(., '[^\s ]')]][1][self::tei:pb]"> A page
+                    beginning (tei:pb) must precede the line beginning (tei:lb). </sch:report>
+            </sch:rule>
+         </sch:pattern>
+         <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:xi="http://www.w3.org/2001/XInclude">
+            <sch:rule context="tei:lb[@break = 'no']">
+               <sch:let name="pb"
+                        value="preceding-sibling::node()[self::* or                     self::text()[matches(., '[^\s ]')]][1][self::tei:pb]"/>
+               <sch:report role="warning"
+                           test="not($pb) and                     matches(string(preceding-sibling::node()[self::* or self::text()][1]),                     '[\s ]$')"> Whitespace is not allowed immediately before tei:lb
+                    within a word. </sch:report>
+               <sch:report role="warning"
+                           test="$pb and                     matches(string($pb/preceding-sibling::node()[ self::* or                     self::text()][1]), '[\s ]$')"> Whitespace is not allowed immediately
+                    before tei:pb within a word. </sch:report>
+               <sch:report role="warning"
+                           test="$pb and preceding-sibling::text()[. &gt;&gt;                     $pb][ matches(., '[\s ]')]"> Whitespace is not allowed between tei:pb
+                    and tei:lb within a word. </sch:report>
+               <sch:report role="warning"
+                           test="matches(string(following-sibling::node()[                     self::* or                     self::text()][1]), '^[\s ]')">
+                    Whitespace is not allowed immediately after tei:lb within a word. </sch:report>
+            </sch:rule>
+         </sch:pattern>
          <ref name="att.breaking.attributes"/>
          <ref name="att.global.facs.attributes"/>
          <empty/>
@@ -3853,14 +3910,29 @@ Elements 7.2.6. Speech Contents]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(column beginning) Describes the beginning of a new column. [3.11.3. Milestone
 Elements]</a:documentation>
          <empty/>
-         <optional>
-            <attribute name="n">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the column count of the original</a:documentation>
-               <data type="string">
-                  <param name="pattern">[a-z]{1}</param>
-               </data>
-            </attribute>
-         </optional>
+         <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:xi="http://www.w3.org/2001/XInclude">
+            <sch:rule context="tei:body[.//tei:cb]">
+               <sch:assert test="count(.//tei:cb) gt 1" xml:lang="en"> If tei:cb is used
+                    within the text, there must always be at least two tei:cb elements.
+                    </sch:assert>
+               <sch:assert test="every $i in 2 to count(.//tei:cb) satisfies                     (.//tei:cb)[$i]/@n != (.//tei:cb)[$i - 1]/@n"
+                           xml:lang="en"> Two consecutive
+                    tei:cb elements within the text must not have the same value for
+                    @n.</sch:assert>
+               <sch:assert test="(.//tei:cb)[1]/@n = 'a'" xml:lang="en"> The first
+                    tei:cb element within the text must have the value 'a' for its @n
+                    attribute.</sch:assert>
+            </sch:rule>
+         </sch:pattern>
+         <attribute name="n">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the column count of the original</a:documentation>
+            <data type="string">
+               <param name="pattern">[a-z]{1}</param>
+            </data>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -4563,7 +4635,7 @@ Elements]</a:documentation>
          </sch:pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-ab-abstractModel-structure-ab-in-l-constraint-rule-55">
+                  id="ssrq-main-schema-ab-abstractModel-structure-ab-in-l-constraint-rule-58">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -4577,9 +4649,10 @@ Elements]</a:documentation>
          <ref name="att.written.attributes"/>
          <optional>
             <attribute name="rend">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the writing means used</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the appearance of the anonymous block</a:documentation>
                <choice>
                   <ref name="ssrq.rend.add"/>
+                  <ref name="ssrq.rend.font"/>
                   <ref name="ssrq.rend.placement"/>
                   <ref name="ssrq.rend.rotation"/>
                </choice>
@@ -4732,7 +4805,7 @@ Elements]</a:documentation>
          </sch:pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-msDesc-one_ms_singleton_max-constraint-rule-62">
+                  id="ssrq-main-schema-msDesc-one_ms_singleton_max-constraint-rule-65">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -4766,7 +4839,7 @@ Elements]</a:documentation>
          </sch:pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-dimensions-duplicateDim-constraint-rule-64">
+                  id="ssrq-main-schema-dimensions-duplicateDim-constraint-rule-67">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5395,6 +5468,9 @@ Elements]</a:documentation>
                <oneOrMore>
                   <ref name="forename"/>
                </oneOrMore>
+               <optional>
+                  <ref name="nameLink"/>
+               </optional>
                <ref name="surname"/>
             </group>
          </choice>
@@ -5415,9 +5491,9 @@ Elements]</a:documentation>
                     </sch:assert>
             </sch:rule>
             <sch:rule context="tei:persName">
-               <sch:report test="tei:forename or tei:surname"> A tei:persName element not
-                    occurring within tei:editor or tei:respStmt must not contain tei:forename or
-                    tei:surname. </sch:report>
+               <sch:report test="tei:forename or tei:surname or tei:nameLink"> A tei:persName
+                    element not occurring within tei:editor or tei:respStmt must not contain
+                    tei:forename, tei:surname or tei:nameLink.</sch:report>
             </sch:rule>
          </sch:pattern>
          <optional>
@@ -5475,6 +5551,12 @@ Elements]</a:documentation>
    <define name="forename">
       <element name="forename">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(forename) Indicates a persons forename. [14.2.1. Personal Names]</a:documentation>
+         <text/>
+      </element>
+   </define>
+   <define name="nameLink">
+      <element name="nameLink">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name link) Indicates name link. [14.2.1. Personal Names]</a:documentation>
          <text/>
       </element>
    </define>
@@ -5660,6 +5742,9 @@ Elements]</a:documentation>
                <zeroOrMore>
                   <ref name="pb"/>
                </zeroOrMore>
+               <zeroOrMore>
+                  <ref name="signed"/>
+               </zeroOrMore>
             </interleave>
             <group>
                <ref name="bibl"/>
@@ -5733,6 +5818,18 @@ Elements]</a:documentation>
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude">
+            <sch:rule context="tei:div[ancestor::tei:body]">
+               <sch:assert test=".//tei:*[name() = ('p', 'table',                     'list', 'figure', 'head')]"
+                           xml:lang="en"> Every
+                    tei:div within tei:body must contain at least one tei:p descendant or, if no
+                    tei:p is present, at least one tei:table, tei:list, tei:figure or tei:head
+                    descendant. </sch:assert>
+            </sch:rule>
+         </sch:pattern>
+         <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:xi="http://www.w3.org/2001/XInclude">
             <sch:rule context="tei:div[tei:head][tei:div]">
                <sch:report test="tei:head[preceding-sibling::tei:div]"> If a tei:head is used
                     inside tei:div it must always precede all tei:div-elements. </sch:report>
@@ -5771,7 +5868,7 @@ Elements]</a:documentation>
          </sch:pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-div-abstractModel-structure-div-in-l-constraint-rule-82">
+                  id="ssrq-main-schema-div-abstractModel-structure-div-in-l-constraint-rule-86">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5783,7 +5880,7 @@ Elements]</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-83">
+                  id="ssrq-main-schema-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-87">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5883,7 +5980,7 @@ Elements]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-addSpan-addSpan-requires-spanTo-constraint-rule-85">
+                  id="ssrq-main-schema-addSpan-addSpan-requires-spanTo-constraint-rule-89">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5893,7 +5990,7 @@ Elements]</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-addSpan-addSpan-requires-spanTo-fr-constraint-rule-86">
+                  id="ssrq-main-schema-addSpan-addSpan-requires-spanTo-fr-constraint-rule-90">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5988,7 +6085,7 @@ Elements]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-damageSpan-damageSpan-requires-spanTo-constraint-rule-87">
+                  id="ssrq-main-schema-damageSpan-damageSpan-requires-spanTo-constraint-rule-91">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -5998,7 +6095,7 @@ Elements]</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-damageSpan-damageSpan-requires-spanTo-fr-constraint-rule-88">
+                  id="ssrq-main-schema-damageSpan-damageSpan-requires-spanTo-fr-constraint-rule-92">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -6017,7 +6114,7 @@ Elements]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-delSpan-delSpan-requires-spanTo-constraint-rule-89">
+                  id="ssrq-main-schema-delSpan-delSpan-requires-spanTo-constraint-rule-93">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -6027,7 +6124,7 @@ Elements]</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-delSpan-delSpan-requires-spanTo-fr-constraint-rule-90">
+                  id="ssrq-main-schema-delSpan-delSpan-requires-spanTo-fr-constraint-rule-94">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -6149,7 +6246,7 @@ Elements]</a:documentation>
          </sch:pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ssrq-main-schema-subst-substContents1-constraint-rule-92">
+                  id="ssrq-main-schema-subst-substContents1-constraint-rule-96">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -6234,6 +6331,8 @@ Elements]</a:documentation>
             <choice>
                <value>applied</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">applied</a:documentation>
+               <value>applied-on-a-binding-lace</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">applied on a binding lace</a:documentation>
                <value>sealed_on_a_cord</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">sealed on a cord</a:documentation>
                <value>sealed_on_a_lace</value>
@@ -6424,7 +6523,7 @@ Elements]</a:documentation>
       </sch:rule>
    </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ssrq-main-schema-sch-att-spanTo-constraint-rule-103">
+            id="ssrq-main-schema-sch-att-spanTo-constraint-rule-107">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -6466,6 +6565,19 @@ Elements]</a:documentation>
    </sch:pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                abstract="true"
+                id="nested-el">
+      <sch:rule context="tei:$el-name">
+         <sch:assert test="count(ancestor::tei:$el-name) le $nested-level" xml:lang="en"> A
+                            <sch:value-of select="concat('tei:', '$el-name')"/>
+                            must not be nested more than
+                            <sch:value-of select="$nested-level"/>
+                            level deep.</sch:assert>
+      </sch:rule>
+   </sch:pattern>
+   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
       <sch:rule context="@*">
          <sch:report test="matches(., '^(\s+|\t+|\n)(.*)$')" xml:lang="en"> The value of <sch:name/> should not start with whitespace.
@@ -6485,7 +6597,7 @@ Elements]</a:documentation>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
-      <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc',                     'head', 'hi',                     'history', 'idno',                     'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI',                     'teiHeader', 'text',                     'textClass',                     'time', 'title',                     'unclear',                     'witness')][not(*)]">
+      <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc', 'head', 'hi',                     'history', 'idno', 'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI', 'teiHeader', 'text',                     'textClass', 'time', 'title',                     'unclear', 'witness')][not(*)]">
          <sch:assert test="string-length(normalize-space(.)) &gt; 0"> The element
                         <sch:name/> must not be empty. </sch:assert>
       </sch:rule>
@@ -6525,7 +6637,7 @@ Elements]</a:documentation>
       </sch:rule>
    </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ssrq-main-schema-unique-xml-ids-constraint-rule-114">
+            id="ssrq-main-schema-unique-xml-ids-constraint-rule-119">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -6535,7 +6647,7 @@ Elements]</a:documentation>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ssrq-main-schema-ref-with-two-targets-constraint-rule-115">
+            id="ssrq-main-schema-ref-with-two-targets-constraint-rule-120">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:xi="http://www.w3.org/2001/XInclude"

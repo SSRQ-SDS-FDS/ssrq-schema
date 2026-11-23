@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2026-10-30T13:03:01Z. . 
+Schema generated from ODD source 2026-11-23T15:12:50Z. . 
 TEI Edition: P5 Version 4.12.0a. Last updated on 27th July 2026, revision 497393620 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/ 
   
@@ -1509,6 +1509,18 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/
       </sch:rule>
    </sch:pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                abstract="true"
+                id="nested-el">
+      <sch:rule context="tei:$el-name">
+         <sch:assert test="count(ancestor::tei:$el-name) le $nested-level" xml:lang="en"> A
+                            <sch:value-of select="concat('tei:', '$el-name')"/>
+                            must not be nested more than
+                            <sch:value-of select="$nested-level"/>
+                            level deep.</sch:assert>
+      </sch:rule>
+   </sch:pattern>
+   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:rule context="@*">
          <sch:report test="matches(., '^(\s+|\t+|\n)(.*)$')" xml:lang="en"> The value of <sch:name/> should not start with whitespace.
@@ -1526,7 +1538,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/
    </sch:pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-      <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc',                     'head', 'hi',                     'history', 'idno',                     'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI',                     'teiHeader', 'text',                     'textClass',                     'time', 'title',                     'unclear',                     'witness')][not(*)]">
+      <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc', 'head', 'hi',                     'history', 'idno', 'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI', 'teiHeader', 'text',                     'textClass', 'time', 'title',                     'unclear', 'witness')][not(*)]">
          <sch:assert test="string-length(normalize-space(.)) &gt; 0"> The element
                         <sch:name/> must not be empty. </sch:assert>
       </sch:rule>
@@ -1562,7 +1574,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/
       </sch:rule>
    </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ssrq-lit-schema-unique-xml-ids-constraint-rule-33">
+            id="ssrq-lit-schema-unique-xml-ids-constraint-rule-34">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 context="tei:TEI">
@@ -1571,7 +1583,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ssrq-lit-schema-ref-with-two-targets-constraint-rule-34">
+            id="ssrq-lit-schema-ref-with-two-targets-constraint-rule-35">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 context="tei:*[@target]">

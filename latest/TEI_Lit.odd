@@ -19,8 +19,8 @@
             <publisher>
                     SSRQ-SDS-FDS
                 </publisher>
-            <date when="2026-10-30Z"/>
-            <idno>1.1.0</idno>
+            <date when="2026-11-23Z"/>
+            <idno>1.1.1</idno>
             <availability>
                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                         Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
@@ -2930,6 +2930,24 @@ resource, either within the current document or elsewhere.</desc>
                </constraint>
             </constraintSpec>
             <constraintSpec xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                            ident="sch-el-complex-nesting"
+                            scheme="schematron"
+                            xml:lang="en">
+               <desc versionDate="2026-11-02" xml:lang="en">abstract pattern to check element
+            nesting</desc>
+               <constraint>
+                  <sch:pattern abstract="true" id="nested-el">
+                     <sch:rule context="tei:$el-name">
+                        <sch:assert test="count(ancestor::tei:$el-name) le $nested-level" xml:lang="en"> A
+                            <sch:value-of select="concat('tei:', '$el-name')"/>
+                            must not be nested more than
+                            <sch:value-of select="$nested-level"/>
+                            level deep.</sch:assert>
+                     </sch:rule>
+                  </sch:pattern>
+               </constraint>
+            </constraintSpec>
+            <constraintSpec xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                             ident="sch-trim-attributes"
                             scheme="schematron"
                             xml:lang="en">
@@ -2969,7 +2987,7 @@ resource, either within the current document or elsewhere.</desc>
             elements</desc>
                <constraint>
                   <sch:pattern>
-                     <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc',                     'head', 'hi',                     'history', 'idno',                     'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI',                     'teiHeader', 'text',                     'textClass',                     'time', 'title',                     'unclear',                     'witness')][not(*)]">
+                     <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc', 'head', 'hi',                     'history', 'idno', 'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI', 'teiHeader', 'text',                     'textClass', 'time', 'title',                     'unclear', 'witness')][not(*)]">
                         <sch:assert test="string-length(normalize-space(.)) &gt; 0"> The element
                         <sch:name/> must not be empty. </sch:assert>
                      </sch:rule>

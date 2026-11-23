@@ -22,8 +22,8 @@
             <publisher>
                     SSRQ-SDS-FDS
                 </publisher>
-            <date when="2026-10-30Z"/>
-            <idno>1.9.0</idno>
+            <date when="2026-11-23Z"/>
+            <idno>1.10.0</idno>
             <availability>
                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                         Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
@@ -2615,6 +2615,7 @@ resource, either within the current document or elsewhere.</desc>
                <desc rend="replace" versionDate="2025-02-06" xml:lang="fr">Contient un paragraphe.</desc>
                <classes>
                   <memberOf key="att.global"/>
+                  <memberOf key="att.global.rendition"/>
                   <memberOf key="model.pLike"/>
                </classes>
                <content>
@@ -2674,6 +2675,19 @@ resource, either within the current document or elsewhere.</desc>
                      <desc versionDate="2025-02-04" xml:lang="de">die Nummerierung des Absatzes</desc>
                      <desc versionDate="2025-02-04" xml:lang="en">the numbering of the paragraph</desc>
                      <desc versionDate="2025-02-04" xml:lang="fr">la numérotation du paragraphe</desc>
+                  </attDef>
+                  <attDef ident="rend" mode="replace">
+                     <desc versionDate="2026-11-18" xml:lang="de">das Aussehen des Absatzes</desc>
+                     <desc versionDate="2026-11-18" xml:lang="en">the appearance of the paragraph</desc>
+                     <desc versionDate="2026-11-18" xml:lang="fr">l’apparition du paragraphe</desc>
+                     <datatype>
+                        <rng:choice>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.rend.add"/>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.rend.font"/>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.rend.placement"/>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.rend.rotation"/>
+                        </rng:choice>
+                     </datatype>
                   </attDef>
                   <attDef ident="xml:id" mode="delete"/>
                </attList>
@@ -3150,12 +3164,12 @@ resource, either within the current document or elsewhere.</desc>
                                mode="add"
                                scheme="schematron"
                                xml:lang="en">
-                  <desc versionDate="2023-05-31" xml:lang="en">constraint for tei:quote</desc>
+                  <desc versionDate="2026-11-13" xml:lang="en">constraint for tei:quote</desc>
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:quote[not(ancestor::tei:back)]">
+                        <sch:rule context="tei:quote[not(ancestor::tei:back)][not(ancestor::tei:note)]">
                            <sch:assert role="warning" test=".[following-sibling::*[1][self::tei:note]]">
-                    tei:quote should be followed by a tei:note element. </sch:assert>
+                    tei:quote should be followed by a tei:note element.</sch:assert>
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
@@ -5274,7 +5288,7 @@ Measures</ref>
                         </sch:rule>
                         <sch:rule context="tei:measure[@type = 'volume']">
                            <sch:let name="volume"
-                                    value="&#34;Becher|Bosse|Brenten|Eimer|Fass|Fuder|Garbe|Immi|Kanne|Klafter|Kopf|Kratten|Kröttli|Ledi|Legel|Malter|Mass|Metzen|Mäss|Mässli|Mütt|Quart|Quartane|Röhrchen|Sack|Saum|Schaffen|Scheffel|Scheibe|Sechzehner|Sester|Staffel|Stauf|Ster|Stuck|Tonne|Trinken|Vierdung|Vierling|Viertel|Zuber|carica&#34;"/>
+                                    value="&#34;Becher|Bosse|Brenten|Eimer|Fass|Fuder|Garbe|Immi|Kanne|Klafter|Kopf|Kratten|Kröttli|Ledi|Legel|Malter|Mass|Metzen|Mäss|Mässli|Mütt|Quart|Quartane|Röhrchen|Sack|Saum|Schaffen|Scheffel|Scheibe|Schoppen|Sechzehner|Sester|Staffel|Stauf|Ster|Stuck|Tonne|Trinken|Vierdung|Vierling|Viertel|Zuber|carica&#34;"/>
                            <sch:assert test="matches(@unit, concat('^', $volume,                     '$'))"> "
                         <sch:value-of select="./@unit"/>
                         " is not a valid capacity unit – you need to choose from the following
@@ -6876,6 +6890,15 @@ Measures</ref>
                      </sequence>
                   </sequence>
                </content>
+               <constraintSpec ident="sch-list" scheme="schematron" xml:lang="en">
+                  <desc versionDate="2026-10-28" xml:lang="en">constraints for tei:list</desc>
+                  <constraint>
+                     <sch:pattern id="nested-list" is-a="nested-el">
+                        <sch:param name="el-name" value="list"/>
+                        <sch:param name="nested-level" value="1"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <constraintSpec ident="gloss-list-must-have-labels"
                                scheme="schematron"
                                xml:lang="en">
@@ -7084,6 +7107,7 @@ Measures</ref>
                <content>
                   <alternate minOccurs="1" maxOccurs="unbounded">
                      <elementRef key="bibl"/>
+                     <elementRef key="list"/>
                      <macroRef key="ssrq.content.default"/>
                   </alternate>
                </content>
@@ -8065,6 +8089,36 @@ Elements</ref>
                <content>
                   <empty/>
                </content>
+               <constraintSpec ident="sch-lb-page-break" scheme="schematron" xml:lang="en">
+                  <desc versionDate="2026-11-20" xml:lang="en">Order and whitespace of page and line
+        beginnings.</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:lb">
+                           <sch:report test="following-sibling::node()[self::* or                     self::text()[matches(., '[^\s ]')]][1][self::tei:pb]"> A page
+                    beginning (tei:pb) must precede the line beginning (tei:lb). </sch:report>
+                        </sch:rule>
+                     </sch:pattern>
+                     <sch:pattern>
+                        <sch:rule context="tei:lb[@break = 'no']">
+                           <sch:let name="pb"
+                                    value="preceding-sibling::node()[self::* or                     self::text()[matches(., '[^\s ]')]][1][self::tei:pb]"/>
+                           <sch:report role="warning"
+                                       test="not($pb) and                     matches(string(preceding-sibling::node()[self::* or self::text()][1]),                     '[\s ]$')"> Whitespace is not allowed immediately before tei:lb
+                    within a word. </sch:report>
+                           <sch:report role="warning"
+                                       test="$pb and                     matches(string($pb/preceding-sibling::node()[ self::* or                     self::text()][1]), '[\s ]$')"> Whitespace is not allowed immediately
+                    before tei:pb within a word. </sch:report>
+                           <sch:report role="warning"
+                                       test="$pb and preceding-sibling::text()[. &gt;&gt;                     $pb][ matches(., '[\s ]')]"> Whitespace is not allowed between tei:pb
+                    and tei:lb within a word. </sch:report>
+                           <sch:report role="warning"
+                                       test="matches(string(following-sibling::node()[                     self::* or                     self::text()][1]), '^[\s ]')">
+                    Whitespace is not allowed immediately after tei:lb within a word. </sch:report>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <exemplum xml:id="ex-lb-de" xml:lang="de">
                   <p>
                 Beispiel für eine Worttrennung am Zeilenende
@@ -8107,6 +8161,11 @@ Elements</ref>
             Bei gedruckten Texten werden analog zu den handschriftlichen Texten Trennstriche mit
             eben hiermit und Bindestrichen bzw. Ergänzungsstriche mit <val>-</val> transkribiert.
         </p>
+                  <p>
+            Wenn Seiten- und Zeilenanfang zusammenfallen, steht <gi>pb</gi> vor <gi>lb</gi>,
+            unabhängig vom Attribut <att>break</att>. Bei <att>break</att> = <val>no</val> darf vor
+            <gi>pb</gi>, zwischen den beiden Elementen und nach <gi>lb</gi> kein Leerraum stehen.
+        </p>
                </remarks>
                <remarks versionDate="2025-02-03" xml:lang="en">
                   <p>
@@ -8119,6 +8178,11 @@ Elements</ref>
             if the line break coincides with the page break. In printed texts, hyphens are
             transcribed with just hereby and hyphens or additional dashes with '-',
             analogous to handwritten texts.
+        </p>
+                  <p>
+            When page and line beginnings coincide, <gi>pb</gi> precedes <gi>lb</gi>, regardless of
+            <att>break</att>. With <att>break</att> = <val>no</val>, whitespace is not allowed
+            before <gi>pb</gi>, between the two elements or after <gi>lb</gi>.
         </p>
                </remarks>
                <remarks versionDate="2025-02-06" xml:lang="fr">
@@ -8136,6 +8200,11 @@ Elements</ref>
             Dans les textes imprimés, les traits d’union sont transcrits de la même manière que
             pour les textes manuscrits, les tirets étant signalés avec cet élément, alors que les
             tirets supplémentaires sont transcrits avec <val>-</val>.
+        </p>
+                  <p>
+            Lorsque les débuts de page et de ligne coïncident, <gi>pb</gi> précède <gi>lb</gi>,
+            indépendamment de <att>break</att>. Avec <att>break</att> = <val>no</val>, aucun espace
+            ne doit figurer avant <gi>pb</gi>, entre les deux éléments ou après <gi>lb</gi>.
         </p>
                </remarks>
                <listRef>
@@ -8165,8 +8234,27 @@ Elements</ref>
                <content>
                   <empty/>
                </content>
+               <constraintSpec ident="sch-cb" scheme="schematron" xml:lang="en">
+                  <desc versionDate="2026-11-04" xml:lang="en">constraints for tei:cb</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:body[.//tei:cb]">
+                           <sch:assert test="count(.//tei:cb) gt 1" xml:lang="en"> If tei:cb is used
+                    within the text, there must always be at least two tei:cb elements.
+                    </sch:assert>
+                           <sch:assert test="every $i in 2 to count(.//tei:cb) satisfies                     (.//tei:cb)[$i]/@n != (.//tei:cb)[$i - 1]/@n"
+                                       xml:lang="en"> Two consecutive
+                    tei:cb elements within the text must not have the same value for
+                    @n.</sch:assert>
+                           <sch:assert test="(.//tei:cb)[1]/@n = 'a'" xml:lang="en"> The first
+                    tei:cb element within the text must have the value 'a' for its @n
+                    attribute.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <attList>
-                  <attDef ident="n" mode="replace">
+                  <attDef ident="n" mode="replace" usage="req">
                      <desc versionDate="2025-01-31" xml:lang="de">die Spaltenzählung des Originals</desc>
                      <desc versionDate="2025-01-31" xml:lang="en">the column count of the original</desc>
                      <desc versionDate="2025-01-31" xml:lang="fr">le nombre de colonnes de l’original</desc>
@@ -11740,12 +11828,15 @@ Elements</ref>
                      </datatype>
                   </attDef>
                   <attDef ident="rend" mode="replace">
-                     <desc versionDate="2025-02-04" xml:lang="de">das verwendete Schreibmittel</desc>
-                     <desc versionDate="2025-02-04" xml:lang="en">the writing means used</desc>
-                     <desc versionDate="2025-02-04" xml:lang="fr">les moyens d’écriture utilisés</desc>
+                     <desc versionDate="2026-11-18" xml:lang="de">das Aussehen des anonymen
+            Textblocks</desc>
+                     <desc versionDate="2026-11-18" xml:lang="en">the appearance of the anonymous
+            block</desc>
+                     <desc versionDate="2026-11-18" xml:lang="fr">l’apparition du bloc anonyme</desc>
                      <datatype>
                         <rng:choice>
                            <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.rend.add"/>
+                           <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.rend.font"/>
                            <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.rend.placement"/>
                            <ref xmlns="http://relaxng.org/ns/structure/1.0" name="ssrq.rend.rotation"/>
                         </rng:choice>
@@ -15937,6 +16028,9 @@ Elements</ref>
                         <oneOrMore>
                            <ref name="forename"/>
                         </oneOrMore>
+                        <optional>
+                           <ref name="nameLink"/>
+                        </optional>
                         <ref name="surname"/>
                      </group>
                   </choice>
@@ -15961,9 +16055,9 @@ Elements</ref>
                     </sch:assert>
                         </sch:rule>
                         <sch:rule context="tei:persName">
-                           <sch:report test="tei:forename or tei:surname"> A tei:persName element not
-                    occurring within tei:editor or tei:respStmt must not contain tei:forename or
-                    tei:surname. </sch:report>
+                           <sch:report test="tei:forename or tei:surname or tei:nameLink"> A tei:persName
+                    element not occurring within tei:editor or tei:respStmt must not contain
+                    tei:forename, tei:surname or tei:nameLink.</sch:report>
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
@@ -16121,6 +16215,37 @@ Elements</ref>
                <desc rend="replace" versionDate="2026-10-27" xml:lang="de">Enthält den Vornamen einer Person.</desc>
                <desc rend="replace" versionDate="2026-10-27" xml:lang="en">Indicates a persons forename.</desc>
                <desc rend="replace" versionDate="2026-10-27" xml:lang="fr">Contient le prénom d’une personne.</desc>
+               <classes/>
+               <content>
+                  <textNode/>
+               </content>
+               <remarks versionDate="2025-02-06" xml:lang="de">
+                  <p>
+            Es gelten die ausführlichen Richtlinien zur Auszeichnung von Personen in den <ref target="persons.de.md">Transkriptionsrichtlinien</ref>.
+        </p>
+               </remarks>
+               <remarks versionDate="2025-02-06" xml:lang="de">
+                  <p>
+            Les directives détaillées relatives à la dénomination des personnes dans les <ref target="persons.de.md">principes de transcription</ref> s’appliquent.
+        </p>
+               </remarks>
+               <listRef>
+                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPER">14.2.1. Personal Names</ref>
+               </listRef>
+            </elementSpec>
+            <elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                         xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                         rend="change"
+                         module="namesdates"
+                         xml:id="gi-nameLink"
+                         ident="nameLink">
+               <gloss rend="replace" versionDate="2026-11-06" xml:lang="de">Namenspartikel</gloss>
+               <gloss rend="replace" versionDate="2026-11-06" xml:lang="en">name link</gloss>
+               <gloss rend="replace" versionDate="2026-11-06" xml:lang="fr">lien entre les composants d’un nom</gloss>
+               <desc rend="replace" versionDate="2026-11-06" xml:lang="de">Enthält eine Namenspartikel.</desc>
+               <desc rend="replace" versionDate="2026-11-06" xml:lang="en">Indicates name link.</desc>
+               <desc rend="replace" versionDate="2026-11-06" xml:lang="fr">Contient le lien entre les composants d’un
+    nom.</desc>
                <classes/>
                <content>
                   <textNode/>
@@ -17381,6 +17506,7 @@ Elements</ref>
                         <elementRef key="div" maxOccurs="unbounded"/>
                         <elementRef key="gap" maxOccurs="unbounded" minOccurs="0"/>
                         <elementRef key="pb" maxOccurs="unbounded" minOccurs="0"/>
+                        <elementRef key="signed" maxOccurs="unbounded" minOccurs="0"/>
                      </sequence>
                      <elementRef key="bibl" maxOccurs="unbounded" minOccurs="2"/>
                   </alternate>
@@ -17524,6 +17650,24 @@ Elements</ref>
                      <sch:pattern>
                         <sch:rule context="tei:div">
                            <sch:assert test="string-length(normalize-space(string-join(text(),                     ''))) = 0"> Text is not allowed in tei:div. </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec ident="sch-el-div-descendants"
+                               mode="add"
+                               scheme="schematron"
+                               xml:lang="en">
+                  <desc versionDate="2026-11-17" xml:lang="en">constraint for the descendants of
+        tei:div</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:div[ancestor::tei:body]">
+                           <sch:assert test=".//tei:*[name() = ('p', 'table',                     'list', 'figure', 'head')]"
+                                       xml:lang="en"> Every
+                    tei:div within tei:body must contain at least one tei:p descendant or, if no
+                    tei:p is present, at least one tei:table, tei:list, tei:figure or tei:head
+                    descendant. </sch:assert>
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
@@ -19435,14 +19579,26 @@ Elements</ref>
                     Siegels</desc>
                      <desc versionDate="2025-01-28" xml:lang="en">the method of attachment of the
                     seal</desc>
-                     <desc versionDate="2025-01-28" xml:lang="fr">le type d’apposition du
+                     <desc versionDate="2026-11-19" xml:lang="fr">le mode d’apposition du
                     sceau</desc>
+                     <desc versionDate="2026-11-19" xml:lang="it">il metodo di apposizione del
+                    sigillo</desc>
                      <valList type="closed">
                         <valItem ident="applied">
                            <desc versionDate="2023-05-31" xml:lang="de">aufgedrückt</desc>
                            <desc versionDate="2023-05-31" xml:lang="en">applied</desc>
                            <desc versionDate="2023-05-31" xml:lang="fr">plaqué</desc>
                            <desc versionDate="2023-05-31" xml:lang="it">aderente</desc>
+                        </valItem>
+                        <valItem ident="applied-on-a-binding-lace">
+                           <desc versionDate="2026-11-17" xml:lang="de">aufgedrückt auf einer
+                            Heftschnur</desc>
+                           <desc versionDate="2026-11-17" xml:lang="en">applied on a binding
+                            lace</desc>
+                           <desc versionDate="2026-11-17" xml:lang="fr">attaché au fil de
+                            reliure</desc>
+                           <desc versionDate="2026-11-17" xml:lang="it">pendente dal filo di
+                            rilegatura</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_cord">
                            <desc versionDate="2023-05-31" xml:lang="de">angehängt an einer
@@ -19454,34 +19610,36 @@ Elements</ref>
                             cordicella</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_lace">
-                           <desc versionDate="2023-05-31" xml:lang="de">angehängt an Schnur</desc>
+                           <desc versionDate="2026-11-19" xml:lang="de">angehängt an einer
+                            Schnur</desc>
                            <desc versionDate="2023-05-31" xml:lang="en">sealed on a lace</desc>
-                           <desc versionDate="2023-05-31" xml:lang="fr">attaché à un floc</desc>
+                           <desc versionDate="2023-05-31" xml:lang="fr">attaché à un cordon</desc>
                            <desc versionDate="2023-05-31" xml:lang="it">pendente da un
                             cordone</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_leather_tag">
-                           <desc versionDate="2023-05-31" xml:lang="de">angehängt an
+                           <desc versionDate="2026-11-19" xml:lang="de">angehängt an einen
                             Lederstreifen</desc>
                            <desc versionDate="2023-05-31" xml:lang="en">sealed on a leather
                             tag</desc>
-                           <desc versionDate="2023-05-31" xml:lang="fr">attaché à une
-                            lanière</desc>
+                           <desc versionDate="2026-11-19" xml:lang="fr">attaché à une lanière de
+                            cuir</desc>
                            <desc versionDate="2023-05-31" xml:lang="it">pendente da un laccio di
                             cuoio</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_parchment_tag">
-                           <desc versionDate="2023-05-31" xml:lang="de">angehängt an
+                           <desc versionDate="2026-11-19" xml:lang="de">angehängt an einen
                             Pergamentstreifen</desc>
                            <desc versionDate="2023-05-31" xml:lang="en">sealed on a parchment
                             tag</desc>
-                           <desc versionDate="2023-05-31" xml:lang="fr">attaché à une
-                            languette</desc>
+                           <desc versionDate="2026-11-19" xml:lang="fr">attaché à une queue de
+                            parchemin</desc>
                            <desc versionDate="2023-05-31" xml:lang="it">pendente da una stricia di
                             pergamena</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_ribbon">
-                           <desc versionDate="2023-05-31" xml:lang="de">angehängt an Band</desc>
+                           <desc versionDate="2026-11-19" xml:lang="de">angehängt an ein
+                            Band</desc>
                            <desc versionDate="2023-05-31" xml:lang="en">sealed on a ribbon</desc>
                            <desc versionDate="2023-05-31" xml:lang="fr">attaché à un ruban</desc>
                            <desc versionDate="2023-05-31" xml:lang="it">pendente da un
@@ -19490,15 +19648,15 @@ Elements</ref>
                         <valItem ident="sealed_on_laces">
                            <desc versionDate="2023-05-31" xml:lang="de">angehängt an Fäden</desc>
                            <desc versionDate="2023-05-31" xml:lang="en">sealed on laces</desc>
-                           <desc versionDate="2023-05-31" xml:lang="fr">attaché à un lac</desc>
-                           <desc versionDate="2023-05-31" xml:lang="it">c’è solo uno slot per il
-                            sigillo</desc>
+                           <desc versionDate="2026-11-19" xml:lang="fr">attaché à un lacs</desc>
+                           <desc versionDate="2026-11-19" xml:lang="it">pendente da lacci</desc>
                         </valItem>
                         <valItem ident="slit">
                            <desc versionDate="2023-05-31" xml:lang="de">nur Siegelschlitz
                             vorhanden</desc>
                            <desc versionDate="2023-05-31" xml:lang="en">slit with no seal</desc>
-                           <desc versionDate="2023-05-31" xml:lang="fr">fente pour le sceau</desc>
+                           <desc versionDate="2026-11-19" xml:lang="fr">seule la fente pour le
+                            sceau est présente</desc>
                            <desc versionDate="2023-05-31" xml:lang="it">c’è solo uno slot per il
                             sigillo</desc>
                         </valItem>
@@ -19849,6 +20007,24 @@ Elements</ref>
                </constraint>
             </constraintSpec>
             <constraintSpec xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                            ident="sch-el-complex-nesting"
+                            scheme="schematron"
+                            xml:lang="en">
+               <desc versionDate="2026-11-02" xml:lang="en">abstract pattern to check element
+            nesting</desc>
+               <constraint>
+                  <sch:pattern abstract="true" id="nested-el">
+                     <sch:rule context="tei:$el-name">
+                        <sch:assert test="count(ancestor::tei:$el-name) le $nested-level" xml:lang="en"> A
+                            <sch:value-of select="concat('tei:', '$el-name')"/>
+                            must not be nested more than
+                            <sch:value-of select="$nested-level"/>
+                            level deep.</sch:assert>
+                     </sch:rule>
+                  </sch:pattern>
+               </constraint>
+            </constraintSpec>
+            <constraintSpec xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                             ident="sch-trim-attributes"
                             scheme="schematron"
                             xml:lang="en">
@@ -19888,7 +20064,7 @@ Elements</ref>
             elements</desc>
                <constraint>
                   <sch:pattern>
-                     <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc',                     'head', 'hi',                     'history', 'idno',                     'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI',                     'teiHeader', 'text',                     'textClass',                     'time', 'title',                     'unclear',                     'witness')][not(*)]">
+                     <sch:rule context="tei:*[name() = ('ab', 'abbr',                     'add', 'additional', 'author',                     'availability', 'bibl', 'body',                     'custEvent', 'custodialHist', 'del',                     'dimensions', 'div', 'docImprint',                     'editorialDecl', 'encodingDesc', 'expan',                     'extent', 'foreign', 'forename', 'fw',                     'handDesc', 'head', 'hi',                     'history', 'idno', 'item',                     'keywords', 'label', 'lem',                     'licence', 'list', 'listBibl',                     'listWit', 'measure', 'measureGrp',                     'msContents', 'msItem', 'note', 'num',                     'objectDesc', 'orgName', 'orig',                     'origPlace', 'p', 'persName',                     'physDesc', 'placeName', 'publicationStmt',                     'publisher', 'pubPlace', 'q', 'quote',                     'repository', 'resp', 'respStmt',                     'row', 'sealDesc', 'seg', 'settlement',                     'sic', 'signed', 'sourceDesc', 'subst',                     'summary', 'supplied', 'support',                     'surname', 'supportDesc', 'table',                     'TEI', 'teiHeader', 'text',                     'textClass', 'time', 'title',                     'unclear', 'witness')][not(*)]">
                         <sch:assert test="string-length(normalize-space(.)) &gt; 0"> The element
                         <sch:name/> must not be empty. </sch:assert>
                      </sch:rule>
@@ -20165,6 +20341,13 @@ Elements</ref>
                         <desc versionDate="2023-09-15" xml:lang="fr">l’affaiblissement de
                         l’encre</desc>
                         <desc versionDate="2023-05-16" xml:lang="it">inchiostro sbiadito</desc>
+                     </valItem>
+                     <valItem ident="faded_pencil">
+                        <desc versionDate="2026-11-18" xml:lang="de">verblasster Bleistift</desc>
+                        <desc versionDate="2026-11-18" xml:lang="en">faded pencil</desc>
+                        <desc versionDate="2026-11-18" xml:lang="fr">l’affaiblissement du
+                        crayon</desc>
+                        <desc versionDate="2026-11-18" xml:lang="it">inchiostra matita</desc>
                      </valItem>
                      <valItem ident="fire">
                         <desc versionDate="2023-05-02" xml:lang="de">Rauch/Brandschaden</desc>
@@ -21348,6 +21531,12 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="fr">laine</desc>
                         <desc versionDate="2023-03-21" xml:lang="it">lana</desc>
                      </valItem>
+                     <valItem ident="yarn">
+                        <desc versionDate="2026-10-31" xml:lang="de">Garn</desc>
+                        <desc versionDate="2026-10-31" xml:lang="en">yarn</desc>
+                        <desc versionDate="2026-10-31" xml:lang="fr">fil</desc>
+                        <desc versionDate="2026-10-31" xml:lang="it">filato</desc>
+                     </valItem>
                      <valItem ident="ziger">
                         <desc versionDate="2023-03-21" xml:lang="de">Ziger</desc>
                         <desc versionDate="2023-03-21" xml:lang="en">ziger (whey cheese)</desc>
@@ -21420,7 +21609,8 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="it">di Firenze</desc>
                      </valItem>
                      <valItem ident="FR">
-                        <desc versionDate="2025-01-30" xml:lang="de">Französischer</desc>
+                        <desc type="singular" versionDate="2025-01-30" xml:lang="de">Französischer</desc>
+                        <desc type="plural" versionDate="2026-11-17" xml:lang="de">Französische</desc>
                         <desc versionDate="2023-03-21" xml:lang="en">French</desc>
                         <desc versionDate="2023-03-21" xml:lang="fr">français/e</desc>
                         <desc versionDate="2023-03-21" xml:lang="it">francese</desc>
@@ -21438,13 +21628,15 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="it">di Ginevra</desc>
                      </valItem>
                      <valItem ident="HU">
-                        <desc versionDate="2023-03-21" xml:lang="de">Ungarischer</desc>
+                        <desc type="singular" versionDate="2023-03-21" xml:lang="de">Ungarischer</desc>
+                        <desc type="plural" versionDate="2026-11-17" xml:lang="de">Ungarische</desc>
                         <desc versionDate="2023-03-21" xml:lang="en">of Hungary</desc>
                         <desc versionDate="2023-03-21" xml:lang="fr">de Hongrie</desc>
                         <desc versionDate="2023-03-21" xml:lang="it">ungherese</desc>
                      </valItem>
                      <valItem ident="IT">
-                        <desc versionDate="2025-01-30" xml:lang="de">Italienischer</desc>
+                        <desc type="singular" versionDate="2025-01-30" xml:lang="de">Italienischer</desc>
+                        <desc type="plural" versionDate="2026-11-17" xml:lang="de">Italienische</desc>
                         <desc versionDate="2025-01-21" xml:lang="en">of Italy</desc>
                         <desc versionDate="2025-01-21" xml:lang="fr">de l’Italie</desc>
                         <desc versionDate="2025-01-21" xml:lang="it">dell’Italia</desc>
@@ -21462,7 +21654,8 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="it">di Losanna</desc>
                      </valItem>
                      <valItem ident="Lothringen">
-                        <desc versionDate="2025-01-30" xml:lang="de">Lothringischer</desc>
+                        <desc type="singular" versionDate="2025-01-30" xml:lang="de">Lothringischer</desc>
+                        <desc type="plural" versionDate="2026-11-17" xml:lang="de">Lothringische</desc>
                         <desc versionDate="2023-03-21" xml:lang="en">of Lorraine</desc>
                         <desc versionDate="2023-03-21" xml:lang="fr">de la Lorraine</desc>
                         <desc versionDate="2023-03-21" xml:lang="it">di Lorena</desc>
@@ -21486,7 +21679,8 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="it">di Neuchâtel</desc>
                      </valItem>
                      <valItem ident="NL">
-                        <desc versionDate="2025-01-30" xml:lang="de">Holländischer</desc>
+                        <desc type="singular" versionDate="2025-01-30" xml:lang="de">Holländischer</desc>
+                        <desc type="plural" versionDate="2026-11-17" xml:lang="de">Holländische</desc>
                         <desc versionDate="2024-06-19" xml:lang="en">of Holland</desc>
                         <desc versionDate="2024-06-19" xml:lang="fr">de Hollande</desc>
                         <desc versionDate="2025-01-30" xml:lang="it">dell’Olanda</desc>
@@ -21498,10 +21692,12 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="it">dell’Austria</desc>
                      </valItem>
                      <valItem ident="Rh">
-                        <desc versionDate="2023-03-21" xml:lang="de">Rheinischer</desc>
+                        <desc type="singular" versionDate="2023-03-21" xml:lang="de">Rheinischer</desc>
+                        <desc type="plural" versionDate="2026-11-12" xml:lang="de">Rheinische</desc>
                         <desc versionDate="2023-03-21" xml:lang="en">of Rhineland</desc>
                         <desc versionDate="2023-03-21" xml:lang="fr">de la Rhénanie</desc>
-                        <desc versionDate="2023-03-21" xml:lang="it">renano</desc>
+                        <desc type="singular" versionDate="2023-03-21" xml:lang="it">renano</desc>
+                        <desc type="plural" versionDate="2026-11-17" xml:lang="it">renani</desc>
                      </valItem>
                      <valItem ident="Rheintaler">
                         <desc versionDate="2023-03-21" xml:lang="de">Rheintaler</desc>
@@ -21510,7 +21706,7 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="it">di Rheintal</desc>
                      </valItem>
                      <valItem ident="Rorschach">
-                        <desc versionDate="2026-10-20" xml:lang="de">Rorschach</desc>
+                        <desc versionDate="2026-11-17" xml:lang="de">Rorschacher</desc>
                         <desc versionDate="2026-10-20" xml:lang="en">of Rorschach</desc>
                         <desc versionDate="2026-10-20" xml:lang="fr">de Rorschach</desc>
                         <desc versionDate="2026-10-20" xml:lang="it">di Rorschach</desc>
@@ -21540,7 +21736,7 @@ Elements</ref>
                         <desc versionDate="2023-03-21" xml:lang="it">di Sciaffusa</desc>
                      </valItem>
                      <valItem ident="Stammheim">
-                        <desc versionDate="2026-10-20" xml:lang="de">Stammheim</desc>
+                        <desc versionDate="2026-11-17" xml:lang="de">Stammheimer</desc>
                         <desc versionDate="2026-10-20" xml:lang="en">of Stammheim</desc>
                         <desc versionDate="2026-10-20" xml:lang="fr">de Stammheim</desc>
                         <desc versionDate="2026-10-20" xml:lang="it">di Stammheim</desc>
@@ -21564,7 +21760,7 @@ Elements</ref>
                         <desc versionDate="2025-10-10" xml:lang="it">di Tirolo</desc>
                      </valItem>
                      <valItem ident="Utrecht">
-                        <desc versionDate="2025-01-30" xml:lang="de">Utrischer</desc>
+                        <desc versionDate="2026-11-17" xml:lang="de">Utrechter</desc>
                         <desc versionDate="2023-03-21" xml:lang="en">of Utrecht</desc>
                         <desc versionDate="2023-03-21" xml:lang="fr">d’Utrecht</desc>
                         <desc versionDate="2023-03-21" xml:lang="it">di Utrecht</desc>
@@ -22080,6 +22276,12 @@ Elements</ref>
                         <desc type="plural" versionDate="2023-03-17" xml:lang="fr">tranches</desc>
                         <desc type="singular" versionDate="2023-03-17" xml:lang="it">fetta</desc>
                         <desc type="plural" versionDate="2023-03-17" xml:lang="it">fette</desc>
+                     </valItem>
+                     <valItem ident="Schoppen">
+                        <desc versionDate="2026-10-31" xml:lang="de">Schoppen</desc>
+                        <desc versionDate="2026-10-31" xml:lang="en">schoppen</desc>
+                        <desc versionDate="2026-10-31" xml:lang="fr">schoppen</desc>
+                        <desc versionDate="2026-10-31" xml:lang="it">schoppen</desc>
                      </valItem>
                      <valItem ident="Sechzehner">
                         <desc versionDate="2023-03-17" xml:lang="de">Sechzehner</desc>
