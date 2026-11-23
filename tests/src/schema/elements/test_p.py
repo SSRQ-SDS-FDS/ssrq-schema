@@ -24,6 +24,11 @@ from ..conftest import RNG_test_function, SimpleTEIWriter, add_tei_namespace
             True,
         ),
         (
+            "valid-p-with-rend",
+            "<p rend='rotated_180'>foo</p>",
+            True,
+        ),
+        (
             "valid-p-with-list-content",
             "<p><list><item>bar</item></list></p>",
             True,

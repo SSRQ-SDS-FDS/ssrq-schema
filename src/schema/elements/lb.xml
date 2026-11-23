@@ -3,7 +3,7 @@
 href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl"
 type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <elementSpec ident="lb" mode="change" module="core" xmlns="http://www.tei-c.org/ns/1.0"
-xmlns:xi="http://www.w3.org/2001/XInclude">
+xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude">
     <gloss versionDate="2025-02-03" xml:lang="de">Zeilenanfang</gloss>
     <gloss versionDate="2025-02-03" xml:lang="en">line beginning</gloss>
     <gloss versionDate="2025-02-03" xml:lang="fr">début de ligne</gloss>
@@ -18,6 +18,39 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
     <content>
         <empty/>
     </content>
+    <constraintSpec ident="sch-lb-page-break" scheme="schematron" xml:lang="en">
+        <desc versionDate="2026-11-20" xml:lang="en">Order and whitespace of page and line
+        beginnings.</desc>
+        <constraint>
+            <sch:pattern>
+                <sch:rule context="tei:lb">
+                    <sch:report test="following-sibling::node()[self::* or
+                    self::text()[matches(., &apos;[^\s ]&apos;)]][1][self::tei:pb]"> A page
+                    beginning (tei:pb) must precede the line beginning (tei:lb). </sch:report>
+                </sch:rule>
+            </sch:pattern>
+            <sch:pattern>
+                <sch:rule context="tei:lb[@break = &apos;no&apos;]">
+                    <sch:let name="pb" value="preceding-sibling::node()[self::* or
+                    self::text()[matches(., &apos;[^\s ]&apos;)]][1][self::tei:pb]"/>
+                    <sch:report role="warning" test="not($pb) and
+                    matches(string(preceding-sibling::node()[self::* or self::text()][1]),
+                    &apos;[\s ]$&apos;)"> Whitespace is not allowed immediately before tei:lb
+                    within a word. </sch:report>
+                    <sch:report role="warning" test="$pb and
+                    matches(string($pb/preceding-sibling::node()[ self::* or
+                    self::text()][1]), &apos;[\s ]$&apos;)"> Whitespace is not allowed immediately
+                    before tei:pb within a word. </sch:report>
+                    <sch:report role="warning" test="$pb and preceding-sibling::text()[. &gt;&gt;
+                    $pb][ matches(., &apos;[\s ]&apos;)]"> Whitespace is not allowed between tei:pb
+                    and tei:lb within a word. </sch:report>
+                    <sch:report role="warning" test="matches(string(following-sibling::node()[
+                    self::* or                     self::text()][1]), &apos;^[\s ]&apos;)">
+                    Whitespace is not allowed immediately after tei:lb within a word. </sch:report>
+                </sch:rule>
+            </sch:pattern>
+        </constraint>
+    </constraintSpec>
     <xi:include href="examples.xml" xpointer="ex-lb-de"/>
     <xi:include href="examples.xml" xpointer="ex-lb-en"/>
     <xi:include href="examples.xml" xpointer="ex-lb-fr"/>
@@ -36,6 +69,11 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             Bei gedruckten Texten werden analog zu den handschriftlichen Texten Trennstriche mit
             eben hiermit und Bindestrichen bzw. Ergänzungsstriche mit <val>-</val> transkribiert.
         </p>
+        <p>
+            Wenn Seiten- und Zeilenanfang zusammenfallen, steht <gi>pb</gi> vor <gi>lb</gi>,
+            unabhängig vom Attribut <att>break</att>. Bei <att>break</att> = <val>no</val> darf vor
+            <gi>pb</gi>, zwischen den beiden Elementen und nach <gi>lb</gi> kein Leerraum stehen.
+        </p>
     </remarks>
     <remarks versionDate="2025-02-03" xml:lang="en">
         <p>
@@ -48,6 +86,11 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             if the line break coincides with the page break. In printed texts, hyphens are
             transcribed with just hereby and hyphens or additional dashes with &apos;-&apos;,
             analogous to handwritten texts.
+        </p>
+        <p>
+            When page and line beginnings coincide, <gi>pb</gi> precedes <gi>lb</gi>, regardless of
+            <att>break</att>. With <att>break</att> = <val>no</val>, whitespace is not allowed
+            before <gi>pb</gi>, between the two elements or after <gi>lb</gi>.
         </p>
     </remarks>
     <remarks versionDate="2025-02-06" xml:lang="fr">
@@ -65,6 +108,11 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             Dans les textes imprimés, les traits d’union sont transcrits de la même manière que
             pour les textes manuscrits, les tirets étant signalés avec cet élément, alors que les
             tirets supplémentaires sont transcrits avec <val>-</val>.
+        </p>
+        <p>
+            Lorsque les débuts de page et de ligne coïncident, <gi>pb</gi> précède <gi>lb</gi>,
+            indépendamment de <att>break</att>. Avec <att>break</att> = <val>no</val>, aucun espace
+            ne doit figurer avant <gi>pb</gi>, entre les deux éléments ou après <gi>lb</gi>.
         </p>
     </remarks>
 </elementSpec>

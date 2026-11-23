@@ -81,12 +81,15 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             </datatype>
         </attDef>
         <attDef ident="rend" mode="replace">
-            <desc versionDate="2025-02-04" xml:lang="de">das verwendete Schreibmittel</desc>
-            <desc versionDate="2025-02-04" xml:lang="en">the writing means used</desc>
-            <desc versionDate="2025-02-04" xml:lang="fr">les moyens d’écriture utilisés</desc>
+            <desc versionDate="2026-11-18" xml:lang="de">das Aussehen des anonymen
+            Textblocks</desc>
+            <desc versionDate="2026-11-18" xml:lang="en">the appearance of the anonymous
+            block</desc>
+            <desc versionDate="2026-11-18" xml:lang="fr">l’apparition du bloc anonyme</desc>
             <datatype>
                 <rng:choice>
                     <rng:ref name="ssrq.rend.add"/>
+                    <rng:ref name="ssrq.rend.font"/>
                     <rng:ref name="ssrq.rend.placement"/>
                     <rng:ref name="ssrq.rend.rotation"/>
                 </rng:choice>

@@ -658,14 +658,26 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                     Siegels</desc>
                     <desc versionDate="2025-01-28" xml:lang="en">the method of attachment of the
                     seal</desc>
-                    <desc versionDate="2025-01-28" xml:lang="fr">le type d’apposition du
+                    <desc versionDate="2026-11-19" xml:lang="fr">le mode d’apposition du
                     sceau</desc>
+                    <desc versionDate="2026-11-19" xml:lang="it">il metodo di apposizione del
+                    sigillo</desc>
                     <valList type="closed">
                         <valItem ident="applied">
                             <desc versionDate="2023-05-31" xml:lang="de">aufgedrückt</desc>
                             <desc versionDate="2023-05-31" xml:lang="en">applied</desc>
                             <desc versionDate="2023-05-31" xml:lang="fr">plaqué</desc>
                             <desc versionDate="2023-05-31" xml:lang="it">aderente</desc>
+                        </valItem>
+                        <valItem ident="applied-on-a-binding-lace">
+                            <desc versionDate="2026-11-17" xml:lang="de">aufgedrückt auf einer
+                            Heftschnur</desc>
+                            <desc versionDate="2026-11-17" xml:lang="en">applied on a binding
+                            lace</desc>
+                            <desc versionDate="2026-11-17" xml:lang="fr">attaché au fil de
+                            reliure</desc>
+                            <desc versionDate="2026-11-17" xml:lang="it">pendente dal filo di
+                            rilegatura</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_cord">
                             <desc versionDate="2023-05-31" xml:lang="de">angehängt an einer
@@ -677,34 +689,36 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                             cordicella</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_lace">
-                            <desc versionDate="2023-05-31" xml:lang="de">angehängt an Schnur</desc>
+                            <desc versionDate="2026-11-19" xml:lang="de">angehängt an einer
+                            Schnur</desc>
                             <desc versionDate="2023-05-31" xml:lang="en">sealed on a lace</desc>
-                            <desc versionDate="2023-05-31" xml:lang="fr">attaché à un floc</desc>
+                            <desc versionDate="2023-05-31" xml:lang="fr">attaché à un cordon</desc>
                             <desc versionDate="2023-05-31" xml:lang="it">pendente da un
                             cordone</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_leather_tag">
-                            <desc versionDate="2023-05-31" xml:lang="de">angehängt an
+                            <desc versionDate="2026-11-19" xml:lang="de">angehängt an einen
                             Lederstreifen</desc>
                             <desc versionDate="2023-05-31" xml:lang="en">sealed on a leather
                             tag</desc>
-                            <desc versionDate="2023-05-31" xml:lang="fr">attaché à une
-                            lanière</desc>
+                            <desc versionDate="2026-11-19" xml:lang="fr">attaché à une lanière de
+                            cuir</desc>
                             <desc versionDate="2023-05-31" xml:lang="it">pendente da un laccio di
                             cuoio</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_parchment_tag">
-                            <desc versionDate="2023-05-31" xml:lang="de">angehängt an
+                            <desc versionDate="2026-11-19" xml:lang="de">angehängt an einen
                             Pergamentstreifen</desc>
                             <desc versionDate="2023-05-31" xml:lang="en">sealed on a parchment
                             tag</desc>
-                            <desc versionDate="2023-05-31" xml:lang="fr">attaché à une
-                            languette</desc>
+                            <desc versionDate="2026-11-19" xml:lang="fr">attaché à une queue de
+                            parchemin</desc>
                             <desc versionDate="2023-05-31" xml:lang="it">pendente da una stricia di
                             pergamena</desc>
                         </valItem>
                         <valItem ident="sealed_on_a_ribbon">
-                            <desc versionDate="2023-05-31" xml:lang="de">angehängt an Band</desc>
+                            <desc versionDate="2026-11-19" xml:lang="de">angehängt an ein
+                            Band</desc>
                             <desc versionDate="2023-05-31" xml:lang="en">sealed on a ribbon</desc>
                             <desc versionDate="2023-05-31" xml:lang="fr">attaché à un ruban</desc>
                             <desc versionDate="2023-05-31" xml:lang="it">pendente da un
@@ -713,15 +727,15 @@ type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure
                         <valItem ident="sealed_on_laces">
                             <desc versionDate="2023-05-31" xml:lang="de">angehängt an Fäden</desc>
                             <desc versionDate="2023-05-31" xml:lang="en">sealed on laces</desc>
-                            <desc versionDate="2023-05-31" xml:lang="fr">attaché à un lac</desc>
-                            <desc versionDate="2023-05-31" xml:lang="it">c’è solo uno slot per il
-                            sigillo</desc>
+                            <desc versionDate="2026-11-19" xml:lang="fr">attaché à un lacs</desc>
+                            <desc versionDate="2026-11-19" xml:lang="it">pendente da lacci</desc>
                         </valItem>
                         <valItem ident="slit">
                             <desc versionDate="2023-05-31" xml:lang="de">nur Siegelschlitz
                             vorhanden</desc>
                             <desc versionDate="2023-05-31" xml:lang="en">slit with no seal</desc>
-                            <desc versionDate="2023-05-31" xml:lang="fr">fente pour le sceau</desc>
+                            <desc versionDate="2026-11-19" xml:lang="fr">seule la fente pour le
+                            sceau est présente</desc>
                             <desc versionDate="2023-05-31" xml:lang="it">c’è solo uno slot per il
                             sigillo</desc>
                         </valItem>
