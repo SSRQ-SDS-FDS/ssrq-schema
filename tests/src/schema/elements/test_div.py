@@ -150,6 +150,11 @@ def test_div(
             "<body><div><seg>foo</seg><seg>bar</seg></div></body>",
             False,
         ),
+        (
+            "invalid-div-gap-only",
+            "<body><div><pb/><gap reason='illegible'/></div></body>",
+            False,
+        ),
     ],
 )
 def test_div_text_constraint(

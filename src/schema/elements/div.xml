@@ -55,11 +55,11 @@ xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/200
         <constraint>
             <sch:pattern>
                 <sch:rule context="tei:div[ancestor::tei:body]">
-                    <sch:assert test=".//tei:*[name() = (&apos;p&apos;, &apos;table&apos;,
-                    &apos;list&apos;, &apos;figure&apos;, &apos;head&apos;)]" xml:lang="en"> Every
-                    tei:div within tei:body must contain at least one tei:p descendant or, if no
-                    tei:p is present, at least one tei:table, tei:list, tei:figure or tei:head
-                    descendant. </sch:assert>
+                    <sch:assert test=".//tei:*[local-name() = (&apos;p&apos;, &apos;table&apos;,
+                    &apos;list&apos;, &apos;figure&apos;, &apos;head&apos;)]|.//tei:gap[@reason =
+                    &apos;irrelevant&apos;]" xml:lang="en"> Every tei:div within tei:body must
+                    contain at least one tei:p descendant or, if no tei:p is present, at least one
+                    tei:table, tei:list, tei:figure or tei:head descendant. </sch:assert>
                 </sch:rule>
             </sch:pattern>
         </constraint>
