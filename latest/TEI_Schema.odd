@@ -22,8 +22,8 @@
             <publisher>
                     SSRQ-SDS-FDS
                 </publisher>
-            <date when="2026-11-23Z"/>
-            <idno>1.10.0</idno>
+            <date when="2026-11-27Z"/>
+            <idno>1.10.1</idno>
             <availability>
                <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                         Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
@@ -8090,13 +8090,15 @@ Elements</ref>
                   <empty/>
                </content>
                <constraintSpec ident="sch-lb-page-break" scheme="schematron" xml:lang="en">
-                  <desc versionDate="2026-11-20" xml:lang="en">Order and whitespace of page and line
-        beginnings.</desc>
+                  <desc versionDate="2026-11-27" xml:lang="en">Order of page, column and line beginnings, and
+        whitespace at line beginnings.</desc>
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:lb">
-                           <sch:report test="following-sibling::node()[self::* or                     self::text()[matches(., '[^\s ]')]][1][self::tei:pb]"> A page
-                    beginning (tei:pb) must precede the line beginning (tei:lb). </sch:report>
+                        <sch:rule context="tei:cb | tei:lb">
+                           <sch:let name="next"
+                                    value="following-sibling::node()[self::* or                     self::text()[matches(., '[^\s ]')]][1]"/>
+                           <sch:report test="$next[self::tei:pb] or (self::tei:lb and                     $next[self::tei:cb])"> Page, column and line beginnings must occur in this
+                    order: tei:pb, tei:cb, tei:lb. </sch:report>
                         </sch:rule>
                      </sch:pattern>
                      <sch:pattern>
@@ -8162,9 +8164,11 @@ Elements</ref>
             eben hiermit und Bindestrichen bzw. Ergänzungsstriche mit <val>-</val> transkribiert.
         </p>
                   <p>
-            Wenn Seiten- und Zeilenanfang zusammenfallen, steht <gi>pb</gi> vor <gi>lb</gi>,
-            unabhängig vom Attribut <att>break</att>. Bei <att>break</att> = <val>no</val> darf vor
-            <gi>pb</gi>, zwischen den beiden Elementen und nach <gi>lb</gi> kein Leerraum stehen.
+            Treffen Seiten-, Spalten- oder Zeilenanfang zusammen, gilt die Reihenfolge <gi>pb</gi>,
+            <gi>cb</gi>, <gi>lb</gi>, unabhängig vom Attribut <att>break</att>. Fallen Seiten- und
+            Zeilenanfang direkt zusammen, darf bei <att>break</att> = <val>no</val> vor
+            <gi>pb</gi>, zwischen <gi>pb</gi> und <gi>lb</gi> sowie nach <gi>lb</gi> kein Leerraum
+            stehen.
         </p>
                </remarks>
                <remarks versionDate="2025-02-03" xml:lang="en">
@@ -8180,9 +8184,10 @@ Elements</ref>
             analogous to handwritten texts.
         </p>
                   <p>
-            When page and line beginnings coincide, <gi>pb</gi> precedes <gi>lb</gi>, regardless of
-            <att>break</att>. With <att>break</att> = <val>no</val>, whitespace is not allowed
-            before <gi>pb</gi>, between the two elements or after <gi>lb</gi>.
+            When page, column or line beginnings coincide, they occur in the order <gi>pb</gi>,
+            <gi>cb</gi>, <gi>lb</gi>, regardless of <att>break</att>. When <gi>pb</gi> and
+            <gi>lb</gi> coincide directly and <att>break</att> = <val>no</val>, whitespace is not
+            allowed before <gi>pb</gi>, between <gi>pb</gi> and <gi>lb</gi>, or after <gi>lb</gi>.
         </p>
                </remarks>
                <remarks versionDate="2025-02-06" xml:lang="fr">
@@ -8202,9 +8207,11 @@ Elements</ref>
             tirets supplémentaires sont transcrits avec <val>-</val>.
         </p>
                   <p>
-            Lorsque les débuts de page et de ligne coïncident, <gi>pb</gi> précède <gi>lb</gi>,
-            indépendamment de <att>break</att>. Avec <att>break</att> = <val>no</val>, aucun espace
-            ne doit figurer avant <gi>pb</gi>, entre les deux éléments ou après <gi>lb</gi>.
+            Lorsque des débuts de page, de colonne ou de ligne coïncident, ils suivent l’ordre
+            <gi>pb</gi>, <gi>cb</gi>, <gi>lb</gi>, indépendamment de <att>break</att>. Lorsque
+            <gi>pb</gi> et <gi>lb</gi> coïncident directement et que <att>break</att> =
+            <val>no</val>, aucun espace ne doit figurer avant <gi>pb</gi>, entre <gi>pb</gi> et
+            <gi>lb</gi> ou après <gi>lb</gi>.
         </p>
                </remarks>
                <listRef>
@@ -17663,11 +17670,11 @@ Elements</ref>
                   <constraint>
                      <sch:pattern>
                         <sch:rule context="tei:div[ancestor::tei:body]">
-                           <sch:assert test=".//tei:*[name() = ('p', 'table',                     'list', 'figure', 'head')]"
-                                       xml:lang="en"> Every
-                    tei:div within tei:body must contain at least one tei:p descendant or, if no
-                    tei:p is present, at least one tei:table, tei:list, tei:figure or tei:head
-                    descendant. </sch:assert>
+                           <sch:assert test=".//tei:*[local-name() = ('p', 'table',                     'list', 'figure', 'head')]|.//tei:gap[@reason =                     'irrelevant']"
+                                       xml:lang="en"> Every tei:div within tei:body must
+                    contain at least one tei:p descendant or, if no tei:p is present, at least one
+                    tei:table, tei:list, tei:figure, tei:head or tei:gap with
+                    @reason="irrelevant". </sch:assert>
                         </sch:rule>
                      </sch:pattern>
                   </constraint>

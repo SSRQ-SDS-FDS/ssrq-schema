@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2026-11-23T15:12:46Z. . 
+Schema generated from ODD source 2026-11-27T11:50:12Z. . 
 TEI Edition: P5 Version 4.12.0a. Last updated on 27th July 2026, revision 497393620 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0a/ 
   
@@ -3874,9 +3874,11 @@ Elements 7.2.6. Speech Contents]</a:documentation>
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude">
-            <sch:rule context="tei:lb">
-               <sch:report test="following-sibling::node()[self::* or                     self::text()[matches(., '[^\s ]')]][1][self::tei:pb]"> A page
-                    beginning (tei:pb) must precede the line beginning (tei:lb). </sch:report>
+            <sch:rule context="tei:cb | tei:lb">
+               <sch:let name="next"
+                        value="following-sibling::node()[self::* or                     self::text()[matches(., '[^\s ]')]][1]"/>
+               <sch:report test="$next[self::tei:pb] or (self::tei:lb and                     $next[self::tei:cb])"> Page, column and line beginnings must occur in this
+                    order: tei:pb, tei:cb, tei:lb. </sch:report>
             </sch:rule>
          </sch:pattern>
          <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
@@ -5819,11 +5821,11 @@ Elements]</a:documentation>
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude">
             <sch:rule context="tei:div[ancestor::tei:body]">
-               <sch:assert test=".//tei:*[name() = ('p', 'table',                     'list', 'figure', 'head')]"
-                           xml:lang="en"> Every
-                    tei:div within tei:body must contain at least one tei:p descendant or, if no
-                    tei:p is present, at least one tei:table, tei:list, tei:figure or tei:head
-                    descendant. </sch:assert>
+               <sch:assert test=".//tei:*[local-name() = ('p', 'table',                     'list', 'figure', 'head')]|.//tei:gap[@reason =                     'irrelevant']"
+                           xml:lang="en"> Every tei:div within tei:body must
+                    contain at least one tei:p descendant or, if no tei:p is present, at least one
+                    tei:table, tei:list, tei:figure, tei:head or tei:gap with
+                    @reason="irrelevant". </sch:assert>
             </sch:rule>
          </sch:pattern>
          <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
