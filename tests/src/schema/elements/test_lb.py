@@ -39,17 +39,44 @@ def test_lb(
     test_element_with_rng("lb", name, markup, result, False)
 
 
-@pytest.mark.parametrize("attribute", ["", ' break="no"'])
 @pytest.mark.parametrize(
-    "separator", ["", " ", "\n\t", "<!-- comment -->", " <?test value?> "]
+    "first, second, valid",
+    [
+        ("<lb/>", "<pb/>", False),
+        ('<lb break="no"/>', "<pb/>", False),
+        ('<cb n="a"/>', "<pb/>", False),
+        ("<lb/>", '<cb n="a"/>', False),
+        ('<lb break="no"/>', '<cb n="a"/>', False),
+        ("<pb/>", "<lb/>", True),
+        ("<pb/>", '<cb n="a"/>', True),
+        ('<cb n="a"/>', "<lb/>", True),
+        ('<pb/><cb n="a"/>', "<lb/>", True),
+    ],
 )
-def test_lb_before_pb(
-    main_constraints: str, writer: SimpleTEIWriter, attribute: str, separator: str
+@pytest.mark.parametrize(
+    "separator", ["", " ", "\n\t", "&#160;", "<!-- comment -->", " <?test value?> "]
+)
+def test_milestone_order(
+    main_constraints: str,
+    writer: SimpleTEIWriter,
+    first: str,
+    second: str,
+    valid: bool,
+    separator: str,
 ):
-    markup = f"<body><p>Wortanfang<lb{attribute}/>{separator}<pb/>Wortende</p></body>"
-    writer.write("wrong-order", add_tei_namespace(markup))
+    # Column markup requires a second column with a different number.
+    next_column = '<cb n="b"/>Text' if "<cb" in first or "<cb" in second else ""
+    markup = f"<body><p>Text{first}{separator}{second}Text{next_column}</p></body>"
+    writer.write("milestone-order", add_tei_namespace(markup))
     reports = apply_schematron_validation(input=writer.list(), isosch=main_constraints)
-    assert not reports[0].report.is_valid(all_error_types=False)
+    report = reports[0].report
+    order_errors = [
+        item
+        for item in report.successful_reports or []
+        if item.text.startswith("Page, column and line beginnings")
+    ]
+    assert len(order_errors) == (0 if valid else 1)
+    assert report.is_valid(all_error_types=False) is valid
 
 
 @pytest.mark.parametrize(
@@ -87,7 +114,7 @@ def test_lb_page_break_constraints(
     writer.write("page-break", add_tei_namespace(f"<body><p>{markup}</p></body>"))
     reports = apply_schematron_validation(input=writer.list(), isosch=main_constraints)
     # Whitespace is a formatting issue and should warn without invalidating the
-    # document. The pb/lb order remains a structural error (tested above).
+    # document. Milestone order remains a structural error (tested above).
     report = reports[0].report
     assert report.is_valid(all_error_types=False)
     warnings = [
