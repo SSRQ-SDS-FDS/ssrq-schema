@@ -58,7 +58,7 @@ xmlns:xi="http://www.w3.org/2001/XInclude">
             <desc versionDate="2026-11-18" xml:lang="de">das Aussehen des Absatzes</desc>
             <desc versionDate="2026-11-18" xml:lang="en">the appearance of the paragraph</desc>
             <desc versionDate="2026-11-18" xml:lang="fr">l’apparition du paragraphe</desc>
-            <datatype>
+            <datatype maxOccurs="unbounded">
                 <rng:choice>
                     <rng:ref name="ssrq.rend.add"/>
                     <rng:ref name="ssrq.rend.font"/>
